@@ -179,6 +179,50 @@ installation.  If you leave it off, the PFTW package will show you a
 status bar as it extracts the InstallShield tree to the temporary
 directory.
 
+<h3 id="ismsi">InstallShield with MSI</h3>
+
+<p>Recent versions (7 and above) of InstallShield's tools are able to
+produce <a href="#msi">MSI</a> files.  Read <a
+href="http://documentation.installshield.com/robo/projects/helplibdevstudio9/SilentInstall.htm"
+>InstallShield's documentation</a> for full details.
+
+<p>These MSI files may be shipped alone or with a
+<code>setup.exe</code> installer.  These installers in turn come in
+two flavors, called "InstallScript MSI" and "Basic MSI".
+InstallScript MSI uses the <a href="#installshield">traditional
+InstallShield</a> switches.  Basic MSI is another story.
+
+<p>To perform an unattended installation using a Basic MSI installer,
+you provide the <kbd>/s&nbsp;/v"..."</kbd> switches, where
+<kbd>...</kbd> represents any additional switches you want to pass
+down to <code>msiexec</code>.  These should include the <kbd>/qb</kbd>
+(or <kbd>/qn</kbd>) switch to make the installation non-interactive,
+so a minimal invocation would be:
+
+<pre>
+    setup.exe /s /v"/qb"
+</pre>
+
+<p>Just to make things interesting, any of these mechanisms might be
+combined with <a href="#pftw">PFTW</a>.  For example, I eventually
+figured out that the <a
+href="http://www-3.ibm.com/pc/support/site.wss/MIGR-46134.html">IBM
+Update Connector</a> requires these flags for unattended installation:
+
+<pre>
+    updcon532.exe /s /a /s /v"/qb"
+</pre>
+
+<p>The first <kbd>/s</kbd> tells the PFTW installer to extract
+silently.  The <kbd>/a</kbd> tells it to provide the remaining
+switches to the underlying <code>setup.exe</code>.  The second
+<kbd>/s</kbd> tells <code>setup.exe</code> to run silently, while the
+<kbd>/v"/qb"</kbd> tells it to pass <kbd>/qb</kbd> to
+<code>msiexec</code>, which causes <code>msiexec</code> to run
+non-interactively but display a basic interface.
+
+<p>Are we having fun yet?
+
 
 <h2 id="wise">Wise InstallMaster</h2>
 
@@ -242,10 +286,17 @@ bug report to the installer's creator.
 <p>Most Microsoft hotfixes respond to the <kbd>/?</kbd> switch, but
 they do not always tell you everything.
 
-<p>Modern Microsoft hotfixes usually support <kbd>/u</kbd> for
-unattended installation and <kbd>/z</kbd> to suppress the automatic
-reboot.  There are other useful switches; use <kbd>/?</kbd> to learn
-about them.
+<p>According to <a href="http://support.microsoft.com/?kbid=816915">KB
+article 816915</a> and <a
+href="http://support.microsoft.com/?kbid=824687">KB article
+824687</a>, Microsoft is moving towards standardized packaging and
+naming for hotfixes.  But they are not done yet.
+
+<p>Modern hotfixes support <kbd>/passive</kbd> (formerly
+<kbd>/u</kbd>) for unattended installation, <kbd>/norestart</kbd>
+(formerly <kbd>/z</kbd>) to suppress the automatic reboot, and
+<kbd>/n</kbd> to skip backing up files needed for uninstalling the
+hotfix.
 
 <p>Some hotfixes use an old Microsoft packaging technology called
 "IExpress", whose switches are more-or-less documented in <a
@@ -1026,7 +1077,6 @@ href="http://installation.openoffice.org/01RESPONSE_SO52_final_rev2.pdf"
 >StarOffice 5.2 Admnistration Guide</a> and the <a
 href="http://docs-pdf.sun.com/816-7522/816-7522.pdf">StarOffice 6.0
 Administration Guide</a> from Sun.
-
 
 <p>A minimal response file appears to consist of an
 <code>[Environment]</code> section with settings for
