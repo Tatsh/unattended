@@ -162,6 +162,9 @@ sub read_unattend_txt ($) {
             my ($key, $val) = ($1, $2);
             defined $cur_section
                 or die "$key=$val outside any section in $file";
+            # Strip quotation marks, if any
+            $val =~ /^\"(.*)\"$/
+                and $val = $1;
             my ($major_pri, $minor_pri) = get_priority ($cur_section, $key);
             defined $major_pri && $major_pri == $current_pri
                 and (die "Duplicate $key settings in $file, ",
@@ -218,6 +221,9 @@ sub name_val_str ($$) {
         }
     }
     else {
+        # Add quotation marks, if required.
+        $val =~ /\W/
+            and $val = "\"$val\"";
         $ret = sprintf("    %s=%s\n", $name, $val);
     }
 
