@@ -22,7 +22,7 @@ my %lang=(
 	nor => 'no', # Norwegian
 	plk => 'pl', # Polish
 	ptb => 'pt-br', # Portuguese (Brazilian)
-	prg => 'pt-pt', # Portuguese (Portugal)
+	ptg => 'pt-pt', # Portuguese (Portugal)
 	rom => 'ro', # Romanian 
 	rus => 'ru', # Russian
 	esn => 'es', # Spanish
@@ -95,6 +95,16 @@ if (defined $run) {
     $run =~ s/\//\\/g;
 }
 
+if (defined $link1) {
+    $link1 =~ s/^ +//g;
+    $link1 =~ s/ +$//g;
+}
+
+if (defined $link2) {
+    $link2 =~ s/^ +//g;
+    $link2 =~ s/ +$//g;
+}
+
 print "\n";
 print ":: $title1\n" if defined $title1;
 print ":: $title2\n" if defined $title2;
@@ -102,7 +112,6 @@ print ":: \"$desc\"\n" if defined $desc;
 defined $link2
     or print ":: <$link1>\n" if defined $link1;
 print ":: <$link2>\n" if defined $link2;
-defined $link1 or defined $link2
-    or print ":: <$ARGV[0]>\n" if defined $ARGV[0];
+print ":: <$ARGV[0]>\n" if defined $ARGV[0];
 print ":: $urls->{$_}\n" foreach (sort keys %$urls);
 print "todo.pl \".reboot-on 194 %Z%\\$run /?\"\n" if defined $run;
