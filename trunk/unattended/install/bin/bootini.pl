@@ -10,6 +10,7 @@ use bytes;
 # need
 my %regexp_map =
     ('enu' => qr{Previous Operating System on},
+     'esn' => qr{Sistema operativo anterior en},
      'deu' => qr{Vorheriges Betriebssystem auf},
      'fra' => qr{Syst\x8Ame d\'exploitation pr\x82c\x82dent sur},
      'nld' => qr{Vorig besturingssysteem op},
