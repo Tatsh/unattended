@@ -1,0 +1,51 @@
+[UserData]
+    FullName="Your Name"
+    OrgName="Your Company"
+    ComputerName=*
+;    ProductID=12345-6789AB-CDEFG-HIJKL-MNOPQ
+
+[GuiUnattended]
+;    AdminPassword=
+    OEMSkipRegional=1
+    TimeZone=35
+    OemSkipWelcome=1
+    AutoLogon=Yes
+;    AutoLogonCount=1
+
+[Identification]
+;    JoinDomain=YOURDOM
+;    DomainAdmin=
+;    DomainAdminPassword=
+
+[Unattended]
+    UnattendMode=DefaultHide
+    FileSystem=ConvertNTFS
+    ExtendOemPartition=1
+    OemSkipEula=Yes
+    OemPreinstall=Yes
+    OemPnPDriversPath="drivers\net\IntelPRO;drivers\acpi\T2x;drivers\modem\T20;drivers\net\T22;drivers\video\T22;drivers\video\T23;drivers\audio\T23"
+    TargetPath=\WINNT
+
+[Components]
+    iis_pwmgr=On
+    iis_doc=On
+
+[GuiRunOnce]
+    Command0="c:\netinst\toplev.bat"
+
+[Data]
+    AutoPartition=1
+    MsDosInitiated="0"
+    UnattendedInstall=Yes
+
+[Display]
+    BitsPerPel=32
+    Xresolution=1024
+    YResolution=768
+    Vrefresh=75
+
+[Networking]
+    InstallDefaultComponents=Yes
+
+;[OEM_Ads]
+;    Logo = curllogo.bmp
