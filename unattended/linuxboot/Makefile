@@ -701,6 +701,8 @@ $(call copy_file,misc/master,stage1/etc/master)
 
 $(call copy_file,misc/modprobe.conf,stage1/etc/modprobe.conf)
 
+$(call copy_file,misc/module-order.txt,stage1/etc/module-order.txt)
+
 $(call copy_file,misc/udhcpc-script,stage1/etc/udhcpc-script)
 
 $(call copy_file,misc/nsswitch.conf,stage1/etc/nsswitch.conf)
@@ -714,6 +716,7 @@ stage1 += stage1/init stage1/usr/bin/find-boot-device			\
 		stage1/bin/find-modules-pci				\
 		stage1/bin/make-blkdev-nodes stage1/etc/extra.pcimap	\
 		stage1/etc/master stage1/etc/modprobe.conf		\
+		stage1/etc/module-order.txt				\
 		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf	\
 		stage1/etc/passwd stage1/usr/lib/freedos-mbr.bin
 
