@@ -14,8 +14,7 @@ GetOptions (\%opts, 'logon=s', 'user=s', 'password=s', 'domain=s', 'help')
     and pod2usage ('-exitstatus' => 0, '-verbose' => 2);
 
 my %reg;
-use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg,
-                        qw (REG_SZ));
+use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg);
 
 my $winlogon_key_name =
     'HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows NT/CurrentVersion/Winlogon/';
@@ -24,21 +23,21 @@ my $winlogon_key = $reg{$winlogon_key_name};
 defined $winlogon_key
     or die "Unable to open $winlogon_key_name: $^E";
 
-my %new_values = ('/DefaultUserName' => $opts{'user'},
-                  '/DefaultPassword' => $opts{'password'},
-                  '/AutoAdminLogon' => $opts{'logon'},
-                  '/DefaultDomainName' => $opts{'domain'}
+my %new_values = ('DefaultUserName' => $opts{'user'},
+                  'DefaultPassword' => $opts{'password'},
+                  'AutoAdminLogon' => $opts{'logon'},
+                  'DefaultDomainName' => $opts{'domain'}
                   );
 
 foreach my $name (sort keys %new_values) {
     my $val = $new_values{$name};
     if (defined $val) {
-        $winlogon_key->{$name} = [ $val, REG_SZ ]
-            or die "Unable to set $winlogon_key_name$name to $val: $^E";
+        $winlogon_key->SetValue ($name, $val)
+            or die "Unable to set $winlogon_key_name/$name to $val: $^E";
     }
     else {
-        (delete $winlogon_key->{$name})
-            or die "Unable to delete $winlogon_key_name$name: $^E";
+        (delete $winlogon_key->{"/$name"})
+            or die "Unable to delete $winlogon_key_name/$name: $^E";
     }
 }
 
