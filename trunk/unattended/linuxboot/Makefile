@@ -9,6 +9,8 @@ glibc-linuxthreads=$(strip $(patsubst glibc-%, glibc-linuxthreads-%, $(glibc)))
 klibc=klibc-0.115
 linux=linux-2.6.3
 module-init-tools=module-init-tools-3.0
+nano=nano-1.2.3
+ncurses=ncurses-5.4
 parted=parted-1.6.6
 perl=perl-5.8.3
 pciutils=pciutils-2.1.11
@@ -19,8 +21,8 @@ cwd:=$(shell pwd)
 
 download_targets=$(patsubst %,download-%,$(bash) $(busybox) $(dosemu)	\
 	$(e2fsprogs) $(glibc) $(glibc-linuxthreads) $(klibc) $(linux)	\
-	$(module-init-tools) $(parted) $(perl) $(pciutils) $(pcmcia-cs)	\
-	$(samba)							\
+	$(module-init-tools) $(nano) $(ncurses) $(parted) $(perl)	\
+	$(pciutils) $(pcmcia-cs) $(samba)				\
 	)
 
 .PHONY: stage1 all download $(download_targets)	iso tftpboot
@@ -102,6 +104,9 @@ $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
+$(call download_rule, $(nano), tar.gz, \
+	http://www.ewtoo.org/~astyanax/nano/dist/v1.2/)
+$(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
 $(call download_rule, $(pciutils), tar.bz2,			\
@@ -189,6 +194,20 @@ stage1/bin/sh: stage1/bin/bash
 	mv $@.tmp $@
 
 stage1 += stage1/bin/bash stage1/bin/sh
+
+## BusyBox
+$(busybox)/.config: misc/busybox-config
+	cp -f $< $@
+	cd $(busybox) && make oldconfig
+
+$(busybox)/busybox: $(busybox)/.config
+	cd $(busybox) && make
+
+stage1/bin/busybox: $(busybox)/busybox
+	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
+	cmp $< $@
+
+stage1 += stage1/bin/busybox
 
 ## dosemu
 
@@ -290,11 +309,16 @@ fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
 	mv $@.tmp $@
 
 # "Fake" headers, too
-fakeinclude/stdio.h: build-$(glibc)/libc.so
+fakeinclude/stdio.h: fakelib/libc.so stage1/lib/libdl.so
 	mkdir -p `dirname $@`
 	cd build-$(glibc)						    \
 		&& make inst_includedir=$(cwd)/`dirname $@` install-headers
-	[ -e "$@" ] && touch $@
+	[ -e $@ ] && touch $@
+
+# Variable for use in CFLAGS to convince utilities to compile/link
+# against our just-built libraries instead of the system libraries.
+fakelib_cflags=-I$(cwd)/fakeinclude -L$(cwd)/fakelib			\
+		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib
 
 # Create empty config file to silence ldconfig warnings
 stage1/etc/ld.so.conf:
@@ -351,27 +375,44 @@ stage1 +=							\
 	  libm.so libutil.so					\
 	)
 
-## BusyBox
-$(busybox)/.config: misc/busybox-config
-	cp -f $< $@
-	cd $(busybox) && make oldconfig
+$(nano)/nano: fakeinclude/stdio.h fakeinclude/curses.h
+	cd $(nano)							    \
+	&& CFLAGS="$(fakelib_cflags)"					    \
+		./configure --prefix=/usr				    \
+			--disable-browser --disable-mouse --disable-speller \
+	&& make
+	[ -e $@ ] && touch $@
 
-$(busybox)/busybox: $(busybox)/.config
-	cd $(busybox) && make
+$(call copy_exe, $(nano)/nano, stage1/usr/bin/nano)
 
-stage1/bin/busybox: $(busybox)/busybox
-	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
-	cmp $< $@
+stage1 += stage1/usr/bin/nano
 
-stage1 += stage1/bin/busybox
+## ncurses
+$(ncurses)/lib/libncurses.so: fakeinclude/stdio.h
+	cd $(ncurses)							\
+	&& CFLAGS="$(fakelib_cflags)"					\
+		./configure --prefix=/usr --with-shared			\
+			--without-normal --without-debug		\
+			--disable-database --with-fallbacks=linux	\
+			--target=i486-pc-linux-gnu			\
+	&& make
+	[ -e $@ ] && touch $@
+
+fakeinclude/curses.h: stage1/usr/lib/libncurses.so
+	cd $(ncurses)						\
+	&& make includedir=$(cwd)/`dirname $@` install.includes
+	[ -e $@ ] && touch $@
+
+$(call copy_lib, $(ncurses)/lib/libncurses.so, stage1/usr/lib/libncurses.so)
+
+stage1 += stage1/usr/lib/libncurses.so
 
 ## parted
-$(parted)/parted/.libs/parted: fakelib/libc.so fakeinclude/stdio.h \
-			stage1/lib/libuuid.so stage1/lib/libdl.so
-	cd $(parted)							\
-	&& CFLAGS="-v -I$(cwd)/fakeinclude -L$(cwd)/fakelib		\
-		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib"	\
-		./configure --disable-nls --without-readline		\
+$(parted)/parted/.libs/parted: fakelib/libc.so stage1/lib/libuuid.so	\
+				stage1/lib/libdl.so
+	cd $(parted)						\
+	&& CFLAGS="$(fakelib_cflags)"				\
+		./configure --disable-nls --without-readline	\
 	&& make
 	[ -e $@ ] && touch $@
 
