@@ -8,74 +8,8 @@
 
 :: Extra Updates
 
-:: "Update for Background Intelligent Transfer Service (BITS) 2.0 (KB883357)"
-:: <http://support.microsoft.com/?kbid=883357>
-:: URL|ARA|http://download.microsoft.com/download/1/5/7/157628ca-a352-44c6-9e97-39293de97e12/WindowsXP-KB883357-x86-ara.exe|updates/winxpsp1/windowsxp-kb883357-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/2/f/8/2f898d57-0cbd-4cd2-b6b3-8a54abf165b1/WindowsXP-KB883357-x86-csy.exe|updates/winxpsp1/windowsxp-kb883357-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/9/9/3/993c224e-4e76-4e59-9c97-913727f533ee/WindowsXP-KB883357-x86-dan.exe|updates/winxpsp1/windowsxp-kb883357-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/0/3/1/03118601-c3c0-4d03-8883-2266aac7b674/WindowsXP-KB883357-x86-deu.exe|updates/winxpsp1/windowsxp-kb883357-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/c/6/d/c6dfa9c4-ca46-43af-b131-48b62168c4ce/WindowsXP-KB883357-x86-ell.exe|updates/winxpsp1/windowsxp-kb883357-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/3/c/e/3ce4e2a6-cdf8-4ba1-94b0-e4e96b4b64ac/WindowsXP-KB883357-x86-enu.exe|updates/winxpsp1/windowsxp-kb883357-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/e/5/1/e519394f-b38d-42f0-8ef1-160e37b5ce98/WindowsXP-KB883357-x86-esn.exe|updates/winxpsp1/windowsxp-kb883357-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/a/3/1/a31f0e7d-9d52-4c30-8f47-52b86ebd7885/WindowsXP-KB883357-x86-fin.exe|updates/winxpsp1/windowsxp-kb883357-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/c/c/9/cc94804e-eb16-4348-bae6-2c46fb368700/WindowsXP-KB883357-x86-fra.exe|updates/winxpsp1/windowsxp-kb883357-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/d/0/8/d082a4fd-396b-40e8-a2c3-8047cfa31df7/WindowsXP-KB883357-x86-heb.exe|updates/winxpsp1/windowsxp-kb883357-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/c/d/9/cd93fd13-effa-43f0-a9fe-23d4536836d6/WindowsXP-KB883357-x86-hun.exe|updates/winxpsp1/windowsxp-kb883357-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/2/e/32e28a84-ea03-493a-92a2-2e38ded44e12/WindowsXP-KB883357-x86-ita.exe|updates/winxpsp1/windowsxp-kb883357-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/5/0/450ee812-5be3-4a1f-aeab-c96c5cfb546b/WindowsXP-KB883357-x86-jpn.exe|updates/winxpsp1/windowsxp-kb883357-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/6/1/1/61192962-8e3d-4349-ab1c-e22bb65eacb3/WindowsXP-KB883357-x86-kor.exe|updates/winxpsp1/windowsxp-kb883357-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/f/2/1/f21f9986-8130-4e77-8ea7-74fafe67370d/WindowsXP-KB883357-x86-nld.exe|updates/winxpsp1/windowsxp-kb883357-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/0/2/d/02d932b7-23ee-47e7-a521-1f41294b7a4a/WindowsXP-KB883357-x86-nor.exe|updates/winxpsp1/windowsxp-kb883357-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/1/c/e/1cec122c-bacc-4b01-9613-8c257fda160d/WindowsXP-KB883357-x86-plk.exe|updates/winxpsp1/windowsxp-kb883357-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/a/6/6/a66f3f6b-0fed-4a66-b89b-521169aba40c/WindowsXP-KB883357-x86-ptb.exe|updates/winxpsp1/windowsxp-kb883357-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/c/c/f/ccf8037e-26f8-4c03-9902-7b2a8d851071/WindowsXP-KB883357-x86-ptg.exe|updates/winxpsp1/windowsxp-kb883357-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/b/6/6/b666dc18-dec1-4582-b196-3ddce7b2c707/WindowsXP-KB883357-x86-rus.exe|updates/winxpsp1/windowsxp-kb883357-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/1/d/a1d31b13-7eee-4c68-b1b7-e2b0b21b2956/WindowsXP-KB883357-x86-sve.exe|updates/winxpsp1/windowsxp-kb883357-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/8/5/9/859df18f-aa90-4783-b110-c88c25c759bc/WindowsXP-KB883357-x86-trk.exe|updates/winxpsp1/windowsxp-kb883357-x86-trk.exe
-:: URL|CHS|http://download.microsoft.com/download/5/4/3/5431bc61-e04c-4bd6-b5aa-2117f13aeaed/WindowsXP-KB883357-x86-chs.exe|updates/winxpsp1/windowsxp-kb883357-x86-chs.exe
-:: URL|CHT|http://download.microsoft.com/download/8/2/5/82525e06-cc73-470d-b3c2-2ab456db0ab7/WindowsXP-KB883357-x86-cht.exe|updates/winxpsp1/windowsxp-kb883357-x86-cht.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb883357-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: "Update for BITS 2.0 and WinHTTP 5.1"
-:: <http://support.microsoft.com/?id=842773>
-:: URL|DEU|http://download.microsoft.com/download/a/a/1/aa1da36e-ac1e-401f-8927-53276edc0670/WindowsXP-KB842773-x86-deu.exe|updates/winxpsp1/windowsxp-kb842773-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/6/5/5/655b51dd-d03e-45fc-ab79-1e7889456874/WindowsXP-KB842773-x86-enu.exe|updates/winxpsp1/windowsxp-kb842773-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/a/2/6a26df62-cde0-45df-a3f9-fb09d0be7c2f/WindowsXP-KB842773-x86-esn.exe|updates/winxpsp1/windowsxp-kb842773-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/1/9/8/1986f300-aaef-4288-a264-6ad7ee8f2742/WindowsXP-KB842773-x86-fra.exe|updates/winxpsp1/windowsxp-kb842773-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/0/8/0/0803b32a-c61f-4090-9cc4-7f3e8bf43663/WindowsXP-KB842773-x86-ita.exe|updates/winxpsp1/windowsxp-kb842773-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/8/b/f/8bfeb653-420a-43f3-bb55-75a4d43b76db/WindowsXP-KB842773-x86-nld.exe|updates/winxpsp1/windowsxp-kb842773-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/9/8/a/98a27c58-32b4-43da-8058-7e6ada4855ca/WindowsXP-KB842773-x86-nor.exe|updates/winxpsp1/windowsxp-kb842773-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/b/7/d/b7ddf34a-344a-4efb-a7cb-e531a2ba615a/WindowsXP-KB842773-x86-rus.exe|updates/winxpsp1/windowsxp-kb842773-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb842773-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: "Update for Windows Media Player 9 Series"
-:: <http://support.microsoft.com/?id=837272>
-:: URL|DAN|http://download.microsoft.com/download/3/8/b/38b5dccd-b255-4dd1-98e3-7944a5a0430a/WindowsMedia9-KB837272-DAN.exe|updates/mediaplayer9/windowsmedia9-kb837272-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/b/0/0/b001504d-10bd-402f-94b3-2015abf87cd2/WindowsMedia9-KB837272-DEU.exe|updates/mediaplayer9/windowsmedia9-kb837272-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/7/0/D/70D0BAC6-A68B-4CB6-94AB-E0DF8C0EFCAF/WindowsMedia9-KB837272-ENU.exe|updates/mediaplayer9/windowsmedia9-kb837272-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/b/4/2/b4201cf1-2863-4e9d-9fc4-df7e46536e29/WindowsMedia9-KB837272-ESN.exe|updates/mediaplayer9/windowsmedia9-kb837272-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/0/b/b/0bbce627-51cf-416c-bb79-1bc58bd09e4b/WindowsMedia9-KB837272-FRA.exe|updates/mediaplayer9/windowsmedia9-kb837272-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/3/1/a/31a3658f-e8e2-4b37-90d7-02edc118767d/WindowsMedia9-KB837272-ITA.exe|updates/mediaplayer9/windowsmedia9-kb837272-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/3/7/0/370f42db-fcd5-48d3-b798-56ef8f258206/WindowsMedia9-KB837272-NLD.exe|updates/mediaplayer9/windowsmedia9-kb837272-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/3/c/6/3c6b5375-05af-4fef-8dd0-595506d9e59b/WindowsMedia9-KB837272-RUS.exe|updates/mediaplayer9/windowsmedia9-kb837272-rus.exe
-:: URL|NOR|http://download.microsoft.com/download/2/8/9/289dccf0-77f3-4292-a37b-8621c5d79bad/WindowsMedia9-KB837272-x86-NOR.exe|updates/mediaplayer/windowsmedia9-kb837272-x86-nor.exe
-todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb837272-%WINLANG%.exe /passive /n /norestart"
-
-:: "Shop for music online" link starts IE instead of your default browser
-:: <http://support.microsoft.com/?id=833998>
-:: URL|DAN|http://download.microsoft.com/download/7/6/7/76751f5b-e2a7-47d3-89d4-8440b0a00892/WindowsXP-KB833998-x86-DAN.EXE|updates/winxpsp1/windowsxp-kb833998-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/c/f/b/cfbd99d6-992e-4177-bec3-76e7337d4f0d/WindowsXP-KB833998-x86-DEU.EXE|updates/winxpsp1/windowsxp-kb833998-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/0/9/4/09493548-ad33-4700-b33c-40483d753899/WindowsXP-KB833998-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb833998-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/d/a/0/da0ccb28-f2d3-442d-8e43-a7d8567bc383/WindowsXP-KB833998-x86-ESN.EXE|updates/winxpsp1/windowsxp-kb833998-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/6/9/b/69bfea3d-ddb6-4eed-b374-3bc489759aff/WindowsXP-KB833998-x86-FRA.EXE|updates/winxpsp1/windowsxp-kb833998-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/d/4/7/d47caaef-4089-44e5-830a-98161cfd4563/WindowsXP-KB833998-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb833998-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/4/f/f/4ff8b6d8-e59d-4a5c-b546-146cb96dfd3b/WindowsXP-KB833998-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb833998-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/b/7/c/b7c06c76-7812-4da9-90b4-e70fb7c5cc5b/WindowsXP-KB833998-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb833998-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb833998-x86-%WINLANG%.exe /passive /n /norestart"
-
 :: "Update for HighMAT Support in the Windows XP CD Writing Wizard"
 :: <http://support.microsoft.com/?id=831240>
-:: URL|DAN|http://download.microsoft.com/download/c/9/c/c9c85d7f-89d5-43ca-9457-160a302aefb5/HMTCDWizard_DAN.exe|updates/winxpsp1/hmtcdwizard_dan.exe
 :: URL|DEU|http://download.microsoft.com/download/d/2/7/d27d72d7-28d0-4495-b4a8-184bb8cecf4b/HMTCDWizard_DEU.exe|updates/winxpsp1/hmtcdwizard_deu.exe
 :: URL|ENU|http://download.microsoft.com/download/2/2/b/22b5a5fa-fb50-4fc3-9f27-ba27816ec844/HMTCDWizard_enu.exe|updates/winxpsp1/hmtcdwizard_enu.exe
 :: URL|ESN|http://download.microsoft.com/download/6/5/2/652d727c-6086-4d9f-8a05-e73b66f068a1/HMTCDWizard_ESN.exe|updates/winxpsp1/hmtcdwizard_esn.exe
@@ -85,20 +19,8 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb833998-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/7/a/b/7abfc4bf-3f35-474b-8754-9f4aea7dcdd7/HMTCDWizard_RUS.exe|updates/winxpsp1/hmtcdwizard_rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hmtcdwizard_%WINLANG%.exe /l* %SystemDrive%\netinst\logs\hmtcdwizard.txt /qb ALLUSERS=1 REBOOT=ReallySuppress"
 
-:: Movie Maker 2.0 update
-:: <http://www.microsoft.com/windowsxp/moviemaker/>
-:: (Works better if Media Player 9 is already installed)
-:: URL|DAN|http://download.microsoft.com/download/8/c/7/8c7ad310-38ea-4f15-b91e-fa74f060b270/mm20dan.exe|updates/winxpsp1/mm20dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/e/7/6e7217e2-b984-4509-a898-175278d59b64/mm20deu.exe|updates/winxpsp1/mm20deu.exe
-:: URL|ENU|http://download.microsoft.com/download/0/d/e/0decba0f-bb89-49c9-866a-40c900b2a57e/mm20enu.exe|updates/winxpsp1/mm20enu.exe
-:: URL|ESN|http://download.microsoft.com/download/5/f/4/5f45c3be-c41c-4866-bbae-3adefca61a4e/mm20esn.exe|updates/winxpsp1/mm20esn.exe
-:: URL|FRA|http://download.microsoft.com/download/1/7/5/175b03ac-03ef-4512-8c84-f83266a37c94/mm20fra.exe|updates/winxpsp1/mm20fra.exe
-:: URL|ITA|http://download.microsoft.com/download/0/7/1/0719a285-877f-4e4c-a2b0-f67320a9d002/mm20ita.exe|updates/winxpsp1/mm20ita.exe
-:: URL|NLD|http://download.microsoft.com/download/c/b/2/cb21b3c7-396f-4e8a-a55a-7c450125f825/mm20nld.exe|updates/winxpsp1/mm20nld.exe
-:: URL|RUS|http://download.microsoft.com/download/e/f/4/ef41c60c-3425-43fc-a36e-8b947979926a/mm20rus.exe|updates/winxpsp1/mm20rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mm20%WINLANG%.exe /q /c:\"msiexec /l* %SystemDrive%\netinst\logs\moviemaker.txt /i mm20.msi /qn\""
-
 :: Windows Journal Viewer update
+:: <http://www.microsoft.com/windows2000/downloads/tools/redir-journalviewer.asp>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=fad44098-8b73-4e06-96d4-d1eb70eacb44>
 :: URL|DEU|http://download.microsoft.com/download/b/4/e/b4e86977-7646-479d-835b-cd79dfe18e00/setup.exe|updates/journalviewer/deu/setup.exe
 :: URL|ENU|http://download.microsoft.com/download/4/6/3/463ff4b8-a60a-4569-b3f1-a4c1ec784ff2/setup.exe|updates/journalviewer/enu/setup.exe
@@ -121,43 +43,12 @@ todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"ms
 :: URL|RUS|http://download.microsoft.com/download/1/e/4/1e4af859-cccb-4e40-a10b-5a761ace2592/WindowsMedia-Q828026-x86-RUS.exe|updates/mediaplayer9/windowsmedia-q828026-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia-q828026-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Flaw In Windows Media Player May Allow Media Library Access (819639)
-:: <http://support.microsoft.com/?id=819639>
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-021.mspx>
-:: URL|DAN|http://download.microsoft.com/download/9/1/d/91d317fd-b463-4c0b-9139-5a7e42883cde/WindowsMedia9-KB819639-x86-DAN.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/1/1/6/1165cb4f-0016-4afd-9854-929d2b8c6c17/WindowsMedia9-KB819639-x86-DEU.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/6/6/9/6692c11a-e001-4706-bf86-c37a7111d9de/WindowsMedia9-KB819639-x86-ENU.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/a/8/6a8e305f-c8f1-4d50-842d-6af81ee301f5/WindowsMedia9-KB819639-x86-ESN.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/1/8/a/18a4d567-9c61-4bf6-bdd1-5ffbdff8aff0/WindowsMedia9-KB819639-x86-FRA.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/e/8/8/e88b672a-6186-4caf-923f-f34a3e69b95e/WindowsMedia9-KB819639-x86-ITA.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/2/0/c/20ccf973-faec-438a-8e16-469f689472be/WindowsMedia9-KB819639-x86-NLD.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/7/6/a/76aac9a5-7633-4511-8284-e71a1afe03b0/WindowsMedia9-KB819639-x86-NOR.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/f/b/8/fb8874ba-b8a9-4084-ba42-ac9587f7b913/WindowsMedia9-KB819639-x86-RUS.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N"
-
-:: Media Player 9.0
-:: <http://www.microsoft.com/windows/windowsmedia/>
-:: URL|DAN|http://download.microsoft.com/download/7/6/5/765442c2-dae9-4150-913a-82a2c68d953f/MPsetupXP.exe|packages/mediaplayer9/dan/mpsetupxp.exe
-:: URL|DEU|http://download.microsoft.com/download/a/e/9/ae97dcd4-7a66-424b-92f2-04b503640c2a/MPsetupXP.exe|packages/mediaplayer9/deu/mpsetupxp.exe
-:: URL|ENU|http://download.microsoft.com/download/8/a/2/8a27acce-5c9e-46b3-8996-1e76c0413d17/MPSetupXP.exe|packages/mediaplayer9/enu/mpsetupxp.exe
-:: URL|ESN|http://download.microsoft.com/download/2/0/9/2097abd2-3750-46ea-b947-f85d7af56675/MPSetupXP.exe|packages/mediaplayer9/esn/mpsetupxp.exe
-:: URL|FRA|http://download.microsoft.com/download/2/5/0/250c463f-77b9-47fe-a3dc-43ecf872cc2f/MPSetupXP.exe|packages/mediaplayer9/fra/mpsetupxp.exe
-:: URL|ITA|http://download.microsoft.com/download/2/1/1/21123e9d-042e-40c5-8575-8981a7aca809/MPSetupXP.exe|packages/mediaplayer9/ita/mpsetupxp.exe
-:: URL|NLD|http://download.microsoft.com/download/6/8/c/68cbb606-bb69-4379-8b1e-bbbc5bbbe7df/MPSetupXP.exe|packages/mediaplayer9/nld/mpsetupxp.exe
-:: URL|NOR|http://download.microsoft.com/download/9/4/e/94e90da1-44b2-47f0-b12c-e9dab87369b3/MPsetupXP.exe|packages/mediaplayer9/nor/mpsetupxp.exe
-:: URL|RUS|http://download.microsoft.com/download/b/a/5/ba5100ab-6e6a-4edc-81c8-5c58b6418daa/MPsetupXP.exe|packages/mediaplayer9/rus/mpsetupxp.exe
-todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\%WINLANG%\MPSetupXP.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
-
-:: Windows Messenger Update
-:: <http://www.microsoft.com/windowsxp/windowsmessenger/>
-:: URL|DAN|http://download.microsoft.com/download/7/8/8/788ae395-a347-4150-b560-be11794278ae/install.exe|packages/windowsmessenger/dan/install.exe
-:: URL|DEU|http://download.microsoft.com/download/4/7/a/47a642d4-5b93-4809-a7b1-517a5bb74dad/install.exe|packages/windowsmessenger/deu/install.exe
-:: URL|ENU|http://download.microsoft.com/download/4/6/c/46cfaca6-0441-49eb-b997-7432730d44df/install.exe|packages/windowsmessenger/enu/install.exe
-:: URL|FRA|http://download.microsoft.com/download/1/6/a/16aa5681-b844-4b6c-ade3-8b53d2b7aed5/install.exe|packages/windowsmessenger/fra/install.exe
-:: URL|ITA|http://download.microsoft.com/download/c/1/5/c153f63d-fd6e-4dd1-8e75-1449ed02eeda/install.exe|packages/windowsmessenger/ita/install.exe
-:: URL|NLD|http://download.microsoft.com/download/f/9/0/f9026035-5095-42b7-ae8a-b6c8da8a5fa7/install.exe|packages/windowsmessenger/nld/install.exe
-:: URL|RUS|http://download.microsoft.com/download/4/8/c/48c49ec7-9b10-4908-9ee7-14d01d835d47/install.exe|packages/windowsmessenger/rus/install.exe
-todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /r:n"
+:: Windows Media Player 10
+:: <http://www.microsoft.com/windowsmedia/>
+:: URL|DAN|http://download.microsoft.com/download/B/C/8/BC8860E7-0773-4AA7-A421-FB7|packages/mediaplayer10/dan/mp10setup.exe
+:: URL|ENU|http://download.microsoft.com/download/1/2/A/12A31F29-2FA9-4F50-B95D-E45EF7013F87/MP10Setup.exe|packages/mediaplayer10/enu/mp10setup.exe
+:: URL|RUS|http://download.microsoft.com/download/9/A/F/9AF82D9A-10DE-4BC0-B849-EF7DC9CC89B6/MP10Setup.exe|packages/mediaplayer10/rus/mp10setup.exe
+todo.pl ".reboot-on 194 %Z%\packages\mediaplayer10\%WINLANG%\mp10setup.exe /Q /R:N /C:\"setup_wm.exe /Q /R:N /DisallowSystemRestore /NoPID /SetWMPAsDefault\""
 
 :: Microsoft DirectX 9.0c update
 :: (Requires .NET to be installed first for managed DX)
@@ -359,19 +250,60 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hu1002_pro.exe /q"
 :: URL|RUS|http://download.microsoft.com/download/e/8/6/e86b45a4-cdb6-4777-a08c-6dbcd46fae7f/Q322011_WXP_SP2_x86_RUS.exe|updates/winxpsp1/q322011_wxp_sp2_x86_rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
+:: "Update for Background Intelligent Transfer Service (BITS) 2.0 (KB883357)"
+:: <http://support.microsoft.com/?kbid=883357>
+:: URL|ARA|http://download.microsoft.com/download/1/5/7/157628ca-a352-44c6-9e97-39293de97e12/WindowsXP-KB883357-x86-ara.exe|updates/winxpsp1/windowsxp-kb883357-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/f/8/2f898d57-0cbd-4cd2-b6b3-8a54abf165b1/WindowsXP-KB883357-x86-csy.exe|updates/winxpsp1/windowsxp-kb883357-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/9/9/3/993c224e-4e76-4e59-9c97-913727f533ee/WindowsXP-KB883357-x86-dan.exe|updates/winxpsp1/windowsxp-kb883357-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/3/1/03118601-c3c0-4d03-8883-2266aac7b674/WindowsXP-KB883357-x86-deu.exe|updates/winxpsp1/windowsxp-kb883357-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/c/6/d/c6dfa9c4-ca46-43af-b131-48b62168c4ce/WindowsXP-KB883357-x86-ell.exe|updates/winxpsp1/windowsxp-kb883357-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/c/e/3ce4e2a6-cdf8-4ba1-94b0-e4e96b4b64ac/WindowsXP-KB883357-x86-enu.exe|updates/winxpsp1/windowsxp-kb883357-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/e/5/1/e519394f-b38d-42f0-8ef1-160e37b5ce98/WindowsXP-KB883357-x86-esn.exe|updates/winxpsp1/windowsxp-kb883357-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/a/3/1/a31f0e7d-9d52-4c30-8f47-52b86ebd7885/WindowsXP-KB883357-x86-fin.exe|updates/winxpsp1/windowsxp-kb883357-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/c/c/9/cc94804e-eb16-4348-bae6-2c46fb368700/WindowsXP-KB883357-x86-fra.exe|updates/winxpsp1/windowsxp-kb883357-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/d/0/8/d082a4fd-396b-40e8-a2c3-8047cfa31df7/WindowsXP-KB883357-x86-heb.exe|updates/winxpsp1/windowsxp-kb883357-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/c/d/9/cd93fd13-effa-43f0-a9fe-23d4536836d6/WindowsXP-KB883357-x86-hun.exe|updates/winxpsp1/windowsxp-kb883357-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/2/e/32e28a84-ea03-493a-92a2-2e38ded44e12/WindowsXP-KB883357-x86-ita.exe|updates/winxpsp1/windowsxp-kb883357-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/5/0/450ee812-5be3-4a1f-aeab-c96c5cfb546b/WindowsXP-KB883357-x86-jpn.exe|updates/winxpsp1/windowsxp-kb883357-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/1/1/61192962-8e3d-4349-ab1c-e22bb65eacb3/WindowsXP-KB883357-x86-kor.exe|updates/winxpsp1/windowsxp-kb883357-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/2/1/f21f9986-8130-4e77-8ea7-74fafe67370d/WindowsXP-KB883357-x86-nld.exe|updates/winxpsp1/windowsxp-kb883357-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/0/2/d/02d932b7-23ee-47e7-a521-1f41294b7a4a/WindowsXP-KB883357-x86-nor.exe|updates/winxpsp1/windowsxp-kb883357-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/1/c/e/1cec122c-bacc-4b01-9613-8c257fda160d/WindowsXP-KB883357-x86-plk.exe|updates/winxpsp1/windowsxp-kb883357-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/6/6/a66f3f6b-0fed-4a66-b89b-521169aba40c/WindowsXP-KB883357-x86-ptb.exe|updates/winxpsp1/windowsxp-kb883357-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/c/c/f/ccf8037e-26f8-4c03-9902-7b2a8d851071/WindowsXP-KB883357-x86-ptg.exe|updates/winxpsp1/windowsxp-kb883357-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/b/6/6/b666dc18-dec1-4582-b196-3ddce7b2c707/WindowsXP-KB883357-x86-rus.exe|updates/winxpsp1/windowsxp-kb883357-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/1/d/a1d31b13-7eee-4c68-b1b7-e2b0b21b2956/WindowsXP-KB883357-x86-sve.exe|updates/winxpsp1/windowsxp-kb883357-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/8/5/9/859df18f-aa90-4783-b110-c88c25c759bc/WindowsXP-KB883357-x86-trk.exe|updates/winxpsp1/windowsxp-kb883357-x86-trk.exe
+:: URL|CHS|http://download.microsoft.com/download/5/4/3/5431bc61-e04c-4bd6-b5aa-2117f13aeaed/WindowsXP-KB883357-x86-chs.exe|updates/winxpsp1/windowsxp-kb883357-x86-chs.exe
+:: URL|CHT|http://download.microsoft.com/download/8/2/5/82525e06-cc73-470d-b3c2-2ab456db0ab7/WindowsXP-KB883357-x86-cht.exe|updates/winxpsp1/windowsxp-kb883357-x86-cht.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb883357-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Update package that includes Background Intelligent Transfer Service (BITS) version 2.0 and WinHTTP 5.1 is available for Windows XP
+:: <http://support.microsoft.com/default.aspx?kbid=842773>
+:: URL|ARA|http://download.microsoft.com/download/7/f/4/7f46f050-fed6-44d1-bc31-fe915a007445/WindowsXP-KB842773-v2-x86-ara.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/8/c/68c1b4e3-6825-48f5-b6b4-2abe02aae089/WindowsXP-KB842773-v2-x86-csy.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/e/f/0efec038-25a5-4cb6-8e1b-652e768fc052/WindowsXP-KB842773-v2-x86-dan.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/4/6/6/46663540-be7d-41e5-95ec-f1929fc789e1/WindowsXP-KB842773-v2-x86-deu.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/2/a/8/2a876ca0-f64a-46ea-84a0-4255a7b64cf0/WindowsXP-KB842773-v2-x86-ell.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-ell.exe
+:: URL|ENU|http://www.download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/windowsxp-kb842773-v2-x86-enu_1d3d2bc417bf9d881206ed238ad6a4a9c189cfb3.exe|updates/winxpsp1/windowsxp-kb842773-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/6/c/16cf5394-3678-46da-8bea-01f71047f84c/WindowsXP-KB842773-v2-x86-esn.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/6/c/6/6c6206b2-7a8d-495f-b21d-a6648360a9e1/WindowsXP-KB842773-v2-x86-fin.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/b/c/4bc92f1f-8706-4ed8-a7d9-f9930e005c22/WindowsXP-KB842773-v2-x86-fra.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/a/b/e/abef4a21-d4d8-45d6-a979-a9319d4ec3ee/WindowsXP-KB842773-v2-x86-heb.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/b/c/d/bcdf92c5-ee1f-42d8-bf28-c59c4d095039/WindowsXP-KB842773-v2-x86-hun.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/6/c/b6c089b5-dd09-4355-baac-f808a3274344/WindowsXP-KB842773-v2-x86-ita.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/c/d/5cd8c947-0d9c-4d04-8c0f-aeeea1c08622/WindowsXP-KB842773-v2-x86-jpn.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/1/c/61c73464-7476-4372-92c1-0836ca747c02/WindowsXP-KB842773-v2-x86-kor.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/1/7/2/172c2375-3189-4f93-b99a-9445a3c097bd/WindowsXP-KB842773-v2-x86-nld.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/8/c/8/8c8b90b4-5475-4397-84e9-0c9ee5b78c45/WindowsXP-KB842773-v2-x86-plk.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/c/d/3/cd3cb709-581c-4b10-8ae5-a0e41b7fbba0/WindowsXP-KB842773-v2-x86-ptg.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/1/d/8/1d885bfe-30cb-42cf-80e6-1b11c663bf92/WindowsXP-KB842773-v2-x86-ptb.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/1/c/3/1c3ecd38-6b71-4bc7-af40-1830f9a42712/WindowsXP-KB842773-v2-x86-rus.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/9/0/c/90c7d09b-6b70-4af5-bc75-1fe875d66c9a/WindowsXP-KB842773-v2-x86-sve.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/9/7/5976faaf-054a-4e06-aba6-ab9877c1c07e/WindowsXP-KB842773-v2-x86-trk.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb842773-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: IE Critical Updates
-
-:: Recommended update 871260
-:: "An update rollup is available for Internet Explorer versions 5.x and 6.0"
-:: <http://support.microsoft.com/?id=871260>
-:: (download URLs in ie6.bat)
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB871260-x86-%WINLANG%.exe /q /r:n"
-
-:: Critical update MS04-038 (834707)
-:: "Cumulative Security Update for Internet Explorer"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>
-:: (download URLs in ie6.bat)
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb834707-windows-2000-xp-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-018 (823353)
 :: "Cumulative Security Update for Outlook Express"
@@ -381,6 +313,32 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb834707-windows-2000-xp-x86
 :: URL|NLD|http://download.microsoft.com/download/1/2/6/126e9e94-7cc3-4e49-bf08-21bc84e6b756/IE6.0sp1-KB823353-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/5/e/6/5e6f2c0e-4db3-4310-893e-cff856dd97db/IE6.0sp1-KB823353-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /q /r:n"
+
+:: Critical update MS04-038 (834707)
+:: "Cumulative Security Update for Internet Explorer"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>
+:: URL|ARA|http://download.microsoft.com/download/5/b/5/5b5b248c-9314-4358-a4e8-01e941830487/IE6.0sp1-KB834707-Windows-2000-XP-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/6/4/a645e652-3769-4c8e-a9bd-c1248471492a/IE6.0sp1-KB834707-Windows-2000-XP-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/d/3/ad3d72b0-2494-45c7-8ed7-b913165b83fe/IE6.0sp1-KB834707-Windows-2000-XP-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/6/0/d/60dc034c-b226-4658-a84b-f1dea55aeb57/IE6.0sp1-KB834707-Windows-2000-XP-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/9/8/2/9822f82f-d78c-4b8a-b2c0-e304a5128955/IE6.0sp1-KB834707-Windows-2000-XP-x86-ELL.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/c/2/9/c2970ff8-6fc8-43da-a2c2-56a3aa40173b/IE6.0sp1-KB834707-Windows-2000-XP-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/6/d/26d8d757-7e75-439f-8a4f-dce046dea118/IE6.0sp1-KB834707-Windows-2000-XP-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/a/e/c/aec35feb-044f-4f99-94e5-bda740e0a2a0/IE6.0sp1-KB834707-Windows-2000-XP-x86-FIN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/1/1/a112d141-ffb9-4441-a945-9e6a97639dfe/IE6.0sp1-KB834707-Windows-2000-XP-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/9/6/2/962f2c99-602f-4743-a649-38c2879fbeb3/IE6.0sp1-KB834707-Windows-2000-XP-x86-HEB.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/3/1/5/315eab4b-2e85-491a-aa52-37fcce984829/IE6.0sp1-KB834707-Windows-2000-XP-x86-HUN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/6/8/1/681c3b51-d44a-46de-9753-ea2078d9490f/IE6.0sp1-KB834707-Windows-2000-XP-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/c/a/4caa086f-ea7c-40ff-86fd-771332bb5f64/IE6.0sp1-KB834707-Windows-2000-XP-x86-JPN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/e/e/d/eed4b117-fc2e-4c90-b098-c295198fc4ed/IE6.0sp1-KB834707-Windows-2000-XP-x86-KOR.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/1/5/6/15605d3c-76b9-43ad-93e5-81c2eea0fdff/IE6.0sp1-KB834707-Windows-2000-XP-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/8/c/6/8c674372-a9b7-44f9-9b72-ecf1d312cfdf/IE6.0sp1-KB834707-Windows-2000-XP-x86-PLK.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/5/1/d/51d56603-9988-4f26-92b7-39c0858c6cb8/IE6.0sp1-KB834707-Windows-2000-XP-x86-PTG.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/f/0/3/f037917d-b6b2-4eda-a5da-c4d4954968db/IE6.0sp1-KB834707-Windows-2000-XP-x86-PTB.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/9/9/a/99a329b4-dd40-46dc-8410-c694007efdce/IE6.0sp1-KB834707-Windows-2000-XP-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/5/f/c/5fcfa0a7-35b9-4240-9378-aa1e1a9dad96/IE6.0sp1-KB834707-Windows-2000-XP-x86-SVE.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/4/7/a/47afef12-6823-4a6e-a86b-dbe375888f84/IE6.0sp1-KB834707-Windows-2000-XP-x86-TRK.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb834707-windows-2000-xp-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical Updates
 
