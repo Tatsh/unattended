@@ -312,3 +312,29 @@ sub textmode_retail_drivers ($;$) {
 
     return @ret;
 }
+
+# Return the subdirectories of i386 which exist and hold language
+# files.
+sub lang_dirs ($;$) {
+    my Unattend::WinMedia ($self) = shift;
+    # This should probably do something.  FIXME.
+    my $verbose = shift;
+    my @ret;
+    
+    my $dir = 'lang';
+    my $full_path = $file_spec->catdir ($self->path (), 'i386', $dir);
+    $verbose
+        and print "Looking for $full_path...\n";
+
+    if (-d $full_path) {
+        $verbose
+            and print "...found.\n";
+        push @ret, $dir;
+    }
+    else {
+        $verbose
+            and print "...not found.\n";
+    }
+
+    return @ret;
+}

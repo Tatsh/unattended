@@ -549,10 +549,13 @@ set_value ('_meta', 'doit_cmds',
                my $unattend_txt = (get_value ('_meta', 'netinst')
                                    . '\\unattend.txt');
                my $src_tree = get_value ('_meta', 'OS_media');
+               my $media_obj = Unattend::WinMedia->new ($src_tree);
+               my @lang_dirs = $media_obj->lang_dirs (1);
+               my $lang_opts = join ' ', map { "/rx:$_" } @lang_dirs;
                $src_tree =~ /\\$/
                    or $src_tree .= '\\';
                $src_tree .= 'i386';
-               return "$src_tree\\winnt /s:$src_tree /u:$unattend_txt";
+               return "$src_tree\\winnt $lang_opts /s:$src_tree /u:$unattend_txt";
            });
 
 set_comments ('_meta', 'autolog',
