@@ -624,7 +624,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB873376-x86-%WINLANG%.ex
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB840987-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB841533)
-:: Microsoft Security Bul ..letin MS04-031
+:: Microsoft Security Bulletin MS04-031
 :: "Vulnerability in NetDDE Could Allow Remote Code Execution (841533)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-031.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=C6EB8FB6-6AAE-48BC-9E4F-271F81361AE0>
@@ -682,7 +682,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB841533-x86-%WINLANG%.ex
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824151-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB833987)
-:: Microsoft Security Bulletin MS0 ..4-028
+:: Microsoft Security Bulletin MS04-028
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-028.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=6F8D70C1-63BD-4213-82C1-20266FDFD735>
@@ -740,7 +740,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB833987-x86-%WINLANG%.EX
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB840315-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB841873)
-:: Microsoft Security Bul ..letin MS04-022
+:: Microsoft Security Bulletin MS04-022
 :: "Vulnerability in Task Scheduler Could Allow Code Execution (841873)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-022.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8E8D0A2D-D3B9-4DE8-8B6F-FC27715BC0CF>
@@ -979,7 +979,9 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.ex
 
 if not exist %SystemRoot%\System32\INetSrv\IISAdmin.dll goto noiis
 :: Windows XP Security Patch: Internet Information Services 5.1 Security Fix
-:: <http://www.microsoft.com/technet/security/bulletin/ms03-018.asp>
+:: Microsoft Security Bulletin MS03-018
+:: "Cumulative Patch for Internet Information Service (811114)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms03-018.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=77cfe3ef-c5c5-401c-bc12-9f08154a5007>
 :: (Only install if IIS has been installed)
 :: URL|ARA|http://download.microsoft.com/download/2/e/0/2e031a98-5ddd-4d87-bdcf-32d161c34883/Q811114_WXP_SP2_x86_ARA.exe|updates/winxpsp1/q811114_wxp_sp2_x86_ara.exe
@@ -1018,7 +1020,9 @@ todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
 :nojvm
 
 :: JScript 5.6 Security Patch for Windows 2000 and XP (814078)
-:: <http://support.microsoft.com/?kbid=814078>
+:: Microsoft Security Bulletin MS03-008
+:: "Flaw in Windows Script Engine Could Allow Code Execution (814078)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms03-008.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=824b1bd4-b4d6-49d5-8c58-199bdc731b64>
 :: URL|ARA|http://download.microsoft.com/download/b/7/9/b7996ff1-c3a9-4635-ac13-bb14263e2021/js56nar.exe|updates/common/js56nara.exe
 :: URL|CSY|http://download.microsoft.com/download/d/9/b/d9b1d558-01a1-45fc-8c03-6ab103e1e353/js56ncs.exe|updates/common/js56ncsy.exe
