@@ -281,7 +281,7 @@ maintain.
 
 <h3 id="repackaging">Repackaging</h3>
 
-<p>There are several tools around which can take a "snapshot" of a
+<p>There are several tools around which can take a snapshot of a
 machine's state before and after a manual installation, compute the
 differences between the states, and bundle them up as an "installer".
 The <a href="#wise">Wise</a> product line provides good support for
@@ -291,13 +291,13 @@ href="http://www.microsoft.com/windows2000/techinfo/planning/management/veritas.
 href="http://www.ondemandsoftware.com/FREELE2003/">updated</a>)
 provides bad support for it.
 
-<p>The main problem with this approach is that it fundamentally cannot
-work reliably.  Installers can vary their behavior depending on the
-exact initial state of the machine, such as the OS version or the
-presence/absence of other installed software.  So the repackaged
-installer will almost never do exactly the same thing that a fresh
-installation would, unless the target machine is completely identical
-to the original machine.
+<p>The problem with this approach is that it fundamentally cannot work
+reliably.  An installer's behavior may depend on the exact initial
+state of the machine, such as the OS version or the presence/absence
+of other installed software.  So the repackaged installer will almost
+never do exactly the same thing that a fresh installation would,
+unless the target machine is completely identical to the original
+machine.
 
 <p>In addition, for every new release of an application, you will need
 to repackage it again.  And there are other <a
@@ -377,7 +377,7 @@ href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=665810&amp;g
 </table>
 
 <br><hr width="50%">
-<h2 id="acrobat-reader">Acrobat Reader</h2>
+<h2 id="acrobat-reader">Acrobat Reader 5.1</h2>
 <table border cellpadding=4>
 <tr><td valign="middle">Availability
 <td><a href="http://www.adobe.com/products/acrobat/readstep.html">Free
@@ -439,10 +439,24 @@ Download</a>
 <p>Unlike <a href="#acrobat-reader">Acrobat Reader</a>, this new
 release does not use InstallShield's PackageForTheWeb.  Instead, it
 uses something called the "Netopsystems FEAD optimizer", whose
-command-line switches are a mystery (to me, anyway).
+command-line switches are documented nowhere.
 
-<p>However, if you start the installer and wait for it to finish
-extracting files, you will find it creates a folder named
+<p>However, Adobe provides silent installation instructions in their
+knowledgebase articles <a
+href="http://support.adobe.com/devsup/devsup.nsf/docs/53446.htm"
+>53446</a> and <a
+href="http://support.adobe.com/devsup/devsup.nsf/docs/53495.htm"
+>53495</a>.  Viewing these requires registering for an account with
+the "Adobe Solutions Network".  How annoying.  Briefly, the magic
+invocation is:
+
+<pre>
+    AdbeRdr60_enu_full.exe -p"-s /v\"/qn\""
+</pre>
+
+<p>Alternatively, you can get hold of the MSI file with a quick hack.
+If you start the installer and wait for it to finish extracting files,
+you will find it creates a folder named
 <code><var>%SystemRoot%</var>\cache\Adobe&nbsp;Reader&nbsp;6.0\BIGENU</code>.
 (SystemRoot is normally <code>C:\WINNT</code> or
 <code>C:\WINDOWS</code>.)
@@ -470,14 +484,15 @@ installations like any other MSI package:
 <h2 id="att-global-dialer">AT&amp;T Global Network Dialer</h2>
 <table border cellpadding=4>
 
-<tr><td valign="middle">Availability
-<td><a href="http://help.attbusiness.net/">Free Download</a> (but
-requires the service)
+<tr><td valign="middle">Availability <td><a
+href="http://help.attbusiness.net/">Free Download</a> (<a
+href="ftp://ftp.attglobal.net/pub/client/win32/">direct link</a> to
+FTP site), but requires the service.
 
 <tr><td valign="middle">Details
 
 <td><p>The downloaded installer is named <kbd>ncsetup.exe</kbd>; you
-probably want to rename it to <kbd>att-5.0.6.exe</kbd> or somesuch.
+probably want to rename it to <kbd>att-5.0.8.2.exe</kbd> or somesuch.
 Running "strings" on the executable reveals that it was created by <a
 href="#wise">Wise Installmaster</a>, so the <kbd>/s</kbd> flag will do
 the trick.
