@@ -86,6 +86,10 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
                     '/AllowWindowReuse' => [ pack('L', 1), REG_DWORD ],
                     # Show images the size that they should be
                     '/Enable AutoImageResize' => 'no',
+                    # Don't display errors on page dialog
+                    '/Error Dlg Displayed On Every Error' => 'no',
+                    # Don't display errors on page dialog window
+                    '/Error Dlg Details Pane Open' => 'no',
                     # Render screen before drawing
                     '/Force Offscreen Composition' => [ pack('L', 1), REG_DWORD ],
                     # Don't remember passwords
@@ -96,13 +100,13 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
                     '/NotifyDownloadComplete' => 'no',
                     # Show Image placeholders
                     '/Show Image Placeholders' => [ pack('L', 1), REG_DWORD ],
-                    # Don't use search assistant in Internet Explorer
+                    # Don't ask to auto fill out forms
                     '/Use FormSuggest' => 'no',
                     # Don't use search assistant in Internet Explorer
                     '/Use Search Asst' => 'no',
                 },
                 'IntelliForms/' => {
-                    # Reuse Internet Explorer windows when possible
+                    # Don't ask to auto fill out forms
                     '/AskUser' => [ pack('L', 0), REG_DWORD ],
                 },
             },
