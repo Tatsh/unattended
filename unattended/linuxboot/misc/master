@@ -58,9 +58,18 @@ done
 [ -z "$got_lease" ] \
     && die "Failed to obtain DHCP lease."
 
+smbmount_opts="username=guest,password=guest,ro,ttl=2400000"
+z_path=//ntinstall/install
+
+echo "*** Trying smbmount $z_path /z -o $smbmount_opts"
+
+if ! smbmount "$z_path" /z -o "$smbmount_opts" ; then
+    die "Failed to mount /z.  Enh."
+fi
+
 echo "*** Excellent.  Now, let's see about mass storage controllers..."
 
-# PCI classes 0x01nnnn are Ethernet controllers
+# PCI classes 0x01nnnn are mass storage controllers
 storage_modules=`find-modules-pci 0x01`
 
 [ -z "$storage_modules" ] \
@@ -101,15 +110,6 @@ if [ -z "$did_something" ] ; then
     echo "Your $sys_block contains:"
     ls $sys_block
     die "So close!  Oh, well."
-fi
-
-smbmount_opts="username=guest,password=guest,ro,ttl=2400000"
-z_path=//ntinstall/install
-
-echo "*** Trying smbmount $z_path /z -o $smbmount_opts"
-
-if ! smbmount "$z_path" /z -o "$smbmount_opts" ; then
-    die "Failed to mount /z.  Enh."
 fi
 
 echo "*** By Jove, I think we've got it!"
