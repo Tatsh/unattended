@@ -45,7 +45,7 @@ if not %WINVER%. == win2ksp4. goto didauiu
 :: <http://support.microsoft.com/?kbid=316127>
 :: <http://office.microsoft.com/downloads/2002/oxpauiu.aspx>
 :: ONLY REQUIRED FOR WIN2K!
-todo.pl "msiexec /qb /p %Z%\packages\oxpauiu\MSCTF.msp" .reboot
+todo.pl "msiexec /qb /p %Z%\packages\officexp\updates\oxpauiu\MSCTF.msp" .reboot
 :didauiu
 
 :: Service Pack 2
