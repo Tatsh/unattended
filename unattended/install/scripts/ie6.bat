@@ -14,10 +14,10 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 :: <http://support.microsoft.com/?kbid=318203>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dahotfix /q /n\""
 
-:: Critical update 828750
-:: "October, 2003, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=828750>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q828750.exe /q /r:n"
+:: Critical update 824145
+:: "November, 2003, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=824145>
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
 
 :: Critical update 318089
 :: "Incorrect VBScript Handling in Internet Explorer
