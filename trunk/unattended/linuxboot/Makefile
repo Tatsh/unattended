@@ -441,8 +441,9 @@ stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 
 ## Perl
 $(perl)/perl:
-	cd $(perl)				\
-	&& ./Configure -Dprefix=/opt/perl -de	\
+	rm -f $@
+	cd $(perl)						\
+	&& ./Configure -Dusethreads -Dprefix=/opt/perl -de	\
 	&& make
 	[ -e $@ ]
 
@@ -521,9 +522,10 @@ stage1 += stage1/linuxrc stage1/bin/find-modules-pci			\
 
 ## Stage 1
 stage1: $(stage1)
+	mkdir -p stage1/usr/local
 
 ## Stage 2
-.stamp-stage2: $(stage1) misc/nail-floppy.txt
+.stamp-stage2: stage1 misc/nail-floppy.txt
 	rm -rf stage2 ../install/linuxaux
 	mkdir stage2
 	cp -R -f --preserve=links,mode stage1/. stage2/.
