@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for a in `egrep -H '^todo.*(packages|updates)\\\\' scripts/* | perl -pe 's#scripts/(.*?):.*((packages|updates)\\\\.*?\.([a-zA-Z]{3})).*#$1:$2#;s#%WINLANG%#enu#;s#\\\\#/#g' | tr ' [:upper:]' '~[:lower:]' | sort | grep -v '^todo'`
+do 
+    a=`echo $a | tr '~' ' '`
+    if ! [ -r "`echo $a | cut -d':' -f2`" ]
+    then 
+        echo $a
+    fi
+done
