@@ -12,7 +12,8 @@ sub yes_no_choice ($) {
     my ($question) = @_;
     print "\n";
     system 'choice', $question;
-    return ($? == 1 ? 1 : 0);
+    my $ret = $? >> 8;
+    return ($ret == 1 ? 1 : 0);
 }
 
 # Menu of options.  Takes an even number of arguments which are
