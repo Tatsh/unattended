@@ -294,6 +294,14 @@ sub ask_fdisk_lba () {
 
 # fdisk commands to run
 sub ask_fdisk_cmds () {
+    # Read current partition table.
+    my $partition_layout = read_partition_table ();
+
+    # Display it.
+    print "\nCurrent partition table:";
+    print $partition_layout;
+    print "\n";
+
     print "Choose partitioning scheme.\n";
     print "NOTE: If partition table changes, machine will reboot.\n";
     # Commands to erase partition table
@@ -305,30 +313,22 @@ sub ask_fdisk_cmds () {
     # Command to run fdisk interactively
     my $interactive_cmd = 'fdisk /xo';
 
-    my $ret;
+    my $ret = menu_choice
+        ('Do nothing (continue)' => undef,
+         'Run fdisk interactively (experts only)' => $interactive_cmd,
+         'Whole disk C:', =>
+         'fdisk /pri:100,100',
+         '4G C:, rest D:' =>
+         'fdisk /pri:4096;fdisk /pri:100,100 /spec:7',
+         '12G C:, 5G D:, rest E:' =>
+         'fdisk /pri:12288;fdisk /pri:5120 /spec:7;fdisk /pri:100,100 /spec:7'
+         );
 
-    while (1) {
-        $ret = menu_choice
-            ('Do nothing (continue)' => undef,
-             'Run fdisk interactively (experts only)' => $interactive_cmd,
-             'Whole disk C:', =>
-             'fdisk /pri:100,100',
-             '4G C:, rest D:' =>
-             'fdisk /pri:4096;fdisk /pri:100,100 /spec:7',
-             '12G C:, 5G D:, rest E:' =>
-             'fdisk /pri:12288;fdisk /pri:5120 /spec:7;fdisk /pri:100,100 /spec:7'
-             );
+    defined $ret
+        or return undef;
 
-        defined $ret
-            or last;
-
-        $ret eq $interactive_cmd
-            or $ret = "$pre_cmds;$ret;$post_cmds";
-
-        print "WARNING: This operation erases the disk!";
-        yes_no_choice ("Are you sure")
-            and last;
-    }
+    $ret eq $interactive_cmd
+        or $ret = "$pre_cmds;$ret;$post_cmds";
 
     return $ret;
 }
@@ -937,15 +937,24 @@ defined $macaddr
 # Read current partition table.
 my $partition_table = read_partition_table ();
 
-# Display it.
-print "\nCurrent partition table:";
-print $partition_table;
-print "\n";
-
+my $fdisk_cmds;
 # Partition the disk.
-my $fdisk_cmds = $u->{'_meta'}->{'fdisk_cmds'};
-defined $fdisk_cmds
-    or $fdisk_cmds = '';
+while (1) {
+    $fdisk_cmds = $u->{'_meta'}->{'fdisk_cmds'};
+    defined $fdisk_cmds
+        or $fdisk_cmds = '';
+
+    $fdisk_cmds =~ /\S/
+        or last;
+
+    print "\n";
+    print "ABOUT TO PARTITION THE FIRST HARD DRIVE!\n";
+    print "WARNING: This operation erases the disk!";
+    yes_no_choice ("Are you sure")
+        and last;
+   # undef $u->{'_meta'}->{'fdisk_cmds'};
+    $u->{'_meta'}->{'fdisk_cmds'} = \&ask_fdisk_cmds;
+}
 
 # Run the fdisk commands.
 foreach my $cmd (split /;/, $fdisk_cmds) {
