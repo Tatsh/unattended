@@ -442,9 +442,9 @@ $u->{'UserData'}->{'ProductID'} =
         if ($os_name =~ /Windows 2000/) {
             return 'MY-WINDOWS-2000-KEY';
         }
-        elsif (defined $u->{'UserData'}->{'ProductID'}) {
+        elsif (defined $u->{'UserData'}->{'ProductKey'}) {
             # It is OK for us to return undef as long as there is a
-            # ProductID.
+            # ProductKey.
             return undef;
         }
         die "No ProductKey nor ProductID!";
