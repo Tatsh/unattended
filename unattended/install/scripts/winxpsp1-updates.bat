@@ -1,6 +1,6 @@
 :: Install all updates and hotfixes for Windows XP SP1
 
-:: All of these were downloaded using the Windows Update Catalog,
+:: Most of these were downloaded using the Windows Update Catalog,
 :: <http://windowsupdate.microsoft.com/catalog/>.  Some of them were
 :: just named "setup.exe", so I renamed them to something more
 :: descriptive.  You'll figure it out.
@@ -10,7 +10,7 @@
 
 :: Critical update Q323255
 :: <http://www.microsoft.com/Downloads/Release.asp?ReleaseID=41834>
-todo.pl "z:\packages\win2ksp3\Q323255_WXP_SP2_x86_ENU.exe /u /o /z"
+todo.pl "z:\packages\winxpsp1\Q323255_WXP_SP2_x86_ENU.exe /u /o /z"
 
 :: Movie Maker 1.2.1 update
 :: <http://www.download.windowsupdate.com/msdownload/update/v3/static/RTF/en/5509.htm>
