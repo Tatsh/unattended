@@ -12,5 +12,8 @@ todo.pl "startup-type.pl manual Messenger"
 :: install
 todo.pl "auconfig.pl 3"
 
+:: Work around daylight saving bug in XP unattended installation.
+todo.pl fixtz.pl
+
 :: First things first: Defragment the drive to collect the free space.
 todo.pl "AutoIt z:\scripts\defrag.aut"
