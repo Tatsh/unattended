@@ -500,6 +500,44 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 </table>
 
 <br><hr width="50%">
+<h2 id="leechftp">LeechFTP v1.3.1.207</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+
+<td><a
+href="http://stud.fh-heilbronn.de/~jdebis/leechftp/"
+>Free</a>
+<tr><td valign="middle">Details
+
+<td><p>Development on LeechFTP ceased a while ago, but many people
+still like it for its size, speed, simplicity, and robustness.  The
+only problem is that the automatic "checking for software update"
+feature will always fail because the update server is gone.  Users can
+disable this feature in the "options" menu; it only checks once a
+week, and it does not hurt anything anyway.
+
+<p>Leech can also just be installed on a test machine and the contents
+of the <code>Program&nbsp;Files\LeechFTP</code> directory moved from
+system to system.  It creates registry entries for each user that runs
+it, but the defaults are very sensible.
+
+<p>The only trick is to make sure that all users can write to
+"LeechFTP\default.lfq" (default queue file).  This file gets clobbered
+and recreated by each user.  The simplest approach is probably to use
+a cacls line to give "users" the ability to "change" the entire
+directory.
+
+<tr><td valign="middle">Example
+<td><p>(copy folder to <code>C:\Program&nbsp;Files\LeechFTP)
+<p><code>cacls "C:\Program Files\LeechFTP" /t /e /g users:c</code>
+
+<tr><td valign="middle">Thanks to
+<td>Trask Rogers
+
+</table>
+
+<br><hr width="50%">
 <h2 id="lotus-notes">Lotus Notes (technically IBM/Lotus, but who cares)</h2>
 <table border cellpadding=4>
 
@@ -774,6 +812,37 @@ this documented somewhere?)
 </table>
 
 <br><hr width="50%">
+<h2 id="naivirus">NAI Virus Scan</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://www.nai.com/">Commercial</a>
+
+<tr><td valign="middle">Details
+
+<p>This product ships with an ordinary <a href="#msi">MSI</a> package
+which can be installed in the usual way, but to preconfigure
+when/what/how to scan you have to do some more work.  You need to
+download the "Installation Designer" to do this.
+
+<p>After installing the "Installation Designer", run it and give it
+the original .msi file to customize.  The easiest approach is to
+install the VirusScan software on that very computer and configure it
+to your liking.  When you get about halfway through the "Installation
+Designer", it will give you the option to export the settings from the
+local computer.
+
+<p>The original installer is a .msi file plus several other files and
+directories.  When you finish creating your "custom" installer it will
+be a "self contained" .msi file that has no external dependencies.
+
+<tr><td valign="middle">Thanks to
+<td>Trask Rogers
+
+</table>
+
+
+<br><hr width="50%">
 <h2 id="openoffice">OpenOffice.org</h2>
 <table border cellpadding=4>
 
@@ -804,6 +873,35 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 >openoffice.bat</a>, <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/openoffice.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >openoffice.txt</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="securecrt">SecureCRT</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability <td><a
+href="http://www.vandyke.com/">Commercial Product</a>
+
+<tr><td valign="middle">Details
+
+<td>Not free and version 4.0 has recently come out (2002-Nov-7), but a
+very good terminal program.  Actually requires no "official"
+installation to work normally.  Just copy the correct contents into a
+directory and create a shortcut for it.  The first time it is run it
+asks for a location to store profile data; just accept the default.
+
+<tr><td valign="middle">Example
+
+<td>
+<p><code>xcopy /i /c /e /y /h "Z:\packages\SecCRT" "C:\Program
+Files\SecureCRT 3.4.1"</code>
+<p>
+<code>copy "C:\Program Files\SecureCRT 3.4.1\SCRT.lnk" "C:\Documents
+and Settings\All Users\Start Menu\Programs\SecureCRT.lnk"</code>
+
+<tr><td valign="middle">Thanks to
+<td>Trask Rogers
 
 </table>
 
@@ -854,6 +952,51 @@ have not found that to be necessary.)
 <tr><td valign="middle">Example <td><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/vnc.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >vnc.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="timbuktu">Timbuktu Pro</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://www.netopia.com/">Commercial</a>
+
+<tr><td valign="middle">Details
+
+<td><p>Netopia provides an <a href="#msi">MSI</a> package.  Use it
+with standard arguments to perform a silent install.
+
+<p>It is possible to set which accounts can log in, passwords,
+security settings (everything in the "Setup" menu) ahead of time so
+you do not have to configure them manually for each install.  Timbuktu
+uses a file named <code>tb2.plu</code> in the application directory to
+record all the settings from the "Setup" menu.  So, to create an
+installer with your custom settings:
+
+<ul>
+
+<li>Install Timbuktu on a machine.
+
+<li>Manually change all the settings to your liking.
+
+<li> "Exit and Shutdown Timbuktu Pro" so it will save the current
+configuration.
+
+<li>Copy the file <code>tb2.plu</code> from the application directory
+(typically <code>C:\Program&nbsp;Files\Timbuktu&nbsp;Pro</code>) into
+the install directory structure you obtained from Netopia.  There is a
+subfolder called <code>Program&nbsp;Files\Timbuktu&nbsp;Pro</code>;
+overwrite the version of <code>tb2.plu</code> which is there.
+
+</ul>
+
+<tr><td valign="middle">Example <td>
+<code>msiexec /i "Z:\packages\TimbuktuPro_5.1(900)\TimbuktuPro.msi"
+/qn</code>
+
+<tr><td valign="middle">Thanks to
+<td>Trask Rogers
 
 </table>
 
