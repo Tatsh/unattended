@@ -177,12 +177,33 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
-:: Cumulative Update for Outlook Express 6 Service Pack 1
+:: Cumulative Update for Outlook Express for Windows XP (KB887797)
+:: Outlook Express for Windows update available
 :: <http://support.microsoft.com/kb/887797>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=fda6678b-69b0-4813-9856-a1a3da675baf>
-:: (msparse.pl not working...)
-:: URL|ENU|http://download.microsoft.com/download/3/4/2/34288a12-9814-4719-b5f7-1663c49a0329/IE6.0sp1-KB887797-Windows-2000-XP-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb887797-windows-2000-xp-x86-enu.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB887797-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=785c35bb-0f03-4f2d-9e1c-66c9934b4610>
+:: URL|ARA|http://download.microsoft.com/download/3/d/3/3d3fde6f-7f9f-4027-ac55-1726e3766465/WindowsXP-KB887797-x86-ara.exe|updates/winxpsp2/windowsxp-kb887797-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/d/6/bd6061ee-2328-4af1-a4b1-a2178ce52c0f/WindowsXP-KB887797-x86-csy.exe|updates/winxpsp2/windowsxp-kb887797-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/d/2/4/d24479ce-6503-41e5-88a9-5ef176aaa8d8/WindowsXP-KB887797-x86-dan.exe|updates/winxpsp2/windowsxp-kb887797-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/7/4/b740cf9c-6fbd-4e93-a1ea-684ff03e5a14/WindowsXP-KB887797-x86-deu.exe|updates/winxpsp2/windowsxp-kb887797-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/b/8/1/b81f8c75-373b-4e28-8a87-6de49112f404/WindowsXP-KB887797-x86-ell.exe|updates/winxpsp2/windowsxp-kb887797-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/8/b/28b5dcea-9c23-4161-8ca3-221b1f9348b9/WindowsXP-KB887797-x86-enu.exe|updates/winxpsp2/windowsxp-kb887797-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/e/1/d/e1dbabd0-aa8d-4605-9f34-a2be53c6a670/WindowsXP-KB887797-x86-esn.exe|updates/winxpsp2/windowsxp-kb887797-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/6/d/d/6dd700f2-743e-47c0-bf99-79528ad037c2/WindowsXP-KB887797-x86-fin.exe|updates/winxpsp2/windowsxp-kb887797-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/e/9/4e910959-240a-4589-98ae-59b3085bf47c/WindowsXP-KB887797-x86-fra.exe|updates/winxpsp2/windowsxp-kb887797-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/e/9/9/e9983908-cd3e-4fba-a422-3ab5123915f8/WindowsXP-KB887797-x86-heb.exe|updates/winxpsp2/windowsxp-kb887797-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/5/8/b/58b8e1a8-f206-4db9-b200-bec4e430b548/WindowsXP-KB887797-x86-hun.exe|updates/winxpsp2/windowsxp-kb887797-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/7/7/e/77ea0ebe-2c6c-48f9-92c5-6ff5b068f007/WindowsXP-KB887797-x86-ita.exe|updates/winxpsp2/windowsxp-kb887797-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/9/f/6/9f611c89-bf83-457b-beab-1ba247a33c53/WindowsXP-KB887797-x86-jpn.exe|updates/winxpsp2/windowsxp-kb887797-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/0/4/004f9377-ec69-43b9-a568-a939f1a5e058/WindowsXP-KB887797-x86-kor.exe|updates/winxpsp2/windowsxp-kb887797-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/9/f/49fb4f7b-6b78-4cf0-b249-7bdf3f2d7a0d/WindowsXP-KB887797-x86-nld.exe|updates/winxpsp2/windowsxp-kb887797-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/e/4/c/e4cba6a6-4605-4ebc-835e-7f99311599e4/WindowsXP-KB887797-x86-nor.exe|updates/winxpsp2/windowsxp-kb887797-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/c/a/c/cac8f7c1-f5fa-415b-b77e-72fb30ee6214/WindowsXP-KB887797-x86-plk.exe|updates/winxpsp2/windowsxp-kb887797-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/d/3/bd381a3f-d412-4389-98ca-8d2fb20681ad/WindowsXP-KB887797-x86-ptb.exe|updates/winxpsp2/windowsxp-kb887797-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/0/4/7/0471335e-2946-49b9-84a7-b0815e0a33bd/WindowsXP-KB887797-x86-ptg.exe|updates/winxpsp2/windowsxp-kb887797-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/3/f/3/3f32025c-4b98-4b50-9ffd-d658fa67df98/WindowsXP-KB887797-x86-rus.exe|updates/winxpsp2/windowsxp-kb887797-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/2/7/6/276aec89-22a4-4df2-a5ce-fb7fe3d6335d/WindowsXP-KB887797-x86-sve.exe|updates/winxpsp2/windowsxp-kb887797-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/a/1/6a1517ec-a57c-45a4-bb57-faae508ef28f/WindowsXP-KB887797-x86-trk.exe|updates/winxpsp2/windowsxp-kb887797-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB887797-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Microsoft Security Bulletin MS04-044
 :: "Vulnerabilities in Windows Kernel and LSASS Could Allow Elevation of Privilege (885835)"
@@ -318,3 +339,13 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB834707-x86-%WINLANG%.ex
 :: URL|SVE|http://download.microsoft.com/download/8/f/2/8f2ed66c-1b10-4cb5-901f-21f52b2f7f5b/WindowsXP-KB886185-x86-sve.exe|updates/winxpsp2/windowsxp-kb886185-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/6/0/16044625-40f9-4d2c-b4a4-d3c0b3926058/WindowsXP-KB886185-x86-trk.exe|updates/winxpsp2/windowsxp-kb886185-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB886185-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update 873374 (GDI+ Detection Tool)
+:: <http://support.microsoft.com/kb/873374>
+:: What a load of crap.  All this "tool" does is check to see if you
+:: have various Microsoft products installed, then throw up a dialog
+:: directing you to their Web page on the topic.  For a fresh
+:: installation which applies the relevant updates, this is useless,
+:: so just this once we violate our principles and patch the registry
+:: directly.
+todo.pl "regedit /s %Z%\scripts\kb873374.reg"
