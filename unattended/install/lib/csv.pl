@@ -6,8 +6,8 @@
 #
 #   "Asset Tag","Owner","Description","Key"
 #   "x1000",1348,"Microsoft Windows XP","12345-ABCDE-FGHIJ-KLMNO-PQRST"
-#   "x1001","-",1348,"Microsoft Office XP","12345-ABCDE-FGHIJ-KLMNO-PQRST"
-#   "x1002","-",1348,"Adobe Acrobat 5.0","KWW505R7104502-158"
+#   "x1001",1348,"Microsoft Office XP","12345-ABCDE-FGHIJ-KLMNO-PQRST"
+#   "x1002",1348,"Adobe Acrobat 5.0","KWW505R7104502-158"
 #
 # That is, each line consists of items separated by commas.  Items may
 # be enclosed in double-quotes, and must be so enclosed if they
