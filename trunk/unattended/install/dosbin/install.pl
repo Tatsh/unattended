@@ -4,6 +4,7 @@ use strict;
 use Carp;
 use File::Spec::Win32;
 use File::Copy;
+use IO::File;
 use Unattend::IniFile;
 use Unattend::WinMedia;
 
@@ -261,6 +262,21 @@ sub read_partition_table () {
     return join '', run_command ('fdisk /info /tech');
 }
 
+# Write a bunch of lines to a file.
+sub write_file ($@) {
+    my ($file, @lines) = @_;
+    my $fh = new IO::File;
+    $fh->open ($file, 'w')
+        or die "Unable to open $file for writing: $^E";
+
+    foreach my $line (@lines) {
+        print $fh $line, "\n";
+    }
+
+    $fh->close ()
+        or die "Unable to close $file: $^E";
+}
+
 ## Functions for asking about particular settings.
 
 # Large disk support
@@ -313,7 +329,7 @@ sub ask_fdisk_cmds () {
 
 # Which OS to install
 sub ask_os () {
-    my $os_dir = get_value ('_meta', 'os_dir');
+    my $os_dir = $u->{'_meta'}->{'os_dir'};
 
     print "Scanning for OS directories under $os_dir...\n";
 
@@ -388,13 +404,32 @@ sub create_postinst_bat () {
     # Compute contents of postinst.bat script.
     my @postinst_lines;
 
+    # Basic framework:  mapznrun, permcreds, tempcreds
+    print 'Copying z:\\bin\\mapznrun.bat...';
+    copy ('z:\\bin\\mapznrun.bat', $file_spec->catfile ($netinst,
+                                                        'mapznrun.bat'))
+        or die "Unable to copy mapznrun.bat";
+    print "done.\n";
+
+    my $z_path = $u->{'_meta'}->{'z_path'};
+    my $permcreds = $file_spec->catfile ($netinst, 'permcreds.bat');
+    print "Creating $permcreds...";
+    write_file ($permcreds,["SET Z=Z:",
+                            "SET Z_PATH=$z_path"]);
+    print "done.";
+
+    my $z_user = $u->{'_meta'}->{'z_user'};
+    my $z_pass = $u->{'_meta'}->{'z_password'};
+    my $tempcreds = $file_spec->catfile ($netinst, 'tempcreds.bat');
+    print "Creating $tempcreds...";
+    write_file ($permcreds, ["SET Z_USER=$z_user",
+                             "SET Z_PASS=$z_pass"]);
+    print "done.";
+
     # Local admins
     my $admin_group = get_value('_meta', 'local_admin_group');
     my $admins = get_value ('_meta', 'local_admins');
-    my @admins = (defined $admins ? split / /, $admins : undef);
-    # Hack around Perl bug
-    defined $admins[0]
-        or undef @admins;
+    my @admins = (defined $admins ? split / /, $admins : ());
     @admins = map { canonicalize_user
                         (get_value ('Identification', 'JoinDomain'),
                          $_) } @admins;
@@ -407,19 +442,13 @@ sub create_postinst_bat () {
     defined $ntp_servers && $ntp_servers ne ''
         and push @postinst_lines, "net time /setsntp:\"$ntp_servers\"";
 
+    my $netinst = $u->{'_meta'}->{'netinst'};
+
     # Top-level installation script
     my $top = get_value ('_meta', 'top');
     if (defined $top) {
         push @postinst_lines,
-        ('goto map',
-         ':delmap',
-         # Setup maping loop to make sure we map drive z:
-         'net use z: /delete',
-         ':map',
-         "net use z: $ENV{'INSTALL'} /persistent:yes",
-         'if errorlevel 1 goto delmap',
-         'call z:\\scripts\\perl.bat',
-         'PATH=z:\\bin;%PATH%',
+        ('PATH=z:\\bin;%PATH%',
          # Last step is always a reboot
          'todo.pl .reboot',
          # Next-to-last step is to disable automatic logon
@@ -429,35 +458,19 @@ sub create_postinst_bat () {
          '',
          'todo.pl --go');
 
-        print "Copying z:\\bin\\maptodo.pl...";
-	copy ("z:\\bin\\maptodo.pl", get_value ('_meta','netinst')."\\maptodo.pl")
-		or die "Unable to copy to drive c:";
-        print "done.\n";
     }
 
-    my $postinst = $file_spec->catfile (get_value ('_meta', 'netinst'),
-                                        'postinst.bat');
+    my $postinst = $file_spec->catfile ($netinst, 'postinst.bat');
     if (scalar @postinst_lines > 0) {
         print "Creating $postinst...";
-
-        open POSTINST, ">$postinst"
-            or die "Unable to open $postinst for writing: $^E";
-
-        foreach my $line (@postinst_lines) {
-            print POSTINST $line, "\n"
-                or die "Unable to write to $postinst: $^E";
-        }
-
-        close POSTINST
-            or die "Unable to close $postinst: $^E";
-
+        write_file ($postinst, @postinst_lines);
         print "done.\n";
     }
     else {
         undef $postinst;
     }
 
-    return $postinst;
+    return defined $postinst ? "$netinst\\mapznrun.bat $postinst" : undef;
 }
 
 $u->comments ('_meta') =
@@ -583,12 +596,28 @@ set_value ('_meta', 'doit_cmds',
                return "$src_tree\\winnt $lang_opts /s:$src_tree /u:$unattend_txt";
            });
 
-set_comments ('_meta', 'autolog',
-              "    ; Command to disable (or modify) logon setting when installation finishes\n");
+$u->comments ('_meta', 'autolog') =
+    ["Command to disable (or modify) autologon when installation finishes"];
 
 # Default setting for automatic logon is to disable it, but retain
 # default setting of last user who logged on.
-set_value ('_meta', 'autolog', 'autolog.pl --logon=0');
+$u->{'_meta'}->{'autolog'} = 'autolog.pl --logon=0';
+
+# Default is to fetch these from environment set up by autoexec.bat.
+$u->comments ('_meta', 'z_path') = ['UNC path to install share'];
+(defined $ENV{'Z_PATH'})
+    or die "autoexec.bat failed to set Z_PATH; bailing";
+$u->{'_meta'}->{'z_path'} = $ENV{'Z_PATH'};
+
+$u->comments ('_meta', 'z_user') = ['Username for mapping install share'];
+(defined $ENV{'Z_USER'})
+    or die "autoexec.bat failed to set Z_USER; bailing";
+$u->{'_meta'}->{'z_user'} = $ENV{'Z_USER'};
+
+$u->comments ('_meta', 'z_password') = ['Password for mapping install share'];
+(defined $ENV{'Z_PASS'})
+    or die "autoexec.bat failed to set Z_PASS; bailing";
+$u->{'_meta'}->{'z_password'} = $ENV{'Z_PASS'};
 
 set_value ('UserData', 'FullName',
            sub {
@@ -838,16 +867,7 @@ my $unattend_txt = "$netinst\\unattend.txt";
 my @unattend_contents = $u->generate ();
 
 print "Creating $unattend_txt...";
-
-open UNATTEND, ">$unattend_txt"
-    or die "Unable to open $unattend_txt for writing: $^E";
-print UNATTEND join "\n", @unattend_contents
-    or die "Unable to write to $unattend_txt: $^E";
-print UNATTEND "\n"
-    or die "Unable to write to $unattend_txt: $^E";
-close UNATTEND
-    or die "Unable to close $unattend_txt: $^E";
-
+write_file ($unattend_txt, @unattend_contents);
 print "done.\n";
 
 # While DJGPP is running, there is not enough conventional memory
@@ -855,18 +875,7 @@ print "done.\n";
 # .bat script (doit.bat) and run it.
 my $doit = "$netinst\\doit.bat";
 print "Creating $doit...";
-open DOIT, ">$doit"
-    or die "Unable to open $doit for writing: $^E";
-
-
-foreach my $cmd (split /;/, get_value('_meta', 'doit_cmds')) {
-    print DOIT $cmd, "\n"
-	 or die "Unable to write to $doit: $^E";
-}
-
-close DOIT
-    or die "Unable to close $doit: $^E";
-
+write_file ($doit, split /;/, get_value('_meta', 'doit_cmds'));
 print "done.\n";
 
 my @edit_choices;
@@ -882,7 +891,7 @@ defined $postinst
 push @edit_choices, ("Edit $doit (will run when you select Continue)"
                      => $doit);
 
-while (get_value('_meta','edit_files')) {
+while ($u->{'_meta'}->{'edit_files'}) {
     my $file = menu_choice (@edit_choices,
                             'Continue' => undef);
     defined $file
