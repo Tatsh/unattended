@@ -13,7 +13,7 @@ todo.pl .reboot
 :: "Flaw in SMB Signing Could Enable Group Policy to be Modified"
 :: <http://support.microsoft.com/?kbid=329170>
 :: <http://support.microsoft.com/?kbid=309376>
-todo.pl "z:\packages\win2ksp3\Q329170_W2K_SP4_X86_EN.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q329170_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Critical Update 810030
 :: "Flaw in Microsoft VM May Compromise Windows"
@@ -24,7 +24,7 @@ todo.pl "z:\packages\win2ksp3\Q810030_W2K.exe /u /o /z"
 :: Critical Update Q328310
 :: "Flaw in Windows WM_TIMER Message Handling Could Enable Privilege Elevation"
 :: <http://support.microsoft.com/?kbid=322913>
-todo.pl "z:\packages\win2ksp3\Q328310_W2K_SP4_X86_EN.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q328310_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Recommended update Q322913
 :: "WM_TIMER Messages Not Delivered to Programs"
