@@ -1,5 +1,5 @@
 bash=bash-2.05b
-busybox=busybox-1.00-rc1
+busybox=busybox-1.00-rc2
 dbd-mysql=DBD-mysql-2.9004
 dbi=DBI-1.43
 dmidecode=dmidecode-2.4
@@ -11,8 +11,7 @@ glibc=glibc-20040723
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-#klibc=klibc-0.116
-klibc=klibc-0.146
+klibc=klibc-0.152
 linux=linux-2.6.7
 module-init-tools=module-init-tools-3.0
 mysql=mysql-4.0.20
@@ -162,7 +161,8 @@ $(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch \
 # does not rebuild reboot.o), hence the "make clean" here.
 # FIXME: Should use fake flags for CFLAGS too?
 $(busybox)/busybox: $(busybox)/.config fakeinclude/stdio.h
-	cd $(busybox) && make clean && make LDFLAGS="$(fakelib_cflags)"
+	cd $(busybox) && make clean \
+	&& make CFLAGS_EXTRA="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
 
 stage1/bin/busybox: $(busybox)/busybox
 	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
@@ -180,7 +180,12 @@ stage1 += stage1/usr/sbin/dmidecode
 
 ## dosemu
 
-build-$(dosemu)/config.status: $(dosemu)/configure
+$(dosemu)/.stamp-dosemu-nolock-patch: misc/dosemu-nolock-patch
+	cd $(dosemu) && patch -p1 < $(cwd)/$<
+	touch $@
+
+build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
+			$(dosemu)/configure
 	rm -f $@
 	mkdir -p $(dir $@)
 	cd $(dir $@)							\
