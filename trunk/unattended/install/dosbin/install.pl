@@ -633,7 +633,7 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             my $netinst = $u->{'_meta'}->{'netinst'};
             # Basic framework for mapping Z: drive
             my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
-            print 'Copying $mapznrun...';
+            print "Copying $mapznrun...";
             copy ('z:\\bin\\mapznrun.bat', $mapznrun)
                 or die "Unable to copy mapznrun.bat";
             print "done.\n";
