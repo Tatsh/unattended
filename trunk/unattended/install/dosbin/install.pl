@@ -485,13 +485,18 @@ sub disk_end () {
 }
 
 # Find the largest interval of free space on the drive which does not
-# overlap other partitions.  Return as a pair (START, END) where each
-# is in megabytes from start of disk.
-sub find_free_space () {
+# overlap other partitions.  If argument is true, find space for
+# creating a logical partition (i.e., within the extended partition).
+# Return as a pair (START, END) where each is in megabytes from start
+# of disk.
+sub find_free_space ($) {
+    my ($logical) = @_;
+
     $is_linux
         or croak 'internal error';
 
     my @partitions;
+    my ($ext_start, $ext_end);
 
     # Read the current partition table.
     my $cmd = 'parted -s /dev/dsk print';
@@ -499,26 +504,45 @@ sub find_free_space () {
         or die "Unable to fork: $^E";
 
     while (my $line = <PARTED>) {
-        my ($start, $end) = ($line =~ /^\d+\s+(\d+\.\d{3})\s+(\d+\.\d{3})/);
-        defined $end
+        my ($start, $end, $parttype) =
+            ($line =~ /^\d+\s+(\d+\.\d{3})\s+(\d+\.\d{3})\s+(primary|logical|extended)/);
+        defined $start && defined $end && defined $parttype
             or next;
 
-        push @partitions, [ $start, $end ];
+        if ($logical && $parttype eq 'extended') {
+            # If multiple extended partitions (weird), use the first.
+            defined $ext_start && defined $ext_end
+                and next;
+            ($ext_start, $ext_end) = ($start, $end);
+        }
+        else {
+            push @partitions, [ $start, $end ];
+        }
     }
 
     close PARTED
         or die "'$cmd' failed: $^E $?";
+
+    # Default is to search entire disk.
+    my ($search_start, $search_end) = (0, disk_end());
+
+    # For logical partition creation, search extended partition.
+    if ($logical) {
+        defined $ext_start && defined $ext_end
+            or die 'Error: No extended partition found for logical partition';
+        ($search_start, $search_end) = ($ext_start, $ext_end);
+    }
 
     # Keep track of best result so far.
     my ($best_start, $best_end) = (0, 0);
 
     # Now loop through looking for free space.
   LOOP:
-    foreach my $part ([0, 0], @partitions) {
+    foreach my $part ([0, $search_start], @partitions) {
         # Try fitting new partition in just after this one.
         my $start = $part->[1];
-        my $end = disk_end ();
-        foreach my $other (@partitions, [ disk_end (), disk_end () ]) {
+        my $end = $search_end;
+        foreach my $other (@partitions, [ $search_end, disk_end () ]) {
             # Each other partition may or may not constrain us.
             my ($other_start, $other_end) = @$other;
             if ($start >= $other_end) {
@@ -549,7 +573,7 @@ sub convert_fdisk_parted ($) {
 
     my ($cmd) = ($fdisk_cmd =~ /^\s*fdisk\s+(.*?)\s*\z/i);
     defined $cmd
-        or croak 'internal error';
+        or croak "Internal error: Cannot convert '$fdisk_cmd'";
 
     if ($cmd =~ /^\/clear\s+1\z/i) {
         $ret = "$parted mklabel msdos";
@@ -563,10 +587,16 @@ sub convert_fdisk_parted ($) {
     elsif ($cmd =~ /^\/xo/i) {
         $ret = 'parted /dev/dsk';
     }
-    elsif ($cmd =~ /\/pri(o)?:(\d+)(,100)?(?:\s+\/spec:(\d+))?/i) {
-        my ($fat16, $size, $is_percent, $type) = ($1, $2, $3, $4);
+    elsif ($cmd =~ /\/(pri|log|ext)(o)?:(\d+)(,100)?(?:\s+\/spec:(\d+))?/i) {
+        my ($ptype, $fat16, $size, $is_percent, $type) =
+            ($1, $2, $3, $4, $5);
 
-        my ($start, $end) = find_free_space ();
+        # Map partition type numbers to Parted names.
+        my %type_map = (7 => 'ntfs',
+                        130 => 'linux-swap',
+                        131 => 'ext2');
+
+        my ($start, $end) = find_free_space ($ptype eq 'log');
 
         defined $is_percent
             and $size = disk_end () * ($size / 100);
@@ -587,13 +617,18 @@ sub convert_fdisk_parted ($) {
             and $end = '-0';
 
         my $fs = (defined $fat16 ? 'fat16' : 'fat32');
+        my $parttype;
         if (defined $type) {
-            $type == 7
-                or croak "Sorry, only type 7 (NTFS) is allowed ($fdisk_cmd)";
-            $fs = 'ntfs';
+            (exists $type_map{$type})
+                or croak "Unknown type $type in fdisk command ($fdisk_cmd)";
+            $fs = $type_map{$type};
         }
 
-        $ret = "$parted mkpart primary $fs $start $end";
+ 	if ($ptype eq 'pri') { $parttype = 'primary' }
+ 	elsif ($ptype eq 'log') { $parttype = 'logical' }
+ 	elsif ($ptype eq 'ext') { $parttype = 'extended'; $fs='' }
+
+        $ret = "$parted mkpart $parttype $fs $start $end";
     }
     else {
         die "Unable to convert '$fdisk_cmd' to Parted commands; bailing";
