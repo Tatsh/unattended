@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Step-By-Step Unattended Preperation Guide</title>
+<title>Step-By-Step Unattended Preparation Guide</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link href="Unattended.css" rel="stylesheet" type="text/css">
 </head>
@@ -827,7 +827,27 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>note: add cygwin command line way to burn cd using cdrecord </td>
+        <td>Burning image with <a href="http://www.fokus.fhg.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html">cdrecord</a> </td>
+      </tr>
+      <tr>
+        <td width="467">&nbsp;</td>
+        <td width="449" class="CygwinCommands">$ cdrecord -dev=1,0,0 bootdisk.iso</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>To find out numbers after -dev look for you CD-writer in the output of the following command</td>
+      </tr>
+      <tr>
+        <td width="467">&nbsp;</td>
+        <td width="449" class="CygwinCommands">$ cdrecord -scanbus</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>To erase CD-RW run </td>
+      </tr>
+      <tr>
+        <td width="467">&nbsp;</td>
+        <td width="449" class="CygwinCommands">$ cdrecord -dev=1,0,0 -blank=fast</td>
       </tr>
     </table>
     <table width="673" border="0">
