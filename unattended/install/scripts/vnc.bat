@@ -1,6 +1,6 @@
 :: Install TightVNC
 
-start /wait z:\packages\tightvnc-1.2.6-setup.exe /silent
+start /wait z:\packages\tightvnc-1.2.7-setup.exe /silent
 if errorlevel 1 exit 1
 c:
 cd "\Program Files\TightVNC"
