@@ -1,9 +1,4 @@
 :: DirectX 8.1 upgrade
 
-:: Reboot when finished
-todo.pl .reboot
+todo.pl "z:\packages\directx81\dxsetup /install /silent" .reboot
 
-start /wait z:\packages\directx81\dxsetup /install /silent
-
-:: Cannot check for errors because dxsetup always exits non-zero.  Sigh.
-::if errorlevel 1 exit 1
