@@ -218,14 +218,22 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 :: Critical update MS04-013 (837009)
 :: "Cumulative Security Update for Outlook Express"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-013.mspx>
+:: URL|DEU|http://download.microsoft.com/download/4/d/e/4dec9a9c-8916-4cc5-a779-769a2715d095/OE6.0sp1-KB837009-x86-DEU.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/8/1/0/81030a34-d638-494c-aaaa-9babb069304a/OE6.0sp1-KB837009-x86-ENU.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/3/0/b/30b10402-b8af-4579-9e03-e20dc4eee64c/OE6.0sp1-KB837009-x86-FRA.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-fra.exe
+:: URL|NLD|http://download.microsoft.com/download/a/5/9/a5965948-4e22-438d-b3d0-fe475ba26970/OE6.0sp1-KB837009-x86-NLD.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/4/f/2/4f2c896d-a6c4-4d83-a990-50d9e19706f5/OE6.0sp1-KB837009-x86-RUS.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\oe6.0sp1-kb837009-x86-%WINLANG%.exe /q /r:n"
 
 :: Critical update 831167
 :: <http://support.microsoft.com/?id=831167>
 :: "Wininet retries POST requests with a blank header"
 :: (needed after installing 832894)
+:: URL|DEU|http://download.microsoft.com/download/7/c/6/7c6cc370-d3e3-4b23-a035-4e9518a64298/Q831167.exe|updates/ie6sp1/deu/q831167.exe
 :: URL|ENU|http://download.microsoft.com/download/2/2/c/22cae35f-d96f-45ad-90f6-f81263911eb7/Q831167.exe|updates/ie6sp1/enu/q831167.exe
+:: URL|FRA|http://download.microsoft.com/download/a/a/8/aa8cbdb2-8a3b-43f4-89e1-c16f470b021a/Q831167.exe|updates/ie6sp1/fra/q831167.exe
+:: URL|NLD|http://download.microsoft.com/download/7/e/0/7e01a413-8adb-4783-9f80-5d467b528b3d/Q831167.exe|updates/ie6sp1/nld/q831167.exe
+:: URL|RUS|http://download.microsoft.com/download/9/9/9/999c1614-9058-4df9-8da7-2eecd2305dce/Q831167.exe|updates/ie6sp1/rus/q831167.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q831167.exe /q /r:n"
 
 :: Critical update 832894 (MS04-004)

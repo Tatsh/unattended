@@ -84,6 +84,9 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
 :: URL|DEU|http://download.microsoft.com/download/c/c/e/cce6ad8a-f554-41dd-9ce1-9c84cfe3968c/Windows2000-KB837001-x86-DEU.EXE|updates/win2ksp4/windows2000-kb837001-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/f/2/0/f20ae35d-b404-4021-9d9c-daab1f376462/Windows2000-KB837001-x86-ENU.EXE|updates/win2ksp4/windows2000-kb837001-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/2/6/f/26ff2914-057d-4ed7-a412-438376a57dbc/Windows2000-KB837001-x86-FRA.EXE|updates/win2ksp4/windows2000-kb837001-x86-fra.exe
+:: URL|NLD|http://download.microsoft.com/download/5/f/8/5f8fd678-c28d-4158-ba7a-2cf1ab3fb4d7/Windows2000-KB837001-x86-NLD.EXE|updates/win2ksp4/windows2000-kb837001-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/0/9/0/090e3604-96c1-498f-b8c1-205008bc891b/Windows2000-KB837001-x86-RUS.EXE|updates/win2ksp4/windows2000-kb837001-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Root Certificates Update
@@ -133,6 +136,9 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-012.mspx>
 :: URL|DEU|http://download.microsoft.com/download/7/6/f/76f5a50b-7409-45bd-bdeb-c0244694e44b/Windows2000-KB828741-x86-DEU.EXE|updates/win2ksp4/windows2000-kb828741-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/5/6/c/56cdedb2-fa2e-45ba-9a75-1b0335484386/Windows2000-KB828741-x86-ENU.EXE|updates/win2ksp4/windows2000-kb828741-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/7/a/2/7a2fb3eb-01c2-4f77-916e-c7950d181354/Windows2000-KB828741-x86-FRA.EXE|updates/win2ksp4/windows2000-kb828741-x86-fra.exe
+:: URL|NLD|http://download.microsoft.com/download/3/f/c/3fc94148-4705-43bd-83ae-446d0d0de2d0/Windows2000-KB828741-x86-NLD.EXE|updates/win2ksp4/windows2000-kb828741-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/a/4/6/a4681ccd-b857-4b4e-a516-e7c6cf528283/Windows2000-KB828741-x86-RUS.EXE|updates/win2ksp4/windows2000-kb828741-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-011 (835732)
@@ -140,6 +146,9 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb828741-x86-%WINLANG%.
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-011.mspx>
 :: URL|DEU|http://download.microsoft.com/download/2/2/d/22d00213-a68e-4ad7-9473-c4f3177b35ea/Windows2000-KB835732-x86-DEU.EXE|updates/win2ksp4/windows2000-kb835732-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/f/a/a/faa796aa-399d-437a-9284-c3536e9f2e6e/Windows2000-KB835732-x86-ENU.EXE|updates/win2ksp4/windows2000-kb835732-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/0/1/6/016bd08b-1a0a-4ce6-9c3f-bc1f4ccb1b9b/Windows2000-KB835732-x86-FRA.EXE|updates/win2ksp4/windows2000-kb835732-x86-fra.exe
+:: URL|NLD|http://download.microsoft.com/download/c/1/1/c1126e8e-85b3-4d21-bead-8a468bc6b46f/Windows2000-KB835732-x86-NLD.EXE|updates/win2ksp4/windows2000-kb835732-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/7/3/a/73a89113-ce21-4fac-9a49-037d0e2ff457/Windows2000-KB835732-x86-RUS.EXE|updates/win2ksp4/windows2000-kb835732-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
