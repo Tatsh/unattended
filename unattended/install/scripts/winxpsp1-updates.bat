@@ -131,19 +131,19 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 
 :: IE Critical Updates
 
+:: Critical update 832894 (MS04-004)
+:: URL|ENU|http://download.microsoft.com/download/9/b/3/9b3f16b4-a907-468b-8283-c050d1ea4948/q832894.exe|updates/ie6sp1/enu/q832894.exe
+:: "February, 2004, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=832894>
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-004.asp>
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
+
 :: Critical update 330994
 :: URL|ENU|http://download.microsoft.com/download/1/5/f/15f23ca7-965e-4a10-95a5-5b3d6a83f218/q330994.exe|updates/ie6sp1/enu/q330994.exe
 :: "April 2003, Cumulative Patch for Outlook Express"
 :: <http://support.microsoft.com/?kbid=330994>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
-
-:: Critical update 824145 (MS03-048)
-:: URL|ENU|http://download.microsoft.com/download/9/d/7/9d7d9a9b-6b4c-41cf-8db6-331c1c6606e2/q824145.exe|updates/ie6sp1/enu/q824145.exe
-:: "November, 2003, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=824145>
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-048.asp>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
 
 :: Critical Updates
 

@@ -34,11 +34,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB829558-x86-%WINLAN
 
 :: IE Critical Updates
 
-:: Critical update 824145
-:: URL|ENU|http://download.microsoft.com/download/7/9/f/79f676bb-ebec-404b-8961-f225af9a5b24/WindowsServer2003-KB824145-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb824145-x86-enu.exe
-:: "November, 2003, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=824145>
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824145-x86-%WINLANG%.exe /passive /n /norestart"
+:: Critical update 832894 (MS04-004)
+:: URL|ENU|http://download.microsoft.com/download/a/f/3/af318e61-4d69-42c3-90b9-e99676a5540c/WindowsServer2003-KB832894-x86-ENU.EXE|updates/ws2k3/WindowsServer2003-KB832894-x86-ENU.EXE
+:: "February, 2004, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=832894>
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-004.asp>
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical Updates
 
