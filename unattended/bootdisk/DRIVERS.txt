@@ -21,15 +21,11 @@ dp83815  Natsemi 83815 "MacPHYTER" family (e.g., Netgear FA311/FA312)
 # for PRODOS2.EXE):
 # <http://downloadfinder.intel.com/scripts-df/File_Filter.asp?FileName=PRODOS2.EXE>
 e100b    Intel Pro/100 family of PCI and CardBus adapters
-
-# Also from the PRODOS2.EXE distribution
 e1000    Intel Pro/1000 family of gigabit adapters
 
-# Found by doing a search on product number (3cxfe575ct) at
+# Found by doing a search on product numbers (3cxfe575ct, 3c905c) at
 # <http://www.3com.com/products/en_US/downloadsindex.jsp>.
 elpc575  3com 3c575 family of CardBus (laptop) adapters
-
-# Found by doing a search for "3c905c" on 3com's support site.
 el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
 
 # <http://www.google.com/search?q=via+ethernet+drivers>
