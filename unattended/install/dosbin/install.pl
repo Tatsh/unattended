@@ -692,6 +692,10 @@ $u->{'OEMBootFiles'} =
         return \%ret;
     };
 
+# Make sure [_meta] section sorts very late in the file, since
+# sections after it do not seem to work right (?)
+$u->sort_index ('_meta') = 999999;
+
 ## Now the meat of the script.
 
 # Read master unattend.txt.
