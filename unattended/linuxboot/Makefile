@@ -12,7 +12,7 @@ klibc=klibc-0.115
 # HACK FIXME: New ltmain.sh from libtool 1.5.2 is required for Parted
 # 1.6.8, but hopefully not for any later versions...
 libtool=libtool-1.5.2
-linux=linux-2.6.4
+linux=linux-2.6.5
 module-init-tools=module-init-tools-3.0
 nano=nano-1.2.3
 ncurses=ncurses-5.4
@@ -88,12 +88,12 @@ $(linux)/.stamp-initramfs-patch: misc/initramfs-patch
 
 # Apply patch to expose legacy BIOS cylinder/head/sector values
 # (INT13/AH=08h) under /sys/firmware/edd/int13_devXX.
-$(linux)/.stamp-edd-legacy-patch: misc/edd-legacy-patch
-	cd $(linux) && patch -p1 < $(cwd)/$<
-	touch $@
+#$(linux)/.stamp-edd-legacy-patch: misc/edd-legacy-patch
+#	cd $(linux) && patch -p1 < $(cwd)/$<
+#	touch $@
 
-$(linux)/.config: misc/linux-config $(linux)/.stamp-initramfs-patch	\
-			$(linux)/.stamp-edd-legacy-patch
+$(linux)/.config: misc/linux-config $(linux)/.stamp-initramfs-patch
+#			$(linux)/.stamp-edd-legacy-patch
 	cp -f $< $@
 	cd $(linux) && make oldconfig
 
@@ -112,7 +112,7 @@ stage1 += stage1/.stamp-modules
 
 ## klibc
 
-$(klibc)/ash/sh:
+$(klibc)/ash/sh: $(linux)/arch/i386/boot/bzImage
 	cd $(klibc) && ln -nsf $(cwd)/$(linux) ./linux	\
 	&& make
 	[ -e $@ ]
@@ -239,8 +239,8 @@ $(glibc)/.stamp-sscanf-patch: misc/glibc-sscanf-patch
 	cd $(glibc) && patch -p1 < $(cwd)/$<
 	touch $@
 
-build-$(glibc)/libc.so: $(glibc)/.stamp-sscanf-patch
-#build-$(glibc)/libc.so:
+build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage \
+			$(glibc)/.stamp-sscanf-patch
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure	\
 	    --prefix=/usr				\
@@ -394,7 +394,7 @@ $(parted)/parted/.libs/parted: fakelib/libc.so stage1/lib/libuuid.so	\
 	[ -e $@ ]
 
 $(parted)/libparted/.libs/libparted.so: $(parted)/parted/.libs/parted
-	[ -e $@ ]
+	[ -e $@ ] && touch $@
 
 $(call copy_exe, $(parted)/parted/.libs/parted, stage1/usr/sbin/parted)
 $(call copy_lib, $(parted)/libparted/.libs/libparted.so, \
@@ -418,11 +418,13 @@ stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 
 ## pcmcia-cs (PCMCIA Card Services, particularly cardmgr)
 $(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/i386/boot/bzImage
+	rm $@
 	cd $(pcmcia-cs)						\
 	&& make clean						\
 	&& ./Configure --noprompt --kernel=$(cwd)/$(linux)	\
 		--nox11 --srctree				\
 	&& make all
+	[ -e $@ ]
 
 stage1/var/run:
 	mkdir -p $@
