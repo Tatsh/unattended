@@ -1,0 +1,17 @@
+; AutoIt script to install Windows 2000 SP4 symbols
+
+Run, %Z%\\updates\\win2k\\symbols\\symbolsx.exe
+
+WinWait, License
+Send, {TAB}{ENTER}
+
+WinWait, Microsoft Windows, Symbols install directory
+Send, {ENTER}
+
+; "Directory xxx does not exist.  Do you want to create it?"
+; Time this one out after fifteen seconds (yuck)
+WinWait, Microsoft Windows, Do you want to create it?, 15
+Send, {ENTER}
+
+WinWait, Microsoft Windows, Installation is complete
+Send, {ENTER}
