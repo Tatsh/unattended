@@ -679,9 +679,12 @@ procedure, because I have no idea what will happen otherwise.
 
 <p>Incidentally, this will perform a "Default" installation of MSDN
 Library, which means that most of the files will not be installed
-locally but rather loaded from the source as required.  So choose the
-path to that <code>msdn.msi</code> package carefully, because that is
-the path MSDN will use whenever it needs something.
+locally but rather loaded from the source directory as required.  So
+choose the path to that <code>msdn.msi</code> package carefully,
+because that is the path MSDN will search whenever it needs something.
+(Hint: If you would rather perform a "Full" installation so that all
+files are copied to the local machine, add
+<code>INSTALLATION_TYPE=Full</code> to the command line.)
 
 <tr><td valign="middle">Example
 <td><a
