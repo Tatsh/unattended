@@ -8,10 +8,13 @@ This top-level directory contains:
 
   LICENSE.txt - The license for this stuff
 
-  Makefile    - A Makefile for my use (to make new releases), not
-                yours; sorry
+  NEWS.txt    - A history of release notes, more or less
+
+  Makefile    - A Makefile for my use, not yours; sorry
 
   bootdisk/   - Directory holding the boot disk sources and Makefile
 
   install/    - Directory holding the initial \\ntinstall\install
-                share (see the documentation)
+                share, aka. Z:\ drive; see the documentation
+
+  html/       - A copy of the Web pages as previously mentioned
