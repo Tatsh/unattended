@@ -31,11 +31,11 @@ Add latest recommended updates for Windows XP.
 
 ** Changes in version 3.4 (2003-Nov-14)
 
-New script install/prepare.  This is a Unix shell script which
-automatically downloads everything free thing it can for the install
-share.  That includes critical updates, recommended updates, and all
-the free software.  Downloads something like a gigabyte of data all
-told...  Thanks, Shad.
+New script install/prepare, a Unix shell script which automatically
+downloads every free thing it can for the install share.  This
+includes critical updates, recommended updates, and all the free
+software.  Downloads something like a gigabyte of data all told...
+Thanks, Shad.
 
 Rearrange install share slightly (sorry).
 
@@ -545,7 +545,7 @@ command-line interface to configure Automatic Updates.  Use it in
 base.bat.
 
 Add documentation for LeechFTP, NAI Virus Scan, SecureCRT, and
-Timbuktu Pro installers.  Thanks to Trask Rogers.
+Timbuktu Pro installers.
 
 Add first pass at documentation for OpenOffice.org.  Too bad it
 doesn't work, because the installer modifies the current user's
