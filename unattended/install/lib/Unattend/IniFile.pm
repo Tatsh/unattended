@@ -134,12 +134,10 @@ sub comments : lvalue {
     $$ref;
 }
 
-# Return the comments for a section or section+key in canonical form
+# Convert comments for a section or section+key into canonical form
 # (array of lines).
-sub _canonical_comments ($$$) {
-    my ($self, @sect_key) = @_;
-
-    my $comments = $self->comments (@sect_key);
+sub _canonicalize_comments ($) {
+    my ($comments) = @_;
 
     defined $comments
         or $comments = [ ];
@@ -191,6 +189,9 @@ sub max_index ($) {
 sub _merge_comments ($$) {
     my ($c1, $c2) = @_;
 
+    $c1 = _canonicalize_comments ($c1);
+    $c2 = _canonicalize_comments ($c2);
+
     # If the new comments are non-trivial or the old comments are
     # trivial, return the new.
     return ((0 < scalar grep { /[^\s;]/ } @$c2
@@ -232,8 +233,8 @@ sub merge ($$) {
             $self->{$section}->{$key} = $other->{$section}->{$key};
             # Merge the comments.
             $self->comments ($section, $key) =
-                _merge_comments ($self->_canonical_comments ($section, $key),
-                                 $other->_canonical_comments ($section, $key));
+                _merge_comments ($self->comments ($section, $key),
+                                 $other->comments ($section, $key));
             # Overwrite the sort index.
             $self->sort_index ($section, $key) =
                 $other->sort_index ($section, $key);
@@ -377,7 +378,7 @@ sub _dump_comments ($$;$) {
     my @ret;
 
     my $indent = $global_indent;
-    my $comments = $self->_canonical_comments (@sect_key);
+    my $comments = _canonicalize_comments ($self->comments (@sect_key));
 
     if (!exists $sect_key[1]) {
         # Section data.
