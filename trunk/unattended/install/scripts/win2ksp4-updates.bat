@@ -14,6 +14,7 @@
 :: URL|DAN|http://download.microsoft.com/download/3/8/b/38b5dccd-b255-4dd1-98e3-7944a5a0430a/WindowsMedia9-KB837272-DAN.exe|updates/mediaplayer9/windowsmedia9-kb837272-dan.exe
 :: URL|DEU|http://download.microsoft.com/download/b/0/0/b001504d-10bd-402f-94b3-2015abf87cd2/WindowsMedia9-KB837272-DEU.exe|updates/mediaplayer9/windowsmedia9-kb837272-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/7/0/D/70D0BAC6-A68B-4CB6-94AB-E0DF8C0EFCAF/WindowsMedia9-KB837272-ENU.exe|updates/mediaplayer9/windowsmedia9-kb837272-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/0/b/b/0bbce627-51cf-416c-bb79-1bc58bd09e4b/WindowsMedia9-KB837272-FRA.exe|updates/mediaplayer9/windowsmedia9-kb837272-fra.exe
 :: URL|NLD|http://download.microsoft.com/download/3/7/0/370f42db-fcd5-48d3-b798-56ef8f258206/WindowsMedia9-KB837272-NLD.exe|updates/mediaplayer9/windowsmedia9-kb837272-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/3/c/6/3c6b5375-05af-4fef-8dd0-595506d9e59b/WindowsMedia9-KB837272-RUS.exe|updates/mediaplayer9/windowsmedia9-kb837272-rus.exe
 :: <http://support.microsoft.com/?id=837272>
@@ -130,6 +131,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
 :: URL|DEU|http://download.microsoft.com/download/c/c/e/cce6ad8a-f554-41dd-9ce1-9c84cfe3968c/Windows2000-KB837001-x86-DEU.EXE|updates/win2ksp4/windows2000-kb839645-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/windows2000-kb839645-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/1/e/e/1ee1393b-ce01-4844-8cbf-572195a1943d/Windows2000-KB839645-x86-FRA.EXE|updates/win2ksp4/windows2000-kb839645-x86-fra.exe
 :: URL|RUS|http://download.microsoft.com/download/a/e/0/ae04dfa4-2de0-4305-96a7-afe7b0629c74/Windows2000-KB839645-x86-RUS.EXE|updates/win2ksp4/windows2000-kb839645-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB839645-x86-%WINLANG%.EXE /passive /n /norestart"
 
@@ -138,6 +140,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB839645-x86-%WINLANG%.
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-020.mspx>
 :: URL|DEU|http://download.microsoft.com/download/4/3/6/43604e45-8f3f-4f4c-abab-84f154404c98/Windows2000-KB841872-x86-DEU.EXE|updates/win2ksp4/windows2000-kb841872-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/7/9/c/79c0720a-3c99-4a5b-87ed-2fc6e1bc0426/Windows2000-KB841872-x86-ENU.EXE|updates/win2ksp4/windows2000-kb841872-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/8/3/3/8333a486-00eb-4bd6-a1d8-346c67bb36dc/Windows2000-KB841872-x86-FRA.EXE|updates/win2ksp4/windows2000-kb841872-x86-fra.exe
 :: URL|RUS|http://download.microsoft.com/download/9/2/4/924c867d-4596-4a84-8b9e-5e5b150699c3/Windows2000-KB841872-x86-RUS.EXE|updates/win2ksp4/windows2000-kb841872-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB841872-x86-%WINLANG%.EXE /passive /n /norestart"
 
@@ -146,6 +149,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB841872-x86-%WINLANG%.
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-019.mspx>
 :: URL|DEU|http://download.microsoft.com/download/1/1/a/11aa9321-96bd-4cbd-b01a-ab531b67e68e/Windows2000-KB842526-x86-DEU.EXE|updates/win2ksp4/windows2000-kb842526-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/3/b/6/3b627f83-d5e4-46fb-9fd0-4a1330c57981/Windows2000-KB842526-x86-ENU.EXE|updates/win2ksp4/windows2000-kb842526-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/b/e/3/be3a003d-9a42-4fe3-a2d4-8b19ff353d0c/Windows2000-KB842526-x86-FRA.EXE|updates/win2ksp4/windows2000-kb842526-x86-fra.exe
 :: URL|RUS|http://download.microsoft.com/download/f/b/2/fb289d39-7e12-462d-a0b3-d089e384840d/Windows2000-KB842526-x86-RUS.EXE|updates/win2ksp4/windows2000-kb842526-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842526-x86-%WINLANG%.EXE /passive /n /norestart"
 
@@ -210,6 +214,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-023.mspx>
 :: URL|DEU|http://download.microsoft.com/download/7/8/a/78adf5e4-8331-4343-bf7f-7f9147dff300/Windows2000-KB840315-x86-DEU.EXE|updates/win2ksp4/windows2000-kb840315-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/7/2/7/727d9721-abdc-4ecf-ab36-4635cfd61172/Windows2000-KB840315-x86-ENU.EXE|updates/win2ksp4/windows2000-kb840315-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/a/7/b/a7b2e02c-7b7a-4f48-be1b-9e52cef377ba/Windows2000-KB840315-x86-FRA.EXE|updates/win2ksp4/windows2000-kb840315-x86-fra.exe
 :: URL|RUS|http://download.microsoft.com/download/4/e/8/4e8574db-3558-48a0-a162-52526e1a341d/Windows2000-KB840315-x86-RUS.EXE|updates/win2ksp4/windows2000-kb840315-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB840315-x86-%WINLANG%.exe /passive /n /norestart"
 
@@ -218,13 +223,14 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB840315-x86-%WINLANG%.
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-022.mspx>
 :: URL|DEU|http://download.microsoft.com/download/0/4/e/04e97fe2-6121-4e0a-922d-34b34223fd60/Windows2000-KB841873-x86-DEU.EXE|updates/win2ksp4/windows2000-kb841873-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/f/f/5/ff52e0cb-e04d-4dc0-9177-6272557cd6d4/Windows2000-KB841873-x86-ENU.EXE|updates/win2ksp4/windows2000-kb841873-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/9/0/6/90659de1-0747-422e-8161-2cf6310e0102/Windows2000-KB841873-x86-FRA.EXE|updates/win2ksp4/windows2000-kb841873-x86-fra.exe
 :: URL|RUS|http://download.microsoft.com/download/a/4/a/a4ac948f-2438-45ce-8aa6-12778cfc99cd/Windows2000-KB841873-x86-RUS.EXE|updates/win2ksp4/windows2000-kb841873-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB841873-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 870669
 :: "How to disable the ADODB.Stream object from Internet Explorer"
 :: (aka. "the zero-day exploit")
-:: <http://support.microsoft.com/?kbid=818043>
+:: <http://support.microsoft.com/?kbid=870669>
 :: URL|ALL|http://download.microsoft.com/download/e/5/5/e55bbf16-ae16-4d58-8f75-3233ec146255/Windows-KB870669-x86-ENU.exe|updates/common/windows-kb870669-x86.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\windows-kb870669-x86.exe /q /r:n"
 
