@@ -102,7 +102,13 @@ todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\%WINLANG%\MPSetupXP.EXE /Q /R:
 :: <http://www.microsoft.com/windowsxp/windowsmessenger/>
 todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /r:n"
 
-:: Microsoft DirectX 9.0b update
+:: DirectX Update MS04-016 (839643)
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-016.mspx>
+:: "Vulnerability in DirectPlay Could Allow Denial of Service"
+:: URL|ENU|http://download.microsoft.com/download/5/8/4/584e3b1c-37ed-4845-8c04-232858b468e9/DirectX90-KB839643-x86-ENU.EXE|updates/common/directx90-kb839643-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\directx90-kb839643-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Microsoft DirectX 9.0b
 :: (Requires .NET to be installed first for managed DX)
 todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
