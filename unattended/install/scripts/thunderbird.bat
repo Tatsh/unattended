@@ -36,4 +36,4 @@
 ::
 @echo off
 
-todo.pl "%Z%\packages\nozilla\thunderbird-100-%WINLANG%.exe -ms -ira"
+todo.pl "%Z%\packages\mozilla\thunderbird-100-%WINLANG%.exe -ms -ira"
