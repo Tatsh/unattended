@@ -20,6 +20,7 @@ etc/ld.so.cache
 etc/master
 
 etc/modprobe.conf
+etc/module-order.txt
 etc/nsswitch.conf
 etc/passwd
 etc/pcmcia
