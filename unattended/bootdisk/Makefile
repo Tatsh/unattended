@@ -45,7 +45,7 @@ images/%.img: .stamp-template drivers/%.dos
 # ISO CD-ROM targets
 iso: bootdisk.iso
 
-bootdisk.iso: images memdisk iso/isolinux/isolinux.cfg \
+bootdisk.iso: .stamp-images memdisk iso/isolinux/isolinux.cfg \
 			iso/isolinux/isoboot.msg
 	ln -f images/*.img memdisk iso/isolinux
 	@echo -n "Making $@..."
@@ -66,7 +66,7 @@ iso/isolinux/isolinux.cfg: isolinux.cfg
 	done
 	@echo "done"
 
-iso/isolinux/isoboot.msg: isoboot.msg
+iso/isolinux/isoboot.msg: isoboot.msg DRIVERS.txt
 	@echo -n "Making $@..."
 	@cat isoboot.msg >| $@
 	@echo >> $@
@@ -74,8 +74,12 @@ iso/isolinux/isoboot.msg: isoboot.msg
 	@echo "done"
 
 # TFTP boot (PXE) targets
-tftpboot: images/${univ_driver}.img memdisk tftpboot/pxelinux.cfg/default
+tftpboot: .stamp-tftpboot
+
+.stamp-tftpboot: images/${univ_driver}.img memdisk \
+			tftpboot/pxelinux.cfg/default
 	ln -f images/${univ_driver}.img memdisk tftpboot
+	@touch $@
 
 tftpboot/pxelinux.cfg/default: pxelinux.cfg
 	@echo -n "Making $@..."
@@ -87,7 +91,7 @@ tftpboot/pxelinux.cfg/default: pxelinux.cfg
 	@echo "done"
 
 clean:
-	@-rm -f .stamp-images .stamp-template
+	@-rm -f .stamp-images .stamp-template .stamp-tftpboot
 	-rm -f images/*.img
 	-rm -f bootdisk.iso
 	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.img,memdisk}
