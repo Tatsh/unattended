@@ -229,6 +229,32 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: Critical update MS04-032 (840987)
+:: "Security Update for Microsoft Windows"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-032.mspx>
+:: URL|ARA|http://download.microsoft.com/download/2/0/d/20dda415-ae6c-4bfd-86ea-702659495d11/Windows2000-KB840987-x86-ARA.EXE|updates/win2ksp4/windows2000-kb840987-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/c/6/c/c6c557a8-ec3f-4611-8faa-2a2b2780fb69/Windows2000-KB840987-x86-CSY.EXE|updates/win2ksp4/windows2000-kb840987-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/2/0/e/20e93b27-d1b9-4769-bbed-84c1e2ecd5ca/Windows2000-KB840987-x86-DAN.EXE|updates/win2ksp4/windows2000-kb840987-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/d/4/c/d4c13512-060e-478e-9402-ce9edc1adec3/Windows2000-KB840987-x86-DEU.EXE|updates/win2ksp4/windows2000-kb840987-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/0/b/c/0bc13fc7-5bf0-4b3a-b692-3391adfd6fba/Windows2000-KB840987-x86-ELL.EXE|updates/win2ksp4/windows2000-kb840987-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/8/0/f/80f7dee4-175d-436e-9997-dc5cbc2d89f2/Windows2000-KB840987-x86-ENU.EXE|updates/win2ksp4/windows2000-kb840987-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/9/d/69dfb3f1-ba7d-4ec5-afda-a41d230fcce1/Windows2000-KB840987-x86-ESN.EXE|updates/win2ksp4/windows2000-kb840987-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/b/6/9/b693ac65-a687-4497-98d6-d421407c3b6a/Windows2000-KB840987-x86-FIN.EXE|updates/win2ksp4/windows2000-kb840987-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/3/0/7/30788d69-f5e3-41b8-ab54-177b2b7d218c/Windows2000-KB840987-x86-FRA.EXE|updates/win2ksp4/windows2000-kb840987-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/9/b/39bda818-d5da-4055-b2b4-e139e91ec2e2/Windows2000-KB840987-x86-HEB.EXE|updates/win2ksp4/windows2000-kb840987-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/a/d/7ada7c8c-2b3f-4573-b02c-016dfb943cf2/Windows2000-KB840987-x86-HUN.EXE|updates/win2ksp4/windows2000-kb840987-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/e/1/4/e14279ba-5cc6-412f-8d9d-6965689b396d/Windows2000-KB840987-x86-ITA.EXE|updates/win2ksp4/windows2000-kb840987-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/8/9/1892045a-d95b-4982-aff1-410094993ef4/Windows2000-KB840987-x86-JPN.EXE|updates/win2ksp4/windows2000-kb840987-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/2/b/62b6bb74-1127-4f86-8a8a-9f5c90dbe1e7/Windows2000-KB840987-x86-KOR.EXE|updates/win2ksp4/windows2000-kb840987-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/1/7/9176c711-34db-4b30-988c-d4e86fab987b/Windows2000-KB840987-x86-NLD.EXE|updates/win2ksp4/windows2000-kb840987-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/1/d/c/1dccb04a-d6cd-45be-936d-c79bea5fe88a/Windows2000-KB840987-x86-PLK.EXE|updates/win2ksp4/windows2000-kb840987-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/3/a/0/3a0ee238-b352-4b99-bf13-43d7d120bf24/Windows2000-KB840987-x86-PTG.EXE|updates/win2ksp4/windows2000-kb840987-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/e/c/f/ecf0aac5-a8f4-4b51-bad9-ee429ad1fdec/Windows2000-KB840987-x86-PTB.EXE|updates/win2ksp4/windows2000-kb840987-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/b/c/8/bc888e9c-b159-41b5-975d-a7f793ae2d65/Windows2000-KB840987-x86-RUS.EXE|updates/win2ksp4/windows2000-kb840987-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/2/c/72cbfc0f-f0a8-4945-b1c5-ddd973ff33b4/Windows2000-KB840987-x86-SVE.EXE|updates/win2ksp4/windows2000-kb840987-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/e/e/7ee07672-4347-4cc9-a4d7-26c0287d72e4/Windows2000-KB840987-x86-TRK.EXE|updates/win2ksp4/windows2000-kb840987-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb840987-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-031 (841533)
 :: "Vulnerability in NetDDE Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-031.mspx>
