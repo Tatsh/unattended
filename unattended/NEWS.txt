@@ -1,4 +1,12 @@
-*** Changes in version NEXT (not released yet)
+*** Changes in version 2.4 (2003-Feb-10)
+
+Recognize Windows XP Professional OEM (winxpoem) as a separate
+operating system when offering choice of OS to install.  Document
+Microsoft's lack of slipstreaming support for this OS.  Thanks to
+Scott Card.
+
+Add support for AMD PCNet cards, so that we can work with VMware
+(untested).
 
 Sync with SYSLINUX 2.01.
 
@@ -38,10 +46,11 @@ Thanks to Scott Card.
 
 Fix autolog.pl, again.  Run it with --help for details.
 
-Implement and document .sleep directive for todo.pl.  Use it in
-mozilla.bat, because the Mozilla installer exits before launching
-itself for the first time, and the new windows occasionally screw
-stuff up.  Sigh.
+Implement and document .sleep directive for todo.pl, because I thought
+I needed it for Mozilla.
+
+Update documentation and script for installing Mozilla to include
+"-ira" flag.  Thanks to Marcus Greil.
 
 Add support for configuring NTP servers at installation time.
 
