@@ -1,4 +1,8 @@
-** Changes in version 4.4 (2004-???-???)
+** Changes in version 4.4 (2004-Aug-??)
+
+(Linux) Fix serious bug in find-modules-pci script, which prevented us
+from loading the correct mass storage driver on certain systems
+(especially Compaqs).
 
 (Linux) Try mount.cifs if smbmount fails, since the latter does not
 support SMB signing, and Windows Server 2003 requires it by default.
@@ -6,8 +10,8 @@ support SMB signing, and Windows Server 2003 requires it by default.
 (Linux) Implement and use new script "find-boot-device" to find the
 Linux device corresponding to the boot device (BIOS disk 80h).
 
-(Linux) Upgrade to klibc 0.146, nano 1.2.4, pcmcia-cs 3.2.8, Samba
-3.0.5, DBI 1.43, and DBD::mysql 2.9004.
+(Linux) Upgrade to BusyBox 1.00-rc2, klibc 0.152, nano 1.2.4,
+pcmcia-cs 3.2.8, Samba 3.0.5, DBI 1.43, and DBD::mysql 2.9004.
 
 (Linux) Ensure dmfe driver loads before tulip, since the latter does
 not work right on some hardware.
@@ -23,9 +27,13 @@ New script (opera.bat) from Niels Richthof.
 
 Add initial support for Spanish (ESN).  Thanks to David Cruz Langreo.
 
-Add July hotfixes (MS04-018 through MS04-024) with international
-downloads.  Thanks to the usual suspects (Niels Richthof, Wim
-Vandersmissen, Eugene Kotlyarov).
+Fill in download URLs for all languages.  Thanks, Niels!
+
+Numerous minor bug fixes.
+
+Add July hotfixes (MS04-018 through MS04-025).  International download
+URLs thanks to the usual suspects (Niels Richthof, Wim Vandersmissen,
+Eugene Kotlyarov).  Upgrade to DirectX 9.0c.
 
 
 ** Changes in version 4.3 (2004-Jun-17)
