@@ -36,7 +36,6 @@ todo.pl "%Z%\updates\officexp\OfficeXP-KB822036-Client-%WINLANG%.exe /q /c:\"msi
 :: Outlook 2002 Update: January 22, 2003
 :: <http://support.microsoft.com/?kbid=812262>
 :: <http://office.microsoft.com/downloads/2002/olk1006.aspx>
-:: Run "Olk1006.exe /c /t:<path>" to extract files to <path>.
 todo.pl "%Z%\updates\officexp\olk1006.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst\logs\olk1006.txt /p OUTLOOKop.msp REBOOT=ReallySuppress\""
 
 :: Hm, tying this to SP4 is probably wrong.  FIXME
@@ -52,14 +51,12 @@ todo.pl "%Z%\updates\officexp\oxpauiu.exe /r:n /q /c:\"msiexec /qb /l* c:\netins
 :: See <http://support.microsoft.com/?kbid=325671>
 :: Download from:
 :: <http://download.microsoft.com/download/officexpstandard/sp/oxpsp2/w98nt42kmexp/en-us/oxpsp2.exe>
-:: Then run "oxpsp2 /c /t:<path>" to extract files to <path>.
 todo.pl "%Z%\updates\officexp\oxpsp2.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst\logs\oxpsp2.txt /p MAINSP2.msp REBOOT=ReallySuppress\""
 
 :: Service Pack 1
 :: See <http://support.microsoft.com/?kbid=307843>
 :: Download from:
 :: <http://download.microsoft.com/download/officexpstandard/sp/oxpsp1/w98nt42kmexp/en-us/oxpsp1.exe>
-:: Then run "oxpsp1 /c /t:<path>" to extract files to <path>.
 todo.pl "%Z%\updates\officexp\oxpsp1.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst\logs\oxpsp1.txt /p MAINSP1.msp REBOOT=ReallySuppress\""
 
 todo.pl "%Z%\packages\officexp\setup.exe /qb /l* c:\netinst\logs\officexp.txt ADDLOCAL=ALL NOUSERNAME=1 PIDKEY=%PIDKEY%"
