@@ -431,7 +431,7 @@ my @cmd_lines =
       ? ("net use z: $ENV{'INSTALL'} /persistent:yes",
          "call z:\\scripts\\perl.bat",
          "PATH=z:\\bin;%PATH%",
-         "todo.pl $top \"autolog.pl --disable\" .reboot",
+         "todo.pl $top autolog.pl .reboot",
          "\ntodo.pl --go")
       : ())
      );
