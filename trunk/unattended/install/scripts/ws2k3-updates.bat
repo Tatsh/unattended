@@ -10,6 +10,7 @@
 
 :: "Update for Windows Media Player 9 Series"
 :: URL|ENU|http://download.microsoft.com/download/7/0/D/70D0BAC6-A68B-4CB6-94AB-E0DF8C0EFCAF/WindowsMedia9-KB837272-ENU.exe|updates/mediaplayer9/windowsmedia9-kb837272-enu.exe
+:: URL|RUS|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/WindowsMedia9-KB837272-RUS_b6fe29ce412032622728fa1eb4cc7a0.exe|updates/mediaplayer9/windowsmedia9-kb837272-rus.exe
 :: <http://support.microsoft.com/?id=837272>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb837272-%WINLANG%.exe /passive /n /norestart"
 
@@ -59,6 +60,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLAN
 :: "Vulnerability in Help and Support Center Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-015.mspx>
 :: URL|ENU|http://download.microsoft.com/download/a/8/c/a8c904e2-7955-47e2-a2ae-e7f6490eee95/WindowsServer2003-KB840374-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb840374-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/c/9/d/c9d92c5a-34dd-4ebc-a40e-1e13d9169567/WindowsServer2003-KB840374-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb840374-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb840374-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-013 (837009)
