@@ -8,7 +8,7 @@ $page['next']  = 'documentation.php';
 $page['last']  = 'links.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: index.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: index.php,v 1.2 2005-01-17 18:06:19 nrichthof Exp $';
 $sections[]    = array ('Introduction', 'introduction');
 $sections[]    = array ('Why should I use it?', 'motivation');
 $sections[]    = array ('How to start', 'howtostart');
@@ -43,10 +43,10 @@ $content       = <<<EOT
       <p>Microsoft has their own approach to this problem, called <a
         href="http://www.microsoft.com/windows2000/en/datacenter/help/sag_RIS_Default_topnode.htm"
         rel="external">Remote Installation Services</a> (RIS).  You may be wondering  why
-        you should use should use Unattended instead of RIS.</p>
+        you should use Unattended instead of RIS.</p>
 
       <p>The main reason is that Unattended is open source.  Using RIS,  just try to  add
-        support for a new network card to the boot disk, or  try  tocreate  a  customized
+        support for a new network card to the boot disk, or  try to create  a  customized
         partitioning scheme,  or try to fix a bug.  With an open source system,  you have
         everything you need to fix any problem or add any feature you want,   and you can
         contribute your changes back to the project so that others may benefit.</p>
