@@ -246,7 +246,13 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 
 :: Critical Updates
 
-:: Critical update 835732 (MS04-011)
+:: Critical update MS04-012 (828741)
+:: "Cumulative Update for Microsoft RPC/DCOM"
+:: (Worst Windows security hole, ever.  Again.  And again.)
+:: URL|ENU|http://download.microsoft.com/download/8/c/9/8c9f999d-c55b-4e09-8cc0-b75bcf7368cc/WindowsXP-KB828741-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb828741-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update MS04-011 (835732)
 :: "Security Update for Microsoft Windows"  (no, really?)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-011.asp>
 :: URL|ENU|http://download.microsoft.com/download/6/1/5/615a50e9-a508-4d67-b53c-3a43455761bf/WindowsXP-KB835732-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb835732-x86-enu.exe
