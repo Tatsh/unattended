@@ -103,6 +103,27 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLAN
 
 :: Critical Updates
 
+:: Critical update MS04-032 (840987)
+:: "Security Update for Microsoft Windows"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-032.mspx>
+:: URL|CSY|http://download.microsoft.com/download/4/a/5/4a5eb4e2-62e7-4439-bc89-5e2869b4d9df/WindowsServer2003-KB840987-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/2/1/9/2197e589-9e04-4a7d-96c9-e69d93562534/WindowsServer2003-KB840987-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/5/1/8/518b9eae-79f1-49a2-b196-4759b5e7c600/WindowsServer2003-KB840987-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/8/5/485ea5c7-3d0b-4f46-aa97-216fca504d98/WindowsServer2003-KB840987-x86-esn.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/7/c/3/7c3c7ae4-cf0d-4915-92a9-1aca0643c908/WindowsServer2003-KB840987-x86-fra.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/a/7/6/a76dbcb3-4cfc-4231-915c-e308a77bed27/WindowsServer2003-KB840987-x86-hun.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/2/3/2/232bdac5-773f-4255-a409-171206fe64b6/WindowsServer2003-KB840987-x86-ita.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/a/e/b/aebe1a0f-3946-439b-837f-a95e4d9ab16b/WindowsServer2003-KB840987-x86-jpn.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/b/1/5b19a27a-f041-44e7-8471-23faf434563a/WindowsServer2003-KB840987-x86-kor.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/3/d/4/3d4da1c1-23fc-49c8-a366-268d4f613175/WindowsServer2003-KB840987-x86-nld.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/2/0/c/20c765c9-c8a7-433b-bfdd-ab5f2337f7b1/WindowsServer2003-KB840987-x86-plk.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/b/5/e/b5ec6439-ccdf-4f1d-86dc-7c163be58649/WindowsServer2003-KB840987-x86-ptg.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/9/7/7/9774d1a8-f3f3-44c3-8dbe-ca68b0a2f3a4/WindowsServer2003-KB840987-x86-ptb.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/0/1/7/01736def-b66c-40ae-a845-065d3ea4d7d5/WindowsServer2003-KB840987-x86-rus.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/d/1/2/d1233d77-45e7-4ca7-88b8-079834b5a197/WindowsServer2003-KB840987-x86-sve.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/1/b/71b367ff-cfd7-46de-bf21-edfd6d0a8a49/WindowsServer2003-KB840987-x86-trk.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb840987-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-031 (841533)
 :: "Vulnerability in NetDDE Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-031.mspx>

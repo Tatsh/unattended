@@ -384,6 +384,32 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /
 
 :: Critical Updates
 
+:: Critical update MS04-032 (840987)
+:: "Security Update for Microsoft Windows"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-032.mspx>
+:: URL|ARA|http://download.microsoft.com/download/e/0/3/e03e4678-636c-45e6-a023-e2503888ca9b/WindowsXP-KB840987-x86-ara.exe|updates/winxpsp1/windowsxp-kb840987-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/1/3/213eb52e-064b-4e65-a730-f71a94e0f812/WindowsXP-KB840987-x86-csy.exe|updates/winxpsp1/windowsxp-kb840987-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/6/9/a/69ab7717-81ec-4b73-a31f-e0d62d1ce34f/WindowsXP-KB840987-x86-dan.exe|updates/winxpsp1/windowsxp-kb840987-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/4/d/6/4d60a0bf-024c-48ba-9c92-5a280c8f6a11/WindowsXP-KB840987-x86-deu.exe|updates/winxpsp1/windowsxp-kb840987-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/d/e/4/de4ba2c3-0ed6-4dec-863d-55d56ad7e14c/WindowsXP-KB840987-x86-ell.exe|updates/winxpsp1/windowsxp-kb840987-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/8/6/9/8690e191-bb64-4cdb-8466-a58306442a71/WindowsXP-KB840987-x86-enu.exe|updates/winxpsp1/windowsxp-kb840987-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/0/7/5/07534aff-5f6a-4337-9e60-b3ea5587f089/WindowsXP-KB840987-x86-esn.exe|updates/winxpsp1/windowsxp-kb840987-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/e/e/a/eea52e72-9b3e-4313-96f1-bf32ad03538c/WindowsXP-KB840987-x86-fin.exe|updates/winxpsp1/windowsxp-kb840987-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/6/2/6/6267bf3e-e0af-4249-bd28-8df6c086131d/WindowsXP-KB840987-x86-fra.exe|updates/winxpsp1/windowsxp-kb840987-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/e/7/8e79a9e4-7859-4bff-88cd-8313ebe95104/WindowsXP-KB840987-x86-heb.exe|updates/winxpsp1/windowsxp-kb840987-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/b/2/c/b2c86ba9-f0c6-4fc6-bbf6-c0b6170729f0/WindowsXP-KB840987-x86-hun.exe|updates/winxpsp1/windowsxp-kb840987-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/6/4/0641949d-bd65-4669-9160-cf9713a67f55/WindowsXP-KB840987-x86-ita.exe|updates/winxpsp1/windowsxp-kb840987-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/c/7/2/c72f35f9-2ec8-4f44-bdb8-a463bcb9e613/WindowsXP-KB840987-x86-jpn.exe|updates/winxpsp1/windowsxp-kb840987-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/9/a/99a20431-6c0c-4a99-98e4-ac83fc50c0df/WindowsXP-KB840987-x86-kor.exe|updates/winxpsp1/windowsxp-kb840987-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/6/e/c6ea92ff-95d4-454a-a5ca-440617265880/WindowsXP-KB840987-x86-nld.exe|updates/winxpsp1/windowsxp-kb840987-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/b/1/0/b10fa022-f1d4-4c21-9bf4-38f389b44cb0/WindowsXP-KB840987-x86-plk.exe|updates/winxpsp1/windowsxp-kb840987-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/b/2/5/b25014a4-45cd-492d-bff6-a444e6418787/WindowsXP-KB840987-x86-ptg.exe|updates/winxpsp1/windowsxp-kb840987-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/d/e/6/de6f847e-8bfc-402d-b23f-b92671b821f2/WindowsXP-KB840987-x86-ptb.exe|updates/winxpsp1/windowsxp-kb840987-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/b/d/2/bd253ef1-a7a4-4387-8874-e118982fdaf0/WindowsXP-KB840987-x86-rus.exe|updates/winxpsp1/windowsxp-kb840987-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/6/8/76865160-32c0-4648-917a-cd796319e5c1/WindowsXP-KB840987-x86-sve.exe|updates/winxpsp1/windowsxp-kb840987-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/b/4/3/b4373989-3629-4caf-a21a-bb37f601bea1/WindowsXP-KB840987-x86-trk.exe|updates/winxpsp1/windowsxp-kb840987-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb840987-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-031 (841533)
 :: "Vulnerability in NetDDE Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-031.mspx>
@@ -655,20 +681,6 @@ todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
 :: URL|NOR|http://download.microsoft.com/download/d/5/d/d5d7e78c-b28e-461c-8397-2ff0c727e3f0/js56nno.exe|updates/common/js56nnor.exe
 :: URL|RUS|http://download.microsoft.com/download/c/6/c/c6c6a8e5-de5d-46b5-9d03-2523ebaaecb2/js56nru.exe|updates/common/js56nrus.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
-
-:: Critical update 824141 (MS03-045)
-:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.mspx>
-:: URL|DAN|http://download.microsoft.com/download/f/1/4/f1417cae-69b3-44a4-9c5a-e436363d4064/WindowsXP-KB824141-x86-DAN.exe|updates/winxpsp1/windowsxp-kb824141-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/8/4/2/8427ad0b-d2fd-48b0-8517-5237df90a2e8/WindowsXP-KB824141-x86-DEU.exe|updates/winxpsp1/windowsxp-kb824141-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/9/8/3/9835c5c9-5cab-4181-a821-2c9b8f6ea612/WindowsXP-KB824141-x86-ENU.exe|updates/winxpsp1/windowsxp-kb824141-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/e/1/6/e160c917-b56c-4b60-8783-6dd456182f57/WindowsXP-KB824141-x86-ESN.exe|updates/winxpsp1/windowsxp-kb824141-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/9/5/5/955ea0a2-dd9b-46a6-9a54-fd4fc1f69e5f/WindowsXP-KB824141-x86-FRA.exe|updates/winxpsp1/windowsxp-kb824141-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/5/5/b/55b0ec8d-17a1-4ac5-95e8-271ba6d4c73b/WindowsXP-KB824141-x86-ITA.exe|updates/winxpsp1/windowsxp-kb824141-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/2/f/d/2fd43ab5-7d1b-497a-9f93-434c1e80ecde/WindowsXP-KB824141-x86-NLD.exe|updates/winxpsp1/windowsxp-kb824141-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/4/e/d/4ede9a95-8173-42a0-83c9-2b597e64eb4b/WindowsXP-KB824141-x86-NOR.exe|updates/winxpsp1/windowsxp-kb824141-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/3/1/2/31290345-fb84-487c-87f4-f306afad87a9/WindowsXP-KB824141-x86-RUS.exe|updates/winxpsp1/windowsxp-kb824141-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824141-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 825119 (MS03-044)
 :: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise"
