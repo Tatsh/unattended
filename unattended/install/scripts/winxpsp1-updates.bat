@@ -6,6 +6,11 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 824105
+:: "Flaw in NetBIOS Could Lead to Information Disclosure"
+:: <http://support.microsoft.com/?kbid=824105>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB824105-x86-ENU.exe" .reboot
+
 :: Critical update 823718
 :: "Security Update for Microsoft Data Access Components"
 :: (This will be superseded if MDAC 2.8 is installed later, but no
