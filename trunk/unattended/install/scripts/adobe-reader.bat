@@ -5,4 +5,4 @@
 :: URL|FRA|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/fra/AdbeRdr60_fra_full.exe|packages/adobereader/adberdr60_fra_full.exe
 
 :: Download from <http://www.adobe.com/products/acrobat/alternate.html>
-todo.pl "%Z%\packages\AdobeReader\AdbeRdr60_%WINLANG%_full.exe -p\"-s /v\\\"/qb /l* c:\netinst\logs\adobe-reader.txt\\\"\""
+todo.pl "%Z%\packages\AdobeReader\AdbeRdr60_%WINLANG%_full.exe -p\"-s /v\\\"/qb /l* %SystemDrive%\netinst\logs\adobe-reader.txt\\\"\""
