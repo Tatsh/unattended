@@ -34,7 +34,8 @@ my $winlogon_key =
 my %new_values = ('DefaultUserName' => $user,
                   'DefaultPassword' => $pass,
                   'AutoAdminLogon' => 1,
-                  'DefaultDomain' => $opts{'domain'};
+                  'DefaultDomain' => $opts{'domain'}
+                  );
 
 foreach my $key (sort keys %new_values) {
     if (exists $opts{'enable'}) {
