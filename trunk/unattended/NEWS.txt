@@ -1,4 +1,4 @@
-** Changes in version 4.6 (2004-Jan-01)
+** Changes in version 4.6 (2004-Jan-02)
 
 (Linux) Add g(un)zip to boot disk since it is needed for non-English
 keyboard support.
@@ -19,13 +19,13 @@ Add Norwegian support to bootini.pl; thanks to Tor Haakon Gjerde.
 
 Add Norwegian download URLs everywhere; thanks to Espen Stefansen.
 
-Make Adobe Reader an optional package, and update it to version 7.0,
+Make Adobe Reader an optional package.  Update it to version 7.0,
 language permitting.  Thanks to Godfrey Livingstone.
 
 (DOS) Fix warnings when building under recent Cygwin (ekot).
 
 (DOS) Upgrade to FreeDOS Beta 9 Service Release #1.  Do not load any
-UMB provider by default because usually it hurts more than it helps.
+UMB provider by default, because usually it hurts more than it helps.
 
 (DOS) Upgrade b44.dos and e1000.dos to latest versions.
 
