@@ -11,11 +11,13 @@ cvs := $$USER@cvs.unattended.sourceforge.net:/cvsroot/unattended
 
 dir = unattended-${ver}
 
-release:
+checkver:
 	@if [ "${ver}" == "" ] ; then					\
 		echo "You forgot to set the 'ver' variable" ;		\
 		exit 1 ;						\
 	fi
+
+release: checkver
 	tag=`echo REL_${ver} | sed s/\\\\./_/g` &&	                \
 	cvs tag $$tag .
 	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
@@ -34,4 +36,12 @@ release:
 	cd / &&								\
 	rm -rf $$temp
 
-.PHONY: default release
+test: checkver
+	cd bootdisk && make && make tidy
+	mkdir -p /var/tmp/${dir} &&				\
+	rsync -aHv --exclude CVS/ --exclude '*~' --exclude '.*'	\
+	    . /var/tmp/${dir}/. &&				\
+	cd /var/tmp &&						\
+	tar -cvzf ${dir}.tar.gz ${dir}
+
+.PHONY: default checkver release test
