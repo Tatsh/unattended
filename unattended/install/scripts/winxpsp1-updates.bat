@@ -112,10 +112,10 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 
 :: IE Critical Updates
 
-:: Critical update 828750
-:: "October, 2003, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=828750>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q828750.exe /q /r:n"
+:: Critical update 824145
+:: "November, 2003, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=824145>
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
 
 :: Critical update 330994
 :: "April 2003, Cumulative Patch for Outlook Express"
