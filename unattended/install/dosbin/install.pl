@@ -1336,6 +1336,22 @@ $u->sort_index ('_meta') = 999999;
 
 ## Now the meat of the script.
 
+# Compare Z:\version.txt file to VERSION environment variable.
+my $version_file = 'Z:\\version.txt';
+if (! -f dos_to_host ($version_file)) {
+    print "Warning: $version_file not found (old install share?)\n";
+}
+elsif (!defined $ENV{'VERSION'}) {
+    print "Warning: VERSION variable is empty (old boot disk?)\n"
+}
+else {
+    my ($share_ver) = read_file ($version_file);
+    chomp $share_ver;
+    my $boot_ver = $ENV{'VERSION'};
+    $share_ver eq $boot_ver
+        or print "Warning: Boot disk version ($boot_ver) does not match install share version ($share_ver)\n";
+}
+
 # Read master unattend.txt.
 $u->read (dos_to_host ('z:\\lib\\unattend.txt'));
 
