@@ -10,6 +10,7 @@ bin/busybox
 bin/find-modules-pci
 bin/gzip
 bin/loadkeys
+bin/lsmod
 bin/mkdir
 bin/mount
 bin/sh
