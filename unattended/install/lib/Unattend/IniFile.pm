@@ -274,7 +274,7 @@ sub read ($$;$) {
         $line =~ s/\r//;
         chomp $line;
         
-        if ($line =~ /^\[\s*(.+?)\s*\]\z/) {
+        if ($line =~ /^\s*\[\s*(.+?)\s*\]\s*\z/) {
             # New section header
             $section = $1;
             $section =~ $sect_re
