@@ -72,35 +72,52 @@ sub canonicalize_user ($$) {
 # full human-readable name.
 sub full_os_name ($) {
     my ($arg) = @_;
+    my ($base, $suffix) =
+        $arg =~ /^(win2k|winxp)(?:sp\d+|oem)?\z/;
     my $ret;
-    if ($arg =~ /^win2k(?:sp(\d+))?$/) {
-        $ret = "Windows 2000 Professional";
+
+    defined $base
+        or return undef;
+
+    if ($base eq 'win2k') {
+        $ret = 'Windows 2000 Professional';
     }
-    elsif ($arg =~ /^winxp(?:sp(\d+))?$/) {
-        $ret = "Windows XP Professional";
+    elsif ($base eq 'winxp') {
+        $ret = 'Windows XP Professional';
     }
-    elsif ($arg eq 'winxpoem') {
-        $ret = "Windows XP Professional OEM";
+    else {
+        die 'Internal error';
     }
-    defined $1
-        and $ret .= " Service Pack $1";
+
+    if (!defined $suffix) {
+        # do nothing
+    }
+    elsif ($suffix =~ /^sp(\d+)\z/) {
+        $ret .= " Service Pack $1";
+    }
+    elsif ($suffix =~ /^oem\z/) {
+        $ret .= ' OEM';
+    }
+
     return $ret;
 }
 
 # Run a command and return the output.  We need this because pipes and
 # backticks do not work under DJGPP Perl.
-sub run_command ($;@) {
-    my ($cmd, $expected_status) = @_;
+sub run_command ($@) {
+    my ($cmd, @expected_statuses) = @_;
 
-    defined $expected_status
-        or $expected_status = 0;
+    defined $expected_statuses[0]
+        or @expected_statuses = (0);
+
+    my %status_hash = map { $_ => undef } @expected_statuses;
 
     my $tmpfile = 'A:\\tmp.txt';
 
     my $ret = system "$cmd > $tmpfile";
     my $status = $ret >> 8;
-    $status == $expected_status
-        or die "$cmd > $tmpfile failed, status $status";
+    (exists $status_hash{$status})
+        or die "$cmd > $tmpfile failed, unexpected status $status";
 
     open TMP, $tmpfile
         or die "Unable to open $tmpfile for reading: $^E";
@@ -181,7 +198,7 @@ sub ask_os () {
     print "Please choose the OS to install:\n";
     return menu_choice (map { full_os_name ($_) . " ($os_dir\\$_)"
                                   => $_ }
-                        @oses);
+                        sort @oses);
 }
 
 sub simple_q ($) {
@@ -214,8 +231,10 @@ set_value ('_meta', 'format_cmd',
 
 set_value ('_meta', 'ipaddr',
            sub {
-               # ipconfig.exe always exits with status 13, apparently.
-               foreach my $line (run_command ('ipconfig A:\\NET\\', 13)) {
+               # ipconfig.exe exits with many statuses, mostly between
+               # 11 and 15.
+               foreach my $line (run_command ('ipconfig A:\\NET\\',
+                                              (11 .. 15))) {
                    $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
                        and return $1;
                }
