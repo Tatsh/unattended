@@ -1,6 +1,6 @@
 ; AutoIt script to install Shiva VPN client
 
-Run, z:\\packages\\shiva-7.01p4-w2k\\setup.exe
+Run, z:\\packages\\shiva-7.01p5-w2k\\setup.exe
 
 WinWait, Welcome
 Send, !n
