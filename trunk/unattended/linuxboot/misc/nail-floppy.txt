@@ -1,0 +1,55 @@
+# List of files which must not be moved to the network share
+
+linuxrc
+bin/ash
+bin/bash
+bin/busybox
+bin/find-modules-pci
+bin/mkdir
+bin/sh
+
+etc/extra.pcimap
+etc/ld.so.cache
+etc/master
+# These two are debatable; they are only needed for dosemu I think
+etc/nsswitch.conf
+etc/passwd
+etc/pcmcia
+etc/udhcpc-script
+
+lib/ld-linux.so
+lib/libc.so
+lib/libcrypt.so # Samba
+lib/libdl.so
+lib/libnsl.so   # Samba again
+lib/libnss_dns.so
+lib/libnss_files.so
+lib/libresolv.so
+
+lib/modules/2.6.3/modules.alias
+lib/modules/2.6.3/modules.ccwmap
+lib/modules/2.6.3/modules.dep
+lib/modules/2.6.3/modules.ieee1394map
+lib/modules/2.6.3/modules.inputmap
+lib/modules/2.6.3/modules.isapnpmap
+lib/modules/2.6.3/modules.pcimap
+lib/modules/2.6.3/modules.symbols
+lib/modules/2.6.3/modules.usbmap
+
+lib/modules/2.6.3/kernel/drivers/net
+
+sbin/cardmgr
+sbin/insmod
+sbin/modprobe
+sbin/lspci
+
+# Samba junk
+usr/bin/smbmnt
+usr/bin/smbmount
+usr/lib/smb.conf
+usr/lib/charset
+usr/var/locks
+
+usr/share/pci.ids
+
+var/run
