@@ -61,37 +61,6 @@ sub dos_to_host ($) {
 # filenames.
 Unattend::WinMedia->set_dos_to_host (\&dos_to_host);
 
-# Deprecated helper functions.  Use $u object directly instead.
-sub get_value ($$) {
-    my ($section, $key) = @_;
-    carp 'Warning: get_value is deprecated';
-    return $u->{$section}->{$key};
-}
-
-sub get_value_noforce ($$) {
-    my ($section, $key) = @_;
-    carp 'Warning: get_value_noforce is deprecated';
-    return $u->noforce ($section, $key);
-}
-
-sub set_value ($$$) {
-    my ($section, $key, $value) = @_;
-    carp 'Warning: set_value is deprecated';
-    $u->{$section}->{$key} = $value;
-}
-
-sub set_comments ($$$) {
-    my ($section, $key, $comments) = @_;
-    carp 'Warning: set_comments is deprecated';
-    $u->comments ($section, $key) = $comments;
-}
-
-sub push_value ($$$) {
-    my ($section, $key, $value) = @_;
-    carp 'Warning: push_value is deprecated';
-    $u->push_value ($section, $key, $value);
-}
-
 # Ensure prompts are printed promptly.
 $| = 1;
 
@@ -562,6 +531,13 @@ sub convert_fdisk_parted ($) {
         }
 
         my ($start, $end) = find_free_space ($size);
+
+        # Sanity-check size of FAT16 partitions.
+        defined $fat16 && $end - $start > 2047
+            and die "Unable to execute fdisk $cmd\n"
+            . "because it would create a FAT16 partition > 2047M\n"
+            . "I suggest using /pri:XXX instead of /prio:XXX\n"
+            . 'Bailing out';
 
         $end >= $infinity
             and $end = '-0';
