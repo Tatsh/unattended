@@ -86,8 +86,14 @@ sub full_os_name ($) {
 # Read the current partition table and return it as a human-readable
 # string.
 sub read_partition_table () {
-    open FDISK, 'fdisk /info /tech|'
-        or die "Unable to run fdisk: $^E";
+    my $pid = open FDISK, '-|'
+        or die "Unable to fork: $^E";
+
+    if ($pid == 0 ) {
+        # Child
+        exec 'fdisk', '/info', '/tech';
+        die "Unable to exec fdisk: $^E";
+    }
 
     my $ret = join '', <FDISK>;
 
