@@ -26,7 +26,10 @@ case $arg in
         dhcp_out=/var/run/dhcp.out
         echo "interface=$interface" >| $dhcp_out.tmp
         echo "ip=$ip" >> $dhcp_out.tmp
+        [ -n "$unattend" ] \
+            && echo "unattend='$unattend'" >> $dhcp_out.tmp
         mv $dhcp_out.tmp $dhcp_out
+        # set > /var/run/dhcp-set.out   # for debugging
         ;;
     renew)
         echo "$0: ERROR: RENEW NOT IMPLEMENTED" >&2
