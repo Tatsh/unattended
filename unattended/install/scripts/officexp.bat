@@ -27,7 +27,6 @@ todo.pl .reboot
 :: URL|PLK|http://download.microsoft.com/download/e/a/7/ea7412af-1368-4c76-8415-fa490a93a7b6/officexp-kb837253-client-plk.exe|updates/officexp/officexp-kb837253-client-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/1/1/3/1139edd8-457a-4812-a4db-48050b7eb09f/officexp-kb837253-client-ptb.exe|updates/officexp/officexp-kb837253-client-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/1/6/4/1643808d-b751-4f4c-af5c-5035e8165675/officexp-kb837253-client-ptg.exe|updates/officexp/officexp-kb837253-client-ptg.exe
-:: URL|ROM|http://download.microsoft.com/download/8/a/0/8a0f79fb-b527-4bbf-8638-baaa04d2be4e/officexp-kb837253-client-rom.exe|updates/officexp/officexp-kb837253-client-rom.exe
 :: URL|RUS|http://download.microsoft.com/download/d/0/2/d02c53ab-b033-46a9-8175-d5f9f5cd4438/officexp-kb837253-client-rus.exe|updates/officexp/officexp-kb837253-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/4/c/9/4c9727a6-aca7-46a1-abf7-13a8d6902f2d/officexp-kb837253-client-sve.exe|updates/officexp/officexp-kb837253-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/5/4/f/54fc725a-c04e-4394-a5c8-22968e5ab8ae/officexp-kb837253-client-trk.exe|updates/officexp/officexp-kb837253-client-trk.exe
@@ -88,7 +87,6 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\WindowsXP-KB885884-x86-%WINLANG%.ex
 :: URL|PLK|http://download.microsoft.com/download/d/e/b/debbc667-8e73-49a7-b909-4f3958fb7833/officexp-kb832332-v2-client-plk.exe|updates/officexp/officexp-kb832332-v2-client-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/a/b/4/ab4b5ce3-d8a0-41ce-9947-3a27050d57fb/officexp-kb832332-v2-client-ptb.exe|updates/officexp/officexp-kb832332-v2-client-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/3/0/2/30271189-e9d6-4f7c-9af3-a517d232de25/officexp-kb832332-v2-client-ptg.exe|updates/officexp/officexp-kb832332-v2-client-ptg.exe
-:: URL|ROM|http://download.microsoft.com/download/b/d/3/bd376b51-9596-4e3b-b929-ae3cabc904ef/officexp-kb832332-v2-client-rom.exe|updates/officexp/officexp-kb832332-v2-client-rom.exe
 :: URL|RUS|http://download.microsoft.com/download/6/2/d/62dde967-e8fc-4b6e-8811-afaa0f5ce9ba/officexp-kb832332-v2-client-rus.exe|updates/officexp/officexp-kb832332-v2-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/1/a/1/1a1aa76c-27ad-4e35-9138-961c567d7191/officexp-kb832332-v2-client-sve.exe|updates/officexp/officexp-kb832332-v2-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/6/d/0/6d0824cd-3cce-45ec-9610-9b5e83d86687/officexp-kb832332-v2-client-trk.exe|updates/officexp/officexp-kb832332-v2-client-trk.exe
@@ -116,7 +114,6 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb832332-v2-client-%WINLAN
 :: URL|PLK|http://download.microsoft.com/download/d/2/6/d26c1e96-fc59-46ce-afea-eaaf98920fa5/officexp-kb873379-client-plk.exe|updates/officexp/officexp-kb873379-client-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/e/d/a/edafaea0-dd52-415f-a887-336aedc5e987/officexp-kb873379-client-ptb.exe|updates/officexp/officexp-kb873379-client-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/2/1/2/212d5342-b5c9-40f1-a9c0-de2a69b3f013/officexp-kb873379-client-ptg.exe|updates/officexp/officexp-kb873379-client-ptg.exe
-:: URL|ROM|http://download.microsoft.com/download/d/b/8/db8fd0d5-2f64-4693-8ccd-09b91e347ab9/officexp-kb873379-client-rom.exe|updates/officexp/officexp-kb873379-client-rom.exe
 :: URL|RUS|http://download.microsoft.com/download/5/1/b/51b17201-0a1e-4768-a656-2eeaef27c06b/officexp-kb873379-client-rus.exe|updates/officexp/officexp-kb873379-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/b/4/c/b4cee13a-022f-4d37-b14d-8156b2403b86/officexp-kb873379-client-sve.exe|updates/officexp/officexp-kb873379-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/3/8/e/38e414d1-e733-4681-8dd9-2edc458b1666/officexp-kb873379-client-trk.exe|updates/officexp/officexp-kb873379-client-trk.exe
@@ -144,7 +141,6 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb873379-client-%WINLANG%.
 :: URL|PLK|http://download.microsoft.com/download/f/8/3/f8362686-338a-4a73-aa05-e31bdd0fc40a/officexp-kb833858-client-plk.exe|updates/officexp/officexp-kb833858-client-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/8/a/e/8aef9ba6-8865-4de7-b62c-ed811dd73eb3/officexp-kb833858-client-ptb.exe|updates/officexp/officexp-kb833858-client-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/7/b/9/7b9f9401-d69d-468e-bc4e-c8b84a1d0355/officexp-kb833858-client-ptg.exe|updates/officexp/officexp-kb833858-client-ptg.exe
-:: URL|ROM|http://download.microsoft.com/download/c/3/1/c3136b66-66a8-4d12-87c9-27a9b7e803eb/officexp-kb833858-client-rom.exe|updates/officexp/officexp-kb833858-client-rom.exe
 :: URL|RUS|http://download.microsoft.com/download/1/0/1/10170949-f767-477a-b879-8d6d583374e5/officexp-kb833858-client-rus.exe|updates/officexp/officexp-kb833858-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/1/8/c/18cdbd7a-a52c-4dcc-bd1b-e3fe03394667/officexp-kb833858-client-sve.exe|updates/officexp/officexp-kb833858-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/9/b/5/9b582456-7654-4ffc-ae96-28044cb5e54d/officexp-kb833858-client-trk.exe|updates/officexp/officexp-kb833858-client-trk.exe
@@ -173,7 +169,6 @@ if not %WINVER%. == win2ksp4. goto did832668
 :: URL|PLK|http://download.microsoft.com/download/b/f/3/bf37f38b-063d-4183-a512-67cf3298e2da/OfficeXP-kb832668-client-plk.exe|updates/officexp/officexp-kb832668-client-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/5/8/5/585c2c75-6278-4f91-974f-f4a0682c7bdd/OfficeXP-kb832668-client-ptb.exe|updates/officexp/officexp-kb832668-client-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/a/c/6/ac6bc597-cdee-42dc-a956-d154f099df8f/OfficeXP-kb832668-client-ptg.exe|updates/officexp/officexp-kb832668-client-ptg.exe
-:: URL|ROM|http://download.microsoft.com/download/8/6/8/8680ec20-5439-4fcf-ac22-8caafd2b0506/OfficeXP-kb832668-client-rom.exe|updates/officexp/officexp-kb832668-client-rom.exe
 :: URL|RUS|http://download.microsoft.com/download/0/0/1/001d1235-bba6-45ae-9f4a-a447a8dd3674/OfficeXP-kb832668-client-rus.exe|updates/officexp/officexp-kb832668-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/8/0/1/801bf89e-a6d4-453a-a271-846701ef9d75/OfficeXP-kb832668-client-sve.exe|updates/officexp/officexp-kb832668-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/3/4/6/34650f2a-093f-42c6-bc18-21bd2a866fb7/OfficeXP-kb832668-client-trk.exe|updates/officexp/officexp-kb832668-client-trk.exe
@@ -202,7 +197,6 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\OfficeXP-kb832668-client-%WINLANG%.
 :: URL|PLK|http://download.microsoft.com/download/c/c/d/ccd9f9e1-0383-46d4-8479-8abe6db49db6/OfficeXpSp3-kb832671-client-plk.exe|updates/officexp/officexpsp3-kb832671-client-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/5/9/e/59e4114d-1d09-4a16-b776-8117304840d9/OfficeXpSp3-kb832671-client-ptb.exe|updates/officexp/officexpsp3-kb832671-client-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/8/9/2/89262b7b-81e6-4c73-a0c8-699413858f29/OfficeXpSp3-kb832671-client-ptg.exe|updates/officexp/officexpsp3-kb832671-client-ptg.exe
-:: URL|ROM|http://download.microsoft.com/download/b/2/4/b243fdbd-8f64-4148-9241-1b683fa0e3e7/OfficeXpSp3-kb832671-client-rom.exe|updates/officexp/officexpsp3-kb832671-client-rom.exe
 :: URL|RUS|http://download.microsoft.com/download/d/9/e/d9edc340-90fc-4641-b70a-92de18717d2a/OfficeXpSp3-kb832671-client-rus.exe|updates/officexp/officexpsp3-kb832671-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/2/1/7/217be725-a7b9-40cc-8a16-5a546a0018f8/OfficeXpSp3-kb832671-client-sve.exe|updates/officexp/officexpsp3-kb832671-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/8/0/4/804be6c3-1403-4479-a050-b7c0a8daae3b/OfficeXpSp3-kb832671-client-trk.exe|updates/officexp/officexpsp3-kb832671-client-trk.exe

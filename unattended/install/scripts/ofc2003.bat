@@ -27,7 +27,6 @@ todo.pl .reboot
 :: URL|PLK|http://download.microsoft.com/download/4/c/a/4ca2a8a9-3d5f-45bf-be40-810c99b1d9ef/office2003-kb870765-fullfile-plk.exe|updates/office2003/office2003-kb870765-fullfile-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/6/f/7/6f70db5d-373b-4445-94ec-623e1f9aebce/office2003-kb870765-fullfile-ptb.exe|updates/office2003/office2003-kb870765-fullfile-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/3/5/4/3542f9d3-6ce3-408a-8f66-8526aa421f72/office2003-kb870765-fullfile-ptg.exe|updates/office2003/office2003-kb870765-fullfile-ptg.exe
-:: URL|ROM|http://download.microsoft.com/download/1/2/9/129ae0f2-0987-4080-acec-ce2748c59445/office2003-kb870765-fullfile-rom.exe|updates/office2003/office2003-kb870765-fullfile-rom.exe
 :: URL|RUS|http://download.microsoft.com/download/1/5/8/1581f369-f54c-4fed-9fce-79fd6b622115/office2003-kb870765-fullfile-rus.exe|updates/office2003/office2003-kb870765-fullfile-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/2/4/8/2483f581-51e6-428f-8a56-d940359f966f/office2003-kb870765-fullfile-sve.exe|updates/office2003/office2003-kb870765-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/3/1/13114bc4-e03e-4462-ba7b-207802629433/office2003-kb870765-fullfile-trk.exe|updates/office2003/office2003-kb870765-fullfile-trk.exe
@@ -55,7 +54,6 @@ todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb870765-fullfile-%WIN
 :: URL|PLK|http://download.microsoft.com/download/7/4/6/7466c5d6-027f-495f-9f7c-ae607bf1d390/Office2003SP1-kb842532-client-plk.exe|updates/office2003/office2003sp1-kb842532-client-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/9/d/4/9d4b1e82-ccb7-45ab-a5e8-8834738c807d/Office2003SP1-kb842532-client-ptb.exe|updates/office2003/office2003sp1-kb842532-client-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/8/0/1/8012d31d-db05-41cd-8397-38954028af13/Office2003SP1-kb842532-client-ptg.exe|updates/office2003/office2003sp1-kb842532-client-ptg.exe
-:: URL|ROM|http://download.microsoft.com/download/c/e/7/ce7afce3-5189-4268-a86a-967efc9e8782/Office2003SP1-kb842532-client-rom.exe|updates/office2003/office2003sp1-kb842532-client-rom.exe
 :: URL|RUS|http://download.microsoft.com/download/9/b/1/9b1e99d3-c605-40ae-953d-95250265d75a/Office2003SP1-kb842532-client-rus.exe|updates/office2003/office2003sp1-kb842532-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/5/f/9/5f97ecdc-fcec-41d3-9a85-37f37efc6ace/Office2003SP1-kb842532-client-sve.exe|updates/office2003/office2003sp1-kb842532-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/b/3/8/b3814d31-f19f-4523-99ec-4d8e68fb0401/Office2003SP1-kb842532-client-trk.exe|updates/office2003/office2003sp1-kb842532-client-trk.exe

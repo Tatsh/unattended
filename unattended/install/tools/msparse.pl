@@ -23,7 +23,6 @@ my %lang=(
 	plk => 'pl', # Polish
 	ptb => 'pt-br', # Portuguese (Brazilian)
 	ptg => 'pt-pt', # Portuguese (Portugal)
-	rom => 'ro', # Romanian 
 	rus => 'ru', # Russian
 	esn => 'es', # Spanish
 	sve => 'sv', # Swedish
