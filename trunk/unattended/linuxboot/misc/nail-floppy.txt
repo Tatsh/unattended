@@ -1,6 +1,9 @@
 # List of files which must not be moved to the network share
 
 linuxrc
+
+.dosemu
+
 bin/ash
 bin/bash
 bin/busybox
