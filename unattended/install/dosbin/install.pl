@@ -317,7 +317,7 @@ sub ask_fdisk_cmds () {
     my $pre_cmds = 'fdisk /clear 1';
     # Commands to delete first primary partition and replace it with a
     # 2G FAT partition
-    my $post_cmds = 'fdisk /delete /pri:1;fdisk /prio:2000;fdisk /activate:1';
+    my $post_cmds = 'fdisk /delete /pri:1;fdisk /pri:4000;fdisk /activate:1';
 
     # Command to run fdisk interactively
     my $interactive_cmd = 'fdisk /xo';
@@ -563,7 +563,7 @@ $u->{'_meta'}->{'fdisk_confirm'} = 1;
 $u->{'_meta'}->{'format_cmd'} =
     sub {
         return (yes_no_choice ('Format C: drive')
-                ? 'format /y /q /v: c:'
+                ? 'format /y /z:seriously /q /u /a /v: c:'
                 : undef);
     };
 
