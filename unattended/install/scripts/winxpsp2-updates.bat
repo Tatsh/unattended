@@ -177,6 +177,13 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
+:: Cumulative Update for Outlook Express 6 Service Pack 1
+:: <http://support.microsoft.com/kb/887797>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=fda6678b-69b0-4813-9856-a1a3da675baf>
+:: (msparse.pl not working...)
+:: URL|ENU|http://download.microsoft.com/download/3/4/2/34288a12-9814-4719-b5f7-1663c49a0329/IE6.0sp1-KB887797-Windows-2000-XP-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb887797-windows-2000-xp-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB887797-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Microsoft Security Bulletin MS04-044
 :: "Vulnerabilities in Windows Kernel and LSASS Could Allow Elevation of Privilege (885835)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-044.mspx>
