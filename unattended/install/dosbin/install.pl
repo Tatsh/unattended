@@ -633,25 +633,32 @@ my $product_key_q =
     . "(like 12345-6789A-BCDEF-GHIJK-LMNOP)\n\n"
     . "Enter key: ";
 
-set_value ('UserData', 'ProductID',
-           sub {
-               my $media_obj =
-                   Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
-               my $name = $media_obj->name ();
-               # ProductID is used by win2k and winnt
-               $name =~ /Windows 2000/ || $name =~ /Windows NT/
-                   or return undef;
-               return simple_q ($product_key_q);
-           });
+$u->{'UserData'}->{'ProductID'} =
+    sub {
+        my $media_obj =
+            Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
+        my $name = $media_obj->name ();
+        # ProductID is used by win2k and winnt
+        $name =~ /Windows 2000/ || $name =~ /Windows NT/
+            or return undef;
 
-set_value ('UserData', 'ProductKey',
-           sub {
-               my $product_id = get_value ('UserData', 'ProductID');
-               # Only ask for ProductKey if we lack a ProductID
-               defined $product_id
-                   and return undef;
-               return simple_q ($product_key_q);
-           });
+        # Mutual recursion.  IniFile object takes care of it.
+        my $product_key = $u->{'UserData'}->{'ProductKey'};
+        # Only ask for ProductID if we lack a ProductKey
+        defined $product_key
+            and return undef;
+        return simple_q ($product_key_q);
+    });
+
+$u->{'UserData'}->{'ProductKey'} =
+    sub {
+        # Mutual recursion.  IniFile object takes care of it.
+        my $product_id = get_value ('UserData', 'ProductID');
+        # Only ask for ProductKey if we lack a ProductID
+        defined $product_id
+            and return undef;
+        return simple_q ($product_key_q);
+    });
 
 $u->comments ('MassStorageDrivers') =
     ['See <http://support.microsoft.com/?kbid=288344>'];
