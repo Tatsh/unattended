@@ -192,6 +192,12 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: Critical update MS04-023 (840315)
+:: "Vulnerability in HTML Help Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-023.mspx>
+:: URL|ENU|http://download.microsoft.com/download/7/2/7/727d9721-abdc-4ecf-ab36-4635cfd61172/Windows2000-KB840315-x86-ENU.EXE|updates/win2ksp4/windows2000-kb840315-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB840315-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-022 (841873)
 :: "Vulnerability in Task Scheduler Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-022.mspx>
