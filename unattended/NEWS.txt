@@ -1,3 +1,30 @@
+** Changes in version 4.1a (2004-Apr-19)
+
+This is a bug fix release, mostly.
+
+Handle "" for username in mapznrun.bat.
+
+Make installation scripts run quietly (@echo off).  Thanks to Jeff
+Black.  (I know, this is not really a bug fix.  Oh, well.)
+
+(Linux) Map install share as read/write instead of read-only, since
+some users want their config.pl to write to it.
+
+(Linux) Build Perl with threading support.  Should provide better
+compatibility with most Linux distributions' binary modules.
+
+(Linux) Create empty install/linuxaux/usr/local directory and add its
+"bin" and "sbin" subdirectories to the boot disk's PATH.  We do not
+use these, but an end-user might.
+
+(Linux) Instead of unconditionally waiting 5 seconds, try DHCP
+immediately and retry repeatedly for ten seconds or so.  Retry is
+needed because some network drivers take a while to become ready.
+
+(Linux) Include entire usr/share/keymaps directory on boot disk,
+because some keymaps under "i386" include other maps.
+
+
 ** Changes in version 4.1 (2004-Apr-18)
 
 (Linux) Upgrade Linux kernel to 2.6.5.
@@ -24,8 +51,8 @@ install share.
 (DOS) Now that the FreeDOS folks added support for VCPI in emm386.exe,
 use it instead of umbpci.sys for UMB provider,
 
-New script linuxboot/tools/replace-mbr.pl, useful for prepping a USB
-flash drive for booting (see FAQ).
+(Linux) New script linuxboot/tools/replace-mbr.pl, useful for prepping
+a USB flash drive for booting (see FAQ).
 
 Rewrite auconfig.pl to support "--policy" switch and all the new
 settings it allows.  Contributed by Nils Ostbjerg.
@@ -41,7 +68,7 @@ devices (like CD or DVD).  Thanks to Niels de Groot.
 
 Modify todo.pl to hook HKEY_LOCAL_MACHINE\...\Run key instead of
 HKEY_CURRENT_USER\...\Run key, in case user wants to switch logon ID
-to a domain account mid-install.  Recognize Windows XP SP2.
+to a domain account mid-install.  Also, recognize Windows XP SP2.
 
 In install.pl, have z_user default to "DOMAIN\user", because some
 people use domain accounts to map their install shares.
