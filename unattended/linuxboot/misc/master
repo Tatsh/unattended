@@ -10,7 +10,7 @@ if [ -z "$CMDLINE" ] ; then
     proc_cmdline=/proc/cmdline
     [ -r "$proc_cmdline" ] \
         || die "Unable to read $proc_cmdline"
-    CMDLINE=`cat $proc_cmdline`
+    CMDLINE=$(< $proc_cmdline)
     unset proc_cmdline
 fi
 
@@ -29,11 +29,11 @@ get_cmdline_param () {
 }
 
 # Configure the keyboard, if requested.
-kbd=`get_cmdline_param kbd`
+kbd=$(get_cmdline_param kbd)
 [ -n "$kbd" ] \
     && loadkeys ${kbd#*=}
 
-check_shell=`get_cmdline_param shell`
+check_shell=$(get_cmdline_param shell)
 
 [ -n "$check_shell" ] \
     && die "'shell' kernel parameter found"
@@ -50,7 +50,7 @@ sleep 3
 echo "*** First, we'll look for PCI Ethernet hardware..."
 
 # PCI classes 0x0200nn are Ethernet controllers.
-network_modules=`find-modules-pci 0x02 0x00`
+network_modules=$(find-modules-pci 0x02 0x00)
 
 # FIXME: How do we handle multiple drivers for same device (e100/eepro100).
 for module in $network_modules ; do
@@ -97,11 +97,11 @@ while : ; do
     Z_PASS=guest
     Z_PATH=//ntinstall/install
 
-    val=`get_cmdline_param z_user`
+    val=$(get_cmdline_param z_user)
     [ -n "$val" ] && Z_USER=${val#*=}
-    val=`get_cmdline_param z_pass`
+    val=$(get_cmdline_param z_pass)
     [ -n "$val" ] && Z_PASS=${val#*=}
-    val=`get_cmdline_param z_path`
+    val=$(get_cmdline_param z_path)
     [ -n "$val" ] && Z_PATH=${val#*=}
 
     # Read one character with a 5-second timeout
@@ -154,11 +154,11 @@ unset PASSWD
 echo "*** Excellent.  Now, let's see about mass storage controllers..."
 
 # PCI classes 0x01nnnn are mass storage controllers.
-storage_modules=`find-modules-pci 0x01`
+storage_modules=$(find-modules-pci 0x01)
 
 # PCI classes 0x0e00nn are I2O intelligent controllers, which might
 # have storage devices attached to them.
-storage_modules="$storage_modules `find-modules-pci 0x0e 0x00`"
+storage_modules="$storage_modules $(find-modules-pci 0x0e 0x00)"
 
 [ -z "$storage_modules" ] \
     && die "No mass storage hardware found (missing drivers?)"
@@ -219,13 +219,13 @@ if [ -d "$edd_dir" ] ; then
     declare -i LEGACY_BIOS_HEAD LEGACY_BIOS_SECT
     heads_file="$edd_dir/legacy_heads";
     if [ -e "$heads_file" ] ; then 
-        export LEGACY_BIOS_HEAD="`cat $heads_file`"
+        export LEGACY_BIOS_HEAD="$(< $heads_file)"
         # Heads value is useless until incremented
         let LEGACY_BIOS_HEAD++
     fi
     sectors_file="$edd_dir/legacy_sectors";
     [ -e "$sectors_file" ] \
-        && export LEGACY_BIOS_SECT="`cat $sectors_file`"
+        && export LEGACY_BIOS_SECT="$(< $sectors_file)"
 else
     echo "Directory not found."
 fi
