@@ -3,7 +3,6 @@ use strict;
 
 use Carp;
 use File::Spec::Win32;
-use File::Basename;
 use Unattend::IniFile;
 use Unattend::WinMedia;
 
@@ -12,14 +11,11 @@ use Unattend::WinMedia;
 # around this bug here.
 my $file_spec = 'File::Spec::Win32';
 
-# Similarly for File::Basename.
-fileparse_set_fstype ('MSWin32');
-
 # Global variable holding unattend.txt file which we are generating.
 use vars qw ($u);
 $u = new Unattend::IniFile;
 
-# Scaffolding (FIXME)
+# Scaffolding (FIXME - need to remove these)
 sub get_value ($$) {
     my ($section, $key) = @_;
     return $u->{$section}->{$key};
@@ -108,6 +104,87 @@ sub menu_choice (@) {
         exit 1;
     }
     return $choice_map[$ret];
+}
+
+# Allow selection from among one or more strings.
+sub multi_choice (@) {
+    my @strings = @_;
+
+    scalar @strings > 0
+        or return undef;
+
+    # Choices to display per page
+    my $per_page = 9;
+
+    my $pages = (scalar @strings + $per_page - 1) / $per_page;
+    my %selected = map { $_ => 0 } @strings;
+
+    # Current page
+    my $page = 0;
+    while (1) {
+        printf "Select zero or more (page %d/%d)\n", $page+1, $pages;
+        my $start = $page * $per_page;
+        my $end = ($page == $pages - 1
+                   ? scalar @strings - 1
+                   : $start + $per_page);
+
+        my $choices = '';
+        my @choice_map;
+
+        my $i;
+        foreach $i ($start .. $end) {
+            my $str = strings[$i];
+            printf "%s) [%s] %s\n", $i, exists $selected{$str}, $str;
+            $choices .= $i;
+            $choice_map[$i] = sub { $selected{$str} = !$selected{$str} };
+        }
+
+        $i = $end + 1;
+        print "A) Select all\n";
+        $choices .= 'A';
+        $choice_map[$i] = sub { %selected = map { $_ => 1 } @strings };
+
+        $i++;
+        print "D) Deselect all\n";
+        $choices .= 'D';
+        $choice_map[$i] = sub { %selected = map { $_ => 0 } @strings };
+
+        if ($pages > 1) {
+            $i++;
+            print "N) Next page\n";
+            $choices .= 'N';
+            $choice_map[$i] = sub { $page = ($page + 1) % $pages };
+
+            $i++;
+            print "P) Previous page\n";
+            $choices .= 'P';
+            $choice_map[$i] = sub { $page = ($page + $pages - 1) % $pages };
+        }
+
+        $i++;
+        print "C) Continue\n";
+        $choices .= 'C';
+        my $continue_index = $i;
+
+        $i++;
+        print "X) Exit this program\n";
+        $choices .= 'X';
+        $choice_map[$i] = sub { print "Exiting.\n"; exit 1; };
+
+        system 'choice', "/c:$choices", "Select:";
+        my $ret = ($? >> 8);
+        $ret == $continue_index
+            and break;
+
+        &choice_map[$ret];
+    }
+
+    my %sort_index;
+    foreach my $i (0 .. scalar @strings - 1) {
+        $sort_index{$strings[$i]} = $i;
+    }
+
+    return sort { $sort_index{$a} <=> $sort_index {$b} } keys %selected;
 }
 
 # Canonicalize a username with respect to a domain.  If username is
@@ -259,44 +336,13 @@ sub ask_oem_pnp_drivers_path () {
         or return undef;
 
     print "...found some driver directories.  Please choose which to add.\n";
-    my $rem_string = 'Remove all directories';
-    my $all_string = 'Add all directories';
-    my $cont_string = 'All done ; continue';
-    # Use references to strings as magic return tokens.
-    my @choices = ((map { ($_ => $_) } @pnp_driver_dirs),
-                   $rem_string => \$rem_string,
-                   $all_string => \$all_string,
-                   $cont_string => \$cont_string);
-    my %dirs;
-    while (1) {
-        print "\nCurrent value of OemPnPDriversPath:\n";
-        print join ';', sort keys %dirs;
-        print "\n";
-        print "Choose value to add:";
-        my $val = menu_choice (@choices);
-        if (ref $val) {
-            if ($val == \$rem_string) {
-                undef %dirs;
-            }
-            elsif ($val == \$all_string) {
-                %dirs = map { $_ => undef } @pnp_driver_dirs;
-            }
-            elsif ($val == \$cont_string) {
-                last;
-            }
-            else {
-                die "Internal error";
-            }
-        }
-        else {
-            $dirs{$val} = undef;
-        }
-    }
 
-    my $ret = join ';', sort keys %dirs;
+    my $ret = join ';', multi_choice (sort @pnp_driver_dirs);
+
     # Setup does not like empty OemPnPDriversPath
     $ret =~ /\S/
         or undef $ret;
+
     return $ret;
 }
 
