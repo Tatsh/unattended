@@ -13,8 +13,8 @@ linux=linux-2.6.5
 module-init-tools=module-init-tools-3.0
 nano=nano-1.2.3
 ncurses=ncurses-5.4
-parted=parted-1.6.10
-perl=perl-5.8.3
+parted=parted-1.6.11
+perl=perl-5.8.4
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.7
 samba=samba-3.0.2a
@@ -407,12 +407,9 @@ $(pciutils)/lspci:
 	cd $(pciutils) && make PREFIX=/usr
 	[ -e $@ ]
 
-$(pciutils)/pci.ids: $(pciutils)/lspci
-	[ -e $@ ] && touch $@
-
 $(call copy_exe, $(pciutils)/lspci, stage1/sbin/lspci)
 
-$(call copy_file,$(pciutils)/pci.ids,stage1/usr/share/pci.ids)
+$(call copy_file,pci.ids,stage1/usr/share/pci.ids)
 
 stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 
@@ -458,9 +455,9 @@ stage1/opt/perl/bin/perl: $(perl)/perl
 	find stage1/opt/perl/bin -type f ! -name perl		\
 				-a ! -name perldoc -print0	\
 		| xargs -0 -r rm
+	[ -e $@ ]
 	: # create /usr/bin/perl -> /opt/bin/perl symlink
 	ln -sf /opt/perl/bin/perl stage1/usr/bin/perl
-	[ -e $@ ]
 
 stage1 += stage1/opt/perl/bin/perl
 
@@ -602,6 +599,12 @@ download-$(strip $(1)) :  ;						\
 	&& rm $$$$temp ;						\
 	}
 
+# Special rule to fetch updated pci.ids file
+download-pci.ids:
+	wget http://pciids.sourceforge.net/pci.ids.bz2
+	bunzip2 pci.ids.bz2
+	[ -e pci.ids ]
+
 # Special rule for glibc (checkout from CVS based on date).
 # download-$(glibc):
 # 	[ ! -e "$(dest)/libc" ]
@@ -611,7 +614,8 @@ download-$(strip $(1)) :  ;						\
 # 	&& mv libc $(glibc)
 # 	[ "$(dest)" == . ] || ln -sf $(dest)/$(glibc) $(glibc)
 
-download_targets=$(addprefix download-,$(packages) $(glibc-linuxthreads))
+download_targets=$(addprefix download-,$(packages) $(glibc-linuxthreads) \
+			pci.ids)
 
 download-$(glibc-linuxthreads) : download-$(glibc)
 
@@ -648,9 +652,10 @@ $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
 $(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
 
-symlink_targets=$(addprefix symlink-,$(packages))	\
-	symlink-build-$(glibc) symlink-build-$(dosemu)	\
-	symlink-fakelib symlink-fakeinclude symlink-stage1
+symlink_targets=$(addprefix symlink-,$(packages))		\
+	symlink-build-$(glibc) symlink-build-$(dosemu)		\
+	symlink-fakelib symlink-fakeinclude symlink-stage1	\
+	symlink-pci.ids
 
 $(symlink_targets):
 	@if [ -z "$(dest)" ] || [ "$(dest)" == . ] ; then	\
