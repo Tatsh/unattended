@@ -53,7 +53,7 @@ setenv.pl - Set a Windows environment variable
 
 setenv.pl [ options ] <variable> <value>
 
-Options:
+Options (may be abbreviated):
 
  --help                 Display help and exit
  --remote <host>        Set variable on <host> instead of local machine
