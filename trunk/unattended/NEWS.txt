@@ -1,3 +1,60 @@
+** Changes in version 3.3 (2003-Nov-07)
+
+(NOTE: This release introduces numerous small changes to the directory
+layout on the "install" share.  Most of these were needed for i18n.
+This should be the last such rearrangement for a while.)
+
+Add DOS drivers for Broadcom 440x (b44), DEC/Intel Tulip (dc21x4),
+NatSemi MACPHYTER (dp83815), VIA Rhine (fetnd), and Netgear FA310
+(ngrpci).  Remove Netgear 311/312 (fa31x), since it is superseded by
+dp83815 (in theory).
+
+Update rtsnd.dos and b57.dos to latest versions from vendors.
+
+Use compressed (.imz) floppy images on CD-ROM.
+
+Fix bootdisk/Makefile to work on Cygwin.  Finally, the bootdisk images
+can be regenerated on Windows.
+
+Offer all network drivers during PXE boot, since sometimes the
+"universal" driver does not work right.
+
+Finish i18n support, more or less.  Right now we have English
+(Z:\scripts\enu) and Dutch (Z:\scripts\nld) AutoIT scripts; thanks to
+Niels de Groot for the latter.  Additional translations are welcome.
+
+Improve documentation, especially html/advanced.html.  We still have a
+long way to go...
+
+Rewrite OpenOffice.org installation instructions.  Thanks to Remco
+Jager.
+
+Update install/check script.  We really need to document this one
+someday :-).
+
+Add Abort/Retry/Ignore logic to todo.pl.
+
+New script: install/bin/winxpsp1-notips.pl.  This has examples for how
+to configure everything you want and many things you don't.  The
+entire script is commented out for now while we decide what we want by
+default.
+
+Add new settings [_meta]/middle and [_meta]/bottom (similar to
+[_meta]/top) for controlling optional scripts and "cleanup" scripts,
+respectively.  Add new setting [_meta]/fdisk_confirm, defaulting to
+"true", to control prompting for confirmation before partitioning the
+drive.
+
+Do not require quotes around strings containing characters \x80
+through \xFF in .ini files, because Spanish and French Windows CDs use
+such characters for "Localization" in i386/prodspec.ini, causing us to
+choke.  Thanks to Oriol de Los Santos.
+
+Recognize a bunch more Windows Pid values.
+
+Add latest round of Microsoft updates for all OSes.
+
+
 ** Changes in version 3.2 (2003-Oct-19)
 
 (NOTE: This release introduces an "updates" directory on the install
