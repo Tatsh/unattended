@@ -32,7 +32,7 @@
 :: URL|TRK|http://download.microsoft.com/download/1/4/d/14d817fc-25fe-4240-8d2b-94d0655879e7/scripttr.exe|updates/common/scripttrk.exe
 :: URL|CHS|http://download.microsoft.com/download/d/f/0/df0b2640-79bc-48d2-84bd-cb5b67ee128e/scripchs.exe|updates/common/scriptchs.exe
 :: URL|CHT|http://download.microsoft.com/download/a/8/5/a852b2ad-272a-4de9-8c9d-4233053905bc/scripcht.exe|updates/common/scriptcht.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\script%WINLANG%.exe /q"
+todo.pl ".reboot-on 194 %Z%\updates\common\script%WINLANG%.exe /q /r:n"
 
 :: Windows Media Connect
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=56fd1b34-48ba-424b-9227-7c10e2e9fff1>
