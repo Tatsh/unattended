@@ -685,7 +685,7 @@ sub ask_oem_pnp_drivers_path () {
     print "...found some driver directories.\n";
 
     my @selected_dirs = multi_choice ('Please choose driver(s) to add.',
-                                      @pnp_driver_dirs);
+                                      sort @pnp_driver_dirs);
 
     my $ret = join ';', @selected_dirs;
 
