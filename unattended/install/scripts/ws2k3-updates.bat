@@ -48,6 +48,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLAN
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-007.asp>
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
 
+:: Critical update 830352 (MS04-006)
+:: URL|ENU|http://download.microsoft.com/download/2/b/f/2bf1da36-6368-4e92-9dd2-daa388450028/WindowsServer2003-KB830352-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb830352-x86-enu.exe
+:: "Vulnerability in WINS Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-006.mspx>
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB830352-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update 832483 (MS04-003)
 :: URL|ENU|http://download.microsoft.com/download/c/2/4/c245528e-a1e4-492e-bcf4-e004a052d93b/ENU_Q832483_MDAC_x86.EXE|updates/common/enu_q832483_mdac_x86.exe
 :: "Buffer Overrun in MDAC Function Could Allow Code Execution"
