@@ -85,6 +85,12 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: mdac_typ.exe to something more descriptive.
 todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /qn1\""
 
+:: Critical update 329115 (MS02-050)
+:: (updated November 11, 2003 for win2ksp4)
+:: <http://support.microsoft.com/?kbid=329115>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-049.asp>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB329115-x86-%WINLANG%.exe /u /n /z"
+
 :: Critical update 823718
 :: "Security Update for Microsoft Data Access Components"
 :: (Now installing MDAC 2.8, comment out for now)
