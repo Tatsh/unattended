@@ -1,9 +1,36 @@
+# This script assumes there is a MySQL table that is defined as
+# below, that there is a user/pass that has rights to that table,
+# and that the user can connect via TCP/IP from the install host.
+#
 # CREATE TABLE unattended (
 #   Lookup varchar(128) NOT NULL default '',
 #   Property varchar(128) NOT NULL default '',
 #   Value varchar(255) NOT NULL default '',
 #   PRIMARY KEY  (Lookup,Property)
 # ) TYPE=MyISAM;
+#
+# The following table shows what Lookup values are used for a
+# given Property value.  The order shown is the order searched.
+# The search ends when a valid entry is returned.  If the Value
+# is set to 'Empty' then a valid empty string is returned. 
+# Otherwise, a valid entry is a non-empty response.
+#
+# Property                 Lookup Order
+# =====================    ========================================================
+# ComputerName             <macaddr>,Default
+# FullName                 <macaddr>,<ComputerName>,Default
+# OrgName                  <macaddr>,<ComputerName>,<FullName>,Default
+# JoinDomain               <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# JoinWorkgroup            <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# AdminPassword            <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# OS_media                 <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# <os_name> ProductKey     <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# <os_name> ProductID      <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# top_scripts              <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# middle_scripts           <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# bottom_scripts           <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# ntp_servers              <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# DriverPath               <macaddr>,<ComputerName>,<os_name>,Default
 
 use warnings;
 use strict;
@@ -55,7 +82,6 @@ sub lookup_property ($) {
     return undef;
 }
 
-    my ($lookup, $property) = @_;
 # Lookup computer name from database, if possible.
 $u->push_value ('UserData', 'ComputerName', 
     sub {
@@ -95,8 +121,17 @@ $u->push_value ('UserData', 'OrgName',
         return undef;
     });
 
-# Lookup admin password from database, if possible.
+# Lookup Domain from database, if possible.
+$u->push_value ('Identification', 'JoinDomain', &lookup_property('JoinDomain'));
+
+# Lookup Workgroup from database, if possible.
+$u->push_value ('Identification', 'JoinWorkgroup', &lookup_property('JoinWorkgroup'));
+
+# Lookup Admin password from database, if possible.
 $u->push_value ('GuiUnattended', 'AdminPassword', &lookup_property('AdminPassword'));
+
+# Lookup OS Directory from database, if possible.
+$u->push_value ('_meta', 'OS_media', &lookup_property('OS_media'));
 
 # Lookup product Key from database, if possible.
 $u->push_value ('UserData', 'ProductKey', 
@@ -118,18 +153,6 @@ $u->push_value ('UserData', 'ProductID',
         return lookup_property("$os_name ProductID");
     });
 
-# Lookup Domain from database, if possible.
-$u->push_value ('Identification', 'JoinDomain', &lookup_property('JoinDomain'));
-
-# Lookup Workgroup from database, if possible.
-$u->push_value ('Identification', 'JoinWorkgroup', &lookup_property('JoinWorkgroup'));
-
-# Lookup NTP Servers from database, if possible.
-$u->push_value ('_meta', 'ntp_servers', &lookup_property('ntp_servers'));
-
-# Lookup OS Directory from database, if possible.
-$u->push_value ('_meta', 'OS_media', &lookup_property('OS_media'));
-
 # Lookup "Top" level scripts from database, if possible.
 $u->push_value ('_meta', 'top', &lookup_property('top_scripts'));
 
@@ -138,6 +161,9 @@ $u->push_value ('_meta', 'middle', &lookup_property('middle_scripts'));
 
 # Lookup "Bottom" level scripts from database, if possible.
 $u->push_value ('_meta', 'bottom', &lookup_property('bottom_scripts'));
+
+# Lookup NTP Servers from database, if possible.
+$u->push_value ('_meta', 'ntp_servers', &lookup_property('ntp_servers'));
 
 # Find all relevant drivers for this machine
 $u->push_value ('Unattended', 'OemPnPDriversPath', 
@@ -148,6 +174,7 @@ $u->push_value ('Unattended', 'OemPnPDriversPath',
         my $os_name = $media_obj->name ();
         my @pnp_driver_dirs;
         foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                            $u->{'UserData'}->{'ComputerName'},
                             "$os_name",
                             'Default') {
             my $value = db_select ($lookup, 'DriverPath');
