@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for a in `egrep -Hi '^(run|start|todo).*(packages|updates)\\\\' scripts/* | perl -pe 's#scripts/(.*?):.*((packages|updates)\\\\.*?\.([a-zA-Z]{3})).*#$1:$2#;s#%WINLANG%#enu#;s#\\\\#/#g;s#//#/#g' | tr ' [:upper:]' '~[:lower:]' | sort | egrep -vi '^(run|start|todo)'`
+for a in `egrep -Hi '^(run|start|todo).*(packages|updates)\\\\' scripts/* | perl -pe 's#scripts/(.*?):.*?((packages|updates)\\\\.*?\.([a-zA-Z]{3})).*#$1:$2#;s#%WINLANG%#enu#;s#\\\\#/#g;s#//#/#g' | tr ' [:upper:]' '~[:lower:]' | sort | egrep -vi '^(run|start|todo)'`
 do 
     a=`echo $a | tr '~' ' '`
     if ! [ -r "`echo $a | cut -d':' -f2`" ]
