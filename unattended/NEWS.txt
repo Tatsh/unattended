@@ -23,6 +23,8 @@ Finish i18n support, more or less.  Right now we have English
 (Z:\scripts\enu) and Dutch (Z:\scripts\nld) AutoIT scripts; thanks to
 Niels de Groot for the latter.  Additional translations are welcome.
 
+Update Windows Messenger installation script for 5.0.
+
 Improve documentation, especially html/advanced.html.  We still have a
 long way to go...
 
