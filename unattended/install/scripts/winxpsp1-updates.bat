@@ -84,6 +84,10 @@ todo.pl "%Z%\packages\winxpsp1\WindowsXP-KB282010-x86-%WINLANG%.exe /u /n /z"
 :: <http://support.microsoft.com/default.aspx?kbid=820291>
 todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\WindowsXP-KB820291-x86-%WINLANG%.exe /u /n /z" .reboot
 
+:: "Update for Windows Media Player Script Commands"
+:: <http://support.microsoft.com/?kbid=828026>
+todo.pl "%Z%\packages\winxpsp1\WindowsMedia-KB828026-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
 :: <http://support.microsoft.com/?kbid=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
