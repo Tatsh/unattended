@@ -357,7 +357,7 @@ set_value ('Identification', 'DomainAdminPassword',
 my $product_key_q =
     "Enter your product key now.\n"
     . "This is the 25-character code from your software license\n"
-    . "(like 12345-6789AB-CDEFG-HIJKL-MNOPQ)\n\n"
+    . "(like 12345-6789A-BCDEF-GHIJK-LMNOP)\n\n"
     . "Enter key: ";
 
 set_value ('UserData', 'ProductID',
@@ -457,7 +457,7 @@ foreach my $dir ($netinst, "$netinst\\logs") {
 }
 
 # Create unattend.txt file.
-my $unattend_txt = get_value ('_meta', 'netinst') . '\\unattend.txt';
+my $unattend_txt = "$netinst\\unattend.txt';
 
 my $unattend_contents = generate_unattend_txt ();
 
