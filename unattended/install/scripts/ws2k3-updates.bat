@@ -46,7 +46,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLAN
 :: URL|ENU|http://download.microsoft.com/download/4/a/0/4a0ebe1e-ad89-4408-84d1-9325022a1e23/WindowsServer2003-KB828028-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb828028-x86-enu.exe
 :: "ASN.1 Vulnerability Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-007.asp>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsServer2003-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
 :: URL|ENU|http://download.microsoft.com/download/c/2/4/c245528e-a1e4-492e-bcf4-e004a052d93b/ENU_Q832483_MDAC_x86.EXE|updates/common/enu_q832483_mdac_x86.exe

@@ -93,7 +93,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: URL|ENU|http://download.microsoft.com/download/5/d/b/5db25f4e-76fb-4cc7-85f3-ca6f797f0982/Windows2000-KB828028-x86-ENU.EXE|updates/win2ksp4/windows2000-kb828028-x86-enu.exe
 :: "ASN.1 Vulnerability Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-007.asp>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Windows2000-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
 :: URL|ENU|http://download.microsoft.com/download/c/2/4/c245528e-a1e4-492e-bcf4-e004a052d93b/ENU_Q832483_MDAC_x86.EXE|updates/common/enu_q832483_mdac_x86.exe
