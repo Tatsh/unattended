@@ -349,7 +349,11 @@ sub ask_oem_pnp_drivers_path () {
         }
     }
 
-    return join ';', sort keys %dirs;
+    my $ret = join ';', sort keys %dirs;
+    # Setup does not like empty OemPnPDriversPath
+    $ret =~ /\S/
+        or undef $ret;
+    return $ret;
 }
 
 # Create the "postinst.bat" script and return its full path.  Do
@@ -437,29 +441,29 @@ set_value ('_meta', 'format_cmd',
                        : undef);
            });
 
-set_value ('_meta', 'ipaddr',
-           sub {
-               # ipconfig.exe exits with many statuses, mostly between
-               # 11 and 15.
-               foreach my $line (run_command ('ipconfig A:\\NET\\',
-                                              (11 .. 16))) {
-                   $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
-                       and return $1;
-               }
-               die "INTERNAL ERROR: Unable to get IP address";
-           });
+# set_value ('_meta', 'ipaddr',
+#            sub {
+#                # ipconfig.exe exits with many statuses, mostly between
+#                # 11 and 15.
+#                foreach my $line (run_command ('ipconfig A:\\NET\\',
+#                                               (11 .. 16))) {
+#                    $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
+#                        and return $1;
+#                }
+#                die "INTERNAL ERROR: Unable to get IP address";
+#            });
 
-set_value ('_meta', 'macaddr',
-           sub {
-               # Stupid hack: Need to use full path here or net.exe
-               # gets confused.
-               my $cmd = 'a:\\net\\net diag /status < z:\\doslib\\crlf.txt';
-               foreach my $line (run_command ($cmd)) {
-                   $line =~ /^Permanent node name: ([0-9A-F]+)\r?$/
-                       and return $1;
-               }
-               die "INTERNAL ERROR: Unable to get MAC address";
-           });
+# set_value ('_meta', 'macaddr',
+#            sub {
+#                # Stupid hack: Need to use full path here or net.exe
+#                # gets confused.
+#                my $cmd = 'a:\\net\\net diag /status < z:\\doslib\\crlf.txt';
+#                foreach my $line (run_command ($cmd)) {
+#                    $line =~ /^Permanent node name: ([0-9A-F]+)\r?$/
+#                        and return $1;
+#                }
+#                die "INTERNAL ERROR: Unable to get MAC address";
+#            });
 
 set_value ('_meta', 'replace_mbr',
            sub {
@@ -643,8 +647,8 @@ if (-e $site_conf) {
 }
 
 # Output some interesting info.
-print 'IP address:  ', get_value ('_meta', 'ipaddr'), "\n";
-print 'MAC address: ', get_value ('_meta', 'macaddr'), "\n";
+#print 'IP address:  ', get_value ('_meta', 'ipaddr'), "\n";
+#print 'MAC address: ', get_value ('_meta', 'macaddr'), "\n";
 
 # Set environment variable controlling fdisk's use of INT13 extensions.
 get_value ('_meta', 'fdisk_lba')
