@@ -7,7 +7,7 @@ use Getopt::Long;
 use Pod::Usage;
 
 my %opts;
-GetOptions (\%opts, 'help|h|?', 'day=i', 'time=i')
+GetOptions (\%opts, 'help|h|?', 'day=i', 'time=i', 'remote=s')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -47,12 +47,18 @@ else {
 ## Now do the actual work.
 
 my %reg;
-use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg,
-                        qw (REG_DWORD));
+use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg, qw (REG_DWORD));
 
-my $au_key_name = "HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/CurrentVersion/WindowsUpdate/Auto Update/";
+my $au_key_name = ('HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows/'
+                   . 'CurrentVersion/WindowsUpdate/Auto Update/');
+
+($opts{'remote'})
+    and $au_key_name = "//$opts{'remote'}/$au_key_name";
 
 my $au_key = $reg{$au_key_name};
+defined $au_key
+    or die "Unable to open $au_key_name: $^E";
+
 $au_key->{'/AUOptions'} = [ pack('L', $au_options), REG_DWORD ]
     or die "Unable to set AUOptions key: $^E";
 $au_key->{'/AUState'} = [ pack('L', ($au_options == 1 ? 7 : 2)),
@@ -80,9 +86,11 @@ auconfig.pl [ options ] 1/2/3/4
 
 Options:
 
- --help         Display verbose help and exit (RECOMMENDED)
- --day          Day of week for auto update (1 == Sunday; 0 == every day)
- --time         Time for auto update (0 == midnight, 23 == 11 P.M.)
+ --help           Display verbose help and exit (RECOMMENDED)
+ --remote <host>  Operate on <host> instead of local machine     
+ --day            Day of week for auto update (1 == Sunday; 0 == every day)
+ --time           Time for auto update (0 == midnight, 23 == 11 P.M.)
+
 
 =head1 DESCRIPTION
 
