@@ -15,7 +15,7 @@ todo.pl "z:\packages\win2ksp3\q329414_mdacall_x86.exe /q /c:\"dahotfix /q /n\"" 
 :: "Certificate Validation Flaw Might Permit Identity Spoofing"
 :: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329115>
 :: <http://www.microsoft.com/windows2000/downloads/critical/q329115/>
-todo.pl "z:\packages\win2ksp3\Q329115_W2K_SP4_X86_EN.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q329115_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Not-so-critical update Q328523
 :: "default invocation of IE from the Internet Connection Wizard"
