@@ -161,8 +161,9 @@ $(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch \
 
 # BusyBox has some broken dependencies (changing CONFIG_INIT to off
 # does not rebuild reboot.o), hence the "make clean" here.
+# FIXME: Should use fake flags for CFLAGS too?
 $(busybox)/busybox: $(busybox)/.config
-	cd $(busybox) && make clean && make
+	cd $(busybox) && make clean && make LDFLAGS="$(fakelib_cflags)"
 
 stage1/bin/busybox: $(busybox)/busybox
 	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
@@ -172,14 +173,21 @@ stage1 += stage1/bin/busybox
 
 ## dosemu
 
+build-$(dosemu)/config.status: $(dosemu)/configure
+	rm -f $@
+	mkdir -p $(dir $@)
+	cd $(dir $@)							\
+	&& CC="$(CC) $(fakelib_cflags)" $(cwd)/$(dosemu)/configure	\
+		--without-x --without-gpm
+	[ -e $@ ]
+
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
 # If it is non-zero, they do something weird which breaks for us.  So
 # we force it to be zero.
-build-$(dosemu)/bin/dosemu.bin:
-	mkdir -p build-$(dosemu)
+build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status
+	rm -f $@
 	cd build-$(dosemu)					\
-	&& $(cwd)/$(dosemu)/configure --without-x --without-gpm	\
-	&& make MAKELEVEL=0
+	&& make MAKELEVEL=0 
 	[ -e $@ ]
 
 $(call copy_exe,build-$(dosemu)/bin/dosemu.bin,stage1/usr/bin/dosemu.bin)
@@ -281,7 +289,8 @@ fakeinclude/stdio.h: fakelib/libc.so
 
 # Variable for use in CFLAGS to convince utilities to compile/link
 # against our just-built libraries instead of the system libraries.
-fakelib_cflags=-I$(cwd)/fakeinclude -L$(cwd)/fakelib			\
+# FIXME: Should include -nostdinc here
+fakelib_cflags=-idirafter $(cwd)/fakeinclude -L$(cwd)/fakelib		\
 		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib
 
 # Create empty config file to silence ldconfig warnings
