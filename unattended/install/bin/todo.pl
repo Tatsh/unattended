@@ -7,13 +7,10 @@ use Pod::Usage;
 use Win32API::Registry qw(:Func :SE_);
 my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg);
-use Win32::OLE; # for get_drive_path
+use Win32::NetResource; # for get_drive_path
 
 # Location of the "to do" list.
 my $todo = 'c:\\netinst\\todo.txt';
-
-# In general, bomb out completely if COM engine encounters any trouble.
-Win32::OLE->Option ('Warn' => 3);
 
 # Your usual option-processing sludge.
 my %opts;
@@ -171,46 +168,21 @@ sub get_windows_version () {
     return "$os$sp";
 }
 
-# Get the path to a networked drive.
+# Get the UNC path for a networked drive.
 sub get_drive_path ($) {
     my ($drive) = @_;
 
     $drive =~ /^[a-z]:?$/i
         or die "Invalid drive specification $drive";
 
-    # Canonicalize to upper case
-    $drive =~ tr/a-z/A-Z/;
-
-    # Add colon if needed
+    # Add colon if needed.
     $drive =~ /:$/
         or $drive .= ':';
 
-    # Get a handle to the SWbemServices object of the local machine.
-    my $moniker = 'WinMgmts:';
-    my $computer = Win32::OLE->GetObject ($moniker);
-    defined $computer
-        or die "Unable to GetObject $moniker: " . Win32::OLE::LastError();
-
-    # Get the SWbemObjectSet of all logical disks.  For gory details, see:
-    # http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_logicaldisk.asp
-    my $drives_set = $computer->InstancesOf ('Win32_LogicalDisk');
-
-    # Convert set to array.
-    my @drives = Win32::OLE::Enum->All ($drives_set);
-
-    foreach my $d (@drives) {
-        my $name = $d->{'Name'};
-        $name =~ tr/a-z/A-Z/;
-        $name eq $drive
-            or next;
-        my $path = $d->{'ProviderName'};
-
-        defined $path
-            or die "$drive does not appear to be a networked drive";
-        return $path;
-    }
-
-    die "Drive $drive does not exist";
+    my $unc_name;
+    Win32::NetResource::GetUNCName ($unc_name, $drive)
+        or die "Unable to GetUNCName for $drive: $^E";
+    return $unc_name;
 }
 
 # Since this is the top-level "driver" script, stop if we encounter
