@@ -39,7 +39,7 @@ make_block_device () {
 }
 
 # Replace / with !
-dev="${1//\//\!}"
+dev="${1//\//!}"
 
 [ -n "$dev" ] \
     || die "$0: I need an argument"
