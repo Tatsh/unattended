@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.10-rc3
-# Tue Dec 21 16:25:45 2004
+# Linux kernel version: 2.6.10
+# Mon Dec 27 13:57:44 2004
 #
 CONFIG_X86=y
 CONFIG_MMU=y
@@ -893,6 +893,7 @@ CONFIG_USB_EHCI_HCD=m
 # CONFIG_USB_EHCI_ROOT_HUB_TT is not set
 CONFIG_USB_OHCI_HCD=m
 CONFIG_USB_UHCI_HCD=m
+CONFIG_USB_SL811_HCD=m
 
 #
 # USB Device Class drivers
@@ -998,6 +999,11 @@ CONFIG_USB_HIDINPUT=y
 # CONFIG_USB_GADGET is not set
 
 #
+# MMC/SD Card support
+#
+# CONFIG_MMC is not set
+
+#
 # File systems
 #
 CONFIG_EXT2_FS=m
@@ -1089,7 +1095,7 @@ CONFIG_SMB_FS=y
 CONFIG_CIFS=m
 CONFIG_CIFS_STATS=y
 # CONFIG_CIFS_XATTR is not set
-# CONFIG_CIFS_POSIX is not set
+# CONFIG_CIFS_EXPERIMENTAL is not set
 # CONFIG_NCP_FS is not set
 # CONFIG_CODA_FS is not set
 # CONFIG_AFS_FS is not set
