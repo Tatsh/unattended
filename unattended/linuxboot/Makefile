@@ -10,7 +10,7 @@ dmidecode=dmidecode-2.4
 dosemu=dosemu-20040723
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
-glibc=glibc-20041012
+glibc=glibc-20040723
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
