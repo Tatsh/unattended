@@ -8,7 +8,8 @@ use Win32API::Registry qw(:Func :SE_);
 
 # Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'help|h|?', 'message=s', 'halt', 'reboot', 'timeout=i')
+GetOptions (\%opts, 'help|h|?', 'message=s', 'halt', 'reboot|r',
+            'remote=s', 'timeout=i')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -26,11 +27,13 @@ my $reboot = exists $opts{'reboot'};
 my $message = (exists $opts{'message'} ? $opts{'message'}
                : "$0 is shutting down the system");
 
+my $system = (exists $opts{'remote'} ? $opts{'remote'} : '');
+
 # Enable "shutdown" privilege
 AllowPriv (SE_SHUTDOWN_NAME, 1)
     or die "Unable to AllowPriv SE_SHUTDOWN_NAME: $^E";
 
-InitiateSystemShutdown ('', $message, $timeout, 1, $reboot)
+InitiateSystemShutdown ($system, $message, $timeout, 1, $reboot)
     or die "Unable to InitiateSystemShutdown: $^E";
 
 print "Shutdown initiated.\n";
@@ -53,4 +56,5 @@ shutdown.pl [ options ]
  --message=<msg>         Display <msg> in message box during countdown
  --halt                  Shut down and halt
  --reboot                Shut down and reboot
+ --remote <host>         Shut down <host> instead of local machine
  --timeout=<secs>        Wait <secs> seconds before shutdown (default 10)
