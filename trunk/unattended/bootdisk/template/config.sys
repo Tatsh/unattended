@@ -2,3 +2,7 @@ lastdrive=z
 device=himem.sys /testmem:off
 dos=high,umb
 DEVICEHIGH=\NET\IFSHLP.SYS
+
+; Required for installing XP under VMware.  Thanks to Scott Card for
+; figuring this out.
+FILES=30
