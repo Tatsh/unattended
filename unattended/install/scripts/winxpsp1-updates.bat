@@ -39,7 +39,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia-KB828026-x86-%WINL
 :: URL|ENU|http://download.microsoft.com/download/6/6/9/6692c11a-e001-4706-bf86-c37a7111d9de/WindowsMedia9-KB819639-x86-ENU.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/2/0/c/20ccf973-faec-438a-8e16-469f689472be/WindowsMedia9-KB819639-x86-NLD.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-nld.exe
 :: <http://support.microsoft.com/?kbid=819639>
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-021.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N"
 
 :: Media Player 9.0
@@ -124,7 +124,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB829558-x86-%WINLANG%.ex
 :: URL|ENU|http://download.microsoft.com/download/a/1/3/a134a6a3-a69f-4b19-9292-35eae0b3e7fe/WindowsXP-KB820291-x86-ENU.exe|updates/winxpsp1/windowsxp-kb820291-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/4/b/7/4b729109-1adf-4c4f-a148-77dff771c20b/WindowsXP-KB820291-x86-NLD.exe|updates/winxpsp1/windowsxp-kb820291-x86-nld.exe
 :: "New 'Set Program Access and Defaults' Start Menu Icon ..."
-:: <http://support.microsoft.com/default.aspx?kbid=820291>
+:: <http://support.microsoft.com/?id=820291>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB820291-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 327979
@@ -156,7 +156,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 :: URL|NLD|http://download.microsoft.com/download/2/e/d/2ed7c7e7-4922-48c6-bf4f-c32b76cba519/Q832894.exe|updates/ie6sp1/nld/q832894.exe
 :: "February, 2004, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=832894>
-:: <http://www.microsoft.com/technet/security/bulletin/MS04-004.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-004.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 
 :: Critical update 330994
@@ -173,7 +173,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 :: URL|ENU|http://download.microsoft.com/download/d/0/4/d044a7f5-b5ae-4e1f-b6ae-4edb4dd3e32a/WindowsXP-KB828028-x86-ENU.exe|updates/winxpsp1/windowsxp-kb828028-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/5/7/8/578bacfa-fe7c-4715-a76f-e6b4c8d6df04/WindowsXP-KB828028-x86-NLD.exe|updates/winxpsp1/windowsxp-kb828028-x86-nld.exe
 :: "ASN.1 Vulnerability Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-007.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-007.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
@@ -240,28 +240,28 @@ todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
 :: URL|ENU|http://download.microsoft.com/download/9/8/3/9835c5c9-5cab-4181-a821-2c9b8f6ea612/WindowsXP-KB824141-x86-ENU.exe|updates/winxpsp1/windowsxp-kb824141-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/2/f/d/2fd43ab5-7d1b-497a-9f93-434c1e80ecde/WindowsXP-KB824141-x86-NLD.exe|updates/winxpsp1/windowsxp-kb824141-x86-nld.exe
 :: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824141-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 825119 (MS03-044)
 :: URL|ENU|http://download.microsoft.com/download/4/3/1/431d912c-6c0b-469c-893d-fc138fee7191/WindowsXP-KB825119-x86-ENU.exe|updates/winxpsp1/windowsxp-kb825119-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/9/2/9/929140b3-f5e0-4526-a99c-9abfaf964405/WindowsXP-KB825119-x86-NLD.exe|updates/winxpsp1/windowsxp-kb825119-x86-nld.exe
 :: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-044.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-044.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB825119-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 828035 (MS03-049)
 :: URL|ENU|http://download.microsoft.com/download/e/a/e/eaea4109-0870-4dd3-88e0-a34035dc181a/WindowsXP-KB828035-x86-ENU.exe|updates/winxpsp1/windowsxp-kb828035-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/d/9/9/d99a03e7-60e3-43b9-8b43-37fd398f49af/WindowsXP-KB828035-x86-NLD.exe|updates/winxpsp1/windowsxp-kb828035-x86-nld.exe
 :: "Buffer Overrun in Messenger Service Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-049.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-049.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB828035-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 823182 (MS03-041)
 :: URL|ENU|http://download.microsoft.com/download/4/c/f/4cf3724a-ce0e-4553-8f27-0478ad9e1c53/WindowsXP-KB823182-x86-ENU.exe|updates/winxpsp1/windowsxp-kb823182-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/a/c/f/acf0434f-28ed-48ad-8e58-74f8e0eb928b/WindowsXP-KB823182-x86-NLD.exe|updates/winxpsp1/windowsxp-kb823182-x86-nld.exe
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-041.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB823182-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 826939
