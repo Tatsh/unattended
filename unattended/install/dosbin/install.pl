@@ -78,6 +78,9 @@ sub full_os_name ($) {
     elsif ($arg =~ /^winxp(?:sp(\d+))?$/) {
         $ret = "Windows XP Professional";
     }
+    elsif ($arg eq 'winxpoem') {
+        $ret = "Windows XP Professional OEM";
+    }
     defined $1
         and $ret .= " Service Pack $1";
     return $ret;
