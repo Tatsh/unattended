@@ -6,11 +6,36 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 824141 (MS03-045)
+:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.asp>
+todo.pl "%Z%\packages\win2ksp4\Windows2000-KB824141-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 825119 (MS03-044)
+:: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-044.asp>
+todo.pl "%Z%\packages\win2ksp4\Windows2000-KB825119-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 828035 (MS03-043)
+:: "Buffer Overrun in Messenger Service Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
+todo.pl "%Z%\packages\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 826232 (MS03-042)
+:: "Buffer Overflow in Windows Troubleshooter ActiveX Control Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-042.asp>
+todo.pl "%Z%\packages\win2ksp4\Windows2000-KB826232-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 823182 (MS03-041)
+:: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
+todo.pl "%Z%\packages\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.exe /u /n /z"
+
 :: Critical update 824146
 :: "A Buffer Overrun in RPCSS May Allow Code Execution"
 :: (Worst Windows security hole, ever.  Again.)
 :: <http://support.microsoft.com/?kbid=824146>
-todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\Windows2000-KB824146-x86-%WINLANG%.exe /u /n /z" .reboot
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB824146-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 824105
 :: "Flaw in NetBIOS Could Lead to Information Disclosure"
@@ -42,6 +67,12 @@ todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB823980-x86-%WINLANG
 :: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=823559>
 todo.pl "%Z%\packages\win2ksp4\Windows2000-KB823559-x86-%WINLANG%.exe /u /n /z"
+
+:: Recommended update 822831
+:: "BUG: Driver Installation Program Does Not Install Device Drivers"
+:: <http://support.microsoft.com/?kbid=822831>
+:: (download only available from Windows Catalog)
+todo.pl "%Z%\packages\win2ksp4\Windows2000-KB822831-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 818043
 :: "L2TP/IPSec NAT-T Update for Windows XP and Windows 2000"
