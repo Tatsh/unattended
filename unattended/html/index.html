@@ -22,7 +22,7 @@ come back two hours later to a fully-installed Windows workstation,
 using nothing but Unix servers on the back end.
 
 <p>But be warned: This is not a
-<tt>./configure&nbsp;&amp;&amp;&nbsp;make&nbsp;install</tt> kind of
+<kbd>./configure&nbsp;&amp;&amp;&nbsp;make&nbsp;install</kbd> kind of
 project.  This is a set of instructions, tools, and sample scripts
 which will require some customization for your site.  Nevertheless,
 everything you need to know, or at least a reference to it, is here
@@ -50,11 +50,21 @@ and <a href="http://www.microsoft.com/smserver/">"SMS"</a>.  If you
 think those sound like good ideas, then you are not part of my
 intended audience.
 
-<p>Anyway, I put together a complete system from scratch and I am
-releasing it here on SourceForge.  Most of the content here is also
-available elsewhere, but it took me a while to find because it was not
-all collected in one place.  I am hoping that by creating such a
-place, I can save others like myself some time.
+<p>Some solutions to this problem involve drive imaging (or
+workstation "cloning").  Workstation cloning has several drawbacks,
+including <a
+href="http://service2.symantec.com/SUPPORT/ghost.nsf/docid/1999050308324125"
+>the SID issue</a>, poor support for non-uniform hardware, and
+difficulty in making even minor changes.  But if it works for your
+environment, don't let me stop you.
+
+<p>Anyway, I have assembled a complete unattended installation system
+from scratch, and I am releasing it here on SourceForge.  Most of this
+content is also available elsewhere, but it took me a long time to
+find because it was not all collected in one place.  If something like
+this existed when I started, I could have saved a lot of time.  (The
+database of <a href="installers.html">unattended/silent installer
+flags for Windows apps</a> would have been particularly handy.)
 
 <h1>What next?</h1>
 
@@ -76,13 +86,14 @@ two steps:
 <p>Step 1 is annoying because it involves DOS network drivers.
 
 <p>Step 2 is annoying because there is no standard way to install
-Windows applications from the command line.  (Well, there is, but
-almost nobody uses it.)  So every application must be handled
-specially.  Also, it is tricky to write a script which reboots the
-machine halfway through.  (OK, so rebooting is pretty easy.  But
-automatically picking up where you left off is another matter.)
+Windows applications from the command line.  Well, there is, but
+nobody uses it.  So every application must be handled specially.
+Also, it is tricky to write a script which reboots the machine halfway
+through.  (OK, rebooting itself is easy.  But automatically picking up
+where you left off is harder.)
 
-<p>Click the links above for more information.
+<p>Click the links above for more information.  Also, please let me
+know about any successes, failures, suggestions, or patches you have.
 
 <hr>
 <address>
