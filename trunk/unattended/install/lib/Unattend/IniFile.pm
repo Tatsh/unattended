@@ -123,11 +123,11 @@ sub max_index ($) {
     my ($self) = @_;
     my $ret = 0;
 
-    foreach my $section ($self->sections) {
+    foreach my $section (keys %{$self}) {
         my $index = $self->sort_index ($section);
         $ret < $index
             and $ret = $index;
-        foreach my $key (keys %{$self->section ($section)}) {
+        foreach my $key (keys %{$self->{$section}}) {
             $index = $self->sort_index ($section, $key);
             $ret < $index
                 and $ret = $index;
@@ -154,24 +154,23 @@ sub merge ($$) {
     my $other_max_index = $other->max_index ();
 
     # Offset our sort indices so that we will sort after other
-    foreach my $section ($self->sections) {
+    foreach my $section (keys %{$self}) {
         $self->sort_index ($section) += $other_max_index;
         foreach my $key (keys %{$self->{$section}}) {
             $self->sort_index ($section, $key) += $other_max_index;
         }
     }
 
-    foreach my $section ($other->sections) {
+    foreach my $section (keys %{$other}) {
         # Merge the section comments.
         $self->comments ($section) =
             _merge_comments ($self->comments ($section),
                              $other->comments ($section));
         # Overwrite the section sort index.
         $self->sort_index ($section) = $other->sort_index ($section);
-        foreach my $key (keys %{$other->section ($section)}) {
+        foreach my $key (keys %{$other->{$section}}) {
             # Copy the value.
-            $self->section ($section)->{$key} =
-                $other->section ($section)->{$key};
+            $self->{$section}->{$key} = $other->{$section}->{$key};
             # Merge the comments.
             $self->comments ($section, $key) =
                 _merge_comments ($self->comments ($section, $key),
@@ -222,7 +221,7 @@ sub read ($$;$) {
             $acc->comments ($section) = $comments;
             $comments = [ ];
             # Make sure section exists, even it it contains no values
-            $acc->section ($section);
+            $acc->{$section};
         }
         elsif (defined $section && $section !~ $sect_re) {
             next;
@@ -258,7 +257,7 @@ sub read ($$;$) {
 #                and (die "Duplicate $key settings in $file, ",
 #                     "lines $old_index and $.\n");
             $acc->sort_index ($section, $key) = $.;
-            $acc->section ($section)->{$key} = $val;
+            $acc->{$section}->{$key} = $val;
             $acc->comments ($section, $key) = $comments;
             $comments = [ ];
         }
