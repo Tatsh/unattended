@@ -283,7 +283,11 @@ sub do_cmd ($) {
         if ($cmd eq '.reboot') {
             my $next_cmd = peek_todo ();
             # Coalesce multiple reboots into single reboot
-            if (!defined $next_cmd || $next_cmd ne '.reboot') {
+            if (!defined $next_cmd) {
+                reboot (5);
+                die "Internal error";
+            }
+            elsif ($next_cmd ne '.reboot') {
                 # Arrange to run
                 # ourselves after reboot.
                 run_at_logon ("$mapznrun $0 --go");
@@ -298,6 +302,10 @@ sub do_cmd ($) {
             do_cmd ($new_cmd);
             print "Expecting previous command to reboot; exiting.\n";
             exit 0;
+        }
+        elsif ($cmd =~ /^\.reboot-on\s+(\d+)\s+(.*)$/) {
+            local $ignore_err{$1} = 2;
+            do_cmd ($2);
         }
         elsif ($cmd =~ /^\.ignore-err\s+(\d+)\s+(.*)$/) {
             local $ignore_err{$1} = 1;
@@ -317,6 +325,8 @@ sub do_cmd ($) {
         while (1) {
             print "Running: $cmd\n";
             my $ret = system $cmd;
+            ($ignore_err{$ret >> 8} == 2)
+                and do_cmd ('.reboot');
             ($ignore_err{$ret >> 8})
                 and last;
             print "$cmd failed, status ", $ret >> 8, ' (', $ret % 256, ')', "\n";
@@ -326,7 +336,7 @@ sub do_cmd ($) {
                 and die;
             $key eq 'I'
                 and last;
-      }
+        }
     }
 }
 
