@@ -109,7 +109,7 @@ todo.pl "z:\packages\winxpsp1\Q323255_WXP_SP2_x86_ENU.exe /u /o /z"
 
 :: Recommended update 322011
 :: "You Cannot Preview a Fax in the Fax Console"
-:: <http://support.microsoft.com/?kbid=323255>
+:: <http://support.microsoft.com/?kbid=322011>
 todo.pl "z:\packages\winxpsp1\Q322011_WXP_SP2_x86_ENU.exe /u /o /z"
 
 :: IE updates
