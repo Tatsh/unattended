@@ -90,7 +90,7 @@ for entry in * ; do
     lspci -n -s "$bus_slot_func" >&2
     lspci -s "$bus_slot_func" >&2
 
-    cat $module_dir/modules.pcimap /etc/extra.pcimap \
+    cat /etc/extra.pcimap $module_dir/modules.pcimap \
         | sed -e /^\#/d -e /^\$/d \
         | map_modules_pci $vendor $device $subvendor $subdevice $class
 
