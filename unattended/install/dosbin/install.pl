@@ -3,6 +3,7 @@ use strict;
 
 use Carp;
 use File::Spec::Win32;
+use File::Copy;
 use Unattend::IniFile;
 use Unattend::WinMedia;
 
@@ -409,7 +410,13 @@ sub create_postinst_bat () {
     my $top = get_value ('_meta', 'top');
     if (defined $top) {
         push @postinst_lines,
-        ("net use z: $ENV{'INSTALL'} /persistent:yes",
+        ('goto map',
+         ':delmap',
+         # Setup maping loop to make sure we map drive z:
+         'net use z: /delete',
+         ':map',
+         "net use z: $ENV{'INSTALL'} /persistent:yes",
+         'if errorlevel 1 goto delmap',
          'call z:\\scripts\\perl.bat',
          'PATH=z:\\bin;%PATH%',
          # Last step is always a reboot
@@ -418,7 +425,13 @@ sub create_postinst_bat () {
          'todo.pl "' . get_value ('_meta', 'autolog') . '"',
          # First step is to perform top-level install
          "todo.pl $top",
-         "\ntodo.pl --go");
+         '',
+         'todo.pl --go');
+
+        print "Copying z:\\bin\\maptodo.pl...";
+	copy ("z:\\bin\\maptodo.pl", get_value ('_meta','netinst')."\\maptodo.pl")
+		or die "Unable to copy to drive c:";
+        print "done.\n";
     }
 
     my $postinst = $file_spec->catfile (get_value ('_meta', 'netinst'),
