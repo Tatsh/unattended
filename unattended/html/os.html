@@ -278,22 +278,22 @@ href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/spdeploy
 Guide</em></a>.</p>
 
 <p>The procedure is the same for Windows 2000 and XP.  Using Windows
-XP Service Pack 1 as an example:</p>
+XP Service Pack 2 as an example:</p>
 
 <ol>
 
 <li>Copy or rename <code>Z:\os\winxp</code> to
-<code>Z:\os\winxpsp1</code>.  This name is not accurate yet, but it
+<code>Z:\os\winxpsp2</code>.  This name is not accurate yet, but it
 will be in a few minutes.</li>
 
 <li>Download <a
-href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/network.asp"
+href="http://www.microsoft.com/downloads/details.aspx?displaylang=de&familyid=049c9dbe-3b8e-4f30-8245-9e368d3cdb5a"
 >the service pack (network installation)</a> from Microsoft. This will
-be a package file, say <code>xpsp1_en_x86.exe</code>.</li>
+be a package file, say <code>WindowsXP-KB835935-SP2-DEU.exe</code>.</li>
 
 <li>Run
 <pre>
-    xpsp1_en_x86.exe /u /x:c:\xpsp1
+    WindowsXP-KB835935-SP2-DEU.exe /u /x:c:\xpsp2
 </pre>
 
 <p>This will extract the service pack files to the folder
@@ -302,12 +302,12 @@ be a package file, say <code>xpsp1_en_x86.exe</code>.</li>
 
 <li>Run
 <pre>
-    c:\xpsp1\i386\update\update.exe /s:Z:\os\winxpsp1
+    c:\xpsp2\i386\update\update.exe /s:Z:\os\winxpsp2
 </pre>
 
 <p>This applies the service pack to the distribution point
-<code>Z:\winxpsp1</code>, creating an integrated ("slipstreamed")
-WinXP SP1 tree.  Due to a bug, you must be a local administrator for
+<code>Z:\winxpsp2</code>, creating an integrated ("slipstreamed")
+WinXP SP2 tree.  Due to a bug, you must be a local administrator for
 this command to work, even if you have write access to the target
 folder.  Also, you must be running XP to use the XP service pack
 installer.</p>
@@ -789,3 +789,4 @@ href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
 
 </body>
 </html>
+
