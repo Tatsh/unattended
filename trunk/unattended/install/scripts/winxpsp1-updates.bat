@@ -384,6 +384,32 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /
 
 :: Critical Updates
 
+:: Critical update MS04-033 (873376)
+:: "Vulnerability in Compressed Folders Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-033.mspx>
+:: URL|ARA|http://download.microsoft.com/download/4/8/d/48de2d45-757a-4cbf-87b2-8b89f6ad6b6c/WindowsXP-KB873376-x86-ara.exe|updates/winxpsp1/windowsxp-kb873376-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/8/f/0/8f040bd8-84bf-45d1-b21d-0af1e0bf4b99/WindowsXP-KB873376-x86-csy.exe|updates/winxpsp1/windowsxp-kb873376-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/c/c/e/ccee4c57-0a03-40fe-accd-912d9e2c1379/WindowsXP-KB873376-x86-dan.exe|updates/winxpsp1/windowsxp-kb873376-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/d/8/b/d8b74c10-7ce8-4bf9-9d21-f741b5081ea1/WindowsXP-KB873376-x86-deu.exe|updates/winxpsp1/windowsxp-kb873376-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/2/6/f/26f10f27-ec81-4b0e-b154-a29068a0dec8/WindowsXP-KB873376-x86-ell.exe|updates/winxpsp1/windowsxp-kb873376-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/a/d/4/ad4ecf70-34d2-4739-9b1e-e67f09bb8d35/WindowsXP-KB873376-x86-enu.exe|updates/winxpsp1/windowsxp-kb873376-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/5/4/8/548b130a-7db4-4da6-9bfc-79e593343b53/WindowsXP-KB873376-x86-esn.exe|updates/winxpsp1/windowsxp-kb873376-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/8/d/98df2b48-9552-47c4-812f-849807000477/WindowsXP-KB873376-x86-fin.exe|updates/winxpsp1/windowsxp-kb873376-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/3/f/3/3f3a49d2-1deb-41e6-a038-edece3938150/WindowsXP-KB873376-x86-fra.exe|updates/winxpsp1/windowsxp-kb873376-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/a/8/4a8ed6d8-00fe-47df-8ed3-fa28338a41d7/WindowsXP-KB873376-x86-heb.exe|updates/winxpsp1/windowsxp-kb873376-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/f/e/2/fe2fd919-b279-4fb9-9011-241c01617c7b/WindowsXP-KB873376-x86-hun.exe|updates/winxpsp1/windowsxp-kb873376-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/e/d/bed8fbd4-8180-4fbb-a583-dee437afb582/WindowsXP-KB873376-x86-ita.exe|updates/winxpsp1/windowsxp-kb873376-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/c/a/a/caa6b884-e2da-4e06-b897-f08de0371963/WindowsXP-KB873376-x86-jpn.exe|updates/winxpsp1/windowsxp-kb873376-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/1/5/915fed64-55cf-4d32-a48d-af94d48f6a6e/WindowsXP-KB873376-x86-kor.exe|updates/winxpsp1/windowsxp-kb873376-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/b/4/9/b4978d5d-37fc-4e28-b4fc-9450b9d79c1c/WindowsXP-KB873376-x86-nld.exe|updates/winxpsp1/windowsxp-kb873376-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/0/6/4/064e568b-eabc-4f5b-9ae3-7e96b28283ea/WindowsXP-KB873376-x86-plk.exe|updates/winxpsp1/windowsxp-kb873376-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/b/2/e/b2e05398-7edb-44d2-a72e-ead7566590ba/WindowsXP-KB873376-x86-ptg.exe|updates/winxpsp1/windowsxp-kb873376-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/0/1/7/017dd8e4-c40d-47df-9b24-0d79b758f3a7/WindowsXP-KB873376-x86-ptb.exe|updates/winxpsp1/windowsxp-kb873376-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/5/b/4/5b4243e0-9d61-4fbe-9064-9b87c6662dc2/WindowsXP-KB873376-x86-rus.exe|updates/winxpsp1/windowsxp-kb873376-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/0/9/80904401-74d0-418e-8f4b-59eb546cf544/WindowsXP-KB873376-x86-sve.exe|updates/winxpsp1/windowsxp-kb873376-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/f/5/7/f571cdd8-c34e-4fa1-a714-13c9d508fc08/WindowsXP-KB873376-x86-trk.exe|updates/winxpsp1/windowsxp-kb873376-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb873376-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-032 (840987)
 :: "Security Update for Microsoft Windows"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-032.mspx>

@@ -103,6 +103,27 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLAN
 
 :: Critical Updates
 
+:: Critical update MS04-033 (873376)
+:: "Vulnerability in Compressed Folders Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-033.mspx>
+:: URL|CSY|http://download.microsoft.com/download/e/1/e/e1edffc9-d801-48fa-b9d5-d3bdafa8bddd/WindowsServer2003-KB873376-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/b/6/3/b6351e20-7205-4753-bcbb-dc05eac61e1e/WindowsServer2003-KB873376-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/4/e/7/4e76735f-79ce-4b8a-a518-4135602324ea/WindowsServer2003-KB873376-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/a/d/7ad91cf3-ecd1-44ff-8ffc-ea566bed4eb3/WindowsServer2003-KB873376-x86-esn.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/2/c/f/2cfd0474-a393-4986-8ff7-f5fc2eb56daf/WindowsServer2003-KB873376-x86-fra.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/5/0/2/50231525-e9fa-4318-a888-c81c8343c078/WindowsServer2003-KB873376-x86-hun.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/7/d/4/7d499178-bb5a-4619-9e03-6a8c69fd7f7a/WindowsServer2003-KB873376-x86-ita.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/9/4/8/948f3088-4c21-4803-b688-0810842e3156/WindowsServer2003-KB873376-x86-jpn.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/e/5/4/e54f072c-2a59-432a-9f17-f2096d6cd8c2/WindowsServer2003-KB873376-x86-kor.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/6/9/6/696f3b21-3738-4dde-86cd-f154d0535743/WindowsServer2003-KB873376-x86-nld.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/7/f/4/7f40c1a1-0dba-4bd3-9258-b84b9885f372/WindowsServer2003-KB873376-x86-plk.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/6/5/d/65dc3c4b-e96d-4f8f-9162-61d678062155/WindowsServer2003-KB873376-x86-ptg.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/9/1/1/9117cadd-6ed7-4860-b621-af4c84ecc442/WindowsServer2003-KB873376-x86-ptb.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/e/9/c/e9cf1670-b1d2-4c51-81a4-e301309874ae/WindowsServer2003-KB873376-x86-rus.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/4/5/64586f92-33e2-46d6-9324-a9352209d238/WindowsServer2003-KB873376-x86-sve.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/e/a/6ea21832-6a58-4f46-9962-601a6937f569/WindowsServer2003-KB873376-x86-trk.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb873376-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-032 (840987)
 :: "Security Update for Microsoft Windows"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-032.mspx>
