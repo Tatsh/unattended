@@ -461,6 +461,33 @@ with <code>/q&nbsp;/c:"setup&nbsp;/qn1"</code>.
 </table>
 
 <br><hr width="50%">
+<h2 id="ie">Microsoft Internet Explorer</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://www.microsoft.com/ie/">Free Download</a>
+
+<tr><td valign="middle">Details
+
+<td>Download the <a
+href="http://www.microsoft.com/windows/ieak/">Internet Explorer
+Administration Kit</a> and use its wizard to create an IE installer
+customized for your site.  In the "Media Selection" dialog, choose the
+"Flat (all files in one directory)" option.
+
+<p>To perform an unattended installation, run
+<code>IE6setup.exe</code> from the <code>\ie6\flat\win32\en</code>
+directory with the <code>/q</code> and <code>/r:n</code> options.
+
+<tr><td valign="middle">Example
+
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/ie6.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>ie6.bat</a>
+
+</table>
+
+<br><hr width="50%">
 <h2 id="office">Microsoft Office</h2>
 <table border cellpadding=4>
 
@@ -533,13 +560,11 @@ from me.)
 
 <p>You might try following the directions in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q195828"
->KB Article Q195828</a>.  If you do, you will be disappointed, because
-<code>smsinst.exe</code> forks and exits immediately, making it
-impossible to wait for the installation to finish.
-
-<p>Note that the instructions for using the <code>acost.exe</code>
-tool to configure which components to install is still accurate,
-however.
+>KB article Q195828</a>.  If you do, you will be disappointed, because
+<code>smsinst.exe</code> forks and exits immediately, rendering it
+useless for scripting.  The KB article's instructions for using the
+<code>acost.exe</code> tool to configure which components to install
+is still accurate, however.
 
 <p>Luckily, by running "strings" on <code>smsinst.exe</code>, we can
 learn that all it does is run <code>regedit /s key.dat</code> and then
