@@ -1,3 +1,35 @@
+*** Changes in version 2.5 (2003-Mar-09)
+
+Use DJGPP Pico instead of FreeDOS edit.exe to edit files.  Document
+this new requirement.
+
+Automatically scan i386/$oem$/$1 looking for driver directories. Offer
+to add any such directories to OemPnPDriversPath.
+
+Always use upper-case for driver name in system.ini, since PCNet
+driver requires it.
+
+Add support for RealTek RTL8139 cards (untested).  Thanks to Eugene
+Kotlyarov for the pointer.
+
+Deal with annoying ipconfig.exe behavior, where it exits with various
+statuses from 10 to 16.
+
+When fdisk is run by hand, do not clobber partition table first and do
+not replace first partition with 2G FAT partition afterwards.  In
+other words, assume anybody running fdisk manually knows exactly what
+they are doing.
+
+Do not create postinst.bat unless it has something to do, and do not
+set AutoLogon nor [GuiRunOnce]/Command0 unless we create postinst.bat.
+
+Clean up various documentation.
+
+Sync with SYSLINUX 2.02.
+
+Sync with FreeDOS fdisk 1.1.4 beta.
+
+
 *** Changes in version 2.4 (2003-Feb-10)
 
 Recognize Windows XP Professional OEM (winxpoem) as a separate
