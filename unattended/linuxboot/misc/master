@@ -30,6 +30,25 @@ get_cmdline_param () {
     done
 }
 
+# Sort modules consistent with order in /etc/module-order.txt.
+module_order=$(sed -e s/\#.\*// /etc/module-order.txt)
+sort_modules () {
+    local modules=" $* "
+    local ret=""
+
+    for module in $module_order ; do
+        new_modules=${modules// $module / }
+        [ "$new_modules" == "$modules" ] \
+            && continue
+        ret="$ret $module"
+        modules="$new_modules"
+    done
+
+    ret="$ret $modules"
+
+    echo $ret
+}
+
 load_modules () {
     local modules="$1"
 
@@ -85,8 +104,7 @@ check_shell=$(get_cmdline_param shell)
 echo "*** Next, we'll look for PCI Ethernet hardware..."
 
 # PCI classes 0x0200nn are Ethernet controllers.
-# FIXME: How do we handle multiple drivers for same device (e100/eepro100).
-load_modules "$(find-modules-pci 0x02 0x00)"
+load_modules "$(sort_modules $(find-modules-pci 0x02 0x00))"
 
 echo "*** And I suppose we may as well look for PCMCIA devices..."
 if [ -e /var/run/did_cardmgr ] ; then
@@ -260,7 +278,7 @@ storage_modules="$storage_modules $(find-modules-pci 0x0e 0x00)"
 [ -z "$storage_modules" ] \
     && die "No mass storage hardware found (missing drivers?)"
 
-load_modules "$storage_modules"
+load_modules "$(sort_modules $storage_modules)"
 
 # If we loaded generic SCSI support, also load SCSI disk support.
 lsmod | grep -q "^scsi_mod[[:space:]]" \
