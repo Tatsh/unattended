@@ -472,7 +472,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB883357-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/1/c/3/1c3ecd38-6b71-4bc7-af40-1830f9a42712/WindowsXP-KB842773-v2-x86-rus.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/9/0/c/90c7d09b-6b70-4af5-bc75-1fe875d66c9a/WindowsXP-KB842773-v2-x86-sve.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/5/9/7/5976faaf-054a-4e06-aba6-ab9877c1c07e/WindowsXP-KB842773-v2-x86-trk.exe|updates/winxpsp1/windowsxp-kb842773-v2-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB842773-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB842773-v2-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: IE Critical Updates
 
