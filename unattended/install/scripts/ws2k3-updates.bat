@@ -103,9 +103,30 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLAN
 
 :: Critical Updates
 
+:: Critical update MS04-036 (883935)
+:: "Vulnerability in NNTP Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-036.mspx>
+:: URL|CSY|http://download.microsoft.com/download/1/a/1/1a103a90-ddcb-42f0-bd4b-ea066ddbcee2/WindowsServer2003-KB883935-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/4/1/1/411d44ad-0770-4d79-9354-88986adebd7a/WindowsServer2003-KB883935-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/f/5/d/f5dec840-8ae8-43b3-989e-a38b8f82c50d/WindowsServer2003-KB883935-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/a/8/a/a8a73090-8a84-425f-859d-28f063dbdf10/WindowsServer2003-KB883935-x86-esn.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/2/a/c/2aca0651-d65e-4c2d-affb-3ea0cd3fbea5/WindowsServer2003-KB883935-x86-fra.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/6/5/8/65857e18-46b0-4bf8-8af4-50da2e7508f7/WindowsServer2003-KB883935-x86-hun.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/5/2/1/521dd21c-baf3-4ecb-ade0-ce5482630a84/WindowsServer2003-KB883935-x86-ita.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/4/2/e42a3fb4-d040-4828-bc0b-0b8c67e64ad6/WindowsServer2003-KB883935-x86-jpn.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/e/0/a/e0a068e6-af0d-42c4-bee7-f74ca1a2efa7/WindowsServer2003-KB883935-x86-kor.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/6/6/4/66464fdc-83ae-4c65-9f38-01d0b28f8938/WindowsServer2003-KB883935-x86-nld.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/3/2/f/32f9262b-a030-4392-8ed2-3b7cee82371f/WindowsServer2003-KB883935-x86-plk.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/4/6/6/46666efc-9bd6-4935-9ca4-30aab3025500/WindowsServer2003-KB883935-x86-ptg.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/f/5/d/f5d8686c-424b-4a67-9d9e-daae3d937273/WindowsServer2003-KB883935-x86-ptb.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/3/c/0/3c0d7846-9b3a-4679-b2cf-e8105d709ef8/WindowsServer2003-KB883935-x86-rus.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/b/1/a/b1a61711-f3e3-4d3f-9684-e29e4c53ec6d/WindowsServer2003-KB883935-x86-sve.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/4/c/c/4ccf6dd6-55c2-4cd5-9a17-44bfe483e661/WindowsServer2003-KB883935-x86-trk.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb883935-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-035 (885881)
 :: "Security Update for Windows Server 2003"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-034.mspx>
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-035.mspx>
 :: URL|CSY|http://download.microsoft.com/download/7/9/3/793b0b47-32ce-4590-8a54-90b482160484/WindowsServer2003-KB885881-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb885881-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/8/f/1/8f1eed00-957b-4249-abaa-3baf46f77bfe/WindowsServer2003-KB885881-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb885881-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/4/a/7/4a795e42-3de7-49ac-969f-a61b8015bc7b/WindowsServer2003-KB885881-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb885881-x86-enu.exe
