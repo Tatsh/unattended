@@ -128,6 +128,15 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.exe /u /n /z"
 
+:: Critical update 816093
+:: "Flaw in Microsoft VM Could Enable System Compromise"
+:: <http://support.microsoft.com/?kbid=816093>
+:: (NOTE: Only available from Windows Catalog, be sure to get
+::  the 2000 SP4 or XP version, they are the same)
+if not exist %SystemRoot%\System32\Msjava.dll goto nojvm
+todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
+:nojvm
+
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
 :: <http://support.microsoft.com/?kbid=814078>
