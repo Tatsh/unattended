@@ -30,3 +30,9 @@ dev/tty3 c 4 3
 dev/tty4 c 4 4
 dev/tty5 c 4 5
 dev/tty6 c 4 6
+
+# Serial ports (for serial console)
+dev/ttyS0 c 4 64
+dev/ttyS1 c 4 65
+dev/ttyS2 c 4 66
+dev/ttyS3 c 4 67
