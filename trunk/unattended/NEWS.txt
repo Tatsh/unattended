@@ -1,3 +1,19 @@
+** Changes in version 4.4a (2004-Aug-14)
+
+(Linux) Fix serious bug in master script which could cause a hang just
+after install.pl finishes.
+
+(Linux) Upgrade to Linux 2.6.8.1, Perl 5.8.5, klibc 0.157.
+
+(Linux) Add Net::LDAP and Convert::ASN1 Perl modules.
+
+Tweak post-install scripts for Windows XP SP2 final.
+
+Fix "prepare" script to download to a temporary file and rename into
+place, so that zero-length files from failed downloads do not confuse
+later invocations of the script.
+
+
 ** Changes in version 4.4 (2004-Aug-06)
 
 (Linux) Fix serious bug in find-modules-pci script, which prevented us
