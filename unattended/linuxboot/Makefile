@@ -468,6 +468,8 @@ $(call copy_file,misc/linuxrc,stage1/linuxrc)
 
 $(call copy_file,misc/find-modules-pci,stage1/bin/find-modules-pci)
 
+$(call copy_file,misc/make-blkdev-nodes,stage1/bin/make-blkdev-nodes)
+
 $(call copy_file,misc/extra.pcimap,stage1/etc/extra.pcimap)
 
 $(call copy_file,misc/master,stage1/etc/master)
@@ -480,9 +482,9 @@ $(call copy_file,misc/nsswitch.conf,stage1/etc/nsswitch.conf)
 $(call copy_file,misc/passwd,stage1/etc/passwd)
 
 stage1 += stage1/linuxrc stage1/bin/find-modules-pci			\
-		stage1/etc/extra.pcimap stage1/etc/master		\
-		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf	\
-		stage1/etc/passwd
+		stage1/bin/make-blkdev-nodes stage1/etc/extra.pcimap	\
+		stage1/etc/master stage1/etc/udhcpc-script		\
+		stage1/etc/nsswitch.conf stage1/etc/passwd
 
 ## Stage 1
 stage1: $(stage1)
