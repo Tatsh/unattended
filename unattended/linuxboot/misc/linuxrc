@@ -2,6 +2,8 @@
 
 echo WELCOME!!!
 
+/bin/mkdir /tmp
+
 /bin/mkdir /sys
 /bin/mount -t sysfs sysfs /sys
 
