@@ -643,7 +643,7 @@ set_value ('UserData', 'ProductKey',
                return simple_q ($product_key_q);
            });
 
-$u->comments->{'MassStorageDrivers'} =
+$u->comments ('MassStorageDrivers') =
     ['See <http://support.microsoft.com/?kbid=288344>'];
 
 $u->{'MassStorageDrivers'} =
@@ -668,7 +668,7 @@ $u->{'MassStorageDrivers'} =
         return \%ret;
     };
 
-$u->comments->{'OEMBootFiles'} = 'See comments for [MassStorageDrivers]';
+$u->comments ('OEMBootFiles') = 'See comments for [MassStorageDrivers]';
 $u->{'OEMBootFiles'} =
     sub {
         (defined $u->{'MassStorageDrivers'})
