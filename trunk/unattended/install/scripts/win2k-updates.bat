@@ -4,7 +4,7 @@
 todo.pl win2ksp4-updates.bat
 
 :: Windows 2000 Service Pack 4 Network Install for IT Professionals
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=1001AAF1-749F-49F4-8010-297BD6CA33A0&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=1001AAF1-749F-49F4-8010-297BD6CA33A0>
 :: URL|ARA|http://download.microsoft.com/download/3/f/8/3f8a308a-eae1-4a2d-927d-1f76d3e60442/w2ksp4_ar.exe|updates/win2k/ara/w2ksp4.exe
 :: URL|CSY|http://download.microsoft.com/download/f/d/2/fd2b1d2a-16c8-43ba-b805-518dbff8a438/w2ksp4_cs.exe|updates/win2k/csy/w2ksp4.exe
 :: URL|DAN|http://download.microsoft.com/download/7/c/7/7c7b3abd-2bfc-4e0d-b808-f4abdfc1c5f1/w2ksp4_da.exe|updates/win2k/dan/w2ksp4.exe
