@@ -29,7 +29,7 @@ if [ ! -f packages/mdac/enu/mdac-2.8.exe ]; then wget http://download.microsoft.
 if [ ! -f packages/directx9/dx90update_redist.exe ]; then wget http://download.microsoft.com/download/c/9/c/c9c8a1d4-7690-4c98-baf3-0c67e7f3751f/dx90update_redist.exe -O packages/directx9/dx90update_redist.exe; fi
 
 # Microsoft Windows Messenger
-if [ ! -f packages/windowsmessenger/enu/install.exe ]; then wget http://download.microsoft.com/download/4/4/0/44035C82-FEFC-49BB-965F-A20DF645AD0B/mmssetup.exe -O packages/windowsmessenger/enu/install.exe; fi
+if [ ! -f packages/windowsmessenger/enu/install.exe ]; then wget http://download.microsoft.com/download/4/6/c/46cfaca6-0441-49eb-b997-7432730d44df/install.exe -O packages/windowsmessenger/enu/install.exe; fi
 
 # Windows Media Player w/ Updates
 if [ ! -f packages/mediaplayer9/mpsetupxp.exe ]; then wget http://download.microsoft.com/download/8/a/2/8a27acce-5c9e-46b3-8996-1e76c0413d17/MPSetupXP.exe -O packages/mediaplayer9/mpsetupxp.exe; fi
