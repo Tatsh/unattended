@@ -24,6 +24,15 @@ if not exist "%CommonProgramFiles%\Microsoft Shared\Web Server Extensions\50\bin
 todo.pl "%Z%\updates\officexp\officexp-kb812708-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\fp5autlop.txt /p FP5AUTLop.msp\""
 :nospts
 
+:: "FrontPage 2002 Server Extensions Security Patch: November 11, 2003"
+:: <http://support.microsoft.com/?kbid=813380>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-051.asp>
+:: (You may need to rename this from -ENG.exe to -ENU.exe)
+:: (Only install if FrontPage Server Extensions are installed)
+if not exist "%CommonProgramFiles%\Microsoft Shared\Web Server Extensions\50\bin\Fp5Awel.dll" goto nofpse
+todo.pl "%Z%\updates\officexp\officexp-KB813380-client-%WINLANG%.exe /q"
+:nofpse
+
 :: "Access 2002 Snapshot Viewer Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=826293>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-038.asp>
