@@ -13,12 +13,16 @@ deployment system</a>.
 <hr>
 <h1>Overview</h1>
 
-To perform an unattended installation of Windows NT, 2000, or XP, you
-need to:
+<p>To use this system to perform an unattended installation of Windows
+2000 or XP, you need to:
 
 <ol>
+<li><a href="#answer-file">Understand what you are really doing</a>
+
+<li><a href="http:#network">Make sure your network infrastructure is
+sufficient</a>
+
 <li><a href="#install-share">Create the OS distribution point</a>
-(basically, a folder holding a copy of the Windows CD-ROM)
 
 <li><a href="#bootdisk">Create the DOS network boot disk</a>
 
@@ -27,20 +31,92 @@ go get a snack while the OS installs itself
 
 </ol>
 
+<p>If you are installing multiple systems, you will probably get tired
+of answering the same questions over and over.  You can customize this
+process for your site to avoid as many questions as you like; this is
+described in the <a href="advanced.html">advanced configuration</a>
+document.
+
+
+<h1 id="answer-file">Understanding the goal: unattend.txt</h1>
+
+<p><em>Windows&nbsp;Setup</em> is the program which installs Windows
+on a new computer.  To do this, it needs to ask lots of questions:
+What is your name?  What is your product key?  What is your time zone?
+And so on.
+
+<p>When you install Windows by hand, <em>Windows&nbsp;Setup</em> will
+stop and put up a dialog box for every question to which it needs an
+answer.
+
+<p>To perform an unattended installation, we need to provide an
+"answer file" with pre-recorded answers to all of the questions.  The
+traditional name for this file is <code>unattend.txt</code>, and its
+creation is our main goal.  Another way of describing the overall
+unattended installation process is:
+
+<ol>
+
+<li>Obtain access to the OS installation media
+
+<li>Obtain access to the destination hard drive
+
+<li>Generate <code>unattend.txt</code>
+
+<li>Run <em>Windows&nbsp;Setup</em> with appropriate switches to make
+it get answers from <code>unattend.txt</code> instead of from dialog
+boxes
+
+</ol>
+
+<p>These are the steps which Unattended performs for you.  It uses DOS
+to provide access to the OS installation media and hard drive, it uses
+a Perl script to create the <code>unattend.txt</code> file, and it
+knows how to invoke <em>Windows&nbsp;Setup</em> appropriately.
+
+<p>You do not need to understand the contents of
+<code>unattend.txt</code> to use Unattended, but you should learn
+about it eventually.  See the <a href="advanced.html">advanced
+configuration</a> document for information and references.
+
+
+<h1>Make sure your network infrastructure is sufficient</h1>
+
+<p>Unattended is designed to run mostly, or entirely, off of the
+network.
+
+<p>You will need a DHCP server, because that is how the boot disk
+obtains an IP address, WINS server, and default gateway.  Any sane
+network already has a DHCP server; if yours does not, I suggest you
+get one.  (Yes, you could modify the <code>system.ini</code> and
+<code>protocol.ini</code> files on the boot disk to have a fully
+static configuration.  But you do not want to.)
+
+<p>You do not need administrative access to the DHCP server, as long
+as it already provides the necessary information to the machine you
+are installing.
+
+<p>Initiating an installation by booting directly from the network
+requires some more infrastructure; namely, a TFTP server and the
+ability to configure the DHCP server itself.  <a
+href="http:#netboot">See below</a> for details.
+
+
 <h1 id="install-share">Create the OS distribution point</h1>
 
 <p>In principle, the OS distribution point could be a CD-ROM or a
 local disk directory, but we are going to use a network share.
 
+
 <h2>Create the install share (Z: drive)</h2>
 <p>Copy the <code>install</code> directory tree from this distribution
 to a Windows file server (or a Unix box running <a
 href="http://www.samba.org/">Samba</a>), and export it read-only with
-guest access permitted.  The bootdisk will ask you for the full
-Windows name of this share; the default is
-<code>\\ntinstall\install</code>.  The boot disk maps this share as
-the <code>Z:</code> drive, and this is how we will refer to it from
-now on.
+guest access permitted.  When you later boot from the boot disk, it
+will ask you for the full Windows name of this share; the default it
+assumes is <code>\\ntinstall\install</code>.  The boot disk maps this
+share as the <code>Z:</code> drive, and that is how we will refer to
+it from now on.
 
 <p>This procedure relies on the following files and directories from
 the <code>Z:</code> drive:
@@ -53,33 +129,41 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 
 <dd>Contains parts of <a
 href="http://www.delorie.com/djgpp/">DJGPP</a>, a collection of Unix
-tools for DOS.  This one is too big to bundle, so you will need to
-download it yourself; <a href="#djgpp">see below</a> for instructions.
-(Is it really worth it just so we can use a Bourne shell script
-instead of a <code>.bat</code> file?  Yes, it is.)
+tools for DOS.  DJGPP is required because the master installation
+script is written in Perl.  This one is too big to bundle, so you will
+need to download it yourself; <a href="#djgpp">see below</a> for
+instructions.  (Yes, it is worth it.)
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/dosbin/"
 >dosbin</a>
 
 <dd>Directory containing DOS utility programs (like fdisk) from the <a
-href="http://www.freedos.org/">FreeDOS</a> project.
+href="http://www.freedos.org/">FreeDOS</a> project.  Also contains <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>install.pl</a>, the master installation script.
 
 <dt><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/install.sh?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->install.sh</a>
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/doslib/"
+>doslib</a>
 
-<dd>Shell script run by <code>autoexec.bat</code> on the bootdisk.
-This is the first entry point to the networked portion of the
-installation.  This script will ask you a bunch of questions, then
-start the actual unattended installation.  You may need to edit this
-script slightly for your site.
+<dd>Directory containing helper files for the master installation
+script, including <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/doslib/unattend.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>unattend.pl</a> (an <code>unattend.txt</code> parser/generator) and
+the default <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/doslib/unattend.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>unattend.txt</a> file.
 
-<dt><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/unattend.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >unattend.txt</a>
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/site/"
+>site</a>
 
-<dd>Prototype answer file.  The <code>install.sh</code> script will
-copy this to your local drive and let you edit it.  <a
-href="#answer-file">See below</a> for more information.
+<dd>Directory containing your site-specific customizations.  If you
+place an <code>unattend.txt</code> file here, its settings will
+override the defaults.  More advanced customization is possible; see
+the <a href="advanced.html">advanced configuration</a> document for
+details.
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/win2k/"
@@ -125,13 +209,13 @@ href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/djdev203.zip"
 href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2misc/csdpmi5b.zip"
 >v2misc/csdpmi5b.zip</a>)
 
-<li>The Bash port (<a
-href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu/bsh204b.zip"
->v2gnu/bsh204b.zip</a>)
+<li>The Perl port (<a
+href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu/perl561b.zip"
+>v2gnu/perl561b.zip</a>)
 
 </ul>
 
-<p>Just unzip all of them under <code>Z:\djgpp</code>.
+<p>Simply unzip all of them under <code>Z:\djgpp</code>.
 
 <h2 id="cd-rom">Copy the Windows CD-ROM to the share</h2>
 <p>Copy the <code>i386</code> folder from your Windows CD-ROM to the
@@ -146,16 +230,15 @@ apply any other hotfix later.  But combining the service pack into the
 distribution point now will make installation faster.
 
 <p>To apply the service pack to the installation point, use the
-"slipstreaming" feature introduced in Windows 2000 Service Pack 1
-(i.e., not supported by NT).  You can find details in Microsoft's <a
+"slipstreaming" feature.  You can find details in Microsoft's <a
 href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/spdeploy.htm"
 ><em>Windows 2000 Service Pack 3 Installation and Deployment
 Guide</em></a> or <a
 href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/spdeploy.asp"
 >Windows XP Service Pack 1 Installation and Deployment Guide</a>.
 
-<p>The process is the same for Windows 2000 and XP.  Using Windows XP
-Service Pack 1 as an example:
+<p>The procedure is the same for Windows 2000 and XP.  Using Windows
+XP Service Pack 1 as an example:
 
 <ol>
 
@@ -195,28 +278,29 @@ installer.
 version of Windows you are trying to install.  Each release of Windows
 generally ships with a fairly large collection of drivers, supporting
 most of the hardware which was current at the time.  However, if you
-are installing, say, Windows 2000 on a recent system (especially a
-laptop), you may find that it does not support some or all of your
-hardware.
+are installing and older OS on a recent system, especially a laptop,
+you may find that the OS lacks built-in support for some or all of
+your hardware.
 
-<p>You can add the device drivers later, of course.  But if you want
-to automate both OS and application installation, and your version of
-Windows lacks built-in support for your network card, you will need to
-provide proper network drivers on the OS distribution point.  Here is
-how to do it.
+<p>You can add device drivers after the OS is installed, of course.
+But if you want to automate both OS and application installation, and
+your version of Windows lacks built-in support for your network card,
+you will need to provide proper network drivers on the OS distribution
+point.  Here is how to do it.
 
 <p>First, download the driver package from the hardware vendor and
 expand it.  There should be a collection of <code>.inf</code> files in
 the top-level directory; that is the directory you need to copy to the
-OS distribution share.
+OS distribution point.
 
-<p>To where should you copy it?  That is a long story...
+<p>To where should you copy it, exactly?  That is a long story...
 
 <p>Under the <code>i386</code> folder on the distribution point,
 create a folder named <code>$oem$</code>.  Under <b>that</b> folder,
-create a folder named <code>$1</code>.  (Yes, really.)  Windows Setup
-will copy everything below the <code>$1</code> folder to the
-<code>C:</code> drive during installation.
+create a folder named <code>$1</code>.  (Yes, really.)
+<em>Windows&nbsp;Setup</em> will copy everything below the
+<code>$1</code> folder to the <code>C:</code> drive during
+installation.
 
 <p>You may put the driver folder anywhere you like under the
 <code>$1</code> directory, as long as you add it to
@@ -235,47 +319,55 @@ of these paths, starting with <code>drivers/</code> level, appear in
 
 <p>The goal here is very simple: To boot to DOS so we can mount the
 <code>install</code> share as the <code>Z:</code> drive and run the
-<code>Z:\install.sh</code> script.  There are three ways to do this:
+<code>Z:\install.pl</code> script.  There are three ways to do this:
 By booting from a floppy, by booting from a CD-ROM, or by booting
 directly from the network.
 
-<p>The <code>bootdisk</code> directory from this distribution holds
-the disk images and the tools needed to re-create them.  Please
-<kbd>cd</kbd> there for the rest of this section.
+<p>The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bootdisk/"
+>bootdisk</a> directory from the Unattended distribution holds all of
+the disk images and the tools needed to re-create them.
+
 
 <h2>Booting from a floppy</h2>
 
-<p>The <code>images</code> subdirectory holds one 1.44M floppy disk
-image for each supported network driver.  The <a
+<p>The <code>images</code> subdirectory has a single 1.44M floppy disk
+image for each supported network driver.  For example, the
+<code>e100b.img</code> is the floppy image with support for the
+Intel&nbsp;Pro/100 family of network cards.  The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/DRIVERS.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->DRIVERS.txt</a> file describes the supported drivers.  The driver
+>DRIVERS.txt</a> file lists all of the supported drivers.  The driver
 names are a little weird because each is derived from the
-corresponding DOS network driver filename.
+corresponding DOS network driver filename; you may as well get used to
+them in case you ever find yourself creating a DOS networking disk
+from scratch.
 
-<p>You need to use the floppy image with the right driver for your
-network card.  If you are not sure which driver is right, you may need
-to try them all.  (See below about <a href="#netboot">booting directly
-from the network</a>, in which case this is not an issue.)
+<p>You need to select the floppy image with the right DOS driver for
+your network card.  If you are not sure which driver is right, you may
+need to try them all.  (But see below about <a href="#netboot">booting
+directly from the network</a>, for which this is not an issue.)
 
-<p>Once you have chosen the correct floppy image for your network
-card, you will need to write it to a floppy.  How you do this depends
-on your operating system.
+<p>Once you have chosen the correct floppy image, you will need to
+write it to a floppy.  How you do this depends on your operating
+system.
 
 <p>For Linux, a command like
-<kbd>dd&nbsp;if=images/e100b.img&nbsp;of=/dev/fd0</kbd> will do the
+"<kbd>dd&nbsp;if=images/e100b.img&nbsp;of=/dev/fd0</kbd>" will do the
 trick.
 
 <p>For Windows, you will need to download a <a
 href="http://www.fdos.org/ripcord/rawrite/readme.html#windows">rawrite
 utility</a>.  They say <a
 href="http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm">rawwritewin</a>
-has a nice GUI.
+has a nice GUI.  [Note:  We could use some more detailed instructions
+for this section.  Feel free to contribute some...]
+
 
 <h2>Booting from CD-ROM</h2>
 
 <p>This section is optional; you can kick off the installation process
-just using a floppy.  But this is faster, and <b>all</b> of the floppy
-images fit on a single CD-ROM.
+just using a floppy.  But a CD-ROM is faster, and <b>all</b> of the
+floppy images fit on a single piece of media.
 
 <p>The <code>bootdisk.iso</code> file is an ISO-9660 image of a
 bootable CD-ROM.  Simply burn it to a CD, which you can do with just
@@ -291,76 +383,89 @@ card.
 
 <h2 id="netboot">Booting from the network</h2>
 
-<p>This section is also optional, although all-network installs really
-are the most fun.  They do require the most support from the network
-infrastructure, however.
+<p>This section is also optional, although "nothing but net" installs
+are my favorite.  Walking into a coworker's office and rebuilding
+their machine using nothing more than your hands and your brain is
+pretty fun.  Also, when you boot from the network, you do <b>not</b>
+need to select any network driver for your card!  3com has kindly
+written a "universal" DOS network driver which works on any PXE
+implementation, meaning one floppy image can support any
+PXE-compatible network card.  (This also means that any newly-released
+network card is more likely to work with DOS than with any other
+operating system, including Windows or Linux.  I find this mildly
+amusing.)
+
+<p>However, booting from the network does require the most support
+from the infrastructure.
 
 <p>First, you will need a TFTP server.  Copy the files and folders
 from the <code>tftpboot</code> directory to the TFTP server's root
 directory.  <a href="http://tftpd32.jounin.net/">Tftpd32</a> is a good
-TFTP server for Windows, and it might even work for this.  [Editor's
-note: Contributions to this section are welcome.]
+TFTP server for Windows, and it might even work for this purpose.
+[Note: I have not actually tried it.  If you do, please let me know if
+it works.]
 
 <p>Second, you will need to configure your DHCP server.  Most modern
 network cards support booting directly from the network following
 Intel's <em>Preboot eXecution Environment</em> (PXE) specification.
 If you are a masochist, you can download the PXE specification from <a
 href="http://www.intel.com/labs/manage/wfm/wfmspecs.htm">Intel's WFM
-site</a>.  But the basic idea is pretty simple: Just configure your
-DHCP server to provide <em>filename</em> and <em>next-server</em> DHCP
-options naming the TFTP server and <code>pxelinux.0</code>,
+site</a>.  But the basic idea is pretty simple: Configure your DHCP
+server to provide <em>filename</em> and <em>next-server</em> DHCP
+options naming the TFTP server and <code>pxelinux.0</code> file,
 respectively.  Do not let the name fool you; <code>pxelinux.0</code>
 has nothing to do with Linux.  It comes from the <a
 href="http://syslinux.zytor.com/">SYSLINUX</a> package, an excellent
 general-purpose boot loader.
 
-<p>Once you have configured your TFTP and DHCP servers, you are ready
-to boot machines from the network.  Actually convincing a machine to
-do this can take some work.  Many network cards have a BIOS of their
-own which you must use to enable booting via PXE.  For systems with
-integrated network hardware, the system BIOS itself may have a
-configuration option called "Enable on-board network" with
-<b>three</b> settings: "On", "Off", and "On w/ PXE".
+<p>Finally, you will need to convince your machine to boot from the
+network, which many systems do not support.  And even if your machine
+has this support, actually configuring it can take some work.  Many
+network cards have a configuration BIOS of their own which you must
+access to enable booting via PXE.  For systems with integrated network
+hardware, the system BIOS itself may have a configuration option
+called "Enable on-board network" with <b>three</b> settings, with
+names like "Off", "On", and "On&nbsp;w/&nbsp;MBA".
 
 <p>NOTE: Historically (meaning as recently as 2002), many vendors' PXE
 implementations were extremely buggy.  Always flash the firmware on
 your network card to the latest version before attempting a network
 boot.  For network hardware embedded on a motherboard or laptop, this
-probably means flashing the system BIOS.
+means flashing the system BIOS.
 
 <p>Once you have enabled PXE in the network card BIOS, reboot the
 machine and enter the system BIOS again. Examine the "boot order"
-option.  There should be a new entry, with a name like "MBA slot 0" or
-"IBA slot 3".  (Note that many BIOSes have a "Network" option here
-which may <b>not</b> be what you want.)  Configure the network boot
-device ahead of the hard disk, and you should be good to go.
+option.  There should be a new entry, with a name like "MBA slot 1" or
+"IBA slot 3".  Note that many BIOSes have a "Network" option in the
+boot menu which does <b>not</b> work; you may need to experiment.
+Configure the boot order to put the network device ahead of the hard
+disk, and you should be good to go.
 
-<p>Some systems, like the Dell PowerEdge and Optiplex series, will
+<p>Some systems, like the Dell PowerEdge and Optiplex lines, will
 respond to <kbd>F12</kbd> during power-up to initiate a network boot.
 This is convenient if you only want to boot from the network once or
 twice to kick off the OS installation, but you want most boots to be
 from the hard drive.
 
 <p>If all else fails, contact your vendor and ask them how to perform
-a PXE network boot.  If they say you cannot, stick your tongue at them
-and use a floppy or CD-ROM instead.
+a PXE network boot.  If they say you cannot, shake your head in
+disgust and boot from floppy or CD-ROM instead.
 
-<p>One great feature of booting from the network is that you do
-<b>not</b> need to choose the network driver for your card (!).  3com
-has kindly written a "universal" DOS network driver which works on top
-of any PXE implementation, allowing one floppy image to support any
-PXE-compatible network device.
 
 <h2>Modifying the boot disk</h2>
 
 <p>This section is <b>definitely</b> optional.  If it makes no sense
-to you, just skip it.
+to you, feel free to skip it.
 
-<p>Modifying the bootdisk requires a Unix box with the appropriate
-utilities installed.  Basic utilities like GNU Make go without saying.
-But to update the floppy disk images, you will also need the <a
-href="http://mtools.linux.lu/">Mtools</a> suite.  To update the ISO
-image, you will need the <a
+<p>The boot disk is just a DOS floppy, so you can edit the files on it
+just like any other floppy.  But that will not get you new ISO and PXE
+images.
+
+<p>Modifying the boot disk "correctly" requires a Unix system with the
+appropriate utilities installed.  Basic utilities like GNU Make go
+without saying.  But to create the floppy disk images, you will also
+need the <a href="http://mtools.linux.lu/">Mtools</a> suite.  To
+update the ISO image, you will need the <a
 href="http://www.andante.org/mkisofs.html">mkisofs</a> utility.
 
 <p>In the <code>bootdisk</code> directory, typing
@@ -369,9 +474,11 @@ Typing <kbd>make&nbsp;iso</kbd> will create the ISO image.  Typing
 <kbd>make&nbsp;tftpboot</kbd> will populate the <code>tftpboot</code>
 directory.  And simply typing <kbd>make</kbd> will do all these.
 
-<p>The <code>DRIVERS.txt</code> file and <code>drivers</code>
-directory define the supported network drivers.  To add a new driver,
-put it in the <code>drivers</code> directory, update
+<p>The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bootdisk/DRIVERS.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+><code>DRIVERS.txt</code></a> file defines the supported network
+drivers and the <code>drivers</code> subdirectory contains them.  To
+add a new driver, put it in the <code>drivers</code> directory, update
 <code>DRIVERS.txt</code>, and type <kbd>make</kbd>.
 
 <p>The <a
@@ -382,13 +489,15 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootd
 >autoexec.bat</a> or <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/template/config.sys?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >config.sys</a>, just edit them under <code>template</code> and run
-<kbd>make</kbd>.  (Most of the binaries on the bootdisk are just
+<kbd>make</kbd>.
+
+<p>For the record, most of the binaries on the bootdisk are from
 Microsoft's <a href="ftp://ftp.microsoft.com/bussys/Clients/MSCLIENT/"
 >MSCLIENT</a> distribution.  The exceptions are
 <code>random.com</code> and <code>nset.com</code>, very handy
 utilities from <a
 href="http://home.mnet-online.de/horst.muc/horst.htm">Horst
-Schaeffer's nice collection</a>.)
+Schaeffer's nice collection</a>.
 
 <p>The CD-ROM boot loader is <a
 href="http://syslinux.zytor.com/iso.php">ISOLINUX</a> from the <a
@@ -400,27 +509,21 @@ SYSLINUX, to allow us to chain-boot to a "virtual floppy".
 >PXELINUX</a>, also from the <a href="http://syslinux.zytor.com/"
 >SYSLINUX</a> package.  It also uses <a
 href="http://syslinux.zytor.com/memdisk.php">memdisk</a> to boot from
-a "virtual floppy", this time directly over the network.  The
-universal DOS network driver is <code>undis3c.dos</code> from 3com's
-<a href="http://support.3com.com/infodeli/tools/nic/mba.htm" >MBA
-Utility disk</a>.
+a virtual floppy, this time directly over the network.  The universal
+DOS network driver is <code>undis3c.dos</code> from 3com's <a
+href="http://support.3com.com/infodeli/tools/nic/mba.htm" >MBA Utility
+disk</a>.
 
 
-<h1 id="go">Boot the bootdisk</h1>
+<h1 id="go">Boot from the boot disk</h1>
 
-<p>(Note: The bootdisk uses DHCP to obtain an IP address.  You
-probably already have a DHCP server on your network, but if you do
-not, you will need to modify the bootdisk's <code>system.ini</code>
-and <code>protocol.ini</code> files to use a static IP address.  This
-task is beyond the scope of this document; I suggest you set up a DHCP
-server instead.)
-
-<p>The bootdisk's entire purpose in life is to obtain access to the
+<p>The boot disk's entire purpose in life is to obtain access to the
 network, then hand off control to the more powerful tools available
-there.  In particular, the bootdisk mounts the <code>install</code>
-share as the <code>Z:</code> drive, then executes the Bourne shell
-script <code>Z:\install.sh</code>.  This script will help you perform
-several preparatory tasks and then launch the OS installer.
+there.  Specifically, the boot disk loads the network drivers, mounts
+the <code>install</code> share as the <code>Z:</code> drive, and then
+executes the Perl script <code>Z:\install.pl</code>.  This script will
+ask you a bunch of questions, generate <code>unattend.txt</code>, and
+launch <em>Windows&nbsp;Setup</em>.
 
 <p>Follow along in <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/template/autoexec.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -432,220 +535,149 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootd
 <code>net&nbsp;start&nbsp;basic</code>.  This will prompt you for a
 user name, password, and whether you want to save the password in your
 "password list".  (Since ramdisks are volatile, this last option is
-useless, but I have been unable to figure out how to suppress it.)  If
-your <code>install</code> share is exported with "guest" access
-allowed, you can simply press <kbd>Enter</kbd> three times here.  If
-the share does not allow guest access, you may provide any valid user
-name and password to map the share.  You will then be able to install
-the operating system, but you may have problems when the process moves
-on to installing the applications, because that requires mapping the
-<code>Z:</code> drive from Windows.  All in all, you are probably best
-off permitting (read-only) guest access to the <code>install</code>
-share.
+often useless, but I have been unable to figure out how to suppress
+it.)  If your <code>install</code> share is exported with "guest"
+access allowed, you can simply press <kbd>Enter</kbd> three times
+here.  If the share does not allow guest access, you may provide any
+valid user name and password to map the share.  You will then be able
+to install the operating system, but you may have problems when the
+process moves on to installing the applications, because that requires
+mapping the <code>Z:</code> drive from Windows.  All in all, you are
+probably best off permitting (read-only) guest access to the share.
 
-<p>Next, the bootdisk asks you for the name of the install share and
-runs <code>net&nbsp;use&nbsp;Z:&nbsp;<var>share</var></code> to map
-it.
+<p>Next, the bootdisk asks you for the UNC path to the the install
+share and runs <code>net&nbsp;use&nbsp;Z:&nbsp;<var>share</var></code>
+to map it.  The default is <code>\\ntinstall\install</code>.
 
-<p>Finally, the bootdisk passes control to the <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/install.sh?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
-><code>Z:\install.sh</code></a> script.  Once again, feel free to
-follow along by reading the script.
+<p>Finally, the bootdisk passes control to the installation script <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+><code>Z:\install.pl</code></a>.  This script is a lot more
+complicated, but you do not need to understand it in order to use it.
 
-<h2>Partitioning and formatting</h2>
 
-<p>The <code>install.sh</code> script begins by helping you partition
-and format the drive.
+<h2>Partitioning</h2>
 
-<p>The partition table must have a small (< 2G) FAT partition for the
-<code>C:</code> drive.  Do not worry; Windows Setup will later expand
-the partition to take up any adjacent free space, and it will convert
-the partition to NTFS.
+<p>The installation script begins by helping you partition the hard
+drive.
 
-<p>The menu will offer to partition the disk automatically using a few
-layouts which I like.  You can partition the disk manually.  Either
-way, you will reboot the machine to let the BIOS notice any partition
-table changes.
+<p>This can be complicated for two reasons.  First, any change to the
+partition table requires rebooting the system.  Second, DOS cannot
+access NTFS partitions, but NTFS is the file system you almost
+certainly want to use for your primary Windows partition.
 
-<p>Once you have a small FAT partition as the <code>C:</code> drive,
-you need to format it; just select that option from the menu.
+<p>The installation script hides this complexity from you by offering
+a simple menu of several automated partitioning schemes.  If none of
+the automated schemes appeals to you, one of the menu options is to
+run <code>fdisk</code> interactively to let you partition by hand.
+
+<p>Whether you pick an automated scheme or partition by hand, the
+installation script will <b>delete</b> the first partition and replace
+it with a 2G FAT partition.  Then it will reboot the machine, so that
+2G FAT partition will become the <code>C:</code> drive, which is where
+Windows will be installed.  During the OS installation,
+<em>Windows&nbsp;Setup</em> will convert the FAT partition to NTFS and
+expand it back to its original size.
+
+<p>Note that the OS is always installed on the first partition of the
+drive.  If this is a problem for you, let me know and maybe I will
+change it in a future release.
+
+<p>After the reboot, the installation script will begin by offering to
+partition the drive again.  (It has no way to know that the drive is
+already partitioned correctly.)  Simply select the menu option to "Do
+nothing (continue)".
+
+
+<h2>Formatting</h2>
+
+<p>The installation script will offer to format the <code>C:</code>
+drive.  Answer "yes".
 
 <h2>Choosing the operating system</h2>
 
-<p>Next, <code>install.sh</code> will ask you which operating system
-you want to install.  If you do not see the one you want, send me a
-feature request (or add it yourself and send me a patch).
+<p>The installation script will ask you which operating system you
+want to install.  It derives the list of choices from the directories
+in <code>Z:</code> with names like <code>win2k</code>,
+<code>win2ksp3</code>, or <code>winxpsp1</code>.  So to add a new
+operating system to the list, just create the appropriate <a
+href="#install-share">distribution point</a>.
 
-<h2>Adding domain accounts to local Administrators group</h2>
+<h2>Product key</h2>
 
-<p>Next, <code>install.sh</code> will offer to add accounts to the
-local Administrators group.  You may specify accounts in
-<var>DOMAIN\username</var> form.  Or you may just list usernames, in
-which case a useful default domain will be prepended.  Well, useful
-for me, anyway :-).
+<p>The installation script will ask you for your 25-character product
+key.  Enter it exactly as it appears on your software license, with a
+dash between every block of five characters (like
+"12345-6789AB-CDEFG-HIJKL-MNOPQ").
 
-<p>If you are not joining the machine to a domain, or if you do not
-want to add any domain accounts to the local Administrators group, you
-can simply press <kbd>Enter</kbd> here.
+<h2>Computer name</h2>
+
+<p>The script will ask you for the computer's name.  Entering "*" will
+cause <em>Windows&nbsp;Setup</em> to pick a random name.
+
+<h2>Organization and User name</h2>
+
+<p>The script will ask you for the organization name and user name for
+this machine.  Provide them.
+
+<h2>Local Administrator password</h2>
+
+<p>The script will ask you for the local administrator password for
+the machine.  This value will echo (sorry).
+
+<h2>Joining a domain</h2>
+
+<p>The script will ask to what domain you wish to join the system.  If
+you do not want to join the system to a domain during OS installation,
+just press Enter.
+
+<p>If you do provide a domain, the script will ask you for an account
+name and password to use to join the system to the domain.  You may
+use a fully qualified <em>domain</em>\<em>user</em> name, or just the
+user name.  The password will echo (sorry again).
+
+<p>Also, if you provide a domain, the script will ask you for a list
+of domain accounts to add to the local Administrators group.  Many
+organizations add the machine's "owner" to the local Administrators
+group.  If you do not wish to add any extra users to the
+Administrators group, just press Enter.
+
 
 <h2>Choosing the application suite</h2>
 
-<p>Next, <code>install.sh</code> will ask you which script to run (if
-any) after the OS installation is finished.  This is the hook to start
+<p>Next, the installation script will ask you which script to run, if
+any, after the OS installation is finished.  This is the hook to start
 the automated application installation process.  The scripts live in
-the <code>Z:\scripts</code> directory, as is discussed on the <a
+the <code>Z:\scripts</code> directory, and are discussed on the <a
 href="apps.html">application installation page</a>.
 
-<p>Next, <code>install.sh</code> will create
-<code>C:\netinst\postinst.bat</code>, which is what the
-<code>unattend.txt</code> file specifies as the script to run when OS
-installation is finished.
 
-<h2 id="answer-file">Editing unattend.txt</h2>
+<h2>Final edits</h2>
 
-<p>Finally, <code>install.sh</code> will copy the sample <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/unattend.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
-><code>z:\unattend.txt</code></a> file to the <code>c:\netinst</code>
-directory and let you edit it.
+<p>Finally, the installation script will generate the
+<code>unattend.txt</code>, <code>postinst.bat</code>, and
+<code>doit.bat</code> scripts, and offer to let you edit them.  This
+is your chance to make any manual alterations to the scripts before
+the installation begins.
 
-<p>The <code>unattend.txt</code> file, also known as the "answer
-file", is the key to the whole process.  Normally, <em>Windows
-Setup</em> tosses up lots of dialogs to ask you questions like, "What
-is your name?", "What is your license key?", and so on.  By passing
-the right flags to the installer (<code>i386\winnt.exe</code>), we
-will cause <em>Windows Setup</em> to consult this file for the answers
-instead.
+<p>The <code>unattend.txt</code> is <a href="#answer-file">described
+above</a>.  The <code>postinst.bat</code> will run when OS
+installation is finished, unless you edit the default
+<code>GuiRunOnce</code> section in <code>unattend.txt</code>.  The
+<code>doit.bat</code> script will run when you select "Continue"; it
+is a one-liner which fires off the unattended
+<em>Windows&nbsp;Setup</em> process.
 
-<a name="guide"></a>
-<p>The best documentation for the answer file is Microsoft's own, but
-unfortunately, it is a bit annoying to obtain.  There are different
-versions both for Windows 2000 and for Windows XP, although the answer
-files are very similar.
+<p>When you have finished making your changes, if any, select the
+"Continue" option.
 
-<dl>
-<dt><em>Windows 2000 Guide to Unattended Setup</em>
-
-<dd>Unfortunately, as far as I know, you cannot download this document
-directly; you must first download and install the <a
-href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/supporttools.asp"
->Windows 2000 SP3 Support Tools</a>, then use Internet Explorer to
-extract the <code>unattend.doc</code> file from the
-<code>deploy.cab</code> archive.  You can also find
-<code>deploy.cab</code> on the Windows 2000 CD in the
-<code>support\tools</code> folder.
-
-<dt><em>Microsoft Windows Preinstallation Reference</em>
-
-<dd>This document is also unavailable for direct download.  You must
-first download the <a
-href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/deploytools.asp"
->Windows XP SP1 Corporate Deployment Tools</a>, also known as
-<code>deploy.cab</code>.  Then use Internet Explorer to extract
-<code>ref.chm</code>, a Windows Help file.
-</dl>
-
-<p>(Personally, I find the Windows 2000 Word document easier to read.)
-
-<p>Once you understand it, editing <code>unattend.txt</code> is pretty
-easy.  And you certainly will want to edit it, because the template is
-not going to have the correct organization name, domain, or (heh)
-license key.
-
-<p>Most lines are simple <em>variable = value</em> pairs.  Lines
-starting with ; are comments.  If you fail to provide a required
-variable, like <em>ProductKey</em>, the installation will stop at some
-point to throw up a dialog and ask for it.
-
-<p>The keys you will most likely want to edit include:
-
-<dl>
-<dt><em>FullName</em>
-<dd>The full name of the user of this computer.  The actual value is
-not very important.
-
-<dt><em>OrgName</em>
-<dd>Similarly.
-
-<dt><em>ComputerName</em>
-<dd>The name of the computer.  A value of "*" tells the Windows Setup
-to pick a random name.
-
-<dt><em>ProductKey</em>
-<dd>Your 25-character Windows XP software license key, just as it
-appears on your license.  For Windows 2000, this variable is named
-<em>ProductID</em>.
-
-<dt><em>AdminPassword</em>
-<dd>The password for the local Administrator account.
-
-<dt><em>TimeZone</em>
-
-<dd>The time zone setting.  This must be a <b>numeric</b> value.  For
-example, <code>35</code> means "U.S. Eastern" and <code>4</code> means
-"Pacific".  The <a href="#guide">Guide to Unattended Setup</a> has a
-complete list.
-
-<dt><em>AutoLogon</em>
-
-<dd>If set to "yes", Setup will patch the registry to logon
-automatically as Administrator, skipping the logon screen, at every
-reboot.  This setting is useful for automatically doing other things
-once the OS install is done. (You can use the <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/autolog.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->autolog.pl</a> script in <code>Z:\bin</code> to enable or disable
-this registry setting after the OS is installed.)
-
-<dt><em>JoinDomain</em>
-<dd>If present, tells Setup to join this computer to a domain.
-
-<dt><em>DomainAdmin, DomainAdminPassword</em>
-
-<dd>These work in conjunction with <em>JoinDomain</em>.  They specify
-the domain account and password to use to join the computer to the
-domain.  Note that <em>DomainAdmin</em> must be in fully-specified
-(<code>DOMAIN\user</code>) form.
-
-<dt><em>OemPnpDriversPath</em>
-
-<dd>Specifies additions to the search path for Plug&amp;Play drivers.
-Elements of this path are separated by semicolons.  Windows uses this
-path when searching for a driver for a piece of hardware.  These paths
-are relative to the <code>C:</code> drive, and are usually used in
-conjunction with the <a href="#drivers"><code>$oem$/$1</code></a>
-mechanism.
-
-<dt><code>GuiRunOnce</code>
-
-<dd>(This is an entire section of the answer file, not just a
-variable.)  This section lists one or more commands to run the first
-time a user logs into the machine following the OS installation.  In
-conjunction with the <em>AutoLogon</em> key, this is the hook we use
-to install hotfixes and applications after the OS installation
-finishes.  We list the single command
-<code>c:\netinst\postinst.bat</code> here, which is a batch file
-generated by <code>install.sh</code>.
-
-</dl>
-
-<p>These are just a few of the important keys; for a complete list,
-consult the <a href="#guide"><em>Guide to Unattended Setup</em></a>.
-
-<p>Note that if you have standard settings for these keys at your
-site, you can edit the prototype <code>Z:\unattend.txt</code> on the
-file server so that you do not need to edit them for every
-installation.
-
-
-<h2>Firing it off</h2>
-
-<p>Once you have edited <code>unattend.txt</code>, select the
-"proceed" option.  This will run <code>i386\winnt.exe</code> from the
-OS distribution point with the proper options to perform an unattended
-installation.
-
-<p>And that's it; your OS installation should be on its way.  You
+<p>And that is all; your OS installation should be on its way.  You
 probably want to automate <a href="apps.html">installing the
 applications</a> next.
+
+<p>If you get tired of answering all these questions (or editing
+<code>unattend.txt</code>) by hand, you can create a site
+configuration to provide as many of the answers as you like.  See the
+<a href="advanced.html">advanced configuration</a> page for details.
 
 <hr>
 <address>
