@@ -99,7 +99,8 @@ for iface in eth0 eth1 eth2 ; do
     echo "*** Trying DHCP on $iface..."
     start=$SECONDS
     while : ; do
-        if udhcpc --interface=$iface --now --script=/etc/udhcpc-script ; then
+        if udhcpc --interface=$iface --userclass=Unattended \
+            --now --script=/etc/udhcpc-script ; then
             echo "*** DHCP on $iface worked!"
             got_lease=1
             # Break to top level.
@@ -208,7 +209,7 @@ while [ ! -f /z/dosbin/install.pl ] ; do
 
     echo "*** Trying smbmount $Z_PATH /z -o ttl=600000,$mount_opts"
     
-    smbmount "$Z_PATH" /z -o "ttl=600000,$smbmount_opts" \
+    smbmount "$Z_PATH" /z -o "ttl=600000,$mount_opts" \
         && break
 
     unset PASSWD
