@@ -64,6 +64,9 @@ usr/bin/smbmnt
 usr/bin/smbmount
 usr/lib/charset
 usr/lib/smb.conf
+usr/lib/lowcase.dat
+usr/lib/upcase.dat
+usr/lib/valid.dat
 
 usr/share/kbd/keymaps
 
