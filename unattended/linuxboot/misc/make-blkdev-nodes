@@ -10,7 +10,7 @@ sys_block=/sys/block
 [ -d $sys_block ] \
     || die "$sys_block not found!"
 
-# Argument is a directory like /sys/block/hda or /sys/block/sda3
+# Argument is a directory like /sys/block/hda or /sys/block/sda/sda3
 make_block_device () {
     local path="$1"
 
@@ -43,7 +43,7 @@ shopt -s nullglob
 make_block_device "$sys_block/$dev"
 
 for devX in "$sys_block/$dev/$dev"[1-9]* ; do
-    make_block_device $devX
+    make_block_device "$devX"
 done
 
 exit 0
