@@ -1,3 +1,58 @@
+** Changes in version 4.1 (2004-Apr-??)
+
+(Linux) Upgrade Linux kernel to 2.6.5.
+
+(Linux) Add kbd package, and use it to start shells on virtual
+terminals 2 and 3 (debugging aid).  Recognize "kbd=..." kernel
+parameter to select keyboard map.  Add support for serial console.
+Fix bug preventing ^C from working.
+
+(Linux) Fix dosemu font to let winnt.exe ASCII art look nice.  Thanks
+to Max Lovius.
+
+(Linux) Obtain settings (z_user, z_pass, z_path) from DHCP option 233
+in addition to kernel command line.
+
+(DOS) Add support for Realtek RTL8169/RTL8110S gigabit adapters.
+
+(DOS) Create WinImage-compatible (PKZIP format) compressed floppy
+images.  Patch memdisk so it can handle such images.
+
+(DOS/Linux) Permit "DOMAIN\username" syntax in username for mapping
+install share.
+
+(DOS) Now that the FreeDOS folks added support for VCPI in emm386.exe,
+use it instead of umbpci.sys for UMB provider,
+
+Rewrite auconfig.pl to support "--policy" switch and all the new
+settings it allows.  Contributed by Nils Ostbjerg.
+
+Add internationalized support to bootini.pl, including French, Dutch,
+German, and Italian.  Thanks to Sylvain Faivre, Niels de Groot,
+Gerhard Heift, and Rosario Esposito, respectively.  (Thanks to Jan
+Brauer and Harro Bruins for other i18n contributions.)
+
+Modify mapznrun.bat to hunt through drives for \dosbin\install.pl
+before trying to map Z: drive.  Useful for installing from fixed
+devices (like CD or DVD).  Thanks to Niels de Groot.
+
+Modify todo.pl to hook HKEY_LOCAL_MACHINE\...\Run key instead of
+HKEY_CURRENT_USER\...\Run key, in case user wants to switch logon ID
+to a domain account mid-install.  Recognize Windows XP SP2.
+
+In install.pl, have z_user default to "DOMAIN\user", because some
+people use domain accounts to map their install shares.
+
+Add URLs for Italian downloads.  Thanks to Rosario Esposito.
+
+Use %SystemDrive% instead of C: everywhere.
+
+Fix various minor bugs.
+
+Add April updates from Microsoft (MS04-011, MS04-012, MS04-013, and
+MS04-014).  Nasty.
+
+
 ** Changes in version 4.0b (2004-Mar-20)
 
 Add Shad's sample configuration as install/site/sample-config.pl.
