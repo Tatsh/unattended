@@ -10,16 +10,16 @@ cvs := :pserver:anonymous@cvs.unattended.sourceforge.net:/cvsroot/unattended
 release: check-version unattended-${ver}.tar.gz
 
 unattended-${ver}.tar.gz: FORCE
-	dir=`pwd` &&							 \
-	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			 \
-	cd $$temp &&							 \
-	cvs -z3 -d${cvs} checkout unattended &&				 \
-	mv unattended unattended-${ver} &&				 \
-	tar --exclude CVS -cvzf unattended-${ver}.tar.gz		 \
-		unattended-${ver} &&					 \
-	curl -T unattended-${ver}.tar.gz				 \
-		ftp://anonymous:patl@upload.sourceforge.net/incoming/ && \
-	cd / &&								 \
+	dir=`pwd` &&							\
+	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
+	cd $$temp &&							\
+	cvs -z3 -d${cvs} checkout unattended &&				\
+	mv unattended unattended-${ver} &&				\
+	tar --exclude CVS -cvzf unattended-${ver}.tar.gz		\
+		unattended-${ver} &&					\
+	ncftpput -p patl@users.sourceforge.net upload.sourceforge.net	\
+		/incoming unattended-${ver}.tar.gz &&			\
+	cd / &&								\
 	rm -rf $$temp
 
 
