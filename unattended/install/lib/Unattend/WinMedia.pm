@@ -233,7 +233,7 @@ sub _textmode_dir ($) {
 # Return the names of drivers from the [scsi] section of txtsetup.oem.
 # See <http://support.microsoft.com/?kbid=288344>.
 
-sub textmode_oem_drivers ($) {
+sub textmode_oem_drivers ($;$) {
     my Unattend::WinMedia ($self) = shift;
     my $verbose = shift;
 
@@ -290,8 +290,9 @@ sub textmode_files ($) {
     return @ret;
 }
 
-sub textmode_retail_drivers ($) {
+sub textmode_retail_drivers ($;$) {
     my Unattend::WinMedia ($self) = shift;
+    # This should probably do something.  FIXME.
     my $verbose = shift;
 
     my @ret;
