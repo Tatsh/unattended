@@ -4,14 +4,22 @@
 start /wait regedit /s %Z%\scripts\vs6.reg
 if errorlevel 1 exit 1
 
-:: Install latest service pack
-todo.pl "%Z%\updates\VS6\setupsp5.exe /qn1 /g %SystemDrive%\netinst\logs\vs6sp5.txt" .reboot
+:: Service Pack 6 for Visual Basic 6.0, Visual C++ 6.0 with Visual Source Safe 6.0d
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=A8494EDB-2E89-4676-A16A-5C5477CB9713&displaylang=en>
+:: URL|DEU|http://download.microsoft.com/download/5/6/0/560a4725-4ae4-41e9-abac-8dff2f25f0af/Vs6sp6.exe|updates/vs6/deu/vs6sp6.exe
+:: URL|ENU|http://download.microsoft.com/download/1/9/f/19fe4660-5792-4683-99e0-8d48c22eed74/Vs6sp6.exe|updates/vs6/enu/vs6sp6.exe
+:: URL|ESN|http://download.microsoft.com/download/6/d/7/6d77d007-23a6-434b-b932-e70f88b6a2ab/Vs6sp6.exe|updates/vs6/esn/vs6sp6.exe
+:: URL|FRA|http://download.microsoft.com/download/4/1/b/41b29b6d-c426-4ffd-a319-4d4690e07b5f/Vs6sp6.exe|updates/vs6/fra/vs6sp6.exe
+:: URL|ITA|http://download.microsoft.com/download/6/e/9/6e9a2a91-e1d5-47e0-a2af-ceb94e07567b/Vs6sp6.exe|updates/vs6/ita/vs6sp6.exe
+:: URL|JPN|http://download.microsoft.com/download/8/e/9/8e9e24d9-e731-499b-991e-587633198356/Vs6sp6.exe|updates/vs6/jpn/vs6sp6.exe
+:: URL|KOR|http://download.microsoft.com/download/4/a/9/4a9c57b6-0ff1-4f52-a7ad-387e3835856f/Vs6sp6.exe|updates/vs6/kor/vs6sp6.exe
+todo.pl "%Z%\updates\vs6\%WINLANG%\setupsp6.exe /qn1 /g %SystemDrive%\netinst\logs\vs6sp6.txt" .reboot
 
 :: NOTE: You must create %Z%\site\vs6_key.bat to set the vs6_key
 :: variable to your license key
 call %Z%\site\vs6_key.bat
 if %vs6_key%.==. goto nokey
-todo.pl "%Z%\packages\VS6\acmboot.exe /qn1 /g %SystemDrive%\netinst\logs\vs6.txt /k %vs6_key%" .reboot
+todo.pl "%Z%\packages\vs6\acmboot.exe /qn1 /g %SystemDrive%\netinst\logs\vs6.txt /k %vs6_key%" .reboot
 if errorlevel 1 exit 1
 exit 0
 
