@@ -36,31 +36,36 @@ todo.pl "z:\packages\win2ksp3\q329414_mdacall_x86.exe /q /c:\"dahotfix /q /n\"" 
 
 :: Critical Update Q329115
 :: "Certificate Validation Flaw Might Permit Identity Spoofing"
-:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329115>
+:: <http://support.microsoft.com/?kbid=329115>
 :: <http://www.microsoft.com/windows2000/downloads/critical/q329115/>
 todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q329115_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Not-so-critical update Q328523
 :: "default invocation of IE from the Internet Connection Wizard"
-:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q328523>
+:: <http://support.microsoft.com/?kbid=328523>
 :: <http://www.microsoft.com/Downloads/Release.asp?ReleaseID=42457>
 todo.pl "z:\packages\win2ksp3\Q328523_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Critical Update Q329834
 :: "Unchecked Buffer in PPTP Implementation Could Enable Denial of Service"
+:: <http://support.microsoft.com/?kbid=329834>
 :: <http://www.microsoft.com/Windows2000/downloads/critical/q329834/>
 todo.pl "z:\packages\win2ksp3\Q329834_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: IIS security Roll-up package Q327696
+:: <http://support.microsoft.com/?kbid=327696>
 :: <http://www.microsoft.com/Windows2000/downloads/security/q327696/>
 todo.pl "z:\packages\win2ksp3\Q327696_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Critical Update Q323255
+:: "Unchecked Buffer in Windows Help Facility May Allow Attacker to Run Code"
+:: <http://support.microsoft.com/?kbid=323255>
 :: <http://www.microsoft.com/Windows2000/downloads/critical/q323255/>
 todo.pl "z:\packages\win2ksp3\Q323255_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Critical Update Q329077
-:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329077>
+:: "Flaw in Microsoft VM JDBC Classes Might Permit Code to Be Run"
+:: <http://support.microsoft.com/?kbid=329077>
 :: (security bulletin says reboot required)
 todo.pl "Z:\packages\win2ksp3\vm-sfix3.exe /Q /R:N" .reboot
 
