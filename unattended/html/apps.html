@@ -222,7 +222,7 @@ or 37.  It will still treat other status codes as errors.
 <p><code>todo.pl</code> arranges to run all commands in a consistent
 environment, with the following environment variables set.
 
-<h3><kbd>PATH</kbd></h3>
+<h3><code>PATH</code></h3>
 
 <p>The <code>PATH</code> environment variable will have
 <code>Z:\bin;Z:\scripts</code> prepended to it before any commands are
@@ -247,6 +247,20 @@ string representing the version of Windows:
 
 <p>...and so on.  This variable is useful in scripts whose behavior
 needs to vary based on OS; e.g., a script for installing hotfixes.
+
+<h3><code>Z_PATH</code></h3>
+
+<p>The <code>Z_PATH</code> environment variable contains the full UNC
+path of the share which is mapped to the <code>Z:</code> drive.  Some
+applications (e.g., the <a
+href="installers.html#msdn">MSDN&nbsp;Library</a>) remember which
+pathname was used to install them, and they will occasionally search
+for things there.  Since <code>Z:</code> is only used during the
+installation process, users may not have it mapped, so installing from
+<code>Z:</code> can cause the application to fail later.  For such
+applications, <code>Z_PATH</code> provides a workaround; see <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/msdn.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>msdn.bat</a> for an example.
 
 <h1>Examples</h1>
 
