@@ -111,14 +111,14 @@ sub menu_choice (@) {
         $pages > 1
             and printf "(Page %d/%d)\n", $page+1, $pages;
 
-        my $start = $page * $per_page * 2;
+        my $start = $page * $per_page;
 
         my $i = 0;
         my $choices = '';
 
         # Generate current page of choices.
         while ($i < $per_page && $start + $i < $count) {
-            my $elt = $start + 2*$i;
+            my $elt = 2 * ($start + $i);
             printf "%d) %s\n", $i+1, $args[$elt];
             $choices .= $i+1;
             # Capture value for sub below
@@ -185,10 +185,11 @@ sub multi_choice (@) {
                  no warnings 'exiting';
                  last LOOP;
              },
-             map { (sprintf "[%s] %s",
-                    $selected{$_} ? '*' : ' ', $_)
-                       => sub { $selected{$_} = !$selected{$_} }
-               } @strings;
+             map { 
+                 my $str = $_;
+                 (sprintf "[%s] %s", $selected{$str} ? '*' : ' ', $str)
+                     => sub { $selected{$str} = !$selected{$str} }
+               } @strings,
              );
 
         my $func = menu_choice ($menu_state, @choices);
