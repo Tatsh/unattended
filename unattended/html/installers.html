@@ -687,14 +687,13 @@ unattended install, run with
 
 <tr><td valign="middle">Details
 
-<td>Download the <a
-href="http://www.microsoft.com/windows/ieak/">Internet Explorer
-Administration Kit</a> and use its wizard to create an IE installer
-customized for your site.  In the "Media Selection" dialog, choose the
-"Flat (all files in one directory)" option.
+<td>After downloading IE6setup.exe issue the following command to download necessary files for installing. 
+<pre>
+     IE6setup.exe /c:"ie6wzd.exe /d /s:""#E"
+</pre>
 
 <p>To perform an unattended installation, run
-<code>IE6setup.exe</code> from the <code>\ie6\flat\win32\en</code>
+<code>IE6setup.exe</code> from the <code>\ie6sp1</code>
 directory with the <code>/q</code> and <code>/r:n</code> options.
 
 <tr><td valign="middle">Example
