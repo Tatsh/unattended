@@ -721,8 +721,8 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             my $permcred = $file_spec->catfile ($netinst, 'permcred.bat');
             print "Creating $permcred...";
             write_file ($permcred,
-                        "SET Z=$z",
-                        "SET Z_PATH=$z_path");
+                        "\@SET Z=$z",
+                        "\@SET Z_PATH=$z_path");
             print "done.\n";
 
             # "Temporary" credentials (username, password)
@@ -731,8 +731,8 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
             print "Creating $tempcred...";
             write_file ($tempcred,
-                        "SET Z_USER=$z_user",
-                        "SET Z_PASS=$z_pass");
+                        "\@SET Z_USER=$z_user",
+                        "\@SET Z_PASS=$z_pass");
             print "done.\n";
 
             $ret = "$mapznrun $postinst";
