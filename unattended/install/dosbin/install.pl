@@ -474,12 +474,19 @@ sub ask_fdisk_lba () {
          'No large disk support (required for some broken BIOSes)' => 0);
 }
 
-# Use Parted to find the start of the free space on the drive.  Note
-# that this will only find space at the END of the currently active
-# partitions.
-sub find_free_space () {
+# Find an interval of free space on the drive of at least SIZE
+# megabytes.  Return as a pair (START, END).  Note that the only
+# guarantee is that the interval does not overlap any partitions; it
+# may stretch beyond the end of the drive.
+sub find_free_space ($) {
+    my ($size) = @_;
+
     $is_linux
         or croak "internal error";
+
+    my @partitions;
+
+    # Read the current partition table.
     my $cmd = 'parted -s /dev/dsk print';
     open PARTED, "$cmd|"
         or die "Unable to fork: $^E";
@@ -487,18 +494,31 @@ sub find_free_space () {
     my $max = 0;
 
     while (my $line = <PARTED>) {
-        my ($end) = ($line =~ /^\d+\s+\d+\.\d{3}\s+(\d+\.\d{3})/);
+        my ($start, $end) = ($line =~ /^\d+\s+(\d+\.\d{3})\s+(\d+\.\d{3})/);
         defined $end
             or next;
 
-        $end > $max
-            and $max = $end;
+        push @partitions, [ $start, $end ];
     }
 
     close PARTED
         or die "'$cmd' failed: $^E $?";
 
-    return $max;
+    # Now loop through looking for free space.
+  LOOP:
+    foreach my $temp_part ([0, 0], @partitions) {
+        my (undef, $temp_end) = @$temp_part;
+        my ($start, $end) = ($temp_end, $temp_end + $size);
+        foreach my $part (@partitions) {
+            my ($part_start, $part_end) = @$part;
+            # If we overlap a partition, no good.
+            $start < $part_end && $end > $part_start
+                and next LOOP;
+        }
+        return ($start, $end);
+    }
+
+    die 'Internal error';
 }
 
 # Convert an fdisk command to a parted command, more or less.
@@ -518,7 +538,6 @@ sub convert_fdisk_parted ($) {
         $ret = "$parted mklabel msdos";
     }
     elsif ($cmd =~ /^\/delete\s+\/pri:(\d+)\z/i) {
-        croak "'$fdisk_cmd': you do not want to do that ; bailing";
         $ret = "$parted rm $1";
     }
     elsif ($cmd =~ /^\/activate:(\d+)\z/i) {
@@ -530,16 +549,21 @@ sub convert_fdisk_parted ($) {
     elsif ($cmd =~ /\/pri(o)?:(\d+)(,100)?(?:\s+\/spec:(\d+))?/i) {
         my ($fat16, $size, $is_percent, $type) = ($1, $2, $3, $4);
 
-        my $start = find_free_space ();
-        my $end;
+        # We really want "infinity" here.  But I suppose a
+        # petabyte will do.
+        my $infinity = 1000000000;
         if (defined $is_percent) {
             $size eq '100'
                 or croak "We only support 100,100 for size spec ($fdisk_cmd)";
+            $size = $infinity;
+        }
+
+        my ($start, $end) = find_free_space ($size);
+
+        if ($end >= $infinity) {
             $end = '-0';
         }
-        else {
-            $end = $start + $size + 0.001;
-        }
+
         my $fs = (defined $fat16 ? 'fat16' : 'fat32');
         if (defined $type) {
             $type == 7
@@ -571,8 +595,10 @@ sub ask_fdisk_cmds () {
     print "NOTE: If partition table changes, machine will reboot.\n";
     # Commands to erase partition table
     my $pre_cmds = 'fdisk /clear 1';
-    # Commands to activate primary partition
-    my $post_cmds = 'fdisk /activate:1';
+
+    # Commands to replace the first partition with a 4G FAT32
+    # partition and activate it
+    my $post_cmds = 'fdisk /delete /pri:1;fdisk /pri:4000;fdisk /activate:1';
 
     # Command to run fdisk interactively
     my $interactive_cmd = 'fdisk /xo';
@@ -777,6 +803,32 @@ sub batfile_first_lines () {
     return $_batfile_first_lines;
 }
 
+my $_dhcp_settings;
+# Get the DHCP settings into an associative array (linux only).
+
+sub dhcp_settings () {
+    if (!defined $_dhcp_settings) {
+        $_dhcp_settings = { };
+        my $dhcp = '/var/run/dhcp.out';
+        if (open DHCP, $dhcp) {
+            while (my $line = <DHCP>) {
+                chomp $line;
+                my ($var, $val) = $line =~ /^(\w+)=(.+)\z/;
+                defined $var
+                    or die "Could not parse line in$dhcp:\n  $line\n...";
+                $_dhcp_settings->{$var} = $val;
+            }
+            close DHCP
+                or die "Unable to close $dhcp: $^E";
+        }
+        else {
+            warn "Unable to open $dhcp: $^E";
+        }
+    }
+
+    return $_dhcp_settings;
+}
+
 $u->comments ('_meta') =
     ['This section is for informational purposes.',
      'Windows Setup does not use it.'];
@@ -826,18 +878,26 @@ $u->{'_meta'}->{'format_cmd'} =
 
 $u->{'_meta'}->{'ipaddr'} =
     sub {
-        $is_linux
-            and return 'FIXME: Add support for IP addr';
-        # Parse file written by autoexec.bat
-        my $ipconfig = '\\ipconfig.txt';
-        if (-e $ipconfig) {
-            foreach my $line (read_file ($ipconfig)) {
-                $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
-                    and return $1;
-            }
+        my $ret;
+        if ($is_linux) {
+            my $dhcp_settings = dhcp_settings ();
+            $ret = $dhcp_settings->{'ip'};
         }
-        warn "Unable to get IP address from $ipconfig";
-        return undef;
+        else {
+            # Parse file written by autoexec.bat
+            my $ipconfig = '\\ipconfig.txt';
+            if (-e $ipconfig) {
+                foreach my $line (read_file ($ipconfig)) {
+                    $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
+                        or next;
+                    $ret=$1;
+                    last;
+                }
+            }
+            defined $ret
+                or warn "Unable to get IP address from $ipconfig";
+        }
+        return $ret;
     };
 
 
@@ -860,16 +920,42 @@ $u->{'_meta'}->{'local_admins'} =
 
 $u->{'_meta'}->{'macaddr'} =
     sub {
-        $is_linux
-            and return 'FIXME: Add support for IP addr';
-        # Parse file written by autoexec.bat.
-        my $netdiag = '\\netdiag.txt';
-        foreach my $line (read_file ($netdiag)) {
-            $line =~ /^Permanent node name: ([0-9A-F]+)\r?$/
-                and return $1;
+        my $ret;
+        if ($is_linux) {
+            # Get the interface we are using.
+            my $dhcp_settings = dhcp_settings ();
+            my $interface = $dhcp_settings->{'interface'};
+            # Run ifconfig to get MAC address for interface.
+            open IFCONFIG, "ifconfig $interface|"
+                or die "Could not fork: $^E";
+            my @lines = <IFCONFIG>;
+            close IFCONFIG
+                or die "ifconfig $interface exited with status $?";
+            foreach my $line (@lines) {
+                chomp $line;
+                if ($line =~ /HWaddr (..:..:..:..:..:..)/) {
+                    $ret = $1;
+                    # Remove colons, to convert to form used by "net
+                    # diag /status"
+                    $ret =~ s/://g;
+                }
+            }
+            defined $ret
+                or warn "Unable to get MAC address from ifconfig $interface";
         }
-        warn "Unable to get MAC address from $netdiag";
-        return undef;
+        else {
+            # Parse file written by autoexec.bat.
+            my $netdiag = '\\netdiag.txt';
+            foreach my $line (read_file ($netdiag)) {
+                $line =~ /^Permanent node name: ([0-9A-F]+)\r?$/
+                    or next;
+                $ret = $1;
+                last;
+            }
+            defined $ret
+                or warn "Unable to get MAC address from $netdiag";
+        }
+        return $ret;
     };
 
 $u->{'_meta'}->{'netinst'} = 'c:\\netinst';
@@ -1209,6 +1295,59 @@ my $macaddr = $u->{'_meta'}->{'macaddr'};
 defined $macaddr
     and print "MAC address: $macaddr\n";
 
+# On Linux, we may need to correct the kernel's notion of the disk
+# geometry.  Otherwise the disk partitioning tool will have the wrong
+# idea about how to create the partition, and dosemu will present the
+# wrong geometry to the Windows installer (resulting in a partition
+# which does not boot).
+if ($is_linux) {
+    my $bios_head = $ENV{'LEGACY_BIOS_HEAD'};
+    my $bios_sect = $ENV{'LEGACY_BIOS_SECT'};
+
+    if (defined $bios_head && defined $bios_sect) {
+        my $hda = readlink ('/dev/dsk');
+        defined $hda
+            or die "readlink /dev/dsk failed: $^E";
+
+        # Get size of disk in sectors.
+        my $size_file = "/sys/block/$hda/size";
+        open SIZE, $size_file
+            or die "Unable to open $size_file for reading: $^E";
+        my $size = <SIZE>;
+        defined $size
+            or die "Unable to read $size_file: $^E";
+        close SIZE
+            or die "Unable to close $size_file: $^E";
+        chomp $size;
+        $size =~ /^0x/
+            and $size = hex $size;
+
+        my $cylinders = int ($size / $bios_head / $bios_sect);
+
+        $size == $cylinders * $bios_head * $bios_sect
+            or print "Odd.  C/H/S does not multiply out to $size.\n";
+
+        $cylinders > 65535
+            and $cylinders = 65535;
+
+        my $settings_file = "/proc/ide/$hda/settings";
+
+        if (-e $settings_file) {
+            print "\nSetting C/H/S to $cylinders/$bios_head/$bios_sect...\n";
+            open SETTINGS, ">$settings_file"
+                or die "Unable to open $settings_file for writing: $^E";
+            printf SETTINGS "bios_cyl:%d bios_head:%d bios_sect:%d\n",
+            $cylinders, $bios_head, $bios_sect;
+            close SETTINGS
+                or die "Unable to close $settings_file: $^E";
+        }
+        else {
+            # Non-IDE disk.  Should probably sanity-check kernel
+            # geometry against legacy BIOS geometry here.  FIXME.
+        }
+    }
+}
+
 # Set environment variable controlling fdisk's use of INT13 extensions.
 $is_linux || ($u->{'_meta'}->{'fdisk_lba'})
     or $ENV{'FFD_VERSION'}=6;
@@ -1236,50 +1375,6 @@ while (1) {
         and last;
 
     $u->{'_meta'}->{'fdisk_cmds'} = \&ask_fdisk_cmds;
-}
-
-# On Linux, we may need to correct the kernel's notion of the disk
-# geometry.  Otherwise the disk partitioning tool may create a
-# partition which Windows cannot boot.
-if ($is_linux) {
-    my $bios_head = $ENV{'LEGACY_BIOS_HEAD'};
-    my $bios_sect = $ENV{'LEGACY_BIOS_SECT'};
-
-    if (defined $bios_head && defined $bios_sect) {
-        my $hda = readlink ('/dev/dsk');
-        defined $hda
-            or die "readlink /dev/dsk failed: $^E";
-
-        # Get size of disk in sectors.
-        my $size_file = "/sys/block/$hda/size";
-        open SIZE, $size_file
-            or die "Unable to open $size_file for reading: $^E";
-        my $size = <SIZE>;
-        defined $size
-            or die "Unable to read $size_file: $^E";
-        close SIZE
-            or die "Unable to close $size_file: $^E";
-        chomp $size;
-        $size =~ /^0x/
-            and $size = hex $size;
-
-        my $cylinders = $size / $bios_head / $bios_sect;
-
-        my $settings_file = "/proc/ide/$hda/settings";
-
-        if (-e $settings_file) {
-            print "Setting C/H/S to $cylinders/$bios_head/$bios_sect...\n";
-            $size == $cylinders * $bios_head * $bios_sect
-                or print "Odd.  C/H/S does not multiply out to $size.\n";
-
-            open SETTINGS, ">$settings_file"
-                or die "Unable to open $settings_file for writing: $^E";
-            printf SETTINGS "bios_cyl:%d bios_head:%d bios_sect:%d\n",
-            $cylinders, $bios_head, $bios_sect;
-            close SETTINGS
-                or die "Unable to close $settings_file: $^E";
-        }
-    }
 }
 
 # Run the fdisk commands.
