@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -71,17 +71,63 @@ See <a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01312.html"
 >this message</a> for details.
 
-<p>The boot disk uses Linux kernel 2.6.5, whose hardware support is
-still maturing.  We are interested in your success/failure reports;
-please send them to <a
+
+<h1>Is the Linux boot disk actually supposed to work?</h1>
+
+<p>Yes, and if it does not work for you, we are very interested in
+fixing it.  The boot disk uses Linux kernel 2.6.5, which is still
+maturing.
+
+<p>One common problem is with ACPI support, which is under very active
+development.  So, try booting with ACPI support disabled.  To do this,
+hold down the <kbd>Shift</kbd> key while booting, which will present a
+<code>boot:</code> prompt.  Then type
+<kbd>unattended&nbsp;acpi=off</kbd> and press <kbd>Enter</kbd>.  If
+this helps, the bug is in the Linux ACPI support and we would like to
+report it to them.  (We would disable ACPI by default, but then some
+hardware <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01557.html"
+>does not work at all</a>.  We may yet disable it anyway if we receive
+enough failure reports.)
+
+<p>If disabling ACPI does not help, most likely your network or mass
+storage hardware is not yet supported by our boot disk.  This is
+usually easy for us to fix, since Linux itself has fairly broad
+hardware support.  But we need somebody who actually has the hardware
+to test our changes.
+
+<p>So, whether disabling ACPI works or not, please send a report to <a
 href="mailto:unattended-devel@lists.sourceforge.net">unattended-devel</a>.
+Include a description of your hardware and the version of Unattended
+which you are using.
+
+
+<h1>Is the DOS boot disk supposed to crash?</h1>
+
+<p>Not usually.
+
+<p>Starting with version 4.0 of Unattended, we switched from MS-DOS to
+FreeDOS.  Apart from general principles (we like free software), this
+avoids potential legal issues.  But FreeDOS is still under
+development, and it occasionally has difficulty with some hardware.
+
+<p>In particular, the <code>e1000.dos</code> driver for Intel PRO/1000
+gigabit network hardware causes FreeDOS to crash.  In response to our
+bug reports, the FreeDOS maintainers have tracked down this problem
+and will fix it in the next release.
+
+<p>Also, the VCPI support in FreeDOS EMM386 (which the 4.1 release of
+Unattended uses) is too new.  We will be switching back to <a
+href="http://www.uwe-sieber.de/umbpci_e.html" >UMBPCI</a> for the 4.2
+release.
+
 
 <h1>Why is the mailing list so slow?</h1>
 
 <p><a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01460.html"
->Two reasons</a>.  But probably because SpamAssassin thinks your
-message smells like spam.
+>Two reasons</a>.  But probably because your message "smells like
+spam" and got held for manual approval.
 
 <p>The two most common causes are:
 
