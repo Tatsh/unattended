@@ -108,6 +108,7 @@ my %pid_table =
      '51882335' => 'Retail',
      '55274000' => 'Retail',
      '51883270' => 'Volume',
+     '55274270' => 'Volume',
      '82503OEM' => 'OEM',
      '55274OEM' => 'Dell OEM',
      # 2k
@@ -128,7 +129,7 @@ sub type ($) {
     defined $pid
         and $ret = (exists $pid_table{$pid}
                     ? $pid_table{$pid}
-                    : 'UNKNOWN PID $pid');
+                    : "UNKNOWN PID $pid");
 
     return $ret;
 }
