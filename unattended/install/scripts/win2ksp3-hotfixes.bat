@@ -6,12 +6,18 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Recommended update Q322913
+:: "WM_TIMER Messages Not Delivered to Programs"
+:: <http://www.microsoft.com/windows2000/downloads/recommended/q322913/>
+:: <http://support.microsoft.com/?kbid=322913>
+todo.pl "z:\packages\win2ksp3\Q322913_W2K_SP4_X86_EN.exe /u /o /z" .reboot
+
 :: Critical Update Q329414
 :: "Buffer Overrun in MDAC Can Lead to Code Execution (MDAC 2.6)"
-:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329414>
+:: <http://support.microsoft.com/?kbid=329414>
 todo.pl "z:\packages\win2ksp3\q329414_mdacall_x86.exe /q /c:\"dahotfix /q /n\"" .reboot
 
-:: Critical Update 329115
+:: Critical Update Q329115
 :: "Certificate Validation Flaw Might Permit Identity Spoofing"
 :: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329115>
 :: <http://www.microsoft.com/windows2000/downloads/critical/q329115/>
