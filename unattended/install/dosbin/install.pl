@@ -1077,18 +1077,14 @@ $u->{'_meta'}->{'top'} =
     sub {
         my $bat_heads = batfile_first_lines ();
         my %master_choices = _script_sel_helper ('MASTER', $bat_heads);
+        my $master = '';
 
-        # Backwards compatibility hack.  Remove someday (FIXME).
-        scalar keys %master_choices > 0
-            or %master_choices = ('base.bat (Basic installation)'
-                                  => 'base.bat',
-                                  'sales.bat (Sales laptop installation)',
-                                  => 'sales.bat');
-
-        print "Choose master post-installation script to run.\n";
-        my @choices = (map { ($_ => $master_choices{$_}) }
-                       sort keys %master_choices);
-        my $master = menu_choice (@choices, 'none' => '');
+        if (scalar keys %master_choices > 0) {
+            my @choices = (map { ($_ => $master_choices{$_}) }
+                           sort keys %master_choices);
+            print "Choose master post-installation script to run.\n";
+            $master = menu_choice (@choices, 'none' => '');
+        }
 
         return $master;
     };
