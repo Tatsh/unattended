@@ -1,4 +1,4 @@
-:: OPTIONAL: Install WinAmp 5.03
+:: OPTIONAL: Install WinAmp 5.05
 
 :: user contributed translation packages
 :: URL|DEU|http://download.nullsoft.com/customize/component/2004/3/18/P/Deutsche_Sprachdatei_v14_Winamp502.exe|packages/winamp/langpack-deu_.exe
@@ -8,12 +8,12 @@
 :: URL|NLD|http://download.nullsoft.com/customize/component/2004/4/14/P/Dutch_languagepack_5-03.exe|packages/winamp/langpack-nld.exe
 :: URL|RUS|http://download.nullsoft.com/customize/component/2004/4/26/P/Winamp_5v03_RUS.exe|packages/winamp/langpack-rus.exe
 ::
-:: warning: DEU, ESN and FRA do not (completely) install silently. Please  the underscore "_"
+:: warning: DEU, ESN and FRA do not (completely) install silently. Please remove the underscore "_"
 :: from the filename, if you want to the package to be called anyway.
 ::
 if not exist %Z%\packages\winamp\langpack-%WINLANG%.exe goto nolangpack
 todo.pl "%Z%\packages\winamp\langpack-%WINLANG%.exe /S"
 :nolangpack
 
-:: URL|ALL|http://download.nullsoft.com/winamp/client/winamp503_full.exe|packages/winamp/winamp503-full.exe
-todo.pl "%Z%\packages\winamp\winamp503-full.exe /S /install=SFQR"
+:: URL|ALL|http://download.nullsoft.com/winamp/client/winamp505_full.exe|packages/winamp/winamp505-full.exe
+todo.pl "%Z%\packages\winamp\winamp505-full.exe /S /install=SFQR"
