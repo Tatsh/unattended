@@ -28,6 +28,7 @@ also in waiting for the installation to finish and suppressing any
 automatic reboot.  These are both necessary to create a system for <a
 href="apps.html">reliably installing multiple applications</a>.
 
+<hr>
 <h1>General information</h1>
 
 <p>There are several utilities in common use in the Windows world for
@@ -38,10 +39,10 @@ href="http://www.gnu.org/manual/binutils-2.12/html_node/binutils_9.html"
 >strings</a>; and sometimes you just have to guess.
 
 <p>Sure, you can run the installer with the <kbd>/?</kbd> switch to
-learn which other switches it supports.  If you really expect this to
-work, then you have not been using Windows for very long.  By all
-means, try it.  But in my experience, the odds are about 4-to-1
-against <kbd>/?</kbd> telling you anything at all, even when there is
+learn which other switches it supports.  But if you really expect this
+to work, then you have not been using Windows for very long.  By all
+means, try it; in my experience, the odds are about 1 in 4 that
+<kbd>/?</kbd> will tell you anything at all, even when there is
 something to tell.
 
 <h2 id="msi">MSI packages</h2>
@@ -59,9 +60,9 @@ href="http://www.microsoft.com/TechNet/prodtechnol/winxppro/proddocs/msiexec.asp
 
 <p>For installation, use the <kbd>/i</kbd> and <kbd>/qb</kbd>
 switches.  Use the <kbd>/l*</kbd> switch to produce a log file.  You
-can provide named options at the end of the command line; which
-options are supported depends on the package.  For example, this
-command:
+can provide named options ("properties") at the end of the command
+line; which properties are supported depends on the package.  For
+example, this command:
 
 <pre>
     msiexec /qb /l* perl-log.txt /i ActivePerl.msi PERL_PATH=Yes PERL_EXT=Yes
@@ -159,17 +160,41 @@ command at all.)
 
 <p>See the "NOTE" in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q317244"
->KB article Q317244</a> for an example of this in action.
+>KB article Q317244</a> for an example.
 
 <p>Most of these installers support the <kbd>/?</kbd> switch, which
 will then claim to support <kbd>/q</kbd> for "quiet" operation and
-<kbd>/r:n</kbd> to suppress the reboot, except that sometimes it's
-<kbd>/z</kbd> instead.
+<kbd>/r:n</kbd> to suppress the reboot, except when it's <kbd>/z</kbd>
+to suppress the reboot.
 
-<p>Only Microsoft could make system administration an experimental
-science.
+<p>Leave it to Microsoft to make systems administration an <a
+href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q69563"
+>experimental science</a>.
+
+<hr>
 
 <h1>Specific applications</h1>
+
+<h2 id="7-zip">7-zip</h2>
+<table border cellpadding=4>
+<tr><td valign="middle">Availability
+<td><a href="http://www.7-zip.org/">Open Source</a>
+<tr><td valign="middle">Details
+
+<td>
+
+<p>As far as I know, <code>7-zip</code> is is the only open source
+competitor to WinZip.  It uses its own self-extracting installation
+scheme.
+
+<p>For silent installation, run with options <code>-y&nbsp;/Q</code>.
+Yes, that's "dash y slash Q", as described <a
+href="http://sourceforge.net/tracker/?func=detail&atid=114481&aid=599673&group_id=14481">here</a>.
+
+<tr><td valign="middle">Example
+<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/7-zip.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >7-zip.pl</a>
+
+</table>
 
 <br><hr width="50%">
 <h2 id="acrobat-reader">Acrobat Reader</h2>
@@ -264,10 +289,159 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 
 </table>
 
+<br><hr width="50%">
+<h2 id="lotus-notes">Lotus Notes (technically IBM/Lotus, but who cares)</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+
+<td>The software is a <a href="http://www.lotus.com/">commercial
+product</a>; the incremental update installers <a
+href="http://www.lotus.com/ldd/down.nsf">are available for
+download</a>.
+
+<tr><td valign="middle">Details
+
+<td><p>The master <code>setup.exe</code> is just an <a
+href="http:#installshield">InstallShield</a> executable.  Use the
+<code>/s&nbsp;/sms</code> (and perhaps the <code>/f1</code>) switches.
+
+<p>The incremental installers, on the other hand, respond to
+<code>/?</code>.  For unattended installation, provide the
+<code>/nouser</code> switch.  Note that each incremental installer
+only works for the immediately preceeding version of notes, so you
+must apply each of them in order.
+
+<tr><td valign="middle">Example
+<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/notes.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >notes.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="mdac">MDAC (Microsoft Data Access Components)</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://www.microsoft.com/data/download.htm">Free Download</a>
+
+<tr><td valign="middle">Details
+
+<td><p>Typical random Microsoft package.  For unattended install, run
+with <code>/q&nbsp;/c:"setup&nbsp;/qn1"</code>.
+
+<tr><td valign="middle">Example
+<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/mdac.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >mdac.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="office">Microsoft Office</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://www.microsoft.com/office/">Commercial</a>
+
+<tr><td valign="middle">Details
+
+<td><p>This is another fun one.
+
+<p>To perform unattended installations of Office, you need to create
+what Microsoft calls an <a
+href="http://www.microsoft.com/office/ork/2000/two/45ct_3.htm"
+>"Administrative Installation Point"</a>.  This is basically a copy of
+the CD, modified to already contain your license key and organization
+name.  To create the Administrative Installation Point, run:
+
+<pre>
+    setup.exe /a data1.msi
+</pre>
+
+<p>The <code>data1.msi</code> file is at the top-level of the CD-ROM.
+
+<p>You will surely want to apply Microsoft's updates, as well.  You
+can keep up with them by reading Microsoft's <a
+href="http://www.microsoft.com/office/ork/xp/journ/adminup.htm"
+>Administrative Updates Journal</a>.  Note that some updates are not
+released with an "administrative" version; for such updates, you will
+need to apply them after the installation of Office completes.
+
+<p>Once that is finished, you can install Office using the
+<code>data1.msi</code> package from the Administrative Installation
+Point just like any other <a href="#msi">MSI</a> package.  There are
+many public properties you can use, as documented in <a
+href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q270920">KB
+article Q270920</a> (although a better description can be found in the
+setupref.xls spreadsheet from the <a
+href="http://www.microsoft.com/office/ork/2000/appndx/toolbox.htm#offinfo"
+>Office Information</a> part of the Office Resource Kit toolbox.)  I
+happen to like the settings <code>ADDLOCAL=ALL</code>,
+<code>REBOOT=ReallySuppress</code>, <code>NOUSERNAME=TRUE</code>,
+<code>ALLUSERS=1</code>, and <code>DISABLEMEDIA=1</code>.  Your
+mileage may vary.
+
+<p>Note: To create an Administrative Installation Point, you must be
+using the Retail or Enterprise editions of Office 2000 (not OEM).  For
+Office XP, only the Enterprise edition will do.  If you try to use the
+OEM edition, the process will appear to work, but it will actually
+just scribble uselessly over the root directory of the current drive.
+(Hint: You can bypass this behavior by using the Office Resource Kit
+to create a <em>transform file</em> which changes the
+<code>OEMRelease<code> property from 1 to 0, but you did not hear this
+from me.)
+
+<tr><td valign="middle">Example
+<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/office.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >office.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="mozilla">Mozilla</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://www.mozilla.org/">Open Source</a>
+
+<tr><td valign="middle">Details
+
+<td>For unattended install, run with <code>-ma</code> option.  (Is
+this documented somewhere?)
+
+<tr><td valign="middle">Example
+<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/mozilla.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >mozilla.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="support-tools">Windows 2000 Support Tools</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a
+href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/supporttools.asp"
+>Free Download</a>
+
+<tr><td valign="middle">Details
+
+<td><p>Run the installer with the <code>/X</code> switch (figured out
+by running "strings").  The installer will prompt for a directory to
+which it will extract the tree.  Inside the tree will be an <a
+href="#msi">MSI</a> file named <code>2000rkst.msi</code>.
+
+<tr><td valign="middle">Example <td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/support-tools.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>support-tools.bat</a>
+
+</table>
+
 <hr>
 <address>
 Patrick J. LoPresti <a
 href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
 </address>
+
+<A href="http://sourceforge.net"> <IMG align="right"
+src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
+width="210" height="62" border="0" alt="SourceForge Logo"></A>
+
 </body>
 </html>
