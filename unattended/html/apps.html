@@ -46,10 +46,13 @@ And so on.
 <p>In short, these installation scripts need to be able to invoke
 other installation scripts.  You might expect this to be trivial,
 until you remember that installing some software requires rebooting
-the machine.  So if (say) <code>sales.bat</code> begins by invoking
-<code>base.bat</code>, and <code>base.bat</code> needs to reboot the
-machine halfway through, how exactly do you resume where you left off?
-<a href="#todo">See below</a> for my answer.
+the machine.  So if (say) <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>sales.bat</a> begins by invoking <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>base.bat</a>, which needs to reboot the machine halfway through, how
+exactly do you resume where you left off?  <a href="#todo">See
+below</a> for my answer.
 
 <li>Simplicity
 
@@ -64,8 +67,7 @@ anything here, please let me know.
 
 The process goes like this:
 <ol>
-<li>Map the <code>\\ntinstall\install</code> share as the <code>Z:</code>
-drive.
+<li>Map the <code>install</code> share as the <code>Z:</code> drive.
 <li>Install Perl.
 <li>Install everything else.
 </ol>
@@ -74,12 +76,23 @@ drive.
 Perl.  You do not need to know Perl to use the scripts, but you should
 learn it anyway because it is a good tool.
 
+<p>Note that this process is normally invoked immediately after the <a
+href="os.html">unattended OS installation</a> by the
+<code>GuiRunOnce</code> section in the <a
+href="os.html#answer-file"><code>unattend.txt</code></a> file.  In
+particular, this process assumes that the machine is already
+configured to automatically log on as the local Administrator after
+every reboot.  To invoke this procedure standalone, you can use the <a
+href="#autolog">autolog.pl</a> script to enable or disable automatic
+logon.
+
 <h2>Structure of the <code>install</code> share</h2>
 
-<p>The <code>\\ntinstall\install</code> share is the one you created when
-you set up the <a href="os.html">automated OS installation</a>,
-by simply copying the <code>install</code> directory from this project's
-distribution.
+<p>The <code>install</code> share is the one you created when you set
+up the <a href="os.html">automated OS installation</a>, by simply
+copying the <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/"
+><code>install</code></a> directory from this project's distribution.
 
 <p>Application installation relies on these subdirectories of the
 <code>install</code> share:
@@ -121,8 +134,8 @@ driver script</h1>
 
 <h2>One script to rule them all</h2>
 <p>One master Perl script, <code>todo.pl</code>, oversees the entire
-installation process.  <b>All</b> of the other scripts are invoked by
-<code>todo.pl</code>.
+installation process.  All of the other scripts are meant to be
+invoked by <code>todo.pl</code>.
 
 <p><code>todo.pl</code> maintains a "to-do list" on disk in the plain-text
 file <code>C:\netinst\todo.txt</code>.  It takes any number of commands as
@@ -154,10 +167,10 @@ reboots.
 <h2>The <kbd>.reboot</kbd> meta-command</h2>
 
 <p>In addition to normal commands and scripts, one other item may
-appear in the to-do list: "<kbd>.reboot</kbd>".  This is a directive
-to reboot the machine.  <code>todo.pl</code> knows how to do this,
-after first patching the registry to cause <em>itself</em> to run the
-next time the current user logs in.
+appear in the to-do list: "<kbd>.reboot</kbd>".  This tells
+<code>todo.pl</code> to reboot the machine, after first patching the
+registry to cause <em>itself</em> to run the next time the current
+user logs in.
 
 <p>In other words, <kbd>.reboot</kbd> provides a controlled mechanism
 for rebooting during application installation.  This is important,
@@ -167,7 +180,7 @@ you write a script to install an application, take care to suppress
 any reboots performed by the installer and use the <kbd>.reboot</kbd>
 directive instead.
 
-<h2>Thep environment</h2>
+<h2>The environment</h2>
 
 <p><code>todo.pl</code> arranges to run all commands in a consistent
 environment, with the following environment variables set.
@@ -176,13 +189,13 @@ environment, with the following environment variables set.
 
 <p>The <code>PATH</code> environment variable will have
 <code>Z:\bin;Z:\scripts</code> prepended to it before any commands are
-run.  So the scripts, and the to-do list, may refer to themselves and
-to the utility scripts without supplying a full pathname.
+run.  So the scripts may refer to each other and to the utility
+scripts without supplying a full pathname.
 
 <h3 id="WINVER"><kbd>WINVER</kbd></h3>
 
 <p>The <code>WINVER</code> environment variable will contain a short
-string representing the version of Windows being installed:
+string representing the version of Windows:
 
 <dl compact>
 <dt><em>win2k</em>
@@ -196,7 +209,7 @@ string representing the version of Windows being installed:
 </dl>
 
 <p>...and so on.  This variable is useful in scripts whose behavior
-needs to vary between OSes; e.g., installing hotfixes.
+needs to vary based on OS; e.g., a script for installing hotfixes.
 
 <h1>Examples</h1>
 
@@ -210,9 +223,9 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/directx81.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">directx81.bat</a>
 script installs DirectX 8.1 and reboots the machine.  First, it adds
 the <kbd>.reboot</kbd> directive to the to-do list.  Then it runs the
-installer from the <code>Z:\packages</code> directory, taking care to wait
-until the installer finishes and to supply flags to suppress the
-normal reboot performed by the installer.
+installer from the <code>Z:\packages</code> directory, taking care to
+wait until the installer finishes and to suppress the normal reboot
+performed by the installer.
 
 <p>To invoke this script manually, you would type:
 <pre>
@@ -269,17 +282,6 @@ system.
 <h2>A high-level example</h2>
 
 <p>The <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/win2ksp3-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->win2ksp3-updates.bat</a> script installs all of the post-SP3 updates
-to Windows 2000 Service Pack 3.  (Or at least, all of the ones we care
-about where I work.)  All this script does is push a bunch of items
-onto the to-do list, including a bunch of hotfixes, the ie6.bat
-script, and the directx81.bat script.  Several of these involve
-rebooting the machine.
-
-<h2>Another high-level example</h2>
-
-<p>The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >base.bat</a> script performs a "base workstation" installation for
 our organization.  This includes a bunch of free software.
@@ -287,15 +289,27 @@ our organization.  This includes a bunch of free software.
 <p>This example also illustrates the use of the <a
 href="#WINVER">WINVER</a> environment variable to choose which
 "updates" script to run.  The <kbd>%WINVER%-updates.bat</kbd> entry in
-the to-do list will run (for example) <kbd>win2ksp3-updates.bat</kbd>
-if the operating system is Windows 2000 Service Pack 3, but it will
-run <kbd>winxpsp1-updates.bat</kbd> on Windows XP Service Pack 1.
+the to-do list will run (for example) <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/win2ksp3-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>win2ksp3-updates.bat</a> for Windows 2000 Service Pack 3, but it will
+run <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/winxpsp1-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>winxpsp1-updates.bat</a> for Windows XP Service Pack 1.
 
-<p>This example also illustrates how to add a command with arguments
-to the to-do list by putting it in quotes.  Normally, spaces separate
-the commands themselves.
+<h2>A more complex example</h2>
 
-<p>Finally, this example illustrates one unpleasant consequence of the
+<p>The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/winxpsp1-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>winxpsp1-updates.bat</a> script installs all of Microsoft's
+"critical" and "recommended" updates to to Windows XP Service Pack 1.
+All this script does is push a bunch of items onto the to-do list,
+including the occasional <code>.reboot</code> directive.
+
+<p>This example illustrates how to add a command with arguments to the
+to-do list by putting it in quotes.  Normally, spaces separate the
+commands themselves.
+
+<p>Also, this example illustrates one unpleasant consequence of the
 "last in, first out" semantics of <code>todo.pl</code>.  Since we
 always add items to the <b>front</b> of the to-do list, the
 invocations of <code>startup-type.pl</code> appearing at the end of <a
@@ -320,7 +334,7 @@ to the to-do list.  But this sequence of commands:
 
 <p>...will add <code>bar.bat</code> followed by <code>foo.bat</code>
 to the to-do list.  This behavior can make it difficult to read
-complicated installation scripts.  So I suggest you do not write
+complicated installation scripts.  So I suggest you generally avoid
 complicated scripts; instead, break the task into simple pieces and
 compose them.
 
@@ -332,7 +346,14 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 our organization.  As you can see, this just performs a base install,
 then adds Microsoft Office, Lotus Notes, the AT&amp;T global network
 dialer, and the Shiva (technically "Intel Netstructure", but I fear
-change) VPN client.  Mmm, composability.
+change) VPN client.
+
+<p>Notice that if you make a change to the base configuration (<a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>base.bat</a>), the change will automatically affect all the other
+configurations (like <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>sales.bat</a>).  Composability is good.
 
 <h1>Database of "unattended" switches for various applications</h1>
 
@@ -340,8 +361,7 @@ change) VPN client.  Mmm, composability.
 know how to install that application in "unattended" mode.  To help
 you, I am collecting a <a href="installers.html">list of
 unattended/silent mode installer switches</a> for common installers
-and applications.  Contributions to this list are particularly
-welcome.
+and applications.  Contributions to this list are most welcome.
 
 <h1>Other utility scripts</h1>
 
@@ -350,7 +370,7 @@ are others in <code>Z:\bin</code> which you might find useful:
 
 <dl>
 <dt><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/autolog.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/autolog.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" name="autolog"
 >autolog.pl</a>
 
 <dd>Patches the registry to enable or disable the "automatic logon"
@@ -363,10 +383,10 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 >bootini.pl</a>
 
 <dd>For some reason, all of my unattended installations end up
-displaying a boot menu with an unusable "Previous Operating System on
-C:\" option.  This even happens if I wipe the disk with zeroes first.
-This script edits the hidden system file <code>boot.ini</code> to get
-rid of the useless menu option.
+displaying a boot menu with an unbootable "Previous Operating System
+on C:\" option.  This even happens if I wipe the disk with zeroes
+first.  This script edits the hidden system file <code>boot.ini</code>
+to get rid of the useless menu option.
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/hidepw.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -410,6 +430,13 @@ inherited by every new user who logs into the machine.  Most
 approaches I have seen to this involve copying <code>NTUSER.DAT</code>
 from some other profile to the default user profile, but with Perl,
 you can edit this registry hive directly.
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/winxpsp1-notips.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>winxpsp1-notips.pl</a>
+
+<dd>Similarly, but for Windows XP Service Pack 1.  (Work in
+progress...)
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/startup-type.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
