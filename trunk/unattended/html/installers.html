@@ -155,7 +155,7 @@ There are other useful switches; use <kbd>/?</kbd> to learn about
 them.
 
 <p>Some hotfixes use Microsoft's old packaging technology whose name I
-forget, but whose switches are documented in <a
+forget and whose switches are more-or-less documented in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q197147">KB
 article Q197147</a>.  These installers first extract themselves to a
 temporary folder and then run a command from inside that folder.
@@ -166,11 +166,11 @@ Passing just <kbd>/c</kbd> suppresses running the command at all, so
 you can use <kbd>/c&nbsp;/t:<var>path</var></kbd> to extract the
 hotfix so you can look at it.
 
-<p>These hotfixes support the <kbd>/q</kbd> switch for quiet
-operation.  They also support the (usually undocumented)
-<kbd>/r:n</kbd> switch to suppress the reboot.  Well, mostly; some
-require manual fiddling with the <kbd>/c</kbd> switch.  See the "NOTE"
-in <a
+<p>These packages support the <kbd>/q</kbd> switch for quiet
+operation, except sometimes you have to use <kbd>/q:a</kbd> instead.
+They also support the <kbd>/r:n</kbd> switch to suppress the reboot.
+Sometimes these do not work and you have to fiddle with the
+<kbd>/c:<var>command</var></kbd> switch; see the "NOTE" in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q317244"
 >KB article Q317244</a> for an example.
 
