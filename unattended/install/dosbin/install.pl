@@ -599,6 +599,41 @@ sub ask_fdisk_cmds () {
     return $ret;
 }
 
+# Check that a directory name complies with "old DOS" criteria; i.e.,
+# that it contains only 8+3 components.  Particularly needed because
+# Linux allows longer filenames, but harmless as a sanity check even
+# under DOS.
+sub validate_old_dos_dir ($) {
+    my ($name) = @_;
+
+    my (undef, $dirs, undef) = $file_spec->splitpath ($name, 1);
+    my @dirs = $file_spec->splitdir ($dirs);
+
+    foreach my $dir (@dirs) {
+        my $failure = '';
+        my ($base, $ext) = $dir =~ /^(.*)(?:\.(.*))?\z/;
+
+        # Check "impossible" cases first.
+        $base =~ /\\/
+            || defined $ext && ($ext =~ /\\/ || $ext =~ /\./)
+            and die 'Internal error';
+
+        if (length $base > 8) {
+            $failure = "'$base' has more than eight characters";
+        }
+        elsif ($base =~ /\./) {
+            $failure = "'$dir' contains more than one dot";
+        }
+        elsif (defined $ext) {
+            if (length $ext > 3) {
+                $failure = "Extension '$ext' has more than three characters";
+            }
+        }
+        $failure eq ''
+            or die "'$name' is invalid because:\n$failure.\nBailing out";
+    }
+}
+
 # Which OS to install
 sub ask_os () {
     my $os_dir = $u->{'_meta'}->{'os_dir'};
@@ -643,6 +678,7 @@ sub ask_os () {
                         sort { $a->full_name () cmp $b->full_name () }
                         @media_objs);
     $choice->cache ();
+    validate_old_dos_dir ($choice->path ());
     return $choice->path ();
 }
 
@@ -828,6 +864,11 @@ $u->{'_meta'}->{'doit_cmds'} =
         my $media_obj = Unattend::WinMedia->new ($src_tree);
         my @lang_dirs = $media_obj->lang_dirs (1);
         my $lang_opts = join ' ', map { "/rx:$_" } @lang_dirs;
+
+        # Yes, it is annoying to call this twice.  But we really must
+        # call it now, and it would be even more annoying not to catch
+        # the problem right away during the interactive section above.
+        validate_old_dos_dir ($src_tree);
         $src_tree =~ /\\$/
             or $src_tree .= '\\';
         $src_tree .= 'i386';
