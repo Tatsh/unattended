@@ -304,8 +304,9 @@ fakeinclude/stdio.h: fakelib/libc.so
 # Variable for use in CFLAGS to convince utilities to compile/link
 # against our just-built libraries instead of the system libraries.
 # FIXME: Should include -nostdinc here
-fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib		    \
-		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib
+fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib	\
+	-L$(cwd)/stage1/lib -L$(cwd)/stage1/usr/lib		\
+	-Wl,-rpath-link,$(cwd)/stage1/lib
 
 # Create empty config file to silence ldconfig warnings
 stage1/etc/ld.so.conf:
