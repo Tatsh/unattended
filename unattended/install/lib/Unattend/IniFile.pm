@@ -6,35 +6,54 @@ use warnings;
 use strict;
 use Carp;
 
-use fields qw (_vals _comments _section_comments
-               _sort_index _section_sort_index);
+# We cannot "use fields" here because we want to overload the hash
+# dereference operator.  So, we use an array as our representation,
+# and constants to refer to the slots in the array.
+use constant {
+    SECTIONS => 0,
+    COMMENTS => 1,
+    SECTION_COMMENTS => 2,
+    SORT_INDEX => 3,
+    SECTION_SORT_INDEX => 4,
+};
 
-my $magic_str = 'IniFile.pm magic string';
-my $no_val_ref = \$magic_str;
+# Overload hash dereference to return "sections" hash.
+use overload
+    '%{}' => sub { my ($self) = @_;
+                   return $self->[SECTIONS];
+               };
+
+use constant NO_VAL_REF => [ "Magic noval string" ];
 
 sub new {
     my ($proto) = @_;
     my $class = ref $proto || $proto;
 
-    my $self = fields::new ($class);
-    # Initialize all of the slots needing hashes
-    foreach my $slot ('_vals', '_comments', '_section_comments',
-                      '_sort_index', '_section_sort_index') {
-        tie %{$self->{$slot}}, 'Unattend::InfFile::_Hash';
-    }
+    my $self = [ ];
 
-    return $self;  # Already blessed
+    # Initialize all of our slots with hashes.
+    tie %{$self->[SECTIONS]}, 'Unattend::InfFile::_Hash';
+    tie %{$self->[COMMENTS]}, 'Unattend::InfFile::_Hash';
+    tie %{$self->[SECTION_COMMENTS]}, 'Unattend::InfFile::_Hash';
+    tie %{$self->[SORT_INDEX]}, 'Unattend::InfFile::_Hash';
+    tie %{$self->[SECTION_SORT_INDEX]}, 'Unattend::InfFile::_Hash';
+
+    return bless $self, $class;
 }
 
-sub value ($$$) : lvalue {
+sub noforce ($$;$) {
     my ($self, $section, $key) = @_;
 
-    # Evaluate to lvalue representing this slot
-    my $ref = \$self->{_vals}->{$section}->{$key};
-    $$ref;
+    if (defined $key) {
+        my $sec_hash = $self->{$section};
+        return (tied %$sec_hash)->fetch_noforce ($key);
+    }
+    else {
+        return (tied %$self)->fetch_noforce ($section);
+    }
 }
 
-sub _force ($) {
+sub force ($) {
     my ($value) = @_;
 
     ref $value eq 'Unattend::Promise'
@@ -43,45 +62,36 @@ sub _force ($) {
     return $value;
 }
 
-sub forced_value ($$$) {
-    my ($self, $section, $key) = @_;
-
-    my $vals = $self->{_vals};
-    (exists $vals->{$section})
-        && (exists $vals->{$section}->{$key})
-        or return undef;
-
-    return _force ($self->value ($section, $key));
-}
-
+# This is garbage.  Clean it up!  (FIXME)
 sub push_value ($$$$) {
     my ($self, $section, $key, $value) = @_;
 
-    my $orig_value = $self->value ($section, $key);
+    my $orig_value = $self->noforce ($section, $key);
 
     # Convert value into a Promise
-    $self->value ($section, $key) = $value;
-    $value = $self->value ($section, $key);
+    $self->{$section}->{$key} = $value;
+    $value = $self->{$section}->{$key};
 
-    $self->value ($section, $key) =
-        sub {
-            my $forced = _force ($value);
-            return (defined $forced ? $forced : _force ($orig_value));
-        };
+    # Install a new Promise which does the "right thing".
+    $self->{$section}->{$key} =
+         sub {
+             my $forced = force ($value);
+             return (defined $forced ? $forced : force ($orig_value));
+         };
 }
 
 # Return the magic scalar representing "no value"
 sub no_value ($) {
     my ($self) = @_;
-    return $no_val_ref;
+    return NO_VAL_REF;
 }
 
 sub comments : lvalue {
     my ($self, $section, $key) = @_;
 
     my $ref = (defined $key
-               ? \$self->{_comments}->{$section}->{$key}
-               : \$self->{_section_comments}->{$section});
+               ? \$self->[COMMENTS]->{$section}->{$key}
+               : \$self->[SECTION_COMMENTS]->{$section});
 
     defined $$ref
         or $$ref = [ ];
@@ -104,8 +114,8 @@ sub sort_index : lvalue {
     my ($self, $section, $key) = @_;
 
     my $ref = (defined $key
-               ? \$self->{_sort_index}->{$section}->{$key}
-               : \$self->{_section_sort_index}->{$section});
+               ? \$self->[SORT_INDEX]->{$section}->{$key}
+               : \$self->[SECTION_SORT_INDEX]->{$section});
     defined $$ref
         or $$ref = -1;
     $$ref;
@@ -119,7 +129,7 @@ sub max_index ($) {
         my $index = $self->sort_index ($section);
         $ret < $index
             and $ret = $index;
-        foreach my $key ($self->keys ($section)) {
+        foreach my $key (keys %{$self->section ($section)}) {
             $index = $self->sort_index ($section, $key);
             $ret < $index
                 and $ret = $index;
@@ -127,16 +137,6 @@ sub max_index ($) {
     }
 
     return $ret;
-}
-
-sub sections ($) {
-    my ($self) = @_;
-    return keys %{$self->{_vals}};
-}
-
-sub keys ($$) {
-    my ($self, $section) = @_;
-    return keys %{$self->{_vals}->{$section}};
 }
 
 sub _merge_comments ($$) {
@@ -158,7 +158,7 @@ sub merge ($$) {
     # Offset our sort indices so that we will sort after other
     foreach my $section ($self->sections) {
         $self->sort_index ($section) += $other_max_index;
-        foreach my $key ($self->keys ($section)) {
+        foreach my $key (keys %{$self->{$section}}) {
             $self->sort_index ($section, $key) += $other_max_index;
         }
     }
@@ -170,9 +170,10 @@ sub merge ($$) {
                              $other->comments ($section));
         # Overwrite the section sort index.
         $self->sort_index ($section) = $other->sort_index ($section);
-        foreach my $key ($other->keys ($section)) {
+        foreach my $key (keys %{$other->section ($section)}) {
             # Copy the value.
-            $self->value ($section, $key) = $other->value ($section, $key);
+            $self->section ($section)->{$key} =
+                $other->section ($section)->{$key};
             # Merge the comments.
             $self->comments ($section, $key) =
                 _merge_comments ($self->comments ($section, $key),
@@ -223,8 +224,7 @@ sub read ($$;$) {
             $acc->comments ($section) = $comments;
             $comments = [ ];
             # Make sure section exists, even it it contains no values
-            $acc->value ($section, 'notused') =
-                $acc->value ($section, 'notused');
+            $acc->section ($section);
         }
         elsif (defined $section && $section !~ $sect_re) {
             next;
@@ -235,7 +235,6 @@ sub read ($$;$) {
             chomp $comment;
             push @$comments, $comment;
         }
-        # FIXME: Need to get this regexp right someday.
         elsif ($line =~ /^\s*($token)(?:\s*=\s*($token))?\s*$/) {
             # key=value setting
             my ($key, $val) = ($1, $2);
@@ -261,7 +260,7 @@ sub read ($$;$) {
 #                and (die "Duplicate $key settings in $file, ",
 #                     "lines $old_index and $.\n");
             $acc->sort_index ($section, $key) = $.;
-            $acc->value ($section, $key) = $val;
+            $acc->section ($section)->{$key} = $val;
             $acc->comments ($section, $key) = $comments;
             $comments = [ ];
         }
@@ -311,13 +310,13 @@ sub generate ($) {
 
     foreach my $section (sort { $self->sort_index ($a)
                                     <=> $self->sort_index ($b) }
-                         $self->sections) {
+                         keys %{$self}) {
         push @ret, $self->_dump_comments ($section);
         push @ret, "[$section]";
         foreach my $key (sort { $self->sort_index ($section, $a)
                                     <=> $self->sort_index ($section, $b) }
-                         $self->keys ($section)) {
-            my $value = $self->forced_value ($section, $key);
+                         keys %{$self->{$section}}) {
+            my $value = $self->{$section}->{$key};
             defined $value
                 or next;
             push @ret, $self->_dump_comments ($section, $key);
@@ -343,13 +342,14 @@ sub generate ($) {
 }
 
 # Special magical hash.  When a proc is stored into it, converts it
-# into a Promise and stores that instead.
+# into a Promise and stores that instead.  Also, by default, forces
+# the promise when fetched.
 package Unattend::InfFile::_Hash;
 use Unattend::FoldHash;
 use base qw(Unattend::FoldHash::Nestable);
 use Unattend::Promise;
 
-sub STORE {
+sub STORE ($$$) {
     my ($self, $key, $value) = @_;
 
     my $new_value = (ref $value eq 'CODE'
@@ -357,6 +357,27 @@ sub STORE {
                      : $value);
 
     return $self->SUPER::STORE ($key, $new_value);
+}
+
+sub FETCH ($$) {
+    my ($self, $key) = @_;
+
+    my $value = $self->SUPER::FETCH ($key);
+
+    if (ref $value eq 'Unattend::Promise') {
+        $value = $value->force ();
+        # Cache it for efficiency, and also to convert hashes to
+        # folded hashes.
+        $self->SUPER::STORE ($key, $value);
+    }
+
+    return $self->SUPER::FETCH ($key);
+}
+
+sub fetch_noforce ($$) {
+    my ($self, $key) = @_;
+
+    return $self->SUPER::FETCH ($key);
 }
 
 1;
