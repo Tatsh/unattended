@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Unattended/Silent Installer Switches for Windows Apps</title>
+<title>Unattended/Silent Installation Switches for Windows Apps</title>
 </head>
 <body>
 
@@ -84,21 +84,21 @@ the oldest and most widely used application packaging utilities.
 <p>Installers created by InstallShield recognize the <kbd>/r</kbd>,
 <kbd>/s</kbd>, <kbd>/sms</kbd>, and <kbd>/f1</kbd> flags.
 
-<p>To perform a "silent" installation, you need a <em>setup.iss</em>
-file.  Some applications ship with such a file, but if not, you can
-use the graphical installer itself to create one.
+<p>To perform a "silent" installation, you need a
+<code>setup.iss</code> file.  Some applications ship with such a file,
+but if not, you can use the graphical installer itself to create one.
 
 <p>Here is how it works.  Run the installer with the <kbd>/r</kbd>
 ("record") option.  Proceed through the dialogs and complete the
-installation.  This will create a <em>setup.iss</em> file and place it
-in the <em>C:\WINNT</em> directory (yes, really).  This file will
-include all of your responses to the InstallShield dialogs, allowing
-you to perform unattended installations as if you were giving the same
-answers again.  Simply copy <em>setup.iss</em> to the same directory
-as the installer executable.
+installation.  This will create a <code>setup.iss</code> file and
+place it in the <code>C:\WINNT</code> directory (yes, really).  This
+file will include all of your responses to the InstallShield dialogs,
+allowing you to perform unattended installations as if you were giving
+the same answers again.  Simply copy <code>setup.iss</code> to the
+same directory as the installer executable.
 
-<p>Once you have a <em>setup.iss</em> file, run the installer with the
-<kbd>/s</kbd> ("silent") option.  This will perform an unattended
+<p>Once you have a <code>setup.iss</code> file, run the installer with
+the <kbd>/s</kbd> ("silent") option.  This will perform an unattended
 installation.
 
 <p>Unfortunately, the installer will fork a separate process and exit,
@@ -111,12 +111,12 @@ will cause the installer to pause until the installation completes.
 the <kbd>/s</kbd> and the <kbd>/sms</kbd> switches.
 
 <p>The <kbd>/f1</kbd> switch allows you to specify a path to the
-<em>setup.iss</em> file.  I assume this is to let you support multiple
-answer files for a single application.
+<code>setup.iss</code> file.  I assume this is to let you have
+multiple answer files for a single application.
 
 <p>Oh, one more thing.  The <kbd>/r</kbd> switch only works if the
 release engineer is competent.  Many packages have "custom dialogs"
-which are not supported by <em>setup.iss</em>, which means those
+which are not supported by <code>setup.iss</code>, which means those
 dialogs will always appear no matter what you do.  For such packages,
 I suggest asking the vendor to fix their installer.  If that does not
 work, I suggest doing what you can to help them go out of business.
@@ -135,10 +135,6 @@ experience, they generally do.  There is no way to set options.
 <p>NOTE: This product has been rebranded the "Wise Installation
 System".  Don't let them confuse you.
 
-<p>The Wise products can also "repackage" existing applications into
-single executables supporting the <kbd>/s</kbd> option.  I do not
-cover this here because I think it is a bad idea.
-
 <h2 id="inno">Inno Setup</h2>
 
 <p><a href="http://www.jrsoftware.org/isinfo.php">Inno Setup</a> is an
@@ -146,7 +142,8 @@ open source competitor in this space.  You can usually identify the
 installers it creates by running "strings" on the executable and
 grepping for "Inno".
 
-<p>Inno Setup installers recognize the <kbd>/silent</kbd> option.
+<p>Inno Setup installers use the <kbd>/silent</kbd> switch for
+unattended installations.
 
 <h2>Microsoft packages</h2>
 
@@ -163,13 +160,83 @@ href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q317244"
 >KB article Q317244</a> for an example.
 
 <p>Most of these installers support the <kbd>/?</kbd> switch, which
-will then claim to support <kbd>/q</kbd> for "quiet" operation and
-<kbd>/r:n</kbd> to suppress the reboot, except when it's <kbd>/z</kbd>
-to suppress the reboot.
+will then claim to support "quiet" operation with <kbd>/q</kbd> and
+"no reboot" operation with <kbd>/r:n</kbd>, except when it's
+<kbd>/z</kbd>.
 
 <p>Leave it to Microsoft to make systems administration an <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q69563"
 >experimental science</a>.
+
+<h2>If all else fails...</h2>
+
+<p>If the application simply has no unattended installation procedure,
+you can create your own.  I prefer to avoid these approaches if at all
+possible, since they are relatively unreliable and difficult to
+maintain.
+
+<h3>Repackaging</h3>
+
+<p>There are several tools around which can take a "snapshot" of a
+machine's state before and after you perform a manual installation,
+compute the differences between the states, and bundle them up in an
+"installer".  The <a href="#wise">Wise</a> product line has good
+support for this.
+
+<p>The problem with this approach is that it fundamentally cannot work
+reliably.  Installers can vary their behavior depending on the exact
+initial state of the machine, such as the OS version or the
+presence/absence of other installed software.  So the repackaged
+installer will almost never do exactly the same thing that a fresh
+installation would, unless the target machine is identical to original
+machine.
+
+<p>And of course, for every new release of an application, you will
+need to perform the repackaging again.
+
+<p>For these reasons, I think repackaging is a very bad idea and I
+recommend against it.
+
+<h3 id="autoit">AutoIt</h3>
+
+<p><a href="http://www.hiddensoft.com/AutoIt/">AutoIt</a> is a free
+tool which can simulate key presses, mouse clicks, etc., following a
+script (customarily named with a <code>.aut</code> extension).  Most
+installers have a sufficiently simple and consistent interface that a
+very short AutoIt script suffices to automate the installation.
+
+<p>The AutoIt distribution comes with very good documentation.  You
+can copy the <code>AutoIt.exe</code> program to
+<code>\\ntinstall\install\bin</code> and invoke it standalone.
+
+<p>AutoIt scripts do have drawbacks.
+
+<p>For one thing, you must be careful when upgrading to new releases
+of an application, since the installer's UI may have changed.
+
+<p>More importantly, AutoIt scripts are theoretically unreliable,
+because they provide no way to know when a sub-process has exited.
+You can tell when the AutoIt executable exits, but that is not the
+same thing at all.  For example, an installer's last window might
+disappear while the installer still had work to do.  Your master
+script, waiting for the AutoIt executable, would then proceed, and it
+might start another installation or reboot the machine before the
+installer had finished.
+
+<p>AutoIt provides <a
+href="http://www.dx21.com/SCRIPTING/AUTOIT/ViewItem.ASP?NTI=4&amp;SI=3&amp;OID=49"
+>Run</a> and <a
+href="http://www.dx21.com/SCRIPTING/AUTOIT/ViewItem.ASP?NTI=4&amp;SI=3&amp;OID=50"
+>"RunWait"</a> primitives, but it does not provide a way to wait for
+the termination of an application which was invoked by "Run".  If it
+did, this race condition could be avoided.
+
+<p>In practice, it does not matter much, because most installers do
+finish their work before destroying their window.  Just make sure your
+<code>.aut</code> script uses <a
+href="http://www.dx21.com/SCRIPTING/AUTOIT/ViewItem.ASP?NTI=4&amp;SI=3&amp;OID=74"
+>WinWaitClose</a> to wait for the installer's top-level window to
+vanish.
 
 <hr>
 
@@ -183,12 +250,13 @@ href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q69563"
 
 <td>
 
-<p>As far as I know, <code>7-zip</code> is is the only open source
+<p>As far as I know, <code>7-zip</code> is the only open source
 competitor to WinZip.  It uses its own self-extracting installation
 scheme.
 
-<p>For silent installation, run with options <code>-y&nbsp;/Q</code>.
-Yes, that's "dash y slash Q", as described <a
+<p>For unattended operation, run it with switches
+<code>-y&nbsp;/Q</code>.  Yes, that's "dash y slash Q", as described
+<a
 href="http://sourceforge.net/tracker/?func=detail&amp;atid=114481&amp;aid=599673&amp;group_id=14481">here</a>.
 
 <tr><td valign="middle">Example
@@ -247,6 +315,41 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 
 </table>
 
+<br><hr width="50%">
+<h2 id="cygwin">Cygwin</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://www.cygwin.com/">Open Source</a>
+
+<tr><td valign="middle">Details
+
+<td><p>Cygwin has its own installer (<code>setup.exe</code>) with no
+unattended mode.  In fact, the package selection portion cannot be
+performed with the keyboard; only with the mouse.
+
+<p>However, Cygwin's <code>setup.exe</code> does allow you to break
+its activity into two portions: download and install.  So to automate
+the installation of a subset of packages, you simply:
+<ol>
+
+<li>Run the installer once by hand to download just the packages you
+want
+
+<li>Write an <a href="#autoit">AutoIt</a> script to run the installer
+in "install from local package directory" mode, clicking in the right
+spot to select "All Packages".
+
+</ol> 
+
+<tr><td valign="middle">Example
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/cygwin.aut?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>cygwin.aut</a>, <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/cygwin.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>cygwin.bat</a>
+
+</table>
 <br><hr width="50%">
 <h2 id="att-global-dialer">AT&amp;T Global Network Dialer</h2>
 <table border cellpadding=4>
@@ -439,7 +542,7 @@ Patrick J. LoPresti <a
 href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
 </address>
 
-<A href="http://sourceforge.net"> <IMG align="right"
+<A href="http://sourceforge.net/"> <IMG align="right"
 src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
 width="210" height="62" border="0" alt="SourceForge Logo"></A>
 
