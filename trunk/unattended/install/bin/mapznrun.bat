@@ -8,8 +8,6 @@
 :: If drive is already mapped, do nothing
 if exist %Z%\ goto mapped
 
-net use %Z% /delete
-
 @if not %Z_PATH%. == . goto got_path
 @set Z_PATH=\\ntinstall\install
 :got_path
@@ -26,6 +24,7 @@ net use %Z% /delete
 
 :mapit
 @echo Mapping %Z_PATH% on %Z%...
+@net use %Z% /delete
 @net use %Z% %Z_PATH% %Z_PASS% %USER_ARG% /persistent:no
 @if exist %Z%\ goto mapped
 @echo Failed; retrying.
