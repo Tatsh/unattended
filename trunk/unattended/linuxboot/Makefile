@@ -6,10 +6,10 @@ dbi=DBI-1.42
 dosemu=dosemu-20040606
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
-glibc=glibc-2.3.2
+glibc=glibc-20040606
 #glibc=glibc-20040306
 # Awful hack
-glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
+#glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 klibc=klibc-0.116
 linux=linux-2.6.6
@@ -251,17 +251,15 @@ $(call copy_lib,$(e2fsprogs)/lib/libuuid.so,stage1/lib/libuuid.so)
 stage1 += stage1/lib/libuuid.so
 
 ## glibc
-$(glibc)/.stamp-sscanf-patch: misc/glibc-sscanf-patch
-	cd $(glibc) && patch -p1 < $(cwd)/$<
-	touch $@
-
-build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage \
-			$(glibc)/.stamp-sscanf-patch
+# Configure switches cheerfully stolen from LFS project
+# (http://www.linuxfromscratch.org/lfs/view/unstable/chapter05/glibc.html).
+build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
 	    --prefix=/usr					\
 	    --with-headers=$(cwd)/$(linux)/include		\
-	    --enable-add-ons=linuxthreads			\
+	    --enable-add-ons=nptl --with-tls			\
+	    --disable-profile --without-gd --without-cvs	\
 	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
 	&& make
 	touch -c $@
@@ -324,7 +322,7 @@ build-$(glibc)/math/libm.so: build-$(glibc)/libc.so
 
 build-$(glibc)/login/libutil.so: build-$(glibc)/libc.so
 
-build-$(glibc)/linuxthreads/libpthread.so: build-$(glibc)/libc.so
+build-$(glibc)/nptl/libpthread.so: build-$(glibc)/libc.so
 
 $(call copy_lib, build-$(glibc)/resolv/libresolv.so, stage1/lib/libresolv.so)
 $(call copy_lib, build-$(glibc)/resolv/libnss_dns.so, stage1/lib/libnss_dns.so)
@@ -334,7 +332,7 @@ $(call copy_lib, build-$(glibc)/nis/libnsl.so, stage1/lib/libnsl.so)
 $(call copy_lib, build-$(glibc)/crypt/libcrypt.so, stage1/lib/libcrypt.so)
 $(call copy_lib, build-$(glibc)/math/libm.so, stage1/lib/libm.so)
 $(call copy_lib, build-$(glibc)/login/libutil.so, stage1/lib/libutil.so)
-$(call copy_lib, build-$(glibc)/linuxthreads/libpthread.so, \
+$(call copy_lib, build-$(glibc)/nptl/libpthread.so, \
 	stage1/lib/libpthread.so)
 
 stage1 +=							\
@@ -712,7 +710,7 @@ download-pci.ids:
 download_targets=$(addprefix download-,$(packages) pci.ids)
 #download_targets += download-$(glibc-linuxthreads)
 
-download-$(glibc-linuxthreads) : download-$(glibc)
+#download-$(glibc-linuxthreads) : download-$(glibc)
 
 download: $(download_targets)
 
@@ -728,10 +726,12 @@ $(call cvs_rule, $(dosemu), dosemu,				\
 	:pserver:anonymous@cvs.sourceforge.net:/cvsroot/dosemu)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
-$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
+#$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
+$(call cvs_rule, $(glibc), libc, \
+	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 # Awful hack
-$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
-	http://ftp.gnu.org/gnu/glibc/, $(glibc))
+#$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
+#	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(klibc), tar.bz2,		\
@@ -779,7 +779,7 @@ symlinks: $(symlink_targets)
 # Blow away everything we do not want to ship.
 tidy:
 	rm -rf $(patsubst symlink-%,%,$(symlink_targets))
-	rm -f $(glibc-linuxthreads)
+#	rm -f $(glibc-linuxthreads)
 	rm -rf dosboot iso
 	rm -rf .stamp-stage1 stage2 .stamp-stage2
 	rm -f devices.cpio initrd
