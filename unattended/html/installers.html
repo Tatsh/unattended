@@ -78,6 +78,13 @@ add Perl.exe to your <code>PATH</code> and to associate
 <code>.pl</code> files with it. (<a href="#activeperl">See below</a>
 for more on Perl.)
 
+<p>Perhaps the most important common property is the <a
+href="http://msdn.microsoft.com/library/en-us/msi/setup/reboot_property.asp"
+>REBOOT property</a>, which you can use to suppress any automatic
+reboot the MSI package might try to perform.  So in general, you want
+to provide the <kbd>/i</kbd>, <kbd>/qb</kbd>, and
+<kbd>REBOOT=ReallySuppress</kbd> parameters to <kbd>msiexec</kbd>.
+
 <p><kbd>msiexec</kbd> can do many other things, like uninstall
 software or apply patches.  Neat, huh?  Too bad nobody uses it.
 
@@ -148,7 +155,7 @@ add-on product called <a href="http://www.installshield.com/pftw/"
 InstallShield tree bundled up as a single-file executable.
 
 <p>When you run this executable, it extracts a bunch of files to a
-temporary directory, then launches the <code>setup.exe</code> within.
+temporary directory and launches the <code>setup.exe</code> within.
 
 <p>The PFTW package recognizes the <kbd>/s</kbd> and
 <kbd>/a&nbsp;...</kbd> switches.  The <kbd>/s</kbd> switch instructs
@@ -489,9 +496,10 @@ Download</a>
 <td>
 
 <p>Unlike <a href="#acrobat-reader">Acrobat Reader</a>, this new
-release does not use InstallShield's PackageForTheWeb.  Instead, it
-uses something called the "Netopsystems FEAD optimizer", whose
-command-line switches are documented nowhere.
+release does not use InstallShield's <a
+href="#pftw">PackageForTheWeb</a>.  Instead, it uses something called
+the "Netopsystems FEAD optimizer", whose command-line switches are
+documented nowhere.
 
 <p>However, Adobe provides silent installation instructions in their
 knowledgebase articles <a
@@ -509,14 +517,14 @@ invocation is:
 <p>Alternatively, you can get hold of the MSI file with a quick hack.
 If you start the installer and wait for it to finish extracting files,
 you will find it creates a folder named
-<code><var>%SystemRoot%</var>\cache\Adobe&nbsp;Reader&nbsp;6.0\BIGENU</code>.
+<code><var>%SystemRoot%</var>\cache\Adobe&nbsp;Reader&nbsp;6.0\ENUBIG</code>.
 (SystemRoot is normally <code>C:\WINNT</code> or
 <code>C:\WINDOWS</code>.)
 
 <p>This folder contains the complete uncompressed tree, including an
 <a href="#msi">MSI</a> file named
 <code>Adobe&nbsp;Reader&nbsp;6.0.msi</code>.  So just copy the
-<code>BIGENU</code> folder to, say,
+<code>ENUBIG</code> folder to, say,
 <code>Z:\packages\AdobeReader60</code>, and you can perform unattended
 installations like any other MSI package:
 
@@ -777,7 +785,7 @@ perform a silent installation.
 
 <td><a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/dotnet.bat?view=auto"
->ie6.bat</a>
+>dotnet.bat</a>
 
 </table>
 
@@ -1074,7 +1082,7 @@ matters.)
 StarOffice.  The installation can be automated using a "response
 file", which is more-or-less documented in the <a
 href="http://installation.openoffice.org/01RESPONSE_SO52_final_rev2.pdf"
->StarOffice 5.2 Admnistration Guide</a> and the <a
+>StarOffice 5.2 Administration Guide</a> and the <a
 href="http://docs-pdf.sun.com/816-7522/816-7522.pdf">StarOffice 6.0
 Administration Guide</a> from Sun.
 
@@ -1197,6 +1205,37 @@ href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/script
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/shiva.aut?view=auto"
 >shiva.aut</a>
 
+</table>
+
+<br><hr width="50%">
+<h2 id="sun-jre">Sun Java Runtime Environment (JRE), aka. Java Virtual
+Machine (JVM)</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://java.sun.com/j2se/downloads/">Free Download</a>
+(Click on the J2SE version you want, then select the JRE download)
+
+<tr><td valign="middle">Details
+
+<td>This is an <a href="#ismsi">Installshield with MSI</a> installer.
+Sun displays pleasant originality by providing <a
+href="http://java.sun.com/j2se/1.4.2/docs/guide/plugin/developer_guide/silent.html"
+>instructions</a> for silent installation.  I like to use:
+
+<pre>
+  [jre].exe /s /v"/qb IEXPLORER=1 MOZILLA=1 NETSCAPE6=1 REBOOT=ReallySuppress"
+</pre>
+
+As far as I can tell, it does no harm to request support for all of
+the browsers even if some of the browsers are not installed.
+
+<tr><td valign="middle">Example <td><a
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sun-jre.bat?view=auto"
+>sun-jre.bat</a>
+
+<tr><td valign="middle">Thanks to
+<td><a href="mailto:bret@tragnifamily.org">Bret&nbsp;Tragni</a>
 </table>
 
 <br><hr width="50%">
