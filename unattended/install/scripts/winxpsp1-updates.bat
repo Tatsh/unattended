@@ -6,6 +6,12 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 824146
+:: "A Buffer Overrun in RPCSS May Allow Code Execution"
+:: (Worst Windows security hole, ever.  Again.)
+:: <http://support.microsoft.com/?kbid=824146>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB824146-x86-ENU.exe /u /n /z" .reboot
+
 :: Critical update 824105
 :: "Flaw in NetBIOS Could Lead to Information Disclosure"
 :: <http://support.microsoft.com/?kbid=824105>
