@@ -616,8 +616,8 @@ symlinks: $(symlink_targets)
 
 # Blow away everything we do not want to ship
 tidy:
-	rm -f $(symlink_targets)
-	rm -rf iso
-	rm -rf stage1
-	rm -rf stage2
-	rm initrd
+	rm -f $(patsubst symlink-%,%,$(symlink_targets))
+	rm -rf dosboot iso
+	rm -rf fakeinclude fakelib
+	rm -rf stage1 stage2
+	rm -f devices.cpio initrd
