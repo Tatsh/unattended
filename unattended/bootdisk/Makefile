@@ -49,11 +49,13 @@ iso/isolinux/%.imz: images/%.img
 	gzip --best -c $< >| $@.tmp
 	mv $@.tmp $@
 
+iso/isolinux/memdisk: memdisk
+	ln -f $< $@.tmp
+	mv $@.tmp $@
+
 bootdisk.iso: $(patsubst images/%.img,iso/isolinux/%.imz,$(images)) \
-			memdisk iso/isolinux/isolinux.cfg \
+			iso/isolinux/memdisk iso/isolinux/isolinux.cfg \
 			iso/isolinux/isoboot.msg iso/isolinux/isolinux.bin
-#	rm -f iso/isolinux/*.img
-#	ln -f $(images) memdisk iso/isolinux
 	@echo -n "Making $@..."
 	@mkisofs -quiet -o $@.tmp \
                 -b isolinux/isolinux.bin -c isolinux/boot.cat \
