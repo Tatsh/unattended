@@ -83,6 +83,12 @@ sub name ($) {
         defined $srvcd
             and $ret = $srvcd;
     }
+    elsif (exists $strings->{'entcd'}) {
+        # Win2k Advanced Server uses "entcd" string instead
+        my ($entcd) = $strings->{'entcd'} =~ /^(Windows .*?) CD/;
+        defined $entcd
+            and $ret = $entcd;
+    }
 
     return $ret;
 }
@@ -119,23 +125,29 @@ sub service_pack ($) {
 my %pid_table =
     (
      # Windows Server 2003
-     '69753000' => 'Retail',
      '69763000' => 'Trial',
+     '69753000' => 'Retail',
+     '69712270' => 'Volume',
      # XP
      # See <http://www.thetechguide.com/howto/setuppini.html>
-     '51882335' => 'Retail',
-     '55274000' => 'Retail',
-     '51883270' => 'Volume',
-     '55274270' => 'Volume',
-     '82503OEM' => 'OEM',
      '55274OEM' => 'Dell OEM',
+     '55274000' => 'Retail',
+     '55274270' => 'Volume',
+     '51882335' => 'Retail',
+     '51883270' => 'Volume',
+     '82503OEM' => 'OEM',
+     # 2k Adv Server
+     '51879000' => 'Retail',
+     '51879270' => 'Volume',
      # 2k
-     '51873000' => 'Retail',
      '51873OEM' => 'OEM',
+     '51873000' => 'Retail',
+     '51873270' => 'Volume',
      # Windows 2000 Professional, Russian
      '52882000' => 'Retail',
      # 2k server
-     '51876000' => 'Volume',
+     '51876000' => 'Retail',
+     '51876270' => 'Volume',
      # NT
      '50036' => 'Retail',
      '50382' => 'Retail'
