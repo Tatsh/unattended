@@ -1,6 +1,6 @@
 :: Install Emacs for Windows
 @Echo off
-set zip="c:\Program Files\7-ZIP\7z.exe"
+set zip="%ProgramFiles%\7-ZIP\7z.exe"
 set prog=emacs-21.3
 
 c:
