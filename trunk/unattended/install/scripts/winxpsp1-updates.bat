@@ -84,7 +84,7 @@ todo.pl "%Z%\packages\winxpsp1\WindowsMedia-KB828026-x86-%WINLANG%.exe /passive 
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
 :: <http://support.microsoft.com/?kbid=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
-todo.pl "%Z%\packages\winxpsp1\windowsmedia9-kb819639-x86-%WINLANG%.exe /Q /R:N" .reboot
+todo.pl "%Z%\packages\winxpsp1\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N" .reboot
 
 :: Trick to skip EULA on Media Player 9 
 todo.pl "regedit /s %Z%\scripts\mediaplayer9.reg"
