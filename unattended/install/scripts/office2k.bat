@@ -61,42 +61,42 @@ todo.pl "%Z%\updates\office2k\office2000-kb824993-client-%WINLANG%.exe /q /c:\"m
 todo.pl "%Z%\updates\office2k\Office2000-KB822035-Client-%WINLANG%.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\vbe6op.txt /p VBE6op.msp REBOOT=ReallySuppress\""
 
 :: Install the "Outlook 2000 Update: December 18, 2002"
-:: URL|ENU|http://download.microsoft.com/download/f/1/d/f1d8421a-2b76-4603-808b-39d8dcc74038/Olk0901.exe|updates/office2k/olk0901.exe
-:: URL|DEU|http://download.microsoft.com/download/2/2/3/223520df-1403-4406-a29c-549d147dba05/olk0901.exe|updates/office2k/olk0901_deu.exe
-:: URL|NLD|http://download.microsoft.com/download/9/3/e/93e84ec0-9f9e-466e-8e1b-9a4f3ac53c0c/Olk0901.exe|updates/office2k/olk0901.exe
-:: URL|RUS|http://download.microsoft.com/download/c/f/0/cf0e4961-c166-4200-b346-bb52873f70a3/Olk0901.exe|updates/office2k/olk0901.exe
+:: URL|ENU|http://download.microsoft.com/download/f/1/d/f1d8421a-2b76-4603-808b-39d8dcc74038/Olk0901.exe|updates/office2k/enu/olk0901.exe
+:: URL|DEU|http://download.microsoft.com/download/2/2/3/223520df-1403-4406-a29c-549d147dba05/olk0901.exe|updates/office2k/deu/olk0901_deu.exe
+:: URL|NLD|http://download.microsoft.com/download/9/3/e/93e84ec0-9f9e-466e-8e1b-9a4f3ac53c0c/Olk0901.exe|updates/office2k/nld/olk0901.exe
+:: URL|RUS|http://download.microsoft.com/download/c/f/0/cf0e4961-c166-4200-b346-bb52873f70a3/Olk0901.exe|updates/office2k/rus/olk0901.exe
 :: <http://support.microsoft.com/?kbid=811167>
-todo.pl "%Z%\updates\office2k\Olk0901.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst\logs\Olk0901.txt /p OMIop.msp REBOOT=ReallySuppress\""
+todo.pl "%Z%\updates\office2k\%WINLANG%\Olk0901.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst\logs\Olk0901.txt /p OMIop.msp REBOOT=ReallySuppress\""
 
 :: Install View Control Security Update
-:: URL|ENU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/o2ksp3.exe
-:: URL|DEU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/DE/O2kSp3.exe|updates/office2k/o2ksp3_deu.exe
-:: URL|NLD|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/NL/O2kSp3.exe|updates/office2k/o2ksp3.exe
-:: URL|RUS|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/RU/O2kSp3.exe|updates/office2k/o2ksp3.exe
+:: URL|ENU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/enu/o2ksp3.exe
+:: URL|DEU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/DE/O2kSp3.exe|updates/office2k/deu/o2ksp3.exe
+:: URL|NLD|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/NL/O2kSp3.exe|updates/office2k/nld/o2ksp3.exe
+:: URL|RUS|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/RU/O2kSp3.exe|updates/office2k/rus/o2ksp3.exe
 :: (part of SP3, but not installed via MSI)
-todo.pl "%Z%\updates\office2k\o2ksp3.exe /r:n /q /c:\"outlctlx.exe /q /r:n\""
+todo.pl "%Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"outlctlx.exe /q /r:n\""
 
 :: Install Service Pack 3
-:: URL|ENU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/o2ksp3.exe
-:: URL|DEU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/DE/O2kSp3.exe|updates/office2k/o2ksp3_deu.exe
-:: URL|NLD|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/NL/O2kSp3.exe|updates/office2k/o2ksp3.exe
-:: URL|RUS|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/RU/O2kSp3.exe|updates/office2k/o2ksp3.exe
+:: URL|ENU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/enu/o2ksp3.exe
+:: URL|DEU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/DE/O2kSp3.exe|updates/office2k/deu/o2ksp3.exe
+:: URL|NLD|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/NL/O2kSp3.exe|updates/office2k/nld/o2ksp3.exe
+:: URL|RUS|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/RU/O2kSp3.exe|updates/office2k/rus/o2ksp3.exe
 :: See <http://support.microsoft.com/?kbid=326585>
 :: Download from:
 :: <http://office.microsoft.com/downloads/2000/o2ksp3.aspx>
-todo.pl "%Z%\updates\office2k\o2ksp3.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst\logs\o2ksp3.txt /p MAINSP3.msp REBOOT=ReallySuppress\""
+todo.pl "%Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst\logs\o2ksp3.txt /p MAINSP3.msp REBOOT=ReallySuppress\""
 
 :: Install SR-1a
-:: URL|ENU|http://download.microsoft.com/download/office2000prem/adminup2/SR-1a/WIN98/EN-US/O2KSR1aDL.EXE|updates/office2k/o2ksr1adl.exe
-:: URL|DEU|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/DE/O2KSR1ADL.EXE|updates/office2k/o2ksr1adl_deu.exe
-:: URL|NLD|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/NL/O2KSR1ADL.EXE|updates/office2k/o2ksr1adl.exe
-:: URL|RUS|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/RU/O2KSR1ADL.EXE|updates/office2k/o2ksr1adl.exe
+:: URL|ENU|http://download.microsoft.com/download/office2000prem/adminup2/SR-1a/WIN98/EN-US/O2KSR1aDL.EXE|updates/office2k/enu/o2ksr1adl.exe
+:: URL|DEU|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/DE/O2KSR1ADL.EXE|updates/office2k/deu/o2ksr1adl.exe
+:: URL|NLD|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/NL/O2KSR1ADL.EXE|updates/office2k/nld/o2ksr1adl.exe
+:: URL|RUS|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/RU/O2KSR1ADL.EXE|updates/office2k/rus/o2ksr1adl.exe
 :: See <http://support.microsoft.com/?kbid=245025>
 :: and <http://support.microsoft.com/?kbid=258323>
 :: Download O2KSR1aDL.exe from:
 :: <http://www.microsoft.com/office/ork/2000/appndx/toolbox.htm#o2sr1au>
 todo.pl "msiexec /qb /l* c:\netinst\logs\o2ksr1a.txt /p %TEMP%\o2ksr1a\DATA1.msp REBOOT=ReallySuppress"
-todo.pl "%Z%\updates\office2k\O2KSR1aDL.EXE /t:%TEMP%\o2ksr1a"
+todo.pl "%Z%\updates\office2k\%WINLANG%\O2KSR1aDL.EXE /t:%TEMP%\o2ksr1a"
 
 :: Use Z_PATH instead of %Z%\ because Office likes to phone home a lot,
 :: even with ADDLOCAL=ALL.
