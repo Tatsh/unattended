@@ -23,8 +23,7 @@ download_targets=$(patsubst %,download-%,$(bash) $(busybox) $(dosemu)	\
 	$(samba)							\
 	)
 
-.PHONY: stage1 all download glibc $(download_targets) \
-	iso tftpboot
+.PHONY: stage1 all download $(download_targets)	iso tftpboot
 
 # Macro to generate rule for copying single file
 copy_file=					\
@@ -104,12 +103,6 @@ $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
 $(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
 
-
-glibc: build-$(glibc)/libc.so
-
-bash: $(bash)/bash
-
-pciutils: $(pciutils)/lspci
 
 ## module-init-tools (depmod et. al.)
 
@@ -251,7 +244,11 @@ $(call copy_exe,$(e2fsprogs)/lib/libuuid.so,stage1/lib/libuuid.so)
 stage1_libs += stage1/lib/libuuid.so
 
 ## glibc
-build-$(glibc)/libc.so:
+$(glibc)/.stamp-sscanf-patch: misc/glibc-sscanf-patch
+	cd $(glibc) && patch -p1 < $(cwd)/$<
+	touch $@
+
+build-$(glibc)/libc.so: $(glibc)/.stamp-sscanf-patch
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure	\
 	    --prefix=/usr				\
@@ -320,8 +317,8 @@ stage1 += stage1/bin/busybox
 
 ## parted
 $(parted)/parted/.libs/parted:
-	cd $(parted)							     \
-	&& ./configure --disable-nls --without-readline \
+	cd $(parted)					\
+	&& ./configure --disable-nls --without-readline	\
 	&& make
 	[ -e $@ ]
 
