@@ -70,9 +70,9 @@ echo "*** Now we need to map the /z drive."
 while : ; do
     # If we were really cool, these defaults would come from DHCP
     # options.  FIXME
-    z_user=guest
-    z_pass=guest
-    z_path=//ntinstall/install
+    Z_USER=guest
+    Z_PASS=guest
+    Z_PATH=//ntinstall/install
 
     # Read one character with a 5-second timeout
     read -n 1 -t 5 -p "Override bootdisk defaults (if unsure, say yes)? " \
@@ -81,30 +81,34 @@ while : ; do
 
     if [[ "$input" == [yY]* ]] ; then
         # Allow editing, and do not treat backslash specially
-        read -e -r -p "Enter location of install share (default $z_path): " \
+        read -e -r -p "Enter location of install share (default $Z_PATH): " \
             input
-        [ -n "$input" ] && z_path="$input"
+        [ -n "$input" ] && Z_PATH="$input"
         read -e -r \
-            -p "Enter username for mapping install share (default $z_user): " \
+            -p "Enter username for mapping install share (default $Z_USER): " \
             input
-        [ -n "$input" ] && z_user="$input"
+        [ -n "$input" ] && Z_USER="$input"
         while : ; do
             read -e -r -s -p "Enter password for mapping install share: " \
                 input
             echo
-            read -e -r -s -p "Confirm password: " z_pass
+            read -e -r -s -p "Confirm password: " Z_PASS
             echo
-            [ "$input" == "$z_pass" ] \
+            [ "$input" == "$Z_PASS" ] \
                 && break
             echo "Passwords do not match.  Please try again."
         done
     fi
 
-    smbmount_opts="username=$z_user,ro,ttl=2400000"
+    # Replace all slashes with backslashes, since Z_PATH will
+    # ultimately appear in permcreds.bat which is read by Windows.
+    Z_PATH=${Z_PATH//\//\\}
 
-    echo "*** Trying smbmount $z_path /z -o $smbmount_opts,password=..."
+    smbmount_opts="username=$Z_USER,ro,ttl=2400000"
 
-    smbmount "$z_path" /z -o "$smbmount_opts,password=$z_pass" \
+    echo "*** Trying smbmount $Z_PATH /z -o $smbmount_opts,password=..."
+
+    smbmount "$Z_PATH" /z -o "$smbmount_opts,password=$Z_PASS" \
         && break
     echo "Failed to mount /z.  Retrying..."
 done
@@ -168,5 +172,8 @@ echo "*** By Jove, I think we've got it!"
 # FIXME: Bad hack to work around dosemu bug running over network
 rm /usr/bin/dosemu.bin
 cp /z/linuxaux/usr/bin/dosemu.bin /usr/bin/dosemu.bin
+
+# install.pl relies on these environment variables
+export Z_PATH Z_USER Z_PASS
 
 exec bash
