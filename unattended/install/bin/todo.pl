@@ -264,6 +264,7 @@ sub get_windows_language () {
                       0x0419 => 'rus',
                       0x041d => 'sve',
                       0x041f => 'trk',
+                      0x0804 => 'chs',
                       0x0816 => 'ptg',
                       0x0c0a => 'esn',
                       );
