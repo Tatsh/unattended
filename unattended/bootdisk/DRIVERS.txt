@@ -6,7 +6,7 @@
 # to this file.  Then just type "make".
 
 # Latest version should be here (or just search Intel's support site
-# for PRODOS.EXE):
+# for PRODOS2.EXE):
 # <http://downloadfinder.intel.com/scripts-df/File_Filter.asp?FileName=PRODOS2.EXE>
 e100b    Intel Pro/100 family of PCI and CardBus adapters
 
