@@ -229,6 +229,58 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: Critical update MS04-031 (841533)
+:: "Vulnerability in NetDDE Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-031.mspx>
+:: URL|ARA|http://download.microsoft.com/download/b/b/3/bb3aecff-dc89-4a36-926e-3c59ab867ce3/Windows2000-KB841533-x86-ARA.EXE|updates/win2ksp4/windows2000-kb841533-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/5/4/4/544d2d4d-b00f-410c-92df-a4c70cbda362/Windows2000-KB841533-x86-CSY.EXE|updates/win2ksp4/windows2000-kb841533-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/2/2/6/22685ba7-e3cd-47c8-a66e-eb84c489e151/Windows2000-KB841533-x86-DAN.EXE|updates/win2ksp4/windows2000-kb841533-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/2/a/4/2a403d58-975e-466f-a297-43f7c7f6707e/Windows2000-KB841533-x86-DEU.EXE|updates/win2ksp4/windows2000-kb841533-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/0/9/3/093340b6-b8a9-4538-98cb-beb7ff95ef4a/Windows2000-KB841533-x86-ELL.EXE|updates/win2ksp4/windows2000-kb841533-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/5/b/e/5becb7dc-1aaa-4123-8cf3-3a13827fe826/Windows2000-KB841533-x86-ENU.EXE|updates/win2ksp4/windows2000-kb841533-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/8/c/9/8c93656e-7018-4f14-8afb-d3e4fb7b42bb/Windows2000-KB841533-x86-ESN.EXE|updates/win2ksp4/windows2000-kb841533-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/e/9/5e94542f-1e48-4f26-8ef3-0ca7a643d08b/Windows2000-KB841533-x86-FIN.EXE|updates/win2ksp4/windows2000-kb841533-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/8/8/2/882e4707-5e4e-4fdc-9e92-56dc88735a22/Windows2000-KB841533-x86-FRA.EXE|updates/win2ksp4/windows2000-kb841533-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/b/1/b/b1b77096-1942-4b02-abcc-9f318e378d57/Windows2000-KB841533-x86-HEB.EXE|updates/win2ksp4/windows2000-kb841533-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/9/1/a91f6bf6-3e09-4986-b28e-a9303145d3fd/Windows2000-KB841533-x86-HUN.EXE|updates/win2ksp4/windows2000-kb841533-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/b/a/bbaa4a2e-9743-4827-bb24-d3c4c311cefa/Windows2000-KB841533-x86-ITA.EXE|updates/win2ksp4/windows2000-kb841533-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/2/8/2280457b-4c99-45e6-8645-065d79e664ce/Windows2000-KB841533-x86-JPN.EXE|updates/win2ksp4/windows2000-kb841533-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/f/c/8/fc8df13b-69e0-4d2f-b472-408c0793c887/Windows2000-KB841533-x86-KOR.EXE|updates/win2ksp4/windows2000-kb841533-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/e/1/f/e1f120cf-4789-47a4-85b9-1e68eb4d21c6/Windows2000-KB841533-x86-NLD.EXE|updates/win2ksp4/windows2000-kb841533-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/e/4/f/e4f4ed2a-5e88-46f4-a68b-83fe66de5e87/Windows2000-KB841533-x86-PLK.EXE|updates/win2ksp4/windows2000-kb841533-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/9/6/2/9627b632-1da7-4c1e-b7e5-394d356c29b8/Windows2000-KB841533-x86-PTG.EXE|updates/win2ksp4/windows2000-kb841533-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/3/1/4/314f8293-7993-49a3-97a7-52a17b3b58ff/Windows2000-KB841533-x86-PTB.EXE|updates/win2ksp4/windows2000-kb841533-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/f/2/4/f24e4b68-8594-469f-a812-15d09df661af/Windows2000-KB841533-x86-RUS.EXE|updates/win2ksp4/windows2000-kb841533-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/0/e/f0eb9e80-0984-46e5-83a0-1e1095eb1ddb/Windows2000-KB841533-x86-SVE.EXE|updates/win2ksp4/windows2000-kb841533-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/b/7/0/b70e83ca-1042-4a29-80d9-4a727d497cb0/Windows2000-KB841533-x86-TRK.EXE|updates/win2ksp4/windows2000-kb841533-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb841533-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update MS04-030 (824151)
+:: "Vulnerability in WebDAV XML Message Handler Could Lead to a DoS"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-030.mspx>
+:: URL|ARA|http://download.microsoft.com/download/e/d/b/edb6772a-4c0d-4d08-870f-d8093ce95365/Windows2000-KB824151-x86-ARA.EXE|updates/win2ksp4/windows2000-kb824151-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/d/1/bd1aa628-f79b-4e6a-b801-5d978bcf6447/Windows2000-KB824151-x86-CSY.EXE|updates/win2ksp4/windows2000-kb824151-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/5/d/a/5daf27c6-2c08-41a2-a073-130bf55ca5ee/Windows2000-KB824151-x86-DAN.EXE|updates/win2ksp4/windows2000-kb824151-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/c/a/1/ca1b6bb6-e352-4c1f-917e-e88513f60afc/Windows2000-KB824151-x86-DEU.EXE|updates/win2ksp4/windows2000-kb824151-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/e/0/5e003674-30d1-4940-8583-427d8d51d5c6/Windows2000-KB824151-x86-ELL.EXE|updates/win2ksp4/windows2000-kb824151-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/b/3/e/b3ecab57-2791-46c4-9508-3e7d342910f7/Windows2000-KB824151-x86-ENU.EXE|updates/win2ksp4/windows2000-kb824151-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/a/1/4a1bb3a7-5a59-4916-9ea2-467e80aa93e4/Windows2000-KB824151-x86-ESN.EXE|updates/win2ksp4/windows2000-kb824151-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/d/3/8/d38201f6-15be-48ed-8a33-e3628ea10a1d/Windows2000-KB824151-x86-FIN.EXE|updates/win2ksp4/windows2000-kb824151-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/0/e/5/0e5a8081-dc42-4c6b-a002-c9d9ebc851ac/Windows2000-KB824151-x86-FRA.EXE|updates/win2ksp4/windows2000-kb824151-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/a/4/b/a4becca6-0d36-4d4d-a208-d73f596402ee/Windows2000-KB824151-x86-HEB.EXE|updates/win2ksp4/windows2000-kb824151-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/9/f/4/9f4a3672-7582-4c01-825d-5bfca7b8622b/Windows2000-KB824151-x86-HUN.EXE|updates/win2ksp4/windows2000-kb824151-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/7/a/37a373b3-8bac-41e9-8c75-16f9c7f5beb8/Windows2000-KB824151-x86-ITA.EXE|updates/win2ksp4/windows2000-kb824151-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/a/1/8a16d96e-2043-4879-8ac0-09180a98e389/Windows2000-KB824151-x86-JPN.EXE|updates/win2ksp4/windows2000-kb824151-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/e/4/4/e44d26ee-299a-442d-9058-f308b2caaacb/Windows2000-KB824151-x86-KOR.EXE|updates/win2ksp4/windows2000-kb824151-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/8/5/7/85796e2f-62ae-4664-83b2-ada8e1421893/Windows2000-KB824151-x86-NLD.EXE|updates/win2ksp4/windows2000-kb824151-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/6/5/b/65b4af12-8513-4bc5-8e6f-8bf5edbda35c/Windows2000-KB824151-x86-PLK.EXE|updates/win2ksp4/windows2000-kb824151-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/2/b/7/2b71326a-4345-482a-bac7-538dc3850942/Windows2000-KB824151-x86-PTG.EXE|updates/win2ksp4/windows2000-kb824151-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/5/8/6/5861caa8-3371-45a5-ae52-7096af2b83f1/Windows2000-KB824151-x86-PTB.EXE|updates/win2ksp4/windows2000-kb824151-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/1/7/b/17be4a5c-5eed-4cd4-a580-f4bb0c6b2f88/Windows2000-KB824151-x86-RUS.EXE|updates/win2ksp4/windows2000-kb824151-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/c/e/7cef1882-4b8f-4b9f-ad98-ed67dca1baf6/Windows2000-KB824151-x86-SVE.EXE|updates/win2ksp4/windows2000-kb824151-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/2/9/129abba3-4df7-4148-85ca-577ddd26dd27/Windows2000-KB824151-x86-TRK.EXE|updates/win2ksp4/windows2000-kb824151-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb824151-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-024 (839645)
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
