@@ -11,10 +11,10 @@
 :: <http://support.microsoft.com/?kbid=817778>
 todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB817778-x86-ENU.exe /u /n /z" .reboot
 
-:: Critical update 819696
-:: "Unchecked Buffer in DirectX Could Enable System Compromise"
-:: <http://support.microsoft.com/?kbid=819696>
-todo.pl "z:\packages\winxpsp1\Q819696_WXP_SP2_x86_ENU.exe /u /n /z"
+:: Microsoft DirectX 9.0b update
+:: <http://www.microsoft.com/directx/>
+:: (Requires .NET to be installed first for managed DX)
+todo.pl ".expect-reboot AutoIt z:\scripts\directx9.aut"
 
 :: Critical update 823980
 :: "Buffer Overrun In RPC Interface Could Allow Code Execution"
@@ -27,6 +27,10 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB823980-x86-ENU.exe /u 
 :: "An Unchecked Buffer in the Windows Shell Could Permit Your System to Be Compromised"
 :: <http://support.microsoft.com/default.aspx?kbid=821557>
 todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB821557-x86-ENU.exe /u /n /z" .reboot
+
+:: Windows Journal Viewer update
+:: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
+todo.pl "z:\packages\winxpsp1\journal_viewer_enu.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: Recommended update 821253
 :: "Update For Windows Error Reporting"
@@ -54,10 +58,16 @@ todo.pl "z:\packages\winxpsp1\WindowsXP-KB282010-x86-ENU.exe /u /n /z"
 :: <http://support.microsoft.com/default.aspx?kbid=820291>
 todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB820291-x86-ENU.exe /u /n /z" .reboot
 
-:: Critical update 817787
-:: "Flaw in Windows Media Player Skins Downloading Could Allow Code Execution"
-:: <http://support.microsoft.com/?kbid=817787>
-todo.pl "z:\packages\winxpsp1\WindowsMedia8-KB817787-x86-ENU.exe /q /r:n"
+:: Flaw In Windows Media Player May Allow Media Library Access (819639)
+:: <http://www.microsoft.com/technet/treeview/default.asp?url=/technet/security/bulletin/MS03-021.asp>
+todo.pl "z:\packages\winxpsp1\windowsmedia9-kb819639-x86-enu.exe /Q /R:N" .reboot
+
+:: Trick to skip EULA on Media Player 9 
+todo.pl "regedit /s z:\scripts\mediaplayer9.reg"
+
+:: Media Player 9.0
+:: <http://www.microsoft.com/windows/windowsmedia/>
+todo.pl "z:\packages\winxpsp1\MPSetupXP.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
 
 :: Critical update 815021
 :: "Unchecked Buffer in Windows Component May Cause Web Server Compromise"
@@ -200,6 +210,10 @@ todo.pl "z:\packages\winxpsp1\Q323255_WXP_SP2_x86_ENU.exe /u /n /z"
 :: "You Cannot Preview a Fax in the Fax Console"
 :: <http://support.microsoft.com/?kbid=322011>
 todo.pl "z:\packages\winxpsp1\Q322011_WXP_SP2_x86_ENU.exe /u /n /z"
+
+:: Microsoft .NET framework
+:: <http://msdn.microsoft.com/netframework/downloads/>
+todo.pl "z:\packages\winxpsp1\dotnetfx.exe /q /c:\"install /q\""
 
 :: IE updates
 
