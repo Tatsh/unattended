@@ -42,13 +42,6 @@ todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\WindowsXP-KB817778-x86-%WINLANG%.
 :: (Requires .NET to be installed first for managed DX)
 todo.pl ".expect-reboot AutoIt %Z%\scripts\directx9.aut"
 
-:: Critical update 823980
-:: "Buffer Overrun In RPC Interface Could Allow Code Execution"
-:: (worst Windows security hole, ever)
-:: <http://support.microsoft.com/?kbid=823980>
-:: <http://www.microsoft.com/security/security_bulletins/ms03-026.asp>
-todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\WindowsXP-KB823980-x86-%WINLANG%.exe /u /n /z" .reboot
-
 :: Critical update 821557
 :: "An Unchecked Buffer in the Windows Shell Could Permit Your System to Be Compromised"
 :: <http://support.microsoft.com/default.aspx?kbid=821557>
@@ -121,13 +114,6 @@ todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\Q817287.exe /q /r:n" .reboot
 :: <http://support.microsoft.com/?kbid=816093>
 :: (download only available from Windows Catalog)
 todo.pl "%Z%\packages\winxpsp1\msjavwu.exe /q /r:n"
-
-:: Critical update 331953
-:: "Flaw in RPC Endpoint Mapper Could Allow Denial of Service Attacks"
-:: (Supposedly superseded by 823980, but Windows Update gets confused
-:: unless you install both.)
-:: <http://support.microsoft.com/?kbid=331953>
-todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\Q331953_WXP_SP2_x86_%WINLANG%.exe /u /n /z" .reboot
 
 :: Recommended update 815485
 :: WPA Wireless Security Update for Windows XP
