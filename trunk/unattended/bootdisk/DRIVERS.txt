@@ -23,6 +23,11 @@ fa31x    Netgear FA311/FA312
 # Just do a Google search for "pcntnd.dos"
 pcntnd   AMD PCNet family (also VMWare)
 
+# See
+# <http://www.realtek.com.tw/downloads/downloads1-3.aspx?series=16&Software=True#16DOS>
+# (thanks to Eugene Kotlyarov)
+rtsnd    Realtek RTL8139 series
+
 # This one is very special.  It implements NDIS2 over a PXE/UNDI
 # stack, which means it works when doing a network boot to DOS using
 # ANY adapter from ANY vendor.  It is included on the 3com MBA utility
