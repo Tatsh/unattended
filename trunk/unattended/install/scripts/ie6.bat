@@ -7,7 +7,7 @@
 :: "April, 2003, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=813489>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/813489/>
-todo.pl "z:\packages\win2ksp3\q813489.exe /q /r:n"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\q813489.exe /q /r:n" .reboot
 
 :: Critical update 330994
 :: "April, 2003, Cumulative patch for Outlook Express"
