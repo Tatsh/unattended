@@ -692,8 +692,7 @@ $u->{'OEMBootFiles'} =
         return \%ret;
     };
 
-# Make sure [_meta] section sorts very late in the file, since
-# sections after it do not seem to work right (?)
+# Make [_meta] section sort last in the file.
 $u->sort_index ('_meta') = 999999;
 
 ## Now the meat of the script.
@@ -718,8 +717,12 @@ if (-e $site_conf) {
 }
 
 # Output some interesting info.
-#print 'IP address:  ', get_value ('_meta', 'ipaddr'), "\n";
-#print 'MAC address: ', get_value ('_meta', 'macaddr'), "\n";
+my $ipaddr = $u->{'_meta'}->{'ipaddr'};
+defined $ipaddr
+    and print "IP address:  $ipaddr\n";
+my $macaddr = $u->{'_meta'}->{'macaddr'};
+defined $macaddr
+    and print "MAC address: $macaddr\n";
 
 # Set environment variable controlling fdisk's use of INT13 extensions.
 get_value ('_meta', 'fdisk_lba')
