@@ -4,6 +4,7 @@
 todo.pl winxpsp2-updates.bat
 
 :: Windows XP Service Pack 2 Network Installation Package for IT Professionals and Developers
+:: <http://support.microsoft.com/?kbid=837783>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=049c9dbe-3b8e-4f30-8245-9e368d3cdb5a>
 :: URL|ARA|http://download.microsoft.com/download/4/f/f/4ff4d6c8-a9de-4a94-95ab-e2ddc9aabb62/WindowsXP-KB835935-SP2-ARA.exe|updates/winxp/windowsxp-kb835935-sp2-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/2/8/0/28001168-047a-4f33-bcac-e343824afe79/WindowsXP-KB835935-SP2-CSY.exe|updates/winxp/windowsxp-kb835935-sp2-csy.exe

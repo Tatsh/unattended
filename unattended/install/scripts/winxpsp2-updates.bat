@@ -156,6 +156,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: IE Critical Updates
 
+:: Cumulative Security Update for Internet Explorer for XP Service Pack 2 (KB834707)
 :: Microsoft Security Bulletin MS04-038
 :: "Cumulative Security Update for Internet Explorer (834707)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>

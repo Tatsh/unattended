@@ -65,7 +65,9 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\WindowsXP-KB885884-x86-%WINLANG%.ex
 :did885884
 
 :: Office XP Security Update: KB832332
-:: <http://support.microsoft.com?kbid=832332>
+:: Microsoft Security Bulletin MS04-028
+:: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-028.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=7d128614-6d34-49df-8d63-6c17e9a2d312>
 :: URL|ARA|http://download.microsoft.com/download/d/e/1/de1d6bd7-a22f-4b34-ab84-8cde3e39b240/officexp-kb832332-v2-client-ara.exe|updates/officexp/officexp-kb832332-v2-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/4/d/9/4d9e3193-f377-4a74-9b70-87d6703db78a/officexp-kb832332-v2-client-csy.exe|updates/officexp/officexp-kb832332-v2-client-csy.exe
@@ -90,7 +92,7 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\WindowsXP-KB885884-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/6/2/d/62dde967-e8fc-4b6e-8811-afaa0f5ce9ba/officexp-kb832332-v2-client-rus.exe|updates/officexp/officexp-kb832332-v2-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/1/a/1/1a1aa76c-27ad-4e35-9138-961c567d7191/officexp-kb832332-v2-client-sve.exe|updates/officexp/officexp-kb832332-v2-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/6/d/0/6d0824cd-3cce-45ec-9610-9b5e83d86687/officexp-kb832332-v2-client-trk.exe|updates/officexp/officexp-kb832332-v2-client-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb832332-v2-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb8323332.txt /p SHAREDop.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb832332-v2-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb832332.txt /p SHAREDop.msp REBOOT=ReallySuppress\""
 
 :: Security Update for Office XP: WordPerfect 5.x Converter (KB873379)
 :: <http://support.microsoft.com/?kbid=873379>
