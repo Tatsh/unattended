@@ -13,6 +13,7 @@ my %regexp_map =
      'deu' => qr{Vorheriges Betriebssystem auf},
      'fra' => qr{Syst\x8Ame d\'exploitation pr\x82c\x82dent sur},
      'nld' => qr{Vorig besturingssysteem op},
+     'ita' => qr{Sistema operativo precedente su},
      );
 
 
