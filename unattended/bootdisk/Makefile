@@ -15,7 +15,7 @@ images: .stamp-images
 	@find template -newer $@ -print | sed s/.\*/$@/ | xargs -r touch
 
 # Detect updates to images.
-.stamp-images: $(images)
+.stamp-images: ${images}
 	@touch $@
 
 # Images targets
@@ -47,7 +47,8 @@ iso: bootdisk.iso
 
 bootdisk.iso: .stamp-images memdisk iso/isolinux/isolinux.cfg \
 			iso/isolinux/isoboot.msg iso/isolinux/isolinux.bin
-	ln -f images/*.img memdisk iso/isolinux
+	rm -f iso/isolinux/*.img
+	ln -f ${images} memdisk iso/isolinux
 	@echo -n "Making $@..."
 	@mkisofs -quiet -o $@.tmp \
                 -b isolinux/isolinux.bin -c isolinux/boot.cat \
@@ -56,7 +57,7 @@ bootdisk.iso: .stamp-images memdisk iso/isolinux/isolinux.cfg \
 	@mv $@.tmp $@
 	@echo "...done making $@"
 
-iso/isolinux/isolinux.cfg: isolinux.cfg
+iso/isolinux/isolinux.cfg: isolinux.cfg DRIVERS.txt
 	@echo -n "Making $@..."
 	@cat $< >| $@.tmp
 	@for driver in ${drivers} ; do					\
