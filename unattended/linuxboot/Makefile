@@ -16,13 +16,20 @@ download_targets=$(patsubst %,download-%,$(bash) $(busybox) $(dosemu)	\
 	)
 
 .PHONY: stage1 all download klibc glibc $(download_targets) \
-	iso
+	iso tftpboot
 
 # Macro to generate rule for copying single file
 copy_file=					\
 $(2) : $(1)	;				\
 	mkdir -p `dirname $(2)` ;		\
 	cp -f $(1) $(2).tmp ;			\
+	mv $(2).tmp $(2)
+
+# Macro to generate rule for hard-linking single file
+link_file=					\
+$(2) : $(1)	;				\
+	mkdir -p `dirname $(2)` ;		\
+	ln -f $(1) $(2).tmp ;			\
 	mv $(2).tmp $(2)
 
 # Macro to generate rule for copying single executable
@@ -191,13 +198,13 @@ $(call copy_file,misc/config.sys,dosboot/config.sys)
 
 stage1/var/lib/dosemu/drives/dosboot.img: dosboot/autoexec.bat \
 				dosboot/config.sys dosboot/lredir.com \
-				empty-boot.img.gz
+				../bootdisk/empty-boot.img.gz
 	mkdir -p `dirname $@`
 	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&		\
 	echo 'drive x:' > $$tmpfile &&				\
 	echo file=\"$(cwd)/"$@.tmp"\" >> $$tmpfile &&		\
 	export MTOOLSRC=$$tmpfile &&				\
-	gunzip -c empty-boot.img.gz >| $@.tmp &&		\
+	gunzip -c ../bootdisk/empty-boot.img.gz >| $@.tmp &&	\
 	(cd dosboot &&						\
 	 find . -name CVS -prune -o -mindepth 1 -print |	\
 		while read filename ; do			\
@@ -207,7 +214,7 @@ stage1/var/lib/dosemu/drives/dosboot.img: dosboot/autoexec.bat \
 			fi ;					\
 			mcopy $$filename x:/$$filename ;	\
 		done) &&					\
-	rm $$tmpfile &&						\
+	rm $$tmpfile
 	mv $@.tmp $@
 
 stage1 := $(stage1) stage1/var/lib/dosemu/drives/dosboot.img
@@ -375,17 +382,13 @@ devices: $(patsubst %,stage1/dev/%,$(devices))
 
 ## ISO image targets
 
-iso/isolinux/bzImage: $(linux)/arch/i386/boot/bzImage
-	mkdir -p `dirname $@`
-	cp -f $< $@
+$(call copy_file,$(linux)/arch/i386/boot/bzImage,iso/isolinux/bzImage)
 
-iso/isolinux/initrd: initrd
-	mkdir -p `dirname $@`
-	cp -f $< $@
+$(call link_file,initrd,iso/isolinux/initrd)
 
-iso/isolinux/isolinux.cfg: misc/isolinux.cfg
-	mkdir -p `dirname $@`
-	cp -f $< $@
+$(call copy_file,misc/isolinux.cfg,iso/isolinux/isolinux.cfg)
+
+$(call copy_file,../bootdisk/isolinux.bin,iso/isolinux/isolinux.bin)
 
 linuxboot.iso: iso/isolinux/bzImage iso/isolinux/initrd \
 	iso/isolinux/isolinux.cfg iso/isolinux/isolinux.bin
@@ -397,5 +400,10 @@ linuxboot.iso: iso/isolinux/bzImage iso/isolinux/initrd \
 
 iso: linuxboot.iso
 
-# Not yet...
-tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg
+## tftpboot targets
+
+$(call link_file,iso/isolinux/bzImage,tftpboot/bzImage)
+$(call link_file,iso/isolinux/initrd,tftpboot/initrd)
+$(call link_file,iso/isolinux/isolinux.cfg,tftpboot/pxelinux.cfg/default)
+
+tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default
