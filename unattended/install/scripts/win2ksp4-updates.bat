@@ -9,7 +9,7 @@
 :: Critical update 824141 (MS03-045)
 :: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-045.asp>
-todo.pl "%Z%\packages\win2ksp4\Windows2000-KB824141-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB824141-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 825119 (MS03-044)
 :: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise"
@@ -19,7 +19,7 @@ todo.pl "%Z%\packages\win2ksp4\Windows2000-KB825119-x86-%WINLANG%.exe /u /n /z"
 :: Critical update 828035 (MS03-043)
 :: "Buffer Overrun in Messenger Service Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
-todo.pl "%Z%\packages\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 826232 (MS03-042)
 :: "Buffer Overflow in Windows Troubleshooter ActiveX Control Could Allow Code Execution"
@@ -29,7 +29,7 @@ todo.pl "%Z%\packages\win2ksp4\Windows2000-KB826232-x86-%WINLANG%.exe /u /n /z"
 :: Critical update 823182 (MS03-041)
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
-todo.pl "%Z%\packages\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 824146
 :: "A Buffer Overrun in RPCSS May Allow Code Execution"
@@ -66,7 +66,7 @@ todo.pl "%Z%\packages\win2ksp4\Windows2000-KB823559-x86-%WINLANG%.exe /u /n /z"
 :: "BUG: Driver Installation Program Does Not Install Device Drivers"
 :: <http://support.microsoft.com/?kbid=822831>
 :: (download only available from Windows Catalog)
-todo.pl "%Z%\packages\win2ksp4\Windows2000-KB822831-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB822831-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Recommended update 818043
 :: "L2TP/IPSec NAT-T Update for Windows XP and Windows 2000"
