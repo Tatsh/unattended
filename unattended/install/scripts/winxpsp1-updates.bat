@@ -367,11 +367,11 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 :: (download URLs in ie6.bat)
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB871260-x86-%WINLANG%.exe /q /r:n"
 
-:: Critical update MS04-025 (867801)
+:: Critical update MS04-038 (834707)
 :: "Cumulative Security Update for Internet Explorer"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-025.mspx>
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>
 :: (download URLs in ie6.bat)
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867801-x86-%WINLANG%.exe /q /r:n"
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb834707-windows-2000-xp-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-018 (823353)
 :: "Cumulative Security Update for Outlook Express"

@@ -89,17 +89,26 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837001-x86-%WINLAN
 
 :: IE Critical Updates
 
-:: Critical update MS04-025 (867801)
+:: Critical update MS04-038 (834707)
 :: "Cumulative Security Update for Internet Explorer"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-025.mspx>
-:: URL|DEU|http://download.microsoft.com/download/b/b/d/bbdee4c8-dfad-41f3-8805-eb98a41d876c/WindowsServer2003-KB867801-x86-deu.exe|updates/ws2k3/windowsserver2003-kb867801-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/2/a/e/2ae9e877-f448-49b4-8505-6c7feaf3d3eb/WindowsServer2003-KB867801-x86-enu.exe|updates/ws2k3/windowsserver2003-kb867801-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/3/5/a/35a901f6-573b-4af5-9e0b-8649a2d470bb/WindowsServer2003-KB867801-x86-esn.exe|updates/ws2k3/windowsserver2003-kb867801-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/d/c/e/dce4257c-d562-475b-9f4b-543dcaedcd09/WindowsServer2003-KB867801-x86-fra.exe|updates/ws2k3/windowsserver2003-kb867801-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/b/8/2/b82947e3-9535-4163-b955-35d0a02399f5/WindowsServer2003-KB867801-x86-ita.exe|updates/ws2k3/windowsserver2003-kb867801-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/d/3/c/d3ca5aca-09dc-4f03-afcb-26cef76b3314/WindowsServer2003-KB867801-x86-nld.exe|updates/ws2k3/windowsserver2003-kb867801-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/9/0/b/90b79312-4d2f-4305-a64b-8cd67e974820/WindowsServer2003-KB867801-x86-rus.exe|updates/ws2k3/windowsserver2003-kb867801-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLANG%.exe /passive /n /norestart"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>
+:: URL|CSY|http://download.microsoft.com/download/2/b/6/2b662788-3992-432b-9ca2-89ccd6272aa9/WindowsServer2003-KB834707-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/1/5/6/156e20c0-73f4-4215-a7a2-d94dc7d9a530/WindowsServer2003-KB834707-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/8/6/e/86e75905-3dac-4d9e-988a-781a1d1b6dc7/WindowsServer2003-KB834707-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/f/0/3/f038f64b-8393-4887-aec0-f917a1760c85/WindowsServer2003-KB834707-x86-esn.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/4/f/d/4fda1c56-b807-4f7f-8761-582888a4132b/WindowsServer2003-KB834707-x86-fra.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/0/c/3/0c3eeb65-6240-4705-8620-88c99ffc15e2/WindowsServer2003-KB834707-x86-hun.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/f/c/a/fcafeec8-01ff-4059-84ca-44d05afe40f0/WindowsServer2003-KB834707-x86-ita.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/b/d/3/bd37f1d2-f9f0-4bde-9d70-b81ec0f0c3cb/WindowsServer2003-KB834707-x86-jpn.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/3/1/a/31ab5e39-99c2-413e-b7ee-108a3affefaf/WindowsServer2003-KB834707-x86-kor.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/4/9/a497f75f-70cf-4db8-adc0-cbf8e6247fcf/WindowsServer2003-KB834707-x86-nld.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/0/e/7/0e77cbb8-412c-4ae3-b723-aa7a38f6049a/WindowsServer2003-KB834707-x86-plk.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/b/d/7/bd7f8c73-520c-4d3b-b99f-eac41d119d7a/WindowsServer2003-KB834707-x86-ptg.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/4/a/4/4a44b5dc-a8bc-44fc-a032-d76c01de22cb/WindowsServer2003-KB834707-x86-ptb.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/c/8/4/c8423ade-7588-468b-86fb-a47792cab577/WindowsServer2003-KB834707-x86-rus.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/e/4/ee4056c5-6c4f-4408-8fc7-93a6ab279da2/WindowsServer2003-KB834707-x86-sve.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/b/7/3b729b02-3469-41f9-84b8-45a274103f83/WindowsServer2003-KB834707-x86-trk.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb834707-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical Updates
 
