@@ -1,12 +1,17 @@
-** Changes in version 4.0a (2004-Mar-??)
+** Changes in version 4.0a (2004-Mar-08)
 
 (DOS) Make install.pl work again (whoops).  Thanks, Shad.
+
+(DOS) Add FreeDOS mode.com to boot disk.  Might be useful for people
+who want to use a serial console.
 
 (Linux) Allow kernel command-line options z_user, z_pass, and z_path
 to override bootdisk defaults.
 
 (Linux) Add "X" (exit) option to initial "override bootdisk defaults"
 question.
+
+Sort the list of options for OemPnPDriversPath.
 
 ** Changes in version 4.0 (2004-Mar-07)
 
