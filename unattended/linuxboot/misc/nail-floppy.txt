@@ -61,7 +61,7 @@ usr/bin/smbmount
 usr/lib/charset
 usr/lib/smb.conf
 
-usr/share/kbd/keymaps/i386
+usr/share/kbd/keymaps
 
 usr/share/pci.ids
 
