@@ -7,7 +7,7 @@ todo.pl .reboot
 
 :: Office XP Update: KB837253
 :: <http://support.microsoft.com?kbid=837253>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=0dd4c99a-9196-421b-83f0-3d2f93189028&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=0dd4c99a-9196-421b-83f0-3d2f93189028>
 :: URL|ARA|http://download.microsoft.com/download/6/0/4/60464ed9-d9c3-439a-964e-b571dd13eae7/officexp-kb837253-client-ara.exe|updates/officexp/officexp-kb837253-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/4/2/4/424a024f-136d-465a-a1ef-6ed85f761db5/officexp-kb837253-client-csy.exe|updates/officexp/officexp-kb837253-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/0/d/d/0dd7012f-d3f5-4967-b531-05be82ed9027/officexp-kb837253-client-dan.exe|updates/officexp/officexp-kb837253-client-dan.exe
@@ -38,7 +38,7 @@ if not %WINVER%. == winxpsp2. goto did885884
 :: Microsoft Security Bulletin MS04-028
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-028.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=b167e7fa-3713-4a26-b637-61dc90bb3dcd&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=b167e7fa-3713-4a26-b637-61dc90bb3dcd>
 :: URL|ARA|http://download.microsoft.com/download/2/a/9/2a9b73f7-a8bb-4e3b-91a4-b0a0dd8f93f0/WindowsXP-KB885884-x86-ara.exe|updates/officexp/windowsxp-kb885884-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/e/a/6/ea63ad79-9f7f-43b2-bf57-fa2a10498589/WindowsXP-KB885884-x86-csy.exe|updates/officexp/windowsxp-kb885884-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/6/9/4/694b0868-e670-4d62-ab21-12d6d7aeecc9/WindowsXP-KB885884-x86-dan.exe|updates/officexp/windowsxp-kb885884-x86-dan.exe
@@ -66,7 +66,7 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\WindowsXP-KB885884-x86-%WINLANG%.ex
 
 :: Office XP Security Update: KB832332
 :: <http://support.microsoft.com?kbid=832332>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=7d128614-6d34-49df-8d63-6c17e9a2d312&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=7d128614-6d34-49df-8d63-6c17e9a2d312>
 :: URL|ARA|http://download.microsoft.com/download/d/e/1/de1d6bd7-a22f-4b34-ab84-8cde3e39b240/officexp-kb832332-v2-client-ara.exe|updates/officexp/officexp-kb832332-v2-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/4/d/9/4d9e3193-f377-4a74-9b70-87d6703db78a/officexp-kb832332-v2-client-csy.exe|updates/officexp/officexp-kb832332-v2-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/c/1/0/c104f0a3-fc48-4e55-81dc-952e4a460d67/officexp-kb832332-v2-client-dan.exe|updates/officexp/officexp-kb832332-v2-client-dan.exe
@@ -94,7 +94,7 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb832332-v2-client-%WINLAN
 
 :: Security Update for Office XP: WordPerfect 5.x Converter (KB873379)
 :: <http://support.microsoft.com/?kbid=873379>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=10a6ceb3-7b94-4f74-a5a0-60c31ce2f57b&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=10a6ceb3-7b94-4f74-a5a0-60c31ce2f57b>
 :: URL|ARA|http://download.microsoft.com/download/8/2/c/82c801e0-f93d-48c7-ba3c-ddad906adf38/officexp-kb873379-client-ara.exe|updates/officexp/officexp-kb873379-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/9/b/f/9bfe51a6-b8b8-4ff1-b392-287a8a52e65d/officexp-kb873379-client-csy.exe|updates/officexp/officexp-kb873379-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/5/a/7/5a7b0c14-45c5-4061-a33b-2e532834b859/officexp-kb873379-client-dan.exe|updates/officexp/officexp-kb873379-client-dan.exe
@@ -122,7 +122,7 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb873379-client-%WINLANG%.
 
 :: Office XP Update: KB833858
 :: <http://support.microsoft.com?kbid=833858>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=12a8ccdf-2643-477d-94d4-4677a02aaa7e&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=12a8ccdf-2643-477d-94d4-4677a02aaa7e>
 :: URL|ARA|http://download.microsoft.com/download/1/f/0/1f069f9b-6074-4094-86d5-ceec178cf384/officexp-kb833858-client-ara.exe|updates/officexp/officexp-kb833858-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/d/6/1/d6107c89-3575-4822-a389-08c89897b14b/officexp-kb833858-client-csy.exe|updates/officexp/officexp-kb833858-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/c/6/8/c687bb15-1d2a-49c5-a673-485b4fd01fe6/officexp-kb833858-client-dan.exe|updates/officexp/officexp-kb833858-client-dan.exe
@@ -151,7 +151,7 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb833858-client-%WINLANG%.
 if not %WINVER%. == win2ksp4. goto did832668
 :: Office XP Alternative User Input Update: KB832668
 :: <http://support.microsoft.com?kbid=832668>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=3489d806-be63-4253-9120-5e5a2d81dfa9&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=3489d806-be63-4253-9120-5e5a2d81dfa9>
 :: URL|ARA|http://download.microsoft.com/download/1/4/1/141c2914-9aea-4840-9571-3ec4f0895716/OfficeXP-kb832668-client-ara.exe|updates/officexp/officexp-kb832668-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/1/4/3/143ad906-7f7d-4d24-84db-ee012d52d8ab/OfficeXP-kb832668-client-csy.exe|updates/officexp/officexp-kb832668-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/b/e/e/bee66948-8097-41c8-be97-0287309a7e47/OfficeXP-kb832668-client-dan.exe|updates/officexp/officexp-kb832668-client-dan.exe
@@ -180,7 +180,7 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\OfficeXP-kb832668-client-%WINLANG%.
 
 :: Office XP Service Pack 3 (SP3)
 :: <http://support.microsoft.com/?kbid=832671>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=85af7bfd-6f69-4289-8bd1-eb966bcdfb5e&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=85af7bfd-6f69-4289-8bd1-eb966bcdfb5e>
 :: URL|ARA|http://download.microsoft.com/download/0/d/e/0debd2ea-a3c6-4d63-94dd-84d81c6260c7/OfficeXpSp3-kb832671-client-ara.exe|updates/officexp/officexpsp3-kb832671-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/7/5/0/750640ad-59cd-4763-8480-5c8d95b85511/OfficeXpSp3-kb832671-client-csy.exe|updates/officexp/officexpsp3-kb832671-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/3/0/4/304ef26c-5bcf-4bb4-a491-0f19f4ecaa84/OfficeXpSp3-kb832671-client-dan.exe|updates/officexp/officexpsp3-kb832671-client-dan.exe

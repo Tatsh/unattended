@@ -7,7 +7,7 @@ todo.pl .reboot
 
 :: Update for Outlook 2003: Junk E-mail Filter (KB870765)
 :: <http://support.microsoft.com/?kbid=870765>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=d8ded71e-89ed-4473-9640-13a2b799564e&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=d8ded71e-89ed-4473-9640-13a2b799564e>
 :: URL|ARA|http://download.microsoft.com/download/b/e/7/be7e1918-4b3b-4954-80a8-677afc40a81e/office2003-kb870765-fullfile-ara.exe|updates/office2003/office2003-kb870765-fullfile-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/0/6/0/06014eed-0960-4d07-b03d-a9cf1abf1653/office2003-kb870765-fullfile-csy.exe|updates/office2003/office2003-kb870765-fullfile-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/d/3/e/d3e84b9b-71eb-4fbd-8fdd-e315e0db5df4/office2003-kb870765-fullfile-dan.exe|updates/office2003/office2003-kb870765-fullfile-dan.exe
@@ -35,7 +35,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb870765-fullfile-%WIN
 
 :: Office 2003 Service Pack 1
 :: <http://support.microsoft.com/?kbid=842532>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=9c51d3a6-7cb1-4f61-837e-5f938254fc47&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=9c51d3a6-7cb1-4f61-837e-5f938254fc47>
 :: URL|ARA|http://download.microsoft.com/download/e/e/5/ee5c68b0-6783-41a1-a948-c2f192acc057/Office2003SP1-kb842532-client-ara.exe|updates/office2003/office2003sp1-kb842532-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/b/d/1/bd14e601-3983-4c49-b16b-71a671a89a69/Office2003SP1-kb842532-client-csy.exe|updates/office2003/office2003sp1-kb842532-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/a/2/9/a291ea50-a083-4b3a-884a-4de911733eea/Office2003SP1-kb842532-client-dan.exe|updates/office2003/office2003sp1-kb842532-client-dan.exe

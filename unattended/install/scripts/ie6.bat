@@ -7,7 +7,7 @@
 :: Microsoft Security Bulletin MS04-028
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-028.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B0095851-674D-4357-868C-DD75D88405EC&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B0095851-674D-4357-868C-DD75D88405EC>
 :: URL|ARA|http://download.microsoft.com/download/3/6/9/3696bf6d-50d0-4939-8bd7-83a14429a44f/IE6.0sp1-KB833989-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/6/5/0/650fb3da-fc6e-46ed-86d5-097ee0801810/IE6.0sp1-KB833989-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/1/6/9/16980ea5-5817-4bb8-8f97-9be01ed3d384/IE6.0sp1-KB833989-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-dan.exe
@@ -36,7 +36,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB833989-x86-%WINLANG%.exe /
 :: Microsoft Security Bulletin MS04-038
 :: "Cumulative Security Update for Internet Explorer (834707)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=7C1404E6-F5D4-4FED-9573-DD83F2DFF074&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=7C1404E6-F5D4-4FED-9573-DD83F2DFF074>
 :: URL|ARA|http://download.microsoft.com/download/5/b/5/5b5b248c-9314-4358-a4e8-01e941830487/IE6.0sp1-KB834707-Windows-2000-XP-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/a/6/4/a645e652-3769-4c8e-a9bd-c1248471492a/IE6.0sp1-KB834707-Windows-2000-XP-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/a/d/3/ad3d72b0-2494-45c7-8ed7-b913165b83fe/IE6.0sp1-KB834707-Windows-2000-XP-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-dan.exe
@@ -65,7 +65,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB834707-Windows-2000-XP-x86
 :: Microsoft Security Bulletin MS04-018
 :: "Cumulative Security Update for Outlook Express (823353)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-018.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD6A96BC-DAF0-4EAB-89B8-BD702B3E3E5D&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD6A96BC-DAF0-4EAB-89B8-BD702B3E3E5D>
 :: URL|ARA|http://download.microsoft.com/download/0/5/3/053cdafd-cb23-4e83-acc2-ed51d7f8ca5a/IE6.0sp1-KB823353-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/2/2/6/22683f51-f765-4a2b-826c-e227a746dec5/IE6.0sp1-KB823353-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/7/9/2/79200852-c62e-4dcd-80f2-371926a205be/IE6.0sp1-KB823353-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-dan.exe
@@ -94,7 +94,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB823353-x86-%WINLANG%.exe /
 :: Microsoft Security Bulletin MS02-008
 :: "XMLHTTP Control Can Allow Access to Local Files"
 :: <http://www.microsoft.com/technet/security/bulletin/MS02-008.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=c13d688c-75d8-4bd8-992c-2c14cff159ac&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=c13d688c-75d8-4bd8-992c-2c14cff159ac>
 :: URL|ALL|http://download.microsoft.com/download/xml/Patch/3.0/W9XNT4MeXP/EN-US/Q318203_MSXML30_x86.exe|updates/ie6sp1/q318203_msxml30_x86.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dahotfix /q /n\""
 
@@ -102,7 +102,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dah
 :: Microsoft Security Bulletin MS02-009
 :: "Incorrect VBScript Handling in IE can Allow Web Pages to Read Local Files"
 :: <http://www.microsoft.com/technet/security/bulletin/MS02-009.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=08e148e3-03c9-43a9-98be-6a4065fe99d3&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=08e148e3-03c9-43a9-98be-6a4065fe99d3>
 :: URL|ARA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/AR/vbs56nar.exe|updates/ie6sp1/ara/vbs56n.exe
 :: URL|CSY|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/CS/vbs56ncs.exe|updates/ie6sp1/csy/vbs56n.exe
 :: URL|DAN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/DA/vbs56nda.exe|updates/ie6sp1/dan/vbs56n.exe
@@ -129,7 +129,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\vbs56n.exe /q /r:n"
 
 :: Internet Explorer 6 Service Pack 1
 :: <http://support.microsoft.com/?kbid=326489>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=1e1550cb-5e5d-48f5-b02b-20b602228de6&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=1e1550cb-5e5d-48f5-b02b-20b602228de6>
 :: URL|ARA|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/AR/ie6setup.exe|packages/ie6sp1/ara/ie6setup.exe
 :: URL|CSY|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/CS/ie6setup.exe|packages/ie6sp1/csy/ie6setup.exe
 :: URL|DAN|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/DA/ie6setup.exe|packages/ie6sp1/dan/ie6setup.exe
