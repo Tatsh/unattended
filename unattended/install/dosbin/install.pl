@@ -469,8 +469,7 @@ my $_batfile_first_lines;
 sub batfile_first_lines () {
     if (!defined $_batfile_first_lines) {
         $_batfile_first_lines = { };
-        my $z = $u->{'_meta'}->{'z_drive'};
-        my $script_dir = "$z\\scripts";
+        my $script_dir = 'z:\\scripts'
         opendir SCRIPTS, $script_dir
             or die "Unable to opendir $script_dir: $^E";
         while (my $ent = readdir SCRIPTS) {
@@ -550,7 +549,7 @@ $u->{'_meta'}->{'replace_mbr'} =
 
 $u->comments ('_meta', 'OS_dir') = ['Directory holding OS media directories'];
 $u->{'_meta'}->{'OS_dir'} =
-    sub { return $file_spec->catdir ($u->{'_meta'}->{'z_drive'}, 'os'); };
+    sub { return $file_spec->catdir ('z:', 'os'); };
 
 $u->{'_meta'}->{'OS_media'} = \&ask_os;
 
@@ -641,8 +640,7 @@ $u->{'_meta'}->{'doit_cmds'} =
         $src_tree =~ /\\$/
             or $src_tree .= '\\';
         $src_tree .= 'i386';
-        my $z = $u->{'_meta'}->{'z_drive'};
-        return "$z;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
+        return "z:;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
     };
 
 $u->{'_meta'}->{'edit_files'} = '1';
@@ -710,14 +708,14 @@ $u->{'GuiRunOnce'}->{'Command0'} =
         else {
             my $netinst = $u->{'_meta'}->{'netinst'};
             # Basic framework for mapping Z: drive
-            my $z = $u->{'_meta'}->{'z_drive'};
             my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
             print "Copying $mapznrun...";
-            copy ("$z\\bin\\mapznrun.bat", $mapznrun)
-                or die "Unable to copy $z\\bin\\mapznrun.bat to $mapznrun";
+            copy ("z:\\bin\\mapznrun.bat", $mapznrun)
+                or die "Unable to copy z:\\bin\\mapznrun.bat to $mapznrun";
             print "done.\n";
 
             # "Permanent" credentials (drive letter, UNC path)
+            my $z = $u->{'_meta'}->{'z_drive'};
             my $z_path = $u->{'_meta'}->{'z_path'};
             my $permcred = $file_spec->catfile ($netinst, 'permcred.bat');
             print "Creating $permcred...";
