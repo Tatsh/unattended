@@ -190,6 +190,37 @@ sub get_windows_version () {
     return "$os$sp";
 }
 
+# Get the three-letter acronym for the OS language.
+sub get_windows_language () {
+    use Win32::OLE;
+    # Bomb out completely if COM engine encounters any trouble.
+    Win32::OLE->Option ('Warn' => 3);
+
+    # Get a handle to the SWbemServices object of the machine.
+    my $wmi = Win32::OLE->GetObject ('WinMgmts:');
+
+    # Get the SWbemObjectSet of Win32_OperatingSystem instances.
+    my $os_instances = $wmi->InstancesOf ('Win32_OperatingSystem');
+
+    # Convert set to Perl array.
+    my @oses = Win32::OLE::Enum->All ($os_instances);
+
+    scalar @oses == 1
+        or die "Internal error (too many OS objects in get_windows_language)";
+
+    # FIXME: Should complete this table someday.  See
+    # <http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_operatingsystem.asp>
+    my %lang_table = (0x0409 => 'enu',
+                      0x0419 => 'rus',
+                      );
+
+    my $langid = $oses[0]->OSLanguage;
+    (defined $lang_table{$langid})
+        or die sprintf "Unknown language ID 0x%04X", $langid;
+
+    return $lang_table{$langid};
+}
+
 # Get the UNC path for a networked drive.
 sub get_drive_path ($) {
     my ($drive) = @_;
@@ -280,6 +311,9 @@ if (exists $opts{'go'}) {
 
     # Set handy "WINVER" environment variable.
     $ENV{'WINVER'} = get_windows_version ();
+
+    # Set handy "WINLANG" environment variable.
+    $ENV{'WINLANG'} = get_windows_language ();
 
     # Set handy "Z_PATH" environment variable.
     $ENV{'Z_PATH'} = get_drive_path ($z);
