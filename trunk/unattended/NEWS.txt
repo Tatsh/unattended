@@ -1,4 +1,4 @@
-** Changes in version 4.0 (2004-???-??)
+** Changes in version 4.0 (2004-Mar-07)
 
 Major changes to the boot disk in this release.  You will need to
 refresh pretty much everything.  On the DOS side, we have switched to
