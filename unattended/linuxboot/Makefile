@@ -145,6 +145,10 @@ $(busybox)/.stamp-busybox-patch: misc/busybox-patch
 	cd $(busybox) && patch -p1 < $(cwd)/$<
 	touch $@
 
+$(busybox)/.stamp-busybox-userclass-patch: misc/busybox-userclass-patch
+	cd $(busybox) && patch -p1 < $(cwd)/$<
+	touch $@
+
 $(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch
 	cp -f $< $@
 	cd $(busybox) && make oldconfig
