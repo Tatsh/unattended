@@ -179,12 +179,12 @@ while [ ! -f /z/dosbin/install.pl ] ; do
         Z_USER="${Z_USER##*/}\\${Z_USER%/*}"
     fi
 
-    username=${Z_USER#*\\}              # everything before first backslash
+    username=${Z_USER#*\\}              # everything after first backslash
     [ "$username" == "$Z_USER" ] \
-        || domain=${Z_USER%%\\*}        # everyting after first backslash
+        || domain=${Z_USER%%\\*}        # everyting before first backslash
 
     # Default mount options: username, read-only mount
-    mount_opts="username=$Z_USER,ro"
+    mount_opts="username=$username,ro"
 
     # Append domain (workgroup), if any.
     [ -n "$domain" ] \
