@@ -30,9 +30,12 @@ img.logo {float: right; border-width: 0;}
 
 .code {
         font-family: monospace;
-        font-weight: bold;
-        border: solid maroon;
+        border: solid;
         border-width: 1px;
-        color: maroon;
         margin-right: 10%;
+        padding: 1em;
+}
+
+hr.half {
+        width: 50%;
 }
