@@ -10,6 +10,15 @@ z:\bin\todo.pl mdac.bat "z:\packages\VC6\vc6_sp5\setupsp5.exe /qn1 /g c:\netinst
 :: Reboot after installing VC6
 z:\bin\todo.pl .reboot
 
-:: NOTE: YOU MUST PROVIDE A VALID LICENSE KEY FOR THE /k OPTION
-start /wait z:\packages\VC6\acmboot.exe /qn1 /g c:\netinst\logs\vc6.txt /k 1234567890
+:: NOTE: You must create Z:\site\vc6_key.bat to set the vc6_key
+:: variable to your license key
+call Z:\site\vc6_key.bat
+if %vc6_key%.==. goto nokey
+start /wait z:\packages\VC6\acmboot.exe /qn1 /g c:\netinst\logs\vc6.txt /k %vc6_key%
 if errorlevel 1 exit 1
+exit 0
+
+:nokey
+@echo *** Unable to get VC6 license key
+@echo ***  (did you forget to create Z:\site\vc6_key.bat?)
+exit 2
