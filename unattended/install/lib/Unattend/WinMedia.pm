@@ -6,7 +6,7 @@ use warnings;
 use strict;
 use Unattend::IniFile;
 use File::Spec::Win32;
-use fields qw (txtsetup setupp path oem_pnp_dirs);
+use fields qw (txtsetup setupp path);
 
 # File::Spec is supposed to auto-detect the OS and adapt
 # appropriately, but it does not recognize a $^O value of "dos".  Work
@@ -205,11 +205,8 @@ sub _find_oem_pnp_dirs ($) {
 }
 
 sub oem_pnp_dirs ($;$) {
-    my Unattend::WinMedia $self = $_[0];
-    my $verbose = $_[1];
-
-    (defined $self->{oem_pnp_dirs})
-        and return @{$self->{oem_pnp_dirs}};
+    my Unattend::WinMedia $self = shift;
+    my $verbose = shift;
 
     my $oem_system_dir =
         $file_spec->catdir ($self->path (), 'i386', '$oem$', '$1');
@@ -224,6 +221,92 @@ sub oem_pnp_dirs ($;$) {
     $verbose && scalar @ret == 0
         and print "...no driver directories found.\n";
 
-    $self->{oem_pnp_dirs} = \@ret;
+    return @ret;
+}
+
+sub _textmode_dir ($) {
+    my Unattend::WinMedia ($self) = @_;
+    
+    return $file_spec->catdir ($self->path, 'i386', '$oem$','textmode');
+}
+
+# Return the names of drivers from the [scsi] section of txtsetup.oem.
+# See <http://support.microsoft.com/?kbid=288344>.
+
+sub textmode_oem_drivers ($) {
+    my Unattend::WinMedia ($self) = shift;
+    my $verbose = shift;
+
+    my $txtsetup_oem_file =
+        $file_spec->catfile ($self->_textmode_dir (), 'txtsetup.oem');
+
+    $verbose
+        and print "Trying to parse $txtsetup_oem_file...\n";
+
+    unless (-f $txtsetup_oem_file) {
+        $verbose
+            and print "...file not found\n";
+        return ();
+    }
+
+    my $txtsetup_oem =
+        Unattend::IniFile->new ($txtsetup_oem_file, qr{scsi});
+
+    my @ret;
+
+    # Grab first component of each value in [scsi] section.
+    my $scsi = $txtsetup_oem->{'scsi'};
+    foreach my $key (keys %$scsi) {
+        my $value = $scsi->{$key};
+        ref $value eq 'ARRAY'
+            or $value = [ $value ] ;
+        push @ret, $value->[0];
+    }
+
+    $verbose
+        and print "...done\n";
+    return @ret;
+}
+
+# Return a list of all files in the $OEM$/TEXTMODE directory
+sub textmode_files ($) {
+    my Unattend::WinMedia ($self) = @_;
+    my @ret = ();
+
+    my $textmode = $self->_textmode_dir ();
+
+    if (-d $textmode) {
+        opendir TEXTMODE, $textmode
+            or die "Unable to opendir $textmode: $^E";
+        while (my $ent = readdir TEXTMODE) {
+            $ent eq '.' || $ent eq '..'
+                and next;
+            push @ret, $ent;
+        }
+        closedir TEXTMODE, $textmode
+            or die "Unable to closedir $textmode: $^E";
+    }
+
+    return @ret;
+}
+
+sub textmode_retail_drivers ($) {
+    my Unattend::WinMedia ($self) = shift;
+    my $verbose = shift;
+
+    my @ret;
+
+    # Iterate through entries in [SCSI] section of txtsetup.sif
+    my $scsi = $self->{txtsetup}->{'SCSI'};
+    foreach my $key (keys %$scsi) {
+        # Skip this key unless it is listed in the [SCSI.Load] section.
+        (defined $self->{txtsetup}->{'SCSI.Load'}->{$key})
+            or next;
+        my $value = $scsi->{$key};
+        ref $value eq 'ARRAY'
+            or $value = [ $value ] ;
+        push @ret, $value->[0];
+    }
+
     return @ret;
 }
