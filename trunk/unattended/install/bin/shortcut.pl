@@ -2,21 +2,27 @@
 
 use warnings;
 use strict;
-
+use Getopt::Long;
+use Pod::Usage;
 use Win32::OLE;
 
 use File::Basename;
+use File::Spec;
+use File::Path;
 
-sub die_usage () {
-    die "Usage: $0 <target>\n";
-}
+# Your usual option-processing sludge.
+my %opts;
+GetOptions (\%opts, 'help|h|?')
+    or pod2usage (2);
 
-scalar @ARGV == 1
-    or die_usage ();
+(exists $opts{'help'})
+    and pod2usage ('-exitstatus' => 0, '-verbose' => 2);
 
-my ($target) = @ARGV;
+# Ensure exactly one argument after options.
+scalar @ARGV == 2
+    or pod2usage (2);
 
-my ($name, $dir, $type) = fileparse ($target, qr{\..*});
+my ($target, $shortcut) = @ARGV;
 
 # Bomb out completely if COM engine encounters any trouble.
 Win32::OLE->Option ('Warn' => 3);
@@ -25,12 +31,87 @@ Win32::OLE->Option ('Warn' => 3);
 # <http://msdn.microsoft.com/library/en-us/script56/html/wsobjwshshell.asp>
 my $wsh_shell = Win32::OLE->CreateObject ('WScript.Shell');
 
-my $desktop = $wsh_shell->SpecialFolders ('AllUsersDesktop');
+sub canonicalize_filename ($) {
+    my ($filename) = @_;
 
-my $shortcut = $wsh_shell->CreateShortcut ("$desktop\\$name.lnk");
+    if ($filename =~ /^special:([a-z]+)(.*)/i) {
+        my ($special, $rest) = ($1, $2);
+        # Get special folder.  See
+        # <http://msdn.microsoft.com/library/en-us/script56/html/wsprospecialfolders.asp>
 
-$shortcut->{TargetPath} = $target;
-$shortcut->{WindowStyle} = 1;
-$shortcut->{IconLocation} = "$target, 0";
+        my $folder = $wsh_shell->SpecialFolders ($special);
+        $filename = "$folder$rest";
+    }
 
-$shortcut->Save ();
+    return $filename;
+}
+
+$target = canonicalize_filename ($target);
+$shortcut = canonicalize_filename ($shortcut);
+
+my ($target_name, $target_dir, $target_type)
+    = fileparse ($target, qr{\..*});
+
+my ($shortcut_name, $shortcut_dir, $shortcut_type);
+
+if ($shortcut =~ /\\\z/ || -d $shortcut) {
+    # Argument is a directory, so create the shortcut inside it.
+    $shortcut_name = $target_name;
+    $shortcut_dir = $shortcut;
+    $shortcut_type = $target_type;
+}
+else {
+    # Treat shortcut as a full path.
+    ($shortcut_name, $shortcut_dir, $shortcut_type)
+        = fileparse ($shortcut, qr{\..*});
+}
+
+# Shortcuts are always .lnk files.
+$shortcut_type = '.lnk';
+
+mkpath ($shortcut_dir);
+
+my $full_shortcut = File::Spec->catfile ($shortcut_dir,
+                                         "$shortcut_name$shortcut_type");
+
+print "Creating shortcut $full_shortcut -> $target\n";
+
+my $obj = $wsh_shell->CreateShortcut ($full_shortcut);
+$obj->{TargetPath} = $target;
+$obj->{WindowStyle} = 1;
+$obj->{IconLocation} = "$target, 0";
+$obj->{WorkingDirectory} = $shortcut_dir;
+
+$obj->Save ();
+
+exit 0;
+
+__END__
+
+=head1 NAME
+
+shortcut.pl - Create a Windows shortcut
+
+=head1 SYNOPSIS
+
+shortcut.pl [ options ] <target> <shortcut>
+
+Options (may be abbreviated):
+
+ --help                 Display help and exit
+
+=head1 DESCRIPTION
+
+This script creates a shortcut from <shortcut> to <target>.  If the
+string "special:<xxx>" appears in either argument, it will be replaced
+by the full path to the special folder <xxx>.  (Follow the link under
+SEE ALSO for a complete list of special folders.)
+
+=head1 EXAMPLES
+
+ shortcut.pl "C:\Program Files\Foo\foo.exe" special:AllUsersDesktop
+
+ shortcut.pl --special AllUsersStartMenu "C:\Program Files\Foo\bar.exe"
+
+=head1 SEE ALSO
+C<http://msdn.microsoft.com/library/en-us/script56/html/wsprospecialfolders.asp>
