@@ -4,7 +4,6 @@ use strict;
 use Carp;
 use File::Spec::Win32;
 use File::Copy;
-use IO::File;
 use Unattend::IniFile;
 use Unattend::WinMedia;
 
@@ -265,15 +264,16 @@ sub read_partition_table () {
 # Write a bunch of lines to a file.
 sub write_file ($@) {
     my ($file, @lines) = @_;
-    my $fh = new IO::File;
-    $fh->open ($file, 'w')
+    local *FILE;
+
+    open FILE, ">$file"
         or die "Unable to open $file for writing: $^E";
 
     foreach my $line (@lines) {
-        print $fh $line, "\n";
+        print FILE $line, "\n";
     }
 
-    $fh->close ()
+    close FILE
         or die "Unable to close $file: $^E";
 }
 
