@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#
+# This script updates your script files from the official
+# unattended cvs repository.
+#
+# This scripts crawles through your script directory, and
+# tries to update every found file from the cvs. You can
+# define exceptions in this script.
+#
+# Warning #1: this scripts overwrites YOUR changes to official
+# script files without any warning! Please double-check that
+# none of your own-written scripts accidentially have the same
+# name than any of the official scripts.
+#
+# Warning #2: it does not add scripts in the cvs that are
+# not found in your script directory. You have to download
+# new scripts once manually.
+#
+# Warning #3: you might want to call it as cron job, but
+# please be not surprised by broken scripts in the cvs.
+# This happens from time to time.
+#
+
+# HTTP-Link to the cvs-repository (WITHOUT trailing "/scripts")
+CVSLINK="http://cvs.sourceforge.net/viewcvs.py/*checkout*/unattended/unattended/install"
+
+# paths to needed programs
+WGET=$(which wget)
+FIND=$(which find)
+GREP=$(which grep)
+SORT=$(which sort)
+
+# Change to the scripts directory so paths are correct
+cd "$(dirname "$0")"/..
+
+# crawl through the script-dir
+for file in $($FIND scripts -type f | $GREP -v CVS | $SORT)
+do
+    if $WGET --output-document "$file.$$.tmp" $CVSLINK/$file?rev=HEAD
+    then
+        mv "$file.$$.tmp" "$file"
+    else
+        rm -f "$file.$$.tmp"
+    fi
+done
+
