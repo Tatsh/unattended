@@ -391,7 +391,7 @@ $(perl)/perl:
 
 stage1/opt/perl/bin/perl: $(perl)/perl
 	cd $(perl) && make DESTDIR=$(cwd)/stage1 STRIPFLAGS=-s install.perl
-	: create /usr/bin/perl -> /opt/bin/perl symlink
+	: # create /usr/bin/perl -> /opt/bin/perl symlink
 	ln -sf /opt/perl/bin/perl stage1/usr/bin/perl
 	[ -e $@ ]
 
