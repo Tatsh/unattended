@@ -442,7 +442,7 @@ my @cmd_lines =
          # Last step is always a reboot
          'todo.pl .reboot',
          # Next-to-last step is to disable automatic logon
-         'todo.pl ' . get_value ('_meta', 'autolog'),
+         'todo.pl "' . get_value ('_meta', 'autolog') . '"',
          # First step is to perform top-level install
          "todo.pl $top",
          "\ntodo.pl --go")
