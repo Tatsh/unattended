@@ -282,9 +282,6 @@ sub get_drive_path ($) {
 my $console = new Win32::Console (STD_INPUT_HANDLE)
     or die "Unable to create STDIN console: $^E";
 
-$console->Mode (ENABLE_PROCESSED_INPUT)
-    or die "Unable to set mode on console: %^E";
-
 $| = 1;
 
 # Run a command, including handling of pseudo-commands (like .reboot).
@@ -361,9 +358,17 @@ sub do_cmd ($;$) {
         while ($ret != 0) {
             print "$cmd failed, status ", $ret >> 8, ' (', $ret % 256, ')', "\n";
             print "A)bort R)etry I)gnore ? ";
+            my $old_mode = $console->Mode (ENABLE_PROCESSED_INPUT);
+            defined $old_mode
+                or die "Unable to set mode on console: %^E";
+
             my $key = $console->InputChar (1);
             defined $key
                 or die "InputChar failed: $^E";
+
+            defined $console->Mode ($old_mode)
+                or die "Unable to reset mode on console: %^E";
+
             $key = uc $key;
             if ($key eq 'A') {
                 die "Aborting.\n";
