@@ -63,7 +63,7 @@ todo.pl "z:\packages\winxpsp1\Q811114_WXP_SP2_x86_ENU.exe /u /z"
 :: "Windows Update 643 Error and the Catalog Database"
 :: <http://support.microsoft.com/?kbid=817287>
 :: (download only available from Windows Catalog)
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817287.exe /u /z" .reboot
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817287.exe /q /r:n" .reboot
 
 :: Critical update 816093
 :: "Flaw in the Microsoft VM Could Enable System Compromise"
