@@ -5,6 +5,12 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: "Office XP Update: March 23, 2004"
+:: ("exploitable security issues in Microsoft Script Editor")
+:: URL|ENU|http://download.microsoft.com/download/2/5/7/25750DD8-E66E-4099-95B4-216C0542D2F1/officexp-kb833858-fullfile-enu.exe|updates/officexp/officexp-kb833858-fullfile-enu.exe
+:: <http://support.microsoft.com/?id=833858>
+todo.pl "%Z%\updates\officexp\officexp-kb833858-fullfile-enu.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb833858.txt /p VSDEBUGff.msp REBOOT=ReallySuppress\""
+
 :: Hm, tying this to win2ksp4 is probably wrong.  FIXME
 if not %WINVER%. == win2ksp4. goto didauiu
 :: Office XP Alternative User Input Update: March 11, 2004
