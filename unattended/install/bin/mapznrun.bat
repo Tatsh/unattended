@@ -29,7 +29,8 @@ net use %Z% %Z_PATH% %Z_PASS% %USER_ARG% /persistent:no
 if exist %Z%\ goto mapped
 net use %Z% /delete
 echo Failed; retrying.
-if exist C:\Perl\bin\perl.exe C:\Perl\bin\perl.exe -e "sleep 10;"
+:: Sleep for 10 seconds
+ping -n 10 localhost > nul
 goto try_again
 
 :mapped
