@@ -426,9 +426,12 @@ sub create_postinst_bat () {
     defined $ntp_servers && $ntp_servers ne ''
         and push @postinst_lines, "net time /setsntp:\"$ntp_servers\"";
 
+    my $netinst = $u->{'_meta'}->{'netinst'};
+
     # Top-level installation script
     my $top = $u->{'_meta'}->{'top'};
     if (defined $top) {
+        my $tempcreds = $file_spec->catfile ($netinst, 'tempcreds.bat');
         push @postinst_lines,
         ('call z:\\bin\\perl.bat',
          'PATH=z:\\bin;%PATH%',
@@ -448,7 +451,6 @@ sub create_postinst_bat () {
     my $postinst;
 
     if (scalar @postinst_lines > 0) {
-        my $netinst = $u->{'_meta'}->{'netinst'};
         $postinst = $file_spec->catfile ($netinst, 'postinst.bat');
         print "Creating $postinst...";
         write_file ($postinst, @postinst_lines);
