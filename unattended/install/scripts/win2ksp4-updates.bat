@@ -575,7 +575,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB841533-x86-%WINLANG%.
 :: URL|RUS|http://download.microsoft.com/download/1/7/b/17be4a5c-5eed-4cd4-a580-f4bb0c6b2f88/Windows2000-KB824151-x86-RUS.EXE|updates/win2ksp4/windows2000-kb824151-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/7/c/e/7cef1882-4b8f-4b9f-ad98-ed67dca1baf6/Windows2000-KB824151-x86-SVE.EXE|updates/win2ksp4/windows2000-kb824151-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/2/9/129abba3-4df7-4148-85ca-577ddd26dd27/Windows2000-KB824151-x86-TRK.EXE|updates/win2ksp4/windows2000-kb824151-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824151-x86-%WINLANG%.EXE /passive /n/ /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824151-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Security Update for Windows 2000 (KB840315)
 :: Microsoft Security Bulletin MS04-023
