@@ -6,6 +6,17 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical Update Q329414
+:: "Buffer Overrun in MDAC Can Lead to Code Execution (MDAC 2.6)"
+:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329414>
+todo.pl "z:\packages\win2ksp3\q329414_mdacall_x86.exe /q /c:\"dahotfix /q /n\"" .reboot
+
+:: Critical Update 329115
+:: "Certificate Validation Flaw Might Permit Identity Spoofing"
+:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329115>
+:: <http://www.microsoft.com/windows2000/downloads/critical/q329115/>
+todo.pl "z:\packages\win2ksp3\Q329115_W2K_SP4_X86_EN.exe /u /o /z"
+
 :: Critical Update Q328970
 :: "November 2002, Cumulative Patch for Internet Explorer"
 :: <http://www.microsoft.com/windows/ie/downloads/critical/Q328970/>
