@@ -28,6 +28,26 @@ sub get_info ($$) {
     return $key_hash;
 }
 
+# Return an array enumerating all of the sections.
+sub get_sections () {
+    return map { get_info ($_, '')->{'dname'} } keys %$unattend;
+}
+
+# Return an array enumerating all of the keys within a section.
+sub get_keys ($) {
+    my ($sect) = @_;
+    my @ret;
+    my $l_sect = lc $sect;
+    my $sect_hash = $unattend->{$l_sect};
+    foreach my $key (keys %$sect_hash) {
+        # Skip key with info for section itself
+        $key eq ''
+            and next;
+        push @ret, get_info ($l_sect, $key)->{'dname'};
+    }
+    return @ret;
+}
+
 # "Force" a promise.  If argument is not a promise, return it
 # unaltered.
 sub force ($) {
@@ -216,17 +236,15 @@ sub name_val_str ($$) {
 sub generate_unattend_txt () {
     my $ret = '';
 
-    foreach my $sect (sort { cmp_pri ($a, '', $b, '') } keys %$unattend) {
+    my @sections = get_sections ();
+    foreach my $sect (sort { cmp_pri ($a, '', $b, '') } @sections) {
         my $comments = get_comments ($sect, '');
         $comments =~ /^\n/
             or $comments = "\n$comments";
         $ret .= $comments;
         $ret .= sprintf "[%s]\n", get_display_name ($sect, '');
         foreach my $key (sort { cmp_pri ($sect, $a, $sect, $b) }
-                         keys %{$unattend->{$sect}}) {
-            # Skip info for section itself
-            $key eq ''
-                and next;
+                         get_keys ($sect)) {
             my $val = get_value ($sect, $key);
             defined $val
                 or next;
