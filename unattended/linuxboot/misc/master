@@ -221,16 +221,21 @@ while : ; do
     if smbmount "$Z_PATH" /z -o "ttl=600000,$mount_opts" ; then
         check_z \
             && break
+        echo "*** smbmount \"succeeded\", but /z/dosbin/install.pl not found"
         umount /z
+    else
+        echo "*** smbmount failed."
     fi
 
-    echo "*** smbmount did not work."
     echo "*** Trying mount.cifs $Z_PATH /z -o $mount_opts"
 
     if mount.cifs "$Z_PATH" /z -o "$mount_opts" ; then
         check_z \
             && break
+        echo "*** mount.cifs \"succeeded\", but /z/dosbin/install.pl not found"
         umount /z
+    else
+        echo "*** mount.cifs failed."
     fi
 
     unset PASSWD
@@ -239,9 +244,6 @@ while : ; do
 done
 
 unset PASSWD
-
-check_z \
-    || die "Invalid install share: /z/dosbin/install.pl not found."
 
 [ -d /z/linuxaux ] \
     || die "Invalid install share: /z/linuxaux directory not found."
