@@ -115,7 +115,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\HMTCDWizard_%WINLANG%.exe /l* %Syst
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* %SystemDrive%\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
-if not exist %Z%\updates\common\%WINLANG%\dotnet_langpack.exe goto nolangpack
+if not exist %Z%\updates\common\%WINLANG%\langpack.exe goto nolangpack
 :: Microsoft .NET Framework Version 1.1 Language Pack
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=04DBAF2E-61ED-43F4-8D2A-CCB2BAB7B8EB>
 :: No Download found for ARA.
