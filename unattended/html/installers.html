@@ -210,18 +210,22 @@ unattended installations.
 Install System</a> (NSIS) is another open source installation system.
 It was created by the <a href="http://www.winamp.com/">WinAmp</a>
 authors to distribute that application, but it is now a
-general-purpose installation system which anyone might use.
+general-purpose system which <a
+href="http://www.nullsoft.com/free/nsis/users.html" >anyone might
+use</a>.
 
 <p>When an NSIS installer runs, it creates a little window which says
 <code>verifying&nbsp;installer:&nbsp;N%</code>, where <code>N</code>
 counts from 0 to 100.  So you can recognize these installers by this
-behavior.  (Or you can run "strings" and grep for "NSIS".)
+behavior.  (Actually the verification procedure is optional, but most
+installers have it enabled.  As an alternative, you can run "strings"
+and grep for "NSIS"...)
 
 <p>NSIS installers recognize <kbd>/S</kbd> for silent installation,
 <kbd>/NCRC</kbd> to suppress the CRC (verification) step, and
-<kbd>/D=<var>dir</var></kbd> to specify the "output directory",
-whatever that means.  These options are <em>case-sensitive</em>, so be
-sure to type them in upper case.
+<kbd>/D=<var>dir</var></kbd> to specify the "output directory", which
+is where the program will be installed.  These options are
+<em>case-sensitive</em>, so be sure to type them in upper case.
 
 <p>Incidentally, all <kbd>/S</kbd> does is change the installer
 script's <a
