@@ -58,14 +58,49 @@ done
 [ -z "$got_lease" ] \
     && die "Failed to obtain DHCP lease."
 
-smbmount_opts="username=guest,password=guest,ro,ttl=2400000"
-z_path=//ntinstall/install
+echo "*** Now we need to map the /z drive."
 
-echo "*** Trying smbmount $z_path /z -o $smbmount_opts"
+while : ; do
+    # If we were really cool, these defaults would come from DHCP
+    # options.  FIXME
+    z_user=guest
+    z_pass=guest
+    z_path=//ntinstall/install
 
-if ! smbmount "$z_path" /z -o "$smbmount_opts" ; then
-    die "Failed to mount /z.  Enh."
-fi
+    # Read one character with a 5-second timeout
+    read -n 1 -t 5 -p "Override bootdisk defaults (if unsure, say yes)? " \
+        input
+    echo
+
+    if [[ "$input" == [yY]* ]] ; then
+        # Allow editing, and do not treat backslash specially
+        read -e -r -p "Enter location of install share (default $z_path): " \
+            input
+        [ -n "$input" ] && z_path="$input"
+        read -e -r \
+            -p "Enter username for mapping install share (default $z_user): " \
+            input
+        [ -n "$input" ] && z_user="$input"
+        while : ; do
+            read -e -r -s -p "Enter password for mapping install share: " \
+                input
+            echo
+            read -e -r -s -p "Confirm password: " z_pass
+            echo
+            [ "$input" == "$z_pass" ] \
+                && break
+            echo "Passwords do not match.  Please try again."
+        done
+    fi
+
+    smbmount_opts="username=$z_user,ro,ttl=2400000"
+
+    echo "*** Trying smbmount $z_path /z -o $smbmount_opts,password=..."
+
+    smbmount "$z_path" /z -o "$smbmount_opts,password=$z_pass" \
+        && break
+    echo "Failed to mount /z.  Retrying..."
+done
 
 echo "*** Excellent.  Now, let's see about mass storage controllers..."
 
