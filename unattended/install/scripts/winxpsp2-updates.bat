@@ -80,27 +80,27 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: Critical update MS04-038 (834707)
 :: "Cumulative Security Update for Internet Explorer"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>
-:: URL|ARA|http://download.microsoft.com/download/5/b/5/5b5b248c-9314-4358-a4e8-01e941830487/IE6.0sp1-KB834707-Windows-2000-XP-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/a/6/4/a645e652-3769-4c8e-a9bd-c1248471492a/IE6.0sp1-KB834707-Windows-2000-XP-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/a/d/3/ad3d72b0-2494-45c7-8ed7-b913165b83fe/IE6.0sp1-KB834707-Windows-2000-XP-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/0/d/60dc034c-b226-4658-a84b-f1dea55aeb57/IE6.0sp1-KB834707-Windows-2000-XP-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/9/8/2/9822f82f-d78c-4b8a-b2c0-e304a5128955/IE6.0sp1-KB834707-Windows-2000-XP-x86-ELL.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/c/2/9/c2970ff8-6fc8-43da-a2c2-56a3aa40173b/IE6.0sp1-KB834707-Windows-2000-XP-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/6/d/26d8d757-7e75-439f-8a4f-dce046dea118/IE6.0sp1-KB834707-Windows-2000-XP-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/a/e/c/aec35feb-044f-4f99-94e5-bda740e0a2a0/IE6.0sp1-KB834707-Windows-2000-XP-x86-FIN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/a/1/1/a112d141-ffb9-4441-a945-9e6a97639dfe/IE6.0sp1-KB834707-Windows-2000-XP-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/9/6/2/962f2c99-602f-4743-a649-38c2879fbeb3/IE6.0sp1-KB834707-Windows-2000-XP-x86-HEB.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/3/1/5/315eab4b-2e85-491a-aa52-37fcce984829/IE6.0sp1-KB834707-Windows-2000-XP-x86-HUN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/6/8/1/681c3b51-d44a-46de-9753-ea2078d9490f/IE6.0sp1-KB834707-Windows-2000-XP-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/c/a/4caa086f-ea7c-40ff-86fd-771332bb5f64/IE6.0sp1-KB834707-Windows-2000-XP-x86-JPN.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/e/e/d/eed4b117-fc2e-4c90-b098-c295198fc4ed/IE6.0sp1-KB834707-Windows-2000-XP-x86-KOR.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/1/5/6/15605d3c-76b9-43ad-93e5-81c2eea0fdff/IE6.0sp1-KB834707-Windows-2000-XP-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/8/c/6/8c674372-a9b7-44f9-9b72-ecf1d312cfdf/IE6.0sp1-KB834707-Windows-2000-XP-x86-PLK.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-plk.exe
-:: URL|PRG|http://download.microsoft.com/download/5/1/d/51d56603-9988-4f26-92b7-39c0858c6cb8/IE6.0sp1-KB834707-Windows-2000-XP-x86-PTG.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ptg.exe
-:: URL|PTB|http://download.microsoft.com/download/f/0/3/f037917d-b6b2-4eda-a5da-c4d4954968db/IE6.0sp1-KB834707-Windows-2000-XP-x86-PTB.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-ptb.exe
-:: URL|RUS|http://download.microsoft.com/download/9/9/a/99a329b4-dd40-46dc-8410-c694007efdce/IE6.0sp1-KB834707-Windows-2000-XP-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/5/f/c/5fcfa0a7-35b9-4240-9378-aa1e1a9dad96/IE6.0sp1-KB834707-Windows-2000-XP-x86-SVE.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/4/7/a/47afef12-6823-4a6e-a86b-dbe375888f84/IE6.0sp1-KB834707-Windows-2000-XP-x86-TRK.exe|updates/ie6sp1/ie6.0sp1-kb834707-windows-2000-xp-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb834707-windows-2000-xp-x86-%WINLANG%.exe /passive /n /norestart"
+:: URL|ARA|http://download.microsoft.com/download/6/2/a/62af3ef3-224a-4a2e-9ba1-edce73ce5158/WindowsXP-KB834707-x86-ara.exe|updates/winxpsp2/windowsxp-kb834707-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/d/4/a/d4ae80d0-8a5d-42fb-be91-c26701fd8a14/WindowsXP-KB834707-x86-csy.exe|updates/winxpsp2/windowsxp-kb834707-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/b/e/abeebd22-63ed-457d-b0d1-b0121316c242/WindowsXP-KB834707-x86-dan.exe|updates/winxpsp2/windowsxp-kb834707-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/4/7/f/47fa7b4f-93ea-4540-bfc9-ced14c4eac11/WindowsXP-KB834707-x86-deu.exe|updates/winxpsp2/windowsxp-kb834707-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/7/5/f/75fff639-922e-4af6-8e3c-622750f233e4/WindowsXP-KB834707-x86-ell.exe|updates/winxpsp2/windowsxp-kb834707-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/0/a/20ae9ba5-0e55-4b53-9454-62b6ef7b1f0a/WindowsXP-KB834707-x86-enu.exe|updates/winxpsp2/windowsxp-kb834707-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/8/9/d/89d62787-4296-4906-9315-faa40c0de8a0/WindowsXP-KB834707-x86-esn.exe|updates/winxpsp2/windowsxp-kb834707-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/b/6/7/b6702fa5-dde6-48cc-88a7-eaf0ea5c0e45/WindowsXP-KB834707-x86-fin.exe|updates/winxpsp2/windowsxp-kb834707-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/1/c/a/1ca7f97c-8136-421c-9c1f-7d95176d077f/WindowsXP-KB834707-x86-fra.exe|updates/winxpsp2/windowsxp-kb834707-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/0/d/c/0dc0043f-f214-4b77-9252-c63de0e4c600/WindowsXP-KB834707-x86-heb.exe|updates/winxpsp2/windowsxp-kb834707-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/d/e/e/deec3224-2e85-400c-b082-30a936d223b3/WindowsXP-KB834707-x86-hun.exe|updates/winxpsp2/windowsxp-kb834707-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/2/6/2/262e2f1a-8cb7-485b-b2e1-b00d236f0d23/WindowsXP-KB834707-x86-ita.exe|updates/winxpsp2/windowsxp-kb834707-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/9/4/59442b24-95d8-494a-9ebb-709f712a6391/WindowsXP-KB834707-x86-jpn.exe|updates/winxpsp2/windowsxp-kb834707-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/2/7/4/27433f7d-72aa-4107-9264-b4f14bef8ca6/WindowsXP-KB834707-x86-kor.exe|updates/winxpsp2/windowsxp-kb834707-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/3/2/f/32f0c30f-8cf5-4c38-8280-caa505d1ee4b/WindowsXP-KB834707-x86-nld.exe|updates/winxpsp2/windowsxp-kb834707-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/b/d/2/bd2b59a5-10c6-4dd7-b561-37c5a892b044/WindowsXP-KB834707-x86-plk.exe|updates/winxpsp2/windowsxp-kb834707-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/f/8/2/f826a72e-85d8-4f1e-9b19-9498789f56b8/WindowsXP-KB834707-x86-ptg.exe|updates/winxpsp2/windowsxp-kb834707-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/0/6/2/062d6f4f-282e-4431-9bd8-49184284e6e1/WindowsXP-KB834707-x86-ptb.exe|updates/winxpsp2/windowsxp-kb834707-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/9/8/9/989a2945-f06f-4d45-8308-06a657645d69/WindowsXP-KB834707-x86-rus.exe|updates/winxpsp2/windowsxp-kb834707-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/a/7/aa79111a-20a6-4ae8-a01f-0ce5af38e571/WindowsXP-KB834707-x86-sve.exe|updates/winxpsp2/windowsxp-kb834707-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/d/4/5/d45c109d-1047-48c6-b021-f71d127bf1d1/WindowsXP-KB834707-x86-trk.exe|updates/winxpsp2/windowsxp-kb834707-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\windowsxp-kb834707-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical Updates
