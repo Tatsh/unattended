@@ -11,7 +11,7 @@
 :: (This will be superseded if MDAC 2.8 is installed later, but no
 :: harm done.)
 :: <http://support.microsoft.com/?kbid=823718>
-todo.pl "z:\packages\winxpsp1\Q823718_MDAC_SecurityPatch.exe /q /c:\"dahotfix.exe /q /n\""
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q823718_MDAC_SecurityPatch.exe /q /c:\"dahotfix.exe /q /n\"" .reboot
 
 :: Recommended update 817778
 :: "Advanced Networking Pack for Windows XP"
