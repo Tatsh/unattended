@@ -1,22 +1,22 @@
 ; AutoIt script to install Cygwin
 
-Run, %Z%\\packages\\cygwin\\setup.exe
+Run, "C:\\Documents and Settings\\slords\\Desktop\\cygwin\\setup.exe"
 
 WinWait, Cygwin Setup, This wizard will guide you
 Send, !n
 
-WinWait, Choose Installation Type
+WinWait, Cygwin Setup - Choose Installation Type
 ; Choose "Install from Local Directory"
 Send, !l!n
 
-WinWait, Choose Installation Directory
+WinWait, Cygwin Setup - Choose Installation Directory
 Send, !n
 
-WinWait, Select Local Package Directory, Select Local Package Directory
+WinWait, Cygwin Setup - Select Local Package Directory, Select Local Package Directory
 ; Use proper package directory
-Send, %Z%\\packages\\cygwin!n
+Send, C:\\Documents and Settings\\slords\\Desktop\\cygwin\\!n
 
-WinWait, Select Packages
+WinWait, Cygwin Setup - Select Packages
 ; Make sure the Window is active, then click in the right place to
 ; select "install all"
 WinActivate, Select Packages
@@ -26,7 +26,7 @@ LeftClick, 60, 135
 Sleep, 10000
 Send, !n
 
-WinWait, Create Icons
+WinWait, Cygwin Setup - Create Icons
 Send, {ENTER}
 
 WinWait, Cygwin Setup, Installation Complete
