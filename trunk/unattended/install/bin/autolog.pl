@@ -30,7 +30,7 @@ my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg);
 
 my $winlogon_key =
-    'HKEY_LOCAL_MACHINE/Software/Microsoft/Windows NT/CurrentVersion/Winlogon';
+    'HKEY_LOCAL_MACHINE/Software/Microsoft/Windows NT/CurrentVersion/Winlogon/';
 
 my %new_values = ('DefaultUserName' => $user,
                   'DefaultPassword' => $pass,
@@ -40,10 +40,10 @@ foreach my $key (sort keys %new_values) {
     if (exists $opts{'enable'}) {
         my $val = $new_values{$key};
         $reg{$winlogon_key}->{$key} = $val
-            or die "Unable to set $winlogon_key/$key to $val";
+            or die "Unable to set $winlogon_key/$key to $val: $^E";
     }
     else {
         (delete $reg{$winlogon_key}->{$key})
-            or die "Unable to delete $winlogon_key/$key";        
+            or die "Unable to delete $winlogon_key/$key: $^E";
     }
 }
