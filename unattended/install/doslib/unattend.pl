@@ -189,7 +189,12 @@ sub read_unattend_txt ($) {
             merge_comments ($cur_section, '', $cur_comments);
             $cur_comments = '';
         }
-        elsif ($line =~ /^\s*(\w+)\s*=\s*(.*)$/) {
+        elsif ($line =~ /^(\s*;.*|\s*)$/) {
+            # Comment
+            $cur_comments .= $line;
+        }
+        # FIXME: Need to get this regexp right someday.
+        elsif ($line =~ /^\s*(.+?)\s*=\s*(.*)$/) {
             # key=value setting
             my ($key, $val) = ($1, $2);
             defined $cur_section
@@ -197,6 +202,8 @@ sub read_unattend_txt ($) {
             # Strip quotation marks, if any
             $val =~ /^\"(.*)\"$/
                 and $val = $1;
+            $key =~ /^\"(.*)\"$/
+                and $key = $1;
             my ($major_pri, $minor_pri) = get_priority ($cur_section, $key);
             defined $major_pri && $major_pri == $current_pri
                 and (die "Duplicate $key settings in $file, ",
@@ -205,10 +212,6 @@ sub read_unattend_txt ($) {
             set_value ($cur_section, $key, $val);
             merge_comments ($cur_section, $key, $cur_comments);
             $cur_comments = '';
-        }
-        elsif ($line =~ /^(\s*;.*|\s*)$/) {
-            # Comment
-            $cur_comments .= $line;
         }
         else {
             die "Unrecognized line:\n  $line\n...in $file, ";
