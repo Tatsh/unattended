@@ -153,9 +153,9 @@ sub menu_choice (@) {
         $i++;
 
         system 'choice', "/c:$choices", "Select:";
-        my $ret = ($? >> 8) - 1;
+        my $sel = ($? >> 8) - 1;
 
-        my $func = $choice_map[$ret];
+        my $func = $choice_map[$sel];
         &$func ();
     }
 
@@ -362,6 +362,7 @@ sub ask_os () {
 
     exists $media_objs[0]
         or die "None found! bailing";
+
     unless (exists $media_objs[1]) {
         my $only = $media_objs[0]->path ();
         print "$only is the only OS directory I found; using it.\n";
