@@ -1,4 +1,5 @@
 :: OPTIONAL: Install PDFCreator <http://sector7g.wurzel6.de/pdfcreator/>
+@echo off
 
 :: Install language files
 :: URL|CAT|http://dl.sourceforge.net/sourceforge/pdfcreator/catalan.ini|packages/pdfcreator/lang-cat-0_8_0.ini
@@ -22,5 +23,3 @@ todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini %ProgramFiles%\PD
 :: Install PDFCreator
 :: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_0_GNUGhostscript.exe|packages/pdfcreator/pdfcreator-0_8_0_gnughostscript.exe
 todo.pl "%Z%\packages\pdfcreator\PDFCreator-0_8_0_GNUGhostscript.exe /sp- /silent /norestart"
-
-
