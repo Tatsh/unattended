@@ -10,16 +10,16 @@
 
 :: "Shop for music online" link starts IE instead of your default browser
 :: URL|ENU|http://download.microsoft.com/download/0/9/4/09493548-ad33-4700-b33c-40483d753899/WindowsXP-KB833998-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb833998-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/b/7/c/b7c06c76-7812-4da9-90b4-e70fb7c5cc5b/WindowsXP-KB833998-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb833998-x86-rus.exe
 :: <http://support.microsoft.com/?id=833998>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb833998-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: "Update for HighMAT Support in the Windows XP CD Writing Wizard"
+:: URL|DEU|http://download.microsoft.com/download/d/2/7/d27d72d7-28d0-4495-b4a8-184bb8cecf4b/HMTCDWizard_DEU.exe|updates/winxpsp1/hmtcdwizard_deu.exe
 :: URL|ENU|http://download.microsoft.com/download/2/2/b/22b5a5fa-fb50-4fc3-9f27-ba27816ec844/HMTCDWizard_enu.exe|updates/winxpsp1/hmtcdwizard_enu.exe
-:: URL|NLD|http://download.microsoft.com/download/2/2/b/22b5a5fa-fb50-4fc3-9f27-ba27816ec844/HMTCDWizard_enu.exe|updates/winxpsp1/hmtcdwizard_nld.exe
-:: (Dutch version not available)
-:: URL|DEU|http://download.microsoft.com/download/2/2/b/22b5a5fa-fb50-4fc3-9f27-ba27816ec844/HMTCDWizard_enu.exe|updates/winxpsp1/hmtcdwizard_deu.exe
-:: (German version not available)
 :: URL|ITA|http://download.microsoft.com/download/a/d/e/adecc729-5785-4eed-82da-2cbfaece61a6/HMTCDWizard_ITA.exe|updates/winxpsp1/hmtcdwizard_ita.exe
+:: URL|NLD|http://download.microsoft.com/download/2/a/9/2a9e7269-f9d5-46ab-bbbb-7014436a72ab/HMTCDWizard_NLD.exe|updates/winxpsp1/hmtcdwizard_nld.exe
+:: URL|RUS|http://download.microsoft.com/download/7/a/b/7abfc4bf-3f35-474b-8754-9f4aea7dcdd7/HMTCDWizard_RUS.exe|updates/winxpsp1/hmtcdwizard_rus.exe
 :: <http://support.microsoft.com/?id=831240>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hmtcdwizard_%WINLANG%.exe /l* %SystemDrive%\netinst\logs\hmtcdwizard.txt /qb ALLUSERS=1 REBOOT=ReallySuppress"
 
@@ -107,6 +107,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: "Vulnerability in the Microsoft Jet ... could permit code execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
 :: URL|ENU|http://download.microsoft.com/download/6/8/d/68d5abd5-da33-4403-a55a-af5625bb8d2d/WindowsXP-KB837001-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb837001-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/4/d/4/4d40c874-b227-4ec5-8b30-3f0054d0732f/WindowsXP-KB837001-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb837001-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Recommended update 826942
@@ -126,11 +127,11 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Windowsxp-kb826942-x86-%WINLANG%.ex
 :: URL|NLD|http://download.microsoft.com/download/c/d/f/cdf236d4-c2fe-4100-a254-85206aa39037/Q814995_WXP_SP2_x86_NLD.exe|updates/winxpsp1/q814995_wxp_sp2_x86_nld.exe
 :: URL|DEU|http://download.microsoft.com/download/e/1/1/e1123500-fe5a-4b79-aa68-59fbf1e5ab1e/Q814995_WXP_SP2_x86_DEU.exe|updates/winxpsp1/q814995_wxp_sp2_x86_deu.exe
 :: URL|ITA|http://download.microsoft.com/download/e/f/9/ef9ed6e3-b5f4-457f-b6fc-f566c8603250/Q814995_WXP_SP2_x86_ITA.exe|updates/winxpsp1/q814995_wxp_sp2_x86_ita.exe
+:: URL|RUS|http://download.microsoft.com/download/d/a/8/da8ca324-c3de-46bb-bf9d-97dcfdf340ed/Q814995_WXP_SP2_x86_RUS.exe|updates/winxpsp1/q814995_wxp_sp2_x86_rus.exe
 :: 
 :: "Some ... Fixes Stop Working After You Install the 328310 Update"
 :: (required even though 328310 got subsumed by 826939)
 :: <http://support.microsoft.com/?kbid=814995>
-:: (download only available from Windows Update Catalog)
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q814995_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
 :: Recommended update 810243
@@ -190,6 +191,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB820291-x86-%WINLANG%.ex
 :: URL|FRA|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/FR/Q327979_WXP_SP2_x86_FRA.exe|updates/winxpsp1/q327979_wxp_sp2_x86_fra.exe
 :: URL|DEU|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/DE/Q327979_WXP_SP2_x86_DEU.exe|updates/winxpsp1/q327979_wxp_sp2_x86_deu.exe
 :: URL|NLD|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/NL/Q327979_WXP_SP2_x86_NLD.exe|updates/winxpsp1/q327979_wxp_sp2_x86_nld.exe 
+:: URL|RUS|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q327979_WXP_SP2_5FEE23CE8405BD9B66C9D1968926F79DB6B4FB68.EXE|updates/winxpsp1/q327979_wxp_sp2_x86_rus.exe 
 :: "Game Stops Responding (Hangs) or Quits Unexpectedly ..."
 :: <http://support.microsoft.com/?kbid=327979>
 :: (download only available from Windows Catalog)
@@ -256,12 +258,14 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 :: (Worst Windows security hole, ever.  Again.  And again.)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-012.mspx>
 :: URL|ENU|http://download.microsoft.com/download/8/c/9/8c9f999d-c55b-4e09-8cc0-b75bcf7368cc/WindowsXP-KB828741-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb828741-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/9/6/5/965969b8-b010-439f-923c-6cee6ef7a8e3/WindowsXP-KB828741-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb828741-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-011 (835732)
 :: "Security Update for Microsoft Windows"  (no, really?)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-011.mspx>
 :: URL|ENU|http://download.microsoft.com/download/6/1/5/615a50e9-a508-4d67-b53c-3a43455761bf/WindowsXP-KB835732-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb835732-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/2/f/8/2f8b11f2-244f-41b6-b038-b15a1dd13457/WindowsXP-KB835732-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb835732-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
