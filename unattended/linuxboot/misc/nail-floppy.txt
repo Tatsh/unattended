@@ -8,6 +8,8 @@ bin/ash
 bin/bash
 bin/busybox
 bin/find-modules-pci
+bin/gzip
+bin/loadkeys
 bin/mkdir
 bin/sh
 
@@ -53,10 +55,13 @@ sbin/lspci
 # Samba junk
 usr/bin/smbmnt
 usr/bin/smbmount
-usr/lib/smb.conf
 usr/lib/charset
-usr/var/locks
+usr/lib/smb.conf
+
+usr/share/kbd/keymaps/i386
 
 usr/share/pci.ids
+
+usr/var/locks
 
 var/run
