@@ -49,6 +49,16 @@ sub stop () {
     }
 }
 
+# Since this is the top-level "driver" script, stop if we encounter
+# any problems.
+END {
+    $? == 0
+        and return;
+
+    print "$0 exiting with status $? ; halting...\n";
+    stop ();
+}
+
 sub reboot ($) {
     my ($timeout) = @_;
     AllowPriv (SE_SHUTDOWN_NAME, 1)
@@ -132,8 +142,8 @@ sub peek_todo () {
     return pop_todo (1);
 }
 
-# Add registry entry to make a command to run at boot.  If arg is
-# undef, remove the registry entry.
+# Add registry entry to make a command run at next logon of current
+# user.  If arg is undef, remove the registry entry.
 sub run_at_logon (;$) {
     my ($cmd) = @_;
     my $run_key = 'CUser/Software/Microsoft/Windows/CurrentVersion/Run/';
@@ -152,7 +162,7 @@ sub run_at_logon (;$) {
     }
 }
 
-# Get Windows version as a canonical string, like "win2ksp3".
+# Get Windows version as a canonical string, like "win2ksp4".
 sub get_windows_version () {
     my $ver_key = "LMachine/SOFTWARE/Microsoft/Windows NT/CurrentVersion";
 
@@ -193,7 +203,7 @@ sub get_windows_version () {
     return "$os$sp";
 }
 
-# Get the three-letter acronym for the OS language.
+# Get the three-letter acronym for the language of the running OS.
 sub get_windows_language () {
     use Win32::OLE;
     # Bomb out completely if COM engine encounters any trouble.
@@ -211,8 +221,11 @@ sub get_windows_language () {
     scalar @oses == 1
         or die "Internal error (too many OS objects in get_windows_language)";
 
-    # See
-    # <http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_operatingsystem.asp>
+    # See OSLanguage property in
+    # <http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_operatingsystem.asp>.
+    # See also
+    # <http://www.microsoft.com/globaldev/reference/winxp/langtla.mspx>.
+
     my %lang_table = (
                       0x0401 => 'ara',
                       0x0405 => 'csy',
@@ -220,7 +233,7 @@ sub get_windows_language () {
                       0x0407 => 'deu',
                       0x0408 => 'ell',
                       0x0409 => 'enu',
-                      0x040a => 'esn',
+                      0x040a => 'esp',
                       0x040b => 'fin',
                       0x040c => 'fra',
                       0x040d => 'heb',
@@ -232,10 +245,12 @@ sub get_windows_language () {
                       0x0414 => 'nor',
                       0x0415 => 'plk',
                       0x0416 => 'ptb',
+                      0x0418 => 'rom',
                       0x0419 => 'rus',
-                      0x041f => 'trk',
                       0x041d => 'sve',
+                      0x041f => 'trk',
                       0x0816 => 'ptg',
+                      0x0c0a => 'esn',
                       );
 
     my $langid = $oses[0]->OSLanguage;
@@ -262,83 +277,91 @@ sub get_drive_path ($) {
     return $unc_name;
 }
 
-# Since this is the top-level "driver" script, stop if we encounter
-# any problems.
-END {
-    $? == 0
-        and return;
-
-    print "$0 exiting with status $? ; halting...\n";
-    stop ();
-}
-
-# Always ignore successful status
-my %ignore_err = (0 => 1);
-
-sub do_cmd ($);
-sub do_cmd ($) {
-    my ($cmd) = @_;
+# Run a command, including handling of pseudo-commands (like .reboot).
+# If second arg is true, return exit status ($?) instead of bombing if
+# non-zero.
+sub do_cmd ($;$);
+sub do_cmd ($;$) {
+    my ($cmd, $no_bomb) = @_;
+    my $ret;
 
     if ($cmd =~ /^\./) {
         if ($cmd eq '.reboot') {
+            # If the to-do list is not empty, arrange to run ourselves
+            # after reboot.
             my $next_cmd = peek_todo ();
-            # Coalesce multiple reboots into single reboot
-            if (!defined $next_cmd) {
-                reboot (5);
-                die "Internal error";
-            }
-            elsif ($next_cmd ne '.reboot') {
-                # Arrange to run
-                # ourselves after reboot.
-                run_at_logon ("$mapznrun $0 --go");
-                reboot (5);
-                die "Internal error";
-            }
+            defined $next_cmd
+                and run_at_logon ("$mapznrun $0 --go");
+            reboot (5);
+            die 'Internal error';
         }
         elsif ($cmd =~ /^\.expect-reboot\s+(.*)$/) {
             my $new_cmd = $1;
-            # Arrange to run ourselves after reboot.
-            run_at_logon ("$mapznrun $0 --go");
+            # If the to-do list is not empty, arrange to run ourselves
+            # after reboot.
+            my $next_cmd = peek_todo ();
+            defined $next_cmd
+                and run_at_logon ("$mapznrun $0 --go");
             do_cmd ($new_cmd);
             print "Expecting previous command to reboot; exiting.\n";
             exit 0;
         }
         elsif ($cmd =~ /^\.reboot-on\s+(\d+)\s+(.*)$/) {
-            local $ignore_err{$1} = 2;
-            do_cmd ($2);
+            my ($err_to_reboot, $new_cmd) = ($1, $2);
+            my $status = do_cmd ($new_cmd, 1);
+
+            if ($status == $err_to_reboot << 8) {
+                print "$new_cmd exited status $err_to_reboot; rebooting.\n";
+                do_cmd ('.reboot');
+                die 'Internal error';
+            }
+
+            $ret = $status;
         }
         elsif ($cmd =~ /^\.ignore-err\s+(\d+)\s+(.*)$/) {
-            local $ignore_err{$1} = 1;
-            do_cmd ($2);
+            my ($err_to_ignore, $new_cmd) = ($1, $2);
+            my $status = do_cmd ($new_cmd, 1);
+
+            $status == $err_to_ignore << 8
+                and $status = 0;
+
+            $ret = $status;
         }
         elsif ($cmd =~ /^\.sleep\s+(\d+)$/) {
             my ($secs) = $1;
             print "Sleeping $secs seconds...";
             sleep $secs;
             print "done.\n";
+            $ret = 0;
         }
         else {
-            die "Unrecognized dot-command $cmd";
+            die "Unrecognized pseudo-command $cmd";
         }
     }
     else {
-        while (1) {
-            print "Running: $cmd\n";
-            my $ret = system $cmd;
-            if ($ignore_err{$ret >> 8}) {
-                ($ignore_err{$ret >> 8} == 2)
-                    and do_cmd ('.reboot');
-                last;
-            }
+        print "Running: $cmd\n";
+        my $status = system $cmd;
+        $ret = $status;
+    }
+
+    defined $ret
+        or die 'Internal error';
+
+    unless ($no_bomb) {
+        while ($ret != 0) {
             print "$cmd failed, status ", $ret >> 8, ' (', $ret % 256, ')', "\n";
             print "R)etry A)bort I)gnore ?\n";
             my $key = uc(getc(STDIN));
             $key eq 'A'
-                and die;
+                and die "Aborting.\n";
+            $key eq 'R'
+                and return do_cmd ($cmd);
             $key eq 'I'
-                and last;
+                and $ret = 0;
         }
     }
+
+    return $ret;
 }
 
 if (exists $opts{'go'}) {
