@@ -18,7 +18,7 @@
 :: URL|JPN|ftp://ftp.opera.com/pub/opera/win/lng/723/ja/ow723_3227ja.lng|packages/opera/languages/opera-jpn.lng
 :: URL|KOR|ftp://ftp.opera.com/pub/opera/win/lng/754/ko/ow754_3865ko.lng|packages/opera/languages/opera-kor.lng
 :: URL|NLD|ftp://ftp.opera.com/pub/opera/win/lng/754/nl/ow754_3865nl.lng|packages/opera/languages/opera-nld.lng
-:: URL|NON|ftp://ftp.opera.com/pub/opera/win/lng/723/nn/ow723_3227nn.lng|packages/opera/languages/opera-non.lng
+:: URL|NON|ftp://ftp.opera.com/pub/opera/win/lng/754/nn/ow754_3865nn.lng|packages/opera/languages/opera-non.lng
 :: URL|NOR|ftp://ftp.opera.com/pub/opera/win/lng/754/nb/ow754_3865nb.lng|packages/opera/languages/opera-nor.lng
 :: URL|PLK|ftp://ftp.opera.com/pub/opera/win/lng/754/pl/ow754_3865pl.lng|packages/opera/languages/opera-plk.lng
 :: URL|PTB|ftp://ftp.opera.com/pub/opera/win/lng/722/pt-BR/ow722_3221pt-BR.lng|packages/opera/languages/opera-ptb.lng
