@@ -26,14 +26,17 @@ todo.pl "%Z%\updates\officexp\officexp-kb812708-client-%WINLANG%.exe /q /c:\"msi
 
 :: "Access 2002 Snapshot Viewer Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=826293>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-038.asp>
 todo.pl "%Z%\updates\officexp\officexp-kb826293-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\snapviewop.txt /p SNAPVIEWop.msp REBOOT=ReallySuppress\""
 
 :: "WordPerfect 5.x Converter Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=824938>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-036.asp>
 todo.pl "%Z%\updates\officexp\officexp-kb824938-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\msconvop.txt /p MSCONVop.msp REBOOT=ReallySuppress\""
 
 :: "Office XP Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=822036>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-037.asp>
 todo.pl "%Z%\updates\officexp\OfficeXP-KB822036-Client-%WINLANG%.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\vbe6op.txt /p VBE6op.msp REBOOT=ReallySuppress\""
 
 :: Outlook 2002 Update: January 22, 2003
