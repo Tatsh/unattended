@@ -2,11 +2,14 @@
 
 use warnings;
 use strict;
+use bytes;
 
 my %regexp_map =
-    ('enu' => qr{Previous Operating System on}
-     'fra' => qr{Systme d\'exploitation prcdent sur}
+    ('enu' => qr{Previous Operating System on},
+     'fra' => qr{Syst\x8Ame d\'exploitation pr\x82c\x82dent sur}
      );
+    # you can find the ASCII numbers in the windows character map (in the start folder > accessories > system tools)
+    # browse the "terminal" font and you will find the ASCII numbers you need
 
 my $bootini = 'C:\\boot.ini';
 
