@@ -270,11 +270,18 @@ sub read ($$;$) {
         or die "Unable to open $file: $^E";
 
     while (my $line = <FILE>) {
+        chomp $line;
         # Clobber CR (for testing on Unix).
         $line =~ s/\r//;
-        chomp $line;
-        
-        if ($line =~ /^\s*\[\s*(.+?)\s*\]\s*\z/) {
+        # Remove leading and trailing whitespace.
+        $line =~ s/^\s+//;
+        $line =~ s/\s+\z//;
+
+        # Skip blank lines
+        $line =~ /^\z/
+            and next;
+
+        if ($line =~ /^\[\s*(.+?)\s*\]\z/) {
             # New section header
             $section = $1;
             $section =~ $sect_re
@@ -292,7 +299,7 @@ sub read ($$;$) {
                 or $acc->{$section} = undef;
             next;
         }
-        elsif ($line =~ /^\s*([;\#].*|\s*)$/) {
+        elsif ($line =~ /^([;\#])/) {
             # Comment
             my $comment = $1;
             chomp $comment;
@@ -306,7 +313,7 @@ sub read ($$;$) {
             next;
         }
         elsif ($line =~
-               /^\s*($token)\s*(?:=\s*($token\s*(?:,\s*$token\s*)*))?\z/) {
+               /^($token)\s*(?:=\s*($token\s*(?:,\s*$token\s*)*))?\z/) {
             # key=value setting
             my ($key, $rest) = ($1, $2);
             defined $section
@@ -322,7 +329,9 @@ sub read ($$;$) {
                 my @elts;
                 while ($rest =~ /\S/) {
                     my $elt;
-                    ($elt, $rest) = $rest =~ /\s*($token)\s*(?:,|\z)(.*)/;
+                    ($elt, $rest) = $rest =~ /^($token)\s*(?:,|\z)\s*(.*)/;
+                    defined $elt
+                        or die 'Internal error';
                     # Strip quotation marks around element.
                     $elt =~ /^\"(.*)\"\z/
                         and $elt = $1;
