@@ -9,6 +9,12 @@
 :: Always reboot after installing hotfixes
 todo.pl .reboot
 
+:: Critical Update 810649 (funny)
+:: "Hyperlinks Open in Internet Explorer Instead of in Default Browser"
+:: (only available from <http://windowsupdate.microsoft.com/catalog/>)
+:: <http://support.microsoft.com/?kbid=810649>
+todo.pl "z:\packages\win2ksp3\Q810649_W2K_SP4.exe /u /o /z"
+
 :: Critical Update 329170/309376
 :: "Flaw in SMB Signing Could Enable Group Policy to be Modified"
 :: <http://support.microsoft.com/?kbid=329170>
