@@ -10,7 +10,7 @@ LH TINYRFC.EXE
 NET START BASIC
 NET USE Z: \\ntinstall\install
 
-set PATH=Z:\bin;%PATH%
+set PATH=Z:\dosbin;%PATH%
 
 set DJGPP=Z:\djgpp\djgpp.env
 set PATH=Z:\djgpp\bin;%PATH%
