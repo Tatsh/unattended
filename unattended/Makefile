@@ -25,7 +25,7 @@ release:
 	tar --exclude CVS -cvzf ${dir}.tar.gz ${dir} &&			\
 	sleep 2 &&							\
 	cd ${dir}/bootdisk &&						\
-	make &&								\
+	make && make tidy						\
 	cd ../.. &&							\
 	tar --exclude CVS --newer ./${dir}.tar.gz -cvzf			\
 		${dir}-images.tar.gz ${dir} &&				\
