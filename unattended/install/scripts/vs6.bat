@@ -4,8 +4,8 @@
 start /wait regedit /s %Z%\scripts\vs6.reg
 if errorlevel 1 exit 1
 
-:: After VS6 is done, install MDAC, then SP5, then reboot
-todo.pl mdac.bat "%Z%\updates\VS6\setupsp5.exe /qn1 /g c:\netinst\logs\vs6sp5.txt" .reboot
+:: Install latest service pack
+todo.pl "%Z%\updates\VS6\setupsp5.exe /qn1 /g c:\netinst\logs\vs6sp5.txt" .reboot
 
 :: NOTE: You must create %Z%\site\vs6_key.bat to set the vs6_key
 :: variable to your license key
