@@ -18,7 +18,13 @@
 
 [Components]
     ; Install IIS by default
+    iis_common=On
+    iis_inetmgr=On
+    iis_www=On
+    ; Docs suggest iis_pwmgr only works on Win2k, but include it
+    ; anyway
     iis_pwmgr=On
+    ; Include docs
     iis_doc=On
 
 [Data]
