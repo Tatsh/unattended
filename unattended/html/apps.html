@@ -58,7 +58,7 @@ below</a> for my answer.
 
 <p>However this system works, it must be as simple to understand as
 possible.  Sysadmins are busy people.  In fact, I am amazed you have
-read this far :-).  Anyway, if you can think of a simpler approach for
+read this far&nbsp;:-).  Anyway, if you can think of a simpler approach for
 anything here, please let me know.
 
 </ul>
@@ -92,7 +92,7 @@ logon.
 up the <a href="os.html">automated OS installation</a>, by simply
 copying the <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/"
-><code>install</code></a> directory from this project's distribution.
+><code>install</code></a> directory from the Unattended distribution.
 
 <p>Application installation relies on these subdirectories of the
 <code>install</code> share:
@@ -139,9 +139,9 @@ before some of the sample scripts will work.
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/todo.pl?view=auto">todo.pl</a>
 driver script</h1>
 
-<h2>One script to rule them all</h2>
+<h1>One script to rule them all</h1>
 <p>One master Perl script, <code>todo.pl</code>, oversees the entire
-installation process.  All of the other scripts are meant to be
+installation process.  All of the other scripts are designed to be
 invoked by <code>todo.pl</code>.
 
 <p><code>todo.pl</code> maintains a "to-do list" on disk in the
@@ -175,7 +175,7 @@ reboots.
 
 <p>In addition to simple commands, the to-do list may contain
 <em>directives</em> for <code>todo.pl</code>.  Directives always start
-with a dot.
+with a dot and include:
 
 <h2>The <code>.ignore-err</code> directive</h2>
 
@@ -485,6 +485,20 @@ displaying a boot menu with an unbootable "Previous Operating System
 on C:\" option.  This even happens if I wipe the disk with zeroes
 first.  This script edits the hidden system file <code>boot.ini</code>
 to get rid of the useless menu option.
+
+<p>
+<dt><a
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/cert.pl?view=auto"
+name="cert">cert.pl</a>
+
+<dd>This script adds a certificate to the <code>ROOT</code>
+certificate store.  It depends on the <a
+href="http://msdn.microsoft.com/library/en-us/security/Security/getting_ready_to_use_capicom.asp"
+>CryptoAPI COM interface (CAPICOM)</a>, which you must install first.
+This means just copying the DLL to the right place and registering it;
+see <a
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/capicom.bat?view=auto"
+>capicom.bat</a> for a sample installation script.
 
 <p>
 <dt><a
