@@ -2,6 +2,7 @@ bash=bash-2.05b
 busybox=busybox-1.00-pre10
 dbd-mysql=DBD-mysql-2.9003
 dbi=DBI-1.42
+dmidecode=dmidecode-2.4
 #dosemu=dosemu-1.2.1
 dosemu=dosemu-20040606
 # libuuid.so (from e2fsprogs) is required by parted
@@ -26,10 +27,11 @@ wireless_tools=wireless_tools.26
 
 cwd:=$(shell pwd)
 
-packages=$(bash) $(busybox) $(dbd-mysql) $(dbi) $(dosemu) $(e2fsprogs)	\
-	$(glibc) $(kbd) $(klibc) $(linux) $(module-init-tools) $(mysql)	\
-	$(nano) $(ncurses) $(parted) $(perl) $(pciutils) $(pcmcia-cs)	\
-	$(pmtools) $(samba) $(wireless_tools)
+packages=$(bash) $(busybox) $(dbd-mysql) $(dbi) $(dmidecode) $(dosemu)	\
+	$(e2fsprogs) $(glibc) $(kbd) $(klibc) $(linux)			\
+	$(module-init-tools) $(mysql) $(nano) $(ncurses) $(parted)	\
+	$(perl) $(pciutils) $(pcmcia-cs) $(pmtools) $(samba)		\
+	$(wireless_tools)
 
 CC=gcc
 
@@ -172,6 +174,14 @@ stage1/bin/busybox: $(busybox)/busybox
 	cmp $< $@
 
 stage1 += stage1/bin/busybox
+
+## dmidecode
+$(dmidecode)/dmidecode:
+	cd $(dir $@) && make
+	[ -e $@ ]
+
+$(call copy_exe,$(dmidecode)/dmidecode,stage1/usr/sbin/dmidecode)
+stage1 += stage1/usr/sbin/dmidecode
 
 ## dosemu
 
@@ -744,6 +754,8 @@ $(call download_rule, $(dbd-mysql), tar.gz, \
 	http://www.cpan.org/authors/id/R/RU/RUDY/)
 $(call download_rule, $(dbi), tar.gz, \
 	http://www.cpan.org/authors/id/T/TI/TIMB/)
+$(call download_rule, $(dmidecode), tar.bz2,	\
+	http://nongnu.org/download/dmidecode/)
 #$(call download_rule, $(dosemu), tgz,					\
 #	http://dl.sourceforge.net/sourceforge/dosemu/)
 $(call cvs_rule, $(dosemu), dosemu,				\
