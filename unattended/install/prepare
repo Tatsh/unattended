@@ -123,6 +123,7 @@ if [ ! -f updates/officexp/olk1006.exe ]; then wget http://download.microsoft.co
 if [ ! -f updates/officexp/officexp-kb822036-client-enu.exe ]; then wget http://download.microsoft.com/download/6/7/5/67570E80-E423-4F17-B57E-8CBFB517B832/OfficeXP-KB822036-Client-ENU.exe -O updates/officexp/officexp-kb822036-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb824938-client-enu.exe ]; then wget http://download.microsoft.com/download/7/9/3/7938238c-f0f5-44b5-986d-0252650c537c/officexp-kb824938-client-enu.exe -O updates/officexp/officexp-kb824938-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb826293-client-enu.exe ]; then wget http://download.microsoft.com/download/2/2/3/223b52aa-0143-4a71-aaf2-ca097a1d2431/officexp-kb826293-client-enu.exe -O updates/officexp/officexp-kb826293-client-enu.exe; fi
+if [ ! -f updates/officexp/officexp-kb813380-client-enu.exe ]; then wget http://download.microsoft.com/download/a/4/e/a4e8bf96-9daa-41a6-a4d7-e64050eeb9e6/officexp-KB813380-client-ENG.exe -O updates/officexp/officexp-kb813380-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb812708-client-enu.exe ]; then wget http://download.microsoft.com/download/d/1/3/d1335281-d1d8-4f58-afc2-c6871e6d694f/officexp-KB812708-client-ENG.exe -O updates/officexp/officexp-kb812708-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb830346-client-enu.exe ]; then wget http://download.microsoft.com/download/B/0/E/B0E276B5-1859-4121-9740-E7FF6E64747C/officexp-kb830346-client-enu.exe -O updates/officexp/officexp-kb830346-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb830350-client-enu.exe ]; then wget http://download.microsoft.com/download/3/5/A/35AC6464-B956-4E98-B0CE-CFE367A27519/Officexp-kb830350-client-enu.exe -O updates/officexp/officexp-kb830350-client-enu.exe; fi
@@ -131,6 +132,11 @@ if [ ! -f updates/officexp/officexp-kb830350-client-enu.exe ]; then wget http://
 if [ ! -f updates/office2k/o2ksr1adl.exe ]; then wget http://download.microsoft.com/download/office2000prem/adminup2/SR-1a/WIN98/EN-US/O2KSR1aDL.EXE -O updates/office2k/o2ksr1adl.exe; fi
 if [ ! -f updates/office2k/o2ksp3.exe ]; then wget http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe -O updates/office2k/o2ksp3.exe; fi
 if [ ! -f updates/office2k/olk0901.exe ]; then wget http://download.microsoft.com/download/f/1/d/f1d8421a-2b76-4603-808b-39d8dcc74038/Olk0901.exe -O updates/office2k/olk0901.exe; fi
+if [ ! -f updates/office2k/office2000-kb822035-client-enu.exe ]; then wget http://download.microsoft.com/download/5/E/D/5ED56804-6577-46E4-88EE-9EB47AC6AA0E/Office2000-KB822035-Client-ENU.exe -O updates/office2k/office2000-kb822035-client-enu.exe; fi
+if [ ! -f updates/office2k/office2000-kb824993-client-enu.exe ]; then wget http://download.microsoft.com/download/8/7/8/8785bb28-b4e3-401d-9aef-c23e7af0e347/office2000-kb824993-client-enu.exe -O updates/office2k/office2000-kb824993-client-enu.exe; fi
+if [ ! -f updates/office2k/office2000-kb826292-client-enu.exe ]; then wget http://download.microsoft.com/download/2/d/5/2d5a89c9-972f-4135-a8d9-3747188552b2/office2000-kb826292-client-enu.exe -O updates/office2k/office2000-kb826292-client-enu.exe; fi
+if [ ! -f updates/office2k/office2000-kb830347-client-enu.exe ]; then wget http://download.microsoft.com/download/f/2/2/f225f9c6-87ef-45bd-a4f7-cc08bb14f4da/Office2000-kb830347-client-enu.exe -O updates/office2k/office2000-kb830347-client-enu.exe; fi
+if [ ! -f updates/office2k/office2000-kb830349-client-enu.exe ]; then wget http://download.microsoft.com/download/3/4/e/34e4d08b-f015-4bc8-84e6-f827ecbc4107/office2000-kb830349-client-enu.exe -O updates/office2k/office2000-kb830349-client-enu.exe; fi
 
 # Open Office (openoffice.org)
 if [ ! -f packages/openoffice/ooo_1.1.0_win32intel_install.zip ]; then wget http://www.ibiblio.org/pub/mirrors/openoffice/stable/1.1.0/OOo_1.1.0_Win32Intel_install.zip -O packages/openoffice/ooo_1.1.0_win32intel_install.zip; fi
