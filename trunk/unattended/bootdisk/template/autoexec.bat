@@ -21,7 +21,13 @@ PROMPT $P$G
 :: delete the old system.ini if it exists and replace it with a clean copy
 type \net\system.in_ > \net\system.ini
 RANDOM 65535 >> \net\system.ini
+
 echo Initializing Network Card....
+
+:: Delete stale DHCP state file, if present.
+attrib -h -r -s \net\dhcp.prm > nul
+del \net\dhcp.prm > nul
+
 NET INITIALIZE /DYNAMIC
 NETBIND.COM
 UMB.COM
