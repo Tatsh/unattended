@@ -1,5 +1,8 @@
 # Makefile to create bootable DOS images for various network cards.
 
+# We use bash-isms
+SHELL = /bin/bash
+
 # Timeout value
 timeout := 10
 
@@ -38,7 +41,7 @@ images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos
 	echo 'drive x:' > $$tmpfile &&					\
 	echo file=\"`pwd`/"$@.tmp"\" >> $$tmpfile &&			\
 	export MTOOLSRC=$$tmpfile &&					\
-	gunzip -c empty-boot.img.gz >| $@.tmp &&			\
+	gzip -d -c empty-boot.img.gz >| $@.tmp &&			\
 	(cd template &&							\
 	 find . -name CVS -prune -o -mindepth 1 -print |		\
 		while read filename ; do				\
@@ -96,7 +99,7 @@ iso/isolinux/isoboot.msg: isoboot.msg DRIVERS.txt
 	@echo -n "Making $@..."
 	@cat isoboot.msg >| $@.tmp
 	@echo >> $@.tmp
-	@grep '^\($(subst $(space),\|,$(drivers))\)' DRIVERS.txt >> $@.tmp
+	@grep ^[[:alnum:]] DRIVERS.txt >> $@.tmp
 	@mv $@.tmp $@
 	@echo "done"
 
