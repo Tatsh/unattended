@@ -5,7 +5,7 @@ busybox=busybox-1.00
 convert-asn1=Convert-ASN1-0.18
 dbd-mysql=DBD-mysql-2.9004
 dbi=DBI-1.45
-dmidecode=dmidecode-2.4
+dmidecode=dmidecode-2.5
 #dosemu=dosemu-1.2.1
 dosemu=dosemu-20040723
 # libuuid.so (from e2fsprogs) is required by parted
@@ -15,18 +15,18 @@ glibc=glibc-20040723
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 linux=linux-2.6.9
-module-init-tools=module-init-tools-3.0
-mysql=mysql-4.0.21
+module-init-tools=module-init-tools-3.1
+mysql=mysql-4.0.22
 nano=nano-1.2.4
 ncurses=ncurses-5.4
-parted=parted-1.6.15
+parted=parted-1.6.18
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.8.5
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.3202
 pmtools=pmtools-20031210
-samba=samba-3.0.7
+samba=samba-3.0.9
 wireless_tools=wireless_tools.26
 zlib=zlib-1.2.2
 
