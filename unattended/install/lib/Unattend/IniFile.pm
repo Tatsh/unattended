@@ -68,7 +68,7 @@ sub push_value ($$$$) {
 
     # Convert value into a Promise
     $self->{$section}->{$key} = $value;
-    $value = $self->{$section}->{$key};
+    $value = $self->noforce ($section, $key);
 
     # Install a new Promise which does the "right thing".
     $self->{$section}->{$key} =
