@@ -77,20 +77,19 @@ href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01312
 <h1>Is the Linux boot disk actually supposed to work?</h1>
 
 <p>Yes, and if it does not work for you, we are very interested in
-fixing it.  The boot disk uses Linux kernel 2.6.5, which is still
+fixing it.  The boot disk uses Linux kernel 2.6, which is still
 maturing.</p>
 
 <p>One common problem is with ACPI support, which is under very active
-development.  So, try booting with ACPI support disabled.  To do this,
-hold down the <kbd>Shift</kbd> key while booting, which will present a
-<code>boot:</code> prompt.  Then type
+development.  So if you have problems, try booting with ACPI support
+disabled.  To do this, hold down the <kbd>Shift</kbd> key while
+booting, which will present a <code>boot:</code> prompt.  Then type
 <kbd>unattended&nbsp;acpi=off</kbd> and press <kbd>Enter</kbd>.  If
 this helps, the bug is in the Linux ACPI support and we would like to
-report it to them.  (We would disable ACPI by default, but then some
-hardware <a
+report it to the Linux developers.  (We would disable ACPI by default,
+but then some hardware <a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01557.html"
->does not work at all</a>.  We may yet disable it anyway if we receive
-enough failure reports.)</p>
+>does not work at all</a>.)</p>
 
 <p>If disabling ACPI does not help, most likely your network or mass
 storage hardware is not yet supported by our boot disk.  This is
@@ -330,8 +329,10 @@ href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01130
 
 <p>The instructions for this are somewhat confusing, and I have not
 yet had time to try them myself.  The question <a
-href="https://sourceforge.net/mailarchive/message.php?msg_id=7556124">comes
-up</a> on the mailing list from time to time.</p>
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01292.html"
+>comes up</a> on the mailing list <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00552.html"
+>from time to time</a>.</p>
 
 <p>Searching for <code>[Homenet]</code> and
 <code>InternetConnectionFirewall</code> on Google <a
