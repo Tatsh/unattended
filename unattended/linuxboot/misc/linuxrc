@@ -11,11 +11,20 @@ echo WELCOME!!!
 /bin/mkdir /dev/pts
 /bin/mount -t devpts devpts /dev/pts
 
+/bin/mkdir /z
+
 # For playing random games
 /bin/mkdir /mnt
-/bin/mkdir /z
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 export PATH
 
-exec /etc/master
+# Fire up shells on virtual consoles 2 and 3
+openvt -c 2 bash
+openvt -c 3 bash
+
+# Should never return
+openvt -f -c 1 -w /etc/master
+
+echo "**** Master script exited!"
+exec bash
