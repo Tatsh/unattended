@@ -182,7 +182,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb837001-x86-%WINLANG%.
 :: Root Certificates Update
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/4702.htm>
 :: (download only available from Windows Catalog)
-:: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_afc57447f7caadd3253333e35777fcd.exe|updates/win2ksp4/rootsupd.exe
+:: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_a55a7188cf9a44a33cf16bf7b224ce5.exe|updates/win2ksp4/rootsupd.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\rootsupd.exe /q /r:n"
 
 :: Recommended update 822831
