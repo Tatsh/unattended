@@ -1,3 +1,45 @@
+** Changes in version 4.6-pre1 (2004-Dec-??)
+
+(Linux) Add g(un)zip to boot disk since it is needed for non-English
+keyboard support.
+
+(DOS) Fix warnings about deleting non-existent DHCP cached state file
+(dhcp.prm).
+
+Set [Unattended]/DriverSigningPolicy to "Ignore" in
+Z:\lib\unattend.txt (slords).
+
+Add Norweigan support to bootini.pl; thanks to Tor Haakon Gjerde.
+
+Add Norweigan download URLs everywhere; thanks to Espen Stefansen.
+
+(DOS) Fix warnings when building under recent Cygwin (ekot).
+
+(DOS) Upgrade to FreeDOS Beta 9 Service Release #1.  Do not load any
+UMB provider by default because usually it hurts more than it helps.
+
+(DOS) Upgrade b44.dos and e1000.dos to latest versions.
+
+Add Internet shortcut (URL) support to shortcut.pl.
+
+Always clean up our installation mess, whether or not any post-install
+scripts are selected (slords).
+
+Fix CSV file parser to permit blank lines (slords).
+
+Update to Opera 7.54u1, Windows Installer 3.0, PHP 4.3.9, Shockwave
+10.1.0.011, WinAmp 5.07 (nrichthof).  Upgrade to PuTTY 0.56
+(dolphinbofh).
+
+Fix numerous download locations and installation scripts all over the
+place (slords).
+
+Upgrade to SYSLINUX 2.13.
+
+Add current collection of MS hotfixes.  (Mostly.  We still have some
+work to do...)
+
+
 ** Changes in version 4.5 (2004-Oct-23)
 
 Completely overhaul sample-config.pl to allow automatic machine
