@@ -78,12 +78,11 @@ todo.pl ".reboot-on 194 %Z%\updates\common\windows-kb870669-x86.exe /q /r:n"
 :: URL|RUS|http://download.microsoft.com/download/c/9/d/c9d92c5a-34dd-4ebc-a40e-1e13d9169567/WindowsServer2003-KB840374-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb840374-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb840374-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Critical update MS04-013 (837009)
+:: Critical update MS04-018 (823353)
 :: "Cumulative Security Update for Outlook Express"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-013.mspx>
-:: URL|ENU|http://download.microsoft.com/download/2/f/e/2fe46d88-aca5-4f1d-ac42-4febc172d5bc/WindowsServer2003-KB837009-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb837009-x86-enu.exe
-:: URL|RUS|http://download.microsoft.com/download/b/1/2/b120a57c-2d85-40e3-ad45-d13c16d7ecc3/WindowsServer2003-KB837009-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb837009-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837009-x86-%WINLANG%.exe /passive /n /norestart"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-018.mspx>
+:: URL|ENU|http://download.microsoft.com/download/7/7/3/773c1014-30ed-4a37-ae5a-09be1918e1a3/WindowsServer2003-KB823353-x86-enu.exe|updates/ws2k3/windowsserver2003-kb823353-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb823353-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-012 (828741)
 :: "Cumulative Update for Microsoft RPC/DCOM"
