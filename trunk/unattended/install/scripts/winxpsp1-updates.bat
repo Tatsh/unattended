@@ -6,6 +6,16 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 814078
+:: "Flaw in Windows Script Engine May Allow Code to Run"
+:: <http://support.microsoft.com/?kbid=814078>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\js56nen.exe /u /o /z"
+
+:: Critical update 814033
+:: "Cannot Install Driver Updates from the Windows Update Web Site"
+:: <http://support.microsoft.com/?kbid=814033>
+todo.pl "z:\packages\winxpsp1\Q814033_WXP_SP2_x86_ENU.exe /u /o /z"
+
 :: Recommended update 814995
 :: "Some ... Fixes Stop Working After You Install the 328310 Update"
 :: <http://support.microsoft.com/?kbid=814995>
