@@ -1,4 +1,4 @@
-# Routines for parsing and generate unattend.txt files.
+# Routines for parsing and generating unattend.txt files.
 
 use warnings;
 use strict;
