@@ -7,18 +7,18 @@
 Run, %Z%\\packages\\cygwin\\setup.exe
 
 WinWait, Cygwin Setup, This wizard will guide you
-Send, !n
+Send, {ENTER}
 
 WinWait, Cygwin Setup - Choose Installation Type
 ; Choose "Install from Local Directory"
-Send, !l!n
+Send, !l{ENTER}
 
 WinWait, Cygwin Setup - Choose Installation Directory
-Send, !n
+Send, {ENTER}
 
 WinWait, Cygwin Setup - Select Local Package Directory, Select Local Package Directory
 ; Use proper package directory
-Send, %Z%\\packages\\cygwin!n
+Send, %Z%\\packages\\cygwin{ENTER}
 
 WinWait, Cygwin Setup - Select Packages
 ; Make sure the Window is active, then click in the right place to
@@ -28,7 +28,7 @@ LeftClick, 60, 135
 
 ; Wait ten seconds to ensure selection is noticed (yuck)
 Sleep, 10000
-Send, !n
+Send, {ENTER}
 
 WinWait, Cygwin Setup - Create Icons
 Send, {ENTER}
