@@ -1103,7 +1103,7 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
             print "Creating $tempcred...";
             write_file ($tempcred,
-                        "\@SET Z_USER=$z_user",
+                        "\@SET Z_USER=\"$z_user\"",
                         "\@SET Z_PASS=\"$z_pass\"");
             print "done.\n";
 
