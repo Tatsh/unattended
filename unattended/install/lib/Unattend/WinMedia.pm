@@ -18,7 +18,7 @@ my %cache;
 
 # Function which translates DOS path names to host form.  Defaults to
 # identity.
-my $dos_to_host = sub ($) { return $_[0]; };
+my $dos_to_host = sub ($) { return @_; };
 
 sub new ($$) {
     my ($proto, $path) = @_;
