@@ -1,5 +1,7 @@
 bash=bash-2.05b
 busybox=busybox-1.00-rc2
+# Convert::ASN1 is required by perl-ldap
+convert-asn1=Convert-ASN1-0.18
 dbd-mysql=DBD-mysql-2.9004
 dbi=DBI-1.43
 dmidecode=dmidecode-2.4
@@ -18,7 +20,9 @@ mysql=mysql-4.0.20
 nano=nano-1.2.4
 ncurses=ncurses-5.4
 parted=parted-1.6.11
-perl=perl-5.8.4
+perl=perl-5.8.5
+# perl-ldap aka. Net::LDAP
+perl-ldap=perl-ldap-0.3202
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.8
 pmtools=pmtools-20031210
@@ -27,10 +31,10 @@ wireless_tools=wireless_tools.26
 
 cwd:=$(shell pwd)
 
-packages=$(bash) $(busybox) $(dbd-mysql) $(dbi) $(dmidecode) $(dosemu)	\
-	$(e2fsprogs) $(glibc) $(kbd) $(klibc) $(linux)			\
-	$(module-init-tools) $(mysql) $(nano) $(ncurses) $(parted)	\
-	$(perl) $(pciutils) $(pcmcia-cs) $(pmtools) $(samba)		\
+packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		    \
+	$(dmidecode) $(dosemu) $(e2fsprogs) $(glibc) $(kbd) $(klibc)	    \
+	$(linux) $(module-init-tools) $(mysql) $(nano) $(ncurses) $(parted) \
+	$(perl) $(perl-ldap) $(pciutils) $(pcmcia-cs) $(pmtools) $(samba)   \
 	$(wireless_tools)
 
 CC=gcc
@@ -518,6 +522,25 @@ $(call copy_lib,$(mysql)/libmysql/.libs/libmysqlclient.so,stage1/lib/libmysqlcli
 
 stage1 += stage1/lib/libmysqlclient.so
 
+## Convert-ASN1 Perl module
+$(convert-asn1)/Makefile: stage1/opt/perl/bin/perl
+	cd $(dir $@)							\
+	&& eval `$(perlrun) -V:archlib`					\
+	&& { [ -n "$$archlib" ] || exit 37 ; }				\
+	&& $(perlrun) Makefile.PL PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
+		DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)
+	[ -e $@ ]
+
+# Path to modules is too painful to compute, so use a stamp file.
+stage1/.stamp-convert-asn1: $(convert-asn1)/Makefile
+	rm -f $@
+	cd $(convert-asn1)					\
+	&& make PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags)"	\
+	&& make PERL="$(perlrun)" install
+	touch $@
+
+stage1 += stage1/.stamp-convert-asn1
+
 ## DBI Perl module
 $(dbi)/Makefile: stage1/opt/perl/bin/perl
 	cd $(dir $@)							\
@@ -527,8 +550,8 @@ $(dbi)/Makefile: stage1/opt/perl/bin/perl
 		DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)
 	[ -e $@ ]
 
-# Path to modules is too painful to compute, so use a stamp file.
 stage1/.stamp-dbi: $(dbi)/Makefile
+	rm -f $@
 	cd $(dbi)						\
 	&& make PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags)"	\
 	&& make PERL="$(perlrun)" install
@@ -547,12 +570,31 @@ $(dbd-mysql)/Makefile: stage1/opt/perl/bin/perl
 	[ -e $@ ]
 
 stage1/.stamp-dbd-mysql: $(dbd-mysql)/Makefile stage1/lib/libmysqlclient.so
+	rm -f $@
 	cd $(dbd-mysql)						\
 	&& make PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags) -I$(cwd)/fakeinclude/mysql"	\
 	&& make PERL="$(perlrun)" install
 	touch $@
 
 stage1 += stage1/.stamp-dbd-mysql
+
+## perl-ldap Perl module
+$(perl-ldap)/Makefile: stage1/opt/perl/bin/perl
+	cd $(dir $@)							\
+	&& eval `$(perlrun) -V:archlib`					\
+	&& { [ -n "$$archlib" ] || exit 37 ; }				\
+	&& $(perlrun) Makefile.PL PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
+		DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)
+	[ -e $@ ]
+
+stage1/.stamp-perl-ldap: $(perl-ldap)/Makefile
+	rm -f $@
+	cd $(perl-ldap)						\
+	&& make PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags)"	\
+	&& make PERL="$(perlrun)" install
+	touch $@
+
+stage1 += stage1/.stamp-perl-ldap
 
 
 ## Samba
@@ -758,6 +800,8 @@ download: $(download_targets)
 
 $(call download_rule, $(bash), tar.gz, http://ftp.gnu.org/gnu/bash/)
 $(call download_rule, $(busybox), tar.bz2, http://busybox.net/downloads/)
+$(call download_rule, $(convert-asn1), tar.gz, \
+	http://www.cpan.org/authors/id/G/GB/GBARR/)
 $(call download_rule, $(dbd-mysql), tar.gz, \
 	http://www.cpan.org/authors/id/R/RU/RUDY/)
 $(call download_rule, $(dbi), tar.gz, \
@@ -785,14 +829,13 @@ $(call download_rule, $(linux), tar.bz2,		\
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
-	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-4.0/)
+	http://www.signal42.com/mirrors/mysql/Downloads/MySQL-4.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v1.2/)
-# Sometimes main Nano site is down.  ewtoo.org is a mirror site.
-#$(call download_rule, $(nano), tar.gz,
-#	http://www.ewtoo.org/~astyanax/nano/dist/v1.2/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
+$(call download_rule, $(perl-ldap), tar.gz, \
+	http://www.cpan.org/authors/id/G/GB/GBARR/)
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
