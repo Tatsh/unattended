@@ -91,6 +91,12 @@ todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /
 :: <http://support.microsoft.com/?kbid=823718>
 :: todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q823718_MDAC_SecurityPatch.exe /q /c:\"dahotfix.exe /q /n\""
 
+:: Critical update 828749 (MS03-049)
+:: "Buffer Overrun in the Workstation Service Could Allow Code Execution"
+:: <http://support.microsoft.com/?kbid=828749>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-042.asp>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828749-x86-%WINLANG%.exe /u /n /z"
+
 :: Critical update 824105
 :: "Flaw in NetBIOS Could Lead to Information Disclosure"
 :: <http://support.microsoft.com/?kbid=824105>
@@ -125,7 +131,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB825119-x86-%WINLANG%.
 :: Critical update 828035 (MS03-043)
 :: "Buffer Overrun in Messenger Service Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /u /n /z"
+::todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 823182 (MS03-041)
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
