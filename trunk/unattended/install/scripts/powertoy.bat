@@ -5,7 +5,7 @@
 :: URL|ALL|http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/SlideshowPowertoySetup.exe|packages/powertoys/slideshowpowertoysetup.exe
 :: URL|ALL|http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/TimershotPowertoySetup.exe|packages/powertoys/timershotpowertoysetup.exe
 :: URL|ALL|http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/TweakUiPowertoySetup.exe|packages/powertoys/tweakuipowertoysetup.exe
-:: URL|ALL|http://isorecorder.alexfeinman.com/bin/ISORecorderSetup.msi|packages/powertoys/isorecordersetup.msi
+:: URL|ALL|http://isorecorder.alexfeinman.com/IsoRecorder/download.asp|packages/powertoys/isorecordersetup.msi
 @Echo off
 :: Windows Power Toys for XP
 :: <http://www.microsoft.com/windowsxp/pro/downloads/powertoys.asp>
