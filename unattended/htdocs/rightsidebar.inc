@@ -2,18 +2,15 @@
 
 
       <div class="rightSideBar doNotPrint">
-<!-- news temporarily disabled //
+
         <p class="sideBarTitle">News</p>
 
-        <div class="sideBarText"><strong>2004-08-06</strong><br />
-          Unattended 4.4 released</div>
-
-        <div class="sideBarText"><strong>2004-06-16</strong><br />
-          Unattended 4.3 released</div>
+        <div class="sideBarText"><strong>Changelog</strong><br />
+          <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/NEWS.txt?rev=HEAD&view=auto">version 4.4</a></div>
 
         <a href="http://sourceforge.net/news/?group_id=62053"
           class="more">more news &raquo;</a>
-// -->
+
         <p class="sideBarTitle">Downloads</p>
 
         <div class="sideBarText"><strong>Unattended</strong><br />
