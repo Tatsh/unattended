@@ -9,11 +9,14 @@ glibc=glibc-2.3.2
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 klibc=klibc-0.115
+# HACK FIXME: New ltmain.sh from libtool 1.5.2 is required for Parted
+# 1.6.8, but hopefully not for any later versions...
+libtool=libtool-1.5.2
 linux=linux-2.6.4
 module-init-tools=module-init-tools-3.0
 nano=nano-1.2.3
 ncurses=ncurses-5.4
-parted=parted-1.6.6
+parted=parted-1.6.8
 perl=perl-5.8.3
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.7
@@ -22,8 +25,8 @@ samba=samba-3.0.2a
 cwd:=$(shell pwd)
 
 packages=$(bash) $(busybox) $(dosemu) $(e2fsprogs) $(glibc) $(kbd)	\
-	$(klibc) $(linux) $(module-init-tools) $(nano) $(ncurses)	\
-	$(parted) $(perl) $(pciutils) $(pcmcia-cs) $(samba)
+	$(klibc) $(libtool) $(linux) $(module-init-tools) $(nano)	\
+	$(ncurses) $(parted) $(perl) $(pciutils) $(pcmcia-cs) $(samba)
 
 .PHONY: stage1 all download $(download_targets)	$(symlink_targets) \
 	iso tftpboot tidy
@@ -321,12 +324,15 @@ stage1 +=							\
 
 ## kbd
 $(kbd)/src/loadkeys: fakeinclude/stdio.h
+	rm -f $@
 	cd $(kbd)					\
 	&& export CFLAGS="$(fakelib_cflags) -O2"	\
 	&& ./configure					\
 	&& make CFLAGS="$$CFLAGS"
+	[ -e $@ ]
 
 stage1/bin/loadkeys: $(kbd)/src/loadkeys
+	rm -f $@
 	cd $(kbd)				\
 	&& make DESTDIR=$(cwd)/stage1 install
 	rm -r stage1/usr/share/locale
@@ -335,7 +341,7 @@ stage1/bin/loadkeys: $(kbd)/src/loadkeys
 		stage1/usr/bin/psf*table				\
 		stage1/usr/bin/{resizecons,setkeycodes,setleds}		\
 		stage1/usr/bin/{setmetamode,showconsolefont,showkey}
-	[ -e $@ ] && touch $@
+	[ -e $@ ]
 
 stage1 += stage1/bin/loadkeys
 
@@ -372,21 +378,23 @@ $(call copy_lib, $(ncurses)/lib/libncurses.so, stage1/usr/lib/libncurses.so)
 stage1 += stage1/usr/lib/libncurses.so
 
 ## parted
-$(parted)/.stamp-bgs64-patch: misc/parted-bgs64-patch
-	cd $(parted) && patch -p1 < $(cwd)/$<
-	touch $@
+
+# The ltmain.sh file shipped with Parted 1.6.8 is too old.  As a
+# result, the shared libraries have no .so extension.  Replacing
+# ltmain.sh with a copy from libtool 1.5.2 fixes this problem.
+$(call copy_file,$(libtool)/ltmain.sh,$(parted)/ltmain.sh)
 
 $(parted)/parted/.libs/parted: fakelib/libc.so stage1/lib/libuuid.so	\
-				stage1/lib/libdl.so			\
-				$(parted)/.stamp-bgs64-patch
+				stage1/lib/libdl.so $(parted)/ltmain.sh
+	rm -f $@
 	cd $(parted)						\
 	&& CFLAGS="$(fakelib_cflags)"				\
 		./configure --disable-nls --without-readline	\
 	&& make
-	[ -e $@ ] && touch $@
+	[ -e $@ ]
 
 $(parted)/libparted/.libs/libparted.so: $(parted)/parted/.libs/parted
-	[ -e $@ ] && touch $@
+	[ -e $@ ]
 
 $(call copy_exe, $(parted)/parted/.libs/parted, stage1/usr/sbin/parted)
 $(call copy_lib, $(parted)/libparted/.libs/libparted.so, \
@@ -613,6 +621,8 @@ $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(klibc), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/libs/klibc/)
+# FIXME:  Remove this if/when the Parted folks fix their bug.
+$(call download_rule, $(libtool), tar.gz, http://ftp.gnu.org/gnu/libtool/)
 $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
