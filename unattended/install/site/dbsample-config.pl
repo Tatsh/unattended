@@ -143,10 +143,12 @@ $u->push_value ('_meta', 'OS_media',
         my $os_media = lookup_property('OS_media');
         defined $os_media
             or return undef;
-        opendir OSMEDIA, dos_to_host ($os_dir . '\\' . $os_media)
+        $os_media =~ /^[a-z]:/i
+            or $os_media = $os_dir . '\\' . $os_media;
+        opendir OSMEDIA, dos_to_host ($os_media)
             or return undef;
         closedir OSMEDIA;
-        return $os_dir . '\\' . $os_media;
+        return $os_media;
     });
 
 # Lookup product Key from database, if possible.
