@@ -218,14 +218,14 @@ sub get_windows_version () {
     return "$os$sp";
 }
 
+# Get a handle to the SWbemServices object for this machine.
+my $wmi = Win32::OLE->GetObject ('WinMgmts:');
+
 # Get the three-letter acronym for the language of the running OS.
 sub get_windows_language () {
     use Win32::OLE;
     # Bomb out completely if COM engine encounters any trouble.
     Win32::OLE->Option ('Warn' => 3);
-
-    # Get a handle to the SWbemServices object of the machine.
-    my $wmi = Win32::OLE->GetObject ('WinMgmts:');
 
     # Get the SWbemObjectSet of Win32_OperatingSystem instances.
     my $os_instances = $wmi->InstancesOf ('Win32_OperatingSystem');
@@ -273,6 +273,17 @@ sub get_windows_language () {
         or die sprintf "Unknown language ID 0x%04X", $langid;
 
     return $lang_table{$langid};
+}
+
+# Get the name of the local Administrators group, which varies by
+# language.
+sub get_administrators_group () {
+    # Lookup by well-known SID.  See
+    # <http://support.microsoft.com/?id=243330> and
+    # <http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_sid.asp>.
+
+    my $admin_sid = $wmi->Get ('Win32_SID.SID="S-1-5-32-544"');
+    return $admin_sid->{'AccountName'};
 }
 
 # For input letter X, return the UNC path to which X: is connected.
@@ -441,6 +452,10 @@ if (exists $opts{'go'}) {
 
     # Set handy "Z_PATH" environment variable.
     $ENV{'Z_PATH'} = get_drive_path ($z);
+
+    # Set "Administrators" environment variable to local
+    # Administrators group.
+    $ENV{'Administrators'} = get_administrators_group ();
 
     # Disable running ourselves after reboot.
     run_at_logon ();
