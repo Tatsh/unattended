@@ -1,5 +1,5 @@
-@if exist c:\netinst\permcreds.bat call c:\netinst\permcreds.bat
-@if exist c:\netinst\tempcreds.bat call c:\netinst\tempcreds.bat
+@if exist c:\netinst\permcred.bat call c:\netinst\permcred.bat
+@if exist c:\netinst\tempcred.bat call c:\netinst\tempcred.bat
 
 @if not %Z%. == . goto got_drive
 @set Z=Z:
@@ -20,7 +20,7 @@ net use %Z% /delete
 
 :try_again
 @set COUNT=x%COUNT%
-@if not %COUNT% == xxxxx goto mapit
+@if not %COUNT% == xxxxxxxxxxxxxxxxxxxx goto mapit
 @echo Too many retries; giving up
 @goto hang
 
