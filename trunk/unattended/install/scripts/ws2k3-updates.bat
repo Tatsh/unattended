@@ -55,6 +55,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLAN
 
 :: Critical Updates
 
+:: MS04-015
+:: "Vulnerability in Help and Support Center Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-015.mspx>
+:: URL|ENU|http://download.microsoft.com/download/a/8/c/a8c904e2-7955-47e2-a2ae-e7f6490eee95/WindowsServer2003-KB840374-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb840374-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb840374-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-013 (837009)
 :: "Cumulative Security Update for Outlook Express"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-013.mspx>
