@@ -8,6 +8,7 @@ use Win32API::Registry qw(:Func :SE_);
 my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg);
 use Win32::NetResource; # for get_drive_path
+use Win32::Console;
 
 # Location of the "to do" list.
 my $todo = 'c:\\netinst\\todo.txt';
@@ -277,6 +278,15 @@ sub get_drive_path ($) {
     return $unc_name;
 }
 
+# Set up console for single-character input and autoflush output.
+my $console = new Win32::Console (STD_INPUT_HANDLE)
+    or die "Unable to create STDIN console: $^E";
+
+$console->Mode (ENABLE_PROCESSED_INPUT)
+    or die "Unable to set mode on console: %^E";
+
+$| = 1;
+
 # Run a command, including handling of pseudo-commands (like .reboot).
 # If second arg is true, return exit status ($?) instead of bombing if
 # non-zero.
@@ -350,14 +360,22 @@ sub do_cmd ($;$) {
     unless ($no_bomb) {
         while ($ret != 0) {
             print "$cmd failed, status ", $ret >> 8, ' (', $ret % 256, ')', "\n";
-            print "R)etry A)bort I)gnore ?\n";
-            my $key = uc(getc(STDIN));
-            $key eq 'A'
-                and die "Aborting.\n";
-            $key eq 'R'
-                and return do_cmd ($cmd);
-            $key eq 'I'
-                and $ret = 0;
+            print "A)bort R)etry I)gnore ? ";
+            my $key = $console->InputChar (1);
+            defined $key
+                or die "InputChar failed: $^E";
+            $key = uc $key;
+            if ($key eq 'A') {
+                die "Aborting.\n";
+            }
+            elsif ($key eq 'R') {
+                print "\nRetrying...\n";
+                return do_cmd ($cmd);
+            }
+            elsif ($key eq 'I') {
+                print "\nIgnoring.\n";
+                $ret = 0;
+            }
         }
     }
 
