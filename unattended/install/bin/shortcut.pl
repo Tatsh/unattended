@@ -108,6 +108,9 @@ string "special:<xxx>" appears in either argument, it will be replaced
 by the full path to the special folder <xxx>.  (Follow the link under
 SEE ALSO for a complete list of special folders.)
 
+If the <shortcut> argument is a directory, the shortcut will be
+created within.
+
 =head1 EXAMPLES
 
  shortcut.pl "C:\Program Files\Foo\foo.exe" special:AllUsersDesktop
