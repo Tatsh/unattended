@@ -164,16 +164,16 @@ sub type ($) {
 
     if ( defined $pid ) {
         if ( exists $pid_table{$pid} ) {
-            $ret = pid_table{$pid};
+            $ret = $pid_table{$pid};
         } 
         elsif ( $pid =~ /^.....270$/ ) {
-            $ret = 'Volume?';
+            $ret = 'Volume??';
         } 
         elsif ( $pid =~ /^.....000$/ ) {
-            $ret = 'Retail?';
+            $ret = 'Retail??';
         } 
         elsif ( $pid =~ /^.....OEM$/ ) {
-            $ret = 'OEM?';
+            $ret = 'OEM??';
         }
         else {
             $ret = "UNKNOWN PID $pid";
