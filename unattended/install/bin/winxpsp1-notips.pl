@@ -5,7 +5,7 @@ use strict;
 
 # FIXME: Decide which things we actually want to do by default.  For
 # now, skip entire script!
-exit 0;
+#exit 0;
 
 @ARGV == 0
     or die "Usage: $0";
@@ -34,7 +34,6 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
         '/ScreenBufferSize' => [ pack('L', 131072080), REG_DWORD ],
         # Allow users to use mouse to edit in console
         '/QuickEdit' => [ pack('L', 1), REG_DWORD ],
-        
     } or die "Unable to set User/Console/ registry settings: $^E";
 
     $reg_key->{'Control Panel/'} = {
@@ -143,9 +142,9 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
                             # Disable Thumbnail caching
                             '/DisableThumbnailCache' => [ pack('L', 1), REG_DWORD ],
                             # Display path names correctly
-                            '/DontPrettyPath' =>  [ pack('L', 1), REG_DWORD ],
-                            # Remove popup balloons from tray applications (disabled)
-                            #'/EnableBalloonTips' =>  [ pack('L', 0), REG_DWORD ],
+                            '/DontPrettyPath' => [ pack('L', 1), REG_DWORD ],
+                            # Remove popup balloons from tray applications
+                            #'/EnableBalloonTips' => [ pack('L', 0), REG_DWORD ],
                             # Show Hidden and System Files
                             '/Hidden' => [ pack('L', 1), REG_DWORD ],
                             # Prevent windows from crawling network looking for shares
@@ -231,6 +230,8 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
                         },
                         # Don't cache Encrypted pages
                         '/DisableCachingOfSSLPages' => [ pack('L', 1), REG_DWORD ],
+                        # Don't show privacy reminder
+                        '/PrivDiscUiShown' => [ pack('L', 1), REG_DWORD ],
                         # Check for newer of page on every visit
                         '/SyncMode5' => [ pack('L', 3), REG_DWORD ],
                         # Don't warn when crossing from http to https
@@ -252,7 +253,7 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
                     },
                     'UnreadMail/' => {
                         # Don't display count of unread mail
-                        '/MessageExpiryDays' =>  [ pack('L', 0), REG_DWORD ],
+                        '/MessageExpiryDays' => [ pack('L', 0), REG_DWORD ],
                     },
                 },
                 'ShellNoRoam/' => {
@@ -296,9 +297,6 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
             },
         },
     } or die "Unable to set User/Software/Microsoft/ registry settings: $^E";
-
-    # Don't run Microsoft Messenger
-    delete $reg_key->{'Software/Microsoft/Windows/CurrentVersion/Run//MSMSGS'};
 
     # Remove all Post Boot Reminders
     foreach my $reminder ( keys( %{$reg_key->{'Software/Microsoft/Windows/CurrentVersion/Explorer/PostBootReminders/'}} ) ) {
@@ -366,7 +364,7 @@ $reg{'LMachine'}->{'Software/'} = {
                 },
                 'UnreadMail/' => {
                     # Don't display count of unread mail
-                    '/MessageExpiryDays' =>  [ pack('L', 0), REG_DWORD ],
+                    '/MessageExpiryDays' => [ pack('L', 0), REG_DWORD ],
                 },
             },
         },
@@ -384,7 +382,7 @@ $reg{'LMachine'}->{'Software/'} = {
             'Windows/' => {
                 'Installer/' => {
                     # Enable administrators to install appliations over Terminal Services
-                    '/EnableAdminTSRemote' =>  [ pack('L', 1), REG_DWORD ],
+                    '/EnableAdminTSRemote' => [ pack('L', 1), REG_DWORD ],
                 },
             },
         },
@@ -396,7 +394,7 @@ $reg{'LMachine'}->{'System/'} = {
         'Control/' => {
             'ContentIndex/' => {
                 # Find text in all files, not just known ones
-                '/FilterFilesWithUnknownExtensions' =>  [ pack('L', 1), REG_DWORD ],
+                '/FilterFilesWithUnknownExtensions' => [ pack('L', 1), REG_DWORD ],
             },
             'FileSystem/' => {
                 # Disable NTFS Last Access updates
@@ -412,9 +410,9 @@ $reg{'LMachine'}->{'System/'} = {
             },
             'Tcpip/' => {
                 # Disable dynamic DNS updates
-                '/DisableDynamicUpdate' =>  [ pack('L', 1), REG_DWORD ],
+                '/DisableDynamicUpdate' => [ pack('L', 1), REG_DWORD ],
                 # Don't autoconfigure IP if DHCP not found
-                '/IPAutoconfigurationEnabled' =>  [ pack('L', 0), REG_DWORD ],
+                '/IPAutoconfigurationEnabled' => [ pack('L', 0), REG_DWORD ],
             },
         },
     },
