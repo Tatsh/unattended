@@ -433,7 +433,7 @@ sub create_postinst_bat () {
     if (defined $top) {
         my $tempcreds = $file_spec->catfile ($netinst, 'tempcreds.bat');
         push @postinst_lines,
-        ('call z:\\bin\\perl.bat',
+        ('call z:\\scripts\\perl.bat',
          'PATH=z:\\bin;%PATH%',
          # Last step is always a reboot
          'todo.pl .reboot',
