@@ -1,6 +1,9 @@
 set PATH=A:\;A:\NET
 PROMPT $P$G
 :: Randomize hostname
+:: delete the old system.ini and replace it with a clean copy
+del \net\system.ini
+copy \net\system.in_ \net\system.ini
 RANDOM 65535 >> \net\system.ini
 :: UMB.COM
 NET INITIALIZE /DYNAMIC
