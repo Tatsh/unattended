@@ -202,10 +202,10 @@ set_value ('_meta', 'OS_dir', 'z:\\');
 
 set_value ('_meta', 'OS', \&ask_os);
 
-set_comments ('_meta', 'post_install_script',
+set_comments ('_meta', 'top',
               "    ; Script run by postinst.bat\n");
 
-set_value ('_meta', 'post_install_script',
+set_value ('_meta', 'top',
            sub {
                print "Choose post-installation script to run:\n";
                my @scripts = ('base.bat', 'sales.bat', 'developer.bat',
@@ -214,6 +214,15 @@ set_value ('_meta', 'post_install_script',
                                    ($full => $full);
                                } @scripts;
                return menu_choice (@choices, 'none' => undef);
+           });
+
+set_comments ('_meta', 'ntp_servers',
+              "    ; NTP servers, separated by commas or spaces");
+
+set_value ('_meta', 'ntp_servers',
+           sub {
+               return simple_q
+                   ("Enter NTP servers, separated by commas or spaces (default=none):");
            });
 
 set_comments ('_meta', 'local_admins',
@@ -420,7 +429,10 @@ print "done.\n";
 my $postinst = "$netinst\\postinst.bat";
 print "Creating $postinst...";
 
-my $top = get_value ('_meta', 'post_install_script');
+# Compute contents of postinst.bat script.
+my @postinst_lines;
+
+# Local admins
 my $admins = get_value ('_meta', 'local_admins');
 my @admins = (defined $admins ? split / /, $admins : undef);
 # Hack around Perl bug
@@ -429,25 +441,33 @@ defined $admins[0]
 @admins = map { canonicalize_user
                     (get_value ('Identification', 'JoinDomain'),
                      $_) } @admins;
+foreach my $admin (@admins) {
+    push @postinst_lines, "net localgroup Administrators $_ /add";
+}
+
+# NTP servers
+my $ntp_servers = get_value ('_meta', 'ntp_servers');
+defined $ntp_servers && $ntp_servers ne ''
+    and push @postinst_lines, "net time /setsntp:\"$ntp_servers\"";
+
+# Top-level installation script
+my $top = get_value ('_meta', 'top');
+if (defined $top) {
+    push @postinst_lines, ("net use z: $ENV{'INSTALL'} /persistent:yes",
+                           'call z:\\scripts\\perl.bat',
+                           'PATH=z:\\bin;%PATH%',
+                           # Last step is always a reboot
+                           'todo.pl .reboot',
+                           # Next-to-last step is to disable automatic logon
+                           'todo.pl "' . get_value ('_meta', 'autolog') . '"',
+                           # First step is to perform top-level install
+                           "todo.pl $top",
+                           "\ntodo.pl --go");
+}
+
 
 open POSTINST, ">$postinst"
     or die "Unable to open $postinst for writing: $^E";
-
-my @cmd_lines =
-    ((map { "net localgroup Administrators $_ /add" } @admins),
-     (defined $top
-      ? ("net use z: $ENV{'INSTALL'} /persistent:yes",
-         'call z:\\scripts\\perl.bat',
-         'PATH=z:\\bin;%PATH%',
-         # Last step is always a reboot
-         'todo.pl .reboot',
-         # Next-to-last step is to disable automatic logon
-         'todo.pl "' . get_value ('_meta', 'autolog') . '"',
-         # First step is to perform top-level install
-         "todo.pl $top",
-         "\ntodo.pl --go")
-      : ())
-     );
 
 foreach my $line (@cmd_lines) {
     print POSTINST $line, "\n"
