@@ -1,3 +1,63 @@
+** Changes in version 4.2 (2004-May-16)
+
+(Linux) Build and enable ACPI support in kernel.  Required for some
+hardware (e.g., SiS 5513 IDE controller), but breaks other hardware
+(e.g., IBM Thinkpad T22 3c59x).  Hoping the Linux folks eventually fix
+things...  Meanwhile, if you have problems, try passing "acpi=off" on
+the kernel command line.
+
+(DOS) Change from emm386.exe back to umbpci.sys for UMB provider.  (We
+changed this in 4.1, but it was premature and caused crashes on many
+systems.)  Upgrade umbpci.sys to latest version (3.56).
+
+(Linux) Build and enable USB keyboard support.
+
+(Linux) Change default mount options for install share back to
+read-only.  Add support for "z_opts" kernel parameter to override
+default mount options (e.g., "z_opts=rw").
+
+(Linux) Add support for various RAID and S-ATA cards (untested).
+
+(Linux) Upgrade to Linux 2.6.6, Perl 5.8.4, Parted 1.6.11, Samba
+3.0.4, and klibc 0.116.
+
+(Linux) Include floppy disk driver (floppy.ko) and FAT support on boot
+disk.  Useful for capturing diagnostic output when things go awry
+before network starts.
+
+(Linux) Make /etc/master script idempotent.
+
+(Linux) Build CIFS client and include mount.cifs on boot disk, but do
+not use it yet since it does awful things to dosemu's performance
+(must investigate).
+
+(DOS) Upgrade to latest version of umbpci.sys.
+
+(DOS) Upgrade to SYSLINUX 2.10-pre1.
+
+(DOS) Upgrade dp83815, e1000, e100b, and fetnd drivers to latest
+versions from manufacturers' sites.
+
+Add and document new "--hotkey", "--workingdirectory", "--arguments",
+and "--description" options to shortcut.pl.  Fix bug in setting
+default WorkingDirectory of shortcut (thanks to Scott Gilroy).
+
+Fix bug in processing "auconfig.pl --wait".  Thanks to Paul Griffith.
+
+Add and document new "--query" option to instances.pl.
+
+Add hotfixes 833407, 835235, and 834691 to ofc2003.bat.  Thanks to
+Joshua P. Hartley.
+
+Add Russian, German, Dutch, and Italian download URLs for latest round
+of MS hotfixes.  Thanks to the usual suspects (imdos, Eugene, Jan
+Brauer, Rosario Esposito).
+
+Add hotfixes MS04-015 (840374) and 837272.
+
+Convert (most) web pages to XHTML 1.0 Strict.
+
+
 ** Changes in version 4.1a (2004-Apr-19)
 
 This is a bug fix release, mostly.
