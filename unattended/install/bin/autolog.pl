@@ -26,15 +26,18 @@ else {
 }
 
 my %reg;
-use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg);
+use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg,
+                        qw (REG_SZ));
 
 my $winlogon_key =
-    'HKEY_LOCAL_MACHINE/Software/Microsoft/Windows NT/CurrentVersion/Winlogon/';
+    'HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows NT/CurrentVersion/Winlogon/';
 
-my %new_values = ('DefaultUserName' => $user,
-                  'DefaultPassword' => $pass,
-                  'AutoAdminLogon' => 1,
-                  'DefaultDomain' => $opts{'domain'}
+my %new_values = ('/DefaultUserName' => $user,
+                  '/DefaultPassword' => (defined $pass && $pass ne ''
+                                         ? $pass
+                                         : undef),
+                  '/AutoAdminLogon' => 1,
+                  '/DefaultDomain' => $opts{'domain'}
                   );
 
 foreach my $key (sort keys %new_values) {
@@ -43,7 +46,7 @@ foreach my $key (sort keys %new_values) {
         defined $val
             or next;
         $reg{$winlogon_key}->{$key} = $val
-            or die "Unable to set $winlogon_key/$key to $val: $^E";
+            or die "Unable to set $winlogon_key$key to $val: $^E";
     }
     else {
         (delete $reg{$winlogon_key}->{$key})
