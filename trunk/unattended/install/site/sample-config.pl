@@ -173,11 +173,11 @@ $u->push_value ('Unattended', 'OemPnPDriversPath',
                 and last;
         }
         defined $os_drivers 
-            or $os_drivers = $os_media . '\\$i386\\$oem$\\$1\\';
-        $os_drivers =~ /^All$/i;
-            and $os_drivers = $os_media . '\\$i386\\$oem$\\$1\\';
+            or return undef;
+        $os_drivers =~ /^All$/i
+            and $os_drivers = $os_media . '\\i386\\$oem$\\$1\\';
         $os_drivers =~ /^[a-z]:/i
-            or $os_drivers = $os_media . '\\$i386\\$oem$\\$1\\' . $os_drivers;
+            or $os_drivers = $os_media . '\\i386\\$oem$\\$1\\' . $os_drivers;
         opendir OSDRIVERS, dos_to_host ($os_drivers)
             or return undef;
         closedir OSDRIVERS;
@@ -185,7 +185,7 @@ $u->push_value ('Unattended', 'OemPnPDriversPath',
         scalar @pnp_driver_dirs > 0
             or return undef;
         print "...found some driver directories.\n";
-        if ($os_drivers ne $os_media . '\\$i386\\$oem$\\$1\\' . $os_drivers) {
+        if (! $os_drivers =~ /\\i386\\\$oem\$\\\$1\\/) {
             print 'Copying $os_drivers to C:\\ (Still Broken)'; # FIXME
         }
         my $drivers = join ';', @pnp_driver_dirs;
