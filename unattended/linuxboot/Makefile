@@ -17,7 +17,7 @@ parted=parted-1.6.11
 perl=perl-5.8.4
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.7
-samba=samba-3.0.2a
+samba=samba-3.0.3
 
 cwd:=$(shell pwd)
 
