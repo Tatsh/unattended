@@ -7,23 +7,19 @@ images := $(patsubst %,images/%.img,$(drivers))
 
 all: images iso tftpboot
 
-images: .stamp-images
+images: $(images)
 
 # Detect updates to template files.
 .stamp-template: FORCE
 	@[ -e $@ ] || touch $@
 	@find template -newer $@ -print | sed s/.\*/$@/ | xargs -r touch
 
-# Detect updates to images.
-.stamp-images: ${images}
-	@touch $@
-
 # Images targets
 images/%.img: .stamp-template drivers/%.dos
 	@echo -n "Making $@..."
 	@driver=`basename "$@" .img` &&					\
-	driver_uc=`echo $$driver | tr '[[:lower:]]' '[[:upper:]]'`	\
-	tmpfile=`mktemp /var/tmp/bootdisk.XXXXXX` &&			\
+	driver_uc=`echo $$driver | tr [[:lower:]] [[:upper:]]`		\
+	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&			\
 	echo 'drive x:' > $$tmpfile &&					\
 	echo file=\"`pwd`/"$@"\" >> $$tmpfile &&			\
 	export MTOOLSRC=$$tmpfile &&					\
@@ -45,10 +41,15 @@ images/%.img: .stamp-template drivers/%.dos
 # ISO CD-ROM targets
 iso: bootdisk.iso
 
-bootdisk.iso: .stamp-images memdisk iso/isolinux/isolinux.cfg \
+iso/isolinux/%.imz: images/%.img
+	gzip --best -c $< >| $@.tmp
+	mv $@.tmp $@
+
+bootdisk.iso: $(patsubst images/%.img,iso/isolinux/%.imz,$(images)) \
+			memdisk iso/isolinux/isolinux.cfg \
 			iso/isolinux/isoboot.msg iso/isolinux/isolinux.bin
-	rm -f iso/isolinux/*.img
-	ln -f ${images} memdisk iso/isolinux
+#	rm -f iso/isolinux/*.img
+#	ln -f $(images) memdisk iso/isolinux
 	@echo -n "Making $@..."
 	@mkisofs -quiet -o $@.tmp \
                 -b isolinux/isolinux.bin -c isolinux/boot.cat \
@@ -60,11 +61,11 @@ bootdisk.iso: .stamp-images memdisk iso/isolinux/isolinux.cfg \
 iso/isolinux/isolinux.cfg: isolinux.cfg DRIVERS.txt
 	@echo -n "Making $@..."
 	@cat $< >| $@.tmp
-	@for driver in ${drivers} ; do					\
+	@for driver in $(drivers) ; do					\
 		echo >> $@.tmp ;					\
 		echo "label $$driver" >> $@.tmp ;			\
 		echo "        kernel memdisk" >> $@.tmp ;		\
-		echo "        append initrd=$$driver.img" >> $@.tmp ;	\
+		echo "        append initrd=$$driver.imz" >> $@.tmp ;	\
 	done
 	@mv $@.tmp $@
 	@echo "done"
@@ -86,9 +87,9 @@ iso/isolinux/isolinux.bin: isolinux.bin
 # TFTP boot (PXE) targets
 tftpboot: .stamp-tftpboot
 
-.stamp-tftpboot: images/${univ_driver}.img memdisk \
+.stamp-tftpboot: images/$(univ_driver).img memdisk \
 			tftpboot/pxelinux.cfg/default
-	ln -f images/${univ_driver}.img memdisk tftpboot
+	ln -f images/$(univ_driver).img memdisk tftpboot
 	@touch $@
 
 tftpboot/pxelinux.cfg/default: pxelinux.cfg
@@ -97,16 +98,16 @@ tftpboot/pxelinux.cfg/default: pxelinux.cfg
 	@echo >> $@.tmp
 	@echo "label inst" >> $@.tmp
 	@echo "        kernel memdisk" >> $@.tmp
-	@echo "        append initrd=${univ_driver}.img keeppxe" >> $@.tmp
+	@echo "        append initrd=$(univ_driver).img keeppxe" >> $@.tmp
 	@mv $@.tmp $@
 	@echo "done"
 
 clean:
-	@-rm -f .stamp-images .stamp-template .stamp-tftpboot
+	@-rm -f .stamp-template .stamp-tftpboot
 	-rm -f images/*.img
 	-rm -f bootdisk.iso
-	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.img,memdisk,isolinux.bin}
-	-rm -f tftpboot/${univ_driver}.img tftpboot/memdisk
+	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.imz,memdisk,isolinux.bin}
+	-rm -f tftpboot/$(univ_driver).img tftpboot/memdisk
 	-rm -f tftpboot/pxelinux.cfg/default
 
 FORCE:
