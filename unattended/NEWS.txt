@@ -1,3 +1,30 @@
+*** Changes in version 2.2 (2002-Dec-15)
+
+Alter Makefile to always write .tmp files and rename them into place
+when generating images.  This may help some people who have had
+trouble regenerating the images, and it is good technique anyway.
+
+Create and document new auconfig.pl script, which provides a
+command-line interface to configure Automatic Updates.  Use it in
+base.bat.
+
+Add documentation for LeechFTP, NAI Virus Scan, SecureCRT, and
+Timbuktu Pro installers (thanks to Trask Rogers).
+
+Add first pass at documentation for OpenOffice.org.  Too bad it
+doesn't work, because the installer modifies the current user's
+profile instead of the one in "All Users".
+
+Rewrite autolog.pl script.  Now you can use it to set the default
+logon name and domain even if you are not configuring automatic logon
+itself.
+
+Fix some bugs in install.pl.  Add new [_meta]/autolog parameter to
+control invocation of autolog.pl after installation finishes.
+
+Update IE6SP1 and Win2kSP3 hotfixes.
+
+
 *** Changes in version 2.1 (2002-Nov-10)
 
 Create and document setenv.pl script.  Use it in Cygwin/SSH scripts.
