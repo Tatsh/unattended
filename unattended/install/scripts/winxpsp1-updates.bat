@@ -42,6 +42,13 @@ todo.pl "%Z%\updates\winxpsp1\dotnetfx.exe /q /c:\"install /q\""
 
 :: Recommended Updates
 
+:: Recommended update 814995
+:: "Some ... Fixes Stop Working After You Install the 328310 Update"
+:: (required even though 328310 got subsumed by 826939)
+:: <http://support.microsoft.com/?kbid=814995>
+:: (download only available from Windows Update Catalog)
+todo.pl ".ignore-err 194 %Z%\updates\winxpsp1\Q814995_WXP_SP2_x86_%WINLANG%.exe /u /n /z" .reboot
+
 :: Recommended update 810243
 :: "DirectShow Playback Support for Files Recorded with Windows XP Media Center Edition"
 :: <http://support.microsoft.com/?kbid=810243>
