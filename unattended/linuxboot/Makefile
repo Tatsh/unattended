@@ -406,7 +406,6 @@ stage1 += stage1/usr/lib/libncurses.so
 
 $(parted)/parted/.libs/parted: fakeinclude/stdio.h stage1/lib/libuuid.so \
 				stage1/lib/libdl.so
-	rm -f $@
 	cd $(parted)						\
 	&& CFLAGS="$(fakelib_cflags)"				\
 		./configure --disable-nls --without-readline	\
