@@ -1479,10 +1479,11 @@ while ($u->{'_meta'}->{'edit_files'}) {
     defined $file
         or last;
     if ($is_linux) {
-        print "*** NOT SUPPORTED ON LINUX YET (FIXME) ***";
-        next;
+        system 'nano', '--dos', '--nowrap', dos_to_host ($file);
     }
-    system 'pico', '-w', $file;
+    else {
+        system 'pico', '-w', $file;
+    }
 }
 
 # Return control to master script, which will run doit.bat.
