@@ -53,6 +53,12 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
+:: Recommended update 826942
+:: URL|ENU|http://download.microsoft.com/download/2/2/3/2237d088-7840-4f77-a90d-55bdf1ccbc1c/WindowsXP-KB826942-x86-ENU.exe|updates/winxpsp1/windowsXP-KB826942-x86-ENU.exe
+:: "Wireless Update Rollup Package for Windows XP is Available"
+:: <http://support.microsoft.com/?id=826942>
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB821253-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Recommended update 814995
 :: URL|ENU|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q814995_WXP_SP2_x86_ENU_9e15819376b7ecb637bc9f9bfac2d16.exe|updates/winxpsp1/q814995_wxp_sp2_x86_enu.exe
 :: "Some ... Fixes Stop Working After You Install the 328310 Update"
@@ -97,12 +103,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB829558-x86-%WINLANG%.ex
 :: "New 'Set Program Access and Defaults' Start Menu Icon ..."
 :: <http://support.microsoft.com/default.aspx?kbid=820291>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB820291-x86-%WINLANG%.exe /u /n /z"
-
-:: Recommended update 815485
-:: URL|ENU|http://download.microsoft.com/download/c/c/2/cc2aae3a-da13-4a9a-b3d9-802b0e7c877c/Q815485_WXP_SP2_x86_ENU.exe|updates/winxpsp1/q815485_wxp_sp2_x86_enu.exe
-:: WPA Wireless Security Update for Windows XP
-:: <http://support.microsoft.com/?kbid=815485>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q815485_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
 :: Recommended update 327979
 :: URL|ENU|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q327979_WXP_SP2_6F667CA10E50EC0D64B146168F17B5B74E0403D3.EXE|updates/winxpsp1/q327979_wxp_sp2_x86_enu.exe
