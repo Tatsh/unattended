@@ -8,6 +8,7 @@
     OemSkipWelcome=1
 
 [Unattended]
+    DriverSigningPolicy=Ignore
     UnattendMode=DefaultHide
     FileSystem=ConvertNTFS
     ExtendOemPartition=1
