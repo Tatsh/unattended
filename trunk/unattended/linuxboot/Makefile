@@ -627,13 +627,19 @@ stage1/usr/lib/smb.conf: $(samba)/source/config.status
 	find stage1/ -name \*.old -print0 | xargs -r -0 rm
 	touch $@
 
+$(samba)/source/nsswitch/libnss_wins.so: stage1/usr/lib/smb.conf
+
+$(call copy_lib,$(samba)/source/nsswitch/libnss_wins.so,stage1/lib/libnss_wins.so)
+
+stage1 += stage1/usr/lib/smb.conf stage1/lib/libnss_wins.so
+
 # CIFS support.  We fall back on this if smbmount fails.
 $(samba)/source/client/mount.cifs: fakeinclude/stdio.h
 	$(CC) -O2 $(fakelib_cflags) -o $@ $@.c
 
 $(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
 
-stage1 += stage1/usr/lib/smb.conf stage1/sbin/mount.cifs
+stage1 += stage1/sbin/mount.cifs
 
 
 ## wireless_tools
