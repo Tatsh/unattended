@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="keywords" content="windows 2000, windows xp, unattended
+installation">
+
 <title>Windows installation the Unix way</title>
 </head>
 <body>
@@ -16,10 +19,9 @@
 
 <h1>What is this?</h1>
 <p>This is a project for Unix systems administrators living in a
-Windows world.  It will teach you how to boot from a floppy (or
-CD-ROM, or directly from the network), answer a few questions, and
-come back two hours later to a fully-installed Windows workstation,
-using nothing but Unix servers on the back end.
+Windows world.  It will teach you how to boot from a floppy, CD-ROM,
+or directly from the network, answer a few questions, and come back
+two hours later to a fully installed Windows workstation.
 
 <p>But be warned: This is not a
 <kbd>./configure&nbsp;&amp;&amp;&nbsp;make&nbsp;install</kbd> kind of
@@ -45,37 +47,39 @@ like <a
 href="http//:www.microsoft.com/windows2000/technologies/directory/ad/"
 >"Active Directory"</a> and <a
 href="http://www.microsoft.com/windows2000/en/datacenter/help/sag_RIS_Default_topnode.htm">"RIS"</a>
-and <a href="http://www.microsoft.com/smserver/">"SMS"</a>.  If you
-think those sound like good ideas, then you are not part of this
-project's intended audience.
+and <a href="http://www.microsoft.com/smserver/">"SMS"</a>.  Because
+of the nature of my infrastructure, and some personal biases, this
+project does not rely on any of them.  You can certainly use Windows
+servers if you like; I myself use this procedure to join workstations
+to our Windows domain, for instance.  But you do not need them.
 
 <p>Some approaches to this problem involve drive imaging (also known
 as "cloning").  This project is not one of them.  Workstation cloning
 has several drawbacks, including <a
 href="http://service2.symantec.com/SUPPORT/ghost.nsf/docid/1999050308324125"
 >the SID issue</a>, poor support for non-uniform hardware, poor
-maintainability, and large, bulky images.  Even minor hardware
-variations, or minor updates to the software configuration, can cause
-major headaches.  On the other hand, if you need to crank out a large
-number of completely identical workstations, drive imaging is very
-easy to set up.  And products like <a
+maintainability, and large, bulky images.  Even small hardware
+variations, or small updates to the software configuration, can create
+large headaches.  On the other hand, if you need to crank out many
+workstations with completely identical hardware, drive imaging is both
+simple and fast.  And products like <a
 href="http://www.symantec.com/sabu/ghost/">Ghost</a> and <a
 href="http://www.powerquest.com/driveimage/">Drive&nbsp;Image</a> make
-it very easy.
+it quite easy.
 
 <p>Anyway, I have assembled a complete unattended installation system
 from scratch, and I am releasing it here on SourceForge.  Most of the
 information here is available elsewhere, but it took me a while to
 find because it was not all collected in one place.  I am hoping this
-project will save some time for others like myself.  (I would have
-found the database of <a href="installers.html">unattended/silent
-installer switches for Windows apps</a> particularly handy.)
+project will save time for others like myself.  (I would have found
+the database of <a href="installers.html">unattended/silent installer
+switches for Windows apps</a> particularly handy.)
 
 <h1>What next?</h1>
 
-<p>If you are interested, you can start right now.  First, <a
-href="https://sourceforge.net/projects/unattended/">visit the
-SourceForge project page</a> to download the distribution.  Or <a
+<p>If you are interested, you can start right now.  First, visit the
+<a href="https://sourceforge.net/projects/unattended/">SourceForge
+project page</a> to download the distribution.  Or <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/">
 browse the CVS repository</a>; just click on a revision number to view
 the corresponding file.
@@ -99,8 +103,13 @@ left off is harder.)
 
 <p>Click the links above for more information.
 
-<p>And please let me know about any successes, failures, suggestions,
-or patches you have.  Thanks!
+<p>Note that this project is still in its testing stage, so do not be
+surprised if you encounter problems.  Please use the links on the <a
+href="https://sourceforge.net/projects/unattended/" >project page</a>
+to submit bug reports and feature requests.
+
+<p>And please <a href="mailto:patl@users.sourceforge.net">let me
+know</a> what you think.  Thanks!
 
 <h1>Related sites</h1>
 
