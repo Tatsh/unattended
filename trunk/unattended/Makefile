@@ -5,9 +5,9 @@ default:
 	@echo "(Did you mean to 'cd bootdisk' first?)"
 	exit 1
 
-#cvs := :pserver:anonymous@cvs.sourceforge.net:/cvsroot/unattended
-# Until they fix the anonymous server...
-cvs := $$USER@cvs.sourceforge.net:/cvsroot/unattended
+cvs := :pserver:anonymous@cvs.sourceforge.net:/cvsroot/unattended
+# just in case the anonymous server is broken again...
+# cvs := $$USER@cvs.sourceforge.net:/cvsroot/unattended
 
 cwd := $(shell pwd)
 
