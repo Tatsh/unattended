@@ -123,7 +123,6 @@ if [ ! -f updates/officexp/olk1006.exe ]; then wget http://download.microsoft.co
 if [ ! -f updates/officexp/officexp-kb822036-client-enu.exe ]; then wget http://download.microsoft.com/download/6/7/5/67570E80-E423-4F17-B57E-8CBFB517B832/OfficeXP-KB822036-Client-ENU.exe -O updates/officexp/officexp-kb822036-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb824938-client-enu.exe ]; then wget http://download.microsoft.com/download/7/9/3/7938238c-f0f5-44b5-986d-0252650c537c/officexp-kb824938-client-enu.exe -O updates/officexp/officexp-kb824938-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb826293-client-enu.exe ]; then wget http://download.microsoft.com/download/2/2/3/223b52aa-0143-4a71-aaf2-ca097a1d2431/officexp-kb826293-client-enu.exe -O updates/officexp/officexp-kb826293-client-enu.exe; fi
-if [ ! -f updates/officexp/officexp-kb813380-client-enu.exe ]; then wget http://download.microsoft.com/download/a/4/e/a4e8bf96-9daa-41a6-a4d7-e64050eeb9e6/officexp-KB813380-client-ENG.exe -O updates/officexp/officexp-kb813380-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb812708-client-enu.exe ]; then wget http://download.microsoft.com/download/d/1/3/d1335281-d1d8-4f58-afc2-c6871e6d694f/officexp-KB812708-client-ENG.exe -O updates/officexp/officexp-kb812708-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb830346-client-enu.exe ]; then wget http://download.microsoft.com/download/B/0/E/B0E276B5-1859-4121-9740-E7FF6E64747C/officexp-kb830346-client-enu.exe -O updates/officexp/officexp-kb830346-client-enu.exe; fi
 if [ ! -f updates/officexp/officexp-kb830350-client-enu.exe ]; then wget http://download.microsoft.com/download/3/5/A/35AC6464-B956-4E98-B0CE-CFE367A27519/Officexp-kb830350-client-enu.exe -O updates/officexp/officexp-kb830350-client-enu.exe; fi
@@ -150,7 +149,7 @@ if [ ! -f packages/powertoys/imageresizerpowertoysetup.exe ]; then wget http://d
 if [ ! -f packages/powertoys/powercalcpowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/PowerCalcPowertoySetup.exe -O packages/powertoys/powercalcpowertoysetup.exe; fi
 if [ ! -f packages/powertoys/slideshowpowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/SlideshowPowertoySetup.exe -O packages/powertoys/slideshowpowertoysetup.exe; fi
 if [ ! -f packages/powertoys/timershotpowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/TimershotPowertoySetup.exe -O packages/powertoys/timershotpowertoysetup.exe; fi
-if [ ! -f packages/powertoys/tweakuipowertoysetup.exe ]; then wget http://download.microsoft.com/download/f/c/a/fca6767b-9ed9-45a6-b352-839afb2a2679/TweakUiPowertoySetup.exe -O packages/powertoys/tweakuipowertoysetup.exe; fi
+if [ ! -f packages/powertoys/tweakuipowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/TweakUiPowertoySetup.exe -O packages/powertoys/tweakuipowertoysetup.exe; fi
 
 # ISO Recorder Power Toy
 if [ ! -f packages/powertoys/isorecordersetup.msi ]; then wget http://isorecorder.alexfeinman.com/bin/ISORecorderSetup.msi -O packages/powertoys/isorecordersetup.msi; fi
