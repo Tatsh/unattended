@@ -10,11 +10,10 @@
     TimeZone=35
     OemSkipWelcome=1
     AutoLogon=Yes
-;    AutoLogonCount=1
 
 [Identification]
 ;    JoinDomain=YOURDOM
-;    DomainAdmin=
+;    DomainAdmin=YOURDOM\admin
 ;    DomainAdminPassword=
 
 [Unattended]
