@@ -328,10 +328,10 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 :: Critical update MS04-024 (839645)
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
-:: URL|DEU|http://download.microsoft.com/download/c/f/4/cf4aa9d6-f05b-48a8-804b-46a3a2dd87fa/WindowsXP-KB839645-x86-deu.exe|updates/winxpxp1/windowsxp-kb839645-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/d/0/3/d03971cd-ae3d-49ab-bec2-44ce3911fa76/WindowsXP-KB839645-x86-enu.exe|updates/winxpxp1/windowsxp-kb839645-x86-enu.exe
-:: URL|NLD|http://download.microsoft.com/download/3/5/c/35ca1eb2-44fa-4151-8317-f0d63d4e4cf8/windowsxp-kb839645-X86-NLD.exe|updates/winspxp1/windowsxp-kb839645-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/3/b/e/3be1b343-a7ed-4b91-a6d2-f3bbe3acbdf9/windowsxp-kb839645-X86-RUS.exe|updates/winspxp1/windowsxp-kb839645-x86-rus.exe
+:: URL|DEU|http://download.microsoft.com/download/c/f/4/cf4aa9d6-f05b-48a8-804b-46a3a2dd87fa/WindowsXP-KB839645-x86-deu.exe|updates/winxpsp1/windowsxp-kb839645-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/d/0/3/d03971cd-ae3d-49ab-bec2-44ce3911fa76/WindowsXP-KB839645-x86-enu.exe|updates/winxpsp1/windowsxp-kb839645-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/3/5/c/35ca1eb2-44fa-4151-8317-f0d63d4e4cf8/windowsxp-kb839645-X86-NLD.exe|updates/winxpsp1/windowsxp-kb839645-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/3/b/e/3be1b343-a7ed-4b91-a6d2-f3bbe3acbdf9/windowsxp-kb839645-X86-RUS.exe|updates/winxpsp1/windowsxp-kb839645-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB839645-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-023 (840315)
