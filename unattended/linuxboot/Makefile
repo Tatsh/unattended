@@ -373,7 +373,7 @@ stage1 += stage1/usr/bin/nano
 ## ncurses
 $(ncurses)/lib/libncurses.so: fakeinclude/stdio.h
 	cd $(ncurses)							\
-	&& CFLAGS="$(fakelib_cflags)"					\
+	&& CC="$(CC) $(fakelib_cflags)"					\
 		./configure --prefix=/usr --with-shared			\
 			--without-normal --without-debug		\
 			--disable-database --with-fallbacks=linux	\
