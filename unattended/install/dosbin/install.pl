@@ -88,6 +88,7 @@ sub push_value ($$$) {
     $u->push_value ($section, $key, $value);
 }
 
+# Ensure prompts are printed promptly.
 $| = 1;
 
 ## "choice" implementation, generic between DOS and Unix.
@@ -145,6 +146,31 @@ sub yes_no_choice ($) {
     my ($question) = @_;
     print "\n";
     return (choice ($question) == 0 ? 1 : 0);
+}
+
+# Ask for a password.
+sub password_q ($) {
+    my ($prompt) = @_;
+    my $ret;
+    
+    if ($is_linux) {
+        while (1) {
+            print "\n", $prompt;
+            # Maximum length of Windows passwords is 14.  I think.
+            $ret = read_secret (14);
+            print 'Re-enter to confirm: ';
+            my $again = read_secret (14);
+            $ret eq $again
+                and last;
+            print "*** Passwords do not match!  Try again.\n";
+        }
+    }
+    else {
+        # Passwords echo on DOS.  Oh, well.
+        $ret = simple_q ($prompt);
+    }
+
+    return $ret;
 }
 
 # Create a menu of options.  Takes an even number of arguments which
@@ -958,7 +984,7 @@ $u->{'GuiRunOnce'}->{'Command0'} =
 
 $u->{'GuiUnattended'}->{'AdminPassword'} =
     sub {
-        return simple_q ('Enter password for local administrator account: ');
+        return password_q ('Enter password for local administrator account: ');
     };
 
 $u->{'GuiUnattended'}->{'AutoLogon'} =
@@ -1010,8 +1036,8 @@ $u->{'Identification'}->{'DomainAdminPassword'} =
         my $admin = $u->{'Identification'}->{'DomainAdmin'};
         defined $admin
             or return undef;
-        return simple_q
-            ("DomainAdminPassword for $admin account? ");
+        return password_q
+            ("Enter DomainAdminPassword for $admin account: ");
     };
 
 $u->{'Unattended'}->{'OemPnPDriversPath'} = \&ask_oem_pnp_drivers_path;
