@@ -29,11 +29,12 @@ todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"ms
 
 :: Microsoft DirectX 9.0c update
 :: (Requires .NET to be installed first for managed DX)
-:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx/directx_9c_redist.exe
+:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx9/directx_9c_redist.exe
 ::
-:: Here we extract the installer to %TEMP%, then run it.
-todo.pl ".reboot-on 194 %TEMP%\dx9c\dxsetup.exe /silent /installmanageddx"
-todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:%TEMP%\dx9c"
+:: Here we extract the installer to %TEMP%, run it, and delete it.
+todo.pl "rmdir /s /q \"%TEMP%\dx9c\""
+todo.pl ".reboot-on 194 \"%TEMP%\dx9c\dxsetup.exe\" /silent /installmanageddx"
+todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 
 :: Microsoft .NET framework
 :: URL|ENU|http://download.microsoft.com/download/a/a/c/aac39226-8825-44ce-90e3-bf8203e74006/dotnetfx.exe|updates/common/enu/dotnetfx.exe

@@ -36,10 +36,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.e
 
 :: Microsoft DirectX 9.0c update
 :: (Requires .NET to be installed first for managed DX)
-:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx/directx_9c_redist.exe
-:: download and run directx_9c_redist.exe extract into
-:. /packages/directx9/
-todo.pl "dxsetup.exe /silent /installmanageddx"
+:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx9/directx_9c_redist.exe
+::
+:: Here we extract the installer to %TEMP%, run it, and delete it.
+todo.pl "rmdir /s /q \"%TEMP%\dx9c\""
+todo.pl ".reboot-on 194 \"%TEMP%\dx9c\dxsetup.exe\" /silent /installmanageddx"
+todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 
 :: Recommended Updates
 
