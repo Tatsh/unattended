@@ -6,6 +6,21 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Not-so-critical update Q328523
+:: "default invocation of IE from the Internet Connection Wizard"
+:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q328523>
+:: <http://www.microsoft.com/Downloads/Release.asp?ReleaseID=42457>
+todo.pl "z:\packages\win2ksp3\Q328523_W2K_SP4_X86_EN.exe /u /o /z"
+
+:: Critical Update Q329834 
+:: "Unchecked Buffer in PPTP Implementation Could Enable Denial of Service"
+:: <http://www.microsoft.com/Windows2000/downloads/critical/q329834/>
+todo.pl "z:\packages\win2ksp3\Q329834_W2K_SP4_X86_EN.exe /u /o /z" .reboot
+
+:: IIS security Roll-up package Q327696
+:: <http://www.microsoft.com/Windows2000/downloads/security/q327696/>
+todo.pl "z:\packages\win2ksp3\Q327696_W2K_SP4_X86_EN.exe /u /o /z"
+
 :: Critical Update Q323255
 :: <http://www.microsoft.com/Windows2000/downloads/critical/q323255/>
 todo.pl "z:\packages\win2ksp3\Q323255_W2K_SP4_X86_EN.exe /u /o /z"
