@@ -112,6 +112,27 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb834707-x86-%WINLAN
 
 :: Critical Updates
 
+:: Microsoft Security Bulletin (MS04-028)
+:: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-028.mspx>
+:: URL|CSY|http://download.microsoft.com/download/d/0/e/d0eb1cd0-d901-45fc-873b-4276c2b9154f/WindowsServer2003-KB833987-x86-CSY.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/b/5/b/b5b964e6-f77e-4af8-b1e1-e1a54668a501/WindowsServer2003-KB833987-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/e/5/9/e5901f37-e33b-433c-9beb-9f58428c93de/WindowsServer2003-KB833987-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/3/8/d/38db22f3-c041-4f62-8781-7c75882fcc17/WindowsServer2003-KB833987-x86-ESN.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/3/c/9/3c911aab-c424-46aa-b1b6-dcd2d41f58cf/WindowsServer2003-KB833987-x86-FRA.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/5/4/7/54753c6b-6c94-4c93-8830-06d765513903/WindowsServer2003-KB833987-x86-HUN.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/e/7/6/e766a98c-b2f9-41e3-94b8-179c471a9c4e/WindowsServer2003-KB833987-x86-ITA.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/d/d/b/ddb8d175-c879-4b2d-9b61-03fd2d4a5993/WindowsServer2003-KB833987-x86-JPN.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/5/0/550da493-90e5-4596-9a40-42afb55a81d1/WindowsServer2003-KB833987-x86-KOR.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/d/c/ddc5bbe2-ca1b-458f-9a45-588b03f13d25/WindowsServer2003-KB833987-x86-NLD.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/9/0/9/9099fe4e-3e9e-425e-9f8b-924ebee739e9/WindowsServer2003-KB833987-x86-PLK.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/3/a/b/3aba44e0-6658-4dfe-b4be-347d22452978/WindowsServer2003-KB833987-x86-PTG.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/3/c/8/3c8c6b76-d6e5-4b2d-8e57-0bccd824d87b/WindowsServer2003-KB833987-x86-PTB.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/e/7/b/e7b06d89-275c-4d35-9e51-0e1fc0fa3500/WindowsServer2003-KB833987-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/0/5/3/0533728c-540a-4925-a45d-f985b7249f6f/WindowsServer2003-KB833987-x86-SVE.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/1/a/e1ae6d18-2026-49fd-8547-0718e8118b01/WindowsServer2003-KB833987-x86-TRK.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB833987-x86-%WINLANG%.exe /u /n /z"
+
 :: Critical update MS04-037 (841356)
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-037.mspx>
