@@ -76,6 +76,8 @@ sub push_value ($$$$) {
              my $forced = force ($value);
              return (defined $forced ? $forced : force ($orig_value));
          };
+
+    return 1;
 }
 
 # Return the magic scalar representing "no value"
@@ -180,6 +182,8 @@ sub merge ($$) {
                 $other->sort_index ($section, $key);
         }
     }
+
+    return 1;
 }
 
 # Characters needing no quotes on output
@@ -221,9 +225,11 @@ sub read ($$;$) {
             $acc->comments ($section) = $comments;
             $comments = [ ];
             # Make sure section exists, even it it contains no values
-            $acc->{$section};
+            (exists $acc->{$section})
+                or $acc->{$section} = undef;
         }
         elsif (defined $section && $section !~ $sect_re) {
+            # Skip sections which do not match regexp.
             next;
         }
         elsif ($line =~ /^\s*(;.*|\s*)$/) {
@@ -269,7 +275,7 @@ sub read ($$;$) {
     close FILE
         or die "Unable to close $file: $^E";
 
-    $self->merge ($acc);
+    return $self->merge ($acc);
 }
 
 my $global_indent = '    ';
