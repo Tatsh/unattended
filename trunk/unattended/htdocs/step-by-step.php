@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.2 2005-01-17 20:22:16 nrichthof Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -214,7 +214,27 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
       <p><strong>Note</strong>: The total absolute length of any file name, including the
         leading <code>\\os\\...\\$oem$</code> portion, must not exceed 64  characters  or
         winnt.exe will get an error when it tries to copy the file.</p>
-
+      <h3>Populate packages directory</h3>
+      <p>All our OS-update scripts and many of our application  install  scripts  contain
+        urls for automatic download. Now it is time to perform this task. Our <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/tools/prepare?view=markup"
+      >prepare</a> script will help you with that:</p>
+<pre class="code">
+    $ cd /path/to/unattended/install/tools
+    $ ./prepare
+    [... output ...]
+    $
+</pre>
+      <p>If the script is called without a parameter,   it assumes that you want to fetch
+        the english version of updates and programs.  If you want to  fetch  a  different
+        language,  you must  give  the  appropriate  <a  href="apps.php#winlang">language
+        code</a>. E.g. for german, type:</p>
+<pre class="code">
+    $ cd /path/to/unattended/install/tools
+    $ ./prepare deu
+    [... output ...]
+    $
+</pre>
+		
       <h2 id="step6">Step 6: Create the bootdisk</h2>
       <p>After you survived the server-side challenge, you can tackle the  bootdisk. </p>
       <p>The goal here is very simple: To boot to DOS  so  we can mount the <code>install
