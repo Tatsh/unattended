@@ -176,4 +176,9 @@ cp /z/linuxaux/usr/bin/dosemu.bin /usr/bin/dosemu.bin
 # install.pl relies on these environment variables
 export Z_PATH Z_USER Z_PASS
 
+# Used as staging area by install.pl
+mkdir /c
+
+perl -I/z/lib /z/dosbin/install.pl
+
 exec bash
