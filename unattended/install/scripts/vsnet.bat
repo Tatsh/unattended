@@ -5,7 +5,13 @@ set VSNETDIR=%Z_PATH%\packages\VSNET
 :: Lots of prereqs here.  Remember that these are actually executed in
 :: reverse order.
 
-:: The last thing to do is install Visual Studio proper.
+:: Security update MS04-017
+:: "Visual Studio .NET 2003 Crystal Reports Security Update"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-017.mspx>
+:: URL|ALL|http://download.microsoft.com/download/0/5/d/05d3fd51-4b60-49e1-a762-afa47ac5ec6b/VS7.1-KB841870-X86.exe|updates/common/vs7.1-kb841870-x86.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\vs7.1-kb841870-x86.exe /q"
+
+:: Install Visual Studio proper.
 todo.pl "AutoIt %Z%\scripts\vsnet.aut"
 
 :: Before that, install the Visual J# core.
