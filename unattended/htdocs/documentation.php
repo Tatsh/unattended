@@ -8,7 +8,7 @@ $page['next']  = 'lists.php';
 $page['last']  = 'links.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: documentation.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: documentation.php,v 1.2 2005-02-19 15:28:01 nrichthof Exp $';
 $sections[]    = array ('OS installation process', 'osinst');
 $sections[]    = array ('Relevant settings for Windows Setup', 'settings');
 $sections[]    = array ('Dynamic configuration with server-side perl scripts', 'dynamic');
@@ -41,7 +41,7 @@ $content       = <<<EOT
         <code>Z:\\site\\config.pl</code>. This is a Perl file which <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
         ><code>install.pl</code></a> reads.</p>
       <ul>
-        <li><a href="dynamic.php">How the installation script works</a></li>
+        <li><a href="dynamic.php">Dynamic configuration with server-side perl scripts</a></li>
         <li><a href="meta.php">The [_meta] section</a></li>
         <li><a href="dynamic.php#howitworks">How the installation script works</a></li>
         <li><a href="dynamic.php#database">Using a database</a></li>
