@@ -7,7 +7,7 @@ use Getopt::Long;
 use Pod::Usage;
 
 my %opts;
-GetOptions (\%opts, 'help|h|?', 'day', 'time')
+GetOptions (\%opts, 'help|h|?', 'day=i', 'time=i')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -28,7 +28,7 @@ $au_options =~ /^[1234]$/
 if ($au_options == 4) {
     # 4 means automatically install, so require a day and time.
     (exists $opts{'day'} && exists $opts{'time'})
-        or die "The --day and --time options required\n";
+        or die "--day and --time options required for mode 4\n";
 
     $opts{'day'} =~ /^[01234567]$/
         or die "--day must be between 0 and 7\n";
@@ -41,7 +41,7 @@ if ($au_options == 4) {
 else {
     # Forbid day and time.
     (exists $opts{'day'} || exists $opts{'time'})
-        and die "The --day and --time options are forbidden\n";
+        and die "--day and --time forbidden except for mode 4\n";
 }
 
 ## Now do the actual work.
