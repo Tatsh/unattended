@@ -5,8 +5,6 @@ use strict;
 @ARGV == 0
     or die "Usage: $0";
 
-sleep(10);
-
 my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg, qw(REG_DWORD REG_BINARY REG_MULTI_SZ));
 
@@ -432,7 +430,5 @@ foreach my $mounts ( grep( /:$/, keys( %{$reg{'LMachine/System/MountedDevices/'}
 
 # Don't browse for Scheduled Tasks in Network Neighborhood
 delete $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Explorer/RemoteComputer/NameSpace/{D6277990-4C6A-11CF-8D87-00AA0060F5BF}/'};
-
-sleep(5);
 
 exit 0;
