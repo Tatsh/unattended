@@ -201,7 +201,8 @@ sub multi_choice (@) {
         $sort_index{$strings[$i]} = $i;
     }
 
-    return sort { $sort_index{$a} <=> $sort_index {$b} } keys %selected;
+    my @selections = grep { $selected{$_} } keys %selected;
+    return sort { $sort_index{$a} <=> $sort_index {$b} } @selections;
 }
 
 # Canonicalize a username with respect to a domain.  If username is
@@ -303,6 +304,9 @@ sub ask_fdisk_cmds () {
 # Which OS to install
 sub ask_os () {
     my $os_dir = get_value ('_meta', 'os_dir');
+
+    print "Scanning for OS directories under $os_dir...\n";
+
     opendir OSDIR, $os_dir
         or die "Unable to opendir $os_dir: $^E";
 
@@ -325,10 +329,10 @@ sub ask_os () {
         or die "Unable to closedir $os_dir: $^E";
 
     exists $media_objs[0]
-        or die "Unable to find any OS directories under $os_dir; bailing";
+        or die "None found! bailing";
     unless (exists $media_objs[1]) {
         my $only = $media_objs[0]->path ();
-        print "$only is the only OS directory under $os_dir; using it.\n";
+        print "$only is the only OS directory I found; using it.\n";
         return $only;
     }
 
@@ -638,6 +642,41 @@ set_value ('UserData', 'ProductKey',
                    and return undef;
                return simple_q ($product_key_q);
            });
+
+$u->comments->{'MassStorageDrivers'} =
+    ['See <http://support.microsoft.com/?kbid=288344>'];
+
+$u->{'MassStorageDrivers'} =
+    sub {
+        my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
+
+        my @oem_drivers =
+            multi_choice ('Select OEM drivers for [MassStorageDrivers]:',
+                          sort @{$media_obj->textmode_oem_drivers (1)});
+
+        scalar @oem_drivers > 0
+            or return undef;
+
+        # OK, adding some OEM drivers.  Add the retail ones while we
+        # are at it.
+        my @retail_drivers =
+            multi_choice ('Select RETAIL drivers for [MassStorageDrivers]:',
+                          sort @{$media_obj->textmode_retail_drivers (1)});
+
+        return { map { $_ => 'RETAIL' } @retail_drivers,
+                 map { $_=> 'OEM' } @oem_drivers };
+    };
+
+$u->comments->{'OEMBootFiles'} = 'See comments for [MassStorageDrivers]';
+$u->{'OEMBootFiles'} =
+    sub {
+        (defined $u->{'MassStorageDrivers'})
+            or return undef;
+        my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
+        return { map { $_ => $u->no_value () }
+                 @{$media_obj->textmode_files ()};
+             };
+    };
 
 ## Now the meat of the script.
 
