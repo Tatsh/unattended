@@ -10,12 +10,12 @@
 :: "A Buffer Overrun in RPCSS May Allow Code Execution"
 :: (Worst Windows security hole, ever.  Again.)
 :: <http://support.microsoft.com/?kbid=824146>
-todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\Windows2000-KB824146-x86-ENU.exe /u /n /z" .reboot
+todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\Windows2000-KB824146-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 824105
 :: "Flaw in NetBIOS Could Lead to Information Disclosure"
 :: <http://support.microsoft.com/?kbid=824105>
-todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB824105-x86-ENU.exe /u /n /z" .reboot
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB824105-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 823718
 :: "Security Update for Microsoft Data Access Components"
@@ -36,12 +36,12 @@ todo.pl ".expect-reboot AutoIt %Z%\scripts\directx9.aut"
 :: "Buffer Overrun in RPC Interface May Allow Code Execution"
 :: (So anyone can take over any Windows computer anywhere.  Wow.)
 :: <http://support.microsoft.com/?kbid=823980>
-todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB823980-x86-ENU.exe /u /n /z" .reboot
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB823980-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 823559
 :: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=823559>
-todo.pl "%Z%\packages\win2ksp4\Windows2000-KB823559-x86-ENU.exe /u /n /z"
+todo.pl "%Z%\packages\win2ksp4\Windows2000-KB823559-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 818043
 :: "L2TP/IPSec NAT-T Update for Windows XP and Windows 2000"
@@ -52,7 +52,10 @@ todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Q818043_W2K_SP5_x86_EN.EXE /u /n 
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
 :: <http://support.microsoft.com/?kbid=814078>
-todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\js56nen.exe /q /r:n" .reboot
+:: NOTE: You must rename this to use the three-letter language
+:: abbreviation instead of two.  For example, for English you would
+:: rename js56nen.exe to js56nenu.exe.
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\js56n%WINLANG%.exe /q /r:n" .reboot
 
 :: Microsoft .NET framework
 :: <http://msdn.microsoft.com/netframework/downloads/>
