@@ -33,7 +33,8 @@ sub new ($$) {
     my $txtsetup = $file_spec->catfile ($path, 'i386', 'txtsetup.sif');
     my $setupp = $file_spec->catfile ($path, 'i386', 'setupp.ini');
     my $prodspec = $file_spec->catfile ($path, 'i386', 'prodspec.ini');
-    -f $txtsetup && -f $setupp && -f $prodspec
+    -f &$dos_to_host ($txtsetup) && -f &$dos_to_host($setupp)
+        && -f &$dos_to_host ($prodspec)
         or return undef;
 
     # Remember the path to this media
