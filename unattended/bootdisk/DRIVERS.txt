@@ -32,9 +32,9 @@ el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
 el94x    3com 3c94x/3c2000 family of gigabit adapters
 
 # <http://www.google.com/search?q=via+ethernet+drivers>
-# <http://www.viaarena.com/?PageID=7>
+# <http://www.viaarena.com/?PageID=71>
 # <ftp://downloads.viaarena.com/drivers/LAN/>
-fetnd    VIA Rhine family (e.g., D-Link DFE-530TX)
+fetnd    VIA VT86C100A/6102/6105 "Rhine" family (e.g., D-Link DFE-530TX)
 
 # http://www.netgear.com/support/products/FA310.asp
 ngrpci   Netgear FA310
@@ -48,8 +48,7 @@ pcntnd   AMD PCNet family (also VMWare)
 rtsnd    Realtek RTL8139 family (e.g., D-Link DFE-530TX+)
 rtgbnd   Realtek RTL8169/8110S Gigabit family
 
-# Downloaded from <http://download.sis.com/>.  (Well, actually I just
-# grabbed sl116.exe from <http://driver.sis.com/lan/>.)
+# Downloaded from <http://download.sis.com/>.
 sis900   SiS 900 family
 
 # This one is very special.  It implements NDIS2 over a PXE/UNDI
