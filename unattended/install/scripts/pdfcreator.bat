@@ -1,4 +1,4 @@
-:: OPTIONAL: Install PDFCreator <http://sector7g.wurzel6.de/pdfcreator/>
+:: OPTIONAL: Install PDFCreator (PDF Printer)
 @echo off
 
 :: Install language files
