@@ -13,10 +13,10 @@ todo.pl %%WINVER%%-updates.bat %%WINVER%%-notips.pl .reboot
 todo.pl "AutoIt z:\scripts\defrag.aut"
 
 :: Set IIS startup type to manual.
-todo.pl "startup-type.pl manual IISADMIN" "startup-type.pl manual W3SVC"
+todo.pl "startup-type.pl Manual IISADMIN" "startup-type.pl Manual W3SVC"
 
 :: Turn off stupid Windows Messenger service.
-todo.pl "startup-type.pl manual Messenger"
+todo.pl "startup-type.pl Manual Messenger"
 
 :: Cleanup messes left over from installing.
 todo.pl hidepw.pl bootini.pl fixtz.pl 
