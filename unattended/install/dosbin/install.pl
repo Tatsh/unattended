@@ -214,6 +214,25 @@ sub canonicalize_user ($$) {
     return $user;
 }
 
+# Read a file.  Return array of lines (minus line endings).
+sub read_file ($) {
+    my ($file) = @_;
+    my @ret;
+
+    open FILE, $file
+        or croak "Unable to open $file for reading: $^E";
+
+    foreach (my $line = <FILE>) {
+        chomp $line;
+        push @ret, $line;
+    }
+
+    close FILE
+        or croak "Unable to close $file: $^E";
+
+    return @ret;
+}
+
 # Run a command and return the output.  We need this function because
 # pipes and backticks do not work under DJGPP Perl.
 sub run_command ($@) {
@@ -231,13 +250,7 @@ sub run_command ($@) {
     (exists $status_hash{$status})
         or die "$cmd > $tmpfile failed, unexpected status $status";
 
-    open TMP, $tmpfile
-        or die "Unable to open $tmpfile for reading: $^E";
-
-    my @ret = <TMP>;
-
-    close TMP
-        or die "Unable to close $tmpfile: $^E";
+    my @ret = read_file ($tmpfile);
 
     # Maybe we should remove $tmpfile here, but that would slow
     # things down and hinder debugging so we don't.
@@ -455,29 +468,29 @@ set_value ('_meta', 'format_cmd',
                        : undef);
            });
 
-# set_value ('_meta', 'ipaddr',
-#            sub {
-#                # ipconfig.exe exits with many statuses, mostly between
-#                # 11 and 15.
-#                foreach my $line (run_command ('ipconfig A:\\NET\\',
-#                                               (11 .. 16))) {
-#                    $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
-#                        and return $1;
-#                }
-#                die "INTERNAL ERROR: Unable to get IP address";
-#            });
+$u->{'_meta'}->{'ipaddr'} =
+    sub {
+        # Parse file written by autoexec.bat.
+        my $ipconfig = '\\ipconfig.txt';
+        foreach my $line (read_file ($ipconfig)) {
+            $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
+                and return $1;
+        }
+        warn "Unable to get IP address from $ipconfig";
+        return undef;
+    };
 
-# set_value ('_meta', 'macaddr',
-#            sub {
-#                # Stupid hack: Need to use full path here or net.exe
-#                # gets confused.
-#                my $cmd = 'a:\\net\\net diag /status < z:\\lib\\crlf.txt';
-#                foreach my $line (run_command ($cmd)) {
-#                    $line =~ /^Permanent node name: ([0-9A-F]+)\r?$/
-#                        and return $1;
-#                }
-#                die "INTERNAL ERROR: Unable to get MAC address";
-#            });
+
+$u->{'_meta'}->{'macaddr'} =
+    sub {
+        # Parse file written by autoexec.bat.
+        my $netdiag = '\\netdiag.txt';
+        foreach my $line (read_file ($netdiag)) {
+            $line =~ /^Permanent node name: ([0-9A-F]+)\r?$/
+                and return $1;
+        }
+        warn "Unable to get MAC address from $netdiag";
+    };
 
 set_value ('_meta', 'replace_mbr',
            sub {
