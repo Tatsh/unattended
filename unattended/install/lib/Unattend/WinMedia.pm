@@ -71,23 +71,22 @@ sub name ($) {
     if (exists $strings->{'productname'}) {
         $ret = $strings->{'productname'};
     }
-    elsif (exists $strings->{'wkscd'}) {
-        # Fall back to parsing the "wkscd" name
-        my ($wkscd) = $strings->{'wkscd'} =~ /^(Windows .*?) CD/;
-        defined $wkscd
-            and $ret = $wkscd;
-    }
-    elsif (exists $strings->{'srvcd'}) {
-        # Win2k Server uses "srvcd" string instead
-        my ($srvcd) = $strings->{'srvcd'} =~ /^(Windows .*?) CD/;
-        defined $srvcd
-            and $ret = $srvcd;
-    }
-    elsif (exists $strings->{'entcd'}) {
-        # Win2k Advanced Server uses "entcd" string instead
-        my ($entcd) = $strings->{'entcd'} =~ /^(Windows .*?) CD/;
-        defined $entcd
-            and $ret = $entcd;
+    else {
+        my $cdname;
+        # Windows 2000 Workstation, Server, and Advanced Server each
+        # use different keys here.
+        foreach my $key ('wkscd', 'srvcd', 'entcd') {
+            (exists $strings->{$key})
+                or next;
+            $cdname = $strings->{'$key'};
+        }
+        if (defined $cdname) {
+            # $cdname is something like "Windows 2000 Professional CD"
+            # (English) or "CD Windows 2000 Professional" (French).
+            # Get rid of the "CD" string and surrounding whitespace.
+            $cdname =~ s/\s*CD\s*//;
+            $ret = $cdname;
+        }
     }
 
     return $ret;
