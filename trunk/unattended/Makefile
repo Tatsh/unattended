@@ -27,7 +27,7 @@ checkver:
 
 release: checkver
 	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&			\
-	$(really) cvs tag $$tag .					\
+	$(really) cvs tag $$tag . &&					\
 	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
 	cd $$temp &&							\
 	cvs -z3 -d${cvs} checkout unattended &&				\
