@@ -35,10 +35,11 @@ foreach my $setting (@settings) {
 
 # Run "real" command.
 
-exec $cmd
-    or die "Unable to exec $cmd: $! $?";
+system $cmd;
+$? == 0
+    or die "$cmd failed, status ", $? / 256, '.', $? %256;
 
-exit -1;
+exit 0;
 
 __END__
 
