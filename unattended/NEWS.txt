@@ -1,5 +1,10 @@
 ** Changes in version 2.8 (2003-Aug-24)
 
+(NOTE: There are many patches and to-do items still in the queue, but
+it has been long enough so we are releasing anyway.  Windows 2000
+support has probably atrophied somewhat since none of us use it
+regularly anymore.  Patches and bug reports always welcome.)
+
 Add maptodo.pl script, which maps the Z:\ drive before running
 todo.pl.  Rewrite dosbin\install.pl and bin\todo.pl to invoke it.
 This works around XP bug where "persistent" share mappings sometimes
