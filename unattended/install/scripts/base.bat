@@ -7,7 +7,7 @@ todo.pl "auconfig.pl 3"
 todo.pl adobe-reader.bat vnc.bat mozilla.bat 7-zip.pl php.bat openoffice.bat
 
 :: Update windows and turn off annoying stuff.
-todo.pl %%WINVER%%-updates.bat %%WINVER%%-notips.pl
+todo.pl %%WINVER%%-updates.bat %%WINVER%%-notips.pl .reboot
 
 :: Defragment the drive to collect the free space.
 todo.pl "AutoIt z:\scripts\defrag.aut"
