@@ -55,6 +55,24 @@ todo.pl "rmdir /s /q \"%TEMP%\dx9c\""
 todo.pl ".reboot-on 1 \"%TEMP%\dx9c\dxsetup.exe\" /silent /installmanageddx"
 todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 
+:: Microsoft .NET framework SP 1
+:: URL|CSY|http://download.microsoft.com/download/0/8/e/08eb42f8-6ac0-4f26-9d92-b01c0f738fb8/WindowsServer2003-KB867460-x86-CSY.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/0/a/9/0a90720d-18f3-4461-9737-4e072b4f4dad/WindowsServer2003-KB867460-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/b/2/2/b229569f-12a6-4707-a3db-20f09826d2cf/WindowsServer2003-KB867460-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/c/1/cc16fcf7-d5bd-40ba-a7b9-bfb489835669/WindowsServer2003-KB867460-x86-ESN.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/d/f/9/df9b2805-6a0f-4242-8cb3-d4de8502f10c/WindowsServer2003-KB867460-x86-FRA.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/1/5/1/1519e264-2ce1-4136-9c7b-a5150c500a3e/WindowsServer2003-KB867460-x86-HUN.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/f/9/9f9bc082-b887-41f5-8710-5cbf4e55a5e3/WindowsServer2003-KB867460-x86-ITA.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/d/7/1/d71eadc3-75a1-4d6a-bb46-a304e1b7132c/WindowsServer2003-KB867460-x86-JPN.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/7/6/c/76cd8413-fd50-4928-9271-ee9e9efa09de/WindowsServer2003-KB867460-x86-KOR.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-kor.exe
+:: URL|PLK|http://download.microsoft.com/download/c/d/0/cd000f93-9d6a-4268-839b-a4f8bd981526/WindowsServer2003-KB867460-x86-PLK.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/0/d/1/0d12386b-6515-4c80-b084-a68c6c5a290e/WindowsServer2003-KB867460-x86-PTG.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/0/5/2/052f3bc0-bdc7-4963-a8f1-8147a228988d/WindowsServer2003-KB867460-x86-PTB.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/b/f/b/bfb0ed5d-2904-42b7-ab64-f170f7bba6a0/WindowsServer2003-KB867460-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/3/0/a3026dd2-ef7b-4d63-99fd-50fb3e887aa7/WindowsServer2003-KB867460-x86-SVE.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/8/3/9/839f92bf-b9ad-491b-9d7c-e1d1b04ce70f/WindowsServer2003-KB867460-x86-TRK.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb867460-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Recommended Updates
 
 :: Recommended Update MS04-014 (837001)
@@ -90,7 +108,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLAN
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
 :: URL|DEU|http://download.microsoft.com/download/6/c/8/6c8e5679-2ad4-493b-881e-02be5ffe9f13/WindowsServer2003-KB839645-x86-deu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/e/7/9/e79e9c09-1755-4ecc-8ccd-fc915c9e0cbf/WindowsServer2003-KB839645-x86-enu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/0/3/f/03f9545f-b7c0-4d59-902d-a0262c1d4c7b/WindowsServer2003-KB839645-x86-esn.exe|updates/ws2k3/windowsserver2003-kb839645-x86-esn.exe                                                     
+:: URL|ESN|http://download.microsoft.com/download/0/3/f/03f9545f-b7c0-4d59-902d-a0262c1d4c7b/WindowsServer2003-KB839645-x86-esn.exe|updates/ws2k3/windowsserver2003-kb839645-x86-esn.exe
 :: URL|FRA|http://download.microsoft.com/download/6/3/4/634bc8d8-c2bd-4fad-a0de-ec6e3bd9fc53/WindowsServer2003-KB839645-x86-fra.exe|updates/ws2k3/windowsserver2003-kb839645-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/a/c/8/ac80d8d0-76e2-4777-9e37-7db67790ae66/WindowsServer2003-KB839645-x86-ita.exe|updates/ws2k3/windowsserver2003-kb839645-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/6/0/a/60aa3daf-2a7f-4aa1-bcc4-8c4cefce77d5/WindowsServer2003-KB839645-x86-nld.exe|updates/ws2k3/windowsserver2003-kb839645-x86-nld.exe
