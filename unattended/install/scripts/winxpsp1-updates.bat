@@ -49,11 +49,6 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q814033_WXP_SP2_x86_ENU.exe /u /z"
 :: (download only available from Windows Update Catalog)
 todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q814995_WXP_SP2_x86_ENU.exe /u /z" .reboot
 
-:: Critical update 813951
-:: "You Cannot Access ... or Authenticate with a Web Site in Various Programs"
-:: <http://support.microsoft.com/?kbid=813951>
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\q813951.exe /q /r:n" .reboot
-
 :: Critical update 811630
 :: "HTML Help Update to Limit Functionality ..."
 :: <http://support.microsoft.com/?kbid=811630>
@@ -144,11 +139,17 @@ todo.pl "z:\packages\winxpsp1\Q322011_WXP_SP2_x86_ENU.exe /u /z"
 
 :: IE updates
 
-:: Critical update 810847
-:: "February, 2003, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=810847>
-:: <http://www.microsoft.com/windows/ie/downloads/critical/810847/>
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\q810847.exe /q /r:n" .reboot
+:: Critical update 813489
+:: "April, 2003, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=813489>
+:: <http://www.microsoft.com/windows/ie/downloads/critical/813489/>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\q813489.exe /q /r:n" .reboot
+
+:: Critical update 330994
+:: "April 2003, Cumulative Patch for Outlook Express"
+:: <http://support.microsoft.com/?kbid=330994>
+:: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
+todo.pl "z:\packages\winxpsp1\q330994.exe /q /r:n"
 
 :: Critical update 318089
 :: "Incorrect VBScript Handling in Internet Explorer Can Allow Web Pages ..."
