@@ -1,4 +1,4 @@
-# Script to configure Auto Updates from a command prompt.
+# Script to configure Automatic Updates from a command prompt.
 # Part of <http://unattended.sourceforge.net/>.
 
 use warnings;
