@@ -478,13 +478,16 @@ $(call copy_file,misc/udhcpc-script,stage1/etc/udhcpc-script)
 
 $(call copy_file,misc/nsswitch.conf,stage1/etc/nsswitch.conf)
 
+$(call copy_file,misc/freedos-mbr.bin,stage1/usr/lib/freedos-mbr.bin)
+
 # Some apps (namely dosemu) need getpwnam() etc. to work
 $(call copy_file,misc/passwd,stage1/etc/passwd)
 
 stage1 += stage1/linuxrc stage1/bin/find-modules-pci			\
 		stage1/bin/make-blkdev-nodes stage1/etc/extra.pcimap	\
 		stage1/etc/master stage1/etc/udhcpc-script		\
-		stage1/etc/nsswitch.conf stage1/etc/passwd
+		stage1/etc/nsswitch.conf stage1/etc/passwd		\
+		stage1/usr/lib/freedos-mbr.bin
 
 ## Stage 1
 stage1: $(stage1)
