@@ -208,10 +208,31 @@ sub get_windows_language () {
     scalar @oses == 1
         or die "Internal error (too many OS objects in get_windows_language)";
 
-    # FIXME: Should complete this table someday.  See
+    # See
     # <http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_operatingsystem.asp>
-    my %lang_table = (0x0409 => 'enu',
+    my %lang_table = (
+                      0x0401 => 'ara',
+                      0x0405 => 'csy',
+                      0x0406 => 'dan',
+                      0x0407 => 'deu',
+                      0x0408 => 'ell',
+                      0x0409 => 'enu',
+                      0x040a => 'esn',
+                      0x040b => 'fin',
+                      0x040c => 'fra',
+                      0x040d => 'heb',
+                      0x040e => 'hun',
+                      0x0410 => 'ita',
+                      0x0411 => 'jpn',
+                      0x0412 => 'kor',
+                      0x0413 => 'nld',
+                      0x0414 => 'nor',
+                      0x0415 => 'plk',
+                      0x0416 => 'ptb',
                       0x0419 => 'rus',
+                      0x041f => 'trk',
+                      0x041d => 'sve',
+                      0x0816 => 'ptg',
                       );
 
     my $langid = $oses[0]->OSLanguage;
