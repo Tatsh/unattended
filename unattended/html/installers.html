@@ -49,10 +49,10 @@ anything at all, even when there is something to tell.
 <h2 id="msi">MSI packages</h2>
 
 <p>Microsoft's own <a
-href="http://www.microsoft.com/windows2000/techinfo/howitworks/management/installer.asp">Windows
-Installer Service</a> is the nominal standard, and if everybody used
-it, there would be no need for this document.  Unfortunately,
-Microsoft invented it too late.
+href="http://www.microsoft.com/windows2000/techinfo/howitworks/management/installer.asp"
+>Windows Installer Service</a> is the nominal standard, and if
+everybody used it, there would be no need for this document.
+Unfortunately, Microsoft invented it too late.
 
 <p>The package files have a <kbd>.msi</kbd> extension, and you
 manipulate them using the <a
@@ -76,8 +76,7 @@ add Perl.exe to your <code>PATH</code> and to associate
 for more on Perl.)
 
 <p><kbd>msiexec</kbd> can do many other things, like uninstall
-software or apply patches to existing MSI files.  Neat, huh?  Too bad
-nobody uses it.
+software or apply patches.  Neat, huh?  Too bad nobody uses it.
 
 <h2 id="installshield">InstallShield</h2>
 
@@ -127,7 +126,7 @@ Once again, there must be <em>no</em> space between the switch and the
 file name.
 
 <p>WARNING: Be careful what characters you use in these file names,
-because InstallShield strips certain non-alphanumerics (like dashes).
+because InstallShield strips certain non-alphanumerics (like hyphens).
 
 <p>Oh, just one more thing.  The <kbd>/r</kbd> and <kbd>/s</kbd>
 switches only work if the release engineer is competent.  Many
@@ -135,7 +134,7 @@ packages have "custom dialogs" which are not supported by
 <code>setup.iss</code>, which means those dialogs will always appear
 no matter what you do.  For such packages, I suggest asking the vendor
 to fix their installer.  If that does not work, I suggest doing what
-you can to help them go out of business.
+you can to deprive them of business.
 
 <h3 id="pftw">PackagefortheWeb</h3>
 
@@ -186,7 +185,8 @@ executable and grepping for "Wise".
 
 <p>InstallMaster installers are supposed to recognize the
 <kbd>/s</kbd> switch to perform a silent installation.  And in my
-experience, they generally do.  There is no way to set options.
+experience, they generally do.  But there is no way to set options,
+and the exit status is meaningless.
 
 <p>NOTE: This product has been rebranded the "Wise Installation
 System".  Don't let them confuse you.
@@ -206,10 +206,10 @@ unattended installations.
 <p>Most Microsoft hotfixes respond to the <kbd>/?</kbd> switch, but
 they do not always tell you everything.
 
-<p>Some Microsoft hotfixes use <kbd>/u</kbd> for unattended
-installation and <kbd>/z</kbd> to suppress the automatic reboot.
-There are other useful switches; use <kbd>/?</kbd> to learn about
-them.
+<p>Modern Microsoft hotfixes usually support <kbd>/u</kbd> for
+unattended installation and <kbd>/z</kbd> to suppress the automatic
+reboot.  There are other useful switches; use <kbd>/?</kbd> to learn
+about them.
 
 <p>Some hotfixes use an old Microsoft packaging technology called
 "IExpress", whose switches are more-or-less documented in <a
@@ -220,8 +220,8 @@ href="http://groups.google.com/groups?selm=%23DxIcwcQ%24GA.236%40cppssbbsa02.mic
 a temporary folder and then run a command from inside that folder.
 They support the <kbd>/t:<var>path</var></kbd> switch, to specify the
 temporary folder name, and the <kbd>/c:<var>command</var></kbd> switch
-to specify the command to run.  Passing just <kbd>/c</kbd> suppresses
-running the command at all, so you can use
+to specify the command to run.  Specifying just <kbd>/c</kbd>
+suppresses running the command at all, so you can use
 <kbd>/c&nbsp;/t:<var>path</var></kbd> to extract the hotfix so you can
 look at it.
 
@@ -247,10 +247,10 @@ maintain.
 <h3 id="repackaging">Repackaging</h3>
 
 <p>There are several tools around which can take a "snapshot" of a
-machine's state before and after you perform a manual installation,
-compute the differences between the states, and bundle them up as an
-"installer".  The <a href="#wise">Wise</a> product line provides good
-support for this, and <a
+machine's state before and after a manual installation, compute the
+differences between the states, and bundle them up as an "installer".
+The <a href="#wise">Wise</a> product line provides good support for
+this, and <a
 href="http://www.microsoft.com/windows2000/techinfo/planning/management/veritas.asp"
 >Microsoft's free tool</a> provides bad support for it.
 
@@ -259,14 +259,13 @@ work reliably.  Installers can vary their behavior depending on the
 exact initial state of the machine, such as the OS version or the
 presence/absence of other installed software.  So the repackaged
 installer will almost never do exactly the same thing that a fresh
-installation would, unless the target machine is identical to original
-machine.
+installation would, unless the target machine is completely identical
+to the original machine.
 
-<p>And of course, for every new release of an application, you will
-need to perform the repackaging again.
-
-There are other <a href="http://support.microsoft.com/?kbid=264478"
->disadvantages</a> which even Microsoft recognizes.
+<p>Of course, for every new release of an application, you will need
+to repackage it again.  And there are other <a
+href="http://support.microsoft.com/?kbid=264478" >disadvantages</a>
+which even Microsoft recognizes.
 
 <p>For these reasons, I think repackaging is a very bad idea and I
 advise against it.
@@ -275,28 +274,27 @@ advise against it.
 <h3 id="autoit">AutoIt</h3>
 
 <p><a href="http://www.hiddensoft.com/AutoIt/">AutoIt</a> is a free
-tool which can simulate key presses, mouse clicks, etc., following a
-script (customarily named with a <code>.aut</code> extension).  Most
+tool which can simulate key presses and mouse clicks, following a
+script customarily named with a <code>.aut</code> extension.  Most
 installers have a sufficiently simple and consistent interface that a
-very short AutoIt script suffices to automate the installation.
+very short AutoIt script suffices to automate their installation.
 
-<p>The AutoIt distribution comes with very good documentation.  You
-can copy the <code>AutoIt.exe</code> program wherever you like (say,
+<p>The AutoIt distribution includes very good documentation.  You can
+copy the <code>AutoIt.exe</code> program wherever you like (say,
 <code>Z:\bin</code>) and invoke it standalone.
 
 <p>AutoIt scripts do have drawbacks.
 
-<p>For one thing, you must be careful when upgrading to new releases
-of an application, since the installer's UI may have changed.
+<p>First, you must be careful when upgrading to new releases of an
+application, since the installer's UI may have changed.
 
-<p>More importantly, AutoIt scripts are theoretically unreliable,
-because they provide no way to know when a sub-process has exited.
-You can tell when the AutoIt executable exits, but that is not the
-same thing at all.  For example, an installer's last window might
-disappear while the installer still had work to do.  Your master
-script, waiting only for the AutoIt executable, would then proceed,
-starting another installation or rebooting the machine before the
-underlying installer had finished.
+<p>More worryingly, AutoIt scripts are theoretically unreliable
+because they do not let you determine when a sub-process has exited.
+You can tell when AutoIt itself exits, but that is not the same thing
+at all.  For example, an installer's last window might disappear while
+the installer was still working.  Your master script, waiting only for
+the AutoIt executable, would then proceed, starting another
+installation or rebooting the machine.
 
 <p>AutoIt provides <a
 href="http://www.dx21.com/SCRIPTING/AUTOIT/ViewItem.ASP?NTI=4&amp;SI=3&amp;OID=49"
@@ -325,8 +323,8 @@ href="http://www.dx21.com/SCRIPTING/AUTOIT/ViewItem.ASP?NTI=4&amp;SI=3&amp;OID=7
 <td>
 
 <p>As far as I know, <code>7-zip</code> is the only open source
-competitor to WinZip.  It uses its own self-extracting installation
-scheme.
+competitor to <a href="http://www.winzip.com/">WinZip</a>.  It uses
+its own self-extracting installation scheme.
 
 <p>For unattended operation, run it with switches
 <code>-y&nbsp;/Q</code>.  Yes, that's "dash y slash Q", as described
@@ -378,8 +376,10 @@ know how to handle</a>.
 
 <p>Most of the available properties are <a
 href="http://aspn.activestate.com/ASPN/Perl/Reference/Products/ActivePerl/install.html#windows%20installers"
->documented</a>, except for <kbd>PERL_EXT</kbd>, which tells the
-installer to make ActivePerl the default handler for .pl files.
+>documented</a>, except for <a
+href="http://bugs.activestate.com/show_bug.cgi?id=20364"
+><kbd>PERL_EXT</kbd></a>, which tells the installer to make ActivePerl
+the default handler for .pl files.
 
 <tr><td valign="middle">Example
 <td><a
@@ -400,13 +400,14 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 unattended mode.  In fact, the package selection portion cannot be
 performed with the keyboard; only with the mouse.
 
-<p>However, Cygwin's <code>setup.exe</code> does allow you to break
-its activity into two portions: download and install.  So to automate
-the installation of a subset of packages, you simply:
+<p>However, Cygwin's <code>setup.exe</code> does allow you to download
+everything during one run and install it during another.  So to
+automate the installation of a subset of packages, you simply
+
 <ol>
 
 <li>Run the installer once by hand to download just the packages you
-want
+want.
 
 <li>Write an <a href="#autoit">AutoIt</a> script to run the installer
 in "install from local package directory" mode, clicking in the right
@@ -438,7 +439,7 @@ requires the service)
 <tr><td valign="middle">Details
 
 <td><p>The downloaded installer is named <kbd>ncsetup.exe</kbd>; you
-probably want to rename it to <kbd>att-5.0.5.exe</kbd> or somesuch.
+probably want to rename it to <kbd>att-5.0.6.exe</kbd> or somesuch.
 Running "strings" on the executable reveals that it was created by <a
 href="#wise">Wise Installmaster</a>, so the <kbd>/s</kbd> flag will do
 the trick.
@@ -556,7 +557,7 @@ href="http:#installshield">InstallShield</a> executable.  Use the
 <p>The incremental installers, on the other hand, respond to
 <code>/?</code>.  For unattended installation, provide the
 <code>/nouser</code> switch.  Note that each incremental installer
-only works for the immediately preceeding version of notes, so you
+only works for the immediately preceeding version of Notes, so you
 must apply each of them in order.
 
 <tr><td valign="middle">Example
@@ -610,7 +611,7 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 </table>
 
 <br><hr width="50%">
-<h2 id="office">Microsoft Office</h2>
+<h2 id="office2k">Microsoft Office 2000</h2>
 <table border cellpadding=4>
 
 <tr><td valign="middle">Availability
@@ -624,48 +625,74 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 what Microsoft calls an <a
 href="http://www.microsoft.com/office/ork/2000/two/45ct_3.htm"
 >"Administrative Installation Point"</a>.  This is basically a copy of
-the CD, modified to incorporate your license key and organization
-name.  To create the Administrative Installation Point, run:
+the CD-ROM, modified to incorporate your license key and organization
+name.  From the top-level of the first Office CD-ROM, run:
 
 <pre>
     setup.exe /a data1.msi
 </pre>
 
-...from the top-level of the CD-ROM.
+<p>Just answer all the questions about license keys and such, and the
+installer will create your Administrative Installation Point.  The
+<code>data1.msi</code> file within will work like any other <a
+href="#msi">MSI</a> package.
 
-<p>You will surely want to apply Microsoft's updates, as well.  You
-can keep up with them by reading Microsoft's <a
-href="http://www.microsoft.com/office/ork/xp/journ/adminup.htm"
->Administrative Updates Journal</a>.  Note that some updates are not
-released with an "administrative" version; for such updates, you will
-need to apply them after the installation of Office completes.
-
-<p>You can install Office using the <code>data1.msi</code> package
-from the Administrative Installation Point just like any other <a
-href="#msi">MSI</a> package.  There are many public properties you can
-use, as documented in <a
-href="http://support.microsoft.com/?kbid=270920">KB article
-270920</a> (although a better description can be found in the
+<p>The Office installer has many public properties.  They are
+documented in <a href="http://support.microsoft.com/?kbid=270920">KB
+article 270920</a>, although a better description can be found in the
 <code>setupref.xls</code> spreadsheet in the <a
 href="http://www.microsoft.com/office/ork/2000/appndx/toolbox.htm#offinfo"
->Office Information</a> download from the Office Resource Kit
-toolbox.)  I happen to like the settings <code>ADDLOCAL=ALL</code>,
+>Office Information</a> download from the Office Resource Kit toolbox.
+I happen to like the settings <code>ADDLOCAL=ALL</code>,
 <code>REBOOT=ReallySuppress</code>, <code>NOUSERNAME=TRUE</code>,
 <code>ALLUSERS=1</code>, and <code>DISABLEADVTSHORTCUTS=1</code>.
 Your mileage may vary.
 
-<p>Note: To create an Administrative Installation Point, you must be
-using the Retail or Enterprise editions of Office 2000 (not OEM).  For
-Office XP, only the Enterprise edition will do.  If you try to use the
-OEM edition, the process will appear to work, but it will actually
-just scribble uselessly over the root directory of the current drive.
-(Hint: You can bypass this behavior by using the Office Resource Kit
-to create a <em>transform file</em> which changes the
-<code>OEMRelease</code> property from 1 to 0, but you did not hear this
-from me.)
+<p>Note: To create an Administrative Installation Point, you must have
+the Retail or Enterprise edition of Office 2000, not the OEM edition.
+And for Office XP, only the Enterprise edition will do.  If you try to
+use the OEM edition, the <code>setup.exe&nbsp;/a</code> process will
+appear to work, but it will actually just scribble uselessly over the
+root directory of the current drive.  (Hint: You can correct this
+behavior by using the <a
+href="http://www.microsoft.com/office/ork/2000/appndx/toolbox.htm#orktools"
+>Office Resource Kit</a> to create a <em>transform file</em> which
+changes the <code>OEMRelease</code> property from 1 to 0.  But you did
+not hear this from me.)
+
+<p>Of course, you will want to apply all of Microsoft's updates,
+because Office is riddled with security holes.  There are two ways to
+do this.
+
+<p>One is to follow Microsoft's <a
+href="http://www.microsoft.com/office/ork/xp/journ/adminup.htm"
+>Administrative Updates Journal</a>.  Here you will find
+"administrative" versions of the updates which you may apply directly
+to your Administrative Installation Point, so that all installations
+performed from that point will have the updates incorporated already.
+Be aware that some updates (e.g., the <a
+href="http://www.microsoft.com/office/ork/xp/journ/ol2k-vc.htm">View
+Control Security Update</a>) have no administrative version; such
+updates must be applied on each client.
+
+<p>If you have applied any administrative updates to your installation
+point, your users will not be able to use the <a
+href="http://office.microsoft.com/productupdates/">Product&nbsp;Updates</a>
+section of Microsoft's web site to install updates themselves.
+Microsoft figures that if you apply any updates administratively, you
+want to apply <em>all</em> updates administratively.  If your users
+(like mine) like to administer their own systems, they may find this
+annoying.
+
+<p>The other way to update Office is to apply the <a
+href="http://office.microsoft.com/Downloads/">normal version of each
+update</a> on each client.  The only hard part here is figuring out
+how to install them in unattended mode, because each update is a
+little different.  The example script below should provide a decent
+starting point, and might even be current.
 
 <tr><td valign="middle">Example
-<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/office.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >office.bat</a>
+<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/office2k.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >office2k.bat</a>
 
 </table>
 
@@ -689,19 +716,20 @@ useless for scripting.  The KB article's instructions for using the
 is still accurate, however.
 
 <p>Luckily, by running "strings" on <code>smsinst.exe</code>, we can
-learn that all it does is run <code>regedit /s key.dat</code> and then
-fire up <code>acmboot.exe</code>.  The <code>key.dat</code> file is
-just a simple registry patch to trick <code>acmboot.exe</code> into
-thinking that the GUI portion of Setup has already run.  You must
-provide the <code>/k</code> switch to <code>acmboot.exe</code> to
-specify your license key (sans hyphens).
+learn that all it does is run
+<code>regedit&nbsp;/s&nbsp;key.dat</code> and then fire up
+<code>acmboot.exe</code>.  The <code>key.dat</code> file is just a
+simple registry patch to trick <code>acmboot.exe</code> into thinking
+that the GUI portion of Setup has already run.  You must provide the
+<code>/k</code> switch to <code>acmboot.exe</code> to specify your
+license key (sans hyphens).
 
 <p>Having installed Visual C++, you probably want to install the
 latest service pack (<a
 href="http://msdn.microsoft.com/vstudio/downloads/updates/sp/vs6/sp5/"
 >SP5</a> as of this writing).  To perform an unattended installation
-of SP5, run <code>setupsp5.exe /qn1</code>.  You may also provide the
-<code>/g</code> switch to specify a log file.
+of SP5, run <code>setupsp5.exe&nbsp;/qn1</code>.  You may also provide
+the <code>/g</code> switch to specify a log file.
 
 <p>But oh, if only it were that simple.  If you are installing on
 Windows 2000, you will find that the <code>/qn1</code> flag does not
@@ -819,7 +847,7 @@ this documented somewhere?)
 
 <tr><td valign="middle">Details
 
-<p>This product ships with an ordinary <a href="#msi">MSI</a> package
+<td><p>This product ships with an ordinary <a href="#msi">MSI</a> package
 which can be installed in the usual way, but to preconfigure
 when/what/how to scan you have to do some more work.  You need to
 download the "Installation Designer" to do this.
