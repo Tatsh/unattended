@@ -1,5 +1,5 @@
 .CygwinCommands {
-	font-family: "Courier New", Courier, mono;
+	font-family: "Courier New", Courier, monospace;
 	font-size: 14px;
 	font-style: normal;
 	line-height: normal;
@@ -11,7 +11,7 @@
 	background-color: #CCCCCC;
 }
 .Win32Commands {
-	font-family: "Courier New", Courier, mono;
+	font-family: "Courier New", Courier, monospace;
 	font-size: 14px;
 	font-style: normal;
 	line-height: normal;
@@ -24,4 +24,15 @@
 	background-color: #CCCCCC;
 	letter-spacing: normal;
 	border: thin inset #333333;
+}
+
+img.logo {float: right; border-width: 0;}
+
+.code {
+        font-family: monospace;
+        font-weight: bold;
+        border: solid maroon;
+        border-width: 1px;
+        color: maroon;
+        margin-right: 10%;
 }
