@@ -41,12 +41,10 @@ unless (-e $mapznrun) {
 
 # Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'help', 'man', 'go')
+GetOptions (\%opts, 'help', 'user', 'go')
     or pod2usage (2);
 
 (exists $opts{'help'})
-    and pod2usage (0);
-(exists $opts{'man'})
     and pod2usage ('-exitstatus' => 0, -verbose => 2);
 
 sub stop () {
@@ -74,6 +72,15 @@ sub reboot ($) {
     InitiateSystemShutdown ('', "$0: Rebooting...", $timeout, 1, 1)
         or die "Unable to InitiateSystemShutdown: $^E";
     stop ();
+}
+
+# Check if we have administrative privileges.
+sub are_we_administrator () {
+    # See if we can enable the "take ownership" privilege.  This is
+    # just a poor approximation to what we really want to know, which
+    # is (usually) whether we can install software.
+    return AllowPriv (SE_TAKE_OWNERSHIP_NAME, 1)
+        && AllowPriv (SE_TAKE_OWNERSHIP_NAME, 0);
 }
 
 # Read a file.  Return an empty list if file does not exist.
@@ -152,7 +159,9 @@ sub peek_todo () {
 # user.  If arg is undef, remove the registry entry.
 sub run_at_logon (;$) {
     my ($cmd) = @_;
-    my $run_key = 'CUser/Software/Microsoft/Windows/CurrentVersion/Run/';
+    my $run_subkey = 'Software/Microsoft/Windows/CurrentVersion/Run/';
+    my $run_key = (exists $opts{'user'}
+                   ? "CUser/$run_subkey" : "LMachine/$run_subkey");
     my $todocmd = '/ToDoCmd';
 
     if ($cmd) {
@@ -294,6 +303,12 @@ sub get_drive_path ($) {
     return $ret;
 }
 
+# Arrange to run ourselves at next logon.
+sub run_ourselves_at_logon () {
+    my $user_arg = (exists $opts{'user'} ? ' --user' : '');
+    run_at_logon ("$mapznrun $0" . $user_arg . ' --go');
+}
+
 # Set up console for single-character input and autoflush output.
 my $console = new Win32::Console (STD_INPUT_HANDLE)
     or die "Unable to create STDIN console: $^E";
@@ -314,7 +329,7 @@ sub do_cmd ($;$) {
             # after reboot.
             my $next_cmd = peek_todo ();
             defined $next_cmd
-                and run_at_logon ("$mapznrun $0 --go");
+                and run_ourselves_at_logon ();
             reboot (5);
             die 'Internal error';
         }
@@ -324,7 +339,7 @@ sub do_cmd ($;$) {
             # after reboot.
             my $next_cmd = peek_todo ();
             defined $next_cmd
-                and run_at_logon ("$mapznrun $0 --go");
+                and run_ourselves_at_logon ();
             do_cmd ($new_cmd);
             print "Expecting previous command to reboot; exiting.\n";
             exit 0;
@@ -403,6 +418,9 @@ sub do_cmd ($;$) {
     return $ret;
 }
 
+exists $opts{'user'} || are_we_administrator ()
+    or die 'Error: Not Administrator and --user not supplied';
+
 if (exists $opts{'go'}) {
     @ARGV == 0
         or pod2usage (2);
@@ -455,4 +473,24 @@ todo.pl [ options ] <commands...>
 
 --help          Display help and exit
 --go            Process the to-do list
+--user          Run in "per user" mode
 
+=head1 DESCRIPTION
+
+todo.pl manages the "to do" list, a plain-text file in
+%SystemDrive%\netinst\todo.txt.
+
+Normally, it simply prepends its arguments to the list.
+
+If invoked with --go, it removes commands from the list one at a time
+and executes them in a controlled environment.  If todo.pl encounters
+a ".reboot" command which is not the final command, it hooks the
+registry to run itself at next logon and reboots the machine.
+
+If invoked without --user, todo.pl hooks HKEY_LOCAL_MACHINE to run
+itself at next logon.  So no matter who logs on next, todo.pl will be
+invoked.  If invoked with --user, todo.pl hooks HKEY_CURRENT_USER
+instead, so it will only run when the same user logs on next.
+
+=head1 SEE ALSO
+L<http://unattended.sourceforge.net/apps.html#todo>
