@@ -1,5 +1,5 @@
 bash=bash-2.05b
-busybox=busybox-1.00-pre9
+busybox=busybox-1.00-pre10
 dosemu=dosemu-1.2.1
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
@@ -145,7 +145,11 @@ stage1/bin/sh: stage1/bin/bash
 stage1 += stage1/bin/bash stage1/bin/sh
 
 ## BusyBox
-$(busybox)/.config: misc/busybox-config
+$(busybox)/.stamp-busybox-patch: misc/busybox-patch
+	cd $(busybox) && patch -p1 < $(cwd)/$<
+	touch $@
+
+$(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch
 	cp -f $< $@
 	cd $(busybox) && make oldconfig
 
