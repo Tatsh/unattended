@@ -8,7 +8,8 @@ list when called with no arguments.  This had the side-effect of
 always prompting about "RETAIL" drivers.  Thanks to Shad Lords.
 
 Add new "lang_dirs" method to Unattend::WinMedia.  Use it to set
-/rx:... option to winnt.exe.  Useful for internationalization; see
+/rx:... option to winnt.exe.  This effectively adds support for
+[RegionalSettings]; see
 <http://www.microsoft.com/globaldev/reference/win2k/setup/specify.mspx>.
 
 Edit Unattend::IniFile::force() method to recognize recursion when
