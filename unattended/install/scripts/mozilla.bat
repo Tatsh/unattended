@@ -1,3 +1,3 @@
 :: OPTIONAL: Install Mozilla
 
-todo.pl "%Z%\packages\mozilla-win32-1.4-installer.exe -ma -ira"
+todo.pl "%Z%\packages\mozilla-win32-1.5-installer.exe -ma -ira"
