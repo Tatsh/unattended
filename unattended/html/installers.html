@@ -648,17 +648,18 @@ href="http://msdn.microsoft.com/library/">browse it online</a>.
 
 <tr><td valign="middle">Details
 
-<td>NOTE: The following applies to the April 2002 edition of the MSDN
-Library.  I make no promises about other editions, although I would be
-happy to hear about your experiences with them.
+<td>NOTE: The following applies to the April 2002 and October 2002
+editions of the MSDN Library.  I make no promises about other
+editions, although I would be happy to hear about your experiences
+with them.
 
 <p>The good news is that the MSDN Library comes with an <a
 href="#msi">MSI</a> package.  The bad news is that when you try to
 install it with <code>msiexec</code>, a little dialog box appears
 telling you to run the provided <code>setup.exe</code> instead.
 
-<p>Naturally, <code>setup.exe</code> responds to <kbd>/?</kbd> with
-"Incorrect command line parameters", so you have to guess what it
+<p>Naturally, this <code>setup.exe</code> responds to <kbd>/?</kbd>
+with "Incorrect command line parameters", so you have to guess what it
 wants.  It turns out that it will take any arguments you give and pass
 them on to <code>msiexec</code>.  So we can just run
 <code>setup.exe&nbsp;/qb</code> and be done with it, right?  Wrong.
@@ -666,7 +667,7 @@ Before running <code>msiexec</code>, <code>setup.exe</code> forks
 itself into the background, so <code>start&nbsp;/wait</code> returns
 immediately instead of waiting.
 
-<p>But we do not give up that easily.
+<p>But we do not give up so easily.
 
 <p>If you run <code>setup.exe</code> with the
 <kbd>/l*v&nbsp;<var>logfile</var></kbd> option, you can learn quite a
@@ -710,7 +711,7 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 
 <tr><td valign="middle">Details
 
-<td>For unattended install, run with <code>-ma</code> option.  (Is
+<td><p>For unattended install, run with <code>-ma</code> option.  (Is
 this documented somewhere?)
 
 <tr><td valign="middle">Example
@@ -730,8 +731,8 @@ for long</a>
 <tr><td valign="middle">Details
 
 <td>(Note: Shiva was bought by Intel a few years ago.  Intel rebranded
-the product line "Intel Netstructure", and is terminating the product
-line.  But we still use it where I work.)
+the product line "Intel Netstructure" and then decided to terminate
+it.  But we still use it where I work.)
 
 <p>This is an <a href="#installshield">InstallShield</a> installer,
 but it has custom dialogs so the <kbd>/s</kbd> switch does not work.
@@ -757,7 +758,10 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 <tr><td valign="middle">Details
 
 <td>This is an <a href="#inno">Inno</a> installer, so just use the
-<code>/silent</code> switch.
+<code>/silent</code> switch.  (TightVNC's <a
+href="http://www.tightvnc.com/winst.html">own installation
+instructions</a> say to use <code>/sp-&nbsp;/verysilent</code>, but I
+have not found that to be necessary.)
 
 <tr><td valign="middle">Example <td><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/vnc.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
