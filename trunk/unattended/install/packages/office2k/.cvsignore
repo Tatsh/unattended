@@ -1,0 +1,14 @@
+ie5
+license.txt
+msi
+*.cab
+pfiles
+readme.doc
+setup.*
+sp
+sql
+system*
+windows
+*.inf
+*.msi
+
