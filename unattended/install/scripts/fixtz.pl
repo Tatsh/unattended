@@ -20,12 +20,6 @@ GetOptions (\%opts, 'help|h|?')
 scalar @ARGV == 0
     or pod2usage (2);
 
-# Only operate on XP.
-unless (exists $ENV{'WINVER'} && $ENV{'WINVER'} =~ /^winxp/) {
-    print "$0: I only run on XP.  Exiting.\n";
-    exit 0;
-}
-
 # Bomb out completely if COM engine encounters any trouble.
 Win32::OLE->Option ('Warn' => 3);
 
@@ -39,14 +33,14 @@ my $tz_set = $computer->InstancesOf ("Win32_TimeZone");
 # Convert set to Perl array.
 my @tzs = Win32::OLE::Enum->All ($tz_set);
 
-# Grab first (only) element.
+# Grab first (only) element, which is our current time zone.
 scalar @tzs == 1
     or die "Internal error";
-my $tz = $tzs[0]->{'Description'};
+my $tz = $tzs[0]->{'StandardName'};
 
 print "Resetting timezone [$tz]...\n";
 
-my $ret = system 'control.exe', "timedate.cpl,,/z $tz";
+my $ret = system "control.exe timedate.cpl,,/Z $tz";
 
 # Status 1 is normal, apparently.
 $ret == 0 || $ret == 256
