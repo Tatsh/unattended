@@ -85,12 +85,6 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: mdac_typ.exe to something more descriptive.
 todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /qn1\""
 
-:: Critical update 823718
-:: "Security Update for Microsoft Data Access Components"
-:: (Now installing MDAC 2.8, comment out for now)
-:: <http://support.microsoft.com/?kbid=823718>
-:: todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q823718_MDAC_SecurityPatch.exe /q /c:\"dahotfix.exe /q /n\""
-
 :: Critical update 329115 (MS02-050)
 :: "Certificate Validation Flaw Might Permit Identity Spoofing"
 :: (updated November 11, 2003 for win2ksp4)
