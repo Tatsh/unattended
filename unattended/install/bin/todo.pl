@@ -39,12 +39,12 @@ sub reboot ($) {
     stop ();
 }
 
-# Read a file.  Just return undef if file does not exist.
+# Read a file.  Return an empty list if file does not exist.
 sub read_file ($) {
     my ($file) = @_;
 
     -e $file
-        or return undef;
+        or return ();
 
     open FILE, $file
         or die "Unable to open $file for reading: $^E";
@@ -61,7 +61,7 @@ sub read_file ($) {
 sub write_file ($@) {
     my ($file, @lines) = @_;
 
-    if (defined $lines[0]) {
+    if (scalar @lines > 0) {
         my $tmp = "$file.tmp.$$";
         open TMP, ">$tmp"
             or die "Unable to open $tmp for writing: $^E";
@@ -81,6 +81,7 @@ sub write_file ($@) {
     }
 }
 
+
 # Push one or more commands onto the to-do list.
 sub push_todo (@) {
     my @new_cmds = @_;
@@ -95,7 +96,7 @@ sub pop_todo (;$) {
     my ($peek) = @_;
     my @cmds = read_file ($todo);
 
-    defined $cmds[0]
+    scalar @cmds > 0
         or return undef;
 
     my $ret = shift @cmds;
