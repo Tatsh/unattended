@@ -13,7 +13,7 @@
 :: URL|RUS|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/enu/AdbeRdr60_enu_full.exe|packages/adobereader/adberdr60_rus_full.exe
 
 if not exist %Z%\packages\adobereader\adberdr70_%WINLANG%_full.exe goto no_v7
-todo.pl "%Z%\packages\adobereader\adberdr70_%WINLANG%_full.exe -p\"-s /v\\\"/qb /l* %SystemDrive%\netinst\logs\adobe-reader.txt\\\"\""
+todo.pl "%Z%\packages\adobereader\adberdr70_%WINLANG%_full.exe /S /v\"/qb /l* %SystemDrive%\netinst\logs\adobe-reader.txt\""
 goto done
 
 :no_v7
