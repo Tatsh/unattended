@@ -1,7 +1,8 @@
 lastdrive=z
 dos=high,umb
 device=himem.sys /testmem:off
-device=emm386.exe NOEMS NOVCPI
+;device=umbpci.sys
+;device=emm386.exe NOEMS NOVCPI
 DEVICEHIGH=\NET\IFSHLP.SYS
 
 ; Required for installing XP under VMware.  Thanks to Scott Card for
