@@ -22,13 +22,10 @@ make_block_device () {
 
 echo "*** OK, here we go."
 
-echo "*** First, we'll look for Ethernet hardware..."
+echo "*** First, we'll look for PCI Ethernet hardware..."
 
 # PCI classes 0x0200nn are Ethernet controllers
 network_modules=`find-modules-pci 0x02 0x00`
-
-[ -z "$network_modules" ] \
-    && die "No network hardware found (missing drivers?)"
 
 for module in $network_modules ; do
     echo "Loading $module..."
@@ -36,10 +33,20 @@ for module in $network_modules ; do
     echo "done loading $module"
 done
 
-echo "*** Good.  Now let's see about DHCP..."
+echo "*** And I suppose we may as well look for PCMCIA devices..."
+# cardmgr only monitors one socket (of two) for me if I omit this
+# delay.  I have no idea why.
+sleep 1
+cardmgr -o
+
+echo "*** Now that we have loaded the modules (maybe), let's try DHCP..."
 
 unset got_lease
 for iface in eth0 eth1 eth2 ; do
+    if ! ifconfig $iface >/dev/null 2>&1 ; then
+        echo "*** $iface not found"
+        continue
+    fi
     echo "*** Trying DHCP on $iface..."
     if udhcpc --interface=$iface --now --script=/etc/udhcpc-script ; then
         echo "*** DHCP on $iface worked!"
