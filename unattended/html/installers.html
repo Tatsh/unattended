@@ -40,10 +40,9 @@ href="http://www.gnu.org/manual/binutils-2.12/html_node/binutils_9.html"
 
 <p>Sure, you can run the installer with the <kbd>/?</kbd> switch to
 learn which other switches it supports.  But if you really expect this
-to work, then you have not been using Windows for very long.  By all
-means, try it; in my experience, the odds are about 1 in 4 that
-<kbd>/?</kbd> will tell you anything at all, even when there is
-something to tell.
+to work, then you have not been using Windows for very long.  In my
+experience, the odds are about 1 in 4 that <kbd>/?</kbd> will tell you
+anything at all, even when there is something to tell.
 
 <h2 id="msi">MSI packages</h2>
 
@@ -386,9 +385,31 @@ href="http://www.microsoft.com/windows/directx/downloads/drx81.asp"
 the tree to <var>path</var>.  From that tree, run
 <kbd>dxsetup&nbsp;/silent&nbsp;/install</kbd>.
 
+<br><hr width="50%">
+<h2 id="emacs">Emacs</h2>
+<table border cellpadding=4>
+<tr><td valign="middle">Availability
+<td><a href="http://ftp.gnu.org/gnu/windows/emacs/"
+>Open Source</a>
+
+<tr><td valign="middle">Details
+
+<td>Binary distributions of Emacs for Windows are distributed as
+<code>.tar.gz</code> files with names like
+<code>emacs-21.2-i386.bin.tar.gz</code>.  You need to extract the tree
+somewhere (like <code>C:\emacs-21.2), then run the
+<code>bin\addpm.exe</code> helper to add the Emacs icon to the Start
+menu.
+
+Using <a href="seven-zip">7-zip</a>, extraction takes two steps: One
+to extract the <code>.tar</code> file from the <code>.tar.gz</code>
+file, and another to extract the distribution itself from the
+<code>.tar</code> file.
+
 <tr><td valign="middle">Example
 <td><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/directx81.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">directx81.bat</a>
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/emacs.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>emacs.bat</a>
 
 </table>
 
@@ -511,6 +532,24 @@ this documented somewhere?)
 
 <tr><td valign="middle">Example
 <td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/mozilla.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >mozilla.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="tightvnc">TightVNC</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://vnc-tight.sourceforge.net/">Open Source</a>
+
+<tr><td valign="middle">Details
+
+<td>This is an <a href="#inno">Inno</a> installer, so just use the
+<code>/silent</code> switch.
+
+<tr><td valign="middle">Example <td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/vnc.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>vnc.bat</a>
 
 </table>
 
