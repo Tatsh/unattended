@@ -1,7 +1,13 @@
-:: Install a developer workstaion
+:: Install a developer workstation
 
 :: C:\Perl\bin\HEAD conflicts with Cygwin version (because Windows is
 :: case-insensitive), so delete it.
 del C:\Perl\bin\HEAD
 
-todo.pl base.bat emacs.bat cygwin.bat vc6.bat msdn.bat %WINVER%-symbols.bat symantec-antivirus.bat
+todo.pl symantec-antivirus.bat
+
+todo.pl gt.bat perforce.bat
+
+todo.pl emacs.bat cygwin.bat vc6.bat vsnet.bat msdn.bat %WINVER%-symbols.bat
+
+todo.pl base.bat 
