@@ -12,12 +12,12 @@
 :: URL|ELL|ftp://ftp.opera.com/pub/opera/win/lng/711/el/ow711_2887el.lng|packages/opera/languages/opera-ell.lng
 :: URL|ENG|ftp://ftp.opera.com/pub/opera/win/lng/723/en-GB/ow723_3227en-GB.lng|packages/opera/languages/opera-eng.lng
 :: URL|ESN|ftp://ftp.opera.com/pub/opera/win/lng/754/es-ES/ow754_3865es-ES.lng|packages/opera/languages/opera-esn.lng
-:: URL|FIN|ftp://ftp.opera.com/pub/opera/win/lng/752/fi/ow752_3834fi.lng|packages/opera/languages/opera-fin.lng
+:: URL|FIN|ftp://ftp.opera.com/pub/opera/win/lng/754/fi/ow754_3865fi.lng|packages/opera/languages/opera-fin.lng
 :: URL|FRA|ftp://ftp.opera.com/pub/opera/win/lng/752/fr/ow752_3834fr.lng|packages/opera/languages/opera-fra.lng
-:: URL|ITA|ftp://ftp.opera.com/pub/opera/win/lng/752/it/ow752_3834it.lng|packages/opera/languages/opera-ita.lng
+:: URL|ITA|ftp://ftp.opera.com/pub/opera/win/lng/754/it/ow754_3865it.lng|packages/opera/languages/opera-ita.lng
 :: URL|JPN|ftp://ftp.opera.com/pub/opera/win/lng/723/ja/ow723_3227ja.lng|packages/opera/languages/opera-jpn.lng
 :: URL|KOR|ftp://ftp.opera.com/pub/opera/win/lng/754/ko/ow754_3865ko.lng|packages/opera/languages/opera-kor.lng
-:: URL|NLD|ftp://ftp.opera.com/pub/opera/win/lng/722/nl/ow722_3221nl.lng|packages/opera/languages/opera-nld.lng
+:: URL|NLD|ftp://ftp.opera.com/pub/opera/win/lng/754/nl/ow754_3865nl.lng|packages/opera/languages/opera-nld.lng
 :: URL|NON|ftp://ftp.opera.com/pub/opera/win/lng/723/nn/ow723_3227nn.lng|packages/opera/languages/opera-non.lng
 :: URL|NOR|ftp://ftp.opera.com/pub/opera/win/lng/754/nb/ow754_3865nb.lng|packages/opera/languages/opera-nor.lng
 :: URL|PLK|ftp://ftp.opera.com/pub/opera/win/lng/754/pl/ow754_3865pl.lng|packages/opera/languages/opera-plk.lng
