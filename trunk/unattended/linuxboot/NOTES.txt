@@ -7,16 +7,17 @@ Linux
 
 Linux supports a new "initramfs" format for initial ramdisks.  This
 format is cool because it is just a cpio(1) archive, which is easy to
-create with unprivileged tools; no need to go root to make a loopback
-mount.  Actually, it is a sequence of cpio archives, which is even
-cooler.  (See
+create with unprivileged tools; no need to go root and make a loopback
+mount.  Actually, the format is a sequence of cpio archives, which is
+even cooler.  (See
 http://linux.bkbits.net:8080/linux-2.5/src/Documentation/early-userspace).
 
 Since the initramfs is a sequence of cpio archives, we can create one
 cpio archive from a tree of files and a separate cpio archive of
 device nodes and glom them together.  This is nice because "mknod"
-would require root access.  The tools/mknod-cpio.pl script generates a
-cpio archive of device nodes when fed misc/devices.txt as input.
+would require root access.  The tools/mknod-cpio.pl script directly
+generates a cpio archive of device nodes when fed misc/devices.txt as
+input.
 
 There is just one problem: As of kernel 2.6.3, initial ramdisks do not
 work quite right because Linux tries to mount a new device as root
@@ -48,6 +49,45 @@ support for future kernels, but we will occasionally want to refresh
 the configuration (especially if the Linux folks add new drivers).
 
 
+The disk geometry nightmare
+===========================
+
+The Linux HDIO_GETGEO ioctl() returns the geometry
+(cylinders/heads/sectors) of a hard disk.  Unfortunately, these values
+are not always the same as that returned by the BIOS, especially the
+legacy INT 13/AH=08h interface (see
+http://www.ctyme.com/intr/rb-0621.htm).  After some discussion on the
+SYSLINUX list, our solution (see
+http://www.zytor.com/pipermail/syslinux/2004-February/003269.html) is
+to patch the kernel to invoke the BIOS calls at startup, and modify
+the edd.ko device driver to expose those values under
+/sys/firmware/edd.  The patch is in misc/edd-legacy-patch.
+
+With this patch applied to the kernel, our scripts can read the files
+under /sys/firmware/edd, use them to set some environment variables
+(LEGACY_BIOS_HEAD and LEGACY_BIOS_SECT), and fix the kernel's notion
+of the geometry by writing "bios_cyl:<C> bios_head:<H> bios_sect:<S>"
+into the /proc/ide/hdX/settings file.
+
+This corrects the values returned by HDIO_GETGEO, which both Parted
+and Dosemu use.  Without this correction, Windows Setup creates a
+partition which its own loader cannot boot ("NTLDR not found").  I am
+not completely sure whether the partition table or Dosemu environment
+is responsible, but it does not matter because this fixes it.
+
+Note that /proc/ide/hdX/settings only exists for IDE devices.
+Browsing the Linux kernel source, I have some hope that most SCSI and
+RAID drivers already return the BIOS-friendly geometry in HDIO_GETGEO.
+If this turns out not to be the case, we will need to find a way to
+manually feed the geometry into Dosemu (easy) and Parted (hard).
+
+There is a somewhat related issue, which is that we assume BIOS device
+80h (the boot device) is the one which we are using.  Our selection
+algorithm ("try hda, then try sda") is much too primitive and
+certainly wrong for complex multi-disk setups.  This may be the
+biggest FIXME at present...
+
+
 module-init-tools
 =================
 
@@ -57,22 +97,50 @@ runs "insmod").  The binaries are small, except for insmod.static,
 which we just delete.
 
 
+bash
+====
+
+I know, Bash is huge.  But I am so accustomed to it that I cannot
+remember which features are standard and which are Bash extensions.
+So sue me.
+
+We use a horrible hack (bash_cv_termcap_lib=gnutermcap ./configure) to
+trick Bash into using its built-in primitive termcap code, instead of
+hunting around looking for libtermcap and libncurses.  We do bundle
+ncurses (because nano needs it), but right now it lives on the
+network, not the boot disk.
+
+
 glibc
 =====
 
-I know, glibc is huge and is not really meant for this purpose.  The
-problem is that everything in the Linux world is written to link
-against glibc.  I looked at other C libraries (especially uClibc), but
-I was particularly worried about Samba, because we need smbmount to
-gain access to our network share.  And what about dosemu or other
-big-ticket items?  Do we somehow try to use uClibc on the boot disk
-and then switch to glibc after mounting the share?
+I know, I know, glibc is really huge and is not really meant for boot
+disks.  The problem is that everything in the Linux world is written
+to link against glibc.  I looked at other C libraries (especially
+uClibc), but I was particularly worried about Samba, because we need
+smbmount to gain access to our network share.  And what about dosemu
+or other big-ticket items?  Do we somehow try to use uClibc on the
+boot disk and then switch to glibc after mounting the share?
 
 In the end, I decided that since a compressed libc.so will fit on a
-floppy (compressed, barely), we can live with it.
+floppy (compressed, barely), we can live with it.  Not that we support
+booting this thing from floppy (yet).
 
 Note that LinuxThreads (and "configure --enable-add-ons") appears to
 be required; glibc-2.3.2 does not build without it.
+
+Even though glibc-2.3.2 is over a year old, it is the latest release.
+And it has a bug which prevents it from building under current
+versions of GCC.  The misc/glibc-sscanf-patch patch, which I found on
+the Net somewhere, fixes this bug.
+
+Note that, in general, your C compiler will compile and link many
+tools against the local system libraries and headers.  This can cause
+problems at run time, when the executables are dynamically loaded
+against the libraries we are building here.  The "fakeinclude" and
+"fakelib" directories work around this problem by letting us build
+apps against the headers and libraries here.  Search the Makefile for
+"fake" to see how it works.
 
 
 klibc
@@ -121,8 +189,15 @@ The whole shebang
 The isolinux.cfg (and, someday, syslinux.cfg and pxelinux.cfg) file
 just passes a few parameters to the kernel.  One of them is
 "init=/linuxrc", which tells the kernel to run that script first after
-booting.  Our copy is in misc/linuxrc.  It does some basic work to set
-the stage to invoke /etc/master (which comes from misc/master), our
-master installation script.
+booting.  Source for the script it misc/linuxrc.  It does some basic
+work to set the stage to invoke /etc/master (which comes from
+misc/master), our master installation script.
 
-I am tired of writing now.  More later, maybe.
+The Makefile generates a stage1/ directory holding the complete
+installation tree as seen after the disk is booted and the network is
+mounted.  The tools/move-and-link script is used to divvy up those
+files between stage2/ (which is the actual boot disk) and
+../install/linuxaux (which is on the Z:\ drive, which /etc/master
+mounts as /z).  For example, the file stage1/lib/libparted.so gets
+moved to ../install/linuxaux/libparted.so, and a symlink is created
+from stage2/lib/libparted.so to /z/linuxaux/lib/libparted.so.
