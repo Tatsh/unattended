@@ -13,11 +13,7 @@ my $soft_ms = 'SOFTWARE/Microsoft';
 my $start_balloon_key =
     "HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Services/KSecDD/StartButtonBalloonTip";
 
-my $au_key = "HKEY_LOCAL_MACHINE/$soft_ms/Windows/CurrentVersion/WindowsUpdate/Auto Update";
-
-my %settings = ($start_balloon_key => 1,
-                "$au_key/AUOptions" => 1,
-                "$au_key/AUState" => 7);
+my %settings = ($start_balloon_key => 1);
                 
 foreach my $key (sort keys %settings) {
     my $val = $settings{$key};
