@@ -187,7 +187,10 @@ $u->push_value ('Unattended', 'OemPnPDriversPath',
             @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1, dos_to_host($driver_path . '\\' . $template));
 # TODO: Must still copy dos_to_host($driver_path.'\\'.$template) over to dos_to_host('c:\')
         } else {
-            @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1);
+            @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1, dos_to_host($driver_path));
+# TODO: Must still copy dos_to_host($driver_path) over to dos_to_host('c:\')
+            scalar @pnp_driver_dirs > 0
+                or @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1);
         }
         scalar @pnp_driver_dirs > 0
             or return undef;
