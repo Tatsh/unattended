@@ -33,7 +33,6 @@ el94x    3com 3c94x/3c2000 family of gigabit adapters
 
 # <http://www.google.com/search?q=via+ethernet+drivers>
 # <http://www.viaarena.com/?PageID=71>
-# <ftp://downloads.viaarena.com/drivers/LAN/>
 fetnd    VIA VT86C100A/6102/6105 "Rhine" family (e.g., D-Link DFE-530TX)
 
 # http://www.netgear.com/support/products/FA310.asp
