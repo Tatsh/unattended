@@ -73,9 +73,9 @@ bootdisk.iso: $(patsubst images/%.imz,iso/isolinux/%.imz,$(images)) \
 			iso/isolinux/memdisk iso/isolinux/isolinux.cfg \
 			iso/isolinux/isoboot.msg iso/isolinux/isolinux.bin
 	@echo -n "Making $@..."
-	@mkisofs -quiet -o $@.tmp \
-                -b isolinux/isolinux.bin -c isolinux/boot.cat \
-                -no-emul-boot -boot-load-size 4 -boot-info-table \
+	@mkisofs -quiet -o $@.tmp -m CVS				\
+                -b isolinux/isolinux.bin -c isolinux/boot.cat		\
+                -no-emul-boot -boot-load-size 4 -boot-info-table	\
 		iso > /dev/null
 	@mv $@.tmp $@
 	@echo "...done making $@"
