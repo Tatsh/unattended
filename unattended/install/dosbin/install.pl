@@ -483,7 +483,7 @@ set_value ('_meta', 'top',
            });
 
 set_comments ('_meta', 'ntp_servers',
-              "    ; NTP servers, separated by commas or spaces");
+              "    ; NTP servers, separated by commas or spaces\n");
 
 set_value ('_meta', 'ntp_servers',
            sub {
@@ -522,7 +522,7 @@ set_value ('_meta', 'doit_cmd',
            });
 
 set_comments ('_meta', 'autolog',
-              "    ; Command to disable (or modify) logon setting when installation finishes");
+              "    ; Command to disable (or modify) logon setting when installation finishes\n");
 
 # Default setting for automatic logon is to disable it, but retain
 # default setting of last user who logged on.
@@ -548,7 +548,7 @@ set_value ('UserData', 'ComputerName',
            });
 
 set_comments ('GuiRunOnce', 'Command0',
-              '    ; Command which runs after OS installation finishes');
+              "    ; Command which runs after OS installation finishes\n");
 
 set_value ('GuiRunOnce', 'Command0', \&create_postinst_bat);
 
