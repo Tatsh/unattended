@@ -11,22 +11,27 @@ cvs := $$USER@cvs.sourceforge.net:/cvsroot/unattended
 
 cwd := $(shell pwd)
 
+ver := $(shell linuxboot/tools/version.pl)
+
+prev := $(shell linuxboot/tools/version.pl 1)
+
 dir := unattended-${ver}
 
 really := echo XXX
 
 checkver:
-	@if [ "${ver}" == "" ] ; then					\
-		echo "You forgot to set the 'ver' variable" ;		\
-		exit 1 ;						\
+	@if [ "${ver}" == "" ] ; then			\
+		echo "Unable to determine version" ;	\
+		exit 1 ;				\
 	fi
 
 release: checkver
-	tag=`echo REL_${ver} | sed s/\\\\./_/g` &&	\
-	$(really) cvs tag $$tag .
+	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&			\
+	$(really) cvs tag $$tag .					\
 	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
 	cd $$temp &&							\
 	cvs -z3 -d${cvs} checkout unattended &&				\
+	echo -e "$(ver)\r" > unattended/install/version.txt &&		\
 	mv unattended $(dir) &&						\
 	find $(dir) -name CVS -prune -o -type f				\
 			-not -name .\* -print |				\
@@ -54,11 +59,11 @@ release: checkver
 	$(really) rm -rf $$temp
 
 diff: checkver
-	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&	\
+	tag=`echo REL_$(prev) | sed s/\\\\./_/g` &&	\
 	cvs diff -u -r$$tag::
 
 log: checkver
-	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&	\
+	tag=`echo REL_$(prev) | sed s/\\\\./_/g` &&	\
 	cvs log -N -S -r$$tag::
 
 .PHONY: default checkver release diff log
