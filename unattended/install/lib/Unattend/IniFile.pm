@@ -118,6 +118,9 @@ sub _canonical_comments ($$$) {
 
     my $comments = $self->comments (@sect_key);
 
+    defined $comments
+        or $comments = [ ];
+
     ref $comments
         and return $comments;
 
@@ -162,6 +165,7 @@ sub max_index ($) {
 # Helper function for merging comments.
 sub _merge_comments ($$) {
     my ($c1, $c2) = @_;
+
     # If the new comments are non-trivial or the old comments are
     # trivial, return the new.
     return ((0 < scalar grep { /[^\s;]/ } @$c2
@@ -203,8 +207,8 @@ sub merge ($$) {
             $self->{$section}->{$key} = $other->{$section}->{$key};
             # Merge the comments.
             $self->comments ($section, $key) =
-                _merge_comments ($self->comments ($section, $key),
-                                 $other->comments ($section, $key));
+                _merge_comments ($self->_canonical_comments ($section, $key),
+                                 $other->_canonical_comments ($section, $key));
             # Overwrite the sort index.
             $self->sort_index ($section, $key) =
                 $other->sort_index ($section, $key);
