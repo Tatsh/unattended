@@ -7,7 +7,7 @@ todo.pl .reboot
 :: "Vulnerability in Microsoft Excel Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-033.mspx>
 :: URL|ENU|http://download.microsoft.com/download/b/0/3/b03abaa0-dd54-4223-b43e-130d338678b1/office2000-kb873372-fullfile-enu.exe|updates/office2k/office2000-kb873372-fullfile-enu.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb886836-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb886836.txt /p EXCELff.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb873372-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb873372.txt /p EXCELff.msp REBOOT=ReallySuppress\""
 
 :: Security Update for Office 2000: WordPerfect 5.x Converter (KB873380)
 :: URL|ARA|http://download.microsoft.com/download/6/a/5/6a5b905d-53f2-4af8-8544-2d8961e10e24/office2000-kb873380-fullfile-ara.exe|updates/office2k/office2000-kb873380-fullfile-ara.exe
