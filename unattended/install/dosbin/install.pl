@@ -410,8 +410,14 @@ sub run_command ($@) {
     (exists $status_hash{$status})
         or die "$cmd > $tmpfile failed, unexpected status $status";
 
-    my @ret = read_file ($tmpfile);
-
+    my @ret = "";
+ 
+    if (-e $tmpfile) {
+      @ret = read_file ($tmpfile);
+    } else {
+      # probably we are booting from read-only device
+      $ret = system "$cmd < nul";
+    }
     # Maybe we should remove $tmpfile here, but that would slow
     # things down and hinder debugging so we don't.
 #    unlink $tmpfile
@@ -624,9 +630,9 @@ sub convert_fdisk_parted ($) {
             $fs = $type_map{$type};
         }
 
- 	if ($ptype eq 'pri') { $parttype = 'primary' }
- 	elsif ($ptype eq 'log') { $parttype = 'logical' }
- 	elsif ($ptype eq 'ext') { $parttype = 'extended'; $fs='' }
+    if ($ptype eq 'pri') { $parttype = 'primary' }
+    elsif ($ptype eq 'log') { $parttype = 'logical' }
+    elsif ($ptype eq 'ext') { $parttype = 'extended'; $fs='' }
 
         $ret = "$parted mkpart $parttype $fs $start $end";
     }
@@ -640,10 +646,10 @@ sub convert_fdisk_parted ($) {
 # fdisk commands to run
 sub ask_fdisk_cmds () {
     # Read current partition table.
+    print "\nCurrent partition table:";
     my $partition_layout = partition_table ();
 
     # Display it.
-    print "\nCurrent partition table:";
     print $partition_layout;
     print "\n";
 
@@ -867,7 +873,8 @@ my $_batfile_first_lines;
 sub batfile_first_lines () {
     if (!defined $_batfile_first_lines) {
         $_batfile_first_lines = { };
-        my $script_dir = 'z:\\scripts';
+        my $dos_zdrv = $u->{'_meta'}->{'dos_zdrv'};
+        my $script_dir = "$dos_zdrv\\scripts";
         opendir SCRIPTS, dos_to_host ($script_dir)
             or die "Unable to opendir $script_dir: $^E";
         while (my $ent = readdir SCRIPTS) {
@@ -954,7 +961,8 @@ $u->{'_meta'}->{'doit_cmds'} =
         $src_tree =~ /\\$/
             or $src_tree .= '\\';
         $src_tree .= 'i386';
-        return "z:;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
+        my $dos_zdrv = $u->{'_meta'}->{'dos_zdrv'};
+        return "$dos_zdrv;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
     };
 
 $u->comments ('_meta', 'edit_files') =
@@ -1069,9 +1077,16 @@ $u->{'_meta'}->{'ntp_servers'} =
             ("Enter NTP servers, separated by spaces (default=none):");
     };
 
+$u->comments ('_meta', 'dos_zdrv') = [ 'Install share drive letter in DOS' ];
+(defined $ENV{'DOS_ZDRV'})
+   or $ENV{'DOS_ZDRV'}='Z:';
+$u->{'_meta'}->{'dos_zdrv'} = $ENV{'DOS_ZDRV'};
+
+my $dos_zdrv = $u->{'_meta'}->{'dos_zdrv'};
+
 $u->comments ('_meta', 'OS_dir') = ['Directory holding OS media directories'];
 $u->{'_meta'}->{'OS_dir'} =
-    sub { return $file_spec->catdir ('z:', 'os'); };
+    sub { return $file_spec->catdir ("$dos_zdrv", 'os'); };
 
 $u->{'_meta'}->{'OS_media'} = \&ask_os;
 
@@ -1202,11 +1217,18 @@ $u->{'_temp'}->{'guirunonce'} =
         else {
             my $netinst = $u->{'_meta'}->{'netinst'};
             # Basic framework for mapping Z: drive
+            my $dos_zdrv = $u->{'_meta'}->{'dos_zdrv'};
             my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
             print "Copying $mapznrun...";
-            copy (dos_to_host ('z:\\bin\\mapznrun.bat'),
+            copy (dos_to_host ("$dos_zdrv\\bin\\mapznrun.bat"),
                   dos_to_host ($mapznrun))
-                or die "Unable to copy z:\\bin\\mapznrun.bat to $mapznrun";
+                or die "Unable to copy $dos_zdrv\\bin\\mapznrun.bat to $mapznrun";
+
+            my $mapcd = $file_spec->catfile ($netinst, 'mapcd.js');
+            print "Copying $mapcd...";
+            copy (dos_to_host ("$dos_zdrv\\bin\\mapcd.js"),
+                  dos_to_host ($mapcd))
+                or die "Unable to copy $dos_zdrv\\bin\\mapcd.js to $mapcd";
             print "done.\n";
 
             # "Permanent" credentials (drive letter, UNC path)
@@ -1373,7 +1395,7 @@ $u->sort_index ('_meta') = 999999;
 ## Now the meat of the script.
 
 # Compare Z:\version.txt file to VERSION environment variable.
-my $version_file = 'Z:\\version.txt';
+my $version_file = "$dos_zdrv\\version.txt";
 if (! -f dos_to_host ($version_file)) {
     print "Warning: $version_file not found (old install share?)\n";
 }
@@ -1389,11 +1411,11 @@ else {
 }
 
 # Read master unattend.txt.
-$u->read (dos_to_host ('z:\\lib\\unattend.txt'));
+$u->read (dos_to_host ("$dos_zdrv\\lib\\unattend.txt"));
 
 # Read site-specific unattend.txt, if it exists.
 if (1) {
-    my $site_unattend_txt = dos_to_host ('z:\\site\\unattend.txt');
+    my $site_unattend_txt = dos_to_host ("$dos_zdrv\\site\\unattend.txt");
     -e ($site_unattend_txt)
         and $u->read ($site_unattend_txt);
 }
@@ -1408,7 +1430,7 @@ defined $macaddr
 
 # Read site-specific Perl configuration file.
 if (1) {
-    my $site_conf = dos_to_host ('z:\\site\\config.pl');
+    my $site_conf = dos_to_host ("$dos_zdrv\\site\\config.pl");
 
     if (-e $site_conf) {
         my $result = do $site_conf;
@@ -1494,7 +1516,10 @@ while (1) {
 }
 
 # Run the fdisk commands.
+my $is_fdisk;
+
 foreach my $cmd (split /;/, $fdisk_cmds) {
+    $is_fdisk = 1;
     system ($is_linux
             ? convert_fdisk_parted ($cmd)
             : $cmd);
@@ -1512,7 +1537,8 @@ if ($is_linux) {
 else {
     # If partition table has changed, reboot.
     print "\nRe-checking partition table...";
-    if ($partition_table ne partition_table (1)) {
+    if ($partition_table ne partition_table (1) ||
+        ($partition_table eq '' && defined $is_fdisk)) {
         print "changed.  Rebooting...\n";
         sleep 2;
         system ('fdisk /reboot');
