@@ -272,12 +272,13 @@ sub _find_oem_pnp_dirs ($) {
     return keys %dirs;
 }
 
-sub oem_pnp_dirs ($;$) {
+sub oem_pnp_dirs ($;$$) {
     my Unattend::WinMedia $self = shift;
     my $verbose = shift;
+    my $oem_system_dir = shift;
 
-    my $oem_system_dir =
-        $file_spec->catdir ($self->path (), 'i386', '$oem$', '$1');
+    defined $oem_system_dir
+        or $oem_system_dir = $file_spec->catdir ($self->path (), 'i386', '$oem$', '$1');
 
     $verbose
         and print "Looking for drivers under $oem_system_dir...\n";
