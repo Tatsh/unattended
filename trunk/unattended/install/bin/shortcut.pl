@@ -85,7 +85,7 @@ my $obj = $wsh_shell->CreateShortcut ($full_shortcut);
 $obj->{TargetPath} = $target;
 $obj->{WindowStyle} = 1;
 $obj->{IconLocation} = "$target, 0";
-$obj->{WorkingDirectory} = $shortcut_dir;
+$obj->{WorkingDirectory} = $target_dir;
 
 (exists $opts{'arguments'})
     and $obj->{Arguments} = $opts{'arguments'};
