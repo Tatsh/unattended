@@ -7,10 +7,9 @@ todo.pl .reboot
 
 :: "Office XP Update: March 23, 2004"
 :: ("exploitable security issues in Microsoft Script Editor")
-:: URL|ENU|http://download.microsoft.com/download/2/5/7/25750DD8-E66E-4099-95B4-216C0542D2F1/officexp-kb833858-fullfile-enu.exe|updates/officexp/officexp-kb833858-fullfile-enu.exe
-:: URL|ITA|http://download.microsoft.com/download/a/a/4/aa4adf57-df3a-4fcb-be66-4da178b2f8df/OfficeXpSp3-kb832671-fullfile-ita.exe|updates/officexp/officexpsp3-kb832671-fullfile-ita.exe
+:: URL|ENU|http://download.microsoft.com/download/2/5/7/25750dd8-e66e-4099-95b4-216c0542d2f1/officexp-kb833858-client-enu.exe|updates/officexp/officexp-kb833858-client-enu.exe
 :: <http://support.microsoft.com/?id=833858>
-todo.pl "%Z%\updates\officexp\officexp-kb833858-fullfile-enu.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb833858.txt /p VSDEBUGff.msp REBOOT=ReallySuppress\""
+todo.pl "%Z%\updates\officexp\officexp-kb833858-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb833858.txt /p VSDEBUGop.msp REBOOT=ReallySuppress\""
 
 :: Hm, tying this to win2ksp4 is probably wrong.  FIXME
 if not %WINVER%. == win2ksp4. goto didauiu
@@ -19,7 +18,7 @@ if not %WINVER%. == win2ksp4. goto didauiu
 :: <http://support.microsoft.com/?id=832668>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=3489d806-be63-4253-9120-5e5a2d81dfa9&displaylang=en>
 :: ONLY REQUIRED FOR WIN2K!
-todo.pl "%Z%\updates\officexp\officexp-kb832668-client-enu.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\oxpauiu.txt /p MSCTF.msp REBOOT=ReallySuppress\""
+todo.pl "%Z%\updates\officexp\officexp-kb832668-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\oxpauiu.txt /p MSCTF.msp REBOOT=ReallySuppress\""
 :didauiu
 
 :: Service Pack 3
