@@ -20,7 +20,6 @@ if not errorlevel 1 goto gotnet
 @echo Enter location of install share (default \\ntinstall\install):
 @nset INSTALL=$0
 @if %INSTALL%.==. set INSTALL=\\ntinstall\install
-@echo OK, using INSTALL=%INSTALL%
 
 NET USE Z: %INSTALL%
 @if not errorlevel 1 goto got_z
@@ -35,6 +34,8 @@ lh cwsdpmi -p -s-
 bash Z:\install.sh
 if errorlevel 1 goto end
 cwsdpmi -u
+:: XP install *requires* smartdrv (KB article Q296814)
+smartdrv
 c:\netinst\doit.bat
 
 :end
