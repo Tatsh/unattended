@@ -279,8 +279,16 @@ sub run_command ($@) {
     return @ret;
 }
 
-sub read_partition_table () {
-    return join '', run_command ('fdisk /info /tech');
+# Cache return value.
+my $_partition_table;
+# Returns cached value unless argument is true.
+sub partition_table (;$) {
+    my ($re_read) = @_;
+
+    !defined $_partition_table || $re_read
+        and $_partition_table = join '', run_command ('fdisk /info /tech');
+
+    return $_partition_table;
 }
 
 ## Functions for asking about particular settings.
@@ -295,7 +303,7 @@ sub ask_fdisk_lba () {
 # fdisk commands to run
 sub ask_fdisk_cmds () {
     # Read current partition table.
-    my $partition_layout = read_partition_table ();
+    my $partition_layout = partition_table ();
 
     # Display it.
     print "\nCurrent partition table:";
@@ -546,6 +554,11 @@ $u->{'_meta'}->{'fdisk_lba'} = \&ask_fdisk_lba;
 
 $u->{'_meta'}->{'fdisk_cmds'} = \&ask_fdisk_cmds;
 
+$u->comments ('_meta', 'fdisk_confirm') =
+    ['Prompt for confirmation before running fdisk_cmds?'];
+
+$u->{'_meta'}->{'fdisk_confirm'} = 1;
+
 $u->{'_meta'}->{'format_cmd'} =
     sub {
         return (yes_no_choice ('Format C: drive')
@@ -661,10 +674,7 @@ $u->{'_meta'}->{'top'} =
         print "Choose master post-installation script to run.\n";
         my @choices = (map { ($_ => $master_choices{$_}) }
                        sort keys %master_choices);
-        my $master = menu_choice (@choices, 'none' => undef);
-
-        defined $master
-            or $master = '';
+        my $master = menu_choice (@choices, 'none' => '');
 
         return $master;
     };
@@ -935,7 +945,7 @@ defined $macaddr
     or $ENV{'FFD_VERSION'}=6;
 
 # Read current partition table.
-my $partition_table = read_partition_table ();
+my $partition_table = partition_table ();
 
 my $fdisk_cmds;
 # Partition the disk.
@@ -947,12 +957,15 @@ while (1) {
     $fdisk_cmds =~ /\S/
         or last;
 
+    ($u->{'_meta'}->{'fdisk_confirm'})
+        or last;
+
     print "\n";
     print "ABOUT TO PARTITION THE FIRST HARD DRIVE!\n";
     print "WARNING: This operation erases the disk!";
     yes_no_choice ("Are you sure")
         and last;
-   # undef $u->{'_meta'}->{'fdisk_cmds'};
+
     $u->{'_meta'}->{'fdisk_cmds'} = \&ask_fdisk_cmds;
 }
 
@@ -963,7 +976,7 @@ foreach my $cmd (split /;/, $fdisk_cmds) {
 
 # If partition table has changed, reboot.
 print "\nRe-checking partition table...";
-if ($partition_table ne read_partition_table ()) {
+if ($partition_table ne partition_table (1)) {
     print "changed.  Rebooting...\n";
     sleep 2;
     system ('fdisk /reboot');
