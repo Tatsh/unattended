@@ -431,6 +431,7 @@ sub create_postinst_bat () {
     # Top-level installation script
     my $top = $u->{'_meta'}->{'top'};
     if (defined $top) {
+        my @scripts = split /;/, $top;
         my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
         push @postinst_lines,
         ('call %Z%\\scripts\\perl.bat',
@@ -443,7 +444,7 @@ sub create_postinst_bat () {
          'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
          # First step is to perform top-level install of master and
          # optional scripts.
-         map { "todo.pl $_" } (reverse split /;/, $top),
+         (map { "todo.pl $_" } reverse @scripts),
          '',
          'todo.pl --go');
     }
@@ -469,7 +470,7 @@ sub batfile_first_lines () {
     if (!defined $_batfile_first_lines) {
         $_batfile_first_lines = { };
         my $z = $u->{'_meta'}->{'z_drive'};
-        my $script_dir = '$z\\scripts';
+        my $script_dir = "$z\\scripts";
         opendir SCRIPTS, $script_dir
             or die "Unable to opendir $script_dir: $^E";
         while (my $ent = readdir SCRIPTS) {
@@ -549,7 +550,7 @@ $u->{'_meta'}->{'replace_mbr'} =
 
 $u->comments ('_meta', 'OS_dir') = ['Directory holding OS media directories'];
 $u->{'_meta'}->{'OS_dir'} =
-    sub { return $file_spec->catdir ($u->{'_meta'}->{'z_drive'}, 'os'); }
+    sub { return $file_spec->catdir ($u->{'_meta'}->{'z_drive'}, 'os'); };
 
 $u->{'_meta'}->{'OS_media'} = \&ask_os;
 
@@ -562,7 +563,7 @@ sub _top_helper ($$) {
     my %ret;
     
     foreach my $script (sort keys %$heads) {
-        $script =~ /^::$token(?!\w)\W*(.*)\z/
+        $heads->{$script} =~ /^::\s*$token(?!\w)\W*(.*)\z/
             or next;
         my $desc = $1;
         my $key = "$script ($desc)";
@@ -578,8 +579,6 @@ $u->{'_meta'}->{'top'} =
     sub {
         my $bat_heads = batfile_first_lines ();
         my %master_choices = _top_helper ('MASTER', $bat_heads);
-#        my @scripts = (grep { $bat_heads->{$_} =~ /^::\s*MASTER(?!\w)/; }
-#                       sort keys %$bat_heads);
 
         # Backwards compatibility hack.  Remove someday (FIXME).
         scalar keys %master_choices > 0
@@ -589,8 +588,8 @@ $u->{'_meta'}->{'top'} =
                                   => 'sales.bat');
 
         print "Choose master post-installation script to run.\n";
-        my @choices = map { ($master_choices($_)
-                             => $_); } sort keys %master_choices;
+        my @choices = (map { ($_ => $master_choices{$_}) }
+                       sort keys %master_choices);
         my $master = menu_choice (@choices, 'none' => undef);
 
         defined $master
@@ -598,7 +597,7 @@ $u->{'_meta'}->{'top'} =
 
         my %optional_choices = _top_helper ('OPTIONAL', $bat_heads);
         my @options = multi_choice ('Choose optional scripts to run.',
-                                    sort keys @%optional_choices);
+                                    sort keys %optional_choices);
         return join ';', ($master, map { $optional_choices{$_} } @options);
     };
 
@@ -714,8 +713,8 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             my $z = $u->{'_meta'}->{'z_drive'};
             my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
             print "Copying $mapznrun...";
-            copy ('$z\\bin\\mapznrun.bat', $mapznrun)
-                or die "Unable to copy mapznrun.bat";
+            copy ("$z\\bin\\mapznrun.bat", $mapznrun)
+                or die "Unable to copy $z\\bin\\mapznrun.bat to $mapznrun";
             print "done.\n";
 
             # "Permanent" credentials (drive letter, UNC path)
