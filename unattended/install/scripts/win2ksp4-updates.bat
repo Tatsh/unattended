@@ -2,6 +2,8 @@
 
 :: Some of these can only be downloaded using the Windows Update
 :: Catalog, <http://windowsupdate.microsoft.com/catalog/>.
+:: Be sure to try both "Windows 2000 Professional SP4" and
+:: "Windows 2000 SP4" sections of the Update Catalog. 
 
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
