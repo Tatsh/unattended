@@ -29,7 +29,7 @@ my $computer = Win32::OLE->GetObject (exists $opts{'remote'}
 
 # Get the environment variable class object.  See:
 # <http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_environment.asp>
-my $var_class = $computer->Get ("Win32_Environment");
+my $var_class = $computer->Get ('Win32_Environment');
 
 # Create an instance of this class.
 my $var = $var_class->Spawninstance_ ();
