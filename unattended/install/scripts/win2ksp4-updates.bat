@@ -6,6 +6,11 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 823980
+:: "Buffer Overrun in RPC Interface May Allow Code Execution"
+:: <http://support.microsoft.com/?kbid=823980>
+todo.pl "z:\packages\win2ksp4\Windows2000-KB823980-x86-ENU.exe /u /z"
+
 :: Critical update 823559
 :: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=823559>
@@ -20,7 +25,7 @@ todo.pl ".ignore-err 194 z:\packages\win2ksp4\Q818043_W2K_SP5_x86_EN.EXE /u /z" 
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
 :: <http://support.microsoft.com/?kbid=814078>
-todo.pl ".ignore-err 194 z:\packages\win2ksp3\js56nen.exe /q /r:n" .reboot
+todo.pl ".ignore-err 194 z:\packages\win2ksp4\js56nen.exe /q /r:n" .reboot
 
 :: Install IE6 and DirectX 8.1
 todo.pl ie6.bat directx81.bat
