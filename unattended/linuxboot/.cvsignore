@@ -5,6 +5,7 @@ busybox-*
 dosemu-*
 e2fsprogs-*
 glibc-*
+kbd-*
 klibc-*
 linux-*
 module-init-tools-*
