@@ -237,13 +237,15 @@ build-$(glibc)/libc.so: $(glibc)/.stamp-sscanf-patch
 	    --enable-add-ons				\
 	    --target=i486-pc-linux-gnu			\
 	&& make
-	[ -e $@ ]
+	[ -e $@ ] && touch $@
 
 $(call copy_lib, build-$(glibc)/libc.so, stage1/lib/libc.so)
 
 # "Fake" library to link against
 $(call copy_file, build-$(glibc)/libc_nonshared.a, \
 	fakelib/libc_nonshared.a)
+
+build-$(glibc)/libc_nonshared.a: build-$(glibc)/libc.so
 
 fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
 	mkdir -p $(dir $@)
@@ -253,9 +255,10 @@ fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
 	mv $@.tmp $@
 
 # "Fake" headers, too
-fakeinclude/stdio.h: fakelib/libc.so stage1/lib/libdl.so
+fakeinclude/stdio.h: fakelib/libc.so
 	mkdir -p $(dir $@)
-	cd build-$(glibc)						    \
+	: # install-headers updates the timestamp on libc.so.  Unbelievable.
+	cd build-$(glibc)						 \
 		&& make inst_includedir=$(cwd)/$(dir $@) install-headers
 	[ -e $@ ] && touch $@
 
@@ -270,38 +273,29 @@ stage1/etc/ld.so.conf:
 
 # Dynamic linker
 build-$(glibc)/elf/ld.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 $(call copy_lib, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
 
 # Bash needs libdl
 build-$(glibc)/dlfcn/libdl.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 $(call copy_lib, build-$(glibc)/dlfcn/libdl.so, stage1/lib/libdl.so)
 
 # Samba needs libresolv, libnss_*, libnsl, libcrypt
 build-$(glibc)/resolv/libresolv.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 build-$(glibc)/resolv/libnss_dns.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 build-$(glibc)/nss/libnss_files.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 build-$(glibc)/nis/libnsl.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 build-$(glibc)/crypt/libcrypt.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 # Perl needs libnsl, libm, libutil
 build-$(glibc)/math/libm.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 build-$(glibc)/login/libutil.so: build-$(glibc)/libc.so
-	[ -e $@ ] && touch $@
 
 $(call copy_lib, build-$(glibc)/resolv/libresolv.so, stage1/lib/libresolv.so)
 $(call copy_lib, build-$(glibc)/resolv/libnss_dns.so, stage1/lib/libnss_dns.so)
@@ -416,6 +410,10 @@ $(perl)/perl:
 
 stage1/opt/perl/bin/perl: $(perl)/perl
 	cd $(perl) && make DESTDIR=$(cwd)/stage1 STRIPFLAGS=-s install.perl
+	: # Delete extra utility programs and hard links
+	find stage1/opt/perl/bin -type f ! -name perl		\
+				-a ! -name perldoc -print0	\
+		| xargs -0 -r rm
 	: # create /usr/bin/perl -> /opt/bin/perl symlink
 	ln -sf /opt/perl/bin/perl stage1/usr/bin/perl
 	[ -e $@ ]
@@ -544,7 +542,7 @@ tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default
 dest=.
 download_rule=								\
 download-$(strip $(1)) :  ;						\
-	what=$(strip $(1)) && suffix=$(strip $(2))			\
+	@what=$(strip $(1)) && suffix=$(strip $(2))			\
 	&& url=$(strip $(3)) && sub=$(strip $(4))			\
 	&& [ -d $$$$what ]						\
 	|| { [ -n "$$$$sub" ] || sub=.					\
@@ -555,10 +553,9 @@ download-$(strip $(1)) :  ;						\
 		*.bz2) prog="bzcat -c" ;;				\
 		*) prog=cat ;;						\
 	esac								\
-	&& { echo $$$$prog ;						\
-	$$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }		\
+	&& { $$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }	\
 	&& { [ "$$$$sub" == . ] || ln -nsf "$$$$sub" "$$$$what" ; }	\
-	&& { [ "$$$$sub" != . ] || [ "$(dest)" == . ] 			\
+	&& { [ "$$$$sub" != . ] || [ "$(dest)" == . ]			\
 		|| ln -sf $(dest)/$$$$what . ; }			\
 	&& rm $$$$temp ;						\
 	}
@@ -604,11 +601,12 @@ $(symlink_targets):
 		echo "You forgot to set dest=" ;		\
 		exit 1 ;					\
 	fi
-	target=$(patsubst symlink-%,%,$@)			\
+	@target=$(patsubst symlink-%,%,$@)			\
 	&& if [ ! -e "$(dest)/$$target" ] ; then		\
 		echo "$(dest)/$$target does not exist!" ;	\
 		exit 1 ;					\
 	fi							\
+	&& echo Linking $$target to $(dest)/$$target		\
 	&& ln -nsf "$(dest)/$$target" "$$target.tmp"		\
 	&& mv "$$target.tmp" "$$target"
 
