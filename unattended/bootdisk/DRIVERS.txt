@@ -7,10 +7,10 @@
 
 # Latest version should be here (or just search Intel's support site
 # for PRODOS.EXE):
-# <http://downloadfinder.intel.com/scripts-df/File_Filter.asp?FileName=PRODOS.EXE>
+# <http://downloadfinder.intel.com/scripts-df/File_Filter.asp?FileName=PRODOS2.EXE>
 e100b    Intel Pro/100 family of PCI and CardBus adapters
 
-# Also from the PRODOS.EXE distribution
+# Also from the PRODOS2.EXE distribution
 e1000    Intel Pro/1000 family of gigabit adapters
 
 # Found by doing a search on product number (3cxfe575ct) at
