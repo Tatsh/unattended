@@ -150,9 +150,9 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\vbs56n%WINLANG%.exe /q /r:n"
 :: URL|SVE|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/SV/ie6setup.exe|packages/ie6sp1/sve/ie6setup.exe
 :: URL|TRK|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/TR/ie6setup.exe|packages/ie6sp1/trk/ie6setup.exe
 ::
-:: See <http://support.microsoft.com/?kbid=257249> for instructions.
+:: See <http://support.microsoft.com/kb/257249> for instructions.
 :: Download Internet Explorer 6 SP1 installer from Microsoft then issue:
-:: ie6setup.exe /c:"ie6wzd.exe /d /s:""#E"
+:: ie6setup.exe /c:"ie6wzd.exe /d /s:""#E"""
 ::
 :: This will allow you to download all necessary files to
 :: Z:\packages\ie6sp1\%WINLANG%, so that the installer does not need
