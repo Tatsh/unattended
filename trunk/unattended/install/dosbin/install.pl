@@ -425,7 +425,7 @@ foreach my $cmd (split /;/, $fdisk_cmds) {
 print "\nRe-checking partition table...";
 if ($partition_table ne read_partition_table ()) {
     print "changed.  Rebooting...\n";
-    sleep 5;
+    sleep 2;
     system ('fdisk /reboot');
     die "Internal error";
 }
