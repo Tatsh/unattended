@@ -28,7 +28,7 @@ TCPTSR.EXE
 TINYRFC.EXE
 
 :retry
-CHOICE /C:YN /T:N,10 Override bootdisk defaults (if unsure, say yes)
+CHOICE /C:YN /T:N,5 Override bootdisk defaults (if unsure, say yes)
 if errorlevel 2 goto endsetup
 echo Enter location of install share (default %Z_PATH%):
 nset INPUT=$0
