@@ -705,16 +705,16 @@ download-$(strip $(1)) :  ;						\
 	&& rm $$$$temp ;						\
 	}
 
-cvs_rule=							\
-download-$(strip $(1)) : ;					\
-	@what=$(strip $(1)) && module=$(strip $(2))		\
-	&& repo=$(strip $(3)) && date=$$$${what\#\#*-}	\
-	&& { [ -d "$$$$what" ] && exit 0 || : ; }		\
-	&& cd $(dest)						\
-	&& [ ! -e $$$$module ]					\
-	&& cvs -z 9 -d $$$$repo checkout -D $$$$date $$$$module	\
-	&& mv $$$$module $$$$what				\
-	&& [ "$(dest)" == . ] || ln -sf $(dest)/$$$$what $(cwd)
+cvs_rule=								\
+download-$(strip $(1)) : ;						\
+	@what=$(strip $(1)) && module=$(strip $(2))			\
+	&& repo=$(strip $(3)) && date=$$$${what\#\#*-}			\
+	&& { [ -d "$$$$what" ] && exit 0 || : ; }			\
+	&& cd $(dest)							\
+	&& [ ! -e $$$$module ]						\
+	&& cvs -z 9 -d $$$$repo checkout -D $$$$date $$$$module		\
+	&& mv $$$$module $$$$what					\
+	&& { [ "$(dest)" == . ] || ln -sf $(dest)/$$$$what $(cwd) ; }
 
 # Special rule for glibc (checkout from CVS based on date).
 # download-$(glibc):
