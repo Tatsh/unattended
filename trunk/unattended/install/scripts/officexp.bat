@@ -1,4 +1,4 @@
-:: Install Office XP and its updates
+:: OPTIONAL: Install Office XP and its updates
 
 :: Reminder: Commands will be executed in reverse order.
 
