@@ -1,15 +1,18 @@
-# This module needs to include a config-<configtype>.pl 
+# This module needs to include a conf-<configtype>.pl 
 # module that defineds two subroutines.  On called 'setup'
 # that calls setups up the interface to that module and
 # another called 'lookup_value' that returns a value for
 # a given Lookup,Property pair.
 #
-# Be sure to also look at the config-csv.pl/config-mysql.pl
+# Be sure to also look at the conf-csv.pl/conf-mysql.pl
 # in the lib directory for setup instructions.
 #
 # The following table shows what Lookup values are used for a
 # given Property value.  The order shown is the order searched.
-# The search ends when a valid entry is returned.
+# The search ends when a valid entry is returned with the 
+# exception of UnattendedFile.  UnattendedFile will search and
+# apply all files in order listed.  Default is sort of redundant
+# for UnattendedFile as z:\site\unattend.txt is considered Default.
 #
 # Property                 Lookup Order
 # =====================    ========================================================
@@ -27,17 +30,18 @@
 # bottom_scripts           <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
 # ntp_servers              <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
 # DriverPath               <macaddr>,<ComputerName>,<os_name>,Default
+# UnattendedFile           Default,<os_name>,<OrgName>,<FullName>,<ComputerName>,<macaddr>
 
 use warnings;
 use strict;
 
 # Set db for mysql interface
-#require "config-mysql.pl";
+#require "conf-mysql.pl";
 #CONFIG->setup('DBI:mysql:database=unattended;host=192.168.2.1', 'username', 'password');
 
 # Setup db for CSV interface
-require "config-csv.pl";
-CONFIG->setup(dos_to_host('z:\site\unattend.csv'), '', '');
+require "conf-csv.pl";
+CONFIG->setup(dos_to_host('z:\\site\\unattend.csv'), '', '');
 
 # Lookup property value using all possible owners
 sub lookup_property ($) {
@@ -191,6 +195,23 @@ $u->push_value ('Unattended', 'OemPnPDriversPath',
         my $drivers = join ';', @pnp_driver_dirs;
         return $drivers;
     });
+
+# Lookup and read specific Unattended.txt files
+my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
+my $os_name = $media_obj->name ();
+foreach my $lookup ("$os_name",
+                    $u->{'UserData'}->{'OrgName'},
+                    $u->{'UserData'}->{'FullName'},
+                    $u->{'UserData'}->{'ComputerName'},
+                    $u->{'_meta'}->{'macaddr'}) {
+    my $unattended_txt = CONFIG->lookup_value($lookup, 'UnattendedFile');
+    next unless defined $unattended_txt;
+    $unattended_txt =~ /^[a-z]:/i
+        or $unattended_txt = "z:\\site\\" . $unattended_txt;
+    $unattended_txt = dos_to_host ($unattended_txt);
+    -e ($unattended_txt)
+        and $u->read ($unattended_txt);
+}
 
 # Make this file evaluate to "true".
 1;
