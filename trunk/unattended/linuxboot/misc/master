@@ -27,6 +27,7 @@ echo "*** First, we'll look for PCI Ethernet hardware..."
 # PCI classes 0x0200nn are Ethernet controllers
 network_modules=`find-modules-pci 0x02 0x00`
 
+# FIXME: How do we handle multiple drivers for same device (e100/eepro100).
 for module in $network_modules ; do
     echo "Loading $module..."
     modprobe $module
@@ -36,17 +37,23 @@ done
 echo "*** And I suppose we may as well look for PCMCIA devices..."
 # cardmgr only monitors one socket (of two) for me if I omit this
 # delay.  I have no idea why.
-sleep 1
+sleep 2
 cardmgr -o
 
-echo "*** Now that we have loaded the modules (maybe), let's try DHCP..."
+echo "*** Lets wait a little bit for things to settle down..."
+# udhcpc only gets a lease 1/5 times with e100/eepro100 cards without this delay.
+# This might be related to above delays too.
+sleep 5
 
+echo "*** Now that we have loaded the modules (maybe), let's try DHCP..."
 unset got_lease
 for iface in eth0 eth1 eth2 ; do
     if ! ifconfig $iface >/dev/null 2>&1 ; then
         echo "*** $iface not found"
         continue
     fi
+    ifconfig $iface > /dev/urandom
+    sleep 1
     echo "*** Trying DHCP on $iface..."
     if udhcpc --interface=$iface --now --script=/etc/udhcpc-script ; then
         echo "*** DHCP on $iface worked!"
@@ -157,5 +164,9 @@ if [ -z "$did_something" ] ; then
 fi
 
 echo "*** By Jove, I think we've got it!"
+
+# FIXME: Bad hack to work around dosemu bug running over network
+rm /usr/bin/dosemu.bin
+cp /z/linuxaux/usr/bin/dosemu.bin /usr/bin/dosemu.bin
 
 exec bash
