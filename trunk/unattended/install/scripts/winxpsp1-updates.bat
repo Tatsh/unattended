@@ -112,9 +112,10 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 
 :: IE Critical Updates
 
-:: Critical update 824145
+:: Critical update 824145 (MS03-048)
 :: "November, 2003, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=824145>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-048.asp>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
 
 :: Critical update 330994
@@ -160,9 +161,9 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824141-x86-%WINLANG%.ex
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-044.asp>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB825119-x86-%WINLANG%.exe /u /n /z"
 
-:: Critical update 828035 (MS03-043)
+:: Critical update 828035 (MS03-049)
 :: "Buffer Overrun in Messenger Service Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-049.asp>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB828035-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 823182 (MS03-041)
