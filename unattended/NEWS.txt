@@ -1,3 +1,23 @@
+** Changes in version 4.4b (2004-Aug-16)
+
+(Linux) Fix bug, introduced in 4.4, which broke DHCP option 233
+processing (our sample options in the PXELINUX/ISOLINUX config file
+were overriding DHCP).
+
+Fix perl.bat to actually display a diagnostic when ActivePerl is
+missing, rather than simply printing "Press any key to continue" and
+halting.
+
+Move "check" and "prepare" scripts from install/ to install/tools.
+Have "prepare" force filenames to lower-case.
+
+Clean up URLs in download scripts.
+
+(Linux) Make DBD::mysql module actually work.
+
+Update OpenOffice to 1.1.2.
+
+
 ** Changes in version 4.4a (2004-Aug-14)
 
 (Linux) Fix serious bug in master script which could cause a hang just
