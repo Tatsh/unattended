@@ -9,6 +9,22 @@
 :: Always reboot after installing hotfixes
 todo.pl .reboot
 
+:: Critical update 811493
+:: "Buffer Overrun ... Could Lead to Elevated Privileges"
+:: <http://support.microsoft.com/?kbid=811493>
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q811493_W2K_SP4_X86_EN.exe /u /z" .reboot
+
+:: Critical update 329553
+:: "Cannot Obtain Device Driver Updates from the Windows Update Web Site"
+:: <http://support.microsoft.com/?kbid=329553>
+:: (only available from <http://windowsupdate.microsoft.com/catalog/>)
+todo.pl "z:\packages\win2ksp3\Q329553_W2K_SP4_X86_EN.exe /u /z"
+
+:: Critical update 331953
+:: "Flaw in RPC Endpoint Mapper Could Allow Denial of Service Attacks"
+:: <http://support.microsoft.com/?kbid=331953>
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q331953_W2K_SP4_X86_EN.exe /u /z" .reboot
+
 :: Critical update 816093
 :: "Flaw in the Microsoft VM Could Enable System Compromise"
 :: <http://support.microsoft.com/?kbid=816093>
@@ -39,13 +55,13 @@ todo.pl "z:\packages\win2ksp3\Q811630_W2K_SP4_X86_EN.exe /u /z"
 :: "February 2003, Update for Internet Explorer 6 SP1"
 :: <http://support.microsoft.com/?kbid=813951>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/813951/>
-todo.pl ".ignore-err 194 z:\packages\win2ksp3\q813951.exe /q /r:n" .reboot
+::todo.pl ".ignore-err 194 z:\packages\win2ksp3\q813951.exe /q /r:n" .reboot
 
 :: Critical Update 810847
 :: "February, 2003, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=810847>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/810847/>
-todo.pl ".ignore-err 194 z:\packages\win2ksp3\q810847.exe /q /r:n" .reboot
+::todo.pl ".ignore-err 194 z:\packages\win2ksp3\q810847.exe /q /r:n" .reboot
 
 :: Critical Update 810833
 :: "Unchecked Buffer in the Locator Service Might Permit Code to Run"
