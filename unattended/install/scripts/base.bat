@@ -5,9 +5,6 @@ todo.pl hidepw.pl %WINVER%-notips.pl bootini.pl %WINVER%-updates.bat mozilla.bat
 :: Set IIS startup type to manual
 todo.pl "startup-type.pl manual IISADMIN" "startup-type.pl manual W3SVC"
 
-:: Turn off stupid Windows Messenger service
-todo.pl "startup-type.pl manual Messenger"
-
 :: Set Automatic Updates to download automatically but prompt before
 :: install
 todo.pl "auconfig.pl 3"
