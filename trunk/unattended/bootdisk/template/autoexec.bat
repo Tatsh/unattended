@@ -1,4 +1,4 @@
-set PATH=A:\;A:\NET
+set PATH=\;\NET
 PROMPT $P$G
 :: Randomize hostname
 :: delete the old system.ini and replace it with a clean copy
@@ -19,6 +19,13 @@ if not errorlevel 1 goto gotnet
 @goto end
 
 :gotnet
+
+
+:: Save MAC addr and IP addr in files (to be parsed later).
+del \netdiag.txt
+net diag /status < nul > \netdiag.txt
+del \ipconfig.txt
+ipconfig \net > \ipconfig.txt
 
 @echo.
 @echo Enter location of install share (default \\ntinstall\install):
