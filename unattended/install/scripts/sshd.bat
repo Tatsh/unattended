@@ -8,8 +8,9 @@
 
 :: Grant curlbot the right to log on as a service.  Create the
 :: cygwin-sshd service to run srvany.exe as curlbot.  Load the
-:: registry with the srvany arguments.
-todo.pl "ntrights -u CURL\curlbot +r SeServiceLogonRight" "instsrv.pl cygwin-sshd c:\ntreskit\srvany.exe CURL\curlbot" "regedit /s z:\scripts\sshd.reg"
+:: registry with the srvany arguments.  Set some useful environment
+:: variables.
+todo.pl "ntrights -u CURL\curlbot +r SeServiceLogonRight" "instsrv.pl cygwin-sshd c:\ntreskit\srvany.exe CURL\curlbot" "regedit /s z:\scripts\sshd.reg" "setenv.pl CYGWIN tty"
 
 :: Create the sshd keys, if needed.
 set cyg=c:\cygwin
