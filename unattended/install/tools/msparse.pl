@@ -41,7 +41,7 @@ $url =~ s/\&\&+/\&/g;
 $url =~ s/\?\&/\?/;
 $url =~ s/\&$//;
 
-my ($urls, $title1, $title2, $desc, $link, $run);
+my ($urls, $title1, $title2, $desc, $link, $run, $recheck);
 foreach my $k (keys (%lang)) {
     open(f,"wget -O - \"$url\&displaylang=$lang{$k}\" 2> /dev/null|");
     while(<f>) {
@@ -49,29 +49,32 @@ foreach my $k (keys (%lang)) {
         if ($k =~ /enu/i) {
             $title1 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
             defined $link
-                or $link = $1 if /\"([^\"]*(\d{6}))\"\>[^\<]*\2/;
+                or $link = $1 if /href=[\"\']\s*(http:\/\/[^\"\']*(\d{6}))[\"\']\>[^\<]*\2/i;
             defined $link
-                or $link = $1 if /\'([^\']*(\d{6}))\'\>[^\<]*\2/;
+                or $link = $1 if /href=[\"\']\s*(http:\/\/[^\"\']*)[\"\']\>[^\<]*Knowledge Base Article/i;
             defined $link
-                or $link = $1 if /\'([^\']*)\'\>[^\<]*Knowledge Base Article/;
-            $link = $1 if /\'([^\']*)\'\>[^\<]*Security Bulletin/;
+                or $link = $1 if /href=[\"\']\s*(http:\/\/[^\"\']*)[\"\']\>[^\<]*Security Update/i;
+            $link = $1 if /href=[\"\']\s*(http:\/\/[^\"\']*)[\"\']\>[^\<]*Security Bulletin [^Pp]/i;
+            $link = $1 if /href=[\"\']\s*(http:\/\/[^\"\']*)[\"\']\>[^\<]*[^wW] Security Bulletin/i;
+            $link = $1 if /href=[\"\']\s*(http:\/\/[^\"\']*)[\"\']\>Security Bulletin\</i;
+#            $link = $1 if /href=[\"\']\s*(http:\/\/[^\"\']*)[\"\']\>[^\<]*ms\d{2}-\d{3}/i;
         }
 
-        if (/\<a href=\"([^\<]*?-client-[^\<]*?)\"\>/i) {
+        if (/\<a href=[\"\']([^\"\']*-client-[^\"\']*)[\"\']\>/i) {
             my $dl=$1;
             my @a=split(/\//,$dl);
             $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
             $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
         }
 
-        if (/\<a id=\'btnDownload\' class=\'downloadButton\' href=\'(.*?)\'\>/) {
+        if (/\<a id=[\"\']btnDownload[\"\'] class=[\"\']downloadButton[\"\'] href=[\"\']([^\"\']*)[\"\']\>/) {
             my $dl=$1;
             my @a=split(/\//,$dl);
             if ($a[$#a] =~ /$k/i) {
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
                 $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
             } elsif ($a[$#a] =~ /$lang{$k}\.exe/i) {
-                $a[$#a] =~ s/$lang{$k}\.exe/$k.exe/;
+                $a[$#a] =~ s/$lang{$k}\.exe/$k.exe/i;
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
                 $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
             } else {
@@ -82,44 +85,72 @@ foreach my $k (keys (%lang)) {
     }
 }
 
-$link =~ s/default.*(\d{6})/\?kbid=$1/i if (defined $link && $link =~ /scid=kb/i);
-$link =~ s/\/\?id=/\/\?kbid=/i if (defined $link && $link =~ /\/?id=/i);
-$link =~ s/(ms\d{2}-\d{3})\.asp/$1.mspx/i if (defined $link && $link =~ /ms\d{2}-\d{3}\.asp/i);
+if (defined $link) {
+    $link =~ s/default.*(\d{6})/\?kbid=$1/i if $link =~ /scid=kb/i;
+    $link =~ s/\/support\/misc\/kblookup.asp\?id=/\/\?kbid=/i if $link =~ /\/support\/misc\/kblookup.asp\?id=/i;
+    $link =~ s/\/\?id=/\/\?kbid=/i if $link =~ /\/?id=/i;
+    $link =~ s/(ms\d{2}-\d{3})\.asp/$1.mspx/i if $link =~ /ms\d{2}-\d{3}\.asp/i;
+}
 
+$recheck = 0;
 if (defined $link) {
     open(f,"wget -O - \"$link\" 2>&1 |");
     while(<f>) {
-        unless ($link =~ /kbid=/i) {
-            defined $title2
-                or $title2 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
-            defined $desc
-                or $desc = "$1" if /\<h2.*?\>(.*?)\<\/h2\>/;
-            if (/(http.*?) \[following\]/i) {
-                $link = "$1";
-                $link =~ s/default.*(\d{6})/\?kbid=$1/i if (defined $link && $link =~ /scid=kb/i);
-                $link =~ s/\/\?id=/\/\?kbid=/i if (defined $link && $link =~ /\/?id=/i);
+        if ($link =~ /kbid=/i) {
+            if (/href=[\"\']\s*(http:\/\/[^\"\']*ms\d{2}-\d{3}\.mspx)[\"\']\>[^\<]*ms\d{2}-\d{3}/i) {
+                $link = $1;
+                $recheck = 1;
             }
+        } else {
+            defined $title2
+                or $title2 = "$1" if /\<h1.*?\>(.*?)(?:\<\/h1\>|$)/;
+            defined $desc
+                or $desc = "$1" if /\<h2.*?\>(.*?)(?:\<\/h2\>|$)/;
+        }
+        if (/(http.*?) \[following\]/i) {
+            $link = "$1";
+            $link =~ s/default.*(\d{6})/\?kbid=$1/i if (defined $link && $link =~ /scid=kb/i);
+            $link =~ s/\/support\/misc\/kblookup.asp\?id=/\/\?kbid=/i if (defined $link && $link =~ /\/support\/misc\/kblookup.asp\?id=/i);
+            $link =~ s/\/\?id=/\/\?kbid=/i if (defined $link && $link =~ /\/?id=/i);
         }
     }
-    $link =~ s/^ +//g;
-    $link =~ s/ +$//g;
-
     $link =~ s/technet\/treeview.*?(technet)/$1/i if ($link =~ /technet\/treeview/i);
-    if ($link =~ /ms\d{2}-\d{3}\.asp/i) {
+    if ($recheck == 1 || $link =~ /ms\d{2}-\d{3}\.asp/i) {
         $link =~ s/(ms\d{2}-\d{3})\.asp/$1.mspx/i;
+
+        undef $title2;
+        undef $desc;
         open(f,"wget -O - \"$link\" 2> /dev/null |");
         while(<f>) {
             defined $title2
-                or $title2 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
+                or $title2 = "$1" if /\<h1.*?\>(.*?)(?:\<\/h1\>|$)/;
             defined $desc
-                or $desc = "$1" if /\<h2.*?\>(.*?)\<\/h2\>/;
+                or $desc = "$1" if /\<h2.*?\>(.*?)(?:\<\/h2\>|$)/;
         }
     }
+}
+
+if (defined $title1) {
+    $title1 =~ s/^ +//g;
+    $title1 =~ s/ +$//g;
+    $title1 =~ s/ *\.\. *//g;
+}
+
+if (defined $title2) {
+    $title2 =~ s/^ +//g;
+    $title2 =~ s/ +$//g;
+    $title2 =~ s/ *\.\. *//g;
 }
 
 if (defined $desc) {
     $desc =~ s/^ +//g;
     $desc =~ s/ +$//g;
+    $desc =~ s/ *\.\. *//g;
+}
+
+if (defined $link) {
+    $link =~ s/^ +//g;
+    $link =~ s/ +$//g;
 }
 
 if (defined $run) {
