@@ -5,8 +5,17 @@
 # manufacturer, copy it to the drivers/ subdirectory, and add a line
 # to this file.  Then just type "make".
 
-# Downloaded from <http://www.broadcom.com/docs/driver-download.html>
-b57      Broadcom BCM57xx series
+# Downloaded from <http://www.broadcom.com/support/downloaddrivers.php>
+b44      Broadcom BCM440x family
+b57      Broadcom BCM57xx "Tigon3" family
+
+# DEC Tulip
+# http://www.google.com/search?q=dc21x4+site%3Aintel.com
+# http://www.intel.com/design/network/drivers/Nd2_300.htm
+dc21x4   DEC/Intel 2104x/2114x "Tulip" family
+
+# http://www.google.com/search?q=dp83815+drivers+site%3Anational.com
+dp83815  Natsemi 83815 "MacPHYTER" family (e.g., Netgear FA311/FA312)
 
 # Latest version should be here (or just search Intel's support site
 # for PRODOS2.EXE):
@@ -23,16 +32,20 @@ elpc575  3com 3c575 family of CardBus (laptop) adapters
 # Found by doing a search for "3c905c" on 3com's support site.
 el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
 
-# Downloaded from <http://www.netgear.com/>
-fa31x    Netgear FA311/FA312
+# <http://www.google.com/search?q=via+ethernet+drivers>
+# <http://www.viaarena.com/?PageID=71>
+fetnd    VIA Rhine family (e.g., D-Link DFE-530TX)
 
-# Just do a Google search for "pcntnd.dos"
+# http://www.netgear.com/support/products/FA310.asp
+ngrpci    Netgear FA310
+
+# http://www.google.com/search?q=pcntnd.dos+site%3Aamd.com
 pcntnd   AMD PCNet family (also VMWare)
 
 # See
 # <http://www.realtek.com.tw/downloads/downloads1-3.aspx?series=16&Software=True#16DOS>
 # (thanks to Eugene Kotlyarov)
-rtsnd    Realtek RTL8139 series
+rtsnd    Realtek RTL8139 family (e.g., D-Link DFE-530TX+)
 
 # Downloaded from <http://download.sis.com/sysdlc/>.  (Well, actually
 # I just grabbed sl116.exe from <http://driver.sis.com/lan/>.)
@@ -43,4 +56,4 @@ sis900   SiS 900 family
 # ANY adapter from ANY vendor.  It is included on the 3com MBA utility
 # disk, last seen at
 # <http://support.3com.com/infodeli/tools/nic/mba.htm>.
-undis3c  "Universal" (PXE/UNDI) driver
+undis3c  "Universal" NDIS UNDI driver (3com)
