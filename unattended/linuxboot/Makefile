@@ -494,18 +494,8 @@ stage1: $(stage1)
 ## Stage 2
 .stamp-stage2: $(stage1) misc/nail-floppy.txt
 	rm -rf stage2 ../install/linuxaux
-	find stage1/ -type d -print0			\
-	| xargs -i -0 -r sh -c				\
-		'from={} && to=stage2/$${from#stage1/}	\
-		&& mkdir -p $$to'
-	find stage1/ -type f -print0			\
-	| xargs -i -0 -r sh -c				\
-		'from={} && to=stage2/$${from#stage1/}	\
-		&& cp -f $$from $$to'
-	find stage1/ -type l -print0			\
-	| xargs -i -0 -r sh -c				\
-		'from={} && to=stage2/$${from#stage1/}	\
-		&& cp -f -d $$from $$to'
+	mkdir stage2
+	cp -a -f stage1/. stage2/.
 	tools/move-and-link.pl --nail-list=misc/nail-floppy.txt	\
 		stage2 ../install/linuxaux /z/linuxaux
 	touch $@
