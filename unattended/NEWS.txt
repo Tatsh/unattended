@@ -1,3 +1,24 @@
+** Changes in version 4.3 (2004-Jun-??)
+
+(Linux) Include acpidmp (for reporting bugs in ACPI), wget, DBI
+module, and DBD::mysql module on boot disk.
+
+(Linux) Start laying groundwork for wireless installs: Build wireless
+drivers with kernel, and include iwconfig+iwlist on boot disk.
+
+(Linux) Support (require) Fedora Core 2 for building boot disk.
+Upgrade to glibc-20040606 (2.3.4, more or less) and dosemu-20040606.
+
+(Linux) Auto-detect active partition instead of assuming it is first.
+
+(DOS) Upgrade to FreeDOS 2.0.35 and switch back to emm386 as UMB
+provider.
+
+(DOS) Upgrade fetnd driver to latest version from Via's site.
+
+Add hotfixes MS04-016 (Windows) and MS04-017 (Visual Studio .NET).
+
+
 ** Changes in version 4.2c (2004-May-21)
 
 (Linux) Fix support for SCSI hardware; whoops again.  Thanks to Tyler
