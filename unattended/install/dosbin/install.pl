@@ -18,14 +18,18 @@ $u = new Unattend::IniFile;
 
 # We might be running on Linux now...
 my $is_linux;
-if ($^O eq 'dos') {
-    $is_linux = 0;
-}
-elsif ($^O eq 'linux') {
-    $is_linux = 1;
-}
-else {
-    die "internal error";
+BEGIN {
+    if ($^O eq 'dos') {
+        $is_linux = 0;
+    }
+    elsif ($^O eq 'linux') {
+        $is_linux = 1;
+        require Unattend::HotKey;
+        import Unattend::HotKey;
+    }
+    else {
+        die "internal error";
+    }
 }
 
 # ...so we have to exercise some care whenever we talk to the
@@ -108,7 +112,6 @@ sub choice ($;$) {
             my $char = substr $choices, $i, 1;
             $choice_map{$char} = $i;
         }
-        use Unattend::HotKey;
         print "$prompt [$choices] ";
         my $key;
         while (1) {
