@@ -6,8 +6,8 @@
 todo.pl .reboot
 
 :: "Access 2002 Snapshot Viewer Security Patch: September 3, 2003"
-:: <http://support.microsoft.com/?kbid=826923>
-todo.pl "z:\packages\officexp-kb826923-client-enu.exe /q /c:\"msiexec /qb /p SNAPVIEWop.msp\""
+:: <http://support.microsoft.com/?kbid=826293>
+todo.pl "z:\packages\officexp-kb826293-client-enu.exe /q /c:\"msiexec /qb /p SNAPVIEWop.msp\""
 
 :: "WordPerfect 5.x Converter Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=824938>
