@@ -294,6 +294,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 
 :: Critical Updates
 
+:: Critical update MS04-022 (841873)
+:: "Vulnerability in Task Scheduler Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-022.mspx>
+:: URL|ENU|http://download.microsoft.com/download/6/f/5/6f5e3bdb-69b6-43e7-9d27-9ce2e4687fef/WindowsXP-KB841873-x86-enu.exe|updates/winxpsp1/windowsxp-kb841873-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB841873-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update 870669
 :: "How to disable the ADODB.Stream object from Internet Explorer"
 :: (aka. "the zero-day exploit")
