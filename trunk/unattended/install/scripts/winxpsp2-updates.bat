@@ -55,6 +55,10 @@ if not exist %Z%\updates\common\%WINLANG%\dotnet_langpack.exe goto nolangpack
 todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnet_langpack.exe /q /c:\"inst /q\""
 :nolangpack
 
+:: Microsoft .NET framework 1.1 Service Pack 1
+:: URL|ALL|http://download.microsoft.com/download/8/b/4/8b4addd8-e957-4dea-bdb8-c4e00af5b94b/NDP1.1sp1-KB867460-X86.exe|updates/common/ndp1.1sp1-kb867460-x86.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\NDP1.1sp1-KB867460-X86.exe /q /i"
+
 :: Microsoft .NET framework
 :: <http://msdn.microsoft.com/netframework/downloads/>
 :: (Click on "How to get the .NET framework", and download the
