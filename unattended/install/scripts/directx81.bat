@@ -4,4 +4,6 @@
 z:\bin\todo.pl .reboot
 
 start /wait z:\packages\directx81\dxsetup /install /silent
-if errorlevel 1 exit 1
+
+:: Cannot check for errors because dxsetup always exits non-zero.  Sigh.
+::if errorlevel 1 exit 1
