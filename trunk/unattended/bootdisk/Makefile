@@ -44,7 +44,7 @@ images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos
 	export MTOOLSRC=$$mtoolsrc &&					\
 	gzip -d -c empty-boot.img.gz >| $$destdir/$$driver.img &&	\
 	(cd template &&							\
-	 find . -name CVS -prune -o -mindepth 1 -print |		\
+	 find . -name CVS -prune -o -mindepth 1 -print | sort |		\
 		while read filename ; do				\
 			if [ -d $$filename ] ; then			\
 				mmd x:/$$filename ;			\
