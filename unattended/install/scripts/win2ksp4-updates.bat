@@ -101,7 +101,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB329115-x86-%WINLANG%.
 :: "Buffer Overrun in the Workstation Service Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=828749>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-049.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828749-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828749-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 824105
 :: "Flaw in NetBIOS Could Lead to Information Disclosure"
