@@ -7,7 +7,7 @@ default:
 
 #cvs := :pserver:anonymous@cvs.unattended.sourceforge.net:/cvsroot/unattended
 # Until they fix the anonymous server...
-cvs := $$USER@cvs.unattended.sourceforge.net:/cvsroot/unattended
+cvs := $$USER@cvs.sourceforge.net:/cvsroot/unattended
 
 cwd := $(shell pwd)
 
