@@ -246,8 +246,8 @@ sub name_val_str ($$) {
     my ($name, $val) = @_;
 
     # Add quotation marks, if required.
-    $val =~ /\W/
-        and $val = "\"$val\"";
+    $val =~ /^\w+\z/
+        or $val = "\"$val\"";
     return sprintf("    %s=%s\n", $name, $val);
 }
 
