@@ -4,7 +4,7 @@
 :: they will be executed in the opposite order.
 
 :: Critical update 832894 (MS04-004)
-:: URL|ENU|http://download.microsoft.com/download/9/b/3/9b3f16b4-a907-468b-8283-c050d1ea4948/q832894.exe|updates/ie6sp1/enu/q832894.exe
+:: URL|ENU|http://download.microsoft.com/download/9/b/3/9b3f16b4-a907-468b-8283-c050d1ea4948/Q832894.exe|updates/ie6sp1/enu/q832894.exe
 :: "February, 2004, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=832894>
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-004.asp>
