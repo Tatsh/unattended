@@ -13,6 +13,37 @@ use strict;
 my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg, qw(REG_DWORD REG_BINARY REG_MULTI_SZ));
 
+# Replace %VAR% with environment variable VAR in a string.
+sub expand_vars ($) {
+    my ($arg) = @_;
+
+    while ($arg =~ /%([^%]+)%/) {
+        my $var = $1;
+        my $val = $ENV{$var};
+        $val =~ /%/
+            and die 'Internal error (time to rewrite expand_vars)';
+        $arg =~ s/%$var%/$val/g;
+    }
+
+    return $arg;
+}
+
+# Get profiles directory and default user subdirectory
+my $profile_list =
+    'LMachine/SOFTWARE/Microsoft/Windows NT/CurrentVersion/ProfileList/';
+my $profile_list_key = $reg{$profile_list};
+defined $profile_list_key
+    or die "Unable to read $profile_list: $^E";
+
+my $profiles_dir = $profile_list_key->{'/ProfilesDirectory'};
+defined $profiles_dir
+    or die "Unable to read /ProfilesDirectory: $^E";
+$profiles_dir = expand_vars ($profiles_dir);
+
+my $default_user = $profile_list_key->{'/DefaultUserProfile'};
+defined $default_user
+    or die "Unable to read /DefaultUserProfile: $^E";
+
 # Get HKEY_CURRENT_USER key
 my $cuser_key = $reg{'CUser/'};
 
@@ -22,7 +53,7 @@ my $defuser_key = $reg{'Users/.DEFAULT/'};
 # Get NTUSER.DAT registry hive key
 $reg{'/'}->AllowLoad (1)
     or die "Unable to enable loading of hive files: $^E";
-my $ntuser_dat = 'C:/Documents and Settings/Default User/NTUSER.DAT';
+my $ntuser_dat = "$profiles_dir\\$default_user\\NTUSER.DAT";
 my $ntuser_key = $reg{'Users'}->Load ($ntuser_dat, 'NTUSER')
     or die "Unable to load registry hive $ntuser_dat: $^E";
 
