@@ -130,7 +130,7 @@ sub menu_choice (@) {
             $i++;
         }
 
-        # If we have multiple pages, generate Next/Previous option
+        # If we have multiple pages, generate Next/Previous option.
         if ($pages > 1) {
             print "N/P) Next/Previous page\n";
             $choices .= 'N';
@@ -159,80 +159,39 @@ sub menu_choice (@) {
     return $ret;
 }
 
-# Allow selection from among one or more strings.
+# Select from among zero or more strings.
 sub multi_choice (@) {
     my ($prompt, @strings) = @_;
 
     scalar @strings > 0
         or return undef;
 
-    # Choices to display per page
-    my $per_page = 9;
-
-    my $pages = int((scalar @strings + $per_page - 1)
-                    / $per_page);
-
     my %selected = map { $_ => 0 } @strings;
 
-    # Current page
-    my $page = 0;
+    my $menu_state = { 'prompt' => $prompt };
+
+  LOOP:
     while (1) {
-        print "\n$prompt\n";
-        printf "(Page %d/%d)\n", $page+1, $pages;
-        my $start = $page * $per_page;
-        my $end = ($page < $pages - 1
-                   ? $start + $per_page - 1
-                   : scalar @strings - 1);
+        my @choices =
+            ('Select/deselect all' =>
+             sub { my $sel = (0 < scalar grep { $selected{$_} == 0
+                                                } @strings);
+                   # If anything is not selected, select all; else,
+                   # deselect all.
+                   %selected = map { $_ => $sel } @strings;
+               },
+             'All done ; continue' =>
+             sub {
+                 no warnings 'exiting';
+                 last LOOP;
+             },
+             map { (sprintf "[%s] %s",
+                    $selected{$_} ? '*' : ' ', $_)
+                       => sub { $selected{$_} = !$selected{$_} }
+               } @strings;
+             );
 
-        my $choices = '';
-        my @choice_map;
-
-        my $i;
-        foreach $i (0 .. $end - $start) {
-            my $str = $strings[$start + $i];
-            printf("%s) [%s] %s\n",
-                   $i+1,
-                   $selected{$str} ? '*' : ' ',
-                   $str);
-            $choices .= $i+1;
-            $choice_map[$i] = sub { $selected{$str} = !$selected{$str} };
-        }
-
-        $i = $end - $start + 1;
-        print "S/D) Select/Deselect all\n";
-        $choices .= 'S';
-        $choice_map[$i] = sub { %selected = map { $_ => 1 } @strings };
-        $i++;
-        $choices .= 'D';
-        $choice_map[$i] = sub { %selected = map { $_ => 0 } @strings };
-
-        if ($pages > 1) {
-            $i++;
-            print "N/P) Next/Previous page\n";
-            $choices .= 'N';
-            $choice_map[$i] = sub { $page = ($page + 1) % $pages };
-            $i++;
-            $choices .= 'P';
-            $choice_map[$i] = sub { $page = ($page + $pages - 1) % $pages };
-        }
-
-        $i++;
-        print "C) Continue\n";
-        $choices .= 'C';
-        my $continue_index = $i;
-
-        $i++;
-        print "X) Exit this program\n";
-        $choices .= 'X';
-        $choice_map[$i] = sub { print "Exiting.\n"; exit 1; };
-
-        system 'choice', "/c:$choices", "Select:";
-        my $ret = ($? >> 8) - 1;
-
-        $ret == $continue_index
-            and last;
-
-        my $func = $choice_map[$ret];
+        my $func = menu_choice ($menu_state, @choices);
         &$func ();
     }
 
