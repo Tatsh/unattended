@@ -1,0 +1,86 @@
+diff -u -r busybox-1.00-pre10/networking/udhcp.orig/clientpacket.c busybox-1.00-pre10/networking/udhcp/clientpacket.c
+--- busybox-1.00-pre10/networking/udhcp.orig/clientpacket.c	2004-03-15 03:29:00.000000000 -0500
++++ busybox-1.00-pre10/networking/udhcp/clientpacket.c	2004-05-17 15:16:42.000000000 -0400
+@@ -78,6 +78,7 @@
+ 	memcpy(packet->chaddr, client_config.arp, 6);
+ 	add_option_string(packet->options, client_config.clientid);
+ 	if (client_config.hostname) add_option_string(packet->options, client_config.hostname);
++	if (client_config.userclass) add_option_string(packet->options, client_config.userclass);
+ 	add_option_string(packet->options, (uint8_t *) &vendor_id);
+ }
+ 
+diff -u -r busybox-1.00-pre10/networking/udhcp.orig/dhcpc.c busybox-1.00-pre10/networking/udhcp/dhcpc.c
+--- busybox-1.00-pre10/networking/udhcp.orig/dhcpc.c	2004-03-15 03:29:00.000000000 -0500
++++ busybox-1.00-pre10/networking/udhcp/dhcpc.c	2004-05-17 15:41:43.000000000 -0400
+@@ -67,6 +67,7 @@
+ 	script: DEFAULT_SCRIPT,
+ 	clientid: NULL,
+ 	hostname: NULL,
++        userclass: NULL,
+ 	ifindex: 0,
+ 	arp: "\0\0\0\0\0\0",		/* appease gcc-3.0 */
+ };
+@@ -90,6 +91,7 @@
+ "  -r, --request=IP                IP address to request (default: none)\n"
+ "  -s, --script=file               Run file at dhcp events (default:\n"
+ "                                  " DEFAULT_SCRIPT ")\n"
++"  -u, --userclass=USERCLASS       User class identifier (RFC 3004)\n"
+ "  -v, --version                   Display version\n"
+ 	);
+ 	exit(0);
+@@ -204,6 +206,7 @@
+ 		{"quit",	no_argument,		0, 'q'},
+ 		{"request",	required_argument,	0, 'r'},
+ 		{"script",	required_argument,	0, 's'},
++                {"userclass",   required_argument,      0, 'u'},
+ 		{"version",	no_argument,		0, 'v'},
+ 		{0, 0, 0, 0}
+ 	};
+@@ -211,7 +214,7 @@
+ 	/* get options */
+ 	while (1) {
+ 		int option_index = 0;
+-		c = getopt_long(argc, argv, "c:fbH:h:i:np:qr:s:v", arg_options, &option_index);
++		c = getopt_long(argc, argv, "c:fbH:h:i:np:qr:s:u:v", arg_options, &option_index);
+ 		if (c == -1) break;
+ 
+ 		switch (c) {
+@@ -257,6 +260,16 @@
+ 		case 's':
+ 			client_config.script = optarg;
+ 			break;
++		case 'u':
++			len = strlen(optarg) > 255 ? 255 : strlen(optarg);
++			if (client_config.userclass) free(client_config.userclass);
++			client_config.userclass = xmalloc(len + OPT_DATA + 1);
++			client_config.userclass[OPT_CODE] = DHCP_USER_CLASS;
++			client_config.userclass[OPT_LEN] = len+1;
++                        client_config.userclass[OPT_DATA] = len;
++			strncpy(client_config.userclass + OPT_DATA + 1,
++                                optarg, len);
++			break;
+ 		case 'v':
+ 			printf("udhcpcd, version %s\n\n", VERSION);
+ 			return 0;
+diff -u -r busybox-1.00-pre10/networking/udhcp.orig/dhcpc.h busybox-1.00-pre10/networking/udhcp/dhcpc.h
+--- busybox-1.00-pre10/networking/udhcp.orig/dhcpc.h	2004-01-30 18:45:12.000000000 -0500
++++ busybox-1.00-pre10/networking/udhcp/dhcpc.h	2004-05-17 15:16:14.000000000 -0400
+@@ -27,6 +27,7 @@
+ 	char *script;			/* User script to run at dhcp events */
+ 	uint8_t *clientid;		/* Optional client id to use */
+ 	uint8_t *hostname;		/* Optional hostname to use */
++        uint8_t *userclass;             /* Optional user class id to use */
+ 	int ifindex;			/* Index number of the interface to use */
+ 	uint8_t arp[6];			/* Our arp address */
+ };
+diff -u -r busybox-1.00-pre10/networking/udhcp.orig/dhcpd.h busybox-1.00-pre10/networking/udhcp/dhcpd.h
+--- busybox-1.00-pre10/networking/udhcp.orig/dhcpd.h	2004-03-15 03:29:00.000000000 -0500
++++ busybox-1.00-pre10/networking/udhcp/dhcpd.h	2004-05-17 15:13:35.000000000 -0400
+@@ -63,6 +63,7 @@
+ #define DHCP_T2			0x3b
+ #define DHCP_VENDOR		0x3c
+ #define DHCP_CLIENT_ID		0x3d
++#define DHCP_USER_CLASS         0x4d
+ 
+ #define DHCP_END		0xFF
+ 
