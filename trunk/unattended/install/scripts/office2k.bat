@@ -7,6 +7,7 @@ todo.pl .reboot
 
 :: Security Update for Excel 2000 (KB873372)
 :: <http://support.microsoft.com/?kbid=873372>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=B0C40C24-4DDE-45AF-8433-6DBDDD030C30&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/4/9/6/4969fc37-7654-48c9-93b1-1d15a9a93b10/office2000-kb873372-client-ara.exe|updates/office2k/office2000-kb873372-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/8/c/3/8c38a7e4-3ec7-4de2-bbe0-7ba6258cb4e6/office2000-kb873372-client-csy.exe|updates/office2k/office2000-kb873372-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/3/2/3/32328b2d-34a6-49ed-a97b-9f4f2856b4e0/office2000-kb873372-client-dan.exe|updates/office2k/office2000-kb873372-client-dan.exe
@@ -34,6 +35,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb873372-client-%WINLANG
 
 :: Security Update for Office 2000: WordPerfect 5.x Converter (KB873380)
 :: <http://support.microsoft.com/?kbid=873380>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=88f52e69-99e1-4892-9a53-84e5dfadfe6b&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/6/a/5/6a5b905d-53f2-4af8-8544-2d8961e10e24/office2000-kb873380-client-ara.exe|updates/office2k/office2000-kb873380-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/6/d/6/6d6fb65f-3a69-4993-b0a2-c53eeed67853/office2000-kb873380-client-csy.exe|updates/office2k/office2000-kb873380-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/5/b/7/5b7d31a1-ac70-40d5-a224-8aeb2a7f8ac1/office2000-kb873380-client-dan.exe|updates/office2k/office2000-kb873380-client-dan.exe
@@ -64,6 +66,7 @@ if not %WINVER%. == winxpsp1. goto did810217
 :: Microsoft Security Bulletin MS03-051
 :: "Buffer Overrun in Microsoft FrontPage Server Extensions Could Allow Code Execution (813360)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms03-051.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=057D5F0E-0E2B-47D2-9F0F-3B15DD8622A2&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/e/2/0/e20032a4-589c-42a5-b053-1507d2517b60/Windows2000-KB810217-x86-ARA.exe|updates/office2k/windows2000-kb810217-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/9/b/b/9bbd5a21-d23c-447e-a8da-55c9577550e6/Windows2000-KB810217-x86-CSY.exe|updates/office2k/windows2000-kb810217-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/7/0/4/704c6e22-cced-4d94-bd26-667f9fae61db/Windows2000-KB810217-x86-DAN.exe|updates/office2k/windows2000-kb810217-x86-dan.exe
@@ -91,6 +94,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\Windows2000-KB810217-x86-%WINLANG%.
 
 :: Excel 2000 Security Patch: KB830349
 :: <http://support.microsoft.com?kbid=830349>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=9904b2a6-0cf0-4cf2-aae0-062bdd7417d5&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/7/f/1/7f189b9d-7bd3-487d-a56f-2c9cefdcfd35/office2000-kb830349-client-ara.exe|updates/office2k/office2000-kb830349-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/c/a/2/ca25f420-69d6-4b63-8390-b71524024a90/office2000-kb830349-client-csy.exe|updates/office2k/office2000-kb830349-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/7/a/7/7a717090-6061-4fd4-bd9d-ab3944ef2838/office2000-kb830349-client-dan.exe|updates/office2k/office2000-kb830349-client-dan.exe
@@ -118,6 +122,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb830349-client-%WINLANG
 
 :: Word 2000 Security Patch: KB830347
 :: <http://support.microsoft.com?kbid=830347>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=d2bd626e-401b-4fc7-bbac-2c6b6e66d984&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/4/2/f/42fa3673-bf31-4a72-952c-a297d8b09e26/office2000-kb830347-client-ara.exe|updates/office2k/office2000-kb830347-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/7/d/a/7da8f9cd-1123-427f-9c95-134815e9c45c/office2000-kb830347-client-csy.exe|updates/office2k/office2000-kb830347-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/d/a/e/dae300b1-f4f1-494f-9747-fd2d8060ad5c/office2000-kb830347-client-dan.exe|updates/office2k/office2000-kb830347-client-dan.exe
@@ -145,6 +150,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\Office2000-kb830347-client-%WINLANG
 
 :: Access 2000 Snapshot Viewer Security Patch: KB826292
 :: <http://support.microsoft.com/?kbid=826292>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=f6cb9c8e-16e3-422d-86dd-7ed5671fb8d4&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/2/f/f/2ff85c45-47cd-4e91-bcdd-2aaf2a8298e5/office2000-kb826292-client-ara.exe|updates/office2k/office2000-kb826292-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/d/2/4/d249ea80-556f-49e8-92e1-ba0c04e5cdcc/office2000-kb826292-client-csy.exe|updates/office2k/office2000-kb826292-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/2/6/5/26529be9-8894-4ba2-9b6c-8f13d5d8a267/office2000-kb826292-client-dan.exe|updates/office2k/office2000-kb826292-client-dan.exe
@@ -172,6 +178,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb826292-client-%WINLANG
 
 :: Office 2000 WordPerfect 5.x Converter Security Patch: KB824993
 :: <http://support.microsoft.com/?kbid=824993>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=d3ed4189-315a-411a-a739-f7181310fba7&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/e/b/4/eb432912-f4cf-424b-86da-861cad96b634/office2000-kb824993-client-ara.exe|updates/office2k/office2000-kb824993-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/5/2/6/5261bd26-c262-4422-9923-273297d216ab/office2000-kb824993-client-csy.exe|updates/office2k/office2000-kb824993-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/0/7/d/07d33392-bf9a-45cb-8702-cd4d19818c56/office2000-kb824993-client-dan.exe|updates/office2k/office2000-kb824993-client-dan.exe
@@ -199,6 +206,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb824993-client-%WINLANG
 
 :: Office 2000 Security Patch: KB822035
 :: <http://support.microsoft.com?kbid=822035>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=e2cce199-9c4a-4eec-a3ec-9f738017f275&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/f/2/1/f21be8a2-82e0-4859-b3e4-8e2de47eff85/office2000-kb822035-client-ara.exe|updates/office2k/office2000-kb822035-client-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/7/1/4/714f9615-9646-4509-8d01-c90af7c61633/office2000-kb822035-client-csy.exe|updates/office2k/office2000-kb822035-client-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/b/a/0/ba01e982-8876-4cc5-b517-2ba785d3f766/office2000-kb822035-client-dan.exe|updates/office2k/office2000-kb822035-client-dan.exe
@@ -226,6 +234,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb822035-client-%WINLANG
 
 :: Outlook 2000 Update: December 18, 2002
 :: <http://support.microsoft.com?kbid=811167>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=1e252ccf-452a-4313-a402-b50c4405580a&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/9/a/3/9a35d20d-7218-45c0-bd86-eefd7743f93b/Olk0901.exe|updates/office2k/ara/olk0901.exe
 :: URL|CSY|http://download.microsoft.com/download/1/1/0/110c5e03-30ac-4223-aad0-f412bfb658bc/Olk0901.exe|updates/office2k/csy/olk0901.exe
 :: URL|DAN|http://download.microsoft.com/download/b/1/3/b134068f-2696-4453-9b9d-7d2af8444b77/Olk0901.exe|updates/office2k/dan/olk0901.exe
@@ -257,6 +266,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"o
 
 :: Office 2000 Update: Service Pack 3 (SP3)
 :: <http://support.microsoft.com?kbid=326585>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=5C011C70-47D0-4306-9FA4-8E92D36332FE&displaylang=EN>
 :: URL|ARA|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/ara/o2ksp3.exe
 :: URL|CSY|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/csy/o2ksp3.exe
 :: URL|DAN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/dan/o2ksp3.exe
@@ -285,6 +295,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\O2kSp3.exe /r:n /q /c:\"m
 :: Office 2000 SR-1a Administrator Updates
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b1286b93-3ebd-4ba7-91c4-32c7ca12457b&displaylang=en>
 :: <http://www.microsoft.com/office/ork/2000/appndx/toolbox_localized.htm>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=af6c8d03-7633-45b4-ab96-795ee656f2a2&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/office2000prem/SP/1/WIN98/AR/o2ksr1adl.exe|updates/office2k/ara/o2ksr1adl.exe
 :: URL|CSY|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/CS/O2KSR1ADL.EXE|updates/office2k/csy/o2ksr1adl.exe
 :: URL|DAN|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/DA/O2KSR1ADL.EXE|updates/office2k/dan/o2ksr1adl.exe
