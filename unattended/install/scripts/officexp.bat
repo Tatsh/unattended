@@ -163,7 +163,7 @@ if not %WINVER%. == win2ksp4. goto did832668
 :: URL|RUS|http://download.microsoft.com/download/0/0/1/001d1235-bba6-45ae-9f4a-a447a8dd3674/OfficeXP-kb832668-client-rus.exe|updates/officexp/officexp-kb832668-client-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/8/0/1/801bf89e-a6d4-453a-a271-846701ef9d75/OfficeXP-kb832668-client-sve.exe|updates/officexp/officexp-kb832668-client-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/3/4/6/34650f2a-093f-42c6-bc18-21bd2a866fb7/OfficeXP-kb832668-client-trk.exe|updates/officexp/officexp-kb832668-client-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\officexp\OfficeXP-kb832668-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb832668.txt /p MSCFT.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\officexp\OfficeXP-kb832668-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb832668.txt /p MSCTF.msp REBOOT=ReallySuppress\""
 :did832668
 
 :: Office XP Service Pack 3 (SP3)
