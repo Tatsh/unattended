@@ -1,0 +1,38 @@
+; General user information
+[UserData]
+
+[GuiUnattended]
+    OEMSkipRegional=1
+    OemSkipWelcome=1
+    AutoLogon=Yes
+
+[Unattended]
+    ; Use OemPnPDriversPath to add drivers during installation.
+;    OemPnPDriversPath="drivers\net\IntelPRO;drivers\video\T22"
+    UnattendMode=DefaultHide
+    FileSystem=ConvertNTFS
+    ExtendOemPartition=1
+    OemSkipEula=Yes
+    OemPreinstall=Yes
+
+[Components]
+    ; Install IIS by default
+    iis_pwmgr=On
+    iis_doc=On
+
+[GuiRunOnce]
+    Command0="c:\netinst\postinst.bat"
+
+[Data]
+    AutoPartition=1
+    MsDosInitiated="0"
+    UnattendedInstall=Yes
+
+[Display]
+    BitsPerPel=32
+    Xresolution=1024
+    YResolution=768
+    Vrefresh=75
+
+[Networking]
+    InstallDefaultComponents=Yes
