@@ -11,12 +11,10 @@ bin/find-modules-pci
 bin/mkdir
 bin/sh
 
-etc/dosemu/dosemu.conf
-
 etc/extra.pcimap
 etc/ld.so.cache
 etc/master
-# These two are debatable; they are only needed for dosemu I think
+
 etc/nsswitch.conf
 etc/passwd
 etc/pcmcia
