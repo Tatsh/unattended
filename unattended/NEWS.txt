@@ -1,4 +1,4 @@
-*** Changes in version 2.1 ()
+*** Changes in version 2.1 (2002-Nov-10)
 
 Create and document setenv.pl script.  Use it in Cygwin/SSH scripts.
 
