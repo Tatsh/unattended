@@ -1,3 +1,52 @@
+** Changes in version 2.6 (2003-Jun-29)
+
+NOTE: There are many changes in this release.  You will need to
+refresh your install share (Z: drive) and your boot disk.
+
+Replace unattend.txt parser/generator with generic .ini file
+parser/generator.  Create modules Unattend::IniFile,
+Unattend::FoldHash, and Unattend::Promise; bundle them in install/lib.
+This is a complete overhaul of this critical substrate, although the
+only visible effect should be fixing the long-standing bug for people
+needing third-party SCSI drivers (see
+<http://support.microsoft.com/?kbid=288344>).  Mostly, these new
+modules make all sorts of interesting things possible in future
+releases.
+
+Fix bug in install.pl which could result in an empty
+OemPnPDriversPath, which makes Windows Setup croak.  Thanks to Teresa
+Jeremy.
+
+Deprecate install/doslib in favor of install/lib.
+
+Add support for Intel Pro/1000 adapter family.
+
+Add section on Nullsoft Installer System (NSIS) to installers.html.
+Thanks to David Nuttall.
+
+Rewrite instsrv.pl to use WMI instead of instsrv.exe.  This eliminates
+a dependency on the Windows Resource Kit, which Microsoft is no longer
+maintaining.
+
+Fix longstanding todo.pl bug which caused "undefined variable"
+warnings with Perl 5.8.
+
+Eliminate [_meta]/ipaddr and [_meta]/macaddr, since they seem to
+create more problems than they solve.
+
+Do not pass /o ("overwrite OEM files") flag to hotfix installers,
+since it probably does more harm than good.
+
+New scripts install/bin/shortcut.pl, install/scripts/adobe-reader.bat,
+install/scripts/vsnet.{bat,aut}.
+
+Update various installation scripts.
+
+Sync with SYSLINUX 2.02.
+
+Sync with FreeDOS fdisk 1.2.1.
+
+
 *** Changes in version 2.5b (2003-Mar-11)
 
 Fix long-standing bug where autoexec.bat would append a random number
