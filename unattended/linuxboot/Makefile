@@ -320,7 +320,7 @@ stage1 +=							\
 	)
 
 ## kbd
-$(kbd)/src/loadkeys:
+$(kbd)/src/loadkeys: fakeinclude/stdio.h
 	cd $(kbd)					\
 	&& export CFLAGS="$(fakelib_cflags) -O2"	\
 	&& ./configure					\
