@@ -31,6 +31,35 @@
 :: URL|TRK|http://download.microsoft.com/download/4/3/2/43262c73-731f-4510-80e7-e43931d17e59/WindowsMedia9-KB885492-x86-TRK.exe|updates/mediaplayer9/windowsmedia9-kb885492-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB885492-x86-%WINLANG%.exe /passive /n /norestart"
 
+:: Security Update for Windows 2000 (KB839645)
+:: Microsoft Security Bulletin MS04-024
+:: "Vulnerability in Windows Shell Could Allow Remote Code Execution (839645)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=397BE12B-A026-41A6-8E98-B4027BC6A110>
+:: URL|ARA|http://download.microsoft.com/download/9/4/a/94ad9d8d-bcc5-4b5f-a008-acd371c9b75d/Windows2000-KB839645-x86-ARA.EXE|updates/win2ksp4/windows2000-kb839645-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/3/7/9/3792b40e-e220-462f-a6c0-042831213c00/Windows2000-KB839645-x86-CSY.EXE|updates/win2ksp4/windows2000-kb839645-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/c/5/a/c5a1c479-2343-49e3-a728-d7d68753a09e/Windows2000-KB839645-x86-DAN.EXE|updates/win2ksp4/windows2000-kb839645-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/7/3/b734af44-2439-4747-a476-cbbdcb5fd03b/Windows2000-KB839645-x86-DEU.EXE|updates/win2ksp4/windows2000-kb839645-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/d/5/e/d5eb91b5-5042-4c99-aa38-6e7049809e54/Windows2000-KB839645-x86-ELL.EXE|updates/win2ksp4/windows2000-kb839645-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/windows2000-kb839645-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/f/5/6f5fd4b1-9921-4e4a-b645-ea192e48ab83/Windows2000-KB839645-x86-ESN.EXE|updates/win2ksp4/windows2000-kb839645-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/6/3/0/63065bee-c6e7-46e7-8ce0-77844d635491/Windows2000-KB839645-x86-FIN.EXE|updates/win2ksp4/windows2000-kb839645-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/1/e/e/1ee1393b-ce01-4844-8cbf-572195a1943d/Windows2000-KB839645-x86-FRA.EXE|updates/win2ksp4/windows2000-kb839645-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/0/5/2/0520e84a-53d0-485d-962c-84fabfc99c56/Windows2000-KB839645-x86-HEB.EXE|updates/win2ksp4/windows2000-kb839645-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/d/2/b/d2bf17dd-0e32-4ca8-af5f-731e0bc67578/Windows2000-KB839645-x86-HUN.EXE|updates/win2ksp4/windows2000-kb839645-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/1/3/d137bb98-7fca-4d73-abae-73cc6e0777fb/Windows2000-KB839645-x86-ITA.EXE|updates/win2ksp4/windows2000-kb839645-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/9/7/f/97f989d2-4d4e-42a3-8188-858f8cbefeaf/Windows2000-KB839645-x86-JPN.EXE|updates/win2ksp4/windows2000-kb839645-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/c/e/8ce74b75-5ecd-4813-ba04-867d95474c24/Windows2000-KB839645-x86-KOR.EXE|updates/win2ksp4/windows2000-kb839645-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/c/a/4cab1add-84e6-4026-8fdd-3a8e227255c7/Windows2000-KB839645-x86-NLD.EXE|updates/win2ksp4/windows2000-kb839645-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/4/c/3/4c393267-89e8-49e5-be4e-df9c83f0ab45/Windows2000-KB839645-x86-NOR.EXE|updates/win2ksp4/windows2000-kb839645-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/0/3/2036c1ff-c554-4837-91f1-26386dacd3b0/Windows2000-KB839645-x86-PLK.EXE|updates/win2ksp4/windows2000-kb839645-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/4/1/4/414fbcb9-f36e-4862-95b5-d3a319bb35f0/Windows2000-KB839645-x86-PTB.EXE|updates/win2ksp4/windows2000-kb839645-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/4/6/5/465d7ff6-3c07-48fa-af93-03729c6686f4/Windows2000-KB839645-x86-PTG.EXE|updates/win2ksp4/windows2000-kb839645-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/a/e/0/ae04dfa4-2de0-4305-96a7-afe7b0629c74/Windows2000-KB839645-x86-RUS.EXE|updates/win2ksp4/windows2000-kb839645-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/f/f/6ffe6705-eb88-4ef2-a586-db8f4df9ffd4/Windows2000-KB839645-x86-SVE.EXE|updates/win2ksp4/windows2000-kb839645-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/b/b/8/bb8bad55-4f56-436e-a9e0-d182ea29e70e/Windows2000-KB839645-x86-TRK.EXE|updates/win2ksp4/windows2000-kb839645-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB839645-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Security Update for Windows 2000 (KB888113)
 :: Microsoft Security Bulletin MS05-015
 :: "Vulnerability in Hyperlink Object Library Could Allow Remote Code Execution (888113)"

@@ -84,6 +84,35 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\HMTCDWizard_%WINLANG%.exe /l* %Syst
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* %SystemDrive%\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
+:: Security Update for Windows XP (KB839645)
+:: Microsoft Security Bulletin MS04-024
+:: "Vulnerability in Windows Shell Could Allow Remote Code Execution (839645)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=C3365B8E-666B-4C82-A9ED-FC0F84F107BA>
+:: URL|ARA|http://download.microsoft.com/download/9/c/7/9c79077f-f144-4c2f-96d9-f7c5283178d2/WindowsXP-KB839645-x86-ara.exe|updates/winxpsp1/windowsxp-kb839645-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/e/5/1/e51bb81a-8d19-4167-b1c6-d451b6786088/WindowsXP-KB839645-x86-csy.exe|updates/winxpsp1/windowsxp-kb839645-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/4/a/d/4adef737-d2a3-4a75-bf8e-57a9bda28f7c/windowsxp-kb839645-X86-DAN.exe|updates/winxpsp1/windowsxp-kb839645-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/c/f/4/cf4aa9d6-f05b-48a8-804b-46a3a2dd87fa/WindowsXP-KB839645-x86-deu.exe|updates/winxpsp1/windowsxp-kb839645-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/d/1/1/d11ac807-dd60-4b11-84b4-54bb80140b4e/windowsxp-kb839645-X86-ELL.exe|updates/winxpsp1/windowsxp-kb839645-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/d/0/3/d03971cd-ae3d-49ab-bec2-44ce3911fa76/WindowsXP-KB839645-x86-enu.exe|updates/winxpsp1/windowsxp-kb839645-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/9/9/c990ed3f-4ba1-4a28-81c0-ac9689e30a69/windowsxp-kb839645-X86-ESN.exe|updates/winxpsp1/windowsxp-kb839645-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/c/f/e/cfec4cd0-a914-495d-9b67-20f3ab69465d/windowsxp-kb839645-X86-FIN.exe|updates/winxpsp1/windowsxp-kb839645-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/7/3/2/7329c960-07e4-4535-a601-de926b8382cd/windowsxp-kb839645-X86-FRA.exe|updates/winxpsp1/windowsxp-kb839645-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/f/a/5/fa559e29-d269-4eb0-acf0-dfeaebe49dc6/windowsxp-kb839645-X86-HEB.exe|updates/winxpsp1/windowsxp-kb839645-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/b/8/4/b84181ad-49f1-4cc2-bb9a-9889b3fcc6c3/windowsxp-kb839645-X86-HUN.exe|updates/winxpsp1/windowsxp-kb839645-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/e/b/3eb56030-c519-4f41-8d7f-82705105796a/windowsxp-kb839645-X86-ITA.exe|updates/winxpsp1/windowsxp-kb839645-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/2/e/52eb8e75-1c1c-4ad3-bad3-645c3105e6e7/windowsxp-kb839645-X86-JPN.exe|updates/winxpsp1/windowsxp-kb839645-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/9/9/4992d8eb-f320-414b-b1b4-21867f5de878/windowsxp-kb839645-X86-KOR.exe|updates/winxpsp1/windowsxp-kb839645-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/3/5/c/35ca1eb2-44fa-4151-8317-f0d63d4e4cf8/windowsxp-kb839645-X86-NLD.exe|updates/winxpsp1/windowsxp-kb839645-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/1/1/5/1152e544-d279-4655-a06c-96227bfb80e3/windowsxp-kb839645-X86-NOR.exe|updates/winxpsp1/windowsxp-kb839645-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/0/5/5/055bed82-4338-477a-ae7b-2f3985ecab32/windowsxp-kb839645-X86-PLK.exe|updates/winxpsp1/windowsxp-kb839645-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/3/f/23f43c69-58c9-4318-8c2c-22fea7be17d5/windowsxp-kb839645-X86-PTB.exe|updates/winxpsp1/windowsxp-kb839645-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/0/9/b09087d4-8867-44cd-b868-4cee93fc9330/windowsxp-kb839645-X86-PTG.exe|updates/winxpsp1/windowsxp-kb839645-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/3/b/e/3be1b343-a7ed-4b91-a6d2-f3bbe3acbdf9/windowsxp-kb839645-X86-RUS.exe|updates/winxpsp1/windowsxp-kb839645-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/4/f/f4f8c012-9e99-4a8e-9a34-439478d786d0/windowsxp-kb839645-X86-SVE.exe|updates/winxpsp1/windowsxp-kb839645-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/2/e/3/2e3f49c2-9e13-4461-b38f-56ba762b28b6/windowsxp-kb839645-X86-TRK.exe|updates/winxpsp1/windowsxp-kb839645-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb839645-X86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical Update for Windows Media Player (All Versions) for Windows 2000, Windows XP, and Windows Server 2003 (KB828026)
 :: <http://support.microsoft.com/?kbid=828026>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=af9cf65e-0c55-452e-a0fa-3aa165e667c1>
