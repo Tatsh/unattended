@@ -1,3 +1,45 @@
+** Changes in version 4.0b (2004-Mar-20)
+
+Add Shad's sample configuration as install/site/sample-config.pl.
+This causes Unattended to use a pair of spreadsheets (hardware.csv and
+software.csv) to automatically determine the host name, Windows
+product key, and other things.  We may make this behavior the default
+in future releases; join the unattended-info mailing list if you would
+like to express an opinion.
+
+Ship ZIP archives instead of .tar.gz archives, because WinZip is too
+clever by half and mangles our line endings.
+
+Add Dutch updates and download URLs.  Thanks to Niels de Groot.
+
+Add Russian updates and download URLs.  Thanks to Eugene Kotlyarov.
+
+Add German updates and download URLs.  Thanks to Gerhard Heift and Jan
+Brauer.
+
+Add French updates and download URLs.  Thanks to Sylvain Faivre.
+
+Replace all Office XP updates with Office XP Service Pack 3.
+
+Add ofc2003.bat script for installing Office 2003.  Thanks to imdos.
+
+(DOS) Update to SYSLINUX 2.09-pre13.  This should fix the corrupted
+isolinux.bin file in the last couple of releases.
+
+(Linux) Add support for I2O adapters (e.g., Adaptec 2110S).
+
+(Linux) Upgrade to dosemu 1.2.1 and Linux 2.6.4.  Might improve
+support for some hardware.
+
+(Linux) Apply patch to Parted so it can compile against recent
+toolchain/kernel.  See
+<http://lists.debian.org/debian-glibc/2003/debian-glibc-200311/msg00400.html>.
+Thanks to Mark Pavlichuk.
+
+(DOS) Update Broadcom 57xx (b57.dos) and VIA Rhine (fetnd.dos) drivers
+to latest versions from Broadcom's and VIA's sites, respectively.
+
+
 ** Changes in version 4.0a (2004-Mar-08)
 
 (DOS) Make install.pl work again (whoops).  Thanks, Shad.
@@ -23,7 +65,7 @@ disk based on Linux.  We expect to support both indefinitely.
 Many changes to install.pl to support running under Linux.
 
 Use a 4000M FAT32 partition instead of a 2000M FAT16 partition for
-initial installation partition.
+initial installation.
 
 Use FreeDOS himem64.exe instead of himem.sys as XMS provider.  Loads
 of fun.
