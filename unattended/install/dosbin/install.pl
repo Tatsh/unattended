@@ -83,6 +83,20 @@ sub full_os_name ($) {
     return $ret;
 }
 
+# Read the current partition table and return it as a human-readable
+# string.
+sub read_partition_table () {
+    open FDISK, 'fdisk /info /tech|'
+        or die "Unable to run fdisk: $^E";
+
+    my $ret = join '', <FDISK>;
+
+    # Omit error check here because we like to test under Windows...
+    close FDISK;
+
+    return $ret;
+}
+
 ## Set defaults.
 
 sub ask_fdisk_lba () {
@@ -93,38 +107,31 @@ sub ask_fdisk_lba () {
 
 sub ask_fdisk_cmds () {
     print "Choose partitioning scheme.\n";
-    print "NOTE: Any choice other than 'Do nothing' will require a reboot.\n";
-    my @pre_cmds = ('fdisk /clearall 1');
-    my @post_cmds = ('fdisk /prio:2000',
-                     'fdisk /activate:1',
-                     'fdisk /mbr',
-                     'fdisk /reboot');
+    print "NOTE: If partition table changes, machine will reboot.\n";
+    # Commands to erase partition table
+    my $pre_cmds = 'fdisk /clear 1';
+    # Commands to delete first primary partition and replace it with a
+    # 2G FAT partition
+    my $post_cmds = 'fdisk /delete /pri:1;fdisk /prio:2000;fdisk /activate:1';
 
     while (1) {
         my $cmds = menu_choice
             ('Do nothing (continue)' => undef,
+             'Wipe partition table and run fdisk interactively' =>
+             'fdisk /xo',
              'Whole disk C:', =>
-             [ @pre_cmds, @post_cmds],
+             'fdisk /pri:100,100',
              '4G C:, rest D:' =>
-             [ @pre_cmds,
-               'fdisk /pri:4096',
-               'fdisk /pri:100,100 /spec:7',
-               'fdisk /delete /pri:1',
-               @post_cmds ],
+             'fdisk /pri:4096;fdisk /pri:100,100 /spec:7',
              '4G C:, 4G D:, rest E:' =>
-             [ @pre_cmds,
-               'fdisk /pri:4096',
-               'fdisk /pri:4096 /spec:7',
-               'fdisk /pri:100,100 /spec:7',
-               @post_cmds ],
-             'Run fdisk interactively' =>
-             [ 'fdisk /xo', @post_cmds ]);
+             'fdisk /pri:4096;fdisk /pri:4096 /spec:7;fdisk /pri:100,100 /spec:7'
+             );
         if (defined $cmds) {
             print "WARNING: This operation destroys the disk!";
             yes_no_choice ("Are you sure")
                 or next;
         }
-        return $cmds;
+        return "$pre_cmds;$cmds;$post_cmds";
     }
 }
 
@@ -176,6 +183,12 @@ set_value ('_meta', 'format_cmd',
                return (yes_no_choice ('Format C: drive')
                        ? 'format /q /v: c:'
                        : undef);
+           });
+
+set_value ('_meta', 'replace_mbr',
+           sub {
+               return yes_no_choice
+                   ('Replace Master Boot Record (if unsure, say yes)');
            });
 
 set_comments ('_meta', 'OS_dir',
@@ -330,23 +343,38 @@ if (-e $site_conf) {
 get_value ('_meta', 'fdisk_lba')
     or $ENV{'FFD_VERSION'}=6;
 
-# Display the partition table.
+# Read current partition table.
+my $partition_table = read_partition_table ();
+
+# Display it.
 print "\nCurrent partition table:\n\n";
-system 'fdisk', '/info';
+print $partition_table;
 print "\n";
 
-# Partition the disk and reboot, if required.
+# Partition the disk.
 my $fdisk_cmds = get_value ('_meta', 'fdisk_cmds');
-if (defined $fdisk_cmds) {
-    foreach my $cmd (@$fdisk_cmds) {
-        system $cmd;
-    }
+
+# Run the fdisk commands.
+foreach my $cmd (split /;/, $fdisk_cmds) {
+    system $cmd;
+}
+
+# If partition table has changed, reboot.
+if ($partition_table ne read_partition_table ()) {
+    print "Partition table has changed, rebooting...\n";
+    sleep 5;
+    system ('fdisk /reboot');
+    die "Internal error";
 }
 
 # Run formatting command, if any.
 my $format_cmd = get_value ('_meta', 'format_cmd');
 defined $format_cmd
     and system $format_cmd;
+
+# Overwrite MBR, if desired.
+get_value ('_meta', 'replace_mbr')
+    and system ('fdisk /mbr');
 
 # Create C:\netinst and subdirectories.
 my $netinst = get_value ('_meta', 'netinst');
