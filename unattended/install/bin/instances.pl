@@ -50,7 +50,14 @@ sub dump_obj ($) {
         printf "%32s ", $name;
         my $value;
         if ($prop->{'IsArray'}) {
-            $value = '<array>';
+            my $elts = $prop->Value();
+            if (!defined $elts) {
+                $value = "<empty array>";
+            }
+            else {
+                $value = '<array ' . join ' ', @$elts;
+                $value .= '>';
+            }
         }
         else {
             $value = $prop->{'Value'};
