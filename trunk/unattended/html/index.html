@@ -41,9 +41,9 @@ need to perform some customization for your site.
 
 <h1>Where did it come from?</h1>
 
-<p>In my (often reluctant) experience with Windows, I have found that
-the more recently a machine was installed, the better it works.  So I
-went searching for ways to make the installation process routine.
+<p>In my experience with Windows, I have found that the more recently
+a machine was installed, the better it works.  So I went searching for
+ways to make the installation process routine.
 
 <p>This led me into the strange and quirky world of DOS networking,
 <code>.bat</code> scripts, <code>unattend.txt</code> files, network
@@ -59,27 +59,28 @@ and <a href="http://www.microsoft.com/smserver/">"SMS"</a>.  I
 consider those technologies too heavyweight and complex, so this
 system does not depend on them.
 
-<p>Some approaches to this problem involve drive imaging (also known
-as "cloning").  This system is not one of them.  Workstation cloning
-has several drawbacks, including <a
+<p>Many people attack this problem with drive imaging, also known as
+workstation "cloning".  This is almost always a bad idea.  Although <a
+href="http://www.microsoft.com/windowsxp/pro/using/itpro/deploying/introduction.asp"
+>Sysprep</a> solves the classic <a
 href="http://service2.symantec.com/SUPPORT/ghost.nsf/docid/1999050308324125"
->the SID issue</a>, poor support for non-uniform hardware, poor
-maintainability, and large, bulky images.  Even small hardware
-variations, or small updates to the software configuration, can create
-large headaches.  On the other hand, if you need to crank out many
-workstations with completely identical hardware, drive imaging is both
-simple and fast.  And products like <a
+>SID problem</a>, imaging has many other drawbacks, including poor
+support for non-uniform hardware, difficult maintenance, and bulky
+images.  If you need to crank out many workstations with completely
+identical hardware and software, imaging is fine; and products like <a
 href="http://www.symantec.com/sabu/ghost/">Ghost</a> and <a
 href="http://www.powerquest.com/driveimage/">Drive&nbsp;Image</a> make
-it quite easy.
+it easy and fast.  But for most deployments, true unattended
+installation allows for better reliability and easier maintenance.
 
-<p>Anyway, I assembled my own complete unattended installation system
-from scratch, and I am releasing it here on SourceForge.  Most of the
-information in these pages is available elsewhere, but it took me a
-while to find because it was not all collected in one place.  I am
-hoping this project will save time for others like myself.  (I would
-have found the database of <a href="installers.html">unattended/silent
-installer switches for Windows apps</a> particularly handy.)
+<p>Anyway, I have assembled my own complete unattended installation
+system from scratch, and I am releasing it here on SourceForge.  Most
+of the information in these pages is available elsewhere, but it took
+me a while to find because it was not all collected in one place.  I
+am hoping this project will save time for others like myself.  (I
+would have found the database of <a
+href="installers.html">unattended/silent installer switches for
+Windows apps</a> particularly handy.)
 
 <h1>What next?</h1>
 
@@ -89,10 +90,10 @@ installer switches for Windows apps</a> particularly handy.)
 components: The main distribution
 (<code>unattended-<var>version</var>.tar.gz</code>), and the pre-built
 disk images
-(<code>unattended-images-<var>version</var>.tar.gz</code>).  If you
-have a Unix machine with the right tools, you can build the disk
-images from the main distribution; but for now, you should probably
-just download both and extract them to the same folder.
+(<code>unattended-images-<var>version</var>.tar.gz</code>).  Extract
+them to the same folder.  If you have a Unix machine with the right
+tools, you can build the disk images from the main distribution; but
+for now, you should probably just download both.
 
 <p>Next, read the rest of this documentation.  The overall process
 consists of two steps:
@@ -110,10 +111,10 @@ tricky to write a script which reboots the machine halfway through.
 harder.)
 </ol>
 
-<p>Note that these steps describe the process which we are automating.
-Once you finish the preparatory work, the actual process of installing
-a workstation will be 1)&nbsp;Boot from floppy, CD, or network;
-2)&nbsp;Answer some questions; 3)&nbsp;Have a cup of tea.
+<p>Note that these steps describe the process which you are
+automating.  Once you finish some preparatory work, the actual process
+of installing a workstation will be 1)&nbsp;Boot from floppy, CD, or
+network; 2)&nbsp;Answer some questions; 3)&nbsp;Go have a cup of tea.
 
 <p>This system is still relatively new, so do not be surprised or
 dismayed if you encounter problems.  Just use the links on the <a
