@@ -64,7 +64,9 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB822831-x86-%WINLANG%.
 :: "Computer Stops Responding (Hangs) When It Tries to Mount an NTFS Volume After You Restart the Computer"
 :: <http://support.microsoft.com/?kbid=820888>
 :: (download only available from Windows Catalog)
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.exe /u /n /z"
+:: (At least, it used to be.  Now it is gone, so we have commented
+:: this out.  FIXME 2003-09-07)
+:: todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 818043
 :: "L2TP/IPSec NAT-T Update for Windows XP and Windows 2000"
@@ -73,15 +75,6 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.
 :: NOTE: You must rename this to use the three-letter language
 :: abbreviation instead of two.  For example, for English you would
 :: rename Q818043_W2K_SP5_x86_EN.EXE to Q818043_W2K_SP5_x86_ENU.EXE.
-::
-:: As of 2003-10-19, this update was still not available from
-:: Windows Catalog.  See:
-:: <http://groups.google.com/groups?threadm=uJILwu%24kDHA.3612%40TK2MSFTNGP11.phx.gbl>
-:: Until Microsoft gets their act together, you will have to use
-:: Windows Update to install this one by hand. Or download like
-:: wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q818043_W2K_SP5_x86_EN_8771f25008d3c5f8c7aa577b615f619.EXE -O q818043_w2k_sp5_x86_enu.exe
-:: You can also move from c:\documents and settings\administrator\local settings\temporary internet files\q818043*.exe 
-:: and rename appropriately.
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z"
 
 :: Critical Updates
