@@ -30,7 +30,7 @@ sub menu_choice (@) {
     scalar @args % 2 == 0
         or croak "menu_choice called with odd number of arguments";
 
-    scalar @args > 18
+    scalar @args > 30
         and croak "menu_choice called with too many arguments";
 
     print "\n";
@@ -40,8 +40,9 @@ sub menu_choice (@) {
     while (exists $args[0]) {
         my $option = shift @args;
         my $value = shift @args;
-        print "$i) $option\n";
-        $choices .= $i;
+        my $key = sprintf '%X', $i;
+        print "$key) $option\n";
+        $choices .= $key;
         $choice_map[$i] = $value;
         $i++;
     }
@@ -457,7 +458,7 @@ foreach my $dir ($netinst, "$netinst\\logs") {
 }
 
 # Create unattend.txt file.
-my $unattend_txt = "$netinst\\unattend.txt';
+my $unattend_txt = "$netinst\\unattend.txt";
 
 my $unattend_contents = generate_unattend_txt ();
 
