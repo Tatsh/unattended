@@ -24,7 +24,8 @@ if "%WINVER%" == "win2k" goto skipinstaller3
 %Z%\packages\windowsinstaller\WindowsInstaller-KB884016-v2-x86.exe /passive /norestart
 :skipinstaller3
 
-set perl_msi=%Z%\packages\ActivePerl-5.8.4.810-MSWin32-x86.msi
+:: URL|ALL|http://downloads.activestate.com/ActivePerl/Windows/5.8/ActivePerl-5.8.6.811-MSWin32-x86-122208.msi|packages/activeperl-5.8.6.811-mswin32-x86-12208.msi
+set perl_msi=%Z%\packages\activeperl-5.8.6.811-mswin32-x86-12208.msi
 
 :retry
 if exist %perl_msi% goto have_perl
@@ -39,6 +40,5 @@ goto retry
 :: (The latter is undocumented; see
 :: http://bugs.activestate.com/show_bug.cgi?id=20364)
 
-:: URL|ALL|http://downloads.activestate.com/ActivePerl/Windows/5.8/ActivePerl-5.8.4.810-MSWin32-x86.msi|packages/activeperl-5.8.4.810-mswin32-x86.msi
 start /wait msiexec /qb /l* %SystemDrive%\netinst\logs\perl.txt /i %perl_msi% PERL_PATH=Yes PERL_EXT=Yes
 @if errorlevel 1 exit 1
