@@ -1,4 +1,5 @@
-# Object which represents a .inf file.
+# Object to represents a .ini file.  Includes methods for parsing and
+# generating.
 
 package Unattend::IniFile;
 
@@ -15,7 +16,8 @@ use constant SECTION_COMMENTS => 2;
 use constant SORT_INDEX => 3;
 use constant SECTION_SORT_INDEX => 4;
 
-# Overload hash dereference to return "sections" hash.
+# Overload hash dereference.  Return "sections" hash, which is the
+# interesting part.
 use overload
     '%{}' => sub { my ($self) = @_;
                    return $self->[SECTIONS];
@@ -23,6 +25,7 @@ use overload
 
 use constant NO_VAL_REF => [ "Magic noval string" ];
 
+# Constructor.  Arguments, if provided, will be passed to "read".
 sub new ($;@) {
     my ($proto, @read_args) = @_;
     my $class = ref $proto || $proto;
@@ -43,6 +46,9 @@ sub new ($;@) {
     return $self;
 }
 
+# Return the "unforced" value for a section or section+key.  This will
+# either be the actual value, or a Promise which can be "forced" to
+# deliver the value.
 sub noforce ($$;$) {
     my ($self, $section, $key) = @_;
 
@@ -55,6 +61,7 @@ sub noforce ($$;$) {
     }
 }
 
+# Force a value returned by noforce.
 sub force ($) {
     my ($value) = @_;
 
@@ -84,12 +91,13 @@ sub push_value ($$$$) {
     return 1;
 }
 
-# Return the magic scalar representing "no value"
+# Return the magic scalar representing "no value".
 sub no_value ($) {
     my ($self) = @_;
     return NO_VAL_REF;
 }
 
+# Get the (modifiable) comments field for a section or section+key.
 sub comments : lvalue {
     my ($self, $section, $key) = @_;
 
@@ -103,6 +111,8 @@ sub comments : lvalue {
     $$ref;
 }
 
+# Return the comments for a section or section+key in canonical form
+# (array of lines).
 sub _canonical_comments ($$$) {
     my ($self, @sect_key) = @_;
 
@@ -114,6 +124,7 @@ sub _canonical_comments ($$$) {
     return [ split /\n/, $comments ];
 }
 
+# Get the (modifiable) sort index for a section or section+key.
 sub sort_index : lvalue {
     my ($self, $section, $key) = @_;
 
@@ -125,6 +136,7 @@ sub sort_index : lvalue {
     $$ref;
 }
 
+# Return the largest sort index of any section or section+key pair.
 sub max_index ($) {
     my ($self) = @_;
     my $ret = 0;
@@ -143,6 +155,7 @@ sub max_index ($) {
     return $ret;
 }
 
+# Helper function for merging comments.
 sub _merge_comments ($$) {
     my ($c1, $c2) = @_;
     # If the new comments are non-trivial or the old comments are
@@ -153,7 +166,7 @@ sub _merge_comments ($$) {
             : $c1);
 }
 
-# Merge another IniFile into this one.
+# Merge another IniFile into ourselves.
 sub merge ($$) {
     my ($self, $other) = @_;
 
@@ -198,6 +211,10 @@ my $nq_in_chars = qr{$nq_out_chars};
 # Regexp matching a single token (key or value)
 my $token = qr{(?:\".*?\"|$nq_in_chars+?)};
 
+# Read a .ini file and merge its contents into ourselves.  Second
+# argument, if present, is a regexp; sections whose names do not match
+# will be skipped (useful optimization when only examining part of a
+# large file).
 sub read ($$;$) {
     my ($self, $file, $sect_pattern) = @_;
     my $section;
@@ -213,9 +230,11 @@ sub read ($$;$) {
         or die "Unable to open $file: $^E";
 
     while (my $line = <FILE>) {
-
-        $line =~ s/\r//;        # For testing on Unix...
-        if ($line =~ /^\[\s*(.+?)\s*\]$/) {
+        # Clobber CR (for testing on Unix).
+        $line =~ s/\r//;
+        chomp $line;
+        
+        if ($line =~ /^\[\s*(.+?)\s*\]\z/) {
             # New section header
             $section = $1;
             $section =~ $sect_re
@@ -231,12 +250,14 @@ sub read ($$;$) {
             # Make sure section exists, even it it contains no values
             (exists $acc->{$section})
                 or $acc->{$section} = undef;
+            next;
         }
-        elsif ($line =~ /^\s*(;.*|\s*)$/) {
+        elsif ($line =~ /^\s*([;\#].*|\s*)$/) {
             # Comment
             my $comment = $1;
             chomp $comment;
             push @$comments, $comment;
+            next;
         }
         elsif (defined $section && $section !~ $sect_re) {
             # Skip sections which do not match regexp, but accumulate
@@ -244,9 +265,10 @@ sub read ($$;$) {
             $comments = [ ];
             next;
         }
-        elsif ($line =~ /^\s*($token)(?:\s*=\s*($token))?\s*$/) {
+        elsif ($line =~
+               /^\s*($token)\s*(?:=\s*($token\s*(?:,\s*$token\s*)*))?\z/) {
             # key=value setting
-            my ($key, $val) = ($1, $2);
+            my ($key, $rest) = ($1, $2);
             defined $section
                 or die "$key outside any section at $file line $.";
 
@@ -254,13 +276,26 @@ sub read ($$;$) {
             $key =~ /^\"(.*)\"$/
                 and $key = $1;
 
-            if (defined $val) {
-                # Strip quotation marks around value.
-                $val =~ /^\"(.*)\"$/
-                    and $val = $1;
+            my $val;
+
+            if (defined $rest) {
+                my @elts;
+                while ($rest =~ /\S/) {
+                    my $elt;
+                    ($elt, $rest) = $rest =~ /\s*($token)\s*(?:,|\z)(.*)/;
+                    # Strip quotation marks around element.
+                    $elt =~ /^\"(.*)\"\z/
+                        and $elt = $1;
+                    push @elts, $elt;
+                }
+                scalar @elts > 0
+                    or die "Internal error";
+                $val = (scalar @elts > 1
+                        ? \@elts :
+                        $elts[0]);
             }
             else {
-                # Value is optional.
+                # No value provided.
                 $val = $acc->no_value;
             }
 
@@ -272,10 +307,10 @@ sub read ($$;$) {
             $acc->{$section}->{$key} = $val;
             $acc->comments ($section, $key) = $comments;
             $comments = [ ];
+            next;
         }
-        else {
-            die "Unrecognized line:\n  $line\n...in $file, ";
-        }
+        
+        die "Unrecognized line:\n  $line\n...in $file, ";
     }
 
     close FILE
@@ -284,8 +319,10 @@ sub read ($$;$) {
     return $self->merge ($acc);
 }
 
+# Handy string for indentation.
 my $global_indent = '    ';
 
+# Dump comments for a section or for a section+key pair.
 sub _dump_comments ($$;$) {
     my ($self, @sect_key) = @_;
     my @ret;
@@ -313,6 +350,15 @@ sub _dump_comments ($$;$) {
     return @ret;
 }
 
+# Put quotes around a string if needed.
+sub _maybe_quote ($) {
+    my ($arg) = @_;
+
+    $arg =~ /^$nq_out_chars+\z/
+        and return $arg;
+    return "\"$arg\"";
+}
+
 sub generate ($) {
     my ($self) = @_;
     my @ret;
@@ -320,6 +366,8 @@ sub generate ($) {
     foreach my $section (sort { $self->sort_index ($a)
                                     <=> $self->sort_index ($b) }
                          keys %{$self}) {
+        defined $section
+            or next;
         push @ret, $self->_dump_comments ($section);
         push @ret, "[$section]";
         foreach my $key (sort { $self->sort_index ($section, $a)
@@ -329,15 +377,17 @@ sub generate ($) {
             defined $value
                 or next;
             push @ret, $self->_dump_comments ($section, $key);
-            $key =~ /^$nq_out_chars+\z/
-                or $key = "\"$key\"";
+            $key = _maybe_quote ($key);
             if (ref $value && $value == $self->no_value) {
                 push @ret, "$global_indent$key";
             }
             else {
-                $value =~ /^$nq_out_chars+\z/
-                    or $value = "\"$value\"";
-                push @ret, "$global_indent$key = $value";
+                # Convert value to a string.
+                my @elts = (ref $value eq 'ARRAY'
+                            ? @$value
+                            : ($value));
+                my $string = join ',', map { _maybe_quote ($_) } @elts;
+                push @ret, "$global_indent$key = $string";
             }
         }
     }
@@ -350,9 +400,10 @@ sub generate ($) {
     return @ret;
 }
 
-# Special magical hash.  When a proc is stored into it, converts it
-# into a Promise and stores that instead.  Also, by default, forces
-# the promise when fetched.
+# Special magical hash.  When a proc is stored, we convert it into a
+# Promise and store that instead.  When fetched, the Promise is
+# forced.
+
 package Unattend::InfFile::_Hash;
 use Unattend::FoldHash;
 use base qw(Unattend::FoldHash::Nestable);
