@@ -4,6 +4,7 @@
 <head>
 <title>Step-By-Step Unattended Preperation Guide</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="Unattended.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -103,7 +104,7 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
    </tr>
    <tr>
      <td>Mtools</td>
-     <td>Must be compiled from source code as of (3/2004) </td>
+     <td> not yet in the cygwin package repository (as of 3/2004) </td>
    </tr>
    <tr>
      <td>Wget</td>
@@ -114,7 +115,7 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
  <table width="522" border="0">
    <tr>
      <td width="78">&nbsp;</td>
-     <td width="428"> $ is a command typed into the cygwin bash prompt</td>
+     <td width="428" class="CygwinCommands"> $ is a command typed into the cygwin bash prompt</td>
    </tr>
  </table>
  <h2>1. Download Cygwin:</h2>
@@ -172,10 +173,10 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
  </table>
  
 
- <table width="673" border="0">
+ <table width="784" border="0">
    <tr>
      <td width="231">&nbsp;</td>
-     <td width="432">$ wget ftp://www.tux.org/pub/knaff/mtools/mtools-3.9.9.zip</td>
+     <td width="543" class="CygwinCommands">$ wget ftp://www.tux.org/pub/knaff/mtools/mtools-3.9.9.zip</td>
    </tr>
  </table>
  <table width="783" border="0">
@@ -191,30 +192,30 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
  <table width="673" border="0">
    <tr>
      <td width="231">&nbsp;</td>
-     <td width="432">$ unzip mtools-3.9.9.zip </td>
+     <td width="432" class="CygwinCommands">$ unzip mtools-3.9.9.zip </td>
    </tr>
  </table>
  <table width="673" border="0">
    <tr>
      <td width="231">&nbsp;</td>
-     <td width="432">$ cd mtools-3.9.9</td>
+     <td width="432" class="CygwinCommands">$ cd mtools-3.9.9</td>
    </tr>
  </table>
  <table width="673" border="0">
    <tr>
      <td width="231">&nbsp;</td>
-     <td width="432">$ ./configure</td>
+     <td width="432" class="CygwinCommands">$ ./configure</td>
    </tr>
    <tr>
-     <td>&nbsp;</td>
-     <td>$ make</td>
+     <td height="22">&nbsp;</td>
+     <td class="CygwinCommands">$ make</td>
    </tr>
  </table>
    <h2>3. Install mtools:</h2>
    <table width="673" border="0">
      <tr>
        <td width="231">&nbsp;</td>
-       <td width="432">$ make install </td>
+       <td width="432" class="CygwinCommands">$ make install </td>
      </tr>
    </table>
       <h2>4. (optional) remove mtools source code:</h2>
@@ -231,20 +232,19 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       <table width="673" border="0">
         <tr>
           <td width="231">&nbsp;</td>
-          <td width="432">$ cd .. </td>
+          <td width="432" class="CygwinCommands">$ cd .. </td>
         </tr>
         <tr>
           <td>&nbsp;</td>
-          <td>$ rm ./mtools-3.9.9.zip </td>
+          <td class="CygwinCommands">$ rm ./mtools-3.9.9.zip </td>
         </tr>
         <tr>
           <td>&nbsp;</td>
-          <td>$ rm -rf ./mtools-3.9.9</td>
+          <td class="CygwinCommands">$ rm -rf ./mtools-3.9.9</td>
         </tr>
       </table>
       <p>&nbsp;</p>
    <p>&nbsp; </p>
    <p>&nbsp; </p>
-</blockquote>
 </body>
 </html>
