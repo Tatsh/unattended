@@ -16,7 +16,7 @@ my $todo = 'c:\\netinst\\todo.txt';
 my $mapznrun = 'c:\\netinst\\mapznrun.bat';
 
 unless (-e $mapznrun) {
-    print "Hm, no $mapznrun file.  Attempting to copy from Z:\bin...";
+    print "Hm, no $mapznrun file.  Attempting to copy from Z:\\bin...";
     use File::Copy;
     copy 'z:\\bin\\mapznrun.bat', $mapznrun
         or die "copy failed ($^E); bailing";
