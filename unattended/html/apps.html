@@ -418,6 +418,7 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 facility.  The <code>--disable</code> switch disables it; the
 <code>--enable</code> switch enables it, taking a username and
 password as arguments.
+<p>
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/bootini.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -428,6 +429,7 @@ displaying a boot menu with an unbootable "Previous Operating System
 on C:\" option.  This even happens if I wipe the disk with zeroes
 first.  This script edits the hidden system file <code>boot.ini</code>
 to get rid of the useless menu option.
+<p>
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/hidepw.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -438,6 +440,7 @@ Unattended Setup</em></a>, passwords in the <code>unattend.txt</code>
 file are erased when the installation finishes.  I have not found this
 to be true.  So I wrote this script to replace all passwords in
 <code>unattend.txt</code> with X marks.
+<p>
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/instsrv.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -455,6 +458,7 @@ use this script.  (Yes, strictly speaking, using this script means
 your installation will no longer be "fully unattended".  But I do not
 like embedding passwords in world-readable scripts, and I hate using
 the GUI.)
+<p>
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/shutdown.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -497,15 +501,22 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 
 <dd>Similarly, but for Windows XP Service Pack 1.  (Work in
 progress...)
+<p>
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/startup-type.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >startup-type.pl</a>
 
 <dd>This script lets you set the "startup type" (<em>automatic</em>,
-<em>manual</em>, or <em>disabled</em>) for a service from the
+<em>manual</em>, <em>disabled</em>, etc.) for a service from the
 command-line.  There are probably other tools out there to do this,
 but I got tired of looking for them and wrote my own.
+
+<p>This script also provides a good example of how to use <a
+href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/wmi_reference.asp"
+>WMI</a>, which you can use to enumerate and configure <a
+href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/operating_system_classes.asp"
+>quite a few things</a>.
 
 </dl>
 
