@@ -14,7 +14,7 @@ Send, !n
 
 WinWait, Cygwin Setup - Select Local Package Directory, Select Local Package Directory
 ; Use proper package directory
-Send, C:\\Documents and Settings\\slords\\Desktop\\cygwin\\!n
+Send, %Z%\\packages\\cygwin!n
 
 WinWait, Cygwin Setup - Select Packages
 ; Make sure the Window is active, then click in the right place to
