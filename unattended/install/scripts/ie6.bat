@@ -12,7 +12,7 @@
 :: "November 2002, Cumulative Patch for Internet Explorer"
 :: <http://www.microsoft.com/windows/ie/downloads/critical/Q328970/>
 :: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q328970>
-todo.pl .reboot "z:\packages\win2ksp3\q328970.exe /q /r:n" .reboot
+todo.pl .reboot ".ignore-err 194 z:\packages\win2ksp3\q328970.exe /q /r:n" .reboot
 
 z:
 cd \packages\ie6\flat\win32\en
