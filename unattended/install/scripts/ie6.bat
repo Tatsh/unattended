@@ -7,7 +7,7 @@
 :: <http://www.microsoft.com/technet/security/bulletin/MS02-068.asp>
 :: <http://support.microsoft.com/?kbid=324929>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/q324929/>
-todo.pl "z:\packages\win2ksp3\q324929.exe /q:a"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\q324929.exe /q:a" .reboot
 
 :: Critical Update Q328970
 :: "November 2002, Cumulative Patch for Internet Explorer"
