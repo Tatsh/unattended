@@ -1313,7 +1313,9 @@ if ($is_linux) {
             or die "readlink /dev/dsk failed: $^E";
 
         # Get size of disk in sectors.
-        my $size_file = "/sys/block/$hda/size";
+        my $sys_hda = $hda;
+        $sys_hda =~ s/\//!/g;
+        my $size_file = "/sys/block/$sys_hda/size";
         open SIZE, $size_file
             or die "Unable to open $size_file for reading: $^E";
         my $size = <SIZE>;
@@ -1333,7 +1335,7 @@ if ($is_linux) {
         $cylinders > 65535
             and $cylinders = 65535;
 
-        my $settings_file = "/proc/ide/$hda/settings";
+        my $settings_file = "/proc/ide/$sys_hda/settings";
 
         if (-e $settings_file) {
             print "\nSetting C/H/S for $hda to $cylinders/$bios_head/$bios_sect...";
