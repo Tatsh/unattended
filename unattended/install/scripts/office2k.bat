@@ -5,7 +5,7 @@ todo.pl .reboot
 
 :: Install the "Outlook 2000 Update: December 18, 2002"
 :: <http://support.microsoft.com/?kbid=811167>
-todo.pl "z:\packages\Olk0901.exe /q:a /r:n"
+todo.pl "z:\packages\Olk0901.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\Olk0901.txt /p OMIop.msp REBOOT=ReallySuppress\""
 
 :: Install Service Pack 3
 :: See <http://support.microsoft.com/?kbid=326585>
