@@ -22,14 +22,14 @@ installation">
 <p>If you have visited these pages before, then you probably want to
 check out the <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended//NEWS.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->NEWS file</a> to see what's new.
+>NEWS file</a> to see what is new in the distribution.
 
 <p>If you have any ongoing interest in this project, please consider
 subscribing to the <a
 href="http://lists.sourceforge.net/lists/listinfo/unattended-info/"
 >mailing list</a>.
 
-<p>You probably want the links <a href="#next">near the bottom</a> of
+<p>The interesting links are <a href="#next">near the bottom</a> of
 this page.
 
 
@@ -49,10 +49,10 @@ this page.
 <li>Completely free
 </ul>
 
-<p>When you are finished setting up <u>Unattended</u>, you will be
-able to boot any PC from a floppy, from a CD-ROM, or directly from
-network, answer a few questions, and come back an hour or two later to
-a fully-installed Windows workstation.
+<p>When you are finished setting up Unattended, you will be able to
+boot any PC from a floppy, from a CD-ROM, or directly from network,
+answer a few questions, and come back an hour or two later to a
+fully-installed Windows workstation.
 
 <p>But be warned: This is not a
 <kbd>./configure&nbsp;&amp;&amp;&nbsp;make&nbsp;install</kbd> kind of
@@ -66,65 +66,67 @@ need to perform some customization for your site.
 <p>Microsoft has their own approach to this problem, called <a
 href="http://www.microsoft.com/windows2000/en/datacenter/help/sag_RIS_Default_topnode.htm"
 >Remote Installation Services</a> (RIS).  You may be wondering why you
-should use this system instead of RIS.
+should use Unattended instead of RIS.
 
-<p>Well, <u>Unattended</u> is open source, which is a pretty good
-reason.  For example, with RIS, try to add support for a new network
-card to the boot disk, or try to create a customized partitioning
-scheme, or try to fix a bug.  With an open source system, you have
-everything you need to fix any problem or add any feature you want,
-and you can contribute you change back to the project so that others
-may benefit.
+<p>The main reason is that Unattended is open source.  Using RIS, just
+try to add support for a new network card to the boot disk, or try to
+create a customized partitioning scheme, or try to fix a bug.  With an
+open source system, you have everything you need to fix any problem or
+add any feature you want, and you can contribute you change back to
+the project so that others may benefit.
 
-<p><u>Unattended</u> does have other advantages, like being able to
-use whatever servers you happen to have handy, regardless of their OS.
-But really, other than being open source, <u>Unattended</u> is not all
-that different from RIS.  Perhaps I should have named it OpenRIS...
+<p>Unattended does have other advantages, like using whatever servers
+you happen to have handy, whether Windows or Unix.  But really, other
+than being open source, Unattended is not all that different from RIS.
+Perhaps I should have named it OpenRIS...
 
 
-<h1>Disk Imaging: A bad idea</h1>
+<h1>What about disk imaging?</h1>
 
-<p>Whether you use <u>Unattended</u>, RIS, or some other system for
+<p>Whether you use Unattended, RIS, or some other system for
 Windows deployment, one technique which you should absolutely avoid is
 disk imaging.
 
-<p>Also called "cloning", disk imaging consists of taking a "snapshot"
-of one machine's hard drive and restoring it onto the hard drive of a
-new machine.  Microsoft provides tools like <a
+<p>Also called "cloning", disk imaging means taking a snapshot of the
+hard drive of one machine and restoring it onto the hard drive of
+another.  Microsoft provides tools like <a
 href="http://www.microsoft.com/windowsxp/pro/using/itpro/deploying/introduction.asp"
 >Sysprep</a> and <a
 href="http://www.microsoft.com/WINDOWS2000/techinfo/reskit/en/Distrib/dsed_dpl_dgsx.htm"
 >RIPrep</a> to help you with this task, and it is a very popular way
 to deploy systems.
 
-<p>It is almost always a bad idea.  Never mind that imaging provides
-poor support for non-uniform hardware.  The real problem is that
-imaging creates a maintenance nightmare.
+<p>But it is usually a bad idea.  Never mind that imaging provides
+poor support for non-uniform hardware; the big problem is that it
+creates a maintenance nightmare.
 
-<p>For example, where I work, we have several configurations of
-system, from sales laptops to developer workstations to automated
-build servers to training workstations.  To use RIPrep effectively, we
-would need a different image for each software configuration.  In
-addition, we are trying to manage an incremental migration from
-Windows 2000 to Windows XP.
+<p>For example, suppose you have several system configurations,
+including salesperson laptops, developer workstations, automated build
+servers, and financial systems.  In addition, suppose you are in the
+process of migrating your organization from Windows 2000 to Windows
+XP, so you need to be able to install either.
 
-<p>Just for these examples, we would need eight different images.  To
-make a change to a common software component, we would need to modify
-and re-image eight different times.
+<p>Even for this simple example, you will need to create and store
+eight different images, one for each combination of OS and application
+suite.  To update a common application, you will have to modify and
+re-create all eight images.  Add some diverse hardware like fancy
+laptops into the picture, and the nightmare becomes clear.
 
-<p>If you are someone like Dell, cranking out thousands of identical
-workstations with completely identical hardware and software, imaging
-is a fine approach.  But for most deployments, true unattended
-installation provides better reliability and much easier maintenance.
+<p>If you are cranking out thousands of identical workstations with
+completely identical hardware and software, imaging is a fine
+approach.  But if your organization is like most, with heterogenous
+hardware and software, true unattended installation will give you
+better reliability and much easier maintenance.
 
-<p>(Another common but very bad idea is application repackaging, which
-I discuss <a href="installers.html#repackaging">elsewhere</a>.)
+<p>(By the way, another common but bad idea is application
+repackaging, which I discuss <a
+href="installers.html#repackaging">elsewhere</a>.)
 
 
 <h1 id="next">What next?</h1>
 
-<p>If you would like to give <u>Unattended</u> a try, you can start
-right now.  First, visit the <a
+<p>If you would like to give Unattended a try, you can start right
+now.  First, visit the <a
 href="https://sourceforge.net/project/showfiles.php?group_id=62053"
 >download page</a> to download the distribution.  Each release has two
 components: The main distribution
