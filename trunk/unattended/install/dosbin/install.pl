@@ -134,7 +134,9 @@ sub ask_fdisk_cmds () {
             yes_no_choice ("Are you sure")
                 or next;
         }
-        return "$pre_cmds;$cmds;$post_cmds";
+        return (defined $cmds
+                ? "$pre_cmds;$cmds;$post_cmds"
+                : undef);
     }
 }
 
@@ -356,6 +358,8 @@ print "\n";
 
 # Partition the disk.
 my $fdisk_cmds = get_value ('_meta', 'fdisk_cmds');
+defined $fdisk_cmds
+    or $fdisk_cmds = '';
 
 # Run the fdisk commands.
 foreach my $cmd (split /;/, $fdisk_cmds) {
