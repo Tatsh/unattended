@@ -21,7 +21,7 @@ sub yes_no_choice ($) {
 #
 #     menu_choice ('option X' => 'foo', 'option Y' => 'bar')
 #
-# ...returns 'foo' the user selects option X and 'bar' if the user
+# ...returns 'foo' if the user selects option X and 'bar' if the user
 # selects option Y.
 sub menu_choice (@) {
     my @args = @_;
@@ -469,7 +469,7 @@ if (defined $top) {
 open POSTINST, ">$postinst"
     or die "Unable to open $postinst for writing: $^E";
 
-foreach my $line (@cmd_lines) {
+foreach my $line (@postinst_lines) {
     print POSTINST $line, "\n"
         or die "Unable to write to $postinst: $^E";
 }
@@ -506,5 +506,5 @@ while (1) {
     system 'edit', $file;
 }
 
-# Return control to autoexec.bat, which will run postinst.bat.
+# Return control to autoexec.bat, which will run doit.bat.
 exit 0;
