@@ -1,3 +1,14 @@
+; this is a comment
 [Environment]
   InstallationMode=INSTALL_NORMAL
   DestinationPath=C:\Program Files\OpenOffice.org
+
+[Module_Specify]
+  InstallProcedure = MySelectProc
+
+; this is another comment
+[Procedures]
+Sub MySelectProc
+  SelectModuleByName ( "OpenOffice" )
+  DeSelectModuleByName ( "QuickStarter" )
+End Sub
