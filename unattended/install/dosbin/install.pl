@@ -500,7 +500,7 @@ set_value ('_meta', 'replace_mbr',
 
 set_comments ('_meta', 'OS_dir',
               "    ; Directory holding OS media directories\n");
-set_value ('_meta', 'OS_dir', 'z:\\');
+set_value ('_meta', 'OS_dir', 'z:\\os\\');
 
 set_value ('_meta', 'OS_media', \&ask_os);
 
