@@ -24,7 +24,7 @@
 #DEFAULT (echo ""; id; echo %s; date; cat) >> $CVSROOT/CVSROOT/commitlog
 # or
 #DEFAULT (echo ""; id; echo %{sVv}; date; cat) >> $CVSROOT/CVSROOT/commitlog
-##patlhack 2
+##patlhack 3 (removed -u)
 
-CVSROOT /cvsroot/sitedocs/CVSROOT/cvstools/syncmail %{sVv} patl@users.sourceforge.net
+CVSROOT /cvsroot/sitedocs/CVSROOT/cvstools/syncmail %%{sVv} patl@users.sourceforge.net
 DEFAULT /cvsroot/sitedocs/CVSROOT/cvstools/syncmail -u %{sVv} unattended-cvs@lists.sourceforge.net
