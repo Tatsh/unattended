@@ -449,7 +449,7 @@ it.
 
 <p>Finally, the bootdisk passes control to the <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/install.sh?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
-><code>Z:\install.sh</code></a>script.  Once again, feel free to
+><code>Z:\install.sh</code></a> script.  Once again, feel free to
 follow along by reading the script.
 
 <h2>Partitioning and formatting</h2>
@@ -476,18 +476,29 @@ you need to format it; just select that option from the menu.
 you want to install.  If you do not see the one you want, send me a
 feature request (or add it yourself and send me a patch).
 
+<h2>Adding domain accounts to local Administrators group</h2>
+
+<p>Next, <code>install.sh</code> will offer to add accounts to the
+local Administrators group.  You may specify accounts in
+<var>DOMAIN\username</var> form.  Or you may just list usernames, in
+which case a useful default domain will be prepended.  Well, useful
+for me, anyway :-).
+
+<p>If you are not joining the machine to a domain, or if you do not
+want to add any domain accounts to the local Administrators group, you
+can simply press <kbd>Enter</kbd> here.
+
 <h2>Choosing the application suite</h2>
 
 <p>Next, <code>install.sh</code> will ask you which script to run (if
 any) after the OS installation is finished.  This is the hook to start
-the automated application installation process.  The scripts are found
-in the <code>Z:\scripts</code> share, as is discussed in the <a
-href="apps.html">application installation</a> portion of this
-documentation.
+the automated application installation process.  The scripts live in
+the <code>Z:\scripts</code> directory, as is discussed on the <a
+href="apps.html">application installation page</a>.
 
 <p>Next, <code>install.sh</code> will create
-<code>C:\netinst\toplev.bat</code>, which is what the
-<code>unattend.txt</code> file names as the script to run when OS
+<code>C:\netinst\postinst.bat</code>, which is what the
+<code>unattend.txt</code> file specifies as the script to run when OS
 installation is finished.
 
 <h2 id="answer-file">Editing unattend.txt</h2>
