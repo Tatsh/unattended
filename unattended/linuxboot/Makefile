@@ -302,10 +302,12 @@ build-$(glibc)/nis/libnsl.so: build-$(glibc)/libc.so
 
 build-$(glibc)/crypt/libcrypt.so: build-$(glibc)/libc.so
 
-# Perl needs libnsl, libm, libutil
+# Perl needs libnsl, libm, libutil, and libpthread
 build-$(glibc)/math/libm.so: build-$(glibc)/libc.so
 
 build-$(glibc)/login/libutil.so: build-$(glibc)/libc.so
+
+build-$(glibc)/linuxthreads/libpthread.so: build-$(glibc)/libc.so
 
 $(call copy_lib, build-$(glibc)/resolv/libresolv.so, stage1/lib/libresolv.so)
 $(call copy_lib, build-$(glibc)/resolv/libnss_dns.so, stage1/lib/libnss_dns.so)
@@ -315,12 +317,14 @@ $(call copy_lib, build-$(glibc)/nis/libnsl.so, stage1/lib/libnsl.so)
 $(call copy_lib, build-$(glibc)/crypt/libcrypt.so, stage1/lib/libcrypt.so)
 $(call copy_lib, build-$(glibc)/math/libm.so, stage1/lib/libm.so)
 $(call copy_lib, build-$(glibc)/login/libutil.so, stage1/lib/libutil.so)
+$(call copy_lib, build-$(glibc)/linuxthreads/libpthread.so, \
+	stage1/lib/libpthread.so)
 
 stage1 +=							\
 	$(patsubst %, stage1/lib/%,				\
 	  libc.so ld-linux.so libdl.so libresolv.so libnsl.so	\
 	  libnss_dns.so libnss_files.so libcrypt.so		\
-	  libm.so libutil.so					\
+	  libm.so libutil.so libpthread.so			\
 	)
 
 ## kbd
@@ -440,10 +444,11 @@ stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 	stage1/etc/pcmcia/network
 
 ## Perl
-$(perl)/perl:
+$(perl)/perl: fakeinclude/stdio.h
 	rm -f $@
-	cd $(perl)						\
-	&& ./Configure -Dusethreads -Dprefix=/opt/perl -de	\
+	cd $(perl)					\
+	&& ./Configure -Dusethreads -Dprefix=/opt/perl	\
+		-Accflags="$(fakelib_cflags)" -de	\
 	&& make
 	[ -e $@ ]
 
