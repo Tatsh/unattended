@@ -68,8 +68,8 @@ example, this command:
 </pre>
 
 ...is how you install ActiveState Perl, instructing the MSI package to
-add Perl.exe to your PATH and to associate .pl files with it (<a
-href="#activeperl">See below</a> for more on Perl).
+add Perl.exe to your PATH and to associate .pl files with it. (<a
+href="#activeperl">See below</a> for more on Perl.)
 
 <p><kbd>msiexec</kbd> can do many other things, like uninstall
 software or apply patches to existing MSI files.  Neat, huh?  Too bad
@@ -639,6 +639,35 @@ this documented somewhere?)
 
 <tr><td valign="middle">Example
 <td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/mozilla.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >mozilla.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="shiva">Shiva VPN client</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability <td><a
+href="http://www.intel.com/network/shiva/">Commercial Product</a>, but
+<a href="http://www.intel.com/support/netstructure/vpn/31455.htm">not
+for long</a>
+
+<tr><td valign="middle">Details
+
+<td>(Note: Shiva was bought by Intel a few years ago.  Intel rebranded
+the product line "Intel Netstructure", and is terminating the product
+line.  But we still use it where I work.)
+
+<p>This is an <a href="#installshield">InstallShield</a> installer,
+but it has custom dialogs so the <kbd>/s</kbd> switch does not work.
+An <a href="#autoit">AutoIt</a> script is the only way to go.
+
+<tr><td valign="middle">Example
+
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/shiva.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>shiva.bat</a>, <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/shiva.aut?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>shiva.aut</a>
 
 </table>
 
