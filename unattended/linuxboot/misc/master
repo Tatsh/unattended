@@ -156,7 +156,7 @@ sys_block=/sys/block
 [ -d $sys_block ] \
     || die "Internal error: $sys_block not found?"
 
-mass_device_names="hda sda"
+mass_device_names="hda sda i2o/hda"
 
 unset did_something
 
