@@ -33,16 +33,27 @@ applications.</a>
 <h1>General information</h1>
 
 <p>There are several installer packages in common use in the Windows
-World.  Sometimes it will be obvious from the splash screen which one
+world.  Sometimes it will be obvious from the splash screen which one
 is in use; sometimes you can figure it out by running the Unix
 "strings" utility; and sometimes you just have to guess.
 
-<h2>MSI packages</h2>
+<p>Sure, you can run the installer with the <kbd>/?</kbd> switch to
+learn which other switches it supports.  And by all means, try it.
+But if you really expect this to work then you have not been using
+Windows for very long.  In my experience, the odds are about 4-to-1
+against <kbd>/?</kbd> telling you anything at all, even when there is
+something to tell.
+
+<p>Note that many applications fall into none of these categories.
+
+
+<h2 id="msi">MSI packages</h2>
 
 <p>Microsoft's own <a
 href="http://www.microsoft.com/windows2000/techinfo/howitworks/management/installer.asp">Windows
-Installer Service</a> is the standard, and if everybody used it, there
-would be no need for this document.
+Installer Service</a> is the nominal standard, and if everybody used
+it, there would be no need for this document.  Unfortunately,
+Microsoft invented it too late.
 
 <p>The package files have a <kbd>.msi</kbd> extension, and you
 manipulate them using the <a
@@ -71,46 +82,45 @@ nobody uses it.
 <p><a href="http://www.installshield.com/">InstallShield</a> is one of
 the oldest and most widely used application packaging utilities.
 
-<p>Installers created by InstallShield generally recognize the
-<kbd>/r</kbd>, <kbd>/s</kbd>, <kbd>/sms</kbd>, and <kbd>/f1</kbd>
-flags.
+<p>Installers created by InstallShield recognize the <kbd>/r</kbd>,
+<kbd>/s</kbd>, <kbd>/sms</kbd>, and <kbd>/f1</kbd> flags.
 
 <p>To perform a "silent" installation, you need a <em>setup.iss</em>
-file.  Some applications ship with such a file, but if yours does not,
-you can use the graphical installer itself to create one.
+file.  Some applications ship with such a file, but if not, you can
+use the graphical installer itself to create one.
 
-<p>Here's how it works.  Run the installer with the <kbd>/r</kbd>
+<p>Here is how it works.  Run the installer with the <kbd>/r</kbd>
 ("record") option.  Proceed through the dialogs and complete the
 installation.  This will create a <em>setup.iss</em> file and place it
 in the <em>C:\WINNT</em> directory (yes, really).  This file will
-include all of your answers to the InstallShield dialogs, allowing you
-to perform unattended installations giving the same answers.  Simply
-copy <em>setup.iss</em> to the same directory as the installer.
+include all of your responses to the InstallShield dialogs, allowing
+you to perform unattended installations as if you were giving the same
+answers again.  Simply copy <em>setup.iss</em> to the same directory
+as the installer executable.
 
-<p>Once you have a <em>setup.iss</em> file, you can run the installer
-with the <kbd>/s</kbd> ("silent") option.  This will perform an
-unattended installation.
+<p>Once you have a <em>setup.iss</em> file, run the installer with the
+<kbd>/s</kbd> ("silent") option.  This will perform an unattended
+installation.
 
 <p>Unfortunately, the installer will fork a separate process and exit,
-meaning it will return immediately even if you run it with
-<kbd>start&nbsp;/wait</kbd>.  Luckily, there is another option,
-<kbd>/sms</kbd>, which will cause the installer to pause until the
-installation completes.
+meaning it will return immediately even if you run it under
+<kbd>start&nbsp;/wait</kbd>.  This makes it useless for scripting
+purposes.  Luckily, there is another switch, <kbd>/sms</kbd>, which
+will cause the installer to pause until the installation completes.
 
-<p>Hence, for an InstallShield app, you want to provide the
-<kbd>/s</kbd> and <kbd>/sms</kbd> switches.
+<p>Hence, for an InstallShield application, you want to provide both
+the <kbd>/s</kbd> and the <kbd>/sms</kbd> switches.
 
 <p>The <kbd>/f1</kbd> switch allows you to specify a path to the
 <em>setup.iss</em> file.  I assume this is to let you support multiple
-configurations for a single application.
+answer files for a single application.
 
 <p>Oh, one more thing.  The <kbd>/r</kbd> switch only works if the
-vendor is competent.  Many vendors add "custom dialogs" to their
-InstallShield packages and do not bother to support them in
-<em>setup.iss</em> files, which means those dialogs will always appear
-no matter what you do.  For such vendors, I suggest asking them to fix
-their installers, and if that does not work, doing what you can to
-help them go out of business.
+release engineer is competent.  Many packages have "custom dialogs"
+which are not supported by <em>setup.iss</em>, which means those
+dialogs will always appear no matter what you do.  For such packages,
+I suggest asking the vendor to fix their installer.  If that does not
+work, I suggest doing what you can to help them go out of business.
 
 <h2 id="wise">Wise InstallMaster</h2>
 
@@ -126,6 +136,10 @@ experience, they generally do.  There is no way to set options.
 <p>NOTE: This product has been rebranded the "Wise Installation
 System".  Don't let them confuse you.
 
+<p>The Wise products can also "repackage" existing applications into
+single executables supporting the <kbd>/s</kbd> option.  I do not
+cover this here because I think it is a bad idea.
+
 <h2="inno">Inno Setup</h2>
 
 <p><a href="http://www.jrsoftware.org/isinfo.php">Inno Setup</a> is an
@@ -134,6 +148,28 @@ installers it creates by running "strings" on the executable and
 grepping for "Inno".
 
 <p>Inno Setup installers recognize the <kbd>/silent</kbd> option.
+
+<h2>Microsoft packages</h2>
+
+<p>Many packages (like hotfixes) which you can download from Microsoft
+actually extract themselves to a temporary folder and then run a
+command from inside that folder.  These packages often support the
+<kbd>/t:<var>path</var></kbd> switch, to specify the temporary folder
+name, and the <kbd>/c:<var>command</var></kbd> switch to specify the
+command to run.  (Passing just <kbd>/c</kbd> suppresses running the
+command at all.)
+
+<p>See the "NOTE" in <a
+href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q317244"
+>KB article Q317244</a> for an example of this in action.
+
+<p>Most of these installers support the <kbd>/?</kbd> switch, which
+will then claim to support <kbd>/q</kbd> for "quiet" operation and
+<kbd>/r:n</kbd> to suppress the reboot, except that sometimes it's
+<kbd>/z</kbd> instead.
+
+<p>Only Microsoft could make system administration an experimental
+science.
 
 <h1>Specific applications</h1>
 
@@ -174,7 +210,7 @@ Windows"</a> document.  It is an <a href="#installshield"
 <tr><td valign="middle">Availability
 <td><a href="http://www.activestate.com/Products/ActivePerl/">Open Source</a>
 <tr><td valign="middle">Details
-<td><p>Just download the MSI file.
+<td><p>Just download the <a href="#msi">MSI</a> file.
 
 <p>Most of the options are <a
 href="http://aspn.activestate.com/ASPN/Perl/Reference/Products/ActivePerl/install.html#windows%20installers"
