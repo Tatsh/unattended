@@ -1,6 +1,6 @@
 bash=bash-2.05b
 busybox=busybox-1.00-pre8
-dosemu=dosemu-1.2.0
+dosemu=dosemu-1.2.1
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
 glibc=glibc-2.3.2
@@ -8,7 +8,7 @@ glibc=glibc-2.3.2
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 klibc=klibc-0.115
-linux=linux-2.6.3
+linux=linux-2.6.4
 module-init-tools=module-init-tools-3.0
 nano=nano-1.2.3
 ncurses=ncurses-5.4
@@ -163,8 +163,8 @@ stage1 += stage1/bin/busybox
 # we force it to be zero.
 build-$(dosemu)/bin/dosemu.bin:
 	mkdir -p build-$(dosemu)
-	cd build-$(dosemu)				\
-	&& $(cwd)/$(dosemu)/configure --without-x	\
+	cd build-$(dosemu)					\
+	&& $(cwd)/$(dosemu)/configure --without-x --without-gpm	\
 	&& make MAKELEVEL=0
 	[ -e $@ ]
 
@@ -386,6 +386,7 @@ stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 ## pcmcia-cs (PCMCIA Card Services, particularly cardmgr)
 $(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/i386/boot/bzImage
 	cd $(pcmcia-cs)						\
+	&& make clean						\
 	&& ./Configure --noprompt --kernel=$(cwd)/$(linux)	\
 		--nox11 --srctree				\
 	&& make all
@@ -613,7 +614,8 @@ $(call download_rule, $(pcmcia-cs), tar.gz,			\
 $(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
 
 symlink_targets=$(addprefix symlink-,$(packages))	\
-	symlink-build-$(glibc) symlink-build-$(dosemu)
+	symlink-build-$(glibc) symlink-build-$(dosemu)	\
+	symlink-fakelib symlink-fakeinclude
 
 $(symlink_targets):
 	@if [ -z "$(dest)" ] || [ "$(dest)" == . ] ; then	\
@@ -635,6 +637,5 @@ symlinks: $(symlink_targets)
 tidy:
 	rm -f $(patsubst symlink-%,%,$(symlink_targets))
 	rm -rf dosboot iso
-	rm -rf fakeinclude fakelib
 	rm -rf stage1 stage2 .stamp-stage2
 	rm -f devices.cpio initrd
