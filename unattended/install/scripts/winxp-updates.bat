@@ -4,6 +4,7 @@
 todo.pl winxpsp2-updates.bat
 
 :: Windows XP Service Pack 2 Network Installation Package for IT Professionals and Developers
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=049c9dbe-3b8e-4f30-8245-9e368d3cdb5a&displaylang=en>
 :: URL|ARA|http://download.microsoft.com/download/4/f/f/4ff4d6c8-a9de-4a94-95ab-e2ddc9aabb62/WindowsXP-KB835935-SP2-ARA.exe|updates/winxp/windowsxp-kb835935-sp2-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/2/8/0/28001168-047a-4f33-bcac-e343824afe79/WindowsXP-KB835935-SP2-CSY.exe|updates/winxp/windowsxp-kb835935-sp2-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/5/b/e/5be85df7-16e9-46e2-ad42-daefeccd3f56/WindowsXP-KB835935-SP2-DAN.exe|updates/winxp/windowsxp-kb835935-sp2-dan.exe
@@ -21,8 +22,8 @@ todo.pl winxpsp2-updates.bat
 :: URL|NLD|http://download.microsoft.com/download/6/d/6/6d6fe05d-63bc-4274-accf-add56312cfb6/WindowsXP-KB835935-SP2-NLD.exe|updates/winxp/windowsxp-kb835935-sp2-nld.exe
 :: URL|NOR|http://download.microsoft.com/download/5/3/d/53d54a30-92a7-4725-be77-0a7f9b2f689a/WindowsXP-KB835935-SP2-NOR.exe|updates/winxp/windowsxp-kb835935-sp2-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/a/c/7/ac78df4d-59cc-4e25-b4d7-94598a149719/WindowsXP-KB835935-SP2-PLK.exe|updates/winxp/windowsxp-kb835935-sp2-plk.exe
-:: URL|PRG|http://download.microsoft.com/download/8/1/f/81f1ce4b-f2ca-4d5f-b6ef-ec2cb5f14ae3/WindowsXP-KB835935-SP2-PTG.exe|updates/winxp/windowsxp-kb835935-sp2-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/0/5/f/05fcbd3f-fb50-43be-a995-ad12ee4dcbe5/WindowsXP-KB835935-SP2-PTB.exe|updates/winxp/windowsxp-kb835935-sp2-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/1/f/81f1ce4b-f2ca-4d5f-b6ef-ec2cb5f14ae3/WindowsXP-KB835935-SP2-PTG.exe|updates/winxp/windowsxp-kb835935-sp2-ptg.exe
 :: URL|RUS|http://download.microsoft.com/download/b/6/8/b68977d4-aa1d-45ca-a74a-f35645cf96b2/WindowsXP-KB835935-SP2-RUS.exe|updates/winxp/windowsxp-kb835935-sp2-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/9/4/f/94fcdebe-17ff-4e57-bd77-482aad53b796/WindowsXP-KB835935-SP2-SVE.exe|updates/winxp/windowsxp-kb835935-sp2-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/2/9/3/293425d3-4989-4b55-93c4-746344264c52/WindowsXP-KB835935-SP2-TRK.exe|updates/winxp/windowsxp-kb835935-sp2-trk.exe
