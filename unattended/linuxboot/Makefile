@@ -4,17 +4,18 @@ dosemu=dosemu-1.2.0
 glibc=glibc-2.3.2
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%, glibc-linuxthreads-%, $(glibc)))
-klibc=klibc-0.110
+klibc=klibc-0.114
 linux=linux-2.6.3
 module-init-tools=module-init-tools-3.0-pre10
 pciutils=pciutils-2.1.11
+pcmcia-cs=pcmcia-cs-3.2.7
 samba=samba-3.0.2a
 
 cwd:=$(shell pwd)
 
 download_targets=$(patsubst %,download-%,$(bash) $(busybox) $(dosemu)	\
 	$(glibc) $(glibc-linuxthreads) $(klibc) $(linux)		\
-	$(module-init-tools) $(pciutils) $(samba)			\
+	$(module-init-tools) $(pciutils) $(pcmcia-cs) $(samba)		\
 	)
 
 .PHONY: stage1 all download klibc glibc $(download_targets) \
@@ -51,7 +52,7 @@ download-$(strip $(1)) :  ;						\
 	&& url=$(strip $(3)) && sub=$(strip $(4))			\
 	&& [ -d $$$$what ]						\
 	|| { [ -n "$$$$sub" ] || sub=.					\
-	&& temp=`mktemp /var/tmp/dl.XXXXXXXX`				\
+	&& temp=`mktemp /var/tmp/dl.XXXXXX`				\
 	&& wget -O $$$$temp $$$$url$$$$what.$$$$suffix			\
 	&& case $$$$suffix in						\
 		*.gz|tgz) prog="gzip -d -c" ;;				\
@@ -60,8 +61,9 @@ download-$(strip $(1)) :  ;						\
 	esac								\
 	&& { echo $$$$prog ;						\
 	$$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }		\
-	&& { [ -z "$$$$sub" ] || ln -s "$$$$sub" "$$$$what" ; }		\
-	&& { [ "$(dest)" == . ] || ln -sf $(dest)/$$$$what . ; }	\
+	&& { [ "$$$$sub" == . ] || ln -s "$$$$sub" "$$$$what" ; }	\
+	&& { [ "$(dest)" != . ] && [ "$$$$sub" == . ]			\
+		&& ln -sf $(dest)/$$$$what . ; }			\
 	&& rm $$$$temp ;						\
 	}
 
@@ -89,6 +91,8 @@ $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.kernel.org/pub/software/utils/pciutils/)
+$(call download_rule, $(pcmcia-cs), tar.gz,			\
+	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
 $(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
 
 
@@ -144,11 +148,11 @@ $(klibc)/ash/sh:
 $(call copy_exe,$(klibc)/ash/sh,stage1/bin/ash)
 
 $(klibc)/utils/mkdir: $(klibc)/ash/sh
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 $(call copy_exe,$(klibc)/utils/mkdir,stage1/bin/mkdir)
 
 $(klibc)/utils/mount: $(klibc)/ash/sh
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 $(call copy_exe,$(klibc)/utils/mount,stage1/bin/mount)
 
 stage1 := $(stage1) stage1/bin/ash stage1/bin/mkdir stage1/bin/mount
@@ -189,7 +193,7 @@ stage1/.dosemu/disclaimer:
 stage1 := $(stage1) stage1/.dosemu/disclaimer
 
 build-$(dosemu)/bin/../commands/lredir.com: build-$(dosemu)/bin/dosemu.bin
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 $(call copy_file,build-$(dosemu)/bin/../commands/lredir.com,\
 	dosboot/lredir.com)
@@ -236,31 +240,31 @@ $(call copy_exe, build-$(glibc)/libc.so, stage1/lib/libc.so)
 
 # Dynamic linker
 build-$(glibc)/elf/ld.so: build-$(glibc)/libc.so
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 $(call copy_exe, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
 
 # Bash needs libdl
 build-$(glibc)/dlfcn/libdl.so: build-$(glibc)/libc.so
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 $(call copy_exe, build-$(glibc)/dlfcn/libdl.so, stage1/lib/libdl.so)
 
 # Samba needs libresolv, libnss_*, libnsl, libcrypt
 build-$(glibc)/resolv/libresolv.so: build-$(glibc)/libc.so
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 build-$(glibc)/resolv/libnss_dns.so: build-$(glibc)/libc.so
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 build-$(glibc)/nss/libnss_files.so: build-$(glibc)/libc.so
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 build-$(glibc)/nis/libnsl.so: build-$(glibc)/libc.so
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 build-$(glibc)/crypt/libcrypt.so: build-$(glibc)/libc.so
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 $(call copy_exe, build-$(glibc)/resolv/libresolv.so, stage1/lib/libresolv.so)
 $(call copy_exe, build-$(glibc)/resolv/libnss_dns.so, stage1/lib/libnss_dns.so)
@@ -296,9 +300,10 @@ stage1 := $(stage1) stage1/bin/busybox
 ## pciutils
 $(pciutils)/lspci:
 	cd $(pciutils) && make PREFIX=/usr
+	[ -e $@ ]
 
 $(pciutils)/pci.ids: $(pciutils)/lspci
-	[ -e $@ ] ; touch $@
+	[ -e $@ ] && touch $@
 
 $(call copy_exe, $(pciutils)/lspci, stage1/sbin/lspci)
 
@@ -307,6 +312,18 @@ stage1/usr/share/pci.ids: $(pciutils)/pci.ids
 	cp -f $< $@
 
 stage1 := $(stage1) stage1/sbin/lspci stage1/usr/share/pci.ids
+
+## pcmcia-cs (PCMCIA Card Services, particularly cardmgr)
+$(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/i386/boot/bzImage
+	cd $(pcmcia-cs)						\
+	&& ./Configure --noprompt --kernel=$(cwd)/$(linux)	\
+		--nox11 --srctree				\
+	&& make all
+
+$(call copy_exe,$(pcmcia-cs)/cardmgr/cardmgr,stage1/sbin/cardmgr)
+$(call copy_file,$(pcmcia-cs)/etc/config,stage1/etc/pcmcia/config)
+
+stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config
 
 ## Samba
 
@@ -324,17 +341,17 @@ samba_progs=bin/smbmount bin/smbmnt bin/smbumount
 # Without "make installmodules" (which installs CP850.so), smbmount
 # prints a tremendous number of "convert_string_internal: Conversion
 # not supported" errors.
-stage1/.stamp-samba: $(samba)/source/config.status
+stage1/usr/lib/smb.conf: $(samba)/source/config.status
 	cd $(samba)/source					\
 	    && make SBIN_PROGS="" BIN_PROGS="$(samba_progs)"	\
 	    && make SBIN_PROGS="" BIN_PROGS="$(samba_progs)"	\
 		    DESTDIR=$(cwd)/stage1			\
 		    installbin installdat installmodules
+	ln -sf ../usr/bin/smbmount stage1/sbin/mount.smbfs
 	find stage1 -name \*.old -print0 | xargs -r -0 rm
-	touch stage1/usr/lib/smb.conf
 	touch $@
 
-stage1 := $(stage1) stage1/.stamp-samba
+stage1 := $(stage1) stage1/usr/lib/smb.conf
 
 ## devices
 devices.cpio: misc/devices.txt
