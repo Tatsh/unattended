@@ -1,7 +1,6 @@
 @echo off
 if exist c:\netinst\permcred.bat call c:\netinst\permcred.bat
 if exist c:\netinst\tempcred.bat call c:\netinst\tempcred.bat
-for %%a in ( c d e f g h i j k l m n o p q r s t u v w x y z ) do if exist %%a:\dosbin\install.pl set Z=%%a:
 
 if not %Z%. == . goto got_drive
 set Z=Z:
