@@ -15,7 +15,8 @@ sub doit ($);
 sub doit ($) {
     my ($file) = @_;
 
-    return if ($file =~ /.*(?:CVS|Unattend|AutoIt\.exe|README\.txt)$/);
+    print "Skipping $file\n" if ($file =~ /.*(?:linuxaux|CVS|Unattend|AutoIt\.exe|README\.txt)$/);
+    return if ($file =~ /.*(?:linuxaux|CVS|Unattend|AutoIt\.exe|README\.txt)$/);
 
     if (! -l $file && -d _) {
         # Directory; recurse through its contents.
@@ -34,6 +35,8 @@ sub doit ($) {
     # Rename to lower-case.
     my $lc_file = $file;
     $lc_file =~ s/([^\/]*\/*)$/lc($1)/eg;
+    $file eq $lc_file
+        or print "Renaming $file -> $lc_file\n";
     $file eq $lc_file
         or rename $file, $lc_file
         or die "Unable to rename $file to $lc_file: $^E";
