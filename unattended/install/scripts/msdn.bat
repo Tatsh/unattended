@@ -1,6 +1,6 @@
 :: Install MSDN Library
 
-:: Reboot when installation is finished
+:: Reboot when installation is finished.
 todo.pl .reboot
 
 :: Use UNC path to installer, because MSDN library depends on the
