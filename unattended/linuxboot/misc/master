@@ -275,6 +275,10 @@ storage_modules="$(find-modules-pci 0x01)"
 # have storage devices attached to them.
 storage_modules="$storage_modules $(find-modules-pci 0x0e 0x00)"
 
+# Dell PowerEdge 2400 PERC2/Si uses PCI class 0x0508nn ("memory
+# controller") for no apparent reason.
+storage_modules="$storage_modules $(find-modules-pci 0x05 0x08)"
+
 [ -z "$storage_modules" ] \
     && die "No mass storage hardware found (missing drivers?)"
 
