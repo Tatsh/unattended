@@ -579,11 +579,11 @@ stage1/.stamp-dbd-mysql: $(dbd-mysql)/Makefile stage1/lib/libmysqlclient.so
 stage1 += stage1/.stamp-dbd-mysql
 
 ## perl-ldap Perl module
-$(perl-ldap)/Makefile: stage1/opt/perl/bin/perl
+$(perl-ldap)/Makefile: stage1/.stamp-convert-asn1
 	cd $(dir $@)							\
 	&& eval `$(perlrun) -V:archlib`					\
 	&& { [ -n "$$archlib" ] || exit 37 ; }				\
-	&& $(perlrun) Makefile.PL PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
+	&& $(perlrun) Makefile.PL --skipdeps PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
 		DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)
 	[ -e $@ ]
 
