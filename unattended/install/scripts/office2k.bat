@@ -22,8 +22,9 @@ todo.pl "%Z%\updates\office2k\o2ksp3.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst
 :: and <http://support.microsoft.com/?kbid=258323>
 :: Download O2KSR1aDL.exe from:
 :: <http://www.microsoft.com/office/ork/2000/appndx/toolbox.htm#o2sr1au>
-:: Run it to extract the package.
-todo.pl "msiexec /qb /l* c:\netinst\logs\o2ksr1a.txt /p %Z%\updates\office2k\o2ksr1a\DATA1.msp REBOOT=ReallySuppress"
+todo.pl "msiexec /qb /l* c:\netinst\logs\o2ksr1a.txt /p %TEMP%\o2ksr1a\DATA1.msp REBOOT=ReallySuppress"
+todo.pl "%Z%\updates\office2k\O2KSR1aDL.EXE /t:%TEMP%\o2ksr1a"
+
 :: Use Z_PATH instead of %Z%\ because Office likes to phone home a lot,
 :: even with ADDLOCAL=ALL
 todo.pl "msiexec /qb /l* c:\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
