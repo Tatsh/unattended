@@ -1,5 +1,6 @@
 :: Install Adobe Reader
 :: URL|ENU|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/enu/AdbeRdr60_enu_full.exe|packages/adobereader/adberdr60_enu_full.exe
+:: URL|DEU|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/deu/AdbeRdr60_deu_full.exe|packages/adobereader/adberdr60_deu_full.exe
 :: URL|NLD|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/nld/AdbeRdr60_nld_full.exe|packages/adobereader/adberdr60_nld_full.exe
 
 :: Download from <http://www.adobe.com/products/acrobat/alternate.html>
