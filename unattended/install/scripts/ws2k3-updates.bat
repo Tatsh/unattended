@@ -897,35 +897,6 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824105-x86-%WINLAN
 :: URL|TRK|http://download.microsoft.com/download/4/4/9/4493567f-c9d2-41c9-b7cc-0026c0400269/WindowsServer2003-KB823559-x86-TRK.exe|updates/ws2k3/windowsserver2003-kb823559-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB823559-x86-%WINLANG%.exe /u /n /z"
 
-:: Security Update for Microsoft Windows Server 2003: KB824141
-:: Microsoft Security Bulletin MS03-045
-:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution (824141)"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=02F97DE4-29DF-4D33-A33B-E7630349E69E>
-:: No Download found for ARA.
-:: URL|CSY|http://download.microsoft.com/download/0/8/4/084b555b-5240-4aaa-a256-b2b4903d85b1/WindowsServer2003-KB824141-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb824141-x86-csy.exe
-:: No Download found for DAN.
-:: URL|DEU|http://download.microsoft.com/download/1/7/d/17d1c750-6d98-481a-b476-40d4b9b879ad/WindowsServer2003-KB824141-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb824141-x86-deu.exe
-:: No Download found for ELL.
-:: URL|ENU|http://download.microsoft.com/download/0/d/0/0d03f099-3673-42ca-81f9-5533fc5c18fb/WindowsServer2003-KB824141-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb824141-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/d/d/1/dd1ac549-bc7b-4a88-9057-51b7c33abf3e/WindowsServer2003-KB824141-x86-ESN.exe|updates/ws2k3/windowsserver2003-kb824141-x86-esn.exe
-:: No Download found for FIN.
-:: URL|FRA|http://download.microsoft.com/download/e/f/a/efad9955-6f61-4245-8b73-fba773c74a1d/WindowsServer2003-KB824141-x86-FRA.exe|updates/ws2k3/windowsserver2003-kb824141-x86-fra.exe
-:: No Download found for HEB.
-:: URL|HUN|http://download.microsoft.com/download/5/a/a/5aa5bfc5-1661-47d3-94b4-ebb951fe56bc/WindowsServer2003-KB824141-x86-HUN.exe|updates/ws2k3/windowsserver2003-kb824141-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/9/e/3/9e3d8b27-84b1-4c86-9ea3-046ff7c92f24/WindowsServer2003-KB824141-x86-ITA.exe|updates/ws2k3/windowsserver2003-kb824141-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/e/9/4e953019-3b01-4557-abc2-d7afee2235d9/WindowsServer2003-KB824141-x86-JPN.exe|updates/ws2k3/windowsserver2003-kb824141-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/1/3/f/13f2cb36-c8a1-4fa0-b3ae-3ef12fedec55/WindowsServer2003-KB824141-x86-KOR.exe|updates/ws2k3/windowsserver2003-kb824141-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/a/d/4/ad404828-d17a-47ad-b137-1e1cca3d8599/WindowsServer2003-KB824141-x86-NLD.exe|updates/ws2k3/windowsserver2003-kb824141-x86-nld.exe
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/d/2/e/d2e27561-0b46-428f-9534-c3de73a37446/WindowsServer2003-KB824141-x86-PLK.exe|updates/ws2k3/windowsserver2003-kb824141-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/5/e/a/5eabf192-fde2-4ca6-a9cf-580ead595ffc/WindowsServer2003-KB824141-x86-PTB.exe|updates/ws2k3/windowsserver2003-kb824141-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/b/3/5/b3513400-6469-4aa4-b423-ba4dcf70ac84/WindowsServer2003-KB824141-x86-PTG.exe|updates/ws2k3/windowsserver2003-kb824141-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/9/2/3/9231c10e-4176-434a-8b00-57416e199076/WindowsServer2003-KB824141-x86-RUS.exe|updates/ws2k3/windowsserver2003-kb824141-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/4/b/9/4b96ae18-ad12-4117-bd3b-4b1f337bfae0/WindowsServer2003-KB824141-x86-SVE.exe|updates/ws2k3/windowsserver2003-kb824141-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/2/e/e/2eee76b0-4067-444f-a9f9-24884fdf8b1c/WindowsServer2003-KB824141-x86-TRK.exe|updates/ws2k3/windowsserver2003-kb824141-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824141-x86-%WINLANG%.exe /u /n /z"
-
 :: Security Update for Microsoft Windows Server 2003: KB825119
 :: Microsoft Security Bulletin MS03-044
 :: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise (825119)"
