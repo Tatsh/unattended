@@ -32,18 +32,16 @@ welcome.
 <h1>Where did it come from?</h1>
 
 <p>In my (ever reluctant) experience with Windows, I have found that
-the more recently a machine was installed, the better it tends to
-work.  So I decided to look for ways to make the installation process
-routine.
+the more recently a machine was installed, the better it works.  So I
+decided to look for ways to make the installation process routine.
 
 <p>This led me into the strange and quirky world of DOS networking,
 <code>.bat</code> scripts, <code>unattended.txt</code> files, network
-booting, and the amazingly under-documented <a
-href="installers.html">silent installation procedures for various
-Windows applications</a>.
+booting, and the amazingly under-documented silent installation
+procedures for various Windows applications.
 
-<p>Microsoft has their own solutions to these problems, involving
-things like <a
+<p>Microsoft has their own solution to this problem, involving things
+like <a
 href="http//:www.microsoft.com/windows2000/technologies/directory/ad/"
 >"Active Directory"</a> and <a
 href="http://www.microsoft.com/windows2000/en/datacenter/help/sag_RIS_Default_topnode.htm">"RIS"</a>
@@ -51,13 +49,13 @@ and <a href="http://www.microsoft.com/smserver/">"SMS"</a>.  If you
 think those sound like good ideas, then you are not part of this
 project's intended audience.
 
-<p>Some solutions to this problem involve drive imaging (or
-workstation "cloning").  This project is not one of them.  Workstation
-cloning has several drawbacks, including <a
+<p>Some approaches to this problem involve drive imaging (also known
+as "cloning").  This project is not one of them.  Workstation cloning
+has several drawbacks, including <a
 href="http://service2.symantec.com/SUPPORT/ghost.nsf/docid/1999050308324125"
->the SID issue</a>, poor support for non-uniform hardware, and
-maintenance headaches.  On the other hand, it is a lot simpler to set
-up, and products like <a
+>the SID issue</a>, poor support for non-uniform hardware, and poor
+maintainability.  On the other hand, it is a lot simpler to set up,
+and products like <a
 href="http://www.symantec.com/sabu/ghost/">Ghost</a> and <a
 href="http://www.powerquest.com/driveimage/">Drive&nbsp;Image</a> make
 it very easy.
@@ -66,22 +64,21 @@ it very easy.
 from scratch, and I am releasing it here on SourceForge.  Most of the
 information here is available elsewhere, but it took me a while to
 find because it was not all collected in one place.  I am hoping this
-project will save some time for others like myself.  (The database of
-<a href="installers.html">unattended/silent installer switches for
-Windows apps</a> would have been particularly handy.)
+project will save some time for others like myself.  (I would have
+found the database of <a href="installers.html">unattended/silent
+installer switches for Windows apps</a> particularly handy.)
 
 <h1>What next?</h1>
 
 <p>If you are interested, you can start right now.  First, <a
 href="https://sourceforge.net/projects/unattended/">visit the
-SourceForge project page</a> to download the distribution [NOTE: Not
-yet...].  Or <a
+SourceForge project page</a> to download the distribution.  Or <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/">
-browse the CVS repository</a>; just click on the revision number to
-view the corresponding file.
+browse the CVS repository</a>; just click on a revision number to view
+the corresponding file.
 
-<p>Next, read the rest of the documentation.  The overall process
-consists of two steps:
+<p>Next, read the rest of the documentation and follow the
+instructions.  The overall process consists of two steps:
 
 <ol>
 <li><a href="os.html">Install the operating system</a>
@@ -97,13 +94,20 @@ Also, it is tricky to write a script which reboots the machine halfway
 through.  (OK, the rebooting part is easy.  But resuming where you
 left off is harder.)
 
-<p>Click the links above for more information.  Also, please let me
-know about any successes, failures, suggestions, or patches you have.
+<p>Click the links above for more information.
+
+<p>And please let me know about any successes, failures, suggestions,
+or patches you have.  Thanks!
 
 <hr>
 <address>
 Patrick J. LoPresti <a
 href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
 </address>
+
+<A href="http://sourceforge.net"> <IMG align="right"
+src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
+width="210" height="62" border="0" alt="SourceForge Logo"></A>
+
 </body>
 </html>
