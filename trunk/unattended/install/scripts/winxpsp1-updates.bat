@@ -288,6 +288,18 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 
 :: IE Critical Updates
 
+:: Recommended update 871260
+:: "An update rollup is available for Internet Explorer versions 5.x and 6.0"
+:: <http://support.microsoft.com/?id=871260>
+:: (download URLs in ie6.bat)
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB871260-x86-%WINLANG%.exe /q /r:n"
+
+:: Critical update MS04-025 (867801)
+:: "Cumulative Security Update for Internet Explorer"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-025.mspx>
+:: (download URLs in ie6.bat)
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867801-x86-%WINLANG%.exe /q /r:n"
+
 :: Critical update MS04-018 (823353)
 :: "Cumulative Security Update for Outlook Express"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-018.mspx>
@@ -296,32 +308,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 :: URL|NLD|http://download.microsoft.com/download/1/2/6/126e9e94-7cc3-4e49-bf08-21bc84e6b756/IE6.0sp1-KB823353-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/5/e/6/5e6f2c0e-4db3-4310-893e-cff856dd97db/IE6.0sp1-KB823353-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /q /r:n"
-
-:: Critical update 831167
-:: <http://support.microsoft.com/?id=831167>
-:: "Wininet retries POST requests with a blank header"
-:: (needed after installing 832894)
-:: URL|DAN|http://download.microsoft.com/download/0/f/b/0fb1a02e-356e-4ffb-82c0-1af2f41be752/Q831167.exe|updates/ie6sp1/dan/q831167.exe
-:: URL|DEU|http://download.microsoft.com/download/7/c/6/7c6cc370-d3e3-4b23-a035-4e9518a64298/Q831167.exe|updates/ie6sp1/deu/q831167.exe
-:: URL|ENU|http://download.microsoft.com/download/2/2/c/22cae35f-d96f-45ad-90f6-f81263911eb7/Q831167.exe|updates/ie6sp1/enu/q831167.exe
-:: URL|FRA|http://download.microsoft.com/download/a/a/8/aa8cbdb2-8a3b-43f4-89e1-c16f470b021a/Q831167.exe|updates/ie6sp1/fra/q831167.exe
-:: URL|NLD|http://download.microsoft.com/download/7/e/0/7e01a413-8adb-4783-9f80-5d467b528b3d/Q831167.exe|updates/ie6sp1/nld/q831167.exe
-:: URL|RUS|http://download.microsoft.com/download/9/9/9/999c1614-9058-4df9-8da7-2eecd2305dce/Q831167.exe|updates/ie6sp1/rus/q831167.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q831167.exe /q /r:n"
-
-:: Critical update 832894 (MS04-004)
-:: URL|DAN|http://download.microsoft.com/download/0/b/a/0ba62c6c-2796-4fd3-ae5a-dbce309acf57/Q832894.exe|updates/ie6sp1/dan/q832894.exe
-:: URL|DEU|http://download.microsoft.com/download/0/f/1/0f134842-5111-4f87-a2b3-e01c8f80e5b9/Q832894.exe|updates/ie6sp1/deu/q832894.exe
-:: URL|ENU|http://download.microsoft.com/download/9/b/3/9b3f16b4-a907-468b-8283-c050d1ea4948/Q832894.exe|updates/ie6sp1/enu/q832894.exe
-:: URL|FRA|http://download.microsoft.com/download/a/7/c/a7cf4dc1-b1a0-4273-8b42-5e2a4139a478/Q832894.exe|updates/ie6sp1/fra/q832894.exe
-:: URL|ITA|http://download.microsoft.com/download/8/3/0/8301208a-e59f-4f30-9587-71439334a51f/Q832894.exe|updates/ie6sp1/ita/q832894.exe
-:: URL|NLD|http://download.microsoft.com/download/2/e/d/2ed7c7e7-4922-48c6-bf4f-c32b76cba519/Q832894.exe|updates/ie6sp1/nld/q832894.exe
-:: URL|RUS|http://download.microsoft.com/download/c/f/d/cfd3fc45-d53b-4c6d-878d-de4282069a26/Q832894.exe|updates/ie6sp1/rus/q832894.exe
-:: "February, 2004, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=832894>
-:: <http://www.microsoft.com/technet/security/bulletin/MS04-004.mspx>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
-
 
 :: Critical Updates
 
