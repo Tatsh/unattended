@@ -5,7 +5,9 @@ default:
 	@echo "(Did you mean to 'cd bootdisk' first?)"
 	exit 1
 
-cvs := :pserver:anonymous@cvs.unattended.sourceforge.net:/cvsroot/unattended
+#cvs := :pserver:anonymous@cvs.unattended.sourceforge.net:/cvsroot/unattended
+# Until they fix the anonymous server...
+cvs := $$USER@cvs.unattended.sourceforge.net:/cvsroot/unattended
 
 dir = unattended-${ver}
 
@@ -27,7 +29,7 @@ release:
 	cd ../.. &&							\
 	tar --exclude CVS --newer ./${dir}.tar.gz -cvzf			\
 		${dir}-images.tar.gz ${dir} &&				\
-	ncftpput -p patl@users.sourceforge.net upload.sourceforge.net	\
+	ncftpput -p $$USER@users.sourceforge.net upload.sourceforge.net	\
 		/incoming ${dir}.tar.gz ${dir}-images.tar.gz &&		\
 	cd / &&								\
 	rm -rf $$temp
