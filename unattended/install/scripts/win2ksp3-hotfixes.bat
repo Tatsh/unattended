@@ -6,6 +6,15 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical Update Q323255
+:: <http://www.microsoft.com/Windows2000/downloads/critical/q323255/>
+todo.pl "z:\packages\win2ksp3\Q323255_W2K_SP4_X86_EN.exe /u /o /z"
+
+:: Critical Update Q329077
+:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329077>
+:: (security bulletin says reboot required)
+todo.pl "Z:\packages\win2ksp3\vm-sfix3.exe /Q /R:N" .reboot
+
 :: Q324096
 :: http://www.microsoft.com/Windows2000/downloads/security/q324096/
 todo.pl "z:\packages\win2ksp3\Q324096_W2K_SP4_X86_EN.exe /u /o /z"
