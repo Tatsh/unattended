@@ -224,7 +224,7 @@ sub get_windows_language () {
 
     # See OSLanguage property in
     # <http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_operatingsystem.asp>.
-    # See also
+    # See also <http://www.microsoft.com/globaldev/nlsweb> and
     # <http://www.microsoft.com/globaldev/reference/winxp/langtla.mspx>.
 
     my %lang_table = (
