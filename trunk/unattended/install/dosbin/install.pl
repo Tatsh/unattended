@@ -456,7 +456,7 @@ $u->comments ('_meta') =
     ['This section is for informational purposes.',
      'Windows Setup does not use it.'];
 
-$u->comments ('_meta') =
+$u->comments ('_meta', 'fdisk_lba') =
     ['Use extended INT13 BIOS calls for fdisk?'];
 
 $u->value ('_meta', 'fdisk_lba') = \&ask_fdisk_lba;
@@ -742,7 +742,9 @@ print "Creating $unattend_txt...";
 
 open UNATTEND, ">$unattend_txt"
     or die "Unable to open $unattend_txt for writing: $^E";
-print UNATTEND @unattend_contents
+print UNATTEND join "\n", @unattend_contents
+    or die "Unable to write to $unattend_txt: $^E";
+print UNATTEND "\n"
     or die "Unable to write to $unattend_txt: $^E";
 close UNATTEND
     or die "Unable to close $unattend_txt: $^E";
