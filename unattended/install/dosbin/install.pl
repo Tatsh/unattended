@@ -108,55 +108,57 @@ sub menu_choice (@) {
 
 # Allow selection from among one or more strings.
 sub multi_choice (@) {
-    my @strings = @_;
+    my ($prompt, @strings) = @_;
 
     scalar @strings > 0
         or return undef;
 
     # Choices to display per page
-    my $per_page = 9;
+    my $per_page = 4;
 
-    my $pages = (scalar @strings + $per_page - 1) / $per_page;
+    my $pages = int((scalar @strings + $per_page - 1)
+                    / $per_page);
+
     my %selected = map { $_ => 0 } @strings;
 
     # Current page
     my $page = 0;
     while (1) {
-        printf "Select zero or more (page %d/%d)\n", $page+1, $pages;
+        print "$prompt\n";
+        printf "(Page %d/%d)\n", $page+1, $pages;
         my $start = $page * $per_page;
-        my $end = ($page == $pages - 1
-                   ? scalar @strings - 1
-                   : $start + $per_page);
+        my $end = ($page < $pages - 1
+                   ? $start + $per_page - 1
+                   : scalar @strings - 1);
 
         my $choices = '';
         my @choice_map;
 
         my $i;
-        foreach $i ($start .. $end) {
-            my $str = strings[$i];
-            printf "%s) [%s] %s\n", $i, exists $selected{$str}, $str;
-            $choices .= $i;
+        foreach $i (0 .. $end - $start) {
+            my $str = $strings[$start + $i];
+            printf("%s) [%s] %s\n",
+                   $i+1,
+                   $selected{$str} ? '*' : ' ',
+                   $str);
+            $choices .= $i+1;
             $choice_map[$i] = sub { $selected{$str} = !$selected{$str} };
         }
 
-        $i = $end + 1;
-        print "A) Select all\n";
-        $choices .= 'A';
+        $i = $end - $start + 1;
+        print "S/D) Select/Deselect all\n";
+        $choices .= 'S';
         $choice_map[$i] = sub { %selected = map { $_ => 1 } @strings };
-
         $i++;
-        print "D) Deselect all\n";
         $choices .= 'D';
         $choice_map[$i] = sub { %selected = map { $_ => 0 } @strings };
 
         if ($pages > 1) {
             $i++;
-            print "N) Next page\n";
+            print "N/P) Next/Previous page\n";
             $choices .= 'N';
             $choice_map[$i] = sub { $page = ($page + 1) % $pages };
-
             $i++;
-            print "P) Previous page\n";
             $choices .= 'P';
             $choice_map[$i] = sub { $page = ($page + $pages - 1) % $pages };
         }
@@ -172,11 +174,13 @@ sub multi_choice (@) {
         $choice_map[$i] = sub { print "Exiting.\n"; exit 1; };
 
         system 'choice', "/c:$choices", "Select:";
-        my $ret = ($? >> 8);
-        $ret == $continue_index
-            and break;
+        my $ret = ($? >> 8) - 1;
 
-        &choice_map[$ret];
+        $ret == $continue_index
+            and last;
+
+        my $func = $choice_map[$ret];
+        &$func ();
     }
 
     my %sort_index;
@@ -335,9 +339,12 @@ sub ask_oem_pnp_drivers_path () {
     scalar @pnp_driver_dirs > 0
         or return undef;
 
-    print "...found some driver directories.  Please choose which to add.\n";
+    print "...found some driver directories.\n";
 
-    my $ret = join ';', multi_choice (sort @pnp_driver_dirs);
+    my @selected_dirs = multi_choice ('Please choose driver(s) to add.',
+                                      @pnp_driver_dirs);
+
+    my $ret = join ';', @selected_dirs;
 
     # Setup does not like empty OemPnPDriversPath
     $ret =~ /\S/
