@@ -21,11 +21,9 @@ if not errorlevel 1 goto gotnet
 :gotnet
 
 
-:: Save MAC addr and IP addr in files (to be parsed later).
+:: Save MAC address in file (to be parsed later).
 del \netdiag.txt
 net diag /status < nul > \netdiag.txt
-del \ipconfig.txt
-ipconfig \net > \ipconfig.txt
 
 @echo.
 @echo Enter location of install share (default \\ntinstall\install):
@@ -39,6 +37,11 @@ NET USE Z: %INSTALL%
 
 :got_z
 set PATH=Z:\djgpp\bin;z:\dosbin;%PATH%
+
+:: Save IP address in file (to be parsed later).
+del \ipconfig.txt
+ipconfig \net > \ipconfig.txt
+
 set DJGPP=Z:\djgpp\djgpp.env
 lh cwsdpmi -p -s-
 
