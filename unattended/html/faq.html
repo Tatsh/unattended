@@ -112,9 +112,11 @@ pretty easily, so let us know if it bothers you.
 <h1>I get "No system disk or disk error" when I boot from CD-ROM or
 network using the DOS boot disk.</h1>
 
-<p>This usually happens on laptops without a floppy drive.  The DOS
-boot disk uses a "virtual floppy", so you must enable floppy disk
-support in your BIOS even if you have no physical drive.
+<p>This usually happens on laptops without a floppy drive.  Our CD-ROM
+(and PXE) DOS boot uses a "virtual floppy" provided by <a
+href="http://syslinux.zytor.com/memdisk.php"
+><code>memdisk</code></a>, so you must enable floppy disk support in
+your BIOS even if you have no physical drive.
 
 <p>The Toshiba Tecra S1 has an additional problem: You must
 <em>disable</em> "USB legacy floppy emulation" before memdisk will
@@ -307,6 +309,19 @@ href="http://groups.google.com/groups?threadm=s5gptgh4811.fsf%40patl%3Dusers.sf.
 <p>See <a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01050.html"
 >this thread</a> from the mailing list.
+
+<h1>How do I add multiple third-party mass-storage drivers?</h1>
+
+<p>This comes up on the mailing list <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00992.html"
+>now</a> and <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01010.html"
+>then</a>.  At the moment, you must have a good understanding of <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00107.html"
+>TXTSETUP.OEM</a> files, because you must create one by hand which
+incorporates all of your drivers.  Writing a tool to help automate
+this is on our to-do list.
+
 
 <h1>Is FAT -> NTFS conversion a bad idea?</h1>
 
