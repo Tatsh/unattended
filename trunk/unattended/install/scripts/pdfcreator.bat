@@ -17,7 +17,7 @@
 :: URL|SKY|http://dl.sourceforge.net/sourceforge/pdfcreator/slovensko.ini|packages/pdfcreator/lang-sky-0_8_0.ini
 :: URL|UKR|http://dl.sourceforge.net/sourceforge/pdfcreator/ukrainian.ini|packages/pdfcreator/lang-ukr-0_8_0.ini
 if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini goto nolangpack
-todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini %ProgramFiles%\PDFCreator\languages\"
+todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini \"%ProgramFiles%\PDFCreator\languages\""
 :nolangpack
 
 :: Install PDFCreator
