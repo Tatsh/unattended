@@ -19,7 +19,7 @@ you need to:
 <ol>
 <li><a href="#answer-file">Understand what you are really doing</a>
 
-<li><a href="http:#network">Make sure your network infrastructure is
+<li><a href="#network">Make sure your network infrastructure is
 sufficient</a>
 
 <li><a href="#install-share">Create the OS distribution point</a>
@@ -79,7 +79,7 @@ about it eventually anyway.  See the <a href="advanced.html">advanced
 configuration</a> document for information and references.
 
 
-<h1>Make sure your network infrastructure is sufficient</h1>
+<h1 id="network">Make sure your network infrastructure is sufficient</h1>
 
 <p>Unattended is designed to run mostly, or entirely, off of the
 network.
@@ -112,13 +112,17 @@ local disk directory, but we are going to use a network share.
 
 
 <h2>Create the install share (Z: drive)</h2>
-<p>Copy the <code>install</code> directory tree from this distribution
-to the file server, and export it read-only with guest access
-permitted.  When you later boot from the boot disk, it will ask you
-for the full Windows UNC name of this share; the default it assumes is
-<code>\\ntinstall\install</code>.  The boot disk maps this share as
-the <code>Z:</code> drive, and that is how we will refer to it from
-now on.
+
+<p>(You have <a href="./#next">downloaded the Unattended distribution
+already</a>, right?  If not, now would be a good time.)
+
+<p>Copy the <code>install</code> directory tree from the Unattended
+distribution to the file server, and export it read-only with guest
+access permitted.  When you later boot from the boot disk, it will ask
+you for the full Windows UNC name of this share; the default it
+assumes is <code>\\ntinstall\install</code>.  The boot disk maps this
+share as the <code>Z:</code> drive, and that is how we will refer to
+it from now on.
 
 <p>This procedure relies on the following files and directories from
 the <code>Z:</code> drive:
@@ -308,9 +312,9 @@ href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp4/hfdeploy.h
 >into Windows 2000</a> and <a
 href="http://www.microsoft.com/windowsxp/pro/downloads/servicepacks/sp1/hfdeploy.asp#the_combination_installation_gxsi"
 >into Windows XP</a>.  (Also see KB articles <a
-href="http://support.microsoft.com/?kbid=814847" >814847</a>, <a
-href="http://support.microsoft.com/?kbid=824994" >824994</a>, and
-especially <a href="http://support.microsoft.com/?kbid=828930"
+href="http://support.microsoft.com/?id=814847" >814847</a>, <a
+href="http://support.microsoft.com/?id=824994" >824994</a>, and
+especially <a href="http://support.microsoft.com/?id=828930"
 >828930</a>.)  It is a messy procedure, but it is supported.
 
 <p>Since the procedure is messy, and since Unattended was written
@@ -456,51 +460,49 @@ from your infrastructure.
 <p>First, you will need a TFTP server.  Copy the files and folders
 from the <code>tftpboot</code> directory to the TFTP server's root
 directory.  <a href="http://tftpd32.jounin.net/">Tftpd32</a> is a good
-TFTP server for Windows, and it might even work for this purpose.
-[Note: I have not actually tried this.  If you do, please let me know
-how it goes.]
+TFTP server for Windows which has been reported to work.
 
 <p>Second, you will need to configure your DHCP server.  Most modern
 network cards support booting directly from the network following
 Intel's <em>Preboot eXecution Environment</em> (PXE) specification.
-If you are a masochist, you can download the PXE specification from <a
-href="http://www.intel.com/labs/manage/wfm/wfmspecs.htm">Intel's WFM
-site</a>.  But the basic idea is pretty simple: Configure your DHCP
-server to provide <em>next-server</em> and <em>filename</em> DHCP
-options naming the TFTP server and <code>pxelinux.0</code> file,
-respectively.  Do not let the name fool you; <code>pxelinux.0</code>
-has nothing to do with Linux.  It comes from the <a
-href="http://syslinux.zytor.com/">SYSLINUX</a> package, an excellent
-general-purpose boot loader.
+If you are a masochist, you can obtain the entire PXE specification
+from <a href="http://www.intel.com/labs/manage/wfm/wfmspecs.htm"
+>Intel's WFM site</a>.  But the basic idea is pretty simple: Configure
+your DHCP server to provide <em>next-server</em> and <em>filename</em>
+DHCP options identifying your TFTP server and the
+<code>pxelinux.0</code> file, respectively.  (Do not let the name fool
+you; <code>pxelinux.0</code> has nothing to do with Linux.  It comes
+from the <a href="http://syslinux.zytor.com/">SYSLINUX</a> package, an
+excellent general-purpose boot loader.)
 
 <p>Finally, you will need to convince your machine to boot from the
-network, which many systems do not support.  And even if your machine
-has this support, actually configuring it can take some work.  Many
-network cards have a configuration BIOS of their own which you must
-access to enable booting via PXE.  For systems with integrated network
-hardware, the system BIOS itself may have a configuration option
-called "Enable on-board network" with <b>three</b> settings named
-something like "Off", "On", and "On&nbsp;w/&nbsp;MBA".
+network.  Even if your machine has PXE support, actually enabling it
+can take some work.  Many network cards have a configuration BIOS of
+their own which you must access to enable booting via PXE.  For
+motherboards with integrated network hardware, the system BIOS itself
+may have a configuration option named "Enable on-board network" with
+<b>three</b> settings called something like "Off", "On", and
+"On&nbsp;w/&nbsp;MBA".
 
 <p>NOTE: Historically (meaning as recently as 2002), many vendors' PXE
-implementations were extremely buggy.  Always flash the firmware on
+implementations were extremely buggy.  Always update the firmware on
 your network card to the latest version before attempting a network
-boot.  For network hardware embedded on a motherboard or laptop, this
-means flashing the system BIOS.
+boot.  For network hardware integrated on the motherboard, this means
+updating the system BIOS.
 
 <p>Once you have enabled PXE in the network card BIOS, reboot the
 machine and enter the system BIOS again. Examine the "boot order"
 option.  There should be a new entry, with a name like "MBA slot 1" or
-"IBA slot 3".  Note that many BIOSes have a "Network" option in the
-boot menu which does <b>not</b> work; you may need to experiment.
-Configure the boot order to put the network device ahead of the hard
-disk, and you should be good to go.
+"IBA slot 3".  Note that many BIOSes have a "Network" entry here which
+does <b>not</b> work; you may need to experiment.  Configure the boot
+order to put the network device ahead of the hard disk, and you should
+be good to go.
 
-<p>Some systems, like the Dell PowerEdge and Optiplex lines, will
-respond to <kbd>F12</kbd> during power-up to initiate a network boot.
+<p>Some systems, including most Dells and IBM Thinkpads, will respond
+to <kbd>F12</kbd> during power-up to let you initiate a network boot.
 This is convenient if you only want to boot from the network once or
-twice to kick off the OS installation, but you want most boots to be
-from the hard drive.
+twice to install the OS, but you want all later boots to be from the
+hard drive.
 
 <p>If all else fails, contact your vendor and ask them how to perform
 a PXE network boot.  If they say you cannot, shake your head in
