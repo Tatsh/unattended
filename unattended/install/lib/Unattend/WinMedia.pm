@@ -51,6 +51,11 @@ sub cache ($) {
     return 1;
 }
 
+sub path ($) {
+    my Unattend::WinMedia ($self) = @_;
+    return $self->{path};
+}
+
 # Grovel around to find the common name of this media.
 sub name ($) {
     my Unattend::WinMedia ($self) = @_;
