@@ -29,6 +29,7 @@
 # middle_scripts           <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
 # bottom_scripts           <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
 # ntp_servers              <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# Partitions               <macaddr>,<ComputerName>,<os_name>,Default
 # DriverPath               <macaddr>,<ComputerName>,<os_name>,Default
 # UnattendedFile           Default,<os_name>,<OrgName>,<FullName>,<ComputerName>,<macaddr>
 
@@ -59,6 +60,28 @@ sub lookup_property ($) {
     }
     return undef;
 }
+
+# Lookup fdisk (partitioning) commands from database, if possible.
+$u->push_value ('_meta', 'fdisk_cmds'
+    sub {
+        my $os_media = $u->{'_meta'}->{'OS_media'};
+        defined $os_media
+            or return undef;
+        my $media_obj = Unattend::WinMedia->new ($os_media);
+        defined $media_obj
+            or return undef;
+        my $os_name = $media_obj->name ();
+        my $partitions;
+        foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                            $u->{'UserData'}->{'ComputerName'},
+                            "$os_name",
+                            'Default') {
+            $value = CONFIG->lookup_value($lookup, 'Partitions');
+            defined $value
+                and return $value;
+        }
+        return undef;
+    });
 
 # Lookup computer name from database, if possible.
 $u->push_value ('UserData', 'ComputerName', 
