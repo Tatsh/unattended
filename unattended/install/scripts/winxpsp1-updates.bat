@@ -11,7 +11,7 @@
 :: Windows Messenger Update
 :: (This will be disabled in the notips script)
 :: <http://www.microsoft.com/windowsxp/windowsmessenger/>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mmssetup.exe /q"
+todo.pl ".reboot-on 194 %Z%\updates\common\windowsmessenger\%WINLANG%\install.exe /q /r:n"
 
 :: Microsoft DirectX 9.0b update
 :: <http://www.microsoft.com/directx/>
