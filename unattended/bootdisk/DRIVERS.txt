@@ -32,7 +32,8 @@ el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
 el94x    3com 3c94x/3c2000 family of gigabit adapters
 
 # <http://www.google.com/search?q=via+ethernet+drivers>
-# <http://www.viaarena.com/?PageID=71>
+# <http://www.viaarena.com/?PageID=7>
+# <ftp://downloads.viaarena.com/drivers/LAN/>
 fetnd    VIA Rhine family (e.g., D-Link DFE-530TX)
 
 # http://www.netgear.com/support/products/FA310.asp
