@@ -1,7 +1,8 @@
 :: MASTER: Perform a basic workstation installation
 @Echo off
-:: Set Automatic Updates to download automatically but prompt before install.
-todo.pl "auconfig.pl 3"
+
+:: Set Automatic Updates to download and update automatically (SP2 behavior)
+todo.pl "auconfig.pl --day 0 --time 3 --wait 10 4"
 
 :: Install popular applications.
 todo.pl adobe-reader.bat
@@ -16,7 +17,7 @@ todo.pl defrag.bat
 todo.pl ".ignore-err 255 startup-type.pl Manual IISADMIN" ".ignore-err 255 startup-type.pl Manual W3SVC"
 
 :: Turn off Windows Messenger service
-todo.pl "startup-type.pl Manual Messenger"
+todo.pl "startup-type.pl Disabled Messenger"
 
 :: Cleanup messes left over from installing.
 todo.pl hidepw.pl bootini.pl fixtz.pl
