@@ -242,4 +242,4 @@ todo.pl [ options ] <commands...>
 =head1 OPTIONS
 
 --help          Display help and exit
---run           Process the to-do list
+--go            Process the to-do list
