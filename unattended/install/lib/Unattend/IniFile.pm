@@ -24,7 +24,7 @@ use overload
                    return $self->[SECTIONS];
                };
 
-use constant NO_VAL_REF => [ "Magic noval string" ];
+use constant NO_VAL_REF => [ 'Magic no_val string' ];
 
 # Constructor.  Arguments, if provided, will be passed to "read".
 sub new ($;@) {
