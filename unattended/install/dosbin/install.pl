@@ -164,7 +164,7 @@ sub multi_choice (@) {
     my ($prompt, @strings) = @_;
 
     scalar @strings > 0
-        or return undef;
+        or return ();
 
     my %selected = map { $_ => 0 } @strings;
 
