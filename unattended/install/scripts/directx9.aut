@@ -2,13 +2,13 @@
 
 Run, z:\\packages\\DirectX9\\dxsetup.exe /installmanageddx
 
-WinWait, Installing Microsoft(R) DirectX(R) 
-WinActivate, Installing Microsoft(R) DirectX(R) 
+WinWait, Installing Microsoft(R) DirectX(R)
+WinActivate, Installing Microsoft(R) DirectX(R)
 Send, !an
-WinWait, Installing Microsoft(R) DirectX(R) 
-WinActivate, Installing Microsoft(R) DirectX(R) 
+WinWait, Installing Microsoft(R) DirectX(R)
+WinActivate, Installing Microsoft(R) DirectX(R)
 Send, !n
 
 WinWait, Installing Microsoft(R) DirectX(R), Finish
-WinActivate, Installing Microsoft(R) DirectX(R) 
+WinActivate, Installing Microsoft(R) DirectX(R)
 Send, {ENTER}
