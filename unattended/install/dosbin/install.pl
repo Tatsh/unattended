@@ -486,7 +486,7 @@ set_value ('_meta', 'format_cmd',
 #            sub {
 #                # Stupid hack: Need to use full path here or net.exe
 #                # gets confused.
-#                my $cmd = 'a:\\net\\net diag /status < z:\\doslib\\crlf.txt';
+#                my $cmd = 'a:\\net\\net diag /status < z:\\lib\\crlf.txt';
 #                foreach my $line (run_command ($cmd)) {
 #                    $line =~ /^Permanent node name: ([0-9A-F]+)\r?$/
 #                        and return $1;
@@ -658,7 +658,7 @@ set_value ('UserData', 'ProductKey',
 ## Now the meat of the script.
 
 # Read master unattend.txt.
-$u->read ('z:\\doslib\\unattend.txt');
+$u->read ('z:\\lib\\unattend.txt');
 
 # Read site-specific unattend.txt, if it exists.
 my $site_unattend_txt = 'z:\\site\\unattend.txt';
