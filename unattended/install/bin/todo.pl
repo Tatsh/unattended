@@ -253,3 +253,4 @@ todo.pl [ options ] <commands...>
 
 --help          Display help and exit
 --go            Process the to-do list
+
