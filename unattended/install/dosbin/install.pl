@@ -463,8 +463,6 @@ sub find_free_space ($) {
     open PARTED, "$cmd|"
         or die "Unable to fork: $^E";
 
-    my $max = 0;
-
     while (my $line = <PARTED>) {
         my ($start, $end) = ($line =~ /^\d+\s+(\d+\.\d{3})\s+(\d+\.\d{3})/);
         defined $end
@@ -783,9 +781,11 @@ sub batfile_first_lines () {
 }
 
 my $_dhcp_settings;
-# Get the DHCP settings into an associative array (linux only).
 
+# Get the DHCP settings into an associative array (linux only).
 sub dhcp_settings () {
+    $is_linux
+        or croak 'Internal error';
     if (!defined $_dhcp_settings) {
         $_dhcp_settings = { };
         my $dhcp = '/var/run/dhcp.out';
@@ -1399,9 +1399,17 @@ else {
 # Run formatting command, if any.
 my $format_cmd = $u->{'_meta'}->{'format_cmd'};
 # On DOS, format now.
-# On Linux, take care of it later (see below).
-!$is_linux && defined $format_cmd
-    and system $format_cmd;
+# On Linux, take care of it later.
+my @doit_cmds;
+if (defined $format_cmd) {
+    if ($is_linux) {
+        print "(Deferring format command to run under DOSEMU)\n";
+        push @doit_cmds, $format_cmd;
+    }
+    else {
+        system $format_cmd;
+    }
+}
 
 # Overwrite MBR, if desired.
 if ($u->{'_meta'}->{'replace_mbr'}) {
@@ -1434,18 +1442,12 @@ print "Creating $unattend_txt...";
 write_file ($unattend_txt, @unattend_contents);
 print "done.\n";
 
-# While DJGPP is running, there is not enough conventional memory
-# available for winnt.exe to work.  So we just drop the command in a
-# .bat script (doit.bat) and run it.
+# Batch script to run after this script exits.
 my $doit = "$netinst\\doit.bat";
-print "Creating $doit...";
-my @doit_cmds;
-if ($is_linux) {
-    defined $format_cmd
-        && push @doit_cmds, $format_cmd;
-    push @doit_cmds, 'xcopy /s /e /y Y:\\ C:\\';
-}
+$is_linux
+    and push @doit_cmds, 'xcopy /s /e /y Y:\\ C:\\';
 push @doit_cmds, split /;/, $u->{'_meta'}->{'doit_cmds'};
+print "Creating $doit...";
 write_file ($doit, @doit_cmds);
 print "done.\n";
 
