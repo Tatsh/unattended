@@ -72,7 +72,7 @@ lh cwsdpmi -p -s-
 set PERLLIB=Z:\lib
 echo Starting install.pl....
 perl Z:\dosbin\install.pl
-if errorlevel 1 goto reboot
+if errorlevel 1 goto end
 cwsdpmi -u
 
 :: XP install requires smartdrv (http://support.microsoft.com/?kbid=296814)
