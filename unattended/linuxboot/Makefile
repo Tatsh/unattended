@@ -19,32 +19,31 @@ samba=samba-3.0.2a
 
 cwd:=$(shell pwd)
 
-download_targets=$(patsubst %,download-%,$(bash) $(busybox) $(dosemu)	\
-	$(e2fsprogs) $(glibc) $(glibc-linuxthreads) $(klibc) $(linux)	\
-	$(module-init-tools) $(nano) $(ncurses) $(parted) $(perl)	\
-	$(pciutils) $(pcmcia-cs) $(samba)				\
-	)
+packages=$(bash) $(busybox) $(dosemu) $(e2fsprogs) $(glibc) $(klibc)	\
+	$(linux) $(module-init-tools) $(nano) $(ncurses) $(parted)	\
+	$(perl) $(pciutils) $(pcmcia-cs) $(samba)
 
-.PHONY: stage1 all download $(download_targets)	iso tftpboot
+.PHONY: stage1 all download $(download_targets)	$(symlink_targets) \
+	iso tftpboot tidy
 
 # Macro to generate rule for copying single file
 copy_file=					\
 $(2) : $(1)	;				\
-	mkdir -p `dirname $(2)` ;		\
+	mkdir -p $(dir $(2)) ;			\
 	cp -f $(1) $(2).tmp ;			\
 	mv $(2).tmp $(2)
 
 # Macro to generate rule for hard-linking single file
 link_file=					\
 $(2) : $(1)	;				\
-	mkdir -p `dirname $(2)` ;		\
+	mkdir -p $(dir $(2)) ;			\
 	ln -f $(1) $(2).tmp ;			\
 	mv $(2).tmp $(2)
 
 # Macro to generate rule for copying single executable
 copy_exe=					\
 $(2) : $(1)	;				\
-	mkdir -p `dirname $(2)` ;		\
+	mkdir -p $(dir $(2)) ;			\
 	cp -f $(1) $(2).tmp ;			\
 	strip $(2).tmp ;			\
 	mv $(2).tmp $(2)
@@ -52,68 +51,13 @@ $(2) : $(1)	;				\
 # Macro to generate rule for copying library file into stage1
 copy_lib=					\
 $(2) : $(1) stage1/etc/ld.so.conf ;		\
-	mkdir -p `dirname $(2)` &&		\
+	mkdir -p $(dir $(2)) &&			\
 	cp -f $(1) $(2).tmp &&			\
 	strip $(2).tmp &&			\
 	mv $(2).tmp $(2) &&			\
 	ldconfig -r stage1
 
-# Macro to generate download-foo rule to download and unpack a package
-# FIXME - This is horrid
-dest=.
-download_rule=								\
-download-$(strip $(1)) :  ;						\
-	what=$(strip $(1)) && suffix=$(strip $(2))			\
-	&& url=$(strip $(3)) && sub=$(strip $(4))			\
-	&& [ -d $$$$what ]						\
-	|| { [ -n "$$$$sub" ] || sub=.					\
-	&& temp=`mktemp /var/tmp/dl.XXXXXX`				\
-	&& wget -O $$$$temp $$$$url$$$$what.$$$$suffix			\
-	&& case $$$$suffix in						\
-		*.gz|tgz) prog="gzip -d -c" ;;				\
-		*.bz2) prog="bzcat -c" ;;				\
-		*) prog=cat ;;						\
-	esac								\
-	&& { echo $$$$prog ;						\
-	$$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }		\
-	&& { [ "$$$$sub" == . ] || ln -sf "$$$$sub" "$$$$what" ; }	\
-	&& { [ "$$$$sub" != . ] || [ "$(dest)" == . ] 			\
-		|| ln -sf $(dest)/$$$$what . ; }			\
-	&& rm $$$$temp ;						\
-	}
-
 all: iso tftpboot
-
-download-$(glibc-linuxthreads) : download-$(glibc)
-
-download: $(download_targets)
-
-$(call download_rule, $(bash), tar.gz, http://ftp.gnu.org/gnu/bash/)
-$(call download_rule, $(busybox), tar.bz2, http://busybox.net/downloads/)
-$(call download_rule, $(dosemu), tgz,					\
-	http://dl.sourceforge.net/sourceforge/dosemu/)
-$(call download_rule, $(e2fsprogs), tar.gz,			\
-	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
-$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
-# Awful hack
-$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
-	http://ftp.gnu.org/gnu/glibc/, $(glibc))
-$(call download_rule, $(klibc), tar.bz2,		\
-	http://ftp.kernel.org/pub/linux/libs/klibc/)
-$(call download_rule, $(linux), tar.bz2,		\
-	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
-$(call download_rule, $(module-init-tools), tar.bz2,			 \
-	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
-$(call download_rule, $(nano), tar.gz, \
-	http://www.ewtoo.org/~astyanax/nano/dist/v1.2/)
-$(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
-$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
-$(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
-$(call download_rule, $(pciutils), tar.bz2,			\
-	http://ftp.kernel.org/pub/software/utils/pciutils/)
-$(call download_rule, $(pcmcia-cs), tar.gz,			\
-	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
-$(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
 
 
 ## module-init-tools (depmod et. al.)
@@ -231,7 +175,7 @@ stage1 += stage1/etc/dosemu/dosemu.conf
 
 # Trick dosemu into thinking we already agreed to its disclaimer
 stage1/.dosemu/disclaimer:
-	mkdir -p `dirname $@`
+	mkdir -p $(dir $@)
 	touch $@
 
 stage1 += stage1/.dosemu/disclaimer
@@ -249,7 +193,7 @@ $(call copy_file,misc/config.sys,dosboot/config.sys)
 stage1/var/lib/dosemu/drives/dosboot.img: dosboot/autoexec.bat \
 				dosboot/config.sys dosboot/lredir.com \
 				../bootdisk/empty-boot.img.gz
-	mkdir -p `dirname $@`
+	mkdir -p $(dir $@)
 	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&		\
 	echo 'drive x:' > $$tmpfile &&				\
 	echo file=\"$(cwd)/"$@.tmp"\" >> $$tmpfile &&		\
@@ -302,7 +246,7 @@ $(call copy_file, build-$(glibc)/libc_nonshared.a, \
 	fakelib/libc_nonshared.a)
 
 fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
-	mkdir -p `dirname $@`
+	mkdir -p $(dir $@)
 	echo "OUTPUT_FORMAT(elf32-i386)" >| $@.tmp
 	echo "GROUP ( $(cwd)/stage1/lib/libc.so.6 \
 		$(cwd)/fakelib/libc_nonshared.a )" >> $@.tmp
@@ -310,9 +254,9 @@ fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
 
 # "Fake" headers, too
 fakeinclude/stdio.h: fakelib/libc.so stage1/lib/libdl.so
-	mkdir -p `dirname $@`
+	mkdir -p $(dir $@)
 	cd build-$(glibc)						    \
-		&& make inst_includedir=$(cwd)/`dirname $@` install-headers
+		&& make inst_includedir=$(cwd)/$(dir $@) install-headers
 	[ -e $@ ] && touch $@
 
 # Variable for use in CFLAGS to convince utilities to compile/link
@@ -400,7 +344,7 @@ $(ncurses)/lib/libncurses.so: fakeinclude/stdio.h
 
 fakeinclude/curses.h: stage1/usr/lib/libncurses.so
 	cd $(ncurses)						\
-	&& make includedir=$(cwd)/`dirname $@` install.includes
+	&& make includedir=$(cwd)/$(dir $@) install.includes
 	[ -e $@ ] && touch $@
 
 $(call copy_lib, $(ncurses)/lib/libncurses.so, stage1/usr/lib/libncurses.so)
@@ -592,3 +536,87 @@ $(call link_file,iso/isolinux/initrd,tftpboot/initrd)
 $(call link_file,iso/isolinux/isolinux.cfg,tftpboot/pxelinux.cfg/default)
 
 tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default
+
+## Maintainer targets
+
+# Macro to generate download-foo rule to download and unpack a package
+# FIXME - This is horrid
+dest=.
+download_rule=								\
+download-$(strip $(1)) :  ;						\
+	what=$(strip $(1)) && suffix=$(strip $(2))			\
+	&& url=$(strip $(3)) && sub=$(strip $(4))			\
+	&& [ -d $$$$what ]						\
+	|| { [ -n "$$$$sub" ] || sub=.					\
+	&& temp=`mktemp /var/tmp/dl.XXXXXX`				\
+	&& wget -O $$$$temp $$$$url$$$$what.$$$$suffix			\
+	&& case $$$$suffix in						\
+		*.gz|tgz) prog="gzip -d -c" ;;				\
+		*.bz2) prog="bzcat -c" ;;				\
+		*) prog=cat ;;						\
+	esac								\
+	&& { echo $$$$prog ;						\
+	$$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }		\
+	&& { [ "$$$$sub" == . ] || ln -sf "$$$$sub" "$$$$what" ; }	\
+	&& { [ "$$$$sub" != . ] || [ "$(dest)" == . ] 			\
+		|| ln -sf $(dest)/$$$$what . ; }			\
+	&& rm $$$$temp ;						\
+	}
+
+download_targets=$(addprefix download-,$(packages) $(glibc-linuxthreads))
+
+download-$(glibc-linuxthreads) : download-$(glibc)
+
+download: $(download_targets)
+
+$(call download_rule, $(bash), tar.gz, http://ftp.gnu.org/gnu/bash/)
+$(call download_rule, $(busybox), tar.bz2, http://busybox.net/downloads/)
+$(call download_rule, $(dosemu), tgz,					\
+	http://dl.sourceforge.net/sourceforge/dosemu/)
+$(call download_rule, $(e2fsprogs), tar.gz,			\
+	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
+$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
+# Awful hack
+$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
+	http://ftp.gnu.org/gnu/glibc/, $(glibc))
+$(call download_rule, $(klibc), tar.bz2,		\
+	http://ftp.kernel.org/pub/linux/libs/klibc/)
+$(call download_rule, $(linux), tar.bz2,		\
+	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
+$(call download_rule, $(module-init-tools), tar.bz2,			 \
+	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
+$(call download_rule, $(nano), tar.gz, \
+	http://www.ewtoo.org/~astyanax/nano/dist/v1.2/)
+$(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
+$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
+$(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
+$(call download_rule, $(pciutils), tar.bz2,			\
+	http://ftp.kernel.org/pub/software/utils/pciutils/)
+$(call download_rule, $(pcmcia-cs), tar.gz,			\
+	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
+$(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
+
+symlink_targets=$(addprefix symlink-,$(packages))
+
+$(symlink_targets):
+	@if [ -z "$(dest)" ] || [ "$(dest)" == . ] ; then	\
+		echo "You forgot to set dest=" ;		\
+		exit 1 ;					\
+	fi
+	target=$(patsubst symlink-%,%,$@)			\
+	&& if [ ! -e "$(dest)/$$target" ] ; then		\
+		echo "$(dest)/$$target does not exist!" ;	\
+		exit 1 ;					\
+	fi							\
+	&& ln -sf "$(dest)/$$target" "$$target.tmp"		\
+	&& mv "$$target.tmp" "$$target"
+
+symlinks: $(symlink_targets)
+
+# Blow away everything we do not want to ship
+tidy:
+	rm -f $(symlink_targets)
+	rm -rf iso
+	rm -rf stage1
+	rm -rf stage2
+	rm initrd
