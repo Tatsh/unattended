@@ -145,6 +145,41 @@ if [ -z "$did_something" ] ; then
     die "So close!  Oh, well."
 fi
 
+# Obtain and export the legacy BIOS disk geometry, which is needed by
+# our partitioning tools.
+echo "*** Now we'll load the EDD module..."
+modprobe edd \
+    || die "'modprobe edd' exited with status $?"
+
+sleep 2         # paranoia
+
+edd_dir=/sys/firmware/edd/int13_dev80
+echo "*** And look for legacy BIOS disk geometry in $edd_dir"
+
+# Here we baldly assume that we have found the boot device (BIOS disk
+# 80h), and that this is the device the user wanted.  Need to fix this
+# up someday.  FIXME.
+if [ -d "$edd_dir" ] ; then
+    declare -i LEGACY_BIOS_HEAD LEGACY_BIOS_SECT
+    heads_file="$edd_dir/legacy_heads";
+    if [ -e "$heads_file" ] ; then 
+        export LEGACY_BIOS_HEAD="`cat $heads_file`"
+        # Heads value is useless until incremented
+        let LEGACY_BIOS_HEAD++
+    fi
+    sectors_file="$edd_dir/legacy_sectors";
+    [ -e "$sectors_file" ] \
+        && export LEGACY_BIOS_SECT="`cat $sectors_file`"
+else
+    echo "Directory not found."
+fi
+
+if [ -n "$LEGACY_BIOS_HEAD" ] && [ -n "$LEGACY_BIOS_SECT" ] ; then
+    echo "*** Legacy BIOS says $LEGACY_BIOS_HEAD heads and $LEGACY_BIOS_SECT sectors"
+else
+    echo "*** Found no legacy BIOS data.  Probably no big deal.  Continuing."
+fi
+
 echo "*** By Jove, I think we've got it!"
 
 # FIXME: Bad hack to work around dosemu bug running over network
