@@ -266,9 +266,12 @@ sub get_windows_language () {
     return $lang_table{$langid};
 }
 
-# Get the UNC path for a networked drive.
+# For input letter X, return the UNC path to which X: is connected.
+# If X is a not a networked drive, return "X:".
+use constant ERROR_NOT_CONNECTED => 2250;
 sub get_drive_path ($) {
     my ($drive) = @_;
+    my $ret;
 
     $drive =~ /^[a-z]:?$/i
         or die "Invalid drive specification $drive";
@@ -277,10 +280,18 @@ sub get_drive_path ($) {
     $drive =~ /:$/
         or $drive .= ':';
 
-    my $unc_name;
-    Win32::NetResource::GetUNCName ($unc_name, $drive)
-        or die "Unable to GetUNCName for $drive: $^E";
-    return $unc_name;
+    if (Win32::NetResource::GetUNCName ($ret, $drive)) {
+        # all done
+    }
+    elsif ($^E == ERROR_NOT_CONNECTED) {
+        # Not a network drive, so just return the drive letter itself.
+        $ret = $drive;
+    }
+    else {
+        die "Unable to GetUNCName for $drive: $^E";
+    }
+
+    return $ret;
 }
 
 # Set up console for single-character input and autoflush output.
