@@ -10,6 +10,7 @@ klibc=klibc-0.115
 linux=linux-2.6.3
 module-init-tools=module-init-tools-3.0-pre10
 parted=parted-1.6.6
+perl=perl-5.8.3
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.7
 samba=samba-3.0.2a
@@ -17,9 +18,8 @@ samba=samba-3.0.2a
 cwd:=$(shell pwd)
 
 download_targets=$(patsubst %,download-%,$(bash) $(busybox) $(dosemu)	\
-	$(e2fsprogs)							\
-	$(glibc) $(glibc-linuxthreads) $(klibc) $(linux)		\
-	$(module-init-tools) $(parted) $(pciutils) $(pcmcia-cs)		\
+	$(e2fsprogs) $(glibc) $(glibc-linuxthreads) $(klibc) $(linux)	\
+	$(module-init-tools) $(parted) $(perl) $(pciutils) $(pcmcia-cs)	\
 	$(samba)							\
 	)
 
@@ -66,9 +66,9 @@ download-$(strip $(1)) :  ;						\
 	esac								\
 	&& { echo $$$$prog ;						\
 	$$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }		\
-	&& { [ "$$$$sub" == . ] || ln -s "$$$$sub" "$$$$what" ; }	\
-	&& { [ "$(dest)" != . ] && [ "$$$$sub" == . ]			\
-		&& ln -sf $(dest)/$$$$what . ; }			\
+	&& { [ "$$$$sub" == . ] || ln -sf "$$$$sub" "$$$$what" ; }	\
+	&& { [ "$$$$sub" != . ] || [ "$(dest)" == . ] 			\
+		|| ln -sf $(dest)/$$$$what . ; }			\
 	&& rm $$$$temp ;						\
 	}
 
@@ -97,6 +97,7 @@ $(call download_rule, $(linux), tar.bz2,		\
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
+$(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
