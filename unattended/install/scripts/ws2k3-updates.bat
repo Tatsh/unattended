@@ -35,7 +35,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB829558-x86-%WINLAN
 :: IE Critical Updates
 
 :: Critical update 832894 (MS04-004)
-:: URL|ENU|http://download.microsoft.com/download/a/f/3/af318e61-4d69-42c3-90b9-e99676a5540c/WindowsServer2003-KB832894-x86-ENU.EXE|updates/ws2k3/WindowsServer2003-KB832894-x86-ENU.EXE
+:: URL|ENU|http://download.microsoft.com/download/a/f/3/af318e61-4d69-42c3-90b9-e99676a5540c/WindowsServer2003-KB832894-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb832894-x86-enu.exe
 :: "February, 2004, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=832894>
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-004.asp>
