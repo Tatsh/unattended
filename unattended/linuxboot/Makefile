@@ -7,6 +7,7 @@ glibc=glibc-2.3.2
 #glibc=glibc-20040306
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
+kbd=kbd-1.12
 klibc=klibc-0.115
 linux=linux-2.6.4
 module-init-tools=module-init-tools-3.0
@@ -20,9 +21,9 @@ samba=samba-3.0.2a
 
 cwd:=$(shell pwd)
 
-packages=$(bash) $(busybox) $(dosemu) $(e2fsprogs) $(glibc) $(klibc)	\
-	$(linux) $(module-init-tools) $(nano) $(ncurses) $(parted)	\
-	$(perl) $(pciutils) $(pcmcia-cs) $(samba)
+packages=$(bash) $(busybox) $(dosemu) $(e2fsprogs) $(glibc) $(kbd)	\
+	$(klibc) $(linux) $(module-init-tools) $(nano) $(ncurses)	\
+	$(parted) $(perl) $(pciutils) $(pcmcia-cs) $(samba)
 
 .PHONY: stage1 all download $(download_targets)	$(symlink_targets) \
 	iso tftpboot tidy
@@ -115,16 +116,19 @@ $(klibc)/ash/sh:
 
 $(call copy_exe,$(klibc)/ash/sh,stage1/bin/ash)
 
+$(klibc)/gzip/gzip: $(klibc)/ash/sh
+	[ -e $@ ] && touch $@
+$(call copy_exe,$(klibc)/gzip/gzip,stage1/bin/gzip)
+
 $(klibc)/utils/static/mkdir: $(klibc)/ash/sh
 	[ -e $@ ] && touch $@
 $(call copy_exe,$(klibc)/utils/static/mkdir,stage1/bin/mkdir)
 
 $(klibc)/utils/static/mount: $(klibc)/ash/sh
 	[ -e $@ ] && touch $@
-
 $(call copy_exe,$(klibc)/utils/static/mount,stage1/bin/mount)
 
-stage1 += stage1/bin/ash stage1/bin/mkdir stage1/bin/mount
+stage1 += stage1/bin/ash stage1/bin/gzip stage1/bin/mkdir stage1/bin/mount
 
 ## bash
 $(bash)/bash:
@@ -315,6 +319,27 @@ stage1 +=							\
 	  libm.so libutil.so					\
 	)
 
+## kbd
+$(kbd)/src/loadkeys:
+	cd $(kbd)					\
+	&& export CFLAGS="$(fakelib_cflags) -O2"	\
+	&& ./configure					\
+	&& make CFLAGS="$$CFLAGS"
+
+stage1/bin/loadkeys:
+	cd $(kbd)				\
+	&& make DESTDIR=$(cwd)/stage1 install
+	rm -r stage1/usr/share/locale
+	rm stage1/usr/bin/{deallocvt,dumpkeys,fgconsole,getkeycodes}	\
+		stage1/usr/bin/{kbdrate,loadunimap,mapscrn}		\
+		stage1/usr/bin/psf*table				\
+		stage1/usr/bin/{resizecons,setkeycodes,setleds}		\
+		stage1/usr/bin/{setmetamode,showconsolefont,showkey}
+	[ -e $@ ] && touch $@
+
+stage1 += stage1/bin/loadkeys
+
+## nano
 $(nano)/nano: fakeinclude/stdio.h fakeinclude/curses.h
 	cd $(nano)							    \
 	&& CFLAGS="$(fakelib_cflags)"					    \
@@ -584,6 +609,8 @@ $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 # Awful hack
 $(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
 	http://ftp.gnu.org/gnu/glibc/, $(glibc))
+$(call download_rule, $(kbd), tar.bz2,			\
+	http://ftp.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(klibc), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/libs/klibc/)
 $(call download_rule, $(linux), tar.bz2,		\
