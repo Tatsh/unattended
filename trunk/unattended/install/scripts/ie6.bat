@@ -19,4 +19,4 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 :: <http://support.microsoft.com/?kbid=318203>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dahotfix /q /n\""
 
-todo.pl ".reboot-on 194 %Z%\packages\ie6sp1\IE6setup.exe /q /r:n"
+todo.pl ".reboot-on 194 %Z%\packages\ie6sp1\%WINLANG%\IE6setup.exe /q /r:n"
