@@ -13,6 +13,9 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB817778-x86-ENU.exe /u 
 
 :: Microsoft DirectX 9.0b update
 :: <http://www.microsoft.com/directx/>
+:: Download the redistributable for developers (dx90b_redist.exe) and
+:: extract it to z:\packages\DirectX.
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=a6dee0db-dcce-43ea-87bb-7c7e1fd1eaa2>
 :: (Requires .NET to be installed first for managed DX)
 todo.pl ".expect-reboot AutoIt z:\scripts\directx9.aut"
 
@@ -59,7 +62,8 @@ todo.pl "z:\packages\winxpsp1\WindowsXP-KB282010-x86-ENU.exe /u /n /z"
 todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB820291-x86-ENU.exe /u /n /z" .reboot
 
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
-:: <http://www.microsoft.com/technet/treeview/default.asp?url=/technet/security/bulletin/MS03-021.asp>
+:: <http://support.microsoft.com/?kbid=819639>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
 todo.pl "z:\packages\winxpsp1\windowsmedia9-kb819639-x86-enu.exe /Q /R:N" .reboot
 
 :: Trick to skip EULA on Media Player 9 
