@@ -1,4 +1,3 @@
-#bash=bash-2.05b
 bash=bash-3.0
 busybox=busybox-1.00
 # Convert::ASN1 is required by perl-ldap
@@ -7,7 +6,6 @@ dbd-mysql=DBD-mysql-2.9005_3
 dbi=DBI-1.46
 dmidecode=dmidecode-2.5
 dosemu=dosemu-1.2.2
-#dosemu=dosemu-20040723
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
 glibc=glibc-20041122
@@ -827,8 +825,6 @@ $(call download_rule, $(dmidecode), tar.bz2,	\
 	http://nongnu.org/download/dmidecode/)
 $(call download_rule, $(dosemu), tgz,					\
 	http://dl.sourceforge.net/sourceforge/dosemu/)
-#$(call cvs_rule, $(dosemu), dosemu,				\
-#	:pserver:anonymous@cvs.sourceforge.net:/cvsroot/dosemu)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
 #$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
