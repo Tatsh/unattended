@@ -1,7 +1,5 @@
 #!/bin/sh
 
-domain=CURL
-
 echo "Welcome to the new boot disk!"
 
 echo
@@ -137,17 +135,21 @@ else
     exit 1
 fi
 
-echo
-echo -n "For whom is this machine (0 or more usernames)? "
-read tmp_users
+# Offer to add domain accounts to local Administrators group
+defaultdomain=CURL
+if [ "$defaultdomain" != "" ] ; then
+    echo
+    echo -n "For whom is this machine (0 or more usernames)? "
+    read tmp_users
 
-for user in $tmp_users ; do
-    if [ "${user##*\\}" == "$user" ] ; then
-        # username does not include "\", so prepend domain
-        user="$domain\\$user";
-    fi
-    admin_users="$admin_users $user";
-done
+    for user in $tmp_users ; do
+        if [ "${user##*\\}" == "$user" ] ; then
+            # username does not include "\", so prepend default domain
+            user="$defaultdomain\\$user";
+        fi
+        admin_users="$admin_users $user";
+    done
+fi
 
 echo
 if [ "$admin_users" == "" ] ; then
@@ -210,11 +212,9 @@ echo "done."
 postinst="$netinst\\postinst.bat"
 
 echo -n "Creating default $postinst file..."
-echo "set top=$top" >> $postinst
-echo >> $postinst
 echo "net use z: $INSTALL /persistent:yes" >> $postinst
 echo "call z:\\scripts\\perl.bat" >> $postinst
-echo "z:\\bin\\todo.pl %top%.bat \"autolog.pl --disable\" .reboot" >> $postinst
+echo "z:\\bin\\todo.pl $top.bat \"autolog.pl --disable\" .reboot" >> $postinst
 for user in $admin_users ; do
     echo "z:\\bin\\todo.pl \"net localgroup Administrators $user /add\"" >> $postinst
 done
