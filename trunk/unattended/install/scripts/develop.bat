@@ -4,8 +4,6 @@
 :: case-insensitive), so delete it.
 del C:\Perl\bin\HEAD
 
-todo.pl gt.bat perforce.bat
-
 todo.pl php.bat emacs.bat cygwin.bat vs6.bat vsnet.bat msdn.bat %%WINVER%%-symbols.bat
 
 todo.pl base.bat 
