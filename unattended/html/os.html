@@ -134,7 +134,7 @@ href="http://www.delorie.com/djgpp/">DJGPP</a>, a collection of Unix
 tools for DOS.  DJGPP is required because the master installation
 script is written in Perl.  This one is too big to bundle, so you will
 need to download it yourself; <a href="#djgpp">see below</a> for
-instructions.  (Yes, it is worth it.)
+instructions.
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/dosbin/"
@@ -215,9 +215,21 @@ href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2misc/csdpmi5b.zip"
 href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu/perl561b.zip"
 >v2gnu/perl561b.zip</a>)
 
+<li>The Pico text editor (<a
+href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2apps/pico396b.zip"
+>v2apps/pico396b.zip</a>)
+
 </ul>
 
 <p>Simply unzip all of them under <code>Z:\djgpp</code>.
+
+<p><b>Unix users please note:</b> Use the <kbd>-L</kbd> switch to
+<code>unzip</code> when you extract these.  Otherwise, you may find
+that some files extract under <code>bin</code> while others extract
+under <code>BIN</code>, and this will cause all sorts of trouble when
+the system tries to access them from DOS.  Windows users do not need
+to worry about this, because Windows (like DOS) is not case-sensitive.
+
 
 <h2 id="cd-rom">Copy the Windows CD-ROM to the share</h2>
 <p>Copy the <code>i386</code> folder from your Windows CD-ROM to the
@@ -318,24 +330,19 @@ OS distribution point.
 
 <p>Under the <code>i386</code> folder on the distribution point,
 create a folder named <code>$oem$</code>.  Under <b>that</b> folder,
-create a folder named <code>$1</code>.  (Yes, really.)
+create a folder named <code>$1</code>.  Yes, really.
 <em>Windows&nbsp;Setup</em> will copy everything below the
-<code>$1</code> folder to the <code>C:</code> drive during
-installation.
+<code>$1</code> folder to the <code>%SystemDrive%</code> (normally
+<code>C:</code>) during installation.
 
-<p>You may put the driver folder anywhere you like under the
-<code>$1</code> directory, as long as you add it to
-<code>OemPnPDriversPath</code> in the <a
-href="#answer-file"><code>unattend.txt</code></a> file.
+<p>You may put your driver folder anywhere you like under the
+<code>$1</code> folder, and you may add as many driver folders as you
+like.  The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>install.pl</a> script will automatically scan for all driver folders
+and offer to add them to the <code>OemPnPDriversPath</code> setting in
+the <a href="#answer-file"><code>unattend.txt</code></a> file for you.
 
-<p>For example, at my site we have a folder named
-<code>Z:\win2ksp3\i386\$oem$\$1\drivers\net\IntelPRO</code> which
-holds the Intel&nbsp;Pro/100 network family drivers, and we have a
-folder named <code>Z:\win2ksp3\i386\$oem$\$1\drivers\video\T22</code>
-which holds the video drivers for the IBM ThinkPad T22 laptop.  Both
-of these paths, starting from the <code>drivers\</code> level, appear
-in <code>OemPnPDriversPath</code> in our <code>unattend.txt</code>
-file.
 
 <h1 id="bootdisk">Create the bootdisk</h1>
 
@@ -588,8 +595,8 @@ drive.
 
 <p>This can be complicated for two reasons.  First, any change to the
 partition table requires rebooting the system.  Second, DOS cannot
-access NTFS partitions, but NTFS is the file system you almost
-certainly want to use for your primary Windows partition.
+access NTFS partitions, but NTFS is almost certainly the file system
+you want to use for your primary Windows partition.
 
 <p>The installation script hides this complexity from you by offering
 a simple menu of several automated partitioning schemes.  If none of
@@ -609,10 +616,10 @@ drive.  If this is a problem for you, let me know and maybe I will
 change it in a future release.
 
 <p>After the reboot, the installation script will begin by offering to
-partition the drive again.  (It has no way to know that the drive is
-already partitioned correctly.)  Simply select the menu option to "Do
-nothing (continue)".
-
+partition the drive again.  Simply choose the same partitioning scheme
+again, and the script will notice that the partition table is not
+changing and continue.  Or just select the menu option to "Do nothing
+(continue)".
 
 <h2>Formatting</h2>
 
@@ -633,7 +640,7 @@ href="#install-share">distribution point</a>.
 <p>The installation script will ask you for your 25-character product
 key.  Enter it exactly as it appears on your software license, with a
 dash between every block of five characters (like
-"12345-6789AB-CDEFG-HIJKL-MNOPQ").
+"12345-6789A-BCDEF-GHIJK-LMNOP").
 
 <h2>Computer name</h2>
 
@@ -685,13 +692,13 @@ href="apps.html">application installation page</a>.
 is your chance to make any manual alterations to the scripts before
 the installation begins.
 
-<p>The <code>unattend.txt</code> is <a href="#answer-file">described
-above</a>.  The <code>postinst.bat</code> will run when OS
-installation is finished, unless you edit the default
-<code>GuiRunOnce</code> section in <code>unattend.txt</code>.  The
-<code>doit.bat</code> script will run when you select "Continue"; it
-is a one-liner which fires off the unattended
-<em>Windows&nbsp;Setup</em> process.
+<p>The <code>unattend.txt</code> file is <a
+href="#answer-file">described above</a>.  The
+<code>postinst.bat</code> script will run when OS installation is
+finished, unless you edit the default <code>GuiRunOnce</code> section
+in <code>unattend.txt</code>.  The <code>doit.bat</code> script will
+run when you select "Continue"; it is a one-liner which fires off the
+unattended <em>Windows&nbsp;Setup</em> process.
 
 <p>When you have finished making your changes, if any, select the
 "Continue" option.
