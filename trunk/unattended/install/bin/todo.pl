@@ -196,6 +196,55 @@ END {
     stop ();
 }
 
+# Always ignore successful status
+my %ignore_err = (0 => 1);
+
+sub do_cmd ($);
+sub do_cmd ($) {
+    my ($cmd) = @_;
+
+    if ($cmd =~ /^\./) {
+        if ($cmd eq '.reboot') {
+            my $next_cmd = peek_todo ();
+            # Coalesce multiple reboots into single reboot
+            if (!defined $next_cmd || $next_cmd ne '.reboot') {
+                # Arrange to run
+                # ourselves after reboot.
+                run_at_logon ("$0 --go");
+                reboot (5);
+                die "Internal error";
+            }
+        }
+        elsif ($cmd =~ /^\.expect-reboot\s+(.*)$/) {
+            my $new_cmd = $1;
+            # Arrange to run ourselves after reboot.
+            run_at_logon ("$0 --go");
+            do_cmd ($new_cmd);
+            print "Expecting previous command to reboot; exiting.\n";
+            exit 0;
+        }
+        elsif ($cmd =~ /^\.ignore-err\s+(\d+)\s+(.*)$/) {
+            local $ignore_err{$1} = 1;
+            do_cmd ($2);
+        }
+        elsif ($cmd =~ /^\.sleep\s+(\d+)$/) {
+            my ($secs) = $1;
+            print "Sleeping $secs seconds...";
+            sleep $secs;
+            print "done.\n";
+        }
+        else {
+            die "Unrecognized dot-command $cmd";
+        }
+    }
+    else {
+        print "Running: $cmd\n";
+        my $ret = system $cmd;
+        ($ignore_err{$ret >> 8})
+            or die "$cmd failed, status ", $ret >> 8, '.', $ret % 256;
+    }
+}
+
 if (exists $opts{'go'}) {
     @ARGV == 0
         or pod2usage (2);
@@ -218,43 +267,7 @@ if (exists $opts{'go'}) {
     run_at_logon ();
 
     while (defined (my $cmd = pop_todo ())) {
-        my $err_to_ignore = 0;
-
-        if ($cmd =~ /^\./) {
-            if ($cmd eq '.reboot') {
-                my $next_cmd = peek_todo ();
-                if (defined $next_cmd) {
-                    # Coalesce multiple reboots into single reboot
-                    $next_cmd eq '.reboot'
-                        and next;
-
-                    # We have more work to do, so arrange to run
-                    # ourselves after reboot.
-                    run_at_logon ("$0 --go");
-                }
-                reboot (5);
-                die "Internal error";
-            }
-            elsif ($cmd =~ /^\.ignore-err\s+(\d+)\s+(.*)$/) {
-                $err_to_ignore = $1;
-                $cmd = $2;
-            }
-            elsif ($cmd =~ /^\.sleep\s+(\d+)$/) {
-                my ($secs) = $1;
-                print "Sleeping $secs seconds...";
-                sleep $secs;
-                print "done.\n";
-                next;
-            }
-            else {
-                die "Unrecognized dot-command $cmd";
-            }
-        }
-
-        print "Running: $cmd\n";
-        my $ret = system $cmd;
-        $ret == 0 || ($ret >> 8) == $err_to_ignore
-            or die "$cmd failed, status ", $ret >> 8, '.', $ret % 256;
+        do_cmd ($cmd);
     }
 }
 else {
