@@ -1,0 +1,10 @@
+All of the source code, text, and HTML documents here were written by
+me.  They are hereby licensed under version 2 of the GNU General
+Public License, available at <http://www.gnu.org/copyleft/gpl.html>
+and elsewhere.
+
+The binaries are all readily available for free download as documented
+in various README.txt files throughout the distribution.  Perhaps I am
+not suppoed to be redistributing them...  So someday I will probably
+remove them all and replace them with automated scripts to download
+and unpack them.  That would sure be a good use of time.
