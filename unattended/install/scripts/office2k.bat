@@ -7,6 +7,10 @@ todo.pl .reboot
 :: <http://support.microsoft.com/?kbid=811167>
 todo.pl "z:\packages\Olk0901.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\Olk0901.txt /p OMIop.msp REBOOT=ReallySuppress\""
 
+:: Install View Control Security Update
+:: (part of SP3, but not installed via MSI)
+todo.pl "z:\packages\o2ksp3.exe /q /c:\"outlctlx.exe /q /r:n\""
+
 :: Install Service Pack 3
 :: See <http://support.microsoft.com/?kbid=326585>
 :: Download from:
