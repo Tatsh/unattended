@@ -1,3 +1,9 @@
+** Changes in version 4.2c (2004-May-21)
+
+(Linux) Fix support for SCSI hardware; whoops again.  Thanks to Tyler
+Hepworth.
+
+
 ** Changes in version 4.2b (2004-May-17)
 
 (Linux) Fix nasty little typo in master script; whoops.  Thanks to
