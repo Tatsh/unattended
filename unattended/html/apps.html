@@ -47,9 +47,9 @@ And so on.
 other installation scripts.  You might expect this to be trivial,
 until you remember that installing some software requires rebooting
 the machine.  So if (say) <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?view=auto"
 >sales.bat</a> begins by invoking <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?view=auto"
 >base.bat</a>, which needs to reboot the machine halfway through, how
 exactly do you resume where you left off?  <a href="#todo">See
 below</a> for my answer.
@@ -136,7 +136,7 @@ before some of the sample scripts will work.
 </dl>
 
 <h1 id="todo">The <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/todo.pl?rev=HEAD&amp;view=auto">todo.pl</a>
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/todo.pl?view=auto">todo.pl</a>
 driver script</h1>
 
 <h2>One script to rule them all</h2>
@@ -296,7 +296,7 @@ for things there.  Since <code>Z:</code> is only used during the
 installation process, users may not have it mapped, so installing from
 <code>Z:</code> can cause the application to fail later.  For such
 applications, <code>Z_PATH</code> provides a workaround; see <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/msdn.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/msdn.bat?view=auto"
 >msdn.bat</a> for an example.
 
 <h1>Examples</h1>
@@ -308,7 +308,7 @@ href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/script
 <h2>Acrobat reader</h2>
 
 <p>The <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/acrobat-reader.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/acrobat-reader.bat?view=auto"
 >acrobat-reader.bat</a> script installs Adobe Acrobat reader.  This is
 about as simple as an installation script can get.
 
@@ -326,7 +326,7 @@ of allowing <code>todo.pl</code> to do its job.
 <h2>DirectX 8.1</h2>
 
 <p>The <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/directx81.bat?rev=HEAD&amp;view=auto">directx81.bat</a>
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/directx81.bat?view=auto">directx81.bat</a>
 script installs DirectX 8.1 and reboots the machine.  First, it adds
 the <code>.reboot</code> directive to the to-do list.  Then it runs
 the DirectX installer from the <code>Z:\packages</code> directory,
@@ -374,7 +374,7 @@ both installed, even though the machine had to reboot in the middle.
 <h2>A more complex example</h2>
 
 <p>The <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/winxpsp1-updates.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/winxpsp1-updates.bat?view=auto"
 >winxpsp1-updates.bat</a> script installs all of Microsoft's
 "critical" and "recommended" updates for Windows XP Service
 Pack&nbsp;1.  All this script does is push a bunch of items onto the
@@ -400,22 +400,22 @@ another way, "<code>todo.pl&nbsp;X</code>" followed by
 <h2>A high-level example</h2>
 
 <p>The <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?view=auto"
 >base.bat</a> script performs a "base workstation" installation for my
 organization.  This includes a bunch of free software.
 
 <p>This example illustrates the use of the <a
 href="#WINVER">WINVER</a> environment variable.  The
 <kbd>%WINVER%-updates.bat</kbd> name, for example, will expand to <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/win2ksp4-updates.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/win2ksp4-updates.bat?view=auto"
 >win2ksp4-updates.bat</a> on Windows 2000 Service Pack 4 and <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/winxpsp1-updates.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/winxpsp1-updates.bat?view=auto"
 >winxpsp1-updates.bat</a> on Windows XP Service Pack 1.
 
 <h2>A higher-level example</h2>
 
 <p>The <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?view=auto"
 >sales.bat</a> script performs a "salesperson laptop" installation for
 my organization.  As you can see, this just performs a base
 installation, then adds Microsoft Office, Lotus Notes, the AT&amp;T
@@ -426,9 +426,9 @@ Intel Netstructure VPN client, but I fear change).
 low-level scripts into high-level ones, no matter how many reboots the
 low-level scripts perform.  Observe that if you make a change to the
 configuration in <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?view=auto"
 >base.bat</a>, the <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?view=auto"
 >sales.bat</a> script will automatically inherit it.
 
 <p>Unlimited composability is nice.
@@ -455,7 +455,7 @@ XP, and it is available as a free download for NT.
 
 <dl>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/auconfig.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/auconfig.pl?view=auto"
 name="auconfig" >auconfig.pl</a>
 
 <dd>Configures the Automatic Updates feature introduced with Windows
@@ -467,7 +467,7 @@ Reboot to make the changes take effect.
 <p>
 
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/autolog.pl?rev=HEAD&amp;view=auto" name="autolog"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/autolog.pl?view=auto" name="autolog"
 >autolog.pl</a>
 
 <dd>Patches the registry to enable or disable the "automatic logon"
@@ -477,7 +477,7 @@ facility.  Can also set the default user name and domain.  Run
 <p>
 
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/bootini.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/bootini.pl?view=auto"
 >bootini.pl</a>
 
 <dd>For some reason, all of my unattended installations end up
@@ -488,7 +488,7 @@ to get rid of the useless menu option.
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/defrag.aut?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/defrag.aut?view=auto"
 >defrag.aut</a>
 
 <dd>This is an <a href="installers.html#autoit">AutoIt</a> script to
@@ -500,7 +500,7 @@ space), then again just before delivering the machine to the user.
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/hidepw.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/hidepw.pl?view=auto"
 >hidepw.pl</a>
 
 <dd>According to Microsoft's <a href="advanced.html#guide"><em>Guide
@@ -511,7 +511,7 @@ to replace all passwords in <code>unattend.txt</code> with X marks.
 <p>
 
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/instances.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/instances.pl?view=auto"
 name="instances">instances.pl</a>
 
 <dd>WMI has many useful <a
@@ -532,7 +532,7 @@ href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_baseboard.asp"
 <p>
 
  <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/instsrv.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/instsrv.pl?view=auto"
 >instsrv.pl</a>
  
 <dd>The <a
@@ -550,7 +550,7 @@ passwords in world-readable scripts, and I hate using the GUI.
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/rdconfig.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/rdconfig.pl?view=auto"
 name="rdconfig" >rdconfig.pl</a>
 
 <dd>This script enables or disables the Remote Desktop service
@@ -565,7 +565,7 @@ href="http://msdn.microsoft.com/library/en-us/termserv/termserv/win32_terminalse
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/setenv.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/setenv.pl?view=auto"
 name="setenv" >setenv.pl</a>
 
 <dd>This script takes two arguments, a variable name and a value.  It
@@ -576,7 +576,7 @@ it with <kbd>--help</kbd> for more information.
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/shortcut.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/shortcut.pl?view=auto"
 name="shortcut" >shortcut.pl</a>
 
 <dd>This script creates a Windows shortcut.  What makes it interesting
@@ -591,7 +591,7 @@ to create a desktop shortcut for all users.
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/shutdown.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/shutdown.pl?view=auto"
 name="shutdown" >shutdown.pl</a>
 
 <dd>Once upon a time, you could get <code>shutdown.exe</code> from the
@@ -611,7 +611,7 @@ instead.  But I am including it anyway for the heck of it.)
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/startup-type.pl?rev=HEAD&amp;view=auto" name="startup-type"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/startup-type.pl?view=auto" name="startup-type"
 >startup-type.pl</a>
 
 <dd>This script lets you set the "startup type" (<em>automatic</em>,
@@ -621,7 +621,7 @@ but I got tired of looking for them and wrote my own.
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/win2ksp4-notips.pl?rev=HEAD&amp;view=auto" name="2k-notips"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/win2ksp4-notips.pl?view=auto" name="2k-notips"
 >win2ksp4-notips.pl</a>
 
 <dd>As you are no doubt aware, Windows displays lots of annoying
@@ -638,7 +638,7 @@ you can edit this registry hive directly.
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/winxpsp1-notips.pl?rev=HEAD&amp;view=auto" name="xp-notips"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/winxpsp1-notips.pl?view=auto" name="xp-notips"
 >winxpsp1-notips.pl</a>
 
 <dd>Similarly, but for Windows XP Service Pack 1.  (Work in
@@ -647,7 +647,7 @@ progress...)
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/with-env.pl?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/with-env.pl?view=auto"
 name="with-env" >with-env.pl</a>
 
 <dd>This script allows the output of one command to specify the
@@ -670,9 +670,9 @@ around.  So, for example, I have a Perl script at my site
 Office&nbsp;XP product key for the current machine in a software
 license spreadsheet, and prints a single line of the form
 <code>PIDKEY=xxx</code>.  Then I invoke <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/officexp.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/officexp.bat?view=auto"
 >officexp.bat</a> from <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?view=auto"
 >sales.bat</a> like this:
 
 <pre>
