@@ -84,14 +84,14 @@ disabling automatic logon for next time.
 To automatically log on to the local machine as user "Administrator"
 with password "sekrit":
 
-  autolog.pl --user=Administrator --password=sekrit --domain=%COMPUTERNAME% --logon=1
+  autolog.pl --logon=1 --user=Administrator --password=sekrit
 
 To set the defaut user name and domain to MYDOM\someuser:
 
-  autolog.pl --user=someuser --domain=MYDOM --logon=0
+  autolog.pl --logon=0 --user=someuser --domain=MYDOM
 
-To disable automatic logon and clear the defaults, but retain the
-memory of who logged on last to set the defaults in future:
+To disable automatic logon and clear the defaults, but allow Windows
+to set the defaults in the future:
 
   autolog.pl --logon=0
 
