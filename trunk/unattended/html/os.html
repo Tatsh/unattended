@@ -29,22 +29,22 @@ go get a snack while the OS installs itself
 
 <h1 id="install-share">Create the OS distribution point</h1>
 
-<p>In principle, the OS distribution point could be CD-ROM or a local
-disk directory, but we are going to use a network share.
+<p>In principle, the OS distribution point could be a CD-ROM or a
+local disk directory, but we are going to use a network share.
 
 <h2>Create the \\ntinstall\install share</h2>
 <p>Copy the <code>install</code> directory tree from this project's
 distribution to a Windows file server (say, a Unix box running <a
 href="http://www.samba.org/">Samba</a>), and export it read-only with
 guest access permitted.  The sample scripts, and this documentation,
-assume that this share is named <code>\\ntinstall\install</code>.  In
+assume that this share is called <code>\\ntinstall\install</code>.  In
 other words, the name <code>ntinstall</code> is an alias for the file
 server and the share is named <code>install</code>.  If you want to
 use different names, that is OK, but you will need to modify the
 scripts to refer to it (just search for "ntinstall").
 
-<p>OS installation relies on these files and directories in the
-<code>install</code> share:
+<p>This procedure relies on the following files and directories from
+the <code>install</code> share:
 
 <dl>
 
@@ -56,8 +56,8 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 href="http://www.delorie.com/djgpp/">DJGPP</a>, a collection of Unix
 tools for DOS.  This one is too big to bundle, so you will need to
 download it yourself; <a href="#djgpp">see below</a> for instructions.
-(Is it really worth all this just so we can write a Bourne shell
-script instead of a <code>.bat</code> file?  Yes, it is.)
+(Is it really worth it just so we can write a Bourne shell script
+instead of a <code>.bat</code> file?  Yes, it is.)
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/dosbin/"
@@ -70,7 +70,7 @@ href="http://www.freedos.org/">FreeDOS</a> project.
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/install.sh?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >install.sh</a>
 
-<dd>Shell script run by <code>autoexec.bat</code> from the bootdisk.
+<dd>Shell script run by <code>autoexec.bat</code> on the bootdisk.
 This is the first entry point to the networked portion of the
 installation.  This script will ask you a bunch of questions, then
 start the actual unattended installation.  You may need to edit this
@@ -143,8 +143,8 @@ folder to <code>\\ntinstall\install\win2ksp3</code>.
 
 <h3 id="service-pack">Integrate the service pack (optional)</h3>
 
-<p>This step is optional; you can apply a service pack together with
-all the other hotfixes later.  But combining the service pack into the
+<p>This step is optional; you can apply a service pack just like you
+apply any other hotfix later.  But combining the service pack into the
 distribution point now will make installation faster.
 
 <p>To apply the service pack to the installation point, use the
@@ -179,6 +179,49 @@ to the target folder.
 
 </ol>
 
+<h3 id="drivers">Add device drivers</h3>
+
+<p>This step may be optional, depending on your hardware and which
+version of Windows you are trying to install.  Windows generally ships
+with a fairly rich collection of drivers, supporting most of the
+hardware which was current at the time.  However, if you are
+installing, say, Windows 2000 on a recent system (especially a
+laptop), you may find that it does not support some or all of your
+hardware.
+
+<p>You can add the device drivers later, of course.  But if you want
+to automate both OS and application installation, you will need to
+provide at least the proper network drivers on the OS distribution
+point.  Here is how to do it.
+
+<p>First, download the driver package from the hardware vendor and
+expand it.  There should be a collection of <code>.inf</code> files in
+the top-level directory or possibly a subdirectory; that is the
+directory you need to copy to the OS distribution share.
+
+<p>To where should you copy it?  That is a long story...
+
+<p>Under the <code>i386</code> folder, create a folder named
+<code>$oem$</code>.  Under <b>that</b> folder, create a folder named
+<code>$1</code>.  (Yes, really.)  Windows Setup will copy everything
+below the <code>$1</code> folder to the <code>C:</code> drive during
+installation.
+
+<p>You may put the driver folder anywhere you like under the
+<code>$1</code> directory, as long as you add it to
+<code>OemPnPDriversPath</code> in the <code>unattend.txt</code> file.
+(<a href="#answer-file">See below</a> for more informatoin on
+<code>unattend.txt</code>.)
+
+<p>For example, at my site we have a folder named
+<code>//ntinstall/install/win2ksp3/i386/$oem$/$1/drivers/net/IntelPRO</code>
+which holds the Intel Pro/100 network family drivers, and we have a
+folder named
+<code>//ntinstall/install/win2ksp3/i386/$oem$/$1/drivers/video/T22</code>
+which holds the video drivers for the IBM ThinkPad T22 laptop.  Both
+of these paths, starting with <code>drivers/</code> level, appear in
+<code>OemPnPDriversPath</code> in our <code>unattend.txt</code> file.
+
 <h1 id="bootdisk">Create the DOS network boot disk</h1>
 
 <p>The goal here is very simple: To boot to DOS so we can mount
@@ -192,13 +235,13 @@ href="http://mtools.linux.lu/">Mtools</a> suite installed on your Unix
 box.  (You probably already have them; type <kbd>mcopy</kbd> to find
 out.)
 
-<p>To create the ISO image, you will need the <a
+<p>To create the ISO image (optional), you will need the <a
 href="http://www.andante.org/mkisofs.html">mkisofs</a> utility.
 
-<p>For both the ISO image and the tftpboot directory, you will need
-parts of the <a href="http://syslinux.zytor.com/">SYSLINUX</a>
-package.  But the parts you need are small (one of the beauties of
-SYSLINUX), so I have included them in the distribution.
+<p>For the ISO image and the tftpboot directory (both optional), you
+will need parts of the <a href="http://syslinux.zytor.com/"
+>SYSLINUX</a> package.  But the parts you need are small (one of the
+beauties of SYSLINUX), so I have included them in the distribution.
 
 <h2>Booting from floppy</h2>
 
@@ -340,10 +383,9 @@ exported with "guest" access allowed, you can simply press
 user name and password to map the share.  You will then be able to
 install the operating system, but you may have problems when the
 process moves on to installing the applications, because that requires
-mapping the drive from Windows.
-
-<p>All in all, you are probably best off permitting (read-only) guest
-access to the <code>install</code> share.
+mapping the <code>Z:</code> drive from Windows.  All in all, you are
+probably best off permitting (read-only) guest access to the
+<code>install</code> share.
 
 <h2>Partitioning and formatting</h2>
 
@@ -351,14 +393,14 @@ access to the <code>install</code> share.
 and format the drive.
 
 <p>The partition table must have a small (< 2G) FAT partition for the
-<code>C:</code> drive.  Do not worry; Windows will later expand the
-partition to take up any adjacent free space and convert the partition
-to NTFS.
+<code>C:</code> drive.  Do not worry; Windows Setup will later expand
+the partition to take up any adjacent free space, and it will convert
+the partition to NTFS.
 
-<p>The menu will offer a few partitioning schemes which I like, as
-well as letting you partition the disk yourself.  Using any of these
-will reboot the machine to let the BIOS notice the partition table
-change.
+<p>The menu will offer to partition the disk automatically using a few
+layouts which I like, or you can partition the disk manually.  Using
+any of these options will reboot the machine to let the BIOS notice
+the partition table change.
 
 <p>Once you have a small FAT partition as the <code>C:</code> drive,
 you need to format it; just select that option from the menu.
@@ -398,6 +440,7 @@ the right flags to the installer (<code>i386\winnt.exe</code>),
 <code>install.sh</code> will cause <em>Windows Setup</em> to consult
 this file for the answers instead.
 
+<a name="guide">
 <p>The best documentation for the answer file is Microsoft's own
 <em>Microsoft Windows 2000 Guide to Unattended Setup</em>.  I
 recommend having this document handy as a reference.  Unfortunately,
@@ -420,7 +463,8 @@ with ; are comments.  If you fail to comment out a required key, like
 <em>ProductID</em>, the installation will stop at some point to throw
 up a dialog asking for your license key.
 
-<p>The most likely keys you will want to edit include:
+<p>The keys you will most likely want to edit include:
+
 <dl>
 <dt><em>FullName</em>
 <dd>The full name of the user of this computer.  The actual value is
@@ -460,10 +504,19 @@ the domain account and password to use to join the computer to the
 domain.  Note that <em>DomainAdmin</em> must be in fully-specified
 (<code>DOMAIN\user</code>) form.
 
+<dt>OemPnpDriversPath
+
+<dd>Specifies additions to the search path for Plug&amp;Play drivers.
+Elements of this path are separated by semicolons.  Windows uses this
+path when searching for a driver for a piece of hardware.  These paths
+are relative to the <code>C:</code> drive, and are usually used in
+conjunction with the <a href="#drivers"><code>$oem$/$1</code></a>
+mechanism.
+
 </dl>
 
-<p>These are just the most common keys; for a complete list, consult
-the <em>Guide to unattended setup</em>.
+<p>These are just a few important keys; for a complete list, consult
+the <a href="#guide"><em>Guide to Unattended Setup</em></a>.
 
 <p>Note that if you have standard settings for these keys at your
 site, you can edit the sample <code>unattend.txt</code> file on the
@@ -488,7 +541,7 @@ Patrick J. LoPresti <a
 href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
 </address>
 
-<A href="http://sourceforge.net"> <IMG align="right"
+<A href="http://sourceforge.net/"> <IMG align="right"
 src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
 width="210" height="62" border="0" alt="SourceForge Logo"></A>
 
