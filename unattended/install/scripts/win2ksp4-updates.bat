@@ -166,7 +166,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/d/b/e/dbe3a1da-48a3-4aaa-8ef3-efac2b3066a4/MPsetup.exe|packages/mediaplayer9/rus/mpsetup.exe
 :: URL|SVE|http://download.microsoft.com/download/1/6/c/16c7bf39-0f6a-4d06-8fd0-9d0dd0ca5b1a/MPSetup.exe|packages/mediaplayer9/sve/mpsetup.exe
 :: URL|TRK|http://download.microsoft.com/download/e/a/0/ea09f0a9-901d-499b-868d-0ebef90cc329/MPsetup.exe|packages/mediaplayer9/trk/mpsetup.exe
-todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\%WINLANG%\MPSetup.EXE /q /r:n /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /q /r:n\""
+todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\%WINLANG%\MPSetup.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
 
 :: Windows Messenger 5.0
 :: <http://support.microsoft.com/?kbid=835971>
