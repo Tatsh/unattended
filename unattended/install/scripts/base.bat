@@ -19,9 +19,8 @@ todo.pl "AutoIt z:\scripts\defrag.aut"
 :: Set IIS startup type to manual.
 todo.pl "startup-type.pl Manual IISADMIN" "startup-type.pl Manual W3SVC"
 
-:: Turn off some services (Windows Messenger, Universal Plug and Play
-:: Device Host)
-todo.pl "startup-type.pl Manual Messenger" "startup-type.pl Manual upnphost"
+:: Turn off Windows Messenger service
+todo.pl "startup-type.pl Manual Messenger"
 
 :: Cleanup messes left over from installing.
 todo.pl hidepw.pl bootini.pl fixtz.pl 
