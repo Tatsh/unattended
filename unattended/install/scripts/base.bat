@@ -19,4 +19,4 @@ todo.pl "startup-type.pl Manual IISADMIN" "startup-type.pl Manual W3SVC"
 todo.pl "startup-type.pl Manual Messenger"
 
 :: Cleanup messes left over from installing.
-todo.pl hidepw.pl bootini.pl fixtz.pl 
+todo.pl hidepw.pl bootini.pl fixtz.pl
