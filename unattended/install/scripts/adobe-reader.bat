@@ -6,10 +6,10 @@
 :: URL|DEU|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0/deu/AdbeRdr70_deu_full.exe|packages/adobereader/adberdr70_deu_full.exe
 :: URL|ENU|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0/enu/AdbeRdr70_enu_full.exe|packages/adobereader/adberdr70_enu_full.exe
 :: URL|FRA|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0/fra/AdbeRdr70_fra_full.exe|packages/adobereader/adberdr70_fra_full.exe
-:: URL|ITA|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/ita/AdbeRdr60_ita_full.exe|packages/adobereader/adberdr60_ita_full.exe
+:: URL|ITA|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0/ita/AdbeRdr70_ita_full.exe|packages/adobereader/adberdr70_ita_full.exe
 :: URL|JPN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0/jpn/AdbeRdr70_jpn_full.exe|packages/adobereader/adberdr70_jpn_full.exe
-:: URL|NLD|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/nld/AdbeRdr60_nld_full.exe|packages/adobereader/adberdr60_nld_full.exe
-:: URL|NOR|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/nor/AdbeRdr60_nor_full.exe|packages/adobereader/adberdr60_nor_full.exe
+:: URL|NLD|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0/nld/AdbeRdr70_nld_full.exe|packages/adobereader/adberdr70_nld_full.exe
+:: URL|NOR|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0/nor/AdbeRdr70_nor_full.exe|packages/adobereader/adberdr70_nor_full.exe
 :: URL|RUS|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/enu/AdbeRdr60_enu_full.exe|packages/adobereader/adberdr60_rus_full.exe
 
 if not exist %Z%\packages\adobereader\adberdr70_%WINLANG%_full.exe goto no_v7
