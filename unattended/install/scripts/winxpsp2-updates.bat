@@ -37,7 +37,7 @@
 :: the System Restore configuration, enable it, run the installer, and
 :: restore the configuration.  Instead we just enable, install, and
 :: disable.  FIXME.
-todo.pl "srconfig.pl --enable" ".reboot-on 194 %Z%\updates\winxpsp2\wmcsetup.exe /q /r:n" "srconfig.pl --disable"
+todo.pl "srconfig.pl --enable" ".reboot-on 194 %Z%\updates\winxpsp2\%WINLANG%\wmcsetup.exe /q /r:n" "srconfig.pl --disable"
 
 :: Windows Media Player 10
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=b446ae53-3759-40cf-80d5-cde4bbe07999&displaylang=en>
