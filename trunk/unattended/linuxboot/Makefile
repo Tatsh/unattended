@@ -8,7 +8,7 @@ glibc=glibc-2.3.2
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-klibc=klibc-0.115
+klibc=klibc-0.116
 linux=linux-2.6.5
 module-init-tools=module-init-tools-3.0
 nano=nano-1.2.3
