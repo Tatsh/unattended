@@ -1,3 +1,30 @@
+** Changes in version 3.1 (2003-Sep-21)
+
+Dynamically generate list of post-install scripts from
+specially-formatted comments in the first line.  Allow selection of
+one "master" script and zero or more "optional" scripts.  Thanks to
+Shad Lords and Jose Diaz for ideas and code.
+
+Add [_meta]/z_drive parameter for using a different letter than Z: for
+mapping install share.  Add "Z" environment variable for commands
+invoked by todo.pl.  Replace Z: with %Z% in all installation scripts.
+
+Take initial crack at i18n support (thanks to Eugene Kotlyarov).
+Recognize and report language of OS media.  Have todo.pl set WINLANG
+environment variable to the three-letter abbreviation for the OS
+language (e.g., "enu").  Modify the -updates.bat scripts to use
+%WINLANG% in hotfix file names.
+
+Use lowercase default password for mapping install share.
+
+Use /persistent:no when mapping Z: drive.
+
+Disable "Internet Connection Wizard" in win2ksp4-notips.pl.  Thanks to
+Eugene Kotlyarov.
+
+Increase choices per page in install.pl to 8.
+
+
 ** Changes in version 3.0 (2003-Sep-14)
 
 NOTE: This release has many changes.  You will need to refresh your
