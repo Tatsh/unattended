@@ -175,7 +175,9 @@ $(bash)/bash:
 
 $(call copy_exe, $(bash)/bash, stage1/bin/bash)
 
-stage1 += stage1/bin/bash
+$(call link_file,stage1/bin/bash,stage1/bin/sh)
+
+stage1 += stage1/bin/bash stage1/bin/sh
 
 ## dosemu
 
