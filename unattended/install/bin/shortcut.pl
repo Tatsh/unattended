@@ -115,7 +115,7 @@ created within.
 
  shortcut.pl "C:\Program Files\Foo\foo.exe" special:AllUsersDesktop
 
- shortcut.pl --special AllUsersStartMenu "C:\Program Files\Foo\bar.exe"
+ shortcut.pl "C:\Program Files\Foo\bar.exe" special:AllUsersStartMenu
 
 =head1 SEE ALSO
 C<http://msdn.microsoft.com/library/en-us/script56/html/wsprospecialfolders.asp>
