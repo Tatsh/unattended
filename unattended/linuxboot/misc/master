@@ -19,7 +19,9 @@ fi
 get_cmdline_param () {
     local what="$1"
 
-    for token in $CMDLINE ; do
+    # Order matters here, because command line should override DHCP
+    # option.
+    for token in $CMDLINE $unattend ; do
         local var=${token%%=*}
         if [ "$var" == "$what" ] ; then
             echo "$token"
@@ -87,6 +89,11 @@ done
 
 [ -z "$got_lease" ] \
     && die "Failed to obtain DHCP lease."
+
+# Having obtained a lease, read its info.  In particular, here we set
+# "unattend" to the value from local DHCP option 233.
+[ -f /var/run/dhcp.out ] \
+    && . /var/run/dhcp.out
 
 echo "*** Now we need to map the /z drive."
 
