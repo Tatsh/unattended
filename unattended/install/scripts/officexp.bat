@@ -39,6 +39,15 @@ todo.pl "msiexec /qb /p z:\packages\exc1003\EXCELop.msp"
 :: Run "wrd1005.exe /c /t:<path>" to extract files to <path>.
 todo.pl "msiexec /qb /p z:\packages\wrd1005\WINWORDop.msp"
 
+:: Hm, tying this to SP4 is probably wrong.  FIXME
+if not %WINVER%. == win2ksp4. goto didauiu
+:: Office XP Alternative User Input Update: January 24, 2002
+:: <http://support.microsoft.com/?kbid=316127>
+:: <http://office.microsoft.com/downloads/2002/oxpauiu.aspx>
+:: ONLY REQUIRED FOR WIN2K!
+todo.pl "msiexec /qb /p z:\packages\oxpauiu\MSCTF.msp" .reboot
+:didauiu
+
 :: Service Pack 2
 :: See <http://support.microsoft.com/?kbid=325671>
 :: Download from:
