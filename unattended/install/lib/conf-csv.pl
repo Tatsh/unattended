@@ -74,6 +74,7 @@ sub setup ($$$) {
                                                                                                                            
     my $num_fields = scalar @field_names;
     while (my $line = <CSV_FILE>) {
+        next if $line =~ /^\s*$/;
         my @fields = parse_line ($line);
         $num_fields == scalar @fields
             or die "Wrong number of items (expected $num_fields):\n$line\n ";
