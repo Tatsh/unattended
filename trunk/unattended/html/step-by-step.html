@@ -773,7 +773,35 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>note: add cygwin command line way to make floppies</td>
+        <td>Making floppies with <a href="http://mtools.linux.lu">Mtools</a></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>Unzip chosen image (replace b44 with right name)</td>
+      </tr>
+      <tr>
+        <td width="467">&nbsp;</td>
+        <td width="449" class="CygwinCommands">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk/images</td>
+      </tr>
+      <tr>
+        <td width="467">&nbsp;</td>
+        <td width="449" class="CygwinCommands">$ unzip b44.imz</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>Format floppy using bootsector from image file</td>
+      </tr>
+      <tr>
+        <td width="467">&nbsp;</td>
+        <td width="449" class="CygwinCommands">$ mformat -B b44.img a:</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>Copy all files from image file to floppy</td>
+      </tr>
+      <tr>
+        <td width="467">&nbsp;</td>
+        <td width="449" class="CygwinCommands">$ mcopy -i b44.img -s ::* a:</td>
       </tr>
     </table>
     <table width="750" border="0">
