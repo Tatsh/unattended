@@ -27,19 +27,19 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\journal_viewer_%WINLANG%.exe /q /c:
 
 :: "Update for Windows Media Player Script Commands"
 :: <http://support.microsoft.com/?kbid=828026>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsMedia-KB828026-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia-KB828026-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
 :: <http://support.microsoft.com/?kbid=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N"
+todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N"
 
 :: Trick to skip EULA on Media Player 9 
-todo.pl "regedit /s %Z%\scripts\mediaplayer9.reg"
+todo.pl "regedit /s %Z%\packages\mediaplayer9\mediaplayer9.reg"
 
 :: Media Player 9.0
 :: <http://www.microsoft.com/windows/windowsmedia/>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\MPSetupXP.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
+todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\MPSetupXP.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
 
 :: Microsoft .NET framework
 :: <http://msdn.microsoft.com/netframework/downloads/>
