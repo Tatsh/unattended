@@ -1,6 +1,6 @@
-; AutoIt script to install Windows 2000 SP3 symbols
+; AutoIt script to install Windows 2000 SP4 symbols
 
-Run, %Z%\\packages\\win2ksp3\\symbols\\symbols_sp.exe
+Run, %Z%\\packages\\win2ksp4\\symbols\\symbols_sp.exe
 
 WinWait, License
 Send, {TAB}{ENTER}
