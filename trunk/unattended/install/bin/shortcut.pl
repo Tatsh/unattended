@@ -14,7 +14,7 @@ use File::Path;
 # Your usual option-processing sludge.
 my %opts;
 GetOptions (\%opts, 'help|h|?', 'arguments=s', 'description=s',
-            'workingdirectory=s')
+            'hotkey=s', 'workingdirectory=s')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -96,6 +96,8 @@ $obj->{WorkingDirectory} = (exists $opts{'workingdirectory'}
 (exists $opts{'description'})
     and $obj->{Description} = $opts{'description'};
 
+(exists $opts{'hotkey'})
+    and $obj->{Hotkey} = $opts{'hotkey'};
 
 $obj->Save ();
 
@@ -115,7 +117,8 @@ Options (may be abbreviated):
 
  --help                   Display help and exit
  --arguments <args>       Use <args> as arguments to target
- --description <desc>     Set description (infotip) to <desc>
+ --description <desc>     Set description (aka. "infotip") to <desc>
+ --hotkey <key>           Set hotkey (aka. "keyboard shortcut") to <key>
  --workingdirectory <dir> Set working directory to <dir>
 
 =head1 DESCRIPTION
