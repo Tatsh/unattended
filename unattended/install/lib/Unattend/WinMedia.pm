@@ -6,7 +6,7 @@ use warnings;
 use strict;
 use Unattend::IniFile;
 use File::Spec::Win32;
-use fields qw (txtsetup setupp path);
+use fields qw (txtsetup setupp prodspec path);
 
 # File::Spec is supposed to auto-detect the OS and adapt
 # appropriately, but it does not recognize a $^O value of "dos".  Work
@@ -27,7 +27,8 @@ sub new ($$) {
 
     my $txtsetup = $file_spec->catfile ($path, 'i386', 'txtsetup.sif');
     my $setupp = $file_spec->catfile ($path, 'i386', 'setupp.ini');
-    -f $txtsetup && -f $setupp
+    my $prodspec = $file_spec->catfile ($path, 'i386', 'prodspec.ini');
+    -f $txtsetup && -f $setupp && -f $prodspec
         or return undef;
 
     # Remember the path to this media
@@ -39,6 +40,9 @@ sub new ($$) {
 
     # Read SETUPP.INI
     $self->{setupp} = Unattend::IniFile->new ($setupp);
+
+    # Read PRODSPEC.INI
+    $self->{prodspec} = Unattend::IniFile->new ($prodspec);
 
     return $self;       # Already blessed by fields::new
 }
@@ -83,6 +87,11 @@ sub name ($) {
     return $ret;
 }
 
+sub localization ($) {
+    my Unattend::WinMedia ($self) = @_;
+    return $self->{prodspec}->{'Product Specification'}->{'Localization'};
+}
+
 sub service_pack ($) {
     my Unattend::WinMedia ($self) = @_;
     my $ret = '';
@@ -123,7 +132,7 @@ my %pid_table =
      '51873000' => 'Retail',
      '51873OEM' => 'OEM',
      # Windows 2000 Professional, Russian
-     '52882000' => 'Russian Retail',
+     '52882000' => 'Retail',
      # 2k server
      '51876000' => 'Volume',
      # NT
@@ -154,7 +163,8 @@ sub full_name ($) {
     $sp ne ''
         and $sp = " SP$sp";
     my $type = $self->type ();
-    return "$name$sp ($type)";
+    my $localization = $self->localization();
+    return "$name$sp ($type, $localization)";
 }
 
 # Find the .inf files below a given directory.  Allow .inf files in
