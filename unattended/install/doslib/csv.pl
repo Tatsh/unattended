@@ -19,9 +19,9 @@
 # of the fields for one record.
 
 use strict;
-use Carp;
 
 package CSV;
+use Carp;
 
 # Parse a single line from a CSV file and return an array of its
 # fields.  Unlikely to be called  externally.
@@ -117,3 +117,5 @@ sub index_by ($;$) {
 
     return $ret;
 }
+
+1;
