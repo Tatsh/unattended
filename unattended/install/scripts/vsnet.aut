@@ -1,6 +1,6 @@
 ; AutoIt script to install Visual Studio .NET 2003
 
-Run, Z:\\packages\\VSNET\\setup.exe
+Run, %Z_PATH%\\packages\\VSNET\\setup.exe
 
 ; Match any substring in window title or text
 SetTitleMatchMode, 2
@@ -44,7 +44,7 @@ Send, {TAB}{TAB}{TAB}{TAB}{TAB}{SPACE}
 
 ; Wait for setup to finish
 WinWait, Install Page, Setup is complete
-Send, {SPACE}
+Send, {ESC}
 WinWaitClose, Install Page
 
 ; Back to top-level page
