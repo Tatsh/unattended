@@ -1,3 +1,34 @@
+** Changes in version 3.5 (2003-Dec-16)
+
+Update SYSLINUX to version 2.08.  This resolves several issues,
+including a problem with some BIOSes and the compressed floppy images
+on the CD-ROM.
+
+Update perl.bat to ActivePerl 5.8.1 build 807.  (You will need to
+download the new ActivePerl installer.)
+
+Add comments to all files with URLs to direct downloads for updates
+and other freebies.  Rewrite "prepare" script to use them.
+
+Fix several broken links in Web pages.  Thanks to Veronica Loell.
+
+Fix bug in example in advanced.html.  Thanks to Michael Kahle.
+
+Add DOS driver for 3com 3c556 family of mini-PCI adapters (el556.dos).
+
+Update Broadcom 440x (b44.dos) and 57xx (b57.dos) DOS drivers to
+latest versions from Broadcom's site.
+
+Update 3com 3c59x/3c90x (el90x.dos) DOS driver to latest version from
+3com's site. 
+
+Add Russian defrag.aut translation.
+
+Add Sun JVM installation script (Z:\scripts\sun-jre.bat).
+
+Add latest recommended updates for Windows XP.
+
+
 ** Changes in version 3.4 (2003-Nov-14)
 
 New script install/prepare.  This is a Unix shell script which
