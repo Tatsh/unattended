@@ -5,10 +5,10 @@
 :: Install share
 SET Z_PATH=\\ntinstall\install
 
-:: Username to logon to install share
+:: Username for mapping install share
 SET Z_USER=GUEST
 
-:: Password for install share
+:: Password for mapping install share
 SET Z_PASS=GUEST
 
 :: End of user settable variables
@@ -28,7 +28,7 @@ TCPTSR.EXE
 TINYRFC.EXE
 
 :retry
-CHOICE /C:YN /T:N,10 Override defaults (if unsure, say yes)
+CHOICE /C:YN /T:N,10 Override bootdisk defaults (if unsure, say yes)
 if errorlevel 2 goto endsetup
 echo Enter location of install share (default %Z_PATH%):
 nset INPUT=$0
@@ -39,6 +39,7 @@ if not %INPUT%. == . set Z_USER=%INPUT%
 echo Enter password for mapping install share (default %Z_PASS%):
 nset INPUT=$0
 if not %INPUT%. == . set Z_PASS=%INPUT%
+set INPUT=
 
 :endsetup
 
