@@ -74,7 +74,7 @@ href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01312
 >this message</a> for details.</p>
 
 
-<h1>Is the Linux boot disk actually supposed to work?</h1>
+<h1 id="linux-problems">Is the Linux boot disk actually supposed to work?</h1>
 
 <p>Yes, and if it does not work for you, we are very interested in
 fixing it.  The boot disk uses Linux kernel 2.6, which is still
@@ -91,16 +91,17 @@ but then some hardware <a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01557.html"
 >would not work at all</a>.)</p>
 
-<p>If disabling ACPI does not help, most likely your network or mass
-storage hardware is not yet supported by our boot disk.  This is
-usually easy for us to fix, since Linux itself has fairly broad
-hardware support.  But we need somebody who actually has the hardware
-to test our changes.</p>
+<p>Also try using <code>noapic</code> or <code>nolapic</code> instead
+of (or in addition to) <code>acpi=off</code>.  These disable the 2.6
+kernel's new APIC and "local APIC" support, which may help in rare
+cases.</p>
 
-<p>So, whether disabling ACPI works or not, please send a report to <a
-href="mailto:unattended-devel@lists.sourceforge.net">unattended-devel</a>.
-Include a description of your hardware and the version of Unattended
-which you are using.</p>
+<p>If none of these help, perhaps your network or mass storage
+hardware is not yet supported by our boot disk.  This usually just
+means our code to detect hardware and load drivers needs to be
+tweaked, since Linux itself has fairly broad hardware support.  But we
+need somebody who actually has the hardware to test our changes, so
+please let us know.</p>
 
 
 <h1>Is the DOS boot disk supposed to crash?</h1>
@@ -112,6 +113,12 @@ FreeDOS.  Apart from general principles (we like free software), this
 avoids potential legal issues.  But FreeDOS is still under
 development, and it occasionally has difficulty with some
 hardware.</p>
+
+<p>The UMB provider in particular can be somewhat touchy.  Try editing
+<code>config.sys</code> to comment out the loading of
+<code>EMM386.EXE</code>, or to load <code>UMBPCI.SYS</code> instead.
+Commenting out both is the most reliable path, but it may leave
+insufficient conventional memory for the Windows installer to run.</p>
 
 
 <h1>Why is the mailing list so slow?</h1>
@@ -363,13 +370,15 @@ href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00448
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00705.html"
 >trust</a> QChain.</p>
 
-<h1>How do I disable sound?</h1>
+<h1>How do I control the volume (disable sound) unattended?</h1>
 
 <p>See <a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01050.html"
->this thread</a> from the mailing list.</p>
+>this thread</a> and <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01979.html"
+>this message</a> from the mailing list.</p>
 
-<h1>How do I add multiple third-party mass-storage drivers?</h1>
+<h1 id="txtsetup">How do I add multiple third-party mass-storage drivers?</h1>
 
 <p>This comes up on the mailing list <a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00992.html"
