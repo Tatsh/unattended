@@ -193,7 +193,7 @@ set_value ('_config', 'post_install_script',
                my @scripts = ('base.bat', 'sales.bat', 'developer.bat',
                               'build-server.bat', 'training.bat');
                my @choices = map { my $full = "Z:\\scripts\\$_";
-                                   return ($full => $full);
+                                   ($full => $full);
                                } @scripts;
                return menu_choice (@choices, 'none' => undef);
            });
@@ -210,9 +210,7 @@ set_value ('_config', 'local_admins',
                print "Enter users to add to local Administrators group.\n";
                my $users = simple_q
                    ("Type 0 or more usernames, separated by spaces:\n");
-               my @users = (map { canonicalize_user ($dom, $_); }
-                            split / /, $users);
-               return (exists $users[0] ? \@users : undef);
+               return $users;
            });
 
 set_value ('_config', 'netinst', 'c:\\netinst');
@@ -228,6 +226,8 @@ set_value ('_config', 'doit_cmd',
                $src_tree .= '\\i386';
                return "$src_tree\\winnt /s:$src_tree /u:$unattend_txt";
            });
+
+set_value ('_config', 'extra_unattend_txt', undef);
 
 set_value ('UserData', 'FullName',
            sub {
@@ -261,8 +261,9 @@ set_value ('Identification', 'DomainAdmin',
            sub {
                my $dom = get_value ('Identification', 'JoinDomain');
                defined $dom or return undef;
-               return simple_q
+               my $user = simple_q
                    ("DomainAdmin account for joining $dom domain? ");
+               return canonicalize_user ($dom, $user);
            });
 
 set_value ('Identification', 'DomainAdminPassword',
@@ -372,18 +373,27 @@ my $postinst = "$netinst\\postinst.bat";
 print "Creating $postinst...";
 
 my $top = get_value ('_config', 'post_install_script');
-my @local_admins = @{get_value ('_config', 'local_admins')};
+my $admins = get_value ('_config', 'local_admins');
+my @admins = (defined $admins ? split / /, $admins : undef);
+# Hack around Perl bug
+defined $admins[0]
+    or undef @admins;
 
 open POSTINST, ">$postinst"
     or die "Unable to open $postinst for writing: $^E";
 
-foreach my $line ("net use z: $ENV{'INSTALL'} /persistent:yes",
-                  "call z:\\scripts\\perl.bat",
-                  "PATH=z:\\bin;%PATH%",
-                  "todo.pl $top \"autolog.pl --disable\" .reboot",
-                  (map { "todo.pl \"net localgroup Administrators $_ /add" }
-                   @local_admins),
-                  "\ntodo.pl --go") {
+my @cmd_lines =
+    ((map { "todo.pl \"net localgroup Administrators $_ /add" } @admins),
+     (defined $top
+      ? ("net use z: $ENV{'INSTALL'} /persistent:yes",
+         "call z:\\scripts\\perl.bat",
+         "PATH=z:\\bin;%PATH%",
+         "todo.pl $top \"autolog.pl --disable\" .reboot",
+         "\ntodo.pl --go")
+      : ())
+     );
+
+foreach my $line (@cmd_lines) {
     print POSTINST $line, "\n"
         or die "Unable to write to $postinst: $^E";
 }
@@ -410,11 +420,15 @@ close DOIT
 print "done.\n";
 
 while (1) {
-    my $file = menu_choice ("Edit $unattend_txt" => $unattend_txt,
-                            "Edit $postinst" => $postinst,
-                            "Edit $doit" => $doit,
-                            'Continue' => undef);
+    my $file = menu_choice
+        ("Edit $unattend_txt" => $unattend_txt,
+         "Edit $postinst (will run when OS install is done)" => $postinst,
+         "Edit $doit (will run when you select Continue)" => $doit,
+         'Continue' => undef);
     defined $file
         or last;
     system 'edit', $file;
 }
+
+# Return control to autoexec.bat, which will run postinst.bat.
+exit 0;
