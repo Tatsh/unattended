@@ -397,7 +397,7 @@ sub linux_write_mbr ($) {
     close BOOT
         or croak "Unable to close $boot_file: $^E";
 
-    print "Installing $boot_file as MBR...\n";
+    print "Installing $boot_file as MBR...";
 
     substr($bootsect, 0, $mbr_size,
            substr($new_mbr, 0, $mbr_size));
@@ -414,7 +414,7 @@ sub linux_write_mbr ($) {
     close DISK
         or die "Unable to close write to $disk: $^E";
 
-    print "...done.\n";
+    print "done.\n";
 }
 
 # Run a command and return the output.  We need this function because
@@ -1333,13 +1333,14 @@ if ($is_linux) {
         my $settings_file = "/proc/ide/$hda/settings";
 
         if (-e $settings_file) {
-            print "\nSetting C/H/S to $cylinders/$bios_head/$bios_sect...\n";
+            print "\nSetting C/H/S for $hda to $cylinders/$bios_head/$bios_sect...";
             open SETTINGS, ">$settings_file"
                 or die "Unable to open $settings_file for writing: $^E";
             printf SETTINGS "bios_cyl:%d bios_head:%d bios_sect:%d\n",
             $cylinders, $bios_head, $bios_sect;
             close SETTINGS
                 or die "Unable to close $settings_file: $^E";
+            print "done.\n";
         }
         else {
             # Non-IDE disk.  Should probably sanity-check kernel
