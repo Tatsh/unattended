@@ -1,4 +1,4 @@
-# Object to represents a .ini file.  Includes methods for parsing and
+# Object to represent a .ini file.  Includes methods for parsing and
 # generating.
 
 package Unattend::IniFile;
