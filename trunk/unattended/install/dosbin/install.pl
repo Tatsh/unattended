@@ -330,14 +330,19 @@ sub ask_oem_pnp_drivers_path () {
         print "\n";
         print "Choose value to add:";
         my $val = menu_choice (@choices);
-        if ($val == \$rem_string) {
-            undef %dirs;
-        }
-        elsif ($val == \$all_string) {
-            %dirs = map { $_ => undef } @pnp_driver_dirs;
-        }
-        elsif ($val == \$cont_string) {
-            last;
+        if (ref $val) {
+            if ($val == \$rem_string) {
+                undef %dirs;
+            }
+            elsif ($val == \$all_string) {
+                %dirs = map { $_ => undef } @pnp_driver_dirs;
+            }
+            elsif ($val == \$cont_string) {
+                last;
+            }
+            else {
+                die "Internal error";
+            }
         }
         else {
             $dirs{$val} = undef;
