@@ -173,7 +173,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB820291-x86-%WINLANG%.ex
 :: URL|ENU|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q327979_WXP_SP2_6F667CA10E50EC0D64B146168F17B5B74E0403D3.EXE|updates/winxpsp1/q327979_wxp_sp2_x86_enu.exe
 :: URL|FRA|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/FR/Q327979_WXP_SP2_x86_FRA.exe|updates/winxpsp1/q327979_wxp_sp2_x86_fra.exe
 :: URL|DEU|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/DE/Q327979_WXP_SP2_x86_DEU.exe|updates/winxpsp1/q327979_wxp_sp2_x86_deu.exe
-:: 
+:: URL|NLD|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/NL/Q327979_WXP_SP2_x86_NLD.exe|updates/winxpsp1/q327979_wxp_sp2_x86_nld.exe 
 :: "Game Stops Responding (Hangs) or Quits Unexpectedly ..."
 :: <http://support.microsoft.com/?kbid=327979>
 :: (download only available from Windows Catalog)
