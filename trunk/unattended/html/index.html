@@ -17,10 +17,26 @@ installation">
 
 <hr>
 
+<h1>If you have been here before...</h1>
+
+<p>If you have visited these pages before, then you probably want to
+check out the <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended//NEWS.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>NEWS file</a> to see what's new.
+
+<p>If you have any ongoing interest in this project, please consider
+subscribing to the <a
+href="http://lists.sourceforge.net/lists/listinfo/unattended-info/"
+>mailing list</a>.
+
+<p>You probably want the links <a href="#next">near the bottom</a> of
+this page.
+
+
 <h1>What is this?</h1>
 
-<p><u>Unattended</u> is a system for fully automating the installation
-of Windows 2000 and XP workstations.
+<p>This is a system for fully automating the installation of Windows
+2000 and XP workstations.
 
 <p>Features include:
 <ul>
@@ -33,59 +49,83 @@ of Windows 2000 and XP workstations.
 <li>Completely free
 </ul>
 
+<p>When you are finished setting up <u>Unattended</u>, you will be
+able to boot any PC from a floppy, from a CD-ROM, or directly from
+network, answer a few questions, and come back an hour or two later to
+a fully-installed Windows workstation.
+
 <p>But be warned: This is not a
 <kbd>./configure&nbsp;&amp;&amp;&nbsp;make&nbsp;install</kbd> kind of
 project, and it is not a slick GUI app.  You will need to understand
 at least a little of what goes on "under the covers", and you will
 need to perform some customization for your site.
 
-<h1>Where did it come from?</h1>
 
-<p>In my experience with Windows, I have found that the more recently
-a machine was installed, the better it works.  So I went searching for
-ways to make the installation process routine.
+<h1>Why should I use it?</h1>
 
-<p>This led me into the strange and quirky world of DOS networking,
-<code>.bat</code> scripts, <code>unattend.txt</code> files, network
-booting, and the amazingly under-documented silent installation
-procedures for various Windows applications.
+<p>Microsoft has their own approach to this problem, called <a
+href="http://www.microsoft.com/windows2000/en/datacenter/help/sag_RIS_Default_topnode.htm"
+>Remote Installation Services</a> (RIS).  You may be wondering why you
+should use this system instead of RIS.
 
-<p>Microsoft has their own solution to this problem, involving things
-like <a
-href="http//:www.microsoft.com/windows2000/technologies/directory/ad/"
->"Active Directory"</a> and <a
-href="http://www.microsoft.com/windows2000/en/datacenter/help/sag_RIS_Default_topnode.htm">"RIS"</a>
-and <a href="http://www.microsoft.com/smserver/">"SMS"</a>.  I
-consider those technologies too heavyweight and complex, so this
-system does not depend on them.
+<p>Well, <u>Unattended</u> is open source, which is a pretty good
+reason.  For example, with RIS, try to add support for a new network
+card to the boot disk, or try to create a customized partitioning
+scheme, or try to fix a bug.  With an open source system, you have
+everything you need to fix any problem or add any feature you want,
+and you can contribute you change back to the project so that others
+may benefit.
 
-<p>Many people attack this problem with drive imaging, also known as
-workstation "cloning".  This is almost always a bad idea.  Although <a
+<p><u>Unattended</u> does have other advantages, like being able to
+use whatever servers you happen to have handy, regardless of their OS.
+But really, other than being open source, <u>Unattended</u> is not all
+that different from RIS.  Perhaps I should have named it OpenRIS...
+
+
+<h1>Disk Imaging: A bad idea</h1>
+
+<p>Whether you use <u>Unattended</u>, RIS, or some other system for
+Windows deployment, one technique which you should absolutely avoid is
+disk imaging.
+
+<p>Also called "cloning", disk imaging consists of taking a "snapshot"
+of one machine's hard drive and restoring it onto the hard drive of a
+new machine.  Microsoft provides tools like <a
 href="http://www.microsoft.com/windowsxp/pro/using/itpro/deploying/introduction.asp"
->Sysprep</a> solves the classic <a
-href="http://service2.symantec.com/SUPPORT/ghost.nsf/docid/1999050308324125"
->SID problem</a>, imaging has many other drawbacks, including poor
-support for non-uniform hardware, difficult maintenance, and bulky
-images.  If you need to crank out many workstations with completely
-identical hardware and software, imaging is fine; and products like <a
-href="http://www.symantec.com/sabu/ghost/">Ghost</a> and <a
-href="http://www.powerquest.com/driveimage/">Drive&nbsp;Image</a> make
-it easy and fast.  But for most deployments, true unattended
-installation allows for better reliability and easier maintenance.
+>Sysprep</a> and <a
+href="http://www.microsoft.com/WINDOWS2000/techinfo/reskit/en/Distrib/dsed_dpl_dgsx.htm"
+>RIPrep</a> to help you with this task, and it is a very popular way
+to deploy systems.
 
-<p>Anyway, I have assembled my own complete unattended installation
-system from scratch, and I am releasing it here on SourceForge.  Most
-of the information in these pages is available elsewhere, but it took
-me a while to find because it was not all collected in one place.  I
-am hoping this project will save time for others like myself.  (I
-would have found the database of <a
-href="installers.html">unattended/silent installer switches for
-Windows apps</a> particularly handy.)
+<p>It is almost always a bad idea.  Never mind that imaging provides
+poor support for non-uniform hardware.  The real problem is that
+imaging creates a maintenance nightmare.
 
-<h1>What next?</h1>
+<p>For example, where I work, we have several configurations of
+system, from sales laptops to developer workstations to automated
+build servers to training workstations.  To use RIPrep effectively, we
+would need a different image for each software configuration.  In
+addition, we are trying to manage an incremental migration from
+Windows 2000 to Windows XP.
 
-<p>If you are interested, you can start right now.  First, visit the
-<a href="https://sourceforge.net/project/showfiles.php?group_id=62053"
+<p>Just for these examples, we would need eight different images.  To
+make a change to a common software component, we would need to modify
+and re-image eight different times.
+
+<p>If you are someone like Dell, cranking out thousands of identical
+workstations with completely identical hardware and software, imaging
+is a fine approach.  But for most deployments, true unattended
+installation provides better reliability and much easier maintenance.
+
+<p>(Another common but very bad idea is application repackaging, which
+I discuss <a href="installers.html#repackaging">elsewhere</a>.)
+
+
+<h1 id="next">What next?</h1>
+
+<p>If you would like to give <u>Unattended</u> a try, you can start
+right now.  First, visit the <a
+href="https://sourceforge.net/project/showfiles.php?group_id=62053"
 >download page</a> to download the distribution.  Each release has two
 components: The main distribution
 (<code>unattended-<var>version</var>.tar.gz</code>), and the pre-built
@@ -95,51 +135,47 @@ them to the same folder.  If you have a Unix machine with the right
 tools, you can build the disk images from the main distribution; but
 for now, you should probably just download both.
 
-<p>Next, read the rest of this documentation.  The overall process
-consists of two steps:
+<p>Next, read the rest of this documentation, which consists of three
+parts:
 
 <ol>
-<li><a href="os.html">Install the operating system.</a> This step is
-annoying because it involves DOS networking.
+<li><a href="os.html">Installing the operating system</a>
 
-<li><a href="apps.html">Install the applications.</a> This step is
-annoying because there is no standard way to install Windows
-applications from the command line.  Well, there is, but nobody uses
-it.  So every application must be handled specially.  Also, it is
-tricky to write a script which reboots the machine halfway through.
-(OK, the rebooting part is easy.  But resuming where you left off is
-harder.)
+<li><a href="apps.html">Installing the hotfixes and applications</a>
+
+<li><a href="installers.html">Scripting the installation of various
+applications</a>
+
 </ol>
 
-<p>Note that these steps describe the process which you are
-automating.  Once you finish some preparatory work, the actual process
-of installing a workstation will be 1)&nbsp;Boot from floppy, CD, or
-network; 2)&nbsp;Answer some questions; 3)&nbsp;Go have a cup of tea.
+<p>This system is still fairlynew, so do not be surprised or dismayed
+if you encounter problems.  Just send a message to the <a
+href="mailto:unattended-info@lists.sourceforge.net">mailing list</a>,
+or use the links on the <a
+href="https://sourceforge.net/projects/unattended/">project page</a>
+to submit a bug report or feature request.
 
-<p>This system is still relatively new, so do not be surprised or
-dismayed if you encounter problems.  Just use the links on the <a
-href="https://sourceforge.net/projects/unattended/" >project page</a>
-to submit a bug report or feature request.  Developers might be
-interested in browsing <a
+<p>Developers might be interested in browsing <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/">
 the CVS repository</a>; just click on a revision number to view the
-corresponding file.  I am looking for co-developers; contact me if you
-are interested.
+corresponding file.  I am looking for co-developers; <a
+href="mailto:patl@users.sourceforge.net">contact me</a> if you are
+interested.
 
-<p>And in any event, please <a
-href="mailto:patl@users.sourceforge.net">let me know</a> what you
-think; user feedback is my primary motivation.  Thanks!
 
 <h1>Related sites</h1>
 
-<p>I was informed and inspired by a few other sites, like these:
+<p>You can find information and inspiration from a few other sites,
+like these:
 
-<p><a href="http://isg.ee.ethz.ch/tools/realmen/ ">Real Men Don't
+<p><a href="http://isg.ee.ethz.ch/tools/realmen/">Real Men Don't
 Click</a>
 
 <p><a
 href="http://www.labmice.net/Windows2000/install/unattend_install.htm"
 >labmice.net</a>
+
+<p><a href="http://appdeploy.com/">AppDeploy.com</a>
 
 <hr>
 <address>
