@@ -23,8 +23,8 @@ need to:
 <li><a href="#bootdisk">Obtain access to that distribution point</a>,
 and your hard drive, from DOS
 
-<li><a href="#go">Format the disk, create the unattend.txt file, and
-run <tt>i386\winnt.exe</tt></a> from the distribution point
+<li><a href="#go">Format the disk, create the <em>unattend.txt</em>
+file, and run <em>i386\winnt.exe</em></a> from the distribution point
 
 </ol>
 
@@ -34,26 +34,26 @@ run <tt>i386\winnt.exe</tt></a> from the distribution point
 to create a network distribution point because it's more fun.
 
 <h2>Creating the \\ntinstall\install share</h2>
-<p>Copy the <tt>install</tt> directory tree from this project's
+<p>Copy the <em>install</em> directory tree from this project's
 distribution to a Windows file server (say, a Unix box running <a
 href="http://www.samba.org/">Samba</a>), and export it read-only with
 guest access permitted.  The sample scripts, and this documentation,
-assume that this share is named <tt>\\ntinstall\install</tt>.  In
-other words, the name <tt>ntinstall</tt> is an alias for the file
-server and the share is named <tt>install</tt>.  If you want to use
+assume that this share is named <em>\\ntinstall\install</em>.  In
+other words, the name <em>ntinstall</em> is an alias for the file
+server and the share is named <em>install</em>.  If you want to use
 different names, that is OK, but you will need to modify the scripts
 to refer to it (search for "ntinstall").
 
 <p>Some parts of the install share (like <a
 href="http://www.delorie.com/djgpp/">DJGPP</a>) are required but not
 included, so you will need to download them yourself.  See the
-<tt>README.txt</tt> file in the install directory for details.
+<em>README.txt</em> file in the install directory for details.
 
 <h2>Copying the Windows CD-ROM to the share</h2>
-<p>Next, copy the <tt>i386</tt> folder from the Windows CD-ROM to the
+<p>Next, copy the <em>i386</em> folder from the Windows CD-ROM to the
 appropriate subdirectory of the install share.  For example, for
-Windows 2000 Service Pack 3, copy the <tt>i386</tt> folder to
-<tt>\\ntinstall\install\win2ksp3</tt>.
+Windows 2000 Service Pack 3, copy the <em>i386</em> folder to
+<em>\\ntinstall\install\win2ksp3</em>.
 
 <h2>Applying the service pack, if any</h2>
 
@@ -71,16 +71,16 @@ is pretty simple:
 
 <ol>
 
-<li>Run <tt>w2ksp3.exe&nbsp;/u&nbsp;/x:c:\sp3</tt>.  (w2ksp3.exe is
+<li>Run <kbd>w2ksp3.exe&nbsp;/u&nbsp;/x:c:\sp3</kbd>.  (w2ksp3.exe is
 what you get when you download the Service Pack from Microsoft).  This
-extracts the service pack to <tt>c:\sp3</tt>.
+extracts the service pack to <em>c:\sp3</em>.
 
 <li>Run
-<tt>c:\sp3\i386\update\update.exe&nbsp;/s:\\ntinstall\install\win2ksp3</tt>.
+<kbd>c:\sp3\i386\update\update.exe&nbsp;/s:\\ntinstall\install\win2ksp3</kbd>.
 This applies the service pack to the distribution point, creating the
 "slipstreamed" Win2k SP3 tree.  Due to a bug, you must be a local
 administrator for this to work, even if the distribution point is on a
-remote share.  (Otherwise, <tt>update.exe</tt> will fail with
+remote share.  (Otherwise, <em>update.exe</em> will fail with
 "permission denied".)
 
 </ol>
@@ -89,31 +89,32 @@ remote share.  (Otherwise, <tt>update.exe</tt> will fail with
 DOS</h1>
 
 <p>The goal here is very simple: To boot to DOS and mount
-<tt>\\ntinstall\install</tt> as the <tt>Z:</tt> drive.
+<em>\\ntinstall\install</em> as the <em>Z:</em> drive.
 
 <h2>Using the unattended.sourceforge.net bootdisk</h2>
 
-<p>The <tt>bootdisk</tt> directory from this project's distribution is
+<p>The <em>bootdisk</em> directory from this project's distribution is
 dedicated to helping you create a bootable DOS disk with networking.
-Simply <tt>cd&nbsp;bootdisk</tt> and run <tt>make</tt> to generate a
-bunch of floppy disk images in the <tt>images</tt> subdirectory.
+Simply <kbd>cd&nbsp;bootdisk</kbd> and run <kbd>make</kbd> to generate a
+bunch of floppy disk images in the <em>images</em> subdirectory.
 
 <p>There will be one floppy image for each supported network driver;
 you will need to use the image with the right driver for your network
 card.  If you are not sure which driver is right, you may need to try
-them all.
+them all (but see below about <a href="#netboot">booting from the
+network</a>).
 
 <p>For instructions on adding new drivers and other information on
-customizing the bootdisk, see the <tt>README.txt</tt> file in the
-bootdisk directory.  Note that the <tt>template</tt> subdirectory
+customizing the bootdisk, see the <em>README.txt</em> file in the
+bootdisk directory.  Note that the <em>template</em> subdirectory
 holds the canonical copy of the tree which is copied to the bootdisk.
 To see for yourself (or modify) what the bootdisk will do, start with
-the <tt>autoexec.bat</tt> file in that directory.
+the <em>autoexec.bat</em> file in that directory.
 
 <p>Once you have chosen the correct floppy image, you will need to
 write it to a floppy.  How you do this depends on your operating
 system; on Linux, something like
-<tt>dd&nbsp;if=e100b.img&nbsp;of=/dev/fd0</tt> will do the trick.
+<kbd>dd&nbsp;if=e100b.img&nbsp;of=/dev/fd0</kbd> will do the trick.
 
 <h2>Booting from CD-ROM or network</h2>
 
@@ -133,18 +134,18 @@ from the excellent <a href="http://syslinux.zytor.com/">SYSLINUX</a>
 package.  (Do not be fooled by the name; SYSLINUX is a very powerful
 boot loader whose use goes far beyond Linux.  It is perfect for this
 application, for example.)  Download the SYSLINUX package, and copy
-the <tt>isolinux</tt> and <tt>memdisk</tt> applications to the
-<tt>iso</tt> directory.  Then type <tt>make iso</tt>.  You should end
-up with a <tt>bootdisk.iso</tt> image, suitable for burning to a
+the <em>isolinux</em> and <em>memdisk</em> applications to the
+<em>iso</em> directory.  Then type <kbd>make iso</kbd>.  You should end
+up with a <em>bootdisk.iso</em> image, suitable for burning to a
 CD-ROM.  Booting this CD-ROM will give you a choice of "virtual
 floppies" to boot; choose the one with the right driver for your
 network card.
 
-<h3>Booting from the network</h3>
+<h3 id="netboot">Booting from the network</h3>
 
 <p>Most modern network cards support booting directly from the network
-using Intel's Preboot eXecution Environment (PXE).  You can find the
-PXE specification on <a
+according to Intel's Preboot eXecution Environment (PXE)
+specification.  You can download the PXE specification from <a
 href="http://www.intel.com/labs/manage/wfm/wfmspecs.htm">Intel's WFM
 site</a>, but the basic idea is simple: Just configure your DHCP
 server to provide "filename" and "next-server" DHCP options giving to
@@ -152,22 +153,20 @@ the file name and TFTP server of the PXE boot loader.
 
 <p>Which boot loader?  We will use <a
 href="http://syslinux.zytor.com/pxe.php">PXELINUX</a>, also from the
-SYSLINUX package.  (I suggest following that link and reading it
-before proceeding.)  This will work just like the ISO CD-ROM boot,
-using <tt>memdisk</tt> to load a virtual floppy, but here you do not
-need to choose the network driver!  3com has kindly written a
-"universal" DOS driver which runs over any PXE implementation,
-allowing one floppy image to support any PXE-compatible network
-hardware.
+SYSLINUX package.  This will work just like the ISO CD-ROM boot, using
+<em>memdisk</em> to load a virtual floppy, but here you do not care
+which network driver to use!  3com has kindly written a "universal"
+DOS network driver which runs over any PXE implementation, allowing
+one floppy image to support any PXE-compatible network hardware.
 
 <p>NOTE: Historically, by which I mean as recently as this year, PXE
-implementations are very buggy.  Always flash the firmware on your
-network card to the latest version before attempting a network boot.
-For network hardware embedded on the motherboard or laptop, this
+implementations have been extremely buggy.  Always flash the firmware
+on your network card to the latest version before attempting a network
+boot.  For network hardware embedded on a motherboard or laptop, this
 probably means flashing the system BIOS.
 
-<p>In the <tt>bootdisk</tt> directory, type
-<tt>make&nbsp;tftpboot</tt>.  This will populate the tftpboot
+<p>In the <em>bootdisk</em> directory, type
+<kbd>make&nbsp;tftpboot</kbd>.  This will populate the tftpboot
 directory with everything you need; just copy it to /tftpboot on your
 TFTP server, set up your DHCP server as described above, and you
 should be good to go.
@@ -177,37 +176,38 @@ should be good to go.
 <p>The bootdisk's entire purpose in life is to obtain access to the
 network, then hand off control to the more powerful tools available
 there.  In particular, the bootdisk mounts
-<tt>\\ntinstall\install</tt> as the <tt>Z:</tt> drive, then executes
-the Bourne shell script <tt>z:\install.sh</tt>.
+<em>\\ntinstall\install</em> as the <em>Z:</em> drive, then executes
+the Bourne shell script <em>z:\install.sh</em>.
 
 <p>The install.sh script will help you partition the drive and format
 it.  It will ask you which script to run after the OS installation is
 finished; this is the hook by which the <a
 href="apps.html">application installation</a> process is kicked off.
 
-<p>Finally, install.sh will copy the sample z:\unattend.txt file to
-the c:\ drive and offer to let you edit it.
+<p>Finally, <em>install.sh</em> will copy the sample
+<em>z:\unattend.txt</em> file to the <em>c:\</em> drive and offer to
+let you edit it.
 
-<p>The unattend.txt file, also known as the "answer file", is the key
-to this whole process.  Normally, Windows Setup tosses up lots of
-dialogs to ask you questions ("what is your name?", "what is your
+<p>The <em>unattend.txt</em> file, also known as the "answer file", is
+the key to this whole process.  Normally, Windows Setup tosses up lots
+of dialogs to ask you questions ("what is your name?", "what is your
 license key?", etc.) during the OS installation.  By passing the right
-flags to <tt>i386\winnt.exe</tt>, we will make Setup consult this file
-instead.
+flags to <em>i386\winnt.exe</em>, we will cause Setup to consult this
+file for its answers instead.
 
-<p>The most thorough documentation on this file is Microsoft's own
-"Microsoft Windows 2000 Guide to Unattended Setup".  (I strongly
-recommend that you read it, or at least browse it, before proceeding.)
+<p>The best documentation for this file is Microsoft's own "Microsoft
+Windows 2000 Guide to Unattended Setup".  (I strongly recommend that
+you read it, or at least browse it, before proceeding.)
 Unfortunately, as far as I know, you cannot download this document
 directly; you must first download and install the <a
 href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/supporttools.asp"
 >Windows 2000 SP3 Support Tools</a>, then use Internet Explorer to
-extract the <tt>unattend.doc</tt> file from the <tt>deploy.cab</tt>
+extract the <em>unattend.doc</em> file from the <em>deploy.cab</em>
 archive.
 
-<p>Once you understand it, editing <tt>unattend.txt</tt> is pretty
+<p>Once you understand it, editing <em>unattend.txt</em> is pretty
 easy.  And once you have edited it, you can select "Install now" to
-run the <tt>i386\winnt.exe</tt> program with the appropriate
+run the <em>i386\winnt.exe</em> program with the appropriate
 arguments.
 
 <p>Congratulations, your unattended Windows OS installation is on its
