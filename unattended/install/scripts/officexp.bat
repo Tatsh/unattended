@@ -147,6 +147,8 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb873379-client-%WINLANG%.
 todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb833858-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb833858.txt /p VSDEBUGop.msp REBOOT=ReallySuppress\""
 
 if not %WINVER%. == win2ksp4. goto did832668
+:: Egads, what a nightmare.  This is going to fail except for ENU,
+:: JPN, and KOR.  Not clear how to fix.  FIXME.
 :: Office XP Alternative User Input Update: KB832668 (Updated Nov 9th, 2004)
 :: <http://support.microsoft.com/kb/832668>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=3489d806-be63-4253-9120-5e5a2d81dfa9>
