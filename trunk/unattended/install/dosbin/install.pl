@@ -469,7 +469,7 @@ my $_batfile_first_lines;
 sub batfile_first_lines () {
     if (!defined $_batfile_first_lines) {
         $_batfile_first_lines = { };
-        my $script_dir = 'z:\\scripts'
+        my $script_dir = 'z:\\scripts';
         opendir SCRIPTS, $script_dir
             or die "Unable to opendir $script_dir: $^E";
         while (my $ent = readdir SCRIPTS) {
@@ -710,7 +710,7 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             # Basic framework for mapping Z: drive
             my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
             print "Copying $mapznrun...";
-            copy ("z:\\bin\\mapznrun.bat", $mapznrun)
+            copy ('z:\\bin\\mapznrun.bat', $mapznrun)
                 or die "Unable to copy z:\\bin\\mapznrun.bat to $mapznrun";
             print "done.\n";
 
