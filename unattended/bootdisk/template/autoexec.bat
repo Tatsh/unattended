@@ -8,7 +8,8 @@ NETBIND.COM
 TCPTSR.EXE
 TINYRFC.EXE
 
-NET LOGON /YES /SAVEPW:NO
+:: LH NET LOGON /YES /SAVEPW:NO
+NET START BASIC
 if not errorlevel 1 goto gotnet
 @echo *** Unable to start network, probably because
 @echo *** you are using the wrong device driver.
