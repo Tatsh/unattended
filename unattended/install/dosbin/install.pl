@@ -223,6 +223,7 @@ sub canonicalize_user ($$) {
 # Read a file.  Return array of its lines.
 sub read_file ($) {
     my ($file) = @_;
+    local *FILE;
 
     open FILE, $file
         or croak "Unable to open $file for reading: $^E";
@@ -233,6 +234,22 @@ sub read_file ($) {
         or croak "Unable to close $file: $^E";
 
     return @ret;
+}
+
+# Write a bunch of lines to a file.
+sub write_file ($@) {
+    my ($file, @lines) = @_;
+    local *FILE;
+
+    open FILE, ">$file"
+        or die "Unable to open $file for writing: $^E";
+
+    foreach my $line (@lines) {
+        print FILE $line, "\n";
+    }
+
+    close FILE
+        or die "Unable to close $file: $^E";
 }
 
 # Run a command and return the output.  We need this function because
@@ -264,22 +281,6 @@ sub run_command ($@) {
 
 sub read_partition_table () {
     return join '', run_command ('fdisk /info /tech');
-}
-
-# Write a bunch of lines to a file.
-sub write_file ($@) {
-    my ($file, @lines) = @_;
-    local *FILE;
-
-    open FILE, ">$file"
-        or die "Unable to open $file for writing: $^E";
-
-    foreach my $line (@lines) {
-        print FILE $line, "\n";
-    }
-
-    close FILE
-        or die "Unable to close $file: $^E";
 }
 
 ## Functions for asking about particular settings.
@@ -534,22 +535,14 @@ $u->{'_meta'}->{'ntp_servers'} =
     };
 
 $u->comments ('_meta', 'local_admin_group') =
-    ['Name of local Administrators group.  Depends on language...'];
+    ['Name of local Administrators group.  Should depend on language...'];
 
-$u->{'_meta'}->{'local_admin_group'} =
-    sub {
-        my $def = 'Administrators';
-        my $answer =
-            simple_q ("Enter local Administrators group name (default=$def):");
-        return (defined $answer ? $answer : $def);
-    };
+$u->{'_meta'}->{'local_admin_group'} = 'Administrators';
 
 $u->{'_meta'}->{'local_admins'} =
     ['Accounts added to local Administrators group'];
 $u->{'_meta'}->{'local_admins'} =
     sub {
-        # Bogus dependency to enforce question order
-        $u->{'Identification'}->{'DomainAdmin'};
         my $dom = $u->{'Identification'}->{'JoinDomain'};
         defined $dom
             or return undef;
@@ -562,8 +555,7 @@ $u->{'_meta'}->{'netinst'} = 'c:\\netinst';
 
 $u->{'_meta'}->{'edit_files'} = '1';
 
-$u->comments ('_meta', 'doit_cmds') =
-    ['Contents of doit.bat script'];
+$u->comments ('_meta', 'doit_cmds') = ['Contents of doit.bat script'];
 $u->{'_meta'}->{'doit_cmds'} =
     sub {
         my $unattend_txt = $file_spec->catfile ($u->{'_meta'}->{'netinst'},
@@ -579,7 +571,7 @@ $u->{'_meta'}->{'doit_cmds'} =
     };
 
 $u->comments ('_meta', 'autolog') =
-    ["Command to disable (or modify) autologon when installation finishes"];
+    ['Command to disable (or modify) autologon when installation finishes'];
 
 # Default setting for automatic logon is to disable it, but retain
 # default setting of last user who logged on.
