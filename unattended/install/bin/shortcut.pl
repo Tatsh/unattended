@@ -13,7 +13,7 @@ use File::Path;
 
 # Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'help|h|?')
+GetOptions (\%opts, 'help|h|?', 'arguments=s', 'description=s')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -35,6 +35,7 @@ my $wsh_shell = Win32::OLE->CreateObject ('WScript.Shell');
 sub canonicalize_filename ($) {
     my ($filename) = @_;
 
+    # FIXME: Add support for "ProgramFiles".
     if ($filename =~ /^special:([a-z]+)(.*)/i) {
         my ($special, $rest) = ($1, $2);
         # Get special folder.  See
@@ -77,11 +78,21 @@ my $full_shortcut = File::Spec->catfile ($shortcut_dir,
 
 print "Creating shortcut $full_shortcut -> $target\n";
 
+# See
+# <http://msdn.microsoft.com/library/en-us/script56/html/wsobjwshshortcut.asp>
+
 my $obj = $wsh_shell->CreateShortcut ($full_shortcut);
 $obj->{TargetPath} = $target;
 $obj->{WindowStyle} = 1;
 $obj->{IconLocation} = "$target, 0";
 $obj->{WorkingDirectory} = $shortcut_dir;
+
+(exists $opts{'arguments'})
+    and $obj->{Arguments} = $opts{'arguments'};
+
+(exists $opts{'description'})
+    and $obj->{Description} = $opts{'description'};
+
 
 $obj->Save ();
 
@@ -100,6 +111,8 @@ shortcut.pl [ options ] <target> <shortcut>
 Options (may be abbreviated):
 
  --help                 Display help and exit
+ --arguments <args>     Use <args> as arguments to target
+ --description <desc>   Set description (infotip) to <desc>
 
 =head1 DESCRIPTION
 
@@ -115,7 +128,12 @@ created within.
 
  shortcut.pl "C:\Program Files\Foo\foo.exe" special:AllUsersDesktop
 
- shortcut.pl "C:\Program Files\Foo\bar.exe" special:AllUsersStartMenu
+ shortcut.pl --description "My Foo shortcut" "C:\foo\foo.exe" special:AllUsersStartMenu
+
+ shortcut.pl C:\foo\foo.exe --arguments "-x \"hi there\" -y" special:Desktop
+
+The last example creates a shortcut to invoke 'C:\foo\foo.exe -x "hi
+there" -y'.
 
 =head1 SEE ALSO
 C<http://msdn.microsoft.com/library/en-us/script56/html/wsprospecialfolders.asp>
