@@ -7,9 +7,9 @@
 ping -n 10 localhost > nul
 
 :: This will gracefully exit on both 2000, XP, and 2003 if already installed
-:: URL|ALL|http://download.microsoft.com/download/WindowsInstaller/Install/2.0/NT45/EN-US/InstMsiW.exe|packages/windowsinstaller/instmsiw.exe
-if not exist %Z%\packages\windowsinstaller\instmsiw.exe goto nomsi
-%Z%\packages\windowsinstaller\InstMsiW.exe /q /c:"msiinst.exe /i instmsi.msi /q"
+:: URL|ALL|http://download.microsoft.com/download/9/e/1/9e14751c-f897-4bbd-af7a-890d9a0f5430/WindowsInstaller-KB884016-x86.exe|packages/windowsinstaller/WindowsInstaller-KB884016-x86.exe
+if not exist %Z%\packages\windowsinstaller\WindowsInstaller-KB884016-x86.exe goto nomsi
+%Z%\packages\windowsinstaller\WindowsInstaller-KB884016-x86.exe /passive /norestart
 :nomsi
 
 set perl_msi=%Z%\packages\ActivePerl-5.8.4.810-MSWin32-x86.msi
