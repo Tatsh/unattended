@@ -306,8 +306,8 @@ sub dump ($) {
 # Special magical hash.  When a proc is stored into it, converts it
 # into a Promise and stores that instead.
 package Unattend::InfFile::_Hash;
-use Unattend::FoldingHash;
-use base qw(Unattend::FoldingHash::Nestable);
+use Unattend::FoldHash;
+use base qw(Unattend::FoldHash::Nestable);
 use Unattend::Promise;
 
 sub STORE {
