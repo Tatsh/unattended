@@ -22,6 +22,12 @@ case $arg in
         done
         mv /etc/resolv.conf.tmp /etc/resolv.conf
 
+        # Create smb.conf (WINS servers)
+        if [ -n "$wins" ] ; then
+            echo "wins server = $wins" > /usr/lib/smb.conf.tmp
+            mv /usr/lib/smb.conf.tmp /usr/lib/smb.conf
+        fi
+
         # Set our hostname if DHCP provided it
         [ -n "$hostname" ] && hostname "$hostname"
 
