@@ -222,10 +222,10 @@ todo.pl "z:\packages\winxpsp1\dotnetfx.exe /q /c:\"install /q\""
 
 :: IE updates
 
-:: Critical update 818529
-:: "June, 2003, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=818529>
-todo.pl ".ignore-err 194 z:\packages\ie6sp1\q818529.exe /q /r:n" .reboot
+:: Critical update 822925
+:: "August, 2003, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=822925>
+todo.pl ".ignore-err 194 z:\packages\ie6sp1\q822925.exe /q /r:n" .reboot
 
 :: Critical update 330994
 :: "April 2003, Cumulative Patch for Outlook Express"
