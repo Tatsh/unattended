@@ -52,21 +52,6 @@ sub set_value ($$$) {
     my ($sect, $key, $val) = @_;
     my $sect_info = get_info ($sect, '');
     # Handle "array" keys, a little invention of our own.
-    if ($key =~ /^(.*)\[(\d+)\]$/) {
-        my ($container_key, $index) = ($1, $2);
-        my $container_val = get_value ($sect, $container_key);
-        if (!defined $container_val) {
-            # Entry does not exist yet, so create it.
-            $container_val = [ ];
-        }
-
-        ref $container_val eq 'ARRAY'
-            or die "Cannot set array index $index of scalar key $sect/$container_key";
-
-        $container_val->[$index] = $val;
-        $key = $container_key;
-        $val = $container_val;
-    }
 
     my $key_info = get_info ($sect, $key);
     $key_info->{'value'} = $val;
@@ -215,11 +200,6 @@ sub name_val_str ($$) {
     if (!defined $val) {
         # do nothing
     }
-    elsif (ref $val eq 'ARRAY') {
-        foreach my $i (0 .. $#$val) {
-            $ret .= name_val_str ("$name\[$i\]", $val->[$i]);
-        }
-    }
     else {
         # Add quotation marks, if required.
         $val =~ /\W/
@@ -244,6 +224,7 @@ sub generate_unattend_txt () {
             # Skip info for section itself
             $key eq ''
                 and next;
+            print "HERE $sect $key\n";
             my $val = get_value ($sect, $key);
             my $dname = get_display_name ($sect, $key);
             $ret .= name_val_str ($dname, $val);
