@@ -83,21 +83,35 @@ sub full_os_name ($) {
     return $ret;
 }
 
-# Read the current partition table and return it as a human-readable
-# string.
-sub read_partition_table () {
-    # Sigh.  DJGPP Perl does not support pipes...
-    my $tmpfile = 'A:\\fdisktmp.txt';
-    system "fdisk /info /tech > $tmpfile";
+# Run a command and return the output.  We need this because pipes and
+# backticks do not work under DJGPP Perl.
+sub run_command ($;@) {
+    my ($cmd, $expected_status) = @_;
+
+    defined $expected_status
+        or $expected_status = 0;
+
+    my $tmpfile = 'A:\\tmp.txt';
+
+    my $ret = system "$cmd > $tmpfile";
+    my $status = $ret >> 8;
+    $status == $expected_status
+        or die "$cmd > $tmpfile failed, status $status";
+
     open TMP, $tmpfile
         or die "Unable to open $tmpfile for reading: $^E";
 
-    my $ret = join '', <TMP>;
+    my @ret = <TMP>;
 
     close TMP
-        or die "Unable to close $tmpfile read: $^E";
+        or die "Unable to close $tmpfile: $^E";
 
-    return $ret;
+    # Maybe we should remove $tmpfile here, but that would slow
+    # things down and hinder debugging so we don't.
+#    unlink $tmpfile
+#        or die "Unable to remove $tmpfile: $^E";
+
+    return @ret;
 }
 
 ## Set defaults.
@@ -188,6 +202,28 @@ set_value ('_meta', 'format_cmd',
                return (yes_no_choice ('Format C: drive')
                        ? 'format /q /v: c:'
                        : undef);
+           });
+
+set_value ('_meta', 'ipaddr',
+           sub {
+               # ipconfig.exe always exits with status 13, apparently.
+               foreach my $line (run_command ('ipconfig A:\\NET\\', 13)) {
+                   $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
+                       and return $1;
+               }
+               die "INTERNAL ERROR: Unable to get IP address";
+           });
+
+set_value ('_meta', 'macaddr',
+           sub {
+               # Stupid hack: Need to use full path here or net.exe
+               # gets confused.
+               my $cmd = 'a:\\net\\net diag /status < z:\\doslib\\crlf.txt';
+               foreach my $line (run_command ($cmd)) {
+                   $line =~ /^Permanent node name: ([0-9A-F]+)\r?$/
+                       and return $1;
+               }
+               die "INTERNAL ERROR: Unable to get MAC address";
            });
 
 set_value ('_meta', 'replace_mbr',
@@ -355,12 +391,16 @@ if (-e $site_conf) {
         or die "Could not do $site_conf: $^E";
 }
 
+# Output some interesting info.
+print 'IP address:  ', get_value ('_meta', 'ipaddr'), "\n";
+print 'MAC address: ', get_value ('_meta', 'macaddr'), "\n";
+
 # Set environment variable controlling fdisk's use of INT13 extensions.
 get_value ('_meta', 'fdisk_lba')
     or $ENV{'FFD_VERSION'}=6;
 
 # Read current partition table.
-my $partition_table = read_partition_table ();
+my $partition_table = join '', run_command ('fdisk /info /tech');
 
 # Display it.
 print "\nCurrent partition table:";
