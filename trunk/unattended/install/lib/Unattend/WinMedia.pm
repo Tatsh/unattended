@@ -6,7 +6,7 @@ use warnings;
 use strict;
 use Unattend::IniFile;
 use File::Spec::Win32;
-use fields qw (txtsetup setupp path);
+use fields qw (txtsetup setupp path oem_pnp_dirs);
 
 # File::Spec is supposed to auto-detect the OS and adapt
 # appropriately, but it does not recognize a $^O value of "dos".  Work
@@ -141,5 +141,90 @@ sub full_name ($) {
     $sp ne ''
         and $sp = " SP$sp";
     my $type = $self->type ();
-    return "$name$sp [$type]\n";
+    return "$name$sp ($type)";
+}
+
+# Find the .inf files below a given directory.  Allow .inf files in
+# one directory to "mask" the presence of .inf files below it.  This
+# is useful for computing the OemPnPDriversPath.
+sub _find_inf_files ($);
+sub _find_inf_files ($) {
+    my ($dir) = @_;
+    my @results;
+
+    # Read the directory.
+    opendir DIR, $dir
+        or die "Unable to opendir $dir: $^E";
+
+    my @entries = sort readdir DIR;
+
+    closedir DIR
+        or die "Unable to closedir $dir: $^E";
+
+    # Loop through it once, looking for .inf files.
+    foreach my $entry (@entries) {
+        my $full_path = $file_spec->catfile ($dir, $entry);
+
+        if ($entry =~ /\.inf\z/i) {
+            push @results, $full_path;
+        }
+    }
+
+    # If we found any .inf files, we are done.  Otherwise, loop
+    # through directory again, calling ourselves on each subdirectory
+    # and accumulating the results.
+    if (scalar @results == 0) {
+        foreach my $entry (@entries) {
+            $entry eq '.' || $entry eq '..'
+                and next;
+
+            my $full_path = $file_spec->catdir ($dir, $entry);
+
+            -d $full_path
+                and push @results, _find_inf_files ($full_path);
+        }
+    }
+
+    return (@results);
+}
+
+# Like find_inf_files above, but return only the directory portions,
+# relative to the base path provided as argument.
+sub _find_oem_pnp_dirs ($) {
+    my ($base) = @_;
+
+    my @files = find_inf_files ($base);
+    my %dirs;
+
+    foreach my $file (@files) {
+        my (undef, $dir) =
+            $file_spec->splitpath (dirname ($file), 1);
+        $dirs{$file_spec->abs2rel ($dir, $base)} = undef;
+    }
+
+    return keys %dirs;
+}
+
+sub oem_pnp_dirs ($;$) {
+    my Unattend::WinMedia $self = $_[0];
+    my $verbose = $_[1];
+
+    (defined $self->{oem_pnp_dirs})
+        and return @{$self->{oem_pnp_dirs}};
+
+    my $oem_system_dir =
+        $file_spec->catdir ($self->path (), 'i386', '$oem$', '$1');
+
+    $verbose
+        and print "Looking for drivers under $oem_system_dir...\n";
+
+    my @ret = (-d $oem_system_dir
+               ? _find_oem_pnp_dirs ($oem_system_dir)
+               : ());
+
+    $verbose && scalar @ret == 0
+        and print "...no driver directories found.\n";
+
+    $self->{oem_pnp_dirs} = \@ret;
+    return @ret;
 }
