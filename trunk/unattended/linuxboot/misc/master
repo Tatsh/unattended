@@ -44,6 +44,11 @@ load_modules () {
     done
 }
 
+# See if /z is already mounted.
+check_z () {
+    cat /z/dosbin/install.pl > /dev/null 2>&1
+}
+
 echo "*** OK, here we go."
 echo
 echo "*** (If you booted from CD-ROM, you may eject it now.)"
@@ -203,7 +208,7 @@ while : ; do
 
     export PASSWD="$Z_PASS"
 
-    if [ -f /z/dosbin/install.pl ] ; then
+    if check_z ; then
         echo "*** /z already mounted; skipping mount"
         break
     fi
@@ -211,19 +216,22 @@ while : ; do
     # In case something broken is already mounted on /z
     umount /z >/dev/null 2>&1
 
-#    echo "*** Trying mount.cifs $Z_PATH /z -o $mount_opts"
-
-#     if mount.cifs "$Z_PATH" /z -o "$mount_opts" ; then
-#         cat /z/dosbin/install.pl > /dev/null 2>&1 \
-#             && break
-#         umount /z
-#     fi
-#     echo "*** CIFS mount did not work.  Falling back to smbfs."
-
     echo "*** Trying smbmount $Z_PATH /z -o ttl=600000,$mount_opts"
 
-    smbmount "$Z_PATH" /z -o "ttl=600000,$mount_opts" \
-        && break
+    if smbmount "$Z_PATH" /z -o "ttl=600000,$mount_opts" ; then
+        check_z \
+            && break
+        umount /z
+    fi
+
+    echo "*** smbmount did not work."
+    echo "*** Trying mount.cifs $Z_PATH /z -o $mount_opts"
+
+    if mount.cifs "$Z_PATH" /z -o "$mount_opts" ; then
+        check_z \
+            && break
+        umount /z
+    fi
 
     unset PASSWD
 
@@ -232,7 +240,7 @@ done
 
 unset PASSWD
 
-[ -f /z/dosbin/install.pl ] \
+check_z \
     || die "Invalid install share: /z/dosbin/install.pl not found."
 
 [ -d /z/linuxaux ] \
