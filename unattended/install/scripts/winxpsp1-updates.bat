@@ -97,8 +97,9 @@ todo.pl "z:\packages\winxpsp1\msjavwu.exe /q /r:n"
 
 :: Critical update 331953
 :: "Flaw in RPC Endpoint Mapper Could Allow Denial of Service Attacks"
+:: Superseded by 823980!
 :: <http://support.microsoft.com/?kbid=331953>
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q331953_WXP_SP2_x86_ENU.exe /u /n /z" .reboot
+:: todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q331953_WXP_SP2_x86_ENU.exe /u /n /z" .reboot
 
 :: Recommended update 815485
 :: WPA Wireless Security Update for Windows XP
