@@ -17,7 +17,7 @@ parted=parted-1.6.11
 perl=perl-5.8.4
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.7
-samba=samba-3.0.3
+samba=samba-3.0.4
 
 cwd:=$(shell pwd)
 
@@ -653,7 +653,7 @@ $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
-$(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
+$(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/)
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
