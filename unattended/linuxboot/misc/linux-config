@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.9
-# Thu Oct 21 09:22:33 2004
+# Fri Oct 22 15:00:46 2004
 #
 CONFIG_X86=y
 CONFIG_MMU=y
@@ -547,7 +547,7 @@ CONFIG_TYPHOON=m
 # Tulip family network device support
 #
 CONFIG_NET_TULIP=y
-# CONFIG_DE2104X is not set
+CONFIG_DE2104X=m
 CONFIG_TULIP=m
 # CONFIG_TULIP_MWI is not set
 # CONFIG_TULIP_MMIO is not set
