@@ -20,4 +20,4 @@ todo.pl "z:\packages\win2ksp3\q324929.exe /q:a"
 :: <http://support.microsoft.com/?kbid=318203>
 ::todo.pl .reboot "z:\packages\win2ksp3\Q318203_MSXML30_x86.exe /q:a /c:\"dahotfix /q /n\"" .reboot
 
-todo.pl "start /wait z:\packages\ie6\flag\win32\en\IE6setup.exe /q /r:n"
+todo.pl "z:\packages\ie6\flag\win32\en\IE6setup.exe /q /r:n"
