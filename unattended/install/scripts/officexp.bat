@@ -5,6 +5,16 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: "Excel 2002 Security Patch: November 11, 2003"
+:: <http://support.microsoft.com/?kbid=830350>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-050.asp>
+todo.pl "%Z%\updates\officexp\officexp-kb830350-client-%WINLANG%.exe /q /c:\"msiexec /qb /p EXCELop.msp\""
+
+:: "Word 2002 Security Patch: November 11, 2003"
+:: <http://support.microsoft.com/?kbid=830346>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-050.asp>
+todo.pl "%Z%\updates\officexp\Officexp-kb830346-client-%WINLANG%.exe /q /c:\"msiexec /qb /p WINWORDop.msp\""
+
 :: "Access 2002 Snapshot Viewer Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=826293>
 todo.pl "%Z%\updates\officexp\officexp-kb826293-client-%WINLANG%.exe /q /c:\"msiexec /qb /p SNAPVIEWop.msp\""
@@ -12,10 +22,6 @@ todo.pl "%Z%\updates\officexp\officexp-kb826293-client-%WINLANG%.exe /q /c:\"msi
 :: "WordPerfect 5.x Converter Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=824938>
 todo.pl "%Z%\updates\officexp\officexp-kb824938-client-%WINLANG%.exe /q /c:\"msiexec /qb /p MSCONVop.msp\""
-
-:: "Word 2002 Security Patch: September 3, 2003"
-:: <http://support.microsoft.com/?kbid=824934>
-todo.pl "%Z%\updates\officexp\officexp-kb824934-client-%WINLANG%.exe /q /c:\"msiexec /qb /p WINWORDop.msp\""
 
 :: "Office XP Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=822036>
@@ -26,18 +32,6 @@ todo.pl "%Z%\updates\officexp\OfficeXP-KB822036-Client-%WINLANG%.exe /q /c:\"msi
 :: <http://office.microsoft.com/downloads/2002/olk1006.aspx>
 :: Run "Olk1006.exe /c /t:<path>" to extract files to <path>.
 todo.pl "msiexec /qb /p %Z%\updates\officexp\Olk1006\OUTLOOKop.msp"
-
-:: Excel 2002 Update: October 16, 2002
-:: <http://support.microsoft.com/?kbid=329750>
-:: <http://office.microsoft.com/downloads/2002/exc1003.aspx>
-:: Run "exc1003.exe /c /t:<path>" to extract files to <path>.
-todo.pl "msiexec /qb /p %Z%\updates\officexp\exc1003\EXCELop.msp"
-
-:: Word 2002 Update: October 16, 2002
-:: <http://support.microsoft.com/?kbid=329748>
-:: <http://office.microsoft.com/downloads/2002/wrd1005.aspx>
-:: Run "wrd1005.exe /c /t:<path>" to extract files to <path>.
-todo.pl "msiexec /qb /p %Z%\updates\officexp\wrd1005\WINWORDop.msp"
 
 :: Hm, tying this to SP4 is probably wrong.  FIXME
 if not %WINVER%. == win2ksp4. goto didauiu
