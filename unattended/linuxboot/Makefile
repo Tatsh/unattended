@@ -1,5 +1,5 @@
 bash=bash-2.05b
-busybox=busybox-1.00-pre7
+busybox=busybox-1.00-pre8
 dosemu=dosemu-1.2.0
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.34
@@ -168,7 +168,9 @@ $(bash)/bash:
 
 $(call copy_exe, $(bash)/bash, stage1/bin/bash)
 
-$(call link_file,stage1/bin/bash,stage1/bin/sh)
+stage1/bin/sh: stage1/bin/bash
+	ln -s `basename $<` $@.tmp
+	mv $@.tmp $@
 
 stage1 += stage1/bin/bash stage1/bin/sh
 
@@ -256,6 +258,7 @@ build-$(glibc)/libc.so: $(glibc)/.stamp-sscanf-patch
 	    --enable-add-ons				\
 	    --target=i486-pc-linux-gnu			\
 	&& make
+	[ -e $@ ]
 
 $(call copy_exe, build-$(glibc)/libc.so, stage1/lib/libc.so)
 
@@ -287,19 +290,28 @@ build-$(glibc)/nis/libnsl.so: build-$(glibc)/libc.so
 build-$(glibc)/crypt/libcrypt.so: build-$(glibc)/libc.so
 	[ -e $@ ] && touch $@
 
+# Perl needs libnsl, libm, libutil
+build-$(glibc)/math/libm.so: build-$(glibc)/libc.so
+	[ -e $@ ] && touch $@
+
+build-$(glibc)/login/libutil.so: build-$(glibc)/libc.so
+	[ -e $@ ] && touch $@
+
 $(call copy_exe, build-$(glibc)/resolv/libresolv.so, stage1/lib/libresolv.so)
 $(call copy_exe, build-$(glibc)/resolv/libnss_dns.so, stage1/lib/libnss_dns.so)
 $(call copy_exe, build-$(glibc)/nss/libnss_files.so, \
 	stage1/lib/libnss_files.so)
 $(call copy_exe, build-$(glibc)/nis/libnsl.so, stage1/lib/libnsl.so)
 $(call copy_exe, build-$(glibc)/crypt/libcrypt.so, stage1/lib/libcrypt.so)
+$(call copy_exe, build-$(glibc)/math/libm.so, stage1/lib/libm.so)
+$(call copy_exe, build-$(glibc)/login/libutil.so, stage1/lib/libutil.so)
 
-glibc_libs=$(patsubst %, stage1/lib/%,				\
-	libc.so ld-linux.so libdl.so libresolv.so libnsl.so	\
-	libnss_dns.so libnss_files.so libcrypt.so		\
+stage1_libs +=							\
+	$(patsubst %, stage1/lib/%,				\
+	  libc.so ld-linux.so libdl.so libresolv.so libnsl.so	\
+	  libnss_dns.so libnss_files.so libcrypt.so		\
+	  libm.so libutil.so					\
 	)
-
-stage1_libs += $(glibc_libs)
 
 ## BusyBox
 $(busybox)/.config: misc/busybox-config
@@ -362,13 +374,28 @@ $(call copy_file,$(pcmcia-cs)/etc/config.opts,stage1/etc/pcmcia/config.opts)
 
 stage1/etc/pcmcia/network: stage1/bin/ash
 	echo "#!/bin/ash" >| $@.tmp
-	echo ":" >> $@.tmp
+	echo "exit 0" >> $@.tmp
 	chmod +x $@.tmp
 	mv $@.tmp $@
 
 stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 	stage1/etc/pcmcia/config.opts stage1/var/run \
 	stage1/etc/pcmcia/network
+
+## Perl
+$(perl)/perl:
+	cd $(perl)				\
+	&& ./Configure -Dprefix=/opt/perl -de	\
+	&& make
+	[ -e $@ ]
+
+stage1/opt/perl/bin/perl: $(perl)/perl
+	cd $(perl) && make DESTDIR=$(cwd)/stage1 STRIPFLAGS=-s install.perl
+	: create /usr/bin/perl -> /opt/bin/perl symlink
+	ln -sf /opt/perl/bin/perl stage1/usr/bin/perl
+	[ -e $@ ]
+
+stage1 += stage1/opt/perl/bin/perl
 
 ## Samba
 
@@ -435,20 +462,26 @@ stage1 += stage1/etc/ld.so.cache
 stage1: $(stage1)
 
 ## Stage 2
-stage2: $(stage1)
+.stamp-stage2: $(stage1) misc/nail-floppy.txt
+	rm -rf stage2
+	find stage1 -type d -print0			\
+	| xargs -i -0 -r sh -c				\
+		'from={} && to=stage2/$${from#stage1/}	\
+		&& mkdir -p $$to'
 	find stage1 -type f -print0			\
 	| xargs -i -0 -r sh -c				\
 		'from={} && to=stage2/$${from#stage1/}	\
-		&& mkdir -p `dirname $$to`		\
 		&& ln -f $$from $$to'
 	find stage1 -type l -print0			\
 	| xargs -i -0 -r sh -c				\
 		'from={} && to=stage2/$${from#stage1/}	\
-		&& mkdir -p `dirname $$to`		\
 		&& cp -f -d $$from $$to'
+	tools/move-and-link.pl --nail-list=misc/nail-floppy.txt	\
+		stage2 ../install/linuxaux /z/linuxaux
+	touch $@
 
-initrd: devices.cpio $(stage1)
-	(cd stage1 && find . | cpio -H newc -o) >| $@.tmp
+initrd: devices.cpio .stamp-stage2
+	(cd stage2 && find . | cpio -H newc -o) >| $@.tmp
 	cat devices.cpio >> $@.tmp
 	mv $@.tmp $@
 
