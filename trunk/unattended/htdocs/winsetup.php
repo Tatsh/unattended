@@ -8,7 +8,7 @@ $page['next']  = 'timezones.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: winsetup.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: winsetup.php,v 1.2 2005-03-08 22:07:54 nrichthof Exp $';
 $sections[]    = array ('User, Organization, and Computer Name', 'uname');
 $sections[]    = array ('Product Key', 'pkey');
 $sections[]    = array ('Local Administrator Password', 'adminpw');
@@ -50,7 +50,7 @@ $content       = <<<EOT
       <pre class="code">[Identification]
     JoinDomain=FOOBAR
     DomainAdmin=FOOBAR\\wsadmin
-    DomainAdminPassword=verysekrit</pre>
+    DomainAdminPassword=&quot;verysekrit&quot;</pre>
 
       <p>If you do not want to  store  the  password  in  cleartext,  you  can  omit  the
         DomainAdminPassword entry; remember that the installation script will prompt  you
