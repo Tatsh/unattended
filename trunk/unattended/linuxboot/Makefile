@@ -1,28 +1,29 @@
 bash=bash-2.05b
-busybox=busybox-1.00-pre10
-dbd-mysql=DBD-mysql-2.9003
-dbi=DBI-1.42
+busybox=busybox-1.00-rc1
+dbd-mysql=DBD-mysql-2.9004
+dbi=DBI-1.43
 dmidecode=dmidecode-2.4
 #dosemu=dosemu-1.2.1
-dosemu=dosemu-20040606
+dosemu=dosemu-20040723
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
-glibc=glibc-20040606
+glibc=glibc-20040723
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-klibc=klibc-0.116
+#klibc=klibc-0.116
+klibc=klibc-0.146
 linux=linux-2.6.7
 module-init-tools=module-init-tools-3.0
 mysql=mysql-4.0.20
-nano=nano-1.2.3
+nano=nano-1.2.4
 ncurses=ncurses-5.4
 parted=parted-1.6.11
 perl=perl-5.8.4
 pciutils=pciutils-2.1.11
-pcmcia-cs=pcmcia-cs-3.2.7
+pcmcia-cs=pcmcia-cs-3.2.8
 pmtools=pmtools-20031210
-samba=samba-3.0.4
+samba=samba-3.0.5
 wireless_tools=wireless_tools.26
 
 cwd:=$(shell pwd)
@@ -43,14 +44,14 @@ copy_file=					\
 $(2) : $(1)	;				\
 	mkdir -p $(dir $(2)) ;			\
 	cp -f $(1) $(2).tmp ;			\
-	mv $(2).tmp $(2)
+	mv -f $(2).tmp $(2)
 
 # Macro to generate rule for hard-linking single file
 link_file=					\
 $(2) : $(1)	;				\
 	mkdir -p $(dir $(2)) ;			\
 	ln -f $(1) $(2).tmp ;			\
-	mv $(2).tmp $(2)
+	mv -f $(2).tmp $(2)
 
 # Macro to generate rule for copying single executable
 copy_exe=					\
@@ -160,7 +161,7 @@ $(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch \
 # BusyBox has some broken dependencies (changing CONFIG_INIT to off
 # does not rebuild reboot.o), hence the "make clean" here.
 # FIXME: Should use fake flags for CFLAGS too?
-$(busybox)/busybox: $(busybox)/.config
+$(busybox)/busybox: $(busybox)/.config fakeinclude/stdio.h
 	cd $(busybox) && make clean && make LDFLAGS="$(fakelib_cflags)"
 
 stage1/bin/busybox: $(busybox)/busybox
@@ -632,7 +633,7 @@ stage1/usr/local:
 	mkdir -p $@
 
 .stamp-stage1: $(stage1) stage1/usr/local
-	rm -rf $(stage1)/opt/perl/man
+	rm -rf stage1/opt/perl/man
 	touch $@
 
 stage1: .stamp-stage1
