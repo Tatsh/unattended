@@ -9,4 +9,4 @@
 :: <http://java.sun.com/j2se/1.4.2/docs/guide/plugin/developer_guide/silent.html>
 :: for installation switches.
 @Echo off
-todo.pl "%Z%\packages\j2re-1_4_2_05-windows-i586-p.exe /s /v\"/qb IEXPLORER=1 MOZILLA=1 NETSCAPE6=1 REBOOT=ReallySuppress\""
+todo.pl "%Z%\packages\j2re-1_4_2_05-windows-i586-p.exe /s /v\"/qb IEXPLORER=1 MOZILLA=1 NETSCAPE6=1 REBOOT=ReallySuppress JAVAUPDATE=0 WEBSTARTICON=0\""
