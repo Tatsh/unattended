@@ -460,6 +460,43 @@ sub create_postinst_bat () {
     return $postinst;
 }
 
+# Cache for remembering first lines of .bat files under scripts
+# directory.
+my $_batfile_first_lines;
+
+# Routine to fetch hash mapping batfiles to first lines.
+sub batfile_first_lines () {
+    if (!defined $_batfile_first_lines) {
+        $_batfile_first_lines = { };
+        my $script_dir = 'Z:\\scripts';
+        opendir SCRIPTS, $script_dir
+            or die "Unable to opendir $script_dir: $^E";
+        while (my $ent = readdir SCRIPTS) {
+            # Skip special files
+            $ent eq '.' || $ent eq '..'
+                and next;
+            # Skip non-bat files
+            $ent =~ /\.bat\z/i
+                or next;
+            # Skip non-ordinary filess
+            my $full_path = $file_spec->catfile ($script_dir, $ent);
+            -f $full_path
+                or next;
+            open FILE, $full_path
+                or die "Unable to open $full_path for reading: $^E";
+            my $line = <FILE>;
+            chomp $line;
+            $_batfile_first_lines->{$full_path} = $line;
+            close FILE
+                or die "Unable to close $full_path: $^E";
+        }
+        closedir SCRIPTS
+            or die "Unable to closedir $script_dir: $^E";
+    }
+
+    return $_batfile_first_lines;
+}
+
 $u->comments ('_meta') =
     ['This section is for informational purposes.',
      'Windows Setup does not use it.'];
@@ -518,12 +555,18 @@ $u->comments ('_meta', 'top') = ['Script run by postinst.bat'];
 
 $u->{'_meta'}->{'top'} =
     sub {
+        my $lines = batfile_first_lines ();
+        my @scripts = (grep { $lines->{$_} =~ /^::\s*BASE(?!\w)/; }
+                       sort keys %$lines);
+
+        # Backwards compatibility hack.  Remove someday (FIXME).
+        scalar @scripts > 0
+            or @scripts = (map { "Z:\\scripts\\$_" }
+                           ('base.bat', 'sales.bat',
+                            'developer.bat', 'build-server.bat'));
+
         print "Choose post-installation script to run:\n";
-        my @scripts = ('base.bat', 'sales.bat', 'developer.bat',
-                       'build-server.bat', 'training.bat');
-        my @choices = map { my $full = "Z:\\scripts\\$_";
-                            ($full => $full);
-                        } @scripts;
+        my @choices = map { ($full => $full); } @scripts;
         return menu_choice (@choices, 'none' => undef);
     };
 

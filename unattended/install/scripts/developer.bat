@@ -1,4 +1,4 @@
-:: Install a developer workstation
+:: BASE: Install a developer workstation
 
 :: C:\Perl\bin\HEAD conflicts with Cygwin version (because Windows is
 :: case-insensitive), so delete it.
