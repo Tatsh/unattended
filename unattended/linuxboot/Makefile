@@ -290,7 +290,7 @@ fakeinclude/stdio.h: fakelib/libc.so
 # Variable for use in CFLAGS to convince utilities to compile/link
 # against our just-built libraries instead of the system libraries.
 # FIXME: Should include -nostdinc here
-fakelib_cflags=-idirafter $(cwd)/fakeinclude -L$(cwd)/fakelib		\
+fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib		\
 		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib
 
 # Create empty config file to silence ldconfig warnings
@@ -400,7 +400,7 @@ stage1 += stage1/usr/lib/libncurses.so
 
 ## parted
 
-$(parted)/parted/.libs/parted: fakelib/libc.so stage1/lib/libuuid.so	\
+$(parted)/parted/.libs/parted: fakeinclude/stdio.h stage1/lib/libuuid.so \
 				stage1/lib/libdl.so
 	rm -f $@
 	cd $(parted)						\
