@@ -13,6 +13,6 @@ for needed in `egrep -hri "URL\|($WINLANG|ALL)" scripts/$2 | tr ' ' '~'`; do
     mkdir -p "$path"
     # Download file if it doesn't exist
     if [ ! -f "$file" ]; then 
-        wget "$url" -O "$file"
+        wget -O "$file" "$url"
     fi
 done
