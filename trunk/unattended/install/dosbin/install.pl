@@ -161,7 +161,7 @@ sub simple_q ($) {
 }
 
 set_comments ('_meta', '',
-              "; This section is for informational purposes;\n"
+              "; This section is for informational purposes.\n"
               . "; Windows Setup does not use it.\n");
 
 set_comments ('_meta', 'fdisk_lba',
@@ -215,6 +215,8 @@ set_value ('_meta', 'local_admins',
 
 set_value ('_meta', 'netinst', 'c:\\netinst');
 
+set_comments ('_meta', 'doit_cmd',
+              "    ; Contents of doit.bat script\n");
 set_value ('_meta', 'doit_cmd',
            sub {
                my $unattend_txt = (get_value ('_meta', 'netinst')
@@ -248,8 +250,11 @@ set_value ('UserData', 'ComputerName',
                return $name;
            });
 
-# Default time zone US/Eastern (FIXME)
-set_value ('GuiUnattended', 'TimeZone', 35);
+set_value ('GuiUnattended', 'AdminPassword',
+           sub {
+               return simple_q
+                   ('Enter AdminPassword for local administrator account: ');
+           });
 
 set_value ('Identification', 'JoinDomain',
            sub {
@@ -310,7 +315,7 @@ my $site_unattend_txt = 'z:\\site\\unattend.txt';
     and read_unattend_txt ($site_unattend_txt);
 
 # Read site-specific Perl configuration file.
-my $site_conf = 'z:\\site\\dosconf.pl';
+my $site_conf = 'z:\\site\\config.pl';
 if (-e $site_conf) {
     my $result = do $site_conf;
     $@
