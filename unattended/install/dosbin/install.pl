@@ -106,7 +106,7 @@ sub menu_choice (@) {
     my $count = scalar @args / 2;
 
     # Choices to display per page
-    my $per_page = 8;
+    my $per_page = 15;
 
     my $pages = int(($count + $per_page - 1) / $per_page);
 
