@@ -6,6 +6,11 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 823559
+:: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
+:: <http://support.microsoft.com/?kbid=823559>
+todo.pl "z:\packages\winxpsp1\WindowsXP-KB823559-x86-ENU.exe /u /z"
+
 :: Recommended update 282010
 :: "Updated Version of Microsoft Jet 4.0"
 :: <http://support.microsoft.com/default.aspx?kbid=282010>
@@ -168,13 +173,7 @@ todo.pl "z:\packages\winxpsp1\Q322011_WXP_SP2_x86_ENU.exe /u /z"
 :: Critical update 818529
 :: "June, 2003, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=818529>
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\q818529.exe /q /r:n" .reboot
-
-:: Critical update 813489
-:: "April, 2003, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=813489>
-:: <http://www.microsoft.com/windows/ie/downloads/critical/813489/>
-:: todo.pl ".ignore-err 194 z:\packages\winxpsp1\q813489.exe /q /r:n" .reboot
+todo.pl ".ignore-err 194 z:\packages\ie6sp1\q818529.exe /q /r:n" .reboot
 
 :: Critical update 330994
 :: "April 2003, Cumulative Patch for Outlook Express"
