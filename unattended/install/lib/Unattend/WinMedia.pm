@@ -308,7 +308,7 @@ sub textmode_oem_drivers ($;$) {
     $verbose
         and print "Trying to parse $txtsetup_oem_file...\n";
 
-    unless (-f $txtsetup_oem_file) {
+    unless (-f &$dos_to_host ($txtsetup_oem_file)) {
         $verbose
             and print "...file not found\n";
         return ();
@@ -348,7 +348,7 @@ sub textmode_files ($) {
             $ent eq '.' || $ent eq '..'
                 and next;
             my $full_path = $file_spec->catfile ($textmode, $ent);
-            if (! -f $full_path) {
+            if (! -f &$dos_to_host ($full_path)) {
                 warn "$full_path is not a file; ignoring.\n";
                 next;
             }
