@@ -1,4 +1,6 @@
 ; AutoIt script to install DirectX 9.0b
+; download and run dx90update_redist.exe extract into
+; /packages/directx9/%WINLANG%/
 
 Run, %Z%\\packages\\DirectX9\\%WINLANG%\\dxsetup.exe /installmanageddx
 

@@ -1,4 +1,4 @@
-:: OPTIONAL: Install Windows PowerToys
+:: OPTIONAL: Install Windows PowerToys (for XP Only)
 
 :: Windows Power Toys for XP
 :: <http://www.microsoft.com/windowsxp/pro/downloads/powertoys.asp>
@@ -13,4 +13,4 @@ todo.pl "%Z%\packages\powertoys\cmdherepowertoysetup.exe /S /v/qn"
 :: ISO Recorder Power Toy
 :: "Nice tool to burn ISO images with XP"
 :: <http://isorecorder.alexfeinman.com/isorecorder.htm>
-todo.pl "msiexec /qb /i %Z%\packages\powertoys\isorecordersetup.msi"
+todo.pl "msiexec /qb /l* c:\netinst\logs\isorecorder.txt /i %Z%\packages\powertoys\isorecordersetup.msi"
