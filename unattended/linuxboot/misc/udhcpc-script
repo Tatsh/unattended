@@ -1,0 +1,31 @@
+#!/bin/bash
+
+arg="$1"
+
+case $arg in
+    deconfig)
+        ifconfig $interface 0.0.0.0
+        ;;
+    bound)
+        [ -n "$subnet" ] && subnet="netmask $subnet"
+        [ -n "$broadcast" ] && broadcast="broadcast $broadcast"
+        echo "Running ifconfig $interface $ip $subnet $broadcast" >&2
+        ifconfig $interface $ip $subnet $broadcast
+        for router in $router ; do
+            route add default gw $router
+        done
+        [ -e /etc/resolv.conf ] && rm /etc/resolv.conf
+        [ -n "$domain" ] && echo "search $domain" >> /etc/resolv.conf
+        for dns_server in $dns ; do
+            echo "nameserver $dns_server" >> /etc/resolv.conf
+        done
+        ;;
+    renew)
+        echo "$0: ERROR: RENEW NOT IMPLEMENTED" >&2
+        exit 1
+        ;;
+    nak)
+        echo "$0: ERROR: DHCP server gave NAK" >&2
+esac
+
+exit 0
