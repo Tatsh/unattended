@@ -1,6 +1,6 @@
 ; AutoIt script to install Cygwin
 
-Run, "C:\\Documents and Settings\\slords\\Desktop\\cygwin\\setup.exe"
+Run, %Z%\\packages\\cygwin\\setup.exe
 
 WinWait, Cygwin Setup, This wizard will guide you
 Send, !n
