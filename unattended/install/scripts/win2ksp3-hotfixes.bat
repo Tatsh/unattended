@@ -12,12 +12,12 @@ todo.pl .reboot
 :: Critical Update 810833
 :: "Unchecked Buffer in the Locator Service Might Permit Code to Run"
 :: <http://support.microsoft.com/?kbid=810833>
-todo.pl "z:\packages\win2ksp3\Q810833_W2K_SP4_X86_EN.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q810833_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Recommended Update 329251
 :: "Performance Improvement Fix for Windows NAT Solutions"
 :: <http://support.microsoft.com/?kbid=329251>
-todo.pl "z:\packages\win2ksp3\Q329251_W2K_SP4.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q329251_W2K_SP4.exe /u /o /z"
 
 :: Critical Update 810649 (funny)
 :: "Hyperlinks Open in Internet Explorer Instead of in Default Browser"
