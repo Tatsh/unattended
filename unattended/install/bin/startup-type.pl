@@ -43,7 +43,7 @@ my @services = Win32::OLE::Enum->All ($services_set);
 foreach my $service (@services) {
     my $name = $service->{'Name'};
     my $display_name = $service->{'DisplayName'};
-    if ($service_name eq to_lower($name)
+    if ($service_name eq to_lower ($name)
         || $service_name eq to_lower ($display_name)) {
         print "Setting mode for $name ($display_name) to $types{$type}...";
         my $ret = $service->ChangeStartMode ($types{$type});
