@@ -53,25 +53,35 @@ sub canonicalize_filename ($) {
 $target = canonicalize_filename ($target);
 $shortcut = canonicalize_filename ($shortcut);
 
-my ($target_name, $target_dir, $target_type)
-    = fileparse ($target, qr{\..*});
+my ($shortcut_type, $shortcut_name, $shortcut_dir, $target_dir);
 
-my ($shortcut_name, $shortcut_dir, $shortcut_type);
+if ($target =~ /^[a-z]+:\/\//i) {
+    # Target looks like a URL, so create a URL shortcut.
+    $shortcut_type = '.url';
+    (exists $opts{'description'})
+        and $shortcut_name = $opts{'description'};
+}
+else {
+    # Create a traditional shortcut.
+    $shortcut_type = '.lnk';
+    # By defaut, name the shortcut after the target.
+    my $target_name;
+    ($target_name, $target_dir, undef) = fileparse ($target, qr{\..*});
+    $shortcut_name = $target_name;
+}
 
 if ($shortcut =~ /\\\z/ || -d $shortcut) {
     # Argument is a directory, so create the shortcut inside it.
-    $shortcut_name = $target_name;
     $shortcut_dir = $shortcut;
-    $shortcut_type = $target_type;
 }
 else {
     # Treat shortcut as a full path.
-    ($shortcut_name, $shortcut_dir, $shortcut_type)
+    ($shortcut_name, $shortcut_dir, undef)
         = fileparse ($shortcut, qr{\..*});
 }
 
-# Shortcuts are always .lnk files.
-$shortcut_type = '.lnk';
+defined $shortcut_name
+    or die "URL shortcuts need a description or a full path ; bailing out";
 
 mkpath ($shortcut_dir);
 
@@ -82,25 +92,32 @@ print "Creating shortcut $full_shortcut -> $target\n";
 
 # See
 # <http://msdn.microsoft.com/library/en-us/script56/html/wsobjwshshortcut.asp>
+# <http://msdn.microsoft.com/library/en-us/script56/html/wsobjwshurlshortcut.asp>
 
 my $obj = $wsh_shell->CreateShortcut ($full_shortcut);
 $obj->{TargetPath} = $target;
-$obj->{WindowStyle} = 1;
-$obj->{IconLocation} = (exists $opts{'icon'}
-                        ? $opts{'icon'}
-                        : "$target, 0");
-$obj->{WorkingDirectory} = (exists $opts{'workingdirectory'}
-                            ? $opts{'workingdirectory'}
-                            : $target_dir);
 
-(exists $opts{'arguments'})
-    and $obj->{Arguments} = $opts{'arguments'};
+if ($shortcut_type eq '.lnk') {
+    # These properties only exist on traditional shortcuts.
+    $obj->{WindowStyle} = 1;
 
-(exists $opts{'description'})
-    and $obj->{Description} = $opts{'description'};
+    $obj->{IconLocation} = (exists $opts{'icon'}
+                            ? $opts{'icon'}
+                            : "$target, 0");
 
-(exists $opts{'hotkey'})
-    and $obj->{Hotkey} = $opts{'hotkey'};
+    $obj->{WorkingDirectory} = (exists $opts{'workingdirectory'}
+                                ? $opts{'workingdirectory'}
+                                : $target_dir);
+
+    (exists $opts{'arguments'})
+        and $obj->{Arguments} = $opts{'arguments'};
+
+    (exists $opts{'description'})
+        and $obj->{Description} = $opts{'description'};
+
+    (exists $opts{'hotkey'})
+        and $obj->{Hotkey} = $opts{'hotkey'};
+}
 
 $obj->Save ();
 
@@ -139,9 +156,17 @@ The WorkingDirectory property of the shortcut may be set by the
 "--workingdirectory" option; it defaults to the directory of the
 target.
 
+If the target looks like a URL, an Internet shortcut will be created.
+In this case, you must either provide the "--description" option or
+give a complete path for the shortcut.  (A default name derived from
+the URL would include slashes and colons, which are illegal in
+shortcut names.)
+
 =head1 EXAMPLES
 
  shortcut.pl "C:\Program Files\Foo\foo.exe" special:AllUsersDesktop
+
+ shortcut.pl --description Unattended http://unattended.sourceforge.net/ special:Desktop
 
  shortcut.pl --description "My Foo shortcut" "C:\foo\foo.exe" special:AllUsersStartMenu
 
