@@ -27,6 +27,7 @@ etc/udhcpc-script
 
 lib/ld-linux.so
 lib/libc.so
+lib/libm.so
 lib/libcrypt.so # Samba
 lib/libdl.so
 lib/libnsl.so   # Samba again
@@ -62,10 +63,13 @@ lib/modules/2.6.6/kernel/fs/msdos/fat.ko
 lib/modules/2.6.6/kernel/fs/vfat/fat.ko
 lib/modules/2.6.6/kernel/fs/nls/nls_iso8859-1.ko
 
+sbin/acpidmp
 sbin/cardmgr
 sbin/insmod
-sbin/modprobe
+sbin/iwconfig
+sbin/iwlist
 sbin/lspci
+sbin/modprobe
 
 usr/bin/openvt
 
