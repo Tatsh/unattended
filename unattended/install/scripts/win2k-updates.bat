@@ -8,6 +8,7 @@ todo.pl win2ksp4-updates.bat
 :: URL|ESN|http://download.microsoft.com/download/0/d/0/0d02572f-e667-4bd7-a2d7-4b1a4328a711/w2ksp4_es.exe|updates/win2k/w2ksp4_esn.exe
 :: URL|DEU|http://download.microsoft.com/download/c/3/5/c35591e3-52b6-4be0-95d3-ec82fa01ce12/W2KSP4_DE.EXE|updates/win2k/w2ksp4_deu.exe
 :: URL|NLD|http://download.microsoft.com/download/1/b/7/1b7b823b-e760-4aa3-99d6-d9843cf71e7f/w2ksp4_nl.exe|updates/win2k/w2ksp4_nld.exe
+:: URL|NOR|http://download.microsoft.com/download/2/4/c/24ce4080-c34c-4636-bc01-8eb900f5021e/w2ksp4_no.exe|updates/win2k/w2ksp4_nor.exe
 :: URL|RUS|http://download.microsoft.com/download/6/1/1/611e63b8-95ec-40f4-b96c-e676f96d1a95/w2ksp4_ru.exe|updates/win2k/w2ksp4_rus.exe
 :: URL|ITA|http://download.microsoft.com/download/4/3/9/4399958a-cae3-48cf-9fc3-2a36daab3a5e/w2ksp4_it.exe|updates/win2k/w2ksp4_ita.exe
 :: See <http://support.microsoft.com/?kbid=262839> for a description
