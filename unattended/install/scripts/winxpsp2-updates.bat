@@ -8,30 +8,30 @@
 :: Windows Script update to version 5.6.0.8825
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=C717D943-7E4B-4622-86EB-95A22B832CAA&displaylang=en>
 
-:: URL|ARA|http://download.microsoft.com/download/5/b/1/5b1170ba-b891-4623-9ec5-83ae6cdb7d72/scriptar.exe|updates\common\scriptara.exe
-:: URL|CSY|http://download.microsoft.com/download/2/a/3/2a3ffc17-7821-4dd0-a3ec-1923b1363e46/scriptcs.exe|updates\common\scriptcsy.exe
-:: URL|DAN|http://download.microsoft.com/download/b/5/d/b5d75956-af70-4275-8f6c-8467749de927/scriptda.exe|updates\common\scriptdan.exe
-:: URL|DEU|http://download.microsoft.com/download/9/d/a/9dadc25e-a010-4fb4-a711-83c9457eec97/scriptde.exe|updates\common\scriptdeu.exe
-:: URL|ELL|http://download.microsoft.com/download/d/3/8/d38dc54b-80d7-422f-a1df-ea48601edd39/scriptel.exe|updates\common\scriptell.exe
-:: URL|ENU|http://download.microsoft.com/download/2/8/a/28a5a346-1be1-4049-b554-3bc5f3174353/scripten.exe|updates\common\scriptenu.exe
-:: URL|ESN|http://download.microsoft.com/download/4/3/8/43847142-5bd7-491c-819c-3c745d0ea46e/scriptes.exe|updates\common\scriptesn.exe
-:: URL|FIN|http://download.microsoft.com/download/9/5/1/95111c32-5fa3-4ab4-a227-631311fe8f27/scriptfi.exe|updates\common\scriptfin.exe
-:: URL|FRA|http://download.microsoft.com/download/e/a/9/ea9b9bab-0acf-47c4-8c48-75133f499e4d/scriptfr.exe|updates\common\scriptfra.exe
-:: URL|HEB|http://download.microsoft.com/download/6/3/c/63c966cc-17c6-47cb-956c-edd5cbf2bce3/scripthe.exe|updates\common\scriptheb.exe
-:: URL|HUN|http://download.microsoft.com/download/1/2/6/1265de6c-06e0-4b28-af97-545000ade6b7/scripthu.exe|updates\common\scripthun.exe
-:: URL|ITA|http://download.microsoft.com/download/c/c/3/cc314bbd-0710-4b0e-b436-c7c2787c675d/scriptit.exe|updates\common\scriptita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/6/0/460c22f3-90c4-4d5e-95ca-4975f3dcdc12/scriptjp.exe|updates\common\scriptjpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/f/e/4febed69-c399-476b-8826-8562bed2245c/scriptko.exe|updates\common\scriptkor.exe
-:: URL|NLD|http://download.microsoft.com/download/5/7/3/573dbcec-e07a-40ad-9b82-7224a496bf45/scriptnl.exe|updates\common\scriptnld.exe
-:: URL|NOR|http://download.microsoft.com/download/5/9/2/5920760f-1883-4096-b36a-2fcce329bd34/scriptno.exe|updates\common\scriptnor.exe
-:: URL|PLK|http://download.microsoft.com/download/3/e/0/3e0259f3-effd-4232-ba0b-f51007b0fdb1/scriptpl.exe|updates\common\scriptplk.exe
-:: URL|PTB|http://download.microsoft.com/download/5/a/2/5a26c30c-155d-4038-8bd0-614f7a248018/scripptb.exe|updates\common\scriptptb.exe
-:: URL|PTG|http://download.microsoft.com/download/8/a/4/8a4a147f-7171-4d1c-aebb-c68da856fe2e/scripptg.exe|updates\common\scriptptg.exe
-:: URL|RUS|http://download.microsoft.com/download/a/3/6/a36fd52f-ad38-4fd2-bd2c-5b6c2dc94654/scriptru.exe|updates\common\scriptrus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/1/e/a1ee6d01-7f6a-44e7-84a4-ae2dbcf4c94e/scriptsv.exe|updates\common\scriptsve.exe
-:: URL|TRK|http://download.microsoft.com/download/1/4/d/14d817fc-25fe-4240-8d2b-94d0655879e7/scripttr.exe|updates\common\scripttrk.exe
-:: URL|CHS|http://download.microsoft.com/download/d/f/0/df0b2640-79bc-48d2-84bd-cb5b67ee128e/scripchs.exe|updates\common\scriptchs.exe
-:: URL|CHT|http://download.microsoft.com/download/a/8/5/a852b2ad-272a-4de9-8c9d-4233053905bc/scripcht.exe|updates\common\scriptcht.exe
+:: URL|ARA|http://download.microsoft.com/download/5/b/1/5b1170ba-b891-4623-9ec5-83ae6cdb7d72/scriptar.exe|updates/common/scriptara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/a/3/2a3ffc17-7821-4dd0-a3ec-1923b1363e46/scriptcs.exe|updates/common/scriptcsy.exe
+:: URL|DAN|http://download.microsoft.com/download/b/5/d/b5d75956-af70-4275-8f6c-8467749de927/scriptda.exe|updates/common/scriptdan.exe
+:: URL|DEU|http://download.microsoft.com/download/9/d/a/9dadc25e-a010-4fb4-a711-83c9457eec97/scriptde.exe|updates/common/scriptdeu.exe
+:: URL|ELL|http://download.microsoft.com/download/d/3/8/d38dc54b-80d7-422f-a1df-ea48601edd39/scriptel.exe|updates/common/scriptell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/8/a/28a5a346-1be1-4049-b554-3bc5f3174353/scripten.exe|updates/common/scriptenu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/3/8/43847142-5bd7-491c-819c-3c745d0ea46e/scriptes.exe|updates/common/scriptesn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/5/1/95111c32-5fa3-4ab4-a227-631311fe8f27/scriptfi.exe|updates/common/scriptfin.exe
+:: URL|FRA|http://download.microsoft.com/download/e/a/9/ea9b9bab-0acf-47c4-8c48-75133f499e4d/scriptfr.exe|updates/common/scriptfra.exe
+:: URL|HEB|http://download.microsoft.com/download/6/3/c/63c966cc-17c6-47cb-956c-edd5cbf2bce3/scripthe.exe|updates/common/scriptheb.exe
+:: URL|HUN|http://download.microsoft.com/download/1/2/6/1265de6c-06e0-4b28-af97-545000ade6b7/scripthu.exe|updates/common/scripthun.exe
+:: URL|ITA|http://download.microsoft.com/download/c/c/3/cc314bbd-0710-4b0e-b436-c7c2787c675d/scriptit.exe|updates/common/scriptita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/6/0/460c22f3-90c4-4d5e-95ca-4975f3dcdc12/scriptjp.exe|updates/common/scriptjpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/f/e/4febed69-c399-476b-8826-8562bed2245c/scriptko.exe|updates/common/scriptkor.exe
+:: URL|NLD|http://download.microsoft.com/download/5/7/3/573dbcec-e07a-40ad-9b82-7224a496bf45/scriptnl.exe|updates/common/scriptnld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/9/2/5920760f-1883-4096-b36a-2fcce329bd34/scriptno.exe|updates/common/scriptnor.exe
+:: URL|PLK|http://download.microsoft.com/download/3/e/0/3e0259f3-effd-4232-ba0b-f51007b0fdb1/scriptpl.exe|updates/common/scriptplk.exe
+:: URL|PTB|http://download.microsoft.com/download/5/a/2/5a26c30c-155d-4038-8bd0-614f7a248018/scripptb.exe|updates/common/scriptptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/a/4/8a4a147f-7171-4d1c-aebb-c68da856fe2e/scripptg.exe|updates/common/scriptptg.exe
+:: URL|RUS|http://download.microsoft.com/download/a/3/6/a36fd52f-ad38-4fd2-bd2c-5b6c2dc94654/scriptru.exe|updates/common/scriptrus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/1/e/a1ee6d01-7f6a-44e7-84a4-ae2dbcf4c94e/scriptsv.exe|updates/common/scriptsve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/4/d/14d817fc-25fe-4240-8d2b-94d0655879e7/scripttr.exe|updates/common/scripttrk.exe
+:: URL|CHS|http://download.microsoft.com/download/d/f/0/df0b2640-79bc-48d2-84bd-cb5b67ee128e/scripchs.exe|updates/common/scriptchs.exe
+:: URL|CHT|http://download.microsoft.com/download/a/8/5/a852b2ad-272a-4de9-8c9d-4233053905bc/scripcht.exe|updates/common/scriptcht.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\script%WINLANG%.exe /q"
 
 :: Windows Media Connect
@@ -311,7 +311,6 @@ todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB873339-x86-%WINLANG%.exe 
 :: URL|SVE|http://download.microsoft.com/download/3/a/0/3a00f15b-4d81-4686-b773-7ef494cffb53/WindowsXP-KB885836-x86-SVE.exe|updates/common/windowsxp-kb885836-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/8/a/e/8ae4a3a2-ff3a-4f89-a8a8-5045858b4669/WindowsXP-KB885836-x86-TRK.exe|updates/common/windowsxp-kb885836-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB885836-x86-%WINLANG%.exe /passive /n /norestart"
-
 
 :: IE Critical Updates
 
