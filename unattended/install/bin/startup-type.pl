@@ -28,10 +28,7 @@ my %types = map { (to_lower ($_) => $_) } ('Boot', 'System', 'Automatic',
 Win32::OLE->Option ('Warn' => 3);
 
 # Get a handle to the SWbemServices object of the local machine.
-my $moniker = 'WinMgmts:';
-my $computer = Win32::OLE->GetObject ($moniker);
-defined $computer
-    or die "Unable to GetObject $moniker: $^E";
+my $computer = Win32::OLE->GetObject ('WinMgmts:');
 
 # Get the SWbemObjectSet of all services.  See:
 # http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_service.asp
