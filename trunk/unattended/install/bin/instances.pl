@@ -7,7 +7,7 @@ use Win32::OLE;
 
 # Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'help|h|?', 'remote=s')
+GetOptions (\%opts, 'help|h|?', 'remote=s', 'query=s')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -28,7 +28,11 @@ my $computer = Win32::OLE->GetObject (exists $opts{'remote'}
                                       : 'WinMgmts:');
 
 # Get the SWbemObjectSet of all objects of the class.
-my $instances_set = $computer->InstancesOf ($class);
+my $query = "SELECT * FROM $class";
+(exists $opts{'query'})
+    and $query .= " WHERE $opts{'query'}";
+print "Executing query: $query\n";
+my $instances_set = $computer->ExecQuery ($query);
 
 # Convert set to Perl array.
 my @instances = Win32::OLE::Enum->All ($instances_set);
@@ -78,7 +82,9 @@ Options:
 
  --help                 Display help and exit
  --remote <host>        Operate on <host> instead of local machine
+ --query <query>        Restrict instances to match WQL query <query>
 
 =head1 SEE ALSO
 
 http://msdn.microsoft.com/library/en-us/wmisdk/wmi/wmi_classes.asp
+http://msdn.microsoft.com/library/en-us/wmisdk/wmi/querying_with_wql.asp
