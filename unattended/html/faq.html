@@ -58,10 +58,33 @@ href="https://sourceforge.net/mailarchive/message.php?msg_id=7558006">edit
 pxelinux.cfg/default</a> to override the bootdisk defaults
 (<code>Z:</code> share, username, password).
 
+<p>If you are using Samba 3.x as your Unattended server, you probably
+want to set <code>unix&nbsp;extensions</code> option to
+<code>off</code>.  See <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01312.html"
+>this message</a> for details.
+
 <p>The boot disk uses Linux kernel 2.6.4, whose hardware support is
 still maturing.  We are interested in your success/failure reports;
 please send them to <a
 href="mailto:unattended-devel@lists.sourceforge.net">unattended-devel</a>.
+
+
+<h1>I get "No system disk or disk error" when I boot from CD-ROM or
+network using the DOS boot disk.</h1>
+
+<p>This usually happens on laptops without a floppy drive.  The DOS
+boot disk uses a "virtual floppy", so you must enable floppy disk
+support in your BIOS.
+
+<p>The Toshiba Tecra S1 has an additional problem: You must
+<em>disable</em> "USB legacy floppy emulation" before memdisk will
+work.  See <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01293.html"
+>this thread</a> and <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00521.html"
+>this message</a> from the mailing list.
+
 
 <h1>Can I use Cygwin to rebuild the disk images on Windows?</h1>
 
