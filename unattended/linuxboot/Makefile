@@ -501,7 +501,7 @@ stage1: $(stage1)
 	find stage1/ -type f -print0			\
 	| xargs -i -0 -r sh -c				\
 		'from={} && to=stage2/$${from#stage1/}	\
-		&& ln -f $$from $$to'
+		&& cp -f $$from $$to'
 	find stage1/ -type l -print0			\
 	| xargs -i -0 -r sh -c				\
 		'from={} && to=stage2/$${from#stage1/}	\
