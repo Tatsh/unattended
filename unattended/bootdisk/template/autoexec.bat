@@ -2,13 +2,13 @@ set PATH=A:\;A:\NET
 PROMPT $P$G
 :: Randomize hostname
 RANDOM 65535 >> \net\system.ini
-UMB.COM
-LH NET INITIALIZE /DYNAMIC
-LH NETBIND.COM
-LH TCPTSR.EXE
-LH TINYRFC.EXE
+:: UMB.COM
+NET INITIALIZE /DYNAMIC
+NETBIND.COM
+TCPTSR.EXE
+TINYRFC.EXE
 
-NET START BASIC
+NET LOGON /YES /SAVEPW:NO
 if not errorlevel 1 goto gotnet
 @echo *** Unable to start network, probably because
 @echo *** you are using the wrong device driver.
