@@ -75,16 +75,10 @@ perl Z:\dosbin\install.pl
 if errorlevel 1 goto reboot
 cwsdpmi -u
 
-:: XP install *requires* smartdrv (KB article Q296814)
+:: XP install requires smartdrv (http://support.microsoft.com/?kbid=296814)
 smartdrv
 
 C:\netinst\doit.bat
-
-:reboot
-CHOICE /C:YN /T:Y,5 Reboot?
-if errorlevel 2 goto end
-
-fdapm WARMBOOT
 
 :end
 echo on
