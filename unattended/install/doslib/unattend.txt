@@ -36,3 +36,7 @@
 
 [Networking]
     InstallDefaultComponents=Yes
+
+[NetOptionalComponents]
+    ; Install Print Services for UNIX
+    LPDSVC=1
