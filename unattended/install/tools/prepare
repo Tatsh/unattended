@@ -21,5 +21,7 @@ for needed in `egrep -hri "URL\|($WINLANG|ALL)" scripts/$2 | tr ' ' '~'`; do
         else
             rm -f "$file.$$.tmp"
         fi
+    else
+        touch "$file"
     fi
 done
