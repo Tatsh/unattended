@@ -163,6 +163,29 @@ various applications</a>
 
 </ol>
 
+<h1>Addenda</h1>
+
+<p>The main documentation pages are in need of a rewrite.  For one
+thing, they are out of date (not inaccurate; just incomplete).  Also,
+they are written in a somewhat meandering and server-agnostic style
+which occasionally lacks detail.
+
+<p>You may find these extra documents helpful:
+
+<ul>
+<li>The <a href="step-by-step.html">Step by step installation
+guide</a> is good if you just want to get up and running quickly with
+Unattended using a Windows server.
+
+<li>The <a href="cygwin.html">Using Cygwin</a> guide will show you how
+to use Cygwin to run the handy <code>prepare</code> script, rebuild
+the DOS boot disk images, and other things.
+
+<li>The <a href="faq.html">Frequently Asked Questions</a> list pretty
+much speaks for itself.
+
+</ul>
+
 <p>If you encounter problems or have suggestions, just send a message
 to the <a href="mailto:unattended-info@lists.sourceforge.net">mailing
 list</a>.  You can also use the links on the <a
@@ -172,38 +195,14 @@ to submit a formal bug report or feature request.
 <p>Developers might be interested in browsing <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/">
 the CVS repository</a>.  Click on a revision number to view the
-corresponding file.  Additional co-developers are welcome; <a
-href="mailto:patl@users.sourceforge.net">contact me</a> if you are
-interested.  If you are a masochist and want to observe this project's
-development in real time, you can subscribe to the <a
+corresponding file.  Additional co-developers are welcome; send your
+ideas/patches to the <a
+href="https://lists.sourceforge.net/lists/listinfo/unattended-devel/"
+>unattended-devel list</a>.  If you are a masochist and want to
+observe this project's development in real time, you can subscribe to
+the <a
 href="https://lists.sourceforge.net/lists/listinfo/unattended-cvs/"
 >CVS commit logs</a>.
-
-<h1 id="linux">Did you say "Linux boot disk"?</h1>
-
-<p>Traditionally, Unattended had you boot to DOS to start the
-installation of Windows.  And most of the documentation on this site
-was written with this approach in mind.
-
-<p>It works fine, usually, but DOS has certain <a
-href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01030.html"
->limitations</a> which we can avoid by using Linux.  If you do not
-care, then feel free to continue using the old boot disk.
-
-<p>Starting with Unattended 4.0, we are shipping a Linux boot disk in
-addition to the DOS boot disk.  Note that this is not for installing
-Linux; we are simply booting a custom diskless Linux system to
-initiate the installation of Windows.  The Linux boot disk is very new
-and our documentation has not been updated for it, but it works much
-the same as the DOS boot disk.  It runs the same Perl code, in fact,
-which we think is kind of neat.  At present, it only supports booting
-from CD-ROM (<code>linuxboot/linuxboot.iso</code>) and network
-(<code>linuxboot/tftpboot</code>).
-
-<p>The boot disk uses Linux kernel 2.6.3, whose hardware support is
-still maturing.  We are interested in your success/failure reports;
-please send them to <a
-href="mailto:unattended-devel@lists.sourceforge.net">unattended-devel</a>.
 
 <h1>Related sites</h1>
 
