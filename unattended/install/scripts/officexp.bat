@@ -16,7 +16,11 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb833858-client-%WINLANG%.
 :: Hm, tying this to win2ksp4 is probably wrong.  FIXME
 if not %WINVER%. == win2ksp4. goto didauiu
 :: Office XP Alternative User Input Update: March 11, 2004
-:: URL|ALL|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-client-enu.exe|updates/officexp/officexp-kb832668-client-enu.exe
+:: URL|DEU|http://download.microsoft.com/download/7/4/c/74cd80fd-30a0-4618-923e-e1732c1c80c7/OfficeXP-kb832668-client-deu.exe|updates/officexp/officexp-kb832668-client-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-client-enu.exe|updates/officexp/officexp-kb832668-client-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/c/a/2/ca2a607c-5cdb-40e3-9912-b759d61a8116/OfficeXP-kb832668-client-fra.exe|updates/officexp/officexp-kb832668-client-fra.exe
+:: URL|NLD|http://download.microsoft.com/download/2/7/5/275715fb-38b2-41b2-9e84-b834669d2d3e/OfficeXP-kb832668-client-nld.exe|updates/officexp/officexp-kb832668-client-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/0/0/1/001d1235-bba6-45ae-9f4a-a447a8dd3674/OfficeXP-kb832668-client-rus.exe|updates/officexp/officexp-kb832668-client-rus.exe
 :: <http://support.microsoft.com/?id=832668>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=3489d806-be63-4253-9120-5e5a2d81dfa9&displaylang=en>
 :: ONLY REQUIRED FOR WIN2K!
