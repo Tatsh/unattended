@@ -16,7 +16,8 @@ set perl_msi=%Z%\packages\ActivePerl-5.8.4.810-MSWin32-x86.msi
 
 :retry
 if exist %perl_msi% goto have_perl
-pause %perl_msi% not found; press any key to retry.
+echo %perl_msi% not found; press any key to retry.
+pause > nul
 goto retry
 
 :have_perl
