@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: apps.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: apps.php,v 1.2 2005-01-17 20:24:15 nrichthof Exp $';
 $sections[]    = array ('Goals', 'goals');
 $sections[]    = array ('Overview', 'overview');
 $sections[]    = array ('The todo.pl driver script', 'todo');
@@ -225,7 +225,7 @@ $content       = <<<EOT
         scripts may refer to each other and to the utility scripts  without  supplying  a
         full pathname.</p>
 
-      <h3>WINLANG</h3>
+      <h3 id="winlang">WINLANG</h3>
       <p>The <code>WINLANG</code> environment variable contains the <a href="http://www.microsoft.com/globaldev/reference/winxp/langtla.mspx"
         rel="external">three-letter language code</a> for the currently  running  version
         of Windows. This is useful for writing language-independent scripts.</p>
