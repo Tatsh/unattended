@@ -875,6 +875,9 @@ $u->{'_meta'}->{'doit_cmds'} =
         return "z:;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
     };
 
+$u->comments ('_meta', 'edit_files') =
+    ['Display prompt for final edits?'];
+
 $u->{'_meta'}->{'edit_files'} = '1';
 
 $u->comments ('_meta', 'fdisk_lba') =
@@ -995,7 +998,7 @@ $u->{'_meta'}->{'OS_dir'} =
 
 $u->{'_meta'}->{'OS_media'} = \&ask_os;
 
-$u->{'_meta'}->{'postinst'} = \&create_postinst_bat;
+$u->{'_temp'}->{'postinst'} = \&create_postinst_bat;
 
 $u->{'_meta'}->{'replace_mbr'} =
     sub {
@@ -1107,8 +1110,13 @@ $u->comments ('GuiRunOnce', 'Command0') =
 
 $u->{'GuiRunOnce'}->{'Command0'} =
     sub {
+        return $u->{'_temp'}->{'guirunonce'};
+    };
+
+$u->{'_temp'}->{'guirunonce'} =
+    sub {
         my $ret;
-        my $postinst = $u->{'_meta'}->{'postinst'};
+        my $postinst = $u->{'_temp'}->{'postinst'};
 
         if (!defined $postinst) {
             undef $ret;
@@ -1463,6 +1471,9 @@ if ($u->{'_meta'}->{'replace_mbr'}) {
     }
 }
 
+# At this point, force everything else.
+$u->generate ();
+
 # Create C:\netinst and subdirectories.
 my $netinst = $u->{'_meta'}->{'netinst'};
 foreach my $dir ($netinst, "$netinst\\logs") {
@@ -1474,15 +1485,6 @@ foreach my $dir ($netinst, "$netinst\\logs") {
     print "done.\n";
 }
 
-# Create unattend.txt file.
-my $unattend_txt = "$netinst\\unattend.txt";
-
-my @unattend_contents = $u->generate ();
-
-print "Creating $unattend_txt...";
-write_file ($unattend_txt, @unattend_contents);
-print "done.\n";
-
 # Batch script to run after this script exits.
 my $doit = "$netinst\\doit.bat";
 $is_linux
@@ -1492,11 +1494,14 @@ print "Creating $doit...";
 write_file ($doit, @doit_cmds);
 print "done.\n";
 
+# Create list of files to offer for editing.
+my $unattend_txt = "$netinst\\unattend.txt";
+
 my @edit_choices;
 
 push @edit_choices, ("Edit $unattend_txt" => $unattend_txt);
 
-my $postinst = $u->{'_meta'}->{'postinst'};
+my $postinst = $u->{'_temp'}->{'postinst'};
 defined $postinst
     and push (@edit_choices,
               "Edit $postinst (will run after OS install is done)"
@@ -1504,6 +1509,19 @@ defined $postinst
 
 push @edit_choices, ("Edit $doit (will run when you select Continue)"
                      => $doit);
+
+# Create unattend.txt file.
+print "Creating $unattend_txt...";
+
+# Remove [_temp] section.  Since it holds subroutines with
+# side-effects, including it in unattend.txt would almost certainly be
+# an error.
+delete $u->{'_temp'};
+
+my @unattend_contents = $u->generate ();
+
+write_file ($unattend_txt, @unattend_contents);
+print "done.\n";
 
 while ($u->{'_meta'}->{'edit_files'}) {
     my $file = menu_choice (@edit_choices,
