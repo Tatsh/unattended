@@ -3,6 +3,15 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update MS04-025 (867801)
+:: "Cumulative Security Update for Internet Explorer"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-025.mspx>
+:: URL|DEU|http://download.microsoft.com/download/f/7/d/f7d7831d-f578-455c-9c6c-a5f7f68cbea9/IE6.0sp1-KB867801-x86-DEU.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/6/8/9/68923cc9-04f0-4add-98e7-f7d72c88734d/IE6.0sp1-KB867801-x86-ENU.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/c/5/a/c5a8a5d1-438c-4381-b93c-a6b05e6c740b/IE6.0sp1-KB867801-x86-NLD.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/4/8/a/48ad1d78-0044-44f6-b7f2-dbb9c0ef5b79/IE6.0sp1-KB867801-x86-RUS.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-rus.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867801-x86-%WINLANG%.exe /q /r:n"
+
 :: Critical update MS04-018 (823353)
 :: "Cumulative Security Update for Outlook Express"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-018.mspx>
