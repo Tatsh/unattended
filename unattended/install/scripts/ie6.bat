@@ -16,7 +16,7 @@
 :: URL|RUS|http://download.microsoft.com/download/c/3/9/c399ed2c-7e22-446d-98c0-e1a1f93eeb03/IE6.0sp1-KB871260-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB871260-x86-%WINLANG%.exe /q /r:n"
 
-:: Critical update MS04-028 (833987)
+:: Critical update MS04-028 (833989)
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-028.mspx>
 :: URL|ARA|http://download.microsoft.com/download/3/6/9/3696bf6d-50d0-4939-8bd7-83a14429a44f/IE6.0sp1-KB833989-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-ara.exe
