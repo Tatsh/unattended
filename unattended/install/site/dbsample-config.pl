@@ -122,16 +122,16 @@ $u->push_value ('UserData', 'OrgName',
     });
 
 # Lookup Domain from database, if possible.
-$u->push_value ('Identification', 'JoinDomain', &lookup_property('JoinDomain'));
+$u->push_value ('Identification', 'JoinDomain', sub { return lookup_property('JoinDomain'); });
 
 # Lookup Workgroup from database, if possible.
-$u->push_value ('Identification', 'JoinWorkgroup', &lookup_property('JoinWorkgroup'));
+$u->push_value ('Identification', 'JoinWorkgroup', sub { lookup_property('JoinWorkgroup'); });
 
 # Lookup Admin password from database, if possible.
-$u->push_value ('GuiUnattended', 'AdminPassword', &lookup_property('AdminPassword'));
+$u->push_value ('GuiUnattended', 'AdminPassword', sub { lookup_property('AdminPassword'); });
 
 # Lookup OS Directory from database, if possible.
-$u->push_value ('_meta', 'OS_media', &lookup_property('OS_media'));
+$u->push_value ('_meta', 'OS_media', sub { lookup_property('OS_media'); });
 
 # Lookup product Key from database, if possible.
 $u->push_value ('UserData', 'ProductKey', 
@@ -154,16 +154,16 @@ $u->push_value ('UserData', 'ProductID',
     });
 
 # Lookup "Top" level scripts from database, if possible.
-$u->push_value ('_meta', 'top', &lookup_property('top_scripts'));
+$u->push_value ('_meta', 'top', sub { lookup_property('top_scripts'); });
 
 # Lookup "Middle" level scripts from database, if possible.
-$u->push_value ('_meta', 'middle', &lookup_property('middle_scripts'));
+$u->push_value ('_meta', 'middle', sub { lookup_property('middle_scripts'); });
 
 # Lookup "Bottom" level scripts from database, if possible.
-$u->push_value ('_meta', 'bottom', &lookup_property('bottom_scripts'));
+$u->push_value ('_meta', 'bottom', sub { lookup_property('bottom_scripts'); });
 
 # Lookup NTP Servers from database, if possible.
-$u->push_value ('_meta', 'ntp_servers', &lookup_property('ntp_servers'));
+$u->push_value ('_meta', 'ntp_servers', sub { lookup_property('ntp_servers'); });
 
 # Find all relevant drivers for this machine
 $u->push_value ('Unattended', 'OemPnPDriversPath', 
