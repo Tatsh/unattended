@@ -6,7 +6,6 @@
     TimeZone=35
     OEMSkipRegional=1
     OemSkipWelcome=1
-    AutoLogon=Yes
 
 [Unattended]
     UnattendMode=DefaultHide
@@ -21,9 +20,6 @@
     ; Install IIS by default
     iis_pwmgr=On
     iis_doc=On
-
-[GuiRunOnce]
-    Command0="c:\netinst\postinst.bat"
 
 [Data]
     AutoPartition=1
