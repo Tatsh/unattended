@@ -193,12 +193,11 @@ sub _find_inf_files ($) {
 sub _find_oem_pnp_dirs ($) {
     my ($base) = @_;
 
-    my @files = find_inf_files ($base);
+    my @files = _find_inf_files ($base);
     my %dirs;
 
     foreach my $file (@files) {
-        my (undef, $dir) =
-            $file_spec->splitpath (dirname ($file), 1);
+        my (undef, $dir) = $file_spec->splitpath ($file);
         $dirs{$file_spec->abs2rel ($dir, $base)} = undef;
     }
 
