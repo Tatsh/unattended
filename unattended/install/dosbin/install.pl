@@ -446,15 +446,50 @@ sub ask_fdisk_lba () {
          'No large disk support (required for some broken BIOSes)' => 0);
 }
 
-# Find an interval of free space on the drive of at least SIZE
-# megabytes.  Return as a pair (START, END).  Note that the only
-# guarantee is that the interval does not overlap any partitions; it
-# may stretch beyond the end of the drive.
-sub find_free_space ($) {
-    my ($size) = @_;
-
+# Return size of disk in 512-byte sectors.
+my $_disk_sectors;
+sub get_disk_sectors () {
     $is_linux
-        or croak "internal error";
+        or croak 'internal error';
+
+    if (!defined $_disk_sectors) {
+        my $hda = readlink ('/dev/dsk');
+        defined $hda
+            or die "readlink /dev/dsk failed: $^E";
+
+        # Get size of disk in sectors.
+        my $sys_hda = $hda;
+        $sys_hda =~ s/\//!/g;
+        my $size_file = "/sys/block/$sys_hda/size";
+        open SIZE, $size_file
+            or die "Unable to open $size_file for reading: $^E";
+        my $size = <SIZE>;
+        defined $size
+            or die "Unable to read $size_file: $^E";
+        close SIZE
+            or die "Unable to close $size_file: $^E";
+        chomp $size;
+        $size =~ /^0x/
+            and $size = hex $size;
+        $_disk_sectors = $size;
+    }
+        
+    return $_disk_sectors;
+}
+
+# Calculate end of disk in megabytes.
+sub disk_end () {
+    $is_linux
+        or croak 'internal error';
+    return get_disk_sectors () * 512 / 1024 / 1024;
+}
+
+# Find the largest interval of free space on the drive which does not
+# overlap other partitions.  Return as a pair (START, END) where each
+# is in megabytes from start of disk.
+sub find_free_space () {
+    $is_linux
+        or croak 'internal error';
 
     my @partitions;
 
@@ -474,21 +509,33 @@ sub find_free_space ($) {
     close PARTED
         or die "'$cmd' failed: $^E $?";
 
+    # Keep track of best result so far.
+    my ($best_start, $best_end) = (0, 0);
+
     # Now loop through looking for free space.
   LOOP:
-    foreach my $temp_part ([0, 0], @partitions) {
-        my (undef, $temp_end) = @$temp_part;
-        my ($start, $end) = ($temp_end, $temp_end + $size);
-        foreach my $part (@partitions) {
-            my ($part_start, $part_end) = @$part;
-            # If we overlap a partition, no good.
-            $start < $part_end && $end > $part_start
-                and next LOOP;
+    foreach my $part ([0, 0], @partitions) {
+        # Try fitting new partition in just after this one.
+        my $start = $part->[1];
+        my $end = disk_end ();
+        foreach my $other (@partitions, [ disk_end (), disk_end () ]) {
+            # Each other partition may or may not constrain us.
+            my ($other_start, $other_end) = @$other;
+            if ($start >= $other_end) {
+                # Partition ends before we start, so no worries.
+            }
+            elsif ($end > $other_start) {
+                # We must end before the other partition starts.
+                $end = $other_start;
+            }
         }
-        return ($start, $end);
+
+        # Keep track of the best we have found.
+        $end - $start > $best_end - $best_start
+            and ($best_start, $best_end) = ($start, $end);
     }
 
-    die 'Internal error';
+    return ($best_start, $best_end);
 }
 
 # Convert an fdisk command to a parted command, more or less.
@@ -519,16 +566,14 @@ sub convert_fdisk_parted ($) {
     elsif ($cmd =~ /\/pri(o)?:(\d+)(,100)?(?:\s+\/spec:(\d+))?/i) {
         my ($fat16, $size, $is_percent, $type) = ($1, $2, $3, $4);
 
-        # We really want "infinity" here.  But I suppose a
-        # petabyte will do.
-        my $infinity = 1000000000;
-        if (defined $is_percent) {
-            $size eq '100'
-                or croak "We only support 100,100 for size spec ($fdisk_cmd)";
-            $size = $infinity;
-        }
+        my ($start, $end) = find_free_space ();
 
-        my ($start, $end) = find_free_space ($size);
+        defined $is_percent
+            and $size = disk_end () * ($size / 100);
+
+        # If the available space is more than we need, shrink it.
+        $end - $start > $size
+            and $end = $start + $size;
 
         # Sanity-check size of FAT16 partitions.
         defined $fat16 && $end - $start > 2047
@@ -537,7 +582,8 @@ sub convert_fdisk_parted ($) {
             . "I suggest using /pri:XXX instead of /prio:XXX\n"
             . 'Bailing out';
 
-        $end >= $infinity
+        # Magic Parted syntax for end of disk.
+        $end == disk_end ()
             and $end = '-0';
 
         my $fs = (defined $fat16 ? 'fat16' : 'fat32');
@@ -584,10 +630,12 @@ sub ask_fdisk_cmds () {
          'Run partitioning tool manually (experts only)' => $interactive_cmd,
          'Whole disk C:', =>
          'fdisk /pri:100,100',
-         '4G C:, rest D:' =>
-         'fdisk /pri:4096;fdisk /pri:100,100 /spec:7',
+         '12G C:, rest D:' =>
+         'fdisk /pri:12288;fdisk /pri:100,100 /spec:7',
          '12G C:, 5G D:, rest E:' =>
-         'fdisk /pri:12288;fdisk /pri:5120 /spec:7;fdisk /pri:100,100 /spec:7'
+         'fdisk /pri:12288;fdisk /pri:5120 /spec:7;fdisk /pri:100,100 /spec:7',
+         '50% C:, 50% d:' =>
+         'fdisk /pri:50,100;fdisk /pri:50,100 /spec:7',
          );
 
     defined $ret
@@ -1344,29 +1392,18 @@ if ($is_linux) {
         defined $hda
             or die "readlink /dev/dsk failed: $^E";
 
-        # Get size of disk in sectors.
-        my $sys_hda = $hda;
-        $sys_hda =~ s/\//!/g;
-        my $size_file = "/sys/block/$sys_hda/size";
-        open SIZE, $size_file
-            or die "Unable to open $size_file for reading: $^E";
-        my $size = <SIZE>;
-        defined $size
-            or die "Unable to read $size_file: $^E";
-        close SIZE
-            or die "Unable to close $size_file: $^E";
-        chomp $size;
-        $size =~ /^0x/
-            and $size = hex $size;
+        my $sectors = get_disk_sectors ();
 
-        my $cylinders = int ($size / $bios_head / $bios_sect);
+        my $cylinders = int ($sectors / $bios_head / $bios_sect);
 
-        $size == $cylinders * $bios_head * $bios_sect
-            or print "Odd.  C/H/S does not multiply out to $size.\n";
+        $sectors == $cylinders * $bios_head * $bios_sect
+            or print "Odd.  C/H/S does not multiply out to $sectors.\n";
 
         $cylinders > 65535
             and $cylinders = 65535;
 
+        my $sys_hda = $hda;
+        $sys_hda =~ s/\//!/g;
         my $settings_file = "/proc/ide/$sys_hda/settings";
 
         if (-e $settings_file) {
