@@ -24,7 +24,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.ex
 :: URL|ITA|http://download.microsoft.com/download/b/a/b/babcaa5a-3a95-4fef-a257-08d050064bd6/Office2000-kb830349-client-ita.exe|updates/office2k/office2000-kb830349-client-ita.exe
 :: <http://support.microsoft.com/?kbid=830349>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-050.mspx>
-todo.pl "%Z%\updates\office2k\Office2000-kb830349-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\excelop.txt /p EXCELop.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\Office2000-kb830349-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\excelop.txt /p EXCELop.msp REBOOT=ReallySuppress\""
 
 :: "Word 2000 Security Patch: November 11, 2003"
 :: URL|ENU|http://download.microsoft.com/download/f/2/2/f225f9c6-87ef-45bd-a4f7-cc08bb14f4da/Office2000-kb830347-client-enu.exe|updates/office2k/office2000-kb830347-client-enu.exe
@@ -34,7 +34,7 @@ todo.pl "%Z%\updates\office2k\Office2000-kb830349-client-%WINLANG%.exe /q /c:\"m
 :: URL|ITA|http://download.microsoft.com/download/d/0/2/d02e6ae8-d3a4-443c-a525-6f9f70b032eb/office2000-kb830347-client-ita.exe|updates/office2k/office2000-kb830347-client-ita.exe
 :: <http://support.microsoft.com/?kbid=830347>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-050.mspx>
-todo.pl "%Z%\updates\office2k\Office2000-kb830347-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\winwordop.txt /p WINWORDop.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\Office2000-kb830347-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\winwordop.txt /p WINWORDop.msp REBOOT=ReallySuppress\""
 
 :: "Access 2000 Snapshot Viewer Security Patch: September 3, 2003"
 :: URL|ENU|http://download.microsoft.com/download/2/d/5/2d5a89c9-972f-4135-a8d9-3747188552b2/office2000-kb826292-client-enu.exe|updates/office2k/office2000-kb826292-client-enu.exe
@@ -44,7 +44,7 @@ todo.pl "%Z%\updates\office2k\Office2000-kb830347-client-%WINLANG%.exe /q /c:\"m
 :: URL|ITA|http://download.microsoft.com/download/2/f/f/2ff717e2-83f2-42d3-8532-0709288c9453/office2000-kb826292-client-ita.exe|updates/office2k/office2000-kb826292-client-ita.exe
 :: <http://support.microsoft.com/?kbid=826292>
 :: <http://www.microsoft.com/technet/security/bulletin/ms03-038.mspx>
-todo.pl "%Z%\updates\office2k\office2000-kb826292-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\snapviewop.txt /p SNAPVIEWop.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb826292-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\snapviewop.txt /p SNAPVIEWop.msp REBOOT=ReallySuppress\""
 
 :: "WordPerfect 5.x Converter Security Patch: September 3, 2003"
 :: URL|ENU|http://download.microsoft.com/download/8/7/8/8785bb28-b4e3-401d-9aef-c23e7af0e347/office2000-kb824993-client-enu.exe|updates/office2k/office2000-kb824993-client-enu.exe
@@ -54,7 +54,7 @@ todo.pl "%Z%\updates\office2k\office2000-kb826292-client-%WINLANG%.exe /q /c:\"m
 :: URL|ITA|http://download.microsoft.com/download/4/4/7/4477a633-2258-47eb-8460-9c1918a39e32/office2000-kb824993-client-ita.exe|updates/office2k/office2000-kb824993-client-ita.exe
 :: <http://support.microsoft.com/?kbid=824993>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-036.mspx>
-todo.pl "%Z%\updates\office2k\office2000-kb824993-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\msconvop.txt /p MSCONVop.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb824993-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\msconvop.txt /p MSCONVop.msp REBOOT=ReallySuppress\""
 
 :: "Office 2000 Security Patch: September 3, 2003"
 :: URL|ENU|http://download.microsoft.com/download/5/E/D/5ED56804-6577-46E4-88EE-9EB47AC6AA0E/Office2000-KB822035-Client-ENU.exe|updates/office2k/office2000-kb822035-client-enu.exe
@@ -64,7 +64,7 @@ todo.pl "%Z%\updates\office2k\office2000-kb824993-client-%WINLANG%.exe /q /c:\"m
 :: URL|ITA|http://download.microsoft.com/download/c/e/d/ced938a2-482f-42f6-947c-83a798282019/office2000-kb822035-client-ita.exe|updates/office2k/office2000-kb822035-client-ita.exe
 :: <http://support.microsoft.com/?kbid=822035>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-037.mspx>
-todo.pl "%Z%\updates\office2k\Office2000-KB822035-Client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\vbe6op.txt /p VBE6op.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\Office2000-KB822035-Client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\vbe6op.txt /p VBE6op.msp REBOOT=ReallySuppress\""
 
 :: Install the "Outlook 2000 Update: December 18, 2002"
 :: URL|ENU|http://download.microsoft.com/download/f/1/d/f1d8421a-2b76-4603-808b-39d8dcc74038/Olk0901.exe|updates/office2k/enu/olk0901.exe
@@ -73,7 +73,7 @@ todo.pl "%Z%\updates\office2k\Office2000-KB822035-Client-%WINLANG%.exe /q /c:\"m
 :: URL|RUS|http://download.microsoft.com/download/c/f/0/cf0e4961-c166-4200-b346-bb52873f70a3/Olk0901.exe|updates/office2k/rus/olk0901.exe
 :: URL|ITA|http://download.microsoft.com/download/d/6/5/d651e805-5234-4dd7-8edf-3b6a08a379d8/Olk0901.exe|updates/office2k/ita/olk0901.exe
 :: <http://support.microsoft.com/?kbid=811167>
-todo.pl "%Z%\updates\office2k\%WINLANG%\Olk0901.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\Olk0901.txt /p OMIop.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\Olk0901.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\Olk0901.txt /p OMIop.msp REBOOT=ReallySuppress\""
 
 :: Install View Control Security Update
 :: URL|ENU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/enu/o2ksp3.exe
@@ -82,7 +82,7 @@ todo.pl "%Z%\updates\office2k\%WINLANG%\Olk0901.exe /r:n /q /c:\"msiexec /qb /l*
 :: URL|RUS|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/RU/O2kSp3.exe|updates/office2k/rus/o2ksp3.exe
 :: URL|ITA|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/IT/O2kSp3.exe|updates/office2k/ita/o2ksp3.exe
 :: (part of SP3, but not installed via MSI)
-todo.pl "%Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"outlctlx.exe /q /r:n\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"outlctlx.exe /q /r:n\""
 
 :: Install Service Pack 3
 :: URL|ENU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/enu/o2ksp3.exe
@@ -93,7 +93,7 @@ todo.pl "%Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"outlctlx.exe /q 
 :: See <http://support.microsoft.com/?kbid=326585>
 :: Download from:
 :: <http://office.microsoft.com/downloads/2000/o2ksp3.aspx>
-todo.pl "%Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\o2ksp3.txt /p MAINSP3.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\o2ksp3.txt /p MAINSP3.msp REBOOT=ReallySuppress\""
 
 :: Install SR-1a
 :: URL|ENU|http://download.microsoft.com/download/office2000prem/adminup2/SR-1a/WIN98/EN-US/O2KSR1aDL.EXE|updates/office2k/enu/o2ksr1adl.exe
@@ -105,12 +105,12 @@ todo.pl "%Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"msiexec /qb /l* 
 :: and <http://support.microsoft.com/?kbid=258323>
 :: Download O2KSR1aDL.exe from:
 :: <http://www.microsoft.com/office/ork/2000/appndx/toolbox.htm#o2sr1au>
-todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\o2ksr1a.txt /p %TEMP%\o2ksr1a\DATA1.msp REBOOT=ReallySuppress"
-todo.pl "%Z%\updates\office2k\%WINLANG%\O2KSR1aDL.EXE /t:%TEMP%\o2ksr1a"
+todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\o2ksr1a.txt /p %TEMP%\o2ksr1a\DATA1.msp REBOOT=ReallySuppress"
+todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\O2KSR1aDL.EXE /t:%TEMP%\o2ksr1a"
 
 :: Use Z_PATH instead of %Z%\ because Office likes to phone home a lot,
 :: even with ADDLOCAL=ALL.
 :: "REMOVE=WinFax" means do not install the Symantec Fax Starter
 :: Edition.  (It shows up as a printer and is therefore annoying.)
 :: Thanks to Justin Beckley.
-todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REMOVE=WinFax REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
+todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REMOVE=WinFax REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
