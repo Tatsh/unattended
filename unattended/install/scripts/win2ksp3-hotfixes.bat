@@ -6,6 +6,12 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical Update Q328970
+:: "November 2002, Cumulative Patch for Internet Explorer"
+:: <http://www.microsoft.com/windows/ie/downloads/critical/Q328970/>
+:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q328970>
+todo.pl "z:\packages\win2ksp3\q328970.exe /q /r:n" .reboot
+
 :: Not-so-critical update Q328523
 :: "default invocation of IE from the Internet Connection Wizard"
 :: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q328523>
