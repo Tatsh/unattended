@@ -83,6 +83,9 @@ Change instsrv.pl to set startup type to "Automatic" by default.
 Add Adobe Reader section to installers.html.  Thanks to Nils Østbjerg.
 (Documentation is good.  Must find more time to write docs.)
 
+Restore support for [_meta]/ipaddr and [_meta]/macaddr, since some
+people (including mr-russ) actually use them.
+
 Various bug fixes.
 
 ** Changes in version 2.6 (2003-Jun-29)
