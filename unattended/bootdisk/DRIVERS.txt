@@ -1,5 +1,6 @@
-# This is a list of one-line summaries of our supported driver names
-# and their descriptions.  To add support for another network card,
+# This is a list of one-line summaries of our supported drivers.  The
+# first word is the DOS driver name; the rest of the line is a
+# human-readable description.  To add support for a network card,
 # download the NDIS2 driver (.dos extension) from the card's
 # manufacturer, copy it to the drivers/ subdirectory, and add a line
 # to this file.  Then just type "make".
