@@ -1,4 +1,4 @@
-Run, z:\\packages\\php-4.3.0-installer.exe /s
+Run, %Z%\\packages\\php-4.3.0-installer.exe /s
 
 WinWait, IIS Scriptmap Node Selection
 WinActivate, IIS Scriptmap Node Selection

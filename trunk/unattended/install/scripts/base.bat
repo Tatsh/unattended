@@ -14,7 +14,7 @@ todo.pl adobe-reader.bat tightvnc.bat mozilla.bat 7-zip.bat php.bat openoffice.b
 todo.pl %%WINVER%%-updates.bat %%WINVER%%-notips.pl .reboot
 
 :: Defragment the drive to collect the free space.
-todo.pl "AutoIt z:\scripts\defrag.aut"
+todo.pl "AutoIt %Z%\scripts\defrag.aut"
 
 :: Set IIS startup type to manual.
 todo.pl "startup-type.pl Manual IISADMIN" "startup-type.pl Manual W3SVC"

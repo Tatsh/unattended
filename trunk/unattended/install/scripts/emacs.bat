@@ -6,7 +6,7 @@ set prog=emacs-21.3
 c:
 cd \
 
-%zip% x z:\packages\%prog%-fullbin-i386.tar.gz
+%zip% x %Z%\packages\%prog%-fullbin-i386.tar.gz
 if errorlevel 1 exit 1
 %zip% x %prog%-fullbin-i386.tar
 if errorlevel 1 exit 1
