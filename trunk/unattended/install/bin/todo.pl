@@ -15,6 +15,13 @@ my $todo = 'c:\\netinst\\todo.txt';
 # Location of "mapznrun" script
 my $mapznrun = 'c:\\netinst\\mapznrun.bat';
 
+unless (-e $mapznrun) {
+    print "Hm, no $mapznrun file.  Attempting to copy from Z:\bin...";
+    use File::Copy;
+    copy 'z:\\bin\\mapznrun.bat', $mapznrun
+        or die "copy failed ($^E); bailing";
+}
+
 # Your usual option-processing sludge.
 my %opts;
 GetOptions (\%opts, 'help', 'man', 'go')
