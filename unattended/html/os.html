@@ -225,15 +225,13 @@ on your operating system; on Linux, something like
 
 <h2>Booting from CD-ROM or network</h2>
 
-<p>These sections are optional; you can kick off the installation
-process just using a floppy.  But a CD-ROM is faster, and it can hold
-ALL of the floppy images at once.  And "nothing-but-net" installs are
-the most fun, although I still find them a little creepy.  Still, you
-should probably skip these sections the first time through.  Once you
-have the whole process working from floppy, moving to a CD-ROM or
-network boot is pretty easy.
 
-<h3>Booting from CD-ROM</h3>
+<h2>Booting from CD-ROM</h2>
+
+<p>This section is optional; you can kick off the installation process
+just using a floppy.  But a CD-ROM is faster, and it can hold
+<b>all</b> of the floppy images at once.
+
 <p>To boot from a CD-ROM, we will use the <a
 href="http://syslinux.zytor.com/iso.php">ISOLINUX</a> and <a
 href="http://syslinux.zytor.com/memdisk.php">memdisk</a> utilities
@@ -248,25 +246,29 @@ CD-ROM.  Booting this CD-ROM will give you a choice of "virtual
 floppies" to boot; choose the one with the right driver for your
 network card.
 
-<h3 id="netboot">Booting from the network</h3>
+<h2 id="netboot">Booting from the network</h2>
+
+<p>This section is also optional, but "nothing but net" installs are
+the most fun.
 
 <p>Most modern network cards support booting directly from the network
 according to Intel's Preboot eXecution Environment (PXE)
 specification.  You can download the PXE specification from <a
 href="http://www.intel.com/labs/manage/wfm/wfmspecs.htm">Intel's WFM
 site</a>, but the basic idea is simple: Just configure your DHCP
-server to provide "filename" and "next-server" DHCP options giving to
-the file name and TFTP server of the PXE boot loader.
+server to provide "filename" and "next-server" DHCP options naming the
+file and TFTP server for the PXE boot loader.
 
 <p>Which boot loader?  We will use <a
 href="http://syslinux.zytor.com/pxe.php">PXELINUX</a>, also from the
-SYSLINUX package.  This will work just like the ISO CD-ROM boot, using
-<code>memdisk</code> to load a virtual floppy, but here you do not care
-which network driver to use!  3com has kindly written a "universal"
-DOS network driver which runs over any PXE implementation, allowing
-one floppy image to support any PXE-compatible network hardware.
+SYSLINUX package.  This works just like booting from CD-ROM, using
+<code>memdisk</code> to load a virtual floppy, but here you do not
+have to pick a network driver (!).  3com has kindly written a
+"universal" DOS network driver which runs over any PXE implementation,
+allowing one net-booted floppy image to support any PXE-compatible
+network hardware.
 
-<p>NOTE: Historically, by which I mean as recently as this year, PXE
+<p>NOTE: Historically (meaning as recently as 2002), most vendors' PXE
 implementations have been extremely buggy.  Always flash the firmware
 on your network card to the latest version before attempting a network
 boot.  For network hardware embedded on a motherboard or laptop, this
