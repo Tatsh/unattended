@@ -1,13 +1,19 @@
-# This script assumes there is a MySQL table that is defined as
-# below, that there is a user/pass that has rights to that table,
-# and that the user can connect via TCP/IP from the install host.
+# The following section (uncommented) will create a database, 
+# user, and table for use in this script.  It also puts a 
+# sample row in that will set the Computer Name to testing
+# when it sees the MAC address 0002A52A9871.
 #
+# echo 'create database unattended;' | mysql
+# echo 'grant all on unattended.* to username@"%" identified by "password";' | mysql
+# echo << EOF | mysql unattended
 # CREATE TABLE unattended (
 #   Lookup varchar(128) NOT NULL default '',
 #   Property varchar(128) NOT NULL default '',
 #   Value varchar(255) NOT NULL default '',
 #   PRIMARY KEY  (Lookup,Property)
 # ) TYPE=MyISAM;
+# EOF
+# echo 'insert into unattended values ("0002A52A9871","ComputerName","testing");' | mysql unattended
 #
 # The following table shows what Lookup values are used for a
 # given Property value.  The order shown is the order searched.
