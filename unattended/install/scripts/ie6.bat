@@ -1,7 +1,7 @@
 :: Install IE6
 
 :: Arrange for hotfixes to run after IE6 is installed
-z:\bin\todo.pl .reboot q317244.bat
+todo.pl .reboot q317244.bat
 
 z:
 cd \packages\ie6\flat\win32\en
