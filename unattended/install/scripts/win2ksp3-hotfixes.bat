@@ -9,6 +9,39 @@
 :: Always reboot after installing hotfixes
 todo.pl .reboot
 
+:: Critical update 815021
+:: "Unchecked Buffer in Windows Component May Cause Web Server Compromise"
+:: <http://support.microsoft.com/?kbid=815021>
+todo.pl "z:\packages\win2ksp3\Q815021_W2K_SP4_x86_EN.exe /u /o /z"
+
+:: Critical update 814078
+:: "Flaw in Windows Script Engine May Allow Code to Run"
+:: <http://support.microsoft.com/?kbid=814078>
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\js56nen.exe /q /r:n" .reboot
+
+:: Critical update 814033
+:: "Cannot Install Driver Updates from the Windows Update Web Site"
+:: (only available from <http://windowsupdate.microsoft.com/catalog/>)
+:: <http://support.microsoft.com/?kbid=814033>
+todo.pl "z:\packages\win2ksp3\Q814033_W2K_SP4_x86_EN.exe /u /o /z"
+
+:: Critical Update 811630
+:: "HTML Help Update to Limit Functionality ..."
+:: <http://support.microsoft.com/?kbid=811630>
+todo.pl "z:\packages\win2ksp3\Q811630_W2K_SP4_X86_EN.exe /u /o /z"
+
+:: Critical Update 813951
+:: "February 2003, Update for Internet Explorer 6 SP1"
+:: <http://support.microsoft.com/?kbid=813951>
+:: <http://www.microsoft.com/windows/ie/downloads/critical/813951/>
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\q813951.exe /q /r:n" .reboot
+
+:: Critical Update 810847
+:: "February, 2003, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=810847>
+:: <http://www.microsoft.com/windows/ie/downloads/critical/810847/>
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\q810847.exe /q /r:n" .reboot
+
 :: Critical Update 810833
 :: "Unchecked Buffer in the Locator Service Might Permit Code to Run"
 :: <http://support.microsoft.com/?kbid=810833>
