@@ -84,7 +84,7 @@ if ($opts{'policy'}) {
       die "--time must be between 0 and 23\n";
     }
     
-    if ($opts{'wait'} =~ /^\d+$/ && $opts{'time'} >= 1 && $opts{'time'} <= 60) {
+    if ($opts{'wait'} =~ /^\d+$/ && $opts{'wait'} >= 1 && $opts{'wait'} <= 60) {
       $au_values{'RescheduleWaitTime'} = $opts{'wait'};
     } else {
       die "--wait must be between 1 and 60\n";
