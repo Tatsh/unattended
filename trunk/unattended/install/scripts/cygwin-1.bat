@@ -21,4 +21,4 @@ todo.pl "c:\cygwin\bin\bash.exe --login -c 'ssh-host-config --no'"
 todo.pl "c:\cygwin\bin\bash.exe --login -c 'grep -q curlbot /etc/passwd || echo curlbot:unused_by_nt/2000/xp:11427:10513:Curl Q. Robot,U-CURL\\curlbot,S-1-5-21-223763145-1258644291-1338337383-1427:/u/curlbot:/bin/bash >> /etc/passwd'"
 
 :: Populate /etc/group similarly (mkgroup -d)
-todo.pl "c:\cygwin\bin\bash.exe --login -c 'grep -q 10513 /etc/group|| echo Domain Users:S-1-5-21-223763145-1258644291-1338337383-513:10513: >> /etc/group"'
+todo.pl "c:\cygwin\bin\bash.exe --login -c 'grep -q 10513 /etc/group|| echo Domain Users:S-1-5-21-223763145-1258644291-1338337383-513:10513: >> /etc/group'"
