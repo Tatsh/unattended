@@ -1104,7 +1104,7 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             print "Creating $tempcred...";
             write_file ($tempcred,
                         "\@SET Z_USER=$z_user",
-                        "\@SET Z_PASS=$z_pass");
+                        "\@SET Z_PASS=\"$z_pass\"");
             print "done.\n";
 
             $ret = "$mapznrun $postinst";
