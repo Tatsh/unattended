@@ -1,3 +1,3 @@
 :: Install a salesperson laptop
 
-z:\scripts\todo.pl base.bat office.bat notes.bat att.bat shiva.bat
+z:\bin\todo.pl base.bat office.bat notes.bat att.bat shiva.bat
