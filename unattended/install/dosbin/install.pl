@@ -222,7 +222,7 @@ sub read_file ($) {
     open FILE, $file
         or croak "Unable to open $file for reading: $^E";
 
-    foreach (my $line = <FILE>) {
+    while (my $line = <FILE>) {
         chomp $line;
         push @ret, $line;
     }
@@ -490,6 +490,7 @@ $u->{'_meta'}->{'macaddr'} =
                 and return $1;
         }
         warn "Unable to get MAC address from $netdiag";
+        return undef;
     };
 
 set_value ('_meta', 'replace_mbr',
