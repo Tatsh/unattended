@@ -385,6 +385,8 @@ href="http://www.microsoft.com/windows/directx/downloads/drx81.asp"
 the tree to <var>path</var>.  From that tree, run
 <kbd>dxsetup&nbsp;/silent&nbsp;/install</kbd>.
 
+</table>
+
 <br><hr width="50%">
 <h2 id="emacs">Emacs</h2>
 <table border cellpadding=4>
@@ -397,7 +399,7 @@ the tree to <var>path</var>.  From that tree, run
 <td>Binary distributions of Emacs for Windows are distributed as
 <code>.tar.gz</code> files with names like
 <code>emacs-21.2-i386.bin.tar.gz</code>.  You need to extract the tree
-somewhere (like <code>C:\emacs-21.2), then run the
+somewhere like <code>C:\emacs-21.2</code>, then run the
 <code>bin\addpm.exe</code> helper to add the Emacs icon to the Start
 menu.
 
@@ -489,10 +491,10 @@ href="http://www.microsoft.com/office/ork/xp/journ/adminup.htm"
 released with an "administrative" version; for such updates, you will
 need to apply them after the installation of Office completes.
 
-<p>Once that is finished, you can install Office using the
-<code>data1.msi</code> package from the Administrative Installation
-Point just like any other <a href="#msi">MSI</a> package.  There are
-many public properties you can use, as documented in <a
+<p>You can install Office using the <code>data1.msi</code> package
+from the Administrative Installation Point just like any other <a
+href="#msi">MSI</a> package.  There are many public properties you can
+use, as documented in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q270920">KB
 article Q270920</a> (although a better description can be found in the
 setupref.xls spreadsheet from the <a
@@ -527,24 +529,25 @@ from me.)
 
 <tr><td valign="middle">Details
 
-<td><p>This is a fun one.
+<td><p>This is another fun one.
 
-<p>You might try following the instructions in <a
+<p>You might try following the directions in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q195828"
->KB Article Q195828</a>.  If you do, you will be disappointed:
-<code>smsinst.exe</code> forks and exits immediately, thus making it
+>KB Article Q195828</a>.  If you do, you will be disappointed, because
+<code>smsinst.exe</code> forks and exits immediately, making it
 impossible to wait for the installation to finish.
 
-<p>(Their information about using the <code>acost.exe</code> tool to
-configure which components to install is still accurate, however.)
+<p>Note that the instructions for using the <code>acost.exe</code>
+tool to configure which components to install is still accurate,
+however.
 
 <p>Luckily, by running "strings" on <code>smsinst.exe</code>, we can
 learn that all it does is run <code>regedit /s key.dat</code> and then
-fire up <code>acmboot.exe</code>.  <code>key.dat</code> is just a
-trivial registry patch to trick <code>acmsetup.exe</code> into
-thinking that the GUI portion of Setup has already run.
-<code>acmsetup.exe</code> requires a <code>/k</code> switch to provide
-your license key (sans hyphens).
+fire up <code>acmboot.exe</code>.  The <code>key.dat</code> file just
+a simple registry patch to trick <code>acmsetup.exe</code> into
+thinking that the GUI portion of Setup has already run.  You must
+provide the <code>/k</code> switch to <code>acmsetup.exe</code> to
+specify your license key (sans hyphens).
 
 <p>Having installed Visual C++, you probably want to install the
 latest service pack (<a
@@ -564,12 +567,14 @@ install the service pack.
 
 <ol>
 <li>Run <code>regedit /s key.dat</code>
-<li>Run <code>start /wait acmsetup.exe /k <var>license-key</var>
+<li>Run <code>start /wait acmsetup.exe /k <var>license-key</var></code>
 <li>Reboot
 <li><a href="#mdac">Update MDAC to the latest version</a>
 <li>Run <code>start /wait setupsp5.exe /qn1</code>
 </ol>
-<tr><a
+
+<tr><td valign="middle">Example
+<td><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/vc6.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >vc6.bat</a>
 
