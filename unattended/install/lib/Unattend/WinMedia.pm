@@ -78,13 +78,13 @@ sub name ($) {
         foreach my $key ('wkscd', 'srvcd', 'entcd') {
             (exists $strings->{$key})
                 or next;
-            $cdname = $strings->{'$key'};
+            $cdname = $strings->{"$key"};
         }
         if (defined $cdname) {
             # $cdname is something like "Windows 2000 Professional CD"
             # (English) or "CD Windows 2000 Professional" (French).
             # Get rid of the "CD" string and surrounding whitespace.
-            $cdname =~ s/\s*CD\s*//;
+            $cdname =~ s/\s*CD(-ROM)?\s*//;
             $ret = $cdname;
         }
     }
