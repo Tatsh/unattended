@@ -125,6 +125,11 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 
 :: Critical Updates
 
+:: Critical update 810217 (MS03-051)
+:: "FrontPage 2000 Server Extensions ... November 2003 Security Patch"
+:: <http://support.microsoft.com/?kbid=810217>
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.exe /u /n /z"
+
 :: Download from <http://www.microsoft.com/data/>.  Rename
 :: mdac_typ.exe to something more descriptive.
 todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /qn1\""
