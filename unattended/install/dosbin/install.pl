@@ -262,7 +262,7 @@ set_value ('Identification', 'DomainAdmin',
                my $dom = get_value ('Identification', 'JoinDomain');
                defined $dom or return undef;
                return simple_q
-                   ('DomainAdmin account for joining $dom domain? ');
+                   ("DomainAdmin account for joining $dom domain? ");
            });
 
 set_value ('Identification', 'DomainAdminPassword',
@@ -271,7 +271,7 @@ set_value ('Identification', 'DomainAdminPassword',
                defined $admin
                    or return undef;
                return simple_q
-                   ('DomainAdminPassword for $admin account? ');
+                   ("DomainAdminPassword for $admin account? ");
            });
 
 my $product_key_q =
