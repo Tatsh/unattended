@@ -7,49 +7,38 @@ use Pod::Usage;
 
 # Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'disable', 'domain=s')
+GetOptions (\%opts, 'logon=s', 'user=s', 'password=s', 'domain=s', 'help')
     or pod2usage (2);
 
 (exists $opts{'help'})
     and pod2usage ('-exitstatus' => 0, '-verbose' => 2);
 
-my ($user, $pass);
-
-unless (exists $opts{'disable'}) {
-    scalar @ARGV == 2
-        or pod2usage (2);
-    ($user, $pass) = @ARGV;
-}
-
-# Personal preference: Canonicalize to lower case
-# This really does not belong here (FIXME)
-defined $user
-    and $user =~ tr/A-Z/a-z/;
-
 my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg,
-                        qw (REG_DWORD));
+                        qw (REG_SZ));
 
-my $winlogon_key =
+my $winlogon_key_name =
     'HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows NT/CurrentVersion/Winlogon/';
 
-my %new_values = ('/DefaultUserName' => $user,
-                  '/DefaultPassword' => (defined $pass && $pass ne ''
-                                         ? $pass
-                                         : undef),
-                  '/AutoAdminLogon' => (exists $opts{'disable'} ? 0 : 1),
+my $winlogon_key = $reg{$winlogon_key_name};
+defined $winlogon_key
+    or die "Unable to open $winlogon_key_name: $^E";
+
+my %new_values = ('/DefaultUserName' => $opts{'user'},
+                  '/DefaultPassword' => $opts{'password'},
+                  '/AutoAdminLogon' => $opts{'logon'},
                   '/DefaultDomainName' => $opts{'domain'}
                   );
 
-foreach my $key (sort keys %new_values) {
-    my $val = $new_values{$key};
+foreach my $name (sort keys %new_values) {
+    my $val = $new_values{$name};
     if (defined $val) {
-        $reg{$winlogon_key}->{$key} = $val
-            or die "Unable to set $winlogon_key$key to $val: $^E";
+        $winlogon_key->{$name} = [ REG_SZ, $val ]
+            or die "Unable to set $winlogon_key_name$name to $val: $^E";
     }
     else {
-        (delete $reg{$winlogon_key}->{$key})
-            or die "Unable to delete $winlogon_key/$key: $^E";
+        (delete $winlogon_key->{$name})
+            or die "Unable to delete $winlogon_key_name$name: $^E";
     }
 }
 
@@ -57,7 +46,7 @@ __END__
 
 =head1 NAME
 
-autolog.pl - Enable/disable automatic logon
+autolog.pl - Set defaults for Windows logon
 
 =head1 SYNOPSIS
 
@@ -66,13 +55,20 @@ autolog.pl [ options ] <username> <password>
 Options:
 
  --help                 Display help and exit
- --domain <dom>         Log into domain <dom>
- --disable              Disable automatic logon
+ --user=<username>      Set user name field to <username>
+ --password=<password>  Set password field to <password>
+ --domain=<domain>      Set domain to <domain>
+ --logon=<val>          Set AutoAdminLogon key to <val>
 
 =head1 NOTES
 
-This script patches the registry to bypass the Windows logon screen,
-logging in with the provided user name and password.  Note that the
-password is stored in the clear in the registry.
+This script patches the registry to set the values in the Windows
+logon panel, logging in automatically if the AutoAdminLogon key has a
+non-zero value.
 
-Use "autolog.pl --disable" to disable automatic logon.
+Note that all of these values, including the password, are stored in
+the clear in the registry.
+
+Also note that if the password is not set, the logon can still proceed
+if the account has an empty password.  However, Windows will
+"helpfully" set the AutoAdminLogon key back to 0 in this case.
