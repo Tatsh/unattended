@@ -8,6 +8,6 @@ todo.pl symantec-antivirus.bat
 
 todo.pl gt.bat perforce.bat
 
-todo.pl emacs.bat cygwin.bat vc6.bat vsnet.bat msdn.bat %WINVER%-symbols.bat
+todo.pl emacs.bat cygwin.bat vs6.bat vsnet.bat msdn.bat %WINVER%-symbols.bat
 
 todo.pl base.bat 
