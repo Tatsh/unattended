@@ -83,8 +83,13 @@ echo "*** Next, we'll look for PCI Ethernet hardware..."
 # FIXME: How do we handle multiple drivers for same device (e100/eepro100).
 load_modules "$(find-modules-pci 0x02 0x00)"
 
-echo "*** And I suppose we may as well look for PCMCIA devices..."
-cardmgr -o
+    echo "*** And I suppose we may as well look for PCMCIA devices..."
+if [ -e /var/run/did_cardmgr ] ; then
+    echo "*** (cardmgr already run; skipping)"
+else
+    cardmgr -o
+    touch /var/run/did_cardmgr
+fi
 
 echo "*** Now that we have loaded the modules (maybe), let's try DHCP..."
 unset got_lease
@@ -125,7 +130,7 @@ done
 
 echo "*** Now we need to map the /z drive."
 
-while [ ! -f /z/dosbin/install.pl ] ; do
+while : ; do
     Z_USER=guest
     Z_PASS=guest
     Z_PATH=//ntinstall/install
@@ -198,6 +203,14 @@ while [ ! -f /z/dosbin/install.pl ] ; do
 
     export PASSWD="$Z_PASS"
 
+    if [ -f /z/dosbin/install.pl ] ; then
+        echo "*** /z already mounted; skipping mount"
+        break
+    fi
+
+    # In case something broken is already mounted on /z
+    umount /z >/dev/null 2>&1
+
 #    echo "*** Trying mount.cifs $Z_PATH /z -o $mount_opts"
 
 #     if mount.cifs "$Z_PATH" /z -o "$mount_opts" ; then
@@ -208,7 +221,7 @@ while [ ! -f /z/dosbin/install.pl ] ; do
 #     echo "*** CIFS mount did not work.  Falling back to smbfs."
 
     echo "*** Trying smbmount $Z_PATH /z -o ttl=600000,$mount_opts"
-    
+
     smbmount "$Z_PATH" /z -o "ttl=600000,$mount_opts" \
         && break
 
@@ -333,7 +346,7 @@ echo "*** By Jove, I think we've got it!"
 rm /usr/bin/dosemu.bin
 cp /z/linuxaux/usr/bin/dosemu.bin /usr/bin/dosemu.bin
 rm -f /var/lib /var/lib/dosemu /var/lib/dosemu/drives \
-    /var/lib/dosemu/drives/dosboot.img
+    /var/lib/dosemu/drives/dosboot.img >/dev/null 2>&1
 mkdir -p /var/lib/dosemu/drives
 cp /z/linuxaux/var/lib/dosemu/drives/dosboot.img /var/lib/dosemu/drives/.
 
@@ -342,7 +355,7 @@ cp /z/linuxaux/var/lib/dosemu/drives/dosboot.img /var/lib/dosemu/drives/.
 export Z_PATH Z_USER Z_PASS
 
 # Used as staging area by install.pl
-mkdir /c
+[ -d /c ] || mkdir /c
 
 perl -I/z/lib /z/dosbin/install.pl \
     || die "install.pl exited non-zero"
