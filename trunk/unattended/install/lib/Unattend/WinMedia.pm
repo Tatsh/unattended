@@ -14,17 +14,11 @@ use fields qw (txtsetup setupp prodspec path);
 # around this bug here.
 my $file_spec = 'File::Spec::Win32';
 
-if ($^O eq 'dos' || $^O eq 'MSWin32') {
-    $file_spec = 'File::Spec::Win32';
-}
-elsif ($^O eq 'linux') {
-    $file_spec = 'File::Spec::Unix';
-}
-else {
-    die "internal error";
-}
-
 my %cache;
+
+# Function which translates DOS path names to host form.  Defaults to
+# identity.
+my $dos_to_host = sub ($) { return $_[0]; };
 
 sub new ($$) {
     my ($proto, $path) = @_;
@@ -47,15 +41,21 @@ sub new ($$) {
 
     # Read the relevant sections of TXTSETUP.SIF
     $self->{txtsetup} = Unattend::IniFile->new 
-        ($txtsetup, 'Strings|SCSI|SCSI\.Load');
+        (&$dos_to_host ($txtsetup), 'Strings|SCSI|SCSI\.Load');
 
     # Read SETUPP.INI
-    $self->{setupp} = Unattend::IniFile->new ($setupp);
+    $self->{setupp} = Unattend::IniFile->new (&$dos_to_host ($setupp));
 
     # Read PRODSPEC.INI
-    $self->{prodspec} = Unattend::IniFile->new ($prodspec);
+    $self->{prodspec} = Unattend::IniFile->new (&$dos_to_host ($prodspec));
 
     return $self;       # Already blessed by fields::new
+}
+
+sub set_dos_to_host ($$) {
+    my (undef, $func) = @_;
+
+    $dos_to_host = $func;
 }
 
 # Handy optimization
@@ -214,7 +214,7 @@ sub _find_inf_files ($) {
     my @results;
 
     # Read the directory.
-    opendir DIR, $dir
+    opendir DIR, &$dos_to_host ($dir)
         or die "Unable to opendir $dir: $^E";
 
     my @entries = sort readdir DIR;
@@ -241,7 +241,7 @@ sub _find_inf_files ($) {
 
             my $full_path = $file_spec->catdir ($dir, $entry);
 
-            -d $full_path
+            -d &$dos_to_host ($full_path)
                 and push @results, _find_inf_files ($full_path);
         }
     }
@@ -275,7 +275,7 @@ sub oem_pnp_dirs ($;$) {
     $verbose
         and print "Looking for drivers under $oem_system_dir...\n";
 
-    my @ret = (-d $oem_system_dir
+    my @ret = (-d &$dos_to_host ($oem_system_dir)
                ? _find_oem_pnp_dirs ($oem_system_dir)
                : ());
 
@@ -311,7 +311,8 @@ sub textmode_oem_drivers ($;$) {
     }
 
     my $txtsetup_oem =
-        Unattend::IniFile->new ($txtsetup_oem_file, 'scsi');
+        Unattend::IniFile->new (&$dos_to_host ($txtsetup_oem_file),
+                                'scsi');
 
     my @ret;
 
@@ -336,8 +337,8 @@ sub textmode_files ($) {
 
     my $textmode = $self->_textmode_dir ();
 
-    if (-d $textmode) {
-        opendir TEXTMODE, $textmode
+    if (-d &$dos_to_host ($textmode)) {
+        opendir TEXTMODE, &$dos_to_host ($textmode)
             or die "Unable to opendir $textmode: $^E";
         while (my $ent = readdir TEXTMODE) {
             $ent eq '.' || $ent eq '..'
@@ -390,7 +391,7 @@ sub lang_dirs ($;$) {
     $verbose
         and print "Looking for $full_path...\n";
 
-    if (-d $full_path) {
+    if (-d &$dos_to_host ($full_path)) {
         $verbose
             and print "...found.\n";
         push @ret, $dir;
