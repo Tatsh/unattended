@@ -12,7 +12,7 @@ todo.pl .reboot
 :: Critical update 815021
 :: "Unchecked Buffer in Windows Component May Cause Web Server Compromise"
 :: <http://support.microsoft.com/?kbid=815021>
-todo.pl "z:\packages\win2ksp3\Q815021_W2K_SP4_x86_EN.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q815021_W2K_SP4_x86_EN.exe /u /o /z" .reboot
 
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
