@@ -157,7 +157,7 @@ while : ; do
         Z_USER="${Z_USER##*/}\\${Z_USER%/*}"
     fi
 
-    smbmount_opts="username=$Z_USER,ro,ttl=2400000"
+    smbmount_opts="username=$Z_USER,rw,ttl=2400000"
 
     echo "*** Trying smbmount $Z_PATH /z -o $smbmount_opts"
 
