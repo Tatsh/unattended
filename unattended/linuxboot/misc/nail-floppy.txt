@@ -11,6 +11,8 @@ bin/find-modules-pci
 bin/mkdir
 bin/sh
 
+etc/dosemu/dosemu.conf
+
 etc/extra.pcimap
 etc/ld.so.cache
 etc/master
