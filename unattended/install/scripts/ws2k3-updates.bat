@@ -58,7 +58,13 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837001-x86-%WINLAN
 :: Critical update MS04-025 (867801)
 :: "Cumulative Security Update for Internet Explorer"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-025.mspx>
+:: URL|DEU|http://download.microsoft.com/download/b/b/d/bbdee4c8-dfad-41f3-8805-eb98a41d876c/WindowsServer2003-KB867801-x86-deu.exe|updates/ws2k3/windowsserver2003-kb867801-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/2/a/e/2ae9e877-f448-49b4-8505-6c7feaf3d3eb/WindowsServer2003-KB867801-x86-enu.exe|updates/ws2k3/windowsserver2003-kb867801-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/3/5/a/35a901f6-573b-4af5-9e0b-8649a2d470bb/WindowsServer2003-KB867801-x86-esn.exe|updates/ws2k3/windowsserver2003-kb867801-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/d/c/e/dce4257c-d562-475b-9f4b-543dcaedcd09/WindowsServer2003-KB867801-x86-fra.exe|updates/ws2k3/windowsserver2003-kb867801-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/b/8/2/b82947e3-9535-4163-b955-35d0a02399f5/WindowsServer2003-KB867801-x86-ita.exe|updates/ws2k3/windowsserver2003-kb867801-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/d/3/c/d3ca5aca-09dc-4f03-afcb-26cef76b3314/WindowsServer2003-KB867801-x86-nld.exe|updates/ws2k3/windowsserver2003-kb867801-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/9/0/b/90b79312-4d2f-4305-a64b-8cd67e974820/WindowsServer2003-KB867801-x86-rus.exe|updates/ws2k3/windowsserver2003-kb867801-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical Updates
