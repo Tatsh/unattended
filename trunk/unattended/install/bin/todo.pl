@@ -251,7 +251,7 @@ sub do_cmd ($) {
         print "Running: $cmd\n";
         my $ret = system $cmd;
         ($ignore_err{$ret >> 8})
-            or die "$cmd failed, status ", $ret >> 8, '.', $ret % 256;
+            or die "$cmd failed, status ", $ret >> 8, ' (', $ret % 256, ')';
     }
 }
 
