@@ -4,7 +4,7 @@ use strict;
 use Carp;
 use File::Spec::Win32;
 use File::Basename;
-use Unattended::IniFile;
+use Unattend::IniFile;
 
 # File::Spec is supposed to auto-detect the OS and adapt
 # appropriately, but it does not recognize a $^O value of "dos".  Work
@@ -21,7 +21,7 @@ $u = new Unattend::IniFile;
 # Scaffolding (FIXME)
 sub get_value ($$) {
     my ($section, $key) = @_;
-    return $u->value ($section, $key);
+    return $u->forced_value ($section, $key);
 }
 
 sub get_value_noforce ($$) {
