@@ -33,7 +33,7 @@ images: $(images)
 images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos
 	@echo -n "Making $@..."
 	@driver=`basename "$@" .imz` &&					\
-	driver_uc=`echo $$driver | tr [[:lower:]] [[:upper:]]`		\
+	driver_uc=`echo $$driver | tr [[:lower:]] [[:upper:]]` &&	\
 	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&			\
 	echo 'drive x:' > $$tmpfile &&					\
 	echo file=\"`pwd`/"$@.tmp"\" >> $$tmpfile &&			\
@@ -155,11 +155,11 @@ tftpboot/pxelinux.cfg/default: tftpboot/msgs/information.msg
 	@echo >> $@.tmp
 	@echo "label local" >> $@.tmp
 	@echo "  localboot 0" >> $@.tmp
-	@for driver in $(drivers) ; do						\
-		echo >> $@.tmp ;						\
-		echo "label $$driver" >> $@.tmp ;				\
-		echo "    kernel unattended/memdisk" >> $@.tmp ;		\
-		echo "    append initrd=unattended/$$driver.imz" >> $@.tmp ;	\
+	@for driver in $(drivers) ; do					     \
+		echo >> $@.tmp ;					     \
+		echo "label $$driver" >> $@.tmp ;			     \
+		echo "    kernel unattended/memdisk" >> $@.tmp ;	     \
+		echo "    append initrd=unattended/$$driver.imz" >> $@.tmp ; \
 	done
 	@for driver in $(universal) ; do						\
 		echo >> $@.tmp ;							\
