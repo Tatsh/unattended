@@ -1031,11 +1031,11 @@ $u->comments ('_meta', 'z_user') = ['Username for mapping install share'];
 $u->{'_meta'}->{'z_user'} =
     sub {
         my $user = $ENV{'Z_USER'};
-        my $domain = $u->{'Identification'}->{'JoinDomain'};
-        return (defined $domain
+        my $domain = $ENV{'Z_DOMAIN'};
+        return (defined $domain && $domain =~ /\S/
                 ? canonicalize_user ($domain, $user)
                 : $user);
-};
+    };
 
 $u->comments ('_meta', 'z_password') = ['Password for mapping install share'];
 (defined $ENV{'Z_PASS'})
