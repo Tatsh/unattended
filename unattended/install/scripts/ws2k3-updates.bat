@@ -6,8 +6,6 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
-
-
 :: Critical update 824146
 :: "A Buffer Overrun in RPCSS May Allow Code Execution"
 :: (Worst Windows security hole, ever.  Again.)
@@ -41,8 +39,10 @@ todo.pl "%Z%\packages\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N" .r
 
 :: Critical update 828750
 :: "October, 2003, Cumulative Patch for Internet Explorer"
+:: (Note: You must click through to get the special version of this
+:: update for Windows Server 2003)
 :: <http://support.microsoft.com/?kbid=828750>
-todo.pl ".ignore-err 194 %Z%\packages\ie6sp1\q828750.exe /q /r:n" .reboot
+todo.pl ".ignore-err 194 %Z%\packages\ws2k3\WindowsServer2003-KB828750-x86-%WINLANG%.exe /passive /n /norestart" .reboot
 
 :: Microsoft DirectX 9.0b update
 :: <http://www.microsoft.com/directx/>
