@@ -9,7 +9,7 @@ glibc=glibc-2.3.2
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 klibc=klibc-0.116
-linux=linux-2.6.5
+linux=linux-2.6.6
 module-init-tools=module-init-tools-3.0
 nano=nano-1.2.3
 ncurses=ncurses-5.4
@@ -79,9 +79,9 @@ stage1 += stage1/sbin/depmod
 
 # Apply patch to prevent Linux from trying to mount root when booting
 # from an initramfs.
-$(linux)/.stamp-initramfs-patch: misc/initramfs-patch
-	cd $(linux) && patch -p1 < $(cwd)/$<
-	touch $@
+#$(linux)/.stamp-initramfs-patch: misc/initramfs-patch
+#	cd $(linux) && patch -p1 < $(cwd)/$<
+#	touch $@
 
 # Apply patch to expose legacy BIOS cylinder/head/sector values
 # (INT13/AH=08h) under /sys/firmware/edd/int13_devXX.
@@ -89,8 +89,7 @@ $(linux)/.stamp-initramfs-patch: misc/initramfs-patch
 #	cd $(linux) && patch -p1 < $(cwd)/$<
 #	touch $@
 
-$(linux)/.config: misc/linux-config $(linux)/.stamp-initramfs-patch
-#			$(linux)/.stamp-edd-legacy-patch
+$(linux)/.config: misc/linux-config
 	cp -f $< $@
 	cd $(linux) && make oldconfig
 
@@ -110,6 +109,7 @@ stage1 += stage1/.stamp-modules
 ## klibc
 
 $(klibc)/ash/sh: $(linux)/arch/i386/boot/bzImage
+	rm -f $@
 	cd $(klibc) && ln -nsf $(cwd)/$(linux) ./linux	\
 	&& make
 	[ -e $@ ]
@@ -243,10 +243,11 @@ $(glibc)/.stamp-sscanf-patch: misc/glibc-sscanf-patch
 build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage \
 			$(glibc)/.stamp-sscanf-patch
 	mkdir -p build-$(glibc)
-	cd build-$(glibc) && $(cwd)/$(glibc)/configure	\
-	    --prefix=/usr				\
-	    --with-headers=$(cwd)/$(linux)/include	\
-	    --enable-add-ons=linuxthreads		\
+	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
+	    --prefix=/usr					\
+	    --with-headers=$(cwd)/$(linux)/include		\
+	    --enable-add-ons=linuxthreads			\
+	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
 	&& make
 	touch -c $@
 
@@ -495,7 +496,7 @@ devices.cpio: misc/devices.txt
 	mv $@.tmp $@
 
 ## Custom scripts and stuff
-$(call copy_file,misc/linuxrc,stage1/linuxrc)
+$(call copy_file,misc/init,stage1/init)
 
 $(call copy_file,misc/find-modules-pci,stage1/bin/find-modules-pci)
 
@@ -516,7 +517,7 @@ $(call copy_file,misc/freedos-mbr.bin,stage1/usr/lib/freedos-mbr.bin)
 # Some apps (namely dosemu) need getpwnam() etc. to work
 $(call copy_file,misc/passwd,stage1/etc/passwd)
 
-stage1 += stage1/linuxrc stage1/bin/find-modules-pci			\
+stage1 += stage1/init stage1/bin/find-modules-pci			\
 		stage1/bin/make-blkdev-nodes stage1/etc/extra.pcimap	\
 		stage1/etc/master stage1/etc/modprobe.conf		\
 		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf	\
