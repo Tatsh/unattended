@@ -35,25 +35,26 @@ my %lang=(
 my $url=$ARGV[0];
 my $type=$ARGV[1];
 
-$url=~s/displaylang=en/displaylang=/g;
+$url =~ s/amp;/\&/g;
+$url =~ s/displaylang=[a-z]{2}(?:-[a-z]{2})?//ig;
+$url =~ s/\&\&+/\&/g;
+$url =~ s/\?\&/\?/;
+$url =~ s/\&$//;
 
-my ($urls, $title1, $title2, $desc, $link1, $link2, $run);
+my ($urls, $title1, $title2, $desc, $link, $run);
 foreach my $k (keys (%lang)) {
-    open(f,"wget -O - \"$url$lang{$k}\" 2> /dev/null|");
+    open(f,"wget -O - \"$url\&displaylang=$lang{$k}\" 2> /dev/null|");
     while(<f>) {
         chomp;
         if ($k =~ /enu/i) {
             $title1 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
-            defined $link1
-                or $link1 = $1 if /\"([^\"]*kbid=\d+)\"\>[^\<]*(?:Overview|Description)[^\<]*KB\d+/;
-            defined $link1
-                or $link1 = $1 if /\"([^\"]*kbid=\d+)\"\>\(\d+\)[^\<]*(?:Overview|Description)/;
-            defined $link1
-                or $link1 = $1 if /\'([^\']*kbid=\d+)\'\>[^\<]*(?:Overview|Description)[^\<]*KB\d+/;
-            defined $link1
-                or $link1 = $1 if /\'([^\']*kbid=\d+)\'\>\(\d+\)[^\<]*(?:Overview|Description)/;
-            $link1 = $1 if /\'([^\']*)\'\>[^\<]*Knowledge Base Article/;
-            $link1 = $1 if /\'([^\']*)\'\>[^\<]*Security Bulletin/;
+            defined $link
+                or $link = $1 if /\"([^\"]*(\d{6}))\"\>[^\<]*\2/;
+            defined $link
+                or $link = $1 if /\'([^\']*(\d{6}))\'\>[^\<]*\2/;
+            defined $link
+                or $link = $1 if /\'([^\']*)\'\>[^\<]*Knowledge Base Article/;
+            $link = $1 if /\'([^\']*)\'\>[^\<]*Security Bulletin/;
         }
 
         if (/\<a href=\"([^\<]*?-client-[^\<]*?)\"\>/i) {
@@ -69,6 +70,10 @@ foreach my $k (keys (%lang)) {
             if ($a[$#a] =~ /$k/i) {
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
                 $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
+            } elsif ($a[$#a] =~ /$lang{$k}\.exe/i) {
+                $a[$#a] =~ s/$lang{$k}\.exe/$k.exe/;
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+                $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
             } else {
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($k)."/".lc($a[$#a]);
                 $run = lc($type)."/".lc($k)."/".$a[$#a] if $k =~ /enu/i;
@@ -77,41 +82,57 @@ foreach my $k (keys (%lang)) {
     }
 }
 
-if (defined $link1) {
-    open(f,"wget -O - \"$link1\" 2>&1 |");
+$link =~ s/default.*(\d{6})/\?kbid=$1/i if (defined $link && $link =~ /scid=kb/i);
+$link =~ s/\/\?id=/\/\?kbid=/i if (defined $link && $link =~ /\/?id=/i);
+$link =~ s/(ms\d{2}-\d{3})\.asp/$1.mspx/i if (defined $link && $link =~ /ms\d{2}-\d{3}\.asp/i);
+
+if (defined $link) {
+    open(f,"wget -O - \"$link\" 2>&1 |");
     while(<f>) {
-        unless ($link1 =~ /kbid=/i) {
+        unless ($link =~ /kbid=/i) {
             defined $title2
                 or $title2 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
             defined $desc
                 or $desc = "$1" if /\<h2.*?\>(.*?)\<\/h2\>/;
-            $link2 = "$1" if /(http.*?) \[following\]/;
+            if (/(http.*?) \[following\]/i) {
+                $link = "$1";
+                $link =~ s/default.*(\d{6})/\?kbid=$1/i if (defined $link && $link =~ /scid=kb/i);
+                $link =~ s/\/\?id=/\/\?kbid=/i if (defined $link && $link =~ /\/?id=/i);
+            }
+        }
+    }
+    $link =~ s/^ +//g;
+    $link =~ s/ +$//g;
+
+    $link =~ s/technet\/treeview.*?(technet)/$1/i if ($link =~ /technet\/treeview/i);
+    if ($link =~ /ms\d{2}-\d{3}\.asp/i) {
+        $link =~ s/(ms\d{2}-\d{3})\.asp/$1.mspx/i;
+        open(f,"wget -O - \"$link\" 2> /dev/null |");
+        while(<f>) {
+            defined $title2
+                or $title2 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
+            defined $desc
+                or $desc = "$1" if /\<h2.*?\>(.*?)\<\/h2\>/;
         }
     }
 }
 
+if (defined $desc) {
+    $desc =~ s/^ +//g;
+    $desc =~ s/ +$//g;
+}
+
 if (defined $run) {
     $run =~ s/([-_\/])enu/$1%WINLANG%/i;
+    $run =~ s/enu\.exe/%WINLANG%\.exe/i;
     $run =~ s/\//\\/g;
-}
-
-if (defined $link1) {
-    $link1 =~ s/^ +//g;
-    $link1 =~ s/ +$//g;
-}
-
-if (defined $link2) {
-    $link2 =~ s/^ +//g;
-    $link2 =~ s/ +$//g;
 }
 
 print "\n";
 print ":: $title1\n" if defined $title1;
 print ":: $title2\n" if defined $title2;
 print ":: \"$desc\"\n" if defined $desc;
-defined $link2
-    or print ":: <$link1>\n" if defined $link1;
-print ":: <$link2>\n" if defined $link2;
-print ":: <$ARGV[0]>\n" if defined $ARGV[0];
+print ":: <$link>\n" if defined $link;
+print ":: <$url>\n" if defined $url;
 print ":: $urls->{$_}\n" foreach (sort keys %$urls);
 print "todo.pl \".reboot-on 194 %Z%\\$run /?\"\n" if defined $run;
