@@ -332,6 +332,9 @@ sub read_file ($) {
     open FILE, dos_to_host ($file)
         or croak "Unable to open $file for reading: $^E";
 
+    $is_linux
+        and binmode FILE, ':crlf';
+
     my @ret = <FILE>;
 
     close FILE
@@ -349,6 +352,9 @@ sub write_file ($@) {
 
     open FILE, ">$host_file"
         or die "Unable to open $file for writing: $^E";
+
+    $is_linux
+        and binmode FILE, ':crlf';
 
     foreach my $line (@lines) {
         print FILE $line, "\n";
@@ -1186,7 +1192,16 @@ foreach my $cmd (split /;/, $fdisk_cmds) {
             : $cmd);
 }
 
-unless ($is_linux) {
+if ($is_linux) {
+    # On Linux, we (re-)create the device nodes after modifying the
+    # partition table.
+    my $hda = readlink ('/dev/dsk');
+    defined $hda
+        or die "readlink /dev/dsk failed: $^E";
+    0 == system 'make-blkdev-nodes', $hda
+        or die "make-blkdev-nodes $hda failed: $?";
+}
+else {
     # If partition table has changed, reboot.
     print "\nRe-checking partition table...";
     if ($partition_table ne partition_table (1)) {
@@ -1202,15 +1217,10 @@ unless ($is_linux) {
 
 # Run formatting command, if any.
 my $format_cmd = $u->{'_meta'}->{'format_cmd'};
-if (defined $format_cmd) {
-    if ($is_linux) {
-        print "*** FIXME: Not really doing this right...\n";
-        system 'parted', '-s', '/dev/dsk', 'mkfs', '1', 'fat32';
-    }
-    else {
-        system $format_cmd;
-    }
-}
+# On DOS, format now.
+# On Linux, take care of it later (see below).
+!$is_linux && defined $format_cmd
+    and system $format_cmd;
 
 # Overwrite MBR, if desired.
 if ($u->{'_meta'}->{'replace_mbr'}) {
@@ -1247,7 +1257,14 @@ print "done.\n";
 # .bat script (doit.bat) and run it.
 my $doit = "$netinst\\doit.bat";
 print "Creating $doit...";
-write_file ($doit, split /;/, $u->{'_meta'}->{'doit_cmds'});
+my @doit_cmds;
+if ($is_linux) {
+    defined $format_cmd
+        && push @doit_cmds, $format_cmd;
+    push @doit_cmds, 'xcopy /s /e /y Y:\\ C:\\';
+}
+push @doit_cmds, split /;/, $u->{'_meta'}->{'doit_cmds'};
+write_file ($doit, @doit_cmds);
 print "done.\n";
 
 my @edit_choices;
