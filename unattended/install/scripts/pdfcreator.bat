@@ -20,7 +20,7 @@ todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini %ProgramFiles%\PD
 :nolangpack
 
 :: Install PDFCreator
-:: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_0_GNUGhostscript.exe|packages/pdfcreator/PDFCreator-0_8_0_GNUGhostscript.exe
+:: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_0_GNUGhostscript.exe|packages/pdfcreator/pdfcreator-0_8_0_gnughostscript.exe
 todo.pl "%Z%\packages\pdfcreator\PDFCreator-0_8_0_GNUGhostscript.exe /sp- /silent /norestart"
 
 
