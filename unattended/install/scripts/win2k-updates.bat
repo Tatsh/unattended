@@ -3,6 +3,9 @@
 :: After installing SP4, install updates for win2ksp4
 todo.pl win2ksp4-updates.bat
 
+:: Update Windows Installer
+todo.pl "%Z%\packages\windowsinstaller\WindowsInstaller-KB884016-v2-x86.exe /passive /norestart"
+
 :: Windows 2000 Service Pack 4 Network Install for IT Professionals
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=1001AAF1-749F-49F4-8010-297BD6CA33A0>
 :: URL|ARA|http://download.microsoft.com/download/3/f/8/3f8a308a-eae1-4a2d-927d-1f76d3e60442/w2ksp4_ar.exe|updates/win2k/ara/w2ksp4.exe
