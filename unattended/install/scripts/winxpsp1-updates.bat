@@ -6,6 +6,26 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Recommended update 820291
+:: "New 'Set Program Access and Defaults' Start Menu Icon ..."
+:: <http://support.microsoft.com/default.aspx?kbid=820291>
+todo.pl "z:\packages\winxpsp1\WindowsXP-KB820291-x86-ENU.exe /u /z"
+
+:: Critical update 817787
+:: "Flaw in Windows Media Player Skins Downloading Could Allow Code Execution"
+:: <http://support.microsoft.com/?kbid=817787>
+todo.pl "z:\packages\winxpsp1\WindowsMedia8-KB817787-x86-ENU.exe /q /r:n"
+
+:: Critical update 815021
+:: "Unchecked Buffer in Windows Component May Cause Web Server Compromise"
+:: <http://support.microsoft.com/?kbid=815021>
+todo.pl "z:\packages\winxpsp1\Q815021_WXP_SP2_x86_ENU.exe /u /z"
+
+:: Critical update 811114
+:: "May 2003 Cumulative Patch for Internet Information Services (IIS)"
+:: <http://support.microsoft.com/?kbid=811114>
+todo.pl "z:\packages\winxpsp1\Q811114_WXP_SP2_x86_ENU.exe /u /z"
+
 :: Critical update 817287
 :: "Windows Update 643 Error and the Catalog Database"
 :: <http://support.microsoft.com/?kbid=817287>
@@ -119,7 +139,7 @@ todo.pl "z:\packages\winxpsp1\Q327979_WXP_SP2.exe /u /z"
 :: Critical update 327696
 :: "October 2002 Cumulative Patch for Internet Information Services"
 :: <http://support.microsoft.com/?kbid=327696>
-todo.pl "z:\packages\winxpsp1\Q327696_WXP_SP2_x86_ENU.exe /u /z"
+::todo.pl "z:\packages\winxpsp1\Q327696_WXP_SP2_x86_ENU.exe /u /z"
 
 :: Recommended update 327405
 :: "Windows XP Documentation Update Can Help You Understand How to Make Your Compute
@@ -139,11 +159,16 @@ todo.pl "z:\packages\winxpsp1\Q322011_WXP_SP2_x86_ENU.exe /u /z"
 
 :: IE updates
 
+:: Critical update 818529
+:: "June, 2003, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=818529>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\q818529.exe /q /r:n" .reboot
+
 :: Critical update 813489
 :: "April, 2003, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=813489>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/813489/>
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\q813489.exe /q /r:n" .reboot
+:: todo.pl ".ignore-err 194 z:\packages\winxpsp1\q813489.exe /q /r:n" .reboot
 
 :: Critical update 330994
 :: "April 2003, Cumulative Patch for Outlook Express"
