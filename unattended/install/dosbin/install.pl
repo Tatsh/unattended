@@ -16,29 +16,34 @@ my $file_spec = 'File::Spec::Win32';
 use vars qw ($u);
 $u = new Unattend::IniFile;
 
-# Scaffolding (FIXME - need to remove these)
+# Deprecated helper functions.  Use $u object directly instead.
 sub get_value ($$) {
     my ($section, $key) = @_;
+    carp 'Warning: get_value is deprecated';
     return $u->{$section}->{$key};
 }
 
 sub get_value_noforce ($$) {
     my ($section, $key) = @_;
+    carp 'Warning: get_value_noforce is deprecated';
     return $u->noforce ($section, $key);
 }
 
 sub set_value ($$$) {
     my ($section, $key, $value) = @_;
+    carp 'Warning: set_value is deprecated';
     $u->{$section}->{$key} = $value;
 }
 
 sub set_comments ($$$) {
     my ($section, $key, $comments) = @_;
+    carp 'Warning: set_comments is deprecated';
     $u->comments ($section, $key) = $comments;
 }
 
 sub push_value ($$$) {
     my ($section, $key, $value) = @_;
+    carp 'Warning: push_value is deprecated';
     $u->push_value ($section, $key, $value);
 }
 
@@ -539,39 +544,39 @@ $u->{'_meta'}->{'local_admin_group'} =
         return (defined $answer ? $answer : $def);
     };
 
-set_comments ('_meta', 'local_admins',
-              "    ; Accounts added to local Administrators group\n");
-set_value ('_meta', 'local_admins',
-           sub {
-               # Bogus dependency to enforce question order
-               get_value ('Identification', 'DomainAdmin');
-               my $dom = get_value ('Identification', 'JoinDomain');
-               defined $dom
-                   or return undef;
-               print "Enter users to add to local Administrators group.\n";
-               return simple_q
-                   ("Type 0 or more usernames, separated by spaces:\n");
-           });
+$u->{'_meta'}->{'local_admins'} =
+    ['Accounts added to local Administrators group'];
+$u->{'_meta'}->{'local_admins'} =
+    sub {
+        # Bogus dependency to enforce question order
+        $u->{'Identification'}->{'DomainAdmin'};
+        my $dom = $u->{'Identification'}->{'JoinDomain'};
+        defined $dom
+            or return undef;
+        print "Enter users to add to local Administrators group.\n";
+        return simple_q
+            ("Type 0 or more usernames, separated by spaces:\n");
+    };
 
-set_value ('_meta', 'netinst', 'c:\\netinst');
+$u->{'_meta'}->{'netinst'} = 'c:\\netinst';
 
-set_value ('_meta', 'edit_files', '1');
+$u->{'_meta'}->{'edit_files'} = '1';
 
-set_comments ('_meta', 'doit_cmds',
-              "    ; Contents of doit.bat script\n");
-set_value ('_meta', 'doit_cmds',
-           sub {
-               my $unattend_txt = (get_value ('_meta', 'netinst')
-                                   . '\\unattend.txt');
-               my $src_tree = get_value ('_meta', 'OS_media');
-               my $media_obj = Unattend::WinMedia->new ($src_tree);
-               my @lang_dirs = $media_obj->lang_dirs (1);
-               my $lang_opts = join ' ', map { "/rx:$_" } @lang_dirs;
-               $src_tree =~ /\\$/
-                   or $src_tree .= '\\';
-               $src_tree .= 'i386';
-               return "$src_tree\\winnt $lang_opts /s:$src_tree /u:$unattend_txt";
-           });
+$u->comments ('_meta', 'doit_cmds') =
+    ['Contents of doit.bat script'];
+$u->{'_meta'}->{'doit_cmds'} =
+    sub {
+        my $unattend_txt = $file_spec->catfile ($u->{'_meta'}->{'netinst'},
+                                                'unattend.txt');
+        my $src_tree = $u->{'_meta'}->{'OS_media'};
+        my $media_obj = Unattend::WinMedia->new ($src_tree);
+        my @lang_dirs = $media_obj->lang_dirs (1);
+        my $lang_opts = join ' ', map { "/rx:$_" } @lang_dirs;
+        $src_tree =~ /\\$/
+            or $src_tree .= '\\';
+        $src_tree .= 'i386';
+        return "$src_tree\\winnt $lang_opts /s:$src_tree /u:$unattend_txt";
+    };
 
 $u->comments ('_meta', 'autolog') =
     ["Command to disable (or modify) autologon when installation finishes"];
@@ -598,24 +603,21 @@ $u->comments ('_meta', 'z_password') = ['Password for mapping install share'];
     or die "autoexec.bat failed to set Z_PASS; bailing";
 $u->{'_meta'}->{'z_password'} = $ENV{'Z_PASS'};
 
-set_value ('UserData', 'FullName',
-           sub {
-               return simple_q
-                   ("Enter the user's full name for this machine:\n");
-           });
+$u->{'UserData'}->{'FullName'} =
+    sub {
+        return simple_q ("Enter the user's full name for this machine:\n");
+    };
 
-set_value ('UserData', 'OrgName',
-           sub {
-               return simple_q
-                   ("Enter the organization name for this machine:\n");
-           });
+$u->{'UserData'}->{'OrgName'} =
+    sub {
+        return simple_q ("Enter the organization name for this machine:\n");
+    };
 
-set_value ('UserData', 'ComputerName',
-           sub {
-               my $name = simple_q
-                   ("Enter computer name (* == autogenerate):\n");
-               return $name;
-           });
+$u->{'UserData'}->{'ComputerName'} =
+    sub {
+        my $name = simple_q ("Enter computer name (* == autogenerate):\n");
+        return $name;
+    };
 
 $u->comments ('GuiRunOnce', 'Command0') =
     ["Command which runs after OS installation finishes"];
@@ -667,19 +669,18 @@ $u->{'GuiRunOnce'}->{'Command0'} =
         return $ret;
     };
 
-set_value ('GuiUnattended', 'AdminPassword',
-           sub {
-               return simple_q
-                   ('Enter AdminPassword for local administrator account: ');
-           });
+$u->{'GuiUnattended'}->{'AdminPassword'} =
+    sub {
+        return simple_q ('Enter password for local administrator account: ');
+    };
 
-set_value ('GuiUnattended', 'AutoLogon',
-           sub {
-               my $runonce_cmd = get_value ('GuiRunOnce', 'Command0');
-               return (defined $runonce_cmd
-                       ? 'Yes'
-                       : undef);
-           });
+$u->{'GuiUnattended'}->{'AutoLogon'} =
+    sub {
+        my $runonce_cmd = $u->{'GuiRunOnce'}->{'Command0'};
+        return (defined $runonce_cmd
+                ? 'Yes'
+                : undef);
+    };
 
 $u->{'Identification'}->{'JoinDomain'} =
     sub {
@@ -709,26 +710,24 @@ $u->{'Identification'}->{'JoinWorkgroup'} =
 $u->sort_index ('Identification', 'JoinWorkgroup')
     = $u->sort_index ('Identification', 'JoinDomain') + 1;
 
-set_value ('Identification', 'DomainAdmin',
-           sub {
-               my $dom = get_value ('Identification', 'JoinDomain');
-               defined $dom or return undef;
-               my $user = simple_q
-                   ("DomainAdmin account for joining $dom domain? ");
-               return canonicalize_user ($dom, $user);
-           });
+$u->{'Identification'}->{'DomainAdmin'} =
+    sub {
+        my $dom = $u->{'Identification'}->{'JoinDomain'};
+        defined $dom or return undef;
+        my $user = simple_q ("DomainAdmin account for joining $dom domain? ");
+        return canonicalize_user ($dom, $user);
+    };
 
-set_value ('Identification', 'DomainAdminPassword',
-           sub {
-               my $admin = get_value ('Identification', 'DomainAdmin');
-               defined $admin
-                   or return undef;
-               return simple_q
-                   ("DomainAdminPassword for $admin account? ");
-           });
+$u->{'Identification'}->{'DomainAdminPassword'} =
+    sub {
+        my $admin = $u->{'Identification'}->{'DomainAdmin'};
+        defined $admin
+            or return undef;
+        return simple_q
+            ("DomainAdminPassword for $admin account? ");
+    };
 
-set_value ('Unattended', 'OemPnPDriversPath',
-           \&ask_oem_pnp_drivers_path);
+$u->{'Unattended'}->{'OemPnPDriversPath'} = \&ask_oem_pnp_drivers_path;
 
 my $product_key_q =
     "Enter your product key now.\n"
@@ -756,7 +755,7 @@ $u->{'UserData'}->{'ProductID'} =
 $u->{'UserData'}->{'ProductKey'} =
     sub {
         # Mutual recursion.  IniFile object takes care of it.
-        my $product_id = get_value ('UserData', 'ProductID');
+        my $product_id = $u->{'UserData'}->{'ProductID'};
         # Only ask for ProductKey if we lack a ProductID
         defined $product_id
             and return undef;
@@ -832,7 +831,7 @@ defined $macaddr
     and print "MAC address: $macaddr\n";
 
 # Set environment variable controlling fdisk's use of INT13 extensions.
-get_value ('_meta', 'fdisk_lba')
+($u->{'_meta'}->{'fdisk_lba'})
     or $ENV{'FFD_VERSION'}=6;
 
 # Read current partition table.
@@ -844,7 +843,7 @@ print $partition_table;
 print "\n";
 
 # Partition the disk.
-my $fdisk_cmds = get_value ('_meta', 'fdisk_cmds');
+my $fdisk_cmds = $u->{'_meta'}->{'fdisk_cmds'};
 defined $fdisk_cmds
     or $fdisk_cmds = '';
 
@@ -866,7 +865,7 @@ else {
 }
 
 # Run formatting command, if any.
-my $format_cmd = get_value ('_meta', 'format_cmd');
+my $format_cmd = $u->{'_meta'}->{'format_cmd'};
 defined $format_cmd
     and system $format_cmd;
 
@@ -875,7 +874,7 @@ defined $format_cmd
     and system ('fdisk /mbr');
 
 # Create C:\netinst and subdirectories.
-my $netinst = get_value ('_meta', 'netinst');
+my $netinst = $u->{'_meta'}->{'netinst'};
 foreach my $dir ($netinst, "$netinst\\logs") {
     -d $dir
         and next;
