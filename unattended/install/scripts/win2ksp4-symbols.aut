@@ -1,6 +1,6 @@
 ; AutoIt script to install Windows 2000 SP4 symbols
 
-Run, %Z%\\updates\\win2ksp4\\symbols\\symbols_sp.exe
+Run, %Z%\\updates\\win2ksp4\\w2ksp4sym_%WINLANG%.exe
 
 WinWait, License
 Send, {TAB}{ENTER}
