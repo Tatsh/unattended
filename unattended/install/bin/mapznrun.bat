@@ -5,6 +5,9 @@
 @set Z=Z:
 :got_drive
 
+:: If drive is already mapped, do nothing
+if exist %Z%\ goto mapped
+
 net use %Z% /delete
 
 @if not %Z_PATH%. == . goto got_path
@@ -25,6 +28,7 @@ net use %Z% /delete
 net use %Z% %Z_PATH% %Z_PASS% %USER_ARG%
 @if not exist %Z%\ goto try_again
 
+:mapped
 :: Clean up environment, except for %Z%
 @set Z_PATH=
 @set Z_USER=
