@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Unattended/Silent Installer Flags for Windows Apps</title>
+<title>Unattended/Silent Installer Switches for Windows Apps</title>
 </head>
 <body>
 
@@ -30,7 +30,110 @@ finish and to suppress any automatic reboot.  These are both necessary
 for creating a system to <a href="apps.html">reliably install multiple
 applications.</a>
 
-<h1>General principles</h1>
+<h1>General information</h1>
+
+<p>There are several installer packages in common use in the Windows
+World.  Sometimes it will be obvious from the splash screen which one
+is in use; sometimes you can figure it out by running the Unix
+"strings" utility; and sometimes you just have to guess.
+
+<h2>MSI packages</h2>
+
+<p>Microsoft's own <a
+href="http://www.microsoft.com/windows2000/techinfo/howitworks/management/installer.asp">Windows
+Installer Service</a> is the standard, and if everybody used it, there
+would be no need for this document.
+
+<p>The package files have a <kbd>.msi</kbd> extension, and you
+manipulate them using the <a
+href="http://www.microsoft.com/TechNet/prodtechnol/winxppro/proddocs/msiexec.asp"
+><kbd>msiexec</kbd></a> utility.
+
+<p>For installation, use the <kbd>/i</kbd> and <kbd>/qb</kbd> flags.
+Use the <kbd>/l*</kbd> option to produce a log file.  You may provide
+options at the end of the command line; which options are supported
+depends on the package.  For example, this command:
+
+<pre>
+    msiexec /qb /l* perl-log.txt /i ActivePerl.msi PERL_PATH=Yes PERL_EXT=Yes
+</pre>
+
+...is how you install ActiveState Perl, instructing the MSI package to
+add Perl.exe to your PATH and to associate .pl files with it (<a
+href="#activeperl">See below</a> for more on Perl).
+
+<p><kbd>msiexec</kbd> can do many other things, like uninstall
+software or apply patches to existing MSI files.  Neat, huh?  Too bad
+nobody uses it.
+
+<h2 id="installshield">InstallShield</h2>
+
+<p><a href="http://www.installshield.com/">InstallShield</a> is one of
+the oldest and most widely used application packaging utilities.
+
+<p>Installers created by InstallShield generally recognize the
+<kbd>/r</kbd>, <kbd>/s</kbd>, <kbd>/sms</kbd>, and <kbd>/f1</kbd>
+flags.
+
+<p>To perform a "silent" installation, you need a <em>setup.iss</em>
+file.  Some applications ship with such a file, but if yours does not,
+you can use the graphical installer itself to create one.
+
+<p>Here's how it works.  Run the installer with the <kbd>/r</kbd>
+("record") option.  Proceed through the dialogs and complete the
+installation.  This will create a <em>setup.iss</em> file and place it
+in the <em>C:\WINNT</em> directory (yes, really).  This file will
+include all of your answers to the InstallShield dialogs, allowing you
+to perform unattended installations giving the same answers.  Simply
+copy <em>setup.iss</em> to the same directory as the installer.
+
+<p>Once you have a <em>setup.iss</em> file, you can run the installer
+with the <kbd>/s</kbd> ("silent") option.  This will perform an
+unattended installation.
+
+<p>Unfortunately, the installer will fork a separate process and exit,
+meaning it will return immediately even if you run it with
+<kbd>start&nbsp;/wait</kbd>.  Luckily, there is another option,
+<kbd>/sms</kbd>, which will cause the installer to pause until the
+installation completes.
+
+<p>Hence, for an InstallShield app, you want to provide the
+<kbd>/s</kbd> and <kbd>/sms</kbd> switches.
+
+<p>The <kbd>/f1</kbd> switch allows you to specify a path to the
+<em>setup.iss</em> file.  I assume this is to let you support multiple
+configurations for a single application.
+
+<p>Oh, one more thing.  The <kbd>/r</kbd> switch only works if the
+vendor is competent.  Many vendors add "custom dialogs" to their
+InstallShield packages and do not bother to support them in
+<em>setup.iss</em> files, which means those dialogs will always appear
+no matter what you do.  For such vendors, I suggest asking them to fix
+their installers, and if that does not work, doing what you can to
+help them go out of business.
+
+<h2 id="wise">Wise InstallMaster</h2>
+
+<p>InstallMaster from <a href="http://www.wise.com/">Wise
+Solutions</a> is a competitor to InstallShield.  You can usually
+identify the installers it produces by running "strings" on the
+executable and grepping for "Wise".
+
+<p>InstallMaster installers are supposed to recognize the
+<kbd>/s</kbd> switch to perform a silent installation.  And in my
+experience, they generally do.  There is no way to set options.
+
+<p>NOTE: This product has been rebranded the "Wise Installation
+System".  Don't let them confuse you.
+
+<h2="inno">Inno Setup</h2>
+
+<p><a href="http://www.jrsoftware.org/isinfo.php">Inno Setup</a> is an
+open source competitor in this space.  You can usually identify the
+installers it creates by running "strings" on the executable and
+grepping for "Inno".
+
+<p>Inno Setup installers recognize the <kbd>/silent</kbd> option.
 
 <h1>Specific applications</h1>
 
