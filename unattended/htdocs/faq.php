@@ -8,7 +8,7 @@ $page['next']  = 'unattendtxt.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: faq.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: faq.php,v 1.2 2005-01-16 19:00:25 nrichthof Exp $';
 $sections[]    = array ('Frequently Asked Questions', 'faq');
 $content       = <<<EOT
 
@@ -274,6 +274,30 @@ unattended acpi=off
 
       <a name="7_1"></a><h3>[7.1] How do I  enable  the  Windows XP  Internet  Connection
         Firewall?</h3>
+      <p>You can also use the following settings in unattend.txt:</p>
+<pre class="code">
+[Networking]
+    ; This will turn on IP-filtering, but with all ports allowed :-<
+    ;
+[NetProtocols]
+    MS_TCPIP = params.MS_TCPIP
+
+[params.MS_TCPIP]
+    EnableSecurity = Yes
+
+    ; This will Enable the XP Firewall, but only after first boot.
+    ; During install there's no firewall.
+    ; This also only enables the firewall for the default (first) connection.
+    ;
+[NetAdapters]
+    Adapter1=params.Adapter1
+
+[params.Adapter1]
+    INFID=*
+
+[Homenet]
+    InternetConnectionFirewall = Adapter1
+</pre><br />
 
       <hr />
 
