@@ -1,3 +1,52 @@
+** Changes in version 4.5 (2004-Oct-??)
+
+(Linux) Compile everything for i586 to fix "Illegal Instruction" crash
+on older machines (dolphinbofh).
+
+Completely overhaul sample-config.pl to allow automatic machine
+configuration from spreadsheet or MySQL database (slords).
+
+(Linux) Add /etc/protocols so that LDAP and MySQL modules can actually
+work.  Thanks to Andrew Bartlett.
+
+(Linux) Add partitioning support for logical partitions, extended
+partitions, and Linux partitions.  Thanks to Jordan Share.
+
+(Linux) Use DHCP-supplied WINS servers (in addition to DNS) when
+mapping install share.
+
+Include version on boot disk and install share, and warn if they do
+not match.
+
+Fix bootini.pl not to damage boot.ini for unrecognized languages
+(ekot).
+
+Add --icon switch to shortcut.pl.  Thanks to Moritz Engel.
+
+Several todo.pl improvements: Add new .missing-ok directive
+(slords). Add CHS language (thanks to Andrew Clark).  Set
+"Administrators" environment variable to localized name of
+Administrators group (thanks to Jan Brauer).
+
+Use localized Administrators group name when adding users to
+Administrators group.
+
+Upgrade to Mozilla 1.7.3, Sun JRE 1.5.0, .NET 1.1 SP1 (nrichthof), and
+Winamp 5.05 (nrichthof).
+
+Fix numerous non-English download URLs (ekot).
+
+(Linux) Upgrade to Linux 2.6.9, Bash 3.0, DBI 1.45, MySQL 4.0.21,
+Parted 1.6.15, BusyBox 1.00, Samba 3.0.7, and zlib 1.2.2.
+
+Upgrade to SYSLINUX 2.11.
+
+(DOS) Upgrade Realtek RTL8169/RTL8110S driver to 1.03.
+
+Add September and October hotfixes (MS04-027 through MS04-038).
+Upgrade to Media Player 10.
+
+
 ** Changes in version 4.4b (2004-Aug-16)
 
 (Linux) Fix bug, introduced in 4.4, which broke DHCP option 233
