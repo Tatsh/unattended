@@ -1,6 +1,0 @@
-REGEDIT4
-
-; Set the parameters for srvany.exe
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\cygwin-sshd\Parameters]
-"Application"="c:\\winnt\\system32\\cmd /c"
-"AppParameters"="c:\\cygwin\\usr\\local\\etc\\cygwin-sshd.bat"
