@@ -7,7 +7,7 @@
 :: "An update rollup is available for Internet Explorer versions 5.x and 6.0"
 :: <http://support.microsoft.com/?id=871260>
 :: URL|DEU|http://download.microsoft.com/download/e/3/8/e38b6a7e-fc55-457b-859b-409651255832/IE6.0sp1-KB871260-x86-DEU.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-deu.exe
-:: URL|DEU|http://download.microsoft.com/download/5/3/d/53d24f65-f37e-456b-a9d0-9c4298bace8e/IE6.0sp1-KB871260-x86-ENU.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-enu.exe
+:: URL|ENU|http://download.microsoft.com/download/5/3/d/53d24f65-f37e-456b-a9d0-9c4298bace8e/IE6.0sp1-KB871260-x86-ENU.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/1/d/2/1d2d49f7-266b-48db-a22b-26af1b9ebd45/IE6.0sp1-KB871260-x86-ESN.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-esn.exe
 :: URL|FRA|http://download.microsoft.com/download/b/e/5/be582337-3c44-4c71-8690-d43b12fb1cd5/IE6.0sp1-KB871260-x86-FRA.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/9/a/8/9a8a2bbb-cb4c-44cb-9a5b-ce6d21c094b1/IE6.0sp1-KB871260-x86-ITA.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-ita.exe
