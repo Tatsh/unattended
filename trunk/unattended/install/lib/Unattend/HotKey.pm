@@ -21,7 +21,6 @@ $oterm->getattr($fd_stdin);
 # Create CBREAK settings
 my $cterm     = POSIX::Termios->new();
 $cterm->getattr($fd_stdin);
-$cterm->getlflag();
 
 my $echo     = ECHO | ICANON;
 
