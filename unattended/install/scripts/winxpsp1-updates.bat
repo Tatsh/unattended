@@ -6,17 +6,17 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 817287
+:: "Windows Update 643 Error and the Catalog Database"
+:: <http://support.microsoft.com/?kbid=817287>
+:: (download only available from Windows Catalog)
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817287_WXP_SP2_x86_ENU.exe /u /o /z" .reboot
+
 :: Critical update 816093
 :: "Flaw in the Microsoft VM Could Enable System Compromise"
 :: <http://support.microsoft.com/?kbid=816093>
 :: (download only available from Windows Catalog)
 todo.pl "z:\packages\winxpsp1\msjavwu.exe /q:a /r:n"
-
-:: Critical update 817287
-:: "Windows Update 643 Error and the Catalog Database"
-:: <http://support.microsoft.com/?kbid=817287>
-:: (download not available!?)
-:: todo.pl "???"
 
 :: Critical update 331953
 :: "Flaw in RPC Endpoint Mapper Could Allow Denial of Service Attacks"
