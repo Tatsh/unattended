@@ -19,7 +19,7 @@ if "%WINVER%" == "win2k" goto skipinstaller3
 :: Windows Installer 3.0 Redistributable
 :: <http://support.microsoft.com/?kbid=884016>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=5fbc5470-b259-4733-a914-a956122e08e8>
-:: Doesn't hurt to install this as it exits niCely if not needed (Except on win2k).
+:: Doesn't hurt to install this as it exits nicely if not needed (Except on win2k).
 :: URL|ALL|http://download.microsoft.com/download/9/e/1/9e14751c-f897-4bbd-af7a-890d9a0f5430/WindowsInstaller-KB884016-v2-x86.exe|packages/windowsinstaller/WindowsInstaller-KB884016-v2-x86.exe
 %Z%\packages\windowsinstaller\WindowsInstaller-KB884016-v2-x86.exe /passive /norestart
 :skipinstaller3
