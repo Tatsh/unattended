@@ -74,6 +74,9 @@ mass_device_names="hda sda"
 
 unset did_something
 
+# Force "foo*" to expand to nothing if no matches found
+shopt -s nullglob
+
 for hda in $mass_device_names ; do
     [ -d "$sys_block/$hda" ] || continue
 
