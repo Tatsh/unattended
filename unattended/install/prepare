@@ -1,7 +1,5 @@
 #!/bin/bash
 
-mkdir -p updates/{{common,ie6sp1,journalviewer}/enu,mediaplayer9,office2k,officexp,win2k/symbols,win2ksp4,winxp,winxpsp1,ws2k3} packages/{adobereader,cygwin,directx9,{ie6sp1,mdac,windowsmessenger}/enu,mediaplayer9,openoffice,support-tools,windowsinstaller}
-
 # Default to ENU if nothing passed in as first arg
 if [ ".$1" == "." ]; then WINLANG="ENU"; else WINLANG="$1"; fi
 
