@@ -3,6 +3,14 @@
 :: Reboot after installing everything (superstition)
 todo.pl .reboot
 
+:: Hm, tying this to winxpsp1 is probably wrong.  FIXME
+if not %WINVER%. == winxpsp1. goto didfpse
+:: Critical update 810217 (MS03-051)
+:: "Buffer Overrun in Microsoft FrontPage Server Extensions Could Allow Code Execution"
+:: <http://support.microsoft.com/?kbid=810217>
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.exe /u /n /z"
+:didfpse
+
 :: "Excel 2002 Security Patch: November 11, 2003"
 :: <http://support.microsoft.com/?kbid=830349>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-050.asp>

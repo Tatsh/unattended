@@ -136,7 +136,7 @@ todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824105-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 810217 (MS03-051)
-:: "uffer Overrun in Microsoft FrontPage Server Extensions Could Allow Code Execution"
+:: "Buffer Overrun in Microsoft FrontPage Server Extensions Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=810217>
 :: (Only install if FrontPage Server Extenstions are installed)
 if not exist "%CommonProgramFiles%\Microsoft Shared\Web Server Extensions\40\bin\FP4awel.dll" goto nofpse
