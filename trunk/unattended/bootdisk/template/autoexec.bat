@@ -31,9 +31,10 @@ set PATH=Z:\djgpp\bin;z:\dosbin;%PATH%
 set DJGPP=Z:\djgpp\djgpp.env
 lh cwsdpmi -p -s-
 
-bash Z:\install.sh
+perl -I Z:\doslib Z:\dosbin\install.pl
 if errorlevel 1 goto end
 cwsdpmi -u
+
 :: XP install *requires* smartdrv (KB article Q296814)
 smartdrv
 c:\netinst\doit.bat
