@@ -125,10 +125,11 @@ sub menu_choice (@) {
         # Generate current page of choices.
         while ($i < $per_page && $start + $i < $count) {
             my $elt = 2 * ($start + $i);
-            printf "%d) %s\n", $i+1, $args[$elt];
-            $choices .= $i+1;
+            my $hexd = sprintf '%X', $i+1;
+            printf "%d) %s\n", $hexd, $args[$elt];
+            $choices .= $hexd;
             # Capture value for sub below
-            my $val = $args[$elt+ 1];
+            my $val = $args[$elt + 1];
             $choice_map[$i] = sub { no warnings 'exiting';
                                     $ret = $val;
                                     last LOOP;
