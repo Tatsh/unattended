@@ -27,8 +27,8 @@ new features without updating the docs.</p>
 
 <p>Someday I (or somebody) will crack and rewrite the documentation
 from scratch.  Until then, this page will have to suffice.  It is
-partly a FAQ, and partly just a collection of pointers to bits of
-wisdom from the <a
+partly a Frequently Asked Questions (FAQ) list, and partly just a
+collection of pointers to bits of wisdom from the <a
 href="https://lists.sourceforge.net/lists/listinfo/unattended-info/"
 >unattended-info mailing list</a>.</p>
 
@@ -89,7 +89,7 @@ this helps, the bug is in the Linux ACPI support and we would like to
 report it to the Linux developers.  (We would disable ACPI by default,
 but then some hardware <a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01557.html"
->does not work at all</a>.)</p>
+>would not work at all</a>.)</p>
 
 <p>If disabling ACPI does not help, most likely your network or mass
 storage hardware is not yet supported by our boot disk.  This is
@@ -134,7 +134,7 @@ and dislikes <code>From:&nbsp;patl@users.sourceforge.net</code>.</li>
 
 </ol>
 
-<h1>I am having trouble mapping the install share.</h1>
+<h1 id="mapping">I am having trouble mapping the install share.</h1>
 
 <p>The install share must be an actual share like
 <code>\\server\install</code>, not a subfolder like
@@ -182,7 +182,7 @@ href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00521
 <p>Yes, using the Linux-based boot disk.  (To USB-boot the DOS disk,
 see <a
 href="http://www.mail-archive.com/unattended-devel@lists.sourceforge.net/msg00157.html"
->Eugene Kotlyarov's instructions</a>.)</p>
+>Eugene's instructions</a>.)</p>
 
 <p>I got this working on a <a
 href="http://froogle.google.com/froogle?q=sdcz2-256-768" >256M Sandisk
@@ -196,9 +196,9 @@ free to let us know and we will update these instructions.</p>
 <p>First, I needed to repartition and reformat the drive, because the
 original partition table was an unholy mess which confused the boot
 loader.  I plugged the drive into my RedHat 9 Linux machine and used
-"dmesg" to see that it appeared as <code>/dev/sda</code>.  (It may
-have a different name on your system, especially if you already have
-SCSI disks.)  Then I ran:</p>
+"dmesg" to see that it was autoprobed as <code>/dev/sda</code>.  (It
+may have a different name on your system, especially if you already
+have SCSI disks.)  Then I ran:</p>
 
 <pre class="code">
     parted /dev/sda mklabel msdos
@@ -353,6 +353,15 @@ network printers support IPP.</p>
 href="http://groups.google.com/groups?threadm=s5gptgh4811.fsf%40patl%3Dusers.sf.net"
 >configure an HP LaserJet 4050</a> automatically.</p>
 
+<h1 id="qchain">Why do you reboot so many times instead of using QChain?</h1>
+
+<p>Because Pat <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00167.html"
+>does</a> <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00448.html"
+>not</a> <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00705.html"
+>trust</a> QChain.</p>
 
 <h1>How do I disable sound?</h1>
 
