@@ -7,9 +7,13 @@ use Pod::Usage;
 use Win32API::Registry qw(:Func :SE_);
 my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg);
+use Win32::OLE; # for get_drive_path
 
 # Location of the "to do" list.
 my $todo = 'c:\\netinst\\todo.txt';
+
+# In general, bomb out completely if COM engine encounters any trouble.
+Win32::OLE->Option ('Warn' => 3);
 
 # Your usual option-processing sludge.
 my %opts;
@@ -147,7 +151,6 @@ sub get_windows_version () {
         $os = 'win2k';
     }
     elsif ($product_name eq 'Microsoft Windows XP') {
-        # FIXME: Untested!
         $os = 'winxp';
     }
     else {
@@ -168,6 +171,48 @@ sub get_windows_version () {
     return "$os$sp";
 }
 
+# Get the path to a networked drive.
+sub get_drive_path ($) {
+    my ($drive) = @_;
+
+    $drive =~ /^[a-z]:?$/i
+        or die "Invalid drive specification $drive";
+
+    # Canonicalize to upper case
+    $drive =~ tr/a-z/A-Z/;
+
+    # Add colon if needed
+    $drive =~ /:$/
+        or $drive .= ':';
+
+    # Get a handle to the SWbemServices object of the local machine.
+    my $moniker = 'WinMgmts:';
+    my $computer = Win32::OLE->GetObject ($moniker);
+    defined $computer
+        or die "Unable to GetObject $moniker: " . Win32::OLE::LastError();
+
+    # Get the SWbemObjectSet of all logical disks.  For gory details, see:
+    # http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_logicaldisk.asp
+    my $drives_set = $computer->InstancesOf ('Win32_LogicalDisk');
+
+    # Convert set to array.
+    my @drives = Win32::OLE::Enum->All ($drives_set);
+
+    foreach my $d (@drives) {
+        my $name = $d->{'Name'};
+        $name =~ tr/a-z/A-Z/;
+        $name eq $drive
+            or next;
+        my $path = $d->{'ProviderName'};
+
+        defined $path
+            or die "$drive does not appear to be a networked drive";
+        return $path;
+    }
+
+    die "Drive $drive does not exist";
+}
+
 # Since this is the top-level "driver" script, stop if we encounter
 # any problems.
 END {
@@ -182,16 +227,19 @@ if (exists $opts{'go'}) {
     @ARGV == 0
         or pod2usage (2);
 
-    # Prevent re-entrancy
+    # Prevent re-entrancy.
     (exists $ENV{'_IN_TODO'})
         and exit 0;
     $ENV{'_IN_TODO'} = 'yes';
 
-    # Add "bin" and "scripts" directories to PATH
+    # Add "bin" and "scripts" directories to PATH.
     $ENV{'PATH'} = "Z:\\bin;Z:\\scripts;$ENV{'PATH'}";
 
-    # Set handy "WINVER" environment variable
+    # Set handy "WINVER" environment variable.
     $ENV{'WINVER'} = get_windows_version ();
+
+    # Set handy "Z_PATH" environment variable.
+    $ENV{'Z_PATH'} = get_drive_path ('Z:');
 
     # Disable running ourselves after reboot.
     run_at_logon ();
