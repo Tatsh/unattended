@@ -23,7 +23,7 @@ todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
 :: Windows Journal Viewer update
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
+todo.pl ".reboot-on 194 %Z%\updates\common\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: "Update for Windows Media Player Script Commands"
 :: <http://support.microsoft.com/?kbid=828026>
@@ -45,7 +45,7 @@ todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\MPSetupXP.EXE /Q /R:N /C:\"set
 :: <http://msdn.microsoft.com/netframework/downloads/>
 :: (Click on "How to get the .NET framework", and download the
 :: "Microsoft .NET Framework 1.1 Redistributable".)
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\%WINLANG%\dotnetfx.exe /q /c:\"install /q\""
+todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"install /q\""
 
 :: Recommended Updates
 
@@ -173,7 +173,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\msjavwu.exe /q /r:n"
 :: NOTE: You must rename this to use the three-letter language
 :: abbreviation instead of two.  For example, for English you would
 :: rename js56nen.exe to js56nenu.exe.
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\js56n%WINLANG%.exe /q /r:n"
+todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
 
 :: Critical update 826939
 :: "Update Rollup 1 for Microsoft Windows XP"

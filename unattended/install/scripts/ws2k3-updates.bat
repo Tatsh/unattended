@@ -55,12 +55,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB282010-x86-%WINLAN
 
 :: "Update for Windows Media Player Script Commands"
 :: <http://support.microsoft.com/?kbid=828026>
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsMedia-KB828026-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia-KB828026-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
 :: <http://support.microsoft.com/?kbid=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 828750
 :: "October, 2003, Cumulative Patch for Internet Explorer"

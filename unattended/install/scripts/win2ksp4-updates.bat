@@ -18,7 +18,7 @@ todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
 :: Windows Journal Viewer update
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
+todo.pl ".reboot-on 194 %Z%\updates\common\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: "Update for Windows Media Player Script Commands"
 :: <http://support.microsoft.com/?kbid=828026>
@@ -40,7 +40,7 @@ todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\MPSetup.EXE /Q /R:N /C:\"setup
 :: <http://msdn.microsoft.com/netframework/downloads/>
 :: (Click on "How to get the .NET framework", and download the
 :: "Microsoft .NET Framework 1.1 Redistributable".)
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\%WINLANG%\dotnetfx.exe /q /c:\"install /q\""
+todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"install /q\""
 
 :: Recommended Updates
 
@@ -83,9 +83,6 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.
 :: You can also move from c:\documents and settings\administrator\local settings\temporary internet files\q818043*.exe 
 :: and rename appropriately.
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z"
-
-:: Install IE6
-todo.pl ie6.bat
 
 :: Critical Updates
 
@@ -143,4 +140,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.
 :: NOTE: You must rename this to use the three-letter language
 :: abbreviation instead of two.  For example, for English you would
 :: rename js56nen.exe to js56nenu.exe.
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\js56n%WINLANG%.exe /q /r:n"
+todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
+
+:: Install IE6 First
+todo.pl ie6.bat
