@@ -44,7 +44,7 @@ echo "*** And I suppose we may as well look for PCMCIA devices..."
 sleep 2
 cardmgr -o
 
-echo "*** Lets wait a little bit for things to settle down..."
+echo "*** Let's wait a little bit for things to settle down..."
 # udhcpc only gets a lease 1/5 times with e100/eepro100 cards without
 # this delay.
 # This might be related to above delays too.
