@@ -149,8 +149,17 @@ sub do_move ($) {
     -d $to_dir
         or mkpath $to_dir;
 
-    ! -e $to || unlink $to
-        or die "Unable to delete $to: $^E";
+    if (-e $to) {
+        if (-d _) {
+            rmdir $to
+                or die "Unable to rmdir $to: $^E";
+        }
+        else {
+            unlink $to
+                or die "Unable to delete $to: $^E";
+        }
+    }
+
     rename $from, $to
         or die "Unable to rename $from to $to: $^E";
     symlink $link, $from
