@@ -68,8 +68,9 @@ example, this command:
 </pre>
 
 ...is how you install ActiveState Perl, instructing the MSI package to
-add Perl.exe to your PATH and to associate .pl files with it. (<a
-href="#activeperl">See below</a> for more on Perl.)
+add Perl.exe to your <code>PATH</code> and to associate
+<code>.pl</code> files with it. (<a href="#activeperl">See below</a>
+for more on Perl.)
 
 <p><kbd>msiexec</kbd> can do many other things, like uninstall
 software or apply patches to existing MSI files.  Neat, huh?  Too bad
@@ -154,11 +155,13 @@ installation and <kbd>/z</kbd> to suppress the automatic reboot.
 There are other useful switches; use <kbd>/?</kbd> to learn about
 them.
 
-<p>Some hotfixes use Microsoft's old packaging technology whose name I
-forget and whose switches are more-or-less documented in <a
+<p>Some hotfixes use an old Microsoft packaging technology called
+"IExpress", whose switches are more-or-less documented in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q197147">KB
-article Q197147</a>.  These installers first extract themselves to a
-temporary folder and then run a command from inside that folder.
+article Q197147</a> and <a
+href="http://groups.google.com/groups?selm=%23DxIcwcQ%24GA.236%40cppssbbsa02.microsoft.com"
+>an old USENET post</a>.  These installers first extract themselves to
+a temporary folder and then run a command from inside that folder.
 These packages support the <kbd>/t:<var>path</var></kbd> switch, to
 specify the temporary folder name, and the
 <kbd>/c:<var>command</var></kbd> switch to specify the command to run.
