@@ -111,44 +111,46 @@ sub menu_choice (@) {
         $pages > 1
             and printf "(Page %d/%d)\n", $page+1, $pages;
 
-        my $start = $page * $per_page;
+        my $start = $page * $per_page * 2;
 
         my $i = 0;
         my $choices = '';
 
         # Generate current page of choices.
         while ($i < $per_page && $start + $i < $count) {
-            printf ("%d) %s\n", $i+1, $args[2*$i]);
+            my $elt = $start + 2*$i;
+            printf "%d) %s\n", $i+1, $args[$elt];
             $choices .= $i+1;
             # Capture value for sub below
-            my $val = $args[2*$i + 1];
+            my $val = $args[$elt+ 1];
             $choice_map[$i] = sub { no warnings 'exiting';
                                     $ret = $val;
                                     last LOOP;
                                 };
+            $i++;
         }
 
         # If we have multiple pages, generate Next/Previous option
         if ($pages > 1) {
-            $i++;
             print "N/P) Next/Previous page\n";
             $choices .= 'N';
             $choice_map[$i] = sub { $page = ($page + 1) % $pages };
             $i++;
             $choices .= 'P';
             $choice_map[$i] = sub { $page = ($page + $pages - 1) % $pages };
+            $i++;
         }
 
-        $i++;
         print "X) Exit this program\n";
         $choices .= 'X';
         $choice_map[$i] = sub { print "Exiting.\n"; exit 1; };
+        $i++;
 
         system 'choice', "/c:$choices", "Select:";
         my $ret = ($? >> 8) - 1;
 
         my $func = $choice_map[$ret];
-        &func ();
+        &$func ();
     }
 
     # Record which page we ended up on
@@ -261,7 +263,7 @@ sub run_command ($@) {
 
     my %status_hash = map { $_ => undef } @expected_statuses;
 
-    my $tmpfile = 'A:\\tmp.txt';
+    my $tmpfile = '\\tmp.txt';
 
     my $ret = system "$cmd > $tmpfile";
     my $status = $ret >> 8;
