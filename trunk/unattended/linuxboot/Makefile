@@ -601,9 +601,11 @@ download-$(strip $(1)) :  ;						\
 
 # Special rule to fetch updated pci.ids file
 download-pci.ids:
-	wget http://pciids.sourceforge.net/pci.ids.bz2
-	bunzip2 pci.ids.bz2
-	[ -e pci.ids ]
+	[ -e pci.ids ]							     \
+	|| { rm -f $@.tmp.bz2						     \
+	     && wget -O $@.tmp.bz2 http://pciids.sourceforge.net/pci.ids.bz2 \
+	     && bunzip2 $@.tmp.bz2					     \
+	     && mv $@.tmp pci.ids ; }
 
 # Special rule for glibc (checkout from CVS based on date).
 # download-$(glibc):
