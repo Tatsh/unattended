@@ -99,7 +99,7 @@ graphical installer itself to create one.
 <p>Here is how it works.  Run the installer with the <kbd>/r</kbd>
 ("record") switch.  Proceed through the dialogs and complete the
 installation.  This will create a <code>setup.iss</code> file and
-place it in the <code>C:\WINNT</code> directory (yes, really).  This
+place it in the <code>C:\WINDOWS</code> directory (yes, really).  This
 file will include all of your responses to the InstallShield dialogs,
 allowing you to perform unattended installations as if you were giving
 the same answers again.  Simply copy <code>setup.iss</code> to the
@@ -129,21 +129,22 @@ Once again, there must be <em>no</em> space between the switch and the
 file name.
 
 <p>WARNING: Be careful what characters you use in these file names,
-because InstallShield strips certain non-alphanumerics (like hyphens).
+because InstallShield silently strips certain non-alphanumerics (like
+hyphens).
 
-<p>Oh, just one more thing.  The <kbd>/r</kbd> and <kbd>/s</kbd>
-switches only work if the release engineer is competent.  Many
-packages have "custom dialogs" which are not supported by
-<code>setup.iss</code>, which means those dialogs will always appear
-no matter what you do.  For such packages, I suggest asking the vendor
-to fix their installer.  If that does not work, I suggest doing what
-you can to deprive them of business.
+<p>Oh, one more thing.  The <kbd>/r</kbd> and <kbd>/s</kbd> switches
+only work if the release engineer is competent.  Many packages have
+"custom dialogs" which are not supported by <code>setup.iss</code>,
+which means the dialogs will always appear no matter what you do.  For
+such packages, I suggest asking the vendor to fix their installer.  If
+that does not work, I suggest doing what you can to deprive them of
+business.
 
 <h3 id="pftw">PackagefortheWeb</h3>
 
 <p><a href="#installshield">InstallShield</a> has a relatively new
 add-on product called <a href="http://www.installshield.com/pftw/"
->PackagefortheWeb</a>, or just PFTW for short.  This is basically an
+>PackagefortheWeb</a>, or PFTW for short.  This is basically an
 InstallShield tree bundled up as a single-file executable.
 
 <p>When you run this executable, it extracts a bunch of files to a
@@ -151,8 +152,8 @@ temporary directory, then launches the <code>setup.exe</code> within.
 
 <p>The PFTW package recognizes the <kbd>/s</kbd> and
 <kbd>/a&nbsp;...</kbd> switches.  The <kbd>/s</kbd> switch instructs
-the PFTW package to run silently, although this does not mean that the
-underlying <code>setup.exe</code> will run silently.
+the PFTW package to run silently, although this does not necessarily
+mean that the underlying <code>setup.exe</code> will run silently.
 
 <p>The <kbd>/a&nbsp;...</kbd> ("add") switch allows you to add
 switches to the command line of the underlying <code>setup.exe</code>
@@ -372,7 +373,7 @@ href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=665810&amp;g
 > here</a>.
 
 <tr><td valign="middle">Example
-<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/7-zip.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >7-zip.pl</a>
+<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/7-zip.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >7-zip.bat</a>
 
 </table>
 
@@ -447,7 +448,7 @@ href="http://support.adobe.com/devsup/devsup.nsf/docs/53446.htm"
 >53446</a> and <a
 href="http://support.adobe.com/devsup/devsup.nsf/docs/53495.htm"
 >53495</a>.  Viewing these requires registering for an account with
-the "Adobe Solutions Network".  How annoying.  Briefly, the magic
+the "Adobe Solutions Network"; how annoying.  Briefly, the magic
 invocation is:
 
 <pre>
