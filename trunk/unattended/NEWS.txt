@@ -1,3 +1,42 @@
+** Changes in version 2.8 (2003-Aug-24)
+
+Add maptodo.pl script, which maps the Z:\ drive before running
+todo.pl.  Rewrite dosbin\install.pl and bin\todo.pl to invoke it.
+This works around XP bug where "persistent" share mappings sometimes
+fail.
+
+Use "%%WINVER%%" instead of "%WINVER%" to delay variable expansion
+until after service pack has been applied.
+
+Add .cvsignore files everywhere.
+
+Add rest of XP updates (DirectX 9, Media Player 9, Windows Journal
+Viewer, .NET Framework).
+
+New scripts powertoys.bat and winxpsp1-recommended.bat.  Not invoked
+by default, but there for people who want even non-critical stuff.
+
+Drop PXELINUX timeout for booting from hard disk to 30 seconds.
+
+Upgrade e100b and e1000 DOS drivers to latest Intel release.
+
+Set PREFERREDREDIR and AUTOSTART to BASIC (instead of FULL) in
+system.ini, to make full automation easier.
+
+Add new scripts instances.pl, srconfig.pl, rdconfig.pl, and cert.pl.
+Improve shortcut.pl.  Document some of them in apps.html.
+
+Use srconfig.pl to disable XP "System Restore" functionality during
+base hotfix and application installation.
+
+Add .NET Framework instructions to installers.html.  Update
+section on OpenOffice.
+
+Fix links all over the place.
+
+Rename vnc.bat to tightvnc.bat, to ruffle fewer feathers.
+
+
 ** Changes in version 2.7a (2003-Jul-07)
 
 Fix lurking bug in todo.pl; use ($ret >> 8) instead of ($ret / 256)
