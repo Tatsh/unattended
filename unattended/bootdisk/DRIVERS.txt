@@ -5,19 +5,19 @@
 # manufacturer, copy it to the drivers/ subdirectory, and add a line
 # to this file.  Then just type "make".
 
-e100b Intel Pro/100 family of PCI and CardBus adapters
+e100b    Intel Pro/100 family of PCI and CardBus adapters
 # Latest version should be here (or just search Intel's support site
 # for PRODOS.EXE):
 # <http://downloadfinder.intel.com/scripts-df/File_Filter.asp?FileName=PRODOS.EXE>
 
-elpc575 3com 3c575 family of CardBus (laptop) adapters
+elpc575  3com 3c575 family of CardBus (laptop) adapters
 # Found by doing a search on product number (3cxfe575ct) at
 # <http://www.3com.com/products/en_US/downloadsindex.jsp>.
 
-el90x - 3com 3c59x/3c90x family of PCI and CardBus adapters
+el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
 # Found by doing a search for "3c905c" on 3com's support site.
 
-undis3c "Universal" (PXE/UNDI) driver
+undis3c  "Universal" (PXE/UNDI) driver
 # This one is very special.  It implements NDIS2 over a PXE/UNDI
 # stack, which means it works when doing a network boot to DOS using
 # ANY adapter from ANY vendor.  It is included on the 3com MBA utility
