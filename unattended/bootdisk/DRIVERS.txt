@@ -5,7 +5,7 @@
 # manufacturer, copy it to the drivers/ subdirectory, and add a line
 # to this file.  Then just type "make".
 
-# Downloaded from <http://www.broadcom.com/support/downloaddrivers.php>
+# Downloaded from <http://www.broadcom.com/drivers/downloaddrivers.php>
 b44      Broadcom BCM440x family
 b57      Broadcom BCM57xx "Tigon3" family
 
