@@ -114,6 +114,10 @@ sub run_command ($;@) {
     return @ret;
 }
 
+sub read_partition_table () {
+    return join '', run_command ('fdisk /info /tech');
+}
+
 ## Set defaults.
 
 sub ask_fdisk_lba () {
@@ -400,7 +404,7 @@ get_value ('_meta', 'fdisk_lba')
     or $ENV{'FFD_VERSION'}=6;
 
 # Read current partition table.
-my $partition_table = join '', run_command ('fdisk /info /tech');
+my $partition_table = read_partition_table ();
 
 # Display it.
 print "\nCurrent partition table:";
