@@ -22,6 +22,7 @@ todo.pl .reboot
 :: URL|JPN|http://download.microsoft.com/download/7/1/b/71b0d70e-19cb-4e2f-82e6-09f5d7c63a0a/office2000-kb873372-client-jpn.exe|updates/office2k/office2000-kb873372-client-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/b/4/e/b4e35b3d-bef4-4796-b13a-dd2ab953e133/office2000-kb873372-client-kor.exe|updates/office2k/office2000-kb873372-client-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/6/6/d/66dede04-8898-4bad-84f1-90f0e2dfccf9/office2000-kb873372-client-nld.exe|updates/office2k/office2000-kb873372-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/b/4/b/b4bffecd-ac04-4d75-bc97-836e8e57af86/office2000-kb873372-client-nor.exe|updates/office2k/office2000-kb873372-client-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/6/8/3/6832878d-1a95-4060-a926-78df336799dd/office2000-kb873372-client-plk.exe|updates/office2k/office2000-kb873372-client-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/b/0/6/b069e5e3-29ef-4225-ab7d-3a4f943ed4a3/office2000-kb873372-client-ptg.exe|updates/office2k/office2000-kb873372-client-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/7/4/e/74e7cd5d-1feb-4fe2-b0d8-0427a927a5b9/office2000-kb873372-client-ptb.exe|updates/office2k/office2000-kb873372-client-ptb.exe
@@ -48,6 +49,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb873372-client-%WINLANG
 :: URL|JPN|http://download.microsoft.com/download/0/0/2/002dcb79-74d7-4b00-973d-963dd71a5a5b/office2000-kb873380-client-jpn.exe|updates/office2k/office2000-kb873380-client-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/c/a/e/cae85838-ba31-4abc-bbc6-9876f4b5d6c4/office2000-kb873380-client-kor.exe|updates/office2k/office2000-kb873380-client-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/f/f/3/ff331a7e-deea-46c9-9cc6-e844f36034fe/office2000-kb873380-client-nld.exe|updates/office2k/office2000-kb873380-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/c/d/6cdeccb0-67d2-4097-8bb2-1e0d77340eb7/office2000-kb873380-client-nor.exe|updates/office2k/office2000-kb873380-client-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/5/8/b/58b66562-a9a4-4b8b-9e30-53dbd2bec104/office2000-kb873380-client-plk.exe|updates/office2k/office2000-kb873380-client-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/0/4/8/048cd874-077b-4d8a-b681-dc1672aa0ea8/office2000-kb873380-client-ptg.exe|updates/office2k/office2000-kb873380-client-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/3/e/a/3ea7494a-051f-4078-b8bd-b2c43df72ee5/office2000-kb873380-client-ptb.exe|updates/office2k/office2000-kb873380-client-ptb.exe
@@ -77,6 +79,7 @@ if not %WINVER%. == winxpsp1. goto did810217
 :: URL|JPN|http://download.microsoft.com/download/4/a/b/4ab94c10-dddb-4daf-839a-29c4918de376/Windows2000-KB810217-x86-JPN.exe|updates/office2k/windows2000-kb810217-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/0/d/2/0d2d44c9-6ebf-4f75-91d7-fca7684f1452/Windows2000-KB810217-x86-KOR.exe|updates/office2k/windows2000-kb810217-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/c/1/f/c1fe00ea-fdef-4d18-8a8b-27983710f9fd/Windows2000-KB810217-x86-NLD.exe|updates/office2k/windows2000-kb810217-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/f/4/1/f4167949-45a6-4d86-8ade-2802a3552e1b/Windows2000-KB810217-x86-NOR.exe|updates/office2k/windows2000-kb810217-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/1/a/b/1ab80d7a-2c78-4392-a5f2-1db6f431b94d/Windows2000-KB810217-x86-PLK.exe|updates/office2k/windows2000-kb810217-x86-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/8/5/5/855256c8-a6ff-4a31-8000-0fd1d50f61b7/Windows2000-KB810217-x86-PTG.exe|updates/office2k/prg/windows2000-kb810217-x86-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/9/5/7/957417bf-bf48-4afb-a08b-bf8639d64cb1/Windows2000-KB810217-x86-PTB.exe|updates/office2k/windows2000-kb810217-x86-ptb.exe
@@ -103,6 +106,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\Windows2000-KB810217-x86-%WINLANG%.
 :: URL|JPN|http://download.microsoft.com/download/a/7/3/a7350eef-626b-4bfc-802c-21db4b7a56d7/office2000-kb830349-client-jpn.exe|updates/office2k/office2000-kb830349-client-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/f/b/0/fb04fd99-eede-4b92-a552-1f120275561b/office2000-kb830349-client-kor.exe|updates/office2k/office2000-kb830349-client-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/e/e/7/ee74120e-cbb7-4f27-bc1f-933a4c4d6576/office2000-kb830349-client-nld.exe|updates/office2k/office2000-kb830349-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/2/9/4/294a42af-4c84-4fe6-b311-9221b4150fb9/office2000-kb830349-client-nor.exe|updates/office2k/office2000-kb830349-client-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/3/2/d/32dba614-0d3c-434b-bd61-00b5a9acb38f/office2000-kb830349-client-plk.exe|updates/office2k/office2000-kb830349-client-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/5/d/7/5d77b2b5-afcd-4344-b16f-3d28f4131ace/office2000-kb830349-client-ptg.exe|updates/office2k/prg/office2000-kb830349-client-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/0/d/6/0d6d934b-9bf9-4a79-b167-6b2167a4554d/office2000-kb830349-client-ptb.exe|updates/office2k/office2000-kb830349-client-ptb.exe
@@ -129,6 +133,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb830349-client-%WINLANG
 :: URL|JPN|http://download.microsoft.com/download/c/2/5/c254e36f-0e43-45e8-90df-4ff2918d5e62/office2000-kb830347-client-jpn.exe|updates/office2k/office2000-kb830347-client-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/2/0/d/20dada6f-ea31-4b99-aa4c-73136bb20339/office2000-kb830347-client-kor.exe|updates/office2k/office2000-kb830347-client-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/c/e/8/ce8709c4-f1e6-4de6-933f-07b0c7c6ab39/office2000-kb830347-client-nld.exe|updates/office2k/office2000-kb830347-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/6/c/56c4ca5f-e09e-4e83-8770-8375dd7edd24/office2000-kb830347-client-nor.exe|updates/office2k/office2000-kb830347-client-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/c/2/2/c229d774-4c13-4e39-b00e-d88aaad6f2b8/office2000-kb830347-client-plk.exe|updates/office2k/office2000-kb830347-client-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/1/b/c/1bc56ec9-9f14-45be-9235-9fbc17a906ec/office2000-kb830347-client-ptg.exe|updates/office2k/prg/office2000-kb830347-client-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/e/5/5/e5542167-05aa-4fcd-8bb1-624c174eaf27/office2000-kb830347-client-ptb.exe|updates/office2k/office2000-kb830347-client-ptb.exe
@@ -155,6 +160,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\Office2000-kb830347-client-%WINLANG
 :: URL|JPN|http://download.microsoft.com/download/6/1/d/61dd6060-99c5-4dbe-9562-bf515fbda70a/office2000-kb826292-client-jpn.exe|updates/office2k/office2000-kb826292-client-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/a/8/e/a8efc876-537f-4520-a93a-f62fd000603d/office2000-kb826292-client-kor.exe|updates/office2k/office2000-kb826292-client-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/8/2/9/829f8dcc-ed43-4054-a3c5-ea630db63f63/office2000-kb826292-client-nld.exe|updates/office2k/office2000-kb826292-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/8/3/c/83c14088-52e9-4a47-85a3-4562226a9b4d/office2000-kb826292-client-nor.exe|updates/office2k/office2000-kb826292-client-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/0/f/c/0fcfb911-0d6b-4061-a0d9-8de79f9293e2/office2000-kb826292-client-plk.exe|updates/office2k/office2000-kb826292-client-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/0/d/a/0da418ae-5432-490c-b2e8-1b1e9f3de9ee/office2000-kb826292-client-ptg.exe|updates/office2k/prg/office2000-kb826292-client-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/4/e/2/4e2b9c89-12bb-4abc-8134-a75b4fbce5a7/office2000-kb826292-client-ptb.exe|updates/office2k/office2000-kb826292-client-ptb.exe
@@ -181,6 +187,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb826292-client-%WINLANG
 :: URL|JPN|http://download.microsoft.com/download/2/e/9/2e941160-600f-4255-885b-d13e33b6a2c7/office2000-kb824993-client-jpn.exe|updates/office2k/office2000-kb824993-client-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/c/1/4/c14b40a8-b6ef-4433-8bd9-46981403cd89/office2000-kb824993-client-kor.exe|updates/office2k/office2000-kb824993-client-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/9/b/1/9b1d2c2f-7261-4040-ac27-abb796897655/office2000-kb824993-client-nld.exe|updates/office2k/office2000-kb824993-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/5/a/55af10c7-baf1-464a-bd30-a2e129ad2974/office2000-kb824993-client-nor.exe|updates/office2k/office2000-kb824993-client-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/a/8/c/a8c80a44-a1c0-4568-bb70-30bae917e34c/office2000-kb824993-client-plk.exe|updates/office2k/office2000-kb824993-client-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/f/6/4/f644f9ff-8ebc-46eb-a261-4967828527fa/office2000-kb824993-client-ptg.exe|updates/office2k/prg/office2000-kb824993-client-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/3/1/1/311e7a60-42a6-4459-88c7-40e67a5f7601/office2000-kb824993-client-ptb.exe|updates/office2k/office2000-kb824993-client-ptb.exe
@@ -207,6 +214,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb824993-client-%WINLANG
 :: URL|JPN|http://download.microsoft.com/download/3/c/4/3c4be066-8bb1-4067-a6f8-6237f850c01f/office2000-kb822035-client-jpn.exe|updates/office2k/office2000-kb822035-client-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/4/6/7/467d5162-3fd0-4769-9322-76f34b74602f/office2000-kb822035-client-kor.exe|updates/office2k/office2000-kb822035-client-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/2/3/7/2376a700-6512-4f4c-b5ec-ff24018376bc/office2000-kb822035-client-nld.exe|updates/office2k/office2000-kb822035-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/c/f/a/cfa8777d-f424-4502-bb33-143806daa5cb/office2000-kb822035-client-nor.exe|updates/office2k/office2000-kb822035-client-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/d/b/2/db2790e4-3441-4dba-9db6-4bba565b82fa/office2000-kb822035-client-plk.exe|updates/office2k/office2000-kb822035-client-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/7/f/3/7f32e0e7-e39f-4db7-beb9-eac55684ca3d/office2000-kb822035-client-ptg.exe|updates/office2k/prg/office2000-kb822035-client-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/2/9/4/294b67b4-a555-498d-8b2f-30abebced209/office2000-kb822035-client-ptb.exe|updates/office2k/office2000-kb822035-client-ptb.exe
@@ -233,6 +241,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb822035-client-%WINLANG
 :: URL|JPN|http://download.microsoft.com/download/c/5/4/c54e4f81-6307-486a-80f5-98015f66c58e/Olk0901.exe|updates/office2k/jpn/olk0901.exe
 :: URL|KOR|http://download.microsoft.com/download/e/6/c/e6c45ccc-2dbc-4695-aeb4-1308859805c1/Olk0901.exe|updates/office2k/kor/olk0901.exe
 :: URL|NLD|http://download.microsoft.com/download/9/3/e/93e84ec0-9f9e-466e-8e1b-9a4f3ac53c0c/Olk0901.exe|updates/office2k/nld/olk0901.exe
+:: URL|NOR|http://download.microsoft.com/download/5/e/d/5ed59c16-5071-4cad-9e06-e13d1e69b2ec/Olk0901.exe|updates/office2k/nor/olk0901.exe
 :: URL|PLK|http://download.microsoft.com/download/0/2/b/02bbb5ef-0d5c-4695-8c48-b58c17ab9f09/Olk0901.exe|updates/office2k/plk/olk0901.exe
 :: URL|PRG|http://download.microsoft.com/download/0/7/5/0757932b-873b-4fb7-83cf-c00b39c8ae55/Olk0901.exe|updates/office2k/prg/olk0901.exe
 :: URL|PTB|http://download.microsoft.com/download/0/9/a/09ac674c-eb1a-4935-a484-afa9a807e239/Olk0901.exe|updates/office2k/ptb/olk0901.exe
@@ -291,6 +300,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\O2kSp3.exe /r:n /q /c:\"m
 :: URL|JPN|http://download.microsoft.com/download/office2000prem/Patch/000605/WIN98/JA/O2KSR1aDL.EXE|updates/office2k/jpn/o2ksr1adl.exe
 :: URL|KOR|http://download.microsoft.com/download/office2000prem/SP/SR-1aORK/WIN98/KO/o2ksr1adl.exe|updates/office2k/kor/o2ksr1adl.exe
 :: URL|NLD|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/NL/O2KSR1ADL.EXE|updates/office2k/nld/o2ksr1adl.exe
+:: URL|NOR|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/NO/o2ksr1adl.EXE|updates/office2k/nor/o2ksr1adl.exe
 :: URL|PLK|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/PL/O2KSR1ADL.EXE|updates/office2k/plk/o2ksr1adl.exe
 :: URL|PTB|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/PT-BR/O2KSR1ADL.EXE|updates/office2k/ptb/o2ksr1adl.exe
 :: URL|RUS|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/RU/O2KSR1ADL.EXE|updates/office2k/rus/o2ksr1adl.exe
@@ -305,4 +315,3 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\O2KSR1aDL.EXE /t:%TEMP%\o
 :: Edition.  (It shows up as a printer and is therefore annoying.)
 :: Thanks to Justin Beckley.
 todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REMOVE=WinFax REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
-

@@ -19,6 +19,7 @@ todo.pl winxpsp2-updates.bat
 :: URL|JPN|http://download.microsoft.com/download/5/c/5/5c5b703b-98ea-46a2-ba68-fb64db4d3c26/WindowsXP-KB835935-SP2-JPN.exe|updates/winxp/windowsxp-kb835935-sp2-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/e/d/4/ed4f6199-5e19-4e46-8d45-3b122a9bec90/WindowsXP-KB835935-SP2-KOR.exe|updates/winxp/windowsxp-kb835935-sp2-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/6/d/6/6d6fe05d-63bc-4274-accf-add56312cfb6/WindowsXP-KB835935-SP2-NLD.exe|updates/winxp/windowsxp-kb835935-sp2-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/3/d/53d54a30-92a7-4725-be77-0a7f9b2f689a/WindowsXP-KB835935-SP2-NOR.exe|updates/winxp/windowsxp-kb835935-sp2-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/a/c/7/ac78df4d-59cc-4e25-b4d7-94598a149719/WindowsXP-KB835935-SP2-PLK.exe|updates/winxp/windowsxp-kb835935-sp2-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/8/1/f/81f1ce4b-f2ca-4d5f-b6ef-ec2cb5f14ae3/WindowsXP-KB835935-SP2-PTG.exe|updates/winxp/windowsxp-kb835935-sp2-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/0/5/f/05fcbd3f-fb50-43be-a995-ad12ee4dcbe5/WindowsXP-KB835935-SP2-PTB.exe|updates/winxp/windowsxp-kb835935-sp2-ptb.exe

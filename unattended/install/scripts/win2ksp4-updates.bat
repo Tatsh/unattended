@@ -259,6 +259,7 @@ todo.pl "regedit /s %Z%\scripts\kb873374.reg"
 :: URL|JPN|http://download.microsoft.com/download/c/6/7/c6752c8b-3340-4d5e-a5ac-c5118ccc060e/Windows-KB833407-x86-JPN.exe|updates/common/windows-kb833407-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/6/6/9/6692bac4-15b2-46a9-a81d-c635636cdc7a/Windows-KB833407-x86-KOR.exe|updates/common/windows-kb833407-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/b/4/f/b4f32f95-1d60-4cde-97df-c0f0d41066a6/Windows-KB833407-x86-NLD.exe|updates/common/windows-kb833407-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/3/2/5/325eee7e-26ba-4709-af58-2fb6991076f9/Windows-KB833407-x86-NOR.exe|updates/common/windows-kb833407-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/d/4/a/d4a4a83c-1b8c-4b11-bfbb-57e46a8ce41f/Windows-KB833407-x86-PLK.exe|updates/common/windows-kb833407-x86-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/f/7/5/f75d2ea8-28b9-4d58-8073-0efb14a97eb2/Windows-KB833407-x86-PTG.exe|updates/common/windows-kb833407-x86-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/e/a/6/ea648ec9-0221-4b03-a8c9-cd09a9ffb53f/Windows-KB833407-x86-PTB.exe|updates/common/windows-kb833407-x86-ptb.exe
@@ -285,6 +286,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB833407-x86-%WINLANG%.exe /p
 :: URL|JPN|http://download.microsoft.com/download/f/1/f/f1f9ce5c-1561-45e7-8550-0be8585f00f3/Windows2000-KB841356-x86-JPN.EXE|updates/win2ksp4/windows2000-kb841356-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/2/7/e/27e182d2-4ac8-4f49-9c74-cf18dcdbce30/Windows2000-KB841356-x86-KOR.EXE|updates/win2ksp4/windows2000-kb841356-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/b/1/5/b157f38e-6bc6-4e5d-bece-75d5bdb8b958/Windows2000-KB841356-x86-NLD.EXE|updates/win2ksp4/windows2000-kb841356-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/b/f/9/bf9a9649-8f34-494a-b4ca-7170562f881b/Windows2000-KB841356-x86-NOR.EXE|updates/win2ksp4/windows2000-kb841356-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/4/a/7/4a799c84-9328-4d55-ad2a-4da097d1b3d0/Windows2000-KB841356-x86-PLK.EXE|updates/win2ksp4/windows2000-kb841356-x86-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/e/3/0/e3049d76-b6f2-4534-b3e9-57fc107ddd1d/Windows2000-KB841356-x86-PTG.EXE|updates/win2ksp4/windows2000-kb841356-x86-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/8/3/b/83b4a978-70ce-4300-95bd-1c1cab77d1a5/Windows2000-KB841356-x86-PTB.EXE|updates/win2ksp4/windows2000-kb841356-x86-ptb.exe
@@ -311,6 +313,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb841356-x86-%WINLANG%.
 :: URL|JPN|http://download.microsoft.com/download/1/8/9/1892045a-d95b-4982-aff1-410094993ef4/Windows2000-KB840987-x86-JPN.EXE|updates/win2ksp4/windows2000-kb840987-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/6/2/b/62b6bb74-1127-4f86-8a8a-9f5c90dbe1e7/Windows2000-KB840987-x86-KOR.EXE|updates/win2ksp4/windows2000-kb840987-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/9/1/7/9176c711-34db-4b30-988c-d4e86fab987b/Windows2000-KB840987-x86-NLD.EXE|updates/win2ksp4/windows2000-kb840987-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/9/c/59c69ab7-6319-49fd-bfda-5e9f42d1d5c6/Windows2000-KB840987-x86-NOR.EXE|updates/win2ksp4/windows2000-kb840987-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/1/d/c/1dccb04a-d6cd-45be-936d-c79bea5fe88a/Windows2000-KB840987-x86-PLK.EXE|updates/win2ksp4/windows2000-kb840987-x86-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/3/a/0/3a0ee238-b352-4b99-bf13-43d7d120bf24/Windows2000-KB840987-x86-PTG.EXE|updates/win2ksp4/windows2000-kb840987-x86-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/e/c/f/ecf0aac5-a8f4-4b51-bad9-ee429ad1fdec/Windows2000-KB840987-x86-PTB.EXE|updates/win2ksp4/windows2000-kb840987-x86-ptb.exe
@@ -337,6 +340,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb840987-x86-%WINLANG%.
 :: URL|JPN|http://download.microsoft.com/download/2/2/8/2280457b-4c99-45e6-8645-065d79e664ce/Windows2000-KB841533-x86-JPN.EXE|updates/win2ksp4/windows2000-kb841533-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/f/c/8/fc8df13b-69e0-4d2f-b472-408c0793c887/Windows2000-KB841533-x86-KOR.EXE|updates/win2ksp4/windows2000-kb841533-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/e/1/f/e1f120cf-4789-47a4-85b9-1e68eb4d21c6/Windows2000-KB841533-x86-NLD.EXE|updates/win2ksp4/windows2000-kb841533-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/1/c/2/1c27e0da-7aca-4d97-b779-e14f31e6aa14/Windows2000-KB841533-x86-NOR.EXE|updates/win2ksp4/windows2000-kb841533-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/e/4/f/e4f4ed2a-5e88-46f4-a68b-83fe66de5e87/Windows2000-KB841533-x86-PLK.EXE|updates/win2ksp4/windows2000-kb841533-x86-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/9/6/2/9627b632-1da7-4c1e-b7e5-394d356c29b8/Windows2000-KB841533-x86-PTG.EXE|updates/win2ksp4/windows2000-kb841533-x86-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/3/1/4/314f8293-7993-49a3-97a7-52a17b3b58ff/Windows2000-KB841533-x86-PTB.EXE|updates/win2ksp4/windows2000-kb841533-x86-ptb.exe
@@ -363,6 +367,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb841533-x86-%WINLANG%.
 :: URL|JPN|http://download.microsoft.com/download/8/a/1/8a16d96e-2043-4879-8ac0-09180a98e389/Windows2000-KB824151-x86-JPN.EXE|updates/win2ksp4/windows2000-kb824151-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/e/4/4/e44d26ee-299a-442d-9058-f308b2caaacb/Windows2000-KB824151-x86-KOR.EXE|updates/win2ksp4/windows2000-kb824151-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/8/5/7/85796e2f-62ae-4664-83b2-ada8e1421893/Windows2000-KB824151-x86-NLD.EXE|updates/win2ksp4/windows2000-kb824151-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/1/f/f/1ff622fa-d260-4061-8f7a-d74f3969f27b/Windows2000-KB824151-x86-NOR.EXE|updates/win2ksp4/windows2000-kb824151-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/6/5/b/65b4af12-8513-4bc5-8e6f-8bf5edbda35c/Windows2000-KB824151-x86-PLK.EXE|updates/win2ksp4/windows2000-kb824151-x86-plk.exe
 :: URL|PRG|http://download.microsoft.com/download/2/b/7/2b71326a-4345-482a-bac7-538dc3850942/Windows2000-KB824151-x86-PTG.EXE|updates/win2ksp4/windows2000-kb824151-x86-ptg.exe
 :: URL|PTB|http://download.microsoft.com/download/5/8/6/5861caa8-3371-45a5-ae52-7096af2b83f1/Windows2000-KB824151-x86-PTB.EXE|updates/win2ksp4/windows2000-kb824151-x86-ptb.exe
