@@ -58,7 +58,7 @@ load_modules "$(find-modules-pci 0x0c 0x03)"
 
 # FIXME: We should only load this if we actually have a USB keyboard
 # attached.
-load_modules hid
+load_modules usbhid
 
 # HID module takes a while to initialize.  Doh!
 sleep 2
@@ -317,7 +317,8 @@ export Z_PATH Z_USER Z_PASS
 mkdir /c
 
 if perl -I/z/lib /z/dosbin/install.pl ; then
-    dosemu.bin
+    dosemu.bin \
+        || die "'dosemu.bin' exited with status $?"
     sync
     reboot
 fi
