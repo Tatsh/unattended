@@ -429,7 +429,7 @@ open POSTINST, ">$postinst"
     or die "Unable to open $postinst for writing: $^E";
 
 my @cmd_lines =
-    ((map { "todo.pl \"net localgroup Administrators $_ /add" } @admins),
+    ((map { "net localgroup Administrators $_ /add" } @admins),
      (defined $top
       ? ("net use z: $ENV{'INSTALL'} /persistent:yes",
          "call z:\\scripts\\perl.bat",
