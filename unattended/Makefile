@@ -14,6 +14,8 @@ release:
 		echo "You forgot to set the 'ver' variable" ;		\
 		exit 1 ;						\
 	fi
+	tag=`echo REL_${ver} | sed s/\\\\./_/g` &&	                \
+	cvs tag $$tag .
 	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
 	cd $$temp &&							\
 	cvs -z3 -d${cvs} checkout unattended &&				\
