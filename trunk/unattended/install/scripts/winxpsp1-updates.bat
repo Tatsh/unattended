@@ -135,12 +135,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.ex
 :: mdac_typ.exe to something more descriptive.
 todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /qn1\""
 
-:: Critical update 823718
-:: "Security Update for Microsoft Data Access Components"
-:: (Now installing MDAC 2.8, comment out for now)
-:: <http://support.microsoft.com/?kbid=823718>
-:: todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q823718_MDAC_SecurityPatch.exe /q /c:\"dahotfix.exe /q /n\""
-
 :: Critical update 824105
 :: "Flaw in NetBIOS Could Lead to Information Disclosure"
 :: <http://support.microsoft.com/?kbid=824105>
