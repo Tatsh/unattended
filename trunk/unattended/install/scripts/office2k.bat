@@ -3,6 +3,32 @@
 :: Reboot after installing everything (superstition)
 todo.pl .reboot
 
+::Security Update for Office 2000: WordPerfect 5.x Converter (KB873380)
+:: URL|ARA|http://download.microsoft.com/download/6/a/5/6a5b905d-53f2-4af8-8544-2d8961e10e24/office2000-kb873380-fullfile-ara.exe|updates/office2k/office2000-kb873380-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/d/6/6d6fb65f-3a69-4993-b0a2-c53eeed67853/office2000-kb873380-fullfile-csy.exe|updates/office2k/office2000-kb873380-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/5/b/7/5b7d31a1-ac70-40d5-a224-8aeb2a7f8ac1/office2000-kb873380-fullfile-dan.exe|updates/office2k/office2000-kb873380-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/d/d/e/dde936ed-5116-4aab-938f-1a054ea2a52b/office2000-kb873380-fullfile-deu.exe|updates/office2k/office2000-kb873380-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/f/3/b/f3b33c72-e057-4f7b-9866-82b0e82ff2c2/office2000-kb873380-fullfile-ell.exe|updates/office2k/office2000-kb873380-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/0/c/30cfcf2c-bfcf-40d9-be26-b0e1354ae07e/office2000-kb873380-fullfile-enu.exe|updates/office2k/office2000-kb873380-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/0/5/8/058523ce-18a4-49b3-8779-431580a0e474/office2000-kb873380-fullfile-esn.exe|updates/office2k/office2000-kb873380-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/f/c/c/fcc899ac-1951-4c4b-9c5c-7768f248a05e/office2000-kb873380-fullfile-fin.exe|updates/office2k/office2000-kb873380-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/8/8/a/88af99ae-24d6-4a2e-9164-44aa5bcdf44f/office2000-kb873380-fullfile-fra.exe|updates/office2k/office2000-kb873380-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/a/f/4af1e6df-4304-4bc5-9110-b3e9c253ecf6/office2000-kb873380-fullfile-heb.exe|updates/office2k/office2000-kb873380-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/0/2/1/021155f7-70c3-44fc-95eb-71860bc7c07c/office2000-kb873380-fullfile-hun.exe|updates/office2k/office2000-kb873380-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/c/5/4/c549c8ba-a968-4ec2-ab14-c5a04c17af4e/office2000-kb873380-fullfile-ita.exe|updates/office2k/office2000-kb873380-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/0/2/002dcb79-74d7-4b00-973d-963dd71a5a5b/office2000-kb873380-fullfile-jpn.exe|updates/office2k/office2000-kb873380-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/c/a/e/cae85838-ba31-4abc-bbc6-9876f4b5d6c4/office2000-kb873380-fullfile-kor.exe|updates/office2k/office2000-kb873380-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/f/3/ff331a7e-deea-46c9-9cc6-e844f36034fe/office2000-kb873380-fullfile-nld.exe|updates/office2k/office2000-kb873380-fullfile-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/5/8/b/58b66562-a9a4-4b8b-9e30-53dbd2bec104/office2000-kb873380-fullfile-plk.exe|updates/office2k/office2000-kb873380-fullfile-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/0/4/8/048cd874-077b-4d8a-b681-dc1672aa0ea8/office2000-kb873380-fullfile-ptg.exe|updates/office2k/office2000-kb873380-fullfile-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/3/e/a/3ea7494a-051f-4078-b8bd-b2c43df72ee5/office2000-kb873380-fullfile-ptb.exe|updates/office2k/office2000-kb873380-fullfile-ptb.exe
+:: URL|ROM|http://download.microsoft.com/download/9/0/d/90ddefe0-9b50-4e9e-bc48-545f536e738d/office2000-kb873380-fullfile-rom.exe|updates/office2k/office2000-kb873380-fullfile-rom.exe
+:: URL|RUS|http://download.microsoft.com/download/3/f/4/3f44e7dc-b6bb-4011-95b3-743a7b3bc6b3/office2000-kb873380-fullfile-rus.exe|updates/office2k/office2000-kb873380-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/d/b/7/db724641-96a5-4943-9861-fa905fbf7e2e/office2000-kb873380-fullfile-sve.exe|updates/office2k/office2000-kb873380-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/3/2/132cb48e-496a-419e-a7ef-92390212f5cf/office2000-kb873380-fullfile-trk.exe|updates/office2k/office2000-kb873380-fullfile-trk.exe
+:: <http://support.microsoft.com/?kbid=873380>
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb873380-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb873380.txt /p MSCONVff.msp REBOOT=ReallySuppress\""
+
 :: Hm, tying this to winxpsp1 is probably wrong.  FIXME
 if not %WINVER%. == winxpsp1. goto didfpse
 :: Critical update 810217 (MS03-051)
