@@ -18,6 +18,7 @@ todo.pl .reboot
 :: URL|ESN|http://download.microsoft.com/download/6/1/f/61f62739-74fc-480e-9c30-99d001561f52/Office2003SP1-kb842532-fullfile-esn.exe|updates/office2003/office2003sp1-kb842532-fullfile-esn.exe
 :: URL|FRA|http://download.microsoft.com/download/d/d/2/dd218791-3d92-4eab-a27a-afce9b06f105/Office2003SP1-kb842532-fullfile-fra.exe|updates/office2003/office2003sp1-kb842532-fullfile-fra.exe
 :: URL|NLD|http://download.microsoft.com/download/b/f/b/bfb399e8-9954-4b39-854a-98b0cde40ee6/Office2003SP1-kb842532-fullfile-nld.exe|updates/office2003/office2003sp1-kb842532-fullfile-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/9/b/1/9b1e99d3-c605-40ae-953d-95250265d75a/Office2003SP1-kb842532-fullfile-rus.exe|updates/office2003/office2003sp1-kb842532-fullfile-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\office2003\Office2003SP1-kb842532-fullfile-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\ofc2003sp1.txt /p MAINSP1ff.msp REBOOT=ReallySuppress\""
 
 :: Add "PIDKEY=<key>" to this command line, where <key> is your
