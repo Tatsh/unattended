@@ -30,13 +30,11 @@ todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
 :: Recommended Updates
 
-:: Recommended update 829558
-:: URL|ENU|http://download.microsoft.com/download/a/a/c/aacdba68-214d-484c-b8ac-164fe7261668/WindowsServer2003-KB829558-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb829558-x86-enu.exe
-:: URL|RUS|http://download.microsoft.com/download/0/5/1/0512d21a-6073-4804-9972-870d0f52454a/WindowsServer2003-KB829558-x86-RUS.exe|updates/ws2k3/windowsserver2003-kb829558-x86-rus.exe
-:: URL|ITA|http://download.microsoft.com/download/5/4/c/54ce5b18-9943-4982-99d6-77f481b76018/WindowsServer2003-KB829558-x86-ITA.exe|updates/ws2k3/windowsserver2003-kb829558-x86-ita.exe
-:: "Update for Jet 4.0 Service Pack 8"
-:: <http://support.microsoft.com/?kbid=829558>
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB829558-x86-%WINLANG%.exe /u /n /z"
+:: Recommended Update MS04-014 (837001)
+:: "Vulnerability in the Microsoft Jet ... could permit code execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
+:: URL|ENU|http://download.microsoft.com/download/a/1/0/a1080cda-4801-4a0c-8692-0d9773b1cca5/WindowsServer2003-KB837001-x86-ENU.EXE|windowsserver2003-kb837001-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: IE Critical Updates
 
