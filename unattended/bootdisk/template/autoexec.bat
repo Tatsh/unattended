@@ -65,7 +65,7 @@ goto retry
 set PATH=Z:\djgpp\bin;Z:\dosbin;%PATH%
 
 :: Save IP address in file (to be parsed later).
-ipconfig \net > \ipconfig.txt
+ipconfig \net > \ipconfig.txt < nul
 
 set DJGPP=Z:\djgpp\djgpp.env
 lh cwsdpmi -p -s-
