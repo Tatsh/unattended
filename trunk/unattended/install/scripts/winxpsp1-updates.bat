@@ -15,7 +15,8 @@ todo.pl "z:\packages\winxpsp1\movie-maker-1.2.1.exe /q"
 :: Microsoft .NET framework Service Pack 2
 :: <http://msdn.microsoft.com/netframework/downloads/updates/sp/>
 :: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q321884>
-todo.pl "z:\packages\winxpsp1\NDP10_SP_Q321884_En.exe /q"
+:: (Always seems to exit with status 194)
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\NDP10_SP_Q321884_En.exe /q"
 
 :: Microsoft .NET framework
 :: <http://www.download.windowsupdate.com/msdownload/update/v3/static/RTF/en/4812.htm>
