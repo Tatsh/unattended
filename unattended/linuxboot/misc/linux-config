@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.9
-# Fri Oct 22 15:00:46 2004
+# Mon Oct 25 16:38:56 2004
 #
 CONFIG_X86=y
 CONFIG_MMU=y
@@ -982,7 +982,9 @@ CONFIG_AUTOFS4_FS=y
 #
 # CD-ROM/DVD Filesystems
 #
-# CONFIG_ISO9660_FS is not set
+CONFIG_ISO9660_FS=m
+CONFIG_JOLIET=y
+# CONFIG_ZISOFS is not set
 # CONFIG_UDF_FS is not set
 
 #
