@@ -246,8 +246,8 @@ set_value ('_meta', 'doit_cmd',
                return "$src_tree\\winnt /s:$src_tree /u:$unattend_txt";
            });
 
-set_comment ('_meta', 'autolog',
-             "    ; Command to disable (or modify) logon setting when installation finishes");
+set_comments ('_meta', 'autolog',
+              "    ; Command to disable (or modify) logon setting when installation finishes");
 # Default setting for automatic logon is to disable it.
 set_value ('_meta', 'autolog', 'autolog.pl');
 
