@@ -6,12 +6,23 @@ use warnings;
 use strict;
 use Unattend::IniFile;
 use File::Spec::Win32;
+use File::Spec::Unix;
 use fields qw (txtsetup setupp prodspec path);
 
 # File::Spec is supposed to auto-detect the OS and adapt
 # appropriately, but it does not recognize a $^O value of "dos".  Work
 # around this bug here.
 my $file_spec = 'File::Spec::Win32';
+
+if ($^O eq 'dos' || $^O eq 'MSWin32') {
+    $file_spec = 'File::Spec::Win32';
+}
+elsif ($^O eq 'linux') {
+    $file_spec = 'File::Spec::Unix';
+}
+else {
+    die "internal error";
+}
 
 my %cache;
 
