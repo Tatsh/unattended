@@ -6,6 +6,9 @@ die () {
     exec bash >&2
 }
 
+# Disable console blanking.
+echo -e "\E[9;0]"
+
 # Set VERSION environment variable.
 export VERSION=$(< /etc/version)
 
@@ -107,7 +110,10 @@ check_shell=$(get_cmdline_param shell)
 echo "*** Next, we'll look for PCI Ethernet hardware..."
 
 # PCI classes 0x0200nn are Ethernet controllers.
-load_modules "$(sort_modules $(find-modules-pci 0x02 0x00))"
+network_modules="$(find-modules-pci 0x02 0x00)"
+# For some reason, nVidia CK8S on-board Ethernet has class 0x0680xx.
+network_modules="$network_modules $(find-modules-pci 0x06 0x80)"
+load_modules "$(sort_modules $network_modules)"
 
 echo "*** And I suppose we may as well look for PCMCIA devices..."
 if [ -e /var/run/did_cardmgr ] ; then
