@@ -27,10 +27,13 @@ Send, !n
 WinWait, Question, start automatically
 Send, !n
 
-; Microsoft's security feature
-; "Do you want to continue the installation?"
-WinWait, Digital Signature Not Found
-Send, !y
+; Microsoft's security feature: Digital signature not found.
+
+; Unfortunately, Microsoft totally changed the look and feel of this
+; dialog box between 2000 and XP.  The below is a bad hack, but it
+; works.
+WinWait, , VPN Client Virtual Adapter
+Send, !y!c
 
 ; "Would you like a shortcut on the Desktop?"
 WinWait, Question, shortcut on the Desktop
