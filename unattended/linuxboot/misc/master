@@ -53,7 +53,7 @@ sleep 2
 
 echo "*** First, let's load USB support in case you have a USB keyboard..."
 
-# PCI classes 0x0c03nn are USB controllers
+# PCI classes 0x0c03nn are USB controllers.
 load_modules "$(find-modules-pci 0x0c 0x03)"
 
 # FIXME: We should only load this if we actually have a USB keyboard
@@ -175,7 +175,14 @@ while : ; do
         Z_USER="${Z_USER##*/}\\${Z_USER%/*}"
     fi
 
-    smbmount_opts="username=$Z_USER,rw,ttl=2400000"
+    # Default mount options: username, read-only mount, 2400-second
+    # directory list cache
+    smbmount_opts="username=$Z_USER,ro,ttl=2400000"
+
+    # Add extra mount options, if any.
+    z_opts=$(get_cmdline_param z_opts)
+    [ -n "z_opts" ] \
+        && smbmount_opts="$smbmount_opts,$z_opts"
 
     echo "*** Trying smbmount $Z_PATH /z -o $smbmount_opts"
 
