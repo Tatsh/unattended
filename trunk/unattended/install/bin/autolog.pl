@@ -43,10 +43,14 @@ my %new_values = ('/DefaultUserName' => $user,
 foreach my $key (sort keys %new_values) {
     if (!exists $opts{'disable'}) {
         my $val = $new_values{$key};
-        defined $val
-            or next;
-        $reg{$winlogon_key}->{$key} = $val
-            or die "Unable to set $winlogon_key$key to $val: $^E";
+        if (defined $val) {
+            $reg{$winlogon_key}->{$key} = $val
+                or die "Unable to set $winlogon_key$key to $val: $^E";
+        }
+        else {
+            (delete $reg{$winlogon_key}->{$key})
+                or die "Unable to delete $winlogon_key/$key: $^E";
+        }
     }
     else {
         (delete $reg{$winlogon_key}->{$key})
