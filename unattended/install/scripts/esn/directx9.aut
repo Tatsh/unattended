@@ -6,7 +6,7 @@
 ; <http://www.microsoft.com/downloads/details.aspx?familyid=a6dee0db-dcce-43ea-87bb-7c7e1fd1eaa2>
 ; (Requires .NET to be installed first for managed DX)
 
-Run, %Z%\\packages\\directx9\\esn\\dx90update_redist.exe /installmanageddx
+Run, %Z%\\packages\\DirectX9\\%WINLANG%\\dxsetup.exe /installmanageddx
 
 WinWait, Instalando Microsoft(R) DirectX(R)
 WinActivate, Instalando Microsoft(R) DirectX(R)
