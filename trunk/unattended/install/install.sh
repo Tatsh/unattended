@@ -29,8 +29,8 @@ fdisk /info
 echo
 echo "1) Do nothing (continue)"
 echo "2) Format C:"
-echo "3) Autoparition (whole disk C:) and reboot"
-echo "4) Autoparition (4G C:, rest D:) and reboot"
+echo "3) Autopartition (whole disk C:) and reboot"
+echo "4) Autopartition (4G C:, rest D:) and reboot"
 echo "5) Autopartition (4G C:, 4G D:, rest E:) and reboot"
 echo "6) Run fdisk interactively and reboot"
 echo "X) Exit this program"
