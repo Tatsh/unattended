@@ -59,7 +59,7 @@ images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos
 		done) &&						\
 	mcopy drivers/$$driver.dos x:/net/$$driver.dos &&		\
 	rm $$mtoolsrc &&						\
-	zip -9 -m -q $@.tmp $$destdir/$$driver.img &&			\
+	zip -9 -m -q -j $@.tmp $$destdir/$$driver.img &&		\
 	mv $@.tmp $@
 	@echo "done"
 
