@@ -433,8 +433,8 @@ sub create_postinst_bat () {
     if (defined $top) {
         my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
         push @postinst_lines,
-        ('call z:\\scripts\\perl.bat',
-         'PATH=z:\\bin;%PATH%',
+        ('call %Z%\\scripts\\perl.bat',
+         'PATH=%Z%\\bin;%PATH%',
          # Last step is always a reboot
          'todo.pl .reboot',
          # Antepenultimate step is to delete credentials file
@@ -446,7 +446,6 @@ sub create_postinst_bat () {
          map { "todo.pl $_" } (reverse split /;/, $top),
          '',
          'todo.pl --go');
-
     }
 
     my $postinst;
@@ -469,7 +468,8 @@ my $_batfile_first_lines;
 sub batfile_first_lines () {
     if (!defined $_batfile_first_lines) {
         $_batfile_first_lines = { };
-        my $script_dir = 'Z:\\scripts';
+        my $z = $u->{'_meta'}->{'z_drive'};
+        my $script_dir = '$z\\scripts';
         opendir SCRIPTS, $script_dir
             or die "Unable to opendir $script_dir: $^E";
         while (my $ent = readdir SCRIPTS) {
@@ -487,7 +487,7 @@ sub batfile_first_lines () {
                 or die "Unable to open $full_path for reading: $^E";
             my $line = <FILE>;
             chomp $line;
-            $_batfile_first_lines->{$full_path} = $line;
+            $_batfile_first_lines->{$ent} = $line;
             close FILE
                 or die "Unable to close $full_path: $^E";
         }
@@ -548,45 +548,58 @@ $u->{'_meta'}->{'replace_mbr'} =
     };
 
 $u->comments ('_meta', 'OS_dir') = ['Directory holding OS media directories'];
-$u->{'_meta'}->{'OS_dir'} = 'z:\\os\\';
+$u->{'_meta'}->{'OS_dir'} =
+    sub { return $file_spec->catdir ($u->{'_meta'}->{'z_drive'}, 'os'); }
 
 $u->{'_meta'}->{'OS_media'} = \&ask_os;
 
 $u->comments ('_meta', 'top') = ['Scripts run by postinst.bat'];
 
+# Go through the first line (head) of each script and slurp out the
+# description.
+sub _top_helper ($$) {
+    my ($token, $heads) = @_;
+    my %ret;
+    
+    foreach my $script (sort keys %$heads) {
+        $script =~ /^::$token(?!\w)\W*(.*)\z/
+            or next;
+        my $desc = $1;
+        my $key = "$script ($desc)";
+        (exists $ret{$key})
+            and die "Internal error (duplicate key in _top_helper)";
+        $ret{"$script ($desc)"} = $script;
+    }
+
+    return %ret;
+}
+
 $u->{'_meta'}->{'top'} =
     sub {
         my $bat_heads = batfile_first_lines ();
-        my @scripts = (grep { $bat_heads->{$_} =~ /^::\s*MASTER(?!\w)/; }
-                       sort keys %$bat_heads);
+        my %master_choices = _top_helper ('MASTER', $bat_heads);
+#        my @scripts = (grep { $bat_heads->{$_} =~ /^::\s*MASTER(?!\w)/; }
+#                       sort keys %$bat_heads);
 
         # Backwards compatibility hack.  Remove someday (FIXME).
-        scalar @scripts > 0
-            or @scripts = (map { "Z:\\scripts\\$_" }
-                           ('base.bat', 'sales.bat',
-                            'developer.bat', 'build-server.bat'));
+        scalar keys %master_choices > 0
+            or %master_choices = ('base.bat (Basic installation)'
+                                  => 'base.bat',
+                                  'sales.bat (Sales laptop installation)',
+                                  => 'sales.bat');
 
         print "Choose master post-installation script to run.\n";
-        my @choices = map { ($_ => $_); } @scripts;
+        my @choices = map { ($master_choices($_)
+                             => $_); } sort keys %master_choices;
         my $master = menu_choice (@choices, 'none' => undef);
 
         defined $master
             or return undef;
 
-        my @optionals = (grep { $bat_heads->{$_} =~ /^::\s*OPTIONAL(?!\w)/; }
-                         sort keys %$bat_heads);
+        my %optional_choices = _top_helper ('OPTIONAL', $bat_heads);
         my @options = multi_choice ('Choose optional scripts to run.',
-                                    @optionals);
-        return join ';', ($master, @options);
-    };
-
-$u->comments ('_meta', 'ntp_servers') =
-    ['NTP servers, separated by commas or spaces'];
-
-$u->{'_meta'}->{'ntp_servers'} =
-    sub {
-        return simple_q
-            ("Enter NTP servers, separated by spaces (default=none):");
+                                    sort keys @%optional_choices);
+        return join ';', ($master, map { $optional_choices{$_} } @options);
     };
 
 $u->comments ('_meta', 'local_admin_group') =
@@ -608,7 +621,14 @@ $u->{'_meta'}->{'local_admins'} =
 
 $u->{'_meta'}->{'netinst'} = 'c:\\netinst';
 
-$u->{'_meta'}->{'edit_files'} = '1';
+$u->comments ('_meta', 'ntp_servers') =
+    ['NTP servers, separated by commas or spaces'];
+
+$u->{'_meta'}->{'ntp_servers'} =
+    sub {
+        return simple_q
+            ("Enter NTP servers, separated by spaces (default=none):");
+    };
 
 $u->comments ('_meta', 'doit_cmds') = ['Contents of doit.bat script'];
 $u->{'_meta'}->{'doit_cmds'} =
@@ -622,8 +642,11 @@ $u->{'_meta'}->{'doit_cmds'} =
         $src_tree =~ /\\$/
             or $src_tree .= '\\';
         $src_tree .= 'i386';
-        return "z:;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
+        my $z = $u->{'_meta'}->{'z_drive'};
+        return "$z;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
     };
+
+$u->{'_meta'}->{'edit_files'} = '1';
 
 $u->comments ('_meta', 'autolog') =
     ['Command to disable (or modify) autologon when installation finishes'];
@@ -649,6 +672,9 @@ $u->comments ('_meta', 'z_password') = ['Password for mapping install share'];
 (defined $ENV{'Z_PASS'})
     or die "autoexec.bat failed to set Z_PASS; bailing";
 $u->{'_meta'}->{'z_password'} = $ENV{'Z_PASS'};
+
+$u->comments ('_meta', 'z_drive') = [ 'Install share drive letter' ];
+$u->{'_meta'}->{'z_drive'} = 'Z:';
 
 $u->{'UserData'}->{'FullName'} =
     sub {
@@ -685,9 +711,10 @@ $u->{'GuiRunOnce'}->{'Command0'} =
         else {
             my $netinst = $u->{'_meta'}->{'netinst'};
             # Basic framework for mapping Z: drive
+            my $z = $u->{'_meta'}->{'z_drive'};
             my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
             print "Copying $mapznrun...";
-            copy ('z:\\bin\\mapznrun.bat', $mapznrun)
+            copy ('$z\\bin\\mapznrun.bat', $mapznrun)
                 or die "Unable to copy mapznrun.bat";
             print "done.\n";
 
@@ -696,7 +723,7 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             my $permcred = $file_spec->catfile ($netinst, 'permcred.bat');
             print "Creating $permcred...";
             write_file ($permcred,
-                        "SET Z=Z:",
+                        "SET Z=$z",
                         "SET Z_PATH=$z_path");
             print "done.\n";
 
