@@ -1,5 +1,5 @@
 :: Install all updates and hotfixes for Windows Server 2003
-
+@Echo off
 :: Some of these can only be downloaded using the Windows Update
 :: Catalog, <http://windowsupdate.microsoft.com/catalog/>.
 

@@ -1,5 +1,5 @@
 :: Install updates for Win2k SP4
-
+@Echo off
 :: Some of these can only be downloaded using the Windows Update
 :: Catalog, <http://windowsupdate.microsoft.com/catalog/>.
 :: Be sure to try both "Windows 2000 Professional SP4" and

@@ -1,5 +1,5 @@
 :: Install Notes 5.0.8, then update it to the current release.
-
+@Echo off
 %Z%
 cd \packages\Lotus\notes5.0.8\Clients\W32Intel
 
