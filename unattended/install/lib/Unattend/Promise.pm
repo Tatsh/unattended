@@ -5,7 +5,6 @@ use strict;
 use Carp;
 
 use overload
-    '""' => \&force,
     'fallback' => 1;
 
 my $magic_str = "Unattend::Promise magic string";
