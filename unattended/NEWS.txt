@@ -1,5 +1,7 @@
 *** Changes in version NEXT (not released yet)
 
+Sync with SYSLINUX 2.01.
+
 Bundle AutoIt v2.64, because it is a good tool, because it is small,
 and because I seem to be writing more and more .aut scripts these
 days.
