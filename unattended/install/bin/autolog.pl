@@ -3,27 +3,26 @@
 use warnings;
 use strict;
 use Getopt::Long;
+use Pod::Usage;
 
+# Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'enable', 'disable')
-    or die "GetOptions failed";
+GetOptions (\%opts, 'disable', 'domain=s')
+    or pod2usage (2);
 
-(exists $opts{'enable'} && exists $opts{'disable'})
-    and die "You may only specify one of --enable or --disable";
-
-(exists $opts{'enable'} || exists $opts{'disable'})
-    or die "You must specify one of --enable or --disable";
+(exists $opts{'help'})
+    and pod2usage ('-exitstatus' => 0, '-verbose' => 2);
 
 my ($user, $pass);
 
-if (exists $opts{'enable'}) {
-    @ARGV == 2
-        or die "Usage: $0 --enable <user> <password>";
-    ($user, $pass) = @ARGV;
+if (exists $opts{'disable'}) {
+    scalar @ARGV == 0
+        or pod2usage (2);
 }
 else {
-    @ARGV == 0
-        or die "Usage: $0 --disable";
+    scalar @ARGV == 2
+        or pod2usage (2);
+    ($user, $pass) = @ARGV;
 }
 
 my %reg;
@@ -34,11 +33,14 @@ my $winlogon_key =
 
 my %new_values = ('DefaultUserName' => $user,
                   'DefaultPassword' => $pass,
-                  'AutoAdminLogon' => 1);
+                  'AutoAdminLogon' => 1,
+                  'DefaultDomain' => $opts{'domain'};
 
 foreach my $key (sort keys %new_values) {
     if (exists $opts{'enable'}) {
         my $val = $new_values{$key};
+        defined $val
+            or next;
         $reg{$winlogon_key}->{$key} = $val
             or die "Unable to set $winlogon_key/$key to $val: $^E";
     }
@@ -47,3 +49,27 @@ foreach my $key (sort keys %new_values) {
             or die "Unable to delete $winlogon_key/$key: $^E";
     }
 }
+
+__END__
+
+=head1 NAME
+
+autolog.pl - Enable/disable automatic logon
+
+=head1 SYNOPSIS
+
+autolog.pl [ options ] <username> <password>
+
+Options:
+
+ --help                 Display help and exit
+ --domain <dom>         Log into domain <dom>
+ --disable              Disable automatic logon
+
+=head1 NOTES
+
+This script patches the registry to bypass the Windows logon screen,
+logging in with the provided user name and password.  Note that the
+password is stored in the clear in the registry.
+
+Use "autolog.pl --disable" to disable automatic logon.
