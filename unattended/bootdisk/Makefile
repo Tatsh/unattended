@@ -1,9 +1,18 @@
 # Makefile to create bootable DOS images for various network cards.
 
-drivers := $(shell cut -f1 -d' ' < DRIVERS.txt | grep ^[[:alnum:]])
-univ_driver := undis3c
+# Normal drivers
+drivers   := $(shell grep ^[[:alnum:]] DRIVERS.txt \
+		| grep -w -i -v universal | cut -f1 -d' ')
+# Universal drivers
+universal := $(shell grep ^[[:alnum:]] DRIVERS.txt \
+		| grep -w -i universal | cut -f1 -d' ')
 
-images := $(patsubst %,images/%.img,$(drivers))
+# Compressed disk image files (images/*.imz)
+images := $(patsubst %,images/%.imz,$(drivers) $(universal))
+
+# Hack to get a single space into a variable
+nullstring :=
+space := $(nullstring) # eol
 
 all: images iso tftpboot
 
@@ -15,15 +24,15 @@ images: $(images)
 	@find template -newer $@ -print | sed s/.\*/$@/ | xargs -r touch
 
 # Images targets
-images/%.img: .stamp-template empty-boot.img.gz drivers/%.dos
-	@echo -n "Making $@..."
-	@driver=`basename "$@" .img` &&					\
+images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos		\
+	@echo -n "Making $@..."						\
+	@driver=`basename "$@" .imz` &&					\
 	driver_uc=`echo $$driver | tr [[:lower:]] [[:upper:]]`		\
 	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&			\
 	echo 'drive x:' > $$tmpfile &&					\
-	echo file=\"`pwd`/"$@"\" >> $$tmpfile &&			\
+	echo file=\"`pwd`/"$@.tmp"\" >> $$tmpfile &&			\
 	export MTOOLSRC=$$tmpfile &&					\
-	gunzip -c empty-boot.img.gz >| $@ &&				\
+	gunzip -c empty-boot.img.gz >| $@.tmp &&			\
 	(cd template &&							\
 	 find . -name CVS -prune -o -mindepth 1 -print |		\
 		while read filename ; do				\
@@ -32,28 +41,30 @@ images/%.img: .stamp-template empty-boot.img.gz drivers/%.dos
 				continue ;				\
 			fi ;						\
 			case $$filename in				\
-			  *.ini | *.in_ ) 				\
+			  *.ini | *.in_ )				\
 			    sed s/@driver@/$$driver_uc/g < $$filename |	\
 			    mcopy - x:/$$filename	;;		\
-			  *) mcopy $$filename x:/$$filename;; 		\
-			esac; 						\
+			  *) mcopy $$filename x:/$$filename;;		\
+			esac;						\
 		done) &&						\
 	mcopy drivers/$$driver.dos x:/net/$$driver.dos &&		\
-	rm $$tmpfile
+	rm $$tmpfile &&							\
+	gzip -c --best $@.tmp >| $@.tmp.gz &&				\
+	mv $@.tmp.gz $@ &&						\
+	rm $@.tmp
 	@echo "done"
 
 # ISO CD-ROM targets
 iso: bootdisk.iso
 
-iso/isolinux/%.imz: images/%.img
-	gzip --best -c $< >| $@.tmp
-	mv $@.tmp $@
+iso/isolinux/%.imz: images/%.imz
+	cp $< $@
 
 iso/isolinux/memdisk: memdisk
 	ln -f $< $@.tmp
 	mv $@.tmp $@
 
-bootdisk.iso: $(patsubst images/%.img,iso/isolinux/%.imz,$(images)) \
+bootdisk.iso: $(patsubst images/%.imz,iso/isolinux/%.imz,$(images)) \
 			iso/isolinux/memdisk iso/isolinux/isolinux.cfg \
 			iso/isolinux/isoboot.msg iso/isolinux/isolinux.bin
 	@echo -n "Making $@..."
@@ -80,7 +91,7 @@ iso/isolinux/isoboot.msg: isoboot.msg DRIVERS.txt
 	@echo -n "Making $@..."
 	@cat isoboot.msg >| $@.tmp
 	@echo >> $@.tmp
-	@grep ^[[:alnum:]] < DRIVERS.txt >> $@.tmp
+	grep '^\($(subst $(space),\|,$(drivers))\)' DRIVERS.txt >> $@.tmp
 	@mv $@.tmp $@
 	@echo "done"
 
@@ -91,39 +102,39 @@ iso/isolinux/isolinux.bin: isolinux.bin
 	@echo "done"
 
 # TFTP boot (PXE) targets
-tftpboot: .stamp-tftpboot
-
-.stamp-tftpboot: images/$(univ_driver).img memdisk \
-			tftpboot/pxelinux.cfg/default
-	rm -f tftpboot/*.img
-	ln -f $(images) memdisk tftpboot
-#	ln -f images/$(univ_driver).img memdisk tftpboot
+tftpboot: memdisk tftpboot/pxelinux.cfg/default
+	ln -f memdisk tftpboot
 	@touch $@
 
 tftpboot/pxelinux.cfg/default: pxelinux.cfg
 	@echo -n "Making $@..."
 	@cat $< >| $@.tmp
-	@for driver in $(drivers) ; do					\
-		echo >> $@.tmp ;					\
-		echo "label $$driver" >> $@.tmp ;			\
-		echo "        kernel memdisk" >> $@.tmp ;		\
-		echo "        append initrd=$$driver.img" >> $@.tmp ;	\
+	@for driver in $(drivers) ; do					  \
+		echo >> $@.tmp ;					  \
+		echo "label $$driver" >> $@.tmp ;			  \
+		echo "    kernel memdisk" >> $@.tmp ;			  \
+		echo "    append initrd=$$driver.img" >> $@.tmp ;	  \
 	done
-	@echo >> $@.tmp
-	@echo "label inst" >> $@.tmp
-	@echo "        kernel memdisk" >> $@.tmp
-	@echo "        append initrd=$(univ_driver).img keeppxe" >> $@.tmp
+	@for driver in $(universal) ; do				  \
+		echo >> $@.tmp ;					  \
+		echo "label $$driver" >> $@.tmp ;			  \
+		echo "    kernel memdisk" >> $@.tmp ;			  \
+		echo "    append initrd=$$driver.img keeppxe" >> $@.tmp ; \
+	done
 	@mv $@.tmp $@
 	@echo "done"
 
-clean:
-	@-rm -f .stamp-template .stamp-tftpboot
+# Remove intermediate files which we do not want to ship
+tidy:
+	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.imz,memdisk,isolinux.bin}
+
+clean:	tidy
+	@-rm -f .stamp-template
 	-rm -f images/*.img
 	-rm -f bootdisk.iso
-	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.imz,memdisk,isolinux.bin}
 	-rm -f tftpboot/{*.img,memdisk}
 	-rm -f tftpboot/pxelinux.cfg/default
 
 FORCE:
 
-.PHONY: FORCE clean images iso tftpboot
+.PHONY: FORCE clean images iso tidy tftpboot
