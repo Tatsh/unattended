@@ -2,12 +2,33 @@
 use warnings;
 use strict;
 use Carp;
+use File::Spec::Win32;
+use File::Basename;
 
 require 'unattend.pl';
 
+# File::Spec is supposed to auto-detect the OS and adapt
+# appropriately, but it does not recognize a $^O value of "dos".  Work
+# around this bug here.
+my $file_spec = 'File::Spec::Win32';
+
+# Similarly for File::Basename.
+fileparse_set_fstype ('MSWin32');
+
 ## Handy general-purpose subroutines for asking questions.
 
-# Yes/no question
+# Ask a simple question.
+sub simple_q ($) {
+    my ($question) = @_;
+    print "\n", $question;
+    my $answer = <STDIN>;
+    chomp $answer;
+    $answer eq ''
+        and undef $answer;
+    return $answer;
+}
+
+# Ask a yes/no question.
 sub yes_no_choice ($) {
     my ($question) = @_;
     print "\n";
@@ -16,8 +37,8 @@ sub yes_no_choice ($) {
     return ($ret == 1 ? 1 : 0);
 }
 
-# Menu of options.  Takes an even number of arguments which are
-# display / return pairs.  For example:
+# Create a menu of options.  Takes an even number of arguments which
+# are display / return pairs.  For example:
 #
 #     menu_choice ('option X' => 'foo', 'option Y' => 'bar')
 #
@@ -139,14 +160,79 @@ sub read_partition_table () {
     return join '', run_command ('fdisk /info /tech');
 }
 
-## Set defaults.
+# Find the .inf files below a given directory.  Allow .inf files in
+# one directory to "mask" the presence of .inf files below it.  This
+# is useful for computing the OemPnPDriversPath.
+sub find_inf_files ($);
+sub find_inf_files ($) {
+    my ($dir) = @_;
+    my @results;
 
+    # Read the directory.
+    opendir DIR, $dir
+        or die "Unable to opendir $dir: $^E";
+
+    my @entries = sort readdir DIR;
+
+    closedir DIR
+        or die "Unable to closedir $dir: $^E";
+
+    # Loop through it once, looking for .inf files.
+    foreach my $entry (@entries) {
+        my $full_path = $file_spec->catfile ($dir, $entry);
+
+        if ($entry =~ /\.inf\z/i) {
+            push @results, $full_path;
+        }
+    }
+
+    # If we found any .inf files, we are done.  Otherwise, loop
+    # through directory again, calling ourselves on each subdirectory
+    # and accumulating the results.
+    if (scalar @results == 0) {
+        foreach my $entry (@entries) {
+            $entry eq '.' || $entry eq '..'
+                and next;
+
+            my $full_path = $file_spec->catdir ($dir, $entry);
+
+            -d $full_path
+                and push @results, find_inf_files ($full_path);
+        }
+    }
+
+    return (@results);
+}
+
+# Like find_inf_files above, but return only the directory portions,
+# relative to the base path provided as argument.
+sub find_oem_pnp_dirs ($) {
+    my ($base) = @_;
+
+    my @files = find_inf_files ($base);
+    my %dirs;
+
+    my (undef, $base_no_vol) = $file_spec->splitpath ($base, 1);
+
+    foreach my $file (@files) {
+        my (undef, $dir_no_vol) =
+            $file_spec->splitpath (dirname ($file), 1);
+        $dirs{$file_spec->abs2rel ($dir_no_vol, $base)} = undef;
+    }
+
+    return sort keys %dirs;
+}
+
+## Functions for asking about particular settings.
+
+# Large disk support
 sub ask_fdisk_lba () {
     return menu_choice
         ('Large (>8G) disk support (normal)' => 1,
          'No large disk support (required for some broken BIOSes)' => 0);
 }
 
+# fdisk commands to run
 sub ask_fdisk_cmds () {
     print "Choose partitioning scheme.\n";
     print "NOTE: If partition table changes, machine will reboot.\n";
@@ -156,11 +242,15 @@ sub ask_fdisk_cmds () {
     # 2G FAT partition
     my $post_cmds = 'fdisk /delete /pri:1;fdisk /prio:2000;fdisk /activate:1';
 
+    # Command to run fdisk interactively
+    my $interactive_cmd = 'fdisk /xo';
+
+    my $ret;
+
     while (1) {
-        my $cmds = menu_choice
+        $ret = menu_choice
             ('Do nothing (continue)' => undef,
-             'Wipe partition table and run fdisk interactively' =>
-             'fdisk /xo',
+             'Run fdisk interactively (experts only)' => $interactive_cmd,
              'Whole disk C:', =>
              'fdisk /pri:100,100',
              '4G C:, rest D:' =>
@@ -168,17 +258,22 @@ sub ask_fdisk_cmds () {
              '4G C:, 4G D:, rest E:' =>
              'fdisk /pri:4096;fdisk /pri:4096 /spec:7;fdisk /pri:100,100 /spec:7'
              );
-        if (defined $cmds) {
-            print "WARNING: This operation erases the disk!";
-            yes_no_choice ("Are you sure")
-                or next;
-        }
-        return (defined $cmds
-                ? "$pre_cmds;$cmds;$post_cmds"
-                : undef);
+
+        defined $ret
+            or last;
+
+        $ret eq $interactive_cmd
+            or $ret = "$pre_cmds;$ret;$post_cmds";
+
+        print "WARNING: This operation erases the disk!";
+        yes_no_choice ("Are you sure")
+            and last;
     }
+
+    return $ret;
 }
 
+# Which OS to install
 sub ask_os () {
     my $os_dir = get_value ('_meta', 'os_dir');
     opendir OSDIR, $os_dir
@@ -201,14 +296,122 @@ sub ask_os () {
                         sort @oses);
 }
 
-sub simple_q ($) {
-    my ($question) = @_;
-    print "\n", $question;
-    my $answer = <STDIN>;
-    chomp $answer;
-    $answer eq ''
-        and undef $answer;
-    return $answer;
+# Which directories to include in OemPnPDriversPath
+sub ask_oem_pnp_drivers_path () {
+    my $oem_system_dir =
+        $file_spec->catdir (get_value ('_meta', 'OS_dir'),
+                                   get_value ('_meta', 'OS'),
+                                   'i386', '$oem$', '$1');
+    print "Looking for drivers under $oem_system_dir...\n";
+    unless (-d $oem_system_dir) {
+        print "...no such directory.  Continuing.\n";
+        return undef;
+    }
+
+    my @pnp_driver_dirs = find_oem_pnp_dirs ($oem_system_dir);
+    if (scalar @pnp_driver_dirs == 0) {
+        print "...no driver directories found.  Continuing\n";
+        return undef;
+    }
+
+    print "...found some driver directories.  Please choose which to add.\n";
+    my $rem_string = 'Remove all directories';
+    my $all_string = 'Add all directories';
+    my $cont_string = 'All done ; continue';
+    # Use references to strings as magic return tokens.
+    my @choices = ((map { ($_ => $_) } @pnp_driver_dirs),
+                   $rem_string => \$rem_string,
+                   $all_string => \$all_string,
+                   $cont_string => \$cont_string);
+    my %dirs;
+    while (1) {
+        print "\nCurrent value of OemPnPDriversPath:\n";
+        print join ';', sort keys %dirs;
+        print "\n";
+        print "Choose value to add:";
+        my $val = menu_choice (@choices);
+        if ($val == \$rem_string) {
+            undef %dirs;
+        }
+        elsif ($val == \$all_string) {
+            %dirs = map { $_ => undef } @pnp_driver_dirs;
+        }
+        elsif ($val == \$cont_string) {
+            last;
+        }
+        else {
+            $dirs{$val} = undef;
+        }
+    }
+
+    return join ';', sort keys %dirs;
+}
+
+# Create the "postinst.bat" script and return its full path.  Do
+# nothing and return undef if there are no post-installation commands
+# to run.
+sub create_postinst_bat () {
+    # Create postinst.bat script.
+    # Compute contents of postinst.bat script.
+    my @postinst_lines;
+
+    # Local admins
+    my $admins = get_value ('_meta', 'local_admins');
+    my @admins = (defined $admins ? split / /, $admins : undef);
+    # Hack around Perl bug
+    defined $admins[0]
+        or undef @admins;
+    @admins = map { canonicalize_user
+                        (get_value ('Identification', 'JoinDomain'),
+                         $_) } @admins;
+    foreach my $admin (@admins) {
+        push @postinst_lines, "net localgroup Administrators $admin /add";
+    }
+
+    # NTP servers
+    my $ntp_servers = get_value ('_meta', 'ntp_servers');
+    defined $ntp_servers && $ntp_servers ne ''
+        and push @postinst_lines, "net time /setsntp:\"$ntp_servers\"";
+
+    # Top-level installation script
+    my $top = get_value ('_meta', 'top');
+    if (defined $top) {
+        push @postinst_lines,
+        ("net use z: $ENV{'INSTALL'} /persistent:yes",
+         'call z:\\scripts\\perl.bat',
+         'PATH=z:\\bin;%PATH%',
+         # Last step is always a reboot
+         'todo.pl .reboot',
+         # Next-to-last step is to disable automatic logon
+         'todo.pl "' . get_value ('_meta', 'autolog') . '"',
+         # First step is to perform top-level install
+         "todo.pl $top",
+         "\ntodo.pl --go");
+    }
+
+    my $postinst = $file_spec->catfile (get_value ('_meta', 'netinst'),
+                                        'postinst.bat');
+    if (scalar @postinst_lines > 0) {
+        print "Creating $postinst...";
+
+        open POSTINST, ">$postinst"
+            or die "Unable to open $postinst for writing: $^E";
+
+        foreach my $line (@postinst_lines) {
+            print POSTINST $line, "\n"
+                or die "Unable to write to $postinst: $^E";
+        }
+
+        close POSTINST
+            or die "Unable to close $postinst: $^E";
+
+        print "done.\n";
+    }
+    else {
+        undef $postinst;
+    }
+
+    return $postinst;
 }
 
 set_comments ('_meta', '',
@@ -225,7 +428,7 @@ set_value ('_meta', 'fdisk_cmds', \&ask_fdisk_cmds);
 set_value ('_meta', 'format_cmd',
            sub {
                return (yes_no_choice ('Format C: drive')
-                       ? 'format /q /v: c:'
+                       ? 'format /y /q /v: c:'
                        : undef);
            });
 
@@ -344,10 +547,23 @@ set_value ('UserData', 'ComputerName',
                return $name;
            });
 
+set_comments ('GuiRunOnce', 'Command0',
+              '    ; Command which runs after OS installation finishes');
+
+set_value ('GuiRunOnce', 'Command0', \&create_postinst_bat);
+
 set_value ('GuiUnattended', 'AdminPassword',
            sub {
                return simple_q
                    ('Enter AdminPassword for local administrator account: ');
+           });
+
+set_value ('GuiUnattended', 'AutoLogon',
+           sub {
+               my $runonce_cmd = get_value ('GuiRunOnce', 'Command0');
+               return (defined $runonce_cmd
+                       ? 'Yes'
+                       : undef);
            });
 
 set_value ('Identification', 'JoinDomain',
@@ -373,6 +589,9 @@ set_value ('Identification', 'DomainAdminPassword',
                return simple_q
                    ("DomainAdminPassword for $admin account? ");
            });
+
+set_value ('Unattended', 'OemPnPDriversPath',
+           \&ask_oem_pnp_drivers_path);
 
 my $product_key_q =
     "Enter your product key now.\n"
@@ -492,60 +711,6 @@ close UNATTEND
 
 print "done.\n";
 
-# Create postinst.bat script.
-my $postinst = "$netinst\\postinst.bat";
-print "Creating $postinst...";
-
-# Compute contents of postinst.bat script.
-my @postinst_lines;
-
-# Local admins
-my $admins = get_value ('_meta', 'local_admins');
-my @admins = (defined $admins ? split / /, $admins : undef);
-# Hack around Perl bug
-defined $admins[0]
-    or undef @admins;
-@admins = map { canonicalize_user
-                    (get_value ('Identification', 'JoinDomain'),
-                     $_) } @admins;
-foreach my $admin (@admins) {
-    push @postinst_lines, "net localgroup Administrators $admin /add";
-}
-
-# NTP servers
-my $ntp_servers = get_value ('_meta', 'ntp_servers');
-defined $ntp_servers && $ntp_servers ne ''
-    and push @postinst_lines, "net time /setsntp:\"$ntp_servers\"";
-
-# Top-level installation script
-my $top = get_value ('_meta', 'top');
-if (defined $top) {
-    push @postinst_lines, ("net use z: $ENV{'INSTALL'} /persistent:yes",
-                           'call z:\\scripts\\perl.bat',
-                           'PATH=z:\\bin;%PATH%',
-                           # Last step is always a reboot
-                           'todo.pl .reboot',
-                           # Next-to-last step is to disable automatic logon
-                           'todo.pl "' . get_value ('_meta', 'autolog') . '"',
-                           # First step is to perform top-level install
-                           "todo.pl $top",
-                           "\ntodo.pl --go");
-}
-
-
-open POSTINST, ">$postinst"
-    or die "Unable to open $postinst for writing: $^E";
-
-foreach my $line (@postinst_lines) {
-    print POSTINST $line, "\n"
-        or die "Unable to write to $postinst: $^E";
-}
-
-close POSTINST
-    or die "Unable to close $postinst: $^E";
-
-print "done.\n";
-
 # While DJGPP is running, there is not enough conventional memory
 # available for winnt.exe to work.  So we just drop the command in a
 # .bat script (doit.bat) and run it.
@@ -562,15 +727,25 @@ close DOIT
 
 print "done.\n";
 
+my @edit_choices;
+
+push @edit_choices, ("Edit $unattend_txt" => $unattend_txt);
+
+my $postinst = get_value ('GuiRunOnce', 'Command0');
+defined $postinst
+    and push (@edit_choices,
+              "Edit $postinst (will run after OS install is done)"
+              => $postinst);
+
+push @edit_choices, ("Edit $doit (will run when you select Continue)"
+                     => $doit);
+
 while (1) {
-    my $file = menu_choice
-        ("Edit $unattend_txt" => $unattend_txt,
-         "Edit $postinst (will run when OS install is done)" => $postinst,
-         "Edit $doit (will run when you select Continue)" => $doit,
-         'Continue' => undef);
+    my $file = menu_choice (@edit_choices,
+                            'Continue' => undef);
     defined $file
         or last;
-    system 'edit', $file;
+    system 'z:\\tmp\\pico', $file;
 }
 
 # Return control to autoexec.bat, which will run doit.bat.
