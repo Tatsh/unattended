@@ -5,7 +5,7 @@
 
 :: Language files:
 :: URL|BGR|ftp://ftp.opera.com/pub/opera/win/lng/723/bg/ow723_3227bg.lng|packages/opera/languages/opera-bgr.lng
-:: URL|CAT|ftp://ftp.opera.com/pub/opera/win/lng/723/ca/ow723_3227ca.lng|packages/opera/languages/opera-cat.lng
+:: URL|CAT|ftp://ftp.opera.com/pub/opera/win/lng/754/ca/ow754_3865ca.lng|packages/opera/languages/opera-cat.lng
 :: URL|CHS|ftp://ftp.opera.com/pub/opera/win/lng/723/zh-cn/ow723_3227zh-cn.lng|packages/opera/languages/opera-chs.lng
 :: URL|DAN|ftp://ftp.opera.com/pub/opera/win/lng/754/da/ow754_3865da.lng|packages/opera/languages/opera-dan.lng
 :: URL|DEU|ftp://ftp.opera.com/pub/opera/win/lng/754/de/ow754_3865de.lng|packages/opera/languages/opera-deu.lng
