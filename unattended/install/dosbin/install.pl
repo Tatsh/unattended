@@ -230,6 +230,8 @@ set_value ('_meta', 'local_admins',
                    ("Type 0 or more usernames, separated by spaces:\n");
                my $users = join ' ', map { canonicalize_user ($dom, $_)
                                            } @users;
+               $users eq ''
+                   and $users = undef;
                return $users;
            });
 
