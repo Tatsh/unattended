@@ -22,6 +22,7 @@ images: .stamp-images
 images/%.img: .stamp-template drivers/%.dos
 	@echo -n "Making $@..."
 	@driver=`basename "$@" .img` &&					\
+	driver_uc=`echo $$driver | tr '[[:lower:]]' '[[:upper:]]'`	\
 	tmpfile=`mktemp /var/tmp/bootdisk.XXXXXX` &&			\
 	echo 'drive x:' > $$tmpfile &&					\
 	echo file=\"`pwd`/"$@"\" >> $$tmpfile &&			\
@@ -34,7 +35,7 @@ images/%.img: .stamp-template drivers/%.dos
 				mmd x:/$$filename ;			\
 				continue ;				\
 			fi ;						\
-			sed s/@driver@/$$driver/g < $$filename |	\
+			sed s/@driver@/$$driver_uc/g < $$filename |	\
 				mcopy - x:/$$filename	;		\
 		done) &&						\
 	mcopy drivers/$$driver.dos x:/net/$$driver.dos &&		\
