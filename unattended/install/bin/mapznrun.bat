@@ -25,7 +25,7 @@ net use %Z% /delete
 @goto hang
 
 :mapit
-net use %Z% %Z_PATH% %Z_PASS% %USER_ARG%
+net use %Z% %Z_PATH% %Z_PASS% %USER_ARG% /persistent:no
 @if not exist %Z%\ goto try_again
 
 :mapped
