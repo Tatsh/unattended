@@ -55,7 +55,7 @@ todo.pl "%Z%\updates\ws2k3\WindowsMedia-KB828026-x86-%WINLANG%.exe /passive /n /
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
 :: <http://support.microsoft.com/?kbid=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
-todo.pl "%Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N" .reboot
+todo.pl "%Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 828750
 :: "October, 2003, Cumulative Patch for Internet Explorer"
