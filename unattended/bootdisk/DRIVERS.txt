@@ -23,9 +23,10 @@ dp83815  Natsemi 83815 "MacPHYTER" family (e.g., Netgear FA311/FA312)
 e100b    Intel Pro/100 family of PCI and CardBus adapters
 e1000    Intel Pro/1000 family of gigabit adapters
 
-# Found by doing a search on product numbers (3cxfe575ct, 3c905c) at
-# <http://www.3com.com/products/en_US/downloadsindex.jsp>.
-elpc575  3com 3c575 family of CardBus (laptop) adapters
+# Found by doing a search on product numbers (3cxfe575ct, 3cn3ac1556b,
+# 3c905c) at <http://www.3com.com/products/en_US/downloadsindex.jsp>.
+elpc575  3com 3c575 family of CardBus adapters
+el556    3com 3c556 family of mini-PCI adapters
 el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
 
 # <http://www.google.com/search?q=via+ethernet+drivers>
