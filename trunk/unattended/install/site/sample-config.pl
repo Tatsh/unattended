@@ -172,8 +172,10 @@ $u->push_value ('Unattended', 'OemPnPDriversPath',
             defined $os_drivers
                 and last;
         }
-        defined $os_drivers
-            or return undef;
+        defined $os_drivers 
+            or $os_drivers = $os_media . '\\$i386\\$oem$\\$1\\';
+        $os_drivers =~ /^All$/i;
+            and $os_drivers = $os_media . '\\$i386\\$oem$\\$1\\';
         $os_drivers =~ /^[a-z]:/i
             or $os_drivers = $os_media . '\\$i386\\$oem$\\$1\\' . $os_drivers;
         opendir OSDRIVERS, dos_to_host ($os_drivers)
