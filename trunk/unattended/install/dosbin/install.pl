@@ -785,7 +785,7 @@ while (1) {
                             'Continue' => undef);
     defined $file
         or last;
-    system 'pico', $file;
+    system 'pico', '-w', $file;
 }
 
 # Return control to autoexec.bat, which will run doit.bat.
