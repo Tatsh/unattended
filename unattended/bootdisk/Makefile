@@ -35,13 +35,14 @@ images: $(images)
 # Images targets
 images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos
 	@echo -n "Making $@..."
-	@driver=`basename "$@" .imz` &&					\
+	@destdir=`dirname "$@"` &&					\
+	driver=`basename "$@" .imz` &&					\
 	driver_uc=`echo $$driver | tr [[:lower:]] [[:upper:]]` &&	\
-	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&			\
-	echo 'drive x:' > $$tmpfile &&					\
-	echo file=\"`pwd`/"$@.tmp"\" >> $$tmpfile &&			\
-	export MTOOLSRC=$$tmpfile &&					\
-	gzip -d -c empty-boot.img.gz >| $@.tmp &&			\
+	mtoolsrc=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&			\
+	echo 'drive x:' > $$mtoolsrc &&					\
+	echo file=\"`pwd`/"$$destdir/$$driver.img"\" >> $$mtoolsrc &&	\
+	export MTOOLSRC=$$mtoolsrc &&					\
+	gzip -d -c empty-boot.img.gz >| $$destdir/$$driver.img &&	\
 	(cd template &&							\
 	 find . -name CVS -prune -o -mindepth 1 -print |		\
 		while read filename ; do				\
@@ -57,10 +58,9 @@ images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos
 			esac;						\
 		done) &&						\
 	mcopy drivers/$$driver.dos x:/net/$$driver.dos &&		\
-	rm $$tmpfile &&							\
-	gzip -c --best $@.tmp >| $@.tmp.gz &&				\
-	mv $@.tmp.gz $@ &&						\
-	rm $@.tmp
+	rm $$mtoolsrc &&						\
+	zip -9 -m -q $@.tmp $$destdir/$$driver.img &&			\
+	mv $@.tmp $@
 	@echo "done"
 
 # ISO CD-ROM targets
