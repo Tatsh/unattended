@@ -615,7 +615,7 @@ $(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
 
 symlink_targets=$(addprefix symlink-,$(packages))	\
 	symlink-build-$(glibc) symlink-build-$(dosemu)	\
-	symlink-fakelib symlink-fakeinclude
+	symlink-fakelib symlink-fakeinclude symlink-stage1
 
 $(symlink_targets):
 	@if [ -z "$(dest)" ] || [ "$(dest)" == . ] ; then	\
@@ -637,5 +637,5 @@ symlinks: $(symlink_targets)
 tidy:
 	rm -f $(patsubst symlink-%,%,$(symlink_targets))
 	rm -rf dosboot iso
-	rm -rf stage1 stage2 .stamp-stage2
+	rm -rf stage2 .stamp-stage2
 	rm -f devices.cpio initrd
