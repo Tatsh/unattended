@@ -1,0 +1,21 @@
+#!/bin/ash
+
+echo WELCOME!!!
+
+/bin/mkdir /sys
+/bin/mount -t sysfs sysfs /sys
+
+/bin/mkdir /proc
+/bin/mount -t proc proc /proc
+
+/bin/mkdir /dev/pts
+/bin/mount -t devpts devpts /dev/pts
+
+# For playing random games
+/bin/mkdir /mnt
+/bin/mkdir /z
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+export PATH
+
+exec /etc/master
