@@ -92,6 +92,21 @@ sub set_value ($$$) {
     $key_info->{'dname'} = $key;
 }
 
+# "Push" a value onto a section+key.  If value is undef, or if it is a
+# proc which returns undef, then use original value instead.
+sub push_value ($$$) {
+    my ($sect, $key, $val) = @_;
+
+    my $orig_val = get_value_noforce ($sect, $key);
+    set_value ($sect, $key,
+               sub {
+                   my $ret = force ($val);
+                   return (defined $ret
+                           ? $ret
+                           : force ($orig_val));
+               });
+}
+
 # Get the "priority" of a section+key.  This is a pair (major, minor).
 # Lower priorities sort later in the output file.
 sub get_priority ($$) {
