@@ -493,7 +493,7 @@ stage1: $(stage1)
 
 ## Stage 2
 .stamp-stage2: $(stage1) misc/nail-floppy.txt
-	rm -rf stage2
+	rm -rf stage2 ../install/linuxaux
 	find stage1 -type d -print0			\
 	| xargs -i -0 -r sh -c				\
 		'from={} && to=stage2/$${from#stage1/}	\
