@@ -38,7 +38,7 @@ my %new_values = ('DefaultUserName' => $user,
                   );
 
 foreach my $key (sort keys %new_values) {
-    if (exists $opts{'enable'}) {
+    if (!exists $opts{'disable'}) {
         my $val = $new_values{$key};
         defined $val
             or next;
