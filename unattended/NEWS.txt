@@ -1,3 +1,13 @@
+** Changes in version 4.2b (2004-May-17)
+
+(Linux) Fix nasty little typo in master script; whoops.  Thanks to
+Scott Card.
+
+(Linux) Provide string "Unattended" as the user class identifier
+(option 77 defined by RFC 3004) in our DHCP lease request.  Allows a
+DHCP server to distinguish our lease requests from other clients'.
+
+
 ** Changes in version 4.2 (2004-May-16)
 
 (Linux) Build and enable ACPI support in kernel.  Required for some
