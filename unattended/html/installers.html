@@ -124,13 +124,16 @@ to create the file and with <kbd>/s</kbd> to read it.
 Once again, there must be <em>no</em> space between the switch and the
 file name.
 
-<p>Oh, one more thing.  The <kbd>/r</kbd> and <kbd>/s</kbd> switches
-only work if the release engineer is competent.  Many packages have
-"custom dialogs" which are not supported by <code>setup.iss</code>,
-which means those dialogs will always appear no matter what you do.
-For such packages, I suggest asking the vendor to fix their installer.
-If that does not work, I suggest doing what you can to help them go
-out of business.
+<p>WARNING: Be careful what characters you use in these file names,
+because InstallShield strips certain non-alphanumerics (like dashes).
+
+<p>Oh, just one more thing.  The <kbd>/r</kbd> and <kbd>/s</kbd>
+switches only work if the release engineer is competent.  Many
+packages have "custom dialogs" which are not supported by
+<code>setup.iss</code>, which means those dialogs will always appear
+no matter what you do.  For such packages, I suggest asking the vendor
+to fix their installer.  If that does not work, I suggest doing what
+you can to help them go out of business.
 
 <h3 id="pftw">PackagefortheWeb</h3>
 
@@ -345,17 +348,17 @@ Download</a>
 
 <p>First, download the full installer package from Adobe.  Run:
 <pre>
-    AcroReader51_ENU_full.exe /a /r /f1c:\acrobat-reader.iss
+    AcroReader51_ENU_full.exe /a /r /f1c:\acrobat.iss
 </pre>
 
 <p>Complete the installation manually.  When you are finished, the
-installer will write the <code>c:\acrobat-reader.iss</code> answer
+installer will write the <code>c:\acrobat.iss</code> answer
 file.  Copy this file and the package itself to
 <code>Z:\packages</code>.
 
 <p>Then, to perform unattended installations, run:
 <pre>
-    AcroReader51_ENU_full.exe /a /s /sms /f1Z:\packages\acrobat-reader.iss
+    AcroReader51_ENU_full.exe /a /s /sms /f1Z:\packages\acrobat.iss
 </pre>
 
 <tr><td valign="middle">Example
