@@ -18,6 +18,7 @@ bin/sh
 etc/extra.pcimap
 etc/ld.so.cache
 etc/master
+etc/version
 
 etc/modprobe.conf
 etc/module-order.txt

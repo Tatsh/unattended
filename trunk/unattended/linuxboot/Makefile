@@ -40,9 +40,6 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		    \
 
 CC=gcc
 
-.PHONY: stage1 all download $(download_targets)	$(symlink_targets) \
-	iso tftpboot tidy
-
 # Macro to generate rule for copying single file
 copy_file=					\
 $(2) : $(1)	;				\
@@ -706,6 +703,15 @@ stage1 += stage1/init stage1/usr/bin/find-boot-device			\
 		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf	\
 		stage1/etc/passwd stage1/usr/lib/freedos-mbr.bin
 
+# /etc/version
+stage1/etc/version: FORCE
+	version=`tools/version.pl` &&		\
+	echo -e "$$version" > $@.tmp
+	cmp -s $@.tmp $@ || mv $@.tmp $@
+	rm -f $@.tmp
+
+stage1 += stage1/etc/version
+
 ## Stage 1
 stage1/usr/local:
 	mkdir -p $@
@@ -897,3 +903,8 @@ tidy:
 	rm -rf dosboot iso
 	rm -rf .stamp-stage1 stage2 .stamp-stage2
 	rm -f devices.cpio initrd
+
+FORCE:
+
+.PHONY: stage1 all download $(download_targets)	$(symlink_targets) \
+	iso tftpboot tidy FORCE
