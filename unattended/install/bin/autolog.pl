@@ -7,7 +7,8 @@ use Pod::Usage;
 
 # Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'logon=s', 'user=s', 'password=s', 'domain=s', 'help')
+GetOptions (\%opts, 'logon=s', 'user=s', 'password=s', 'domain=s',
+            'keep', 'help')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -35,10 +36,11 @@ foreach my $name (sort keys %new_values) {
         $winlogon_key->SetValue ($name, $val)
             or die "Unable to set $winlogon_key_name/$name to $val: $^E";
     }
-    else {
+    elsif (!$opts{'keep'}) {
         (delete $winlogon_key->{"/$name"})
             or die "Unable to delete $winlogon_key_name/$name: $^E";
     }
+    # else do nothing
 }
 
 __END__
@@ -51,13 +53,14 @@ autolog.pl - Set defaults for Windows logon
 
 autolog.pl [ options ]
 
-Options:
+Options (may be abbreviated):
 
  --help                 Display help and exit
  --user=<username>      Set user name field to <username>
  --password=<password>  Set password field to <password>
  --domain=<domain>      Set domain to <domain>
  --logon=<val>          Set AutoAdminLogon key to <val>
+ --keep                 Keep current setting for unspecified entries
 
 =head1 NOTES
 
@@ -65,10 +68,10 @@ This script modifies the registry entries controlling automatic logon.
 These also control the default user name and domain name in the logon
 panel, even when automatic logon is disabled.
 
-Failing to specify an argument removes the corresponding registry key.
-You probably at least want to specify --logon=0, because otherwise
-Windows will not even set the defaults to be the last user who logged
-on.
+Failing to specify an argument removes the corresponding registry key,
+unless the --keep option is provided.  You probably at least want to
+specify --logon=0, because otherwise Windows will not even set the
+defaults to be the last user who logged on.
 
 Note that all of these values, most notably the password, are stored
 as cleartext.
