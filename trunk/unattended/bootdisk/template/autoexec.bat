@@ -45,6 +45,20 @@ set INPUT=
 
 :gotcreds
 
+:: MSCLIENT does not allow DOMAIN\username, but we might need the
+:: domain for authentication later.  So, if Z_USER is of the form
+:: "DOM\username", split it so that Z_DOMAIN is DOM and Z_USER is
+:: username.  This particular awful hack was stolen from
+:: <http://www.ericphelps.com/batch/charactr/>.
+echo = | choice /s /c=%Z_USER%= "split.bat " > temp.bat
+
+call temp.bat
+
+set Z_USER=%user%
+set Z_DOMAIN=%domain%
+unset user
+unset domain
+
 :: LOGON
 echo Starting network....
 NET LOGON %Z_USER% %Z_PASS% /YES /SAVEPW:NO
