@@ -374,6 +374,17 @@ todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
 :: rename js56nen.exe to js56nenu.exe.
 todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
 
+:: Critical update 824141 (MS03-045)
+:: URL|ENU|http://download.microsoft.com/download/9/8/3/9835c5c9-5cab-4181-a821-2c9b8f6ea612/WindowsXP-KB824141-x86-ENU.exe|updates/winxpsp1/windowsxp-kb824141-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/2/f/d/2fd43ab5-7d1b-497a-9f93-434c1e80ecde/WindowsXP-KB824141-x86-NLD.exe|updates/winxpsp1/windowsxp-kb824141-x86-nld.exe
+:: URL|FRA|http://download.microsoft.com/download/9/5/5/955ea0a2-dd9b-46a6-9a54-fd4fc1f69e5f/WindowsXP-KB824141-x86-FRA.exe|updates/winxpsp1/windowsxp-kb824141-x86-fra.exe
+:: URL|RUS|http://download.microsoft.com/download/3/1/2/31290345-fb84-487c-87f4-f306afad87a9/WindowsXP-KB824141-x86-RUS.exe|updates/winxpsp1/windowsxp-kb824141-x86-rus.exe
+:: URL|DEU|http://download.microsoft.com/download/8/4/2/8427ad0b-d2fd-48b0-8517-5237df90a2e8/WindowsXP-KB824141-x86-DEU.exe|updates/winxpsp1/windowsxp-kb824141-x86-deu.exe
+:: URL|ITA|http://download.microsoft.com/download/5/5/b/55b0ec8d-17a1-4ac5-95e8-271ba6d4c73b/WindowsXP-KB824141-x86-ITA.exe|updates/winxpsp1/windowsxp-kb824141-x86-ita.exe
+:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.mspx>
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824141-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update 825119 (MS03-044)
 :: URL|ENU|http://download.microsoft.com/download/4/3/1/431d912c-6c0b-469c-893d-fc138fee7191/WindowsXP-KB825119-x86-ENU.exe|updates/winxpsp1/windowsxp-kb825119-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/9/2/9/929140b3-f5e0-4526-a99c-9abfaf964405/WindowsXP-KB825119-x86-NLD.exe|updates/winxpsp1/windowsxp-kb825119-x86-nld.exe
