@@ -81,10 +81,16 @@ todo.pl ".ignore-err 194 %Z%\updates\win2ksp4\Windows2000-KB822831-x86-%WINLANG%
 :: "L2TP/IPSec NAT-T Update for Windows XP and Windows 2000"
 :: <http://support.microsoft.com/?kbid=818043>
 :: (download only available from Windows Catalog)
-:: (Update now MISSING from Windows Catalog.  Comment out for now; FIXME)
 :: NOTE: You must rename this to use the three-letter language
 :: abbreviation instead of two.  For example, for English you would
 :: rename Q818043_W2K_SP5_x86_EN.EXE to Q818043_W2K_SP5_x86_ENU.EXE.
+::
+:: As of 2003-10-19, this update was still not available from
+:: Windows Catalog.  See:
+:: <http://groups.google.com/groups?threadm=uJILwu%24kDHA.3612%40TK2MSFTNGP11.phx.gbl>
+:: Until Microsoft gets their act together, you will have to use
+:: Windows Update to install this one by hand.
+:: Commented out for now.
 :: todo.pl ".ignore-err 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z" .reboot
 
 :: Critical update 814078
