@@ -4,7 +4,7 @@
 
 :: Visio 2002 Service Pack 2 (SP2)
 :: <http://support.microsoft.com?kbid=830242>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=00b9dfe4-ed08-4328-b355-4bc63d6267b2&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=00b9dfe4-ed08-4328-b355-4bc63d6267b2>
 :: URL|DAN|http://download.microsoft.com/download/0/4/9/049e2846-cf75-45b1-a0b6-997ba7fa4a87/Visio2002-KB830242-FullFile-DAN.EXE|updates/visio2002/visio2002-kb830242-fullfile-dan.exe
 :: URL|DEU|http://download.microsoft.com/download/9/d/6/9d6d2239-f00c-4002-abba-8ca3d68e2feb/Visio2002-KB830242-FullFile-DEU.EXE|updates/visio2002/visio2002-kb830242-fullfile-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/7/4/3/743908a4-9e56-4f72-b8d6-501c54fcf089/Visio2002-KB830242-FullFile-ENU.EXE|updates/visio2002/visio2002-kb830242-fullfile-enu.exe

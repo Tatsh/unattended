@@ -1,8 +1,5 @@
 :: Install all updates and hotfixes for Windows Server 2003
 @Echo off
-:: Some of these can only be downloaded using the Windows Update
-:: Catalog, <http://windowsupdate.microsoft.com/catalog/>.
-
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
@@ -10,7 +7,7 @@
 
 :: Update for Windows Media Player 9 Series (KB837272)
 :: <http://support.microsoft.com/?kbid=837272>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=c70948a7-a1a8-4a34-86b4-3cde0c688576&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=c70948a7-a1a8-4a34-86b4-3cde0c688576>
 :: URL|ARA|http://download.microsoft.com/download/3/f/1/3f18f365-1e69-4195-a47c-e558f5472eec/WindowsMedia9-KB837272-ARA.exe|updates/mediaplayer9/windowsmedia9-kb837272-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/d/2/4/d24a8206-8b11-4549-a4e2-06d6c2d9f25b/WindowsMedia9-KB837272-CSY.exe|updates/mediaplayer9/windowsmedia9-kb837272-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/3/8/b/38b5dccd-b255-4dd1-98e3-7944a5a0430a/WindowsMedia9-KB837272-DAN.exe|updates/mediaplayer9/windowsmedia9-kb837272-dan.exe
@@ -37,7 +34,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB837272-%WINLANG
 
 :: Critical Update for Windows Media Player (All Versions) for Windows 2000, Windows XP, and Windows Server 2003 (KB828026)
 :: <http://support.microsoft.com/?kbid=828026>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=af9cf65e-0c55-452e-a0fa-3aa165e667c1&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=af9cf65e-0c55-452e-a0fa-3aa165e667c1>
 :: URL|ARA|http://download.microsoft.com/download/6/8/2/68236e90-fce9-42b5-ab44-f85e48a3b61a/WindowsMedia-Q828026-x86-ARA.exe|updates/mediaplayer9/windowsmedia-q828026-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/d/8/e/d8e83d12-754c-4c78-ab60-efc2828a64a7/WindowsMedia-Q828026-x86-CSY.exe|updates/mediaplayer9/windowsmedia-q828026-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/f/a/e/faefa94d-fb32-4f05-9964-2572b97d84f5/WindowsMedia-Q828026-x86-DAN.exe|updates/mediaplayer9/windowsmedia-q828026-x86-dan.exe
@@ -66,7 +63,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia-Q828026-x86-%WINLA
 :: Microsoft Security Bulletin MS03-021
 :: "Flaw In Windows Media Player May Allow Media Library Access (819639)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms03-021.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?amp;displaylang=en&familyid=82cd6192-15d8-4e28-9b14-f9b78ff01d8a&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=82cd6192-15d8-4e28-9b14-f9b78ff01d8a>
 :: (Even though this is named the same as the one in mediaplayer9 it
 ::  is different for 2003.  So this one goes in ws2k3 directory)
 :: URL|CSY|http://download.microsoft.com/download/1/0/a/10af2668-e7ec-4ec5-a506-a0ec78aed77d/WindowsMedia9-KB819639-x86-CSY.exe|updates/ws2k3/windowsmedia9-kb819639-x86-csy.exe
@@ -87,7 +84,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia-Q828026-x86-%WINLA
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.exe /u /n /z"
 
 :: DirectX 9.0c Redistributable for Software Developers - Multilingual
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=9226a611-62fe-4f61-aba1-914185249413&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=9226a611-62fe-4f61-aba1-914185249413>
 :: (Requires .NET to be installed first for managed DX)
 :: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx9/directx_9c_redist.exe
 :: Here we extract the installer to %TEMP%, run it, and delete it.
@@ -97,7 +94,7 @@ todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 
 :: Microsoft .NET Framework 1.1 Service Pack 1 for Windows Server 2003
 :: <http://support.microsoft.com/?kbid=867460>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=AE7EDEF7-2CB7-4864-8623-A1038563DF23&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=AE7EDEF7-2CB7-4864-8623-A1038563DF23>
 :: URL|CSY|http://download.microsoft.com/download/0/8/e/08eb42f8-6ac0-4f26-9d92-b01c0f738fb8/WindowsServer2003-KB867460-x86-CSY.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/0/a/9/0a90720d-18f3-4461-9737-4e072b4f4dad/WindowsServer2003-KB867460-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/b/2/2/b229569f-12a6-4707-a3db-20f09826d2cf/WindowsServer2003-KB867460-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb867460-x86-enu.exe
@@ -122,7 +119,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867460-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-014
 :: "Vulnerability in the Microsoft Jet Database Engine Could Allow Code Execution (837001)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-014.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=216D708B-3A55-4B50-8AD2-BFF06B668CBB&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=216D708B-3A55-4B50-8AD2-BFF06B668CBB>
 :: URL|CSY|http://download.microsoft.com/download/a/a/a/aaa5c29a-b91f-46bc-b71c-8ecd6c4f96d1/WindowsServer2003-KB837001-x86-CSY.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/0/2/3/023c61e4-f328-429a-bfb0-a290de811b3a/WindowsServer2003-KB837001-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/a/1/0/a1080cda-4801-4a0c-8692-0d9773b1cca5/WindowsServer2003-KB837001-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-enu.exe
@@ -147,7 +144,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB837001-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-038
 :: "Cumulative Security Update for Internet Explorer (834707)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=19E69E5F-9C98-49AD-A61F-4F82A4014412&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=19E69E5F-9C98-49AD-A61F-4F82A4014412>
 :: URL|CSY|http://download.microsoft.com/download/2/b/6/2b662788-3992-432b-9ca2-89ccd6272aa9/WindowsServer2003-KB834707-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/1/5/6/156e20c0-73f4-4215-a7a2-d94dc7d9a530/WindowsServer2003-KB834707-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/8/6/e/86e75905-3dac-4d9e-988a-781a1d1b6dc7/WindowsServer2003-KB834707-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb834707-x86-enu.exe
@@ -180,7 +177,7 @@ todo.pl "regedit /s %Z%\scripts\kb873374.reg"
 
 :: Critical Update for Windows (KB833407)
 :: <http://support.microsoft.com/?kbid=833407>
-:: <http://www.microsoft.com/downloads/details.aspx?amp;displaylang=en&familyid=a0f1dfc7-6a7f-4e9b-9a20-7751ce1ed795&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=a0f1dfc7-6a7f-4e9b-9a20-7751ce1ed795>
 :: URL|ARA|http://download.microsoft.com/download/1/e/6/1e69634b-51b1-4b8e-b998-f78d5aa11268/Windows-KB833407-x86-ARA.exe|updates/common/windows-kb833407-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/d/d/b/ddb63819-8c49-49e6-9667-3b3390457413/Windows-KB833407-x86-CSY.exe|updates/common/windows-kb833407-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/a/c/a/acae3837-1ac4-4ee0-acde-a19c64004a97/Windows-KB833407-x86-DAN.exe|updates/common/windows-kb833407-x86-dan.exe
@@ -209,7 +206,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB833407-x86-%WINLANG%.exe /p
 :: Microsoft Security Bulletin MS04-028
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-028.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B2FBD93C-3DC3-4A9E-BDD6-9F39726EE3E2&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B2FBD93C-3DC3-4A9E-BDD6-9F39726EE3E2>
 :: URL|CSY|http://download.microsoft.com/download/d/0/e/d0eb1cd0-d901-45fc-873b-4276c2b9154f/WindowsServer2003-KB833987-x86-CSY.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/b/5/b/b5b964e6-f77e-4af8-b1e1-e1a54668a501/WindowsServer2003-KB833987-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/e/5/9/e5901f37-e33b-433c-9beb-9f58428c93de/WindowsServer2003-KB833987-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb833987-x86-enu.exe
@@ -232,7 +229,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB833987-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-037
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution (841356)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-037.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=5C60CA12-0045-42B7-9F2A-6D433DEDC105&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=5C60CA12-0045-42B7-9F2A-6D433DEDC105>
 :: URL|CSY|http://download.microsoft.com/download/9/f/f/9ff31ec4-18a3-472f-b75b-c082ba4618c8/WindowsServer2003-KB841356-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/2/c/5/2c53f703-f211-494f-b95d-e7accaafa1cd/WindowsServer2003-KB841356-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/9/9/3/993d53cd-edf9-4dbb-951f-e890b241c1cd/WindowsServer2003-KB841356-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-enu.exe
@@ -255,7 +252,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB841356-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-036
 :: "Vulnerability in NNTP Could Allow Remote Code Execution (883935)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-036.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=DCB1CB73-A426-40D8-BD14-B458C7915815&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=DCB1CB73-A426-40D8-BD14-B458C7915815>
 :: URL|CSY|http://download.microsoft.com/download/1/a/1/1a103a90-ddcb-42f0-bd4b-ea066ddbcee2/WindowsServer2003-KB883935-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/4/1/1/411d44ad-0770-4d79-9354-88986adebd7a/WindowsServer2003-KB883935-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/f/5/d/f5dec840-8ae8-43b3-989e-a38b8f82c50d/WindowsServer2003-KB883935-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb883935-x86-enu.exe
@@ -278,7 +275,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB883935-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-035
 :: "Vulnerability in SMTP Could Allow Remote Code Execution (885881)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-035.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=d7767455-1ca0-49ea-8f71-76da5d451a07&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=d7767455-1ca0-49ea-8f71-76da5d451a07>
 :: URL|CSY|http://download.microsoft.com/download/7/9/3/793b0b47-32ce-4590-8a54-90b482160484/WindowsServer2003-KB885881-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb885881-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/8/f/1/8f1eed00-957b-4249-abaa-3baf46f77bfe/WindowsServer2003-KB885881-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb885881-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/4/a/7/4a795e42-3de7-49ac-969f-a61b8015bc7b/WindowsServer2003-KB885881-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb885881-x86-enu.exe
@@ -301,7 +298,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB885881-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-034
 :: "Vulnerability in Compressed (zipped) Folders Could Allow Remote Code Execution (873376)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-034.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=0903569E-7F3D-4846-A1DC-78734E77D3A9&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=0903569E-7F3D-4846-A1DC-78734E77D3A9>
 :: URL|CSY|http://download.microsoft.com/download/e/1/e/e1edffc9-d801-48fa-b9d5-d3bdafa8bddd/WindowsServer2003-KB873376-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/b/6/3/b6351e20-7205-4753-bcbb-dc05eac61e1e/WindowsServer2003-KB873376-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/4/e/7/4e76735f-79ce-4b8a-a518-4135602324ea/WindowsServer2003-KB873376-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb873376-x86-enu.exe
@@ -324,7 +321,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB873376-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-032
 :: "Security Update for Microsoft Windows (840987)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-032.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=206E9842-997D-45E4-9252-61F3CE5EA66C&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=206E9842-997D-45E4-9252-61F3CE5EA66C>
 :: URL|CSY|http://download.microsoft.com/download/4/a/5/4a5eb4e2-62e7-4439-bc89-5e2869b4d9df/WindowsServer2003-KB840987-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/2/1/9/2197e589-9e04-4a7d-96c9-e69d93562534/WindowsServer2003-KB840987-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/5/1/8/518b9eae-79f1-49a2-b196-4759b5e7c600/WindowsServer2003-KB840987-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb840987-x86-enu.exe
@@ -347,7 +344,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB840987-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-031
 :: "Vulnerability in NetDDE Could Allow Remote Code Execution (841533)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-031.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=01CFA2F4-19B2-4771-8377-FB633C5BF464&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=01CFA2F4-19B2-4771-8377-FB633C5BF464>
 :: URL|CSY|http://download.microsoft.com/download/8/4/b/84b59268-2ead-4a95-9a6b-390d61892c9b/WindowsServer2003-KB841533-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/0/5/f/05fa6e7a-642b-4b1e-9e61-d917b0d8ef00/WindowsServer2003-KB841533-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/0/6/5/0650631d-e64b-44ab-9783-84bc0653f512/WindowsServer2003-KB841533-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-enu.exe
@@ -370,7 +367,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB841533-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-030
 :: "Vulnerability in WebDAV XML Message Handler Could Lead to a Denial of Service (824151)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-030.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=81CE104D-5257-447C-A2CD-D4D149581D71&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=81CE104D-5257-447C-A2CD-D4D149581D71>
 :: URL|CSY|http://download.microsoft.com/download/9/b/a/9ba46d67-c776-4bde-8003-4893e37903be/WindowsServer2003-KB824151-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/2/c/8/2c8cd07c-6cdb-41e6-8b68-abb7b33e8b35/WindowsServer2003-KB824151-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/8/8/c/88cd7fa0-f5be-4d95-b54c-13ca4a8d9f0f/WindowsServer2003-KB824151-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-enu.exe
@@ -393,7 +390,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824151-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-023
 :: "Vulnerability in HTML Help Could Allow Code Execution (840315)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-023.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8B53C35D-E9ED-46AD-936C-30C8E3A7E606&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8B53C35D-E9ED-46AD-936C-30C8E3A7E606>
 :: URL|CSY|http://download.microsoft.com/download/4/1/d/41dd923b-1c0a-4ecf-a64a-293e4522f220/WindowsServer2003-KB840315-x86-csy.exe|updates/ws2k3/windowsserver2003-kb840315-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/a/7/9/a79cd472-9c52-444c-8066-3894df96295e/WindowsServer2003-KB840315-x86-deu.exe|updates/ws2k3/windowsserver2003-kb840315-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/b/4/2/b420044b-eb3a-442b-bba6-0156aa7896ef/WindowsServer2003-KB840315-x86-enu.exe|updates/ws2k3/windowsserver2003-kb840315-x86-enu.exe
@@ -414,7 +411,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB840315-x86-%WINLAN
 
 :: Microsoft Data Access Components - Disable ADODB.Stream object from Internet Explorer (KB870669)
 :: <http://support.microsoft.com/?kbid=870669>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=4d056748-c538-46f6-b7c8-2fbfd0d237e3&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=4d056748-c538-46f6-b7c8-2fbfd0d237e3>
 :: URL|ALL|http://download.microsoft.com/download/e/5/5/e55bbf16-ae16-4d58-8f75-3233ec146255/Windows-KB870669-x86-ENU.exe|updates/common/windows-kb870669-x86.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB870669-x86.exe /q /r:n"
 
@@ -422,7 +419,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB870669-x86.exe /q /r:n"
 :: Microsoft Security Bulletin MS04-015
 :: "Vulnerability in Help and Support Center Could Allow Remote Code Execution (840374)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-015.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=50AD42D7-81BD-4F96-9AD1-0E67310551DF&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=50AD42D7-81BD-4F96-9AD1-0E67310551DF>
 :: URL|CSY|http://download.microsoft.com/download/1/1/9/11997a6c-8320-4778-a678-22c8c8ae7bdb/WindowsServer2003-KB840374-x86-CSY.EXE|updates/ws2k3/windowsserver2003-kb840374-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/1/7/d/17d3bd4f-2cf2-4aa6-9b0c-ef88d4c4b91e/WindowsServer2003-KB840374-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb840374-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/a/8/c/a8c904e2-7955-47e2-a2ae-e7f6490eee95/WindowsServer2003-KB840374-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb840374-x86-enu.exe
@@ -445,7 +442,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB840374-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-018
 :: "Cumulative Security Update for Outlook Express (823353)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-018.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=C99AAFCD-B99B-4B13-A366-5F8EDC83633F&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=C99AAFCD-B99B-4B13-A366-5F8EDC83633F>
 :: URL|CSY|http://download.microsoft.com/download/b/b/7/bb738abd-3d41-47cb-86f9-fd1405166aaa/WindowsServer2003-KB823353-x86-csy.exe|updates/ws2k3/windowsserver2003-kb823353-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/7/d/7/7d79322e-dd26-41f4-b42e-28f951590ea6/WindowsServer2003-KB823353-x86-deu.exe|updates/ws2k3/windowsserver2003-kb823353-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/7/7/3/773c1014-30ed-4a37-ae5a-09be1918e1a3/WindowsServer2003-KB823353-x86-enu.exe|updates/ws2k3/windowsserver2003-kb823353-x86-enu.exe
@@ -468,7 +465,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB823353-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-012
 :: "Cumulative Update for Microsoft RPC/DCOM (828741)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-012.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=07317CE9-520D-4574-B575-5FB85DA9A4D7&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=07317CE9-520D-4574-B575-5FB85DA9A4D7>
 :: URL|CSY|http://download.microsoft.com/download/1/f/6/1f6444d9-17d1-45e1-a085-60fa7cb94ea0/WindowsServer2003-KB828741-x86-CSY.EXE|updates/ws2k3/windowsserver2003-kb828741-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/8/7/9/8798c1c3-cbbe-4a5e-85e4-022f915d30f9/WindowsServer2003-KB828741-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb828741-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/0/0/9/00972728-4bf7-4a73-b17e-85b81e10ab96/WindowsServer2003-KB828741-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb828741-x86-enu.exe
@@ -491,7 +488,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB828741-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-011
 :: "Security Update for Microsoft Windows (835732)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-011.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=EAB176D0-01CF-453E-AE7E-7495864E8D8C&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=EAB176D0-01CF-453E-AE7E-7495864E8D8C>
 :: URL|CSY|http://download.microsoft.com/download/8/2/5/82515e79-671e-4ff9-ba51-f203ff5cc9b5/WindowsServer2003-KB835732-x86-CSY.EXE|updates/ws2k3/windowsserver2003-kb835732-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/4/1/7/4178da0c-a671-481b-a893-7ddba9c9542b/WindowsServer2003-KB835732-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb835732-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/4/d/7/4d74d7ae-e1f7-4c0b-b6e3-ed05f5a3c580/WindowsServer2003-KB835732-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb835732-x86-enu.exe
@@ -514,7 +511,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB835732-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-006
 :: "Vulnerability in the Windows Internet Naming Service (WINS) Could Allow Code Execution (830352)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-006.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AA95192E-5B0B-45F0-B4AE-E228B0625F2D&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AA95192E-5B0B-45F0-B4AE-E228B0625F2D>
 :: URL|CSY|http://download.microsoft.com/download/e/1/2/e12e3b67-0c20-420e-826c-47e316cd017b/WindowsServer2003-KB830352-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb830352-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/c/f/e/cfe2093b-e09b-4a7a-86a2-cee5162c71e5/WindowsServer2003-KB830352-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb830352-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/2/b/f/2bf1da36-6368-4e92-9dd2-daa388450028/WindowsServer2003-KB830352-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb830352-x86-enu.exe
@@ -537,7 +534,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB830352-x86-%WINLAN
 :: Microsoft Security Bulletin MS04-003
 :: "Buffer Overrun in MDAC Function Could Allow Code Execution (832483)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-003.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=39472EE8-C14A-47B4-BFCC-87988E062D91&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=39472EE8-C14A-47B4-BFCC-87988E062D91>
 :: URL|ARA|http://download.microsoft.com/download/4/4/1/441c4127-4449-4e41-a11d-15e603e462ca/ARA_Q832483_MDAC_x86.EXE|updates/common/ara_q832483_mdac_x86.exe
 :: URL|CSY|http://download.microsoft.com/download/5/4/a/54a8102d-fbef-4e95-b293-28f0f6e9da54/CSY_Q832483_MDAC_x86.EXE|updates/common/csy_q832483_mdac_x86.exe
 :: URL|DAN|http://download.microsoft.com/download/3/c/0/3c0b8472-5616-49a1-808c-17b5628d7a82/DAN_Q832483_MDAC_x86.EXE|updates/common/dan_q832483_mdac_x86.exe
@@ -566,7 +563,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%_Q832483_MDAC_x86.EXE /q /c:
 :: Microsoft Security Bulletin MS03-034
 :: "Flaw in NetBIOS Could Lead to Information Disclosure (824105)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-034.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?amp;amp;displaylang=en&familyid=a59cc2ac-f182-4cd5-ace7-3d4c2e3f1326&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=a59cc2ac-f182-4cd5-ace7-3d4c2e3f1326>
 :: URL|CSY|http://download.microsoft.com/download/2/b/6/2b6c8d7a-8ab1-4cac-9803-71cdb4d9db19/WindowsServer2003-KB824105-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb824105-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/2/e/e/2ee6e556-3470-4796-b80d-c015644c7d92/WindowsServer2003-KB824105-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb824105-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/9/8/a/98aed36b-2dc7-4e60-873f-e019ee492319/WindowsServer2003-KB824105-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb824105-x86-enu.exe
@@ -589,7 +586,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824105-x86-%WINLAN
 :: Microsoft Security Bulletin MS03-023
 :: "Buffer Overrun In HTML Converter Could Allow Code Execution (823559)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-023.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?amp;displaylang=en&familyid=1c9914ab-25f8-462e-adc0-5ac6bd0116de&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=1c9914ab-25f8-462e-adc0-5ac6bd0116de>
 :: URL|CSY|http://download.microsoft.com/download/7/8/e/78ebccee-9d43-41a8-b56e-5d551867be73/WindowsServer2003-KB823559-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb823559-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/6/4/0/64001937-f310-4eb0-95be-e1fc6e90f545/WindowsServer2003-KB823559-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb823559-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/1/8/2/18247efe-b9d4-4ecb-abf2-405e8f1f3734/WindowsServer2003-KB823559-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb823559-x86-enu.exe
@@ -612,7 +609,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB823559-x86-%WINLAN
 :: Microsoft Security Bulletin MS03-045
 :: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution (824141)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-045.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=02F97DE4-29DF-4D33-A33B-E7630349E69E&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=02F97DE4-29DF-4D33-A33B-E7630349E69E>
 :: URL|CSY|http://download.microsoft.com/download/0/8/4/084b555b-5240-4aaa-a256-b2b4903d85b1/WindowsServer2003-KB824141-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb824141-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/1/7/d/17d1c750-6d98-481a-b476-40d4b9b879ad/WindowsServer2003-KB824141-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb824141-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/0/d/0/0d03f099-3673-42ca-81f9-5533fc5c18fb/WindowsServer2003-KB824141-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb824141-x86-enu.exe
@@ -635,7 +632,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824141-x86-%WINLAN
 :: Microsoft Security Bulletin MS03-044
 :: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise (825119)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-044.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=40F25862-A815-4674-9175-E3640E3EFD49&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=40F25862-A815-4674-9175-E3640E3EFD49>
 :: URL|CSY|http://download.microsoft.com/download/f/f/0/ff0ad201-fe06-4278-b4e6-1c1ec482a2f7/WindowsServer2003-KB825119-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb825119-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/a/e/c/aec268ae-ca19-41f1-8156-9fd44ad6e09c/WindowsServer2003-KB825119-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb825119-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/4/3/1/431452b5-4e2f-4d86-9f5d-6413d755fb34/WindowsServer2003-KB825119-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb825119-x86-enu.exe
@@ -658,7 +655,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB825119-x86-%WINLAN
 :: Microsoft Security Bulletin MS03-043
 :: "Buffer Overrun in Messenger Service Could Allow Code Execution (828035)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-043.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=1DF106F3-7EC4-4EB0-9143-C1E3C9E2F5F8&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=1DF106F3-7EC4-4EB0-9143-C1E3C9E2F5F8>
 :: URL|CSY|http://download.microsoft.com/download/a/0/4/a041397d-189d-4a1b-82a9-6ee8b8b0c00e/WindowsServer2003-KB828035-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb828035-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/c/3/2/c32ea2cd-bffc-401d-98de-f61cd9a3cefe/WindowsServer2003-KB828035-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb828035-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/b/b/6/bb6151ee-f888-409c-81e0-60bfb601d8e9/WindowsServer2003-KB828035-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb828035-x86-enu.exe
@@ -681,7 +678,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB828035-x86-%WINLAN
 :: Microsoft Security Bulletin MS03-041
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution (823182)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms03-041.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=135D8C00-7B4B-4C21-8EAA-D58814635E0D&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=135D8C00-7B4B-4C21-8EAA-D58814635E0D>
 :: URL|CSY|http://download.microsoft.com/download/d/3/2/d323d382-1047-49b8-9ebc-220cbaaa63db/WindowsServer2003-KB823182-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb823182-x86-csy.exe
 :: URL|DEU|http://download.microsoft.com/download/9/d/5/9d58c5ae-ac10-4d02-9720-0ba2e93d3ed8/WindowsServer2003-KB823182-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb823182-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/0/1/2/0126e70b-7872-404c-978e-daa6b3bd8476/WindowsServer2003-KB823182-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb823182-x86-enu.exe

@@ -5,7 +5,7 @@ start /wait regedit /s %Z%\scripts\vs6.reg
 if errorlevel 1 exit 1
 
 :: Service Pack 6 for Visual Basic 6.0, Visual C++ 6.0 with Visual Source Safe 6.0d
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=A8494EDB-2E89-4676-A16A-5C5477CB9713&displaylang=en>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=A8494EDB-2E89-4676-A16A-5C5477CB9713>
 :: URL|DEU|http://download.microsoft.com/download/5/6/0/560a4725-4ae4-41e9-abac-8dff2f25f0af/Vs6sp6.exe|updates/vs6/deu/vs6sp6.exe
 :: URL|ENU|http://download.microsoft.com/download/1/9/f/19fe4660-5792-4683-99e0-8d48c22eed74/Vs6sp6.exe|updates/vs6/enu/vs6sp6.exe
 :: URL|ESN|http://download.microsoft.com/download/6/d/7/6d77d007-23a6-434b-b932-e70f88b6a2ab/Vs6sp6.exe|updates/vs6/esn/vs6sp6.exe
