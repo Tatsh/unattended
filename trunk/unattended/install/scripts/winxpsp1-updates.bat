@@ -6,6 +6,26 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 823980
+:: "Buffer Overrun In RPC Interface Could Allow Code Execution"
+:: <http://www.microsoft.com/security/security_bulletins/ms03-026.asp>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB823980-x86-ENU.exe /u /z" .reboot
+
+:: Critical update 821557
+:: "An Unchecked Buffer in the Windows Shell Could Permit Your System to Be Compromised"
+:: <http://support.microsoft.com/default.aspx?kbid=821557>
+todo.pl "z:\packages\winxpsp1\WindowsXP-KB821557-x86-ENU.exe /u /z"
+
+:: Recommended update 821253
+:: "Windows Error Reporting Update"
+:: <http://support.microsoft.com/?kbid=821253>
+todo.pl "z:\packages\winxpsp1\WindowsXP-KB821253-x86-ENU.exe /u /z"
+
+:: Critical update 817606
+:: "Buffer Overrun in Windows Could Lead to Data Corruption"
+:: <http://support.microsoft.com/?kbid=817606>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817606_WXP_SP2_x86_ENU.exe /u /z"
+
 :: Critical update 823559
 :: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=823559>
@@ -41,7 +61,7 @@ todo.pl "z:\packages\winxpsp1\Q811114_WXP_SP2_x86_ENU.exe /u /z"
 :: "Windows Update 643 Error and the Catalog Database"
 :: <http://support.microsoft.com/?kbid=817287>
 :: (download only available from Windows Catalog)
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817287_WXP_SP2_x86_ENU.exe /u /z" .reboot
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817287.exe /u /z" .reboot
 
 :: Critical update 816093
 :: "Flaw in the Microsoft VM Could Enable System Compromise"
@@ -115,7 +135,7 @@ todo.pl "z:\packages\winxpsp1\Q329834_WXP_SP2_x86_ENU.exe /u /z"
 :: "You Cannot Create a Network Connection After You Restore Windows XP"
 :: <http://support.microsoft.com/?kbid=329441>
 :: (download only available from Windows Update Catalog)
-todo.pl "z:\packages\winxpsp1\Q329441_WXP_SP2.exe /u /z"
+todo.pl "z:\packages\winxpsp1\Q329441_WXP_SP2_en.exe /u /z"
 
 :: Critical update 329390
 :: "Unchecked Buffer in Windows Shell Might Permit System Compromise"
@@ -145,7 +165,8 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q328310_WXP_SP2_x86_ENU.exe /u /z"
 :: Recommended update 327979
 :: "Game Stops Responding (Hangs) or Quits Unexpectedly ..."
 :: <http://support.microsoft.com/?kbid=327979>
-todo.pl "z:\packages\winxpsp1\Q327979_WXP_SP2.exe /u /z"
+:: (download only available from Windows Catalog)
+todo.pl "z:\packages\winxpsp1\Q327979_WXP_SP2_x86_ENU.exe /u /z"
 
 :: Critical update 327696
 :: "October 2002 Cumulative Patch for Internet Information Services"
@@ -179,7 +200,7 @@ todo.pl ".ignore-err 194 z:\packages\ie6sp1\q818529.exe /q /r:n" .reboot
 :: "April 2003, Cumulative Patch for Outlook Express"
 :: <http://support.microsoft.com/?kbid=330994>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
-todo.pl "z:\packages\winxpsp1\q330994.exe /q /r:n"
+todo.pl ".ignore-err 194 z:\packages\ie6sp1\q330994.exe /q /r:n" .reboot
 
 :: Critical update 318089
 :: "Incorrect VBScript Handling in Internet Explorer Can Allow Web Pages ..."
