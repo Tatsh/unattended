@@ -151,6 +151,11 @@ done
 [ -f /var/run/dhcp.out ] \
     && . /var/run/dhcp.out
 
+# Configure the keyboard again, in case it was provided via DHCP.
+kbd=$(get_cmdline_param kbd)
+[ -n "$kbd" ] \
+    && loadkeys ${kbd#*=}
+
 echo "*** Now we need to map the /z drive."
 
 while : ; do
