@@ -29,50 +29,79 @@ my %lang=(
 	trk => 'tr',
 	prg => 'pt-pt'
 	);
+#%lang=(enu => 'en');
 @ARGV == 2 || die "Usage: msparse.pl [microsoft family download url] [local download directory]\n\ne.g. msparse.pl \"http://www.microsoft.com/downloads/details.aspx?FamilyId=AC1141D2-6CE1-403E-832B-0574ADB0C296&displaylang=en\" updates/winxpsp1\n";
 my $url=$ARGV[0];
 my $type=$ARGV[1];
 
 $url=~s/displaylang=en/displaylang=/g;
 
-my ($urls, $title, $desc, $link, $run);
+my ($urls, $title1, $title2, $desc, $link1, $link2, $run);
 foreach my $k (keys (%lang)) {
     open(f,"wget -O - \"$url$lang{$k}\" 2> /dev/null|");
     while(<f>) {
-	chomp;
-	if ($k =~ /enu/i) {
-	    $title = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
-	    $link = $1 if /\'([^\']*)\'\>[^\<]*Security Bulletin[^\<]*\<\/a\>/;
-	    $link = $1 if /\'([^\']*)\'\>Knowledge Base Article[^\<]*\<\/a\>/;
-	}
+        chomp;
+        if ($k =~ /enu/i) {
+            $title1 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
+            defined $link1
+                or $link1 = $1 if /\"([^\"]*kbid=\d+)\"\>[^\<]*(?:Overview|Description)[^\<]*KB\d+/;
+            defined $link1
+                or $link1 = $1 if /\"([^\"]*kbid=\d+)\"\>\(\d+\)[^\<]*(?:Overview|Description)/;
+            defined $link1
+                or $link1 = $1 if /\'([^\']*kbid=\d+)\'\>[^\<]*(?:Overview|Description)[^\<]*KB\d+/;
+            defined $link1
+                or $link1 = $1 if /\'([^\']*kbid=\d+)\'\>\(\d+\)[^\<]*(?:Overview|Description)/;
+            $link1 = $1 if /\'([^\']*)\'\>[^\<]*Knowledge Base Article/;
+            $link1 = $1 if /\'([^\']*)\'\>[^\<]*Security Bulletin/;
+        }
 
-	if (/\<a id=\'btnDownload\' class=\'downloadButton\' href=\'(.*?)\'\>/) {
-	    my $dl=$1;
-	    my @a=split(/\//,$dl);
-	    $urls->{uc($k)} = "URL|".uc($k)."|$1|".lc($type)."/".lc($a[$#a]);
-	    $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
-	}
+        if (/\<a href=\"([^\<]*?-client-[^\<]*?)\"\>/i) {
+            my $dl=$1;
+            my @a=split(/\//,$dl);
+            $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+            $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
+        }
+
+        if (/\<a id=\'btnDownload\' class=\'downloadButton\' href=\'(.*?)\'\>/) {
+            my $dl=$1;
+            my @a=split(/\//,$dl);
+            if ($a[$#a] =~ /$k/i) {
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+                $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
+            } else {
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($k)."/".lc($a[$#a]);
+                $run = lc($type)."/".lc($k)."/".$a[$#a] if $k =~ /enu/i;
+            }
+        }
     }
 }
 
-if (defined $link) {
-    undef $title;
-
-    open(f,"wget -O - \"$link\" 2>&1 |");
+if (defined $link1) {
+    open(f,"wget -O - \"$link1\" 2>&1 |");
     while(<f>) {
-	$title = "$1" if ! defined $title && /\<h1.*?\>(.*?)\<\/h1\>/;
-	$desc = "$1" if ! defined $desc && /\<h2.*?\>(.*?)\<\/h2\>/;
-	$link = "$1" if /(http.*?) \[following\]/;
+        unless ($link1 =~ /kbid=/i) {
+            defined $title2
+                or $title2 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
+            defined $desc
+                or $desc = "$1" if /\<h2.*?\>(.*?)\<\/h2\>/;
+            $link2 = "$1" if /(http.*?) \[following\]/;
+        }
     }
 }
 
 if (defined $run) {
-    $run =~ s/([-_])enu/$1%WINLANG%/i;
+    $run =~ s/([-_\/])enu/$1%WINLANG%/i;
     $run =~ s/\//\\/g;
 }
 
-print ":: $title\n" if defined $title;
-print ":: \"$desc\"\n" if defined $desc && ! $link =~ /kbid/i;
-print ":: <$link>\n" if defined $link;
+print "\n";
+print ":: $title1\n" if defined $title1;
+print ":: $title2\n" if defined $title2;
+print ":: \"$desc\"\n" if defined $desc;
+defined $link2
+    or print ":: <$link1>\n" if defined $link1;
+print ":: <$link2>\n" if defined $link2;
+defined $link1 or defined $link2
+    or print ":: <$ARGV[0]>\n" if defined $ARGV[0];
 print ":: $urls->{$_}\n" foreach (sort keys %$urls);
 print "todo.pl \".reboot-on 194 %Z%\\$run /?\"\n" if defined $run;
