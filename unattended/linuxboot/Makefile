@@ -122,7 +122,7 @@ stage1/sbin/depmod: $(module-init-tools)/depmod
 	rm stage1/sbin/insmod.static
 	[ -e $@ ]
 
-stage1 := $(stage1) stage1/sbin/depmod
+stage1 += stage1/sbin/depmod
 
 ## Linux
 
@@ -135,7 +135,9 @@ $(linux)/.config: misc/linux-config $(linux)/.stamp-initramfs-patch
 	cd $(linux) && make oldconfig
 
 $(linux)/arch/i386/boot/bzImage: $(linux)/.config
+	rm -f $@
 	cd $(linux) && make
+	[ -e $@ ]
 
 stage1/.stamp-modules: $(linux)/arch/i386/boot/bzImage stage1/sbin/depmod
 	cd $(linux) && make INSTALL_MOD_PATH=$(cwd)/stage1	\
@@ -143,7 +145,7 @@ stage1/.stamp-modules: $(linux)/arch/i386/boot/bzImage stage1/sbin/depmod
 			    modules_install
 	touch $@
 
-stage1 := $(stage1) stage1/.stamp-modules
+stage1 += stage1/.stamp-modules
 
 ## klibc
 
@@ -160,9 +162,10 @@ $(call copy_exe,$(klibc)/utils/static/mkdir,stage1/bin/mkdir)
 
 $(klibc)/utils/static/mount: $(klibc)/ash/sh
 	[ -e $@ ] && touch $@
+
 $(call copy_exe,$(klibc)/utils/static/mount,stage1/bin/mount)
 
-stage1 := $(stage1) stage1/bin/ash stage1/bin/mkdir stage1/bin/mount
+stage1 += stage1/bin/ash stage1/bin/mkdir stage1/bin/mount
 
 ## bash
 $(bash)/bash:
@@ -171,6 +174,8 @@ $(bash)/bash:
             && make
 
 $(call copy_exe, $(bash)/bash, stage1/bin/bash)
+
+stage1 += stage1/bin/bash
 
 ## dosemu
 
@@ -186,18 +191,18 @@ build-$(dosemu)/bin/dosemu.bin:
 
 $(call copy_exe,build-$(dosemu)/bin/dosemu.bin,stage1/usr/bin/dosemu.bin)
 
-stage1 := $(stage1) stage1/usr/bin/dosemu.bin
+stage1 += stage1/usr/bin/dosemu.bin
 
 $(call copy_file,misc/dosemu.conf,stage1/etc/dosemu/dosemu.conf)
 
-stage1 := $(stage1) stage1/etc/dosemu/dosemu.conf
+stage1 += stage1/etc/dosemu/dosemu.conf
 
 # Trick dosemu into thinking we already agreed to its disclaimer
 stage1/.dosemu/disclaimer:
 	mkdir -p `dirname $@`
 	touch $@
 
-stage1 := $(stage1) stage1/.dosemu/disclaimer
+stage1 += stage1/.dosemu/disclaimer
 
 build-$(dosemu)/bin/../commands/lredir.com: build-$(dosemu)/bin/dosemu.bin
 	[ -e $@ ] && touch $@
@@ -309,7 +314,7 @@ stage1/bin/busybox: $(busybox)/busybox
 	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
 	cmp $< $@
 
-stage1 := $(stage1) stage1/bin/busybox
+stage1 += stage1/bin/busybox
 
 ## parted
 $(parted)/parted/.libs/parted:
@@ -338,11 +343,9 @@ $(pciutils)/pci.ids: $(pciutils)/lspci
 
 $(call copy_exe, $(pciutils)/lspci, stage1/sbin/lspci)
 
-stage1/usr/share/pci.ids: $(pciutils)/pci.ids
-	mkdir -p `dirname $@`
-	cp -f $< $@
+$(call copy_file,$(pciutils)/pci.ids,stage1/usr/share/pci.ids)
 
-stage1 := $(stage1) stage1/sbin/lspci stage1/usr/share/pci.ids
+stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 
 ## pcmcia-cs (PCMCIA Card Services, particularly cardmgr)
 $(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/i386/boot/bzImage
@@ -393,7 +396,7 @@ stage1/usr/lib/smb.conf: $(samba)/source/config.status
 	find stage1 -name \*.old -print0 | xargs -r -0 rm
 	touch $@
 
-stage1 := $(stage1) stage1/usr/lib/smb.conf
+stage1 += stage1/usr/lib/smb.conf
 
 ## devices
 devices.cpio: misc/devices.txt
@@ -401,30 +404,24 @@ devices.cpio: misc/devices.txt
 	mv $@.tmp $@
 
 ## Custom scripts and stuff
-stage1/linuxrc: misc/linuxrc
-	cp -f $< $@
+$(call copy_file,misc/linuxrc,stage1/linuxrc)
 
-stage1/bin/find-modules-pci: misc/find-modules-pci
-	cp -f $< $@
+$(call copy_file,misc/find-modules-pci,stage1/bin/find-modules-pci)
 
-stage1/etc/extra.pcimap: misc/extra.pcimap
-	cp -f $< $@
+$(call copy_file,misc/extra.pcimap,stage1/etc/extra.pcimap)
 
-stage1/etc/master: misc/master
-	cp -f $< $@
+$(call copy_file,misc/master,stage1/etc/master)
 
-stage1/etc/udhcpc-script: misc/udhcpc-script
-	cp -f $< $@
+$(call copy_file,misc/udhcpc-script,stage1/etc/udhcpc-script)
 
-stage1/etc/nsswitch.conf: misc/nsswitch.conf
-	cp -f $< $@
+$(call copy_file,misc/nsswitch.conf,stage1/etc/nsswitch.conf)
 
 # Some apps (namely dosemu) need getpwnam() etc. to work
 $(call copy_file,misc/passwd,stage1/etc/passwd)
 
-stage1 := $(stage1) stage1/linuxrc stage1/bin/find-modules-pci \
-		stage1/etc/extra.pcimap stage1/etc/master \
-		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf \
+stage1 += stage1/linuxrc stage1/bin/find-modules-pci			\
+		stage1/etc/extra.pcimap stage1/etc/master		\
+		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf	\
 		stage1/etc/passwd
 
 ## Stage 1
@@ -436,9 +433,8 @@ stage1/etc/ld.so.cache: $(stage1_libs)
 stage1 += stage1/etc/ld.so.cache
 
 stage1: $(stage1)
-#	stage1/bin/mount
 
-initrd: devices.cpio stage1
+initrd: devices.cpio $(stage1)
 	(cd stage1 && find . | cpio -H newc -o) >| $@.tmp
 	cat devices.cpio >> $@.tmp
 	mv $@.tmp $@
