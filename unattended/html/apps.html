@@ -240,7 +240,7 @@ argument.  For example, to sleep 37 seconds, you would do:
 <h2>The environment</h2>
 
 <p><code>todo.pl</code> arranges to run all commands in a consistent
-environment, with the following environment variables set.
+environment, with the following variables set.
 
 <h3><code>PATH</code></h3>
 
@@ -281,7 +281,7 @@ needs to vary based on OS; e.g., when installing hotfixes.
 
 <p>The <code>Z</code> environment variable contains the drive letter
 for the installation share (default <code>Z:</code>).  We added this
-variable after a user complained that his site was already using
+variable after a user complained that his site was already using the
 <code>Z:</code> drive for another purpose.  Unless you are another
 such user, you do not need to worry about this.
 
@@ -305,71 +305,71 @@ href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/script
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/"
 >install/scripts directory</a> in the distribution.
 
-<h2>Acrobat reader</h2>
+<h2>Adobe Reader</h2>
 
 <p>The <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/acrobat-reader.bat?view=auto"
->acrobat-reader.bat</a> script installs Adobe Acrobat reader.  This is
-about as simple as an installation script can get.
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/adobe-reader.bat?view=auto"
+>adobe-reader.bat</a> script installs Adobe Reader.  This is about as
+simple as an installation script can get.
 
 <p>To invoke this script manually, you would type:
 <pre>
-    Z:\bin\todo.pl acrobat-reader.bat
+    Z:\bin\todo.pl adobe-reader.bat
     Z:\bin\todo.pl --go
 </pre>
 
-<p>Obviously, you could just invoke <code>acrobat-reader.bat</code>
-directly without using <code>todo.pl</code>.  But the same is not true
-for the other examples in this section, and you should be in the habit
-of allowing <code>todo.pl</code> to do its job.
+<p>Obviously, you could just invoke the Adobe installer directly.  But
+that would lose the consistent environment and error checking
+performed by <code>todo.pl</code>.
 
-<h2>DirectX 8.1</h2>
+<h2>Office XP</h2>
 
 <p>The <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/directx81.bat?view=auto">directx81.bat</a>
-script installs DirectX 8.1 and reboots the machine.  First, it adds
-the <code>.reboot</code> directive to the to-do list.  Then it runs
-the DirectX installer from the <code>Z:\packages</code> directory,
-taking care to wait until the installer finishes and to suppress the
-normal reboot performed by the installer.
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/officexp.bat?view=auto">officexp.bat</a>
+script installs Microsoft Office XP and reboots the machine.  First,
+it pushes the <code>.reboot</code> directive onto the to-do list.
+Then it pushes directives to install each update for Office XP.
+Finally, it pushes the directive to install Office itself.
 
 <p>To invoke this script manually, you would type:
 <pre>
-    Z:\bin\todo.pl directx81.bat
+    Z:\bin\todo.pl officexp.bat
     Z:\bin\todo.pl --go
 </pre>
 
 <h2>Combining scripts</h2>
 
-<p>To perform both the DirectX&nbsp;8.1 and Acrobat Reader
-installations at once, you would type:
+<p>To perform both the Office XP and Adobe Reader installations at
+once, you would type:
 
 <pre>
-    Z:\bin\todo.pl directx81.bat acrobat-reader.bat
+    Z:\bin\todo.pl officexp.bat adobe-reader.bat
     Z:\bin\todo.pl --go
 </pre>
 
-<p>The first line adds directx81.bat and acrobat-reader.bat to the
-to-do list.  The second command processes the list.  The
+<p>The first line adds officexp.bat and adobe-reader.bat to the to-do
+list.  The second command processes the list.  The
 <code>todo.pl</code> script begins by removing
-<code>directx81.bat</code> from the front of the to-do list and
-executing it.  The <code>directx81.bat</code> script itself starts by
+<code>officexp.bat</code> from the front of the to-do list and
+executing it.  The <code>officexp.bat</code> script itself starts by
 pushing <code>.reboot</code> onto the front of the to-do list.
 
 <p>At this point, the to-do list contains <code>.reboot</code>
-followed by <code>acrobat-reader.bat</code>, and we are still in the
-middle of executing the <code>direct81.bat</code> script itself.
+followed by <code>adobe-reader.bat</code>, and we are still in the
+middle of executing the <code>officexp.bat</code> script itself.
 
-<p>Next, <code>directx81.bat</code> installs DirectX, waits for the
-installation to finish, and exits.  The <code>todo.pl</code> script
-now removes and processes the <code>.reboot</code> directive; namely,
-it arranges to run itself after the next logon and then reboots the
+<p>Next, <code>officexp.bat</code> pushes the updates onto the to-do
+list, and finally it pushes the instruction to install Office itself
+and exits.  Then <code>todo.pl</code> regains control and continues
+processing the to-do list; that is, it installs office followed by its
+updates.  Next, it processes the <code>.reboot</code> directive, by
+arranging to run itself after the next logon and rebooting the
 machine.  After the reboot, <code>todo.pl</code> starts up again,
-removes <code>acrobat-reader.bat</code> from the to-do list and
-executes it.  And so on.
+removes <code>adobe-reader.bat</code> from the to-do list and executes
+it.  And so on.
 
-<p>The final result is that DirectX&nbsp;8.1 and Acrobat Reader are
-both installed, even though the machine had to reboot in the middle.
+<p>The final result is that Office XP and Adobe Reader are both
+installed, even though the machine had to reboot in the middle.
 
 <h2>A more complex example</h2>
 
@@ -502,7 +502,7 @@ href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/script
 
 <p>
 <dt><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/defrag.aut?view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/enu/defrag.aut?view=auto"
 >defrag.aut</a>
 
 <dd>This is an <a href="installers.html#autoit">AutoIt</a> script to
