@@ -1,0 +1,7 @@
+msde2000
+files
+*.inf
+*.msi
+*.htm
+*.xml
+*.cab
