@@ -2,12 +2,12 @@ default:
 	@echo "This Makefile is for the maintainer (sorry)"
 	@echo "Please read the documentation under html/"
 	@echo "or at http://unattended.sourceforge.net/"
-	@echo "(Did you mean to 'cd bootdisk' first?)"
+	@echo "(Did you mean to 'cd bootdisk' or 'cd linuxboot' first?)"
 	exit 1
 
-cvs := :pserver:anonymous@cvs.sourceforge.net:/cvsroot/unattended
-# just in case the anonymous server is broken again...
-# cvs := $$USER@cvs.sourceforge.net:/cvsroot/unattended
+#cvs := :pserver:anonymous@cvs.sourceforge.net:/cvsroot/unattended
+# Anonymous server works, but lags main CVS.
+cvs := $$USER@cvs.sourceforge.net:/cvsroot/unattended
 
 cwd := $(shell pwd)
 
