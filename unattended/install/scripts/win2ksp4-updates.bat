@@ -37,20 +37,54 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB837272-%WINLANG
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-028.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=DBF1EA4E-72BD-4359-9F93-7C232ED2DCD3>
+:: No Download found for ARA.
+:: No Download found for CSY.
+:: No Download found for DAN.
 :: URL|DEU|http://download.microsoft.com/download/1/5/4/1544f14d-9223-4fc2-be89-df2d808f33a9/JournalViewer1.5_KB886179_DEU.exe|updates/journalviewer/journalviewer1.5_kb886179_deu.exe
+:: No Download found for ELL.
 :: URL|ENU|http://download.microsoft.com/download/f/0/a/f0a18b7a-7f60-45be-b4e2-d25905f5bf04/JournalViewer1.5_KB886179_ENU.exe|updates/journalviewer/journalviewer1.5_kb886179_enu.exe
+:: No Download found for ESN.
+:: No Download found for FIN.
 :: URL|FRA|http://download.microsoft.com/download/3/4/2/3426b140-5c57-4c6f-87a1-7ae4a94a93a6/JournalViewer1.5_KB886179_FRA.exe|updates/journalviewer/journalviewer1.5_kb886179_fra.exe
+:: No Download found for HEB.
+:: No Download found for HUN.
+:: No Download found for ITA.
 :: URL|JPN|http://download.microsoft.com/download/e/3/a/e3ae3db1-28d7-4678-9721-2b77ceb69e90/JournalViewer1.5_KB886179_JPN.exe|updates/journalviewer/journalviewer1.5_kb886179_jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/4/2/0/420d19d4-e028-4991-80b8-10678eb6cb8b/JournalViewer1.5_KB886179_KOR.exe|updates/journalviewer/journalviewer1.5_kb886179_kor.exe
+:: No Download found for NLD.
+:: No Download found for NOR.
+:: No Download found for PLK.
+:: No Download found for PTB.
+:: No Download found for PTG.
+:: No Download found for RUS.
+:: No Download found for SVE.
+:: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\JournalViewer1.5_KB886179_%WINLANG%.exe /q /r:n"
 
 :: Microsoft Windows Journal Viewer 1.5
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=fad44098-8b73-4e06-96d4-d1eb70eacb44>
+:: No Download found for ARA.
+:: No Download found for CSY.
+:: No Download found for DAN.
 :: URL|DEU|http://download.microsoft.com/download/b/4/e/b4e86977-7646-479d-835b-cd79dfe18e00/setup.exe|updates/journalviewer/deu/setup.exe
+:: No Download found for ELL.
 :: URL|ENU|http://download.microsoft.com/download/4/6/3/463ff4b8-a60a-4569-b3f1-a4c1ec784ff2/setup.exe|updates/journalviewer/enu/setup.exe
+:: No Download found for ESN.
+:: No Download found for FIN.
 :: URL|FRA|http://download.microsoft.com/download/9/0/6/90660e9c-a491-4a82-98ed-9ec6d78ffbe8/setup.exe|updates/journalviewer/fra/setup.exe
+:: No Download found for HEB.
+:: No Download found for HUN.
+:: No Download found for ITA.
 :: URL|JPN|http://download.microsoft.com/download/b/5/8/b580e6f0-24a2-45bf-b2bc-c82d30dcb153/setup.exe|updates/journalviewer/jpn/setup.exe
 :: URL|KOR|http://download.microsoft.com/download/3/e/4/3e4129e8-0350-48f1-a036-a4c86ccdb02b/setup.exe|updates/journalviewer/kor/setup.exe
+:: No Download found for NLD.
+:: No Download found for NOR.
+:: No Download found for PLK.
+:: No Download found for PTB.
+:: No Download found for PTG.
+:: No Download found for RUS.
+:: No Download found for SVE.
+:: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* %SystemDrive%\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: Critical Update for Windows Media Player (All Versions) for Windows 2000, Windows XP, and Windows Server 2003 (KB828026)
@@ -173,13 +207,16 @@ todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 if not exist %Z%\updates\common\%WINLANG%\dotnet_langpack.exe goto nolangpack
 :: Microsoft .NET Framework Version 1.1 Language Pack
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=04DBAF2E-61ED-43F4-8D2A-CCB2BAB7B8EB>
+:: No Download found for ARA.
 :: URL|CSY|http://download.microsoft.com/download/f/1/0/f10e6152-13dd-4c52-ae6d-4417dd42d4e1/langpack.exe|updates/common/csy/langpack.exe
 :: URL|DAN|http://download.microsoft.com/download/f/4/7/f474c96e-0631-4cbb-b49b-67206b4058db/langpack.exe|updates/common/dan/langpack.exe
 :: URL|DEU|http://download.microsoft.com/download/6/8/2/6821e687-526a-4ef8-9a67-9a402ec5ac9e/langpack.exe|updates/common/deu/langpack.exe
 :: URL|ELL|http://download.microsoft.com/download/a/0/9/a099cf43-8d33-4e3f-ac95-2096c9ee73ef/langpack.exe|updates/common/ell/langpack.exe
+:: No Download found for ENU.
 :: URL|ESN|http://download.microsoft.com/download/2/a/3/2a33623b-d870-46e5-8703-3d61413b559f/langpack.exe|updates/common/esn/langpack.exe
 :: URL|FIN|http://download.microsoft.com/download/f/8/c/f8c44b9d-f4ac-4d53-a6fb-c6fbf6778f0c/langpack.exe|updates/common/fin/langpack.exe
 :: URL|FRA|http://download.microsoft.com/download/3/a/0/3a064c0b-63c7-41ed-ab8f-b91af59d542d/langpack.exe|updates/common/fra/langpack.exe
+:: No Download found for HEB.
 :: URL|HUN|http://download.microsoft.com/download/5/2/a/52ad0a9f-2628-4091-a0bb-8f139462479b/langpack.exe|updates/common/hun/langpack.exe
 :: URL|ITA|http://download.microsoft.com/download/1/f/d/1fdd7c2a-093d-431c-ac2c-374b65a078e6/langpack.exe|updates/common/ita/langpack.exe
 :: URL|JPN|http://download.microsoft.com/download/7/3/e/73ec6013-6db6-4789-857b-73dc0a831d64/langpack.exe|updates/common/jpn/langpack.exe
@@ -203,6 +240,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\NDP1.1sp1-KB867460-X86.exe /q /i"
 
 :: Microsoft .NET Framework Version 1.1 Redistributable Package
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=262D25E3-F589-4842-8157-034D1E7CF3A3>
+:: No Download found for ARA.
 :: URL|CSY|http://download.microsoft.com/download/2/a/2/2a224db0-2e6d-4961-99ed-6f377555b1ef/dotnetfx.exe|updates/common/csy/dotnetfx.exe
 :: URL|DAN|http://download.microsoft.com/download/e/7/5/e755a559-025d-4282-95ae-d14a8d0b1929/dotnetfx.exe|updates/common/dan/dotnetfx.exe
 :: URL|DEU|http://download.microsoft.com/download/4/f/3/4f3ac857-e063-45d0-9835-83894f20e808/dotnetfx.exe|updates/common/deu/dotnetfx.exe
@@ -211,6 +249,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\NDP1.1sp1-KB867460-X86.exe /q /i"
 :: URL|ESN|http://download.microsoft.com/download/8/f/0/8f023ff4-2dc1-4f10-9618-333f5b9f8040/dotnetfx.exe|updates/common/esn/dotnetfx.exe
 :: URL|FIN|http://download.microsoft.com/download/d/a/6/da6b472c-157c-429a-98f6-6eb87fa36fd3/dotnetfx.exe|updates/common/fin/dotnetfx.exe
 :: URL|FRA|http://download.microsoft.com/download/e/d/a/eda9d4ea-8ec9-4431-8efa-75391fb91421/dotnetfx.exe|updates/common/fra/dotnetfx.exe
+:: No Download found for HEB.
 :: URL|HUN|http://download.microsoft.com/download/8/2/0/82093ba7-c9a4-457d-864d-bbeb1cd884d4/dotnetfx.exe|updates/common/hun/dotnetfx.exe
 :: URL|ITA|http://download.microsoft.com/download/1/f/a/1fa816d7-a8d6-4f15-b682-b96239e68ab7/dotnetfx.exe|updates/common/ita/dotnetfx.exe
 :: URL|JPN|http://download.microsoft.com/download/5/b/5/5b510096-5b68-4e3f-8f9e-56fb7a80ca81/dotnetfx.exe|updates/common/jpn/dotnetfx.exe
@@ -305,6 +344,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842526-x86-%WINLANG%.
 :: URL|JPN|http://download.microsoft.com/download/a/a/3/aa39117e-75ac-45d2-8159-a410b54f48bc/Windows2000-KB837001-x86-JPN.EXE|updates/win2ksp4/windows2000-kb837001-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/0/a/3/0a3e4e09-8322-4e8a-a574-072a81d45a60/Windows2000-KB837001-x86-KOR.EXE|updates/win2ksp4/windows2000-kb837001-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/5/f/8/5f8fd678-c28d-4158-ba7a-2cf1ab3fb4d7/Windows2000-KB837001-x86-NLD.EXE|updates/win2ksp4/windows2000-kb837001-x86-nld.exe
+:: No Download found for NOR.
 :: URL|PLK|http://download.microsoft.com/download/a/e/4/ae4ed52b-8f7d-4987-a2ee-e62f77f15b94/Windows2000-KB837001-x86-PLK.EXE|updates/win2ksp4/windows2000-kb837001-x86-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/f/c/f/fcf22c75-cf97-4236-a8f8-3d1c67297d9c/Windows2000-KB837001-x86-PTB.EXE|updates/win2ksp4/windows2000-kb837001-x86-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/2/8/4/284c252d-62a9-4b0d-a070-e098873a298a/Windows2000-KB837001-x86-PTG.EXE|updates/win2ksp4/windows2000-kb837001-x86-ptg.exe
