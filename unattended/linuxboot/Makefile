@@ -80,7 +80,8 @@ all: iso tftpboot
 ## module-init-tools (depmod et. al.)
 
 $(module-init-tools)/depmod:
-	cd $(module-init-tools) && ./configure --prefix=/ && make
+	cd $(module-init-tools) && ./configure --prefix=/ 	\
+		--build=i586-linux && make
 	[ -e $@ ]
 
 stage1/sbin/depmod: $(module-init-tools)/depmod
@@ -138,6 +139,7 @@ stage1 += stage1/bin/ash stage1/bin/gzip stage1/bin/mkdir stage1/bin/mount
 $(bash)/bash:
 	cd $(bash)							\
 	    && bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
+	    	--build=i586-linux					\
             && make
 
 $(call copy_exe, $(bash)/bash, stage1/bin/bash)
@@ -194,7 +196,7 @@ build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
 	mkdir -p $(dir $@)
 	cd $(dir $@)							\
 	&& CC="$(CC) $(fakelib_cflags)" $(cwd)/$(dosemu)/configure	\
-		--without-x --without-gpm
+		--without-x --without-gpm --build=i586-linux
 	[ -e $@ ]
 
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
@@ -256,8 +258,8 @@ stage1 += stage1/var/lib/dosemu/drives/dosboot.img
 
 ## e2fsprogs (just libuuid.so, required for parted)
 $(e2fsprogs)/lib/libuuid.so:
-	cd $(e2fsprogs)				\
-	&& ./configure --enable-elf-shlibs	\
+	cd $(e2fsprogs)						\
+	&& ./configure --enable-elf-shlibs --build=i586-linux	\
 	&& make
 	[ -e $@ ]
 
@@ -275,6 +277,7 @@ build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage
 	    --with-headers=$(cwd)/$(linux)/include		\
 	    --enable-add-ons=nptl --with-tls			\
 	    --disable-profile --without-gd --without-cvs	\
+	    --build=i586-linux					\
 	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
 	&& make
 	touch -c $@
@@ -389,6 +392,7 @@ $(nano)/nano: fakeinclude/stdio.h fakeinclude/curses.h
 	&& CFLAGS="$(fakelib_cflags)"					    \
 		./configure --prefix=/usr				    \
 			--disable-browser --disable-mouse --disable-speller \
+			--build=i586-linux	\
 	&& make
 	[ -e $@ ] && touch $@
 
@@ -404,6 +408,7 @@ $(ncurses)/lib/libncurses.so: fakeinclude/stdio.h
 		./configure --prefix=/usr --with-shared			\
 			--without-normal --without-debug		\
 			--disable-database --with-fallbacks=linux	\
+			--build=i586-linux				\
 	&& make
 	[ -e $@ ] && touch $@
 
@@ -423,6 +428,7 @@ $(parted)/parted/.libs/parted: fakeinclude/stdio.h stage1/lib/libuuid.so \
 	cd $(parted)						\
 	&& CFLAGS="$(fakelib_cflags)"				\
 		./configure --disable-nls --without-readline	\
+			--build=i586-linux			\
 	&& make
 	[ -e $@ ]
 
@@ -488,6 +494,7 @@ $(perl)/perl: fakeinclude/stdio.h
 	rm -f $@
 	cd $(perl)					\
 	&& ./Configure -Dusethreads -Dprefix=/opt/perl	\
+		-Darchname=i586-linux			\
 		-Accflags="$(fakelib_cflags)" -de	\
 	&& make
 	[ -e $@ ]
@@ -511,7 +518,7 @@ perlrun=$(cwd)/stage1/opt/perl/bin/perl -I$(cwd)/stage1/opt/perl/lib/site_perl -
 $(mysql)/Makefile: stage1/opt/perl/bin/perl fakeinclude/zlib.h
 	cd $(dir $@) \
 	&& CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)" \
-		./configure --prefix=/ --without-server
+		./configure --prefix=/ --without-server --build=i586-linux
 
 $(mysql)/libmysql/.libs/libmysqlclient.so: $(mysql)/Makefile
 	rm -f $@
@@ -610,7 +617,8 @@ $(samba)/source/config.status:
 	    && LDFLAGS=-rdynamic ./configure --prefix=/usr	\
 	        --disable-cups --without-readline		\
 		--without-ldap --without-krb5 --without-ads	\
-		--without-utmp --with-included-popt
+		--without-utmp --with-included-popt		\
+		--build=i586-linux
 
 samba_progs=bin/smbmount bin/smbmnt bin/smbumount
 
