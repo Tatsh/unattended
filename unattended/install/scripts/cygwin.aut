@@ -30,6 +30,7 @@ WinWait, Create Icons
 Send, {ENTER}
 
 WinWait, Cygwin Setup, Installation Complete
+WinActivate, Cygwin Setup, Installation Complete
 Send, {ENTER}
 
 WinWaitClose, Cygwin Setup, Installation Complete
