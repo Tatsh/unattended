@@ -152,7 +152,7 @@ todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 :: URL|RUS|http://download.microsoft.com/download/c/1/8/c18a7f97-23ea-4e87-b343-472b6958aba4/WindowsServer2003-KB886903-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb886903-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/f/e/d/fed05c53-f259-4673-932a-d40dfac2e3ba/WindowsServer2003-KB886903-x86-SVE.EXE|updates/ws2k3/windowsserver2003-kb886903-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/d/6/e/d6e2da05-f09c-4fa0-9f23-320a42922b47/WindowsServer2003-KB886903-x86-TRK.EXE|updates/ws2k3/windowsserver2003-kb886903-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB886903-x86-%WINLANG%.EXE /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB886903-x86-%WINLANG%.EXE /q /i"
 
 :: Microsoft .NET Framework 1.1 Service Pack 1 for Windows Server 2003
 :: <http://support.microsoft.com/?kbid=867460>
