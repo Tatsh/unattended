@@ -2,12 +2,12 @@ LASTDRIVE=Z
 DOS=HIGH,UMB
 
 ;; Pick exactly one of these XMS providers
-DEVICE=himem64.exe
+DEVICE=himem.exe
 ;DEVICE=himem.sys /testmem:off
 
 ;; Pick zero or one of these UMB providers
 ;DEVICE=umbpci.sys
-DEVICE=emm386.exe NOEMS X=TEST
+;DEVICE=emm386.exe NOEMS X=TEST
 
 ;; MSCLIENT networking gadget
 DEVICEHIGH=\net\ifshlp.sys
