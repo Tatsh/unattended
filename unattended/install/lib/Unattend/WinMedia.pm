@@ -139,6 +139,9 @@ my %pid_table =
      '69763000' => 'Trial',
      '69753000' => 'Retail',
      '69712270' => 'Volume',
+     # Windows Server 2003, Enterprise Edition
+     '69713000' => 'Retail',
+     '69713270' => 'Volume',
      # XP
      # See <http://www.thetechguide.com/howto/setuppini.html>
      '55274OEM' => 'Dell OEM',
