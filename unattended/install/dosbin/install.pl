@@ -746,12 +746,12 @@ sub create_postinst_bat () {
          'PATH=%Z%\\bin;%PATH%',
          # Last step is always a reboot.
          'todo.pl .reboot',
-         # After installing, re-enable System Restore.
-         'todo.pl "srconfig.pl --enable"',
+         # Penultimate step is to disable automatic logon.
+         'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
          # Antepenultimate step is to delete credentials file.
          "todo.pl \"del $tempcred\"",
-         # Before that, disable automatic logon.
-         'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
+         # After installing, re-enable System Restore.
+         'todo.pl "srconfig.pl --enable"',
          # Before that, run the "cleanup" scripts.
          (map { "todo.pl $_" } reverse @bottom_scripts),
          # Before that, run the optional scripts.
@@ -1454,6 +1454,7 @@ if (defined $format_cmd) {
     if ($is_linux) {
         print "(Deferring format command to run under DOSEMU)\n";
         push @doit_cmds, $format_cmd;
+        push @doit_cmds, 'if errorlevel 1 exit 1';
     }
     else {
         system $format_cmd;
