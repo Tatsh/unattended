@@ -872,7 +872,7 @@ $(call cvs_rule, $(glibc), libc, \
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(klibc), tar.bz2,		\
-	http://ftp.kernel.org/pub/linux/libs/klibc/Stable/)
+	http://ftp.kernel.org/pub/linux/libs/klibc/)
 $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
