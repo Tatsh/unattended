@@ -126,15 +126,6 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
-:: Recommended update MS04-024 (839645)
-:: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
-:: URL|DEU|http://download.microsoft.com/download/c/c/e/cce6ad8a-f554-41dd-9ce1-9c84cfe3968c/Windows2000-KB837001-x86-DEU.EXE|updates/win2ksp4/windows2000-kb839645-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/windows2000-kb839645-x86-enu.exe
-:: URL|FRA|http://download.microsoft.com/download/1/e/e/1ee1393b-ce01-4844-8cbf-572195a1943d/Windows2000-KB839645-x86-FRA.EXE|updates/win2ksp4/windows2000-kb839645-x86-fra.exe
-:: URL|RUS|http://download.microsoft.com/download/a/e/0/ae04dfa4-2de0-4305-96a7-afe7b0629c74/Windows2000-KB839645-x86-RUS.EXE|updates/win2ksp4/windows2000-kb839645-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB839645-x86-%WINLANG%.EXE /passive /n /norestart"
-
 :: Recommended update MS04-020 (841872)
 :: "Vulnerability in POSIX Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-020.mspx>
@@ -208,6 +199,15 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z"
 
 :: Critical Updates
+
+:: Critical update MS04-024 (839645)
+:: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
+:: URL|DEU|http://download.microsoft.com/download/c/c/e/cce6ad8a-f554-41dd-9ce1-9c84cfe3968c/Windows2000-KB837001-x86-DEU.EXE|updates/win2ksp4/windows2000-kb839645-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/windows2000-kb839645-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/1/e/e/1ee1393b-ce01-4844-8cbf-572195a1943d/Windows2000-KB839645-x86-FRA.EXE|updates/win2ksp4/windows2000-kb839645-x86-fra.exe
+:: URL|RUS|http://download.microsoft.com/download/a/e/0/ae04dfa4-2de0-4305-96a7-afe7b0629c74/Windows2000-KB839645-x86-RUS.EXE|updates/win2ksp4/windows2000-kb839645-x86-rus.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB839645-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Critical update MS04-023 (840315)
 :: "Vulnerability in HTML Help Could Allow Code Execution"
