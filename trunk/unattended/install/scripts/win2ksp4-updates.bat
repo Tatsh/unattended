@@ -137,27 +137,27 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: Recommended update MS04-020 (841872)
 :: "Vulnerability in POSIX Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-020.mspx>
-:: URL|DEU|http://download.microsoft.com/download/4/3/6/43604e45-8f3f-4f4c-abab-84f154404c98/Windows2000-KB841872-x86-DEU.EXE|updates/win2ksp4/Windows2000-KB841872-x86-DEU.EXE
-:: URL|ENU|http://download.microsoft.com/download/7/9/c/79c0720a-3c99-4a5b-87ed-2fc6e1bc0426/Windows2000-KB841872-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB841872-x86-ENU.EXE
-:: URL|ESN|http://download.microsoft.com/download/2/e/2/2e210d5a-4fa2-47d8-af4c-7dd114aa0472/Windows2000-KB841872-x86-ESN.EXE|updates/win2ksp4/Windows2000-KB841872-x86-ESN.EXE
-:: URL|FRA|http://download.microsoft.com/download/8/3/3/8333a486-00eb-4bd6-a1d8-346c67bb36dc/Windows2000-KB841872-x86-FRA.EXE|updates/win2ksp4/Windows2000-KB841872-x86-FRA.EXE
-:: URL|ITA|http://download.microsoft.com/download/1/0/3/10363b4a-e67f-4362-977e-601854a0f797/Windows2000-KB841872-x86-ITA.EXE|updates/win2ksp4/Windows2000-KB841872-x86-ITA.EXE
-:: URL|NLD|http://download.microsoft.com/download/4/7/b/47ba363a-39a8-4466-bc2a-4eac27851320/Windows2000-KB841872-x86-NLD.EXE|updates/win2ksp4/Windows2000-KB841872-x86-NLD.EXE
-:: URL|NOR|http://download.microsoft.com/download/9/8/e/98eb651f-63e7-4f26-b3a9-be1d4df4914e/Windows2000-KB841872-x86-NOR.EXE|updates/win2ksp4/Windows2000-KB841872-x86-NOR.EXE
-:: URL|RUS|http://download.microsoft.com/download/7/9/c/79c0720a-3c99-4a5b-87ed-2fc6e1bc0426/Windows2000-KB841872-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB841872-x86-ENU.EXE
+:: URL|DEU|http://download.microsoft.com/download/4/3/6/43604e45-8f3f-4f4c-abab-84f154404c98/Windows2000-KB841872-x86-DEU.EXE|updates/win2ksp4/windows2000-kb841872-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/7/9/c/79c0720a-3c99-4a5b-87ed-2fc6e1bc0426/Windows2000-KB841872-x86-ENU.EXE|updates/win2ksp4/windows2000-kb841872-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/e/2/2e210d5a-4fa2-47d8-af4c-7dd114aa0472/Windows2000-KB841872-x86-ESN.EXE|updates/win2ksp4/windows2000-kb841872-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/8/3/3/8333a486-00eb-4bd6-a1d8-346c67bb36dc/Windows2000-KB841872-x86-FRA.EXE|updates/win2ksp4/windows2000-kb841872-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/1/0/3/10363b4a-e67f-4362-977e-601854a0f797/Windows2000-KB841872-x86-ITA.EXE|updates/win2ksp4/windows2000-kb841872-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/4/7/b/47ba363a-39a8-4466-bc2a-4eac27851320/Windows2000-KB841872-x86-NLD.EXE|updates/win2ksp4/windows2000-kb841872-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/9/8/e/98eb651f-63e7-4f26-b3a9-be1d4df4914e/Windows2000-KB841872-x86-NOR.EXE|updates/win2ksp4/windows2000-kb841872-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/7/9/c/79c0720a-3c99-4a5b-87ed-2fc6e1bc0426/Windows2000-KB841872-x86-ENU.EXE|updates/win2ksp4/windows2000-kb841872-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB841872-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Recommended update MS04-019 (842526)
 :: "Vulnerability in Utility Manager Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-019.mspx>
-:: URL|DEU|http://download.microsoft.com/download/1/1/a/11aa9321-96bd-4cbd-b01a-ab531b67e68e/Windows2000-KB842526-x86-DEU.EXE|updates/win2ksp4/Windows2000-KB842526-x86-DEU.EXE
-:: URL|ENU|http://download.microsoft.com/download/3/b/6/3b627f83-d5e4-46fb-9fd0-4a1330c57981/Windows2000-KB842526-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB842526-x86-ENU.EXE
-:: URL|ESN|http://download.microsoft.com/download/b/4/2/b42d7bf1-b8f3-41db-af2a-6c98c77ede08/Windows2000-KB842526-x86-ESN.EXE|updates/win2ksp4/Windows2000-KB842526-x86-ESN.EXE
-:: URL|FRA|http://download.microsoft.com/download/b/e/3/be3a003d-9a42-4fe3-a2d4-8b19ff353d0c/Windows2000-KB842526-x86-FRA.EXE|updates/win2ksp4/Windows2000-KB842526-x86-FRA.EXE
-:: URL|ITA|http://download.microsoft.com/download/8/5/3/85314374-bb33-4b20-ad85-c65f1b9870c2/Windows2000-KB842526-x86-ITA.EXE|updates/win2ksp4/Windows2000-KB842526-x86-ITA.EXE
-:: URL|NLD|http://download.microsoft.com/download/0/7/0/070afecf-94cb-40dc-8bbb-a4de46119f33/Windows2000-KB842526-x86-NLD.EXE|updates/win2ksp4/Windows2000-KB842526-x86-NLD.EXE
-:: URL|NOR|http://download.microsoft.com/download/1/8/d/18d0c51d-c2eb-4075-847c-cfcddd774fd1/Windows2000-KB842526-x86-NOR.EXE|updates/win2ksp4/Windows2000-KB842526-x86-NOR.EXE
-:: URL|RUS|http://download.microsoft.com/download/3/b/6/3b627f83-d5e4-46fb-9fd0-4a1330c57981/Windows2000-KB842526-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB842526-x86-ENU.EXE
+:: URL|DEU|http://download.microsoft.com/download/1/1/a/11aa9321-96bd-4cbd-b01a-ab531b67e68e/Windows2000-KB842526-x86-DEU.EXE|updates/win2ksp4/windows2000-kb842526-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/3/b/6/3b627f83-d5e4-46fb-9fd0-4a1330c57981/Windows2000-KB842526-x86-ENU.EXE|updates/win2ksp4/windows2000-kb842526-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/b/4/2/b42d7bf1-b8f3-41db-af2a-6c98c77ede08/Windows2000-KB842526-x86-ESN.EXE|updates/win2ksp4/windows2000-kb842526-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/b/e/3/be3a003d-9a42-4fe3-a2d4-8b19ff353d0c/Windows2000-KB842526-x86-FRA.EXE|updates/win2ksp4/windows2000-kb842526-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/8/5/3/85314374-bb33-4b20-ad85-c65f1b9870c2/Windows2000-KB842526-x86-ITA.EXE|updates/win2ksp4/windows2000-kb842526-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/0/7/0/070afecf-94cb-40dc-8bbb-a4de46119f33/Windows2000-KB842526-x86-NLD.EXE|updates/win2ksp4/windows2000-kb842526-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/1/8/d/18d0c51d-c2eb-4075-847c-cfcddd774fd1/Windows2000-KB842526-x86-NOR.EXE|updates/win2ksp4/windows2000-kb842526-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/3/b/6/3b627f83-d5e4-46fb-9fd0-4a1330c57981/Windows2000-KB842526-x86-ENU.EXE|updates/win2ksp4/windows2000-kb842526-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842526-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Recommended Update MS04-014 (837001)
@@ -226,40 +226,40 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: Critical update MS04-024 (839645)
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
-:: URL|DEU|http://download.microsoft.com/download/b/7/3/b734af44-2439-4747-a476-cbbdcb5fd03b/Windows2000-KB839645-x86-DEU.EXE|updates/win2ksp4/Windows2000-KB839645-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB839645-x86-ENU.EXE
-:: URL|ESN|http://download.microsoft.com/download/6/f/5/6f5fd4b1-9921-4e4a-b645-ea192e48ab83/Windows2000-KB839645-x86-ESN.EXE|updates/win2ksp4/Windows2000-KB839645-x86-ESN.EXE
-:: URL|FRA|http://download.microsoft.com/download/1/e/e/1ee1393b-ce01-4844-8cbf-572195a1943d/Windows2000-KB839645-x86-FRA.EXE|updates/win2ksp4/Windows2000-KB839645-x86-FRA.EXE
-:: URL|ITA|http://download.microsoft.com/download/d/1/3/d137bb98-7fca-4d73-abae-73cc6e0777fb/Windows2000-KB839645-x86-ITA.EXE|updates/win2ksp4/Windows2000-KB839645-x86-ITA.EXE
-:: URL|NLD|http://download.microsoft.com/download/4/c/a/4cab1add-84e6-4026-8fdd-3a8e227255c7/Windows2000-KB839645-x86-NLD.EXE|updates/win2ksp4/Windows2000-KB839645-x86-NLD.EXE
-:: URL|NOR|http://download.microsoft.com/download/4/c/3/4c393267-89e8-49e5-be4e-df9c83f0ab45/Windows2000-KB839645-x86-NOR.EXE|updates/win2ksp4/Windows2000-KB839645-x86-NOR.EXE
-:: URL|RUS|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB839645-x86-ENU.EXE
+:: URL|DEU|http://download.microsoft.com/download/b/7/3/b734af44-2439-4747-a476-cbbdcb5fd03b/Windows2000-KB839645-x86-DEU.EXE|updates/win2ksp4/windows2000-kb839645-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/windows2000-kb839645-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/f/5/6f5fd4b1-9921-4e4a-b645-ea192e48ab83/Windows2000-KB839645-x86-ESN.EXE|updates/win2ksp4/windows2000-kb839645-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/1/e/e/1ee1393b-ce01-4844-8cbf-572195a1943d/Windows2000-KB839645-x86-FRA.EXE|updates/win2ksp4/windows2000-kb839645-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/d/1/3/d137bb98-7fca-4d73-abae-73cc6e0777fb/Windows2000-KB839645-x86-ITA.EXE|updates/win2ksp4/windows2000-kb839645-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/4/c/a/4cab1add-84e6-4026-8fdd-3a8e227255c7/Windows2000-KB839645-x86-NLD.EXE|updates/win2ksp4/windows2000-kb839645-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/4/c/3/4c393267-89e8-49e5-be4e-df9c83f0ab45/Windows2000-KB839645-x86-NOR.EXE|updates/win2ksp4/windows2000-kb839645-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/windows2000-kb839645-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB839645-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Critical update MS04-023 (840315)
 :: "Vulnerability in HTML Help Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-023.mspx>
-:: URL|DEU|http://download.microsoft.com/download/7/8/a/78adf5e4-8331-4343-bf7f-7f9147dff300/Windows2000-KB840315-x86-DEU.EXE|updates/win2ksp4/Windows2000-KB840315-x86-DEU.EXE
-:: URL|ENU|http://download.microsoft.com/download/7/2/7/727d9721-abdc-4ecf-ab36-4635cfd61172/Windows2000-KB840315-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB840315-x86-ENU.EXE
-:: URL|ESN|http://download.microsoft.com/download/7/4/3/743a4811-0dad-4307-884e-afbc534f7b30/Windows2000-KB840315-x86-ESN.EXE|updates/win2ksp4/Windows2000-KB840315-x86-ESN.EXE
-:: URL|FRA|http://download.microsoft.com/download/a/7/b/a7b2e02c-7b7a-4f48-be1b-9e52cef377ba/Windows2000-KB840315-x86-FRA.EXE|updates/win2ksp4/Windows2000-KB840315-x86-FRA.EXE
-:: URL|ITA|http://download.microsoft.com/download/2/a/c/2ac328f8-3451-4120-8cb2-d2cc4c8426cb/Windows2000-KB840315-x86-ITA.EXE|updates/win2ksp4/Windows2000-KB840315-x86-ITA.EXE
-:: URL|NLD|http://download.microsoft.com/download/6/c/d/6cd19063-278a-40c5-a441-8de4efcdf649/Windows2000-KB840315-x86-NLD.EXE|updates/win2ksp4/Windows2000-KB840315-x86-NLD.EXE
-:: URL|NOR|http://download.microsoft.com/download/e/0/d/e0d36a6f-fece-454e-b842-cf69dc0eb080/Windows2000-KB840315-x86-NOR.EXE|updates/win2ksp4/Windows2000-KB840315-x86-NOR.EXE
-:: URL|RUS|http://download.microsoft.com/download/7/2/7/727d9721-abdc-4ecf-ab36-4635cfd61172/Windows2000-KB840315-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB840315-x86-ENU.EXE
+:: URL|DEU|http://download.microsoft.com/download/7/8/a/78adf5e4-8331-4343-bf7f-7f9147dff300/Windows2000-KB840315-x86-DEU.EXE|updates/win2ksp4/windows2000-kb840315-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/7/2/7/727d9721-abdc-4ecf-ab36-4635cfd61172/Windows2000-KB840315-x86-ENU.EXE|updates/win2ksp4/windows2000-kb840315-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/4/3/743a4811-0dad-4307-884e-afbc534f7b30/Windows2000-KB840315-x86-ESN.EXE|updates/win2ksp4/windows2000-kb840315-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/a/7/b/a7b2e02c-7b7a-4f48-be1b-9e52cef377ba/Windows2000-KB840315-x86-FRA.EXE|updates/win2ksp4/windows2000-kb840315-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/2/a/c/2ac328f8-3451-4120-8cb2-d2cc4c8426cb/Windows2000-KB840315-x86-ITA.EXE|updates/win2ksp4/windows2000-kb840315-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/6/c/d/6cd19063-278a-40c5-a441-8de4efcdf649/Windows2000-KB840315-x86-NLD.EXE|updates/win2ksp4/windows2000-kb840315-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/e/0/d/e0d36a6f-fece-454e-b842-cf69dc0eb080/Windows2000-KB840315-x86-NOR.EXE|updates/win2ksp4/windows2000-kb840315-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/7/2/7/727d9721-abdc-4ecf-ab36-4635cfd61172/Windows2000-KB840315-x86-ENU.EXE|updates/win2ksp4/windows2000-kb840315-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB840315-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-022 (841873)
 :: "Vulnerability in Task Scheduler Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-022.mspx>
-:: URL|DEU|http://download.microsoft.com/download/0/4/e/04e97fe2-6121-4e0a-922d-34b34223fd60/Windows2000-KB841873-x86-DEU.EXE|updates/win2ksp4/Windows2000-KB841873-x86-DEU.EXE
-:: URL|ENU|http://download.microsoft.com/download/f/f/5/ff52e0cb-e04d-4dc0-9177-6272557cd6d4/Windows2000-KB841873-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB841873-x86-ENU.EXE
-:: URL|ESN|http://download.microsoft.com/download/d/8/b/d8b72b07-1df5-4075-a0a2-8be1a12225b0/Windows2000-KB841873-x86-ESN.EXE|updates/win2ksp4/Windows2000-KB841873-x86-ESN.EXE
-:: URL|FRA|http://download.microsoft.com/download/9/0/6/90659de1-0747-422e-8161-2cf6310e0102/Windows2000-KB841873-x86-FRA.EXE|updates/win2ksp4/Windows2000-KB841873-x86-FRA.EXE
-:: URL|ITA|http://download.microsoft.com/download/7/6/1/761a433d-15c0-4d74-9ce2-7b0805e214cf/Windows2000-KB841873-x86-ITA.EXE|updates/win2ksp4/Windows2000-KB841873-x86-ITA.EXE
-:: URL|NLD|http://download.microsoft.com/download/b/4/6/b46dda7d-fd40-4974-b975-f5cd9770168e/Windows2000-KB841873-x86-NLD.EXE|updates/win2ksp4/Windows2000-KB841873-x86-NLD.EXE
-:: URL|NOR|http://download.microsoft.com/download/8/4/2/842a058d-c7bf-44ce-be14-c53f85ac1aaf/Windows2000-KB841873-x86-NOR.EXE|updates/win2ksp4/Windows2000-KB841873-x86-NOR.EXE
-:: URL|RUS|http://download.microsoft.com/download/f/f/5/ff52e0cb-e04d-4dc0-9177-6272557cd6d4/Windows2000-KB841873-x86-ENU.EXE|updates/win2ksp4/Windows2000-KB841873-x86-ENU.EXE
+:: URL|DEU|http://download.microsoft.com/download/0/4/e/04e97fe2-6121-4e0a-922d-34b34223fd60/Windows2000-KB841873-x86-DEU.EXE|updates/win2ksp4/windows2000-kb841873-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/f/f/5/ff52e0cb-e04d-4dc0-9177-6272557cd6d4/Windows2000-KB841873-x86-ENU.EXE|updates/win2ksp4/windows2000-kb841873-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/8/b/d8b72b07-1df5-4075-a0a2-8be1a12225b0/Windows2000-KB841873-x86-ESN.EXE|updates/win2ksp4/windows2000-kb841873-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/9/0/6/90659de1-0747-422e-8161-2cf6310e0102/Windows2000-KB841873-x86-FRA.EXE|updates/win2ksp4/windows2000-kb841873-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/7/6/1/761a433d-15c0-4d74-9ce2-7b0805e214cf/Windows2000-KB841873-x86-ITA.EXE|updates/win2ksp4/windows2000-kb841873-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/b/4/6/b46dda7d-fd40-4974-b975-f5cd9770168e/Windows2000-KB841873-x86-NLD.EXE|updates/win2ksp4/windows2000-kb841873-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/8/4/2/842a058d-c7bf-44ce-be14-c53f85ac1aaf/Windows2000-KB841873-x86-NOR.EXE|updates/win2ksp4/windows2000-kb841873-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/f/f/5/ff52e0cb-e04d-4dc0-9177-6272557cd6d4/Windows2000-KB841873-x86-ENU.EXE|updates/win2ksp4/windows2000-kb841873-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB841873-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 870669

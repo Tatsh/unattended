@@ -6,27 +6,27 @@
 :: Recommended update 871260
 :: "An update rollup is available for Internet Explorer versions 5.x and 6.0"
 :: <http://support.microsoft.com/?id=871260>
-:: URL|DEU|http://download.microsoft.com/download/e/3/8/e38b6a7e-fc55-457b-859b-409651255832/IE6.0sp1-KB871260-x86-DEU.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/5/3/d/53d24f65-f37e-456b-a9d0-9c4298bace8e/IE6.0sp1-KB871260-x86-ENU.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/1/d/2/1d2d49f7-266b-48db-a22b-26af1b9ebd45/IE6.0sp1-KB871260-x86-ESN.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/b/e/5/be582337-3c44-4c71-8690-d43b12fb1cd5/IE6.0sp1-KB871260-x86-FRA.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/9/a/8/9a8a2bbb-cb4c-44cb-9a5b-ce6d21c094b1/IE6.0sp1-KB871260-x86-ITA.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/3/3/f/33fb37e1-73d4-4a48-8755-f13b5466df75/IE6.0sp1-KB871260-x86-NLD.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/8/4/9/84989cf0-46f3-470e-96fa-524249f0da8a/IE6.0sp1-KB871260-x86-NOR.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/c/3/9/c399ed2c-7e22-446d-98c0-e1a1f93eeb03/IE6.0sp1-KB871260-x86-RUS.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-rus.exe
+:: URL|DEU|http://download.microsoft.com/download/e/3/8/e38b6a7e-fc55-457b-859b-409651255832/IE6.0sp1-KB871260-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/5/3/d/53d24f65-f37e-456b-a9d0-9c4298bace8e/IE6.0sp1-KB871260-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/d/2/1d2d49f7-266b-48db-a22b-26af1b9ebd45/IE6.0sp1-KB871260-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/b/e/5/be582337-3c44-4c71-8690-d43b12fb1cd5/IE6.0sp1-KB871260-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/9/a/8/9a8a2bbb-cb4c-44cb-9a5b-ce6d21c094b1/IE6.0sp1-KB871260-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/3/3/f/33fb37e1-73d4-4a48-8755-f13b5466df75/IE6.0sp1-KB871260-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/8/4/9/84989cf0-46f3-470e-96fa-524249f0da8a/IE6.0sp1-KB871260-x86-NOR.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/c/3/9/c399ed2c-7e22-446d-98c0-e1a1f93eeb03/IE6.0sp1-KB871260-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB871260-x86-%WINLANG%.exe /q /r:n"
 
 :: Critical update MS04-025 (867801)
 :: "Cumulative Security Update for Internet Explorer"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-025.mspx>
-:: URL|DEU|http://download.microsoft.com/download/f/7/d/f7d7831d-f578-455c-9c6c-a5f7f68cbea9/IE6.0sp1-KB867801-x86-DEU.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/6/8/9/68923cc9-04f0-4add-98e7-f7d72c88734d/IE6.0sp1-KB867801-x86-ENU.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/d/5/4/d54db1ef-25d3-48dc-a7b7-19387438acae/IE6.0sp1-KB867801-x86-ESN.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/1/c/e/1ce19499-c3a6-473a-b325-0d0a63209436/IE6.0sp1-KB867801-x86-FRA.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/2/7/8/278341ee-3086-49b3-8904-cfc4e980a312/IE6.0sp1-KB867801-x86-ITA.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/c/5/a/c5a8a5d1-438c-4381-b93c-a6b05e6c740b/IE6.0sp1-KB867801-x86-NLD.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/6/8/a/68a8b217-cabd-4f3a-88ec-3216850e1b38/IE6.0sp1-KB867801-x86-NOR.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-rus.exe
-:: URL|RUS|http://download.microsoft.com/download/4/8/a/48ad1d78-0044-44f6-b7f2-dbb9c0ef5b79/IE6.0sp1-KB867801-x86-RUS.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-rus.exe
+:: URL|DEU|http://download.microsoft.com/download/f/7/d/f7d7831d-f578-455c-9c6c-a5f7f68cbea9/IE6.0sp1-KB867801-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb867801-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/6/8/9/68923cc9-04f0-4add-98e7-f7d72c88734d/IE6.0sp1-KB867801-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb867801-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/5/4/d54db1ef-25d3-48dc-a7b7-19387438acae/IE6.0sp1-KB867801-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb867801-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/1/c/e/1ce19499-c3a6-473a-b325-0d0a63209436/IE6.0sp1-KB867801-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb867801-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/2/7/8/278341ee-3086-49b3-8904-cfc4e980a312/IE6.0sp1-KB867801-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb867801-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/c/5/a/c5a8a5d1-438c-4381-b93c-a6b05e6c740b/IE6.0sp1-KB867801-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb867801-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/8/a/68a8b217-cabd-4f3a-88ec-3216850e1b38/IE6.0sp1-KB867801-x86-NOR.exe|updates/ie6sp1/ie6.0sp1-kb867801-x86-rus.exe
+:: URL|RUS|http://download.microsoft.com/download/4/8/a/48ad1d78-0044-44f6-b7f2-dbb9c0ef5b79/IE6.0sp1-KB867801-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb867801-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867801-x86-%WINLANG%.exe /q /r:n"
 
 :: Critical update MS04-018 (823353)
