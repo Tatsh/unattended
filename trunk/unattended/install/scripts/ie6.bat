@@ -3,6 +3,35 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Cumulative Security Update for Internet Explorer 6 Service Pack 1 for Windows XP and Windows 2000 (KB889293)
+:: Microsoft Security Bulletin MS04-040
+:: "Cumulative Security Update for Internet Explorer (889293)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-040.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=3a9dbd51-4348-4ee6-9bc1-d9a1e12963ec>
+:: URL|ARA|http://download.microsoft.com/download/f/d/b/fdbe8061-da92-4adf-9ea5-983f51b03b43/IE6.0sp1-KB889293-Windows-2000-XP-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/4/f/24ff74ef-b3d8-47b4-8053-e399eea30793/IE6.0sp1-KB889293-Windows-2000-XP-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/9/5/1/9516b804-2228-44b2-a674-2774b4420971/IE6.0sp1-KB889293-Windows-2000-XP-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/a/1/e/a1ef3725-ce48-47f3-8f75-04bce45dd8ce/IE6.0sp1-KB889293-Windows-2000-XP-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/2/2/3/223f299d-79a6-4aa1-b0e0-3774d4dbf9f0/IE6.0sp1-KB889293-Windows-2000-XP-x86-ELL.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/b/a/c/bac5bccc-f2c3-40a3-b010-b1c38cb2a963/IE6.0sp1-KB889293-Windows-2000-XP-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/4/6/c4695f87-de5b-459d-8ad0-138a9019bd8d/IE6.0sp1-KB889293-Windows-2000-XP-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/0/4/50491f1f-7a3b-4363-a672-3a40d033d00f/IE6.0sp1-KB889293-Windows-2000-XP-x86-FIN.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/7/7/c/77c354e0-eb09-4af4-8678-30b1144a921e/IE6.0sp1-KB889293-Windows-2000-XP-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/a/1/1/a11fb669-4336-49e8-97bf-e35c83630d21/IE6.0sp1-KB889293-Windows-2000-XP-x86-HEB.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/0/5/0/0504c500-e10d-4e82-933c-ac37f9ed0432/IE6.0sp1-KB889293-Windows-2000-XP-x86-HUN.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/7/a/97aaba58-5d49-46e3-874a-52993e86d85c/IE6.0sp1-KB889293-Windows-2000-XP-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/0/8/5086d621-64ca-4ff2-bf18-d8354ee8c934/IE6.0sp1-KB889293-Windows-2000-XP-x86-JPN.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/7/4/2/742d2ae9-fd64-4fd3-82eb-0a8854b979a9/IE6.0sp1-KB889293-Windows-2000-XP-x86-KOR.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/5/3/a/53a581e7-d878-4134-9c1f-4b79c6e4cedd/IE6.0sp1-KB889293-Windows-2000-XP-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/1/8/d18434a9-f86b-45bd-86d0-ec5b90777882/IE6.0sp1-KB889293-Windows-2000-XP-x86-NOR.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/4/3/e/43e214ad-bfa3-4337-96af-8f0704bd9474/IE6.0sp1-KB889293-Windows-2000-XP-x86-PLK.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/b/2/ab2c0b19-bcbb-47a5-9b16-9f75a72fa9b7/IE6.0sp1-KB889293-Windows-2000-XP-x86-PTB.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/1/3/3/1337580f-1260-4188-becc-fd5af32bb1a1/IE6.0sp1-KB889293-Windows-2000-XP-x86-PTG.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/d/5/3/d5346c7d-9fec-4039-88ad-2c7823641e64/IE6.0sp1-KB889293-Windows-2000-XP-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/9/e/f9e7c86a-ca2e-4eed-906f-61021961d60c/IE6.0sp1-KB889293-Windows-2000-XP-x86-SVE.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/0/9/4/094ffd57-e4bf-40a8-9e7b-46a8a72d0720/IE6.0sp1-KB889293-Windows-2000-XP-x86-TRK.exe|updates/ie6sp1/ie6.0sp1-kb889293-windows-2000-xp-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB889293-Windows-2000-XP-x86-%WINLANG%.exe /passive /norestart"
+
 :: Security Update for Internet Explorer 6 Service Pack 1 (KB833989)
 :: Microsoft Security Bulletin MS04-028
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
