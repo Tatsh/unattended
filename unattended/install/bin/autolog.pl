@@ -1,5 +1,6 @@
 # Script to enable or disable automatic logon.
 
+use warnings;
 use strict;
 use Getopt::Long;
 
