@@ -248,49 +248,58 @@ the disk images and the tools needed to re-create them.  Please
 <p>The <code>images</code> subdirectory holds one 1.44M floppy disk
 image for each supported network driver.  The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/DRIVERS.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->DRIVERS.txt</a> file describes the supported drivers.
+>DRIVERS.txt</a> file describes the supported drivers.  The driver
+names are a little weird because each is derived from the
+corresponding DOS network driver filename.
 
 <p>You need to use the floppy image with the right driver for your
 network card.  If you are not sure which driver is right, you may need
-to try them all.  See below about <a href="#netboot">booting directly
-from the network</a>, for which this is not an issue.
+to try them all.  (See below about <a href="#netboot">booting directly
+from the network</a>, in which case this is not an issue.)
 
 <p>Once you have chosen the correct floppy image for your network
 card, you will need to write it to a floppy.  How you do this depends
-on your operating system; on Linux, a command like
+on your operating system.
 
-<pre>
-    dd&nbsp;if=images/e100b.img&nbsp;of=/dev/fd0
-</pre>
+<p>For Linux, a command like
+<kbd>dd&nbsp;if=images/e100b.img&nbsp;of=/dev/fd0</kbd> will do the
+trick.
 
-<p>...will do the trick.
-
-<p>[FIXME: NEED INSTRUCTIONS FOR WINDOWS USERS HERE]
-
+<p>For Windows, you will need to download a <a
+href="http://www.fdos.org/ripcord/rawrite/readme.html#windows">rawrite
+utility</a>.  They say <a
+href="http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm">rawwritewin</a>
+has a nice GUI.
 
 <h2>Booting from CD-ROM</h2>
 
 <p>This section is optional; you can kick off the installation process
-just using a floppy.  But a CD-ROM is faster, and it holds
-<b>all</b> of the floppy images on a single piece of media.
+just using a floppy.  But this is faster, and <b>all</b> of the floppy
+images fit on a single CD-ROM.
 
-<p>The <code>bootdisk.iso</code> file is an ISO image of a bootable
-CD-ROM.  When you boot it, you will be offered a choice of "virtual
-floppies" to load, consisting of exactly the same images found in the
-<code>images</code> directory.  Just burn the ISO image to a CD, boot
-from it, and choose your network driver.
+<p>The <code>bootdisk.iso</code> file is an ISO-9660 image of a
+bootable CD-ROM.  Simply burn it to a CD, which you can do with just
+about any CD recording utility.  Consult your utility's documentation
+and search for <code>ISO-9660</code> or just <code>ISO</code>.
 
-<p>[FIXME: NEED INSTRUCTIONS FOR BURNING A CD-ROM HERE]
+<p>When you boot from the CD-ROM, you will be offered a choice of
+"virtual floppies" to load, consisting of exactly the images found in
+the <code>images</code> directory and the <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/DRIVERS.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>DRIVERS.txt</a> file.  Choose the correct image for your network
+card.
 
 <h2 id="netboot">Booting from the network</h2>
 
-<p>This section is also optional, although "nothing but net" installs
-really are the most fun.  But they also require the most support from
-the network infrastructure.
+<p>This section is also optional, although all-network installs really
+are the most fun.  They do require the most support from the network
+infrastructure, however.
 
 <p>First, you will need a TFTP server.  Copy the files and folders
 from the <code>tftpboot</code> directory to the TFTP server's root
-directory.  [FIXME: NEED MORE INSTRUCTIONS FOR SETTING UP TFTP SERVER]
+directory.  <a href="http://tftpd32.jounin.net/">Tftpd32</a> is a good
+TFTP server for Windows, and it might even work for this.  [Editor's
+note: Contributions to this section are welcome.]
 
 <p>Second, you will need to configure your DHCP server.  Most modern
 network cards support booting directly from the network following
@@ -300,10 +309,10 @@ href="http://www.intel.com/labs/manage/wfm/wfmspecs.htm">Intel's WFM
 site</a>.  But the basic idea is pretty simple: Just configure your
 DHCP server to provide <em>filename</em> and <em>next-server</em> DHCP
 options naming the TFTP server and <code>pxelinux.0</code>,
-respectively.  (Do not let the name fool you; <code>pxelinux.0</code>
+respectively.  Do not let the name fool you; <code>pxelinux.0</code>
 has nothing to do with Linux.  It comes from the <a
 href="http://syslinux.zytor.com/">SYSLINUX</a> package, an excellent
-general-purpose boot loader.)
+general-purpose boot loader.
 
 <p>Once you have configured your TFTP and DHCP servers, you are ready
 to boot machines from the network.  Actually convincing a machine to
@@ -398,6 +407,13 @@ Utility disk</a>.
 
 
 <h1 id="go">Boot the bootdisk</h1>
+
+<p>(Note: The bootdisk uses DHCP to obtain an IP address.  You
+probably already have a DHCP server on your network, but if you do
+not, you will need to modify the bootdisk's <code>system.ini</code>
+and <code>protocol.ini</code> files to use a static IP address.  This
+task is beyond the scope of this document; I suggest you set up a DHCP
+server instead.)
 
 <p>The bootdisk's entire purpose in life is to obtain access to the
 network, then hand off control to the more powerful tools available
