@@ -9,7 +9,7 @@
 :: Extra Updates
 
 :: "Update for HighMAT Support in the Windows XP CD Writing Wizard"
-:: URL|ENU|http://download.microsoft.com/download/2/2/b/22b5a5fa-fb50-4fc3-9f27-ba27816ec844/HMTCDWizard_enu.exe|updates/winxpsp1/HMTCDWizard_enu.exe
+:: URL|ENU|http://download.microsoft.com/download/2/2/b/22b5a5fa-fb50-4fc3-9f27-ba27816ec844/HMTCDWizard_enu.exe|updates/winxpsp1/hmtcdwizard_enu.exe
 :: <http://support.microsoft.com/?id=831240>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\HMTCDWizard_%WINLANG%.exe /l* c:\netinst\logs\hmtcdwizard.txt /qb ALLUSERS=1 REBOOT=ReallySuppress"
 
@@ -59,7 +59,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: Recommended Updates
 
 :: Recommended update 826942
-:: URL|ENU|http://download.microsoft.com/download/2/2/3/2237d088-7840-4f77-a90d-55bdf1ccbc1c/WindowsXP-KB826942-x86-ENU.exe|updates/winxpsp1/windowsXP-KB826942-x86-ENU.exe
+:: URL|ENU|http://download.microsoft.com/download/2/2/3/2237d088-7840-4f77-a90d-55bdf1ccbc1c/WindowsXP-KB826942-x86-ENU.exe|updates/winxpsp1/windowsxp-kb826942-x86-enu.exe
 :: "Wireless Update Rollup Package for Windows XP is Available"
 :: <http://support.microsoft.com/?id=826942>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB826942-x86-%WINLANG%.exe /passive /n /norestart"
