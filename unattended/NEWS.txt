@@ -1,3 +1,37 @@
+** Changes in version 3.4 (2003-Nov-14)
+
+New script install/prepare.  This is a Unix shell script which
+automatically downloads everything free thing it can for the install
+share.  That includes critical updates, recommended updates, and all
+the free software.  Downloads something like a gigabyte of data all
+told...  Thanks, Shad.
+
+Rearrange install share slightly (sorry).
+
+Fix bug where ISO image was missing memdisk and was therefore useless.
+Oops.
+
+Modify *-notips.pl to obtain profile directory from registry instead
+of hard-coding "C:\Documents and Settings".  Needed for non-English
+Windowses.
+
+Increase choices per page in install.pl from 8 to 15.
+
+Recognize some more non-English Windows media.
+
+Make things work if IIS is not being installed.
+
+Make things work for Win2k RTM, although you will have to download
+Windows Installer 2.0 (InstMsiW.exe) from Microsoft first.
+
+Use command-line defrag.exe if it exists.
+
+Rearrange *-updates.bat to do critical fixes first.
+
+Add latest hotfixes (through MS03-051) for Windows 2000, Windows XP,
+Windows Server 2003, Office 2000, and Office XP.
+
+
 ** Changes in version 3.3 (2003-Nov-07)
 
 (NOTE: This release introduces numerous small changes to the directory
