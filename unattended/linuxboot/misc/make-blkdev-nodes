@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Create the block device nodes for a mass-storage device and its
+# partitions.  The argument to this script is the canonical name of
+# the device without the /dev prefix, like "hda" or "i2o/sda".
+
 die () {
     echo "$@"
     exit 2
@@ -53,7 +57,14 @@ shopt -s nullglob
 
 make_block_device "$sys_block/$dev"
 
-for devX in "$sys_block/$dev/$dev"[1-9]* ; do
+# Devices like /dev/sda have partition names like /dev/sda1, while
+# devices like /dev/rd/c0d0 have partition names like /dev/rd/c0d0p1.
+# That is, we must append "pX" if the last character is a digit.  See
+# disk_name() in linux/fs/partitions/check.c.
+[[ $dev = *[0-9] ]] \
+    && p=p
+
+for devX in "$sys_block/$dev/$dev"$p[1-9]* ; do
     make_block_device "$devX"
 done
 
