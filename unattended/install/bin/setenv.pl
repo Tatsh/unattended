@@ -23,8 +23,8 @@ my ($var_name, $value) = @ARGV;
 Win32::OLE->Option ('Warn' => 3);
 
 # Get a handle to the SWbemServices object of the machine.
-my $computer = Win32::OLE->GetObject (exists $opts{'hostname'}
-                                      ? "WinMgmts://$opts{'hostname'}/"
+my $computer = Win32::OLE->GetObject (exists $opts{'remote'}
+                                      ? "WinMgmts://$opts{'remote'}/"
                                       : 'WinMgmts:');
 
 # Get the environment variable class object.  See:
