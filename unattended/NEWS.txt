@@ -1,3 +1,59 @@
+*** Changes in version NEXT (not released yet)
+
+Bundle AutoIt v2.64, because it is a good tool, because it is small,
+and because I seem to be writing more and more .aut scripts these
+days.
+
+Create and document with-env.pl script.  Run it with --help for
+details.
+
+Bundle ipconfig.exe from MSCLIENT.  Use it in install.pl to determine
+IP address.
+
+Create install/doslib/csv.pl module, which implements a class for
+parsing comma-separated-value (CSV) files.  Useful for automatically
+looking up settings (like ComputerName, ProductKey) from a corporate
+inventory spreadsheet.
+
+Create and document php.bat and php.aut for installing PHP.
+
+Create officexp.bat script for installing Office XP.  I guess I will
+document this one later.
+
+Create defrag.aut script for performing unattended disk drive
+defragmentation.  Invoke it from base.bat before doing anything else,
+to help compensate for the FAT->NTFS conversion.  I figure it cannot
+hurt to coalesce the free space before installing stuff.
+
+Create winxp-updates.bat script, which just applies Service Pack 1 and
+then runs winxpsp1-updates.bat.  This is necessary for installing an
+OEM version of XP, because slipstreaming does not work.  Thank you,
+Microsoft!
+
+Decrease timeout in isolinux.cfg from five minutes to two, and use
+"localboot 128" to chain-boot the hard drive instead of the floppy.
+Thanks to Scott Card.
+
+Fix autolog.pl, again.  Run it with --help for details.
+
+Implement and document .sleep directive for todo.pl.  Use it in
+mozilla.bat, because the Mozilla installer exits before launching
+itself for the first time, and the new windows occasionally screw
+stuff up.  Sigh.
+
+Add support for configuring NTP servers at installation time.
+
+Create push_value function in unattend.pl.  This is like set_value,
+but it "remembers" the old value in case the new one is undef (or is a
+procedure which returns undef).  Very handy for advanced
+configuration, which I really am going to document some day.
+
+Loosen key=value regexp, for the poor souls who have to deal with
+adding textmode OEM SCSI drivers.
+
+Add latest round of 2000 and XP hotfixes.
+
+
 *** Changes in version 2.3 (2002-Dec-18)
 
 Generate iso/isolinux/isolinux.bin from read-only copy instead of
