@@ -123,8 +123,8 @@ sub full_os_name ($) {
     return $ret;
 }
 
-# Run a command and return the output.  We need this because pipes and
-# backticks do not work under DJGPP Perl.
+# Run a command and return the output.  We need this function because
+# pipes and backticks do not work under DJGPP Perl.
 sub run_command ($@) {
     my ($cmd, @expected_statuses) = @_;
 
@@ -442,7 +442,7 @@ set_value ('_meta', 'ipaddr',
                # ipconfig.exe exits with many statuses, mostly between
                # 11 and 15.
                foreach my $line (run_command ('ipconfig A:\\NET\\',
-                                              (11 .. 15))) {
+                                              (11 .. 16))) {
                    $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
                        and return $1;
                }
