@@ -12,7 +12,7 @@
 todo.pl .reboot
 
 :: "Excel 2003 Update: March 23, 2004"
-:: URL|ENU|http://download.microsoft.com/download/1/2/0/12029EF7-BFD5-433F-B9CD-058E7388A1E2/office2003-kb834691-client-enu.exe|updates/office2003/office2003-office2003-kb834691-client-enu.exe
+:: URL|ENU|http://download.microsoft.com/download/1/2/0/12029EF7-BFD5-433F-B9CD-058E7388A1E2/office2003-kb834691-client-enu.exe|updates/office2003/office2003-kb834691-client-enu.exe
 :: <http://support.microsoft.com/?id=834691>
 todo.pl "%Z%\updates\office2003\office2003-kb834691-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\o2003-kb834691.txt /p excel-Binary-GLB.msp REBOOT=ReallySuppress\""
 
