@@ -17,6 +17,6 @@ todo.pl "%Z%\packages\ie6sp1\q330994.exe /q /r:n"
 :: Critical update Q318203/Q317244
 :: "XMLHTTP Control in MSXML 3.0 Can Allow Access to Local Files"
 :: <http://support.microsoft.com/?kbid=318203>
-todo.pl "%Z%\packages\win2ksp4\Q318203_MSXML30_x86.exe /q:a /c:\"dahotfix /q /n\"" .reboot
+todo.pl "%Z%\packages\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dahotfix /q /n\"" .reboot
 
 todo.pl ".ignore-err 194 %Z%\packages\ie6\flat\win32\en\IE6setup.exe /q /r:n" .reboot
