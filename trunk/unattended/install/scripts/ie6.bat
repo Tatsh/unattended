@@ -1,7 +1,18 @@
 :: Install IE6
 
-:: Arrange for hotfixes to run after IE6 is installed
-todo.pl .reboot q317244.bat
+:: Note that since we are pushing these commands onto the to-do stack,
+:: they will be executed in the opposite order.
+
+:: Critical update Q318203/Q317244
+:: (not required for IE6 SP1?)
+:: <http://support.microsoft.com/?kbid=318203>
+::todo.pl .reboot q317244.bat
+
+:: Critical Update Q328970
+:: "November 2002, Cumulative Patch for Internet Explorer"
+:: <http://www.microsoft.com/windows/ie/downloads/critical/Q328970/>
+:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q328970>
+todo.pl .reboot "z:\packages\win2ksp3\q328970.exe /q /r:n" .reboot
 
 z:
 cd \packages\ie6\flat\win32\en
