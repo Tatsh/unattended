@@ -11,8 +11,9 @@ NETBIND.COM
 TCPTSR.EXE
 TINYRFC.EXE
 
+NET LOGON GUEST GUEST /YES /SAVEPW:NO
 :: LH NET LOGON /YES /SAVEPW:NO
-NET START BASIC
+:: NET START BASIC
 if not errorlevel 1 goto gotnet
 @echo *** Unable to start network, probably because
 @echo *** you are using the wrong device driver.
@@ -26,9 +27,10 @@ del \netdiag.txt
 net diag /status < nul > \netdiag.txt
 
 @echo.
-@echo Enter location of install share (default \\ntinstall\install):
-@nset INSTALL=$0
-@if %INSTALL%.==. set INSTALL=\\ntinstall\install
+:: @echo Enter location of install share (default \\router\wininst):
+:: @nset INSTALL=$0
+:: @if %INSTALL%.==. set INSTALL=\\router\wininst
+set INSTALL=\\router\wininst
 
 NET USE Z: %INSTALL%
 @if not errorlevel 1 goto got_z
