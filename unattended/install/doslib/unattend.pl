@@ -28,18 +28,32 @@ sub get_info ($$) {
     return $key_hash;
 }
 
+# "Force" a promise.  If argument is not a promise, return it
+# unaltered.
+sub force ($) {
+    my ($val) = @_;
+    ref $val eq 'CODE'
+        and $val = force ($val);
+    ref $val eq 'CODE'
+        and die 'INTERNAL ERROR';
+    return $val;
+}
+
+sub get_value_noforce ($$) {
+    my ($sect, $key) = @_;
+    my $info = get_info ($sect, $key);
+    my $val = $info->{'value'};
+    return $val;
+}
+
 # Get the value associated with a section+key in the answer file.
 # Example:
 #   $name = get_value ('UserData', 'FullName');
-sub get_value ($$;$) {
-    my ($sect, $key, $noforce) = @_;
-    my $info = get_info ($sect, $key);
-    my $val = $info->{'value'};
-    if (ref $val eq 'CODE' && !$noforce) {
-        # It is a promise, not a value, so force it.
-        $val = &$val ();
-        $info->{'value'} = $val;
-    }
+sub get_value ($$) {
+    my ($sect, $key) = @_;
+    my $val = force (get_value_noforce ($sect, $key));
+    # Memoize the forced value.
+    set_value ($sect, $key, $val);
     return $val;
 }
 
