@@ -156,9 +156,9 @@ sleep 2         # paranoia
 edd_dir=/sys/firmware/edd/int13_dev80
 echo "*** And look for legacy BIOS disk geometry in $edd_dir"
 
-# Here we baldly assume that we have found the boot device (BIOS disk
-# 80h), and that this is the device the user wanted.  Need to fix this
-# up someday.  FIXME.
+# Here we shamelessly assume that we have found the boot device (BIOS
+# disk 80h), and that this is the device the user wanted.  Need to do
+# better someday.  FIXME.
 if [ -d "$edd_dir" ] ; then
     declare -i LEGACY_BIOS_HEAD LEGACY_BIOS_SECT
     heads_file="$edd_dir/legacy_heads";
@@ -196,6 +196,10 @@ export Z_PATH Z_USER Z_PASS
 # Used as staging area by install.pl
 mkdir /c
 
-perl -I/z/lib /z/dosbin/install.pl
+if perl -I/z/lib /z/dosbin/install.pl ; then
+    dosemu.bin
+    sync
+    reboot
+fi
 
 exec bash
