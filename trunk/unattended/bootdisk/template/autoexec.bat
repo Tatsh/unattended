@@ -24,12 +24,14 @@ RANDOM 65535 >> \net\system.ini
 echo Initializing Network Card....
 NET INITIALIZE /DYNAMIC
 NETBIND.COM
+UMB.COM
 TCPTSR.EXE
 TINYRFC.EXE
+:: DNR.EXE
 
 :retry
 CHOICE /C:YN /T:N,5 Override bootdisk defaults (if unsure, say yes)
-if errorlevel 2 goto endsetup
+if errorlevel 2 goto gotcreds
 echo Enter location of install share (default %Z_PATH%):
 nset INPUT=$0
 if not %INPUT%. == . set Z_PATH=%INPUT%
@@ -41,24 +43,25 @@ nset INPUT=$0
 if not %INPUT%. == . set Z_PASS=%INPUT%
 set INPUT=
 
-:endsetup
+:gotcreds
 
 :: LOGON
 echo Starting network....
 NET LOGON %Z_USER% %Z_PASS% /YES /SAVEPW:NO
 if not errorlevel 1 goto gotnet
-echo *** Unable to start network (are you using the right driver?)
-echo *** retrying...
+echo *** Unable to start network.  (Are you using the right driver?)
+echo *** Retrying...
+NET LOGOFF > nul
 goto retry
 
 :gotnet
 :: Save MAC address in file (to be parsed later).
-net diag /status < nul > \netdiag.txt
+net diag /status < crlf.txt > \netdiag.txt
 
-echo Mapping Z:....
+echo Mapping Z: to %Z_PATH%...
 NET USE Z: %Z_PATH%
 if not errorlevel 1 goto got_z
-echo Unable to map Z: drive.  Retrying...
+echo Failed.  Retrying...
 goto retry
 
 :got_z
@@ -68,12 +71,19 @@ set PATH=Z:\djgpp\bin;Z:\dosbin;%PATH%
 ipconfig \net > \ipconfig.txt < nul
 
 set DJGPP=Z:\djgpp\djgpp.env
+
+if exist %DJGPP% goto got_djgpp
+echo *** %DJGPP% not found
+echo *** (Did you download and install DJGPP?)
+goto die
+:got_djgpp
+
 lh cwsdpmi -p -s-
 
 set PERLLIB=Z:\lib
-echo Starting install.pl....
+echo Starting install.pl...
 perl Z:\dosbin\install.pl
-if errorlevel 1 goto end
+if errorlevel 1 goto die
 cwsdpmi -u
 
 :: XP install requires smartdrv (http://support.microsoft.com/?id=296814)
@@ -81,5 +91,10 @@ smartdrv
 
 C:\netinst\doit.bat
 
+:die
+echo Aborting.
+exit 1
+
 :end
 echo on
+exit 0
