@@ -246,7 +246,10 @@ set_value ('_meta', 'doit_cmd',
                return "$src_tree\\winnt /s:$src_tree /u:$unattend_txt";
            });
 
-set_value ('_meta', 'extra_unattend_txt', undef);
+set_comment ('_meta', 'autolog',
+             "    ; Command to disable (or modify) logon setting when installation finishes");
+# Default setting for automatic logon is to disable it.
+set_value ('_meta', 'autolog', 'autolog.pl');
 
 set_value ('UserData', 'FullName',
            sub {
@@ -421,6 +424,9 @@ my @admins = (defined $admins ? split / /, $admins : undef);
 # Hack around Perl bug
 defined $admins[0]
     or undef @admins;
+@admins = map { canonicalize_user
+                    (get_value ('Identification', 'JoinDomain'),
+                     $_) } @admins;
 
 open POSTINST, ">$postinst"
     or die "Unable to open $postinst for writing: $^E";
@@ -429,8 +435,12 @@ my @cmd_lines =
     ((map { "net localgroup Administrators $_ /add" } @admins),
      (defined $top
       ? ("net use z: $ENV{'INSTALL'} /persistent:yes",
-         "call z:\\scripts\\perl.bat",
-         "PATH=z:\\bin;%PATH%",
+         'call z:\\scripts\\perl.bat',
+         'PATH=z:\\bin;%PATH%',
+         # Last step is always a reboot
+         'todo.pl .reboot',
+         # Next-to-last step is to disable automatic logon
+         'todo.pl ' . get_value ('_meta', 'autolog'),
          "todo.pl $top autolog.pl .reboot",
          "\ntodo.pl --go")
       : ())
