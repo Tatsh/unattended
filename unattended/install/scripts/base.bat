@@ -12,8 +12,8 @@ todo.pl %%WINVER%%-updates.bat %%WINVER%%-notips.pl .reboot
 :: Defragment the drive to collect the free space.
 todo.pl defrag.bat
 
-:: Set IIS startup type to manual.
-todo.pl "startup-type.pl Manual IISADMIN" "startup-type.pl Manual W3SVC"
+:: Set IIS startup type to manual and ignore if not installed.
+todo.pl ".ignore-err 255 startup-type.pl Manual IISADMIN" ".ignore-err 255 startup-type.pl Manual W3SVC"
 
 :: Turn off Windows Messenger service
 todo.pl "startup-type.pl Manual Messenger"
