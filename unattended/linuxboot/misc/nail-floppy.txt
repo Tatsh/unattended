@@ -52,6 +52,8 @@ sbin/insmod
 sbin/modprobe
 sbin/lspci
 
+usr/bin/openvt
+
 # Samba junk
 usr/bin/smbmnt
 usr/bin/smbmount
