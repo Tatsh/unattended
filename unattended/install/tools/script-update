@@ -26,7 +26,7 @@
 #exceptions=( "win2ksp4-updates.bat" "win2ksp4-symbols.bat" )
 exceptions=( )
 
-# HTTP-Link to the cvs-repository (WITHOUT trailing "/scripts")
+# HTTP-Link to the cvs-repository
 CVSLINK="http://cvs.sourceforge.net/viewcvs.py/*checkout*/unattended/unattended/install/scripts"
 
 # paths to needed programs
