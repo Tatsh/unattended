@@ -431,14 +431,14 @@ sub create_postinst_bat () {
     # Top-level installation script
     my $top = $u->{'_meta'}->{'top'};
     if (defined $top) {
-        my $tempcreds = $file_spec->catfile ($netinst, 'tempcreds.bat');
+        my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
         push @postinst_lines,
         ('call z:\\scripts\\perl.bat',
          'PATH=z:\\bin;%PATH%',
          # Last step is always a reboot
          'todo.pl .reboot',
          # Antepenultimate step is to delete credentials file
-         "todo.pl \"del $tempcreds\"",
+         "todo.pl \"del $tempcred\"",
          # Next-to-last step is to disable automatic logon
          'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
          # First step is to perform top-level install
@@ -569,7 +569,7 @@ $u->{'_meta'}->{'doit_cmds'} =
         $src_tree =~ /\\$/
             or $src_tree .= '\\';
         $src_tree .= 'i386';
-        return "$src_tree\\winnt $lang_opts /s:$src_tree /u:$unattend_txt";
+        return "z:;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
     };
 
 $u->comments ('_meta', 'autolog') =
