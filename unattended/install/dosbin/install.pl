@@ -389,6 +389,7 @@ sub create_postinst_bat () {
     my @postinst_lines;
 
     # Local admins
+    my $admin_group = get_value('_meta', 'local_admin_group');
     my $admins = get_value ('_meta', 'local_admins');
     my @admins = (defined $admins ? split / /, $admins : undef);
     # Hack around Perl bug
@@ -398,7 +399,7 @@ sub create_postinst_bat () {
                         (get_value ('Identification', 'JoinDomain'),
                          $_) } @admins;
     foreach my $admin (@admins) {
-        push @postinst_lines, "net localgroup Administrators $admin /add";
+        push @postinst_lines, "net localgroup $admin_group $admin /add";
     }
 
     # NTP servers
@@ -536,6 +537,17 @@ set_value ('_meta', 'ntp_servers',
                return simple_q
                    ("Enter NTP servers, separated by commas or spaces (default=none):");
            });
+
+$u->comments ('_meta', 'local_admin_group') =
+    ['Name of local Administrators group.  Depends on language...'];
+
+$u->{'_meta'}->{'local_admin_group'} =
+    sub {
+        my $def = 'Administrators';
+        my $answer =
+            simple_q ("Enter local Administrators group name (default=$def):");
+        return (defined $answer ? $answer : $default);
+    };
 
 set_comments ('_meta', 'local_admins',
               "    ; Accounts added to local Administrators group\n");
