@@ -5,6 +5,9 @@
 # manufacturer, copy it to the drivers/ subdirectory, and add a line
 # to this file.  Then just type "make".
 
+# Downloaded from <http://www.broadcom.com/docs/driver-download.html>
+b57      Broadcom BCM57xx series
+
 # Latest version should be here (or just search Intel's support site
 # for PRODOS2.EXE):
 # <http://downloadfinder.intel.com/scripts-df/File_Filter.asp?FileName=PRODOS2.EXE>
