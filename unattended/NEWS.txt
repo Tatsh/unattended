@@ -1,4 +1,4 @@
-** Changes in version 4.6-pre2 (2004-Dec-??)
+** Changes in version 4.6 (2004-Jan-01)
 
 (Linux) Add g(un)zip to boot disk since it is needed for non-English
 keyboard support.
@@ -18,6 +18,9 @@ to use the CVS version.
 Add Norwegian support to bootini.pl; thanks to Tor Haakon Gjerde.
 
 Add Norwegian download URLs everywhere; thanks to Espen Stefansen.
+
+Make Adobe Reader an optional package, and update it to version 7.0,
+language permitting.  Thanks to Godfrey Livingstone.
 
 (DOS) Fix warnings when building under recent Cygwin (ekot).
 
@@ -44,8 +47,8 @@ place (slords).
 
 Upgrade to SYSLINUX 2.13.
 
-Add current collection of MS hotfixes.  (Mostly.  We still have some
-work to do...)
+Add current collection of MS hotfixes for win2k, winxpsp1, winxpsp2,
+and ws2k3.
 
 
 ** Changes in version 4.5 (2004-Oct-23)
