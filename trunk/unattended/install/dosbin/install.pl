@@ -68,21 +68,21 @@ sub canonicalize_user ($$) {
     return $user;
 }
 
-# Convert from short OS name (like win2k, win2ksp3, or winxpsp1) to
+# Convert from short OS name (like win2k, win2ksp3, or winxpoem) to
 # full human-readable name.
 sub full_os_name ($) {
     my ($arg) = @_;
-    my ($base, $suffix) =
-        $arg =~ /^(win2k|winxp)(?:sp\d+|oem)?\z/;
+    my ($stem, $suffix) =
+        $arg =~ /^(win2k|winxp)(sp\d+|oem)?\z/;
     my $ret;
 
-    defined $base
+    defined $stem
         or return undef;
 
-    if ($base eq 'win2k') {
+    if ($stem eq 'win2k') {
         $ret = 'Windows 2000 Professional';
     }
-    elsif ($base eq 'winxp') {
+    elsif ($stem eq 'winxp') {
         $ret = 'Windows XP Professional';
     }
     else {
