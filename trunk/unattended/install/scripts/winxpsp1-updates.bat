@@ -104,6 +104,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Windowsxp-kb826942-x86-%WINLANG%.ex
 :: URL|ENU|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q814995_WXP_SP2_x86_ENU_9e15819376b7ecb637bc9f9bfac2d16.exe|updates/winxpsp1/q814995_wxp_sp2_x86_enu.exe
 :: URL|FRA|http://download.microsoft.com/download/7/2/2/7224ba56-e992-4ec9-be4b-ace8ac538f51/Q814995_WXP_SP2_x86_FRA.exe|updates/winxpsp1/q814995_wxp_sp2_x86_fra.exe
 :: URL|DEU|http://download.microsoft.com/download/e/1/1/e1123500-fe5a-4b79-aa68-59fbf1e5ab1e/Q814995_WXP_SP2_x86_DEU.exe|updates/winxpsp1/q814995_wxp_sp2_x86_deu.exe
+:: URL|NLD|http://download.microsoft.com/download/c/d/f/cdf236d4-c2fe-4100-a254-85206aa39037/Q814995_WXP_SP2_x86_NLD.exe|updates/winxpsp1/q814995_wxp_sp2_x86_nld.exe
 :: 
 :: "Some ... Fixes Stop Working After You Install the 328310 Update"
 :: (required even though 328310 got subsumed by 826939)
