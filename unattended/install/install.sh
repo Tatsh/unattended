@@ -87,11 +87,10 @@ fi
 
 
 netinst=c:\\netinst
-nextdir="$netinst\\next"
 
-for dir in $nextdir "$netinst\\logs" ; do
+for dir in $netinst "$netinst\\logs" ; do
     echo -n "Creating $dir..."
-    mkdir -p $dir
+    a:/command.com /c mkdir $dir
     echo "done."
 done
 
@@ -143,7 +142,7 @@ fi
 unattend_src=Z:\\unattend.txt
 unattend_dst="$netinst\\unattend.txt"
 echo -n "Copying $unattend_src to $unattend_dst..."
-xcopy $unattend_src $unattend_dst
+xcopy /f /q $unattend_src $unattend_dst
 echo "done."
 
 if [ -f $unattend_dst ] ; then
@@ -155,11 +154,6 @@ else
     exit 1
 fi
 
-todo_src=z:\\bin\\todo.pl
-echo -n "Copying $todo_src to $netinst..."
-xcopy $todo_src $netinst
-echo "done."
-
 toplev="$netinst\\toplev.bat"
 
 echo -n "Creating default $toplev file..."
@@ -167,22 +161,19 @@ echo "set top=$top" >> $toplev
 echo >> $toplev
 echo "net use z: \\\\ntinstall\\install /persistent:yes" >> $toplev
 echo "call z:\\scripts\\perl.bat" >> $toplev
-echo "$netinst\\todo.pl %top%.bat \"autolog.pl --disable\" .reboot" >> $toplev
+echo "z:\\bin\\todo.pl %top%.bat \"autolog.pl --disable\" .reboot" >> $toplev
 for user in $admin_users ; do
-    echo "$netinst\\todo.pl \"net localgroup Administrators $user /add\"" >> $toplev
+    echo "z:\\bin\\todo.pl \"net localgroup Administrators $user /add\"" >> $toplev
 done
 echo >> $toplev
-echo "$netinst\\todo.pl --go" >> $toplev
+echo "z:\\bin\\todo.pl --go" >> $toplev
 echo "done."
-
-cmdlines=c:\\cmdlines.txt
 
 while : ; do
     echo
     echo "1) Edit $unattend_dst"
     echo "2) Edit $toplev"
-    echo "3) Edit $cmdlines"
-    echo "4) Continue"
+    echo "3) Continue"
     echo "X) Exit this program"
     choice /c:1234x "Select"
     ret=$?
@@ -192,8 +183,6 @@ while : ; do
     elif [ $ret == 2 ] ; then
         edit $toplev
     elif [ $ret == 3 ] ; then
-        edit $cmdlines
-    elif [ $ret == 4 ] ; then
         break
     else
         echo "Exiting."
