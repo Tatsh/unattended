@@ -1,4 +1,5 @@
-# Script to create a shortcut on the "All Users" desktop.
+# Script to create a shortcut, including support for "special folders"
+# (like AllUsersDesktop).
 
 use warnings;
 use strict;
