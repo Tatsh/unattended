@@ -16,7 +16,7 @@ use Win32API::Registry qw(:Func :SE_);
 
 # Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'help|h', 'message=s', 'halt', 'reboot', 'timeout=i')
+GetOptions (\%opts, 'help|h|?', 'message=s', 'halt', 'reboot', 'timeout=i')
     or pod2usage (2);
 
 (exists $opts{'help'})
