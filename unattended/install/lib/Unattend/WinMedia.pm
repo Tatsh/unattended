@@ -118,7 +118,8 @@ sub service_pack ($) {
 
 my %pid_table =
     (
-     # Windows Server 2003, Enterprise Edition
+     # Windows Server 2003
+     '69753000' => 'Retail',
      '69763000' => 'Trial',
      # XP
      # See <http://www.thetechguide.com/howto/setuppini.html>
