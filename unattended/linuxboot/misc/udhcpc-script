@@ -40,6 +40,8 @@ case $arg in
         ;;
     nak)
         echo "$0: ERROR: DHCP server gave NAK" >&2
+        exit 2
+        ;;
 esac
 
 exit 0
