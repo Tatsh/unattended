@@ -360,6 +360,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB821253-x86-%WINLANG%.ex
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB820291-x86-%WINLANG%.exe /u /n /z"
 
 :: Windows XP Patch: Game Stops Responding or Quits Unexpectedly When Introductory Video Clip Is Played
+:: <http://support.microsoft.com/?kbid=327979>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=3c9464fb-7cd7-461b-ad24-6a4d1c5df8ff>
 :: URL|ARA|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/AR/Q327979_WXP_SP2_x86_ARA.exe|updates/winxpsp1/q327979_wxp_sp2_x86_ara.exe
 :: URL|CSY|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/CS/Q327979_WXP_SP2_x86_CSY.exe|updates/winxpsp1/q327979_wxp_sp2_x86_csy.exe
