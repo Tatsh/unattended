@@ -7,8 +7,8 @@ DEVICE=himem64.exe
 ;DEVICE=himem.sys /testmem:off
 
 ;; UMB provider
-DEVICE=umbpci.sys
-;DEVICE=emm386.exe NOEMS
+;DEVICE=umbpci.sys
+DEVICE=emm386.exe NOEMS
 
 ;; MSCLIENT networking gadget
 DEVICEHIGH=\net\ifshlp.sys
@@ -16,7 +16,3 @@ DEVICEHIGH=\net\ifshlp.sys
 ;; Required for installing XP under VMware.  Thanks to Scott Card for
 ;; figuring this out.
 FILES=30
-
-;; Prohibit EBDA movement, which is reported to be incompatible with
-;; several BIOSes.
-SWITCHES=/E
