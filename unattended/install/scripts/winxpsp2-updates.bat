@@ -22,6 +22,7 @@ todo.pl "srconfig.pl --enable" ".reboot-on 194 %Z%\updates\winxpsp2\wmcsetup.exe
 :: Windows Media Player 10
 :: <http://www.microsoft.com/windowsmedia/>
 :: URL|DAN|http://download.microsoft.com/download/B/C/8/BC8860E7-0773-4AA7-A421-FB7|packages/mediaplayer10/dan/mp10setup.exe
+:: URL|DEU|http://download.microsoft.com/download/C/8/9/C893085A-0D62-43EF-B2CA-5FCB6EFA7873/mp10setup.exe|packages/mediaplayer10/deu/mp10setup.exe
 :: URL|ENU|http://download.microsoft.com/download/1/2/A/12A31F29-2FA9-4F50-B95D-E45EF7013F87/MP10Setup.exe|packages/mediaplayer10/enu/mp10setup.exe
 :: URL|RUS|http://download.microsoft.com/download/9/A/F/9AF82D9A-10DE-4BC0-B849-EF7DC9CC89B6/MP10Setup.exe|packages/mediaplayer10/rus/mp10setup.exe
 todo.pl ".reboot-on 194 %Z%\packages\mediaplayer10\%WINLANG%\mp10setup.exe /Q /R:N /C:\"setup_wm.exe /Q /R:N /DisallowSystemRestore /NoPID /SetWMPAsDefault\""
