@@ -11,6 +11,7 @@
 :: "Update for Windows Media Player 9 Series"
 :: URL|DAN|http://download.microsoft.com/download/3/8/b/38b5dccd-b255-4dd1-98e3-7944a5a0430a/WindowsMedia9-KB837272-DAN.exe|updates/mediaplayer9/windowsmedia9-kb837272-dan.exe
 :: URL|ENU|http://download.microsoft.com/download/7/0/D/70D0BAC6-A68B-4CB6-94AB-E0DF8C0EFCAF/WindowsMedia9-KB837272-ENU.exe|updates/mediaplayer9/windowsmedia9-kb837272-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/3/7/0/370f42db-fcd5-48d3-b798-56ef8f258206/WindowsMedia9-KB837272-NLD.exe|updates/mediaplayer9/windowsmedia9-kb837272-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/3/c/6/3c6b5375-05af-4fef-8dd0-595506d9e59b/WindowsMedia9-KB837272-RUS.exe|updates/mediaplayer9/windowsmedia9-kb837272-rus.exe
 :: <http://support.microsoft.com/?id=837272>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb837272-%WINLANG%.exe /passive /n /norestart"
@@ -105,8 +106,13 @@ todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /
 :: DirectX Update MS04-016 (839643)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-016.mspx>
 :: "Vulnerability in DirectPlay Could Allow Denial of Service"
+:: URL|DAN|http://download.microsoft.com/download/b/b/b/bbb5f74e-6011-4eee-9cfb-e49f169a08ef/WindowsXP-KB839643-x86-DAN.EXE|updates/common/directx90-kb839643-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/3/d/d/3ddd2807-4843-4256-bb46-51d44b4baab4/WindowsXP-KB839643-x86-DEU.EXE|updates/common/directx90-kb839643-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/5/8/4/584e3b1c-37ed-4845-8c04-232858b468e9/DirectX90-KB839643-x86-ENU.EXE|updates/common/directx90-kb839643-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/3/0/9/3092ebce-3f0e-40f4-b545-97da552af376/WindowsXP-KB839643-x86-FRA.EXE|updates/common/directx90-kb839643-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/b/6/f/b6f0db61-cfee-4b26-8883-7a24b0b310f7/WindowsXP-KB839643-x86-ITA.EXE|updates/common/directx90-kb839643-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/9/9/9/9999fcb4-634c-4f42-ba72-d049b9b69a53/WindowsXP-KB839643-x86-NLD.EXE|updates/common/directx90-kb839643-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/7/5/c/75cb3158-3a0b-4f08-a0c2-28232be58c4d/WindowsXP-KB839643-x86-RUS.EXE|updates/common/directx90-kb839643-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\directx90-kb839643-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Microsoft DirectX 9.0b
