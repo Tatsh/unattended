@@ -34,9 +34,13 @@ load_modules () {
     local modules="$1"
 
     for module in $modules ; do
-        echo "Loading $module..."
-        modprobe $module
-        echo "...done loading $module"
+        if lsmod | grep -q "^$module[[:space:]]" ; then
+            echo "(module $module already loaded)"
+        else
+            echo "Loading $module..."
+            modprobe $module
+            echo "...done loading $module"
+        fi
     done
 }
 
@@ -120,7 +124,7 @@ done
 
 echo "*** Now we need to map the /z drive."
 
-while : ; do
+while [ ! -f /z/dosbin/install.pl ] ; do
     Z_USER=guest
     Z_PASS=guest
     Z_PATH=//ntinstall/install
@@ -175,22 +179,41 @@ while : ; do
         Z_USER="${Z_USER##*/}\\${Z_USER%/*}"
     fi
 
-    # Default mount options: username, read-only mount, 2400-second
-    # directory list cache
-    smbmount_opts="username=$Z_USER,ro,ttl=2400000"
+    username=${Z_USER#*\\}              # everything before first backslash
+    [ "$username" == "$Z_USER" ] \
+        || domain=${Z_USER%%\\*}        # everyting after first backslash
+
+    # Default mount options: username, read-only mount
+    mount_opts="username=$Z_USER,ro"
+
+    # Append domain (workgroup), if any.
+    [ -n "$domain" ] \
+        && mount_opts="$mount_opts,workgroup=$domain"
 
     # Add extra mount options, if any.
     z_opts=$(get_cmdline_param z_opts)
-    [ -n "z_opts" ] \
-        && smbmount_opts="$smbmount_opts,$z_opts"
-
-    echo "*** Trying smbmount $Z_PATH /z -o $smbmount_opts"
+    [ -n "$z_opts" ] \
+        && mount_opts="$mount_opts,$z_opts"
 
     export PASSWD="$Z_PASS"
-    smbmount "$Z_PATH" /z -o "$smbmount_opts" \
+
+#    echo "*** Trying mount.cifs $Z_PATH /z -o $mount_opts"
+
+#     if mount.cifs "$Z_PATH" /z -o "$mount_opts" ; then
+#         cat /z/dosbin/install.pl > /dev/null 2>&1 \
+#             && break
+#         umount /z
+#     fi
+#     echo "*** CIFS mount did not work.  Falling back to smbfs."
+
+    echo "*** Trying smbmount $Z_PATH /z -o ttl=600000,$mount_opts"
+    
+    smbmount "$Z_PATH" /z -o "ttl=600000,$smbmount_opts" \
         && break
+
     unset PASSWD
-    echo "Failed to mount /z.  Retrying..."
+
+    echo "*** Failed to mount /z.  Retrying..."
 done
 
 unset PASSWD
