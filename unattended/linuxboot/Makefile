@@ -1,7 +1,9 @@
-ash=bash-2.05b
+bash=bash-2.05b
 busybox=busybox-1.00-pre7
 dosemu=dosemu-1.2.0
 glibc=glibc-2.3.2
+# Awful hack
+glibc-linuxthreads=$(strip $(patsubst glibc-%, glibc-linuxthreads-%, $(glibc)))
 klibc=klibc-0.110
 linux=linux-2.6.3
 module-init-tools=module-init-tools-3.0-pre10
@@ -41,32 +43,32 @@ $(2) : $(1)	;				\
 	mv $(2).tmp $(2)
 
 # Macro to generate download-foo rule to download and unpack a package
+# FIXME - This is horrid
 dest=.
-download_rule=								 \
-download-$(strip $(1)) :  ;						 \
-	what=$(strip $(1)) && suffix=$(strip $(2))			 \
-	&& url=$(strip $(3)) && sub=$(strip $(4))			 \
-	&& { [ -n "$$$$sub" ] && [ -d "$$$$sub" ] || [ -d $$$$what ] ; } \
-	|| { [ -n "$$$$sub" ] || sub=.					 \
-	&& temp=`mktemp /var/tmp/dl.XXXXXXXX`				 \
-	&& wget -O $$$$temp $$$$url$$$$what.$$$$suffix			 \
-	&& case $$$$suffix in						 \
-		*.gz|tgz) prog="gzip -d -c" ;;				 \
-		*.bz2) prog="bzcat -c" ;;				 \
-		*) prog=cat ;;						 \
-	esac								 \
-	&& { echo $$$$prog ;						 \
-	$$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }		 \
-	&& { [ "$(dest)" == . ] || ln -sf $(dest)/$$$$what . ; }	 \
-	&& rm $$$$temp ;						 \
+download_rule=								\
+download-$(strip $(1)) :  ;						\
+	what=$(strip $(1)) && suffix=$(strip $(2))			\
+	&& url=$(strip $(3)) && sub=$(strip $(4))			\
+	&& [ -d $$$$what ]						\
+	|| { [ -n "$$$$sub" ] || sub=.					\
+	&& temp=`mktemp /var/tmp/dl.XXXXXXXX`				\
+	&& wget -O $$$$temp $$$$url$$$$what.$$$$suffix			\
+	&& case $$$$suffix in						\
+		*.gz|tgz) prog="gzip -d -c" ;;				\
+		*.bz2) prog="bzcat -c" ;;				\
+		*) prog=cat ;;						\
+	esac								\
+	&& { echo $$$$prog ;						\
+	$$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }		\
+	&& { [ -z "$$$$sub" ] || ln -s "$$$$sub" "$$$$what" ; }		\
+	&& { [ "$(dest)" == . ] || ln -sf $(dest)/$$$$what . ; }	\
+	&& rm $$$$temp ;						\
 	}
 
 all:
 	@echo "You are a dork."
 	@exit 1
 
-# Awful hack
-glibc-linuxthreads=$(strip $(patsubst glibc-%, glibc-linuxthreads-%, $(glibc)))
 download-$(glibc-linuxthreads) : download-$(glibc)
 
 download: $(download_targets)
