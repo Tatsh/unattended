@@ -217,6 +217,93 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB834707-x86-%WINLAN
 
 :: Critical Updates
 
+:: Security Update for Windows Server 2003 (KB871250)
+:: Microsoft Security Bulletin MS05-003
+:: "Vulnerability in the Indexing Service Could Allow Remote Code Execution (871250)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS05-003.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=50F72DC5-5DD6-4D12-A91C-6815EC8203EF>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/f/9/c/f9cf2b92-8275-4c64-8389-36f86dc7d6b5/WindowsServer2003-KB871250-x86-csy.exe|updates/ws2k3/windowsserver2003-kb871250-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/9/3/c/93cfba7d-c0d4-4860-b7ad-95afd3cf64b0/WindowsServer2003-KB871250-x86-deu.exe|updates/ws2k3/windowsserver2003-kb871250-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/8/6/8/86877b39-1f2d-4889-bc43-bed2b0550b63/WindowsServer2003-KB871250-x86-enu.exe|updates/ws2k3/windowsserver2003-kb871250-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/3/a/c/3ac4a5d7-97c1-4bae-b8e6-c0640d70c2ca/WindowsServer2003-KB871250-x86-esn.exe|updates/ws2k3/windowsserver2003-kb871250-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/a/7/2/a7285271-e084-4a2c-8fa2-24d15a40ccff/WindowsServer2003-KB871250-x86-fra.exe|updates/ws2k3/windowsserver2003-kb871250-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/d/9/c/d9c00fe0-76a8-4206-97c4-5eda9365aef9/WindowsServer2003-KB871250-x86-hun.exe|updates/ws2k3/windowsserver2003-kb871250-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/1/1/b11ee6cb-13c5-4e72-976d-c422215b8ed3/WindowsServer2003-KB871250-x86-ita.exe|updates/ws2k3/windowsserver2003-kb871250-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/b/2/e/b2e70f50-6573-457d-9afc-1b7c38bfeb1f/WindowsServer2003-KB871250-x86-jpn.exe|updates/ws2k3/windowsserver2003-kb871250-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/b/e/0be2e2a9-10d8-45c4-aa46-7f24bb49485d/WindowsServer2003-KB871250-x86-kor.exe|updates/ws2k3/windowsserver2003-kb871250-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/2/9/2/29296078-bb89-40c9-b4bc-72aad1e82653/WindowsServer2003-KB871250-x86-nld.exe|updates/ws2k3/windowsserver2003-kb871250-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/8/d/6/8d6a79c2-c2b2-4ed3-a693-fe879dc3c4a6/WindowsServer2003-KB871250-x86-plk.exe|updates/ws2k3/windowsserver2003-kb871250-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/9/5/e/95e91d48-66d3-4f6f-9780-d10c1b5d4eb9/WindowsServer2003-KB871250-x86-ptb.exe|updates/ws2k3/windowsserver2003-kb871250-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/6/1/8/6180ebcd-89d2-4f0e-b1f8-f485e4c4baad/WindowsServer2003-KB871250-x86-ptg.exe|updates/ws2k3/windowsserver2003-kb871250-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/6/5/8/658efe33-6791-417e-97db-7cea420e8da2/WindowsServer2003-KB871250-x86-rus.exe|updates/ws2k3/windowsserver2003-kb871250-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/c/e/fce70d6e-7d7a-45b5-b1ac-78bd9485014a/WindowsServer2003-KB871250-x86-sve.exe|updates/ws2k3/windowsserver2003-kb871250-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/f/4/1f41210c-97b0-4b18-b9ea-db2498fbcb08/WindowsServer2003-KB871250-x86-trk.exe|updates/ws2k3/windowsserver2003-kb871250-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB871250-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB891711)
+:: Microsoft Security Bulletin MS05-002
+:: "Vulnerability in Cursor and Icon Format Handling Could Allow Remote Code Execution (891711)"
+:: <http://www.microsoft.com/technet/Security/bulletin/ms05-002.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=CBCCADF6-449A-4D74-937D-4087A6E6C1C2>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/8/e/0/8e03cfd3-3bb7-4b41-9d64-48aa6519a13b/WindowsServer2003-KB891711-x86-csy.exe|updates/ws2k3/windowsserver2003-kb891711-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/7/e/b/7ebae5ad-ee0f-4a64-8516-62877f45bba4/WindowsServer2003-KB891711-x86-deu.exe|updates/ws2k3/windowsserver2003-kb891711-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/a/2/f/a2f73f4e-0c20-4c70-acb0-8705e65ed4b9/WindowsServer2003-KB891711-x86-enu.exe|updates/ws2k3/windowsserver2003-kb891711-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/3/a/3/3a33ac35-73e0-4252-bede-c1c90b7f15de/WindowsServer2003-KB891711-x86-esn.exe|updates/ws2k3/windowsserver2003-kb891711-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/d/c/f/dcf1bf6e-c2b8-44cb-bb61-9b5e6f3d6034/WindowsServer2003-KB891711-x86-fra.exe|updates/ws2k3/windowsserver2003-kb891711-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/f/b/d/fbd9c059-9297-420d-8242-7c04f3555a55/WindowsServer2003-KB891711-x86-hun.exe|updates/ws2k3/windowsserver2003-kb891711-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/e/0/de0fb086-4237-4617-bd75-c7436aff7e90/WindowsServer2003-KB891711-x86-ita.exe|updates/ws2k3/windowsserver2003-kb891711-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/6/e/16e10c42-c407-46c6-bb15-c14b30e52450/WindowsServer2003-KB891711-x86-jpn.exe|updates/ws2k3/windowsserver2003-kb891711-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/d/5/5d52b039-6771-4c5b-acd2-431efba87397/WindowsServer2003-KB891711-x86-kor.exe|updates/ws2k3/windowsserver2003-kb891711-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/2/0/c2081925-1450-4f5c-b293-a7684da05093/WindowsServer2003-KB891711-x86-nld.exe|updates/ws2k3/windowsserver2003-kb891711-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/b/5/2/b52b1b3f-8097-475f-919f-50d3f0cfa4be/WindowsServer2003-KB891711-x86-plk.exe|updates/ws2k3/windowsserver2003-kb891711-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/a/6/ba645767-f079-4273-abc7-ed1fa1d264cd/WindowsServer2003-KB891711-x86-ptb.exe|updates/ws2k3/windowsserver2003-kb891711-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/9/e/f9e3783d-1a4d-4d5b-b837-fcdf76e6ffc7/WindowsServer2003-KB891711-x86-ptg.exe|updates/ws2k3/windowsserver2003-kb891711-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/8/a/a/8aad01f4-fcf8-4c94-a3ca-1964485d8e8b/WindowsServer2003-KB891711-x86-rus.exe|updates/ws2k3/windowsserver2003-kb891711-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/a/3/1a336e6b-8460-4f1c-907c-5a0b402c8aa7/WindowsServer2003-KB891711-x86-sve.exe|updates/ws2k3/windowsserver2003-kb891711-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/c/9/e/c9e485b9-2915-4ad6-acc9-935aac9ba841/WindowsServer2003-KB891711-x86-trk.exe|updates/ws2k3/windowsserver2003-kb891711-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB891711-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB890175)
+:: Microsoft Security Bulletin MS05-001
+:: "Vulnerability in HTML Help Could Allow Code Execution (890175)"
+:: <http://www.microsoft.com/technet/security/Bulletin/MS05-001.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=23E619FE-F6DB-4666-A247-339F55B059CC>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/1/e/f/1ef6f943-6a0f-4ef1-888a-9f15b084eb24/WindowsServer2003-KB890175-x86-csy.exe|updates/ws2k3/windowsserver2003-kb890175-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/7/b/c/7bc41211-ab5d-40bf-aa7b-0ecf5eefaedf/WindowsServer2003-KB890175-x86-deu.exe|updates/ws2k3/windowsserver2003-kb890175-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/6/9/9/699bd919-ff46-4369-b739-e6b65e8020eb/WindowsServer2003-KB890175-x86-enu.exe|updates/ws2k3/windowsserver2003-kb890175-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/8/3/6/8364bf7b-ce33-41c3-9909-868dfa3183d6/WindowsServer2003-KB890175-x86-esn.exe|updates/ws2k3/windowsserver2003-kb890175-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/3/b/2/3b2a65bb-ccce-44fd-87b7-72237f44571b/WindowsServer2003-KB890175-x86-fra.exe|updates/ws2k3/windowsserver2003-kb890175-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/2/c/4/2c41ab94-60df-4d26-8f28-04a9763fe763/WindowsServer2003-KB890175-x86-hun.exe|updates/ws2k3/windowsserver2003-kb890175-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/f/3/bf3ec086-f19a-446d-9346-abaf4241e734/WindowsServer2003-KB890175-x86-ita.exe|updates/ws2k3/windowsserver2003-kb890175-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/e/b/4eba41a6-b123-4b08-b78c-2f6214305c89/WindowsServer2003-KB890175-x86-jpn.exe|updates/ws2k3/windowsserver2003-kb890175-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/c/a/f/cafecbca-b613-4142-b2b0-ac25e5759d2a/WindowsServer2003-KB890175-x86-kor.exe|updates/ws2k3/windowsserver2003-kb890175-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/e/9/6/e9670f5f-8760-4b96-9208-94ecd89dbd75/WindowsServer2003-KB890175-x86-nld.exe|updates/ws2k3/windowsserver2003-kb890175-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/8/f/6/8f6f6310-6262-4098-a4f1-21e6c122a8e2/WindowsServer2003-KB890175-x86-plk.exe|updates/ws2k3/windowsserver2003-kb890175-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/1/8/f/18fa29e9-0228-4180-b97c-42bf8b57916d/WindowsServer2003-KB890175-x86-ptb.exe|updates/ws2k3/windowsserver2003-kb890175-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/4/5/f456cf9f-aa7f-4ea3-b24f-691cba6a5d37/WindowsServer2003-KB890175-x86-ptg.exe|updates/ws2k3/windowsserver2003-kb890175-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/c/2/8/c28f76c9-f021-4887-ba72-95944914bf1e/WindowsServer2003-KB890175-x86-rus.exe|updates/ws2k3/windowsserver2003-kb890175-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/4/f/64f2b7bf-83ec-42c2-a031-6568d1db3fb8/WindowsServer2003-KB890175-x86-sve.exe|updates/ws2k3/windowsserver2003-kb890175-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/0/9/0/090dd628-4b63-4530-94f2-da92e7c89b21/WindowsServer2003-KB890175-x86-trk.exe|updates/ws2k3/windowsserver2003-kb890175-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB890175-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows Server 2003 (KB885835)
 :: Microsoft Security Bulletin MS04-044
 :: "Vulnerabilities in Windows Kernel and LSASS Could Allow Elevation of Privilege (885835)"
