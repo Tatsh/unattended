@@ -135,4 +135,8 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB828035-x86-%WINLAN
 :: <http://www.microsoft.com/technet/security/bulletin/ms03-041.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB823182-x86-%WINLANG%.exe /u /n /z"
 
+:: Critical update 824146 (MS03-039)
+:: URL|ENU|http://download.microsoft.com/download/5/7/d/57d367eb-ee72-41d6-99ec-e96724655976/WindowsServer2003-KB824146-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb824146-x86-enu.exe
+:: "Buffer Overrun In RPCSS Service Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms03-039.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824146-x86-%WINLANG%.exe /u /n /z"
