@@ -1,7 +1,7 @@
 @echo off
 if exist c:\netinst\permcred.bat call c:\netinst\permcred.bat
 if exist c:\netinst\tempcred.bat call c:\netinst\tempcred.bat
-for %%a in ( c d e f g h i j k l m n o p q r s t u v w x y z ) do if exist %%a:\dosbin\install.pl set z=%%a:
+for %%a in ( c d e f g h i j k l m n o p q r s t u v w x y z ) do if exist %%a:\dosbin\install.pl set Z=%%a:
 
 if not %Z%. == . goto got_drive
 set Z=Z:
@@ -15,6 +15,7 @@ set Z_PATH=\\ntinstall\install
 :got_path
 
 if %Z_USER%. == . goto no_user
+if %Z_USER%. == "". goto no_user
 set USER_ARG=/user:%Z_USER%
 :no_user
 
