@@ -253,8 +253,20 @@ open source competitor in this space.  You can usually identify the
 installers it creates by running "strings" on the executable and
 grepping for "Inno".
 
-<p>Inno Setup installers use the <kbd>/silent</kbd> switch for
-unattended installations.
+<p>The switches for Inno Setup are fully documented in the
+<code>ISetup.hlp</code> file in the Inno distribution.  The GnuWin32
+project has put a <a href="http://gnuwin32.sourceforge.net/setup.html"
+>copy on the Web</a>.
+
+<p>In my experience, the <kbd>/silent</kbd> switch is usually
+sufficient for a basic unattended installation.  But to be completely
+sure, I recommend <kbd>/sp-&nbsp;/silent&nbsp;/norestart</kbd>.
+
+<p>Note that the <kbd>/verysilent</kbd> switch may reboot the machine
+without prompting, which is pretty much the worst of all possible
+worlds.  So if you use <kbd>/verysilent</kbd>, be sure to use
+<kbd>/norestart</kbd> as well.
+
 
 <h2 id="nsis">Nullsoft Scriptable Install System</h2>
 
