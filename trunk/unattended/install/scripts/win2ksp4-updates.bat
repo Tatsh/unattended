@@ -94,7 +94,7 @@ todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /
 :: Critical update 828749 (MS03-049)
 :: "Buffer Overrun in the Workstation Service Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=828749>
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-042.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-049.asp>
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828749-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 824105
