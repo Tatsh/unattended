@@ -167,7 +167,7 @@ echo "set top=$top" >> $toplev
 echo >> $toplev
 echo "net use z: \\\\ntinstall\\install /persistent:yes" >> $toplev
 echo "call z:\\scripts\\perl.bat" >> $toplev
-echo "$netinst\\todo.pl z:\\scripts\\%top%.bat \"z:\\bin\\autolog.pl --disable\" .reboot" >> $toplev
+echo "$netinst\\todo.pl %top%.bat \"autolog.pl --disable\" .reboot" >> $toplev
 for user in $admin_users ; do
     echo "$netinst\\todo.pl \"net localgroup Administrators $user /add\"" >> $toplev
 done
