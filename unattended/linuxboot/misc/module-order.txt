@@ -1,0 +1,8 @@
+# load dmfe before tulip
+dmfe
+
+# load 8139cp before 8139too
+8139cp
+
+# load piix before ide-generic
+piix
