@@ -368,6 +368,15 @@ sub do_cmd ($;$) {
 
             $ret = $status;
         }
+        elsif ($cmd =~ /^\.missing-ok\s+(.*)$/) {
+            my $new_cmd = $1;
+            my $status = do_cmd ($new_cmd, 1);
+
+            $status == 1 << 8
+                and $status = 0;
+
+            $ret = $status;
+        }
         elsif ($cmd =~ /^\.ignore-err\s+(\d+)\s+(.*)$/) {
             my ($err_to_ignore, $new_cmd) = ($1, $2);
             my $status = do_cmd ($new_cmd, 1);
