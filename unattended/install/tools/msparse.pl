@@ -34,14 +34,45 @@ my $url=$ARGV[0];
 my $type=$ARGV[1];
 
 $url=~s/displaylang=en/displaylang=/g;
-foreach my $k (sort(keys (%lang))) {
-	open(f,"wget -O - \"$url$lang{$k}\" 2> /dev/null|");
-while(<f>) {
+
+my ($urls, $title, $desc, $link, $run);
+foreach my $k (keys (%lang)) {
+    open(f,"wget -O - \"$url$lang{$k}\" 2> /dev/null|");
+    while(<f>) {
 	chomp;
-	if (/\<a id=\'btnDownload\' class=\'downloadButton\' href=\'(.*?)\'\>/) {
-	my $dl=$1;
-	my @a=split(/\//,$dl);
-	print ":: URL|".uc($k)."|$1|".lc($type)."/".lc($a[$#a])."\n";
+	if ($k =~ /enu/i) {
+	    $title = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
+	    $link = $1 if /\'([^\']*)\'\>[^\<]*Security Bulletin[^\<]*\<\/a\>/;
+	    $link = $1 if /\'([^\']*)\'\>Knowledge Base Article[^\<]*\<\/a\>/;
 	}
+
+	if (/\<a id=\'btnDownload\' class=\'downloadButton\' href=\'(.*?)\'\>/) {
+	    my $dl=$1;
+	    my @a=split(/\//,$dl);
+	    $urls->{uc($k)} = "URL|".uc($k)."|$1|".lc($type)."/".lc($a[$#a]);
+	    $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
+	}
+    }
 }
+
+if (defined $link) {
+    undef $title;
+
+    open(f,"wget -O - \"$link\" 2>&1 |");
+    while(<f>) {
+	$title = "$1" if ! defined $title && /\<h1.*?\>(.*?)\<\/h1\>/;
+	$desc = "$1" if ! defined $desc && /\<h2.*?\>(.*?)\<\/h2\>/;
+	$link = "$1" if /(http.*?) \[following\]/;
+    }
 }
+
+if (defined $run) {
+    $run =~ s/([-_])enu/$1%WINLANG%/i;
+    $run =~ s/\//\\/g;
+}
+
+print ":: $title\n" if defined $title;
+print ":: \"$desc\"\n" if defined $desc && ! $link =~ /kbid/i;
+print ":: <$link>\n" if defined $link;
+print ":: $urls->{$_}\n" foreach (sort keys %$urls);
+print "todo.pl \".reboot-on 194 %Z%\\$run /?\"\n" if defined $run;
