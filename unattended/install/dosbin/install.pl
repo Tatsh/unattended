@@ -16,6 +16,47 @@ my $file_spec = 'File::Spec::Win32';
 use vars qw ($u);
 $u = new Unattend::IniFile;
 
+# We might be running on Linux now...
+my $is_linux;
+if ($^O eq 'dos') {
+    $is_linux = 0;
+}
+elsif ($^O eq 'linux') {
+    $is_linux = 1;
+}
+else {
+    die "internal error";
+}
+
+# ...so we have to exercise some care whenever we talk to the
+# filesystem.  This function converts DOS-style path names to
+# Unix-style when running on Unix.
+sub dos_to_host ($) {
+    my ($file) = @_;
+    $is_linux
+        or return $file;
+    my ($vol, $dir, $basename) = $file_spec->splitpath ($file);
+    # Convert Z: to z, C: to c, etc.
+    my ($letter) = ($vol =~ /^([a-z]):$/i);
+    defined $letter
+        or die "internal error converting path '$file'";
+
+    # Canonicalize drive letter to lowercase.  Perhaps we should do
+    # this for the entire path, but smbfs (at least) is
+    # case-insensitive so we will not bother.
+    $letter = lc $letter;
+
+    my @dirs = $file_spec->splitdir ($dir);
+
+    my $host_dir = File::Spec::Unix->catdir ('/', $letter, @dirs);
+    my $ret = File::Spec::Unix->catpath ('', $host_dir, $basename);
+    return $ret;
+}
+
+# Tell Unnattend::WinMedia module how to convert dos filenames to host
+# filenames.
+Unattend::WinMedia->set_dos_to_host (\&dos_to_host);
+
 # Deprecated helper functions.  Use $u object directly instead.
 sub get_value ($$) {
     my ($section, $key) = @_;
@@ -47,6 +88,45 @@ sub push_value ($$$) {
     $u->push_value ($section, $key, $value);
 }
 
+$| = 1;
+
+## "choice" implementation, generic between DOS and Unix.
+sub choice ($;$) {
+    my ($prompt, $choices) = @_;
+    my $ret;
+
+    defined $choices
+        or $choices = 'YN';
+
+    # Canonicalize stuff to uppercase
+    $choices = uc $choices;
+
+    if ($is_linux) {
+        my %choice_map;
+        foreach my $i (0 .. (length $choices) - 1) {
+            my $char = substr $choices, $i, 1;
+            $choice_map{$char} = $i;
+        }
+        use Unattend::HotKey;
+        print "$prompt [$choices] ";
+        my $key;
+        while (1) {
+            $key = readkey ();
+            $key = uc $key;
+            (exists $choice_map{$key})
+                and last;
+        }
+        print "$key\n";
+        $ret = $choice_map{$key};
+    }
+    else {
+        system 'choice', $prompt, "/c:$choices";
+        $ret = ($? >> 8) - 1;
+    }
+
+    return $ret;
+}
+
 ## Handy general-purpose subroutines for asking questions.
 
 # Ask a simple question.
@@ -64,9 +144,7 @@ sub simple_q ($) {
 sub yes_no_choice ($) {
     my ($question) = @_;
     print "\n";
-    system 'choice', $question;
-    my $ret = $? >> 8;
-    return ($ret == 1 ? 1 : 0);
+    return (choice ($question) == 0 ? 1 : 0);
 }
 
 # Create a menu of options.  Takes an even number of arguments which
@@ -153,8 +231,7 @@ sub menu_choice (@) {
         $choice_map[$i] = sub { print "Exiting.\n"; exit 1; };
         $i++;
 
-        system 'choice', "/c:$choices", "Select:";
-        my $sel = ($? >> 8) - 1;
+        my $sel = choice ('Select: ', $choices);
 
         my $func = $choice_map[$sel];
         &$func ();
@@ -226,7 +303,7 @@ sub read_file ($) {
     my ($file) = @_;
     local *FILE;
 
-    open FILE, $file
+    open FILE, dos_to_host ($file)
         or croak "Unable to open $file for reading: $^E";
 
     my @ret = <FILE>;
@@ -242,7 +319,9 @@ sub write_file ($@) {
     my ($file, @lines) = @_;
     local *FILE;
 
-    open FILE, ">$file"
+    my $host_file = dos_to_host ($file);
+
+    open FILE, ">$host_file"
         or die "Unable to open $file for writing: $^E";
 
     foreach my $line (@lines) {
@@ -255,8 +334,12 @@ sub write_file ($@) {
 
 # Run a command and return the output.  We need this function because
 # pipes and backticks do not work under DJGPP Perl.
+# Only works under DOS.
 sub run_command ($@) {
     my ($cmd, @expected_statuses) = @_;
+
+    $is_linux
+        and croak 'internal error';
 
     defined $expected_statuses[0]
         or @expected_statuses = (0);
@@ -286,8 +369,11 @@ my $_partition_table;
 sub partition_table (;$) {
     my ($re_read) = @_;
 
-    !defined $_partition_table || $re_read
-        and $_partition_table = join '', run_command ('fdisk /info /tech');
+    if (!defined $_partition_table || $re_read) {
+        $_partition_table = ($is_linux
+                             ? "\n\n" . `parted -s /dev/dsk print`
+                             : join '', run_command ('fdisk /info /tech'));
+    }
 
     return $_partition_table;
 }
@@ -296,9 +382,94 @@ sub partition_table (;$) {
 
 # Large disk support
 sub ask_fdisk_lba () {
+    $is_linux
+        and return undef;
     return menu_choice
         ('Large (>8G) disk support (normal)' => 1,
          'No large disk support (required for some broken BIOSes)' => 0);
+}
+
+# Use Parted to find the start of the free space on the drive.  Note
+# that this will only find space at the END of the currently active
+# partitions.
+sub find_free_space () {
+    $is_linux
+        or croak "internal error";
+    my $cmd = 'parted -s /dev/dsk print';
+    open PARTED, "$cmd|"
+        or die "Unable to fork: $^E";
+
+    my $max = 0;
+
+    while (my $line = <PARTED>) {
+        my ($end) = ($line =~ /^\d+\s+\d+\.\d{3}\s+(\d+\.\d{3})/);
+        defined $end
+            or next;
+
+        $end > $max
+            and $max = $end;
+    }
+
+    close PARTED
+        or die "'$cmd' failed: $^E $?";
+
+    return $max;
+}
+
+# Convert an fdisk command to a parted command, more or less.
+sub convert_fdisk_parted ($) {
+    my ($fdisk_cmd) = @_;
+    my $ret;
+
+    # "--" is required, lest "-0" on the command line look like an
+    # option.
+    my $parted = 'parted -s /dev/dsk --';
+
+    my ($cmd) = ($fdisk_cmd =~ /^fdisk\s+(.*)\z/i);
+    defined $cmd
+        or croak 'internal error';
+
+    if ($cmd =~ /^\/clear\s+1\z/i) {
+        $ret = "$parted mklabel msdos";
+    }
+    elsif ($cmd =~ /^\/delete\s+\/pri:(\d+)\z/i) {
+        croak "'$fdisk_cmd': you do not want to do that ; bailing";
+        $ret = "$parted rm $1";
+    }
+    elsif ($cmd =~ /^\/activate:(\d+)\z/i) {
+        $ret = "$parted set $1 boot on";
+    }
+    elsif ($cmd =~ /^\/xo/i) {
+        $ret = 'parted /dev/dsk';
+    }
+    elsif ($cmd =~ /\/pri(o)?:(\d+)(,100)?(?:\s+\/spec:(\d+))?/i) {
+        my ($fat16, $size, $is_percent, $type) = ($1, $2, $3, $4);
+
+        my $start = find_free_space ();
+        my $end;
+        if (defined $is_percent) {
+            $size eq '100'
+                or croak "We only support 100,100 for size spec ($fdisk_cmd)";
+            $end = '-0';
+        }
+        else {
+            $end = $start + $size + 0.001;
+        }
+        my $fs = (defined $fat16 ? 'fat16' : 'fat32');
+        if (defined $type) {
+            $type == 7
+                or croak "Sorry, only type 7 (NTFS) is allowed ($fdisk_cmd)";
+            $fs = 'ntfs';
+        }
+
+        $ret = "$parted mkpart primary $fs $start $end";
+    }
+    else {
+        die "Unable to convert '$fdisk_cmd' to Parted commands; bailing";
+    }
+
+#    print "HERE ($fdisk_cmd) -> ($ret)\n";
+    return $ret;
 }
 
 # fdisk commands to run
@@ -315,16 +486,15 @@ sub ask_fdisk_cmds () {
     print "NOTE: If partition table changes, machine will reboot.\n";
     # Commands to erase partition table
     my $pre_cmds = 'fdisk /clear 1';
-    # Commands to delete first primary partition and replace it with a
-    # 4G FAT partition
-    my $post_cmds = 'fdisk /delete /pri:1;fdisk /pri:4000;fdisk /activate:1';
+    # Commands to activate primary partition
+    my $post_cmds = 'fdisk /activate:1';
 
     # Command to run fdisk interactively
     my $interactive_cmd = 'fdisk /xo';
 
     my $ret = menu_choice
         ('Do nothing (continue)' => undef,
-         'Run fdisk interactively (experts only)' => $interactive_cmd,
+         'Run partitioning tool manually (experts only)' => $interactive_cmd,
          'Whole disk C:', =>
          'fdisk /pri:100,100',
          '4G C:, rest D:' =>
@@ -348,7 +518,7 @@ sub ask_os () {
 
     print "Scanning for OS directories under $os_dir...\n";
 
-    opendir OSDIR, $os_dir
+    opendir OSDIR, dos_to_host ($os_dir)
         or die "Unable to opendir $os_dir: $^E";
 
     my @media_objs;
@@ -357,7 +527,7 @@ sub ask_os () {
             and next;
 
         my $full_path = $file_spec->catdir ($os_dir, $ent);
-        -d $full_path
+        -d dos_to_host ($full_path)
             or next;
 
         my $media = Unattend::WinMedia->new ($full_path);
@@ -492,7 +662,7 @@ sub batfile_first_lines () {
     if (!defined $_batfile_first_lines) {
         $_batfile_first_lines = { };
         my $script_dir = 'z:\\scripts';
-        opendir SCRIPTS, $script_dir
+        opendir SCRIPTS, dos_to_host ($script_dir)
             or die "Unable to opendir $script_dir: $^E";
         while (my $ent = readdir SCRIPTS) {
             # Skip special files
@@ -503,10 +673,12 @@ sub batfile_first_lines () {
                 or next;
             # Skip non-ordinary filess
             my $full_path = $file_spec->catfile ($script_dir, $ent);
-            -f $full_path
+            -f dos_to_host ($full_path)
                 or next;
-            open FILE, $full_path
+            open FILE, dos_to_host ($full_path)
                 or die "Unable to open $full_path for reading: $^E";
+            $is_linux
+                and binmode FILE, ':crlf';
             my $line = <FILE>;
             chomp $line;
             $_batfile_first_lines->{$ent} = $line;
@@ -569,6 +741,8 @@ $u->{'_meta'}->{'format_cmd'} =
 
 $u->{'_meta'}->{'ipaddr'} =
     sub {
+        $is_linux
+            and return 'FIXME: Add support for IP addr';
         # Parse file written by autoexec.bat
         my $ipconfig = '\\ipconfig.txt';
         if (-e $ipconfig) {
@@ -601,6 +775,8 @@ $u->{'_meta'}->{'local_admins'} =
 
 $u->{'_meta'}->{'macaddr'} =
     sub {
+        $is_linux
+            and return 'FIXME: Add support for IP addr';
         # Parse file written by autoexec.bat.
         my $netdiag = '\\netdiag.txt';
         foreach my $line (read_file ($netdiag)) {
@@ -749,7 +925,8 @@ $u->{'GuiRunOnce'}->{'Command0'} =
             # Basic framework for mapping Z: drive
             my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
             print "Copying $mapznrun...";
-            copy ('z:\\bin\\mapznrun.bat', $mapznrun)
+            copy (dos_to_host ('z:\\bin\\mapznrun.bat'),
+                  dos_to_host ($mapznrun))
                 or die "Unable to copy z:\\bin\\mapznrun.bat to $mapznrun";
             print "done.\n";
 
@@ -917,22 +1094,26 @@ $u->sort_index ('_meta') = 999999;
 ## Now the meat of the script.
 
 # Read master unattend.txt.
-$u->read ('z:\\lib\\unattend.txt');
+$u->read (dos_to_host ('z:\\lib\\unattend.txt'));
 
 # Read site-specific unattend.txt, if it exists.
-my $site_unattend_txt = 'z:\\site\\unattend.txt';
--e ($site_unattend_txt)
-    and $u->read ($site_unattend_txt);
+if (1) {
+    my $site_unattend_txt = dos_to_host ('z:\\site\\unattend.txt');
+    -e ($site_unattend_txt)
+        and $u->read ($site_unattend_txt);
+}
 
 # Read site-specific Perl configuration file.
-my $site_conf = 'z:\\site\\config.pl';
+if (1) {
+    my $site_conf = dos_to_host ('z:\\site\\config.pl');
 
-if (-e $site_conf) {
-    my $result = do $site_conf;
-    $@
-        and die "do $site_conf failed: $@";
-    defined $result
-        or die "Could not do $site_conf: $^E";
+    if (-e $site_conf) {
+        my $result = do $site_conf;
+        $@
+            and die "do $site_conf failed: $@";
+        defined $result
+            or die "Could not do $site_conf: $^E";
+    }
 }
 
 # Output some interesting info.
@@ -944,7 +1125,7 @@ defined $macaddr
     and print "MAC address: $macaddr\n";
 
 # Set environment variable controlling fdisk's use of INT13 extensions.
-($u->{'_meta'}->{'fdisk_lba'})
+$is_linux || ($u->{'_meta'}->{'fdisk_lba'})
     or $ENV{'FFD_VERSION'}=6;
 
 # Read current partition table.
@@ -974,37 +1155,54 @@ while (1) {
 
 # Run the fdisk commands.
 foreach my $cmd (split /;/, $fdisk_cmds) {
-    system $cmd;
+    system ($is_linux
+            ? convert_fdisk_parted ($cmd)
+            : $cmd);
 }
 
-# If partition table has changed, reboot.
-print "\nRe-checking partition table...";
-if ($partition_table ne partition_table (1)) {
-    print "changed.  Rebooting...\n";
-    sleep 2;
-    system ('fdisk /reboot');
-    die "Internal error";
-}
-else {
-    print "no change.  Continuing.\n";
+unless ($is_linux) {
+    # If partition table has changed, reboot.
+    print "\nRe-checking partition table...";
+    if ($partition_table ne partition_table (1)) {
+        print "changed.  Rebooting...\n";
+        sleep 2;
+        system ('fdisk /reboot');
+        die "Internal error";
+    }
+    else {
+        print "no change.  Continuing.\n";
+    }
 }
 
 # Run formatting command, if any.
 my $format_cmd = $u->{'_meta'}->{'format_cmd'};
-defined $format_cmd
-    and system $format_cmd;
+if (defined $format_cmd) {
+    if ($is_linux) {
+        print "*** FIXME: Not really doing this right...\n";
+        system 'parted', '-s', '/dev/dsk', 'mkfs', '1', 'fat32';
+    }
+    else {
+        system $format_cmd;
+    }
+}
 
 # Overwrite MBR, if desired.
-($u->{'_meta'}->{'replace_mbr'})
-    and system ('fdisk /mbr');
+if ($u->{'_meta'}->{'replace_mbr'}) {
+    if ($is_linux) {
+        print "*** FIXME: Must handle MBR here (yowza)!\n";
+    }
+    else {
+        system ('fdisk /mbr');
+    }
+}
 
 # Create C:\netinst and subdirectories.
 my $netinst = $u->{'_meta'}->{'netinst'};
 foreach my $dir ($netinst, "$netinst\\logs") {
-    -d $dir
+    -d dos_to_host ($dir)
         and next;
     print "Creating $dir...";
-    mkdir $dir
+    mkdir dos_to_host ($dir)
         or die "FAILED: $^E";
     print "done.\n";
 }
@@ -1044,8 +1242,12 @@ while ($u->{'_meta'}->{'edit_files'}) {
                             'Continue' => undef);
     defined $file
         or last;
+    if ($is_linux) {
+        print "*** NOT SUPPORTED ON LINUX YET (FIXME) ***";
+        next;
+    }
     system 'pico', '-w', $file;
 }
 
-# Return control to autoexec.bat, which will run doit.bat.
+# Return control to master script, which will run doit.bat.
 exit 0;
