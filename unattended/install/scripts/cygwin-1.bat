@@ -3,6 +3,9 @@
 :: Untar our local additions to the tree
 todo.pl "c:\cygwin\bin\bash.exe --login -c 'tar -C / -xvzf /cygdrive/z/packages/curlstuff.tar.gz'"
 
+:: Configure sshd
+todo.pl "c:\cygwin\bin\bash.exe --login -c 'ssh-host-config --no'"
+
 :: Add curlbot entry to /etc/passwd.  The messy string comes from
 :: running "mkpasswd -d -u curlbot" under Cygwin.  Unfortunately, this
 :: must be run from a valid domain account, so we cannot do this while
