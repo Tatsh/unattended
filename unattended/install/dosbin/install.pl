@@ -439,6 +439,8 @@ sub create_postinst_bat () {
          'PATH=%Z%\\bin;%PATH%',
          # Last step is always a reboot
          'todo.pl .reboot',
+         # After installing and just before reboot re-enable System Restore
+         'todo.pl "srconfig.pl --enable"',
          # Antepenultimate step is to delete credentials file
          "todo.pl \"del $tempcred\"",
          # Next-to-last step is to disable automatic logon
@@ -446,6 +448,8 @@ sub create_postinst_bat () {
          # First step is to perform top-level install of master and
          # optional scripts.
          (map { "todo.pl $_" } reverse @scripts),
+         # Before installing disable System Restore.
+         'todo.pl "srconfig.pl --disable"',
          '',
          'todo.pl --go');
     }
