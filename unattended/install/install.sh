@@ -29,9 +29,10 @@ fdisk /info
 echo
 echo "1) Do nothing (continue)"
 echo "2) Format C:"
-echo "3) Automatically partition (workstation) and reboot"
-echo "4) Automatically partition (build server) and reboot"
-echo "5) Run fdisk interactively and reboot"
+echo "3) Autoparition (whole disk C:) and reboot"
+echo "4) Autoparition (4G C:, rest D:) and reboot"
+echo "5) Autopartition (4G C:, 4G D:, rest E:) and reboot"
+echo "6) Run fdisk interactively and reboot"
 echo "X) Exit this program"
 choice /c:12345x "Select:"
 
@@ -48,7 +49,7 @@ elif [ $ret == 3 ] ; then
     if [ $? == 1 ] ; then
         echo "Autopartitioning..."
         fdisk /clearall 1
-        fdisk /prio:1536
+        fdisk /prio:2000
         fdisk /activate:1
         fdisk /mbr
         echo "Rebooting..."
@@ -63,19 +64,38 @@ elif [ $ret == 4 ] ; then
         fdisk /clearall 1
         # Create 4G partition as place-holder
         fdisk /pri:4096
-        # 4G partition for /scratch-auto
-        fdisk /pri:4096 /spec:7
-        # Rest of drive for /scratch
+        # Allocate rest of drive for D:
         fdisk /pri:100,100 /spec:7
         # Delete place-holder and re-create as FAT
         fdisk /delete /pri:1
-        fdisk /prio:1536
+        fdisk /prio:2000
         fdisk /activate:1
         fdisk /mbr
         echo "Rebooting..."
         fdisk /reboot
     fi
 elif [ $ret == 5 ] ; then
+    echo
+    echo "WARNING: This operation destroys the disk!"
+    choice "Are you sure"
+    if [ $? == 1 ] ; then
+        echo "Autopartitioning..."
+        fdisk /clearall 1
+        # Create 4G partition as place-holder
+        fdisk /pri:4096
+        # 4G partition for D:
+        fdisk /pri:4096 /spec:7
+        # Allocate rest of drive for E:
+        fdisk /pri:100,100 /spec:7
+        # Delete place-holder and re-create as FAT
+        fdisk /delete /pri:1
+        fdisk /prio:2000
+        fdisk /activate:1
+        fdisk /mbr
+        echo "Rebooting..."
+        fdisk /reboot
+    fi
+elif [ $ret == 6 ] ; then
     echo "Running fdisk interactively..."
     fdisk /xo
     echo "Rebooting..."
@@ -93,6 +113,29 @@ for dir in $netinst "$netinst\\logs" ; do
     a:/command.com /c mkdir $dir
     echo "done."
 done
+
+echo
+echo "(Reminder: $INSTALL is Z:)"
+echo "Please choose the OS to install:"
+echo "1) Windows 2000 (Z:\\win2k)"
+echo "2) Windows 2000 Service Pack 3 (Z:\\win2ksp3)"
+echo "3) Windows XP Professional (Z:\\winxp)"
+echo "4) Windows XP Professional Service Pack 1 (Z:\winxpsp1)"
+choice /c:1234 "Select"
+ret=$?
+
+if [ $ret == 1 ] ; then
+    os=win2k
+elif [ $ret == 2 ] ; then
+    os=win2ksp3
+elif [ $ret == 3 ] ; then
+    os=winxp
+elif [ $ret == 4 ] ; then
+    os=winxpsp1
+else
+    echo "Internal error; exiting"
+    exit 1
+fi
 
 echo
 echo -n "For whom is this machine (0 or more usernames)? "
@@ -115,11 +158,11 @@ else
 fi
 
 echo
-echo "1) Do base workstation install (base.bat)"
-echo "2) Do sales laptop install (sales.bat)"
-echo "3) Do developer install (developer.bat)"
-echo "4) Do build server install (build-server.bat)"
-echo "5) Do training install (training.bat)"
+echo "1) Do base workstation install (Z:\scripts\base.bat)"
+echo "2) Do sales laptop install (Z:\scripts\sales.bat)"
+echo "3) Do developer install (Z:\scripts\developer.bat)"
+echo "4) Do build server install (Z:\scripts\build-server.bat)"
+echo "5) Do training install (Z:\scripts\training.bat)"
 echo "X) Exit this program"
 choice /c:12345x "Select"
 ret=$?
@@ -190,7 +233,7 @@ while : ; do
     fi
 done
 
-src_tree=Z:\\win2ksp3\\i386
+src_tree=Z:\\$os\\i386
 
 # While bash is running, there is not enough conventional memory
 # available for winnt.exe to work.  So we just drop the command in a
