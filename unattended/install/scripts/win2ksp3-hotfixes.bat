@@ -17,12 +17,6 @@ todo.pl "z:\packages\win2ksp3\q329414_mdacall_x86.exe /q /c:\"dahotfix /q /n\"" 
 :: <http://www.microsoft.com/windows2000/downloads/critical/q329115/>
 todo.pl "z:\packages\win2ksp3\Q329115_W2K_SP4_X86_EN.exe /u /o /z"
 
-:: Critical Update Q328970
-:: "November 2002, Cumulative Patch for Internet Explorer"
-:: <http://www.microsoft.com/windows/ie/downloads/critical/Q328970/>
-:: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q328970>
-todo.pl "z:\packages\win2ksp3\q328970.exe /q /r:n" .reboot
-
 :: Not-so-critical update Q328523
 :: "default invocation of IE from the Internet Connection Wizard"
 :: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q328523>
