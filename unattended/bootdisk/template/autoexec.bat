@@ -35,7 +35,8 @@ set PATH=Z:\djgpp\bin;z:\dosbin;%PATH%
 set DJGPP=Z:\djgpp\djgpp.env
 lh cwsdpmi -p -s-
 
-perl -I Z:\doslib Z:\dosbin\install.pl
+set PERLLIB=Z:\lib
+perl Z:\dosbin\install.pl
 if errorlevel 1 goto end
 cwsdpmi -u
 
