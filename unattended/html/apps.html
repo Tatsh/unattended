@@ -382,10 +382,17 @@ the GUI.)
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/notips.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >notips.pl</a>
 
-<dd>As you are no doubt aware, Windows installs lots of annoying
+<dd><p>As you are no doubt aware, Windows installs lots of annoying
 first-time logon junk ("tips").  This script gets rid of them all at
-once.  (Note:  This script represents my taste in things to disable;
-you may want to modify it for your site.)
+once.  Note: This script represents my taste in things to disable; you
+may want to modify it for your site.
+
+<p>Incidentally, this script includes examples of editing the registry
+settings for the <em>default user</em>; that is, the settings
+inherited by every new user who logs into the machine.  Most
+approaches I have seen to this involve copying some other file over
+the default user's <code>NTUSER.DAT</code> file, but with Perl, you
+can edit this registry hive directly.
 
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/startup-type.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -404,7 +411,7 @@ Patrick J. LoPresti <a
 href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
 </address>
 
-<A href="http://sourceforge.net"> <IMG align="right"
+<A href="http://sourceforge.net/"> <IMG align="right"
 src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
 width="210" height="62" border="0" alt="SourceForge Logo"></A>
 
