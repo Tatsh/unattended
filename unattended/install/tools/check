@@ -3,7 +3,10 @@
 # Change to the scripts directory so paths are correct
 cd ..
 
-for a in `egrep -Hri '^(run|start|todo).*(packages|updates)\\\\' scripts/* | perl -pe 's#scripts/(.*?):.*?((packages|updates)\\\\.*?\.([a-zA-Z]{3})).*#$1:$2#;s#%WINLANG%#enu#;s#\\\\#/#g;s#//#/#g' | tr ' [:upper:]' '~[:lower:]' | sort | egrep -vi '^(run|start|todo)'`
+# Default to all files if nothing passed in as first arg
+if [ ".$1" == "." ]; then DOFILE="*"; else DOFILE="$1"; fi
+
+for a in `egrep -Hri '^(run|start|todo).*(packages|updates)\\\\' scripts/$DOFILE | perl -pe 's#scripts/(.*?):.*?((packages|updates)\\\\.*?\.([a-zA-Z]{3})).*#$1:$2#;s#%WINLANG%#enu#;s#\\\\#/#g;s#//#/#g' | tr ' [:upper:]' '~[:lower:]' | sort | egrep -vi '^(run|start|todo)'`
 do 
     a=`echo $a | tr '~' ' '`
     if ! [ -r "`echo $a | cut -d':' -f2`" ]
