@@ -78,6 +78,22 @@ foreach my $k (keys (%lang)) {
             }
         }
 
+        if (/if \(useDlWindow\(\)\) \{window.open\([\"\']([^\"\']*)[\"\']/) {
+            my $dl=$1;
+            my @a=split(/\//,$dl);
+            if ($a[$#a] =~ /$k/i) {
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+                $run = lc($type)."/".$a[$#a] unless defined $run;
+            } elsif ($a[$#a] =~ /$lang{$k}\.exe/i) {
+                $a[$#a] =~ s/$lang{$k}\.exe/$k.exe/i;
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+                $run = lc($type)."/".$a[$#a] unless defined $run;
+            } else {
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($k)."/".lc($a[$#a]);
+                $run = lc($type)."/".lc($k)."/".$a[$#a] unless defined $run;
+            }
+        }
+
         if (/\<a id=[\"\']btnDownload[\"\'] class=[\"\']downloadButton[\"\'] href=[\"\']([^\"\']*)[\"\']\>/) {
             my $dl=$1;
             my @a=split(/\//,$dl);
