@@ -18,6 +18,3 @@ todo.pl ".ignore-err 255 startup-type.pl Manual IISADMIN" ".ignore-err 255 start
 
 :: Turn off Windows Messenger service
 todo.pl "startup-type.pl Disabled Messenger"
-
-:: Cleanup messes left over from installing.
-todo.pl hidepw.pl bootini.pl fixtz.pl

@@ -810,50 +810,51 @@ sub create_postinst_bat () {
 
     my $netinst = $u->{'_meta'}->{'netinst'};
 
-    # Top-level installation script
+    my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
+    push @postinst_lines,
+    ('call %Z%\\scripts\\perl.bat',
+     'PATH=%Z%\\bin;%PATH%',
+     # Last step is always a reboot.
+     'todo.pl .reboot',
+     # Penultimate step is to disable automatic logon.
+     'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
+     # Antepenultimate step is to delete credentials file.
+     "todo.pl \"del $tempcred\"",
+     # After installing, re-enable System Restore.
+     'todo.pl "srconfig.pl --enable"',
+     # Before that, add users to the local Administrators group.
+     (map { "todo.pl \"net localgroup \\\"%%Administrators%%\\\" \\\"$_\\\" /add\"" } @admins));
+
+    # Leveled installation scripts
     my $top = $u->{'_meta'}->{'top'};
     my $middle = $u->{'_meta'}->{'middle'};
     my $bottom = $u->{'_meta'}->{'bottom'};
-    if ($top ne '' || $middle ne '' || $bottom ne '') {
-        my @top_scripts = split /;/, $top;
-        my @middle_scripts = split /;/, $middle;
-        my @bottom_scripts = split /;/, $bottom;
-        my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
-        push @postinst_lines,
-        ('call %Z%\\scripts\\perl.bat',
-         'PATH=%Z%\\bin;%PATH%',
-         # Last step is always a reboot.
-         'todo.pl .reboot',
-         # Penultimate step is to disable automatic logon.
-         'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
-         # Antepenultimate step is to delete credentials file.
-         "todo.pl \"del $tempcred\"",
-         # After installing, re-enable System Restore.
-         'todo.pl "srconfig.pl --enable"',
-         # Before that, add users to the local Administrators group.
-         (map { "todo.pl \"net localgroup \\\"%%Administrators%%\\\" \\\"$_\\\" /add\"" }
-          @admins),
-         # Before that, run the "cleanup" scripts.
-         (map { "todo.pl $_" } reverse @bottom_scripts),
-         # Before that, run the optional scripts.
-         (map { "todo.pl $_" } reverse @middle_scripts),
-         # First step is to perform top-level install of master and
-         # optional scripts.
-         (map { "todo.pl $_" } reverse @top_scripts),
-         # Before installing disable System Restore.
-         'todo.pl "srconfig.pl --disable"',
-         '',
-         'todo.pl --go');
-    }
+    my @top_scripts = split /;/, $top;
+    my @middle_scripts = split /;/, $middle;
+    my @bottom_scripts = split /;/, $bottom;
+    push @postinst_lines,
+     # Before that, run the "cleanup" scripts.
+     (map { "todo.pl $_" } reverse @bottom_scripts),
+     # Before that, run the optional scripts.
+     (map { "todo.pl $_" } reverse @middle_scripts),
+     # First step is to perform top-level install of master and
+     # optional scripts.
+     (map { "todo.pl $_" } reverse @top_scripts));
+
+    push @postinst_lines,
+     # Before installing disable System Restore.
+     'todo.pl "srconfig.pl --disable"',
+     # First thing is to clean up installation mess.
+     'todo.pl hidepw.pl bootini.pl fixtz.pl',
+     '',
+     'todo.pl --go');
 
     my $postinst;
 
-    if (scalar @postinst_lines > 0) {
-        $postinst = $file_spec->catfile ($netinst, 'postinst.bat');
-        print "Creating $postinst...";
-        write_file ($postinst, @postinst_lines);
-        print "done.\n";
-    }
+    $postinst = $file_spec->catfile ($netinst, 'postinst.bat');
+    print "Creating $postinst...";
+    write_file ($postinst, @postinst_lines);
+    print "done.\n";
 
     return $postinst;
 }
