@@ -1,5 +1,5 @@
 bash=bash-2.05b
-busybox=busybox-1.00-pre8
+busybox=busybox-1.00-pre9
 dosemu=dosemu-1.2.1
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
@@ -9,14 +9,11 @@ glibc=glibc-2.3.2
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 klibc=klibc-0.115
-# HACK FIXME: New ltmain.sh from libtool 1.5.2 is required for Parted
-# 1.6.8, but hopefully not for any later versions...
-libtool=libtool-1.5.2
 linux=linux-2.6.5
 module-init-tools=module-init-tools-3.0
 nano=nano-1.2.3
 ncurses=ncurses-5.4
-parted=parted-1.6.8
+parted=parted-1.6.9
 perl=perl-5.8.3
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.7
@@ -25,7 +22,7 @@ samba=samba-3.0.2a
 cwd:=$(shell pwd)
 
 packages=$(bash) $(busybox) $(dosemu) $(e2fsprogs) $(glibc) $(kbd)	\
-	$(klibc) $(libtool) $(linux) $(module-init-tools) $(nano)	\
+	$(klibc) $(linux) $(module-init-tools) $(nano)			\
 	$(ncurses) $(parted) $(perl) $(pciutils) $(pcmcia-cs) $(samba)
 
 .PHONY: stage1 all download $(download_targets)	$(symlink_targets) \
@@ -379,13 +376,8 @@ stage1 += stage1/usr/lib/libncurses.so
 
 ## parted
 
-# The ltmain.sh file shipped with Parted 1.6.8 is too old.  As a
-# result, the shared libraries have no .so extension.  Replacing
-# ltmain.sh with a copy from libtool 1.5.2 fixes this problem.
-$(call copy_file,$(libtool)/ltmain.sh,$(parted)/ltmain.sh)
-
 $(parted)/parted/.libs/parted: fakelib/libc.so stage1/lib/libuuid.so	\
-				stage1/lib/libdl.so $(parted)/ltmain.sh
+				stage1/lib/libdl.so
 	rm -f $@
 	cd $(parted)						\
 	&& CFLAGS="$(fakelib_cflags)"				\
@@ -623,8 +615,6 @@ $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(klibc), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/libs/klibc/)
-# FIXME:  Remove this if/when the Parted folks fix their bug.
-$(call download_rule, $(libtool), tar.gz, http://ftp.gnu.org/gnu/libtool/)
 $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
