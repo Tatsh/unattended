@@ -10,11 +10,16 @@ use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg);
 use Win32::NetResource; # for get_drive_path
 use Win32::Console;
 
+(exists $ENV{'SystemDrive'})
+    or die "Internal error";
+
+my $c = $ENV{'SystemDrive'};
+
 # Location of the "to do" list.
-my $todo = 'c:\\netinst\\todo.txt';
+my $todo = "$c\\netinst\\todo.txt";
 
 # Location of "mapznrun" script
-my $mapznrun = 'c:\\netinst\\mapznrun.bat';
+my $mapznrun = "$c\\netinst\\mapznrun.bat";
 
 # Determine alternate letter for z: drive and store it in Z
 # environment variable (unless it is already set).
