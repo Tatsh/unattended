@@ -2,6 +2,11 @@
 
 use warnings;
 use strict;
+
+# FIXME: Decide which things we actually want to do by default.  For
+# now, skip entire script!
+exit 0;
+
 @ARGV == 0
     or die "Usage: $0";
 
