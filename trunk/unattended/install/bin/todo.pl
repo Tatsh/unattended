@@ -208,7 +208,7 @@ sub get_windows_version () {
     if ($csd_version eq '') {
         $sp = '';
     }
-    elsif ($csd_version =~ /^Service Pack (\d+)$/) {
+    elsif ($csd_version =~ /^Service Pack (\d+)/) {
         $sp = "sp$1";
     }
     else {
