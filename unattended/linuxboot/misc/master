@@ -138,6 +138,15 @@ while : ; do
     # ultimately appear in permcreds.bat which is read by Windows.
     Z_PATH=${Z_PATH//\//\\}
 
+    if [[ "$Z_USER" == */* && "$Z_USER" != *\\* ]] ; then
+        # Z_USER contains a slash but not a backslash, so we assume it
+        # is in "Samba format" (username/DOMAIN).  Convert it to
+        # DOMAIN\username.
+
+        # Split Z_USER at (final) slash, reverse, and reassemble.
+        Z_USER="${Z_USER##*/}\\${Z_USER%/*}"
+    fi
+
     smbmount_opts="username=$Z_USER,ro,ttl=2400000"
 
     echo "*** Trying smbmount $Z_PATH /z -o $smbmount_opts"
