@@ -12,7 +12,7 @@ glibc=glibc-2.3.4
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.11
+linux=linux-2.6.11.5
 module-init-tools=module-init-tools-3.1
 mysql=mysql-4.0.23a
 nano=nano-1.2.4
@@ -24,7 +24,7 @@ perl=perl-5.8.6
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.3202
 pmtools=pmtools-20031210
-samba=samba-3.0.11
+samba=samba-3.0.12
 wireless_tools=wireless_tools.27
 zlib=zlib-1.2.2
 
@@ -468,10 +468,13 @@ stage1 += stage1/sbin/acpidmp
 ## Perl
 $(perl)/perl: fakeinclude/stdio.h
 	rm -f $@
-	cd $(perl)					\
-	&& ./Configure -Dusethreads -Dprefix=/opt/perl	\
-		-Darchname=i586-linux			\
-		-Accflags="$(fakelib_cflags)" -de	\
+	cd $(perl)							\
+	&& ./Configure -Dusethreads -Dprefix=/opt/perl			\
+		-Ud_sethostent_r -Ud_setprotoent_r -Ud_setservent_r	\
+		-Ud_endhostent_r -Ud_endprotoent_r -Ud_endservent_r	\
+		-Darchname=i586-linux					\
+		-Accflags="$(fakelib_cflags)"				\
+		-deO							\
 	&& make
 	[ -e $@ ]
 
