@@ -8,6 +8,11 @@
 
 :: Extra Updates
 
+:: Windows Messenger Update
+:: (This will be disabled in the notips script)
+:: <http://www.microsoft.com/windowsxp/windowsmessenger/>
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mmssetup.exe /q"
+
 :: Microsoft DirectX 9.0b update
 :: <http://www.microsoft.com/directx/>
 :: Download the redistributable for developers (dx90b_redist.exe) and
