@@ -3,5 +3,5 @@
 :: Download sp4supporttools.exe and run with the /X paramater 
 :: Extract to /packges/support-tools
 
-start /wait msiexec /qb /l* %SystemDrive%\netinst\logs\support-tools.txt /i %Z%\packages\support-tools\i386\2000rkst.msi NTRK50DIR=%SystemDrive%\SupTools
+start /wait msiexec /qb /l* %SystemDrive%\netinst\logs\support-tools.txt /i %Z%\packages\support-tools\2000rkst.msi NTRK50DIR=%SystemDrive%\SupTools
 if errorlevel 1 exit 1
