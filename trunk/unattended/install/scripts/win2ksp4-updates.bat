@@ -84,7 +84,7 @@ todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /
 ::
 :: Here we extract the installer to %TEMP%, run it, and delete it.
 todo.pl "rmdir /s /q \"%TEMP%\dx9c\""
-todo.pl ".reboot-on 194 \"%TEMP%\dx9c\dxsetup.exe\" /silent /installmanageddx"
+todo.pl ".reboot-on 1 \"%TEMP%\dx9c\dxsetup.exe\" /silent /installmanageddx"
 todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 
 :: Microsoft .NET framework Language Pack
