@@ -347,8 +347,13 @@ $(call copy_lib, $(ncurses)/lib/libncurses.so, stage1/usr/lib/libncurses.so)
 stage1 += stage1/usr/lib/libncurses.so
 
 ## parted
+$(parted)/.stamp-bgs64-patch: misc/parted-bgs64-patch
+	cd $(parted) && patch -p1 < $(cwd)/$<
+	touch $@
+
 $(parted)/parted/.libs/parted: fakelib/libc.so stage1/lib/libuuid.so	\
-				stage1/lib/libdl.so
+				stage1/lib/libdl.so			\
+				$(parted)/.stamp-bgs64-patch
 	cd $(parted)						\
 	&& CFLAGS="$(fakelib_cflags)"				\
 		./configure --disable-nls --without-readline	\
