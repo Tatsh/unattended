@@ -36,6 +36,10 @@ todo.pl ".ignore-err 194 %Z%\updates\win2ksp4\Windows2000-KB823182-x86-%WINLANG%
 :: (download only available from Windows Catalog)
 todo.pl "%Z%\updates\win2ksp4\rootsupd.exe /q /r:n"
 
+:: Windows Journal Viewer update
+:: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
+todo.pl "%Z%\updates\win2ksp4\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
+
 :: Critical update 824146
 :: "A Buffer Overrun in RPCSS May Allow Code Execution"
 :: (Worst Windows security hole, ever.  Again.)
