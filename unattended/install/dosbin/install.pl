@@ -316,7 +316,7 @@ sub ask_fdisk_cmds () {
     # Commands to erase partition table
     my $pre_cmds = 'fdisk /clear 1';
     # Commands to delete first primary partition and replace it with a
-    # 2G FAT partition
+    # 4G FAT partition
     my $post_cmds = 'fdisk /delete /pri:1;fdisk /pri:4000;fdisk /activate:1';
 
     # Command to run fdisk interactively
