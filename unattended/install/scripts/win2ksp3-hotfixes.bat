@@ -6,6 +6,9 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Always reboot after installing hotfixes
+todo.pl .reboot
+
 :: Critical Update 329170/309376
 :: "Flaw in SMB Signing Could Enable Group Policy to be Modified"
 :: <http://support.microsoft.com/?kbid=329170>
