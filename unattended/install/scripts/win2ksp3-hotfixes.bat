@@ -6,6 +6,10 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Q324096
+:: http://www.microsoft.com/Windows2000/downloads/security/q324096/
+todo.pl "z:\packages\win2ksp3\Q324096_W2K_SP4_X86_EN.exe /u /o /z"
+
 :: Q324380
 :: <http://www.microsoft.com/windows2000/downloads/security/q324380/>
 todo.pl "z:\packages\win2ksp3\Q324380.exe /u /o /z"
