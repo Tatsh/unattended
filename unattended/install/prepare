@@ -12,7 +12,11 @@ for needed in `egrep -hri "URL\|($WINLANG|ALL)" scripts/$2 | tr ' ' '~'`; do
     # Make sure path is available
     mkdir -p "$path"
     # Download file if it doesn't exist
-    if [ ! -f "$file" ]; then 
-        wget --passive-ftp -O "$file" "$url"
+    if [ ! -f "$file" ] ; then
+        if wget --passive-ftp -O "$file.$$.tmp" "$url" ; then
+            mv "$file.$$.tmp" "$file"
+        else
+            rm -f "$file.$$.tmp"
+        fi
     fi
 done
