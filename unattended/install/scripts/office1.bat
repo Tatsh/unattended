@@ -3,5 +3,6 @@
 :: Not available as an administrative update, so we apply it after
 :: installing Office reboots.
 
+:: /q means "quiet", /r:n means "do not reboot"
 start /wait z:\packages\outlctlx.exe /q /r:n
 if errorlevel 1 exit 1
