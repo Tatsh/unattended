@@ -138,7 +138,7 @@ sub get_windows_version () {
     defined $product_name
         or die "Unable to get $pn_key: $^E";
     my $csd_key = "$ver_key//CSDVersion";
-    my $csd_version = $reg{$csd_key};
+    my $csd_version = (exists $reg{$csd_key} ? $reg{$csd_key} : '');
     defined $csd_version
         or die "Unable to get $csd_key: $^E";
 
@@ -155,7 +155,10 @@ sub get_windows_version () {
     }
 
     my $sp;
-    if ($csd_version =~ /^Service Pack (\d+)$/) {
+    if ($csd_version eq '') {
+        $sp = '';
+    }
+    elsif ($csd_version =~ /^Service Pack (\d+)$/) {
         $sp = "sp$1";
     }
     else {
