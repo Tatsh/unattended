@@ -143,6 +143,8 @@ my %pid_table =
      '51873OEM' => 'OEM',
      '51873000' => 'Retail',
      '51873270' => 'Volume',
+     # Windows 2000 Professional, Spanish
+     '52339270' => 'Volume',
      # Windows 2000 Professional, Russian
      '52882000' => 'Retail',
      # 2k server
@@ -357,7 +359,6 @@ sub textmode_retail_drivers ($;$) {
 # files.
 sub lang_dirs ($;$) {
     my Unattend::WinMedia ($self) = shift;
-    # This should probably do something.  FIXME.
     my $verbose = shift;
     my @ret;
     
