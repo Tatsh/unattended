@@ -12,7 +12,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q828750.exe /q /r:n"
 :: "April 2003, Cumulative Patch for Outlook Express"
 :: <http://support.microsoft.com/?kbid=330994>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\q330994.exe /q /r:n"
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 
 :: Critical update Q318203/Q317244
 :: "XMLHTTP Control in MSXML 3.0 Can Allow Access to Local Files"
