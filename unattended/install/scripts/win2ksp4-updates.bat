@@ -425,6 +425,63 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: Security Update for Windows 2000 (KB885835)
+:: Microsoft Security Bulletin MS04-044
+:: "Vulnerabilities in Windows Kernel and LSASS Could Allow Elevation of Privilege (885835)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-044.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=EFDEA122-DDA4-40B8-A7AF-9DDCC3870C38>
+:: URL|ARA|http://download.microsoft.com/download/a/0/1/a01b608a-8f60-448d-8c74-727f2fcc2b7c/Windows2000-KB885835-x86-ARA.EXE|updates/win2ksp4/windows2000-kb885835-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/0/1/4/014a3b5e-76af-4a08-a741-5f646b479802/Windows2000-KB885835-x86-CSY.EXE|updates/win2ksp4/windows2000-kb885835-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/7/a/a/7aa8b8ad-efa0-4724-8fca-a0095d058cc7/Windows2000-KB885835-x86-DAN.EXE|updates/win2ksp4/windows2000-kb885835-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/b/4/fb45cfca-fe5e-4703-8a0e-87e0e15b5d8a/Windows2000-KB885835-x86-DEU.EXE|updates/win2ksp4/windows2000-kb885835-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/6/3/8/638db706-8510-4f03-8130-d11608675320/Windows2000-KB885835-x86-ELL.EXE|updates/win2ksp4/windows2000-kb885835-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/8/4/e/84e1995c-c98e-4818-9da3-62004c17d80f/Windows2000-KB885835-x86-ENU.EXE|updates/win2ksp4/windows2000-kb885835-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/5/0/d50ebb07-9582-4bed-a69a-86afab5982a8/Windows2000-KB885835-x86-ESN.EXE|updates/win2ksp4/windows2000-kb885835-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/e/7/7/e77f5ecf-8660-46cf-9049-dc406fb9003b/Windows2000-KB885835-x86-FIN.EXE|updates/win2ksp4/windows2000-kb885835-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/8/4/e/84e797ad-7b73-4c04-a4af-d7670aa4241b/Windows2000-KB885835-x86-FRA.EXE|updates/win2ksp4/windows2000-kb885835-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/f/0/0/f005c5e7-2500-482a-b73d-746cb2a948ec/Windows2000-KB885835-x86-HEB.EXE|updates/win2ksp4/windows2000-kb885835-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/1/9/c/19cb0f7c-327b-4e5e-ab33-6ea026f10505/Windows2000-KB885835-x86-HUN.EXE|updates/win2ksp4/windows2000-kb885835-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/a/1/3/a13060e7-2554-4c25-bfd7-c57b63290247/Windows2000-KB885835-x86-ITA.EXE|updates/win2ksp4/windows2000-kb885835-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/3/b/8/3b875b12-3476-4b9f-8e11-261587967690/Windows2000-KB885835-x86-JPN.EXE|updates/win2ksp4/windows2000-kb885835-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/a/c/b/acbd65de-df15-429d-984d-4d41b1f92740/Windows2000-KB885835-x86-KOR.EXE|updates/win2ksp4/windows2000-kb885835-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/2/4/1/241130ef-e71b-4680-8fa9-8a579578a4e8/Windows2000-KB885835-x86-NLD.EXE|updates/win2ksp4/windows2000-kb885835-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/a/c/6/ac6f3a0b-a766-4aee-ab41-e356a1573301/Windows2000-KB885835-x86-NOR.EXE|updates/win2ksp4/windows2000-kb885835-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/6/b/e/6be396bc-7fbe-420b-bd34-8c4a4f7213d9/Windows2000-KB885835-x86-PLK.EXE|updates/win2ksp4/windows2000-kb885835-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/1/d/4/1d40104e-6f02-401c-a587-bbc633bbeb92/Windows2000-KB885835-x86-PTB.EXE|updates/win2ksp4/windows2000-kb885835-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/d/0/b/d0b51d6e-5bd4-42f2-b6fc-1db3a63dbcd4/Windows2000-KB885835-x86-PTG.EXE|updates/win2ksp4/windows2000-kb885835-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/d/3/0d30503a-e2fd-4f90-999a-5ad9f55349eb/Windows2000-KB885835-x86-RUS.EXE|updates/win2ksp4/windows2000-kb885835-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/7/d/e7d02913-20aa-4a7a-b6dd-abe9817c159f/Windows2000-KB885835-x86-SVE.EXE|updates/win2ksp4/windows2000-kb885835-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/a/9/4/a9459d57-591b-441d-935c-dd316401ed9b/Windows2000-KB885835-x86-TRK.EXE|updates/win2ksp4/windows2000-kb885835-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB885835-x86-%WINLANG%.EXE /passive /n /norestart"
+
+:: Security Update for Windows 2000 (KB885836)
+:: "Vulnerability in WordPad Could Allow Code Execution (885836)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-041.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=C4B9D079-13F0-4E1E-834B-D2077838B9E1>
+:: URL|ARA|http://download.microsoft.com/download/3/6/b/36b25b30-acad-4a77-9767-5db5f6689850/Windows2000-KB885836-x86-ARA.EXE|updates/win2ksp4/windows2000-kb885836-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/d/6/ad64c5b2-0965-4c6d-a5b5-1d97e3baefdd/Windows2000-KB885836-x86-CSY.EXE|updates/win2ksp4/windows2000-kb885836-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/8/c/08c86f33-b064-4664-b523-950301dfd9d8/Windows2000-KB885836-x86-DAN.EXE|updates/win2ksp4/windows2000-kb885836-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/a/3/2/a3231100-7703-470e-b05f-81aa46ae940d/Windows2000-KB885836-x86-DEU.EXE|updates/win2ksp4/windows2000-kb885836-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/4/d/4/4d48d490-7202-4f26-bb1f-82570434f5f5/Windows2000-KB885836-x86-ELL.EXE|updates/win2ksp4/windows2000-kb885836-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/8/d/e/8defe3b9-2f7c-4237-a4b0-c2901d09dc1c/Windows2000-KB885836-x86-ENU.EXE|updates/win2ksp4/windows2000-kb885836-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/7/9/d7937801-2fd1-4e53-8a99-b744d78be59d/Windows2000-KB885836-x86-ESN.EXE|updates/win2ksp4/windows2000-kb885836-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/d/1/7/d17e122b-c245-4d9c-8014-711924d4506e/Windows2000-KB885836-x86-FIN.EXE|updates/win2ksp4/windows2000-kb885836-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/1/6/3/163e6e77-43b2-4a9b-aa5e-2902ba338e20/Windows2000-KB885836-x86-FRA.EXE|updates/win2ksp4/windows2000-kb885836-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/7/7/2/772eb126-3f13-4560-8f34-436a7b16873b/Windows2000-KB885836-x86-HEB.EXE|updates/win2ksp4/windows2000-kb885836-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/5/6/1/561b5013-30d3-40ee-9615-c0b559fc2af0/Windows2000-KB885836-x86-HUN.EXE|updates/win2ksp4/windows2000-kb885836-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/f/5/4f58594f-5ea2-4e43-8223-7a16bbf5b9fd/Windows2000-KB885836-x86-ITA.EXE|updates/win2ksp4/windows2000-kb885836-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/7/c/f7c39970-68c9-4acc-b849-500733b9bc80/Windows2000-KB885836-x86-JPN.EXE|updates/win2ksp4/windows2000-kb885836-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/2/3/0/230d0b92-6d5c-4ec7-9f9d-f6cb56504002/Windows2000-KB885836-x86-KOR.EXE|updates/win2ksp4/windows2000-kb885836-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/b/4/7/b47de505-9745-4624-9b0f-6940f9148c74/Windows2000-KB885836-x86-NLD.EXE|updates/win2ksp4/windows2000-kb885836-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/e/0/b/e0b8a18e-9505-451b-8a2a-57459b0d7e01/Windows2000-KB885836-x86-NOR.EXE|updates/win2ksp4/windows2000-kb885836-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/0/3/80360f76-2fe8-46e6-ba82-135d1c0f7947/Windows2000-KB885836-x86-PLK.EXE|updates/win2ksp4/windows2000-kb885836-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/5/4/6/5466660f-cda8-44fa-962b-b0481c9d8d25/Windows2000-KB885836-x86-PTB.EXE|updates/win2ksp4/windows2000-kb885836-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/a/c/bacd8375-1c84-4373-b9a6-da887fc255c7/Windows2000-KB885836-x86-PTG.EXE|updates/win2ksp4/windows2000-kb885836-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/7/a/07ac29d8-58b5-45f7-850f-35cfa20f9ca7/Windows2000-KB885836-x86-RUS.EXE|updates/win2ksp4/windows2000-kb885836-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/6/e/f6ef3798-6f43-48ba-b095-1c9cf553b4d3/Windows2000-KB885836-x86-SVE.EXE|updates/win2ksp4/windows2000-kb885836-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/d/6/5d643f28-49fb-4712-a04e-f59a81588ce0/Windows2000-KB885836-x86-TRK.EXE|updates/win2ksp4/windows2000-kb885836-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB885836-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Critical update 873374 (GDI+ Detection Tool)
 :: <http://support.microsoft.com/kb/873374>
 :: What a load of crap.  All this "tool" does is check to see if you
