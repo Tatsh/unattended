@@ -6,7 +6,7 @@
 :: Critical update 828750
 :: "October, 2003, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=828750>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\q828750.exe /q /r:n"
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q828750.exe /q /r:n"
 
 :: Critical update 330994
 :: "April 2003, Cumulative Patch for Outlook Express"
