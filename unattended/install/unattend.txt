@@ -31,7 +31,6 @@
     ExtendOemPartition=1
     OemSkipEula=Yes
     OemPreinstall=Yes
-    TargetPath=\WINNT
 
 [Components]
     ; Install IIS by default
