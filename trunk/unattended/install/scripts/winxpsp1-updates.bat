@@ -47,11 +47,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\dotnetfx.exe /q /c:\"install /q\""
 
 :: Recommended Updates
 
-:: Recommended update 829558
-:: "Update for Jet 4.0 Service Pack 8"
-:: <http://support.microsoft.com/?kbid=829558>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB829558-x86-%WINLANG%.exe /u /n /z"
-
 :: Recommended update 814995
 :: "Some ... Fixes Stop Working After You Install the 328310 Update"
 :: (required even though 328310 got subsumed by 826939)
@@ -63,7 +58,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q814995_WXP_SP2_x86_%WINLANG%.exe /
 :: "DirectShow Playback Support for Files Recorded with Windows XP Media Center Edition"
 :: <http://support.microsoft.com/?kbid=810243>
 :: (only available from Windows Update Catalog)
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q810243_WXP_SP2.exe /u /n /z"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810243-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 822603
 :: "Windows XP SP1 USB 1.1 and 2.0 Update"
@@ -80,11 +75,10 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB817778-x86-%WINLANG%.ex
 :: <http://support.microsoft.com/?kbid=821253>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB821253-x86-%WINLANG%.exe /u /n /z"
 
-:: Recommended update 282010
-:: "Updated Version of Microsoft Jet 4.0"
-:: <http://support.microsoft.com/default.aspx?kbid=282010>
-:: (download only available from Windows Catalog)
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB282010-x86-%WINLANG%.exe /u /n /z"
+:: Recommended update 829558
+:: "Update for Jet 4.0 Service Pack 8"
+:: <http://support.microsoft.com/?kbid=829558>
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB829558-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 820291
 :: "New 'Set Program Access and Defaults' Start Menu Icon ..."
