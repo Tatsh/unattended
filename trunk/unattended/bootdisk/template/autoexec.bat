@@ -6,10 +6,10 @@
 SET Z_PATH=\\ntinstall\install
 
 :: Username for mapping install share
-SET Z_USER=GUEST
+SET Z_USER=guest
 
 :: Password for mapping install share
-SET Z_PASS=GUEST
+SET Z_PASS=guest
 
 :: End of user settable variables
 
