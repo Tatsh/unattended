@@ -103,6 +103,27 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLAN
 
 :: Critical Updates
 
+:: Critical update MS04-037 (841356)
+:: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-037.mspx>
+:: URL|CSY|http://download.microsoft.com/download/9/f/f/9ff31ec4-18a3-472f-b75b-c082ba4618c8/WindowsServer2003-KB841356-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/2/c/5/2c53f703-f211-494f-b95d-e7accaafa1cd/WindowsServer2003-KB841356-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/9/9/3/993d53cd-edf9-4dbb-951f-e890b241c1cd/WindowsServer2003-KB841356-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/2/c/72cf8810-6337-4845-ac71-0e03bddffb4d/WindowsServer2003-KB841356-x86-esn.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/9/1/8/91887aad-dfa1-4daf-9d68-5a72c1aa8c0c/WindowsServer2003-KB841356-x86-fra.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/0/9/e/09e0ebbd-b7de-46d9-8f25-cd3754ad7359/WindowsServer2003-KB841356-x86-hun.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/e/4/e/e4e33e28-a978-4c20-b86c-40a7843c8281/WindowsServer2003-KB841356-x86-ita.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/4/9/849bdcec-1afc-47b0-801e-7268b9f6d5f6/WindowsServer2003-KB841356-x86-jpn.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/c/f/1/cf15ce0d-6dea-41a1-b968-35526550e8f0/WindowsServer2003-KB841356-x86-kor.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/b/3/9b3b0221-9063-46f7-8b8f-4943426b9131/WindowsServer2003-KB841356-x86-nld.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/a/7/0/a70bbabd-4482-4778-98a1-5e1ccb94df05/WindowsServer2003-KB841356-x86-plk.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/f/8/6/f86f49d8-e793-46ab-9a5e-886cc99314c0/WindowsServer2003-KB841356-x86-ptg.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/6/1/2/612fc6b6-d9f0-48a0-a33e-912e22bed2fa/WindowsServer2003-KB841356-x86-ptb.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/0/7/9/079333dd-7adc-4215-9bd5-f5c83b9a7d71/WindowsServer2003-KB841356-x86-rus.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/4/a/a4a99c20-176a-4d9f-93ab-cfe06ae338b3/WindowsServer2003-KB841356-x86-sve.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/0/e/3/0e358595-8643-487f-9885-d3c5f9db0418/WindowsServer2003-KB841356-x86-trk.EXE|updates/ws2k3/windowsserver2003-kb841356-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb841356-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-036 (883935)
 :: "Vulnerability in NNTP Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-036.mspx>
@@ -228,18 +249,6 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb841533-x86-%WINLAN
 :: URL|SVE|http://download.microsoft.com/download/e/d/1/ed1c3454-c2b8-4d4b-b68c-45e4593ea2e6/WindowsServer2003-KB824151-x86-sve.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/f/5/0/f501f9ce-1aa3-4800-ae25-c100bc349330/WindowsServer2003-KB824151-x86-trk.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb824151-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: Critical update MS04-024 (839645)
-:: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
-:: URL|DEU|http://download.microsoft.com/download/6/c/8/6c8e5679-2ad4-493b-881e-02be5ffe9f13/WindowsServer2003-KB839645-x86-deu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/e/7/9/e79e9c09-1755-4ecc-8ccd-fc915c9e0cbf/WindowsServer2003-KB839645-x86-enu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/0/3/f/03f9545f-b7c0-4d59-902d-a0262c1d4c7b/WindowsServer2003-KB839645-x86-esn.exe|updates/ws2k3/windowsserver2003-kb839645-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/6/3/4/634bc8d8-c2bd-4fad-a0de-ec6e3bd9fc53/WindowsServer2003-KB839645-x86-fra.exe|updates/ws2k3/windowsserver2003-kb839645-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/a/c/8/ac80d8d0-76e2-4777-9e37-7db67790ae66/WindowsServer2003-KB839645-x86-ita.exe|updates/ws2k3/windowsserver2003-kb839645-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/6/0/a/60aa3daf-2a7f-4aa1-bcc4-8c4cefce77d5/WindowsServer2003-KB839645-x86-nld.exe|updates/ws2k3/windowsserver2003-kb839645-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/c/9/e/c9e871e2-1062-4ffd-aecd-4970db36f31f/WindowsServer2003-KB839645-x86-rus.exe|updates/ws2k3/windowsserver2003-kb839645-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb839645-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-023 (840315)
 :: "Vulnerability in HTML Help Could Allow Code Execution"
