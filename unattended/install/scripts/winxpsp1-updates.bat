@@ -6,6 +6,17 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Recommended update 814995
+:: "Some ... Fixes Stop Working After You Install the 328310 Update"
+:: <http://support.microsoft.com/?kbid=814995>
+:: (download only available from Windows Update Catalog)
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q814995_WXP_SP2_x86_ENU.exe /u /o /z" .reboot
+
+:: Critical update 813951
+:: "You Cannot Access ... or Authenticate with a Web Site in Various Programs"
+:: <http://support.microsoft.com/?kbid=813951>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\q813951.exe /q /r:n" .reboot
+
 :: Critical update 811630
 :: "HTML Help Update to Limit Functionality ..."
 :: <http://support.microsoft.com/?kbid=811630>
@@ -43,6 +54,12 @@ todo.pl "z:\packages\winxpsp1\msjavwu.exe /c:\"javatrig.exe /exe_install /l /q\"
 :: "Unchecked Buffer in PPTP Implementation May Permit Denial-of-Service"
 :: <http://support.microsoft.com/?kbid=329834>
 todo.pl "z:\packages\winxpsp1\Q329834_WXP_SP2_x86_ENU.exe /u /o /z"
+
+:: Critical update 329441
+:: "You Cannot Create a Network Connection After You Restore Windows XP"
+:: <http://support.microsoft.com/?kbid=329441>
+:: (download only available from Windows Update Catalog)
+todo.pl "z:\packages\winxpsp1\Q329441_WXP_SP2.exe /u /o /z"
 
 :: Critical update 329390
 :: "Unchecked Buffer in Windows Shell Might Permit System Compromise"
