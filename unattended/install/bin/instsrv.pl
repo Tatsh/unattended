@@ -42,7 +42,7 @@ my $ret = $srv_class->Create
      $cmd,
      16,
      1,
-     'Manual',
+     'Automatic',
      0,
      $acct,
      $pass
