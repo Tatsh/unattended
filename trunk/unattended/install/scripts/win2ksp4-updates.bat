@@ -344,7 +344,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842526-x86-%WINLANG%.
 :: URL|JPN|http://download.microsoft.com/download/a/a/3/aa39117e-75ac-45d2-8159-a410b54f48bc/Windows2000-KB837001-x86-JPN.EXE|updates/win2ksp4/windows2000-kb837001-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/0/a/3/0a3e4e09-8322-4e8a-a574-072a81d45a60/Windows2000-KB837001-x86-KOR.EXE|updates/win2ksp4/windows2000-kb837001-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/5/f/8/5f8fd678-c28d-4158-ba7a-2cf1ab3fb4d7/Windows2000-KB837001-x86-NLD.EXE|updates/win2ksp4/windows2000-kb837001-x86-nld.exe
-:: No Download found for NOR.
+:: URL|NOR|http://download.microsoft.com/download/d/3/6/d36beb85-ead9-4e5b-9111-f97c024f097f/Windows2000-KB837001-x86-NOR.EXE|updates/win2ksp4/windows2000-kb837001-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/a/e/4/ae4ed52b-8f7d-4987-a2ee-e62f77f15b94/Windows2000-KB837001-x86-PLK.EXE|updates/win2ksp4/windows2000-kb837001-x86-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/f/c/f/fcf22c75-cf97-4236-a8f8-3d1c67297d9c/Windows2000-KB837001-x86-PTB.EXE|updates/win2ksp4/windows2000-kb837001-x86-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/2/8/4/284c252d-62a9-4b0d-a070-e098873a298a/Windows2000-KB837001-x86-PTG.EXE|updates/win2ksp4/windows2000-kb837001-x86-ptg.exe
