@@ -454,6 +454,35 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: URL|TRK|http://download.microsoft.com/download/a/9/4/a9459d57-591b-441d-935c-dd316401ed9b/Windows2000-KB885835-x86-TRK.EXE|updates/win2ksp4/windows2000-kb885835-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB885835-x86-%WINLANG%.EXE /passive /n /norestart"
 
+:: Security Update for Windows 2000 (KB873339)
+:: Microsoft Security Bulletin MS04-043
+:: "Vulnerability in HyperTerminal Could Allow Code Execution (873339)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-043.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=DA3DD6C9-DB7E-40A6-AFD0-5ED87C42190D>
+:: URL|ARA|http://download.microsoft.com/download/e/e/f/eef5de22-eda7-4248-9686-e8ead6431352/Windows2000-KB873339-x86-ARA.EXE|updates/win2ksp4/windows2000-kb873339-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/f/d/6fd4c904-2168-4247-928b-995d033ceebb/Windows2000-KB873339-x86-CSY.EXE|updates/win2ksp4/windows2000-kb873339-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/2/8/c/28c4cbab-414b-4643-8ee6-84e0cd6240c2/Windows2000-KB873339-x86-DAN.EXE|updates/win2ksp4/windows2000-kb873339-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/d/f/c/dfc16ab3-745b-4749-82bd-9d56b7950b09/Windows2000-KB873339-x86-DEU.EXE|updates/win2ksp4/windows2000-kb873339-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/b/5/0/b5097bb2-bb68-47c5-812e-d3294dcf1b93/Windows2000-KB873339-x86-ELL.EXE|updates/win2ksp4/windows2000-kb873339-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/9/6/5/965578e2-2029-4709-8603-ec5c8467cb21/Windows2000-KB873339-x86-ENU.EXE|updates/win2ksp4/windows2000-kb873339-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/a/2/d/a2d1bb65-c648-4ec8-a4e3-48b0ac0a562e/Windows2000-KB873339-x86-ESN.EXE|updates/win2ksp4/windows2000-kb873339-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/1/f/7/1f78af0b-4fc3-4c13-97ae-320dc8b543b3/Windows2000-KB873339-x86-FIN.EXE|updates/win2ksp4/windows2000-kb873339-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/b/7/9/b7979c32-8f4b-4911-a2a7-b048e78e31e7/Windows2000-KB873339-x86-FRA.EXE|updates/win2ksp4/windows2000-kb873339-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/7/8/378b866a-2f12-4578-a6ba-2d7c293f3244/Windows2000-KB873339-x86-HEB.EXE|updates/win2ksp4/windows2000-kb873339-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/d/3/4/d34a9da8-fd88-4add-9afc-bd2c8f917249/Windows2000-KB873339-x86-HUN.EXE|updates/win2ksp4/windows2000-kb873339-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/a/0/4a067145-44b3-45b5-8610-01bd5aefea32/Windows2000-KB873339-x86-ITA.EXE|updates/win2ksp4/windows2000-kb873339-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/c/7/e/c7ee46ba-081e-498d-b407-ca8cf355e958/Windows2000-KB873339-x86-JPN.EXE|updates/win2ksp4/windows2000-kb873339-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/c/3/6c313cd9-3417-4466-ba17-d49ec101de8a/Windows2000-KB873339-x86-KOR.EXE|updates/win2ksp4/windows2000-kb873339-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/e/6/9e67c5fd-9554-4268-9c3b-4c7abcb2417f/Windows2000-KB873339-x86-NLD.EXE|updates/win2ksp4/windows2000-kb873339-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/a/0/e/a0e70cff-afa3-4968-993d-2d7d1d4656a5/Windows2000-KB873339-x86-NOR.EXE|updates/win2ksp4/windows2000-kb873339-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/7/9/1/791d3f16-2559-409f-9368-d1b2f593e06f/Windows2000-KB873339-x86-PLK.EXE|updates/win2ksp4/windows2000-kb873339-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/0/b/0/0b0aa297-68f2-44ba-8647-5e7a5b2d7418/Windows2000-KB873339-x86-PTB.EXE|updates/win2ksp4/windows2000-kb873339-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/e/f/b/efb1504a-8f27-4a32-8124-af572b20bb42/Windows2000-KB873339-x86-PTG.EXE|updates/win2ksp4/windows2000-kb873339-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/4/6/a/46a7ca48-4dfc-4d4c-89df-798096ede220/Windows2000-KB873339-x86-RUS.EXE|updates/win2ksp4/windows2000-kb873339-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/d/a/7da94205-f878-478c-9508-5cebd1d429d1/Windows2000-KB873339-x86-SVE.EXE|updates/win2ksp4/windows2000-kb873339-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/6/e/e6eca5e7-3486-41c6-9686-42ce79b101b7/Windows2000-KB873339-x86-TRK.EXE|updates/win2ksp4/windows2000-kb873339-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB873339-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Security Update for Windows 2000 (KB885836)
 :: "Vulnerability in WordPad Could Allow Code Execution (885836)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-041.mspx>
