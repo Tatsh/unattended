@@ -19,7 +19,7 @@ GetOptions (\%opts, 'help|h|?')
 (exists $opts{'help'})
     and pod2usage ('-exitstatus' => 0, '-verbose' => 2);
 
-# Ensure exactly one argument after options.
+# Ensure exactly two arguments after options.
 scalar @ARGV == 2
     or pod2usage (2);
 
