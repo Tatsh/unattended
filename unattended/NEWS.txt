@@ -1,3 +1,43 @@
+** Changes in version 4.0 (2004-???-??)
+
+Major changes to the boot disk in this release.  You will need to
+refresh pretty much everything.  On the DOS side, we have switched to
+using FreeDOS for the boot disk.  We also have a new experimental
+Linux boot disk based on Linux.  We expect to support both
+indefinitely.
+
+Many changes to install.pl to support running under Linux.
+
+Use a 4000M FAT32 partition instead of a 2000M FAT16 partition for
+initial installation partition.
+
+Use FreeDOS himem64.exe instead of himem.sys as XMS provider.  Loads
+of fun.
+
+Update to FreeDOS FORMAT 0.91m.  Use its new "/a" switch, modelled
+after the same switch in Microsoft's OFORMAT tool (see
+<http://google.com/search?q=oformat+site%3Amicrosoft.com>).  This
+aligns the FAT clusters to a 4k boundary, so after NTFS conversion the
+cluster size will be 4k instead of 512 bytes.
+
+Changes to free up more conventional memory.  Bundle umbpci.sys and
+load it in config.sys.  Load ifshlp.sys into high memory.  Invoke
+umb.com in autoexec.bat.
+
+Rearrange bootdisk/tftpboot to make more sense.
+
+(DOS) Add support for 3com 3c94x/3c2000 family of gigabit adapters.
+
+Avoid hard links in distribution because DOS extractors cannot handle
+them (creating zero-length files).
+
+Add "--remote" switch to shutdown.pl.
+
+Use %SystemDrive% instead of C: in todo.pl.  Thanks to Andrew Clark.
+
+Add usual round of Windows updates.
+
+
 ** Changes in version 3.5 (2003-Dec-16)
 
 Update SYSLINUX to version 2.08.  This resolves several issues,
