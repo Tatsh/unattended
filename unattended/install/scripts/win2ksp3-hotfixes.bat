@@ -24,4 +24,5 @@ todo.pl "z:\packages\win2ksp3\Q326830_W2K_SP4_X86_EN.exe /u /o /z"
 todo.pl "z:\packages\win2ksp3\Q323172_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Q322842
+:: <http://www.microsoft.com/windows2000/downloads/recommended/q322842/>
 todo.pl "z:\packages\win2ksp3\Q322842_W2K_SP4_X86_EN.exe /u /o /z"
