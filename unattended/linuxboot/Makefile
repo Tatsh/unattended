@@ -4,9 +4,10 @@ dosemu=dosemu-1.2.0
 glibc=glibc-2.3.2
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%, glibc-linuxthreads-%, $(glibc)))
-klibc=klibc-0.114
+klibc=klibc-0.115
 linux=linux-2.6.3
 module-init-tools=module-init-tools-3.0-pre10
+parted=parted-1.6.6
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.7
 samba=samba-3.0.2a
@@ -15,10 +16,11 @@ cwd:=$(shell pwd)
 
 download_targets=$(patsubst %,download-%,$(bash) $(busybox) $(dosemu)	\
 	$(glibc) $(glibc-linuxthreads) $(klibc) $(linux)		\
-	$(module-init-tools) $(pciutils) $(pcmcia-cs) $(samba)		\
+	$(module-init-tools) $(parted) $(pciutils) $(pcmcia-cs)		\
+	$(samba)							\
 	)
 
-.PHONY: stage1 all download klibc glibc $(download_targets) \
+.PHONY: stage1 all download glibc $(download_targets) \
 	iso tftpboot
 
 # Macro to generate rule for copying single file
@@ -89,14 +91,13 @@ $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
+$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
 $(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
 
-
-klibc: $(klibc)/ash/sh
 
 glibc: build-$(glibc)/libc.so
 
@@ -143,17 +144,17 @@ stage1 := $(stage1) stage1/.stamp-modules
 $(klibc)/ash/sh:
 	cd $(klibc) && ln -sf $(cwd)/$(linux) ./linux	\
 	&& make
-	[ -f $@ ]
+	[ -e $@ ]
 
 $(call copy_exe,$(klibc)/ash/sh,stage1/bin/ash)
 
-$(klibc)/utils/mkdir: $(klibc)/ash/sh
+$(klibc)/utils/static/mkdir: $(klibc)/ash/sh
 	[ -e $@ ] && touch $@
-$(call copy_exe,$(klibc)/utils/mkdir,stage1/bin/mkdir)
+$(call copy_exe,$(klibc)/utils/static/mkdir,stage1/bin/mkdir)
 
-$(klibc)/utils/mount: $(klibc)/ash/sh
+$(klibc)/utils/static/mount: $(klibc)/ash/sh
 	[ -e $@ ] && touch $@
-$(call copy_exe,$(klibc)/utils/mount,stage1/bin/mount)
+$(call copy_exe,$(klibc)/utils/static/mount,stage1/bin/mount)
 
 stage1 := $(stage1) stage1/bin/ash stage1/bin/mkdir stage1/bin/mount
 
@@ -295,7 +296,22 @@ stage1/bin/busybox: $(busybox)/busybox
 	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
 	cmp $< $@
 
+# Other stuff needs this
+stage1/bin/true: stage1/bin/busybox
+	[ -e $@ ]
+
 stage1 := $(stage1) stage1/bin/busybox
+
+## parted
+$(parted)/parted/parted:
+	cd $(parted)							     \
+	&& ./configure --disable-nls --without-readline	--enable-part-static \
+	&& make
+	[ -e $@ ]
+
+$(call copy_exe, $(parted)/parted/parted, stage1/usr/sbin/parted)
+
+stage1 += stage1/usr/bin/parted
 
 ## pciutils
 $(pciutils)/lspci:
@@ -320,10 +336,21 @@ $(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/i386/boot/bzImage
 		--nox11 --srctree				\
 	&& make all
 
+stage1/var/run:
+	mkdir -p $@
+
 $(call copy_exe,$(pcmcia-cs)/cardmgr/cardmgr,stage1/sbin/cardmgr)
 $(call copy_file,$(pcmcia-cs)/etc/config,stage1/etc/pcmcia/config)
+$(call copy_file,$(pcmcia-cs)/etc/config.opts,stage1/etc/pcmcia/config.opts)
 
-stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config
+stage1/etc/pcmcia/network: stage1/bin/ash
+	echo "#!/bin/ash" >| $@.tmp
+	echo ":" >> $@.tmp
+	mv $@.tmp $@
+
+stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
+	stage1/etc/pcmcia/config.opts stage1/var/run \
+	stage1/etc/pcmcia/network
 
 ## Samba
 
