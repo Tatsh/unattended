@@ -1,6 +1,5 @@
-:: Install Windows XP SP1 debugging symbols
+:: Windows XP with Service Pack 1 and Service Pack 1a symbols
+:: <http://www.microsoft.com/whdc/devtools/debugging/symbolpkg.mspx>
 :: URL|ALL|http://msdl.microsoft.com/download/symbols/packages/windowsxp/xpsp1sym_x86.exe|updates/winxpsp1/xpsp1sym_x86.exe
-:: <http://www.microsoft.com/whdc/ddk/debugging/symbolpkg.mspx>
 @Echo off
-start /wait %Z%\updates\winxpsp1\xpsp1sym_x86.exe /q /c:"symbols.exe /u"
-if errorlevel 1 exit 1
+todo.pl "%Z%\updates\winxpsp1\xpsp1sym_x86.exe /q /c:\"symbols.exe /u\""
