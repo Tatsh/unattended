@@ -159,7 +159,6 @@ $(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch \
 
 # BusyBox has some broken dependencies (changing CONFIG_INIT to off
 # does not rebuild reboot.o), hence the "make clean" here.
-# FIXME: Should use fake flags for CFLAGS too?
 $(busybox)/busybox: $(busybox)/.config fakeinclude/stdio.h
 	cd $(busybox) && make clean \
 	&& make CFLAGS_EXTRA="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
@@ -302,8 +301,7 @@ fakeinclude/stdio.h: fakelib/libc.so
 # against our just-built libraries instead of the system libraries.
 # FIXME: Should include -nostdinc here
 fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib		    \
-		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib	    \
-		-Wl,--start-group,$(cwd)/stage1/lib/ld-linux.so,--end-group
+		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib
 
 # Create empty config file to silence ldconfig warnings
 stage1/etc/ld.so.conf:
