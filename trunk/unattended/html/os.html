@@ -230,7 +230,9 @@ probably want to limit the name to eight characters lest it look
 strange when viewed from DOS.  (The name does not matter much because
 <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/install.pl?rev=HEAD&amp;view=auto"
->install.pl</a> will scan the contents to figure out what it is.)
+>install.pl</a> will scan the contents to figure out what it is.
+However, you should limit the name to 8 characters or fewer,
+especially if you are using the Linux-based boot disk.)
 
 <p>Next, copy the <code>i386</code> folder from your Windows CD-ROM to
 the new directory.  For example, for Windows XP, you would copy the
@@ -251,7 +253,7 @@ only option is to apply the service pack after installing the OS; see
 the <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/winxp-updates.bat?rev=HEAD&amp;view=auto"
 >winxp-updates.bat</a> script and the <a href="apps.html">application
-installation document</a> for details.
+installation document</a> for more information.
 
 <p>If you are using a retail or volume-licensed OS, read on.
 
@@ -324,14 +326,12 @@ However, it does leave the system temporarily vulnerable to any
 exploits which the hotfixes correct.  So if you are installing on an
 insecure network, you may need to integrate certain hotfixes directly
 into the OS distribution point.  In particular, you probably want the
-fixes for the remotely-exploitable flaws.  As of this writing (2000
-Service Pack 4 and XP Service Pack 1), they are <a
-href="http://support.microsoft.com/?id=824146" >824146</a> (or <a
-href="http://support.microsoft.com/?id=826939" >826939</a> for XP), <a
+fixes for the remotely-exploitable flaws.  As of April 2004, they are
+<a href="http://support.microsoft.com/?id=828741" >828741</a>, <a
 href="http://support.microsoft.com/?id=828035" >828035</a>, <a
 href="http://support.microsoft.com/?id=828749" >828749</a> (2000
-only), and <a href="http://support.microsoft.com/?id=828028"
->828028</a>.
+only), and <a href="http://support.microsoft.com/?id=835732"
+>835732</a>.
 
 <p>See <a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00514.html"
@@ -368,7 +368,9 @@ create a folder named <code>$oem$</code>.  Under <b>that</b> folder,
 create a folder named <code>$1</code>.  Yes, really.
 <em>Windows&nbsp;Setup</em> will copy everything below the
 <code>$1</code> folder to the <code>%SystemDrive%</code> (normally
-<code>C:</code>) during installation.
+<code>C:</code>) during installation.  See Microsoft's <a
+href="http://www.microsoft.com/resources/documentation/WindowsServ/2003/all/deployguide/en-us/acicb_ui_wbgu.asp"
+>description of the distribution share</a> for the gory details.
 
 <p>You may put your driver folder anywhere you like under the
 <code>$1</code> folder, and you may add as many driver folders as you
@@ -395,9 +397,9 @@ the disk images and the tools needed to re-create them.
 
 <h2>Booting from a floppy</h2>
 
-<p>The <code>images</code> subdirectory has a single 1.44M floppy disk
-image for each supported network driver.  For example,
-<code>e100b.img</code> is the floppy image with support for the
+<p>The <code>images</code> subdirectory has one compressed 1.44M
+floppy disk image for each supported network driver.  For example,
+<code>e100b.imz</code> is the floppy image with support for the
 Intel&nbsp;Pro/100 family of network cards.  The <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/bootdisk/DRIVERS.txt?rev=HEAD&amp;view=auto"
 >DRIVERS.txt</a> file lists all of the supported drivers.  The driver
@@ -416,14 +418,16 @@ write it to a floppy.  How you do this depends on your operating
 system.
 
 <p>For Linux, a command like
-"<kbd>dd&nbsp;if=images/e100b.img&nbsp;of=/dev/fd0</kbd>" will do the
-trick.
+"<kbd>zcat&nbsp;images/e100b.imz&nbsp;|&nbsp;dd&nbsp;of=/dev/fd0</kbd>"
+will do the trick.
 
 <p>For Windows, you will need to obtain a utility for writing images
 to floppy disks.  One option is <a
 href="http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm">rawwritewin</a>,
-which is free.  <a href="http://www.winimage.com/">WinImage</a> is
-prettier and has more features, but it is shareware.
+which is free, although you will have to unzip the floppy image first.
+<a href="http://www.winimage.com/">WinImage</a> is prettier and has
+more features (e.g., it can handle compressed images directly), but it
+is shareware.
 
 
 <h2>Booting from CD-ROM</h2>
