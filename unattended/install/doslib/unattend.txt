@@ -9,8 +9,6 @@
     AutoLogon=Yes
 
 [Unattended]
-    ; Use OemPnPDriversPath to add drivers during installation.
-;    OemPnPDriversPath="drivers\net\IntelPRO;drivers\video\T22"
     UnattendMode=DefaultHide
     FileSystem=ConvertNTFS
     ExtendOemPartition=1
