@@ -93,12 +93,20 @@ tftpboot: .stamp-tftpboot
 
 .stamp-tftpboot: images/$(univ_driver).img memdisk \
 			tftpboot/pxelinux.cfg/default
-	ln -f images/$(univ_driver).img memdisk tftpboot
+	rm -f tftpboot/*.img
+	ln -f $(images) memdisk tftpboot
+#	ln -f images/$(univ_driver).img memdisk tftpboot
 	@touch $@
 
 tftpboot/pxelinux.cfg/default: pxelinux.cfg
 	@echo -n "Making $@..."
 	@cat $< >| $@.tmp
+	@for driver in $(drivers) ; do					\
+		echo >> $@.tmp ;					\
+		echo "label $$driver" >> $@.tmp ;			\
+		echo "        kernel memdisk" >> $@.tmp ;		\
+		echo "        append initrd=$$driver.img" >> $@.tmp ;	\
+	done
 	@echo >> $@.tmp
 	@echo "label inst" >> $@.tmp
 	@echo "        kernel memdisk" >> $@.tmp
@@ -111,7 +119,7 @@ clean:
 	-rm -f images/*.img
 	-rm -f bootdisk.iso
 	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.imz,memdisk,isolinux.bin}
-	-rm -f tftpboot/$(univ_driver).img tftpboot/memdisk
+	-rm -f tftpboot/{*.img,memdisk}
 	-rm -f tftpboot/pxelinux.cfg/default
 
 FORCE:
