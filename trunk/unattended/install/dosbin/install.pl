@@ -75,7 +75,7 @@ sub full_os_name ($) {
     if ($arg =~ /^win2k(?:sp(\d+))?$/) {
         $ret = "Windows 2000 Professional";
     }
-    elsif ($arg =~ /^winxp(?:sp(\d+))$/) {
+    elsif ($arg =~ /^winxp(?:sp(\d+))?$/) {
         $ret = "Windows XP Professional";
     }
     defined $1
