@@ -47,7 +47,10 @@ todo.pl "%Z%\packages\win2ksp4\Windows2000-KB823559-x86-%WINLANG%.exe /u /n /z"
 :: "L2TP/IPSec NAT-T Update for Windows XP and Windows 2000"
 :: <http://support.microsoft.com/?kbid=818043>
 :: (download only available from Windows Catalog)
-todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Q818043_W2K_SP5_x86_EN.EXE /u /n /z" .reboot
+:: NOTE: You must rename this to use the three-letter language
+:: abbreviation instead of two.  For example, for English you would
+:: rename Q818043_W2K_SP5_x86_EN.EXE to Q818043_W2K_SP5_x86_ENU.EXE.
+todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z" .reboot
 
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
