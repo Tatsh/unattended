@@ -94,11 +94,11 @@ sub ask_fdisk_lba () {
 sub ask_fdisk_cmds () {
     print "Choose partitioning scheme.\n";
     print "NOTE: Any choice other than 'Do nothing' will require a reboot.\n";
-    my @pre_cmds = [ 'fdisk /clearall 1' ];
-    my @post_cmds = [ 'fdisk /prio:2000',
-                      'fdisk /activate:1',
-                      'fdisk /mbr',
-                      'fdisk /reboot'];
+    my @pre_cmds = ('fdisk /clearall 1');
+    my @post_cmds = ('fdisk /prio:2000',
+                     'fdisk /activate:1',
+                     'fdisk /mbr',
+                     'fdisk /reboot');
 
     while (1) {
         my $cmds = menu_choice
