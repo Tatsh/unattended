@@ -17,7 +17,7 @@
 :: URL|ITA|http://download.microsoft.com/download/0/8/0/0803b32a-c61f-4090-9cc4-7f3e8bf43663/WindowsXP-KB842773-x86-ita.exe|updates/winxpsp1/windowsxp-kb842773-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/8/b/f/8bfeb653-420a-43f3-bb55-75a4d43b76db/WindowsXP-KB842773-x86-nld.exe|updates/winxpsp1/windowsxp-kb842773-x86-nld.exe
 :: URL|NOR|http://download.microsoft.com/download/9/8/a/98a27c58-32b4-43da-8058-7e6ada4855ca/WindowsXP-KB842773-x86-nor.exe|updates/winxpsp1/windowsxp-kb842773-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/6/5/5/655b51dd-d03e-45fc-ab79-1e7889456874/WindowsXP-KB842773-x86-enu.exe|updates/winxpsp1/windowsxp-kb842773-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/b/7/d/b7ddf34a-344a-4efb-a7cb-e531a2ba615a/WindowsXP-KB842773-x86-rus.exe|updates/winxpsp1/windowsxp-kb842773-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb842773-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: "Update for Windows Media Player 9 Series"
@@ -42,7 +42,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb837272-%WINLANG
 :: URL|FRA|http://download.microsoft.com/download/6/9/b/69bfea3d-ddb6-4eed-b374-3bc489759aff/WindowsXP-KB833998-x86-FRA.EXE|updates/winxpsp1/windowsxp-kb833998-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/d/4/7/d47caaef-4089-44e5-830a-98161cfd4563/WindowsXP-KB833998-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb833998-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/4/f/f/4ff8b6d8-e59d-4a5c-b546-146cb96dfd3b/WindowsXP-KB833998-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb833998-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/0/9/4/09493548-ad33-4700-b33c-40483d753899/WindowsXP-KB833998-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb833998-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/b/7/c/b7c06c76-7812-4da9-90b4-e70fb7c5cc5b/WindowsXP-KB833998-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb833998-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb833998-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: "Update for HighMAT Support in the Windows XP CD Writing Wizard"
@@ -54,7 +54,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb833998-x86-%WINLANG%.ex
 :: URL|FRA|http://download.microsoft.com/download/f/8/e/f8e529ae-41d7-4428-a1f0-ef8b8f7e6a00/HMTCDWizard_FRA.exe|updates/winxpsp1/hmtcdwizard_fra.exe
 :: URL|ITA|http://download.microsoft.com/download/a/d/e/adecc729-5785-4eed-82da-2cbfaece61a6/HMTCDWizard_ITA.exe|updates/winxpsp1/hmtcdwizard_ita.exe
 :: URL|NLD|http://download.microsoft.com/download/2/a/9/2a9e7269-f9d5-46ab-bbbb-7014436a72ab/HMTCDWizard_NLD.exe|updates/winxpsp1/hmtcdwizard_nld.exe
-:: URL|RUS|http://download.microsoft.com/download/2/2/b/22b5a5fa-fb50-4fc3-9f27-ba27816ec844/HMTCDWizard_enu.exe|updates/winxpsp1/hmtcdwizard_enu.exe
+:: URL|RUS|http://download.microsoft.com/download/7/a/b/7abfc4bf-3f35-474b-8754-9f4aea7dcdd7/HMTCDWizard_RUS.exe|updates/winxpsp1/hmtcdwizard_rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hmtcdwizard_%WINLANG%.exe /l* %SystemDrive%\netinst\logs\hmtcdwizard.txt /qb ALLUSERS=1 REBOOT=ReallySuppress"
 
 :: Movie Maker 2.0 update
@@ -103,7 +103,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia-q828026-x86-%WINLA
 :: URL|ITA|http://download.microsoft.com/download/e/8/8/e88b672a-6186-4caf-923f-f34a3e69b95e/WindowsMedia9-KB819639-x86-ITA.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/2/0/c/20ccf973-faec-438a-8e16-469f689472be/WindowsMedia9-KB819639-x86-NLD.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-nld.exe
 :: URL|NOR|http://download.microsoft.com/download/7/6/a/76aac9a5-7633-4511-8284-e71a1afe03b0/WindowsMedia9-KB819639-x86-NOR.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/6/6/9/6692c11a-e001-4706-bf86-c37a7111d9de/WindowsMedia9-KB819639-x86-ENU.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/f/b/8/fb8874ba-b8a9-4084-ba42-ac9587f7b913/WindowsMedia9-KB819639-x86-RUS.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N"
 
 :: Media Player 9.0
@@ -191,8 +191,8 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: URL|FRA|http://download.microsoft.com/download/3/a/6/3a6ef20c-e3db-44dc-b7c1-e39ffc24ea12/WindowsXP-KB837001-x86-FRA.EXE|updates/winxpsp1/windowsxp-kb837001-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/8/3/d/83d65455-1428-45cd-9680-bc10b1c6e716/WindowsXP-KB837001-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb837001-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/4/4/8/448abf29-ed78-4a64-8fd8-b31bf1295944/WindowsXP-KB837001-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb837001-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/2/d/5/2d5c2891-69e8-472b-9991-e5819b0d81a5/WindowsXP-KB837001-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb837001-x86-rus.exe
-:: URL|RUS|http://download.microsoft.com/download/6/8/d/68d5abd5-da33-4403-a55a-af5625bb8d2d/WindowsXP-KB837001-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb837001-x86-enu.exe
+:: URL|NOR|http://download.microsoft.com/download/2/d/5/2d5c2891-69e8-472b-9991-e5819b0d81a5/WindowsXP-KB837001-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb837001-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/4/d/4/4d40c874-b227-4ec5-8b30-3f0054d0732f/WindowsXP-KB837001-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb837001-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Recommended update 826942
@@ -206,7 +206,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb837001-x86-%WINLANG%.ex
 :: URL|ITA|http://download.microsoft.com/download/6/6/5/665b9e37-7a13-40da-87e6-ae7409dc9167/WindowsXP-KB826942-x86-ITA.exe|updates/winxpsp1/windowsxp-kb826942-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/4/4/6/446daee0-4814-4792-aee4-2e7e98f417f3/WindowsXP-KB826942-x86-NLD.exe|updates/winxpsp1/windowsxp-kb826942-x86-nld.exe
 :: URL|NOR|http://download.microsoft.com/download/8/3/9/839f0b56-5859-41bf-8f75-5ec4386d0a78/WindowsXP-KB826942-x86-NOR.exe|updates/winxpsp1/windowsxp-kb826942-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/2/2/3/2237d088-7840-4f77-a90d-55bdf1ccbc1c/WindowsXP-KB826942-x86-ENU.exe|updates/winxpsp1/windowsxp-kb826942-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/c/6/3/c63b6182-b88f-4f19-a37f-fac658bcf176/WindowsXP-KB826942-x86-RUS.exe|updates/winxpsp1/windowsxp-kb826942-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Windowsxp-kb826942-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Recommended update 814995
@@ -221,7 +221,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Windowsxp-kb826942-x86-%WINLANG%.ex
 :: URL|ITA|http://download.microsoft.com/download/e/f/9/ef9ed6e3-b5f4-457f-b6fc-f566c8603250/Q814995_WXP_SP2_x86_ITA.exe|updates/winxpsp1/q814995_wxp_sp2_x86_ita.exe
 :: URL|NLD|http://download.microsoft.com/download/c/d/f/cdf236d4-c2fe-4100-a254-85206aa39037/Q814995_WXP_SP2_x86_NLD.exe|updates/winxpsp1/q814995_wxp_sp2_x86_nld.exe
 :: URL|NOR|http://download.microsoft.com/download/0/2/9/0292031d-d1dd-4623-b9c7-6a086160227a/Q814995_WXP_SP2_x86_NOR.exe|updates/winxpsp1/q814995_wxp_sp2_x86_nor.exe
-:: URL|RUS|http://download.microsoft.com/download/c/8/1/c81b893a-9c24-419f-a301-c3e1904cedf3/Q814995_WXP_SP2_x86_ENU.exe|updates/winxpsp1/q814995_wxp_sp2_x86_enu.exe
+:: URL|RUS|http://download.microsoft.com/download/d/a/8/da8ca324-c3de-46bb-bf9d-97dcfdf340ed/Q814995_WXP_SP2_x86_RUS.exe|updates/winxpsp1/q814995_wxp_sp2_x86_rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q814995_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
 :: Recommended update 810243
@@ -245,7 +245,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810243-x86-%WINLANG%.ex
 :: URL|ITA|http://download.microsoft.com/download/6/a/5/6a533fef-5b9c-4f57-bf5a-86dedc126e9f/WindowsXP-KB822603-x86-ITA.exe|updates/winxpsp1/windowsxp-kb822603-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/7/3/c/73c422c6-436b-470e-8d58-499fe771cb41/WindowsXP-KB822603-x86-NLD.exe|updates/winxpsp1/windowsxp-kb822603-x86-nld.exe
 :: URL|NOR|http://download.microsoft.com/download/9/9/f/99f594cd-2660-458b-a12a-be47bcb2ed9e/WindowsXP-KB822603-x86-NOR.exe|updates/winxpsp1/windowsxp-kb822603-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/d/5/d/d5dc65b3-fda4-454f-813d-ae4ca2638c87/WindowsXP-KB822603-x86-ENU.exe|updates/winxpsp1/windowsxp-kb822603-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/d/6/0/d60544c3-8860-4d8d-89be-bc9b946a6e8a/WindowsXP-KB822603-x86-RUS.exe|updates/winxpsp1/windowsxp-kb822603-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB822603-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 817778
@@ -273,7 +273,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB817778-x86-%WINLANG%.ex
 :: URL|ITA|http://download.microsoft.com/download/d/8/d/d8dbb19e-b4f2-46b1-bb0c-818a9d932423/WindowsXP-KB821253-x86-ITA.exe|updates/winxpsp1/windowsxp-kb821253-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/b/8/d/b8dcae87-161d-4e84-9492-83182204fcb9/WindowsXP-KB821253-x86-NLD.exe|updates/winxpsp1/windowsxp-kb821253-x86-nld.exe
 :: URL|NOR|http://download.microsoft.com/download/b/4/5/b4585f20-c567-42f7-bde0-06923341cd58/WindowsXP-KB821253-x86-NOR.exe|updates/winxpsp1/windowsxp-kb821253-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/9/f/d/9fdf1d64-6fc3-4b31-919a-7402e9801474/WindowsXP-KB821253-x86-ENU.exe|updates/winxpsp1/windowsxp-kb821253-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/d/9/0/d90e7b60-037b-4b7f-8373-99dc09a22395/WindowsXP-KB821253-x86-RUS.exe|updates/winxpsp1/windowsxp-kb821253-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB821253-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 820291
@@ -346,7 +346,6 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867801-x86-%WINLANG%.exe /
 :: URL|DEU|http://download.microsoft.com/download/6/8/5/68554d08-32c0-477b-836b-b75270a54a26/IE6.0sp1-KB823353-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/1/1/d/11db0514-83d8-46a8-9d71-b01a86c20711/IE6.0sp1-KB823353-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/1/2/6/126e9e94-7cc3-4e49-bf08-21bc84e6b756/IE6.0sp1-KB823353-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/b/b/d/bbd65bd3-ba00-4df2-bfec-fd3e97085d2d/WindowsXP-KB840315-x86-nor.exe|updates/winxpsp1/windowsxp-kb840315-x86-nor.exe
 :: URL|RUS|http://download.microsoft.com/download/5/e/6/5e6f2c0e-4db3-4310-893e-cff856dd97db/IE6.0sp1-KB823353-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /q /r:n"
 
@@ -361,8 +360,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /
 :: URL|FRA|http://download.microsoft.com/download/7/3/2/7329c960-07e4-4535-a601-de926b8382cd/windowsxp-kb839645-X86-FRA.exe|updates/winxpsp1/windowsxp-kb839645-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/3/e/b/3eb56030-c519-4f41-8d7f-82705105796a/windowsxp-kb839645-X86-ITA.exe|updates/winxpsp1/windowsxp-kb839645-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/3/5/c/35ca1eb2-44fa-4151-8317-f0d63d4e4cf8/windowsxp-kb839645-X86-NLD.exe|updates/winxpsp1/windowsxp-kb839645-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/5/3/a/53ad6f07-6117-4bf0-93fa-cc89ac4561a0/WindowsXP-KB841873-x86-nor.exe|updates/winxpsp1/windowsxp-kb841873-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/d/0/3/d03971cd-ae3d-49ab-bec2-44ce3911fa76/WindowsXP-KB839645-x86-enu.exe|updates/winxpsp1/windowsxp-kb839645-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/3/b/e/3be1b343-a7ed-4b91-a6d2-f3bbe3acbdf9/windowsxp-kb839645-X86-RUS.exe|updates/winxpsp1/windowsxp-kb839645-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB839645-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-023 (840315)
@@ -374,8 +372,8 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB839645-x86-%WINLANG%.ex
 :: URL|FRA|http://download.microsoft.com/download/b/d/a/bda6eced-c198-4e3b-bf96-4d4c6759cb10/WindowsXP-KB840315-x86-fra.exe|updates/winxpsp1/windowsxp-kb840315-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/f/7/2/f72ccbec-8f8b-42fb-98e4-af6deaa50532/WindowsXP-KB840315-x86-ita.exe|updates/winxpsp1/windowsxp-kb840315-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/b/f/9/bf90bb40-5ecc-4f3a-b6cc-44d8597552ac/WindowsXP-KB840315-x86-nld.exe|updates/winxpsp1/windowsxp-kb840315-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/a/3/8/a3809444-3d3b-4829-af76-8adb50d7728e/WindowsXP-KB840374-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb840374-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/6/9/f/69f464c5-3341-4249-8697-456a88456b37/WindowsXP-KB840315-x86-enu.exe|updates/winxpsp1/windowsxp-kb840315-x86-enu.exe
+:: URL|NOR|http://download.microsoft.com/download/b/b/d/bbd65bd3-ba00-4df2-bfec-fd3e97085d2d/WindowsXP-KB840315-x86-nor.exe|updates/winxpsp1/windowsxp-kb840315-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/c/0/a/c0a5936b-3edc-493a-877e-1bdf3716311d/WindowsXP-KB840315-x86-rus.exe|updates/winxpsp1/windowsxp-kb840315-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB840315-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-022 (841873)
@@ -387,8 +385,8 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB840315-x86-%WINLANG%.ex
 :: URL|FRA|http://download.microsoft.com/download/1/9/6/19657449-be50-4865-8f03-94d26e10b02d/WindowsXP-KB841873-x86-fra.exe|updates/winxpsp1/windowsxp-kb841873-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/3/a/7/3a7aa7bf-bcad-4763-8941-5e05f7dcfe1f/WindowsXP-KB841873-x86-ita.exe|updates/winxpsp1/windowsxp-kb841873-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/6/8/1/68101755-1ad4-4b74-89d5-90e61cce6578/WindowsXP-KB841873-x86-nld.exe|updates/winxpsp1/windowsxp-kb841873-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/0/5/4/054f73d1-7f1c-403a-b99a-90cc7e536f4c/WindowsXP-KB828741-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb828741-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/6/f/5/6f5e3bdb-69b6-43e7-9d27-9ce2e4687fef/WindowsXP-KB841873-x86-enu.exe|updates/winxpsp1/windowsxp-kb841873-x86-enu.exe
+:: URL|NOR|http://download.microsoft.com/download/5/3/a/53ad6f07-6117-4bf0-93fa-cc89ac4561a0/WindowsXP-KB841873-x86-nor.exe|updates/winxpsp1/windowsxp-kb841873-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/6/e/2/6e2291ec-8d6d-4673-8010-3c86a41c99a8/WindowsXP-KB841873-x86-rus.exe|updates/winxpsp1/windowsxp-kb841873-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB841873-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 870669
@@ -408,8 +406,8 @@ todo.pl ".reboot-on 194 %Z%\updates\common\windows-kb870669-x86.exe /q /r:n"
 :: URL|FRA|http://download.microsoft.com/download/0/c/1/0c11efca-21a2-4d7e-9afd-3708b1dc0616/WindowsXP-KB840374-x86-FRA.EXE|updates/winxpsp1/windowsxp-kb840374-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/8/1/0/81032a5d-1bd2-4916-a4d4-5a84aeeffab3/WindowsXP-KB840374-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb840374-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/1/c/9/1c9d2292-7e0d-49a9-b9ba-2dd25c3bfc38/WindowsXP-KB840374-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb840374-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/9/b/4/9b443a96-c5cb-4520-a3f5-08480a762168/WindowsXP-KB835732-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb835732-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/a/f/a/afa937e7-e7f4-4fe8-8324-6e322f7ab542/WindowsXP-KB840374-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb840374-x86-enu.exe
+:: URL|NOR|http://download.microsoft.com/download/a/3/8/a3809444-3d3b-4829-af76-8adb50d7728e/WindowsXP-KB840374-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb840374-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/b/a/f/baf12958-e3c1-439d-a4c9-78d60bc0f1b5/WindowsXP-KB840374-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb840374-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb840374-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-012 (828741)
@@ -423,8 +421,8 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb840374-x86-%WINLANG%.ex
 :: URL|FRA|http://download.microsoft.com/download/8/3/7/837b3c37-e6a7-4732-9271-56b8decf7c59/WindowsXP-KB828741-x86-FRA.EXE|updates/winxpsp1/windowsxp-kb828741-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/1/5/4/154f374f-e519-4bf4-b167-65bb3419295b/WindowsXP-KB828741-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb828741-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/c/3/6/c367a850-9239-43a3-9914-6d9be29fdc2b/WindowsXP-KB828741-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb828741-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/4/a/1/4a1df9f9-529b-4ff4-ba9e-c78c9a865788/NOR_Q832483_MDAC_x86.EXE|updates/common/nor_q832483_mdac_x86.exe
-:: URL|RUS|http://download.microsoft.com/download/8/c/9/8c9f999d-c55b-4e09-8cc0-b75bcf7368cc/WindowsXP-KB828741-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb828741-x86-enu.exe
+:: URL|NOR|http://download.microsoft.com/download/0/5/4/054f73d1-7f1c-403a-b99a-90cc7e536f4c/WindowsXP-KB828741-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb828741-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/9/6/5/965969b8-b010-439f-923c-6cee6ef7a8e3/WindowsXP-KB828741-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb828741-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-011 (835732)
@@ -437,8 +435,8 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb828741-x86-%WINLANG%.ex
 :: URL|FRA|http://download.microsoft.com/download/6/2/e/62e5a992-b54b-4d86-88ed-ea06852c5c46/WindowsXP-KB835732-x86-FRA.EXE|updates/winxpsp1/windowsxp-kb835732-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/4/2/9/42988565-9dc5-4027-b4c4-fcbea69e2e5e/WindowsXP-KB835732-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb835732-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/b/9/c/b9c2107e-1841-483e-9cb7-fb653fb2dd02/WindowsXP-KB835732-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb835732-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/0/8/c/08c1881c-73b1-4c75-9bcd-e08c494ddee1/MDAC_TYP.EXE|packages/mdac/nor/mdac-2.8.exe
-:: URL|RUS|http://download.microsoft.com/download/6/1/5/615a50e9-a508-4d67-b53c-3a43455761bf/WindowsXP-KB835732-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb835732-x86-enu.exe
+:: URL|NOR|http://download.microsoft.com/download/9/b/4/9b443a96-c5cb-4520-a3f5-08480a762168/WindowsXP-KB835732-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb835732-x86-nor.exe
+:: URL|RUS|http://download.microsoft.com/download/2/f/8/2f8b11f2-244f-41b6-b038-b15a1dd13457/WindowsXP-KB835732-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb835732-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
@@ -451,8 +449,8 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb835732-x86-%WINLANG%.ex
 :: URL|FRA|http://download.microsoft.com/download/7/b/c/7bc5f5d6-f2a3-43da-8537-cd1410a2b024/FRN_Q832483_MDAC_x86.EXE|updates/common/frn_q832483_mdac_x86.exe
 :: URL|ITA|http://download.microsoft.com/download/3/c/f/3cfc944f-ebca-468e-8a65-f77513a00bd0/ITA_Q832483_MDAC_x86.EXE|updates/common/ita_q832483_mdac_x86.exe
 :: URL|NLD|http://download.microsoft.com/download/8/b/3/8b3e32b0-cae9-4349-ac29-38685048174f/NLD_Q832483_MDAC_x86.EXE|updates/common/nld_q832483_mdac_x86.exe
-:: URL|NOR|http://download.microsoft.com/download/0/0/d/00d2e9d2-a2ba-41ca-90f5-9335bf503694/WindowsXP-KB824105-x86-NOR.exe|updates/winxpsp1/windowsxp-kb824105-x86-nor.exe
-:: URL|RUS|http://download.microsoft.com/download/c/2/4/c245528e-a1e4-492e-bcf4-e004a052d93b/ENU_Q832483_MDAC_x86.EXE|updates/common/enu_q832483_mdac_x86.exe
+:: URL|NOR|http://download.microsoft.com/download/4/a/1/4a1df9f9-529b-4ff4-ba9e-c78c9a865788/NOR_Q832483_MDAC_x86.EXE|updates/common/nor_q832483_mdac_x86.exe
+:: URL|RUS|http://download.microsoft.com/download/f/0/a/f0a344ec-c6bf-4273-9162-062c7974b114/RUS_Q832483_MDAC_x86.EXE|updates/common/rus_q832483_mdac_x86.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%_q832483_mdac_x86.exe /q /c:\"dahotfix.exe /q /n\""
 
 :: Microsoft Data Access Components (MDAC) version 2.8
@@ -461,9 +459,10 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%_q832483_mdac_x86.exe /q /c:
 :: URL|DAN|http://download.microsoft.com/download/e/4/e/e4e2be89-69d0-482a-a9c5-d50449ecabca/MDAC_TYP.EXE|packages/mdac/dan/mdac-2.8.exe
 :: URL|DEU|http://download.microsoft.com/download/a/b/9/ab965707-fbab-48bc-8c33-a4cfd44255c6/MDAC_TYP.EXE|packages/mdac/deu/mdac-2.8.exe
 :: URL|ENU|http://download.microsoft.com/download/c/d/f/cdfd58f1-3973-4c51-8851-49ae3777586f/MDAC_TYP.EXE|packages/mdac/enu/mdac-2.8.exe
+:: URL|FRA|http://download.microsoft.com/download/d/8/6/d86f23a0-628a-4fea-9907-5ef1304d8124/MDAC_TYP.EXE|packages/mdac/fra/mdac-2.8.exe
 :: URL|ITA|http://download.microsoft.com/download/f/f/6/ff6bf59e-0955-4f0c-a218-c7fd53d1e31b/MDAC_TYP.EXE|packages/mdac/ita/mdac-2.8.exe
 :: URL|NLD|http://download.microsoft.com/download/7/1/4/714155e5-d132-4aa5-a426-418360c3e318/MDAC_TYP.EXE|packages/mdac/nld/mdac-2.8.exe
-:: URL|FRA|http://download.microsoft.com/download/d/8/6/d86f23a0-628a-4fea-9907-5ef1304d8124/MDAC_TYP.EXE|packages/mdac/fra/mdac-2.8.exe
+:: URL|NOR|http://download.microsoft.com/download/0/8/c/08c1881c-73b1-4c75-9bcd-e08c494ddee1/MDAC_TYP.EXE|packages/mdac/nor/mdac-2.8.exe
 :: URL|RUS|http://download.microsoft.com/download/c/f/2/cf2b5cd9-7ffd-4c19-971f-9ccaf0b57d48/MDAC_TYP.EXE|packages/mdac/rus/mdac-2.8.exe
 todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /qn1\""
 
@@ -477,7 +476,7 @@ todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /
 :: URL|FRA|http://download.microsoft.com/download/e/e/b/eeba122f-2f07-484c-9bb0-ba963110fda8/WindowsXP-KB824105-x86-FRA.exe|updates/winxpsp1/windowsxp-kb824105-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/1/e/a/1eaebc16-3560-4aba-9dbc-75f6920c9777/WindowsXP-KB824105-x86-ITA.exe|updates/winxpsp1/windowsxp-kb824105-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/9/e/d/9ed1d8a4-e65d-4350-9eb5-bc2d476dba79/WindowsXP-KB824105-x86-NLD.exe|updates/winxpsp1/windowsxp-kb824105-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/6/1/0/61028431-abd1-4191-88f9-a8b4dafc9b76/WindowsXP-KB810217-x86-NOR.exe|updates/winxpsp1/windowsxp-kb810217-x86-nor.exe
+:: URL|NOR|http://download.microsoft.com/download/0/0/d/00d2e9d2-a2ba-41ca-90f5-9335bf503694/WindowsXP-KB824105-x86-NOR.exe|updates/winxpsp1/windowsxp-kb824105-x86-nor.exe
 :: URL|RUS|http://download.microsoft.com/download/9/e/2/9e2c155d-3104-4b47-b178-01f9f9f33158/WindowsXP-KB824105-x86-RUS.exe|updates/winxpsp1/windowsxp-kb824105-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824105-x86-%WINLANG%.exe /u /n /z"
 
@@ -492,6 +491,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824105-x86-%WINLANG%.ex
 :: URL|FRA|http://download.microsoft.com/download/e/3/6/e362e19e-870a-487d-8d2b-d658a04eb99b/WindowsXP-KB810217-x86-FRA.exe|updates/winxpsp1/windowsxp-kb810217-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/8/6/4/864155f4-9708-403b-b6e0-8fa7c3d25e20/WindowsXP-KB810217-x86-ITA.exe|updates/winxpsp1/windowsxp-kb810217-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/e/b/d/ebd43dd9-9cc8-4ea9-b6e1-dfc75a78984f/WindowsXP-KB810217-x86-NLD.exe|updates/winxpsp1/windowsxp-kb810217-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/1/0/61028431-abd1-4191-88f9-a8b4dafc9b76/WindowsXP-KB810217-x86-NOR.exe|updates/winxpsp1/windowsxp-kb810217-x86-nor.exe
 :: URL|RUS|http://download.microsoft.com/download/a/a/d/aad356bb-ca20-4f89-a5bc-3a9b474c0d4c/WindowsXP-KB810217-x86-RUS.exe|updates/winxpsp1/windowsxp-kb810217-x86-rus.exe
 if not exist "%CommonProgramFiles%\Microsoft Shared\Web Server Extensions\40\bin\FP4awel.dll" goto nofpse
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.exe /u /n /z"
