@@ -31,6 +31,11 @@ todo.pl "%Z%\updates\win2ksp4\Windows2000-KB826232-x86-%WINLANG%.exe /u /n /z"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
 todo.pl ".ignore-err 194 %Z%\updates\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.exe /u /n /z" .reboot
 
+:: Root Certificates Update
+:: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/4702.htm>
+:: (download only available from Windows Catalog)
+todo.pl "%Z%\updates\win2ksp4\rootsupd.exe /q /r:n"
+
 :: Critical update 824146
 :: "A Buffer Overrun in RPCSS May Allow Code Execution"
 :: (Worst Windows security hole, ever.  Again.)
@@ -72,10 +77,11 @@ todo.pl ".ignore-err 194 %Z%\updates\win2ksp4\Windows2000-KB822831-x86-%WINLANG%
 :: "L2TP/IPSec NAT-T Update for Windows XP and Windows 2000"
 :: <http://support.microsoft.com/?kbid=818043>
 :: (download only available from Windows Catalog)
+:: (Update now MISSING from Windows Catalog.  Comment out for now; FIXME)
 :: NOTE: You must rename this to use the three-letter language
 :: abbreviation instead of two.  For example, for English you would
 :: rename Q818043_W2K_SP5_x86_EN.EXE to Q818043_W2K_SP5_x86_ENU.EXE.
-todo.pl ".ignore-err 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z" .reboot
+:: todo.pl ".ignore-err 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z" .reboot
 
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
