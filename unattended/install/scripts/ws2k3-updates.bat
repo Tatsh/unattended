@@ -60,7 +60,9 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia-KB828026-x86-%WINL
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
 :: <http://support.microsoft.com/?kbid=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
-todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /u /n /z"
+:: (Even though this is named the same as the one in mediaplayer9 it
+::  is different for 2003.  So this one goes in ws2k3 directory)
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 828750
 :: "October, 2003, Cumulative Patch for Internet Explorer"
