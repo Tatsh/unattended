@@ -5,28 +5,30 @@ Run, z:\\packages\\cygwin\\setup.exe
 WinWait, Cygwin Setup, This wizard will guide you
 Send, !n
 
-WinWait, Cygwin Setup, Choose A Download Source
-; Choose "local package directory"
-Send, {DOWN}{DOWN}!n
+WinWait, Choose Installation Type
+; Choose "Install from Local Directory"
+Send, !l!n
 
-WinWait, Cygwin Setup, Select Root Install Directory
+WinWait, Choose Installation Directory
 Send, !n
 
-WinWait, Cygwin Setup, Select Local Package Directory
+WinWait, Select Local Package Directory, Select Local Package Directory
 ; Use proper package directory
 Send, z:\\packages\\cygwin!n
 
-WinWait, Cygwin Setup, Select Packages
+WinWait, Select Packages
 ; Make sure the Window is active, then click in the right place to
 ; select "install all"
-WinActivate, Cygwin Setup, Select Packages
+WinActivate, Select Packages
 LeftClick, 60, 130
 ; Wait ten seconds to ensure events are received in proper order (yuck)
 Sleep, 10000
 Send, !n
 
-WinWait, Cygwin Setup, Create Icons
+WinWait, Create Icons
 Send, {ENTER}
 
 WinWait, Cygwin Setup, Installation Complete
 Send, {ENTER}
+
+WinWaitClose, Cygwin Setup, Installation Complete
