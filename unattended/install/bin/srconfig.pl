@@ -39,6 +39,7 @@ my $computer = Win32::OLE->GetObject
 # <http://msdn.microsoft.com/library/en-us/sr/sr/systemrestore.asp>
 # and
 # <http://msdn.microsoft.com/library/en-us/wmisdk/wmi/select_statement_for_schema_queries.asp>.
+# We do it this way because the class only exists on XP and later.
 
 my $sr_set = $computer->ExecQuery ('SELECT * from meta_class WHERE __this ISA "SystemRestore"');
 
