@@ -8,6 +8,33 @@
 
 :: Extra Updates
 
+:: "Update for Background Intelligent Transfer Service (BITS) 2.0 (KB883357)"
+:: <http://support.microsoft.com/?kbid=883357>
+:: URL|ARA|http://download.microsoft.com/download/1/5/7/157628ca-a352-44c6-9e97-39293de97e12/WindowsXP-KB883357-x86-ara.exe|updates/winxpsp1/windowsxp-kb883357-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/f/8/2f898d57-0cbd-4cd2-b6b3-8a54abf165b1/WindowsXP-KB883357-x86-csy.exe|updates/winxpsp1/windowsxp-kb883357-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/9/9/3/993c224e-4e76-4e59-9c97-913727f533ee/WindowsXP-KB883357-x86-dan.exe|updates/winxpsp1/windowsxp-kb883357-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/3/1/03118601-c3c0-4d03-8883-2266aac7b674/WindowsXP-KB883357-x86-deu.exe|updates/winxpsp1/windowsxp-kb883357-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/c/6/d/c6dfa9c4-ca46-43af-b131-48b62168c4ce/WindowsXP-KB883357-x86-ell.exe|updates/winxpsp1/windowsxp-kb883357-x86-ell.exe
+:: URL|ESN|http://download.microsoft.com/download/e/5/1/e519394f-b38d-42f0-8ef1-160e37b5ce98/WindowsXP-KB883357-x86-esn.exe|updates/winxpsp1/windowsxp-kb883357-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/a/3/1/a31f0e7d-9d52-4c30-8f47-52b86ebd7885/WindowsXP-KB883357-x86-fin.exe|updates/winxpsp1/windowsxp-kb883357-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/c/c/9/cc94804e-eb16-4348-bae6-2c46fb368700/WindowsXP-KB883357-x86-fra.exe|updates/winxpsp1/windowsxp-kb883357-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/d/0/8/d082a4fd-396b-40e8-a2c3-8047cfa31df7/WindowsXP-KB883357-x86-heb.exe|updates/winxpsp1/windowsxp-kb883357-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/c/d/9/cd93fd13-effa-43f0-a9fe-23d4536836d6/WindowsXP-KB883357-x86-hun.exe|updates/winxpsp1/windowsxp-kb883357-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/2/e/32e28a84-ea03-493a-92a2-2e38ded44e12/WindowsXP-KB883357-x86-ita.exe|updates/winxpsp1/windowsxp-kb883357-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/5/0/450ee812-5be3-4a1f-aeab-c96c5cfb546b/WindowsXP-KB883357-x86-jpn.exe|updates/winxpsp1/windowsxp-kb883357-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/1/1/61192962-8e3d-4349-ab1c-e22bb65eacb3/WindowsXP-KB883357-x86-kor.exe|updates/winxpsp1/windowsxp-kb883357-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/2/1/f21f9986-8130-4e77-8ea7-74fafe67370d/WindowsXP-KB883357-x86-nld.exe|updates/winxpsp1/windowsxp-kb883357-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/0/2/d/02d932b7-23ee-47e7-a521-1f41294b7a4a/WindowsXP-KB883357-x86-nor.exe|updates/winxpsp1/windowsxp-kb883357-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/1/c/e/1cec122c-bacc-4b01-9613-8c257fda160d/WindowsXP-KB883357-x86-plk.exe|updates/winxpsp1/windowsxp-kb883357-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/6/6/a66f3f6b-0fed-4a66-b89b-521169aba40c/WindowsXP-KB883357-x86-ptb.exe|updates/winxpsp1/windowsxp-kb883357-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/c/c/f/ccf8037e-26f8-4c03-9902-7b2a8d851071/WindowsXP-KB883357-x86-ptg.exe|updates/winxpsp1/windowsxp-kb883357-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/b/6/6/b666dc18-dec1-4582-b196-3ddce7b2c707/WindowsXP-KB883357-x86-rus.exe|updates/winxpsp1/windowsxp-kb883357-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/1/d/a1d31b13-7eee-4c68-b1b7-e2b0b21b2956/WindowsXP-KB883357-x86-sve.exe|updates/winxpsp1/windowsxp-kb883357-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/8/5/9/859df18f-aa90-4783-b110-c88c25c759bc/WindowsXP-KB883357-x86-trk.exe|updates/winxpsp1/windowsxp-kb883357-x86-trk.exe
+:: URL|CHS|http://download.microsoft.com/download/5/4/3/5431bc61-e04c-4bd6-b5aa-2117f13aeaed/WindowsXP-KB883357-x86-chs.exe|updates/winxpsp1/windowsxp-kb883357-x86-chs.exe
+:: URL|CHT|http://download.microsoft.com/download/8/2/5/82525e06-cc73-470d-b3c2-2ab456db0ab7/WindowsXP-KB883357-x86-cht.exe|updates/winxpsp1/windowsxp-kb883357-x86-cht.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb883357-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: "Update for BITS 2.0 and WinHTTP 5.1"
 :: <http://support.microsoft.com/?id=842773>
 :: URL|DEU|http://download.microsoft.com/download/a/a/1/aa1da36e-ac1e-401f-8927-53276edc0670/WindowsXP-KB842773-x86-deu.exe|updates/winxpsp1/windowsxp-kb842773-x86-deu.exe
@@ -77,6 +104,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mm20%WINLANG%.exe /q /c:\"msiexec /
 :: URL|FRA|http://download.microsoft.com/download/9/0/6/90660e9c-a491-4a82-98ed-9ec6d78ffbe8/setup.exe|updates/journalviewer/fra/setup.exe
 :: URL|ITA|http://download.microsoft.com/download/4/6/3/463ff4b8-a60a-4569-b3f1-a4c1ec784ff2/setup.exe|updates/journalviewer/ita/setup.exe
 :: URL|NLD|http://download.microsoft.com/download/4/6/3/463ff4b8-a60a-4569-b3f1-a4c1ec784ff2/setup.exe|updates/journalviewer/nld/setup.exe
+:: URL|RUS|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/SETUP_A59C971CBE252F87D1DE2D545FE3D01F729B002D.EXE|updates/journalviewer/rus/setup.exe
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* %SystemDrive%\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: "Update for Windows Media Player Script Commands"
@@ -354,6 +382,36 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867801-x86-%WINLANG%.exe /
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /q /r:n"
 
 :: Critical Updates
+
+:: Critical update MS04-028
+:: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-028.mspx>
+:: URL|ARA|http://download.microsoft.com/download/3/c/f/3cf44ee5-a4ff-4d20-b14b-9477a7fed203/WindowsXP-KB833987-x86-ARA.EXE|updates/winxpsp1/windowsxp-kb833987-x86-ARA.exe
+:: URL|CSY|http://download.microsoft.com/download/2/6/c/26c9c744-d764-4525-8e56-cf598dabb709/WindowsXP-KB833987-x86-CSY.EXE|updates/winxpsp1/windowsxp-kb833987-x86-CSY.exe
+:: URL|DAN|http://download.microsoft.com/download/f/c/0/fc0e8824-7d4b-43be-a7c1-859c92dd19f9/WindowsXP-KB833987-x86-DAN.EXE|updates/winxpsp1/windowsxp-kb833987-x86-DAN.exe
+:: URL|DEU|http://download.microsoft.com/download/9/a/5/9a588c7c-e046-4d91-80db-8b0a18f0b2dc/WindowsXP-KB833987-x86-DEU.EXE|updates/winxpsp1/windowsxp-kb833987-x86-DEU.exe
+:: URL|ELL|http://download.microsoft.com/download/d/b/a/dbacbe12-4272-41ec-a201-dab24b84693a/WindowsXP-KB833987-x86-ELL.EXE|updates/winxpsp1/windowsxp-kb833987-x86-ELL.exe
+:: URL|ENU|http://download.microsoft.com/download/a/a/d/aadac1be-dc9d-49a6-945c-778409909bcc/WindowsXP-KB833987-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb833987-x86-ENU.exe
+:: URL|ESN|http://download.microsoft.com/download/3/e/6/3e63741c-8fdf-4371-bbc3-97964f5ad1b5/WindowsXP-KB833987-x86-ESN.EXE|updates/winxpsp1/windowsxp-kb833987-x86-ESN.exe
+:: URL|FIN|http://download.microsoft.com/download/0/5/7/0570c02f-3aff-49aa-9f09-6a9af2de2faa/WindowsXP-KB833987-x86-FIN.EXE|updates/winxpsp1/windowsxp-kb833987-x86-FIN.exe
+:: URL|FRA|http://download.microsoft.com/download/6/e/2/6e201ec5-d075-4c4a-99f5-7ea31b0bbc45/WindowsXP-KB833987-x86-FRA.EXE|updates/winxpsp1/windowsxp-kb833987-x86-FRA.exe
+:: URL|HEB|http://download.microsoft.com/download/6/b/6/6b690320-bdef-4b48-944a-1557d88b6b86/WindowsXP-KB833987-x86-HEB.EXE|updates/winxpsp1/windowsxp-kb833987-x86-HEB.exe
+:: URL|HUN|http://download.microsoft.com/download/3/d/a/3dacaf62-a20d-49c6-bef7-cdb30f365dde/WindowsXP-KB833987-x86-HUN.EXE|updates/winxpsp1/windowsxp-kb833987-x86-HUN.exe
+:: URL|ITA|http://download.microsoft.com/download/3/8/3/3838ac1e-fa85-453c-a673-e69aab2ec1ba/WindowsXP-KB833987-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb833987-x86-ITA.exe
+:: URL|JPN|http://download.microsoft.com/download/1/a/f/1aff3ff6-e100-4c0f-aebc-23cc3ca7c1da/WindowsXP-KB833987-x86-JPN.EXE|updates/winxpsp1/windowsxp-kb833987-x86-JPN.exe
+:: URL|KOR|http://download.microsoft.com/download/1/3/f/13fd3896-417c-40b1-89f5-2731933cb999/WindowsXP-KB833987-x86-KOR.EXE|updates/winxpsp1/windowsxp-kb833987-x86-KOR.exe
+:: URL|NLD|http://download.microsoft.com/download/c/8/8/c88837dc-db50-4a9e-8e9e-96cc6dcf8703/WindowsXP-KB833987-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb833987-x86-NLD.exe
+:: URL|NOR|http://download.microsoft.com/download/6/d/f/6df8bc06-edeb-45f8-a902-9077d589a320/WindowsXP-KB833987-x86-NOR.EXE|updates/winxpsp1/windowsxp-kb833987-x86-NOR.exe
+:: URL|PLK|http://download.microsoft.com/download/5/7/4/5741a93f-69d3-4320-85e1-d9e816319883/WindowsXP-KB833987-x86-PLK.EXE|updates/winxpsp1/windowsxp-kb833987-x86-PLK.exe
+:: URL|PTB|http://download.microsoft.com/download/2/5/4/254880a0-ff97-498b-85fe-952a7c57e27b/WindowsXP-KB833987-x86-PTB.EXE|updates/winxpsp1/windowsxp-kb833987-x86-PTB.exe
+:: URL|PTG|http://download.microsoft.com/download/d/4/6/d4678f3b-3736-4606-a835-6c25994f2c33/WindowsXP-KB833987-x86-PTG.EXE|updates/winxpsp1/windowsxp-kb833987-x86-PTG.exe
+:: URL|RUS|http://download.microsoft.com/download/c/6/0/c60a705e-0be4-401d-b12b-e8291ff97acf/WindowsXP-KB833987-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb833987-x86-RUS.exe
+:: URL|SVE|http://download.microsoft.com/download/a/d/9/ad962d3e-8c4a-4a7f-b080-3df49afab429/WindowsXP-KB833987-x86-SVE.EXE|updates/winxpsp1/windowsxp-kb833987-x86-SVE.exe
+:: URL|TRK|http://download.microsoft.com/download/7/4/c/74c9a9ff-9f61-4f77-862a-8ec605f6a295/WindowsXP-KB833987-x86-TRK.EXE|updates/winxpsp1/windowsxp-kb833987-x86-TRK.exe
+:: URL|CHS|http://download.microsoft.com/download/0/6/9/069a5152-2932-4407-be60-adbc9e8fa4f7/WindowsXP-KB833987-x86-CHS.EXE|updates/winxpsp1/windowsxp-kb833987-x86-CHS.exe
+:: URL|CHT|http://download.microsoft.com/download/3/6/7/367a66c0-c34c-4e2d-a851-29aa23ae4e06/WindowsXP-KB833987-x86-CHT.EXE|updates/winxpsp1/windowsxp-kb833987-x86-CHT.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB833987-x86-%WINLANG%.exe /passive /n /norestart"
+
 
 :: Critical update MS04-024 (839645)
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
