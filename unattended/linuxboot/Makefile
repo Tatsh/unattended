@@ -20,11 +20,11 @@ mysql=mysql-4.0.21
 nano=nano-1.2.4
 ncurses=ncurses-5.4
 parted=parted-1.6.15
+pciutils=pciutils-2.1.11
+pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.8.5
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.3202
-pciutils=pciutils-2.1.11
-pcmcia-cs=pcmcia-cs-3.2.8
 pmtools=pmtools-20031210
 samba=samba-3.0.7
 wireless_tools=wireless_tools.26
