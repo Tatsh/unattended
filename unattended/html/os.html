@@ -185,6 +185,21 @@ to the target folder.
 <code>\\ntinstall\install</code> as the <code>Z:</code> drive and run
 the <code>install.sh</code> script.
 
+<h2>Prerequisites</h2>
+
+<p>To create the floppy disk images, you will need the <a
+href="http://mtools.linux.lu/">Mtools</a> suite installed on your Unix
+box.  (You probably already have them; type <kbd>mcopy</kbd> to find
+out.)
+
+<p>To create the ISO image, you will need the <a
+href="http://www.andante.org/mkisofs.html">mkisofs</a> utility.
+
+<p>For both the ISO image and the tftpboot directory, you will need
+parts of the <a href="http://syslinux.zytor.com/">SYSLINUX</a>
+package.  But the parts you need are small (one of the beauties of
+SYSLINUX), so I have included them in the distribution.
+
 <h2>Booting from floppy</h2>
 
 <p>The <a
