@@ -239,7 +239,7 @@ stage1/var/lib/dosemu/drives/dosboot.img: dosboot/autoexec.bat \
 	mkdir -p $(dir $@)
 	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&		\
 	echo 'drive x:' > $$tmpfile &&				\
-	echo file=\"$(cwd)/"$@.tmp"\" >> $$tmpfile &&		\
+	echo file=\"$(cwd)/"$@.tmp"\" nolock >> $$tmpfile &&	\
 	export MTOOLSRC=$$tmpfile &&				\
 	gunzip -c ../bootdisk/empty-boot.img.gz >| $@.tmp &&	\
 	(cd dosboot &&						\
