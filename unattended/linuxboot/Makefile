@@ -1,5 +1,7 @@
 bash=bash-2.05b
 busybox=busybox-1.00-pre10
+dbd-mysql=DBD-mysql-2.9003
+dbi=DBI-1.42
 dosemu=dosemu-1.2.1
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
@@ -11,6 +13,7 @@ kbd=kbd-1.12
 klibc=klibc-0.116
 linux=linux-2.6.6
 module-init-tools=module-init-tools-3.0
+mysql=mysql-4.0.20
 nano=nano-1.2.3
 ncurses=ncurses-5.4
 parted=parted-1.6.11
@@ -21,8 +24,9 @@ samba=samba-3.0.4
 
 cwd:=$(shell pwd)
 
-packages=$(bash) $(busybox) $(dosemu) $(e2fsprogs) $(glibc) $(kbd)	\
-	$(klibc) $(linux) $(module-init-tools) $(nano)			\
+packages=$(bash) $(busybox) $(dbd-mysql) $(dbi) $(dosemu) $(e2fsprogs)	\
+	$(glibc) $(kbd)							\
+	$(klibc) $(linux) $(module-init-tools) $(mysql) $(nano)		\
 	$(ncurses) $(parted) $(perl) $(pciutils) $(pcmcia-cs) $(samba)
 
 CC=gcc
@@ -76,6 +80,7 @@ stage1/sbin/depmod: $(module-init-tools)/depmod
 	[ -e $@ ]
 
 stage1 += stage1/sbin/depmod
+
 
 ## Linux
 
@@ -463,6 +468,63 @@ stage1/opt/perl/bin/perl: $(perl)/perl
 
 stage1 += stage1/opt/perl/bin/perl
 
+perllib=$(cwd)/stage1/opt/perl/lib/$(patsubst perl-%,%,$(perl))
+perlrun=$(cwd)/stage1/opt/perl/bin/perl -I$(cwd)/stage1/opt/perl/lib/site_perl -I$(perllib)
+
+## mysql
+$(mysql)/Makefile: stage1/opt/perl/bin/perl
+	cd $(dir $@) \
+	&& CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)" \
+		./configure --prefix=/ --without-server
+
+$(mysql)/libmysql/.libs/libmysqlclient.so: $(mysql)/Makefile
+	rm -f $@
+	cd $(mysql)							\
+	&& make								\
+	&& make -C include includedir=$(cwd)/fakeinclude install
+	[ -e $@ ]
+
+$(call copy_lib,$(mysql)/libmysql/.libs/libmysqlclient.so,stage1/lib/libmysqlclient.so)
+
+stage1 += stage1/lib/libmysqlclient.so
+
+## DBI Perl module
+$(dbi)/Makefile: stage1/opt/perl/bin/perl
+	cd $(dir $@)							\
+	&& eval `$(perlrun) -V:archlib`					\
+	&& { [ -n "$$archlib" ] || exit 37 ; }				\
+	&& $(perlrun) Makefile.PL PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
+		DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)
+	[ -e $@ ]
+
+# Path to modules is too painful to compute, so use a stamp file.
+stage1/.stamp-dbi: $(dbi)/Makefile
+	cd $(dbi)						\
+	&& make PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags)"	\
+	&& make install
+	touch $@
+
+stage1 += stage1/.stamp-dbi
+
+## DBD-mysql Perl module
+$(dbd-mysql)/Makefile: stage1/opt/perl/bin/perl
+	cd $(dir $@)							\
+	&& eval `$(perlrun) -V:archlib`					\
+	&& { [ -n "$$archlib" ] || exit 37 ; }				\
+	&& $(perlrun) Makefile.PL PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
+		DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)		\
+		--cflags="$(fakelib_cflags)" --libs="-lmysqlclient"
+	[ -e $@ ]
+
+stage1/.stamp-dbd-mysql: $(dbd-mysql)/Makefile stage1/lib/libmysqlclient.so
+	cd $(dbd-mysql)						\
+	&& make PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags) -I$(cwd)/fakeinclude/mysql"	\
+	&& make install
+	touch $@
+
+stage1 += stage1/.stamp-dbd-mysql
+
+
 ## Samba
 
 # Without -rdynamic, CP850.so craps out with "undefined symbol:
@@ -633,6 +695,10 @@ download: $(download_targets)
 
 $(call download_rule, $(bash), tar.gz, http://ftp.gnu.org/gnu/bash/)
 $(call download_rule, $(busybox), tar.bz2, http://busybox.net/downloads/)
+$(call download_rule, $(dbd-mysql), tar.gz, \
+	http://www.cpan.org/authors/id/R/RU/RUDY/)
+$(call download_rule, $(dbi), tar.gz, \
+	http://www.cpan.org/authors/id/T/TI/TIMB/)
 $(call download_rule, $(dosemu), tgz,					\
 	http://dl.sourceforge.net/sourceforge/dosemu/)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
@@ -649,6 +715,8 @@ $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
+$(call download_rule, $(mysql), tar.gz, \
+	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-4.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v1.2/)
 # Sometimes main Nano site is down.  ewtoo.org is a mirror site.
 #$(call download_rule, $(nano), tar.gz,
