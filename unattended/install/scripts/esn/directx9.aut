@@ -1,0 +1,20 @@
+; AutoIt script to install DirectX 9.0b
+; URL|ALL|http://download.microsoft.com/download/c/9/c/c9c8a1d4-7690-4c98-baf3-0c67e7f3751f/dx90update_redist.exe|packages/directx9/dx90update_redist.exe
+; <http://www.microsoft.com/directx/>
+; Download the redistributable for developers (dx90b_redist.exe) and
+; extract it to %Z%\packages\DirectX9\%WINLANG%
+; <http://www.microsoft.com/downloads/details.aspx?familyid=a6dee0db-dcce-43ea-87bb-7c7e1fd1eaa2>
+; (Requires .NET to be installed first for managed DX)
+
+Run, %Z%\\packages\\directx9\\esn\\dx90update_redist.exe /installmanageddx
+
+WinWait, Instalando Microsoft(R) DirectX(R)
+WinActivate, Instalando Microsoft(R) DirectX(R)
+Send, !cS
+WinWait, Instalando Microsoft(R) DirectX(R)
+WinActivate, Instalando Microsoft(R) DirectX(R)
+Send, !S
+
+WinWait, Instalando Microsoft(R) DirectX(R), Finalizar
+WinActivate, Instalando Microsoft(R) DirectX(R)
+Send, {ENTER}
