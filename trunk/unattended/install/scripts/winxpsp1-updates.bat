@@ -8,6 +8,11 @@
 
 :: Extra Updates
 
+:: Movie Maker 2.0 update
+:: <http://www.microsoft.com/windowsxp/moviemaker/>
+:: (Works better if Media Player 9 is already installed)
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mm20%WINLANG%.exe /q /c:\"msiexec /i mm20.msi /qn\""
+
 :: Windows Journal Viewer update
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
 todo.pl ".reboot-on 194 %Z%\updates\common\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
@@ -21,15 +26,11 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia-KB828026-x86-%WINL
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.asp>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N"
 
-:: Trick to skip EULA on Media Player 9 
-todo.pl "regedit /s %Z%\packages\mediaplayer9\mediaplayer9.reg"
-
 :: Media Player 9.0
 :: <http://www.microsoft.com/windows/windowsmedia/>
 todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\MPSetupXP.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
 
 :: Windows Messenger Update
-:: (This will be disabled in the notips script)
 :: <http://www.microsoft.com/windowsxp/windowsmessenger/>
 todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /r:n"
 
