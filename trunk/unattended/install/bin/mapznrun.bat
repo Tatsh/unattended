@@ -26,6 +26,18 @@ goto hang
 
 :mapit
 echo Mapping %Z_PATH% on %Z%...
+
+if not %Z_PATH%. == dvd. goto not_dvd
+c:\netinst\mapcd.js \bin\todo.pl %Z%
+if exist c:\netinst\setzpath.bat call c:\netinst\setzpath.bat
+if exist %Z%\ goto mapped
+echo Failed; retrying.
+:: Sleep for 10 seconds
+ping -n 10 localhost > nul
+goto try_again
+
+:not_dvd
+
 net use %Z% %Z_PATH% %Z_PASS% %USER_ARG% /persistent:no
 if exist %Z%\ goto mapped
 net use %Z% /delete
@@ -35,9 +47,9 @@ ping -n 10 localhost > nul
 goto try_again
 
 :mapped
+
 echo ...done.
-:: Clean up environment, except for %Z%
-set Z_PATH=
+:: Clean up environment, except for %Z% and %Z_PATH%
 set Z_USER=
 set Z_PASS=
 set USER_ARG=
