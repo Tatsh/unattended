@@ -242,9 +242,7 @@ set_value ('UserData', 'OrgName',
 set_value ('UserData', 'ComputerName',
            sub {
                my $name = simple_q
-                   ("Enter computer name (default = autogenerate):\n");
-               $name eq ''
-                   and $name = '*';
+                   ("Enter computer name (* == autogenerate):\n");
                return $name;
            });
 
@@ -262,7 +260,7 @@ set_value ('Identification', 'DomainAdmin',
                my $dom = get_value ('Identification', 'JoinDomain');
                defined $dom or return undef;
                return simple_q
-                   ('DomainAdmin account for joining domain? ');
+                   ('DomainAdmin account for joining $dom domain? ');
            });
 
 set_value ('Identification', 'DomainAdminPassword',
@@ -271,13 +269,13 @@ set_value ('Identification', 'DomainAdminPassword',
                defined $admin
                    or return undef;
                return simple_q
-                   ('DomainAdminPassword for joining domain? ');
+                   ('DomainAdminPassword for $admin account? ');
            });
 
 my $product_key_q =
     "Enter your product key now.\n"
-    . "This a 25-character code found on your software license,\n"
-    . "like 12345-6789AB-CDEFG-HIJKL-MNOPQ\n"
+    . "This a 25-character key from on your software license\n"
+    . "(like 12345-6789AB-CDEFG-HIJKL-MNOPQ)\n\n"
     . "Enter key: ";
 
 set_value ('UserData', 'ProductID',
@@ -301,7 +299,7 @@ set_value ('UserData', 'ProductKey',
 ## Now the meat of the script.
 
 # Read master unattend.txt.
-#read_unattend_txt ('z:\\unattend.txt');
+read_unattend_txt ('z:\\doslib\\unattend.txt');
 
 # Read site-specific unattend.txt, if it exists.
 my $site_unattend_txt = 'z:\\site\\unattend.txt';
