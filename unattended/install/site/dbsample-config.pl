@@ -133,10 +133,10 @@ $u->push_value ('_meta', 'OS_media', &lookup_property('OS_media'));
 # Lookup "Top" level scripts from database, if possible.
 $u->push_value ('_meta', 'top', &lookup_property('top_scripts'));
 
-# Lookup "Top" level scripts from database, if possible.
+# Lookup "Middle" level scripts from database, if possible.
 $u->push_value ('_meta', 'middle', &lookup_property('middle_scripts'));
 
-# Lookup "Top" level scripts from database, if possible.
+# Lookup "Bottom" level scripts from database, if possible.
 $u->push_value ('_meta', 'bottom', &lookup_property('bottom_scripts'));
 
 # Find all relevant drivers for this machine
