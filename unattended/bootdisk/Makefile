@@ -1,5 +1,8 @@
 # Makefile to create bootable DOS images for various network cards.
 
+# Timeout value
+timeout := 10
+
 # Normal drivers
 drivers   := $(shell grep ^[[:alnum:]] DRIVERS.txt \
 		| grep -w -i -v universal | cut -f1 -d' ')
@@ -93,7 +96,7 @@ iso/isolinux/isoboot.msg: isoboot.msg DRIVERS.txt
 	@echo -n "Making $@..."
 	@cat isoboot.msg >| $@.tmp
 	@echo >> $@.tmp
-	grep '^\($(subst $(space),\|,$(drivers))\)' DRIVERS.txt >> $@.tmp
+	@grep '^\($(subst $(space),\|,$(drivers))\)' DRIVERS.txt >> $@.tmp
 	@mv $@.tmp $@
 	@echo "done"
 
@@ -104,25 +107,65 @@ iso/isolinux/isolinux.bin: isolinux.bin
 	@echo "done"
 
 # TFTP boot (PXE) targets
-tftpboot: tftpboot/memdisk tftpboot/pxelinux.cfg/default
+tftpboot: tftpboot/unattended/memdisk tftpboot/msgs/boot.msg tftpboot/msgs/additional.msg tftpboot/pxelinux.cfg/default
 
-tftpboot/memdisk: memdisk
+tftpboot/unattended/memdisk: memdisk
 	cp $< $@
 
-tftpboot/pxelinux.cfg/default: pxelinux.cfg
+tftpboot/msgs/boot.msg: DRIVERS.txt
 	@echo -n "Making $@..."
-	@cat $< >| $@.tmp
-	@for driver in $(drivers) ; do					  \
-		echo >> $@.tmp ;					  \
-		echo "label $$driver" >> $@.tmp ;			  \
-		echo "    kernel memdisk" >> $@.tmp ;			  \
-		echo "    append initrd=$$driver.imz" >> $@.tmp ;	  \
+	@echo "" > $@.tmp
+	@echo >> $@.tmp
+	@echo "                     09Welcome to 0cUnattended09 Installer!07" >> $@.tmp
+	@echo >> $@.tmp
+	@echo "0aChoose your network driver, or press 0f<ENTER>0a to boot from hard drive" >> $@.tmp
+	@echo "(will automatically trigger in ${timeout} seconds unless you press any key).07" >> $@.tmp
+	@echo "" >> $@.tmp
+	@grep '^\($(subst $(space),\|,$(universal))\)' DRIVERS.txt >> $@.tmp
+	@echo >> $@.tmp
+	@echo "(You can also press 05<F2>07 to see the list of additional drivers available)." >> $@.tmp
+	@echo >> $@.tmp
+	@echo "05[F1-Main] [F2-Additional] [F3-Information]07" >> $@.tmp
+	@mv $@.tmp $@
+	@echo "done"
+
+tftpboot/msgs/additional.msg: DRIVERS.txt
+	@echo -n "Making $@..."
+	@echo "" > $@.tmp
+	@echo >> $@.tmp
+	@echo "                       09Additional Network Drivers07" >> $@.tmp
+	@echo >> $@.tmp
+	@echo "0aThese are additional network drivers that you can choose:07" >> $@.tmp
+	@echo "" >> $@.tmp
+	@grep '^\($(subst $(space),\|,$(drivers))\)' DRIVERS.txt >> $@.tmp
+	@echo >> $@.tmp
+	@echo "05[F1-Main] [F2-Additional Drivers] [F3-Information]07" >> $@.tmp
+	@mv $@.tmp $@
+	@echo "done"
+
+tftpboot/pxelinux.cfg/default: tftpboot/msgs/information.msg
+	@echo -n "Making $@..."
+	@echo "default local" > $@.tmp
+	@echo "timeout ${timeout}0" >> $@.tmp
+	@echo "prompt 1" >> $@.tmp
+	@echo "display msgs/boot.msg" >> $@.tmp
+	@echo "F1 msgs/boot.msg" >> $@.tmp
+	@echo "F2 msgs/additional.msg" >> $@.tmp
+	@echo "F3 msgs/information.msg" >> $@.tmp
+	@echo >> $@.tmp
+	@echo "label local" >> $@.tmp
+	@echo "  localboot 0" >> $@.tmp
+	@for driver in $(drivers) ; do						\
+		echo >> $@.tmp ;						\
+		echo "label $$driver" >> $@.tmp ;				\
+		echo "    kernel unattended/memdisk" >> $@.tmp ;		\
+		echo "    append initrd=unattended/$$driver.imz" >> $@.tmp ;	\
 	done
-	@for driver in $(universal) ; do				  \
-		echo >> $@.tmp ;					  \
-		echo "label $$driver" >> $@.tmp ;			  \
-		echo "    kernel memdisk" >> $@.tmp ;			  \
-		echo "    append initrd=$$driver.imz keeppxe" >> $@.tmp ; \
+	@for driver in $(universal) ; do						\
+		echo >> $@.tmp ;							\
+		echo "label $$driver" >> $@.tmp ;					\
+		echo "    kernel unattended/memdisk" >> $@.tmp ;			\
+		echo "    append initrd=unattended/$$driver.imz keeppxe" >> $@.tmp ;	\
 	done
 	@mv $@.tmp $@
 	@echo "done"
@@ -135,7 +178,8 @@ clean:	tidy
 	@-rm -f .stamp-template
 	-rm -f images/*.imz
 	-rm -f bootdisk.iso
-	-rm -f tftpboot/{*.imz,memdisk}
+	-rm -f tftpboot/msgs/{boot,additional}.msg
+	-rm -f tftpboot/unattended/{*.imz,memdisk}
 	-rm -f tftpboot/pxelinux.cfg/default
 
 FORCE:
