@@ -248,8 +248,10 @@ set_value ('_meta', 'doit_cmd',
 
 set_comments ('_meta', 'autolog',
               "    ; Command to disable (or modify) logon setting when installation finishes");
-# Default setting for automatic logon is to disable it.
-set_value ('_meta', 'autolog', 'autolog.pl');
+
+# Default setting for automatic logon is to disable it, but retain
+# default setting of last user who logged on.
+set_value ('_meta', 'autolog', 'autolog.pl --logon=0');
 
 set_value ('UserData', 'FullName',
            sub {
@@ -441,7 +443,8 @@ my @cmd_lines =
          'todo.pl .reboot',
          # Next-to-last step is to disable automatic logon
          'todo.pl ' . get_value ('_meta', 'autolog'),
-         "todo.pl $top autolog.pl .reboot",
+         # First step is to perform top-level install
+         "todo.pl $top",
          "\ntodo.pl --go")
       : ())
      );
