@@ -32,7 +32,7 @@ sub reboot ($) {
     AllowPriv (SE_SHUTDOWN_NAME, 1)
         or die "Unable to AllowPriv SE_SHUTDOWN_NAME: $^E";
 
-    print "Rebooting...\n";
+    print "$0 is bouncing the system\n";
     InitiateSystemShutdown ('', "$0: Rebooting...", $timeout, 1, 1)
         or die "Unable to InitiateSystemShutdown: $^E";
     stop ();
