@@ -443,7 +443,7 @@ sub create_postinst_bat () {
          'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
          # First step is to perform top-level install of master and
          # optional scripts.
-         map { "todo.pl $_" } reverse split /;/, $top,
+         map { "todo.pl $_" } (reverse split /;/, $top),
          '',
          'todo.pl --go');
 
