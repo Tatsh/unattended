@@ -50,13 +50,13 @@ $(2) : $(1)	;				\
 	mv $(2).tmp $(2)
 
 # Macro to generate rule for copying library file into stage1
-copy_lib=					\
-$(2) : $(1) stage1/etc/ld.so.conf ;		\
-	mkdir -p $(dir $(2)) &&			\
-	cp -f $(1) $(2).tmp &&			\
-	strip $(2).tmp &&			\
-	mv $(2).tmp $(2) &&			\
-	ldconfig -r stage1
+copy_lib=							\
+$(2) : $(1) stage1/etc/ld.so.conf build-$(glibc)/libc.so ;	\
+	mkdir -p $(dir $(2)) &&					\
+	cp -f $(1) $(2).tmp &&					\
+	strip $(2).tmp &&					\
+	mv $(2).tmp $(2) &&					\
+	build-$(glibc)/elf/ldconfig -r stage1
 
 all: iso tftpboot
 
@@ -528,9 +528,9 @@ $(call copy_file,../bootdisk/isolinux.bin,iso/isolinux/isolinux.bin)
 
 linuxboot.iso: iso/isolinux/bzImage iso/isolinux/initrd \
 	iso/isolinux/isolinux.cfg iso/isolinux/isolinux.bin
-	mkisofs -quiet -o $@.tmp \
-                -b isolinux/isolinux.bin -c isolinux/boot.cat \
-                -no-emul-boot -boot-load-size 4 -boot-info-table \
+	mkisofs -quiet -o $@.tmp -m CVS					\
+                -b isolinux/isolinux.bin -c isolinux/boot.cat		\
+                -no-emul-boot -boot-load-size 4 -boot-info-table	\
 		iso > /dev/null
 	mv $@.tmp $@
 
