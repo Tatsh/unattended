@@ -34,18 +34,12 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia-q828026-x86-%WINLA
 ::  is different for 2003.  So this one goes in ws2k3 directory)
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.exe /u /n /z"
 
-:: DirectX Update MS04-016 (839643)
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-016.mspx>
-:: "Vulnerability in DirectPlay Could Allow Denial of Service"
-:: URL|DEU|http://download.microsoft.com/download/3/2/1/3216a4fd-430e-4dd5-9340-11f8b3b3ebee/WindowsServer2003-KB839643-x86-DEU.EXE|updates/common/directx90-kb839643-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/5/8/4/584e3b1c-37ed-4845-8c04-232858b468e9/DirectX90-KB839643-x86-ENU.EXE|updates/common/directx90-kb839643-x86-enu.exe
-:: URL|NLD|http://download.microsoft.com/download/9/9/9/9999fcb4-634c-4f42-ba72-d049b9b69a53/WindowsXP-KB839643-x86-NLD.EXE|updates/common/directx90-kb839643-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/3/7/d/37d80c86-9d35-41b3-b30e-e9643e6710aa/WindowsServer2003-KB839643-x86-RUS.EXE|updates/common/directx90-kb839643-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\directx90-kb839643-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: Microsoft DirectX 9.0b update
+:: Microsoft DirectX 9.0c update
 :: (Requires .NET to be installed first for managed DX)
-todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
+:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx/directx_9c_redist.exe
+:: download and run directx_9c_redist.exe extract into
+:. /packages/directx9/
+todo.pl "dxsetup.exe /silent /installmanageddx"
 
 :: Recommended Updates
 

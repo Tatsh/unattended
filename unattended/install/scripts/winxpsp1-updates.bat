@@ -111,21 +111,12 @@ todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\%WINLANG%\MPSetupXP.EXE /Q /R:
 :: <http://www.microsoft.com/windowsxp/windowsmessenger/>
 todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /r:n"
 
-:: DirectX Update MS04-016 (839643)
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-016.mspx>
-:: "Vulnerability in DirectPlay Could Allow Denial of Service"
-:: URL|DAN|http://download.microsoft.com/download/b/b/b/bbb5f74e-6011-4eee-9cfb-e49f169a08ef/WindowsXP-KB839643-x86-DAN.EXE|updates/common/directx90-kb839643-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/3/d/d/3ddd2807-4843-4256-bb46-51d44b4baab4/WindowsXP-KB839643-x86-DEU.EXE|updates/common/directx90-kb839643-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/5/8/4/584e3b1c-37ed-4845-8c04-232858b468e9/DirectX90-KB839643-x86-ENU.EXE|updates/common/directx90-kb839643-x86-enu.exe
-:: URL|FRA|http://download.microsoft.com/download/3/0/9/3092ebce-3f0e-40f4-b545-97da552af376/WindowsXP-KB839643-x86-FRA.EXE|updates/common/directx90-kb839643-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/b/6/f/b6f0db61-cfee-4b26-8883-7a24b0b310f7/WindowsXP-KB839643-x86-ITA.EXE|updates/common/directx90-kb839643-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/9/9/9/9999fcb4-634c-4f42-ba72-d049b9b69a53/WindowsXP-KB839643-x86-NLD.EXE|updates/common/directx90-kb839643-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/7/5/c/75cb3158-3a0b-4f08-a0c2-28232be58c4d/WindowsXP-KB839643-x86-RUS.EXE|updates/common/directx90-kb839643-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\directx90-kb839643-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: Microsoft DirectX 9.0b
+:: Microsoft DirectX 9.0c update
 :: (Requires .NET to be installed first for managed DX)
-todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
+:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx/directx_9c_redist.exe
+:: download and run directx_9c_redist.exe extract into
+:. /packages/directx9/
+todo.pl "dxsetup.exe /silent /installmanageddx"
 
 :: Microsoft .NET framework Language Pack
 :: URL|CHS|http://download.microsoft.com/download/4/b/c/4bce2f4b-548e-4e36-a3f7-46d79a6abd39/langpack.exe|updates/common/chs/dotnet_langpack.exe
