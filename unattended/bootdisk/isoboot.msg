@@ -1,4 +1,2 @@
-
-Choose your network driver from the following list.  Press Enter to
-boot from the hard drive (will trigger automatically in 30 seconds).
-
+Choose your network driver, or press Enter to boot from the hard drive
+(will trigger automatically in 30 seconds unless you press a key).
