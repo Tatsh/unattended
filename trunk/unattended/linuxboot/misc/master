@@ -213,6 +213,12 @@ storage_modules="$storage_modules $(find-modules-pci 0x0e 0x00)"
 [ -z "$storage_modules" ] \
     && die "No mass storage hardware found (missing drivers?)"
 
+# If we are loading generic SCSI support, also load SCSI disk support.
+# Ensure each word is surrounded by a space, then replace " scsi_mod "
+# with " scsi_mod sd_mod ".
+storage_modules=" $storage_modules "
+storage_modules=${storage_modules/ scsi_mod / scsi_mod sd_mod }
+
 load_modules "$storage_modules"
 
 sys_block=/sys/block
