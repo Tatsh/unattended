@@ -16,7 +16,7 @@ glibc=glibc-20041122
 kbd=kbd-1.12
 linux=linux-2.6.10
 module-init-tools=module-init-tools-3.1
-mysql=mysql-4.0.22
+mysql=mysql-4.0.23a
 nano=nano-1.2.4
 ncurses=ncurses-5.4
 parted=parted-1.6.20
@@ -849,15 +849,14 @@ $(call download_rule, $(mysql), tar.gz, \
 	http://www.signal42.com/mirrors/mysql/Downloads/MySQL-4.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v1.2/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
-#$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
-$(call download_rule, $(parted), tar.gz, http://www.ibiblio.org/pub/gnu/ftp/gnu/parted/)
-$(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
-$(call download_rule, $(perl-ldap), tar.gz, \
-	http://www.cpan.org/authors/id/G/GB/GBARR/)
+$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
+$(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
+$(call download_rule, $(perl-ldap), tar.gz, \
+	http://www.cpan.org/authors/id/G/GB/GBARR/)
 $(call download_rule, $(pmtools), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/)
