@@ -22,6 +22,9 @@ case $arg in
         done
         mv /etc/resolv.conf.tmp /etc/resolv.conf
 
+        # Set our hostname if DHCP provided it
+        [ -n "$hostname" ] && hostname "$hostname"
+
         # Create /var/run/dhcp.out
         dhcp_out=/var/run/dhcp.out
         echo "interface=$interface" >| $dhcp_out.tmp
