@@ -225,6 +225,7 @@ set_value ('_config', 'doit_cmd',
                $src_tree =~ /\\$/
                    or $src_tree .= '\\';
                $src_tree .= get_value ('_config', 'OS');
+               $src_tree .= '\\i386';
                return "$src_tree\\winnt /s:$src_tree /u:$unattend_txt";
            });
 
@@ -378,7 +379,7 @@ open POSTINST, ">$postinst"
 
 foreach my $line ("net use z: $ENV{'INSTALL'} /persistent:yes",
                   "call z:\\scripts\\perl.bat",
-                  "PATH=z:\\bin;$%PATH%",
+                  "PATH=z:\\bin;%PATH%",
                   "todo.pl $top \"autolog.pl --disable\" .reboot",
                   (map { "todo.pl \"net localgroup Administrators $_ /add" }
                    @local_admins),
