@@ -1,3 +1,16 @@
+*** Changes in version 2.0 (2002-Oct-22)
+
+Complete rewrite of install.sh in Perl.  Now it is install.pl, and it
+requires that the user install the DJGPP Perl port.  This allows
+vastly more flexible site-specific configuration.
+
+If you use version 1.x, you should re-read the OS installation page
+(os.html), since it has been rewritten almost from scratch to describe
+the new system.
+
+Application installation is unchanged.
+
+
 *** Changes in version 1.1.2 (2002-Oct-02)
 
 Fix handling of "run fdisk interactively" option.
