@@ -24,10 +24,12 @@ e100b    Intel Pro/100 family of PCI and CardBus adapters
 e1000    Intel Pro/1000 family of gigabit adapters
 
 # Found by doing a search on product numbers (3cxfe575ct, 3cn3ac1556b,
-# 3c905c) at <http://www.3com.com/products/en_US/downloadsindex.jsp>.
+# 3c905c, 3c2000) at
+# <http://www.3com.com/products/en_US/downloadsindex.jsp>.
 elpc575  3com 3c575 family of CardBus adapters
 el556    3com 3c556 family of mini-PCI adapters
 el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
+el94x    3com 3c94x/3c2000 family of gigabit adapters
 
 # <http://www.google.com/search?q=via+ethernet+drivers>
 # <http://www.viaarena.com/?PageID=71>
