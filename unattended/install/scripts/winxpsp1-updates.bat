@@ -10,6 +10,7 @@
 
 :: "Shop for music online" link starts IE instead of your default browser
 :: URL|ENU|http://download.microsoft.com/download/0/9/4/09493548-ad33-4700-b33c-40483d753899/WindowsXP-KB833998-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb833998-x86-enu.exe
+:: URL|ITA|http://download.microsoft.com/download/d/4/7/d47caaef-4089-44e5-830a-98161cfd4563/WindowsXP-KB833998-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb833998-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/4/f/f/4ff8b6d8-e59d-4a5c-b546-146cb96dfd3b/WindowsXP-KB833998-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb833998-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/b/7/c/b7c06c76-7812-4da9-90b4-e70fb7c5cc5b/WindowsXP-KB833998-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb833998-x86-rus.exe
 :: <http://support.microsoft.com/?id=833998>
@@ -108,12 +109,14 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: "Vulnerability in the Microsoft Jet ... could permit code execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
 :: URL|ENU|http://download.microsoft.com/download/6/8/d/68d5abd5-da33-4403-a55a-af5625bb8d2d/WindowsXP-KB837001-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb837001-x86-enu.exe
+:: URL|ITA|http://download.microsoft.com/download/8/3/d/83d65455-1428-45cd-9680-bc10b1c6e716/WindowsXP-KB837001-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb837001-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/4/4/8/448abf29-ed78-4a64-8fd8-b31bf1295944/WindowsXP-KB837001-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb837001-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/4/d/4/4d40c874-b227-4ec5-8b30-3f0054d0732f/WindowsXP-KB837001-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb837001-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Recommended update 826942
 :: URL|ENU|http://download.microsoft.com/download/2/2/3/2237d088-7840-4f77-a90d-55bdf1ccbc1c/WindowsXP-KB826942-x86-ENU.exe|updates/winxpsp1/windowsxp-kb826942-x86-enu.exe
+:: URL|ITA|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/IT/Q327979_WXP_SP2_x86_ITA.exe|updates/winxpsp1/q327979_wxp_sp2_x86_ita.exe 
 :: URL|NLD|http://download.microsoft.com/download/4/4/6/446daee0-4814-4792-aee4-2e7e98f417f3/WindowsXP-KB826942-x86-NLD.exe|updates/winxpsp1/windowsxp-kb826942-x86-nld.exe
 :: URL|FRA|http://download.microsoft.com/download/6/2/e/62e69b63-96e4-409b-8620-6766ae42c82d/WindowsXP-KB826942-x86-FRA.exe|updates/winxpsp1/windowsxp-kb826942-x86-fra.exe
 :: URL|RUS|http://download.microsoft.com/download/c/6/3/c63b6182-b88f-4f19-a37f-fac658bcf176/WindowsXP-KB826942-x86-RUS.exe|updates/winxpsp1/windowsxp-kb826942-x86-rus.exe
@@ -260,6 +263,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 :: (Worst Windows security hole, ever.  Again.  And again.)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-012.mspx>
 :: URL|ENU|http://download.microsoft.com/download/8/c/9/8c9f999d-c55b-4e09-8cc0-b75bcf7368cc/WindowsXP-KB828741-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb828741-x86-enu.exe
+:: URL|ITA|http://download.microsoft.com/download/1/5/4/154f374f-e519-4bf4-b167-65bb3419295b/WindowsXP-KB828741-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb828741-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/c/3/6/c367a850-9239-43a3-9914-6d9be29fdc2b/WindowsXP-KB828741-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb828741-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/9/6/5/965969b8-b010-439f-923c-6cee6ef7a8e3/WindowsXP-KB828741-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb828741-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
@@ -268,6 +272,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb828741-x86-%WINLANG%.ex
 :: "Security Update for Microsoft Windows"  (no, really?)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-011.mspx>
 :: URL|ENU|http://download.microsoft.com/download/6/1/5/615a50e9-a508-4d67-b53c-3a43455761bf/WindowsXP-KB835732-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb835732-x86-enu.exe
+:: URL|ITA|http://download.microsoft.com/download/4/2/9/42988565-9dc5-4027-b4c4-fcbea69e2e5e/WindowsXP-KB835732-x86-ITA.EXE|updates/winxpsp1/windowsxp-kb835732-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/b/9/c/b9c2107e-1841-483e-9cb7-fb653fb2dd02/WindowsXP-KB835732-x86-NLD.EXE|updates/winxpsp1/windowsxp-kb835732-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/2/f/8/2f8b11f2-244f-41b6-b038-b15a1dd13457/WindowsXP-KB835732-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb835732-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
@@ -355,17 +360,6 @@ todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
 :: abbreviation instead of two.  For example, for English you would
 :: rename js56nen.exe to js56nenu.exe.
 todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
-
-:: Critical update 824141 (MS03-045)
-:: URL|ENU|http://download.microsoft.com/download/9/8/3/9835c5c9-5cab-4181-a821-2c9b8f6ea612/WindowsXP-KB824141-x86-ENU.exe|updates/winxpsp1/windowsxp-kb824141-x86-enu.exe
-:: URL|NLD|http://download.microsoft.com/download/2/f/d/2fd43ab5-7d1b-497a-9f93-434c1e80ecde/WindowsXP-KB824141-x86-NLD.exe|updates/winxpsp1/windowsxp-kb824141-x86-nld.exe
-:: URL|FRA|http://download.microsoft.com/download/9/5/5/955ea0a2-dd9b-46a6-9a54-fd4fc1f69e5f/WindowsXP-KB824141-x86-FRA.exe|updates/winxpsp1/windowsxp-kb824141-x86-fra.exe
-:: URL|RUS|http://download.microsoft.com/download/3/1/2/31290345-fb84-487c-87f4-f306afad87a9/WindowsXP-KB824141-x86-RUS.exe|updates/winxpsp1/windowsxp-kb824141-x86-rus.exe
-:: URL|DEU|http://download.microsoft.com/download/8/4/2/8427ad0b-d2fd-48b0-8517-5237df90a2e8/WindowsXP-KB824141-x86-DEU.exe|updates/winxpsp1/windowsxp-kb824141-x86-deu.exe
-:: URL|ITA|http://download.microsoft.com/download/5/5/b/55b0ec8d-17a1-4ac5-95e8-271ba6d4c73b/WindowsXP-KB824141-x86-ITA.exe|updates/winxpsp1/windowsxp-kb824141-x86-ita.exe
-:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.mspx>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824141-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 825119 (MS03-044)
 :: URL|ENU|http://download.microsoft.com/download/4/3/1/431d912c-6c0b-469c-893d-fc138fee7191/WindowsXP-KB825119-x86-ENU.exe|updates/winxpsp1/windowsxp-kb825119-x86-enu.exe
