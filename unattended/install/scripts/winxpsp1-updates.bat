@@ -6,6 +6,11 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 819696
+:: "Unchecked Buffer in DirectX Could Enable System Compromise"
+:: <http://support.microsoft.com/?kbid=819696>
+todo.pl "z:\packages\winxpsp1\Q819696_WXP_SP2_x86_ENU.exe"
+
 :: Critical update 823980
 :: "Buffer Overrun In RPC Interface Could Allow Code Execution"
 :: (worst Windows security hole, ever)
