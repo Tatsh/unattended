@@ -9,29 +9,41 @@
 :: Extra Updates
 
 :: "Update for Windows Media Player 9 Series"
+:: <http://support.microsoft.com/?id=837272>
+:: URL|DAN|http://download.microsoft.com/download/3/8/b/38b5dccd-b255-4dd1-98e3-7944a5a0430a/WindowsMedia9-KB837272-DAN.exe|updates/mediaplayer9/windowsmedia9-kb837272-dan.exe
 :: URL|DEU|http://download.microsoft.com/download/b/0/0/b001504d-10bd-402f-94b3-2015abf87cd2/WindowsMedia9-KB837272-DEU.exe|updates/mediaplayer9/windowsmedia9-kb837272-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/7/0/D/70D0BAC6-A68B-4CB6-94AB-E0DF8C0EFCAF/WindowsMedia9-KB837272-ENU.exe|updates/mediaplayer9/windowsmedia9-kb837272-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/b/4/2/b4201cf1-2863-4e9d-9fc4-df7e46536e29/WindowsMedia9-KB837272-ESN.exe|updates/mediaplayer9/windowsmedia9-kb837272-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/0/b/b/0bbce627-51cf-416c-bb79-1bc58bd09e4b/WindowsMedia9-KB837272-FRA.exe|updates/mediaplayer9/windowsmedia9-kb837272-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/3/1/a/31a3658f-e8e2-4b37-90d7-02edc118767d/WindowsMedia9-KB837272-ITA.exe|updates/mediaplayer9/windowsmedia9-kb837272-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/3/7/0/370f42db-fcd5-48d3-b798-56ef8f258206/WindowsMedia9-KB837272-NLD.exe|updates/mediaplayer9/windowsmedia9-kb837272-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/3/c/6/3c6b5375-05af-4fef-8dd0-595506d9e59b/WindowsMedia9-KB837272-RUS.exe|updates/mediaplayer9/windowsmedia9-kb837272-rus.exe
-:: <http://support.microsoft.com/?id=837272>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb837272-%WINLANG%.exe /passive /n /norestart"
 
+:: Update for Windows Media Player Script Commands (828026)
+:: <http://support.microsoft.com/?id=828026>
+:: "Update for Windows Media Player Script Commands"
 :: URL|DEU|http://download.microsoft.com/download/5/1/a/51ad420e-55b4-479c-bc70-e25771d59300/WindowsMedia-Q828026-x86-DEU.exe|updates/mediaplayer9/windowsmedia-q828026-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/c/e/0/ce005267-09e9-423b-a360-7db7825b4b36/WindowsMedia-Q828026-x86-ENU.exe|updates/mediaplayer9/windowsmedia-q828026-x86-enu.exe
-:: URL|RUS|http://download.microsoft.com/download/1/e/4/1e4af859-cccb-4e40-a10b-5a761ace2592/WindowsMedia-Q828026-x86-RUS.exe|updates/mediaplayer9/windowsmedia-q828026-x86-rus.exe
+:: URL|ESN|http://download.microsoft.com/download/f/2/9/f29f0949-4609-4e4f-91b6-9aacbf6bd78b/WindowsMedia-Q828026-x86-ESN.exe|updates/mediaplayer9/windowsmedia-q828026-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/1/e/c/1eca869e-f23e-4a6c-ae7c-605c01f00c0f/WindowsMedia-Q828026-x86-FRA.exe|updates/mediaplayer9/windowsmedia-q828026-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/c/8/8/c88a8e9f-0c69-4641-9fff-6548df56ea83/WindowsMedia-Q828026-x86-ITA.exe|updates/mediaplayer9/windowsmedia-q828026-x86-ita.exe
-:: "Update for Windows Media Player Script Commands"
-:: <http://support.microsoft.com/?id=828026>
+:: URL|NLD|http://download.microsoft.com/download/1/c/8/1c8145ac-0b4d-4568-87d1-0c399ce14b01/WindowsMedia-Q828026-x86-NLD.exe|updates/mediaplayer9/windowsmedia-q828026-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/1/e/4/1e4af859-cccb-4e40-a10b-5a761ace2592/WindowsMedia-Q828026-x86-RUS.exe|updates/mediaplayer9/windowsmedia-q828026-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia-q828026-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
-:: URL|DEU|http://download.microsoft.com/download/6/d/b/6db6da24-28ec-4abd-b91f-3596b8c8f157/WindowsMedia9-KB819639-x86-DEU.exe|updates/ws2k3/windowsmedia9-kb819639-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/2/e/9/2e90df3e-2d74-4be7-9279-538cfec1b895/WindowsMedia9-KB819639-x86-ENU.exe|updates/ws2k3/windowsmedia9-kb819639-x86-enu.exe
-:: URL|ITA|http://download.microsoft.com/download/c/a/1/ca129ddc-43b2-4012-8e7d-b89e99b07494/WindowsMedia9-KB819639-x86-ITA.exe|updates/ws2k3/windowsmedia9-kb819639-x86-ita.exe
-:: URL|RUS|http://download.microsoft.com/download/5/3/e/53e211c9-f8bf-4db8-9158-6aac86bdc5d5/WindowsMedia9-KB819639-x86-RUS.exe|updates/ws2k3/windowsmedia9-kb819639-x86-rus.exe
 :: <http://support.microsoft.com/?kbid=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/ms03-021.mspx>
 :: (Even though this is named the same as the one in mediaplayer9 it
 ::  is different for 2003.  So this one goes in ws2k3 directory)
+:: URL|DEU|http://download.microsoft.com/download/6/d/b/6db6da24-28ec-4abd-b91f-3596b8c8f157/WindowsMedia9-KB819639-x86-DEU.exe|updates/ws2k3/windowsmedia9-kb819639-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/2/e/9/2e90df3e-2d74-4be7-9279-538cfec1b895/WindowsMedia9-KB819639-x86-ENU.exe|updates/ws2k3/windowsmedia9-kb819639-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/3/d/6/3d6fdd97-d434-4212-b939-ffbd4395843c/WindowsMedia9-KB819639-x86-ESN.exe|updates/ws2k3/windowsmedia9-kb819639-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/a/6/5/a6513a54-760b-4745-af9b-6f9455cc18be/WindowsMedia9-KB819639-x86-FRA.exe|updates/ws2k3/windowsmedia9-kb819639-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/c/a/1/ca129ddc-43b2-4012-8e7d-b89e99b07494/WindowsMedia9-KB819639-x86-ITA.exe|updates/ws2k3/windowsmedia9-kb819639-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/c/4/1/c41d1290-ddc3-4fb5-b866-e438b99774d8/WindowsMedia9-KB819639-x86-NLD.exe|updates/ws2k3/windowsmedia9-kb819639-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/5/3/e/53e211c9-f8bf-4db8-9158-6aac86bdc5d5/WindowsMedia9-KB819639-x86-RUS.exe|updates/ws2k3/windowsmedia9-kb819639-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.exe /u /n /z"
 
 :: Microsoft DirectX 9.0c update
@@ -50,6 +62,10 @@ todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
 :: URL|DEU|http://download.microsoft.com/download/0/2/3/023c61e4-f328-429a-bfb0-a290de811b3a/WindowsServer2003-KB837001-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-enu.exe
 :: URL|ENU|http://download.microsoft.com/download/a/1/0/a1080cda-4801-4a0c-8692-0d9773b1cca5/WindowsServer2003-KB837001-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/a/e/6aeaaa8a-ff6b-404f-b1c5-43fc7eebbe91/WindowsServer2003-KB837001-x86-ESN.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/f/2/9/f292adf9-f7a0-4b71-8a48-67c6af85b5c7/WindowsServer2003-KB837001-x86-FRA.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/1/9/5/195426b8-0cad-44a1-afeb-2811ad52f2a0/WindowsServer2003-KB837001-x86-ITA.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/4/6/7/46701845-33f1-4730-bb7d-9b86a6a7ffef/WindowsServer2003-KB837001-x86-NLD.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/5/e/4/5e4198ce-ab91-4e71-8b89-98c4a5eba820/WindowsServer2003-KB837001-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
 
@@ -74,6 +90,10 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLAN
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
 :: URL|DEU|http://download.microsoft.com/download/6/c/8/6c8e5679-2ad4-493b-881e-02be5ffe9f13/WindowsServer2003-KB839645-x86-deu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/e/7/9/e79e9c09-1755-4ecc-8ccd-fc915c9e0cbf/WindowsServer2003-KB839645-x86-enu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/0/3/f/03f9545f-b7c0-4d59-902d-a0262c1d4c7b/WindowsServer2003-KB839645-x86-esn.exe|updates/ws2k3/windowsserver2003-kb839645-x86-esn.exe                                                     
+:: URL|FRA|http://download.microsoft.com/download/6/3/4/634bc8d8-c2bd-4fad-a0de-ec6e3bd9fc53/WindowsServer2003-KB839645-x86-fra.exe|updates/ws2k3/windowsserver2003-kb839645-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/a/c/8/ac80d8d0-76e2-4777-9e37-7db67790ae66/WindowsServer2003-KB839645-x86-ita.exe|updates/ws2k3/windowsserver2003-kb839645-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/6/0/a/60aa3daf-2a7f-4aa1-bcc4-8c4cefce77d5/WindowsServer2003-KB839645-x86-nld.exe|updates/ws2k3/windowsserver2003-kb839645-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/c/9/e/c9e871e2-1062-4ffd-aecd-4970db36f31f/WindowsServer2003-KB839645-x86-rus.exe|updates/ws2k3/windowsserver2003-kb839645-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb839645-x86-%WINLANG%.exe /passive /n /norestart"
 
@@ -82,6 +102,10 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb839645-x86-%WINLAN
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-023.mspx>
 :: URL|DEU|http://download.microsoft.com/download/a/7/9/a79cd472-9c52-444c-8066-3894df96295e/WindowsServer2003-KB840315-x86-deu.exe|updates/ws2k3/windowsserver2003-kb840315-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/b/4/2/b420044b-eb3a-442b-bba6-0156aa7896ef/WindowsServer2003-KB840315-x86-enu.exe|updates/ws2k3/windowsserver2003-kb840315-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/d/8/cd86a50b-0670-47a1-9546-f191847c5d52/WindowsServer2003-KB840315-x86-esn.exe|updates/ws2k3/windowsserver2003-kb840315-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/d/8/5/d85c011f-3f02-4977-ae10-67c1493eff70/WindowsServer2003-KB840315-x86-fra.exe|updates/ws2k3/windowsserver2003-kb840315-x86-fra.exe
+:: URL|ITA|http://download.microsoft.com/download/f/d/8/fd8738f3-91b1-40e5-af98-69aa68c2b855/WindowsServer2003-KB840315-x86-ita.exe|updates/ws2k3/windowsserver2003-kb840315-x86-ita.exe
+:: URL|NLD|http://download.microsoft.com/download/9/e/2/9e28e92a-97c4-4413-9688-485c2bd0e67e/WindowsServer2003-KB840315-x86-nld.exe|updates/ws2k3/windowsserver2003-kb840315-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/3/0/f/30f268bc-e580-405b-a20f-7da47728901d/WindowsServer2003-KB840315-x86-rus.exe|updates/ws2k3/windowsserver2003-kb840315-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB840315-x86-%WINLANG%.exe /passive /n /norestart"
 
