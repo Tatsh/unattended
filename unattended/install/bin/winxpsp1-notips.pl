@@ -97,7 +97,13 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
                     # Show Image placeholders
                     '/Show Image Placeholders' => [ pack('L', 1), REG_DWORD ],
                     # Don't use search assistant in Internet Explorer
+                    '/Use FormSuggest' => 'no',
+                    # Don't use search assistant in Internet Explorer
                     '/Use Search Asst' => 'no',
+                },
+                'IntelliForms/' => {
+                    # Reuse Internet Explorer windows when possible
+                    '/AskUser' => [ pack('L', 0), REG_DWORD ],
                 },
             },
             'MediaPlayer/' => {
