@@ -563,9 +563,8 @@ sub convert_fdisk_parted ($) {
 
         my ($start, $end) = find_free_space ($size);
 
-        if ($end >= $infinity) {
-            $end = '-0';
-        }
+        $end >= $infinity
+            and $end = '-0';
 
         my $fs = (defined $fat16 ? 'fat16' : 'fat32');
         if (defined $type) {
@@ -580,7 +579,6 @@ sub convert_fdisk_parted ($) {
         die "Unable to convert '$fdisk_cmd' to Parted commands; bailing";
     }
 
-#    print "HERE ($fdisk_cmd) -> ($ret)\n";
     return $ret;
 }
 
@@ -595,7 +593,8 @@ sub ask_fdisk_cmds () {
     print "\n";
 
     print "Choose partitioning scheme.\n";
-    print "NOTE: If partition table changes, machine will reboot.\n";
+    $is_linux
+        or print "NOTE: If partition table changes, machine will reboot.\n";
     # Commands to erase partition table
     my $pre_cmds = 'fdisk /clear 1';
 
@@ -658,6 +657,7 @@ sub ask_os () {
 
     unless (exists $media_objs[1]) {
         my $only = $media_objs[0]->path ();
+        $media_objs[0]->cache ();
         print "$only is the only OS directory I found; using it.\n";
         return $only;
     }
