@@ -1346,6 +1346,14 @@ if (1) {
         and $u->read ($site_unattend_txt);
 }
 
+# Output some interesting info.
+my $ipaddr = $u->{'_meta'}->{'ipaddr'};
+defined $ipaddr
+    and print "IP address:  $ipaddr\n";
+my $macaddr = $u->{'_meta'}->{'macaddr'};
+defined $macaddr
+    and print "MAC address: $macaddr\n";
+
 # Read site-specific Perl configuration file.
 if (1) {
     my $site_conf = dos_to_host ('z:\\site\\config.pl');
@@ -1358,14 +1366,6 @@ if (1) {
             or die "Could not do $site_conf: $^E";
     }
 }
-
-# Output some interesting info.
-my $ipaddr = $u->{'_meta'}->{'ipaddr'};
-defined $ipaddr
-    and print "IP address:  $ipaddr\n";
-my $macaddr = $u->{'_meta'}->{'macaddr'};
-defined $macaddr
-    and print "MAC address: $macaddr\n";
 
 # On Linux, we may need to correct the kernel's notion of the disk
 # geometry.  Otherwise the disk partitioning tool will have the wrong
