@@ -162,10 +162,13 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB828035-x86-%WINLANG%.ex
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB823182-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 816093
-:: "Flaw in the Microsoft VM Could Enable System Compromise"
+:: "Flaw in Microsoft VM Could Enable System Compromise"
 :: <http://support.microsoft.com/?kbid=816093>
-:: (download only available from Windows Catalog)
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\msjavwu.exe /q /r:n"
+:: (NOTE: Only available from Windows Catalog, be sure to get
+::  the 2000 SP4 or XP version, they are the same)
+if not exist %SystemRoot%\System32\Msjava.dll goto nojvm
+todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
+:nojvm
 
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
