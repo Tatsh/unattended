@@ -283,7 +283,8 @@ $(call copy_file, build-$(glibc)/libc_nonshared.a, \
 
 build-$(glibc)/libc_nonshared.a: build-$(glibc)/libc.so
 
-fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
+fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so \
+			stage1/lib/ld-linux.so
 	mkdir -p $(dir $@)
 	echo "OUTPUT_FORMAT(elf32-i386)" >| $@.tmp
 	echo "GROUP ( $(cwd)/stage1/lib/libc.so.6 " \
@@ -300,8 +301,9 @@ fakeinclude/stdio.h: fakelib/libc.so
 # Variable for use in CFLAGS to convince utilities to compile/link
 # against our just-built libraries instead of the system libraries.
 # FIXME: Should include -nostdinc here
-fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib		\
-		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib
+fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib		    \
+		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib	    \
+		-Wl,--start-group,$(cwd)/stage1/lib/ld-linux.so,--end-group
 
 # Create empty config file to silence ldconfig warnings
 stage1/etc/ld.so.conf:
@@ -367,7 +369,7 @@ stage1/bin/loadkeys: $(kbd)/src/loadkeys
 	rm -f $@
 	cd $(kbd)				\
 	&& make DESTDIR=$(cwd)/stage1 install
-	rm -r stage1/usr/share/locale
+	rm -rf stage1/usr/share/locale
 	rm stage1/usr/bin/{deallocvt,dumpkeys,fgconsole,getkeycodes}	\
 		stage1/usr/bin/{kbdrate,loadunimap,mapscrn}		\
 		stage1/usr/bin/psf*table				\
@@ -469,7 +471,8 @@ stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 
 ## pmtools (acpidmp, for diagnostics)
 $(pmtools)/acpidmp/acpidmp: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
-	cd $(dir $@)							\
+	cd $(dir $@)							  \
+	&& make clean							  \
 	&& make CFLAGS="$(fakelib_cflags$) -I$(cwd)/$(linux)/include -O2"
 	[ -e $@ ]
 
@@ -591,8 +594,10 @@ stage1 += stage1/usr/lib/smb.conf stage1/sbin/mount.cifs
 
 ## wireless_tools
 $(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
-	cd $(wireless_tools)			\
-	&& make KERNEL_SRC=$(cwd)/$(linux) CFLAGS="$(fakelib_cflags) -O2 -Wall"
+	cd $(wireless_tools)				\
+	&& make clean					\
+	&& make KERNEL_SRC=$(cwd)/$(linux)		\
+		CFLAGS="$(fakelib_cflags) -O2 -Wall"
 	[ -e $@ ]
 
 $(wireless_tools)/iwlist: $(wireless_tools)/iwconfig
