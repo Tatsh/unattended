@@ -442,7 +442,7 @@ defined $admins[0]
                     (get_value ('Identification', 'JoinDomain'),
                      $_) } @admins;
 foreach my $admin (@admins) {
-    push @postinst_lines, "net localgroup Administrators $_ /add";
+    push @postinst_lines, "net localgroup Administrators $admin /add";
 }
 
 # NTP servers
