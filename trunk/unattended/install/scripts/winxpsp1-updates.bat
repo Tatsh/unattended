@@ -24,7 +24,7 @@ todo.pl "z:\packages\winxpsp1\WindowsXP-KB821253-x86-ENU.exe /u /z"
 :: Critical update 817606
 :: "Buffer Overrun in Windows Could Lead to Data Corruption"
 :: <http://support.microsoft.com/?kbid=817606>
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817606_WXP_SP2_x86_ENU.exe /u /z"
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817606_WXP_SP2_x86_ENU.exe /u /z" .reboot
 
 :: Critical update 823559
 :: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
