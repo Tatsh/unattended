@@ -1,6 +1,6 @@
 ; AutoIt script to install DirectX 9.0b
 
-Run, %Z%\\packages\\DirectX9\\dxsetup.exe /installmanageddx
+Run, %Z%\\packages\\DirectX9\\%WINLANG%\\dxsetup.exe /installmanageddx
 
 WinWait, Installeren van Microsoft(R) DirectX(R)
 WinActivate, Installeren van Microsoft(R) DirectX(R)
