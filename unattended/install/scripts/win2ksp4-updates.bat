@@ -137,7 +137,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB825119-x86-%WINLANG%.
 :: Critical update 828035 (MS03-043)
 :: "Buffer Overrun in Messenger Service Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
-::todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 823182 (MS03-041)
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
