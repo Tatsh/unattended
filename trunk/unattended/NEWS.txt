@@ -1,20 +1,27 @@
-** Changes in version 4.3 (2004-Jun-??)
+** Changes in version 4.3 (2004-Jun-17)
 
-(Linux) Include acpidmp (for reporting bugs in ACPI), wget, DBI
-module, and DBD::mysql module on boot disk.
+(Linux) Add DBI and DBD::mysql Perl modules (untested) to boot disk.
 
-(Linux) Start laying groundwork for wireless installs: Build wireless
-drivers with kernel, and include iwconfig+iwlist on boot disk.
+(Linux) Add acpidmp (for reporting bugs in ACPI), dmidecode, and wget
+to boot disk.
+
+(Linux) Start laying groundwork for wireless installs.  Build wireless
+drivers and add iwconfig+iwlist to boot disk.
 
 (Linux) Support (require) Fedora Core 2 for building boot disk.
-Upgrade to glibc-20040606 (2.3.4, more or less) and dosemu-20040606.
+Upgrade to glibc-20040606 (glibc 2.3.4, more or less) and
+dosemu-20040606.
 
 (Linux) Auto-detect active partition instead of assuming it is first.
+
+(Linux) Make /etc/master script idempotent, for real.
 
 (DOS) Upgrade to FreeDOS 2.0.35 and switch back to emm386 as UMB
 provider.
 
 (DOS) Upgrade fetnd driver to latest version from Via's site.
+
+Upgrade to SYSLINUX 2.10-pre7.
 
 Add hotfixes MS04-016 (Windows) and MS04-017 (Visual Studio .NET).
 
