@@ -10,7 +10,7 @@ echo "*** OK, here we go."
 
 echo "*** First, we'll look for PCI Ethernet hardware..."
 
-# PCI classes 0x0200nn are Ethernet controllers
+# PCI classes 0x0200nn are Ethernet controllers.
 network_modules=`find-modules-pci 0x02 0x00`
 
 # FIXME: How do we handle multiple drivers for same device (e100/eepro100).
@@ -27,7 +27,8 @@ sleep 2
 cardmgr -o
 
 echo "*** Lets wait a little bit for things to settle down..."
-# udhcpc only gets a lease 1/5 times with e100/eepro100 cards without this delay.
+# udhcpc only gets a lease 1/5 times with e100/eepro100 cards without
+# this delay.
 # This might be related to above delays too.
 sleep 5
 
@@ -66,7 +67,7 @@ while : ; do
     echo
 
     if [[ "$input" == [yY]* ]] ; then
-        # Allow editing, and do not treat backslash specially
+        # Allow editing, and do not treat backslash specially.
         read -e -r -p "Enter location of install share (default $Z_PATH): " \
             input
         [ -n "$input" ] && Z_PATH="$input"
@@ -101,8 +102,12 @@ done
 
 echo "*** Excellent.  Now, let's see about mass storage controllers..."
 
-# PCI classes 0x01nnnn are mass storage controllers
+# PCI classes 0x01nnnn are mass storage controllers.
 storage_modules=`find-modules-pci 0x01`
+
+# PCI classes 0x0e00nn are I2O intelligent controllers, which might
+# have storage devices attached to them.
+storage_modules="$storage_modules `find-modules-pci 0x0e 0x00`"
 
 [ -z "$storage_modules" ] \
     && die "No mass storage hardware found (missing drivers?)"
@@ -154,7 +159,7 @@ modprobe edd \
 sleep 2         # paranoia
 
 edd_dir=/sys/firmware/edd/int13_dev80
-echo "*** And look for legacy BIOS disk geometry in $edd_dir"
+echo "*** ...and look for legacy BIOS disk geometry in $edd_dir"
 
 # Here we shamelessly assume that we have found the boot device (BIOS
 # disk 80h), and that this is the device the user wanted.  Need to do
@@ -180,6 +185,12 @@ else
     echo "*** Found no legacy BIOS data.  Probably no big deal.  Continuing."
 fi
 
+if [ -w "/proc/ide/$hda/settings" ] ; then
+    echo -n "*** Making IDE driver interruptible for $hda..."
+    echo unmaskirq:1 >> "/proc/ide/$hda/settings"
+    echo "done."
+fi
+
 echo "*** By Jove, I think we've got it!"
 
 # FIXME: Bad hack to work around dosemu bug running over network
@@ -191,6 +202,7 @@ mkdir -p /var/lib/dosemu/drives
 cp /z/linuxaux/var/lib/dosemu/drives/dosboot.img /var/lib/dosemu/drives/.
 
 # install.pl relies on these environment variables
+# (see also LEGACY_BIOS_HEAD and LEGACY_BIOS_SECT above)
 export Z_PATH Z_USER Z_PASS
 
 # Used as staging area by install.pl
