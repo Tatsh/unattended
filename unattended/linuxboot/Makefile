@@ -153,11 +153,16 @@ $(bash)/bash:
 $(call copy_exe, $(bash)/bash, stage1/bin/bash)
 
 ## dosemu
+
+# For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
+# If it is non-zero, they do something weird which breaks for us.  So
+# we force it to be zero.
 build-$(dosemu)/bin/dosemu.bin:
 	mkdir -p build-$(dosemu)
 	cd build-$(dosemu)				\
 	&& $(cwd)/$(dosemu)/configure --without-x	\
-	&& make
+	&& make MAKELEVEL=0
+	[ -e $@ ]
 
 $(call copy_exe,build-$(dosemu)/bin/dosemu.bin,stage1/usr/bin/dosemu.bin)
 
