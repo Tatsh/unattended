@@ -31,7 +31,6 @@ sub get_info ($$) {
 # Get the value associated with a section+key in the answer file.
 # Example:
 #   $name = get_value ('UserData', 'FullName');
-sub get_value ($$;$);
 sub get_value ($$;$) {
     my ($sect, $key, $noforce) = @_;
     my $info = get_info ($sect, $key);
@@ -47,7 +46,6 @@ sub get_value ($$;$) {
 # Assign a value to a section+key in the answer file.
 # Example:
 #    set_value ('GuiUnattended', 'AdminPassword', 'sekrit');
-sub set_value ($$$);
 sub set_value ($$$) {
     my ($sect, $key, $val) = @_;
     my $sect_info = get_info ($sect, '');
