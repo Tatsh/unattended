@@ -144,24 +144,31 @@ grepping for "Inno".
 <p>Inno Setup installers use the <kbd>/silent</kbd> switch for
 unattended installations.
 
-<h2>Microsoft packages</h2>
+<h2 id="hotfixes">Microsoft hotfixes and older packages</h2>
 
-<p>Many packages (like hotfixes) which you can download from Microsoft
-actually extract themselves to a temporary folder and then run a
-command from inside that folder.  These packages often support the
+<p>Most Microsoft hotfixes respond to the <kbd>/?</kbd> switch, but
+they do not always tell you everything.
+
+<p>Some Microsoft hotfixes use <kbd>/u</kbd> for unattended
+installation and <kbd>/z</kbd> to suppress the automatic reboot.
+There are other useful switches; use <kbd>/?</kbd> to learn about
+them.
+
+<p>Some hotfixes use Microsoft's old packaging technology whose name I
+forget.  They first extract themselves to a temporary folder and then
+run a command from inside that folder.  These packages support the
 <kbd>/t:<var>path</var></kbd> switch, to specify the temporary folder
 name, and the <kbd>/c:<var>command</var></kbd> switch to specify the
-command to run.  (Passing just <kbd>/c</kbd> suppresses running the
-command at all.)
+command to run.  Passing just <kbd>/c</kbd> suppresses running the
+command at all, so you can use <kbd>/c&nbsp;/t:<var>path</var></kbd>
+to extract the hotfix so you can look at it.
 
-<p>See the "NOTE" in <a
+<p>These hotfixes also support the (undocumented) <kbd>/r:n</kbd>
+switch to suppress the reboot.  Or some of them do, anyway; others
+require manual fiddling with the <kbd>/c</kbd> switch.  See the "NOTE"
+in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q317244"
 >KB article Q317244</a> for an example.
-
-<p>Most of these installers support the <kbd>/?</kbd> switch, which
-will then claim to support "quiet" operation with <kbd>/q</kbd> and
-"no reboot" operation with <kbd>/r:n</kbd>, except when it's
-<kbd>/z</kbd>.
 
 <p>Leave it to Microsoft to make systems administration an <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q69563"
@@ -178,7 +185,7 @@ maintain.
 
 <p>There are several tools around which can take a "snapshot" of a
 machine's state before and after you perform a manual installation,
-compute the differences between the states, and bundle them up in an
+compute the differences between the states, and bundle them up as an
 "installer".  The <a href="#wise">Wise</a> product line has good
 support for this.
 
@@ -218,24 +225,23 @@ because they provide no way to know when a sub-process has exited.
 You can tell when the AutoIt executable exits, but that is not the
 same thing at all.  For example, an installer's last window might
 disappear while the installer still had work to do.  Your master
-script, waiting for the AutoIt executable, would then proceed, and it
-might start another installation or reboot the machine before the
-installer had finished.
+script, waiting only for the AutoIt executable, would then proceed,
+starting another installation or rebooting the machine before the
+underlying installer had finished.
 
 <p>AutoIt provides <a
 href="http://www.dx21.com/SCRIPTING/AUTOIT/ViewItem.ASP?NTI=4&amp;SI=3&amp;OID=49"
->Run</a> and <a
+><code>Run</code></a> and <a
 href="http://www.dx21.com/SCRIPTING/AUTOIT/ViewItem.ASP?NTI=4&amp;SI=3&amp;OID=50"
->"RunWait"</a> primitives, but it does not provide a way to wait for
-the termination of an application which was invoked by "Run".  If it
-did, this race condition could be avoided.
+><code>RunWait</code></a> primitives, but it does not provide a way to
+wait for the termination of an application which was invoked by
+<code>Run</code>.  If it did, this race condition could be avoided.
 
 <p>In practice, it does not matter much, because most installers do
-finish their work before destroying their window.  Just make sure your
-<code>.aut</code> script uses <a
+finish their work before destroying their last window.  Just make sure
+your <code>.aut</code> script uses <a
 href="http://www.dx21.com/SCRIPTING/AUTOIT/ViewItem.ASP?NTI=4&amp;SI=3&amp;OID=74"
->WinWaitClose</a> to wait for the installer's top-level window to
-vanish.
+><code>WinWaitClose</code></a> to wait for that last window to vanish.
 
 <hr>
 
@@ -303,7 +309,7 @@ Windows"</a> document.  It is an <a href="#installshield"
 <td><p>Just download the MSI file, which you <a href="#msi">already
 know how to handle</a>.
 
-<p>Most of the options are <a
+<p>Most of the available properties are <a
 href="http://aspn.activestate.com/ASPN/Perl/Reference/Products/ActivePerl/install.html#windows%20installers"
 >documented</a>, except for <kbd>PERL_EXT</kbd>, which tells the
 installer to make ActivePerl the default handler for .pl files.
@@ -348,10 +354,10 @@ of fish; see the example script for one approach.
 <td><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/cygwin.aut?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >cygwin.aut</a>, <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/cygwin.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup",
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/cygwin.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">cygwin.bat</a>,
 <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/sshd.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->sshd.bat</a> >cygwin.bat</a>
+>sshd.bat</a>
 
 </table>
 <br><hr width="50%">
@@ -514,7 +520,7 @@ name.  To create the Administrative Installation Point, run:
     setup.exe /a data1.msi
 </pre>
 
-<p>The <code>data1.msi</code> file is at the top-level of the CD-ROM.
+...from the top-level of the CD-ROM.
 
 <p>You will surely want to apply Microsoft's updates, as well.  You
 can keep up with them by reading Microsoft's <a
@@ -529,10 +535,10 @@ href="#msi">MSI</a> package.  There are many public properties you can
 use, as documented in <a
 href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q270920">KB
 article Q270920</a> (although a better description can be found in the
-setupref.xls spreadsheet from the <a
+<code>setupref.xls</code> spreadsheet in the <a
 href="http://www.microsoft.com/office/ork/2000/appndx/toolbox.htm#offinfo"
->Office Information</a> part of the Office Resource Kit toolbox.)  I
-happen to like the settings <code>ADDLOCAL=ALL</code>,
+>Office Information</a> download from the Office Resource Kit
+toolbox.)  I happen to like the settings <code>ADDLOCAL=ALL</code>,
 <code>REBOOT=ReallySuppress</code>, <code>NOUSERNAME=TRUE</code>,
 <code>ALLUSERS=1</code>, and <code>DISABLEMEDIA=1</code>.  Your
 mileage may vary.
@@ -573,8 +579,8 @@ is still accurate, however.
 
 <p>Luckily, by running "strings" on <code>smsinst.exe</code>, we can
 learn that all it does is run <code>regedit /s key.dat</code> and then
-fire up <code>acmboot.exe</code>.  The <code>key.dat</code> file just
-a simple registry patch to trick <code>acmsetup.exe</code> into
+fire up <code>acmboot.exe</code>.  The <code>key.dat</code> file is
+just a simple registry patch to trick <code>acmsetup.exe</code> into
 thinking that the GUI portion of Setup has already run.  You must
 provide the <code>/k</code> switch to <code>acmsetup.exe</code> to
 specify your license key (sans hyphens).
@@ -583,15 +589,15 @@ specify your license key (sans hyphens).
 latest service pack (<a
 href="http://msdn.microsoft.com/vstudio/downloads/updates/sp/vs6/sp5/"
 >SP5</a> as of this writing).  To perform an unattended installation
-of SP5, you just run <code>setupsp5.exe /qn1</code>.  You may also
-provide the <code>/g</code> switch to specify a log file.
+of SP5, run <code>setupsp5.exe /qn1</code>.  You may also provide the
+<code>/g</code> switch to specify a log file.
 
-<p>Oh, if only it were that easy.  If you are installing on Windows
-2000, you will find that the <code>/qn1</code> flag does not actually
-work, because the installer insists on popping up a useless warning
-that your version of MDAC is out-of-date.  The solution to this?  <a
-href="#mdac">Update MDAC</a> to the latest version before trying to
-install the service pack.
+<p>But oh, if only it were that simple.  If you are installing on
+Windows 2000, you will find that the <code>/qn1</code> flag does not
+actually work, because the installer insists on popping up a useless
+warning that your version of MDAC is out-of-date.  The solution to
+this?  <a href="#mdac">Update MDAC</a> to the latest version before
+trying to install the service pack.
 
 <p>So, the full unattended procedure for installing Visual C++ 6.0 is:
 
