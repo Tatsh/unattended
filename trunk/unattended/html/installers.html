@@ -13,10 +13,9 @@ href="http://unattended.sourceforge.net/"
 <hr>
 <h1>Introduction</h1>
 
-<p>The goal of this page is to collect instructions for performing
+<p>The goal of this document is to collect instructions for performing
 unattended/silent installations of many popular Windows applications.
-Such instructions are useful for people who wish to automate these
-installations.
+Such instructions are useful for automating these installations.
 
 <p>A quick word on terminology: Strictly speaking, an
 <em>unattended</em> installation is one which does not require user
@@ -24,28 +23,26 @@ interaction, and a <em>silent</em> (or <em>quiet</em>) installation is
 one which does not display any indication of its progress.  However,
 most vendors treat these words as synonyms.
 
-<p>In this document, we are interested not only in unattended
-installations, but also in being able to wait for the installation to
-finish and to suppress any automatic reboot.  These are both necessary
-for creating a system to <a href="apps.html">reliably install multiple
-applications.</a>
+<p>Here, we are interested not only in unattended installations, but
+also in waiting for the installation to finish and suppressing any
+automatic reboot.  These are both necessary to create a system for <a
+href="apps.html">reliably installing multiple applications</a>.
 
 <h1>General information</h1>
 
-<p>There are several installer packages in common use in the Windows
-world.  Sometimes it will be obvious from the splash screen which one
-is in use; sometimes you can figure it out by running the Unix
-"strings" utility; and sometimes you just have to guess.
+<p>There are several utilities in common use in the Windows world for
+creating installers.  Sometimes it will be obvious from the
+installer's splash screen which one is in use; sometimes you can
+figure it out by running <a
+href="http://www.gnu.org/manual/binutils-2.12/html_node/binutils_9.html"
+>strings</a>; and sometimes you just have to guess.
 
 <p>Sure, you can run the installer with the <kbd>/?</kbd> switch to
-learn which other switches it supports.  And by all means, try it.
-But if you really expect this to work then you have not been using
-Windows for very long.  In my experience, the odds are about 4-to-1
+learn which other switches it supports.  If you really expect this to
+work, then you have not been using Windows for very long.  By all
+means, try it.  But in my experience, the odds are about 4-to-1
 against <kbd>/?</kbd> telling you anything at all, even when there is
 something to tell.
-
-<p>Note that many applications fall into none of these categories.
-
 
 <h2 id="msi">MSI packages</h2>
 
@@ -60,10 +57,11 @@ manipulate them using the <a
 href="http://www.microsoft.com/TechNet/prodtechnol/winxppro/proddocs/msiexec.asp"
 ><kbd>msiexec</kbd></a> utility.
 
-<p>For installation, use the <kbd>/i</kbd> and <kbd>/qb</kbd> flags.
-Use the <kbd>/l*</kbd> option to produce a log file.  You may provide
-options at the end of the command line; which options are supported
-depends on the package.  For example, this command:
+<p>For installation, use the <kbd>/i</kbd> and <kbd>/qb</kbd>
+switches.  Use the <kbd>/l*</kbd> switch to produce a log file.  You
+can provide named options at the end of the command line; which
+options are supported depends on the package.  For example, this
+command:
 
 <pre>
     msiexec /qb /l* perl-log.txt /i ActivePerl.msi PERL_PATH=Yes PERL_EXT=Yes
@@ -140,7 +138,7 @@ System".  Don't let them confuse you.
 single executables supporting the <kbd>/s</kbd> option.  I do not
 cover this here because I think it is a bad idea.
 
-<h2="inno">Inno Setup</h2>
+<h2 id="inno">Inno Setup</h2>
 
 <p><a href="http://www.jrsoftware.org/isinfo.php">Inno Setup</a> is an
 open source competitor in this space.  You can usually identify the
@@ -210,13 +208,13 @@ Windows"</a> document.  It is an <a href="#installshield"
 <tr><td valign="middle">Availability
 <td><a href="http://www.activestate.com/Products/ActivePerl/">Open Source</a>
 <tr><td valign="middle">Details
-<td><p>Just download the <a href="#msi">MSI</a> file.
+<td><p>Just download the MSI file, which you <a href="#msi">already
+know how to handle</a>.
 
 <p>Most of the options are <a
 href="http://aspn.activestate.com/ASPN/Perl/Reference/Products/ActivePerl/install.html#windows%20installers"
 >documented</a>, except for <kbd>PERL_EXT</kbd>, which tells the
-installer to make ActivePerl the default handler for .pl files (highly
-recommended).
+installer to make ActivePerl the default handler for .pl files.
 
 <tr><td valign="middle">Example
 <td><a
@@ -229,7 +227,7 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 <table border cellpadding=4>
 
 <tr><td valign="middle">Availability
-<td><ahref="http://help.attbusiness.net/">Free Download</a> (but
+<td><a href="http://help.attbusiness.net/">Free Download</a> (but
 requires the service)
 
 <tr><td valign="middle">Details
