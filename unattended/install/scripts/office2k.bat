@@ -1,4 +1,4 @@
-:: Install Office 2000 and its updates
+:: OPTIONAL: Install Office 2000 and its updates
 
 :: Reboot after installing everything (superstition)
 todo.pl .reboot
