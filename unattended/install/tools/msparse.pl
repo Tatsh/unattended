@@ -66,8 +66,17 @@ foreach my $k (keys (%lang)) {
         if (/\<a href=[\"\']([^\"\']*-client-[^\"\']*)[\"\']\>/i) {
             my $dl=$1;
             my @a=split(/\//,$dl);
-            $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
-            $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
+            if ($a[$#a] =~ /$k/i) {
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+                $run = lc($type)."/".$a[$#a] unless defined $run;
+            } elsif ($a[$#a] =~ /$lang{$k}\.exe/i) {
+                $a[$#a] =~ s/$lang{$k}\.exe/$k.exe/i;
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+                $run = lc($type)."/".$a[$#a] unless defined $run;
+            } else {
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($k)."/".lc($a[$#a]);
+                $run = lc($type)."/".lc($k)."/".$a[$#a] unless defined $run;
+            }
         }
 
         if (/\<a id=[\"\']btnDownload[\"\'] class=[\"\']downloadButton[\"\'] href=[\"\']([^\"\']*)[\"\']\>/) {
@@ -75,14 +84,21 @@ foreach my $k (keys (%lang)) {
             my @a=split(/\//,$dl);
             if ($a[$#a] =~ /$k/i) {
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
-                $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
+                $run = lc($type)."/".$a[$#a] unless defined $run;
             } elsif ($a[$#a] =~ /$lang{$k}\.exe/i) {
                 $a[$#a] =~ s/$lang{$k}\.exe/$k.exe/i;
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
-                $run = lc($type)."/".$a[$#a] if $k =~ /enu/i;
+                $run = lc($type)."/".$a[$#a] unless defined $run;
             } else {
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($k)."/".lc($a[$#a]);
-                $run = lc($type)."/".lc($k)."/".$a[$#a] if $k =~ /enu/i;
+                $run = lc($type)."/".lc($k)."/".$a[$#a] unless defined $run;
+            }
+        }
+        if (defined $run) {
+            unless ($run =~ /%WINLANG%/) {
+                $run =~ s/([-_\/])$k/$1%WINLANG%/i;
+                $run =~ s/$k\.exe/%WINLANG%\.exe/i;
+                $run =~ s/\//\\/g;
             }
         }
     }
@@ -156,17 +172,17 @@ if (defined $link) {
     $link =~ s/ +$//g;
 }
 
-if (defined $run) {
-    $run =~ s/([-_\/])enu/$1%WINLANG%/i;
-    $run =~ s/enu\.exe/%WINLANG%\.exe/i;
-    $run =~ s/\//\\/g;
-}
-
 print "\n";
 print ":: $title1\n" if defined $title1;
 print ":: $title2\n" if defined $title2;
 print ":: \"$desc\"\n" if defined $desc;
 print ":: <$link>\n" if defined $link;
 print ":: <$url>\n" if defined $url;
-print ":: $urls->{$_}\n" foreach (sort keys %$urls);
+foreach (sort keys %lang) {
+    if (defined $urls->{uc($_)}) {
+        print ":: $urls->{uc($_)}\n";
+    } else {
+        print ":: No Download found for " . uc($_) . ".\n";
+    }
+}
 print "todo.pl \".reboot-on 194 %Z%\\$run /?\"\n" if defined $run;
