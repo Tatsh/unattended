@@ -52,6 +52,13 @@ foreach my $reg_key ($cuser_key, $defuser_key) {
         or die "Unable to set ", $reg_key->Path, "$path to $value: $^E";
 }
 
+foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
+    my $path = "$soft_ms/Windows/CurrentVersion/RunOnce//^SetupICWDesktop";
+    my $icw = delete $reg_key->{$path};
+}
+
+
+
 # This always returns failure, even though it works...
 #$ntuser_key->UnLoad
 #    or die "Unable to unload registry hive $ntuser_dat: $^E";
