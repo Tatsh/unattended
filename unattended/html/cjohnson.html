@@ -1,0 +1,832 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+  <HEAD>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <TITLE>
+      Unattended Installation
+    </TITLE>
+  </HEAD>
+  <BODY>
+    <CENTER>
+      <H1>
+        Unattended Installation
+      </H1>
+      <H2>
+        Based on Unattended-4.0b<BR>
+         by <A href="mailto:patl@users.sourceforge.net">Patrick J. LoPresti</A><BR>
+         <A href="http://unattended.sourceforge.net/">http://unattended.sourceforge.net/</A>
+      </H2>
+    </CENTER>
+    <H2>
+      Overview
+    </H2>
+    <P>
+      The Unattended project is designed to assist in the installation of Windows operating systems. It uses one of three boot methods (Diskette, CD-ROM, PXE Network) to access a network share (Samba
+      or Windows). It then runs a perl installation script which collates Windows Unattended data with Unattended Project data to produce, with the right configuration, a fully unattended
+      installation.
+    </P>
+    <P>
+      This document is intended as a supplement to, not a replacement for, the web site. It is based off a document originally posted to one of the two dedicated mailing lists: <A href= 
+      "https://lists.sourceforge.net/lists/listinfo/unattended-info/">unattended-info</A> and <A href="https://lists.sourceforge.net/lists/listinfo/unattended-devel/">unattended-devel</A>.
+    </P>
+    <P>
+      <B>Note:</B> I have used Unattended exclusively with Diskette and CD-ROM boot methods (both Linux and DOS). This document does not address PXE in any way.
+    </P>
+    <H2>
+      Prerequisites
+    </H2>
+    <I><B>Required:</B></I> DHCP server.<BR>
+     <I><B>Required:</B></I> SAMBA or Windows server capable of sharing the &ldquo;install&rdquo; share. 
+    <P>
+      Desired: DNS alias for your Unattended server named &ldquo;ntinstall&rdquo;.<BR>
+       Desired: Guest account access to the &ldquo;install&rdquo; share. Username: guest, Password: guest.
+    </P>
+    <P>
+      Useful, But Not Required: A modern (2.6 kernel) Linux system for customizing the Linux boot CD.<BR>
+       Useful, But Not Required: Any Linux system or Windows Cygwin for customizing the DOS boot disk/CD.
+    </P>
+    <P>
+      <B>Note:</B> The &ldquo;Desired&rdquo; prerequisites remove the need to change the default boot disk parameters. This is very convenient, but not necessarily advisable from a security
+      standpoint.
+    </P>
+    <H2>
+      Pre-installation Setup
+    </H2>
+    <H3>
+      Download Unattended Software:
+    </H3>
+    <P>
+      <A href="https://sourceforge.net/project/showfiles.php?group_id=62053">https://sourceforge.net/project/showfiles.php?group_id=62053</A><BR>
+       http://prdownloads.sourceforge.net/unattended/unattended-[ver].zip?download<BR>
+       http://prdownloads.sourceforge.net/unattended/unattended-[ver]-dosboot.zip?download<BR>
+       http://prdownloads.sourceforge.net/unattended/unattended-[ver]-linuxboot.zip?download
+    </P>
+    <P>
+      <B><FONT color="#ff0000">Important Note:</FONT></B> From here on, unattended-[ver] will be referred to as unattended.
+    </P>
+    <H3>
+      Download DJGPP Software, a Port of the Unix Environment to DOS:
+    </H3>
+    <P>
+      <A href="http://www.delorie.com/pub/djgpp/current/v2/">http://www.delorie.com/pub/djgpp/current/v2/</A><BR>
+       http://www.delorie.com/pub/djgpp/current/v2/djdev[ver].zip<BR>
+       http://www.delorie.com/pub/djgpp/current/v2gnu/perl[ver].zip<BR>
+       http://www.delorie.com/pub/djgpp/current/v2apps/pico[ver].zip<BR>
+       http://www.delorie.com/pub/djgpp/current/v2misc/csdpmi[ver].zip
+    </P>
+    <H3>
+      Extract the Software
+    </H3>
+    Extract unattended.zip to a public directory on your SAMBA or Windows server.<BR>
+     Extract unattended-dosboot.zip to that same directory.<BR>
+     Extract unattended-linuxboot.zip to that same directory . 
+    <P>
+      Extract djdev[ver].zip to /unattended/install.<BR>
+       Extract perl[ver].zip to /unattended/install/djgpp.<BR>
+       Extract pico[ver].zip to /unattended/install/djgpp.<BR>
+       Extract csdpmi[ver].zip to /unattended/install/djgpp.
+    </P>
+    <P>
+      You will now have the basic Unattended file structure:
+    </P>
+    <TABLE border="1" width="600">
+      <TR>
+        <TD>
+          /unattended/bootdisk
+        </TD>
+        <TD>
+          DOS Boot Disk files
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          /unattended/html
+        </TD>
+        <TD>
+          Unattended Documentation
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <B>/unattended/install</B>
+        </TD>
+        <TD>
+          *** <B>This is the directory you will mount as \\ntinstall\install</B> ***
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          /unattended/linuxboot
+        </TD>
+        <TD>
+          Linux Boot Disk files
+        </TD>
+      </TR>
+    </TABLE>
+    <H3>
+      Populate the OS Images
+    </H3>
+    Copy the i386 folder from your Windows CD-ROM to /unattended/install/os/[os_name]. 
+    <P>
+      For example, for Windows XP SP1, you would copy the i386 folder to /unattended/install/os/winxpsp1, thus creating /unattended/install/os/winxp/i386.
+    </P>
+    <P>
+      <B>Note:</B> Unattended knows what OS is in the folder based on the folder content, not on the folder name.
+    </P>
+    <H3>
+      Update the OS Image with the Latest Service Pack [Optional]
+    </H3>
+    Please reference: <A href="http://unattended.sourceforge.net/os.html#service-pack">http://unattended.sourceforge.net/os.html#service-pack</A> 
+    <H3>
+      Populate the Packages and Updates
+    </H3>
+    Copy the desired packages to their appropriate directories at /unattended/install/packages.<BR>
+     Copy the desired updates to their appropriate directories at /unattended/install/updates. 
+    <P>
+      <B>Note:</B> These directories must match the content of the script files in /unattended/install/scripts (if you want to use the prebuilt scripts. Trust me, you do).
+    </P>
+    <H3>
+      Create the Install Share
+    </H3>
+    Create a share of the directory /unattended/install on your server and name it &ldquo;install&rdquo;. Make sure the Guest account has read access to the share. 
+    <H3>
+      Create a Boot Disk
+    </H3>
+    For the Linux (preferred!) or DOS boot CD, create a CD from the ISO image supplied: /unattended/linuxboot/linuxboot.iso or /unattended/bootdisk/bootdisk.iso. I suggest <A href= 
+    "http://www.burnatonce.com/">Burnatonce</A> (Donationware, open source, free for non-commercial use). 
+    <P>
+      For a DOS boot diskette, there are a couple more steps involved. The diskette images are stored in compressed format in: /unattended/bootdisk/images. You will need to uncompress the image for
+      <I>your</I> network card.
+    </P>
+    <P>
+      Rename the file from /unattended/bootdisk/images/[network card].imz to [network card].img.gz. Then, if you are using Linux or Cygwin, gunzip [network card].img.gz. WinZip for Windows will also
+      work, just rename the unzipped file. You will end up with a 1.44 Meg floppy image named [network card].img.
+    </P>
+    <P>
+      You can now use freeware utilities to write this image to a floppy. I suggest rawwritewin: <A href="http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm">
+      http://uranus.it.swin.edu.au/~jn/linux/rawwrite.htm</A>.
+    </P>
+    <P>
+      <B>Note:</B> There are utilities which will write compressed images to diskettes directly, but I have not found a freeware version. :-(
+    </P>
+    <H2>
+      Test Your Boot Disk
+    </H2>
+    You are now ready to try your first Unattended installation! Insert your boot disk/CD into a system you can safely format and let it fly! The procedure will ask a lot of questions, so it's not
+    very "unattended" right now, but it's a good time to make sure your structure is setup properly. 
+    <H2>
+      Customization
+    </H2>
+    Unattended is infinitely customizable. I will attempt to show some of the more common ways to make Unattended work more efficiently. 
+    <H3>
+      Modify the Boot Disk (Requires Linux or Cygwin)
+    </H3>
+    If you do not have access to your DNS server, you may want to change the default server name. In the same file, you can setup your own Guest account and password. 
+    <H4>
+      Modify /unattended/bootdisk/template/autoexec.bat
+    </H4>
+    SET Z_PATH=\\[YourUnattendedServer]\install<BR>
+     SET Z_USER=[YourGuestAccount]<BR>
+     SET Z_PASS=[YourGuestPassword]<BR>
+     
+    <P>
+      Using Linux or Cygwin, Run "make" from: /unattended/bootdisk. This will create the disk images and bootdisk.iso image with your specific login information.
+    </P>
+    <H4>
+      Create a Custom unattend.txt
+    </H4>
+    Create a custom unattend.txt file in the directory: /unattended/install/site 
+    <P>
+      These options will <B>Override</B> those in the default file, /unattended/install/lib/unattend.txt. BUT you must explicitly negate options that are listed in the default file if you don't want
+      them.
+    </P>
+    <P>
+      <STRONG><FONT color="#ff0000">*** This file is how you <I>really</I> make Unattended (almost) completely unattended. ***</FONT></STRONG>
+    </P>
+    <P>
+      For example: You do not want print services for Unix running, but the default file has:
+    </P>
+    <BLOCKQUOTE>
+      [NetOptionalComponents]<BR>
+       LPDSVC=1
+    </BLOCKQUOTE>
+    <P>
+      So add an entry to /unattended/install/site/unattend.txt:
+    </P>
+    <BLOCKQUOTE>
+      [NetOptionalComponents]<BR>
+       LPDSVC=0
+    </BLOCKQUOTE>
+    <P>
+      Optionally, you can modify the default file and disable it there, but you may forget that you've done so when Unattended 4.1 comes out. :-)
+    </P>
+    <H4>
+      Create a Custom config.pl
+    </H4>
+    Create a custom config.pl file in the directory: /unattended/install/site 
+    <P>
+      This file contains additions to the main /unattended/install/dosbin/install.pl script. You can automatically add the OemPnPDriversPath, and specify a product key based on the OS (among other
+      things). See the Unattended site for some examples: <A href="http://unattended.sourceforge.net/advanced.html#perl">http://unattended.sourceforge.net/advanced.html#perl</A>
+    </P>
+    <H4>
+      Modify the Windows Notips
+    </H4>
+    <P>
+      One of the hidden gems in Unattended are the Windows Notips files. These files handle all of the dirty registry tweaks you make to Windows after you login for the first time. Some examples are:
+      Folder settings to show hidden/system files, Internet Explorer cache size, Command prompt auto-completion of commands, Command prompt buffer size.
+    </P>
+    <P>
+      The files are located at: <B>/unattended/install/bin/[os name]-notips.pl</B>. Even if you don't know any perl, I highly suggest taking a look at these and customizing them to your tastes. It is
+      very easy to add your own tweaks. As long as perl is installed, you can run these scripts on any system after the fact, too!
+    </P>
+    <H3>
+      Complete Unattended Installation
+    </H3>
+    <P>
+      Unfortunately, there is no 100% pure unattended installation. There is physical intervention necessary, after the main Windows installation starts, to either eject the boot CD/floppy, or modify
+      the BIOS to prevent a PXE boot.
+    </P>
+    <P>
+      That being said, you can get pretty close. You need to supply answers to all of the stock questions. This is done using the files: /unattended/site/unattend.txt and /unattended/site/config.pl.
+      What follows are the absolute minimum entries to install Windows XP unattended:
+    </P>
+    <H4>
+      /unattended/install/site/unattend.txt
+    </H4>
+    <BLOCKQUOTE>
+      <P>
+        [UserData]<BR>
+         ; Generate a Random Computer Name<BR>
+         ComputerName = *<BR>
+         ; Full Name of the User<BR>
+         FullName = YourUserName<BR>
+         ; Organization of the User<BR>
+         OrgName = YourOrganization
+      </P>
+      <P>
+        [GuiUnattended]<BR>
+         ; Set the default Administrator password<BR>
+         AdminPassword = PlainTextPassword
+      </P>
+      <P>
+        [Identification]<BR>
+         ; Join a Workgroup (not a Domain)<BR>
+         JoinWorkgroup = YOURWORKGROUP
+      </P>
+      <P>
+        ; Unattended script specific parameters. These are ignored by Windows.<BR>
+         [_meta]<BR>
+         fdisk_lba = 1<BR>
+         ; Disallow fdisk confirmation.<BR>
+         fdisk_confirm = 0<BR>
+         ; Create a partition that is only used for the Install Only!<BR>
+         fdisk_cmds = "fdisk /clear 1;fdisk /pri:2000;fdisk /activate:1"<BR>
+         format_cmd = "format c: /y /z:seriously /q /v: "<BR>
+         replace_mbr = 1<BR>
+         edit_files = 0<BR>
+         ; This chooses the main installation type. Remove to force the menu.<BR>
+         top = ""<BR>
+         middle = ""<BR>
+         bottom = ""<BR>
+         ; No NTP servers<BR>
+         ntp_servers = ""
+      </P>
+    </BLOCKQUOTE>
+    <H4>
+      /unattended/install/site/config.pl
+    </H4>
+    <BLOCKQUOTE>
+      <P>
+        # File to hold site-specific customizations.
+      </P>
+      <P>
+        # Enable maximum warnings and disallow sloppy constructs.<BR>
+         use warnings;<BR>
+         use strict;
+      </P>
+      <P>
+        $u-&gt;{'UserData'}-&gt;{'ProductKey'} =
+      </P>
+      <BLOCKQUOTE>
+        sub { 
+        <BLOCKQUOTE>
+          my $media_obj =<BR>
+           Unattend::WinMedia-&gt;new ($u-&gt;{'_meta'}-&gt;{'OS_media'});<BR>
+           my $name = $media_obj-&gt;name (); 
+          <P>
+            if ($name =~ /Windows XP/) {<BR>
+             return 'YOURW-INDOW-SKEYG-OESHE-REZZZ';<BR>
+             }<BR>
+             return undef;
+          </P>
+        </BLOCKQUOTE>
+        };
+      </BLOCKQUOTE>
+      <P>
+        # Make this file evaluate to "true".<BR>
+         1;
+      </P>
+    </BLOCKQUOTE>
+    <H2>
+      Conclusion
+    </H2>
+    <P>
+      Unattended allows you to create a complete system, hardware independent (RAID is an exception!), with nothing more than a boot disk/CD (and not even that if you use PXE). It allows installation
+      of most popular software packages, and is easily customizable to taste. It is useful for deploying standards in an office, or an emergency recovery situation at a remote site.
+    </P>
+    <P>
+      Thanks to Patrick LoPresti and all of the Unattended contributors for succeeding where Microsoft falls short.
+    </P>
+    <H2>
+      Example Files
+    </H2>
+    <P>
+      What follows are my individual configuration files and modifications to the standard Unattended installation.
+    </P>
+    <H3>
+      /unattended/install/site/config.pl (complete file)
+    </H3>
+    <P>
+      # File to hold site-specific customizations.
+    </P>
+    <P>
+      # Enable maximum warnings and disallow sloppy constructs.<BR>
+       use warnings;<BR>
+       use strict;
+    </P>
+    $u-&gt;{'Unattended'}-&gt;{'OemPnPDriversPath'} = 
+    <BLOCKQUOTE>
+      sub { 
+      <BLOCKQUOTE>
+        my $media_obj = 
+        <BLOCKQUOTE>
+          Unattend::WinMedia-&gt;new ($u-&gt;{'_meta'}-&gt;{'OS_media'});
+        </BLOCKQUOTE>
+        my @pnp_driver_dirs = $media_obj-&gt;oem_pnp_dirs (1);<BR>
+         # No driver directories means no drivers path<BR>
+         scalar @pnp_driver_dirs &gt; 0 
+        <BLOCKQUOTE>
+          or return undef;
+        </BLOCKQUOTE>
+        print "...found some driver directories.\n";<BR>
+        <BR>
+         my $ret = join ';', @pnp_driver_dirs;<BR>
+         # Setup does not like empty OemPnPDriversPath<BR>
+         $ret =~ /\S/ 
+        <BLOCKQUOTE>
+          or undef $ret;
+        </BLOCKQUOTE>
+        return $ret;
+      </BLOCKQUOTE>
+      };
+    </BLOCKQUOTE>
+    $u-&gt;{'UserData'}-&gt;{'ProductKey'} = 
+    <BLOCKQUOTE>
+      sub { 
+      <BLOCKQUOTE>
+        my $media_obj = Unattend::WinMedia-&gt;new ($u-&gt;{'_meta'}-&gt;{'OS_media'});<BR>
+         my $os_name = $media_obj-&gt;name ();<BR>
+         if ($os_name =~ /Windows XP/) { 
+        <BLOCKQUOTE>
+          return 'YOURW-INDOW-SKEYG-OESHE-REZZZ';
+        </BLOCKQUOTE>
+        }<BR>
+         elsif ($os_name =~ /Windows Server 2003/) { 
+        <BLOCKQUOTE>
+          return 'YOURW-INDOW-SKEYG-OESHE-REZZZ';
+        </BLOCKQUOTE>
+        } return undef;
+      </BLOCKQUOTE>
+      };
+    </BLOCKQUOTE>
+    $u-&gt;{'UserData'}-&gt;{'ProductID'} = 
+    <BLOCKQUOTE>
+      sub { 
+      <BLOCKQUOTE>
+        my $media_obj = Unattend::WinMedia-&gt;new ($u-&gt;{'_meta'}-&gt;{'OS_media'});<BR>
+         my $os_name = $media_obj-&gt;name ();<BR>
+         if ($os_name =~ /Windows 2000/) { 
+        <BLOCKQUOTE>
+          return 'YOURW-INDOW-SKEYG-OESHE-REZZZ';
+        </BLOCKQUOTE>
+        }<BR>
+         elsif (defined $u-&gt;{'UserData'}-&gt;{'ProductKey'}) { 
+        <BLOCKQUOTE>
+          # It is OK for us to return undef as long as there is a<BR>
+           # ProductKey.<BR>
+           return undef;
+        </BLOCKQUOTE>
+        } die "No ProductKey nor ProductID!";
+      </BLOCKQUOTE>
+      };
+    </BLOCKQUOTE>
+    # Make this file evaluate to "true".<BR>
+     1; 
+    <H3>
+      /unattended/install/scripts/base.bat (additions to distribution file)
+    </H3>
+    <P>
+      :: Turn off System Restore todo.pl<BR>
+       "srconfig.pl --disable"
+    </P>
+    <P>
+      :: Enable Automatic logon for installation purposes<BR>
+       todo.pl "autolog.pl --logon=1 --user=Administrator --password=PlainTextPassword"
+    </P>
+    <H3>
+      /unattended/install/scripts/middle.bat (complete file)
+    </H3>
+    <P>
+      :: MIDDLE: Execute after primary install.
+    </P>
+    <P>
+      :: Defragment the drive to collect the free space.<BR>
+       :: todo.pl defrag.bat
+    </P>
+    <P>
+      :: Update windows and turn off annoying stuff.<BR>
+       todo.pl %%WINVER%%-tweaks.bat
+    </P>
+    <H3>
+      /unattended/install/scripts/winxpsp1-tweaks.bat (complete file)
+    </H3>
+    <P>
+      :: WinXP specific tweaks.
+    </P>
+    <P>
+      :: Make the QuickLaunch toolbar visible.<BR>
+       todo.pl quicklaunch.bat
+    </P>
+    <P>
+      :: fixtz.pl - Work around daylight saving bug in XP unattended install<BR>
+       todo.pl fixtz.pl
+    </P>
+    <H3>
+      QuickLaunch / AutoIt3
+    </H3>
+    You can automatically turn on the QuickLaunch toolbar in Windows XP. 
+    <P>
+      Download <A href="http://www.hiddensoft.com/AutoIt/">AutoIt3.exe</A> and place it in /unattended/install/bin.
+    </P>
+    <P>
+      Create an AutoIt3 script: /unattended/install/scripts/enu/quicklaunch.au3.<BR>
+    </P>
+    <BLOCKQUOTE>
+      Run ("rundll32.exe shell32.dll,Options_RunDLL 1", "", @SW_HIDE)<BR>
+       WinWaitActive ( "Taskbar and Start Menu Properties")<BR>
+       WinShow ( "Taskbar and Start Menu Properties", "", @SW_HIDE)<BR>
+       WinActivate ( "Taskbar and Start Menu Properties")<BR>
+       $var = ControlCommand ( "Taskbar and Start Menu Properties", "", "Button5", "IsChecked", "")<BR>
+       If $var = 1 Then<BR>
+       
+      <BLOCKQUOTE>
+        WinClose ("Taskbar and Start Menu Properties")<BR>
+      </BLOCKQUOTE>
+      Else<BR>
+       
+      <BLOCKQUOTE>
+        ControlCommand ( "Taskbar and Start Menu Properties", "", "Button5", "Check", "")<BR>
+         ControlCommand ( "Taskbar and Start Menu Properties", "", "Button11", "Check", "")<BR>
+      </BLOCKQUOTE>
+      EndIf
+    </BLOCKQUOTE>
+    <P>
+      Create a standalone batch file, /unattended/install/scripts/quicklaunch.bat, or add the following lines to another batch file:
+    </P>
+    <BLOCKQUOTE>
+      :: Make the QuickLaunch toolbar visible in Windows XP.<BR>
+       todo.pl "AutoIt3 %Z%\scripts\%WINLANG%\quicklaunch.au3"
+    </BLOCKQUOTE>
+    <H3>
+      /unattended/install/scripts/win2ksp4-updates.bat (modifications to distribution file)
+    </H3>
+    <P>
+      <B>Comment Out:</B><BR>
+       Windows Journal Viewer update<BR>
+       Update for Windows Media Player Script Commands - 819639<BR>
+       Media Player 9.0<BR>
+       Windows Messenger Update<BR>
+       Microsoft DirectX 9.0b update<BR>
+       Microsoft .NET framework<BR>
+       Recommended update 822831<BR>
+       Recommended update 820888<BR>
+       Recommended update 818043
+    </P>
+    <P>
+      <B>Modify:</B> Windows Journal Viewer update - 828026<BR>
+       Download the proper file for MediaPlayer8.<BR>
+       todo.pl ".reboot-on 194 %Z%\updates\mediaplayer8\windowsmedia-q828026-x86-%WINLANG%.exe /passive /n /norestart"
+    </P>
+    <P>
+      <B>Note:</B> I do not personally need .NET, DirectX9, etc. Pick and choose the packages you need!
+    </P>
+    <P>
+      <B>Note:</B> This file works for Windows 2000 Server, too. Copy it to: /unattended/install/scripts/ws2ksp4-updates.bat
+    </P>
+    <H3>
+      /unattended/install/scripts/winxpsp1-updates.bat (modifications to distribution file)
+    </H3>
+    <P>
+      <B>Comment Out:</B><BR>
+       Update for HighMAT Support in the Windows XP CD Writing Wizard<BR>
+       Movie Maker 2.0 update<BR>
+       Windows Journal Viewer update<BR>
+       Flaw In Windows Media Player May Allow Media Library Access (819639)<BR>
+       Media Player 9.0<BR>
+       Windows Messenger Update<BR>
+       Microsoft DirectX 9.0b update<BR>
+       Microsoft .NET framework<BR>
+       Recommended update 826942<BR>
+       Recommended update 814995<BR>
+       Recommended update 814995<BR>
+       Recommended update 810243<BR>
+       Recommended update 810243<BR>
+       Recommended update 817778<BR>
+       Recommended update 821253<BR>
+       Recommended update 820291<BR>
+       Recommended update 327979<BR>
+       Recommended update 327405<BR>
+       Recommended update 322011<BR>
+    </P>
+    <P>
+      <B>Modify:</B> Windows Journal Viewer update - 828026<BR>
+       Download the proper file for MediaPlayer8.<BR>
+       todo.pl ".reboot-on 194 %Z%\updates\mediaplayer8\windowsmedia-q828026-x86-%WINLANG%.exe /passive /n /norestart"
+    </P>
+    <P>
+      <B>Note:</B> Same comment as above, pick and choose the packages you need.
+    </P>
+    <H3>
+      OS Drivers
+    </H3>
+    Create and populate the following directories: 
+    <H4>
+      Windows XP Service Pack 1 / Windows 2000 Service Pack 4
+    </H4>
+    <P>
+      /unattended/install/os/winxpsp1/i386/$oem$<BR>
+       /unattended/install/os/winxpsp1/i386/$oem$/$1<BR>
+       /unattended/install/os/winxpsp1/i386/$oem$/$1/drivers<BR>
+       /unattended/install/os/winxpsp1/i386/$oem$/$1/drivers/video<BR>
+       /unattended/install/os/winxpsp1/i386/$oem$/$1/drivers/chipset<BR>
+       /unattended/install/os/winxpsp1/i386/$oem$/$1/drivers/modem<BR>
+       /unattended/install/os/winxpsp1/i386/$oem$/$1/drivers/network<BR>
+       /unattended/install/os/winxpsp1/i386/$oem$/$1/drivers/audio
+    </P>
+    <B>Note:</B> Substitute win2ksp4 if necessary. Install Laptop/Motherboard specific drivers in these directories. They should contain at least one INF configuration file. 
+    <H4>
+      Windows 2000 Server Service Pack 4
+    </H4>
+    <P>
+      /unattended/install/os/ws2ksp4/i386/$oem$<BR>
+       /unattended/install/os/ws2ksp4/i386/$oem$/$1<BR>
+       /unattended/install/os/ws2ksp4/i386/$oem$/$1/drivers<BR>
+       /unattended/install/os/ws2ksp4/i386/$oem$/$1/drivers/intelinf<BR>
+       /unattended/install/os/ws2ksp4/i386/$oem$/$1/drivers/network<BR>
+       /unattended/install/os/ws2ksp4/i386/$oem$/$1/drivers/scsi<BR>
+       /unattended/install/os/ws2ksp4/i386/$oem$/TEXTMODE
+    </P>
+    <B>Note:</B> The TEXTMODE directory is used during the Windows installation. The $1 directory contains drivers that are loaded after Windows installation. Place RAID drivers (for the Adaptec I2O
+    RAID, for example), in the TEXTMODE directory. 
+    <H3>
+      Sample Unattend.txt files
+    </H3>
+    <H4>
+      /unattended/install/site/unattend.txt - Laptop/Workstation Setup
+    </H4>
+    <BLOCKQUOTE>
+      ; General user information 
+      <P>
+        [UserData]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ComputerName = *<BR>
+         FullName = FullName<BR>
+         OrgName = OrganizationName
+      </BLOCKQUOTE>
+      <P>
+        [GuiUnattended]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ; Set Time Zone for Pacific Time.<BR>
+         TimeZone = 4<BR>
+         AdminPassword = PlainTextPassword
+      </BLOCKQUOTE>
+      <P>
+        [Unattended]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ; Do not prompt if a driver has not been Signed.<BR>
+         DriverSigningPolicy = Ignore
+      </BLOCKQUOTE>
+      <P>
+        [Components]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ; Do NOT Install IIS by default<BR>
+         iis_common = Off<BR>
+         iis_inetmgr = Off<BR>
+         iis_www = Off<BR>
+         ; Docs suggest iis_pwmgr only works on Win2k, but do NOT include it<BR>
+         ; anyway<BR>
+         iis_pwmgr = Off<BR>
+         ; Do NOT Include docs<BR>
+         iis_doc = Off
+      </BLOCKQUOTE>
+      <P>
+        [TapiLocation]<BR>
+      </P>
+      <BLOCKQUOTE>
+        CountryCode = 1<BR>
+         AreaCode = 555
+      </BLOCKQUOTE>
+      <P>
+        [Branding]<BR>
+      </P>
+      <BLOCKQUOTE>
+        BrandIEUsingUnattended = Yes
+      </BLOCKQUOTE>
+      <P>
+        [Proxy]<BR>
+      </P>
+      <BLOCKQUOTE>
+        Proxy_Enable = 0
+      </BLOCKQUOTE>
+      <P>
+        [URL]<BR>
+      </P>
+      <BLOCKQUOTE>
+        AutoConfig = 0<BR>
+         Home_Page = http://your.homepage.here<BR>
+         Search_Page = http://www.google.com/
+      </BLOCKQUOTE>
+      <P>
+        [NetOptionalComponents]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ; Do NOT Install Print Services for UNIX<BR>
+         LPDSVC = 0
+      </BLOCKQUOTE>
+      <P>
+        [Identification]<BR>
+      </P>
+      <BLOCKQUOTE>
+        JoinWorkgroup = YOURWORKGROUP
+      </BLOCKQUOTE>
+      <P>
+        ; Unattended script specific parameters. These are ignored by Windows.<BR>
+         [_meta]<BR>
+      </P>
+      <BLOCKQUOTE>
+        fdisk_lba = 1<BR>
+         ; Modify the following to allow/disallow (1/0) fdisk confirmation.<BR>
+         fdisk_confirm = 0<BR>
+         ; This partition is only used for the Install Only!<BR>
+         fdisk_cmds = "fdisk /clear 1;fdisk /pri:2000;fdisk /activate:1"<BR>
+         format_cmd = "format c: /y /z:seriously /q /v: "<BR>
+         replace_mbr = 1<BR>
+         edit_files = 0<BR>
+         ; This chooses the main installation type. Remove to force the menu.<BR>
+         top = "base.bat"<BR>
+         middle = "middle.bat"<BR>
+         bottom = ""<BR>
+         ; No NTP servers<BR>
+         ntp_servers = ""<BR>
+         ; Force an install of Windows XP SP1.<BR>
+         OS_media = "Z:\os\winxpsp1"<BR>
+         ; Force an install of Windows 2000 SP4.<BR>
+         ; OS_media = "Z:\os\win2ksp4"<BR>
+         ; Force an install of Windows 2000 Server SP4.<BR>
+         ; OS_media = "Z:\os\ws2ksp4"
+      </BLOCKQUOTE>
+    </BLOCKQUOTE>
+    <H4>
+      /unattended/install/site/unattend.txt - Windows 2000 (RAID) Server Setup
+    </H4>
+    <BLOCKQUOTE>
+      ; General user information 
+      <P>
+        [UserData]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ComputerName = *<BR>
+         FullName = FullName<BR>
+         OrgName = OrganizationName
+      </BLOCKQUOTE>
+      <P>
+        [GuiUnattended]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ; Set Time Zone for Pacific Time.<BR>
+         TimeZone = 4<BR>
+         AdminPassword = PlainTextPassword
+      </BLOCKQUOTE>
+      <P>
+        [Unattended]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ; Do not prompt if a driver has not been Signed.<BR>
+         DriverSigningPolicy = Ignore
+      </BLOCKQUOTE>
+      <P>
+        [Components]
+      </P>
+      <BLOCKQUOTE>
+        ; Do NOT install Media Clips or MSN Explorer.<BR>
+         Media_clips = Off<BR>
+         msnexplr = Off<BR>
+         ; Turn ON Terminal Services.<BR>
+         TSEnable = On
+      </BLOCKQUOTE>
+      <P>
+        [LicenseFilePrintData]
+      </P>
+      <BLOCKQUOTE>
+        AutoMode = PerSeat
+      </BLOCKQUOTE>
+      <P>
+        [TapiLocation]<BR>
+      </P>
+      <BLOCKQUOTE>
+        CountryCode = 1<BR>
+         AreaCode = 555
+      </BLOCKQUOTE>
+      <P>
+        [Branding]<BR>
+      </P>
+      <BLOCKQUOTE>
+        BrandIEUsingUnattended = Yes
+      </BLOCKQUOTE>
+      <P>
+        [Proxy]<BR>
+      </P>
+      <BLOCKQUOTE>
+        Proxy_Enable = 0
+      </BLOCKQUOTE>
+      <P>
+        [URL]<BR>
+      </P>
+      <BLOCKQUOTE>
+        AutoConfig = 0<BR>
+         Home_Page = http://your.homepage.here<BR>
+         Search_Page = http://www.google.com/
+      </BLOCKQUOTE>
+      <P>
+        [MassStorageDrivers]<BR>
+      </P>
+      <BLOCKQUOTE>
+        "Adaptec I2O RAID Adapters for Windows 2000 &amp; XP 32bit" = "OEM"
+      </BLOCKQUOTE>
+      <P>
+        [OEMBootFiles]<BR>
+      </P>
+      <BLOCKQUOTE>
+        TXTSETUP.OEM<BR>
+         DPTI2O.CAT<BR>
+         DPTI2O.SYS<BR>
+         OEMSETUP.INF<BR>
+         ADPTMGT.INF<BR>
+         EUROLGC.INF<BR>
+         W2KPREP.EXE<BR>
+         TRANS.TBL<BR>
+         DPT_I2O
+      </BLOCKQUOTE>
+      <P>
+        [Identification]<BR>
+      </P>
+      <BLOCKQUOTE>
+        JoinWorkgroup = YOURWORKGROUP
+      </BLOCKQUOTE>
+      <P>
+        [NetOptionalComponents]<BR>
+      </P>
+      <BLOCKQUOTE>
+        ; Do NOT Install Print Services for UNIX<BR>
+         LPDSVC = 0
+      </BLOCKQUOTE>
+      <P>
+        ; Unattended script specific parameters. These are ignored by Windows.<BR>
+         [_meta]<BR>
+      </P>
+      <BLOCKQUOTE>
+        fdisk_lba = 1<BR>
+         ; Modify the following to allow/disallow (1/0) fdisk confirmation.<BR>
+         fdisk_confirm = 0<BR>
+         ; This partition is only used for the Install Only!<BR>
+         fdisk_cmds = "fdisk /clear 1;fdisk /pri:2000;fdisk /activate:1"<BR>
+         format_cmd = "format c: /y /z:seriously /q /v: "<BR>
+         replace_mbr = 1<BR>
+         edit_files = 0<BR>
+         ; This chooses the main installation type. Remove to force the menu.<BR>
+         top = base.bat<BR>
+         middle = middle.bat<BR>
+         bottom = ""<BR>
+         ; local_admins = ""<BR>
+         ntp_servers = ""<BR>
+         Force an install of Windows 2000 Server.<BR>
+         OS_media = "Z:\os\ws2ksp4"
+      </BLOCKQUOTE>
+    </BLOCKQUOTE>
+  </BODY>
+</HTML>
+
