@@ -12,7 +12,7 @@
 
 :: Windows Journal Viewer update
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
-todo.pl ".reboot-on 194 %Z%\updates\common\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
+todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* c:\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: "Update for Windows Media Player Script Commands"
 :: <http://support.microsoft.com/?kbid=828026>
@@ -85,64 +85,23 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: mdac_typ.exe to something more descriptive.
 todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /qn1\""
 
-:: Critical update 329115 (MS02-050)
-:: (updated November 11, 2003 for win2ksp4)
-:: <http://support.microsoft.com/?kbid=329115>
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-049.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB329115-x86-%WINLANG%.exe /u /n /z"
-
 :: Critical update 823718
 :: "Security Update for Microsoft Data Access Components"
 :: (Now installing MDAC 2.8, comment out for now)
 :: <http://support.microsoft.com/?kbid=823718>
 :: todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q823718_MDAC_SecurityPatch.exe /q /c:\"dahotfix.exe /q /n\""
 
-:: Critical update 828749 (MS03-049)
-:: "Buffer Overrun in the Workstation Service Could Allow Code Execution"
-:: <http://support.microsoft.com/?kbid=828749>
+:: Critical update 329115 (MS02-050)
+:: "Certificate Validation Flaw Might Permit Identity Spoofing"
+:: (updated November 11, 2003 for win2ksp4)
+:: <http://support.microsoft.com/?kbid=329115>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-049.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828749-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB329115-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 824105
 :: "Flaw in NetBIOS Could Lead to Information Disclosure"
 :: <http://support.microsoft.com/?kbid=824105>
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824105-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 826232 (MS03-042)
-:: "Buffer Overflow in Windows Troubleshooter ActiveX Control Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-042.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB826232-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 823559
-:: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
-:: <http://support.microsoft.com/?kbid=823559>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823559-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 824146
-:: "A Buffer Overrun in RPCSS May Allow Code Execution"
-:: (Worst Windows security hole, ever.  Again.)
-:: <http://support.microsoft.com/?kbid=824146>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824146-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 824141 (MS03-045)
-:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824141-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 825119 (MS03-044)
-:: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-044.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB825119-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 828035 (MS03-043)
-:: "Buffer Overrun in Messenger Service Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: Critical update 823182 (MS03-041)
-:: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 816093
 :: "Flaw in Microsoft VM Could Enable System Compromise"
@@ -160,6 +119,48 @@ todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
 :: abbreviation instead of two.  For example, for English you would
 :: rename js56nen.exe to js56nenu.exe.
 todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
+
+:: Critical update 826232 (MS03-042)
+:: "Buffer Overflow in Windows Troubleshooter ActiveX Control Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-042.asp>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB826232-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 823559
+:: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
+:: <http://support.microsoft.com/?kbid=823559>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823559-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 824141 (MS03-045)
+:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.asp>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824141-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 825119 (MS03-044)
+:: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-044.asp>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB825119-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 828749 (MS03-049)
+:: "Buffer Overrun in the Workstation Service Could Allow Code Execution"
+:: <http://support.microsoft.com/?kbid=828749>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-049.asp>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828749-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update 828035 (MS03-043)
+:: "Buffer Overrun in Messenger Service Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update 823182 (MS03-041)
+:: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.exe /u /n /z"
+
+:: Critical update 824146
+:: "A Buffer Overrun in RPCSS May Allow Code Execution"
+:: (Worst Windows security hole, ever.  Again.)
+:: <http://support.microsoft.com/?kbid=824146>
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824146-x86-%WINLANG%.exe /u /n /z"
 
 :: Install IE6 First
 todo.pl ie6.bat

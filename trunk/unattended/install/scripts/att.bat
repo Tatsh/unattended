@@ -1,3 +1,3 @@
 :: Install AT&T Global Network Dialer
 
-todo.pl "%Z%\packages\att-5.0.9.exe /s"
+todo.pl "%Z%\packages\d5091.exe /s"

@@ -29,4 +29,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
 :: rename vbs56nen.exe to vbs56nenu.exe.
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\vbs56n%WINLANG%.exe /q /r:n"
 
+:: Download Internet Explorer 6 SP1 installer from Microsoft then issue:
+:: ie6setup.exe /c:"ie6wzd.exe /d /s:""#E"
+:: This will allow you to download all necessary files for install.
 todo.pl ".reboot-on 194 %Z%\packages\ie6sp1\%WINLANG%\IE6setup.exe /q /r:n"

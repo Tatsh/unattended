@@ -11,11 +11,11 @@
 :: Movie Maker 2.0 update
 :: <http://www.microsoft.com/windowsxp/moviemaker/>
 :: (Works better if Media Player 9 is already installed)
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mm20%WINLANG%.exe /q /c:\"msiexec /i mm20.msi /qn\""
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mm20%WINLANG%.exe /q /c:\"msiexec /l* c:\netinst\logs\moviemaker.txt /i mm20.msi /qn\""
 
 :: Windows Journal Viewer update
-:: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
-todo.pl ".reboot-on 194 %Z%\updates\common\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=fad44098-8b73-4e06-96d4-d1eb70eacb44>
+todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* c:\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: "Update for Windows Media Player Script Commands"
 :: <http://support.microsoft.com/?kbid=828026>
@@ -100,7 +100,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q815485_WXP_SP2_x86_%WINLANG%.exe /
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q327979_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
 :: Recommended update 327405
-:: "Windows XP Documentation Update Can Help You Understand How to Make Your Compute
+:: "Windows XP Documentation Update Can Help You Understand How to Make Your Computer More Secure"
 :: <http://support.microsoft.com/?kbid=327405>
 :: (only available from Windows Update Catalog)
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hu1002_pro.exe /q"
@@ -112,17 +112,17 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 
 :: IE Critical Updates
 
-:: Critical update 824145 (MS03-048)
-:: "November, 2003, Cumulative Patch for Internet Explorer"
-:: <http://support.microsoft.com/?kbid=824145>
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-048.asp>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
-
 :: Critical update 330994
 :: "April 2003, Cumulative Patch for Outlook Express"
 :: <http://support.microsoft.com/?kbid=330994>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
+
+:: Critical update 824145 (MS03-048)
+:: "November, 2003, Cumulative Patch for Internet Explorer"
+:: <http://support.microsoft.com/?kbid=824145>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-048.asp>
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
 
 :: Critical Updates
 
@@ -151,6 +151,23 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824105-x86-%WINLANG%.ex
 :: <http://support.microsoft.com/?kbid=811114>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q811114_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
+:: Critical update 816093
+:: "Flaw in Microsoft VM Could Enable System Compromise"
+:: <http://support.microsoft.com/?kbid=816093>
+:: (NOTE: Only available from Windows Catalog, be sure to get
+::  the 2000 SP4 or XP version, they are the same)
+if not exist %SystemRoot%\System32\Msjava.dll goto nojvm
+todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
+:nojvm
+
+:: Critical update 814078
+:: "Flaw in Windows Script Engine May Allow Code to Run"
+:: <http://support.microsoft.com/?kbid=814078>
+:: NOTE: You must rename this to use the three-letter language
+:: abbreviation instead of two.  For example, for English you would
+:: rename js56nen.exe to js56nenu.exe.
+todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
+
 :: Critical update 824141 (MS03-045)
 :: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-045.asp>
@@ -170,23 +187,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB828035-x86-%WINLANG%.ex
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB823182-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 816093
-:: "Flaw in Microsoft VM Could Enable System Compromise"
-:: <http://support.microsoft.com/?kbid=816093>
-:: (NOTE: Only available from Windows Catalog, be sure to get
-::  the 2000 SP4 or XP version, they are the same)
-if not exist %SystemRoot%\System32\Msjava.dll goto nojvm
-todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
-:nojvm
-
-:: Critical update 814078
-:: "Flaw in Windows Script Engine May Allow Code to Run"
-:: <http://support.microsoft.com/?kbid=814078>
-:: NOTE: You must rename this to use the three-letter language
-:: abbreviation instead of two.  For example, for English you would
-:: rename js56nen.exe to js56nenu.exe.
-todo.pl ".reboot-on 194 %Z%\updates\common\js56n%WINLANG%.exe /q /r:n"
 
 :: Critical update 826939
 :: "Update Rollup 1 for Microsoft Windows XP"
