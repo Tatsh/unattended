@@ -27,8 +27,9 @@ most people use these terms interchangeably.
 
 <p>Here, we are interested not only in performing unattended
 installations, but also in waiting for those installations to finish
-and suppressing reboot they might want to perform.  This is necessary
-for <a href="apps.html">reliably installing multiple applications</a>.
+and suppressing any reboot they might want to perform.  This is
+necessary for <a href="apps.html">reliably installing multiple
+applications</a>.
 
 <hr>
 <h1>General information</h1>
@@ -216,7 +217,7 @@ about them.
 href="http://support.microsoft.com/?kbid=197147">KB article 197147</a>
 and <a
 href="http://groups.google.com/groups?selm=%23DxIcwcQ%24GA.236%40cppssbbsa02.microsoft.com"
->an old USENET post</a>.  These installers first extract themselves to
+>an old USENET post</a>.  These installers first extract some stuff to
 a temporary folder and then run a command from inside that folder.
 They support the <kbd>/t:<var>path</var></kbd> switch, to specify the
 temporary folder name, and the <kbd>/c:<var>command</var></kbd> switch
@@ -391,6 +392,28 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 </table>
 
 <br><hr width="50%">
+<h2 id="att-global-dialer">AT&amp;T Global Network Dialer</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://help.attbusiness.net/">Free Download</a> (but
+requires the service)
+
+<tr><td valign="middle">Details
+
+<td><p>The downloaded installer is named <kbd>ncsetup.exe</kbd>; you
+probably want to rename it to <kbd>att-5.0.6.exe</kbd> or somesuch.
+Running "strings" on the executable reveals that it was created by <a
+href="#wise">Wise Installmaster</a>, so the <kbd>/s</kbd> flag will do
+the trick.
+
+<tr><td valign="middle">Example
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/att.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">att.bat</a>
+
+</table>
+
+<br><hr width="50%">
 <h2 id="cygwin">Cygwin</h2>
 <table border cellpadding=4>
 
@@ -431,28 +454,6 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 >sshd.bat</a>
 
 </table>
-<br><hr width="50%">
-<h2 id="att-global-dialer">AT&amp;T Global Network Dialer</h2>
-<table border cellpadding=4>
-
-<tr><td valign="middle">Availability
-<td><a href="http://help.attbusiness.net/">Free Download</a> (but
-requires the service)
-
-<tr><td valign="middle">Details
-
-<td><p>The downloaded installer is named <kbd>ncsetup.exe</kbd>; you
-probably want to rename it to <kbd>att-5.0.6.exe</kbd> or somesuch.
-Running "strings" on the executable reveals that it was created by <a
-href="#wise">Wise Installmaster</a>, so the <kbd>/s</kbd> flag will do
-the trick.
-
-<tr><td valign="middle">Example
-<td><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/att.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">att.bat</a>
-
-</table>
-
 <br><hr width="50%">
 <h2 id="directx">DirectX 8.1</h2>
 <table border cellpadding=4>
@@ -695,7 +696,11 @@ little different.  The example script below should provide a decent
 starting point, and might even be current.
 
 <tr><td valign="middle">Example
-<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/office2k.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >office2k.bat</a>
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/office2k.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>office2k.bat</a>, <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/officexp.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>officexp.bat</a>
 
 </table>
 
@@ -840,7 +845,7 @@ href="http://groups.google.com/groups?selm=a6ijed%243723%40ripley.netscape.com"
 
 <p>I am not sure what <code>-ira</code> does, exactly, but without it
 the Mozilla installer fires up Mozilla just before exiting.  This is
-annoying because the windows Mozilla puts up can interfere with other
+annoying because the windows Mozilla creates can interfere with other
 things, like <a href="#autoit">AutoIt</a> scripts.  With
 <code>-ira</code>, this does not happen, and I have noticed no bad
 side-effects, so there we are.  (If anybody has definitive information
@@ -939,8 +944,8 @@ approach.
 
 <p>NEWS FLASH: I am now unable to reproduce this problem under Windows
 XP.  Or maybe it has something to do with the IIS version.  Either
-way, I need to investigate further.  So many broken apps, so little
-time...
+way, I need to investigate further.  So many broken installers, so
+little time...
 
 <tr><td valign="middle">Example
 <td><a
@@ -1022,7 +1027,7 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 <code>/silent</code> switch.  (TightVNC's <a
 href="http://www.tightvnc.com/winst.html">own installation
 instructions</a> say to use <code>/sp-&nbsp;/verysilent</code>, but I
-have not found that to be necessary.)
+have not found this to be necessary.)
 
 <tr><td valign="middle">Example <td><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/vnc.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
