@@ -12,7 +12,7 @@ images := $(patsubst %,images/%.imz,$(drivers) $(universal))
 
 # Hack to get a single space into a variable
 nullstring :=
-space := $(nullstring) # eol
+space := $(nullstring) # one space
 
 all: images iso tftpboot
 
@@ -113,13 +113,13 @@ tftpboot/pxelinux.cfg/default: pxelinux.cfg
 		echo >> $@.tmp ;					  \
 		echo "label $$driver" >> $@.tmp ;			  \
 		echo "    kernel memdisk" >> $@.tmp ;			  \
-		echo "    append initrd=$$driver.img" >> $@.tmp ;	  \
+		echo "    append initrd=$$driver.imz" >> $@.tmp ;	  \
 	done
 	@for driver in $(universal) ; do				  \
 		echo >> $@.tmp ;					  \
 		echo "label $$driver" >> $@.tmp ;			  \
 		echo "    kernel memdisk" >> $@.tmp ;			  \
-		echo "    append initrd=$$driver.img keeppxe" >> $@.tmp ; \
+		echo "    append initrd=$$driver.imz keeppxe" >> $@.tmp ; \
 	done
 	@mv $@.tmp $@
 	@echo "done"
@@ -130,9 +130,9 @@ tidy:
 
 clean:	tidy
 	@-rm -f .stamp-template
-	-rm -f images/*.img
+	-rm -f images/*.imz
 	-rm -f bootdisk.iso
-	-rm -f tftpboot/{*.img,memdisk}
+	-rm -f tftpboot/{*.imz,memdisk}
 	-rm -f tftpboot/pxelinux.cfg/default
 
 FORCE:
