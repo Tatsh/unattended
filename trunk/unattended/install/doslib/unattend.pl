@@ -192,22 +192,13 @@ sub read_unattend_txt ($) {
 # }
 
 # Create string for "name=val"
-sub name_val_str ($$);
 sub name_val_str ($$) {
     my ($name, $val) = @_;
-    my $ret = '';
 
-    if (!defined $val) {
-        # do nothing
-    }
-    else {
-        # Add quotation marks, if required.
-        $val =~ /\W/
-            and $val = "\"$val\"";
-        $ret = sprintf("    %s=%s\n", $name, $val);
-    }
-
-    return $ret;
+    # Add quotation marks, if required.
+    $val =~ /\W/
+        and $val = "\"$val\"";
+    return sprintf("    %s=%s\n", $name, $val);
 }
 
 sub generate_unattend_txt () {
@@ -224,8 +215,11 @@ sub generate_unattend_txt () {
             # Skip info for section itself
             $key eq ''
                 and next;
-            print "HERE $sect $key\n";
             my $val = get_value ($sect, $key);
+            defined $val
+                or next;
+            my $key_comments = get_comments ($sect, $key);
+            $ret .= $key_comments;
             my $dname = get_display_name ($sect, $key);
             $ret .= name_val_str ($dname, $val);
         }
