@@ -62,7 +62,7 @@ sub lookup_property ($) {
 }
 
 # Lookup fdisk (partitioning) commands from database, if possible.
-$u->push_value ('_meta', 'fdisk_cmds'
+$u->push_value ('_meta', 'fdisk_cmds',
     sub {
         my $os_media = $u->{'_meta'}->{'OS_media'};
         defined $os_media
