@@ -36,7 +36,8 @@ my $wsh_shell = Win32::OLE->CreateObject ('WScript.Shell');
 sub canonicalize_filename ($) {
     my ($filename) = @_;
 
-    # FIXME: Add support for "ProgramFiles".
+    # FIXME: Add support for "ProgramFiles".  And for "QuickLaunch";
+    # see <http://www.winnetmag.com/Files/07/9176/Listing_03.txt>.
     if ($filename =~ /^special:([a-z]+)(.*)/i) {
         my ($special, $rest) = ($1, $2);
         # Get special folder.  See
