@@ -3,7 +3,7 @@
 use warnings;
 use strict;
 
-my $pkg = 'z:\\packages\\7z230b23.exe -y /Q';
+my $pkg = 'z:\\packages\\7z230b24.exe -y /Q';
 
 print "Running $pkg...";
 0 == system $pkg
