@@ -9,9 +9,9 @@ keyboard support.
 Set [Unattended]/DriverSigningPolicy to "Ignore" in
 Z:\lib\unattend.txt (slords).
 
-Add Norweigan support to bootini.pl; thanks to Tor Haakon Gjerde.
+Add Norwegian support to bootini.pl; thanks to Tor Haakon Gjerde.
 
-Add Norweigan download URLs everywhere; thanks to Espen Stefansen.
+Add Norwegian download URLs everywhere; thanks to Espen Stefansen.
 
 (DOS) Fix warnings when building under recent Cygwin (ekot).
 
@@ -30,6 +30,8 @@ Fix CSV file parser to permit blank lines (slords).
 Update to Opera 7.54u1, Windows Installer 3.0, PHP 4.3.9, Shockwave
 10.1.0.011, WinAmp 5.07 (nrichthof).  Upgrade to PuTTY 0.56
 (dolphinbofh).
+
+Add PHP 5.0.3 (nrichthof).
 
 Fix numerous download locations and installation scripts all over the
 place (slords).
