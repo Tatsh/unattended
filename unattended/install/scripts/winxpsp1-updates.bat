@@ -18,6 +18,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hmtcdwizard_%WINLANG%.exe /l* c:\ne
 :: Movie Maker 2.0 update
 :: URL|ENU|http://download.microsoft.com/download/0/d/e/0decba0f-bb89-49c9-866a-40c900b2a57e/mm20enu.exe|updates/winxpsp1/mm20enu.exe
 :: URL|NLD|http://download.microsoft.com/download/c/b/2/cb21b3c7-396f-4e8a-a55a-7c450125f825/mm20nld.exe|updates/winxpsp1/mm20nld.exe
+:: URL|FRA|http://download.microsoft.com/download/1/7/5/175b03ac-03ef-4512-8c84-f83266a37c94/mm20fra.exe|updates/winxpsp1/mm20fra.exe
 :: <http://www.microsoft.com/windowsxp/moviemaker/>
 :: (Works better if Media Player 9 is already installed)
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mm20%WINLANG%.exe /q /c:\"msiexec /l* c:\netinst\logs\moviemaker.txt /i mm20.msi /qn\""
@@ -26,18 +27,21 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mm20%WINLANG%.exe /q /c:\"msiexec /
 :: URL|ENU|http://download.microsoft.com/download/4/6/3/463ff4b8-a60a-4569-b3f1-a4c1ec784ff2/setup.exe|updates/journalviewer/enu/setup.exe
 :: URL|NLD|http://download.microsoft.com/download/4/6/3/463ff4b8-a60a-4569-b3f1-a4c1ec784ff2/setup.exe|updates/journalviewer/nld/setup.exe
 :: (Dutch version not available)
+:: URL|FRA|http://download.microsoft.com/download/9/0/6/90660e9c-a491-4a82-98ed-9ec6d78ffbe8/setup.exe|updates/journalviewer/fra/setup.exe
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=fad44098-8b73-4e06-96d4-d1eb70eacb44>
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* c:\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: "Update for Windows Media Player Script Commands"
 :: URL|ENU|http://download.microsoft.com/download/c/e/0/ce005267-09e9-423b-a360-7db7825b4b36/WindowsMedia-KB828026-x86-ENU.exe|updates/mediaplayer9/windowsmedia-kb828026-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/1/c/8/1c8145ac-0b4d-4568-87d1-0c399ce14b01/WindowsMedia-KB828026-x86-NLD.exe|updates/mediaplayer9/windowsmedia-kb828026-x86-nld.exe
+:: URL|FRA|http://download.microsoft.com/download/1/e/c/1eca869e-f23e-4a6c-ae7c-605c01f00c0f/WindowsMedia-Q828026-x86-FRA.exe|updates/mediaplayer9/windowsmedia-kb828026-x86-fra.exe
 :: <http://support.microsoft.com/?kbid=828026>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia-KB828026-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Flaw In Windows Media Player May Allow Media Library Access (819639)
 :: URL|ENU|http://download.microsoft.com/download/6/6/9/6692c11a-e001-4706-bf86-c37a7111d9de/WindowsMedia9-KB819639-x86-ENU.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/2/0/c/20ccf973-faec-438a-8e16-469f689472be/WindowsMedia9-KB819639-x86-NLD.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-nld.exe
+:: URL|FRA|http://download.microsoft.com/download/1/8/a/18a4d567-9c61-4bf6-bdd1-5ffbdff8aff0/WindowsMedia9-KB819639-x86-FRA.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-fra.exe
 :: <http://support.microsoft.com/?kbid=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N"
@@ -45,12 +49,14 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WIN
 :: Media Player 9.0
 :: URL|ENU|http://download.microsoft.com/download/8/a/2/8a27acce-5c9e-46b3-8996-1e76c0413d17/MPSetupXP.exe|packages/mediaplayer9/enu/mpsetupxp.exe
 :: URL|NLD|http://download.microsoft.com/download/6/8/c/68cbb606-bb69-4379-8b1e-bbbc5bbbe7df/MPSetupXP.exe|packages/mediaplayer9/nld/mpsetupxp.exe
+:: URL|FRA|http://download.microsoft.com/download/2/5/0/250c463f-77b9-47fe-a3dc-43ecf872cc2f/MPSetupXP.exe|packages/mediaplayer9/fra/mpsetupxp.exe
 :: <http://www.microsoft.com/windows/windowsmedia/>
 todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\%WINLANG%\MPSetupXP.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
 
 :: Windows Messenger Update
 :: URL|ENU|http://download.microsoft.com/download/4/6/c/46cfaca6-0441-49eb-b997-7432730d44df/install.exe|packages/windowsmessenger/enu/install.exe
 :: URL|NLD|http://download.microsoft.com/download/f/9/0/f9026035-5095-42b7-ae8a-b6c8da8a5fa7/install.exe|packages/windowsmessenger/nld/install.exe
+:: URL|FRA|http://download.microsoft.com/download/1/6/a/16aa5681-b844-4b6c-ade3-8b53d2b7aed5/install.exe|packages/windowsmessenger/fra/install.exe
 :: <http://www.microsoft.com/windowsxp/windowsmessenger/>
 todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /r:n"
 
@@ -61,6 +67,7 @@ todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 :: Microsoft .NET framework
 :: URL|ENU|http://download.microsoft.com/download/a/a/c/aac39226-8825-44ce-90e3-bf8203e74006/dotnetfx.exe|updates/common/enu/dotnetfx.exe
 :: URL|NLD|http://download.microsoft.com/download/4/6/b/46b519cb-bdd2-4701-b962-9ffaa323f40b/dotnetfx.exe|updates/common/nld/dotnetfx.exe
+:: URL|FRA|http://download.microsoft.com/download/e/d/a/eda9d4ea-8ec9-4431-8efa-75391fb91421/dotnetfx.exe|updates/common/fra/dotnetfx.exe
 :: <http://msdn.microsoft.com/netframework/downloads/>
 :: (Click on "How to get the .NET framework", and download the
 :: "Microsoft .NET Framework 1.1 Redistributable".)
@@ -71,12 +78,14 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: Recommended update 826942
 :: URL|ENU|http://download.microsoft.com/download/2/2/3/2237d088-7840-4f77-a90d-55bdf1ccbc1c/WindowsXP-KB826942-x86-ENU.exe|updates/winxpsp1/windowsxp-kb826942-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/4/4/6/446daee0-4814-4792-aee4-2e7e98f417f3/WindowsXP-KB826942-x86-NLD.exe|updates/winxpsp1/windowsxp-kb826942-x86-nld.exe
+:: URL|FRA|http://download.microsoft.com/download/6/2/e/62e69b63-96e4-409b-8620-6766ae42c82d/WindowsXP-KB826942-x86-FRA.exe|updates/winxpsp1/windowsxp-kb826942-x86-fra.exe
 :: "Wireless Update Rollup Package for Windows XP is Available"
 :: <http://support.microsoft.com/?id=826942>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Windowsxp-kb826942-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Recommended update 814995
 :: URL|ENU|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q814995_WXP_SP2_x86_ENU_9e15819376b7ecb637bc9f9bfac2d16.exe|updates/winxpsp1/q814995_wxp_sp2_x86_enu.exe
+:: URL|FRA|http://download.microsoft.com/download/7/2/2/7224ba56-e992-4ec9-be4b-ace8ac538f51/Q814995_WXP_SP2_x86_FRA.exe|updates/winxpsp1/q814995_wxp_sp2_x86_fra.exe
 :: 
 :: "Some ... Fixes Stop Working After You Install the 328310 Update"
 :: (required even though 328310 got subsumed by 826939)
