@@ -128,11 +128,20 @@ stage1 += stage1/sbin/depmod
 
 ## Linux
 
+# Apply patch to prevent Linux from trying to mount root when booting
+# from an initramfs.
 $(linux)/.stamp-initramfs-patch: misc/initramfs-patch
 	cd $(linux) && patch -p1 < $(cwd)/$<
 	touch $@
 
-$(linux)/.config: misc/linux-config $(linux)/.stamp-initramfs-patch
+# Apply patch to expose legacy BIOS cylinder/head/sector values
+# (INT13/AH=08h) under /sys/firmware/edd/int13_devXX.
+$(linux)/.stamp-edd-legacy-patch: misc/edd-legacy-patch
+	cd $(linux) && patch -p1 < $(cwd)/$<
+	touch $@
+
+$(linux)/.config: misc/linux-config $(linux)/.stamp-initramfs-patch	\
+			$(linux)/.stamp-edd-legacy-patch
 	cp -f $< $@
 	cd $(linux) && make oldconfig
 
