@@ -13,17 +13,20 @@ todo.pl .reboot
 
 :: "Excel 2003 Update: March 23, 2004"
 :: URL|ENU|http://download.microsoft.com/download/1/2/0/12029EF7-BFD5-433F-B9CD-058E7388A1E2/office2003-kb834691-client-enu.exe|updates/office2003/office2003-kb834691-client-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/7/a/d/7ad3b80c-24a4-4e42-a6b7-5cff9ead225d/office2003-kb834691-client-nld.exe|updates/office2003/office2003-kb834691-client-nld.exe
 :: <http://support.microsoft.com/?id=834691>
 todo.pl "%Z%\updates\office2003\office2003-kb834691-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\o2003-kb834691.txt /p excel-Binary-GLB.msp REBOOT=ReallySuppress\""
 
 
 :: "Outloook 2003 Junk E-mail filter Update: March 23, 2004"
 :: URL|ENU|http://download.microsoft.com/download/8/7/a/87ab64c5-33fe-470b-a5a6-8ae046b3adda/office2003-kb835235-client-enu.exe|updates/office2003/office2003-kb835235-client-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/7/2/6/72699c7d-cc56-4827-8e53-62977456c845/office2003-kb835235-client-nld.exe|updates/office2003/office2003-kb835235-client-nld.exe
 :: <http://support.microsoft.com/?id=835235>
 todo.pl "%Z%\updates\office2003\office2003-kb835235-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\o2003-kb835235.txt /p outlfltr-Binary-GLB.msp REBOOT=ReallySuppress\""
 
 :: "Unacceptable symbols in Bookshelf Symbol 7 font" (?)
 :: URL|ENU|http://download.microsoft.com/download/1/3/c/13c13f98-0d59-4722-b804-5b29e0320b23/Windows-KB833407-x86-enu.exe|updates/office2003/windows-kb833407-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/b/4/f/b4f32f95-1d60-4cde-97df-c0f0d41066a6/Windows-KB833407-x86-NLD.exe|updates/office2003/windows-kb833407-x86-nld.exe
 :: <http://support.microsoft.com/?id=833407>
 todo.pl "%Z%\updates\office2003\windows-kb833407-x86-enu.exe /passive /n /norestart"
 
