@@ -13,7 +13,7 @@ deployment system</a>.
 <hr>
 <h1>Overview</h1>
 
-<p>To use this system to perform an unattended installation of Windows
+<p>To use Unattended to perform an automated installation of Windows
 2000 or XP, you need to:
 
 <ol>
@@ -86,19 +86,20 @@ configuration</a> document for information and references.
 network.
 
 <p>You will need a DHCP server, because that is how the boot disk
-obtains an IP address, WINS server, and default gateway.  Any sane
-network already has a DHCP server; if yours does not, I suggest you
-get one.  (Yes, you could modify the <code>system.ini</code> and
-<code>protocol.ini</code> files on the boot disk to have a fully
-static configuration.  But you do not want to.)
+obtains an IP address, WINS server, and default gateway.  Any
+reasonable network already has a DHCP server; if yours does not, I
+suggest you get one.  (Yes, you could modify the
+<code>system.ini</code> and <code>protocol.ini</code> files on the
+boot disk to have a fully static IP configuration, but you do not want
+to.)
 
 <p>You do not need administrative access to the DHCP server, as long
 as it already provides the necessary information to the machine you
 are installing.
 
 <p>Initiating an installation by booting directly from the network
-requires some more infrastructure; namely, a TFTP server and the
-ability to configure the DHCP server itself.  <a
+(optional) requires some more infrastructure; namely, a TFTP server
+and the ability to configure the DHCP server itself.  <a
 href="http:#netboot">See below</a> for details.
 
 
@@ -231,11 +232,11 @@ distribution point now will make installation faster.
 
 <p>To apply the service pack to the installation point, use the
 "slipstreaming" feature.  You can find details in Microsoft's <a
-href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/spdeploy.htm"
+href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/spdeploy.htm#the_integrated_installation_fmay"
 ><em>Windows 2000 Service Pack 3 Installation and Deployment
 Guide</em></a> or <a
-href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/spdeploy.asp"
->Windows XP Service Pack 1 Installation and Deployment Guide</a>.
+href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/spdeploy.asp#the_integrated_installation_fmay"
+><em>Windows XP Service Pack 1 Installation and Deployment Guide</em></a>.
 
 <p>The procedure is the same for Windows 2000 and XP.  Using Windows
 XP Service Pack 1 as an example:
@@ -319,8 +320,8 @@ of these paths, starting with <code>drivers/</code> level, appear in
 
 <p>The goal here is very simple: To boot to DOS so we can mount the
 <code>install</code> share as the <code>Z:</code> drive and run the
-<code>Z:\install.pl</code> script.  There are three ways to do this:
-By booting from a floppy, by booting from a CD-ROM, or by booting
+master installation script.  There are three ways to do this: By
+booting from a floppy, by booting from a CD-ROM, or by booting
 directly from the network.
 
 <p>The <a
@@ -332,7 +333,7 @@ the disk images and the tools needed to re-create them.
 <h2>Booting from a floppy</h2>
 
 <p>The <code>images</code> subdirectory has a single 1.44M floppy disk
-image for each supported network driver.  For example, the
+image for each supported network driver.  For example,
 <code>e100b.img</code> is the floppy image with support for the
 Intel&nbsp;Pro/100 family of network cards.  The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/DRIVERS.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -396,14 +397,14 @@ operating system, including Windows or Linux.  I find this mildly
 amusing.)
 
 <p>However, booting from the network does require the most support
-from the infrastructure.
+from your infrastructure.
 
 <p>First, you will need a TFTP server.  Copy the files and folders
 from the <code>tftpboot</code> directory to the TFTP server's root
 directory.  <a href="http://tftpd32.jounin.net/">Tftpd32</a> is a good
 TFTP server for Windows, and it might even work for this purpose.
-[Note: I have not actually tried it.  If you do, please let me know if
-it works.]
+[Note: I have not actually tried this.  If you do, please let me know
+how it goes.]
 
 <p>Second, you will need to configure your DHCP server.  Most modern
 network cards support booting directly from the network following
@@ -424,8 +425,8 @@ has this support, actually configuring it can take some work.  Many
 network cards have a configuration BIOS of their own which you must
 access to enable booting via PXE.  For systems with integrated network
 hardware, the system BIOS itself may have a configuration option
-called "Enable on-board network" with <b>three</b> settings, with
-names like "Off", "On", and "On&nbsp;w/&nbsp;MBA".
+called "Enable on-board network" with <b>three</b> settings named
+something like "Off", "On", and "On&nbsp;w/&nbsp;MBA".
 
 <p>NOTE: Historically (meaning as recently as 2002), many vendors' PXE
 implementations were extremely buggy.  Always flash the firmware on
@@ -457,16 +458,18 @@ disgust and boot from floppy or CD-ROM instead.
 <p>This section is <b>definitely</b> optional.  If it makes no sense
 to you, feel free to skip it.
 
-<p>The boot disk is just a DOS floppy, so you can edit the files on it
-just like any other floppy.  But that will not get you new ISO and PXE
-images.
+<p>The boot disk is just a DOS floppy, so you can edit its files just
+like those on any other floppy.  But that is not how I do it, because
+I want to generate new floppy images for every driver, not to mention
+new ISO and PXE images.
 
 <p>Modifying the boot disk "correctly" requires a Unix system with the
 appropriate utilities installed.  Basic utilities like GNU Make go
-without saying.  But to create the floppy disk images, you will also
-need the <a href="http://mtools.linux.lu/">Mtools</a> suite.  To
-update the ISO image, you will need the <a
+without saying.  To create the floppy disk images, you will also need
+the <a href="http://mtools.linux.lu/">Mtools</a> suite.  To update the
+ISO image, you will need the <a
 href="http://www.andante.org/mkisofs.html">mkisofs</a> utility.
+Modern Linux systems generally provide all of the required tools.
 
 <p>In the <code>bootdisk</code> directory, typing
 <kbd>make&nbsp;images</kbd> will generate the floppy disk images.
@@ -521,9 +524,11 @@ disk</a>.
 network, then hand off control to the more powerful tools available
 there.  Specifically, the boot disk loads the network drivers, mounts
 the <code>install</code> share as the <code>Z:</code> drive, and then
-executes the Perl script <code>Z:\install.pl</code>.  This script will
-ask you a bunch of questions, generate <code>unattend.txt</code>, and
-launch <em>Windows&nbsp;Setup</em>.
+executes the Perl script <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+><code>Z:\dosbin\install.pl</code></a>.  This script will ask you a
+bunch of questions, generate <code>unattend.txt</code>, and launch
+<em>Windows&nbsp;Setup</em>.
 
 <p>Follow along in <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/template/autoexec.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
@@ -550,8 +555,8 @@ share and runs <code>net&nbsp;use&nbsp;Z:&nbsp;<var>share</var></code>
 to map it.  The default is <code>\\ntinstall\install</code>.
 
 <p>Finally, the bootdisk passes control to the installation script <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
-><code>Z:\install.pl</code></a>.  This script is a lot more
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+><code>Z:\dosbin\install.pl</code></a>.  This script is a lot more
 complicated, but you do not need to understand it in order to use it.
 
 
