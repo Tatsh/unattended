@@ -129,7 +129,7 @@ sub ask_fdisk_cmds () {
 }
 
 sub ask_os () {
-    my $os_dir = get_value ('_config', 'os_dir');
+    my $os_dir = get_value ('_meta', 'os_dir');
     opendir OSDIR, $os_dir
         or die "Unable to opendir $os_dir: $^E";
     my @ents = map { lc; } readdir OSDIR;
@@ -160,34 +160,34 @@ sub simple_q ($) {
     return $answer;
 }
 
-set_comments ('_config', '',
+set_comments ('_meta', '',
               "; This section is for informational purposes;\n"
               . "; Windows Setup does not use it.\n");
 
-set_comments ('_config', 'fdisk_lba',
+set_comments ('_meta', 'fdisk_lba',
               "    ; Use extended INT13 BIOS calls for fdisk?\n");
 
-set_value ('_config', 'fdisk_lba', \&ask_fdisk_lba);
+set_value ('_meta', 'fdisk_lba', \&ask_fdisk_lba);
 
-set_value ('_config', 'fdisk_cmds', \&ask_fdisk_cmds);
+set_value ('_meta', 'fdisk_cmds', \&ask_fdisk_cmds);
 
-set_value ('_config', 'format_cmd',
+set_value ('_meta', 'format_cmd',
            sub {
                return (yes_no_choice ('Format C: drive')
                        ? 'format /q /v: c:'
                        : undef);
            });
 
-set_comments ('_config', 'OS_dir',
+set_comments ('_meta', 'OS_dir',
               "    ; Directory holding OS media directories\n");
-set_value ('_config', 'OS_dir', 'z:\\');
+set_value ('_meta', 'OS_dir', 'z:\\');
 
-set_value ('_config', 'OS', \&ask_os);
+set_value ('_meta', 'OS', \&ask_os);
 
-set_comments ('_config', 'post_install_script',
+set_comments ('_meta', 'post_install_script',
               "    ; Script run by postinst.bat\n");
 
-set_value ('_config', 'post_install_script',
+set_value ('_meta', 'post_install_script',
            sub {
                print "Choose post-installation script to run:\n";
                my @scripts = ('base.bat', 'sales.bat', 'developer.bat',
@@ -198,9 +198,9 @@ set_value ('_config', 'post_install_script',
                return menu_choice (@choices, 'none' => undef);
            });
 
-set_comments ('_config', 'local_admins',
+set_comments ('_meta', 'local_admins',
               "    ; Accounts added to local Administrators group\n");
-set_value ('_config', 'local_admins',
+set_value ('_meta', 'local_admins',
            sub {
                # Bogus dependency to enforce question order
                get_value ('Identification', 'DomainAdmin');
@@ -213,21 +213,21 @@ set_value ('_config', 'local_admins',
                return $users;
            });
 
-set_value ('_config', 'netinst', 'c:\\netinst');
+set_value ('_meta', 'netinst', 'c:\\netinst');
 
-set_value ('_config', 'doit_cmd',
+set_value ('_meta', 'doit_cmd',
            sub {
-               my $unattend_txt = (get_value ('_config', 'netinst')
+               my $unattend_txt = (get_value ('_meta', 'netinst')
                                    . '\\unattend.txt');
-               my $src_tree = get_value ('_config', 'OS_dir');
+               my $src_tree = get_value ('_meta', 'OS_dir');
                $src_tree =~ /\\$/
                    or $src_tree .= '\\';
-               $src_tree .= get_value ('_config', 'OS');
+               $src_tree .= get_value ('_meta', 'OS');
                $src_tree .= '\\i386';
                return "$src_tree\\winnt /s:$src_tree /u:$unattend_txt";
            });
 
-set_value ('_config', 'extra_unattend_txt', undef);
+set_value ('_meta', 'extra_unattend_txt', undef);
 
 set_value ('UserData', 'FullName',
            sub {
@@ -283,7 +283,7 @@ my $product_key_q =
 
 set_value ('UserData', 'ProductID',
            sub {
-               my $os = get_value ('_config', 'OS');
+               my $os = get_value ('_meta', 'OS');
                # ProductID is used by win2k and winnt
                $os =~ /^win2k/ || $os =~ /^winnt/
                    or return undef;
@@ -320,7 +320,7 @@ if (-e $site_conf) {
 }
 
 # Set environment variable controlling fdisk's use of INT13 extensions.
-get_value ('_config', 'fdisk_lba')
+get_value ('_meta', 'fdisk_lba')
     or $ENV{'FFD_VERSION'}=6;
 
 # Display the partition table.
@@ -329,7 +329,7 @@ system 'fdisk', '/info';
 print "\n";
 
 # Partition the disk and reboot, if required.
-my $fdisk_cmds = get_value ('_config', 'fdisk_cmds');
+my $fdisk_cmds = get_value ('_meta', 'fdisk_cmds');
 if (defined $fdisk_cmds) {
     foreach my $cmd (@$fdisk_cmds) {
         system $cmd;
@@ -337,12 +337,12 @@ if (defined $fdisk_cmds) {
 }
 
 # Run formatting command, if any.
-my $format_cmd = get_value ('_config', 'format_cmd');
+my $format_cmd = get_value ('_meta', 'format_cmd');
 defined $format_cmd
     and system $format_cmd;
 
 # Create C:\netinst and subdirectories.
-my $netinst = get_value ('_config', 'netinst');
+my $netinst = get_value ('_meta', 'netinst');
 foreach my $dir ($netinst, "$netinst\\logs") {
     -d $dir
         and next;
@@ -353,7 +353,7 @@ foreach my $dir ($netinst, "$netinst\\logs") {
 }
 
 # Create unattend.txt file.
-my $unattend_txt = get_value ('_config', 'netinst') . '\\unattend.txt';
+my $unattend_txt = get_value ('_meta', 'netinst') . '\\unattend.txt';
 
 my $unattend_contents = generate_unattend_txt ();
 
@@ -372,8 +372,8 @@ print "done.\n";
 my $postinst = "$netinst\\postinst.bat";
 print "Creating $postinst...";
 
-my $top = get_value ('_config', 'post_install_script');
-my $admins = get_value ('_config', 'local_admins');
+my $top = get_value ('_meta', 'post_install_script');
+my $admins = get_value ('_meta', 'local_admins');
 my @admins = (defined $admins ? split / /, $admins : undef);
 # Hack around Perl bug
 defined $admins[0]
@@ -411,7 +411,7 @@ print "Creating $doit...";
 open DOIT, ">$doit"
     or die "Unable to open $doit for writing: $^E";
 
-print DOIT get_value ('_config', 'doit_cmd'), "\n"
+print DOIT get_value ('_meta', 'doit_cmd'), "\n"
     or die "Unable to write to $doit: $^E";
 
 close DOIT
