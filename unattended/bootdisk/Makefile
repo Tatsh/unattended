@@ -12,7 +12,7 @@ images: .stamp-images
 # Detect updates to template files.
 .stamp-template: FORCE
 	@[ -e $@ ] || touch $@
-	@find template -newer $@ -print | sed s/.*/$@/ | xargs -r touch
+	@find template -newer $@ -print | sed s/.\*/$@/ | xargs -r touch
 
 # Detect updates to images.
 .stamp-images: $(images)
@@ -110,4 +110,4 @@ clean:
 
 FORCE:
 
-.PHONY: FORCE images iso tftpboot
+.PHONY: FORCE clean images iso tftpboot
