@@ -47,8 +47,9 @@ todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
 :: Recommended update MS04-024 (839645)
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
 :: URL|ENU|http://download.microsoft.com/download/e/7/9/e79e9c09-1755-4ecc-8ccd-fc915c9e0cbf/WindowsServer2003-KB839645-x86-enu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/c/9/e/c9e871e2-1062-4ffd-aecd-4970db36f31f/WindowsServer2003-KB839645-x86-rus.exe|updates/ws2k3/windowsserver2003-kb839645-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb839645-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Recommended Update MS04-014 (837001)
@@ -74,6 +75,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLAN
 :: "Vulnerability in HTML Help Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-023.mspx>
 :: URL|ENU|http://download.microsoft.com/download/b/4/2/b420044b-eb3a-442b-bba6-0156aa7896ef/WindowsServer2003-KB840315-x86-enu.exe|updates/ws2k3/windowsserver2003-kb840315-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/3/0/f/30f268bc-e580-405b-a20f-7da47728901d/WindowsServer2003-KB840315-x86-rus.exe|updates/ws2k3/windowsserver2003-kb840315-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB840315-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 870669
@@ -94,6 +96,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb840374-x86-%WINLAN
 :: "Cumulative Security Update for Outlook Express"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-018.mspx>
 :: URL|ENU|http://download.microsoft.com/download/7/7/3/773c1014-30ed-4a37-ae5a-09be1918e1a3/WindowsServer2003-KB823353-x86-enu.exe|updates/ws2k3/windowsserver2003-kb823353-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/8/3/1/831b349b-d4f8-4a91-a92f-22dd7d816bff/WindowsServer2003-KB823353-x86-rus.exe|updates/ws2k3/windowsserver2003-kb823353-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb823353-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-012 (828741)
