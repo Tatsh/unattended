@@ -6,20 +6,6 @@ die () {
     exec bash
 }
 
-make_block_device () {
-    local path="$1"
-
-    local name=${path##*/}
-    local fullname="/dev/$name"
-    echo "Making device $fullname"
-    [ -f "$path/dev" ] \
-        || die "Internal error: $path/dev not found"
-
-    local major_minor="`cat $path/dev`"
-    mknod "$fullname" b ${major_minor%:*} ${major_minor#*:} \
-        || die "mknod failed"
-}
-
 echo "*** OK, here we go."
 
 echo "*** First, we'll look for PCI Ethernet hardware..."
@@ -136,19 +122,11 @@ mass_device_names="hda sda"
 
 unset did_something
 
-# Force "foo*" to expand to nothing if no matches found
-shopt -s nullglob
-
 for hda in $mass_device_names ; do
-    [ -d "$sys_block/$hda" ] || continue
-
-    make_block_device $sys_block/$hda
+    make-blkdev-nodes "$hda" \
+        || continue
 
     did_something=1
-
-    for hdaX in $sys_block/$hda/$hda[0-9]* ; do
-        make_block_device $hdaX
-    done
 
     # DOSEMU skips exactly eight characters into the device name to
     # read the partition number.  Yes, really.  So we have to use a
