@@ -25,4 +25,6 @@ todo.pl "z:\packages\o2ksp3.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\o2ksp3.t
 :: Run it to extract the package.
 todo.pl "msiexec /qb /l* c:\netinst\logs\o2ksr1a.txt /p z:\packages\o2ksr1a\data1.msp REBOOT=ReallySuppress"
 
-todo.pl "msiexec /qb /l* c:\netinst\logs\office.txt /i z:\packages\office2k\data1.msi ADDLOCAL=ALL REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
+:: Use Z_PATH instead of Z:\ because Office likes to phone home a lot,
+:: even with ADDLOCAL=ALL
+todo.pl "msiexec /qb /l* c:\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
