@@ -6,7 +6,7 @@ diff -u -r busybox-1.00-orig/networking/udhcp/options.c busybox-1.00/networking/
  	{"tftp",	OPTION_STRING,				0x42},
  	{"bootfile",	OPTION_STRING,				0x43},
 +	/* Steal "local" option 0xe9 (decimal 233) for Unattended */
-+	{"unattended",	OPTION_STRING | OPTION_REQ,	        0xe9},
++	{"unattend",	OPTION_STRING | OPTION_REQ,	        0xe9},
  	{"",		0x00,				0x00}
  };
 
