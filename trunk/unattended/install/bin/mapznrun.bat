@@ -1,6 +1,6 @@
 @echo off
-if exist c:\netinst\permcred.bat call c:\netinst\permcred.bat
-if exist c:\netinst\tempcred.bat call c:\netinst\tempcred.bat
+if exist %SystemDrive%\netinst\permcred.bat call %SystemDrive%\netinst\permcred.bat
+if exist %SystemDrive%\netinst\tempcred.bat call %SystemDrive%\netinst\tempcred.bat
 
 if not %Z%. == . goto got_drive
 set Z=Z:
@@ -28,8 +28,8 @@ goto hang
 echo Mapping %Z_PATH% on %Z%...
 
 if not %Z_PATH%. == dvd. goto not_dvd
-c:\netinst\mapcd.js \bin\todo.pl %Z%
-if exist c:\netinst\setzpath.bat call c:\netinst\setzpath.bat
+%SystemDrive%\netinst\mapcd.js \bin\todo.pl %Z%
+if exist %SystemDrive%\netinst\setzpath.bat call %SystemDrive%\netinst\setzpath.bat
 if exist %Z%\ goto mapped
 echo Failed; retrying.
 :: Sleep for 10 seconds
