@@ -1,4 +1,4 @@
-:: OPTIONAL: Install WinAmp 5.06
+:: OPTIONAL: Install WinAmp 5.07
 
 :: user contributed translation packages
 :: URL|DEU|http://download.nullsoft.com/customize/component/2004/3/18/P/Deutsche_Sprachdatei_v14_Winamp502.exe|packages/winamp/langpack-deu_.exe
@@ -15,5 +15,5 @@ if not exist %Z%\packages\winamp\langpack-%WINLANG%.exe goto nolangpack
 todo.pl "%Z%\packages\winamp\langpack-%WINLANG%.exe /S"
 :nolangpack
 
-:: URL|ALL|http://download.nullsoft.com/winamp/client/winamp506_full.exe|packages/winamp/winamp506-full.exe
-todo.pl "%Z%\packages\winamp\winamp506-full.exe /S /install=SFQR"
+:: URL|ALL|http://download.nullsoft.com/winamp/client/winamp507_full.exe|packages/winamp/winamp507-full.exe
+todo.pl "%Z%\packages\winamp\winamp507-full.exe /S /install=SFQR"
