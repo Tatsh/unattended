@@ -73,6 +73,12 @@ sub name ($) {
         defined $wkscd
             and $ret = $wkscd;
     }
+    elsif (exists $strings->{'srvcd'}) {
+        # Win2k Server uses "srvcd" string instead
+        my ($srvcd) = $strings->{'srvcd'} =~ /^(Windows .*?) CD/;
+        defined $srvcd
+            and $ret = $srvcd;
+    }
 
     return $ret;
 }
@@ -114,6 +120,8 @@ my %pid_table =
      # 2k
      '51873000' => 'Retail',
      '51873OEM' => 'OEM',
+     # 2k server
+     '51876000' => 'Volume',
      # NT
      '50036' => 'Retail',
      '50382' => 'Retail'
