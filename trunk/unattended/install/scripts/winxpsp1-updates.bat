@@ -9,7 +9,7 @@
 :: Critical update 824141 (MS03-045)
 :: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-045.asp>
-todo.pl "%Z%\packages\winxpsp1\WindowsXP-KB824141-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\WindowsXP-KB824141-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 825119 (MS03-044)
 :: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise"
@@ -19,12 +19,12 @@ todo.pl "%Z%\packages\winxpsp1\WindowsXP-KB825119-x86-%WINLANG%.exe /u /n /z"
 :: Critical update 828035 (MS03-043)
 :: "Buffer Overrun in Messenger Service Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
-todo.pl "%Z%\packages\winxpsp1\WindowsXP-KB828035-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\WindowsXP-KB828035-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 823182 (MS03-041)
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-041.asp>
-todo.pl "%Z%\packages\winxpsp1\WindowsXP-KB823182-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\packages\winxpsp1\WindowsXP-KB823182-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Recommended update 822603
 :: "Windows XP SP1 USB 1.1 and 2.0 Update"
