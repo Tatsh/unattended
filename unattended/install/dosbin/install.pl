@@ -545,9 +545,11 @@ set_value ('_meta', 'local_admins',
 
 set_value ('_meta', 'netinst', 'c:\\netinst');
 
-set_comments ('_meta', 'doit_cmd',
+set_value ('_meta', 'edit_files', '1');
+
+set_comments ('_meta', 'doit_cmds',
               "    ; Contents of doit.bat script\n");
-set_value ('_meta', 'doit_cmd',
+set_value ('_meta', 'doit_cmds',
            sub {
                my $unattend_txt = (get_value ('_meta', 'netinst')
                                    . '\\unattend.txt');
@@ -667,6 +669,7 @@ my $site_unattend_txt = 'z:\\site\\unattend.txt';
 
 # Read site-specific Perl configuration file.
 my $site_conf = 'z:\\site\\config.pl';
+
 if (-e $site_conf) {
     my $result = do $site_conf;
     $@
@@ -759,8 +762,11 @@ print "Creating $doit...";
 open DOIT, ">$doit"
     or die "Unable to open $doit for writing: $^E";
 
-print DOIT get_value ('_meta', 'doit_cmd'), "\n"
-    or die "Unable to write to $doit: $^E";
+
+foreach my $cmd (split /;/, get_value('_meta', 'doit_cmds')) {
+    print DOIT $cmd, "\n"
+	 or die "Unable to write to $doit: $^E";
+}
 
 close DOIT
     or die "Unable to close $doit: $^E";
@@ -780,7 +786,7 @@ defined $postinst
 push @edit_choices, ("Edit $doit (will run when you select Continue)"
                      => $doit);
 
-while (1) {
+while (get_value('_meta','edit_files')) {
     my $file = menu_choice (@edit_choices,
                             'Continue' => undef);
     defined $file
