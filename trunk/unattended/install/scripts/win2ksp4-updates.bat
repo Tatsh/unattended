@@ -131,7 +131,13 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
-:: Critical update 835732 (MS04-011)
+:: Critical update MS04-012 (828741)
+:: "Cumulative Update for Microsoft RPC/DCOM"
+:: (Worst Windows security hole, ever.  Again.  And again.)
+:: URL|ENU|http://download.microsoft.com/download/5/6/c/56cdedb2-fa2e-45ba-9a75-1b0335484386/Windows2000-KB828741-x86-ENU.EXE|updates/win2ksp4/windows2000-kb828741-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update MS04-011 (835732)
 :: "Security Update for Microsoft Windows"  (no, really?)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-011.asp>
 :: URL|ENU|http://download.microsoft.com/download/f/a/a/faa796aa-399d-437a-9284-c3536e9f2e6e/Windows2000-KB835732-x86-ENU.EXE|updates/win2ksp4/windows2000-kb835732-x86-enu.exe
@@ -272,18 +278,6 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828035-x86-%WINLANG%.
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms03-041.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 824146
-:: URL|ENU|http://download.microsoft.com/download/0/a/6/0a634e35-f29a-4f26-b006-d315e898edef/Windows2000-KB824146-x86-ENU.exe|updates/win2ksp4/windows2000-kb824146-x86-enu.exe
-:: URL|DEU|http://download.microsoft.com/download/b/1/b/b1bfda97-c7ee-41a1-ba6b-d4a487c8b952/Windows2000-KB824146-x86-DEU.exe|updates/win2ksp4/windows2000-kb824146-x86-deu.exe
-:: URL|NLD|http://download.microsoft.com/download/6/f/7/6f741481-b2b7-4f1b-a018-6f4a581e7981/Windows2000-KB824146-x86-NLD.exe|updates/win2ksp4/windows2000-kb824146-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/d/b/3/db3546f1-35dd-43b4-8ab1-6b38e343b804/Windows2000-KB824146-x86-RUS.exe|updates/win2ksp4/windows2000-kb824146-x86-rus.exe
-:: URL|FRA|http://download.microsoft.com/download/e/e/1/ee171b06-ef1f-4ac9-a0ab-485f252af8fb/Windows2000-KB824146-x86-FRA.exe|updates/win2ksp4/windows2000-kb824146-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/6/5/3/653128fb-15bb-46bc-bccb-75cb215e2651/Windows2000-KB824146-x86-ITA.exe|updates/win2ksp4/windows2000-kb824146-x86-ita.exe
-:: "A Buffer Overrun in RPCSS May Allow Code Execution"
-:: (Worst Windows security hole, ever.  Again.)
-:: <http://support.microsoft.com/?kbid=824146>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824146-x86-%WINLANG%.exe /u /n /z"
 
 :: Install IE6 First
 todo.pl ie6.bat
