@@ -116,15 +116,6 @@ todo.pl ".ignore-err 194 %Z%\updates\ie6sp1\q828750.exe /q /r:n" .reboot
 :: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
 todo.pl ".ignore-err 194 %Z%\updates\ie6sp1\q330994.exe /q /r:n" .reboot
 
-:: Critical update 318089
-:: "Incorrect VBScript Handling in Internet Explorer Can Allow Web Pages ..."
-:: <http://support.microsoft.com/?kbid=318089>
-:: <http://www.microsoft.com/windows/ie/downloads/critical/q318089/>
-:: NOTE: You must rename this to use the three-letter language
-:: abbreviation instead of two.  For example, for English you would
-:: rename vbs56nen.exe to vbs56nenu.exe.
-todo.pl ".ignore-err 194 %Z%\updates\ie6sp1\vbs56n%WINLANG%.exe /q /r:n" .reboot
-
 :: Critical Updates
 
 :: Critical update 823718
