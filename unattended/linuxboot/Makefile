@@ -235,7 +235,6 @@ build-$(glibc)/libc.so: $(glibc)/.stamp-sscanf-patch
 	    --prefix=/usr				\
 	    --with-headers=$(cwd)/$(linux)/include	\
 	    --enable-add-ons				\
-	    --target=i486-pc-linux-gnu			\
 	&& make
 	[ -e $@ ] && touch $@
 
@@ -332,7 +331,6 @@ $(ncurses)/lib/libncurses.so: fakeinclude/stdio.h
 		./configure --prefix=/usr --with-shared			\
 			--without-normal --without-debug		\
 			--disable-database --with-fallbacks=linux	\
-			--target=i486-pc-linux-gnu			\
 	&& make
 	[ -e $@ ] && touch $@
 
@@ -582,8 +580,10 @@ $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
-$(call download_rule, $(nano), tar.gz, \
-	http://www.ewtoo.org/~astyanax/nano/dist/v1.2/)
+$(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v1.2/)
+# Sometimes main Nano site is down.  ewtoo.org is a mirror site.
+#$(call download_rule, $(nano), tar.gz,
+#	http://www.ewtoo.org/~astyanax/nano/dist/v1.2/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
