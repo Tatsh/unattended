@@ -470,6 +470,7 @@ $(perl)/perl: fakeinclude/stdio.h
 	rm -f $@
 	cd $(perl)							\
 	&& ./Configure -Dusethreads -Dprefix=/opt/perl			\
+		-Dlibpth="$(cwd)/fakelib $(cwd)/stage1/lib"		\
 		-Ud_sethostent_r -Ud_setprotoent_r -Ud_setservent_r	\
 		-Ud_endhostent_r -Ud_endprotoent_r -Ud_endservent_r	\
 		-Darchname=i586-linux					\
