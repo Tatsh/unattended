@@ -501,7 +501,7 @@ $(dbi)/Makefile: stage1/opt/perl/bin/perl
 stage1/.stamp-dbi: $(dbi)/Makefile
 	cd $(dbi)						\
 	&& make PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags)"	\
-	&& make install
+	&& make PERL="$(perlrun)" install
 	touch $@
 
 stage1 += stage1/.stamp-dbi
@@ -519,7 +519,7 @@ $(dbd-mysql)/Makefile: stage1/opt/perl/bin/perl
 stage1/.stamp-dbd-mysql: $(dbd-mysql)/Makefile stage1/lib/libmysqlclient.so
 	cd $(dbd-mysql)						\
 	&& make PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags) -I$(cwd)/fakeinclude/mysql"	\
-	&& make install
+	&& make PERL="$(perlrun)" install
 	touch $@
 
 stage1 += stage1/.stamp-dbd-mysql
