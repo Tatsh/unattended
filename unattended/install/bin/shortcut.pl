@@ -13,7 +13,8 @@ use File::Path;
 
 # Your usual option-processing sludge.
 my %opts;
-GetOptions (\%opts, 'help|h|?', 'arguments=s', 'description=s')
+GetOptions (\%opts, 'help|h|?', 'arguments=s', 'description=s',
+            'workingdirectory=s')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -85,7 +86,9 @@ my $obj = $wsh_shell->CreateShortcut ($full_shortcut);
 $obj->{TargetPath} = $target;
 $obj->{WindowStyle} = 1;
 $obj->{IconLocation} = "$target, 0";
-$obj->{WorkingDirectory} = $target_dir;
+$obj->{WorkingDirectory} = (exists $opts{'workingdirectory'}
+                            ? $opts{'workingdirectory'}
+                            : $target_dir);
 
 (exists $opts{'arguments'})
     and $obj->{Arguments} = $opts{'arguments'};
@@ -110,9 +113,10 @@ shortcut.pl [ options ] <target> <shortcut>
 
 Options (may be abbreviated):
 
- --help                 Display help and exit
- --arguments <args>     Use <args> as arguments to target
- --description <desc>   Set description (infotip) to <desc>
+ --help                   Display help and exit
+ --arguments <args>       Use <args> as arguments to target
+ --description <desc>     Set description (infotip) to <desc>
+ --workingdirectory <dir> Set working directory to <dir>
 
 =head1 DESCRIPTION
 
@@ -123,6 +127,10 @@ SEE ALSO for a complete list of special folders.)
 
 If the <shortcut> argument is a directory, the shortcut will be
 created within.
+
+The WorkingDirectory property of the shortcut may be set by the
+"--workingdirectory" option; it defaults to the directory of the
+target.
 
 =head1 EXAMPLES
 
