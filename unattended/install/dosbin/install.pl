@@ -634,7 +634,7 @@ sub ask_fdisk_cmds () {
          'fdisk /pri:12288;fdisk /pri:100,100 /spec:7',
          '12G C:, 5G D:, rest E:' =>
          'fdisk /pri:12288;fdisk /pri:5120 /spec:7;fdisk /pri:100,100 /spec:7',
-         '50% C:, 50% d:' =>
+         '50% C:, 50% D:' =>
          'fdisk /pri:50,100;fdisk /pri:50,100 /spec:7',
          );
 
@@ -763,16 +763,11 @@ sub create_postinst_bat () {
     my @postinst_lines;
 
     # Local admins
-    my $admin_group = $u->{'_meta'}->{'local_admin_group'};
     my $admins = $u->{'_meta'}->{'local_admins'};
     my @admins = (defined $admins ? split / /, $admins : ());
     @admins = map { canonicalize_user
                         ($u->{'Identification'}->{'JoinDomain'},
                          $_) } @admins;
-    foreach my $admin (@admins) {
-        push @postinst_lines, "net localgroup $admin_group $admin /add";
-    }
-
     # NTP servers
     my $ntp_servers = $u->{'_meta'}->{'ntp_servers'};
     defined $ntp_servers && $ntp_servers ne ''
@@ -800,6 +795,9 @@ sub create_postinst_bat () {
          "todo.pl \"del $tempcred\"",
          # After installing, re-enable System Restore.
          'todo.pl "srconfig.pl --enable"',
+         # Before that, add users to the local Administrators group.
+         (map { "todo.pl \"net localgroup \\\"%%Administrators%%\\\" \\\"$_\\\" /add\"" }
+          @admins),
          # Before that, run the "cleanup" scripts.
          (map { "todo.pl $_" } reverse @bottom_scripts),
          # Before that, run the optional scripts.
@@ -971,11 +969,6 @@ $u->{'_meta'}->{'ipaddr'} =
         return $ret;
     };
 
-
-$u->comments ('_meta', 'local_admin_group') =
-    ['Name of local Administrators group.  Should depend on language...'];
-
-$u->{'_meta'}->{'local_admin_group'} = 'Administrators';
 
 $u->{'_meta'}->{'local_admins'} =
     ['Accounts added to local Administrators group'];
