@@ -18,7 +18,7 @@ echo WELCOME!!!
 # For playing random games
 /bin/mkdir /mnt
 
-PATH=/sbin:/usr/sbin:/bin:/usr/bin
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin
 export PATH
 
 # Fire up shells on virtual consoles 2 and 3
