@@ -1,5 +1,10 @@
-; AutoIt script to install Windows 2000 SP4 symbols
-; Donwload win2000_sym_en[1-5].cab and the executable
+; AutoIt script to install Windows 2000 symbols
+:: URL|ALL|http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN.exe|updates/win2k/symbols/win2000_sym_en.exe
+:: URL|ALL|http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN2.CAB|updates/win2k/symbols/win2000_sym_en2.cab
+:: URL|ALL|http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN3.CAB|updates/win2k/symbols/win2000_sym_en3.cab
+:: URL|ALL|http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN4.CAB|updates/win2k/symbols/win2000_sym_en4.cab
+:: URL|ALL|http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN5.CAB|updates/win2k/symbols/win2000_sym_en5.cab
+; Download win2000_sym_en[1-5].cab and the executable
 ; Execute to unpack and store in /updates/win2k/symbols
 
 Run, %Z%\\updates\\win2k\\symbols\\symbolsx.exe

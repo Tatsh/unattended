@@ -1,4 +1,5 @@
 ; AutoIt script to install Cygwin
+; URL|ALL|http://www.cygwin.com/setup.exe|packages/cygwin/setup.exe
 ; Download cygwin installer (setup.exe). Select and download everything
 ; that you want installed.  Store in /packages/cygwin.  Everything in
 ; that directory will be installed.
