@@ -6,7 +6,7 @@ use Getopt::Long;
 use Pod::Usage;
 use Win32::OLE;
 
-my $me = 'srconf.pl';
+my $me = 'srconfig.pl';
 
 # Your usual option-processing sludge.
 my %opts;
@@ -71,16 +71,16 @@ exit 0;
 
 =head1 NAME
 
-srconf.pl - Enable/disable System Restore
+srconfig.pl - Enable/disable System Restore
 
 =head1 SYNOPSIS
 
-srconf.pl [ options ]
+srconfig.pl [ options ]
 
 Options (may be abbreviated):
 
  --help                 Display help and exit
- --remote <host>        Set variable on <host> instead of local machine
+ --remote <host>        Operate on <host> instead of local machine
  --disable              Disable system restore
  --enable               Enable system restore
  
