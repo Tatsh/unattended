@@ -4,8 +4,9 @@ dosemu=dosemu-1.2.0
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
 glibc=glibc-2.3.2
+#glibc=glibc-20040306
 # Awful hack
-glibc-linuxthreads=$(strip $(patsubst glibc-%, glibc-linuxthreads-%, $(glibc)))
+glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 klibc=klibc-0.115
 linux=linux-2.6.3
 module-init-tools=module-init-tools-3.0
@@ -144,8 +145,8 @@ $(busybox)/.config: misc/busybox-config
 	cp -f $< $@
 	cd $(busybox) && make oldconfig
 
-# BusyBox has some broken dependencies (changing CONFIG_INIT from on
-# to off does not rebuilt reboot.o), hence the "make clean" here.
+# BusyBox has some broken dependencies (changing CONFIG_INIT to off
+# does not rebuild reboot.o), hence the "make clean" here.
 $(busybox)/busybox: $(busybox)/.config
 	cd $(busybox) && make clean && make
 
@@ -232,13 +233,14 @@ $(glibc)/.stamp-sscanf-patch: misc/glibc-sscanf-patch
 	touch $@
 
 build-$(glibc)/libc.so: $(glibc)/.stamp-sscanf-patch
+#build-$(glibc)/libc.so:
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure	\
 	    --prefix=/usr				\
 	    --with-headers=$(cwd)/$(linux)/include	\
-	    --enable-add-ons				\
+	    --enable-add-ons=linuxthreads		\
 	&& make
-	[ -e $@ ] && touch $@
+	touch -c $@
 
 $(call copy_lib, build-$(glibc)/libc.so, stage1/lib/libc.so)
 
@@ -251,8 +253,8 @@ build-$(glibc)/libc_nonshared.a: build-$(glibc)/libc.so
 fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
 	mkdir -p $(dir $@)
 	echo "OUTPUT_FORMAT(elf32-i386)" >| $@.tmp
-	echo "GROUP ( $(cwd)/stage1/lib/libc.so.6 \
-		$(cwd)/fakelib/libc_nonshared.a )" >> $@.tmp
+	echo "GROUP ( $(cwd)/stage1/lib/libc.so.6 " \
+		"$(cwd)/fakelib/libc_nonshared.a )" >> $@.tmp
 	mv $@.tmp $@
 
 # "Fake" headers, too
@@ -561,6 +563,15 @@ download-$(strip $(1)) :  ;						\
 	&& rm $$$$temp ;						\
 	}
 
+# Special rule for glibc (checkout from CVS based on date).
+# download-$(glibc):
+# 	[ ! -e "$(dest)/libc" ]
+# 	cd $(dest)							\
+# 	&& cvs -z 9 -d :pserver:anoncvs@sources.redhat.com:/cvs/glibc	\
+# 		checkout -D $(patsubst glibc-%,%,$(glibc)) libc		\
+# 	&& mv libc $(glibc)
+# 	[ "$(dest)" == . ] || ln -sf $(dest)/$(glibc) $(glibc)
+
 download_targets=$(addprefix download-,$(packages) $(glibc-linuxthreads))
 
 download-$(glibc-linuxthreads) : download-$(glibc)
@@ -620,5 +631,5 @@ tidy:
 	rm -f $(patsubst symlink-%,%,$(symlink_targets))
 	rm -rf dosboot iso
 	rm -rf fakeinclude fakelib
-	rm -rf stage1 stage2
+	rm -rf stage1 stage2 .stamp-stage2
 	rm -f devices.cpio initrd
