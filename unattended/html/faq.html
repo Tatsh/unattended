@@ -339,11 +339,22 @@ thread</a> from the mailing list, especially <a
 href="http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg01174.html">this
 followup</a> from Pablo Manzanera.  Patches are welcome...</p>
 
-<h1>Why do you always install IIS?</h1>
+<h1 id="iis">Why do you always install IIS?</h1>
 
 <p><a
 href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01130.html"
->We have reasons</a>. You can always disable it in unattend.txt.</p>
+>We have reasons</a>. You can disable it by adding these lines to
+<code>Z:\site\unattend.txt</code>:</p>
+
+<pre class="code">
+[Components]
+    ; Do not install IIS
+    iis_common=Off
+    iis_inetmgr=Off
+    iis_www=Off
+    iis_pwmgr=Off
+    iis_doc=Off
+</pre>
 
 <h1>How do I enable the Windows XP Internet Connection Firewall?</h1>
 
