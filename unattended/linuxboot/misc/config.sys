@@ -1,2 +1,4 @@
 lastdrive=Z
 install=\lredir.com Z: linux\fs\z
+; Bad hack, but it works.
+install=\lredir.com Y: linux\fs\c
