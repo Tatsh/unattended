@@ -1,51 +1,60 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="Unattended.css" rel="stylesheet" type="text/css" />
+
 <title>Unattended, A Windows deployment system: Advanced Configuration</title>
 </head>
 <body>
 
-<p>This document is part of <a
+<p>
+<a href="http://validator.w3.org/check?uri=referer"><img class="logo"
+src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0!"
+height="31" width="88" /></a>
+
+This document is part of <a
 href="http://unattended.sourceforge.net/">Unattended, a Windows
 deployment system</a>.
+</p>
 
-<hr>
+<hr />
 
 <h1>Introduction</h1>
 
 <p>After you use Unattended a few times, you will probably get tired
 of answering the same questions over and over.  This document
 describes how to create site-specific configuration files to set
-(or compute) the answers automatically.
+(or compute) the answers automatically.</p>
 
 <p>Unattended looks for all site-specific configuration in
 <code>Z:\site</code>.  In particular, the master installation script
 (<a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
 ><code>install.pl</code></a>) reads <code>Z:\site\unattend.txt</code>
-and <code>Z:\site\config.pl</code>.
+and <code>Z:\site\config.pl</code>.</p>
 
 <p>To perform simple customizations, just create and populate
 <code>z:\site\unattend.txt</code>.  The values you put there will
 override the defaults and cause the installation script to skip any
 corresponding questions.  Do not worry about creating a "complete"
 answer file; if you fail to provide some required value, the
-installation script will prompt you for it.
+installation script will prompt you for it.</p>
 
 <p>Read on for a description of what to put in your
-<code>unattend.txt</code> file.
+<code>unattend.txt</code> file.</p>
 
 <p>(The <code>Z:\site\config.pl</code> mechanism is more complex and
-is discussed way below.)
+is discussed way below.)</p>
 
 <h1>Syntax of <code>unattend.txt</code></h1>
 
 <p>The general syntax of an answer file is the same as any
 <code>.ini</code> (or <code>.inf</code>) file.  It looks something
-like this:
+like this:</p>
 
-<pre>
+<pre class="code">
 [SECTION 1]
   ; COMMENT
   KEY1=VALUE1
@@ -63,7 +72,7 @@ name in square brackets.  Each section has zero or more
 <em>entries</em> (also called <em>settings</em>).  Each entry assigns
 a <em>value</em> to a <em>key</em>, or else consists of a <em>key</em>
 by itself.  Any line beginning with a semicolon, or whitespace
-followed by a semicolon, is a <em>comment</em>.
+followed by a semicolon, is a <em>comment</em>.</p>
 
 <p>If the value contains any special characters, or if it is the empty
 string, it must be placed in quotation marks.  Which characters
@@ -71,24 +80,24 @@ qualify as "special" is undocumented; the <code>.ini</code> file
 parser/generator in Unattended tries to be fairly conservative, and
 will exit with an error message if it encounters an unrecognized line.
 Quotes are allowed even when they are not required, so when in doubt,
-use them.
+use them.</p>
 
 <p>For a complete sample <code>unattend.txt</code> file, use
 Unattended to install Windows and then examine
 <code>C:\NETINST\UNATTEND.TXT</code>.  For a partial file containing
 some of Unattended's defaults, see <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/unattend.txt?rev=HEAD&amp;view=auto"
->Z:\lib\unattend.txt</a> from the distribution.
+>Z:\lib\unattend.txt</a> from the distribution.</p>
 
 <h1 id="guide">Microsoft's documentation</h1>
 
 <p>The most thorough documentation for the answer file is Microsoft's
 own, but unfortunately, it is a bit annoying to obtain.  There are
 different versions for Windows 2000 and Windows XP, although the
-answer files are very similar.
+answer files are very similar.</p>
 
 <dl>
-<dt><em>Windows 2000 Guide to Unattended Setup</em>
+<dt><em>Windows 2000 Guide to Unattended Setup</em></dt>
 
 <dd>Microsoft put the SP1 version of this document <a
 href="http://www.microsoft.com/technet/prodtechnol/Windows2000Pro/deploy/unattend/"
@@ -101,9 +110,10 @@ extract the <code>unattend.doc</code> file from the
 <code>deploy.cab</code> archive.
 
 <p>You can also find an earlier version of <code>deploy.cab</code> on
-the Windows 2000 CD in the <code>\support\tools</code> folder.
+the Windows 2000 CD in the <code>\support\tools</code> folder.</p>
+</dd>
 
-<dt><em>Microsoft Windows Preinstallation Reference</em>
+<dt><em>Microsoft Windows Preinstallation Reference</em></dt>
 
 <dd>As far as I know, this document is not available directly on the
 Web.  You must first download the <a
@@ -114,24 +124,25 @@ href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/deployto
 double-click to browse.
 
 <p>Here again, <code>deploy.cab</code> may also be found on the
-Windows XP CD in the <code>\support\tools</code> folder.
+Windows XP CD in the <code>\support\tools</code> folder.</p>
+</dd>
 
 </dl>
 
-<p>(Personally, I find the Windows 2000 document easier to read.)
+<p>(Personally, I find the Windows 2000 document easier to read.)</p>
 
 <h1>Settings used by <em>Windows&nbsp;Setup</em></h1>
 
 <p>Here are examples for how to configure some common settings.  All
 of these are used by <em>Windows&nbsp;Setup</em>, which means they are
 fully explained in Microsoft's documentation.  These examples are just
-to help you get started quickly.
+to help you get started quickly.</p>
 
 <h2>User Name, Organization Name, and Computer Name</h2>
 
-<p>Example:
+<p>Example:</p>
 
-<pre>
+<pre class="code">
 [UserData]
     FullName="Jane Doe"
     OrgName="FooBar Widgets, Incorporated"
@@ -139,21 +150,21 @@ to help you get started quickly.
 </pre>
 
 <p>Setting the ComputerName to <code>*</code> tells
-<em>Windows&nbsp;Setup</em> to pick a random name.
+<em>Windows&nbsp;Setup</em> to pick a random name.</p>
 
 <h2>Product Key</h2>
-<pre>
+<pre class="code">
 [UserData]
     ProductKey=XXXXX-YYYYY-ZZZZZ-00000-11111
 </pre>
 
-<p>NOTE: Prior to Windows XP, this key was named "ProductID".
+<p>NOTE: Prior to Windows XP, this key was named "ProductID".</p>
 
 <h2>Local Administrator Password</h2>
 
-<p>To set the local Administrator account password:
+<p>To set the local Administrator account password:</p>
 
-<pre>
+<pre class="code">
 [GuiUnattended]
     AdminPassword=sekrit
 </pre>
@@ -161,9 +172,9 @@ to help you get started quickly.
 <h2>Joining a domain</h2>
 
 <p>To join the domain <code>FOOBAR</code> using the account
-<code>FOOBAR\wsadmin</code> and password <code>verysekrit</code>:
+<code>FOOBAR\wsadmin</code> and password <code>verysekrit</code>:</p>
 
-<pre>
+<pre class="code">
 [Identification]
     JoinDomain=FOOBAR
     DomainAdmin=FOOBAR\wsadmin
@@ -173,24 +184,37 @@ to help you get started quickly.
 <p>If you do not want to store the password in cleartext, you can omit
 the DomainAdminPassword entry; remember that the installation script
 will prompt you for any required values which you do not already
-provide.
+provide.</p>
 
 <h2>Joining a workgroup</h2>
 
-<p>To join the workgroup FOOBAR:
+<p>To join the workgroup FOOBAR:</p>
 
-<pre>
+<pre class="code">
 [Identification]
     JoinWorkgroup=FOOBAR
 </pre>
 
-<p>Note that you are required to join either a domain or a workgroup.
+<p>Note that you are required to join either a domain or a workgroup.</p>
+
+<h2>Joining an OU</h2>
+
+<p>To specify the Organizational Unit to join within an Active
+Directory domain:</p>
+
+<pre class="code">
+[Identification]
+    MachineObjectOU="OU=Foo,OU=FooParent,DC=department,DC=example,DC=com"
+</pre>
+
+<p>See also <a href="http://support.microsoft.com/?id=226315">KB
+article 226315</a>.</p>
 
 <h2>Time Zone</h2>
 
-<p>To set the workstation's time zone:
+<p>To set the workstation's time zone:</p>
 
-<pre>
+<pre class="code">
 [GuiUnattended]
     ; U.S. Pacific
     TimeZone=004
@@ -198,7 +222,7 @@ provide.
 
 <p>The time zone setting is numeric; see the <a href="timezones.html"
 >table of index numbers</a> for a complete list.  The default value
-for Unattended is 035 (U.S. Eastern).
+for Unattended is 035 (U.S. Eastern).</p>
 
 <h2>OEM Plug&amp;Play Drivers</h2>
 
@@ -207,11 +231,11 @@ drivers.  Elements of this path are separated by semicolons.  Windows
 uses this path when searching for a driver for a piece of hardware.
 These elements are relative to the <code>C:</code> drive, and are
 usually used in conjunction with the <a href="os.html#drivers"
-><code>$oem$/$1</code></a> mechanism.
+><code>$oem$/$1</code></a> mechanism.</p>
 
-<p>For example:
+<p>For example:</p>
 
-<pre>
+<pre class="code">
 [Unattended]
     OemPnPDriversPath="drivers\net\eepro;drivers\video\nVidia"
 </pre>
@@ -221,9 +245,9 @@ usually used in conjunction with the <a href="os.html#drivers"
 <p>The <code>[Shell]</code> section controls the general look and feel
 of Windows XP.  To use the classic Windows Start menu (with
 <em>My&nbsp;Computer</em> and <em>My&nbsp;Documents</em> on the
-desktop), and to use the "classic Windows visual style":
+desktop), and to use the "classic Windows visual style":</p>
 
-<pre>
+<pre class="code">
 [Shell]
     ; Use classic start menu
     DefaultStartPanelOff=Yes
@@ -240,15 +264,15 @@ new section of the answer file, the <code>[_meta]</code> section.
 This section is ignored by <em>Windows&nbsp;Setup</em>; it exists
 solely to let you provide answers to some of the new questions <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
-><code>install.pl</code></a> asks.
+><code>install.pl</code></a> asks.</p>
 
 <h2>Partitioning and formatting</h2>
 
 <p>The installation script begins by partitioning and formatting the
-disk.
+disk.</p>
 
 <p>To automatically answer the "Use large disk support" question, set
-the <code>fdisk_lba</code> key to 1 for "yes" and 0 for "no".
+the <code>fdisk_lba</code> key to 1 for "yes" and 0 for "no".</p>
 
 <p>To automatically partition the drive, use the
 <code>fdisk_cmds</code> key.  This is a semicolon-separated list of <a
@@ -257,22 +281,22 @@ href="http://usuarios.lycos.es/fenris2003/panicdsk/fdisk_HELP.TXT"
 href="http://www.23cc.com/free-fdisk/">FreeDOS FDISK</a>.  Keep in
 mind that the result of these commands must be a partition table with
 an active FAT partition.  To suppress the confirmation for disk
-partitioning, set <code>fdisk_confirm</code> to 0.
+partitioning, set <code>fdisk_confirm</code> to 0.</p>
 
 <p>To automatically format the drive, set the <code>format_cmd</code>
 key.  This is normally an invocation of the <a
 href="http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/dos/format/"
->FreeDOS format</a> utility.
+>FreeDOS format</a> utility.</p>
 
 <p>Finally, to automatically replace the Master Boot Record (MBR) or
 not, use the <code>replace_mbr</code> key.  Set it to 1 for "yes" and
-0 for "no".
+0 for "no".</p>
 
 <p>For example, to use large disk support, partition the drive as a
 single large partition (without confirmation), format it, and replace
-the MBR:
+the MBR:</p>
 
-<pre>
+<pre class="code">
 [_meta]
     fdisk_lba=1
     fdisk_cmds="fdisk /clear 1;fdisk /pri:4000;fdisk /activate:1"
@@ -281,40 +305,49 @@ the MBR:
     replace_mbr=1
 </pre>
 
-<h2>Post-install script, Local Administrators, NTP servers, final edits</h2>
+<h2>Post-install scripts, Local Administrators, NTP servers, final edits</h2>
 
-<p>To configure which post-installation script to run, set the
-<code>top</code> key.
+<p>To configure which top-level post-installation script to run, set
+the <code>top</code> key.</p>
+
+<p>To configure which "optional" scripts to run, set the
+<code>middle</code> key.</p>
 
 <p>To configure which domain accounts are added to the local
 Administrators group, set the <code>local_admins</code> key to a
 semicolon-separated list of user names.  An empty list is allowed, but
 it must be quoted.  User names may be fully qualified (DOMAIN\user),
 or they may be bare (user); in the latter case, the
-[Identification]/JoinDomain value will be used as the domain.
+[Identification]/JoinDomain value will be used as the domain.</p>
 
 <p>To configure the NTP servers, set the ntp_servers key.  This is a
-space-separated list.
+space-separated list.</p>
 
 <p>To control the final question, where you are asked if you want to
 make any final edits, use the edit_files key.  Set it to 0 to avoid
-being asked the question.
+being asked the question.</p>
 
-<p>For example, to perform a base install, configure NTP servers named
+<p>For example, to perform a base install, add Spybot
+Search&amp;Destroy and the Sun JRE, configure NTP servers named
 "ntp-0" and "ntp-1", not add any accounts to the local Administrators
-group, and skip the final question:
+group, and skip the final question:</p>
 
-<pre>
+<pre class="code">
 [_meta]
     top=base.bat
+    middle="spybot.bat;sun-jre.bat"
     local_admins=""
     ntp_servers="ntp-0 ntp-1"
     edit_files=0
 </pre>
 
-<h2>Optional keys</h2>
+<h2>Other keys</h2>
 
-<p>FIXME: need to write this...
+<p>There are several other keys which appear in the
+<code>[_meta]</code> section, like <code>macaddr</code> and
+<code>ipaddr</code>.  Most of these are generated automatically from
+sane defaults, so unless you are sure about what you are doing, you
+should probably omit them from your <code>unattend.txt</code> file.</p>
 
 <h1 id="perl">Programmatic configuration using config.pl</h1>
 
@@ -323,48 +356,51 @@ group, and skip the final question:
 arbitrarily complex rules using <code>Z:\site\config.pl</code>.  This
 is a Perl file which <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
-><code>install.pl</code></a> reads.
+><code>install.pl</code></a> reads.</p>
 
 <p>To write your own config.pl, you need to know a little Perl and you
-need to understand how the installation script works.
+need to understand how the installation script works.</p>
 
 <h2>How the installation script works</h2>
 
 <p>The installation script generates the answer file in memory,
 placing it in an <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/IniFile.pm?rev=HEAD&amp;view=auto"
->Unattend::IniFile</a> object named <code>$u</code>.
+>Unattend::IniFile</a> object named <code>$u</code>.</p>
 
 <p>Programmatically, this object behaves like a Perl hash (associative
 array).  It maps section names to sections, where each section is
 another hash which maps keys to values.  So, for example, the value of
 the FullName key in the [UserData] section is just
 <code>$u->{'UserData'}->{'FullName'}</code>, and you may read or
-assign this value in your config.pl.
+assign this value in your config.pl.</p>
 
-<p>But these hashes are special in two ways.
+<p>But these hashes are special in two ways.</p>
 
 <p>First, they are case-insensitive, so that
 <code>$u->{'UserData'}->{'FullName'}</code> and
-<code>$u->{'userdata'}->{'fullname'}</code> refer to the same thing.
+<code>$u->{'userdata'}->{'fullname'}</code> refer to the same
+thing.</p>
 
 <p>Second, if you assign a Perl subroutine to a key, something magic
 happens when you read the key: The subroutine will be called with no
 arguments, and the subroutine will be replaced by its own return
 value.  These stored subroutines are called "promises", and the act of
 evaluating the subroutine and replacing the value is called "forcing"
-the promise.  (I knew that CS degree would be useful someday.)
+the promise.  (I knew that CS degree would be useful someday.)</p>
 
 <p>For example, suppose you wanted the local Administrator password to
 be the same as the user's FullName.  This is not a very realistic
 example, perhaps, but it will serve for illustration.  You would put
-this in config.pl:
+this in config.pl:</p>
 
-<pre>
+<pre class="code">
 $u->{'GuiUnattended'}->{'AdminPassword'} =
     sub {
         return $u->{'UserData'}->{'FullName'};
     };
+
+1;
 </pre>
 
 <p>This promise will not be forced until the AdminPassword key is read
@@ -373,40 +409,40 @@ generated).  When that happens, the subroutine will read the value of
 the FullName key in order to return it.  That, in turn, may cause
 another promise to be forced, and so on...  But in the end, the
 FullName will be returned by this subroutine, and it will be stored
-and used as the value for AdminPassword.
+and used as the value for AdminPassword.</p>
 
 <p>In fact, install.pl simply assigns a "default value" for most keys
 which is a subroutine to ask the user an appropriate question.  Then
 it reads unattend.txt and config.pl, each of which may override the
-defaults with static values or with different subroutines.
+defaults with static values or with different subroutines.</p>
 
 <p>This design requires that you think in a "declarative" style rather
 than an "imperative" one.  That is, you should think about how each
 key is to be computed from other data (including other keys).  Except
 for the top-level assignments of subroutines, you should avoid
-assigning to keys themselves.
+assigning to keys themselves.</p>
 
 <p>One more thing.  The config.pl script is executed by Perl's "do"
 operator, which returns the value of the last expression in the file.
 So the last line of config.pl should always be a constant true
-expression, like this:
+expression, like this:</p>
 
-<pre>
+<pre class="code">
 1;
 </pre>
 
 <p>This is to ensure that the "do" operator returns success, and to
-prevent any promises from being forced prematurely.
+prevent any promises from being forced prematurely.</p>
 
-<p>Some examples should help.
+<p>Some examples should help.</p>
 
 <h2>Computing OemPnPDriversPath automatically</h2>
 
 <p>To automatically add all drivers to OemPnPDriversPath, you just
 crib the code from install.pl but skip the part where it asks the
-question:
+question:</p>
 
-<pre>
+<pre class="code">
 use warnings;
 use strict;
 
@@ -430,16 +466,17 @@ $u->{'Unattended'}->{'OemPnPDriversPath'} =
 
 </pre>
 
-<p>This code illustrates a few points.
+<p>This code illustrates a few points.</p>
 
 <p>First, all Perl code you ever write should "use warnings" and "use
-strict".  Do not even think twice about it.
+strict".  Do not even think twice about it.</p>
 
-<p>Second, the last line of the file is <code>1;</code>.
+<p>Second, the last line of the file is <code
+class="code">1;</code>.</p>
 
 <p>Third, if a key has a value of "undef", it will not appear in
 unattend.txt at all.  If you want to delete a key completely, make it
-undef.
+undef.</p>
 
 <p>Finally, this code demonstrates the use of the <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/WinMedia.pm?rev=HEAD&amp;view=auto"
@@ -447,14 +484,14 @@ href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Un
 object by giving it the path to your Windows installation media
 ([_meta]/OS_media value).  It knows lots of things about such media,
 including how to grovel it for OEM Plug&amp;Play drivers
-(oem_pnp_dirs() method).
+(oem_pnp_dirs() method).</p>
 
 <h2>Assigning product key based on OS type</h2>
 
 <p>To pick the product key based on OS type, you would use code like
-this:
+this:</p>
 
-<pre>
+<pre class="code">
 use warnings;
 use strict;
 
@@ -496,21 +533,102 @@ ProductID for backwards compatibility, ProductKey is now canonical and
 we like to be pedantic.)  The code dispatches on the name of the
 chosen operating system, as returned by the name() method of the <a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/WinMedia.pm?rev=HEAD&amp;view=auto"
->Unattend::WinMedia</a> object.
+>Unattend::WinMedia</a> object.</p>
+
+<h2>Reading different answer files based on OS type</h2>
+
+<p>If you want to use different <code>unattend.txt</code> files
+depending on the type of OS being installed:</p>
+
+<pre class="code">
+    my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
+    my $os_name = $media_obj->name ();
+
+    if ($os_name =~ /Windows 2000/) {
+        $u->read (dos_to_host ('z:\\site\\win2k-un.txt'));
+    }
+    elsif ($os_name =~ /Windows XP/) {
+        $u->read (dos_to_host ('z:\\site\\winxp-un.txt'));
+    }
+    else {
+        die "Unrecognized OS name: $os_name";
+    }
+
+    1;
+</pre>
+
+<p>Then put the answer files for Windows 2000 and Windows XP in
+<code>z:\site\win2k-un.txt</code> and
+<code>z:\site\winxp-un.txt</code>, respectively.</p>
+
+<p>Note the call to <code>dos_to_host</code>.  This function does
+nothing on the DOS-based boot disk, but on the Linux-based boot disk
+it converts DOS-style file names (e.g., <code>z:\site\foo.txt</code>)
+to Linux-style (<code>/z/site/foo.txt</code>).  It lets you write most
+<code>config.pl</code> files to work unaltered with either boot
+disk.</p>
+
+<p>With this code, you will probably prefer to use the Linux-based
+boot disk.  Since this code depends on the OS, it will cause the OS
+selection question to be asked immediately, even before you select how
+to partition the drive.  (This is actually correct behavior, since you
+might have partitioning commands in your OS-dependent answer files.)
+If you must reboot after partitioning, as is usually the case with
+DOS, you will end up having making the OS selection again.</p>
+
+
+<h2>Assigning ComputerName based on DNS hostname</h2>
+
+<p>To automatically set the machine's ComputerName based on the DNS
+hostname associated with the IP address assigned to the machine:</p>
+
+<pre class="code">
+use warnings;
+use strict;
+use Socket;
+use Net::hostent;
+
+$u->{'UserData'}->{'ComputerName'} =
+    sub {
+        my $addr = $u->{'_meta'}->{'ipaddr'};
+        defined $addr
+            or return undef;
+        my $host = gethostbyaddr (inet_aton ($addr));
+
+        if (!defined $host) {
+            warn "Unable to gethostbyaddr ($addr): $? $^E\n";
+            return undef;
+        }
+
+        my $name = $host->name ();
+        # Strip off domain portion
+        $name =~ s/\.(.*)//;
+        return $name;
+    };
+
+1;
+</pre>
+
+<p>There are two things to note about this code.  First, it will only
+work with the Linux-based boot disk.  And second, I have not actually
+tested it yet.  If you try it, please let me know how it goes :-).</p>
 
 <h2>More...</h2>
 
-<p>More examples to come, someday.
+<p>More examples to come, someday.</p>
 
-<hr>
+<hr />
+
+<p><a href="http://sourceforge.net/"><img class="logo"
+src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
+width="210" height="62" alt="SourceForge Logo" /></a>
+
+</p>
+
 <address>
 Patrick J. LoPresti <a
 href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
 </address>
-
-<A href="http://sourceforge.net/"> <IMG align="right"
-src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
-width="210" height="62" border="0" alt="SourceForge Logo"></A>
 
 </body>
 </html>
