@@ -1,4 +1,4 @@
-This is a seminal effort to create a Linux-based boot disk for
+This is an initial effort to create a Linux-based boot disk for
 Unattended.  Unless you like playing with pre-pre-alpha releases, you
 probably want to leave this directory now and poke around elsewhere in
 the distribution.
@@ -17,27 +17,28 @@ and load its driver(s), use Parted to partition the disk, run
 install.pl to generate unattend.txt, and finally use dosemu to run
 winnt.exe which will start the real Windows installation.
 
-Right now, everything except the Perl and Parted parts are working for
-me.  Your mileage may vary and we would all love to hear about it (at
-unattended-devel@lists.sourceforge.net).
+It works for me.
 
-To play with this, you need to build it.  To build it, you need a
-reasonably modern Linux system.  I use RedHat 9 at the moment, but I
-am interested in bug reports (or better yet, patches) for other recent
-popular systems, especially SUSE.
+You can make small changes by editing the files under
+Z:\install\linuxaux directly.  For more serious things, or to do it
+"right", you need to rebuild from source.  This will require a
+reasonably modern Linux system.  We have tested on RedHat 9 (me) and
+Fedora Core 1 (Shad).  We are interested in reports for other modern
+distributions, especially SUSE 9.
 
-The Makefile generates the Linux boot disk ab initio.  To download all
-required sources from their canonical locations, type "make download".
-I suggest having gobs of disk space, a fast connection, and lots of
-time.
+The Makefile generates the Linux boot disk _ab initio_.  To download
+all required sources from their canonical locations, type "make
+download".  This will take gobs of disk space, a fast connection, and
+lots of time.
 
 If you want to download the packages into a different directory and
 create symlinks here, use "make dest=/path/to/scratch/directory
 download" instead.
 
-Do "make iso" to build linuxboot.iso.
+Do "make iso" to build linuxboot.iso.  Do "make tftpboot" to populate
+tftpboot/ directory.  A simple "make" does both.
 
 For more details, read the Makefile and other sources.  Hey, what do
 you expect on the bleeding edge?
 
-Ramblings and commentary are in NOTES.txt.
+More ramblings and commentary are in NOTES.txt.
