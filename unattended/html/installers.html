@@ -33,9 +33,9 @@ href="apps.html">reliably installing multiple applications</a>.
 <hr>
 <h1>General information</h1>
 
-<p>There are several utilities in common use in the Windows world for
-creating installers.  Sometimes it will be obvious from the
-installer's splash screen which one is in use; sometimes you can
+<p>There are several utilities commonly used to create installers for
+Windows applications.  Sometimes it will be obvious from the
+installer's splash screen which utility was used; sometimes you can
 figure it out by running <a
 href="http://www.gnu.org/manual/binutils-2.12/html_node/binutils_9.html"
 >strings</a>; and sometimes you just have to guess.
@@ -213,8 +213,8 @@ them.
 
 <p>Some hotfixes use an old Microsoft packaging technology called
 "IExpress", whose switches are more-or-less documented in <a
-href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q197147">KB
-article Q197147</a> and <a
+href="http://support.microsoft.com/?kbid=197147">KB article 197147</a>
+and <a
 href="http://groups.google.com/groups?selm=%23DxIcwcQ%24GA.236%40cppssbbsa02.microsoft.com"
 >an old USENET post</a>.  These installers first extract themselves to
 a temporary folder and then run a command from inside that folder.
@@ -229,13 +229,13 @@ look at it.
 operation, except sometimes you have to use <kbd>/q:a</kbd> instead.
 They also support the <kbd>/r:n</kbd> switch to suppress the reboot.
 Sometimes these do not work and you have to fiddle with the
-<kbd>/c:<var>command</var></kbd> switch; see the "NOTE" in <a
-href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q317244"
->KB article Q317244</a> for an example.
+<kbd>/c:<var>command</var></kbd> switch; see the second "NOTE" in <a
+href="http://support.microsoft.com/?kbid=317244" >KB article
+317244</a> for an example.
 
 <p>Leave it to Microsoft to make systems administration an <a
-href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q69563"
->experimental science</a>.
+href="http://support.microsoft.com/?kbid=69563" >experimental
+science</a>.
 
 <h2>If all else fails...</h2>
 
@@ -265,8 +265,7 @@ machine.
 <p>And of course, for every new release of an application, you will
 need to perform the repackaging again.
 
-There are other <a
-href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q264478"
+There are other <a href="http://support.microsoft.com/?kbid=264478"
 >disadvantages</a> which even Microsoft recognizes.
 
 <p>For these reasons, I think repackaging is a very bad idea and I
@@ -645,8 +644,8 @@ need to apply them after the installation of Office completes.
 from the Administrative Installation Point just like any other <a
 href="#msi">MSI</a> package.  There are many public properties you can
 use, as documented in <a
-href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;Q270920">KB
-article Q270920</a> (although a better description can be found in the
+href="http://support.microsoft.com/?kbid=270920">KB article
+270920</a> (although a better description can be found in the
 <code>setupref.xls</code> spreadsheet in the <a
 href="http://www.microsoft.com/office/ork/2000/appndx/toolbox.htm#offinfo"
 >Office Information</a> download from the Office Resource Kit
@@ -682,8 +681,8 @@ from me.)
 <td><p>This is another fun one.
 
 <p>You might try following the directions in <a
-href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q195828"
->KB article Q195828</a>.  If you do, you will be disappointed, because
+href="http://support.microsoft.com/?kbid=195828" >KB article
+195828</a>.  If you do, you will be disappointed, because
 <code>smsinst.exe</code> forks and exits immediately, rendering it
 useless for scripting.  The KB article's instructions for using the
 <code>acost.exe</code> tool to configure which components to install
