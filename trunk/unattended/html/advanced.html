@@ -274,8 +274,8 @@ the MBR:
 Administrators group, set the <code>local_admins</code> key to a
 semicolon-separated list of user names.  An empty list is allowed, but
 it must be quoted.  User names may be fully qualified (DOMAIN\user),
-or they may be bare (user); in the latter case, the JoinDomain value
-will be used as the domain.
+or they may be bare (user); in the latter case, the
+[Identification]/JoinDomain value will be used as the domain.
 
 <p>To configure the NTP servers, set the ntp_servers key.  This is a
 space-separated list.
@@ -321,8 +321,8 @@ href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Un
 
 <p>Programmatically, this object behaves like a Perl hash (associative
 array).  It maps section names to sections, where each section is
-another hash which maps keys to values.  So, for example, the value
-for the FullName key in the [UserData] section is just
+another hash which maps keys to values.  So, for example, the value of
+the FullName key in the [UserData] section is just
 <code>$u->{'UserData'}->{'FullName'}</code>, and you may read or
 assign this value in your config.pl.
 
