@@ -15,34 +15,78 @@
 <hr>
 
 <h1>What is this?</h1>
-<p>This project is for Unix system administrators living in a Windows
-world.  It will show you how to use your Unix servers to let you boot
-from a floppy (or CD-ROM, or directly from the network), answer a few
-questions, and come back two hours later to a fully-installed Windows
-workstation.
+<p>This is a project for Unix systems administrators living in a
+Windows world.  It will teach you how to boot from a floppy (or
+CD-ROM, or directly from the network), answer a few questions, and
+come back two hours later to a fully-installed Windows workstation,
+using nothing but Unix servers on the back end.
 
-<p>Be warned: This is not a <tt>./configure && make install</tt> kind
-of project.  This is a set of instructions, tools, and examples which
-must be customized for your site.  Nevertheless, here you will find
-everything you need or a reference to it.  Well, that is my intention,
-anyway.
+<p>But be warned: This is not a <tt>./configure && make install</tt>
+kind of project.  This is a set of instructions, tools, and sample
+scripts which will require some customization for your site.
+Nevertheless, everything you need to know, or at least a reference to
+it, is here somewhere.  If not, let me know; all suggestions and
+contributions are welcome.
 
 <h1>Where did it come from?</h1>
 
-<p>In my (reluctant) experience with Windows, I have found that
-freshly-installed systems just work better.  I decided to research
-automating the installation process.
+<p>In my (ever reluctant) experience with Windows, I have found that
+the more recently a machine was installed, the better it tends to
+work.  So I decided to look for ways to make the installation process
+routine.
 
 <p>This led me into the strange and quirky world of DOS networking,
-.bat scripts, unattended.txt files, PXE (network) booting, and the
-myriad different "silent" installation procedures for Windows
-applications.
+.bat scripts, unattended.txt files, network booting, and the
+astoundingly under-documented "silent" installation procedures for
+various Windows applications.
 
-<p>Most of this information is available elsewhere, but to my
-knowledge it is not all collected in one place.  By creating such a
-place, I figure maybe I can save others like myself some time.
+<p>Microsoft has their own solutions to these problems, involving
+things like <a
+href="http//:www.microsoft.com/windows2000/technologies/directory/ad/"
+>"Active Directory"</a> and <a
+href="http://www.microsoft.com/windows2000/en/datacenter/help/sag_RIS_Default_topnode.htm">"RIS"</a>
+and <a href="http://www.microsoft.com/smserver/">"SMS"</a>.  If you
+think those sound like good ideas, then you are not part of my
+intended audience.
+
+<p>Anyway, I put together a complete system from scratch and I am
+releasing it here on SourceForge.  Most of the content here is also
+available elsewhere, but it took me a while to find because it was not
+all collected in one place.  I am hoping that by creating such a
+place, I can save others like myself some time.
 
 <h1>What next?</h1>
 
+<p>If you are interested, you can start right now.  First, <a
+href="https://sourceforge.net/projects/unattended/">visit the
+SourceForge project page</a> to download the distribution.  (Or <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/">
+browse the CVS repository</a>.  Click on a revision number to view the
+corresponding file.)
+
+<p>Next, educate yourself about the overall process.  It consists of
+two steps:
+
+<ol>
+<li><a href="os.html">Install the operating system</a>
+<li><a href="apps.html">Install the applications</a>
+</ol>
+
+<p>Step 1 is annoying because it involves DOS network drivers.
+
+<p>Step 2 is annoying because there is no standard way to install
+Windows applications from the command line.  (Well, there is, but
+almost nobody uses it.)  So every application must be handled
+specially.  Also, it is tricky to write a script which reboots the
+machine halfway through.  (OK, so rebooting is pretty easy.  But
+automatically picking up where you left off is another matter.)
+
+<p>Click the links above for more information.
+
+<hr>
+<address>
+Patrick J. LoPresti <a
+href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
+</address>
 </body>
 </html>
