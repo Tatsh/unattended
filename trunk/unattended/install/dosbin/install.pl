@@ -500,7 +500,7 @@ sub convert_fdisk_parted ($) {
     # option.
     my $parted = 'parted -s /dev/dsk --';
 
-    my ($cmd) = ($fdisk_cmd =~ /^fdisk\s+(.*)\z/i);
+    my ($cmd) = ($fdisk_cmd =~ /^\s*fdisk\s+(.*?)\s*\z/i);
     defined $cmd
         or croak 'internal error';
 
