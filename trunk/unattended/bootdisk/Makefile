@@ -11,15 +11,14 @@ images: .stamp-images
 
 # Detect updates to template files.
 .stamp-template: FORCE
-	@if [ -e $@ ] ; then					\
-		find template -newer $@ -false || touch $@ ;	\
-	else							\
-		touch $@ ;					\
-	fi
+	@[ -e $@ ] || touch $@
+	@find template -newer $@ -print | sed s/.*/$@/ | xargs -r touch
 
+# Detect updates to images.
 .stamp-images: $(images)
 	@touch $@
 
+# Images targets
 images/%.img: .stamp-template drivers/%.dos
 	@echo -n "Making $@..."
 	@driver=`basename "$@" .img` &&					\
@@ -85,7 +84,7 @@ tftpboot/pxelinux.cfg/default: pxelinux.cfg
 	@echo -n "Making $@..."
 	@cat $< >| $@
 	@echo >> $@
-	@echo "label ${univ_driver}" >> $@
+	@echo "label inst" >> $@
 	@echo "        kernel memdisk" >> $@
 	@echo "        append initrd=${univ_driver}.img keeppxe" >> $@
 	@echo "done"
