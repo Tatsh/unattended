@@ -63,10 +63,9 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB822831-x86-%WINLANG%.
 :: Recommended update 820888
 :: "Computer Stops Responding (Hangs) When It Tries to Mount an NTFS Volume After You Restart the Computer"
 :: <http://support.microsoft.com/?kbid=820888>
-:: (download only available from Windows Catalog)
-:: (At least, it used to be.  Now it is gone, so we have commented
-:: this out.  FIXME 2003-09-07)
-:: todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.exe /u /n /z"
+:: (Download only available from Windows Catalog.  Be sure to search
+:: on "Windows 2000 SP4", not "Windows 2000 Professional SP4")
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 818043
 :: "L2TP/IPSec NAT-T Update for Windows XP and Windows 2000"
