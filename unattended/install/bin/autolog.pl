@@ -27,7 +27,7 @@ else {
 
 my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg,
-                        qw (REG_SZ));
+                        qw (REG_DWORD));
 
 my $winlogon_key =
     'HKEY_LOCAL_MACHINE/SOFTWARE/Microsoft/Windows NT/CurrentVersion/Winlogon/';
@@ -36,8 +36,8 @@ my %new_values = ('/DefaultUserName' => $user,
                   '/DefaultPassword' => (defined $pass && $pass ne ''
                                          ? $pass
                                          : undef),
-                  '/AutoAdminLogon' => 1,
-                  '/DefaultDomain' => $opts{'domain'}
+                  '/AutoAdminLogon' => [ pack('L', 1), REG_DWORD ],
+                  '/DefaultDomainName' => $opts{'domain'}
                   );
 
 foreach my $key (sort keys %new_values) {
