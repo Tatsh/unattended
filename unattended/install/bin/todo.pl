@@ -243,6 +243,7 @@ if (exists $opts{'go'}) {
                 print "Sleeping $secs seconds...";
                 sleep $secs;
                 print "done.\n";
+                next;
             }
             else {
                 die "Unrecognized dot-command $cmd";
