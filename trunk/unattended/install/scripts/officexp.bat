@@ -5,6 +5,61 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for SharePoint Team Services (KB890829)
+:: Description of the Security Update for SharePoint Team Services: February 8, 2005
+:: <http://support.microsoft.com/kb/890829>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=6BE3F8AD-768E-4BCB-8EB3-AD74B576038C>
+:: URL|ARA|http://download.microsoft.com/download/f/7/a/f7afadf6-c430-4974-97e1-bf2d9c2dae84/officexp-kb890829-client-ara.exe|updates/officexp/officexp-kb890829-client-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/1/7/d/17d0ee3d-a97b-4dec-affd-0f2ede574f9f/officexp-kb890829-client-csy.exe|updates/officexp/officexp-kb890829-client-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/b/8/7/b87d3a40-b7f6-4906-942a-5ed6898777ea/officexp-kb890829-client-dan.exe|updates/officexp/officexp-kb890829-client-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/3/2/032b0d9f-5d04-4f76-98da-c87bfa834dc1/officexp-kb890829-client-deu.exe|updates/officexp/officexp-kb890829-client-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/6/e/b/6ebccb1e-6ae0-40ab-a258-b7f3b3270724/officexp-kb890829-client-ell.exe|updates/officexp/officexp-kb890829-client-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/5/7/3/573b29dc-5c95-4e97-903c-7e0d019bed2d/officexp-kb890829-client-enu.exe|updates/officexp/officexp-kb890829-client-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/b/f/e/bfe8d3db-9b3e-403b-b4a8-268e73a9d920/officexp-kb890829-client-esn.exe|updates/officexp/officexp-kb890829-client-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/d/3/9d3afe6d-57b5-4a98-982b-702d65aa26b7/officexp-kb890829-client-fin.exe|updates/officexp/officexp-kb890829-client-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/2/7/a278cdc8-c914-4de8-a8c8-1f33c4b1499b/officexp-kb890829-client-fra.exe|updates/officexp/officexp-kb890829-client-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/1/7/31763869-4415-4338-8f34-272c5bfeafc6/officexp-kb890829-client-heb.exe|updates/officexp/officexp-kb890829-client-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/b/8/5/b85bf6d8-1436-4ffa-ab67-fd154e0af2f7/officexp-kb890829-client-hun.exe|updates/officexp/officexp-kb890829-client-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/8/2/2/822fdc28-8fb7-43ca-bc31-a1a550f353e0/officexp-kb890829-client-ita.exe|updates/officexp/officexp-kb890829-client-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/c/b/4/cb4b3da7-3a67-4c3c-a1f9-d7fd2b359efb/officexp-kb890829-client-jpn.exe|updates/officexp/officexp-kb890829-client-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/f/c/6fc5d9a7-7bd4-4b9c-ba4c-25d789f3e2e3/officexp-kb890829-client-kor.exe|updates/officexp/officexp-kb890829-client-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/2/0/e/20e07294-7c28-4097-b7c6-45662d2e4a6d/officexp-kb890829-client-nld.exe|updates/officexp/officexp-kb890829-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/9/7/0/970b3d07-a5f4-494e-806b-90677f834bad/officexp-kb890829-client-nor.exe|updates/officexp/officexp-kb890829-client-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/7/c/b/7cbfe280-3d1d-41da-9f07-901116427d1b/officexp-kb890829-client-plk.exe|updates/officexp/officexp-kb890829-client-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/8/a/d/8ad9367f-4ab8-4df1-bec2-9d647060db33/officexp-kb890829-client-ptb.exe|updates/officexp/officexp-kb890829-client-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/3/8/738d1eaf-9651-4988-a4c9-f4cd8e567057/officexp-kb890829-client-ptg.exe|updates/officexp/officexp-kb890829-client-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/a/5/0a5c16b1-7d10-49e1-bee9-a1c66d2a1c6b/officexp-kb890829-client-rus.exe|updates/officexp/officexp-kb890829-client-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/0/c/80ce2e38-af2a-49c5-bd1f-871d8d4bc997/officexp-kb890829-client-sve.exe|updates/officexp/officexp-kb890829-client-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/1/2/312f05de-47f0-49e2-8ec0-4fa19f222e47/officexp-kb890829-client-trk.exe|updates/officexp/officexp-kb890829-client-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb890829-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb890829.txt /p FP5AUTLop.msp REBOOT=ReallySuppress\""
+
+:: Security Update for Office XP (KB873352)
+:: <http://support.microsoft.com/?kbid=873352>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=A0115BF8-5F80-43E9-BE28-24D344600D69>
+:: URL|ARA|http://download.microsoft.com/download/8/4/3/8437e408-039f-42ff-88ca-f9411c6693d1/officexp-kb873352-client-ara.exe|updates/officexp/officexp-kb873352-client-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/e/6/3/e63537d6-b396-4e23-b515-d2831769068c/officexp-kb873352-client-csy.exe|updates/officexp/officexp-kb873352-client-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/8/6/7/867769b7-208b-48c8-9f4e-a6075072ac48/officexp-kb873352-client-dan.exe|updates/officexp/officexp-kb873352-client-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/3/3/7/3375be5e-47f0-4b69-a50f-06d12f48313c/officexp-kb873352-client-deu.exe|updates/officexp/officexp-kb873352-client-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/1/6/5/16568beb-38fc-4f2a-b6fd-58673fcde479/officexp-kb873352-client-ell.exe|updates/officexp/officexp-kb873352-client-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/1/5/6/15687f15-6556-437f-afcb-a5f75026188e/officexp-kb873352-client-enu.exe|updates/officexp/officexp-kb873352-client-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/9/7/e/97ebb267-d27f-46b6-adea-0071c88c25e9/officexp-kb873352-client-esn.exe|updates/officexp/officexp-kb873352-client-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/6/4/2/6426a5e6-c066-418a-ae3a-c4081eaa96f6/officexp-kb873352-client-fin.exe|updates/officexp/officexp-kb873352-client-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/9/7/c/97cd6cd9-7b35-4d5e-ada9-0f622a31f28a/officexp-kb873352-client-fra.exe|updates/officexp/officexp-kb873352-client-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/a/7/f/a7f7686b-23f4-4249-8234-37e4ccdaf6e2/officexp-kb873352-client-heb.exe|updates/officexp/officexp-kb873352-client-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/4/1/9/4193f3f5-86e1-4de1-b3f9-8a7b6d315311/officexp-kb873352-client-hun.exe|updates/officexp/officexp-kb873352-client-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/e/2/0e26732a-cdb1-4aee-b3f7-c4f285219480/officexp-kb873352-client-ita.exe|updates/officexp/officexp-kb873352-client-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/d/f/e/dfed1381-833b-4474-9d68-5585090e6bdf/officexp-kb873352-client-jpn.exe|updates/officexp/officexp-kb873352-client-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/1/6/616a4687-e9b4-49b9-9903-303040923462/officexp-kb873352-client-kor.exe|updates/officexp/officexp-kb873352-client-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/6/b/d6b49229-9fa5-4ca2-8144-01ff0ce21ebc/officexp-kb873352-client-nld.exe|updates/officexp/officexp-kb873352-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/2/b/7/2b7525a4-2033-48f4-80e5-b6e1921d2d32/officexp-kb873352-client-nor.exe|updates/officexp/officexp-kb873352-client-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/b/7/5/b7571783-3253-458b-8ae6-112572624688/officexp-kb873352-client-plk.exe|updates/officexp/officexp-kb873352-client-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/1/3/8/138dadad-510b-4828-88fe-d6de681f4b7e/officexp-kb873352-client-ptb.exe|updates/officexp/officexp-kb873352-client-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/3/0/830da7a9-a628-48c5-807f-aeb52bb971eb/officexp-kb873352-client-ptg.exe|updates/officexp/officexp-kb873352-client-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/2/6/6/2669d53e-2767-4d49-88e6-e5d35325c8d7/officexp-kb873352-client-rus.exe|updates/officexp/officexp-kb873352-client-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/d/f/1/df1a9102-8ff7-4dfb-8089-7ef1e1bd1eec/officexp-kb873352-client-sve.exe|updates/officexp/officexp-kb873352-client-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/d/5/5/d551c3b5-e939-4074-ae54-0ccc43ad96f5/officexp-kb873352-client-trk.exe|updates/officexp/officexp-kb873352-client-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb873352-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb873352.txt /p SHAREDop.msp REBOOT=ReallySuppress\""
+
 :: Office XP Update: KB837253
 :: <http://support.microsoft.com?kbid=837253>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=0dd4c99a-9196-421b-83f0-3d2f93189028>
