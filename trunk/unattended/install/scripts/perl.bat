@@ -14,10 +14,10 @@ if not exist %Z%\packages\windowsinstaller\instmsiw.exe goto nomsi
 
 set perl_msi=%Z%\packages\ActivePerl-5.8.4.810-MSWin32-x86.msi
 
+:retry
 if exist %perl_msi% goto have_perl
-echo %perl_msi% not found; halting.
-halt:
-goto halt
+pause %perl_msi% not found; press any key to retry.
+goto retry
 
 :have_perl
 
@@ -27,5 +27,5 @@ goto halt
 :: http://bugs.activestate.com/show_bug.cgi?id=20364)
 
 :: URL|ALL|http://downloads.activestate.com/ActivePerl/Windows/5.8/ActivePerl-5.8.4.810-MSWin32-x86.msi|packages/activeperl-5.8.4.810-mswin32-x86.msi
-start /wait msiexec /qb /l* %SystemDrive%\netinst\logs\perl.txt %perl_msi% /i  PERL_PATH=Yes PERL_EXT=Yes
+start /wait msiexec /qb /l* %SystemDrive%\netinst\logs\perl.txt /i %perl_msi% PERL_PATH=Yes PERL_EXT=Yes
 @if errorlevel 1 exit 1
