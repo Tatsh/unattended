@@ -600,11 +600,33 @@ set_value ('GuiUnattended', 'AutoLogon',
                        : undef);
            });
 
-set_value ('Identification', 'JoinDomain',
-           sub {
-               return simple_q
-                   ('Join workstation to what domain (default = none)? ');
-           });
+$u->{'Identification'}->{'JoinDomain'} =
+    sub {
+        # Mutual recursion.  IniFile object takes care of it.
+        my $join_workgroup = $u->{'Identification'}->{'JoinWorkgroup'};
+        # If we are joining a workgroup, then we are not joining a
+        # domain.
+        defined $join_workgroup
+            and return undef;
+        return simple_q
+            ('Join workstation to what domain (default = none)? ');
+    };
+
+$u->{'Identification'}->{'JoinWorkgroup'} =
+    sub {
+        # Mutual recursion.  IniFile object takes care of it.
+        my $join_domain = $u->{'Identification'}->{'JoinDomain'};
+        # If we are joining a domain, then we are not joining a
+        # workgroup.
+        defined $join_domain
+            and return undef;
+        return simple_q
+            ('Join workstation to what workgroup (default = none)? ');
+    };
+
+# Ask about domain before workgroup, ceteris paribus.
+$u->sort_index ('Identification', 'JoinWorkgroup')
+    = $u->sort_index ('Identification', 'JoinDomain') + 1;
 
 set_value ('Identification', 'DomainAdmin',
            sub {
@@ -648,7 +670,7 @@ $u->{'UserData'}->{'ProductID'} =
         defined $product_key
             and return undef;
         return simple_q ($product_key_q);
-    });
+    };
 
 $u->{'UserData'}->{'ProductKey'} =
     sub {
@@ -658,7 +680,7 @@ $u->{'UserData'}->{'ProductKey'} =
         defined $product_id
             and return undef;
         return simple_q ($product_key_q);
-    });
+    };
 
 $u->comments ('MassStorageDrivers') =
     ['See <http://support.microsoft.com/?kbid=288344>'];
