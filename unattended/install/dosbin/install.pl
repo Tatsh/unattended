@@ -283,8 +283,8 @@ sub ask_fdisk_cmds () {
              'fdisk /pri:100,100',
              '4G C:, rest D:' =>
              'fdisk /pri:4096;fdisk /pri:100,100 /spec:7',
-             '4G C:, 4G D:, rest E:' =>
-             'fdisk /pri:4096;fdisk /pri:4096 /spec:7;fdisk /pri:100,100 /spec:7'
+             '12G C:, 5G D:, rest E:' =>
+             'fdisk /pri:12288;fdisk /pri:5120 /spec:7;fdisk /pri:100,100 /spec:7'
              );
 
         defined $ret
@@ -652,7 +652,7 @@ $u->{'MassStorageDrivers'} =
 
         my @oem_drivers =
             multi_choice ('Select OEM drivers for [MassStorageDrivers]:',
-                          sort @{$media_obj->textmode_oem_drivers (1)});
+                          sort $media_obj->textmode_oem_drivers (1));
 
         scalar @oem_drivers > 0
             or return undef;
@@ -661,10 +661,10 @@ $u->{'MassStorageDrivers'} =
         # are at it.
         my @retail_drivers =
             multi_choice ('Select RETAIL drivers for [MassStorageDrivers]:',
-                          sort @{$media_obj->textmode_retail_drivers (1)});
+                          sort $media_obj->textmode_retail_drivers (1));
 
-        my %ret = ( map { $_ => 'RETAIL' } @retail_drivers,
-                    map { $_=> 'OEM' } @oem_drivers);
+        my %ret = ((map { $_ => 'RETAIL' } @retail_drivers),
+                   (map { $_=> 'OEM' } @oem_drivers));
         return \%ret;
     };
 
@@ -675,7 +675,7 @@ $u->{'OEMBootFiles'} =
             or return undef;
         my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
         my %ret = (map { $_ => $u->no_value () }
-                   @{$media_obj->textmode_files ()});
+                   $media_obj->textmode_files ());
         return \%ret;
     };
 
