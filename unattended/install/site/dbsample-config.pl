@@ -129,13 +129,25 @@ $u->push_value ('UserData', 'OrgName',
 $u->push_value ('Identification', 'JoinDomain', sub { return lookup_property('JoinDomain'); });
 
 # Lookup Workgroup from database, if possible.
-$u->push_value ('Identification', 'JoinWorkgroup', sub { lookup_property('JoinWorkgroup'); });
+$u->push_value ('Identification', 'JoinWorkgroup', sub { return lookup_property('JoinWorkgroup'); });
 
 # Lookup Admin password from database, if possible.
-$u->push_value ('GuiUnattended', 'AdminPassword', sub { lookup_property('AdminPassword'); });
+$u->push_value ('GuiUnattended', 'AdminPassword', sub { return lookup_property('AdminPassword'); });
 
 # Lookup OS Directory from database, if possible.
-$u->push_value ('_meta', 'OS_media', sub { lookup_property('OS_media'); });
+$u->push_value ('_meta', 'OS_media', 
+    sub { 
+        my $os_dir = $u->{'_meta'}->{'OS_dir'};
+        defined $os_dir
+            or return undef;
+        my $os_media = lookup_property('OS_media');
+        defined $os_media
+            or return undef;
+        opendir OSMEDIA, dos_to_host ($os_dir . '\\' . $os_media)
+            or return undef;
+        closedir OSMEDIA;
+        return $os_dir . '\\' . $os_media;
+    });
 
 # Lookup product Key from database, if possible.
 $u->push_value ('UserData', 'ProductKey', 
