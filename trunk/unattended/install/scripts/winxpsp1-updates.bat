@@ -132,7 +132,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 :: IE Critical Updates
 
 :: Critical update 832894 (MS04-004)
-:: URL|ENU|http://download.microsoft.com/download/9/b/3/9b3f16b4-a907-468b-8283-c050d1ea4948/q832894.exe|updates/ie6sp1/enu/q832894.exe
+:: URL|ENU|http://download.microsoft.com/download/9/b/3/9b3f16b4-a907-468b-8283-c050d1ea4948/Q832894.exe|updates/ie6sp1/enu/q832894.exe
 :: "February, 2004, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=832894>
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-004.asp>
@@ -146,6 +146,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 
 :: Critical Updates
+
+:: Critical update 828028 (MS04-007)
+:: URL|ENU|http://download.microsoft.com/download/d/0/4/d044a7f5-b5ae-4e1f-b6ae-4edb4dd3e32a/WindowsXP-KB828028-x86-ENU.exe|updates/winxpsp1/windowsxp-kb828028-x86-enu.exe
+:: "ASN.1 Vulnerability Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-007.asp>
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
 :: URL|ENU|http://download.microsoft.com/download/c/2/4/c245528e-a1e4-492e-bcf4-e004a052d93b/ENU_Q832483_MDAC_x86.EXE|updates/common/enu_q832483_mdac_x86.exe
