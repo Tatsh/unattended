@@ -1,9 +1,27 @@
 #!/bin/bash
 
 die () {
-    echo "$@"
-    echo "*** Dropping to shell"
-    exec bash
+    echo "$@" >&2
+    echo "*** Dropping to shell" >&2
+    exec bash >&2
+}
+
+# Get a command-line parameter of the form "foo=bar" or just "foo",
+# for argument foo.
+get_cmdline_param () {
+    local what="$1"
+
+    local cmdline=/proc/cmdline
+    [ -r "$cmdline" ] \
+        || die "Unable to read $cmdline"
+
+    for token in `cat "$cmdline"` ; do
+        local var=${token%%=*}
+        if [ "$var" == "$what" ] ; then
+            echo "$token"
+            return
+        fi
+    done
 }
 
 echo "*** OK, here we go."
@@ -61,12 +79,23 @@ while : ; do
     Z_PASS=guest
     Z_PATH=//ntinstall/install
 
+    val=`get_cmdline_param z_user`
+    [ -n "$val" ] && Z_USER=${val#*=}
+    val=`get_cmdline_param z_pass`
+    [ -n "$val" ] && Z_PASS=${val#*=}
+    val=`get_cmdline_param z_path`
+    [ -n "$val" ] && Z_PATH=${val#*=}
+
     # Read one character with a 5-second timeout
-    read -n 1 -t 5 -p "Override bootdisk defaults (if unsure, say yes)? " \
+    read -n 1 -t 5 -p \
+        "Override bootdisk defaults (if unsure, say yes) [Y/N/X]? " \
         input
     echo
 
-    if [[ "$input" == [yY]* ]] ; then
+    [[ "$input" == [xX] ]] \
+        && die "Exiting."
+
+    if [[ "$input" == [yY] ]] ; then
         # Allow editing, and do not treat backslash specially.
         read -e -r -p "Enter location of install share (default $Z_PATH): " \
             input
