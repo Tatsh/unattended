@@ -85,7 +85,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia-q828026-x86-%WINLA
 :: URL|NLD|http://download.microsoft.com/download/2/0/c/20ccf973-faec-438a-8e16-469f689472be/WindowsMedia9-KB819639-x86-NLD.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-nld.exe
 :: URL|FRA|http://download.microsoft.com/download/1/8/a/18a4d567-9c61-4bf6-bdd1-5ffbdff8aff0/WindowsMedia9-KB819639-x86-FRA.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-fra.exe
 :: URL|RUS|http://download.microsoft.com/download/f/b/8/fb8874ba-b8a9-4084-ba42-ac9587f7b913/WindowsMedia9-KB819639-x86-RUS.exe|updates/mediaplayer9/windowsmedia9-kb819639-x86-rus.exe
-:: <http://support.microsoft.com/?kbid=819639>
+:: <http://support.microsoft.com/?id=819639>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-021.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WINLANG%.exe /Q /R:N"
 
@@ -117,7 +117,7 @@ todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /
 ::
 :: Here we extract the installer to %TEMP%, run it, and delete it.
 todo.pl "rmdir /s /q \"%TEMP%\dx9c\""
-todo.pl ".reboot-on 194 \"%TEMP%\dx9c\dxsetup.exe\" /silent /installmanageddx"
+todo.pl ".reboot-on 1 \"%TEMP%\dx9c\dxsetup.exe\" /silent /installmanageddx"
 todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 
 :: Microsoft .NET framework Language Pack
@@ -196,14 +196,14 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Windowsxp-kb826942-x86-%WINLANG%.ex
 ::
 :: "Some ... Fixes Stop Working After You Install the 328310 Update"
 :: (required even though 328310 got subsumed by 826939)
-:: <http://support.microsoft.com/?kbid=814995>
+:: <http://support.microsoft.com/?id=814995>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q814995_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
 :: Recommended update 810243
 :: URL|ENU|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/WindowsXP-KB810243-x86-ENU_f9221252ff64f016a59490bfacdd617.exe|updates/winxpsp1/windowsxp-kb810243-x86-enu.exe
 :: 
 :: "DirectShow Playback Support for Files Recorded with Windows XP Media Center Edition"
-:: <http://support.microsoft.com/?kbid=810243>
+:: <http://support.microsoft.com/?id=810243>
 :: (only available from Windows Update Catalog)
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810243-x86-%WINLANG%.exe /u /n /z"
 
@@ -216,7 +216,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810243-x86-%WINLANG%.ex
 :: URL|NLD|http://download.microsoft.com/download/7/3/c/73c422c6-436b-470e-8d58-499fe771cb41/WindowsXP-KB822603-x86-NLD.exe|updates/winxpsp1/windowsxp-kb822603-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/d/6/0/d60544c3-8860-4d8d-89be-bc9b946a6e8a/WindowsXP-KB822603-x86-RUS.exe|updates/winxpsp1/windowsxp-kb822603-x86-rus.exe
 :: "Windows XP SP1 USB 1.1 and 2.0 Update"
-:: <http://support.microsoft.com/?kbid=822603>
+:: <http://support.microsoft.com/?id=822603>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB822603-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 817778
@@ -228,7 +228,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB822603-x86-%WINLANG%.ex
 :: URL|NLD|http://download.microsoft.com/download/c/d/1/cd121aa4-64d5-4e03-ad70-bc84927e06e9/WindowsXP-KB817778-x86-NLD.exe|updates/winxpsp1/windowsxp-kb817778-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/5/c/7/5c735613-7b8b-42f6-b669-d9e08f96678a/WindowsXP-KB817778-x86-RUS.exe|updates/winxpsp1/windowsxp-kb817778-x86-rus.exe
 :: "Advanced Networking Pack for Windows XP"
-:: <http://support.microsoft.com/?kbid=817778>
+:: <http://support.microsoft.com/?id=817778>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB817778-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 821253
@@ -240,7 +240,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB817778-x86-%WINLANG%.ex
 :: URL|NLD|http://download.microsoft.com/download/b/8/d/b8dcae87-161d-4e84-9492-83182204fcb9/WindowsXP-KB821253-x86-NLD.exe|updates/winxpsp1/windowsxp-kb821253-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/d/9/0/d90e7b60-037b-4b7f-8373-99dc09a22395/WindowsXP-KB821253-x86-RUS.exe|updates/winxpsp1/windowsxp-kb821253-x86-rus.exe
 :: "Update For Windows Error Reporting"
-:: <http://support.microsoft.com/?kbid=821253>
+:: <http://support.microsoft.com/?id=821253>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB821253-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 820291
@@ -263,14 +263,14 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB820291-x86-%WINLANG%.ex
 :: URL|NLD|http://download.microsoft.com/download/whistler/Patch/Q327979/WXP/NL/Q327979_WXP_SP2_x86_NLD.exe|updates/winxpsp1/q327979_wxp_sp2_x86_nld.exe 
 :: URL|RUS|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q327979_WXP_SP2_5FEE23CE8405BD9B66C9D1968926F79DB6B4FB68.EXE|updates/winxpsp1/q327979_wxp_sp2_x86_rus.exe 
 :: "Game Stops Responding (Hangs) or Quits Unexpectedly ..."
-:: <http://support.microsoft.com/?kbid=327979>
+:: <http://support.microsoft.com/?id=327979>
 :: (download only available from Windows Catalog)
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q327979_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
 :: Recommended update 327405
 :: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/hu1002_pro_D3ADFECA5D27B538BFB5243DBF39A9034F2A5019.exe|updates/winxpsp1/hu1002_pro.exe
 :: "Windows XP Documentation Update Can Help You Understand How to Make Your Computer More Secure"
-:: <http://support.microsoft.com/?kbid=327405>
+:: <http://support.microsoft.com/?id=327405>
 :: (only available from Windows Update Catalog)
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hu1002_pro.exe /q"
 
@@ -283,7 +283,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hu1002_pro.exe /q"
 :: URL|NLD|http://download.microsoft.com/download/5/5/0/55044b20-796a-421d-8585-3a79686dcd7c/Q322011_WXP_SP2_x86_NLD.exe|updates/winxpsp1/q322011_wxp_sp2_x86_nld.exe
 :: URL|RUS|http://download.microsoft.com/download/e/8/6/e86b45a4-cdb6-4777-a08c-6dbcd46fae7f/Q322011_WXP_SP2_x86_RUS.exe|updates/winxpsp1/q322011_wxp_sp2_x86_rus.exe
 :: "You Cannot Preview a Fax in the Fax Console"
-:: <http://support.microsoft.com/?kbid=322011>
+:: <http://support.microsoft.com/?id=322011>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
 :: IE Critical Updates
@@ -341,7 +341,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB841873-x86-%WINLANG%.ex
 :: Critical update 870669
 :: "How to disable the ADODB.Stream object from Internet Explorer"
 :: (aka. "the zero-day exploit")
-:: <http://support.microsoft.com/?kbid=870669>
+:: <http://support.microsoft.com/?id=870669>
 :: URL|ALL|http://download.microsoft.com/download/e/5/5/e55bbf16-ae16-4d58-8f75-3233ec146255/Windows-KB870669-x86-ENU.exe|updates/common/windows-kb870669-x86.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\windows-kb870669-x86.exe /q /r:n"
 
@@ -411,7 +411,7 @@ todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /
 :: URL|NLD|http://download.microsoft.com/download/9/e/d/9ed1d8a4-e65d-4350-9eb5-bc2d476dba79/WindowsXP-KB824105-x86-NLD.exe|updates/winxpsp1/windowsxp-kb824105-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/9/e/2/9e2c155d-3104-4b47-b178-01f9f9f33158/WindowsXP-KB824105-x86-RUS.exe|updates/winxpsp1/windowsxp-kb824105-x86-rus.exe
 :: "Flaw in NetBIOS Could Lead to Information Disclosure"
-:: <http://support.microsoft.com/?kbid=824105>
+:: <http://support.microsoft.com/?id=824105>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824105-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 810217 (MS03-051)
@@ -423,7 +423,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824105-x86-%WINLANG%.ex
 :: URL|NLD|http://download.microsoft.com/download/e/b/d/ebd43dd9-9cc8-4ea9-b6e1-dfc75a78984f/WindowsXP-KB810217-x86-NLD.exe|updates/winxpsp1/windowsxp-kb810217-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/a/a/d/aad356bb-ca20-4f89-a5bc-3a9b474c0d4c/WindowsXP-KB810217-x86-RUS.exe|updates/winxpsp1/windowsxp-kb810217-x86-rus.exe
 :: "Buffer Overrun in Microsoft FrontPage Server Extensions Could Allow Code Execution"
-:: <http://support.microsoft.com/?kbid=810217>
+:: <http://support.microsoft.com/?id=810217>
 :: (Only install if FrontPage Server Extenstions are installed)
 if not exist "%CommonProgramFiles%\Microsoft Shared\Web Server Extensions\40\bin\FP4awel.dll" goto nofpse
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.exe /u /n /z"
@@ -438,7 +438,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.ex
 :: URL|NLD|http://download.microsoft.com/download/4/d/3/4d34da08-a77d-4a76-bc15-af6c4bb06902/Q811114_WXP_SP2_x86_NLD.exe|updates/winxpsp1/q811114_wxp_sp2_x86_nld.exe
 :: URL|RUS|http://download.microsoft.com/download/7/4/6/7469ee89-a58b-4665-86cc-e0ae9f5a5b25/Q811114_WXP_SP2_x86_RUS.exe|updates/winxpsp1/q811114_wxp_sp2_x86_rus.exe
 :: "May 2003 Cumulative Patch for Internet Information Services (IIS)"
-:: <http://support.microsoft.com/?kbid=811114>
+:: <http://support.microsoft.com/?id=811114>
 :: (Only install if IIS has been installed)
 if not exist %SystemRoot%\System32\INetSrv\IISAdmin.dll goto noiis
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q811114_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
@@ -447,7 +447,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q811114_WXP_SP2_x86_%WINLANG%.exe /
 :: Critical update 816093
 :: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/msjavwu_8073687b82d41db93f4c2a04af2b34d.exe|updates/common/msjavwu.exe
 :: "Flaw in Microsoft VM Could Enable System Compromise"
-:: <http://support.microsoft.com/?kbid=816093>
+:: <http://support.microsoft.com/?id=816093>
 :: (NOTE: Only available from Windows Catalog, be sure to get
 ::  the 2000 SP4 or XP version, they are the same)
 if not exist %SystemRoot%\System32\Msjava.dll goto nojvm
@@ -463,7 +463,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
 :: URL|NLD|http://download.microsoft.com/download/a/8/d/a8dece96-bb80-490d-bf80-0df6d93abca8/js56nnl.exe|updates/common/js56nnld.exe
 :: URL|RUS|http://download.microsoft.com/download/c/6/c/c6c6a8e5-de5d-46b5-9d03-2523ebaaecb2/js56nru.exe|updates/common/js56nrus.exe
 :: "Flaw in Windows Script Engine May Allow Code to Run"
-:: <http://support.microsoft.com/?kbid=814078>
+:: <http://support.microsoft.com/?id=814078>
 :: NOTE: You must rename this to use the three-letter language
 :: abbreviation instead of two.  For example, for English you would
 :: rename js56nen.exe to js56nenu.exe.
@@ -526,5 +526,5 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB823182-x86-%WINLANG%.ex
 :: URL|NLD|http://download.microsoft.com/download/4/c/8/4c8fde5b-879e-42a9-b8e5-830e5a067ff0/WindowsXP-KB826939-x86-NLD.exe|updates/winxpsp1/windowsxp-kb826939-x86-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/4/b/9/4b9a5e50-e372-464d-943a-018696aefb91/WindowsXP-KB826939-x86-RUS.exe|updates/winxpsp1/windowsxp-kb826939-x86-rus.exe
 :: "Update Rollup 1 for Microsoft Windows XP"
-:: <http://support.microsoft.com/?kbid=826939>
+:: <http://support.microsoft.com/?id=826939>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB826939-x86-%WINLANG%.exe /u /n /z"
