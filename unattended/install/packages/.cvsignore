@@ -1,7 +1,9 @@
 activeperl*.msi
 adobereader*
+capicom.dll
 cygwin
 mdac
 reskit
 support-tools
 windows*
+sshsecureshellclient

@@ -24,3 +24,4 @@ dosboot
 fake*
 initrd
 linuxboot.iso
+pci.ids*
