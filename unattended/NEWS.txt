@@ -1,3 +1,33 @@
+** Changes in version 4.4 (2004-???-???)
+
+(Linux) Try mount.cifs if smbmount fails, since the latter does not
+support SMB signing, and Windows Server 2003 requires it by default.
+
+(Linux) Implement and use new script "find-boot-device" to find the
+Linux device corresponding to the boot device (BIOS disk 80h).
+
+(Linux) Upgrade to klibc 0.146, nano 1.2.4, pcmcia-cs 3.2.8, Samba
+3.0.5, DBI 1.43, and DBD::mysql 2.9004.
+
+(Linux) Ensure dmfe driver loads before tulip, since the latter does
+not work right on some hardware.
+
+(DOS) Upgrade emm386.exe to latest test release.  Downgrade umbpci to
+3.56 (latest stable release).
+
+Upgrade Z:\dosbin\format.exe to FreeDOS format 0.91r.
+
+Upgrade downloads+scripts for Adobe Reader 6.02, Mozilla 1.7.1,
+ActiveState Perl 5.8.4 build 810, PHP 4.3.8, and Sun JRE 1.4.2_05.
+New script (opera.bat) from Niels Richthof.
+
+Add initial support for Spanish (ESN).  Thanks to David Cruz Langreo.
+
+Add July hotfixes (MS04-018 through MS04-024) with international
+downloads.  Thanks to the usual suspects (Niels Richthof, Wim
+Vandersmissen, Eugene Kotlyarov).
+
+
 ** Changes in version 4.3 (2004-Jun-17)
 
 (Linux) Add DBI and DBD::mysql Perl modules (untested) to boot disk.
