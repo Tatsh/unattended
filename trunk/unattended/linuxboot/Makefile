@@ -28,6 +28,7 @@ pcmcia-cs=pcmcia-cs-3.2.8
 pmtools=pmtools-20031210
 samba=samba-3.0.5
 wireless_tools=wireless_tools.26
+zlib=zlib-1.2.1
 
 cwd:=$(shell pwd)
 
@@ -35,7 +36,7 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		    \
 	$(dmidecode) $(dosemu) $(e2fsprogs) $(glibc) $(kbd) $(klibc)	    \
 	$(linux) $(module-init-tools) $(mysql) $(nano) $(ncurses) $(parted) \
 	$(perl) $(perl-ldap) $(pciutils) $(pcmcia-cs) $(pmtools) $(samba)   \
-	$(wireless_tools)
+	$(wireless_tools) $(zlib)
 
 CC=gcc
 
@@ -507,7 +508,7 @@ perllib=$(cwd)/stage1/opt/perl/lib/$(patsubst perl-%,%,$(perl))
 perlrun=$(cwd)/stage1/opt/perl/bin/perl -I$(cwd)/stage1/opt/perl/lib/site_perl -I$(perllib)
 
 ## mysql
-$(mysql)/Makefile: stage1/opt/perl/bin/perl
+$(mysql)/Makefile: stage1/opt/perl/bin/perl fakeinclude/zlib.h
 	cd $(dir $@) \
 	&& CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)" \
 		./configure --prefix=/ --without-server
@@ -626,7 +627,7 @@ stage1/usr/lib/smb.conf: $(samba)/source/config.status
 	find stage1/ -name \*.old -print0 | xargs -r -0 rm
 	touch $@
 
-# CIFS support.  We might be able to use this instead of smbmount.
+# CIFS support.  We fall back on this if smbmount fails.
 $(samba)/source/client/mount.cifs: fakeinclude/stdio.h
 	$(CC) -O2 $(fakelib_cflags) -o $@ $@.c
 
@@ -649,6 +650,26 @@ $(call copy_exe,$(wireless_tools)/iwconfig,stage1/sbin/iwconfig)
 $(call copy_exe,$(wireless_tools)/iwlist,stage1/sbin/iwlist)
 
 stage1 += stage1/sbin/iwconfig stage1/sbin/iwlist
+
+## zlib (required by libmysqlclient.so)
+zlib_ver := $(patsubst zlib-%,%,$(zlib))
+zlib_so := libz.so.$(zlib_ver)
+
+$(zlib)/$(zlib_so): fakeinclude/stdio.h
+	rm -f $@
+	cd $(zlib)						\
+	&& make CFLAGS="-O $(fakelib_cflags)"			\
+		LDSHARED="cc -shared -Wl,-soname,libz.so.1"	\
+		$(zlib_so)
+
+fakeinclude/zlib.h: $(zlib)/zlib.h $(zlib)/zconf.h
+	mkdir -p $(dir $@)
+	cp -f $^ $(dir $@)
+
+$(call copy_lib,$(zlib)/$(zlib_so),stage1/lib/libz.so)
+
+stage1 += stage1/lib/libz.so
+
 
 ## devices
 devices.cpio: misc/devices.txt
@@ -848,6 +869,7 @@ $(call download_rule, $(pmtools), tar.bz2,			\
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
+$(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
 
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
