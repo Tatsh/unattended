@@ -14,4 +14,4 @@ todo.pl "%VSNETDIR%\WCU\JSharpRedistCore\vjredist.exe /q /c:\"inst /q\""
 
 :: And first, install the "Web Exec Client" and "Setup Runtime",
 :: whatever those are.
-todo.pl "msiexec /qb /l* c:\netinst\logs\weccom.txt /i %VSNETDIR%\WCU\weccom.msi" "msiexec /qb /l* c:\netinst\logs\bootstrap.txt /i %VSNETDIR%\WCU\bootstrap.msi"
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\weccom.txt /i %VSNETDIR%\WCU\weccom.msi" "msiexec /qb /l* %SystemDrive%\netinst\logs\bootstrap.txt /i %VSNETDIR%\WCU\bootstrap.msi"
