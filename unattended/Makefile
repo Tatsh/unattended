@@ -1,8 +1,9 @@
 default:
-	@echo "You probably did not want to do that."
+	@echo "This Makefile is for the maintainer (sorry)"
 	@echo "Please read the documentation under html/"
 	@echo "or at http://unattended.sourceforge.net"
 	@echo "(Or did you mean to 'cd bootdisk' first?)"
+	exit 1
 
 cvs := :pserver:anonymous@cvs.unattended.sourceforge.net:/cvsroot/unattended
 
@@ -23,7 +24,7 @@ unattended-${ver}.tar.gz: FORCE
 
 
 check-version:
-	@if [ "$ver" == "" ] ; then				\
+	@if [ "${ver}" == "" ] ; then				\
 		echo "You forgot to set the 'ver' variable" ;	\
 		exit 1 ;					\
 	fi
