@@ -23,8 +23,8 @@ use overload
 
 use constant NO_VAL_REF => [ "Magic noval string" ];
 
-sub new {
-    my ($proto) = @_;
+sub new ($;@) {
+    my ($proto, @read_args) = @_;
     my $class = ref $proto || $proto;
 
     my $self = [ ];
@@ -36,7 +36,11 @@ sub new {
     tie %{$self->[SORT_INDEX]}, 'Unattend::InfFile::_Hash';
     tie %{$self->[SECTION_SORT_INDEX]}, 'Unattend::InfFile::_Hash';
 
-    return bless $self, $class;
+    bless $self, $class;
+
+    scalar @read_args > 0
+        and $self->read (@read_args);
+    return $self;
 }
 
 sub noforce ($$;$) {
@@ -228,15 +232,17 @@ sub read ($$;$) {
             (exists $acc->{$section})
                 or $acc->{$section} = undef;
         }
-        elsif (defined $section && $section !~ $sect_re) {
-            # Skip sections which do not match regexp.
-            next;
-        }
         elsif ($line =~ /^\s*(;.*|\s*)$/) {
             # Comment
             my $comment = $1;
             chomp $comment;
             push @$comments, $comment;
+        }
+        elsif (defined $section && $section !~ $sect_re) {
+            # Skip sections which do not match regexp, but accumulate
+            # comments for sections which do match.
+            $comments = [ ];
+            next;
         }
         elsif ($line =~ /^\s*($token)(?:\s*=\s*($token))?\s*$/) {
             # key=value setting
