@@ -290,6 +290,11 @@ sub textmode_files ($) {
         while (my $ent = readdir TEXTMODE) {
             $ent eq '.' || $ent eq '..'
                 and next;
+            my $full_path = $file_spec->catfile ($textmode, $ent);
+            if (! -f $full_path) {
+                warn "$full_path is not a file; ignoring.\n";
+                next;
+            }
             push @ret, $ent;
         }
         closedir TEXTMODE, $textmode
