@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: advanced.php,v 1.1 2005-01-16 04:23:05 nrichthof Exp $';
+$cvs           = '$Id: advanced.php,v 1.2 2005-02-16 18:08:55 nrichthof Exp $';
 $sections[]    = array ('Integrate a service pack', 'slipstream');
 $sections[]    = array ('Integrate other hotfixes', 'hotfixes');
 $sections[]    = array ('Modifying the boot disk', 'modify');
@@ -57,7 +57,7 @@ $content       = <<<EOT
         </li>
         <li>Run
 <pre class="code">
-    c:\\xpsp2\\i386\\update\\update.exe /s:Z:\\os\\winxpsp2
+    c:\\xpsp2\\i386\\update\\update.exe /s:z:\\os\\winxpsp2
 </pre>
 
         <p>This  applies   the   service   pack   to   the   distribution   point   <code
@@ -70,7 +70,7 @@ $content       = <<<EOT
       <p>Starting with SP 2 for Windows XP, you can do not need to extract the files from
         the service pack. Simply type:</p>
 <pre class="code">
-    WindowsXP-KB835935-SP2-ENU.exe -s:c:\\os\\winxpsp2
+    WindowsXP-KB835935-SP2-ENU.exe -s:z:\\os\\winxpsp2
 </pre>
 
       <h1 id="hotfixes">Integrate other hotfixes</h1>
