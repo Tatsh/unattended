@@ -14,7 +14,7 @@ glibc=glibc-20041122
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.10-rc3
+linux=linux-2.6.10
 module-init-tools=module-init-tools-3.1
 mysql=mysql-4.0.22
 nano=nano-1.2.4
@@ -839,17 +839,18 @@ $(call cvs_rule, $(glibc), libc, \
 #	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
-#$(call download_rule, $(linux), tar.bz2,		\
-#	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(linux), tar.bz2,		\
-	http://ftp.kernel.org/pub/linux/kernel/v2.6/testing/)
+	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
+#$(call download_rule, $(linux), tar.bz2,		\
+#	http://ftp.kernel.org/pub/linux/kernel/v2.6/testing/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
 	http://www.signal42.com/mirrors/mysql/Downloads/MySQL-4.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v1.2/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
-$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
+#$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
+$(call download_rule, $(parted), tar.gz, http://www.ibiblio.org/pub/gnu/ftp/gnu/parted/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
 $(call download_rule, $(perl-ldap), tar.gz, \
 	http://www.cpan.org/authors/id/G/GB/GBARR/)
