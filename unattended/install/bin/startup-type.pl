@@ -41,5 +41,8 @@ foreach my $service (@services) {
         $ret == 0
             or die "Unable to ChangeStartMode to $types{$type}: $ret";
         print "done.\n";
+        exit 0;
     }
 }
+
+die "Could not find service $service_name.\n";
