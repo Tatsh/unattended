@@ -69,5 +69,8 @@ todo.pl "msiexec /qb /l* c:\netinst\logs\o2ksr1a.txt /p %TEMP%\o2ksr1a\DATA1.msp
 todo.pl "%Z%\updates\office2k\O2KSR1aDL.EXE /t:%TEMP%\o2ksr1a"
 
 :: Use Z_PATH instead of %Z%\ because Office likes to phone home a lot,
-:: even with ADDLOCAL=ALL
-todo.pl "msiexec /qb /l* c:\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
+:: even with ADDLOCAL=ALL.
+:: "REMOVE=WinFax" means do not install the Symantec Fax Starter
+:: Edition.  (It shows up as a printer and is therefore annoying.)
+:: Thanks to Justin Beckley.
+todo.pl "msiexec /qb /l* c:\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REMOVE=WinFax REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
