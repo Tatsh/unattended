@@ -1,3 +1,25 @@
+*** Changes in version 2.3 (2002-Dec-18)
+
+Generate iso/isolinux/isolinux.bin from read-only copy instead of
+shipping it, because mkisofs mutates it.
+
+Several minor documentation changes, plus a full rewrite of the
+"Office 2000" section of installers.html.
+
+Fix cosmetic bug converting unattend.txt entries to lower-case.
+
+Fix bug causing machine to reboot an extra time after completing
+installation.
+
+Add "UnattendSwitch=Yes" to default unattend.txt, to prevent "Out of
+Box Experience" garbage from running during XP installation.  Thanks
+to Paul Baumgardner.
+
+Rename office.bat to office2k.bat, and add latest updates.
+
+Add latest round of Win2kSP3 hotfixes.
+
+
 *** Changes in version 2.2 (2002-Dec-15)
 
 Alter Makefile to always write .tmp files and rename them into place
@@ -9,7 +31,7 @@ command-line interface to configure Automatic Updates.  Use it in
 base.bat.
 
 Add documentation for LeechFTP, NAI Virus Scan, SecureCRT, and
-Timbuktu Pro installers (thanks to Trask Rogers).
+Timbuktu Pro installers.  Thanks to Trask Rogers.
 
 Add first pass at documentation for OpenOffice.org.  Too bad it
 doesn't work, because the installer modifies the current user's
