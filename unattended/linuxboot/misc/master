@@ -64,27 +64,32 @@ done
 echo "*** And I suppose we may as well look for PCMCIA devices..."
 cardmgr -o
 
-echo "*** Let's wait a little bit for things to settle down..."
-# udhcpc only gets a lease 1/5 times with e100/eepro100 cards without
-# this delay.
-# This might be related to above delays too.
-sleep 5
-
 echo "*** Now that we have loaded the modules (maybe), let's try DHCP..."
 unset got_lease
 for iface in eth0 eth1 eth2 ; do
-    if ! ifconfig $iface >/dev/null 2>&1 ; then
+    if ! ifconfig $iface >/dev/urandom 2>&1 ; then
         echo "*** $iface not found"
         continue
     fi
-    ifconfig $iface > /dev/urandom
-    sleep 1
+
+    # Try this interface once, and retry for 10 seconds.  Works around
+    # problems we have had with drivers taking a while to initialize.
     echo "*** Trying DHCP on $iface..."
-    if udhcpc --interface=$iface --now --script=/etc/udhcpc-script ; then
-        echo "*** DHCP on $iface worked!"
-        got_lease=1
-        break
-    fi
+    start=$SECONDS
+    while : ; do
+        if udhcpc --interface=$iface --now --script=/etc/udhcpc-script ; then
+            echo "*** DHCP on $iface worked!"
+            got_lease=1
+            # Break to top level.
+            break 2
+        fi
+        if [ $SECONDS -ge $(($start + 10)) ] ; then
+            echo "*** DHCP on $iface failed.  Giving up."
+            break
+        fi
+        echo "*** Retrying DHCP on $iface..."
+        sleep 1
+    done
 done
 
 [ -z "$got_lease" ] \
@@ -98,8 +103,6 @@ done
 echo "*** Now we need to map the /z drive."
 
 while : ; do
-    # If we were really cool, these defaults would come from DHCP
-    # options.  FIXME
     Z_USER=guest
     Z_PASS=guest
     Z_PATH=//ntinstall/install
