@@ -9,6 +9,11 @@
 :: Always reboot after installing hotfixes
 todo.pl .reboot
 
+:: Critical update 816093
+:: "Flaw in the Microsoft VM Could Enable System Compromise"
+:: <http://support.microsoft.com/?kbid=816093>
+todo.pl "z:\packages\win2ksp3\Q816093_W2K_SP4_X86_EN.exe /u /o /z"
+
 :: Critical update 815021
 :: "Unchecked Buffer in Windows Component May Cause Web Server Compromise"
 :: <http://support.microsoft.com/?kbid=815021>
