@@ -11,4 +11,4 @@
 :: registry with the srvany arguments.
 ::todo.pl "ntrights -u CURL\curlbot +r SeServiceLogonRight" "instsrv.pl cygwin-sshd c:\ntreskit\srvany.exe CURL\curlbot" "regedit /s z:\scripts\sshd.reg"
 
-todo.pl "bash --login -c 'cygrunsrv -I cygwin-sshd -p /usr/local/etc/cygwin-sshd.sh -o -c / -u CURL\\curlbot'"
+todo.pl "c:\cygwin\bin\bash --login -c 'cygrunsrv -I cygwin-sshd -p /usr/local/etc/cygwin-sshd.sh -o -c / -u CURL\\curlbot'"
