@@ -1,173 +1,20 @@
 #!/bin/bash
 
-# Make sure needed paths are available
 mkdir -p updates/{{common,ie6sp1,journalviewer}/enu,mediaplayer9,office2k,officexp,win2k/symbols,win2ksp4,winxp,winxpsp1,ws2k3} packages/{adobereader,cygwin,directx9,{ie6sp1,mdac,windowsmessenger}/enu,mediaplayer9,openoffice,support-tools,windowsinstaller}
 
-# Microsoft Windows Installer
-if [ ! -f packages/windowsinstaller/instmsiw.exe ]; then wget http://download.microsoft.com/download/WindowsInstaller/Install/2.0/NT45/EN-US/InstMsiW.exe -O packages/windowsinstaller/instmsiw.exe; fi
+# Default to ENU if nothing passed in as first arg
+if [ ".$1" == "." ]; then WINLANG="ENU"; else WINLANG="$1"; fi
 
-# Active State Perl
-if [ ! -f packages/activeperl-5.8.0.806-mswin32-x86.msi ]; then wget http://downloads.activestate.com/ActivePerl/Windows/5.8/ActivePerl-5.8.0.806-MSWin32-x86.msi -O packages/activeperl-5.8.0.806-mswin32-x86.msi; fi
+# Look for URL|LANG in scripts/ + second arg
+for needed in `egrep -hri "URL\|($WINLANG|ALL)" scripts/$2 | tr ' ' '~'`; do
+    url=`echo "$needed" | cut -d\| -f3 | tr '~' ' ' | perl -pe 's/\r//;s/^ *//;s/ *$//'`
+    file=`echo "$needed" | cut -d\| -f4 | tr '~' ' '  | perl -pe 's/\r//;s/^ *//;s/ *$//'`
+    path=`echo "$file" | perl -pe 's#(.*/).*#$1#'`
 
-# Common updates for all Microsoft Operating Systems
-if [ ! -f updates/common/js56nenu.exe ]; then wget http://download.microsoft.com/download/a/0/2/a02d7c05-438d-49cd-853c-e69869d22d7a/js56nen.exe -O updates/common/js56nenu.exe; fi
-if [ ! -f updates/common/msjavwu.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/msjavwu_8073687b82d41db93f4c2a04af2b34d.exe -O updates/common/msjavwu.exe; fi
-if [ ! -f updates/common/enu/dotnetfx.exe ]; then wget http://download.microsoft.com/download/a/a/c/aac39226-8825-44ce-90e3-bf8203e74006/dotnetfx.exe -O updates/common/enu/dotnetfx.exe; fi
-
-# Microsoft Internet Explorer v6.0 SP1 w/ Updates
-if [ ! -f packages/ie6sp1/enu/ie6setup.exe ]; then wget http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/EN-US/ie6setup.exe -O packages/ie6sp1/enu/ie6setup.exe; fi
-if [ ! -f updates/ie6sp1/vbs56nenu.exe ]; then wget http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/EN-US/vbs56nen.exe -O updates/ie6sp1/vbs56nenu.exe; fi
-if [ ! -f updates/ie6sp1/enu/q824145.exe ]; then wget http://download.microsoft.com/download/9/d/7/9d7d9a9b-6b4c-41cf-8db6-331c1c6606e2/q824145.exe -O updates/ie6sp1/enu/q824145.exe; fi
-if [ ! -f updates/ie6sp1/q318203_msxml30_x86.exe ]; then wget http://download.microsoft.com/download/xml/Patch/3.0/W9XNT4MeXP/EN-US/Q318203_MSXML30_x86.exe -O updates/ie6sp1/q318203_msxml30_x86.exe; fi
-if [ ! -f updates/ie6sp1/enu/q330994.exe ]; then wget http://download.microsoft.com/download/1/5/f/15f23ca7-965e-4a10-95a5-5b3d6a83f218/q330994.exe -O updates/ie6sp1/enu/q330994.exe; fi
-
-# Microsoft Data Access Componenet v2.8
-if [ ! -f packages/mdac/enu/mdac-2.8.exe ]; then wget http://download.microsoft.com/download/c/d/f/cdfd58f1-3973-4c51-8851-49ae3777586f/MDAC_TYP.EXE -O packages/mdac/enu/mdac-2.8.exe; fi
-
-# Microsoft DirectX v9.0b
-# (You will need to extract files into packages/directx9/enu)
-if [ ! -f packages/directx9/dx90update_redist.exe ]; then wget http://download.microsoft.com/download/c/9/c/c9c8a1d4-7690-4c98-baf3-0c67e7f3751f/dx90update_redist.exe -O packages/directx9/dx90update_redist.exe; fi
-
-# Microsoft Windows Messenger
-if [ ! -f packages/windowsmessenger/enu/install.exe ]; then wget http://download.microsoft.com/download/4/6/c/46cfaca6-0441-49eb-b997-7432730d44df/install.exe -O packages/windowsmessenger/enu/install.exe; fi
-
-# Windows Media Player w/ Updates
-if [ ! -f packages/mediaplayer9/mpsetupxp.exe ]; then wget http://download.microsoft.com/download/8/a/2/8a27acce-5c9e-46b3-8996-1e76c0413d17/MPSetupXP.exe -O packages/mediaplayer9/mpsetupxp.exe; fi
-if [ ! -f packages/mediaplayer9/mpsetup.exe ]; then wget http://download.microsoft.com/download/1/b/c/1bc0b1a3-c839-4b36-8f3c-19847ba09299/MPSetup.exe -O packages/mediaplayer9/mpsetup.exe; fi
-if [ ! -f updates/mediaplayer9/windowsmedia9-kb819639-x86-enu.exe ]; then wget http://download.microsoft.com/download/6/6/9/6692c11a-e001-4706-bf86-c37a7111d9de/WindowsMedia9-KB819639-x86-ENU.exe -O updates/mediaplayer9/windowsmedia9-kb819639-x86-enu.exe; fi
-if [ ! -f updates/mediaplayer9/windowsmedia-kb828026-x86-enu.exe ]; then wget http://download.microsoft.com/download/c/e/0/ce005267-09e9-423b-a360-7db7825b4b36/WindowsMedia-KB828026-x86-ENU.exe -O updates/mediaplayer9/windowsmedia-kb828026-x86-enu.exe; fi
-
-# Windows Journal Viewer
-if [ ! -f updates/journalviewer/enu/setup.exe ]; then wget http://download.microsoft.com/download/4/6/3/463ff4b8-a60a-4569-b3f1-a4c1ec784ff2/setup.exe -O updates/journalviewer/enu/setup.exe ; fi
-
-# Service Pack 1 for Microsoft Windows XP
-if [ ! -f updates/winxp/xpsp1_enu_x86.exe ]; then wget http://premierdownload.microsoft.com/download/whistler/SP/SP1/WXP/en-us/xpsp1_en_x86.exe -O updates/winxp/xpsp1_enu_x86.exe; fi
-
-# Updates for Microsoft Windows XP SP1
-if [ ! -f updates/winxpsp1/windowsxp-kb826939-x86-enu.exe ]; then wget http://download.microsoft.com/download/d/8/0/d80dfc9d-fe92-4009-aa54-1cd00c880a20/WindowsXP-KB826939-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb826939-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb823182-x86-enu.exe ]; then wget http://download.microsoft.com/download/4/c/f/4cf3724a-ce0e-4553-8f27-0478ad9e1c53/WindowsXP-KB823182-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb823182-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb828035-x86-enu.exe ]; then wget http://download.microsoft.com/download/e/a/e/eaea4109-0870-4dd3-88e0-a34035dc181a/WindowsXP-KB828035-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb828035-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb825119-x86-enu.exe ]; then wget http://download.microsoft.com/download/4/3/1/431d912c-6c0b-469c-893d-fc138fee7191/WindowsXP-KB825119-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb825119-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb824141-x86-enu.exe ]; then wget http://download.microsoft.com/download/9/8/3/9835c5c9-5cab-4181-a821-2c9b8f6ea612/WindowsXP-KB824141-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb824141-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/q811114_wxp_sp2_x86_enu.exe ]; then wget http://download.microsoft.com/download/1/1/6/11606584-1476-44f7-863f-b578ec12c888/Q811114_WXP_SP2_x86_ENU.exe -O updates/winxpsp1/q811114_wxp_sp2_x86_enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb824105-x86-enu.exe ]; then wget http://download.microsoft.com/download/2/3/2/232a8505-716c-4bfa-845a-bd9fbc5cc7b1/WindowsXP-KB824105-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb824105-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb810217-x86-enu.exe ]; then wget http://download.microsoft.com/download/e/7/1/e71674de-9f52-4b5a-86c8-5499c359f89d/WindowsXP-KB810217-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb810217-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/q322011_wxp_sp2_x86_enu.exe ]; then wget http://download.microsoft.com/download/e/a/3/ea3b0e47-8142-4a8e-847c-f0d6d836d3c3/Q322011_WXP_SP2_x86_ENU.exe -O updates/winxpsp1/q322011_wxp_sp2_x86_enu.exe; fi
-if [ ! -f updates/winxpsp1/hu1002_pro.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/hu1002_pro_D3ADFECA5D27B538BFB5243DBF39A9034F2A5019.exe -O updates/winxpsp1/hu1002_pro.exe; fi
-if [ ! -f updates/winxpsp1/q327979_wxp_sp2_x86_enu.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q327979_WXP_SP2_6F667CA10E50EC0D64B146168F17B5B74E0403D3.EXE -O updates/winxpsp1/q327979_wxp_sp2_x86_enu.exe; fi
-if [ ! -f updates/winxpsp1/q815485_wxp_sp2_x86_enu.exe ]; then wget http://download.microsoft.com/download/c/c/2/cc2aae3a-da13-4a9a-b3d9-802b0e7c877c/Q815485_WXP_SP2_x86_ENU.exe -O updates/winxpsp1/q815485_wxp_sp2_x86_enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb820291-x86-enu.exe ]; then wget http://download.microsoft.com/download/a/1/3/a134a6a3-a69f-4b19-9292-35eae0b3e7fe/WindowsXP-KB820291-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb820291-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb829558-x86-enu.exe ]; then wget http://download.microsoft.com/download/a/d/f/adfdf363-0b09-4f39-bf89-1b4bc234fe97/WindowsXP-KB829558-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb829558-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb821253-x86-enu.exe ]; then wget http://download.microsoft.com/download/9/f/d/9fdf1d64-6fc3-4b31-919a-7402e9801474/WindowsXP-KB821253-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb821253-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb817778-x86-enu.exe ]; then wget http://download.microsoft.com/download/2/f/1/2f1a22fd-e838-4bc6-ac40-fbdbcc3a17a4/WindowsXP-KB817778-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb817778-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb822603-x86-enu.exe ]; then wget http://download.microsoft.com/download/d/5/d/d5dc65b3-fda4-454f-813d-ae4ca2638c87/WindowsXP-KB822603-x86-ENU.exe -O updates/winxpsp1/windowsxp-kb822603-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/windowsxp-kb810243-x86-enu.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/WindowsXP-KB810243-x86-ENU_f9221252ff64f016a59490bfacdd617.exe -O updates/winxpsp1/windowsxp-kb810243-x86-enu.exe; fi
-if [ ! -f updates/winxpsp1/q814995_wxp_sp2_x86_enu.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q814995_WXP_SP2_x86_ENU_9e15819376b7ecb637bc9f9bfac2d16.exe -O updates/winxpsp1/q814995_wxp_sp2_x86_enu.exe ; fi
-if [ ! -f updates/winxpsp1/mm20enu.exe ]; then wget http://download.microsoft.com/download/0/d/e/0decba0f-bb89-49c9-866a-40c900b2a57e/mm20enu.exe -O updates/winxpsp1/mm20enu.exe; fi
-
-# Debugging Symbols for Microsoft Windows XP SP1
-if [ ! -f updates/winxpsp1/xpsp1sym_x86.exe ]; then wget http://msdl.microsoft.com/download/symbols/packages/windowsxp/xpsp1sym_x86.exe -O updates/winxpsp1/xpsp1sym_x86.exe; fi
-
-# Updates for Microsoft Windows 2003 Server
-if [ ! -f updates/ws2k3/windowsserver2003-kb824145-x86-enu.exe ]; then wget http://download.microsoft.com/download/7/9/f/79f676bb-ebec-404b-8961-f225af9a5b24/WindowsServer2003-KB824145-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb824145-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsserver2003-kb824146-x86-enu.exe ]; then wget http://download.microsoft.com/download/5/7/d/57d367eb-ee72-41d6-99ec-e96724655976/WindowsServer2003-KB824146-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb824146-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsserver2003-kb823182-x86-enu.exe ]; then wget http://download.microsoft.com/download/0/1/2/0126e70b-7872-404c-978e-daa6b3bd8476/WindowsServer2003-KB823182-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb823182-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsserver2003-kb828035-x86-enu.exe ]; then wget http://download.microsoft.com/download/b/b/6/bb6151ee-f888-409c-81e0-60bfb601d8e9/WindowsServer2003-KB828035-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb828035-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsserver2003-kb825119-x86-enu.exe ]; then wget http://download.microsoft.com/download/4/3/1/431452b5-4e2f-4d86-9f5d-6413d755fb34/WindowsServer2003-KB825119-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb825119-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsserver2003-kb824141-x86-enu.exe ]; then wget http://download.microsoft.com/download/0/d/0/0d03f099-3673-42ca-81f9-5533fc5c18fb/WindowsServer2003-KB824141-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb824141-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsserver2003-kb823559-x86-enu.exe ]; then wget http://download.microsoft.com/download/1/8/2/18247efe-b9d4-4ecb-abf2-405e8f1f3734/WindowsServer2003-KB823559-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb823559-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsserver2003-kb824105-x86-enu.exe ]; then wget http://download.microsoft.com/download/9/8/a/98aed36b-2dc7-4e60-873f-e019ee492319/WindowsServer2003-KB824105-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb824105-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsserver2003-kb829558-x86-enu.exe ]; then wget http://download.microsoft.com/download/a/a/c/aacdba68-214d-484c-b8ac-164fe7261668/WindowsServer2003-KB829558-x86-ENU.exe -O updates/ws2k3/windowsserver2003-kb829558-x86-enu.exe; fi
-if [ ! -f updates/ws2k3/windowsmedia9-kb819639-x86-enu.exe ]; then wget http://download.microsoft.com/download/2/e/9/2e90df3e-2d74-4be7-9279-538cfec1b895/WindowsMedia9-KB819639-x86-ENU.exe -O updates/ws2k3/windowsmedia9-kb819639-x86-enu.exe; fi
-
-# Service Pack 4 for Microsoft Windows 2000
-if [ ! -f updates/win2k/w2ksp4_enu.exe ]; then wget http://download.microsoft.com/download/E/6/A/E6A04295-D2A8-40D0-A0C5-241BFECD095E/W2KSP4_EN.EXE -O updates/win2k/w2ksp4_enu.exe; fi
-
-# Updates for Microsoft Windows 2000 SP4
-if [ ! -f updates/win2ksp4/windows2000-kb824146-x86-enu.exe ]; then wget http://download.microsoft.com/download/0/a/6/0a634e35-f29a-4f26-b006-d315e898edef/Windows2000-KB824146-x86-ENU.exe -O updates/win2ksp4/windows2000-kb824146-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb823182-x86-enu.exe ]; then wget http://download.microsoft.com/download/7/2/b/72b8a6a7-def8-4769-bc4b-2d1fa313b1da/Windows2000-KB823182-x86-ENU.exe -O updates/win2ksp4/windows2000-kb823182-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb828035-x86-enu.exe ]; then wget http://download.microsoft.com/download/5/2/3/5231e3ef-ae49-4ee6-aa06-f9f226bc9cfb/Windows2000-KB828035-x86-ENU.exe -O updates/win2ksp4/windows2000-kb828035-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb828749-x86-enu.exe ]; then wget http://download.microsoft.com/download/3/c/6/3c6d56ff-ff8e-4322-84cb-3bf9a915e6d9/Windows2000-KB828749-x86-ENU.exe -O updates/win2ksp4/windows2000-kb828749-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb825119-x86-enu.exe ]; then wget http://download.microsoft.com/download/7/a/5/7a57524c-8aba-474b-9333-ae1d61f020c9/Windows2000-KB825119-x86-ENU.exe -O updates/win2ksp4/windows2000-kb825119-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb824141-x86-enu.exe ]; then wget http://download.microsoft.com/download/5/0/a/50acd5b3-b7e4-4262-8e0b-eb7dada676f4/Windows2000-KB824141-x86-ENU.exe -O updates/win2ksp4/windows2000-kb824141-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb823559-x86-enu.exe ]; then wget http://download.microsoft.com/download/0/0/6/006cef65-34f3-4db4-8153-e4a5bcc9b62e/Windows2000-KB823559-x86-ENU.exe -O updates/win2ksp4/windows2000-kb823559-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb826232-x86-enu.exe ]; then wget http://download.microsoft.com/download/8/4/c/84cd9acc-246c-4a59-b9b2-297c86902a56/Windows2000-KB826232-x86-ENU.exe -O updates/win2ksp4/windows2000-kb826232-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb824105-x86-enu.exe ]; then wget http://download.microsoft.com/download/6/1/c/61c0f4f2-0b48-470f-bc44-d2b7f6743a04/Windows2000-KB824105-x86-ENU.exe -O updates/win2ksp4/windows2000-kb824105-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb329115-x86-enu.exe ]; then wget http://download.microsoft.com/download/8/8/4/884b78b8-130c-4565-b93b-54ed854c0497/Windows2000-KB329115-x86-ENU.exe -O updates/win2ksp4/windows2000-kb329115-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/q818043_w2k_sp5_x86_enu.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Q818043_W2K_SP5_x86_EN_8771f25008d3c5f8c7aa577b615f619.EXE -O updates/win2ksp4/q818043_w2k_sp5_x86_enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb820888-x86-enu.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Windows2000-KB820888-x86-ENU_8833a186ebc7300c1ae5e2a325e2259.exe -O updates/win2ksp4/windows2000-kb820888-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb822831-x86-enu.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Windows2000-KB822831-x86-ENU_5eedf6f038fd4a414a14b6625993217.exe -O updates/win2ksp4/windows2000-kb822831-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/windows2000-kb829558-x86-enu.exe ]; then wget http://download.microsoft.com/download/9/d/c/9dcd9e1c-badc-4fe4-a52e-8f2fdfb652db/Windows2000-KB829558-x86-ENU.exe -O updates/win2ksp4/windows2000-kb829558-x86-enu.exe; fi
-if [ ! -f updates/win2ksp4/rootsupd.exe ]; then wget http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_1848da0ef19bb020cccdbbc1ee0311b.exe -O updates/win2ksp4/rootsupd.exe; fi
-
-# Debugging Symbols for Microsoft Windows 2000
-if [ ! -f updates/win2k/symbols/win2000_sym_en.exe ]; then wget http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN.exe -O updates/win2k/symbols/win2000_sym_en.exe; fi
-if [ ! -f updates/win2k/symbols/win2000_sym_en2.cab ]; then wget http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN2.CAB -O updates/win2k/symbols/win2000_sym_en2.cab; fi
-if [ ! -f updates/win2k/symbols/win2000_sym_en3.cab ]; then wget http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN3.CAB -O updates/win2k/symbols/win2000_sym_en3.cab; fi
-if [ ! -f updates/win2k/symbols/win2000_sym_en4.cab ]; then wget http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN4.CAB -O updates/win2k/symbols/win2000_sym_en4.cab; fi
-if [ ! -f updates/win2k/symbols/win2000_sym_en5.cab ]; then wget http://download.microsoft.com/download/win2000platform/w2ksym/2000/NT5/EN-US/Win2000_Sym_EN5.CAB -O updates/win2k/symbols/win2000_sym_en5.cab; fi
-
-# Debugging Symbols for Microsoft Windows 2000 SP4
-if [ ! -f updates/win2ksp4/w2ksp4sym_enu.exe ]; then wget http://msdl.microsoft.com/download/symbols/packages/windows2000/sp4/w2ksp4sym_en.exe -O updates/win2ksp4/w2ksp4sym_enu.exe; fi
-
-
-# Adobe Acrobat Reader
-if [ ! -f packages/adobereader/acroreader51_enu_full.exe ]; then wget http://ardownload.adobe.com/pub/adobe/acrobatreader/win/5.x/5.1/AcroReader51_ENU_full.exe -O packages/adobereader/acroreader51_enu_full.exe; fi
-if [ ! -f packages/adobereader/adberdr60_enu_full.exe ]; then wget http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/enu/AdbeRdr60_enu_full.exe -O packages/adobereader/adberdr60_enu_full.exe; fi
-
-# Update for Microsoft Office XP
-if [ ! -f updates/officexp/oxpsp1.exe ]; then wget http://download.microsoft.com/download/OfficeXPStandard/SP/oxpsp1/W98NT42KMeXP/EN-US/Oxpsp1.exe -O updates/officexp/oxpsp1.exe; fi
-if [ ! -f updates/officexp/oxpsp2.exe ]; then wget http://download.microsoft.com/download/OfficeXPStandard/SP/oxpsp2/W98NT42KMeXP/EN-US/OxpSp2.exe -O updates/officexp/oxpsp2.exe; fi
-if [ ! -f updates/officexp/oxpauiu.exe ]; then wget http://download.microsoft.com/download/OfficeXPStandard/oxpauiu/1/W98NT42KMeXP/EN-US/Oxpauiu.exe -O updates/officexp/oxpauiu.exe; fi
-if [ ! -f updates/officexp/olk1006.exe ]; then wget http://download.microsoft.com/download/0/3/d/03dcc183-a46e-4c22-9fbd-1fcb32f0fd91/Olk1006.exe -O updates/officexp/olk1006.exe; fi
-if [ ! -f updates/officexp/officexp-kb822036-client-enu.exe ]; then wget http://download.microsoft.com/download/6/7/5/67570E80-E423-4F17-B57E-8CBFB517B832/OfficeXP-KB822036-Client-ENU.exe -O updates/officexp/officexp-kb822036-client-enu.exe; fi
-if [ ! -f updates/officexp/officexp-kb824938-client-enu.exe ]; then wget http://download.microsoft.com/download/7/9/3/7938238c-f0f5-44b5-986d-0252650c537c/officexp-kb824938-client-enu.exe -O updates/officexp/officexp-kb824938-client-enu.exe; fi
-if [ ! -f updates/officexp/officexp-kb826293-client-enu.exe ]; then wget http://download.microsoft.com/download/2/2/3/223b52aa-0143-4a71-aaf2-ca097a1d2431/officexp-kb826293-client-enu.exe -O updates/officexp/officexp-kb826293-client-enu.exe; fi
-if [ ! -f updates/officexp/officexp-kb812708-client-enu.exe ]; then wget http://download.microsoft.com/download/d/1/3/d1335281-d1d8-4f58-afc2-c6871e6d694f/officexp-KB812708-client-ENG.exe -O updates/officexp/officexp-kb812708-client-enu.exe; fi
-if [ ! -f updates/officexp/officexp-kb830346-client-enu.exe ]; then wget http://download.microsoft.com/download/B/0/E/B0E276B5-1859-4121-9740-E7FF6E64747C/officexp-kb830346-client-enu.exe -O updates/officexp/officexp-kb830346-client-enu.exe; fi
-if [ ! -f updates/officexp/officexp-kb830350-client-enu.exe ]; then wget http://download.microsoft.com/download/3/5/A/35AC6464-B956-4E98-B0CE-CFE367A27519/Officexp-kb830350-client-enu.exe -O updates/officexp/officexp-kb830350-client-enu.exe; fi
-
-# Updates for Microsoft Office 2000
-if [ ! -f updates/office2k/o2ksr1adl.exe ]; then wget http://download.microsoft.com/download/office2000prem/adminup2/SR-1a/WIN98/EN-US/O2KSR1aDL.EXE -O updates/office2k/o2ksr1adl.exe; fi
-if [ ! -f updates/office2k/o2ksp3.exe ]; then wget http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe -O updates/office2k/o2ksp3.exe; fi
-if [ ! -f updates/office2k/olk0901.exe ]; then wget http://download.microsoft.com/download/f/1/d/f1d8421a-2b76-4603-808b-39d8dcc74038/Olk0901.exe -O updates/office2k/olk0901.exe; fi
-if [ ! -f updates/office2k/office2000-kb822035-client-enu.exe ]; then wget http://download.microsoft.com/download/5/E/D/5ED56804-6577-46E4-88EE-9EB47AC6AA0E/Office2000-KB822035-Client-ENU.exe -O updates/office2k/office2000-kb822035-client-enu.exe; fi
-if [ ! -f updates/office2k/office2000-kb824993-client-enu.exe ]; then wget http://download.microsoft.com/download/8/7/8/8785bb28-b4e3-401d-9aef-c23e7af0e347/office2000-kb824993-client-enu.exe -O updates/office2k/office2000-kb824993-client-enu.exe; fi
-if [ ! -f updates/office2k/office2000-kb826292-client-enu.exe ]; then wget http://download.microsoft.com/download/2/d/5/2d5a89c9-972f-4135-a8d9-3747188552b2/office2000-kb826292-client-enu.exe -O updates/office2k/office2000-kb826292-client-enu.exe; fi
-if [ ! -f updates/office2k/office2000-kb830347-client-enu.exe ]; then wget http://download.microsoft.com/download/f/2/2/f225f9c6-87ef-45bd-a4f7-cc08bb14f4da/Office2000-kb830347-client-enu.exe -O updates/office2k/office2000-kb830347-client-enu.exe; fi
-if [ ! -f updates/office2k/office2000-kb830349-client-enu.exe ]; then wget http://download.microsoft.com/download/3/4/e/34e4d08b-f015-4bc8-84e6-f827ecbc4107/office2000-kb830349-client-enu.exe -O updates/office2k/office2000-kb830349-client-enu.exe; fi
-
-# Open Office (openoffice.org)
-if [ ! -f packages/openoffice/ooo_1.1.0_win32intel_install.zip ]; then wget http://www.ibiblio.org/pub/mirrors/openoffice/stable/1.1.0/OOo_1.1.0_Win32Intel_install.zip -O packages/openoffice/ooo_1.1.0_win32intel_install.zip; fi
-
-# Tight VNC
-if [ ! -f packages/tightvnc-1.2.9-setup.exe ]; then wget http://easynews.dl.sourceforge.net/sourceforge/vnc-tight/tightvnc-1.2.9-setup.exe -O packages/tightvnc-1.2.9-setup.exe; fi
-
-# Microsoft Power Toys for XP
-if [ ! -f packages/powertoys/cmdherepowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/CmdHerePowertoySetup.exe -O packages/powertoys/cmdherepowertoysetup.exe; fi
-if [ ! -f packages/powertoys/imageresizerpowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/ImageResizerPowertoySetup.exe -O packages/powertoys/imageresizerpowertoysetup.exe; fi
-if [ ! -f packages/powertoys/powercalcpowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/PowerCalcPowertoySetup.exe -O packages/powertoys/powercalcpowertoysetup.exe; fi
-if [ ! -f packages/powertoys/slideshowpowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/SlideshowPowertoySetup.exe -O packages/powertoys/slideshowpowertoysetup.exe; fi
-if [ ! -f packages/powertoys/timershotpowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/TimershotPowertoySetup.exe -O packages/powertoys/timershotpowertoysetup.exe; fi
-if [ ! -f packages/powertoys/tweakuipowertoysetup.exe ]; then wget http://download.microsoft.com/download/whistler/Install/2/WXP/EN-US/TweakUiPowertoySetup.exe -O packages/powertoys/tweakuipowertoysetup.exe; fi
-
-# ISO Recorder Power Toy
-if [ ! -f packages/powertoys/isorecordersetup.msi ]; then wget http://isorecorder.alexfeinman.com/bin/ISORecorderSetup.msi -O packages/powertoys/isorecordersetup.msi; fi
-
-# Microsoft Windows 2000 Support Tools
-if [ ! -f packages/support-tools/sp4supporttools.exe ]; then wget http://download.microsoft.com/download/2/0/C/20C1B0F7-B803-4BAB-BA2F-27DDCADAD68E/sp4supporttools.exe -O packages/support-tools/sp4supporttools.exe; fi
-
-# Mozilla Web Browser
-if [ ! -f packages/mozilla-win32-1.5-installer.exe ]; then wget http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.5/mozilla-win32-1.5-installer.exe -O packages/mozilla-win32-1.5-installer.exe; fi
-
-# PHP Scripting Language
-if [ ! -f packages/php-4.3.4-installer.exe ]; then wget http://us3.php.net/get/php-4.3.4-installer.exe/from/www.php.net/mirror -O packages/php-4.3.4-installer.exe; fi
-
-# 7-zip Compression Package
-if [ ! -f packages/7z311.exe ]; then wget http://www.7-zip.org/dl/7z311.exe -O packages/7z311.exe; fi
-
-# AT&T Global Dialer
-if [ ! -f packages/d5091.exe ]; then wget ftp://ftp.attglobal.net/pub/client/win32/d5091.exe -O packages/d5091.exe; fi
-
-# Cygwin Installer
-if [ ! -f packages/cygwin/setup.exe ]; then wget http://www.cygwin.com/setup.exe -O packages/cygwin/setup.exe; fi
+    # Make sure path is available
+    mkdir -p "$path"
+    # Download file if it doesn't exist
+    if [ ! -f "$file" ]; then 
+        wget "$url" -O "$file"
+    fi
+done
