@@ -30,7 +30,7 @@ echo Initializing Network Card....
 
 :: Delete stale DHCP state file, if present.
 attrib -h -r -s \net\dhcp.prm > nul
-del \net\dhcp.prm > nul
+if exist \net\dhcp.prm del \net\dhcp.prm > nul
 
 NET INITIALIZE /DYNAMIC
 NETBIND.COM
