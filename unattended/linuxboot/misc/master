@@ -6,16 +6,20 @@ die () {
     exec bash >&2
 }
 
+if [ -z "$CMDLINE" ] ; then 
+    proc_cmdline=/proc/cmdline
+    [ -r "$proc_cmdline" ] \
+        || die "Unable to read $proc_cmdline"
+    CMDLINE=`cat $proc_cmdline`
+    unset proc_cmdline
+fi
+
 # Get a command-line parameter of the form "foo=bar" or just "foo",
 # for argument foo.
 get_cmdline_param () {
     local what="$1"
 
-    local cmdline=/proc/cmdline
-    [ -r "$cmdline" ] \
-        || die "Unable to read $cmdline"
-
-    for token in `cat "$cmdline"` ; do
+    for token in $CMDLINE ; do
         local var=${token%%=*}
         if [ "$var" == "$what" ] ; then
             echo "$token"
@@ -24,7 +28,19 @@ get_cmdline_param () {
     done
 }
 
+check_shell=`get_cmdline_param shell`
+
+[ -n "$check_shell" ] \
+    && die "'shell' kernel parameter found"
+
 echo "*** OK, here we go."
+echo "*** (If you booted from CD-ROM, you may eject it now.)"
+
+# Various things break for me on laptop hardware if I omit this delay.
+# For instance, cardmgr only monitors one socket (of two).
+# Or a 3c575 does not appear in /sys/bus/pci.
+# I have no idea why, exactly.  FIXME?
+sleep 3
 
 echo "*** First, we'll look for PCI Ethernet hardware..."
 
@@ -39,9 +55,6 @@ for module in $network_modules ; do
 done
 
 echo "*** And I suppose we may as well look for PCMCIA devices..."
-# cardmgr only monitors one socket (of two) for me if I omit this
-# delay.  I have no idea why.
-sleep 2
 cardmgr -o
 
 echo "*** Let's wait a little bit for things to settle down..."
