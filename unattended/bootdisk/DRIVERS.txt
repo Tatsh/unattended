@@ -31,6 +31,10 @@ pcntnd   AMD PCNet family (also VMWare)
 # (thanks to Eugene Kotlyarov)
 rtsnd    Realtek RTL8139 series
 
+# Downloaded from <http://download.sis.com/sysdlc/>.  (Well, actually
+# I just grabbed sl116.exe from <http://driver.sis.com/lan/>.)
+sis900   SiS 900 family
+
 # This one is very special.  It implements NDIS2 over a PXE/UNDI
 # stack, which means it works when doing a network boot to DOS using
 # ANY adapter from ANY vendor.  It is included on the 3com MBA utility
