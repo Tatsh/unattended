@@ -1,11 +1,3 @@
-: # use perl                                  -*- mode: Perl; -*-
-# use perl -- this hack will cause sh to run perl, but perl will
-#  ignore the eval due to the 'if 0' on the following line.
-#  cygpath deals with windows irregularities.
-    eval 'me=`bash -c "cygpath -w $0 2>/dev/null" || echo $0` ; \
-          exec perl -S $me ${1+"$@"}'
-        if 0;
-
 # Shut down a Windows workstation.
 
 use warnings;
