@@ -663,8 +663,9 @@ $u->{'MassStorageDrivers'} =
             multi_choice ('Select RETAIL drivers for [MassStorageDrivers]:',
                           sort @{$media_obj->textmode_retail_drivers (1)});
 
-        return { map { $_ => 'RETAIL' } @retail_drivers,
-                 map { $_=> 'OEM' } @oem_drivers };
+        my %ret = ( map { $_ => 'RETAIL' } @retail_drivers,
+                    map { $_=> 'OEM' } @oem_drivers);
+        return \%ret;
     };
 
 $u->comments->{'OEMBootFiles'} = 'See comments for [MassStorageDrivers]';
@@ -673,9 +674,9 @@ $u->{'OEMBootFiles'} =
         (defined $u->{'MassStorageDrivers'})
             or return undef;
         my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
-        return { map { $_ => $u->no_value () }
-                 @{$media_obj->textmode_files ()};
-             };
+        my %ret = (map { $_ => $u->no_value () }
+                   @{$media_obj->textmode_files ()});
+        return \%ret;
     };
 
 ## Now the meat of the script.
