@@ -698,7 +698,7 @@ download-$(strip $(1)) :  ;						\
 	&& [ -d $$$$what ]						\
 	|| { [ -n "$$$$sub" ] || sub=.					\
 	&& temp=`mktemp /var/tmp/dl.XXXXXX`				\
-	&& wget -O $$$$temp $$$$url$$$$what.$$$$suffix			\
+	&& wget --passive-ftp -O $$$$temp $$$$url$$$$what.$$$$suffix    \
 	&& case $$$$suffix in						\
 		*.gz|tgz) prog="gzip -d -c" ;;				\
 		*.bz2) prog="bzcat -c" ;;				\
