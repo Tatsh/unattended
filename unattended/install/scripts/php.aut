@@ -1,6 +1,0 @@
-Run, %Z%\\packages\\php-4.3.0-installer.exe /s
-
-WinWait, IIS Scriptmap Node Selection
-WinActivate, IIS Scriptmap Node Selection
-Send, {SPACE}{ENTER}
-Sleep, 5000
