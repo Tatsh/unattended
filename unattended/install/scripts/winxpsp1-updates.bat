@@ -12,6 +12,27 @@
 :: (download only available from Windows Catalog)
 todo.pl "z:\packages\winxpsp1\msjavwu.exe /q:a /r:n"
 
+:: Critical update 817287
+:: "Windows Update 643 Error and the Catalog Database"
+:: <http://support.microsoft.com/?kbid=817287>
+:: (download not available!?)
+:: todo.pl "???"
+
+:: Critical update 331953
+:: "Flaw in RPC Endpoint Mapper Could Allow Denial of Service Attacks"
+:: <http://support.microsoft.com/?kbid=331953>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q331953_WXP_SP2_x86_ENU.exe /u /o /z" .reboot
+
+:: Recommended update 815485
+:: WPA Wireless Security Update for Windows XP
+:: <http://support.microsoft.com/?kbid=815485>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q815485_WXP_SP2_x86_ENU.exe /u /o /z" .reboot
+
+:: Critical update 811493
+:: "Buffer Overrun ... Could Lead to Elevated Privileges"
+:: <http://support.microsoft.com/?kbid=811493>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q811493_WXP_SP2_x86_ENU.exe /u /o /z" .reboot
+
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
 :: <http://support.microsoft.com/?kbid=814078>
