@@ -25,6 +25,8 @@ packages=$(bash) $(busybox) $(dosemu) $(e2fsprogs) $(glibc) $(kbd)	\
 	$(klibc) $(linux) $(module-init-tools) $(nano)			\
 	$(ncurses) $(parted) $(perl) $(pciutils) $(pcmcia-cs) $(samba)
 
+CC=gcc
+
 .PHONY: stage1 all download $(download_targets)	$(symlink_targets) \
 	iso tftpboot tidy
 
@@ -482,7 +484,13 @@ stage1/usr/lib/smb.conf: $(samba)/source/config.status
 	find stage1/ -name \*.old -print0 | xargs -r -0 rm
 	touch $@
 
-stage1 += stage1/usr/lib/smb.conf
+# CIFS support.  We might be able to use this instead of smbmount.
+$(samba)/source/client/mount.cifs: fakeinclude/stdio.h
+	$(CC) -O2 $(fakelib_cflags) -o $@ $@.c
+
+$(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
+
+stage1 += stage1/usr/lib/smb.conf stage1/sbin/mount.cifs
 
 ## devices
 devices.cpio: misc/devices.txt
