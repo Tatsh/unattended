@@ -39,17 +39,18 @@ A <em>base</em> installation consists of applications <em>A</em>,
 <em>B</em>, and <em>C</em>.  A <em>developer workstation</em> consists
 of a base installation plus a development environment.  A <em>sales
 laptop</em> consists of a base installation plus the salesforce
-automation tools.  </blockquote>
+automation tools.
+</blockquote>
 
 And so on.
 
 <p>In short, these installation scripts need to be able to invoke
 other installation scripts.  You might expect this to be trivial,
 until you remember that installing some software requires rebooting
-the machine.  So if (say) <em>sales.bat</em> starts by invoking
-<em>base.bat</em>, and <em>base.bat</em> needs to reboot the machine
-halfway through, how exactly do you resume where you left off?  <a
-href="#todo">See below</a> for one answer.
+the machine.  So if (say) <code>sales.bat</code> begins by invoking
+<code>base.bat</code>, and <code>base.bat</code> needs to reboot the
+machine halfway through, how exactly do you resume where you left off?
+<a href="#todo">See below</a> for my answer.
 
 <li>Simplicity
 
@@ -64,7 +65,7 @@ anything here, please let me know.
 
 The process goes like this:
 <ol>
-<li>Map the <em>\\ntinstall\install</em> share as the <em>Z:</em>
+<li>Map the <code>\\ntinstall\install</code> share as the <code>Z:</code>
 drive.
 <li>Install Perl.
 <li>Install everything else.
@@ -74,15 +75,15 @@ drive.
 Perl.  You do not need to know Perl to use the scripts, but you should
 learn it anyway because it is a good tool.
 
-<h2>Structure of the <em>install</em> share</h2>
+<h2>Structure of the <code>install</code> share</h2>
 
-<p>The <em>\\ntinstall\install</em> share is the one you created when
+<p>The <code>\\ntinstall\install</code> share is the one you created when
 you set up the <a href="http:os.html">automated OS installation</a>,
-by simply copying the <em>install</em> directory from this project's
+by simply copying the <code>install</code> directory from this project's
 distribution.
 
 <p>Application installation relies on these subdirectories of the
-<em>install</em> share:
+<code>install</code> share:
 
 <dl>
 
@@ -120,12 +121,12 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 driver script</h1>
 
 <h2>One script to rule them all</h2>
-<p>One master Perl script <em>todo.pl</em>, oversees the entire
+<p>One master Perl script <code>todo.pl</code>, oversees the entire
 installation process.  <b>All</b> of the other scripts are invoked by
-<em>todo.pl</em>.
+<code>todo.pl</code>.
 
-<p><em>todo.pl</em> maintains a "to-do list" on disk in the plain-text
-file <em>C:\netinst\todo.txt</em>.  It takes any number of commands as
+<p><code>todo.pl</code> maintains a "to-do list" on disk in the plain-text
+file <code>C:\netinst\todo.txt</code>.  It takes any number of commands as
 arguments and inserts them at the <b>front</b> of the to-do list.  (As
 you will see, this is definitely what you want.)  When run as
 <kbd>todo.pl&nbsp;--go</kbd>, it removes the first command from the
@@ -136,7 +137,7 @@ executes it, and so on until the list is empty.
 
 <ul>
 
-<li>It provides a consistent environment (e.g., <em>PATH</em>) for
+<li>It provides a consistent environment (e.g., <code>PATH</code>) for
 running the other scripts.
 
 <li>It notices any errors returned by the other scripts, halting
@@ -154,7 +155,7 @@ disk, it naturally survives reboots.
 
 <p>In addition to normal commands and scripts, one other item may
 appear in the to-do list: "<kbd>.reboot</kbd>".  This is a directive
-to reboot the machine.  <em>todo.pl</em> knows how to reboot the
+to reboot the machine.  <code>todo.pl</code> knows how to reboot the
 machine, first patching the registry to cause itself to run the next
 time the current user logs in.
 
@@ -168,20 +169,20 @@ and use the <kbd>.reboot</kbd> directive instead.
 
 <h2>The environment</h2>
 
-<p><em>todo.pl</em> arranges to run all commands in a standard
+<p><code>todo.pl</code> arranges to run all commands in a standard
 environment, described here.
 
 <h3><kbd>PATH</kbd></h3>
 
-<p>The <em>PATH</em> environment variable will have
-<em>Z:\bin;Z:\scripts</em> prepended to it before any commands are
+<p>The <code>PATH</code> environment variable will have
+<code>Z:\bin;Z:\scripts</code> prepended to it before any commands are
 run.  These means the scripts, and the to-do list, may refer to
 themselves and to the utility scripts without supplying a full
 pathname.
 
 <h3 id="WINVER"><kbd>WINVER</kbd></h3>
 
-<p>The <em>WINVER</em> environment variable will contain a short
+<p>The <code>WINVER</code> environment variable will contain a short
 string representing the version of windows being installed:
 
 <dl compact>
@@ -210,7 +211,7 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/directx81.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">directx81.bat</a>
 script installs DirectX 8.1 and reboots the machine.  First, it adds
 the <kbd>.reboot</kbd> directive to the to-do list.  Then it runs the
-installer from the <em>Z:\packages</em> directory, taking care to wait
+installer from the <code>Z:\packages</code> directory, taking care to wait
 until the installer finishes and to supply flags to suppress the
 normal reboot performed by the installer.
 
@@ -227,7 +228,7 @@ The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/ie6.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >ie6.bat</a> script installs IE6 SP1 plus one required hotfix.  It
 adds <kbd>.reboot&nbsp;q317244.bat</kbd> to the to-do list, then runs
-IE6setup from under <em>Z:\packages</em> directory.  (The installer
+IE6setup from under <code>Z:\packages</code> directory.  (The installer
 itself is created by the <a
 href="http://www.microsoft.com/windows/ieak/">Internet Explorer
 Administration Kit</a>.)  The <kbd>/q</kbd> flag tells IE6setup to
@@ -284,11 +285,11 @@ run <kbd>winxpsp1-updates.bat</kbd> on Windows XP Service Pack 1.
 
 <p>This example also illustrates how to add a command with arguments
 to the to-do list by putting it in quotes.  (Normally, spaces separate
-the commands themselves.)  Note that since <em>todo.pl</em> always
+the commands themselves.)  Note that since <code>todo.pl</code> always
 adds items to the <b>front</b> of the to-do list, the invocations of
 "startup-type.pl" will happen <b>before</b> the other items on the
-to-do list.  On the other hand, <em>todo.pl</em> preserves the order
-of arguments which you pass in all at once.
+to-do list.  On the other hand, <code>todo.pl</code> preserves the
+order of arguments which you pass in all at once.
 
 <p>So, for example, this command:
 <pre>
@@ -316,18 +317,96 @@ then adds Microsoft Office, Lotus Notes, the AT&amp;T global network
 dialer, and the Shiva (technically "Intel Netstructure", but I fear
 change) VPN client.  Mmm, composability.
 
-<h1>Database of unattended mode installer flags</h1>
+<h1>Database of unattended installer switches</h1>
 
-<p>I prefer the most primitive ("atomic") scripts to encapsulate the
-knowledge of how to perform one task correctly.  For instance,
-"install Lotus Notes" or "install Microsoft Office plus security
-fixes".  To create such a script for an application, you need to
-figure out how to install that application in "unattended" mode and
-without an automatic reboot.
+<p>To create an installation script for an application, you need to
+know how to install that application in "unattended" mode and without
+an automatic reboot.  To help you, I am collecting a <a
+href="installers.html">list of unattended/silent mode installer
+switches</a> for common installers and applications.  Contributions to
+this list are particularly welcome.
 
-<p>To this end, I am collecting a <a href="installers.html">list of
-unattended/silent mode installer flags</a>.  Contributions are very
-welcome; I would like to make this the definitive page on the subject.
+<h1>Other utility scripts</h1>
+
+<p>Although <code>todo.pl</code> is the most important script, there
+are others in <code>Z:\bin</code> which you might find useful:
+
+<dl>
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/autolog.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>autolog.pl</a>
+
+<dd>Patches the registry to enable or disable the "automatic logon"
+facility.  The <code>--disable</code> switch disables it; the
+<code>--enable</code> switch enables it (and requires a username and
+password as argument).
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/bootini.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>bootini.pl</a>
+
+<dd>For some reason, whenever I use unattended installation the
+machine ends up displaying a boot menu with a "Previous Operating
+System on C:\" option.  This even happens if I wipe the disk with
+zeroes first.  This script edits the hidden system file
+<code>boot.ini</code> to get rid of the useless menu option.
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/hidepw.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>hidepw.pl</a>
+
+<dd>According to Microsoft's <em>Guide to Unattended Setup</em>,
+passwords in the <code>unattend.txt</code> are overwritten when the
+installation finishes.  I have not found this to be true.  So I wrote
+this script to replace all passwords in <code>unattend.txt</code> with
+X marks.
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/instsrv.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>instsrv.pl</a>
+
+<dd>The <a
+href="http://www.microsoft.com/windows2000/techinfo/reskit/">Windows
+2000 Resource Kit</a> includes a tool named <code>instsrv.exe</code>
+which lets you install a service from the command line.  It is the
+only tool I know of for doing this, but it requires that the password
+be passed to it in the clear.  The <code>instsrv.pl</code> script
+simply prompts you for a password and then invokes
+<code>instsrv.exe</code>.  This does mean you need the Resource Kit to
+use this script.  (Yes, strictly speaking, using this script means
+your installation will no longer be "fully unattended".  But I do not
+like embedding passwords in world-readable scripts, and I hate using
+the GUI.)
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/notips.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>notips.pl</a>
+
+<dd>As you are no doubt aware, Windows installs lots of annoying
+first-time logon junk ("tips").  This script gets rid of them all at
+once.  (Note:  This script represents my taste in things to disable;
+you may want to modify it for your site.)
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/startup-type.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>startup-type.pl</a>
+
+<dd>This script lets you set the "startup type" (<em>automatic</em>,
+<em>manual</em>, or <em>disabled</em>) of a service from the
+command-line.  There are probably other tools out there to do this,
+but I got tired of looking for them and wrote my own.
+
+</dl>
+
+<hr>
+<address>
+Patrick J. LoPresti <a
+href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
+</address>
+
+<A href="http://sourceforge.net"> <IMG align="right"
+src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
+width="210" height="62" border="0" alt="SourceForge Logo"></A>
 
 </body>
 </html>
