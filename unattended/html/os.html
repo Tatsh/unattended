@@ -231,6 +231,25 @@ for Windows XP, copy the <code>i386</code> folder to
 apply any other hotfix later.  But combining the service pack into the
 distribution point now will make installation faster.
 
+<p>NOTE: You <b>cannot</b> do this with an OEM version of Windows XP
+(I am unsure about Windows 2000).  The slipstreaming process will
+appear to work, but after the first reboot during installation the
+installer will abort saying, "The file vga.sys is corrupted".  For an
+OEM installation of XP, your only option is to apply the service pack
+after installing the OS; see the <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/winxp-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>winxp-updates.bat</a> script and the <a href="apps.html">application
+installation document</a> for details.
+
+<p>Because of this limitation, you may want to name the installation
+point <code>winxpoem</code> instead of <code>winxp</code> to
+distinguish between them.  The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>install.pl</a> script will recognize this name so that it can display
+it to you properly.
+
+<p>If you are using a retail or volume-licensed OS, read on.
+
 <p>To apply the service pack to the installation point, use the
 "slipstreaming" feature.  You can find details in Microsoft's <a
 href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/spdeploy.htm#the_integrated_installation_fmay"
