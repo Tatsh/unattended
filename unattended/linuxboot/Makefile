@@ -495,7 +495,7 @@ stage1: $(stage1)
 .stamp-stage2: $(stage1) misc/nail-floppy.txt
 	rm -rf stage2 ../install/linuxaux
 	mkdir stage2
-	cp -a -f stage1/. stage2/.
+	cp -R -f --preserve=links,mode stage1/. stage2/.
 	tools/move-and-link.pl --nail-list=misc/nail-floppy.txt	\
 		stage2 ../install/linuxaux /z/linuxaux
 	touch $@
