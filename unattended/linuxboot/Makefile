@@ -109,11 +109,6 @@ stage1/.stamp-modules: $(linux)/arch/i386/boot/bzImage stage1/sbin/depmod
 stage1 += stage1/.stamp-modules
 
 ## bash
-#$(bash)/bash:
-#	cd $(bash)							\
-#	    && bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
-#	    	--build=i586-linux					\
-#            && make
 
 $(bash)/bash: fakeinclude/stdio.h
 	cd $(bash)							\
@@ -450,8 +445,8 @@ $(call copy_exe,$(pcmcia-cs)/cardmgr/cardmgr,stage1/sbin/cardmgr)
 $(call copy_file,$(pcmcia-cs)/etc/config,stage1/etc/pcmcia/config)
 $(call copy_file,$(pcmcia-cs)/etc/config.opts,stage1/etc/pcmcia/config.opts)
 
-stage1/etc/pcmcia/network: stage1/bin/ash
-	echo "#!/bin/ash" >| $@.tmp
+stage1/etc/pcmcia/network:
+	echo "#!/bin/sh" >| $@.tmp
 	echo "exit 0" >> $@.tmp
 	chmod +x $@.tmp
 	mv $@.tmp $@
