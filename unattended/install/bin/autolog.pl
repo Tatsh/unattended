@@ -15,15 +15,16 @@ GetOptions (\%opts, 'disable', 'domain=s')
 
 my ($user, $pass);
 
-if (exists $opts{'disable'}) {
-    scalar @ARGV == 0
-        or pod2usage (2);
-}
-else {
+unless (exists $opts{'disable'}) {
     scalar @ARGV == 2
         or pod2usage (2);
     ($user, $pass) = @ARGV;
 }
+
+# Personal preference: Canonicalize to lower case
+# This really does not belong here (FIXME)
+defined $user
+    and $user =~ tr/A-Z/a-z/;
 
 my %reg;
 use Win32::TieRegistry (Delimiter => '/', TiedHash => \%reg,
@@ -36,21 +37,15 @@ my %new_values = ('/DefaultUserName' => $user,
                   '/DefaultPassword' => (defined $pass && $pass ne ''
                                          ? $pass
                                          : undef),
-                  '/AutoAdminLogon' => [ pack('L', 1), REG_DWORD ],
+                  '/AutoAdminLogon' => (exists $opts{'disable'} ? 0 : 1),
                   '/DefaultDomainName' => $opts{'domain'}
                   );
 
 foreach my $key (sort keys %new_values) {
-    if (!exists $opts{'disable'}) {
-        my $val = $new_values{$key};
-        if (defined $val) {
-            $reg{$winlogon_key}->{$key} = $val
-                or die "Unable to set $winlogon_key$key to $val: $^E";
-        }
-        else {
-            (delete $reg{$winlogon_key}->{$key})
-                or die "Unable to delete $winlogon_key/$key: $^E";
-        }
+    my $val = $new_values{$key};
+    if (defined $val) {
+        $reg{$winlogon_key}->{$key} = $val
+            or die "Unable to set $winlogon_key$key to $val: $^E";
     }
     else {
         (delete $reg{$winlogon_key}->{$key})
