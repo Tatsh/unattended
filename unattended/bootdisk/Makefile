@@ -104,11 +104,7 @@ iso/isolinux/isolinux.bin: isolinux.bin
 	@echo "done"
 
 # TFTP boot (PXE) targets
-tftpboot: $(patsubst images/%.imz,tftpboot/%.imz,$(images)) \
-		tftpboot/memdisk tftpboot/pxelinux.cfg/default
-
-tftpboot/%.imz: images/%.imz
-	cp $< $@
+tftpboot: tftpboot/memdisk tftpboot/pxelinux.cfg/default
 
 tftpboot/memdisk: memdisk
 	cp $< $@
@@ -128,10 +124,6 @@ tftpboot/pxelinux.cfg/default: pxelinux.cfg
 		echo "    kernel memdisk" >> $@.tmp ;			  \
 		echo "    append initrd=$$driver.imz keeppxe" >> $@.tmp ; \
 	done
-	@echo >> $@.tmp ;
-	@echo "label inst" >> $@.tmp ;
-	@echo "    kernel memdisk" >> $@.tmp ;
-	@echo "    append initrd=${univ_driver}.imz keeppxe" >> $@.tmp ; 
 	@mv $@.tmp $@
 	@echo "done"
 
