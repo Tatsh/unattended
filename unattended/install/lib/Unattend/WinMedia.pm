@@ -157,15 +157,28 @@ my %pid_table =
 
 sub type ($) {
     my Unattend::WinMedia ($self) = @_;
-    my $ret = 'UNKNOWN';
+    my $ret = 'UNKNOWN PID';
 
     # Get product id string
     my $pid = $self->{setupp}->{'Pid'}->{'Pid'};
 
-    defined $pid
-        and $ret = (exists $pid_table{$pid}
-                    ? $pid_table{$pid}
-                    : "UNKNOWN PID $pid");
+    if ( defined $pid ) {
+        if ( exists $pid_table{$pid} ) {
+            $ret = pid_table{$pid};
+        } 
+        elsif ( $pid =~ /^.....270$/ ) {
+            $ret = 'Volume?';
+        } 
+        elsif ( $pid =~ /^.....000$/ ) {
+            $ret = 'Retail?';
+        } 
+        elsif ( $pid =~ /^.....OEM$/ ) {
+            $ret = 'OEM?';
+        }
+        else {
+            $ret = "UNKNOWN PID $pid";
+        }
+    }
 
     return $ret;
 }
