@@ -24,8 +24,8 @@ images: $(images)
 	@find template -newer $@ -print | sed s/.\*/$@/ | xargs -r touch
 
 # Images targets
-images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos		\
-	@echo -n "Making $@..."						\
+images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos
+	@echo -n "Making $@..."
 	@driver=`basename "$@" .imz` &&					\
 	driver_uc=`echo $$driver | tr [[:lower:]] [[:upper:]]`		\
 	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&			\
