@@ -126,7 +126,7 @@ sub menu_choice (@) {
         while ($i < $per_page && $start + $i < $count) {
             my $elt = 2 * ($start + $i);
             my $hexd = sprintf '%X', $i+1;
-            printf "%d) %s\n", $hexd, $args[$elt];
+            print "$hexd) $args[$elt]\n";
             $choices .= $hexd;
             # Capture value for sub below
             my $val = $args[$elt + 1];
