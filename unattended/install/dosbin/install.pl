@@ -353,7 +353,7 @@ set_value ('Identification', 'DomainAdminPassword',
 
 my $product_key_q =
     "Enter your product key now.\n"
-    . "This a 25-character key from on your software license\n"
+    . "This is the 25-character code from your software license\n"
     . "(like 12345-6789AB-CDEFG-HIJKL-MNOPQ)\n\n"
     . "Enter key: ";
 
