@@ -119,40 +119,6 @@ sub canonicalize_user ($$) {
     return $user;
 }
 
-# Convert from short OS name (like win2k, win2ksp3, or winxpoem) to
-# full human-readable name.
-sub full_os_name ($) {
-    my ($arg) = @_;
-    my ($stem, $suffix) =
-        $arg =~ /^(win2k|winxp)(sp\d+|oem)?\z/;
-    my $ret;
-
-    defined $stem
-        or return undef;
-
-    if ($stem eq 'win2k') {
-        $ret = 'Windows 2000 Professional';
-    }
-    elsif ($stem eq 'winxp') {
-        $ret = 'Windows XP Professional';
-    }
-    else {
-        die 'Internal error';
-    }
-
-    if (!defined $suffix) {
-        # do nothing
-    }
-    elsif ($suffix =~ /^sp(\d+)\z/) {
-        $ret .= " Service Pack $1";
-    }
-    elsif ($suffix =~ /^oem\z/) {
-        $ret .= ' OEM';
-    }
-
-    return $ret;
-}
-
 # Run a command and return the output.  We need this function because
 # pipes and backticks do not work under DJGPP Perl.
 sub run_command ($@) {
@@ -188,69 +154,6 @@ sub run_command ($@) {
 
 sub read_partition_table () {
     return join '', run_command ('fdisk /info /tech');
-}
-
-# Find the .inf files below a given directory.  Allow .inf files in
-# one directory to "mask" the presence of .inf files below it.  This
-# is useful for computing the OemPnPDriversPath.
-sub find_inf_files ($);
-sub find_inf_files ($) {
-    my ($dir) = @_;
-    my @results;
-
-    # Read the directory.
-    opendir DIR, $dir
-        or die "Unable to opendir $dir: $^E";
-
-    my @entries = sort readdir DIR;
-
-    closedir DIR
-        or die "Unable to closedir $dir: $^E";
-
-    # Loop through it once, looking for .inf files.
-    foreach my $entry (@entries) {
-        my $full_path = $file_spec->catfile ($dir, $entry);
-
-        if ($entry =~ /\.inf\z/i) {
-            push @results, $full_path;
-        }
-    }
-
-    # If we found any .inf files, we are done.  Otherwise, loop
-    # through directory again, calling ourselves on each subdirectory
-    # and accumulating the results.
-    if (scalar @results == 0) {
-        foreach my $entry (@entries) {
-            $entry eq '.' || $entry eq '..'
-                and next;
-
-            my $full_path = $file_spec->catdir ($dir, $entry);
-
-            -d $full_path
-                and push @results, find_inf_files ($full_path);
-        }
-    }
-
-    return (@results);
-}
-
-# Like find_inf_files above, but return only the directory portions,
-# relative to the base path provided as argument.
-sub find_oem_pnp_dirs ($) {
-    my ($base) = @_;
-
-    my @files = find_inf_files ($base);
-    my %dirs;
-
-    my (undef, $base_no_vol) = $file_spec->splitpath ($base, 1);
-
-    foreach my $file (@files) {
-        my (undef, $dir_no_vol) =
-            $file_spec->splitpath (dirname ($file), 1);
-        $dirs{$file_spec->abs2rel ($dir_no_vol, $base)} = undef;
-    }
-
-    return sort keys %dirs;
 }
 
 ## Functions for asking about particular settings.
@@ -313,9 +216,11 @@ sub ask_os () {
     while (my $ent = readdir OSDIR) {
         $ent eq '.' || $ent eq '..'
             and next;
-        -d $ent
-            or next;
+
         my $full_path = $file_spec->catdir ($os_dir, $ent);
+        -d $full_path
+            or next;
+
         my $media = Unattend::WinMedia->new ($full_path);
         defined $media
             or next;
@@ -345,21 +250,13 @@ sub ask_os () {
 
 # Which directories to include in OemPnPDriversPath
 sub ask_oem_pnp_drivers_path () {
-    my $oem_system_dir =
-        $file_spec->catdir (get_value ('_meta', 'OS_dir'),
-                                   get_value ('_meta', 'OS'),
-                                   'i386', '$oem$', '$1');
-    print "Looking for drivers under $oem_system_dir...\n";
-    unless (-d $oem_system_dir) {
-        print "...no such directory.  Continuing.\n";
-        return undef;
-    }
+    my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
 
-    my @pnp_driver_dirs = find_oem_pnp_dirs ($oem_system_dir);
-    if (scalar @pnp_driver_dirs == 0) {
-        print "...no driver directories found.  Continuing\n";
-        return undef;
-    }
+    my @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1);
+
+    # No driver directories means no drivers path
+    scalar @pnp_driver_dirs > 0
+        or return undef;
 
     print "...found some driver directories.  Please choose which to add.\n";
     my $rem_string = 'Remove all directories';
@@ -522,7 +419,7 @@ set_comments ('_meta', 'OS_dir',
               "    ; Directory holding OS media directories\n");
 set_value ('_meta', 'OS_dir', 'z:\\');
 
-set_value ('_meta', 'OS', \&ask_os);
+set_value ('_meta', 'OS_media', \&ask_os);
 
 set_comments ('_meta', 'top',
               "    ; Script run by postinst.bat\n");
@@ -571,11 +468,10 @@ set_value ('_meta', 'doit_cmds',
            sub {
                my $unattend_txt = (get_value ('_meta', 'netinst')
                                    . '\\unattend.txt');
-               my $src_tree = get_value ('_meta', 'OS_dir');
+               my $src_tree = get_value ('_meta', 'OS_media');
                $src_tree =~ /\\$/
                    or $src_tree .= '\\';
-               $src_tree .= get_value ('_meta', 'OS');
-               $src_tree .= '\\i386';
+               $src_tree .= 'i386';
                return "$src_tree\\winnt /s:$src_tree /u:$unattend_txt";
            });
 
@@ -659,9 +555,11 @@ my $product_key_q =
 
 set_value ('UserData', 'ProductID',
            sub {
-               my $os = get_value ('_meta', 'OS');
+               my $media_obj =
+                   Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
+               my $name = $media_obj->name ();
                # ProductID is used by win2k and winnt
-               $os =~ /^win2k/ || $os =~ /^winnt/
+               $name =~ /Windows 2000/ || $name =~ /Windows NT/
                    or return undef;
                return simple_q ($product_key_q);
            });
