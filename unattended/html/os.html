@@ -20,101 +20,208 @@ need to:
 <li><a href="#install-share">Create the OS distribution point</a>
 (basically, a folder holding a copy of the Windows CD-ROM)
 
-<li><a href="#bootdisk">Obtain access to that distribution point</a>,
-and your hard drive, from DOS
+<li><a href="#bootdisk">Create the DOS network boot disk</a>
 
-<li><a href="#go">Format the disk, create the <em>unattend.txt</em>
-file, and run <em>i386\winnt.exe</em></a> from the distribution point
+<li><a href="#go">Boot from it</a>, answer a bunch of questions, and
+go get a snack while the OS installs
 
 </ol>
 
-<h1 id="install-share">Creating the OS distribution point</h1>
+<h1 id="install-share">Create the OS distribution point</h1>
 
-<p>Although you can use a CD-ROM or local disk directory, we are going
-to create a network distribution point because it's more fun.
+<p>In principle, the OS distribution point could be CD-ROM or a local
+disk directory, but we are going to use a network share.
 
-<h2>Creating the \\ntinstall\install share</h2>
-<p>Copy the <em>install</em> directory tree from this project's
+<h2>Create the \\ntinstall\install share</h2>
+<p>Copy the <code>install</code> directory tree from this project's
 distribution to a Windows file server (say, a Unix box running <a
 href="http://www.samba.org/">Samba</a>), and export it read-only with
 guest access permitted.  The sample scripts, and this documentation,
-assume that this share is named <em>\\ntinstall\install</em>.  In
-other words, the name <em>ntinstall</em> is an alias for the file
-server and the share is named <em>install</em>.  If you want to use
-different names, that is OK, but you will need to modify the scripts
-to refer to it (search for "ntinstall").
+assume that this share is named <code>\\ntinstall\install</code>.  In
+other words, the name <code>ntinstall</code> is an alias for the file
+server and the share is named <code>install</code>.  If you want to
+use different names, that is OK, but you will need to modify the
+scripts to refer to it (just search for "ntinstall").
 
-<p>Some parts of the install share (like <a
-href="http://www.delorie.com/djgpp/">DJGPP</a>) are required but not
-included, so you will need to download them yourself.  See the
-<em>README.txt</em> file in the install directory for details.
+<p>OS installation relies on these files and directories in the
+<code>install</code> share:
 
-<h2>Copying the Windows CD-ROM to the share</h2>
-<p>Next, copy the <em>i386</em> folder from the Windows CD-ROM to the
-appropriate subdirectory of the install share.  For example, for
-Windows 2000 Service Pack 3, copy the <em>i386</em> folder to
-<em>\\ntinstall\install\win2ksp3</em>.
+<dl>
 
-<h2>Applying the service pack, if any</h2>
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/djgpp/"
+>djgpp</a>
 
-<p>(Note: This step is optional; you can apply a service pack along
-with all the other hotfixes later.  But combining the service pack
-into the distribution point now will make installation faster.)
+<dd>Contains parts of <a
+href="http://www.delorie.com/djgpp/">DJGPP</a>, a collection of Unix
+tools for DOS.  This one is too big to bundle, so you will need to
+download it yourself; <a href="#djgpp">see below</a> for instructions.
+(Is it really worth all this just so we can write a Bourne shell
+script instead of a <code>.bat</code> file?  Yes, it is.)
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/dosbin/"
+>dosbin</a>
+
+<dd>Directory containing DOS utility programs (like fdisk) from the <a
+href="http://www.freedos.org/">FreeDOS</a> project.
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/install.sh?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>install.sh</a>
+
+<dd>Shell script run by <code>autoexec.bat</code> from the bootdisk.
+This is the first entry point to the networked portion of the
+installation.  This is the script which asks you a bunch of questions,
+then fires off the actual unattended installation.
+
+<dt><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/unattend.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >unattend.txt</a>
+
+<dd>Prototype <code>unattend.txt</code>.  The <code>install.sh</code>
+script will copy this to your local drive and offer to let you edit
+it.  See below for more information.
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/win2k/"
+>win2k</a>
+
+<dd>Directory holding a copy of the <code>i386</code> folder from a
+Windows 2000 CD-ROM.  You will need to populate this if you want to
+install Win2k (as <a href="http:cd-rom">described below</a>).
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/win2ksp3/"
+>win2ksp3</a>
+
+<dd>Just like <code>win2k</code>, but with Service Pack 3 already
+integrated (also <a href="http:service-pack">described below</a>).
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/winxp/"
+>winxp</a>
+
+<dd>Similarly, but for Windows XP.
+
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/winxpsp1/"
+>winxpsp1</a>
+
+<dd>Similarly, but for Windows XP with integrated Service Pack 1.
+
+</dl>
+
+<h2 id="djgpp">Download DJGPP</h2>
+
+<p><a href="http://www.delorie.com/djgpp/">DJGPP</a> is a port of the
+Unix environment to DOS.  You will need to download the following
+components:
+
+<ul>
+<li>The basic development kit (<a
+href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2/djdev203.zip"
+>v2/djdev203.zip</a>)
+
+<li>The DPMI server (<a
+href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2misc/csdpmi5b.zip"
+>v2misc/csdpmi5b.zip</a>)
+
+<li>The Bash port (<a
+href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu/bsh204b.zip"
+>v2gnu/bsh204b.zip</a>)
+
+</ul>
+
+<p>Just unzip all of them under
+<code>\\ntinstall\install\djgpp</code>.
+
+<h2 id="cd-rom">Copy the Windows CD-ROM to the share</h2>
+<p>Copy the <code>i386</code> folder from the Windows CD-ROM to the
+appropriate subdirectory of the <code>install</code> share.  For
+example, for Windows 2000 Service Pack 3, copy the <code>i386</code>
+folder to <code>\\ntinstall\install\win2ksp3</code>.
+
+<h3 id="service-pack">Integrate the service pack (optional)</h3>
+
+<p>This step is optional; you can apply a service pack together with
+all the other hotfixes later.  But combining the service pack into the
+distribution point now will make installation faster.
 
 <p>To apply the service pack to the installation point, use the
-"slipstreaming" feature introduced with Windows 2000 Service Pack 1
-(but not supported by NT).  You can learn about this in detail by
-reading Microsoft's <a
-href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/spdeploy.htm">
-Installation and Deployment Guide</a> for Win2k SP3, but the process
-is pretty simple:
+"slipstreaming" feature introduced in Windows 2000 Service Pack 1
+(i.e., not supported by NT).  You can find details in Microsoft's <a
+href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/spdeploy.htm"
+>Installation and Deployment Guide for Win2k SP3</a>, but the process
+is pretty simple.  Using Win2k SP3 as an example:
 
 <ol>
 
-<li>Run <kbd>w2ksp3.exe&nbsp;/u&nbsp;/x:c:\sp3</kbd>.  (w2ksp3.exe is
-what you get when you download the Service Pack from Microsoft).  This
-extracts the service pack to <em>c:\sp3</em>.
+<li>Download <a
+href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/"
+>the service pack (<code>w2ksp3.exe</code>)</a> from Microsoft.
 
 <li>Run
-<kbd>c:\sp3\i386\update\update.exe&nbsp;/s:\\ntinstall\install\win2ksp3</kbd>.
-This applies the service pack to the distribution point, creating the
-"slipstreamed" Win2k SP3 tree.  Due to a bug, you must be a local
-administrator for this to work, even if the distribution point is on a
-remote share.  (Otherwise, <em>update.exe</em> will fail with
-"permission denied".)
+<pre>
+    w2ksp3.exe /u /x:c:\sp3
+</pre>
+<p>This extracts the service pack files to <code>c:\sp3</code>.
+
+<li>Run
+<pre>
+    c:\sp3\i386\update\update.exe /s:\\ntinstall\install\win2ksp3
+</pre>
+
+<p>This applies the service pack to the distribution point
+<code>\\ntinstall\install\win2ksp3</code>, creating an integrated
+("slipstreamed") Win2k SP3 tree.  Due to a bug, you must be a local
+administrator for this command to work, even if you have write access
+to the target folder.
 
 </ol>
 
-<h1 id="bootdisk">Obtaining access to the distribution point from
-DOS</h1>
+<h1 id="bootdisk">Create the DOS network boot disk</h1>
 
-<p>The goal here is very simple: To boot to DOS and mount
-<em>\\ntinstall\install</em> as the <em>Z:</em> drive.
+<p>The goal here is very simple: To boot to DOS so we can mount
+<code>\\ntinstall\install</code> as the <code>Z:</code> drive and run
+the <code>install.sh</code> script.
 
-<h2>Using the unattended.sourceforge.net bootdisk</h2>
+<h2>Booting from floppy</h2>
 
-<p>The <em>bootdisk</em> directory from this project's distribution is
-dedicated to helping you create a bootable DOS disk with networking.
-Simply <kbd>cd&nbsp;bootdisk</kbd> and run <kbd>make</kbd> to generate a
-bunch of floppy disk images in the <em>images</em> subdirectory.
+<p>The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/"
+>bootdisk</a> directory from this project will help you create a
+bootable DOS disk with network access.  Simply
+<kbd>cd&nbsp;bootdisk</kbd> and run <kbd>make&nbsp;images</kbd> to
+generate a bunch of floppy disk images in the <code>images</code>
+subdirectory.
 
-<p>There will be one floppy image for each supported network driver;
-you will need to use the image with the right driver for your network
-card.  If you are not sure which driver is right, you may need to try
-them all (but see below about <a href="#netboot">booting from the
-network</a>).
+<p>You will find one floppy disk image for each supported network
+driver, named after the NDIS driver for that card.  The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/DRIVERS.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>DRIVERS.txt</a> file describes the supported drivers.
 
-<p>For instructions on adding new drivers and other information on
-customizing the bootdisk, see the <em>README.txt</em> file in the
-bootdisk directory.  Note that the <em>template</em> subdirectory
-holds the canonical copy of the tree which is copied to the bootdisk.
-To see for yourself (or modify) what the bootdisk will do, start with
-the <em>autoexec.bat</em> file in that directory.
+<p>You will need to use the floppy image with the right driver for
+your network card.  If you are not sure which driver is right, you may
+need to try them all (but see below about <a href="#netboot">booting
+directly from the network</a>).
 
-<p>Once you have chosen the correct floppy image, you will need to
-write it to a floppy.  How you do this depends on your operating
-system; on Linux, something like
-<kbd>dd&nbsp;if=e100b.img&nbsp;of=/dev/fd0</kbd> will do the trick.
+<p>The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/template"
+>template</a> subdirectory contains the files on the boot disk itself.
+For example, if you want to change <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/template/autoexec.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>autoexec.bat</a> or <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/template/config.sys?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>config.sys</a>, just edit them there and run
+<kbd>make&nbsp;images</kbd> again.
+
+<p>Once you have picked the correct floppy image for your network
+card, you will need to write it to a floppy.  How you do this depends
+on your operating system; on Linux, something like
+<pre>
+    dd&nbsp;if=images/e100b.img&nbsp;of=/dev/fd0
+</pre>
+
+<p>...will do the trick.
 
 <h2>Booting from CD-ROM or network</h2>
 
@@ -134,9 +241,9 @@ from the excellent <a href="http://syslinux.zytor.com/">SYSLINUX</a>
 package.  (Do not be fooled by the name; SYSLINUX is a very powerful
 boot loader whose use goes far beyond Linux.  It is perfect for this
 application, for example.)  Download the SYSLINUX package, and copy
-the <em>isolinux</em> and <em>memdisk</em> applications to the
-<em>iso</em> directory.  Then type <kbd>make iso</kbd>.  You should end
-up with a <em>bootdisk.iso</em> image, suitable for burning to a
+the <code>isolinux</code> and <code>memdisk</code> applications to the
+<code>iso</code> directory.  Then type <kbd>make iso</kbd>.  You should end
+up with a <code>bootdisk.iso</code> image, suitable for burning to a
 CD-ROM.  Booting this CD-ROM will give you a choice of "virtual
 floppies" to boot; choose the one with the right driver for your
 network card.
@@ -154,7 +261,7 @@ the file name and TFTP server of the PXE boot loader.
 <p>Which boot loader?  We will use <a
 href="http://syslinux.zytor.com/pxe.php">PXELINUX</a>, also from the
 SYSLINUX package.  This will work just like the ISO CD-ROM boot, using
-<em>memdisk</em> to load a virtual floppy, but here you do not care
+<code>memdisk</code> to load a virtual floppy, but here you do not care
 which network driver to use!  3com has kindly written a "universal"
 DOS network driver which runs over any PXE implementation, allowing
 one floppy image to support any PXE-compatible network hardware.
@@ -165,7 +272,7 @@ on your network card to the latest version before attempting a network
 boot.  For network hardware embedded on a motherboard or laptop, this
 probably means flashing the system BIOS.
 
-<p>In the <em>bootdisk</em> directory, type
+<p>In the <code>bootdisk</code> directory, type
 <kbd>make&nbsp;tftpboot</kbd>.  This will populate the tftpboot
 directory with everything you need; just copy it to /tftpboot on your
 TFTP server, set up your DHCP server as described above, and you
@@ -176,23 +283,23 @@ should be good to go.
 <p>The bootdisk's entire purpose in life is to obtain access to the
 network, then hand off control to the more powerful tools available
 there.  In particular, the bootdisk mounts
-<em>\\ntinstall\install</em> as the <em>Z:</em> drive, then executes
-the Bourne shell script <em>z:\install.sh</em>.
+<code>\\ntinstall\install</code> as the <code>Z:</code> drive, then executes
+the Bourne shell script <code>z:\install.sh</code>.
 
 <p>The install.sh script will help you partition the drive and format
 it.  It will ask you which script to run after the OS installation is
 finished; this is the hook by which the <a
 href="apps.html">application installation</a> process is kicked off.
 
-<p>Finally, <em>install.sh</em> will copy the sample
-<em>z:\unattend.txt</em> file to the <em>c:\</em> drive and offer to
+<p>Finally, <code>install.sh</code> will copy the sample
+<code>z:\unattend.txt</code> file to the <code>c:\</code> drive and offer to
 let you edit it.
 
-<p>The <em>unattend.txt</em> file, also known as the "answer file", is
+<p>The <code>unattend.txt</code> file, also known as the "answer file", is
 the key to this whole process.  Normally, Windows Setup tosses up lots
 of dialogs to ask you questions ("what is your name?", "what is your
 license key?", etc.) during the OS installation.  By passing the right
-flags to <em>i386\winnt.exe</em>, we will cause Setup to consult this
+flags to <code>i386\winnt.exe</code>, we will cause Setup to consult this
 file for its answers instead.
 
 <p>The best documentation for this file is Microsoft's own "Microsoft
@@ -202,12 +309,12 @@ Unfortunately, as far as I know, you cannot download this document
 directly; you must first download and install the <a
 href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/supporttools.asp"
 >Windows 2000 SP3 Support Tools</a>, then use Internet Explorer to
-extract the <em>unattend.doc</em> file from the <em>deploy.cab</em>
+extract the <code>unattend.doc</code> file from the <code>deploy.cab</code>
 archive.
 
-<p>Once you understand it, editing <em>unattend.txt</em> is pretty
+<p>Once you understand it, editing <code>unattend.txt</code> is pretty
 easy.  And once you have edited it, you can select "Install now" to
-run the <em>i386\winnt.exe</em> program with the appropriate
+run the <code>i386\winnt.exe</code> program with the appropriate
 arguments.
 
 <p>Congratulations, your unattended Windows OS installation is on its
