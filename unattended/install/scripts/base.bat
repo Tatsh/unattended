@@ -4,9 +4,6 @@
 :: Set Automatic Updates to download and update automatically (SP2 behavior)
 todo.pl "auconfig.pl --day 0 --time 3 --wait 10 4"
 
-:: Install popular applications.
-todo.pl adobe-reader.bat
-
 :: Update windows and turn off annoying stuff.
 todo.pl %%WINVER%%-updates.bat %%WINVER%%-notips.pl .reboot
 
