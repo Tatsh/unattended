@@ -128,6 +128,33 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867460-x86-%WINLAN
 
 :: Recommended Updates
 
+:: Cumulative Update for Outlook Express for Windows Server 2003 (KB887797)
+:: <http://support.microsoft.com/kb/887797>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=fa504d84-21ce-4fce-99a7-d15c9b438634>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/1/2/3/123d86a8-c365-4094-af70-ffba42c6f389/WindowsServer2003-KB887797-x86-csy.exe|updates/ws2k3/windowsserver2003-kb887797-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/a/b/e/abeb137c-0c3b-421e-a8d4-f1f9b3244af4/WindowsServer2003-KB887797-x86-deu.exe|updates/ws2k3/windowsserver2003-kb887797-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/7/8/4/7841a3ed-afb9-42c3-a350-954f404ab74d/WindowsServer2003-KB887797-x86-enu.exe|updates/ws2k3/windowsserver2003-kb887797-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/5/0/4/5040aeab-316b-46a5-8339-b2e3670f58e4/WindowsServer2003-KB887797-x86-esn.exe|updates/ws2k3/windowsserver2003-kb887797-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/9/5/d/95d6bd90-3d76-403c-a021-ada1937dd61c/WindowsServer2003-KB887797-x86-fra.exe|updates/ws2k3/windowsserver2003-kb887797-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/b/6/9/b69f5f44-d266-4f54-a811-a7ec52957262/WindowsServer2003-KB887797-x86-hun.exe|updates/ws2k3/windowsserver2003-kb887797-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/a/9/ba9f1841-2fcb-4331-90f7-87c7f07888b9/WindowsServer2003-KB887797-x86-ita.exe|updates/ws2k3/windowsserver2003-kb887797-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/9/a/29a108fe-1eb9-4e97-9b7e-871c9ef33b27/WindowsServer2003-KB887797-x86-jpn.exe|updates/ws2k3/windowsserver2003-kb887797-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/6/1/4615ca4f-0ee6-4910-9fc7-1f03906d3232/WindowsServer2003-KB887797-x86-kor.exe|updates/ws2k3/windowsserver2003-kb887797-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/1/b/3/1b3f8f3e-bdb5-482a-8c68-87362c98f870/WindowsServer2003-KB887797-x86-nld.exe|updates/ws2k3/windowsserver2003-kb887797-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/3/e/7/3e77a5ff-ac85-495a-a7ec-bdc9ebd34e2e/WindowsServer2003-KB887797-x86-plk.exe|updates/ws2k3/windowsserver2003-kb887797-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/8/0/0/800ab9d8-fafc-4e44-8c60-a5a53d1507ed/WindowsServer2003-KB887797-x86-ptb.exe|updates/ws2k3/windowsserver2003-kb887797-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/0/4/1/0414a69c-f907-411e-8fd4-d968ff9e6676/WindowsServer2003-KB887797-x86-ptg.exe|updates/ws2k3/windowsserver2003-kb887797-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/7/f/e7f61b50-d755-4b5b-b2bb-61c2c85fc89a/WindowsServer2003-KB887797-x86-rus.exe|updates/ws2k3/windowsserver2003-kb887797-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/e/4/ee4c41a5-43e9-4a31-8320-56ce384a4908/WindowsServer2003-KB887797-x86-sve.exe|updates/ws2k3/windowsserver2003-kb887797-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/d/d/edd9baf2-4ac3-4f8c-99ea-02a7ad587c96/WindowsServer2003-KB887797-x86-trk.exe|updates/ws2k3/windowsserver2003-kb887797-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB887797-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows Server 2003 (KB837001)
 :: Microsoft Security Bulletin MS04-014
 :: "Vulnerability in the Microsoft Jet Database Engine Could Allow Code Execution (837001)"
@@ -189,6 +216,63 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB837001-x86-%WINLAN
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB834707-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Critical Updates
+
+:: Security Update for Windows Server 2003 (KB885835)
+:: Microsoft Security Bulletin MS04-044
+:: "Vulnerabilities in Windows Kernel and LSASS Could Allow Elevation of Privilege (885835)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-044.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=AACB97CB-E8F0-461F-B2D2-F1065229B64E>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/d/5/4/d5444500-4aca-4cf7-8611-9c4d646b321e/WindowsServer2003-KB885835-x86-csy.exe|updates/ws2k3/windowsserver2003-kb885835-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/5/c/9/5c9b321f-048a-449b-8a6a-ab2e1b96f8e8/WindowsServer2003-KB885835-x86-deu.exe|updates/ws2k3/windowsserver2003-kb885835-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/9/b/7/9b75c063-b57c-4493-a437-b1431722b8c2/WindowsServer2003-KB885835-x86-enu.exe|updates/ws2k3/windowsserver2003-kb885835-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/e/7/de792bab-39c8-40b6-ba97-b337863bf419/WindowsServer2003-KB885835-x86-esn.exe|updates/ws2k3/windowsserver2003-kb885835-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/5/4/5/545d90a8-1109-4bd7-b44c-3141b5e774e8/WindowsServer2003-KB885835-x86-fra.exe|updates/ws2k3/windowsserver2003-kb885835-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/5/f/7/5f789e32-fdfe-4a7c-b7f7-b685ac4a7b72/WindowsServer2003-KB885835-x86-hun.exe|updates/ws2k3/windowsserver2003-kb885835-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/c/4/0/c40d2e16-276c-4f25-891e-4ae46c2d7bd1/WindowsServer2003-KB885835-x86-ita.exe|updates/ws2k3/windowsserver2003-kb885835-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/8/6/48685fee-6531-4bbe-8172-190c3364dde6/WindowsServer2003-KB885835-x86-jpn.exe|updates/ws2k3/windowsserver2003-kb885835-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/c/c/5cca2462-e39b-4be4-aa8c-e729caed1bcb/WindowsServer2003-KB885835-x86-kor.exe|updates/ws2k3/windowsserver2003-kb885835-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/2/0/0/200f162d-e8c0-4215-b96d-4f27608ba0e4/WindowsServer2003-KB885835-x86-nld.exe|updates/ws2k3/windowsserver2003-kb885835-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/0/e/4/0e4d4129-be88-40b1-a25b-8673bb83fc67/WindowsServer2003-KB885835-x86-plk.exe|updates/ws2k3/windowsserver2003-kb885835-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/d/2/3/d2310f29-5cc0-4dee-8cbc-d7753bd0ee8e/WindowsServer2003-KB885835-x86-ptb.exe|updates/ws2k3/windowsserver2003-kb885835-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/1/5/71522972-a9b0-46f5-aedd-6b94b512d4e6/WindowsServer2003-KB885835-x86-ptg.exe|updates/ws2k3/windowsserver2003-kb885835-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/6/8/f/68f98558-9d29-43a3-b30d-24446622d4f6/WindowsServer2003-KB885835-x86-rus.exe|updates/ws2k3/windowsserver2003-kb885835-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/f/8/1f8e4247-7b3f-4c9b-94c4-7de6e27e2917/WindowsServer2003-KB885835-x86-sve.exe|updates/ws2k3/windowsserver2003-kb885835-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/5/5/e55b0d18-010a-4ae3-afc1-e59f74160fde/WindowsServer2003-KB885835-x86-trk.exe|updates/ws2k3/windowsserver2003-kb885835-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB885835-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB885836)
+:: "Vulnerability in WordPad Could Allow Code Execution (885836)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-041.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=D1747015-10C8-411F-8C26-773B59008FD8>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/7/4/4/7445abb7-dc09-495a-bfb0-b1e5727a1b80/WindowsServer2003-KB885836-x86-csy.exe|updates/ws2k3/windowsserver2003-kb885836-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/2/1/5/2155c8a0-bd97-4ff7-a174-62ceeb4a7ed5/WindowsServer2003-KB885836-x86-deu.exe|updates/ws2k3/windowsserver2003-kb885836-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/0/5/9/0597de34-f229-464c-9f03-04bcd2361992/WindowsServer2003-KB885836-x86-enu.exe|updates/ws2k3/windowsserver2003-kb885836-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/6/d/26d2357e-e1c2-45ea-9d58-51e15b7fd1d3/WindowsServer2003-KB885836-x86-esn.exe|updates/ws2k3/windowsserver2003-kb885836-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/1/d/d/1dd52202-173a-4316-9c52-d5986fd9c744/WindowsServer2003-KB885836-x86-fra.exe|updates/ws2k3/windowsserver2003-kb885836-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/d/b/8/db8afeac-e5f4-46f2-8143-3232d33d3a27/WindowsServer2003-KB885836-x86-hun.exe|updates/ws2k3/windowsserver2003-kb885836-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/f/5/f/f5fb59d3-888b-4c82-b1c4-2996d0d0de5e/WindowsServer2003-KB885836-x86-ita.exe|updates/ws2k3/windowsserver2003-kb885836-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/9/3/6/936030b6-2b8c-4d3c-a226-84b8103bf367/WindowsServer2003-KB885836-x86-jpn.exe|updates/ws2k3/windowsserver2003-kb885836-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/2/d/02def076-7db5-49d7-ab50-e35ff393fd31/WindowsServer2003-KB885836-x86-kor.exe|updates/ws2k3/windowsserver2003-kb885836-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/c/e/9cee896e-7728-4f83-b356-4544ed432ce9/WindowsServer2003-KB885836-x86-nld.exe|updates/ws2k3/windowsserver2003-kb885836-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/9/c/b/9cbb2255-eaa5-43f8-9199-a59597792106/WindowsServer2003-KB885836-x86-plk.exe|updates/ws2k3/windowsserver2003-kb885836-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/d/6/7/d6772429-607a-4011-9bbb-f6eb0c793b94/WindowsServer2003-KB885836-x86-ptb.exe|updates/ws2k3/windowsserver2003-kb885836-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/a/9/8a9fb6d8-adb4-4219-ab5b-dbe726d2878a/WindowsServer2003-KB885836-x86-ptg.exe|updates/ws2k3/windowsserver2003-kb885836-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/c/a/5ca0d503-dd33-4593-b483-bbabb30cdd8f/WindowsServer2003-KB885836-x86-rus.exe|updates/ws2k3/windowsserver2003-kb885836-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/d/a/b/dab23337-f4d9-4f5c-8f20-3a38d9a4584e/WindowsServer2003-KB885836-x86-sve.exe|updates/ws2k3/windowsserver2003-kb885836-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/a/f/1af3b108-2a43-4cef-bd04-38140b9f58d5/WindowsServer2003-KB885836-x86-trk.exe|updates/ws2k3/windowsserver2003-kb885836-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB885836-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 873374 (GDI+ Detection Tool)
 :: <http://support.microsoft.com/kb/873374>
@@ -695,7 +779,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%_Q832483_MDAC_x86.EXE /q /c:
 :: URL|RUS|http://download.microsoft.com/download/f/9/d/f9d9a3bc-9f1b-4a0a-b3f3-184a56af44da/WindowsServer2003-KB824105-x86-RUS.exe|updates/ws2k3/windowsserver2003-kb824105-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/f/3/1/f312712e-bc37-440d-accd-73d87eb220eb/WindowsServer2003-KB824105-x86-SVE.exe|updates/ws2k3/windowsserver2003-kb824105-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/0/0/9/009b2381-97ec-4da4-b28d-7a4050aa5264/WindowsServer2003-KB824105-x86-TRK.exe|updates/ws2k3/windowsserver2003-kb824105-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824105-x86-%WINLANG%.exe /u /n/z"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824105-x86-%WINLANG%.exe /u /n /z"
 
 :: Windows Server 2003 Security Patch: Buffer Overrun In HTML Converter Could Allow Code Execution
 :: Microsoft Security Bulletin MS03-023
