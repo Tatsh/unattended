@@ -12,7 +12,7 @@
 :: <http://www.microsoft.com/Downloads/Release.asp?ReleaseID=42457>
 todo.pl "z:\packages\win2ksp3\Q328523_W2K_SP4_X86_EN.exe /u /o /z"
 
-:: Critical Update Q329834 
+:: Critical Update Q329834
 :: "Unchecked Buffer in PPTP Implementation Could Enable Denial of Service"
 :: <http://www.microsoft.com/Windows2000/downloads/critical/q329834/>
 todo.pl "z:\packages\win2ksp3\Q329834_W2K_SP4_X86_EN.exe /u /o /z" .reboot
@@ -31,7 +31,7 @@ todo.pl "z:\packages\win2ksp3\Q323255_W2K_SP4_X86_EN.exe /u /o /z"
 todo.pl "Z:\packages\win2ksp3\vm-sfix3.exe /Q /R:N" .reboot
 
 :: Q324096
-:: http://www.microsoft.com/Windows2000/downloads/security/q324096/
+:: <http://www.microsoft.com/Windows2000/downloads/security/q324096/>
 todo.pl "z:\packages\win2ksp3\Q324096_W2K_SP4_X86_EN.exe /u /o /z"
 
 :: Q324380
