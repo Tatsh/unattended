@@ -19,7 +19,7 @@ todo.pl "%Z%\updates\officexp\Officexp-kb830346-client-%WINLANG%.exe /q /c:\"msi
 :: <http://support.microsoft.com/?kbid=812708>
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-051.asp>
 :: (You may need to rename this from -ENG.exe to -ENU.exe)
-:: (FIXME; Only install if SharePoint Team Services are installed)
+:: (FIXME; This should only be installed if SharePoint Team Services are installed)
 todo.pl "%Z%\updates\officexp\officexp-kb812708-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\fp5autlop.txt /p FP5AUTLop.msp\""
 
 :: "Access 2002 Snapshot Viewer Security Patch: September 3, 2003"
@@ -42,7 +42,7 @@ todo.pl "%Z%\updates\officexp\OfficeXP-KB822036-Client-%WINLANG%.exe /q /c:\"msi
 :: <http://office.microsoft.com/downloads/2002/olk1006.aspx>
 todo.pl "%Z%\updates\officexp\olk1006.exe /r:n /q /c:\"msiexec /qb /l* c:\netinst\logs\olk1006.txt /p OUTLOOKop.msp REBOOT=ReallySuppress\""
 
-:: Hm, tying this to SP4 is probably wrong.  FIXME
+:: Hm, tying this to win2ksp4 is probably wrong.  FIXME
 if not %WINVER%. == win2ksp4. goto didauiu
 :: Office XP Alternative User Input Update: January 24, 2002
 :: <http://support.microsoft.com/?kbid=316127>
