@@ -300,6 +300,7 @@ fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib		\
 
 # Create empty config file to silence ldconfig warnings
 stage1/etc/ld.so.conf:
+	mkdir -p $(dir $@)
 	touch $@
 
 # Dynamic linker
