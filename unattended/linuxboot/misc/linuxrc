@@ -22,11 +22,14 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 export PATH
 
 # Fire up shells on virtual consoles 2 and 3
-openvt -c 2 bash
-openvt -c 3 bash
+if openvt -c 2 bash ; then
+    openvt -c 3 bash
 
-# Should never return
-openvt -f -c 1 -w /etc/master
+    openvt -f -c 1 -w /etc/master
+else
+    echo "Hm, maybe we are on a serial console.  Running /etc/master directly."
+    /etc/master
+fi
 
 echo "**** Master script exited!"
 exec bash
