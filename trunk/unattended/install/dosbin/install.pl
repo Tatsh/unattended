@@ -1028,7 +1028,14 @@ $u->{'_meta'}->{'z_path'} = $ENV{'Z_PATH'};
 $u->comments ('_meta', 'z_user') = ['Username for mapping install share'];
 (defined $ENV{'Z_USER'})
     or die "autoexec.bat failed to set Z_USER; bailing";
-$u->{'_meta'}->{'z_user'} = $ENV{'Z_USER'};
+$u->{'_meta'}->{'z_user'} =
+    sub {
+        my $user = $ENV{'Z_USER'};
+        my $domain = $u->{'Identification'}->{'JoinDomain'};
+        return (defined $domain
+                ? canonicalize_user ($domain, $user)
+                : $user);
+};
 
 $u->comments ('_meta', 'z_password') = ['Password for mapping install share'];
 (defined $ENV{'Z_PASS'})
