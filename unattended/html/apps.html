@@ -233,6 +233,22 @@ and timing.  When you write a script to install an application, you
 must suppress any reboots performed by the installer and use the
 <code>.reboot</code> directive instead.</p>
 
+<h2>The <code>.reboot-on</code> directive</h2>
+
+<p>The <code>.reboot-on</code> directive checks the exit status of a
+command to see if it matches the expected value.  If so, it behaves
+like the <code>.reboot</code> directive.  If not, it acts as a
+no-op.</p>
+
+<p>This directive is useful because most Microsoft installers exit
+with status 194 if they want to reboot the machine, but you suppressed
+the reboot with a command-line switch.  For such installers, you would
+use <code>.reboot-on</code> like this:</p>
+
+<pre>
+    todo.pl ".reboot-on 194 q999999.exe /q /r:n"
+</pre>
+
 <h2>The <code>.sleep</code> directive</h2>
 
 <p>If you ever have to use this directive, then you are doing
