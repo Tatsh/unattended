@@ -154,6 +154,8 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
 #                            '/SeparateProcess' => [ pack('L', 1), REG_DWORD ],
                             # Display contents of system folders
 #                            '/WebViewBarricade' => [ pack('L', 1), REG_DWORD ],
+                            # always show full startmenue
+#                            '/IntelliMenus' => 'no',                            
                         },
                         'AutoComplete/' => {
                             # Turn on auto completion of commands
@@ -255,7 +257,7 @@ $reg{'LMachine'}->{'Software/'} = {
         'Microsoft/' => {
             'Windows/' => {
                 'Installer/' => {
-                    # Enable administrators to install appliations over Terminal Services
+                    # Enable administrators to install applications over Terminal Services
 #                    '/EnableAdminTSRemote' => [ pack('L', 1), REG_DWORD ],
                 },
             },
