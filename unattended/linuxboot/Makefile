@@ -526,11 +526,16 @@ stage1 += stage1/linuxrc stage1/bin/find-modules-pci			\
 		stage1/etc/passwd stage1/usr/lib/freedos-mbr.bin
 
 ## Stage 1
-stage1: $(stage1)
-	mkdir -p stage1/usr/local
+stage1/usr/local:
+	mkdir -p $@
+
+.stamp-stage1: $(stage1) stage1/usr/local
+	touch $@
+
+stage1: .stamp-stage1
 
 ## Stage 2
-.stamp-stage2: stage1 misc/nail-floppy.txt
+.stamp-stage2: .stamp-stage1 misc/nail-floppy.txt
 	rm -rf stage2 ../install/linuxaux
 	mkdir stage2
 	cp -R -f --preserve=links,mode stage1/. stage2/.
@@ -668,5 +673,5 @@ tidy:
 	rm -rf $(patsubst symlink-%,%,$(symlink_targets))
 	rm -f $(glibc-linuxthreads)
 	rm -rf dosboot iso
-	rm -rf stage2 .stamp-stage2
+	rm -rf .stamp-stage1 stage2 .stamp-stage2
 	rm -f devices.cpio initrd
