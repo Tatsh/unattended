@@ -22,39 +22,42 @@ checkver:
 	fi
 
 release: checkver
-	tag=`echo REL_${ver} | sed s/\\\\./_/g` &&	                \
+	tag=`echo REL_${ver} | sed s/\\\\./_/g` &&	\
 	$(really) cvs tag $$tag .
-	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&		\
-	cd $$temp &&						\
-	cvs -z3 -d${cvs} checkout unattended &&			\
-	mv unattended ${dir} &&					\
-	tar --exclude CVS -cvzf ${dir}.tar.gz ${dir} &&		\
-	sleep 2 &&						\
-	pushd ${dir}/bootdisk &&				\
-	make && make tidy &&					\
-	popd &&							\
-	tar --exclude CVS --newer ./${dir}.tar.gz -cvzf		\
-		${dir}-dosboot.tar.gz ${dir} &&			\
-	sleep 2 &&						\
-	pushd ${dir}/linuxboot &&				\
-	make dest=$(cwd)/linuxboot symlinks &&		\
-	make && make tidy &&					\
-	popd &&							\
-	tar --exclude CVS --newer ./${dir}-dosboot.tar.gz -cvzf	\
-		${dir}-linuxboot.tar.gz ${dir} &&		\
-	$(really) ncftpput -p $$USER@users.sourceforge.net	\
-		upload.sourceforge.net /incoming		\
-		${dir}.tar.gz ${dir}-dosboot.tar.gz		\
-		${dir}-linuxboot.tar.gz &&			\
-	cd / &&							\
+	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
+	cd $$temp &&							\
+	cvs -z3 -d${cvs} checkout unattended &&				\
+	mv unattended $(dir) &&						\
+	find $(dir) -name CVS -prune -o -type f -print |		\
+		zip $(dir).zip -9 -q -@					\
+	sleep 2 &&							\
+	pushd ${dir}/bootdisk &&					\
+	make && make tidy &&						\
+	popd &&								\
+	find $(dir) -name CVS -prune -o -newer $(dir).zip		\
+			-type f -print |				\
+		zip $(dir)-dosboot.zip -9 -q -@				\
+	sleep 2 &&							\
+	pushd ${dir}/linuxboot &&					\
+	make dest=$(cwd)/linuxboot symlinks &&				\
+	make && make tidy &&						\
+	popd &&								\
+	find $(dir) -name CVS -prune -o -newer $(dir)-dosboot.zip	\
+			-type f -print |				\
+		zip $(dir)-linuxboot.zip -9 -q -@			\
+	$(really) ncftpput -p $$USER@users.sourceforge.net		\
+		upload.sourceforge.net /incoming			\
+		${dir}.zip ${dir}-dosboot.zip				\
+		${dir}-linuxboot.zip &&					\
+	cd / &&								\
 	$(really) rm -rf $$temp
 
-test: checkver
-	cd bootdisk && make && make tidy
-	mkdir -p /var/tmp/${dir} &&				\
-	rsync -aHv --exclude CVS/ --exclude '*~' --exclude '.*'	\
-	    . /var/tmp/${dir}/. &&				\
-	cd /var/tmp &&						\
-	tar -cvzf ${dir}.tar.gz ${dir}
+diff: checkver
+	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&	\
+	cvs diff -u -r$(tag)::
 
-.PHONY: default checkver release test
+log: checkver
+	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&	\
+	cvs log -N -S -r$(tag)::
+
+.PHONY: default checkver release diff
