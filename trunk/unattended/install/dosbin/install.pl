@@ -436,7 +436,7 @@ sub create_postinst_bat () {
 
     }
 
-    my $postinst = $file_spec->catfile ($u->{'meta'}->{'netinst'},
+    my $postinst = $file_spec->catfile ($u->{'_meta'}->{'netinst'},
                                         'postinst.bat');
     if (scalar @postinst_lines > 0) {
         print "Creating $postinst...";
@@ -653,7 +653,7 @@ $u->{'GuiRunOnce'}->{'Command0'} =
         write_file ($tempcred,
                     "SET Z_USER=$z_user",
                     "SET Z_PASS=$z_pass");
-        print "done.";
+        print "done.\n";
 
         return "$mapznrun $postinst";
     };
