@@ -125,6 +125,12 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
+:: Recommended update MS04-024 (839645)
+:: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
+:: URL|ENU|http://download.microsoft.com/download/8/6/3/863ea51d-b378-4a6a-927c-d0dc38f4fed1/Windows2000-KB839645-x86-ENU.EXE|updates/win2ksp4/windows2000-kb839645-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB839645-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Recommended update MS04-020 (841872)
 :: "Vulnerability in POSIX Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-020.mspx>
