@@ -1,0 +1,49 @@
+#!/bin/bash
+
+die () {
+    echo "$@"
+    exit 2
+}
+
+sys_block=/sys/block
+
+[ -d $sys_block ] \
+    || die "$sys_block not found!"
+
+# Argument is a directory like /sys/block/hda or /sys/block/sda3
+make_block_device () {
+    local path="$1"
+
+    local name=${path##*/}
+    local fullname="/dev/$name"
+    echo "Making device $fullname"
+    [ -f "$path/dev" ] \
+        || die "Internal error: $path/dev not found"
+
+    local major_minor="`cat $path/dev`"
+    local temp="$fullname.$$.tmp"
+    mknod "$temp" b ${major_minor%:*} ${major_minor#*:} \
+        || die "mknod failed"
+    mv -f "$temp" "$fullname" \
+        || die "rename $temp to $fullname failed"
+}
+
+dev="$1"
+
+[ -n "$dev" ] \
+    || die "$0: I need an argument"
+
+# Force "foo*" to expand to nothing if no matches found
+shopt -s nullglob
+
+# Exit silently if device does not exist
+[ -d "$sys_block/$dev" ] \
+    || exit 1
+
+make_block_device "$sys_block/$dev"
+
+for devX in "$sys_block/$dev/$dev"[1-9]* ; do
+    make_block_device $devX
+done
+
+exit 0
