@@ -1,36 +1,45 @@
 [UserData]
+    ; You should fill out this entire section
     FullName="Your Name"
     OrgName="Your Company"
     ComputerName=*
+    ; Windows XP uses "ProductKey"
+;   ProductKey=ZYXWV-UTSRQ-PONML-KJIHG-FEDCB
+    ; Windows 2000 uses "ProductID"
 ;    ProductID=12345-6789AB-CDEFG-HIJKL-MNOPQ
 
 [GuiUnattended]
-;    AdminPassword=
-    OEMSkipRegional=1
+    ; local administrator password
+    AdminPassword=
+    ; Your time zone (35=US/Eastern)
     TimeZone=35
+    OEMSkipRegional=1
     OemSkipWelcome=1
     AutoLogon=Yes
 
 [Identification]
+     ; Use these to join machine to a domain
 ;    JoinDomain=YOURDOM
 ;    DomainAdmin=YOURDOM\admin
 ;    DomainAdminPassword=
 
 [Unattended]
+    ; Use OemPnPDriversPath to add drivers during installation
+;    OemPnPDriversPath="drivers\net\IntelPRO;drivers\video\T22"
     UnattendMode=DefaultHide
     FileSystem=ConvertNTFS
     ExtendOemPartition=1
     OemSkipEula=Yes
     OemPreinstall=Yes
-    OemPnPDriversPath="drivers\net\IntelPRO;drivers\acpi\T2x;drivers\modem\T20;drivers\net\T22;drivers\video\T22;drivers\video\T23;drivers\audio\T23"
     TargetPath=\WINNT
 
 [Components]
+    ; Install IIS by default
     iis_pwmgr=On
     iis_doc=On
 
 [GuiRunOnce]
-    Command0="c:\netinst\toplev.bat"
+    Command0="c:\netinst\postinst.bat"
 
 [Data]
     AutoPartition=1
@@ -45,6 +54,3 @@
 
 [Networking]
     InstallDefaultComponents=Yes
-
-;[OEM_Ads]
-;    Logo = curllogo.bmp
