@@ -325,10 +325,11 @@ sub do_cmd ($) {
         while (1) {
             print "Running: $cmd\n";
             my $ret = system $cmd;
-            ($ignore_err{$ret >> 8} == 2)
-                and do_cmd ('.reboot');
-            ($ignore_err{$ret >> 8})
-                and last;
+            if ($ignore_err{$ret >> 8}) {
+                ($ignore_err{$ret >> 8} == 2)
+                    and do_cmd ('.reboot');
+                last;
+            }
             print "$cmd failed, status ", $ret >> 8, ' (', $ret % 256, ')', "\n";
             print "R)etry A)bort I)gnore ?\n";
             my $key = uc(getc(STDIN));
