@@ -197,6 +197,8 @@ if (exists $opts{'go'}) {
     run_at_logon ();
 
     while (defined (my $cmd = pop_todo ())) {
+        my $err_to_ignore = 0;
+
         if ($cmd =~ /^\./) {
             if ($cmd eq '.reboot') {
                 my $next_cmd = peek_todo ();
@@ -210,16 +212,21 @@ if (exists $opts{'go'}) {
                     run_at_logon ("$0 --go");
                 }
                 reboot (5);
+                die "Internal error";
+            }
+            elsif ($cmd =~ /^\.ign-err\s+(\d+)\s+(.*)$/) {
+                $err_to_ignore = $2;
+                $cmd = $1;
             }
             else {
-                die "Unrecognized directive $cmd";
+                die "Unrecognized dot-command $cmd";
             }
-            next;
         }
 
         print "Running: $cmd\n";
-        0 == system $cmd
-            or die "$cmd failed: ", ($? ? $? : $^E);
+        my $ret = system $cmd;
+        $ret == 0 || ($ret / 256) == $err_to_ignore
+            or die "$cmd failed, status ", $ret / 256, '.', $ret % 256;
     }
 }
 else {
