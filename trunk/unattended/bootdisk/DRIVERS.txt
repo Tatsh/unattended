@@ -17,6 +17,9 @@ elpc575  3com 3c575 family of CardBus (laptop) adapters
 el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
 # Found by doing a search for "3c905c" on 3com's support site.
 
+fa31x    Netgear FA311/FA312
+# Downloaded from www.netgear.com
+
 undis3c  "Universal" (PXE/UNDI) driver
 # This one is very special.  It implements NDIS2 over a PXE/UNDI
 # stack, which means it works when doing a network boot to DOS using
