@@ -18,7 +18,7 @@ if not exist %Z%\packages\adobereader\adberdr70_%WINLANG%_full.exe goto no_v7
 :: extract everything to a temporary folder, install by hand, and
 :: delete the temporary folder.
 todo.pl "rmdir /s /q \"%TEMP%\adberdr\""
-todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\adobe-reader.txt /i \"%TEMP%\adberdr\Adobe Reader 7.0.msi\" REBOOT=ReallySuppress"
+todo.pl "for %%m in (\"%TEMP%\adberdr\Adobe Reader 7.0*.msi\") do msiexec /qb /l* %SystemDrive%\netinst\logs\adobe-reader.txt /i \"%%m\" REBOOT=ReallySuppress"
 todo.pl ".ignore-err 131 %Z%\packages\adobereader\adberdr70_%WINLANG%_full.exe /S -nos_ne -nos_o\"%TEMP%\adberdr\""
 goto done
 
