@@ -28,6 +28,11 @@ get_cmdline_param () {
     done
 }
 
+# Configure the keyboard, if requested.
+kbd=`get_cmdline_param kbd`
+[ -n "$kbd" ] \
+    && loadkeys ${kbd#*=}
+
 check_shell=`get_cmdline_param shell`
 
 [ -n "$check_shell" ] \
