@@ -121,7 +121,7 @@ sub choice ($;$) {
         $ret = $choice_map{$key};
     }
     else {
-        system 'choice', $prompt, "/c:$choices";
+        system 'choice', "/c:$choices", $prompt;
         $ret = ($? >> 8) - 1;
     }
 
