@@ -17,6 +17,10 @@ echo Unattended Boot Disk Starting....
 
 set PATH=\;\NET
 PROMPT $P$G
+
+:: Set VERSION environment variable
+call version.bat
+
 :: Randomize hostname
 :: delete the old system.ini if it exists and replace it with a clean copy
 type \net\system.in_ > \net\system.ini
