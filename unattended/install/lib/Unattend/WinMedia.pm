@@ -35,7 +35,7 @@ sub new ($$) {
 
     # Read the relevant sections of TXTSETUP.SIF
     $self->{txtsetup} = Unattend::IniFile->new 
-        ($txtsetup, qr{(?:Strings|SCSI|SCSI\.Load)});
+        ($txtsetup, 'Strings|SCSI|SCSI\.Load');
 
     # Read SETUPP.INI
     $self->{setupp} = Unattend::IniFile->new ($setupp);
@@ -259,7 +259,7 @@ sub textmode_oem_drivers ($;$) {
     }
 
     my $txtsetup_oem =
-        Unattend::IniFile->new ($txtsetup_oem_file, qr{scsi});
+        Unattend::IniFile->new ($txtsetup_oem_file, 'scsi');
 
     my @ret;
 
