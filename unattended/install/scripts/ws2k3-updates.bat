@@ -9,7 +9,7 @@
 :: Critical update 824141 (MS03-045)
 :: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-045.asp>
-todo.pl "%Z%\updates\ws2k3\WindowsServer2003-KB824141-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\updates\ws2k3\WindowsServer2003-KB824141-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 825119 (MS03-044)
 :: "Buffer Overrun in Windows Help and Support Center Could Lead to System Compromise"
@@ -19,7 +19,7 @@ todo.pl "%Z%\updates\ws2k3\WindowsServer2003-KB825119-x86-%WINLANG%.exe /u /n /z
 :: Critical update 828035 (MS03-043)
 :: "Buffer Overrun in Messenger Service Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-043.asp>
-todo.pl "%Z%\updates\ws2k3\WindowsServer2003-KB828035-x86-%WINLANG%.exe /u /n /z"
+todo.pl ".ignore-err 194 %Z%\updates\ws2k3\WindowsServer2003-KB828035-x86-%WINLANG%.exe /u /n /z" .reboot
 
 :: Critical update 823182 (MS03-041)
 :: "Vulnerability in Authenticode Verification Could Allow Remote Code Execution"
