@@ -59,37 +59,6 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb873372-client-%WINLANG
 :: URL|TRK|http://download.microsoft.com/download/1/3/2/132cb48e-496a-419e-a7ef-92390212f5cf/office2000-kb873380-client-trk.exe|updates/office2k/office2000-kb873380-client-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb873380-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb873380.txt /p MSCONVop.msp REBOOT=ReallySuppress\""
 
-if not %WINVER%. == winxpsp1. goto did810217
-:: Security Update for Windows 2000: KB810217
-:: Microsoft Security Bulletin MS03-051
-:: "Buffer Overrun in Microsoft FrontPage Server Extensions Could Allow Code Execution (813360)"
-:: <http://www.microsoft.com/technet/security/bulletin/ms03-051.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=057D5F0E-0E2B-47D2-9F0F-3B15DD8622A2>
-:: URL|ARA|http://download.microsoft.com/download/e/2/0/e20032a4-589c-42a5-b053-1507d2517b60/Windows2000-KB810217-x86-ARA.exe|updates/office2k/windows2000-kb810217-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/9/b/b/9bbd5a21-d23c-447e-a8da-55c9577550e6/Windows2000-KB810217-x86-CSY.exe|updates/office2k/windows2000-kb810217-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/7/0/4/704c6e22-cced-4d94-bd26-667f9fae61db/Windows2000-KB810217-x86-DAN.exe|updates/office2k/windows2000-kb810217-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/5/f/2/5f22963d-c2f5-4957-8126-e6fde0afacf5/Windows2000-KB810217-x86-DEU.exe|updates/office2k/windows2000-kb810217-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/4/2/b/42b1db6d-073c-4d1a-84fe-9cc8e3d14e18/Windows2000-KB810217-x86-ELL.exe|updates/office2k/windows2000-kb810217-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/5/2/6/52699683-76e5-4d35-9d6a-116044cb22c3/Windows2000-KB810217-x86-ENU.exe|updates/office2k/windows2000-kb810217-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/f/9/6f9fc120-a8fe-42ff-8876-af1a29f7a5f1/Windows2000-KB810217-x86-ESN.exe|updates/office2k/windows2000-kb810217-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/5/2/b/52b87e3c-a0dd-49ba-a0a1-ebf3334e098c/Windows2000-KB810217-x86-FIN.exe|updates/office2k/windows2000-kb810217-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/2/e/0/2e083379-cdbe-45bd-9b5a-488420cb2460/Windows2000-KB810217-x86-FRA.exe|updates/office2k/windows2000-kb810217-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/a/7/a/a7ad0f64-0c5d-40b9-978e-034faa1b33e3/Windows2000-KB810217-x86-HEB.exe|updates/office2k/windows2000-kb810217-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/4/e/8/4e8f69da-27be-49e8-bc61-19405023f2da/Windows2000-KB810217-x86-HUN.exe|updates/office2k/windows2000-kb810217-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/4/c/3/4c3e4348-b8bb-4ca5-9e06-446ea548b514/Windows2000-KB810217-x86-ITA.exe|updates/office2k/windows2000-kb810217-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/a/b/4ab94c10-dddb-4daf-839a-29c4918de376/Windows2000-KB810217-x86-JPN.exe|updates/office2k/windows2000-kb810217-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/d/2/0d2d44c9-6ebf-4f75-91d7-fca7684f1452/Windows2000-KB810217-x86-KOR.exe|updates/office2k/windows2000-kb810217-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/c/1/f/c1fe00ea-fdef-4d18-8a8b-27983710f9fd/Windows2000-KB810217-x86-NLD.exe|updates/office2k/windows2000-kb810217-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/f/4/1/f4167949-45a6-4d86-8ade-2802a3552e1b/Windows2000-KB810217-x86-NOR.exe|updates/office2k/windows2000-kb810217-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/1/a/b/1ab80d7a-2c78-4392-a5f2-1db6f431b94d/Windows2000-KB810217-x86-PLK.exe|updates/office2k/windows2000-kb810217-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/5/7/957417bf-bf48-4afb-a08b-bf8639d64cb1/Windows2000-KB810217-x86-PTB.exe|updates/office2k/windows2000-kb810217-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/8/5/5/855256c8-a6ff-4a31-8000-0fd1d50f61b7/Windows2000-KB810217-x86-PTG.exe|updates/office2k/windows2000-kb810217-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/f/3/1/f31448ac-d6ac-473a-b08f-81bd8ae168e7/Windows2000-KB810217-x86-RUS.exe|updates/office2k/windows2000-kb810217-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/9/7/4/974fe447-e268-428a-bd15-05b4193d6647/Windows2000-KB810217-x86-SVE.exe|updates/office2k/windows2000-kb810217-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/d/d/9/dd9c4012-bb69-4e7d-b723-717abaefd1ad/Windows2000-KB810217-x86-TRK.exe|updates/office2k/windows2000-kb810217-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2k\Windows2000-KB810217-x86-%WINLANG%.exe /u /n /z"
-:did810217
-
 :: Excel 2000 Security Patch: KB830349
 :: <http://support.microsoft.com?kbid=830349>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=9904b2a6-0cf0-4cf2-aae0-062bdd7417d5>
