@@ -3,7 +3,7 @@
 :: waiting for.  See
 :: <http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg01259.html>.
 ping -n 10 localhost > nul
-
+@Echo off
 :: This will gracefully exit on both 2000, XP, and 2003 if already installed
 :: URL|ALL|http://download.microsoft.com/download/WindowsInstaller/Install/2.0/NT45/EN-US/InstMsiW.exe|packages/windowsinstaller/instmsiw.exe
 if not exist %Z%\packages\windowsinstaller\instmsiw.exe goto nomsi

@@ -1,5 +1,5 @@
 :: Install Visual Studio 6.0 and service pack
-
+@Echo off
 :: Trick acmboot.exe into thinking that GUI setup has already run
 start /wait regedit /s %Z%\scripts\vs6.reg
 if errorlevel 1 exit 1

@@ -1,5 +1,5 @@
 :: MASTER: Install a salesperson laptop
-
+@Echo off
 :: Do antivirus software last so it picks up Office and Notes
 todo.pl notes.bat att.bat shiva.bat
 

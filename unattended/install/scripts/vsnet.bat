@@ -1,5 +1,5 @@
 :: Install Visual Studio .NET
-
+@Echo off
 set VSNETDIR=%Z_PATH%\packages\VSNET
 
 :: Lots of prereqs here.  Remember that these are actually executed in

@@ -1,5 +1,5 @@
 :: OPTIONAL: Install Office 2003 and its updates
-
+@Echo off
 :: See <http://www.microsoft.com/office/ork/updates/2003/> for a
 :: current list of Office 2003 updates.
 

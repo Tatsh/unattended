@@ -1,5 +1,5 @@
 :: Defragment the C: drive
-
+@Echo off
 if exist %SystemRoot%\system32\defrag.exe goto got_defrag
 
 :: If we have no command-line defragmenter, use AutoIT script

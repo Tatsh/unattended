@@ -8,4 +8,5 @@
 
 :: Grant curlbot the right to log on as a service.  Create the
 :: cygwin-sshd service to run as curlbot.
+@Echo off
 todo.pl "ntrights -u CURL\curlbot +r SeServiceLogonRight" "c:\cygwin\bin\bash --login -c 'cygrunsrv -I cygwin-sshd -p /usr/local/etc/cygwin-sshd.sh -o -c / -u CURL\\\\curlbot'"

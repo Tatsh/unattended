@@ -1,5 +1,5 @@
 :: Perform post-install Cygwin configuration.
-
+@Echo off
 :: Set up mounts (/projects, /releases, etc.)
 todo.pl "c:\cygwin\bin\mount.exe -b -f -s P: /projects" "c:\cygwin\bin\mount.exe -b -f -s R: /releases" "c:\cygwin\bin\mount.exe -b -f -s S: /software" "c:\cygwin\bin\mount.exe -b -f -s U: /u"
 

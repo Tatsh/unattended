@@ -1,5 +1,5 @@
 :: MASTER: Install a developer workstation
-
+@Echo off
 :: C:\Perl\bin\HEAD conflicts with Cygwin version (because Windows is
 :: case-insensitive), so delete it.
 del C:\Perl\bin\HEAD

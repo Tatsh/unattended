@@ -1,5 +1,5 @@
 :: OPTIONAL: Install Office 2000 and its updates
-
+@Echo off
 :: Reboot after installing everything (superstition)
 todo.pl .reboot
 

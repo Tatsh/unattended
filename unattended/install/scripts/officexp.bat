@@ -1,5 +1,5 @@
 :: OPTIONAL: Install Office XP and its updates
-
+@Echo off
 :: Reminder: Commands will be executed in reverse order.
 
 :: Reboot after installing everything (superstition).

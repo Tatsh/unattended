@@ -1,5 +1,5 @@
 :: Install MSDN Library
-
+@Echo off
 :: Reboot when installation is finished.
 todo.pl .reboot
 

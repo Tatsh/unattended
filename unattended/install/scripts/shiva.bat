@@ -1,5 +1,5 @@
 :: Install Shiva VPN client
-
+@Echo off
 :: Reboot when finished
 todo.pl .reboot
 
