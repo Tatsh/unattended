@@ -24,10 +24,9 @@ todo.pl "z:\packages\win2ksp3\euro-tool.exe /q"
 
 :: Recommended Update Q327405
 :: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q327405>
-todo.pl "Z:\packages\winxpsp1\hu1002_pro.exe /Q /R:N"
+todo.pl "Z:\packages\winxpsp1\hu1002_pro.exe /Q /R:N" .reboot
 
 :: Critical Update Q329077
 :: <http://support.microsoft.com/default.aspx?scid=KB;EN-US;q329077>
 :: (security bulletin says reboot required)
-todo.pl "Z:\packages\winxpsp1\hu1002_pro.exe /Q /R:N" .reboot
-
+todo.pl "Z:\packages\winxpsp1\vm-sfix3.exe /Q /R:N" .reboot
