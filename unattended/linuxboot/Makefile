@@ -282,6 +282,13 @@ fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
 		$(cwd)/fakelib/libc_nonshared.a )" >> $@.tmp
 	mv $@.tmp $@
 
+# "Fake" headers, too
+fakeinclude/stdio.h: build-$(glibc)/libc.so
+	mkdir -p `dirname $@`
+	cd build-$(glibc)						    \
+		&& make inst_includedir=$(cwd)/`dirname $@` install-headers
+	[ -e "$@" ] && touch $@
+
 # Create empty config file to silence ldconfig warnings
 stage1/etc/ld.so.conf:
 	touch $@
@@ -352,12 +359,12 @@ stage1/bin/busybox: $(busybox)/busybox
 stage1 += stage1/bin/busybox
 
 ## parted
-$(parted)/parted/.libs/parted: fakelib/libc.so stage1/lib/libuuid.so \
-			stage1/lib/libdl.so
-	cd $(parted)						\
-	&& CFLAGS="-L$(cwd)/fakelib -L$(cwd)/stage1/lib		\
-			-Wl,$(cwd)/stage1/lib/ld-linux.so"	\
-		./configure --disable-nls --without-readline	\
+$(parted)/parted/.libs/parted: fakelib/libc.so fakeinclude/stdio.h \
+			stage1/lib/libuuid.so stage1/lib/libdl.so
+	cd $(parted)							\
+	&& CFLAGS="-I$(cwd)/fakeinclude -L$(cwd)/fakelib		\
+		-L$(cwd)/stage1/lib -Wl,$(cwd)/stage1/lib/ld-linux.so"	\
+		./configure --disable-nls --without-readline		\
 	&& make
 	[ -e $@ ] && touch $@
 
