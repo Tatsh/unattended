@@ -6,6 +6,12 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 816093
+:: "Flaw in the Microsoft VM Could Enable System Compromise"
+:: <http://support.microsoft.com/?kbid=816093>
+:: (download only available from Windows Catalog)
+todo.pl "z:\packages\winxpsp1\msjavwu.exe /q:a /r:n"
+
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
 :: <http://support.microsoft.com/?kbid=814078>
@@ -52,13 +58,6 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q810565_WXP_SP2_x86_ENU.exe /u /o 
 :: <http://support.microsoft.com/?kbid=810243>
 :: (only available from Windows Update Catalog)
 todo.pl "z:\packages\winxpsp1\Q810243_WXP_SP2.exe /u /o /z"
-
-:: Critical update 810030
-:: "Flaw in Microsoft VM May Compromise Windows"
-:: <http://support.microsoft.com/?kbid=810030>
-:: <http://support.microsoft.com/?kbid=304930>
-:: (only available from Windows Update Catalog)
-todo.pl "z:\packages\winxpsp1\msjavwu.exe /c:\"javatrig.exe /exe_install /l /q\" /q:a /r:n" .reboot
 
 :: Critical update 329834
 :: "Unchecked Buffer in PPTP Implementation May Permit Denial-of-Service"
