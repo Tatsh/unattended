@@ -59,9 +59,10 @@ href="http://www.microsoft.com/TechNet/prodtechnol/winxppro/proddocs/msiexec.asp
 
 <p>For installation, use the <kbd>/i</kbd> and <kbd>/qb</kbd>
 switches.  Use the <kbd>/l*</kbd> switch to produce a log file.  You
-can provide named options ("properties") at the end of the command
-line; which properties are supported depends on the package.  For
-example, this command:
+can provide named options (or "<a
+href="http://msdn.microsoft.com/library/en-us/msi/setup/properties.asp
+">properties</a>") at the end of the command line; which properties
+are supported depends on the package.  For example, this command:
 
 <pre>
     msiexec /qb /l* perl-log.txt /i ActivePerl.msi PERL_PATH=Yes PERL_EXT=Yes
@@ -188,17 +189,19 @@ you can create your own.  I prefer to avoid these approaches if at all
 possible, since they are relatively unreliable and difficult to
 maintain.
 
-<h3>Repackaging</h3>
+<h3 id="repackaging">Repackaging</h3>
 
 <p>There are several tools around which can take a "snapshot" of a
 machine's state before and after you perform a manual installation,
 compute the differences between the states, and bundle them up as an
-"installer".  The <a href="#wise">Wise</a> product line has good
-support for this.
+"installer".  The <a href="#wise">Wise</a> product line provides good
+support for this, and <a
+href="http://www.microsoft.com/windows2000/techinfo/planning/management/veritas.asp"
+>Microsoft's free tool</a> provides bad support for it.
 
-<p>The problem with this approach is that it fundamentally cannot work
-reliably.  Installers can vary their behavior depending on the exact
-initial state of the machine, such as the OS version or the
+<p>The main problem with this approach is that it fundamentally cannot
+work reliably.  Installers can vary their behavior depending on the
+exact initial state of the machine, such as the OS version or the
 presence/absence of other installed software.  So the repackaged
 installer will almost never do exactly the same thing that a fresh
 installation would, unless the target machine is identical to original
@@ -207,8 +210,13 @@ machine.
 <p>And of course, for every new release of an application, you will
 need to perform the repackaging again.
 
+There are other <a
+href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q264478"
+>disadvantages</a> which even Microsoft recognizes.
+
 <p>For these reasons, I think repackaging is a very bad idea and I
-recommend against it.
+advise against it.
+
 
 <h3 id="autoit">AutoIt</h3>
 
@@ -592,9 +600,9 @@ is still accurate, however.
 <p>Luckily, by running "strings" on <code>smsinst.exe</code>, we can
 learn that all it does is run <code>regedit /s key.dat</code> and then
 fire up <code>acmboot.exe</code>.  The <code>key.dat</code> file is
-just a simple registry patch to trick <code>acmsetup.exe</code> into
+just a simple registry patch to trick <code>acmboot.exe</code> into
 thinking that the GUI portion of Setup has already run.  You must
-provide the <code>/k</code> switch to <code>acmsetup.exe</code> to
+provide the <code>/k</code> switch to <code>acmboot.exe</code> to
 specify your license key (sans hyphens).
 
 <p>Having installed Visual C++, you probably want to install the
