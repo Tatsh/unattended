@@ -2,13 +2,13 @@ bash=bash-2.05b
 busybox=busybox-1.00-pre8
 dosemu=dosemu-1.2.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.34
+e2fsprogs=e2fsprogs-1.35
 glibc=glibc-2.3.2
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%, glibc-linuxthreads-%, $(glibc)))
 klibc=klibc-0.115
 linux=linux-2.6.3
-module-init-tools=module-init-tools-3.0-pre10
+module-init-tools=module-init-tools-3.0
 parted=parted-1.6.6
 perl=perl-5.8.3
 pciutils=pciutils-2.1.11
@@ -80,9 +80,7 @@ download-$(strip $(1)) :  ;						\
 	&& rm $$$$temp ;						\
 	}
 
-all:
-	@echo "You are a dork."
-	@exit 1
+all: iso tftpboot
 
 download-$(glibc-linuxthreads) : download-$(glibc)
 
