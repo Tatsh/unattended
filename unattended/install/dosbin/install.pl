@@ -503,6 +503,30 @@ $u->comments ('_meta') =
     ['This section is for informational purposes.',
      'Windows Setup does not use it.'];
 
+$u->comments ('_meta', 'autolog') =
+    ['Command to disable (or modify) autologon when installation finishes'];
+
+# Default setting for automatic logon is to disable it, but retain
+# default setting of last user who logged on.
+$u->{'_meta'}->{'autolog'} = 'autolog.pl --logon=0';
+
+$u->comments ('_meta', 'doit_cmds') = ['Contents of doit.bat script'];
+$u->{'_meta'}->{'doit_cmds'} =
+    sub {
+        my $unattend_txt = $file_spec->catfile ($u->{'_meta'}->{'netinst'},
+                                                'unattend.txt');
+        my $src_tree = $u->{'_meta'}->{'OS_media'};
+        my $media_obj = Unattend::WinMedia->new ($src_tree);
+        my @lang_dirs = $media_obj->lang_dirs (1);
+        my $lang_opts = join ' ', map { "/rx:$_" } @lang_dirs;
+        $src_tree =~ /\\$/
+            or $src_tree .= '\\';
+        $src_tree .= 'i386';
+        return "z:;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
+    };
+
+$u->{'_meta'}->{'edit_files'} = '1';
+
 $u->comments ('_meta', 'fdisk_lba') =
     ['Use extended INT13 BIOS calls for fdisk?'];
 
@@ -530,6 +554,23 @@ $u->{'_meta'}->{'ipaddr'} =
     };
 
 
+$u->comments ('_meta', 'local_admin_group') =
+    ['Name of local Administrators group.  Should depend on language...'];
+
+$u->{'_meta'}->{'local_admin_group'} = 'Administrators';
+
+$u->{'_meta'}->{'local_admins'} =
+    ['Accounts added to local Administrators group'];
+$u->{'_meta'}->{'local_admins'} =
+    sub {
+        my $dom = $u->{'Identification'}->{'JoinDomain'};
+        defined $dom
+            or return undef;
+        print "Enter users to add to local Administrators group.\n";
+        return simple_q
+            ("Type 0 or more usernames, separated by spaces:\n");
+    };
+
 $u->{'_meta'}->{'macaddr'} =
     sub {
         # Parse file written by autoexec.bat.
@@ -542,10 +583,15 @@ $u->{'_meta'}->{'macaddr'} =
         return undef;
     };
 
-$u->{'_meta'}->{'replace_mbr'} =
+$u->{'_meta'}->{'netinst'} = 'c:\\netinst';
+
+$u->comments ('_meta', 'ntp_servers') =
+    ['NTP servers, separated by commas or spaces'];
+
+$u->{'_meta'}->{'ntp_servers'} =
     sub {
-        return yes_no_choice
-            ('Replace Master Boot Record (if unsure, say yes)');
+        return simple_q
+            ("Enter NTP servers, separated by spaces (default=none):");
     };
 
 $u->comments ('_meta', 'OS_dir') = ['Directory holding OS media directories'];
@@ -553,6 +599,14 @@ $u->{'_meta'}->{'OS_dir'} =
     sub { return $file_spec->catdir ('z:', 'os'); };
 
 $u->{'_meta'}->{'OS_media'} = \&ask_os;
+
+$u->{'_meta'}->{'postinst'} = \&create_postinst_bat;
+
+$u->{'_meta'}->{'replace_mbr'} =
+    sub {
+        return yes_no_choice
+            ('Replace Master Boot Record (if unsure, say yes)');
+    };
 
 $u->comments ('_meta', 'top') = ['Scripts run by postinst.bat'];
 
@@ -600,60 +654,6 @@ $u->{'_meta'}->{'top'} =
                                     sort keys %optional_choices);
         return join ';', ($master, map { $optional_choices{$_} } @options);
     };
-
-$u->comments ('_meta', 'local_admin_group') =
-    ['Name of local Administrators group.  Should depend on language...'];
-
-$u->{'_meta'}->{'local_admin_group'} = 'Administrators';
-
-$u->{'_meta'}->{'local_admins'} =
-    ['Accounts added to local Administrators group'];
-$u->{'_meta'}->{'local_admins'} =
-    sub {
-        my $dom = $u->{'Identification'}->{'JoinDomain'};
-        defined $dom
-            or return undef;
-        print "Enter users to add to local Administrators group.\n";
-        return simple_q
-            ("Type 0 or more usernames, separated by spaces:\n");
-    };
-
-$u->{'_meta'}->{'netinst'} = 'c:\\netinst';
-
-$u->comments ('_meta', 'ntp_servers') =
-    ['NTP servers, separated by commas or spaces'];
-
-$u->{'_meta'}->{'ntp_servers'} =
-    sub {
-        return simple_q
-            ("Enter NTP servers, separated by spaces (default=none):");
-    };
-
-$u->comments ('_meta', 'doit_cmds') = ['Contents of doit.bat script'];
-$u->{'_meta'}->{'doit_cmds'} =
-    sub {
-        my $unattend_txt = $file_spec->catfile ($u->{'_meta'}->{'netinst'},
-                                                'unattend.txt');
-        my $src_tree = $u->{'_meta'}->{'OS_media'};
-        my $media_obj = Unattend::WinMedia->new ($src_tree);
-        my @lang_dirs = $media_obj->lang_dirs (1);
-        my $lang_opts = join ' ', map { "/rx:$_" } @lang_dirs;
-        $src_tree =~ /\\$/
-            or $src_tree .= '\\';
-        $src_tree .= 'i386';
-        return "z:;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
-    };
-
-$u->{'_meta'}->{'edit_files'} = '1';
-
-$u->comments ('_meta', 'autolog') =
-    ['Command to disable (or modify) autologon when installation finishes'];
-
-# Default setting for automatic logon is to disable it, but retain
-# default setting of last user who logged on.
-$u->{'_meta'}->{'autolog'} = 'autolog.pl --logon=0';
-
-$u->{'_meta'}->{'postinst'} = \&create_postinst_bat;
 
 # Default is to fetch these from environment set up by autoexec.bat.
 $u->comments ('_meta', 'z_path') = ['UNC path to install share'];
