@@ -5,31 +5,32 @@
 #
 use strict;
 my %lang=(
-	ara => 'ar',
-	csy => 'cs',
-	dan => 'da',
-	deu => 'de',
-	ell => 'el',
-	enu => 'en',
-	esn => 'es',
-	fin => 'fi',
-	fra => 'fr',
-	heb => 'he',
-	hun => 'hu',
-	ita => 'it',
-	jpn => 'ja',
-	kor => 'ko',
-	nld => 'nl',
-	nor => 'nn',
-	plk => 'pl',
-	ptb => 'pt-br',
-	rom => 'ro',
-	rus => 'ru',
-	sve => 'sv',
-	trk => 'tr',
-	prg => 'pt-pt'
+	ara => 'ar', # Arabic
+	csy => 'cs', # Czech
+	dan => 'da', # Danish
+	nld => 'nl', # Dutch
+	enu => 'en', # English
+	fin => 'fi', # Finnish
+	fra => 'fr', # French
+	deu => 'de', # German
+	ell => 'el', # Greek
+	heb => 'he', # Hebrew
+	hun => 'hu', # Hungarian
+	ita => 'it', # Italian
+	jpn => 'ja', # Japanese
+	kor => 'ko', # Korean
+	nor => 'no', # Norwegian
+	plk => 'pl', # Polish
+	ptb => 'pt-br', # Portuguese (Brazilian)
+	prg => 'pt-pt', # Portuguese (Portugal)
+	rom => 'ro', # Romanian 
+	rus => 'ru', # Russian
+	esn => 'es', # Spanish
+	sve => 'sv', # Swedish
+	trk => 'tr', # Turkish
 	);
 #%lang=(enu => 'en');
+
 @ARGV == 2 || die "Usage: msparse.pl [microsoft family download url] [local download directory]\n\ne.g. msparse.pl \"http://www.microsoft.com/downloads/details.aspx?FamilyId=AC1141D2-6CE1-403E-832B-0574ADB0C296&displaylang=en\" updates/winxpsp1\n";
 my $url=$ARGV[0];
 my $type=$ARGV[1];
