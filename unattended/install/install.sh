@@ -197,26 +197,37 @@ else
     exit 1
 fi
 
-toplev="$netinst\\toplev.bat"
+# While bash is running, there is not enough conventional memory
+# available for winnt.exe to work.  So we just drop the command in a
+# .bat script and run it.
 
-echo -n "Creating default $toplev file..."
-echo "set top=$top" >> $toplev
-echo >> $toplev
-echo "net use z: $INSTALL /persistent:yes" >> $toplev
-echo "call z:\\scripts\\perl.bat" >> $toplev
-echo "z:\\bin\\todo.pl %top%.bat \"autolog.pl --disable\" .reboot" >> $toplev
+src_tree=Z:\\$os\\i386
+doit=$netinst\\doit.bat
+echo -n "Writing install command to $netinst\\doit.bat..."
+echo "$src_tree\\winnt /s:$src_tree /u:$unattend_dst" > $doit
+echo "done."
+
+postinst="$netinst\\postinst.bat"
+
+echo -n "Creating default $postinst file..."
+echo "set top=$top" >> $postinst
+echo >> $postinst
+echo "net use z: $INSTALL /persistent:yes" >> $postinst
+echo "call z:\\scripts\\perl.bat" >> $postinst
+echo "z:\\bin\\todo.pl %top%.bat \"autolog.pl --disable\" .reboot" >> $postinst
 for user in $admin_users ; do
-    echo "z:\\bin\\todo.pl \"net localgroup Administrators $user /add\"" >> $toplev
+    echo "z:\\bin\\todo.pl \"net localgroup Administrators $user /add\"" >> $postinst
 done
-echo >> $toplev
-echo "z:\\bin\\todo.pl --go" >> $toplev
+echo >> $postinst
+echo "z:\\bin\\todo.pl --go" >> $postinst
 echo "done."
 
 while : ; do
     echo
     echo "1) Edit $unattend_dst"
-    echo "2) Edit $toplev"
-    echo "3) Continue"
+    echo "2) Edit $doit (will run when you choose Continue)"
+    echo "3) Edit $postinst (will run when OS installation is finished)"
+    echo "4) Continue"
     echo "X) Exit this program"
     choice /c:1234x "Select"
     ret=$?
@@ -224,8 +235,10 @@ while : ; do
     if [ $ret == 1 ] ; then
         edit $unattend_dst
     elif [ $ret == 2 ] ; then
-        edit $toplev
+        edit $doit
     elif [ $ret == 3 ] ; then
+        edit $postinst
+    elif [ $ret == 4 ] ; then
         break
     else
         echo "Exiting."
@@ -233,13 +246,4 @@ while : ; do
     fi
 done
 
-src_tree=Z:\\$os\\i386
-
-# While bash is running, there is not enough conventional memory
-# available for winnt.exe to work.  So we just drop the command in a
-# .bat script and run it.
-
-echo -n "Writing install command to $netinst\\doit.bat..."
-echo "$src_tree\\winnt /s:$src_tree /u:$unattend_dst" > $netinst\\doit.bat
-echo "done."
 exit 0
