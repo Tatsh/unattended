@@ -8,8 +8,9 @@
 
 :: Critical update 823980
 :: "Buffer Overrun in RPC Interface May Allow Code Execution"
+:: (So anyone can take over any Windows computer anywhere.  Wow.)
 :: <http://support.microsoft.com/?kbid=823980>
-todo.pl "z:\packages\win2ksp4\Windows2000-KB823980-x86-ENU.exe /u /z"
+todo.pl ".ignore-err 194 z:\packages\win2ksp4\Windows2000-KB823980-x86-ENU.exe /u /z" .reboot
 
 :: Critical update 823559
 :: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
