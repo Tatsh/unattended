@@ -13,4 +13,4 @@ todo.pl "shortcut.pl \"%ProgramFiles%\"\OpenOffice.org\program\soffice.exe speci
 
 todo.pl "shortcut.pl \"%ProgramFiles%\"\OpenOffice.org\program\soffice.exe special:AllUsersPrograms\OpenOffice"
 
-todo.pl "%Z_PATH%\packages\OpenOffice\%WINLANG%\setup.exe -r:%Z%\packages\OpenOffice\officeop.txt -debug -net"
+todo.pl "%Z_PATH%\packages\OpenOffice\%WINLANG%\setup.exe -r:%Z%\packages\OpenOffice\officeop.txt -D:%ProgramFiles%\OpenOffice.org -debug -net"
