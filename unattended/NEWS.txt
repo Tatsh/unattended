@@ -1,4 +1,4 @@
-** Changes in version 4.1 (2004-Apr-??)
+** Changes in version 4.1 (2004-Apr-18)
 
 (Linux) Upgrade Linux kernel to 2.6.5.
 
@@ -23,6 +23,9 @@ install share.
 
 (DOS) Now that the FreeDOS folks added support for VCPI in emm386.exe,
 use it instead of umbpci.sys for UMB provider,
+
+New script linuxboot/tools/replace-mbr.pl, useful for prepping a USB
+flash drive for booting (see FAQ).
 
 Rewrite auconfig.pl to support "--policy" switch and all the new
 settings it allows.  Contributed by Nils Ostbjerg.
