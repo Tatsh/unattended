@@ -76,7 +76,7 @@ perl Z:\dosbin\install.pl
 if errorlevel 1 goto end
 cwsdpmi -u
 
-:: XP install requires smartdrv (http://support.microsoft.com/?kbid=296814)
+:: XP install requires smartdrv (http://support.microsoft.com/?id=296814)
 smartdrv
 
 C:\netinst\doit.bat
