@@ -1,9 +1,5 @@
 :: MASTER: Perform a basic workstation installation
 
-:: Re-enable System Restore.  (FIXME: This really should be at the
-:: very end of the installation.)
-todo.pl "srconfig.pl --enable"
-
 :: Set Automatic Updates to download automatically but prompt before install.
 todo.pl "auconfig.pl 3"
 
@@ -24,6 +20,3 @@ todo.pl "startup-type.pl Manual Messenger"
 
 :: Cleanup messes left over from installing.
 todo.pl hidepw.pl bootini.pl fixtz.pl 
-
-:: Disable "System Restore" during install.
-todo.pl "srconfig.pl --disable"
