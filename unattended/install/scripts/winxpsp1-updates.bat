@@ -263,6 +263,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 
 :: Critical Updates
 
+:: MS04-015
+:: "Vulnerability in Help and Support Center Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-015.mspx>
+:: URL|ENU|http://download.microsoft.com/download/a/f/a/afa937e7-e7f4-4fe8-8324-6e322f7ab542/WindowsXP-KB840374-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb840374-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb840374-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-012 (828741)
 :: "Cumulative Update for Microsoft RPC/DCOM"
 :: (Worst Windows security hole, ever.  Again.  And again.)
