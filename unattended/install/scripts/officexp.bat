@@ -7,37 +7,37 @@ todo.pl .reboot
 
 :: "Access 2002 Snapshot Viewer Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=826293>
-todo.pl "%Z%\packages\officexp\updates\officexp-kb826293-client-%WINLANG%.exe /q /c:\"msiexec /qb /p SNAPVIEWop.msp\""
+todo.pl "%Z%\updates\officexp\officexp-kb826293-client-%WINLANG%.exe /q /c:\"msiexec /qb /p SNAPVIEWop.msp\""
 
 :: "WordPerfect 5.x Converter Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=824938>
-todo.pl "%Z%\packages\officexp\updates\officexp-kb824938-client-%WINLANG%.exe /q /c:\"msiexec /qb /p MSCONVop.msp\""
+todo.pl "%Z%\updates\officexp\officexp-kb824938-client-%WINLANG%.exe /q /c:\"msiexec /qb /p MSCONVop.msp\""
 
 :: "Word 2002 Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=824934>
-todo.pl "%Z%\packages\officexp\updates\officexp-kb824934-client-%WINLANG%.exe /q /c:\"msiexec /qb /p WINWORDop.msp\""
+todo.pl "%Z%\updates\officexp\officexp-kb824934-client-%WINLANG%.exe /q /c:\"msiexec /qb /p WINWORDop.msp\""
 
 :: "Office XP Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=822036>
-todo.pl "%Z%\packages\officexp\updates\OfficeXP-KB822036-Client-%WINLANG%.exe /q /c:\"msiexec /qb /p VBE6op.msp\""
+todo.pl "%Z%\updates\officexp\OfficeXP-KB822036-Client-%WINLANG%.exe /q /c:\"msiexec /qb /p VBE6op.msp\""
 
 :: Outlook 2002 Update: January 22, 2003
 :: <http://support.microsoft.com/?kbid=812262>
 :: <http://office.microsoft.com/downloads/2002/olk1006.aspx>
 :: Run "Olk1006.exe /c /t:<path>" to extract files to <path>.
-todo.pl "msiexec /qb /p %Z%\packages\officexp\updates\Olk1006\OUTLOOKop.msp"
+todo.pl "msiexec /qb /p %Z%\updates\officexp\Olk1006\OUTLOOKop.msp"
 
 :: Excel 2002 Update: October 16, 2002
 :: <http://support.microsoft.com/?kbid=329750>
 :: <http://office.microsoft.com/downloads/2002/exc1003.aspx>
 :: Run "exc1003.exe /c /t:<path>" to extract files to <path>.
-todo.pl "msiexec /qb /p %Z%\packages\officexp\updates\exc1003\EXCELop.msp"
+todo.pl "msiexec /qb /p %Z%\updates\officexp\exc1003\EXCELop.msp"
 
 :: Word 2002 Update: October 16, 2002
 :: <http://support.microsoft.com/?kbid=329748>
 :: <http://office.microsoft.com/downloads/2002/wrd1005.aspx>
 :: Run "wrd1005.exe /c /t:<path>" to extract files to <path>.
-todo.pl "msiexec /qb /p %Z%\packages\officexp\updates\wrd1005\WINWORDop.msp"
+todo.pl "msiexec /qb /p %Z%\updates\officexp\wrd1005\WINWORDop.msp"
 
 :: Hm, tying this to SP4 is probably wrong.  FIXME
 if not %WINVER%. == win2ksp4. goto didauiu
@@ -45,7 +45,7 @@ if not %WINVER%. == win2ksp4. goto didauiu
 :: <http://support.microsoft.com/?kbid=316127>
 :: <http://office.microsoft.com/downloads/2002/oxpauiu.aspx>
 :: ONLY REQUIRED FOR WIN2K!
-todo.pl "msiexec /qb /p %Z%\packages\officexp\updates\oxpauiu\MSCTF.msp" .reboot
+todo.pl "msiexec /qb /p %Z%\updates\officexp\oxpauiu\MSCTF.msp" .reboot
 :didauiu
 
 :: Service Pack 2
@@ -53,13 +53,13 @@ todo.pl "msiexec /qb /p %Z%\packages\officexp\updates\oxpauiu\MSCTF.msp" .reboot
 :: Download from:
 :: <http://download.microsoft.com/download/officexpstandard/sp/oxpsp2/w98nt42kmexp/en-us/oxpsp2.exe>
 :: Then run "oxpsp2 /c /t:<path>" to extract files to <path>.
-todo.pl "msiexec /qb /p %Z%\packages\officexp\updates\oxpsp2\MAINSP2.msp"
+todo.pl "msiexec /qb /p %Z%\updates\officexp\oxpsp2\MAINSP2.msp"
 
 :: Service Pack 1
 :: See <http://support.microsoft.com/?kbid=307843>
 :: Download from:
 :: <http://download.microsoft.com/download/officexpstandard/sp/oxpsp1/w98nt42kmexp/en-us/oxpsp1.exe>
 :: Then run "oxpsp1 /c /t:<path>" to extract files to <path>.
-todo.pl "msiexec /qb /p %Z%\packages\officexp\updates\oxpsp1\MAINSP1.msp"
+todo.pl "msiexec /qb /p %Z%\updates\officexp\oxpsp1\MAINSP1.msp"
 
 todo.pl "%Z%\packages\officexp\setup /qb /l* c:\netinst\logs\officexp.txt ADDLOCAL=ALL NOUSERNAME=1 PIDKEY=%PIDKEY%"
