@@ -6,6 +6,9 @@ die () {
     exec bash >&2
 }
 
+# Set VERSION environment variable.
+export VERSION=$(< /etc/version)
+
 if [ -z "$CMDLINE" ] ; then 
     proc_cmdline=/proc/cmdline
     [ -r "$proc_cmdline" ] \
