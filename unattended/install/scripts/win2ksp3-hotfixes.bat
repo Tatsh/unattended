@@ -23,7 +23,7 @@ todo.pl ".ignore-err 194 z:\packages\win2ksp3\js56nen.exe /q /r:n" .reboot
 :: "Cannot Install Driver Updates from the Windows Update Web Site"
 :: (only available from <http://windowsupdate.microsoft.com/catalog/>)
 :: <http://support.microsoft.com/?kbid=814033>
-todo.pl "z:\packages\win2ksp3\Q814033_W2K_SP4_x86_EN.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\win2ksp3\Q814033_W2K_SP4_x86_EN.exe /u /o /z" .reboot
 
 :: Critical Update 811630
 :: "HTML Help Update to Limit Functionality ..."

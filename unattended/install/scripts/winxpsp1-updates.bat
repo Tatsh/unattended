@@ -14,7 +14,7 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\js56nen.exe /q /r:n" .reboot
 :: Critical update 814033
 :: "Cannot Install Driver Updates from the Windows Update Web Site"
 :: <http://support.microsoft.com/?kbid=814033>
-todo.pl "z:\packages\winxpsp1\Q814033_WXP_SP2_x86_ENU.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q814033_WXP_SP2_x86_ENU.exe /u /o /z" .reboot
 
 :: Recommended update 814995
 :: "Some ... Fixes Stop Working After You Install the 328310 Update"
