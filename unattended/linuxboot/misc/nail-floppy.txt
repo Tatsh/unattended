@@ -38,6 +38,8 @@ lib/modules/2.6.3/modules.usbmap
 
 lib/modules/2.6.3/kernel/drivers/net
 
+lib/modules/2.6.3/kernel/lib/crc32.ko
+
 sbin/cardmgr
 sbin/insmod
 sbin/modprobe
