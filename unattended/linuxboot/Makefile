@@ -47,6 +47,15 @@ $(2) : $(1)	;				\
 	strip $(2).tmp ;			\
 	mv $(2).tmp $(2)
 
+# Macro to generate rule for copying library file into stage1
+copy_lib=					\
+$(2) : $(1) stage1/etc/ld.so.conf ;		\
+	mkdir -p `dirname $(2)` &&		\
+	cp -f $(1) $(2).tmp &&			\
+	strip $(2).tmp &&			\
+	mv $(2).tmp $(2) &&			\
+	ldconfig -r stage1
+
 # Macro to generate download-foo rule to download and unpack a package
 # FIXME - This is horrid
 dest=.
@@ -241,9 +250,9 @@ $(e2fsprogs)/lib/libuuid.so:
 	&& make
 	[ -e $@ ]
 
-$(call copy_exe,$(e2fsprogs)/lib/libuuid.so,stage1/lib/libuuid.so)
+$(call copy_lib,$(e2fsprogs)/lib/libuuid.so,stage1/lib/libuuid.so)
 
-stage1_libs += stage1/lib/libuuid.so
+stage1 += stage1/lib/libuuid.so
 
 ## glibc
 $(glibc)/.stamp-sscanf-patch: misc/glibc-sscanf-patch
@@ -260,19 +269,34 @@ build-$(glibc)/libc.so: $(glibc)/.stamp-sscanf-patch
 	&& make
 	[ -e $@ ]
 
-$(call copy_exe, build-$(glibc)/libc.so, stage1/lib/libc.so)
+$(call copy_lib, build-$(glibc)/libc.so, stage1/lib/libc.so)
+
+# "Fake" library to link against
+$(call copy_file, build-$(glibc)/libc_nonshared.a, \
+	fakelib/libc_nonshared.a)
+
+fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
+	mkdir -p `dirname $@`
+	echo "OUTPUT_FORMAT(elf32-i386)" >| $@.tmp
+	echo "GROUP ( $(cwd)/stage1/lib/libc.so.6 \
+		$(cwd)/fakelib/libc_nonshared.a )" >> $@.tmp
+	mv $@.tmp $@
+
+# Create empty config file to silence ldconfig warnings
+stage1/etc/ld.so.conf:
+	touch $@
 
 # Dynamic linker
 build-$(glibc)/elf/ld.so: build-$(glibc)/libc.so
 	[ -e $@ ] && touch $@
 
-$(call copy_exe, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
+$(call copy_lib, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
 
 # Bash needs libdl
 build-$(glibc)/dlfcn/libdl.so: build-$(glibc)/libc.so
 	[ -e $@ ] && touch $@
 
-$(call copy_exe, build-$(glibc)/dlfcn/libdl.so, stage1/lib/libdl.so)
+$(call copy_lib, build-$(glibc)/dlfcn/libdl.so, stage1/lib/libdl.so)
 
 # Samba needs libresolv, libnss_*, libnsl, libcrypt
 build-$(glibc)/resolv/libresolv.so: build-$(glibc)/libc.so
@@ -297,16 +321,16 @@ build-$(glibc)/math/libm.so: build-$(glibc)/libc.so
 build-$(glibc)/login/libutil.so: build-$(glibc)/libc.so
 	[ -e $@ ] && touch $@
 
-$(call copy_exe, build-$(glibc)/resolv/libresolv.so, stage1/lib/libresolv.so)
-$(call copy_exe, build-$(glibc)/resolv/libnss_dns.so, stage1/lib/libnss_dns.so)
-$(call copy_exe, build-$(glibc)/nss/libnss_files.so, \
+$(call copy_lib, build-$(glibc)/resolv/libresolv.so, stage1/lib/libresolv.so)
+$(call copy_lib, build-$(glibc)/resolv/libnss_dns.so, stage1/lib/libnss_dns.so)
+$(call copy_lib, build-$(glibc)/nss/libnss_files.so, \
 	stage1/lib/libnss_files.so)
-$(call copy_exe, build-$(glibc)/nis/libnsl.so, stage1/lib/libnsl.so)
-$(call copy_exe, build-$(glibc)/crypt/libcrypt.so, stage1/lib/libcrypt.so)
-$(call copy_exe, build-$(glibc)/math/libm.so, stage1/lib/libm.so)
-$(call copy_exe, build-$(glibc)/login/libutil.so, stage1/lib/libutil.so)
+$(call copy_lib, build-$(glibc)/nis/libnsl.so, stage1/lib/libnsl.so)
+$(call copy_lib, build-$(glibc)/crypt/libcrypt.so, stage1/lib/libcrypt.so)
+$(call copy_lib, build-$(glibc)/math/libm.so, stage1/lib/libm.so)
+$(call copy_lib, build-$(glibc)/login/libutil.so, stage1/lib/libutil.so)
 
-stage1_libs +=							\
+stage1 +=							\
 	$(patsubst %, stage1/lib/%,				\
 	  libc.so ld-linux.so libdl.so libresolv.so libnsl.so	\
 	  libnss_dns.so libnss_files.so libcrypt.so		\
@@ -328,21 +352,23 @@ stage1/bin/busybox: $(busybox)/busybox
 stage1 += stage1/bin/busybox
 
 ## parted
-$(parted)/parted/.libs/parted:
-	cd $(parted)					\
-	&& ./configure --disable-nls --without-readline	\
+$(parted)/parted/.libs/parted: fakelib/libc.so stage1/lib/libuuid.so \
+			stage1/lib/libdl.so
+	cd $(parted)						\
+	&& CFLAGS="-L$(cwd)/fakelib -L$(cwd)/stage1/lib		\
+			-Wl,$(cwd)/stage1/lib/ld-linux.so"	\
+		./configure --disable-nls --without-readline	\
 	&& make
-	[ -e $@ ]
+	[ -e $@ ] && touch $@
 
 $(parted)/libparted/.libs/libparted.so: $(parted)/parted/.libs/parted
 	[ -e $@ ] && touch $@
 
 $(call copy_exe, $(parted)/parted/.libs/parted, stage1/usr/sbin/parted)
-$(call copy_exe, $(parted)/libparted/.libs/libparted.so, \
+$(call copy_lib, $(parted)/libparted/.libs/libparted.so, \
 	stage1/lib/libparted.so)
 
-stage1 += stage1/usr/sbin/parted
-stage1_libs += stage1/lib/libparted.so
+stage1 += stage1/usr/sbin/parted stage1/lib/libparted.so
 
 ## pciutils
 $(pciutils)/lspci:
@@ -452,13 +478,6 @@ stage1 += stage1/linuxrc stage1/bin/find-modules-pci			\
 		stage1/etc/passwd
 
 ## Stage 1
-stage1/etc/ld.so.cache: $(stage1_libs)
-	rm -f $@
-	ldconfig -r stage1
-	[ -e $@ ]
-
-stage1 += stage1/etc/ld.so.cache
-
 stage1: $(stage1)
 
 ## Stage 2
