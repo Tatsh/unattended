@@ -1,5 +1,6 @@
 :: OPTIONAL: Install Opera Browser
-:: URL|ALL|ftp://ftp.opera.com/pub/opera/win/754u1/en/std/ow32enen754u1.exe|packages/opera/ow32enen754u1.exe
+:: URL|ALL|ftp://ftp.opera.com/pub/opera/win/754u2/en/std/ow32enen754u2.exe|packages/opera/ow32enen754u2.exe
+           
 :: note: we need the installer WITHOUT java (installer with java cannot install silently)
 @Echo off
 
@@ -28,7 +29,7 @@
 
 :: if you like to do special things (e.g. define custom searches), save your customized ini's in packages/opera/special
 
-%Z%\packages\opera\ow32enen754u1.exe /s
+%Z%\packages\opera\ow32enen754u2.exe /s
 if exist "%ProgramFiles%\Opera\Opera.exe" set opera="%ProgramFiles%\Opera"
 if exist "%ProgramFiles%\Opera7\Opera.exe" set opera="%ProgramFiles%\Opera7"
 if exist "%ProgramFiles%\Opera75\Opera.exe" set opera="%ProgramFiles%\Opera75"
