@@ -1,3 +1,21 @@
+*** Changes in version 2.1 ()
+
+Create and document setenv.pl script.  Use it in Cygwin/SSH scripts.
+
+In install.pl, only reboot machine if partition table changes.
+Moving ever closer to total non-interaction...
+
+Update win2ksp3-hotfixes.pl.
+
+Add support for Netgear FA311 network card.
+
+Fix various minor bugs.
+
+Overhaul documentation for InstallShield.
+
+Import version 2.0 of SYSLINUX binaries.
+
+
 *** Changes in version 2.0 (2002-Oct-22)
 
 Complete rewrite of install.sh in Perl.  Now it is install.pl, and it
