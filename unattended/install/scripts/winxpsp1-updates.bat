@@ -8,6 +8,10 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update Q323255
+:: <http://www.microsoft.com/Downloads/Release.asp?ReleaseID=41834>
+todo.pl "z:\packages\win2ksp3\Q323255_WXP_SP2_x86_ENU.exe /u /o /z"
+
 :: Movie Maker 1.2.1 update
 :: <http://www.download.windowsupdate.com/msdownload/update/v3/static/RTF/en/5509.htm>
 todo.pl "z:\packages\winxpsp1\movie-maker-1.2.1.exe /q"
