@@ -311,7 +311,7 @@ $(parted)/parted/parted:
 
 $(call copy_exe, $(parted)/parted/parted, stage1/usr/sbin/parted)
 
-stage1 += stage1/usr/bin/parted
+stage1 += stage1/usr/sbin/parted
 
 ## pciutils
 $(pciutils)/lspci:
