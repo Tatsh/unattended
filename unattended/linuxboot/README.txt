@@ -1,14 +1,11 @@
-This is an initial effort to create a Linux-based boot disk for
-Unattended.  Unless you like playing with alpha releases, you probably
-want to leave this directory now and poke around elsewhere in the
-distribution.
+This is the source and build tree for our Linux-based boot disk.
 
 To use the Linux-based boot disk, just burn the ISO image
 (linuxboot.iso) to CD and boot from it.  Or copy the contents of the
 tftpboot/ directory to your TFTP server and use PXE to boot it.
 
-That is all for now.  If you want to contribute to the development of
-this boot disk, read on.
+If you want to contribute to the development of this boot disk, read
+on.
 
 ======================================================================
 
@@ -30,22 +27,22 @@ It works for me.
 
 You can make small changes by editing the files under
 Z:\install\linuxaux directly.  For more serious things, or to do it
-"right", you need to rebuild from source.  This will require a
-reasonably modern Linux system.  We have tested on RedHat 9 (me) and
-Fedora Core 1 (Shad).  We are interested in reports for other modern
-distributions, especially SUSE 9.
+"right", you need to rebuild from source.  This will require a very
+modern Linux system.  Our reference system is Fedora Core 2; in
+particular, you will need at least GCC 3.3.3 and binutils 2.15.90.0.3
+or thereabouts.
 
 The Makefile generates the Linux boot disk _ab initio_.  To download
-all required sources from their canonical locations, type "make
-download".  This will take gobs of disk space, a fast connection, and
+all required sources from their canonical locations, do "make
+download".  This will use gobs of disk space, a fast connection, and
 lots of time.
 
 If you want to download the packages into a different directory and
-create symlinks here, use "make dest=/path/to/scratch/directory
-download" instead.
+create symlinks from here to there, use "make
+dest=/path/to/scratch/directory download" instead.
 
 Do "make iso" to build linuxboot.iso.  Do "make tftpboot" to populate
-tftpboot/ directory.  A simple "make" does both.
+the tftpboot/ directory.  A simple "make" does both.
 
 For more details, read the Makefile and other sources.  Hey, what do
 you expect on the bleeding edge?

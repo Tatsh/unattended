@@ -13,29 +13,23 @@ even cooler.  (See
 http://linux.bkbits.net:8080/linux-2.5/src/Documentation/early-userspace).
 
 Since the initramfs is a sequence of cpio archives, we can create one
-cpio archive from a tree of files and a separate cpio archive of
-device nodes and glom them together.  This is nice because "mknod"
-would require root access.  The tools/mknod-cpio.pl script directly
-generates a cpio archive of device nodes when fed misc/devices.txt as
-input.
-
-There is just one problem: As of kernel 2.6.3, initial ramdisks do not
-work quite right because Linux tries to mount a new device as root
-after the ramdisk is populated.  A trivial patch
-(http://www.zytor.com/pipermail/klibc/2003-November/000168.html) fixes
-this and is included here as misc/initramfs.patch.
+cpio archive from a tree of files and a separate cpio archive of /dev
+files and glom them together.  This is nice because "mknod" requires
+root access, and we want to avoid requiring root access.  The
+tools/mknod-cpio.pl script directly generates a cpio archive of device
+nodes when fed misc/devices.txt as input.
 
 Most Linux device drivers declare a MODULE_DEVICE_TABLE which lists
 the hardware which they support.  The "depmod" utility distills this
-information into files like /lib/modules/2.6.3/modules.pcimap.  By
+information into files like /lib/modules/2.6.6/modules.pcimap.  By
 using this map and the contents of /sys (sysfs), a usermode utility
-can autoprobe hardware and decide which driver to load.  The
+can autoprobe hardware and decide which drivers to load.  The
 misc/find-modules-pci script does this.  It is loosely based on the
 agent.pci script from the Linux hotplug utilities
 (http://www.kernel.org/pub/linux/utils/kernel/hotplug/).  This only
 takes care of PCI devices; we need to add USB, PCMCIA, etc. someday.
 
-Some modules do not declare a MODULE_DEVICE_TABLE.  The
+Some modules do not declare a MODULE_DEVICE_TABLE.  Our
 misc/extra.pcimap file holds any additions we need to make.  This will
 likely change from kernel version to kernel version, but it is no big
 deal to load the same module twice (or even the wrong module), as long
@@ -44,9 +38,10 @@ as we load at least the ones we actually need.
 To create misc/linux-config, I ran "make gconfig" in the Linux source
 tree and made a copy of the resulting .config file.  The Makefile here
 just copies misc/linux-config to $(linux)/.config and runs "make
-oldconfig" to configure the kernel.  This should provide pretty good
-support for future kernels, but we will occasionally want to refresh
-the configuration (especially if the Linux folks add new drivers).
+oldconfig" to configure the kernel.  This provides so-so support for
+future kernels, but we typically have to refresh the configuration
+with each kernel release (especially since the Linux folks are always
+adding new drivers).
 
 
 The disk geometry nightmare
@@ -57,35 +52,41 @@ The Linux HDIO_GETGEO ioctl() returns the geometry
 are not always the same as that returned by the BIOS, especially the
 legacy INT 13/AH=08h interface (see
 http://www.ctyme.com/intr/rb-0621.htm).  After some discussion on the
-SYSLINUX list, our solution (see
-http://www.zytor.com/pipermail/syslinux/2004-February/003269.html) is
+SYSLINUX list, my solution (see
+http://www.zytor.com/pipermail/syslinux/2004-February/003269.html) was
 to patch the kernel to invoke the BIOS calls at startup, and modify
-the edd.ko device driver to expose those values under
-/sys/firmware/edd.  The patch is in misc/edd-legacy-patch.
+the EDD device driver to expose those values under /sys/firmware/edd.
 
-With this patch applied to the kernel, our scripts can read the files
-under /sys/firmware/edd, use them to set some environment variables
-(LEGACY_BIOS_HEAD and LEGACY_BIOS_SECT), and fix the kernel's notion
-of the geometry by writing "bios_cyl:<C> bios_head:<H> bios_sect:<S>"
-into the /proc/ide/hdX/settings file.
+My patch was accepted into Linux 2.6.5
+(http://groups.google.com/groups?threadm=1xXh2-850-17%40gated-at.bofh.it)
+and modified somewhat in Linux 2.6.7
+(http://article.gmane.org/gmane.linux.kernel/208395).
+
+So, our scripts can read the files under /sys/firmware/edd, use them
+to set some environment variables (LEGACY_BIOS_HEAD and
+LEGACY_BIOS_SECT), and fix the kernel's notion of the geometry by
+writing "bios_cyl:<C> bios_head:<H> bios_sect:<S>" into the
+/proc/ide/hdX/settings file.
 
 This corrects the values returned by HDIO_GETGEO, which both Parted
 and Dosemu use.  Without this correction, Windows Setup creates a
 partition which its own loader cannot boot ("NTLDR not found").  I am
-not completely sure whether the partition table or Dosemu environment
-is responsible, but it does not matter because this fixes it.
+not completely sure whether the partition table (more likely) or
+Dosemu environment (less likely) is responsible, but it does not
+matter because this fixes both.
 
 Note that /proc/ide/hdX/settings only exists for IDE devices.
 Browsing the Linux kernel source, I have some hope that most SCSI and
 RAID drivers already return the BIOS-friendly geometry in HDIO_GETGEO.
-If this turns out not to be the case, we will need to find a way to
-manually feed the geometry into Dosemu (easy) and Parted (hard).
+So far, this hope has been validated by our users.  If this turns out
+to be wrong, we will need to find some way to manually feed the
+geometry into Dosemu (easy) and Parted (hard).
 
-There is a somewhat related issue, which is that we assume BIOS device
-80h (the boot device) is the one which we are using.  Our selection
-algorithm ("try hda, then try sda") is much too primitive and
-certainly wrong for complex multi-disk setups.  This may be the
-biggest FIXME at present...
+There is a related issue, which is that we assume BIOS device 80h (the
+boot device) is the one onto which we are installing.  Our selection
+algorithm (look for amiraid/ar0, then ataraid/d0, etc.) is much too
+primitive and certainly wrong for complex multi-disk setups.  This may
+be our biggest FIXME at present.
 
 
 module-init-tools
@@ -100,9 +101,9 @@ which we just delete.
 bash
 ====
 
-I know, Bash is huge.  But I am so accustomed to it that I cannot
-remember which features are standard and which are Bash extensions.
-So sue me.
+I know, Bash is huge.  But I am so accustomed to it that I can no
+longer remember which shell features are POSIX and which are Bash
+extensions.  So sue me.
 
 We use a horrible hack (bash_cv_termcap_lib=gnutermcap ./configure) to
 trick Bash into using its built-in primitive termcap code, instead of
@@ -114,28 +115,29 @@ network, not the boot disk.
 glibc
 =====
 
-I know, I know, glibc is really huge and is not really meant for boot
-disks.  The problem is that everything in the Linux world is written
-to link against glibc.  I looked at other C libraries (especially
-uClibc), but I was particularly worried about Samba, because we need
-smbmount to gain access to our network share.  And what about dosemu
-or other big-ticket items?  Do we somehow try to use uClibc on the
-boot disk and then switch to glibc after mounting the share?
+I know, I know, glibc is really huge and is not meant for boot disks.
+The problem is that everything in the Linux world is written to link
+against glibc.  I looked at other C libraries (especially uClibc), but
+I was worried about Samba, because we need smbmount to gain access to
+our network share.  And what about dosemu or other big-ticket items?
 
-In the end, I decided that since a compressed libc.so will fit on a
-floppy (compressed, barely), we can live with it.  Not that we support
-booting this thing from floppy (yet).
+I decided that since a compressed libc.so will fit on a floppy
+(compressed, barely), we can live with it.  Not that we support
+booting this thing from floppy yet.
 
-Note that LinuxThreads (and "configure --enable-add-ons") appears to
-be required; glibc-2.3.2 does not build without it.
+Note that some sort of threading support (and "configure
+--enable-add-ons=nptl") appears to be required; modern versions of
+glibc do not build otherwise.
 
-Even though glibc-2.3.2 is over a year old, it is the latest release.
-And it has a bug which prevents it from building under current
-versions of GCC.  The misc/glibc-sscanf-patch patch, which I found on
-the Net somewhere, fixes this bug.
+Speaking of versions of glibc...  Even though glibc-2.3.2 is over a
+year old, it is the latest "official" release.  But every Linux
+distribution is shipping something called "glibc-2.3.3" or even
+"glibc-2.3.4", which they apparently obtain by pulling from the glibc
+CVS repository as of some random date.  So we do the same.  I wonder
+if there will ever be another real glibc release.
 
-Note that, in general, your C compiler will compile and link many
-tools against the local system libraries and headers.  This can cause
+Moving right along...  By default, your C compiler will compile and
+link against the local system libraries and headers.  This can cause
 problems at run time, when the executables are dynamically loaded
 against the libraries we are building here.  The "fakeinclude" and
 "fakelib" directories work around this problem by letting us build
@@ -150,9 +152,9 @@ klibc is a super tiny C library.  Even if we use glibc for most
 things, for floppy boots we still need a tiny "early userspace" which
 can get the whole show on the road.
 
-Speaking of floppies...  My plan is to write a custom autofs daemon
-which links against klibc, mount that daemon as "/floppy", and replace
-most files on the system with symlinks to /floppy/1/...,
+Speaking of floppies, my ultimate plan is to write a custom autofs
+daemon which links against klibc, mount that daemon as "/floppy", and
+replace most files on the system with symlinks to /floppy/1/...,
 /floppy/2/..., and so on.  The custom autofs daemon, when it gets a
 request for "N", will print a message saying "Please insert floppy N
 and press Enter".  Then it will uncompress the floppy and return
@@ -187,11 +189,12 @@ The whole shebang
 =================
 
 The isolinux.cfg (and, someday, syslinux.cfg and pxelinux.cfg) file
-just passes a few parameters to the kernel.  One of them is
-"init=/linuxrc", which tells the kernel to run that script first after
-booting.  Source for the script it misc/linuxrc.  It does some basic
-work to set the stage to invoke /etc/master (which comes from
-misc/master), our master installation script.
+just fires up the kernel with no parameters.  Kernel 2.6.6 and later
+assume that if you have a file named "/init" on your initial ramdisk,
+then that file should be executed as soon as the ramdisk is unpacked.
+We use that mechanism (source in misc/init) to do some basic work
+which sets the stage for invoking /etc/master (source in misc/master),
+our master installation script.
 
 The Makefile generates a stage1/ directory holding the complete
 installation tree as seen after the disk is booted and the network is
