@@ -7,7 +7,6 @@ dosemu=dosemu-20040606
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
 glibc=glibc-20040606
-#glibc=glibc-20040306
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
@@ -21,14 +20,16 @@ parted=parted-1.6.11
 perl=perl-5.8.4
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.7
+pmtools=pmtools-20031210
 samba=samba-3.0.4
+wireless_tools=wireless_tools.26
 
 cwd:=$(shell pwd)
 
 packages=$(bash) $(busybox) $(dbd-mysql) $(dbi) $(dosemu) $(e2fsprogs)	\
-	$(glibc) $(kbd)							\
-	$(klibc) $(linux) $(module-init-tools) $(mysql) $(nano)		\
-	$(ncurses) $(parted) $(perl) $(pciutils) $(pcmcia-cs) $(samba)
+	$(glibc) $(kbd) $(klibc) $(linux) $(module-init-tools) $(mysql)	\
+	$(nano) $(ncurses) $(parted) $(perl) $(pciutils) $(pcmcia-cs)	\
+	$(pmtools) $(samba) $(wireless_tools)
 
 CC=gcc
 
@@ -455,6 +456,15 @@ stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 	stage1/etc/pcmcia/config.opts stage1/var/run \
 	stage1/etc/pcmcia/network
 
+## pmtools (acpidmp, for diagnostics)
+$(pmtools)/acpidmp/acpidmp: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
+	cd $(dir $@)							\
+	&& make CFLAGS="$(fakelib_cflags$) -I$(cwd)/$(linux)/include -O2"
+	[ -e $@ ]
+
+$(call copy_exe,$(pmtools)/acpidmp/acpidmp,stage1/sbin/acpidmp)
+stage1 += stage1/sbin/acpidmp
+
 ## Perl
 $(perl)/perl: fakeinclude/stdio.h
 	rm -f $@
@@ -566,6 +576,20 @@ $(samba)/source/client/mount.cifs: fakeinclude/stdio.h
 $(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
 
 stage1 += stage1/usr/lib/smb.conf stage1/sbin/mount.cifs
+
+
+## wireless_tools
+$(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
+	cd $(wireless_tools)			\
+	&& make KERNEL_SRC=$(cwd)/$(linux) CFLAGS="$(fakelib_cflags) -O2 -Wall"
+	[ -e $@ ]
+
+$(wireless_tools)/iwlist: $(wireless_tools)/iwconfig
+
+$(call copy_exe,$(wireless_tools)/iwconfig,stage1/sbin/iwconfig)
+$(call copy_exe,$(wireless_tools)/iwlist,stage1/sbin/iwlist)
+
+stage1 += stage1/sbin/iwconfig stage1/sbin/iwlist
 
 ## devices
 devices.cpio: misc/devices.txt
@@ -679,7 +703,7 @@ download-$(strip $(1)) :  ;						\
 
 cvs_rule=							\
 download-$(strip $(1)) : ;					\
-	what=$(strip $(1)) && module=$(strip $(2))		\
+	@what=$(strip $(1)) && module=$(strip $(2))		\
 	&& repo=$(strip $(3)) && date=$$$${what\#\#*-}	\
 	&& { [ -d "$$$$what" ] && exit 0 || : ; }		\
 	&& cd $(dest)						\
@@ -699,7 +723,7 @@ download-$(strip $(1)) : ;					\
 
 # Special rule to fetch updated pci.ids file
 download-pci.ids:
-	[ -e pci.ids ]							     \
+	@[ -e pci.ids ]							     \
 	|| { rm -f $@.tmp.bz2						     \
 	     && wget -O $@.tmp.bz2 http://pciids.sourceforge.net/pci.ids.bz2 \
 	     && bunzip2 $@.tmp.bz2					     \
@@ -753,7 +777,12 @@ $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
+$(call download_rule, $(pmtools), tar.bz2,			\
+	http://ftp.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/)
+$(call download_rule, $(wireless_tools), tar.gz,	\
+	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
+
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
