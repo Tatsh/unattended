@@ -20,8 +20,9 @@ WinWait, Select Packages
 ; Make sure the Window is active, then click in the right place to
 ; select "install all"
 WinActivate, Select Packages
-LeftClick, 60, 130
-; Wait ten seconds to ensure events are received in proper order (yuck)
+LeftClick, 60, 135
+
+; Wait ten seconds to ensure selection is noticed (yuck)
 Sleep, 10000
 Send, !n
 
