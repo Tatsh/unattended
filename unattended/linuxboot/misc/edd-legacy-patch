@@ -1,0 +1,169 @@
+diff -u -r linux-2.6.3-orig/arch/i386/boot/setup.S linux-2.6.3/arch/i386/boot/setup.S
+--- linux-2.6.3-orig/arch/i386/boot/setup.S	2004-02-17 22:58:11.000000000 -0500
++++ linux-2.6.3/arch/i386/boot/setup.S	2004-02-27 14:58:46.000000000 -0500
+@@ -650,6 +650,31 @@
+ 	int	$0x13				# make the call
+ 						# Don't check for fail return
+ 						# it doesn't matter.
++edd_get_legacy_chs:
++        xorw    %ax, %ax
++        movw    %ax, %ds:-8(%si)        
++        movw    %ax, %ds:-6(%si)
++        # Ralf Brown's Interrupt List says to set ES:DI to
++	# 0000h:0000h "to guard against BIOS bugs"
++        pushw   %es
++        movw    %ax, %es
++        movw    %ax, %di
++        pushw   %dx                             # legacy call clobbers %dl
++        movb    $LEGACYGETDEVICEPARAMETERS, %ah # Function 08
++        int     $0x13                           # make the call
++        popw    %es
++        jc      edd_legacy_done                 # failed
++        movb    %cl, %al                        # Low 6 bits are max
++        andb    $0x3F, %al                      #   sector number
++        movb	%al, %ds:-5(%si)                 # Record max sect
++        movb    %dh, %ds:-6(%si)                # Record max head number
++        movb    %ch, %al                        # Low 8 bits of max cyl
++        shr     $6, %cl
++        movb    %cl, %ah                        # High 2 bits of max cyl
++        movw    %ax, %ds:-8(%si)
++        
++edd_legacy_done:
++        popw    %dx
+ 	movw	%si, %ax			# increment si
+ 	addw	$EDDPARMSIZE+EDDEXTSIZE, %ax
+ 	movw	%ax, %si
+
+diff -u -r linux-2.6.3-orig/arch/i386/kernel/edd.c linux-2.6.3/arch/i386/kernel/edd.c
+--- linux-2.6.3-orig/arch/i386/kernel/edd.c	2004-02-17 22:57:22.000000000 -0500
++++ linux-2.6.3/arch/i386/kernel/edd.c	2004-02-27 14:22:12.000000000 -0500
+@@ -321,6 +321,45 @@
+ }
+ 
+ static ssize_t
++edd_show_legacy_cylinders(struct edd_device *edev, char *buf)
++{
++	struct edd_info *info = edd_dev_get_info(edev);
++	char *p = buf;
++	if (!edev || !info || !buf) {
++		return -EINVAL;
++	}
++
++	p += snprintf(p, left, "0x%x\n", info->legacy_cylinders);
++	return (p - buf);
++}
++
++static ssize_t
++edd_show_legacy_heads(struct edd_device *edev, char *buf)
++{
++	struct edd_info *info = edd_dev_get_info(edev);
++	char *p = buf;
++	if (!edev || !info || !buf) {
++		return -EINVAL;
++	}
++
++	p += snprintf(p, left, "0x%x\n", info->legacy_heads);
++	return (p - buf);
++}
++
++static ssize_t
++edd_show_legacy_sectors(struct edd_device *edev, char *buf)
++{
++	struct edd_info *info = edd_dev_get_info(edev);
++	char *p = buf;
++	if (!edev || !info || !buf) {
++		return -EINVAL;
++	}
++
++	p += snprintf(p, left, "0x%x\n", info->legacy_sectors);
++	return (p - buf);
++}
++
++static ssize_t
+ edd_show_default_cylinders(struct edd_device *edev, char *buf)
+ {
+ 	struct edd_info *info = edd_dev_get_info(edev);
+@@ -384,6 +423,33 @@
+  */
+ 
+ static int
++edd_has_legacy_cylinders(struct edd_device *edev)
++{
++	struct edd_info *info = edd_dev_get_info(edev);
++	if (!edev || !info)
++		return -EINVAL;
++	return info->legacy_cylinders > 0;
++}
++
++static int
++edd_has_legacy_heads(struct edd_device *edev)
++{
++	struct edd_info *info = edd_dev_get_info(edev);
++	if (!edev || !info)
++		return -EINVAL;
++	return info->legacy_heads > 0;
++}
++
++static int
++edd_has_legacy_sectors(struct edd_device *edev)
++{
++	struct edd_info *info = edd_dev_get_info(edev);
++	if (!edev || !info)
++		return -EINVAL;
++	return info->legacy_sectors > 0;
++}
++
++static int
+ edd_has_default_cylinders(struct edd_device *edev)
+ {
+ 	struct edd_info *info = edd_dev_get_info(edev);
+@@ -452,6 +518,12 @@
+ static EDD_DEVICE_ATTR(extensions, 0444, edd_show_extensions, NULL);
+ static EDD_DEVICE_ATTR(info_flags, 0444, edd_show_info_flags, NULL);
+ static EDD_DEVICE_ATTR(sectors, 0444, edd_show_sectors, NULL);
++static EDD_DEVICE_ATTR(legacy_cylinders, 0444, edd_show_legacy_cylinders,
++		       edd_has_legacy_cylinders);
++static EDD_DEVICE_ATTR(legacy_heads, 0444, edd_show_legacy_heads,
++		       edd_has_legacy_heads);
++static EDD_DEVICE_ATTR(legacy_sectors, 0444, edd_show_legacy_sectors,
++		       edd_has_legacy_sectors);
+ static EDD_DEVICE_ATTR(default_cylinders, 0444, edd_show_default_cylinders,
+ 		       edd_has_default_cylinders);
+ static EDD_DEVICE_ATTR(default_heads, 0444, edd_show_default_heads,
+@@ -478,6 +550,9 @@
+ 
+ /* These attributes are conditional and only added for some devices. */
+ static struct edd_attribute * edd_attrs[] = {
++	&edd_attr_legacy_cylinders,
++	&edd_attr_legacy_heads,
++	&edd_attr_legacy_sectors,
+ 	&edd_attr_default_cylinders,
+ 	&edd_attr_default_heads,
+ 	&edd_attr_default_sectors_per_track,
+
+diff -u -r linux-2.6.3-orig/include/asm-i386/edd.h linux-2.6.3/include/asm-i386/edd.h
+--- linux-2.6.3-orig/include/asm-i386/edd.h	2004-02-17 22:57:12.000000000 -0500
++++ linux-2.6.3/include/asm-i386/edd.h	2004-02-27 14:21:01.000000000 -0500
+@@ -34,10 +34,11 @@
+ 				   in empty_zero_block - treat this as 1 byte  */
+ #define EDDBUF	0x600		/* addr of edd_info structs in empty_zero_block */
+ #define EDDMAXNR 6		/* number of edd_info structs starting at EDDBUF  */
+-#define EDDEXTSIZE 4		/* change these if you muck with the structures */
++#define EDDEXTSIZE 8		/* change these if you muck with the structures */
+ #define EDDPARMSIZE 74
+ #define CHECKEXTENSIONSPRESENT 0x41
+ #define GETDEVICEPARAMETERS 0x48
++#define LEGACYGETDEVICEPARAMETERS 0x08
+ #define EDDMAGIC1 0x55AA
+ #define EDDMAGIC2 0xAA55
+ 
+@@ -162,6 +163,9 @@
+ } __attribute__ ((packed));
+ 
+ struct edd_info {
++        u16 legacy_cylinders;
++        u8 legacy_heads;
++        u8 legacy_sectors;
+ 	u8 device;
+ 	u8 version;
+ 	u16 interface_support;
