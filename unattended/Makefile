@@ -29,14 +29,14 @@ release: checkver
 	cvs -z3 -d${cvs} checkout unattended &&				\
 	mv unattended $(dir) &&						\
 	find $(dir) -name CVS -prune -o -type f -print |		\
-		zip $(dir).zip -9 -q -@					\
+		zip $(dir).zip -9 -q -@	&&				\
 	sleep 2 &&							\
 	pushd ${dir}/bootdisk &&					\
 	make && make tidy &&						\
 	popd &&								\
 	find $(dir) -name CVS -prune -o -newer $(dir).zip		\
 			-type f -print |				\
-		zip $(dir)-dosboot.zip -9 -q -@				\
+		zip $(dir)-dosboot.zip -9 -q -@ &&			\
 	sleep 2 &&							\
 	pushd ${dir}/linuxboot &&					\
 	make dest=$(cwd)/linuxboot symlinks &&				\
@@ -44,7 +44,7 @@ release: checkver
 	popd &&								\
 	find $(dir) -name CVS -prune -o -newer $(dir)-dosboot.zip	\
 			-type f -print |				\
-		zip $(dir)-linuxboot.zip -9 -q -@			\
+		zip $(dir)-linuxboot.zip -9 -q -@ &&			\
 	$(really) ncftpput -p $$USER@users.sourceforge.net		\
 		upload.sourceforge.net /incoming			\
 		${dir}.zip ${dir}-dosboot.zip				\
