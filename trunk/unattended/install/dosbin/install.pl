@@ -812,23 +812,26 @@ $u->{'UserData'}->{'ProductID'} =
         my $media_obj =
             Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
         my $name = $media_obj->name ();
-        # ProductID is used by win2k and winnt
+
+        # Only ask for ProductID for win2k or winnt.
         $name =~ /Windows 2000/ || $name =~ /Windows NT/
             or return undef;
 
-        # Mutual recursion.  IniFile object takes care of it.
-        my $product_key = $u->{'UserData'}->{'ProductKey'};
-        # Only ask for ProductID if we lack a ProductKey
-        defined $product_key
-            and return undef;
         return simple_q ($product_key_q);
     };
 
 $u->{'UserData'}->{'ProductKey'} =
     sub {
-        # Mutual recursion.  IniFile object takes care of it.
+        my $media_obj =
+            Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
+        my $name = $media_obj->name ();
+
+        # ProductKey is never used by win2k nor winnt.
+        $name =~ /Windows 2000/ || $name =~ /Windows NT/
+            and return undef;
+
+        # Only ask for ProductKey if we lack a ProductID.
         my $product_id = $u->{'UserData'}->{'ProductID'};
-        # Only ask for ProductKey if we lack a ProductID
         defined $product_id
             and return undef;
         return simple_q ($product_key_q);
