@@ -12,7 +12,7 @@ glibc=glibc-20040606
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 klibc=klibc-0.116
-linux=linux-2.6.6
+linux=linux-2.6.7
 module-init-tools=module-init-tools-3.0
 mysql=mysql-4.0.20
 nano=nano-1.2.3
@@ -88,13 +88,7 @@ stage1 += stage1/sbin/depmod
 
 ## Linux
 
-# Apply "critical" 2.6.6 ACPI patch.
-
-$(linux)/.stamp-acpi-patch: misc/acpi-20040326-2.6.6.diff
-	cd $(linux) && patch -p1 < $(cwd)/$<
-	touch $@
-
-$(linux)/.config: misc/linux-config $(linux)/.stamp-acpi-patch
+$(linux)/.config: misc/linux-config
 	cp -f $< $@
 	cd $(linux) && make oldconfig
 

@@ -302,13 +302,13 @@ echo "*** ...and look for legacy BIOS disk geometry in $edd_dir"
 # better someday.  FIXME.
 if [ -d "$edd_dir" ] ; then
     declare -i LEGACY_BIOS_HEAD LEGACY_BIOS_SECT
-    heads_file="$edd_dir/legacy_heads";
+    heads_file="$edd_dir/legacy_max_head";
     if [ -e "$heads_file" ] ; then 
         export LEGACY_BIOS_HEAD="$(< $heads_file)"
         # Heads value is useless until incremented
         let LEGACY_BIOS_HEAD++
     fi
-    sectors_file="$edd_dir/legacy_sectors";
+    sectors_file="$edd_dir/legacy_sectors_per_track";
     [ -e "$sectors_file" ] \
         && export LEGACY_BIOS_SECT="$(< $sectors_file)"
 else
