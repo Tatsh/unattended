@@ -97,24 +97,36 @@ sub move_or_nail ($$) {
     }
 }
 
+# Schedule a file for movement.
 sub move ($) {
     my ($file) = @_;
 
     move_or_nail ($file, 1);
 }
 
-sub move_list ($) {
-    my ($list) = @_;
+# Execute a proc on each line of a file, skipping blank lines and
+# comments.
+sub for_each_line ($$) {
+    my ($list, $proc) = @_;
     open LIST, $list
         or die "Unable to open $list for reading: $^E";
-    while (my $line = <>) {
+    while (my $line = <LIST>) {
         chomp $line;
-        &move ($line);
+        $line =~ s/\s+\#.*//;
+        $line =~ /^$/
+            and next;
+        &$proc ($line);
     }
     close LIST
         or die "Unable to close $list: $^E";
 }
 
+sub move_list ($) {
+    my ($list) = @_;
+    for_each_line ($list, \&move);
+}
+
+# Unschedule a file for movement (i.e., "nail it down").
 sub nail ($) {
     my ($file) = @_;
 
@@ -123,14 +135,7 @@ sub nail ($) {
 
 sub nail_list ($) {
     my ($list) = @_;
-    open LIST, $list
-        or die "Unable to open $list for reading: $^E";
-    while (my $line = <>) {
-        chomp $line;
-        &nail ($line);
-    }
-    close LIST
-        or die "Unable to close $list: $^E";
+    for_each_line ($list, \&nail);
 }
 
 sub do_move ($) {
@@ -144,10 +149,12 @@ sub do_move ($) {
     -d $to_dir
         or mkpath $to_dir;
 
+    unlink $to
+        or die "Unable to delete $to: $^E";
     rename $from, $to
         or die "Unable to rename $from to $to: $^E";
     symlink $link, $from
-        or die "Unable to create symlink $from -> $link: %^E";
+        or die "Unable to create symlink $from -> $link: $^E";
 }
 
 foreach my $action (@opt_actions) {
@@ -157,7 +164,7 @@ foreach my $action (@opt_actions) {
 undef @opt_actions;
 
 foreach my $to_move (keys %to_move) {
-    print "$to_move\n";
+#    print "$to_move\n";
     do_move ($to_move);
 }
 
@@ -176,10 +183,10 @@ move-and-link.pl [ options ] <source> <dest-outside> <dest-inside>
 Options:
 
   --help                        display verbose help and exit
-  --include <path>
-  --include-file <filename>
-  --exclude <path>
-  --exclude-file <filename>
+  --move <path>
+  --move-list <filename>
+  --nail <path>
+  --nail-list <filename>
 
 =head1 DESCRIPTION
 
