@@ -57,12 +57,6 @@ todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Q823718_MDAC_SecurityPatch.exe /q
 :: (Requires .NET to be installed first for managed DX)
 todo.pl ".expect-reboot AutoIt %Z%\scripts\directx9.aut"
 
-:: Critical update 823980
-:: "Buffer Overrun in RPC Interface May Allow Code Execution"
-:: (So anyone can take over any Windows computer anywhere.  Wow.)
-:: <http://support.microsoft.com/?kbid=823980>
-todo.pl ".ignore-err 194 %Z%\packages\win2ksp4\Windows2000-KB823980-x86-%WINLANG%.exe /u /n /z" .reboot
-
 :: Critical update 823559
 :: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=823559>
