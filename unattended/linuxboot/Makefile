@@ -326,7 +326,7 @@ $(kbd)/src/loadkeys:
 	&& ./configure					\
 	&& make CFLAGS="$$CFLAGS"
 
-stage1/bin/loadkeys:
+stage1/bin/loadkeys: $(kbd)/src/loadkeys
 	cd $(kbd)				\
 	&& make DESTDIR=$(cwd)/stage1 install
 	rm -r stage1/usr/share/locale
