@@ -1,3 +1,13 @@
+** Changes in version 4.0a (2004-Mar-??)
+
+(DOS) Make install.pl work again (whoops).  Thanks, Shad.
+
+(Linux) Allow kernel command-line options z_user, z_pass, and z_path
+to override bootdisk defaults.
+
+(Linux) Add "X" (exit) option to initial "override bootdisk defaults"
+question.
+
 ** Changes in version 4.0 (2004-Mar-07)
 
 Major changes to the boot disk in this release.  You will need to
