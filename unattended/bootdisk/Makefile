@@ -45,7 +45,7 @@ images/%.img: .stamp-template drivers/%.dos
 iso: bootdisk.iso
 
 bootdisk.iso: .stamp-images memdisk iso/isolinux/isolinux.cfg \
-			iso/isolinux/isoboot.msg
+			iso/isolinux/isoboot.msg iso/isolinux/isolinux.bin
 	ln -f images/*.img memdisk iso/isolinux
 	@echo -n "Making $@..."
 	@mkisofs -quiet -o $@.tmp \
@@ -75,6 +75,12 @@ iso/isolinux/isoboot.msg: isoboot.msg DRIVERS.txt
 	@mv $@.tmp $@
 	@echo "done"
 
+iso/isolinux/isolinux.bin: isolinux.bin
+	@echo -n "Making $@..."
+	@cat $< >| $@.tmp
+	@mv $@.tmp $@
+	@echo "done"
+
 # TFTP boot (PXE) targets
 tftpboot: .stamp-tftpboot
 
@@ -97,7 +103,7 @@ clean:
 	@-rm -f .stamp-images .stamp-template .stamp-tftpboot
 	-rm -f images/*.img
 	-rm -f bootdisk.iso
-	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.img,memdisk}
+	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.img,memdisk,isolinux.bin}
 	-rm -f tftpboot/${univ_driver}.img tftpboot/memdisk
 	-rm -f tftpboot/pxelinux.cfg/default
 
