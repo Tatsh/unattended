@@ -9,6 +9,7 @@
 :: URL|NLD|http://download.microsoft.com/download/2/e/d/2ed7c7e7-4922-48c6-bf4f-c32b76cba519/Q832894.exe|updates/ie6sp1/nld/q832894.exe
 :: URL|RUS|http://download.microsoft.com/download/c/f/d/cfd3fc45-d53b-4c6d-878d-de4282069a26/Q832894.exe|updates/ie6sp1/rus/q832894.exe
 :: URL|FRA|http://download.microsoft.com/download/a/7/c/a7cf4dc1-b1a0-4273-8b42-5e2a4139a478/Q832894.exe|updates/ie6sp1/fra/q832894.exe
+:: URL|ITA|http://download.microsoft.com/download/8/3/0/8301208a-e59f-4f30-9587-71439334a51f/Q832894.exe|updates/ie6sp1/ita/q832894.exe
 :: "February, 2004, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=832894>
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-004.asp>
@@ -20,6 +21,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 :: URL|NLD|http://download.microsoft.com/download/b/4/6/b4667035-5df2-420a-bfd7-b8ab5542eb80/q330994.exe|updates/ie6sp1/nld/q330994.exe
 :: URL|RUS|http://download.microsoft.com/download/6/5/6/656e2c57-570f-460f-90f6-bcd542f3fe73/q330994.exe|updates/ie6sp1/rus/q330994.exe
 :: URL|FRA|http://download.microsoft.com/download/d/7/2/d727f4ed-92a4-4d60-8be2-8e42e891cc8e/q330994.exe|updates/ie6sp1/fra/q330994.exe
+:: URL|ITA|http://download.microsoft.com/download/9/d/1/9d13668b-df1c-483a-813b-60991cf7a044/q330994.exe|updates/ie6sp1/ita/q330994.exe
 :: "April 2003, Cumulative Patch for Outlook Express"
 :: <http://support.microsoft.com/?kbid=330994>
 :: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
@@ -37,6 +39,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dah
 :: URL|NLD|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/NL/vbs56nnl.exe|updates/ie6sp1/vbs56nnld.exe
 :: URL|RUS|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/RU/vbs56nru.exe|updates/ie6sp1/vbs56nrus.exe
 :: URL|FRA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/FR/vbs56nfr.exe|updates/ie6sp1/vbs56nfra.exe
+:: URL|ITA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/IT/vbs56nit.exe|updates/ie6sp1/vbs56nita.exe
 :: "Incorrect VBScript Handling in Internet Explorer
 ::  Can Allow Web Pages to Read Local Files"
 :: <http://support.microsoft.com/?kbid=318089>
@@ -47,11 +50,12 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dah
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\vbs56n%WINLANG%.exe /q /r:n"
 
 :: Download Internet Explorer 6 SP1 installer from Microsoft then issue:
+:: ie6setup.exe /c:"ie6wzd.exe /d /s:""#E"
+:: This will allow you to download all necessary files for install.
 :: URL|ENU|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/EN-US/ie6setup.exe|packages/ie6sp1/enu/ie6setup.exe
 :: URL|DEU|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/DE/ie6setup.exe|packages/ie6sp1/deu/ie6setup.exe
 :: URL|NLD|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/NL/ie6setup.exe|packages/ie6sp1/nld/ie6setup.exe
 :: URL|RUS|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/RU/ie6setup.exe|packages/ie6sp1/rus/ie6setup.exe
 :: URL|FRA|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/FR/ie6setup.exe|packages/ie6sp1/fra/ie6setup.exe
-:: ie6setup.exe /c:"ie6wzd.exe /d /s:""#E"
-:: This will allow you to download all necessary files for install.
+:: URL|ITA|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/IT/ie6setup.exe|packages/ie6sp1/ita/ie6setup.exe
 todo.pl ".reboot-on 194 %Z%\packages\ie6sp1\%WINLANG%\IE6setup.exe /q /r:n"

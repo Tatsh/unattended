@@ -8,6 +8,7 @@ todo.pl .reboot
 :: "Office XP Update: March 23, 2004"
 :: ("exploitable security issues in Microsoft Script Editor")
 :: URL|ENU|http://download.microsoft.com/download/2/5/7/25750DD8-E66E-4099-95B4-216C0542D2F1/officexp-kb833858-fullfile-enu.exe|updates/officexp/officexp-kb833858-fullfile-enu.exe
+:: URL|ITA|http://download.microsoft.com/download/a/a/4/aa4adf57-df3a-4fcb-be66-4da178b2f8df/OfficeXpSp3-kb832671-fullfile-ita.exe|updates/officexp/officexpsp3-kb832671-fullfile-ita.exe
 :: <http://support.microsoft.com/?id=833858>
 todo.pl "%Z%\updates\officexp\officexp-kb833858-fullfile-enu.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb833858.txt /p VSDEBUGff.msp REBOOT=ReallySuppress\""
 
