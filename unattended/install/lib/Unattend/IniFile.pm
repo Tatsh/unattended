@@ -246,7 +246,7 @@ sub merge ($$) {
 # Characters needing no quotes on output
 my $nq_out_chars = qr{[a-zA-Z0-9_.,<>:/\-%\\\*]};
 # Characters needing no quotes on input
-my $nq_in_chars = qr{[ a-zA-Z0-9_.,<>:/\-%\\\*]};
+my $nq_in_chars = qr{(?:$nq_out_chars|[ \x80-\xFF])};
 
 # Regexp matching a single token (key or value)
 my $token = qr{(?:\".*?\"|$nq_in_chars+?)};
