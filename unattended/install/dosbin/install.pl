@@ -73,37 +73,88 @@ sub yes_no_choice ($) {
 sub menu_choice (@) {
     my @args = @_;
     my @choice_map;
+    my $opts = { };
+
+    # Current page
+    my $page = 0;
+    # Prompt
+    my $prompt = '';
+
+    ref $args[0] eq 'HASH'
+        and $opts = shift @args;
+    
+    # Process magic options hash.
+    foreach my $key (keys %$opts) {
+        if ($key eq 'page') {
+            $page = $opts->{$key};
+        }
+        elsif ($key eq 'prompt') {
+            $prompt = $opts->{$key} . "\n";
+        }
+    }
 
     scalar @args % 2 == 0
         or croak "menu_choice called with odd number of arguments";
 
-    scalar @args > 30
-        and croak "menu_choice called with too many arguments";
+    # Total number of choices
+    my $count = scalar @args / 2;
 
-    print "\n";
+    # Choices to display per page
+    my $per_page = 5;
 
-    my $i = 1;
-    my $choices = '';
-    while (exists $args[0]) {
-        my $option = shift @args;
-        my $value = shift @args;
-        my $key = sprintf '%X', $i;
-        print "$key) $option\n";
-        $choices .= $key;
-        $choice_map[$i] = $value;
+    my $pages = int(($count + $per_page - 1) / $per_page);
+
+    my $ret;
+  LOOP:
+    while (1) {
+        print "\n$prompt";
+        $pages > 1
+            and printf "(Page %d/%d)\n", $page+1, $pages;
+
+        my $start = $page * $per_page;
+
+        my $i = 0;
+        my $choices = '';
+
+        # Generate current page of choices.
+        while ($i < $per_page && $start + $i < $count) {
+            printf ("%d) %s\n", $i+1, $args[2*$i]);
+            $choices .= $i+1;
+            # Capture value for sub below
+            my $val = $args[2*$i + 1];
+            $choice_map[$i] = sub { no warnings 'exiting';
+                                    $ret = $val;
+                                    last LOOP;
+                                };
+        }
+
+        # If we have multiple pages, generate Next/Previous option
+        if ($pages > 1) {
+            $i++;
+            print "N/P) Next/Previous page\n";
+            $choices .= 'N';
+            $choice_map[$i] = sub { $page = ($page + 1) % $pages };
+            $i++;
+            $choices .= 'P';
+            $choice_map[$i] = sub { $page = ($page + $pages - 1) % $pages };
+        }
+
         $i++;
+        print "X) Exit this program\n";
+        $choices .= 'X';
+        $choice_map[$i] = sub { print "Exiting.\n"; exit 1; };
+
+        system 'choice', "/c:$choices", "Select:";
+        my $ret = ($? >> 8) - 1;
+
+        my $func = $choice_map[$ret];
+        &func ();
     }
 
-    print "X) Exit this program\n";
-    $choices .= 'x';
-    my $exit_choice = $i++;
-    system 'choice', "/c:$choices", "Select:";
-    my $ret = ($? >> 8);
-    if ($ret == $exit_choice) {
-        print "Exiting.\n";
-        exit 1;
-    }
-    return $choice_map[$ret];
+    # Record which page we ended up on
+    $opts->{'page'} = $page;
+
+    return $ret;
 }
 
 # Allow selection from among one or more strings.
@@ -114,7 +165,7 @@ sub multi_choice (@) {
         or return undef;
 
     # Choices to display per page
-    my $per_page = 4;
+    my $per_page = 9;
 
     my $pages = int((scalar @strings + $per_page - 1)
                     / $per_page);
@@ -124,7 +175,7 @@ sub multi_choice (@) {
     # Current page
     my $page = 0;
     while (1) {
-        print "$prompt\n";
+        print "\n$prompt\n";
         printf "(Page %d/%d)\n", $page+1, $pages;
         my $start = $page * $per_page;
         my $end = ($page < $pages - 1
