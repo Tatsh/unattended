@@ -362,8 +362,8 @@ stage1 += stage1/bin/busybox
 $(parted)/parted/.libs/parted: fakelib/libc.so fakeinclude/stdio.h \
 			stage1/lib/libuuid.so stage1/lib/libdl.so
 	cd $(parted)							\
-	&& CFLAGS="-I$(cwd)/fakeinclude -L$(cwd)/fakelib		\
-		-L$(cwd)/stage1/lib -Wl,$(cwd)/stage1/lib/ld-linux.so"	\
+	&& CFLAGS="-v -I$(cwd)/fakeinclude -L$(cwd)/fakelib		\
+		-L$(cwd)/stage1/lib -Wl,-rpath-link,$(cwd)/stage1/lib"	\
 		./configure --disable-nls --without-readline		\
 	&& make
 	[ -e $@ ] && touch $@
