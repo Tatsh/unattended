@@ -133,14 +133,20 @@ href="installers.html#repackaging">elsewhere</a>.)
 <p>If you would like to give Unattended a try, you can start right
 now.  First, visit the <a
 href="https://sourceforge.net/project/showfiles.php?group_id=62053"
->download page</a> to download the distribution.  Each release has two
-components: The main distribution
-(<code>unattended-<var>version</var>.tar.gz</code>) and the pre-built
-disk images
-(<code>unattended-<var>version</var>-images.tar.gz</code>).  Extract
-both to the same folder.  If you have a Unix machine with the right
-tools, you can build the disk images from the main distribution; but
-for now, you should probably just download both.
+>download page</a> to download the distribution.  Each release has
+three components: The main distribution
+(<code>unattended-<var>version</var>.tar.gz</code>), the traditional
+DOS boot disk images
+(<code>unattended-<var>version</var>-dosboot.tar.gz</code>), and the
+bleeding-edge <a href="#linux">Linux boot disk</a> images
+(<code>unattended-<var>version</var>-linuxboot.tar.gz</code>).
+Download the main distribution plus one or both of the DOS/Linux boot
+disk archives.
+
+Extract all archives to the same folder.  If you have a Unix machine
+with the right tools, you can rebuild the disk images from the main
+distribution; but for now, you should probably just download
+everything you need.
 
 <p>Next, read the rest of this documentation:
 
@@ -173,6 +179,31 @@ development in real time, you can subscribe to the <a
 href="https://lists.sourceforge.net/lists/listinfo/unattended-cvs/"
 >CVS commit logs</a>.
 
+<h1 id="linux">Did you say "Linux boot disk"?</h1>
+
+<p>Traditionally, Unattended had you boot to DOS to start the
+installation of Windows.  And most of the documentation on this site
+was written with this approach in mind.
+
+<p>It works fine, usually, but DOS has certain <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01030.html"
+>limitations</a> which we can avoid by using Linux.  If you do not
+care, then feel free to continue using the old boot disk.
+
+<p>Starting with Unattended 4.0, we are shipping a Linux boot disk in
+addition to the DOS boot disk.  Note that this is not for installing
+Linux; we are simply booting a custom diskless Linux system to
+initiate the installation of Windows.  The Linux boot disk is very new
+and our documentation has not been updated for it, but it works much
+the same as the DOS boot disk.  It runs the same Perl code, in fact,
+which we think is kind of neat.  At present, it only supports booting
+from CD-ROM (<code>linuxboot/linuxboot.iso</code>) and network
+(<code>linuxboot/tftpboot</code>).
+
+<p>The boot disk uses Linux kernel 2.6.3, whose hardware support is
+still maturing.  We are interested in your success/failure reports;
+please send them to <a
+href="mailto:unattended-devel@lists.sourceforge.net">unattended-devel</a>.
 
 <h1>Related sites</h1>
 
