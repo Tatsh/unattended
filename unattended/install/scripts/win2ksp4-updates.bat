@@ -23,6 +23,15 @@
 :: URL|RUS|http://download.microsoft.com/download/3/c/6/3c6b5375-05af-4fef-8dd0-595506d9e59b/WindowsMedia9-KB837272-RUS.exe|updates/mediaplayer9/windowsmedia9-kb837272-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb837272-%WINLANG%.exe /passive /n /norestart"
 
+:: Security Update for Windows Journal Viewer (KB886179)
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=DBF1EA4E-72BD-4359-9F93-7C232ED2DCD3>
+:: URL|DEU|http://download.microsoft.com/download/1/5/4/1544f14d-9223-4fc2-be89-df2d808f33a9/JournalViewer1.5_KB886179_DEU.exe|updates/journalviewer/journalviewer1.5_kb886179_deu.exe
+:: URL|ENU|http://download.microsoft.com/download/f/0/a/f0a18b7a-7f60-45be-b4e2-d25905f5bf04/JournalViewer1.5_KB886179_ENU.exe|updates/journalviewer/journalviewer1.5_kb886179_enu.exe
+:: URL|FRA|http://download.microsoft.com/download/3/4/2/3426b140-5c57-4c6f-87a1-7ae4a94a93a6/JournalViewer1.5_KB886179_FRA.exe|updates/journalviewer/journalviewer1.5_kb886179_fra.exe
+:: URL|JPN|http://download.microsoft.com/download/e/3/a/e3ae3db1-28d7-4678-9721-2b77ceb69e90/JournalViewer1.5_KB886179_JPN.exe|updates/journalviewer/journalviewer1.5_kb886179_jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/2/0/420d19d4-e028-4991-80b8-10678eb6cb8b/JournalViewer1.5_KB886179_KOR.exe|updates/journalviewer/journalviewer1.5_kb886179_kor.exe
+todo.pl ".reboot-on 194 %Z%\updates\journalviewer\JournalViewer1.5_KB886179_%WINLANG%.exe /Q /R:N"
+
 :: Windows Journal Viewer update
 :: <http://www.microsoft.com/windows2000/downloads/tools/redir-journalviewer.asp>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=fad44098-8b73-4e06-96d4-d1eb70eacb44>
@@ -178,12 +187,6 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842526-x86-%WINLANG%.
 :: URL|NOR|http://download.microsoft.com/download/d/3/6/d36beb85-ead9-4e5b-9111-f97c024f097f/Windows2000-KB837001-x86-NOR.EXE|updates/win2ksp4/windows2000-kb837001-x86-nor.exe
 :: URL|RUS|http://download.microsoft.com/download/0/9/0/090e3604-96c1-498f-b8c1-205008bc891b/Windows2000-KB837001-x86-RUS.EXE|updates/win2ksp4/windows2000-kb837001-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: Root Certificates Update
-:: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/4702.htm>
-:: (download only available from Windows Catalog)
-:: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_94e9af610087f43b1b637bb5c0e8146.exe|updates/win2ksp4/rootsupd.exe
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\rootsupd.exe /q /r:n"
 
 :: Recommended update 822831
 :: "BUG: Driver Installation Program Does Not Install Device Drivers"
@@ -554,3 +557,9 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823182-x86-%WINLANG%.
 
 :: Install IE6 First
 todo.pl ie6.bat
+
+:: Root Certificates Update
+:: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/4702.htm>
+:: (download only available from Windows Catalog)
+:: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_94e9af610087f43b1b637bb5c0e8146.exe|updates/win2ksp4/rootsupd.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\rootsupd.exe /q /r:n"
