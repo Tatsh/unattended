@@ -1,0 +1,107 @@
+#!/bin/bash
+
+die () {
+    echo "$@"
+    echo "*** Dropping to shell"
+    exec bash
+}
+
+make_block_device () {
+    local path="$1"
+
+    local name=${path##*/}
+    local fullname="/dev/$name"
+    echo "Making device $fullname"
+    [ -f "$path/dev" ] \
+        || die "Internal error: $path/dev not found"
+
+    local major_minor="`cat $path/dev`"
+    mknod "$fullname" b ${major_minor%:*} ${major_minor#*:} \
+        || die "mknod failed"
+}
+
+echo "*** OK, here we go."
+
+echo "*** First, we'll look for Ethernet hardware..."
+
+# PCI classes 0x0200nn are Ethernet controllers
+network_modules=`find-modules-pci 0x02 0x00`
+
+[ -z "$network_modules" ] \
+    && die "No network hardware found (missing drivers?)"
+
+for module in $network_modules ; do
+    echo "Loading $module..."
+    modprobe $module
+    echo "done loading $module"
+done
+
+echo "*** Good.  Now let's see about DHCP..."
+
+unset got_lease
+for iface in eth0 eth1 eth2 ; do
+    echo "*** Trying DHCP on $iface..."
+    if udhcpc --interface=$iface --now --script=/etc/udhcpc-script ; then
+        echo "*** DHCP on $iface worked!"
+        got_lease=1
+        break
+    fi
+done
+
+[ -z "$got_lease" ] \
+    && die "Failed to obtain DHCP lease."
+
+echo "*** Excellent.  Now, let's see about mass storage controllers..."
+
+# PCI classes 0x01nnnn are Ethernet controllers
+storage_modules=`find-modules-pci 0x01`
+
+[ -z "$storage_modules" ] \
+    && die "No mass storage hardware found (missing drivers?)"
+
+for module in $storage_modules ; do
+    echo "Loading $module..."
+    modprobe $module
+    echo "done loading $module"
+done
+
+sys_block=/sys/block
+
+[ -d $sys_block ] \
+    || die "Internal error: $sys_block not found?"
+
+mass_device_names="hda sda"
+
+unset did_something
+
+for hda in $mass_device_names ; do
+    [ -d "$sys_block/$hda" ] || continue
+
+    make_block_device $sys_block/$hda
+
+    did_something=1
+
+    for hdaX in $sys_block/$hda/$hda[0-9]* ; do
+        make_block_device $hdaX
+    done
+done
+
+if [ -z "$did_something" ] ; then
+    echo "Hm, found no hard drives ($mass_device_names) under $sys_block"
+    echo "Your $sys_block contains:"
+    ls $sys_block
+    die "So close!  Oh, well."
+fi
+
+smbmount_opts="username=guest,password=guest,ro,ttl=2400000"
+z_path=//ntinstall/install
+
+echo "*** Trying smbmount $z_path /z -o $smbmount_opts"
+
+if ! smbmount "$z_path" /z -o "$smbmount_opts" ; then
+    die "Failed to mount /z.  Enh."
+fi
+
+echo "*** By Jove, I think we've got it!"
+
+exec bash
