@@ -42,10 +42,11 @@ ngrpci   Netgear FA310
 # http://www.google.com/search?q=pcntnd.dos+site%3Aamd.com
 pcntnd   AMD PCNet family (also VMWare)
 
-# See
-# <http://www.realtek.com.tw/downloads/downloads1-3.aspx?series=16&Software=True#16DOS>
+# <http://www.realtek.com.tw/downloads/downloads1-3.aspx?Keyword=rtl8139>
+# <http://www.realtek.com.tw/downloads/downloads1-3.aspx?Keyword=rtl8169>
 # (thanks to Eugene Kotlyarov)
 rtsnd    Realtek RTL8139 family (e.g., D-Link DFE-530TX+)
+rtgbnd   Realtek RTL8169/8110S Gigabit family
 
 # Downloaded from <http://download.sis.com/>.  (Well, actually I just
 # grabbed sl116.exe from <http://driver.sis.com/lan/>.)
