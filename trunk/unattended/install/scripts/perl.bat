@@ -6,11 +6,28 @@
 
 ping -n 10 localhost > nul
 
-:: This will gracefully exit on both 2000, XP, and 2003 if already installed
-:: URL|ALL|http://download.microsoft.com/download/9/e/1/9e14751c-f897-4bbd-af7a-890d9a0f5430/WindowsInstaller-KB884016-x86.exe|packages/windowsinstaller/WindowsInstaller-KB884016-x86.exe
-if not exist %Z%\packages\windowsinstaller\WindowsInstaller-KB884016-x86.exe goto nomsi
-%Z%\packages\windowsinstaller\WindowsInstaller-KB884016-x86.exe /passive /norestart
-:nomsi
+:: Install Windows Installer Redistributable
+::
+:: URL|ALL|http://download.microsoft.com/download/9/e/1/9e14751c-f897-4bbd-af7a-890d9a0f5430/WindowsInstaller-KB884016-v2-x86.exe|packages/windowsinstaller/WindowsInstaller-KB884016-v2-x86.exe
+:: URL|ALL|http://download.microsoft.com/download/WindowsInstaller/Install/2.0/NT45/EN-US/InstMsiW.exe|packages/windowsinstaller/instmsiw.exe
+:: 
+:: Windows Installer 3.0 only installs on Win2000 SP3 or SP4, Win2003Server, WinXP, WinXP SP1
+:: (so we install version 2.0 on systems below and perform an update later and
+:: ignore it on systems above)
+
+if "%WINVER%" == "win2ksp3" goto wininst3
+if "%WINVER%" == "win2ksp4" goto wininst3
+if "%WINVER%" == "ws2k3" goto wininst3
+if "%WINVER%" == "winxp" goto wininst3
+if "%WINVER%" == "winxpsp1" goto wininst3
+if "%WINVER%" == "winxpsp2" goto continue
+
+%Z%\packages\windowsinstaller\InstMsiW.exe /q /c:"msiinst.exe /i instmsi.msi /q"
+goto continue
+
+:wininst3
+%Z%\packages\windowsinstaller\WindowsInstaller-KB884016-v2-x86.exe /passive /norestart
+:continue
 
 set perl_msi=%Z%\packages\ActivePerl-5.8.4.810-MSWin32-x86.msi
 
