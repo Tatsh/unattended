@@ -18,6 +18,14 @@ todo.pl ".ignore-err 194 z:\packages\win2ksp4\Windows2000-KB824105-x86-ENU.exe /
 :: <http://support.microsoft.com/?kbid=823718>
 todo.pl ".ignore-err 194 z:\packages\win2ksp4\Q823718_MDAC_SecurityPatch.exe /q /c:\"dahotfix.exe /q /n\"" .reboot
 
+:: Microsoft DirectX 9.0b update
+:: <http://www.microsoft.com/directx/>
+:: Download the redistributable for developers (dx90b_redist.exe) and
+:: extract it to z:\packages\DirectX.
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=a6dee0db-dcce-43ea-87bb-7c7e1fd1eaa2>
+:: (Requires .NET to be installed first for managed DX)
+todo.pl ".expect-reboot AutoIt z:\scripts\directx9.aut"
+
 :: Critical update 823980
 :: "Buffer Overrun in RPC Interface May Allow Code Execution"
 :: (So anyone can take over any Windows computer anywhere.  Wow.)
@@ -40,5 +48,9 @@ todo.pl ".ignore-err 194 z:\packages\win2ksp4\Q818043_W2K_SP5_x86_EN.EXE /u /n /
 :: <http://support.microsoft.com/?kbid=814078>
 todo.pl ".ignore-err 194 z:\packages\win2ksp4\js56nen.exe /q /r:n" .reboot
 
-:: Install IE6 and DirectX 8.1
-todo.pl ie6.bat directx81.bat
+:: Microsoft .NET framework
+:: <http://msdn.microsoft.com/netframework/downloads/>
+todo.pl "z:\packages\win2ksp4\dotnetfx.exe /q /c:\"install /q\""
+
+:: Install IE6
+todo.pl ie6.bat
