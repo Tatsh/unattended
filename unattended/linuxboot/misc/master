@@ -138,6 +138,15 @@ for hda in $mass_device_names ; do
     for hdaX in $sys_block/$hda/$hda[0-9]* ; do
         make_block_device $hdaX
     done
+
+    # DOSEMU skips exactly eight characters into the device name to
+    # read the partition number.  Yes, really.  So we have to use a
+    # name like "/dev/dsk", not "/dev/disk".
+    ln -sf $hda /dev/dsk
+    for part in 1 2 3 4 5 6 7 8 9 ; do
+        ln -sf $hda$part /dev/dsk$part
+    done
+    break
 done
 
 if [ -z "$did_something" ] ; then
