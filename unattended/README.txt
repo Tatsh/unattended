@@ -12,6 +12,8 @@ This top-level directory contains:
 
   Makefile    - A Makefile for my use, not yours; sorry
 
+  TODO.txt    - What we plan (or have) to do
+
   bootdisk/   - Directory holding the DOS-based boot disk sources and
                 Makefile
 
