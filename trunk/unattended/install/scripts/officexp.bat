@@ -15,6 +15,12 @@ todo.pl "%Z%\updates\officexp\officexp-kb830350-client-%WINLANG%.exe /q /c:\"msi
 :: <http://www.microsoft.com/technet/security/bulletin/MS03-050.asp>
 todo.pl "%Z%\updates\officexp\Officexp-kb830346-client-%WINLANG%.exe /q /c:\"msiexec /qb /p WINWORDop.msp\""
 
+:: "Office XP Web Services Security Patch: November 11, 2003"
+:: <http://support.microsoft.com/?kbid=812708>
+:: (No security bulletin?)
+:: (You may need to rename this from -ENG.exe to -ENU.exe)
+todo.pl "%Z%\updates\officexp\officexp-kb812708-client-%WINLANG%.exe /q /c:\"msiexec /qb /p FP5AUTLop.msp\""
+
 :: "Access 2002 Snapshot Viewer Security Patch: September 3, 2003"
 :: <http://support.microsoft.com/?kbid=826293>
 todo.pl "%Z%\updates\officexp\officexp-kb826293-client-%WINLANG%.exe /q /c:\"msiexec /qb /p SNAPVIEWop.msp\""
