@@ -32,8 +32,16 @@ images: $(images)
 	@[ -e $@ ] || touch $@
 	@find template -newer $@ -print | sed s/.\*/$@/ | xargs -r touch
 
+# Special rule for updating version.bat.
+template/version.bat: FORCE
+	version=`../linuxboot/tools/version.pl` &&	\
+	echo -e "SET VERSION=$$version\r" > $@.tmp
+	cmp -s $@.tmp $@ || mv $@.tmp $@
+	rm -f $@.tmp
+
 # Images targets
-images/%.imz: .stamp-template empty-boot.img.gz drivers/%.dos
+images/%.imz: .stamp-template template/version.bat empty-boot.img.gz \
+		drivers/%.dos
 	@echo -n "Making $@..."
 	@destdir=`dirname "$@"` &&					\
 	driver=`basename "$@" .imz` &&					\
