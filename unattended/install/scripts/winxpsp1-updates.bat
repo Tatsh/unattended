@@ -113,9 +113,11 @@ todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /
 
 :: Microsoft DirectX 9.0c update
 :: (Requires .NET to be installed first for managed DX)
-:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx/directx_9c_redist.exe
-:: download and run directx_9c_redist.exe extract into /packages/directx9/
-todo.pl "dxsetup.exe /silent /installmanageddx"
+:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx9/directx_9c_redist.exe
+::
+:: Here we extract the installer to %TEMP%, then run it.
+todo.pl ".reboot-on 194 %TEMP%\dx9c\dxsetup.exe /silent /installmanageddx"
+todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:%TEMP%\dx9c"
 
 :: Microsoft .NET framework Language Pack
 :: URL|CHS|http://download.microsoft.com/download/4/b/c/4bce2f4b-548e-4e36-a3f7-46d79a6abd39/langpack.exe|updates/common/chs/dotnet_langpack.exe
