@@ -137,13 +137,15 @@ driver script</h1>
 installation process.  All of the other scripts are meant to be
 invoked by <code>todo.pl</code>.
 
-<p><code>todo.pl</code> maintains a "to-do list" on disk in the plain-text
-file <code>C:\netinst\todo.txt</code>.  It takes any number of commands as
-arguments and inserts them at the <b>front</b> of the to-do list.  (As
-you will see, this is definitely what you want.)  When run as
-<kbd>todo.pl&nbsp;--go</kbd>, it removes the first command from the
-list and executes it, then removes the next command from the list and
-executes it, and so on until the list is empty.
+<p><code>todo.pl</code> maintains a "to-do list" on disk in the
+plain-text file <code>C:\netinst\todo.txt</code>.  You can edit this
+file with an ordinary text editor, but normally you will not, because
+<code>todo.pl</code> itself takes any number of commands as arguments
+and inserts them at the <b>front</b> of the to-do list.  (As you will
+see, this is what you want.)  When invoked as
+<kbd>todo.pl&nbsp;--go</kbd>, the script removes the first command
+from the to-do list and executes it, then removes the next command
+from the list and executes it, and so on until the list is empty.
 
 <p>There are multiple advantages to this design:
 
@@ -164,21 +166,49 @@ reboots.
 
 </ul>
 
-<h2>The <kbd>.reboot</kbd> meta-command</h2>
+<h2>The <code>.reboot</code> directive</h2>
 
-<p>In addition to normal commands and scripts, one other item may
-appear in the to-do list: "<kbd>.reboot</kbd>".  This tells
-<code>todo.pl</code> to reboot the machine, after first patching the
-registry to cause <em>itself</em> to run the next time the current
-user logs in.
+<p>In addition to simple commands, the to-do list may contain
+<em>directives</em> for <code>todo.pl</code>.  Directives always start
+with a dot.  The simplest directive is <code>.reboot</code>, which
+instructs <code>todo.pl</code> to reboot the machine after first
+patching the registry to cause <b>itself</b> to run the next time
+the current user logs in.
 
-<p>In other words, <kbd>.reboot</kbd> provides a controlled mechanism
-for rebooting during application installation.  This is important,
-because uncontrolled reboots can create race conditions as the OS
-kills all the processes with indeterminate ordering and timing.  When
-you write a script to install an application, take care to suppress
-any reboots performed by the installer and use the <kbd>.reboot</kbd>
-directive instead.
+<p>In other words, <code>.reboot</code> provides a controlled
+mechanism for rebooting in the middle of installing multiple
+applications.  This is important, because uncontrolled reboots can
+create race conditions as the OS kills all the processes with
+indeterminate ordering and timing.  When you write a script to install
+an application, you should suppress any reboots performed by the
+installer and use the <code>.reboot</code> directive instead.
+
+<h2>The <code>.ignore-err</code> directive</h2>
+
+<p>Like its author, <code>todo.pl</code> is nigh-pathologically
+cautious about error checking.  Any command which exits with a
+non-zero status will cause the script to halt and print a diagnostic.
+
+<p>Some installers always exit with zero status, even when they fail.
+There is not much we can do about this.
+
+<p>On the other hand, some installers always exit with a non-zero
+status even when they succeed.  For such installers, you can use the
+<code>.ignore-err</code> directive to ignore only the expected exit
+status, while still halting if any unexpected errors occur.
+
+<p>For example, suppose you have an installer <code>foo.exe</code>
+which always exits with status 37.  You would schedule it for
+invocation like this:
+
+<pre>
+    todo.pl ".ignore-err 37 foo.exe"
+</pre>
+
+<p>This will add "<code>.ignore-err&nbsp;37&nbsp;foo.exe</code>" to
+the to-do list.  When <code>todo.pl</code> processes this line, it
+will invoke <code>foo.exe</code>, silently ignoring exit status zero
+or 37.  It will still treat other status codes as errors.
 
 <h2>The environment</h2>
 
@@ -192,7 +222,7 @@ environment, with the following environment variables set.
 run.  So the scripts may refer to each other and to the utility
 scripts without supplying a full pathname.
 
-<h3 id="WINVER"><kbd>WINVER</kbd></h3>
+<h3 id="WINVER"><code>WINVER</code></h3>
 
 <p>The <code>WINVER</code> environment variable will contain a short
 string representing the version of Windows:
@@ -217,15 +247,33 @@ needs to vary based on OS; e.g., a script for installing hotfixes.
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/"
 >install/scripts directory</a> in the distribution.
 
-<h2>DirectX update</h2>
+<h2>Acrobat reader</h2>
+
+<p>The <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/acrobat-reader.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>acrobat-reader.bat</a> script installs Adobe Acrobat reader.  This is
+about as simple as an installation script can get.
+
+<p>To invoke this script manually, you would type:
+<pre>
+    Z:\bin\todo.pl acrobat-reader.bat
+    Z:\bin\todo.pl --go
+</pre>
+
+<p>Obviously, you could just invoke <code>acrobat-reader.bat</code>
+directly without using <code>todo.pl</code>.  But the same is not true
+for the other examples in this section, and you should be in the habit
+of allowing <code>todo.pl</code> to do its job.
+
+<h2>DirectX 8.1</h2>
 
 <p>The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/directx81.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">directx81.bat</a>
 script installs DirectX 8.1 and reboots the machine.  First, it adds
-the <kbd>.reboot</kbd> directive to the to-do list.  Then it runs the
-installer from the <code>Z:\packages</code> directory, taking care to
-wait until the installer finishes and to suppress the normal reboot
-performed by the installer.
+the <code>.reboot</code> directive to the to-do list.  Then it runs
+the DirectX installer from the <code>Z:\packages</code> directory,
+taking care to wait until the installer finishes and to suppress the
+normal reboot performed by the installer.
 
 <p>To invoke this script manually, you would type:
 <pre>
@@ -233,127 +281,99 @@ performed by the installer.
     Z:\bin\todo.pl --go
 </pre>
 
+<h2>Combining scripts</h2>
 
-<h2>Internet Explorer update</h2>
-
-The <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/ie6.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->ie6.bat</a> script installs IE6 SP1 plus one required hotfix.  It
-adds <code>.reboot</code> and <code>q317244.bat</code> to the to-do
-list, then runs <code>IE6setup.exe</code> from the
-<code>Z:\packages</code> directory.  (The installer itself is created
-using the <a href="http://www.microsoft.com/windows/ieak/">Internet
-Explorer Administration Kit</a>.)  The <kbd>/q</kbd> flag tells
-<code>IE6setup.exe</code> to work "quietly"; i.e., in unattended mode.
-The <kbd>/r:n</kbd> flag tells it to suppress the automatic reboot.
-
-<h2>Combining updates</h2>
-
-<p>To perform both the DirectX and IE6 updates at once, you would
-type:
+<p>To perform both the DirectX&nbsp;8.1 and Acrobat Reader
+installations at once, you would type:
 
 <pre>
-    Z:\bin\todo.pl directx81.bat ie6.bat
+    Z:\bin\todo.pl directx81.bat acrobat-reader.bat
     Z:\bin\todo.pl --go
 </pre>
 
-<p>The first line adds directx81.bat and ie6.bat to the to-do list.
-The second command processes the list.  The <code>todo.pl</code>
-script begins by removing <code>directx81.bat</code> from the front of
-the to-do list and executing it.  The <code>directx81.bat</code>
-script itself starts by pushing <code>.reboot</code> onto the front of
-the to-do list.
+<p>The first line adds directx81.bat and acrobat-reader.bat to the
+to-do list.  The second command processes the list.  The
+<code>todo.pl</code> script begins by removing
+<code>directx81.bat</code> from the front of the to-do list and
+executing it.  The <code>directx81.bat</code> script itself starts by
+pushing <code>.reboot</code> onto the front of the to-do list.
 
 <p>At this point, the to-do list contains <code>.reboot</code>
 followed by <code>ie6.bat</code>, and we are still in the middle of
-executing the <code>direct81.bat</code> script.
+executing the <code>direct81.bat</code> script itself.
 
 <p>Next, <code>directx81.bat</code> installs DirectX, waits for the
 installation to finish, and exits.  The <code>todo.pl</code> script
-now removes the <code>.reboot</code> command and executes it,
-arranging to restart itself after reboot.  After the reboot completes,
-<code>todo.pl</code> removes <code>ie6.bat</code> from the to-do list
-and executes it.  And so on.
+now removes the <code>.reboot</code> directive and processes it,
+arranging to run itself on boot and rebooting the machine.  After the
+reboot completes, <code>todo.pl</code> starts again, removes
+<code>acrobat-reader.bat</code> from the to-do list and executes it.
+And so on.
 
-<p>The final result is that DirectX 8.1, IE6 SP1, and hotfix Q317244
-are all installed, even though some of these involve rebooting the
-system.
-
-<h2>A high-level example</h2>
-
-<p>The <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->base.bat</a> script performs a "base workstation" installation for
-our organization.  This includes a bunch of free software.
-
-<p>This example also illustrates the use of the <a
-href="#WINVER">WINVER</a> environment variable to choose which
-"updates" script to run.  The <kbd>%WINVER%-updates.bat</kbd> entry in
-the to-do list will run (for example) <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/win2ksp3-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->win2ksp3-updates.bat</a> for Windows 2000 Service Pack 3, but it will
-run <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/winxpsp1-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->winxpsp1-updates.bat</a> for Windows XP Service Pack 1.
+<p>The final result is that DirectX&nbsp;8.1 and Acrobat Reader are
+both installed, even though the machine had to reboot in the middle.
 
 <h2>A more complex example</h2>
 
 <p>The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/winxpsp1-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >winxpsp1-updates.bat</a> script installs all of Microsoft's
-"critical" and "recommended" updates to to Windows XP Service Pack 1.
-All this script does is push a bunch of items onto the to-do list,
-including the occasional <code>.reboot</code> directive.
+"critical" and "recommended" updates for Windows XP Service
+Pack&nbsp;1.  All this script does is push a bunch of items onto the
+to-do list, including the occasional <code>.reboot</code> directive.
 
 <p>This example illustrates how to add a command with arguments to the
-to-do list by putting it in quotes.  Normally, spaces separate the
-commands themselves.
+to-do list by putting it in quotes.  Without quotes, spaces separate
+multiple commands.
 
-<p>Also, this example illustrates one unpleasant consequence of the
-"last in, first out" semantics of <code>todo.pl</code>.  Since we
-always add items to the <b>front</b> of the to-do list, the
-invocations of <code>startup-type.pl</code> appearing at the end of <a
+<p>This example also illustrates the use of the
+<code>.ignore-err</code> directive.
+
+<p>Finally, this example illustrates an important consequence of the
+"last in, first out" semantics of <code>todo.pl</code>.  Since it
+always adds items to the <b>front</b> of the to-do list, commands will
+execute in the <b>opposite</b> order from which they are added.  On
+the other hand, <code>todo.pl</code> will preserve the order of the
+commands if you pass several of them on a single command line.  Put
+another way, "<code>todo.pl&nbsp;X</code>" followed by
+"<code>todo.pl&nbsp;Y</code>" has same effect as
+"<code>todo.pl&nbsp;Y&nbsp;X</code>".
+
+<h2>A high-level example</h2>
+
+<p>The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->base.bat</a> will occur <b>before</b> the items mentioned earlier in
-the script.  On the other hand, <code>todo.pl</code> preserves the
-order of the commands when you pass them on a single command line.
+>base.bat</a> script performs a "base workstation" installation for my
+organization.  This includes a bunch of free software.
 
-<p>An example should help.  This command:
+<p>This example illustrates the use of the <a
+href="#WINVER">WINVER</a> environment variable.  The
+<kbd>%WINVER%-updates.bat</kbd> name, for example, will expand to <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/win2ksp3-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>win2ksp3-updates.bat</a> on Windows 2000 Service Pack 3 and <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/winxpsp1-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>winxpsp1-updates.bat</a> on Windows XP Service Pack 1.
 
-<pre>
-    Z:\bin\todo.pl foo.bat bar.bat
-</pre>
-
-<p>...will add <code>foo.bat</code> followed by <code>bar.bat</code>
-to the to-do list.  But this sequence of commands:
-
-<pre>
-    Z:\bin\todo.pl foo.bat
-    Z:\bin\todo.pl bar.bat
-</pre>
-
-<p>...will add <code>bar.bat</code> followed by <code>foo.bat</code>
-to the to-do list.  This behavior can make it difficult to read
-complicated installation scripts.  So I suggest you generally avoid
-complicated scripts; instead, break the task into simple pieces and
-compose them.
-
-<h2>One more example</h2>
+<h2>A higher-level example</h2>
 
 <p>The <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >sales.bat</a> script performs a "salesperson laptop" installation for
-our organization.  As you can see, this just performs a base install,
-then adds Microsoft Office, Lotus Notes, the AT&amp;T global network
-dialer, and the Shiva (technically "Intel Netstructure", but I fear
-change) VPN client.
+my organization.  As you can see, this just performs a base
+installation, then adds Microsoft Office, Lotus Notes, the AT&amp;T
+global network dialer, and the Shiva VPN client (now technically the
+Intel Netstructure VPN client, but I fear change).
 
-<p>Notice that if you make a change to the base configuration (<a
+<p>These last two examples also illustrate how easily you can compose
+low-level scripts into high-level ones, no matter how many reboots the
+low-level scripts perform.  Observe that if you make a change to the
+configuration in <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->base.bat</a>), the change will automatically affect all the other
-configurations (like <a
+>base.bat</a>, the <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->sales.bat</a>).  Composability is good.
+>sales.bat</a> script will automatically inherit it.
+
+<p>Unlimited composability is nice.
 
 <h1>Database of "unattended" switches for various applications</h1>
 
