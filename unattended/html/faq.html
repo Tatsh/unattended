@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Unattended, A Windows deployment system: FAQ</title>
+</head>
+<body>
+
+<p>This document is part of <a
+href="http://unattended.sourceforge.net/" >Unattended, a Windows
+deployment system</a>.
+
+
+<h1>Introduction</h1>
+
+<p>The main Unattended documentation is perpetually out-of-date.  It
+is still mostly accurate, but it is incomplete because we tend to add
+new features without updating the docs.
+
+<p>Someday I (or somebody) will crack and rewrite the documentation
+from scratch.  Until then, this page will have to suffice.  It is
+partly a FAQ, and partly just a collection of pointers to bits of
+wisdom from the <a
+href="https://lists.sourceforge.net/lists/listinfo/unattended-info/"
+>unattended-info mailing list</a>.
+
+<h1 id="linux">Did you say "Linux boot disk"?</h1>
+
+<p>Why, yes, I did.
+
+<p>Traditionally, Unattended had you boot to DOS to start the
+installation of Windows.  And most of our documentation was written
+with this approach in mind.
+
+<p>It works fine, usually, but DOS has certain <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01030.html"
+>limitations</a> which we can avoid by using Linux.  If you do not
+care, then feel free to continue using the old boot disk.
+
+<p>Starting with Unattended 4.0, we are shipping a Linux boot disk in
+addition to the DOS boot disk.  Note that this is not for installing
+Linux; we are simply booting a custom diskless Linux system to
+initiate the installation of Windows.  The Linux boot disk is very new
+and our documentation has not been updated for it, but it works a lot
+like the DOS boot disk.  It runs the same Perl code, in fact, which we
+think is kind of neat.  At present, it only supports booting from
+CD-ROM (using the <code>linuxboot/linuxboot.iso</code> image) or
+network (using the <code>linuxboot/tftpboot</code> tree).
+
+<p>You can upgrade a pre-4.0 version of Unattended to use the Linux
+boot disk by just <a
+href="https://sourceforge.net/mailarchive/message.php?msg_id=7558008"
+>copying some new stuff</a> to the <code>Z:</code> drive.
+
+<p>If you are booting from the network, you can <a
+href="https://sourceforge.net/mailarchive/message.php?msg_id=7558006">edit
+pxelinux.cfg/default</a> to override the bootdisk defaults
+(<code>Z:</code> share, username, password).
+
+<p>The boot disk uses Linux kernel 2.6.4, whose hardware support is
+still maturing.  We are interested in your success/failure reports;
+please send them to <a
+href="mailto:unattended-devel@lists.sourceforge.net">unattended-devel</a>.
+
+<h1>Can I use Cygwin to rebuild the disk images on Windows?</h1>
+
+<p>For the DOS boot disk, <a href="cygwin.html">yes</a>.
+
+<p>For the Linux boot disk, no.  Probably not, anyway.
+
+<h1>Can I boot from a USB stick?</h1>
+
+<p>Yes.  Er, maybe.  Probably.  (coming soon)
+
+<h1>Can I install over a wireless LAN?</h1>
+
+<p><a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00212.html"
+>Yes</a>, with the help of a commercial product.
+
+<p>Adding wireless support to our (free) DOS boot disk would be
+difficult, because as far as I know, there are no wireless drivers for
+DOS.
+
+<p>Adding wireless support to our Linux boot disk is a Simple Matter
+of Programming, at least for the wireless devices which Linux
+supports.  Call it a "to-do" item.  The hard part is designing and
+implementing an interface to let the user set the wireless parameters
+(like ESSID).  If you would like to help tackle this, subscribe to the
+<a
+href="https://lists.sourceforge.net/lists/listinfo/unattended-devel/"
+>unattended-devel mailing list</a> and ask what's up.
+
+<h1>Can I install Windows NT?</h1>
+
+<p><a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01211.html"
+>Not right now</a>. Patches are welcome.
+
+<h1>Can I install Windows 95/98/ME? </h1>
+
+<p>No, and I think this would be hard.  <a
+href="http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg01135.html"
+>Some interest</a> has been expressed on the mailing list.
+
+<h1>Can I use a serial console?</h1>
+
+<p>This should be possible using either boot disk.  See <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01156.html"
+>this thread</a> on the mailing list.
+
+<h1>Can I install from DVD-ROM instead of a network share?</h1>
+
+<p>We are interested in adding support for this.  See <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01052.html">this
+thread</a> from the mailing list, especially <a
+href="http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg01174.html">this
+followup</a> from Pablo Manzanera.  Patches are welcome...
+
+<h1>Why do you always install IIS?</h1>
+
+<p><a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01130.html"
+>We have reasons</a>. You can always disable it in unattend.txt.
+
+<h1>How do I enable Windows XP' Internet Connection Firewall?</h1>
+
+<p>The instructions for this are somewhat confusing, and I have not
+yet had time to try them myself.  The question <a
+href="https://sourceforge.net/mailarchive/message.php?msg_id=7556124">comes
+up</a> on the mailing list from time to time.
+
+<p>Searching for <code>[Homenet]</code> and
+<code>InternetConnectionFirewall</code> on Google <a
+href="http://www.google.com/search?q=homenet+internetconnectionfirewall">Web</a>
+and <a
+href="http://groups.google.com/groups?q=homenet+internetconnectionfirewall">Groups</a>
+turns up some slightly contradictory information.
+
+<h1>How do I disable sound?</h1>
+
+<p>See <a
+href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01050.html"
+>this thread</a> from the mailing list.
+
+<h1>Is FAT -> NTFS conversion a bad idea?</h1>
+
+<p>As Microsoft describes in "<a
+href="http://www.microsoft.com/whdc/hwdev/tech/storage/ntfs-preinstall.mspx"
+>NTFS Preinstallation and Windows XP</a>", FAT&nbsp;->&nbsp;NTFS
+conversion normally results in a file system with 512-byte clusters
+and a fragmented Master File Table (MFT).
+
+<p>With Windows XP, Microsoft provides two tools (OFORMAT and CVTAREA)
+to address these problems.  <a
+href="http://sourceforge.net/mailarchive/message.php?msg_id=7202531"
+>I asked</a> the FreeDOS folks about running OFORMAT under FreeDOS,
+and <a
+href="http://sourceforge.net/mailarchive/message.php?msg_id=7094304"
+>they responded</a> by adding a switch (<code>/a</code>) to FreeDOS
+FORMAT which does the same thing.  Unattended now uses this switch, so
+we get a 4K cluster size after NTFS conversion, at least on Windows XP
+and Server 2003.
+
+<p>Using CVTAREA is on the "to-do" list.
+
+<p>That said, I and others have installed hundreds of machines without
+using OFORMAT nor CVTAREA, and they work fine.
+
+<hr>
+<address>
+Patrick J. LoPresti <a
+href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
+</address>
+
+<A href="http://sourceforge.net/"> <IMG align="right"
+src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
+width="210" height="62" border="0" alt="SourceForge Logo"></A>
+
+</body>
+</html>
