@@ -25,10 +25,15 @@ net use %Z% /delete
 @goto hang
 
 :mapit
-net use %Z% %Z_PATH% %Z_PASS% %USER_ARG% /persistent:no
-@if not exist %Z%\ goto try_again
+@echo Mapping %Z_PATH% on %Z%...
+@net use %Z% %Z_PATH% %Z_PASS% %USER_ARG% /persistent:no
+@if exist %Z%\ goto mapped
+@echo Failed; retrying.
+if exist C:\Perl\bin\perl.exe C:\Perl\bin\perl.exe -e "sleep 10;"
+@goto try_again
 
 :mapped
+@echo ...done.
 :: Clean up environment, except for %Z%
 @set Z_PATH=
 @set Z_USER=
@@ -38,7 +43,7 @@ net use %Z% %Z_PATH% %Z_PASS% %USER_ARG% /persistent:no
 
 :: Invoke command passed as argument
 %1 %2 %3 %4 %5 %6 %7 %8 %9
-if not errorlevel 1 goto end
+@if not errorlevel 1 goto end
 @echo FAILURE in mapznrun.bat
 
 :hang
