@@ -8,6 +8,8 @@
 
 :: Critical update 823980
 :: "Buffer Overrun In RPC Interface Could Allow Code Execution"
+:: (worst Windows security hole, ever)
+:: <http://support.microsoft.com/?kbid=823980>
 :: <http://www.microsoft.com/security/security_bulletins/ms03-026.asp>
 todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB823980-x86-ENU.exe /u /z" .reboot
 
@@ -17,7 +19,7 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB823980-x86-ENU.exe /u 
 todo.pl "z:\packages\winxpsp1\WindowsXP-KB821557-x86-ENU.exe /u /z"
 
 :: Recommended update 821253
-:: "Windows Error Reporting Update"
+:: "Update For Windows Error Reporting"
 :: <http://support.microsoft.com/?kbid=821253>
 todo.pl "z:\packages\winxpsp1\WindowsXP-KB821253-x86-ENU.exe /u /z"
 
