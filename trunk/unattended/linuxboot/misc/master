@@ -220,7 +220,8 @@ sys_block=/sys/block
 [ -d $sys_block ] \
     || die "Internal error: $sys_block not found?"
 
-mass_device_names="hda sda i2o/hda"
+mass_device_names="amiraid/ar0 ataraid/d0 cciss/c0d0 i2o/hda \
+        ida/c0d0 rd/c0d0 hda sda"
 
 unset did_something
 
@@ -230,12 +231,22 @@ for hda in $mass_device_names ; do
 
     did_something=1
 
+    unset p
+
+    # Devices like /dev/sda have partition names like /dev/sda1, while
+    # devices like /dev/rd/c0d0 have partition names like
+    # /dev/rd/c0d0p1.  That is, we must append "pX" if the last
+    # character is a digit.  See disk_name() in
+    # linux/fs/partitions/check.c.
+    [[ $hda = *[0-9] ]] \
+        && p=p
+
     # DOSEMU skips exactly eight characters into the device name to
     # read the partition number.  Yes, really.  So we have to use a
     # name like "/dev/dsk", not "/dev/disk".
     ln -sf $hda /dev/dsk
     for part in 1 2 3 4 5 6 7 8 9 ; do
-        ln -sf $hda$part /dev/dsk$part
+        ln -sf $hda$p$part /dev/dsk$part
     done
     break
 done
