@@ -9,13 +9,11 @@ use Carp;
 # We cannot "use fields" here because we want to overload the hash
 # dereference operator.  So, we use an array as our representation,
 # and constants to refer to the slots in the array.
-use constant {
-    SECTIONS => 0,
-    COMMENTS => 1,
-    SECTION_COMMENTS => 2,
-    SORT_INDEX => 3,
-    SECTION_SORT_INDEX => 4,
-};
+use constant SECTIONS => 0;
+use constant COMMENTS => 1;
+use constant SECTION_COMMENTS => 2;
+use constant SORT_INDEX => 3;
+use constant SECTION_SORT_INDEX => 4;
 
 # Overload hash dereference to return "sections" hash.
 use overload
