@@ -15,6 +15,8 @@ sub doit ($);
 sub doit ($) {
     my ($file) = @_;
 
+    return if ($file =~ /.*(?:CVS|Unattend|AutoIt\.exe|README\.txt)$/);
+
     if (! -l $file && -d _) {
         # Directory; recurse through its contents.
         opendir DIR, $file
@@ -30,7 +32,8 @@ sub doit ($) {
     }
 
     # Rename to lower-case.
-    my $lc_file = lc $file;
+    my $lc_file = $file;
+    $lc_file =~ s/([^\/]*\/*)$/lc($1)/eg;
     $file eq $lc_file
         or rename $file, $lc_file
         or die "Unable to rename $file to $lc_file: $^E";
