@@ -1,10 +1,13 @@
-** Changes in version 4.5 (2004-Oct-??)
+** Changes in version 4.5 (2004-Oct-23)
+
+Completely overhaul sample-config.pl to allow automatic machine
+configuration from spreadsheet or MySQL database (slords).
 
 (Linux) Compile everything for i586 to fix "Illegal Instruction" crash
 on older machines (dolphinbofh).
 
-Completely overhaul sample-config.pl to allow automatic machine
-configuration from spreadsheet or MySQL database (slords).
+New script install/tools/script-update, to keep a local installation
+up-to-date with our CVS repository (nrichthof).
 
 (Linux) Add /etc/protocols so that LDAP and MySQL modules can actually
 work.  Thanks to Andrew Bartlett.
@@ -14,6 +17,9 @@ partitions, and Linux partitions.  Thanks to Jordan Share.
 
 (Linux) Use DHCP-supplied WINS servers (in addition to DNS) when
 mapping install share.
+
+New script install/tools/msparse.pl, which slurps direct download URLs
+from Microsoft download pages (dolphinbofh).
 
 Include version on boot disk and install share, and warn if they do
 not match.
