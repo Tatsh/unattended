@@ -6,7 +6,7 @@
 package Unattend::HotKey;
 
 @ISA = qw(Exporter);
-@EXPORT = qw(cbreak cooked readkey);
+@EXPORT = qw(cbreak cooked readkey read_secret);
 
 use warnings;
 use strict;
@@ -43,6 +43,40 @@ sub readkey {
     sysread(STDIN, $key, 1);
     cooked();
     return $key;
+}
+
+sub read_secret ($) {
+    my ($max_length) = @_;
+
+    my $ret = '';
+    my $key = '';
+
+    cbreak ();
+
+    while (1) {
+        sysread (STDIN, $key, 1);
+
+        if ($key eq chr(10)) {
+            last;
+        }
+        elsif ($key eq chr(8) || $key eq chr(127)) {
+            length $ret > 0
+                or next;
+            $ret = substr $ret, 0, -1;
+            print chr(8), ' ', chr(8);
+        }
+        else {
+            length $ret < $max_length
+                or next;
+            $ret .= $key;
+            print '*';
+        }
+    }
+
+    cooked ();
+
+    print "\n";
+    return $ret;
 }
 
 END { cooked() }
