@@ -7,7 +7,7 @@
 -sscanf (s, format)
 -     const char *s;
 -     const char *format;
-+sscanf (const char *s, const char *format)
++sscanf (const char *s, const char *format, ...)
  {
    va_list arg;
    int done;
