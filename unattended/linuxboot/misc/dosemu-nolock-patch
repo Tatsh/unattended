@@ -1,0 +1,23 @@
+--- dosemu-20040723/src/dosext/mfs/mfs.c.orig	2004-07-29 12:08:58.000000000 -0400
++++ dosemu-20040723/src/dosext/mfs/mfs.c	2004-07-29 12:12:02.000000000 -0400
+@@ -2690,6 +2690,12 @@
+ 
+ static int lock_file_region(int fd, int cmd, struct flock *fl, long long start, unsigned long len)
+ {
++#if 1
++  if (cmd == F_GETLK || cmd == F_GETLK64) {
++    fl->l_type = F_UNLCK;
++  }
++  return 0;
++#else
+   fl->l_whence = SEEK_SET;
+   fl->l_pid = 0;
+   /* first handle magic file lock value */
+@@ -2718,6 +2724,7 @@
+   fl->l_start = start;
+   fl->l_len = len;
+   return fcntl( fd, cmd, fl );
++#endif
+ }
+ 
+ static boolean_t
