@@ -30,3 +30,5 @@ mysql*
 initrd
 linuxboot.iso
 pci.ids*
+dmidecode-*
+Convert-*
