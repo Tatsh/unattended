@@ -1013,8 +1013,17 @@ have no idea why the destination path is needed; you would think it
 would have some kind of default.)
 
 <p>Unfortunately, this only does a proper installation for the current
-user, not for all users.  So I am still trying to figure this one
-out...  Let me know if you have any suggestions.
+user, not for all users.  The closest thing I have found is to
+manually create a <a href="apps.html#shortcut">shortcut</a> on the
+"All Users" Desktop and in the Start Menu.  The first time a user
+invokes the shortcut, she can click "repair installation" to get
+OpenOffice installed for herself.  This is what the example script
+does.
+
+<p>Note: By default, OpenOffice installs a "QuickStarter" which runs
+every time you log in; it has a little icon which shows up in the
+system tray.  I hate things like that, so the example
+<code>openoffice.txt</code> file shows you how to turn it off.
 
 <tr><td valign="middle">Example <td><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/openoffice.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
