@@ -1,10 +1,17 @@
-lastdrive=z
-dos=high,umb
-device=himem.sys /testmem:off
-;device=umbpci.sys
-;device=emm386.exe NOEMS NOVCPI
-DEVICEHIGH=\NET\IFSHLP.SYS
+LASTDRIVE=Z
+DOS=HIGH,UMB
 
-; Required for installing XP under VMware.  Thanks to Scott Card for
-; figuring this out.
+;; Pick exactly one of these XMS providers
+DEVICE=himem64.exe
+;DEVICE=A:\fdxxms.sys bios ps
+;DEVICE=himem.sys /testmem:off
+
+;; UMB provider
+DEVICE=umbpci.sys
+
+;; MSCLIENT networking gadget
+DEVICEHIGH=\net\ifshlp.sys
+
+;; Required for installing XP under VMware.  Thanks to Scott Card for
+;; figuring this out.
 FILES=30
