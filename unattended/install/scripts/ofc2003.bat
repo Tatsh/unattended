@@ -20,4 +20,6 @@ todo.pl .reboot
 :: URL|NLD|http://download.microsoft.com/download/b/f/b/bfb399e8-9954-4b39-854a-98b0cde40ee6/Office2003SP1-kb842532-fullfile-nld.exe|updates/office2003/office2003sp1-kb842532-fullfile-nld.exe
 todo.pl ".reboot-on 194 %Z%\updates\office2003\Office2003SP1-kb842532-fullfile-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\ofc2003sp1.txt /p MAINSP1ff.msp REBOOT=ReallySuppress\""
 
-todo.pl ".reboot-on 194 %Z%\packages\office2003\setup.exe /qb /l* %SystemDrive%\netinst\logs\office2003.txt ADDLOCAL=ALL NOUSERNAME=1 PIDKEY=%PIDKEY%"
+:: Add "PIDKEY=<key>" to this command line, where <key> is your
+:: product key without hyphens.
+todo.pl ".reboot-on 194 %Z%\packages\office2003\setup.exe /qb /l* %SystemDrive%\netinst\logs\office2003.txt ADDLOCAL=ALL NOUSERNAME=1"
