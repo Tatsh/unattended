@@ -16,3 +16,7 @@ DEVICEHIGH=\net\ifshlp.sys
 ;; Required for installing XP under VMware.  Thanks to Scott Card for
 ;; figuring this out.
 FILES=30
+
+;; Prohibit EBDA movement, which is reported to be incompatible with
+;; several BIOSes.
+SWITCHES=/E
