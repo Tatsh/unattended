@@ -1,6 +1,6 @@
 :: OPTIONAL: Install Sun Java Virtual Machine
 
-:: URL|ALL|http://192.18.97.251/ECom/EComTicketServlet/BEGINjsecom15c.sun.com-1be8%3A416eb294%3A155baba62d444d22/-2147483648/561906963/1/531950/531830/561906963/2ts+/westCoastFSEND/jre-1.5.0-oth-JPR/jre-1.5.0-oth-JPR:1/jre-1_5_0-windows-i586.exe|packages/jre-1_5_0-windows-i586.exe
+:: URL|ALL|http://public.www.planetmirror.com/pub/java-sun/J2SE/5.0/win32/jre-1_5_0-windows-i586.exe|packages/jre-1_5_0-windows-i586.exe
 
 :: Download from <http://java.sun.com/j2se/1.5.0/download.jsp>.
 
