@@ -1,0 +1,50 @@
+*** Changes in version 1.1.2 (2002-Oct-02)
+
+Fix handling of "run fdisk interactively" option.
+
+Remove "TargetPath=\WINNT" because it is redundant, and because it is
+not actually the default for XP.
+
+Rewrite startup-type.pl to use WMI interface instead of hacking
+registry directly.
+
+
+*** Changes in version 1.1.1 (2002-Oct-01)
+
+Add and document Z_PATH environment variable for todo.pl.
+
+Create and document shutdown.pl.
+
+Add MSDN library to installers.html and create msdn.bat script.
+
+
+*** Changes in version 1.1.0 (2002-Sep-30)
+
+Create and document install/site directory.
+
+Add and document .ignore-err directive to todo.pl.
+
+Change todo.pl line endings from \n to \r\n.
+
+Update hotfixes in sample scripts.
+
+
+*** Changes in version 1.04 (2002-Sep-28)
+
+Rewrite lots of documentation.
+
+
+*** Changes in version 1.03 (2002-Sep-27)
+
+Add all current hotfixes to winxpsp1-updates.bat.
+
+
+*** Changes in version 1.02 (2002-Sep-27)
+
+Create winxpsp1-updates.bat script, which installs hotfixes for
+Windows XP Sevice Pack 1.
+
+Add more documentation for install.sh script.
+
+Rewrite "add domain accounts to local Administrators group" section of
+install.sh.
