@@ -1471,9 +1471,6 @@ if ($u->{'_meta'}->{'replace_mbr'}) {
     }
 }
 
-# At this point, force everything else.
-$u->generate ();
-
 # Create C:\netinst and subdirectories.
 my $netinst = $u->{'_meta'}->{'netinst'};
 foreach my $dir ($netinst, "$netinst\\logs") {
@@ -1484,6 +1481,9 @@ foreach my $dir ($netinst, "$netinst\\logs") {
         or die "FAILED: $^E";
     print "done.\n";
 }
+
+# At this point, force everything else.
+$u->generate ();
 
 # Batch script to run after this script exits.
 my $doit = "$netinst\\doit.bat";
