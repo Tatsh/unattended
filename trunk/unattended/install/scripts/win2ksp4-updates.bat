@@ -11,7 +11,7 @@
 :: Microsoft DirectX 9.0b update
 :: <http://www.microsoft.com/directx/>
 :: Download the redistributable for developers (dx90b_redist.exe) and
-:: extract it to %Z%\packages\DirectX.
+:: extract it to %Z%\packages\DirectX9\%WINLANG%
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=a6dee0db-dcce-43ea-87bb-7c7e1fd1eaa2>
 :: (Requires .NET to be installed first for managed DX)
 todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
