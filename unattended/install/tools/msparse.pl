@@ -35,6 +35,9 @@ my %lang=(
 my $url=$ARGV[0];
 my $type=$ARGV[1];
 
+$type =~ s/^\/+//g;
+$type =~ s/\/+$//g;
+
 $url =~ s/amp;/\&/g;
 $url =~ s/displaylang=[a-z]{2}(?:-[a-z]{2})?//ig;
 $url =~ s/\&\&+/\&/g;
