@@ -441,8 +441,9 @@ sub create_postinst_bat () {
          "todo.pl \"del $tempcred\"",
          # Next-to-last step is to disable automatic logon
          'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
-         # First step is to perform top-level install
-         "todo.pl $top",
+         # First step is to perform top-level install of master and
+         # optional scripts.
+         map { "todo.pl $_" } reverse split /;/, $top,
          '',
          'todo.pl --go');
 
@@ -551,13 +552,13 @@ $u->{'_meta'}->{'OS_dir'} = 'z:\\os\\';
 
 $u->{'_meta'}->{'OS_media'} = \&ask_os;
 
-$u->comments ('_meta', 'top') = ['Script run by postinst.bat'];
+$u->comments ('_meta', 'top') = ['Scripts run by postinst.bat'];
 
 $u->{'_meta'}->{'top'} =
     sub {
-        my $lines = batfile_first_lines ();
-        my @scripts = (grep { $lines->{$_} =~ /^::\s*BASE(?!\w)/; }
-                       sort keys %$lines);
+        my $bat_heads = batfile_first_lines ();
+        my @scripts = (grep { $bat_heads->{$_} =~ /^::\s*MASTER(?!\w)/; }
+                       sort keys %$bat_heads);
 
         # Backwards compatibility hack.  Remove someday (FIXME).
         scalar @scripts > 0
@@ -565,9 +566,18 @@ $u->{'_meta'}->{'top'} =
                            ('base.bat', 'sales.bat',
                             'developer.bat', 'build-server.bat'));
 
-        print "Choose post-installation script to run:\n";
-        my @choices = map { ($full => $full); } @scripts;
-        return menu_choice (@choices, 'none' => undef);
+        print "Choose master post-installation script to run.\n";
+        my @choices = map { ($_ => $_); } @scripts;
+        my $master = menu_choice (@choices, 'none' => undef);
+
+        defined $master
+            or return undef;
+
+        my @optionals = (grep { $bat_heads->{$_} =~ /^::\s*OPTIONAL(?!\w)/; }
+                         sort keys %$bat_heads);
+        my @options = multi_choice ('Choose optional scripts to run.',
+                                    @optionals);
+        return join ';', ($master, @options);
     };
 
 $u->comments ('_meta', 'ntp_servers') =
