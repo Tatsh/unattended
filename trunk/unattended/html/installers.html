@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Unattended/Silent Installer Flags for Windows Apps</title>
+</head>
+<body>
+
+<p>This document is part of <a
+href="http://unattended.sourceforge.net/"
+>http://unattended.sourceforge.net/</a>.
+
+<hr>
+<h1>Introduction</h1>
+
+<p>The goal of this page is to collect instructions for performing
+unattended/silent installations of many popular Windows applications.
+Such instructions are useful for people who wish to automate these
+installations.
+
+<p>A quick word on terminology: Strictly speaking, an
+<em>unattended</em> installation is one which does not require user
+interaction, and a <em>silent</em> (or <em>quiet</em>) installation is
+one which does not display any indication of its progress.  However,
+most vendors treat these words as synonyms.
+
+<p>In this document, we are interested not only in unattended
+installations, but also in being able to wait for the installation to
+finish and to suppress any automatic reboot.  These are both necessary
+for creating a system to <a href="apps.html">reliably install multiple
+applications.</a>
+
+<h1>General principles</h1>
+
+<h1>Specific applications</h1>
+
+<br><hr width="50%">
+<h2 id="acrobat-reader">Acrobat Reader</h2>
+<table border cellpadding=4>
+<tr><td valign="middle">Availability
+<td><a href="http://www.adobe.com/products/acrobat/readstep.html">Free
+Download</a>
+<tr><td valign="middle">Details
+<td><p>This one is tricky.
+
+<p>Download the full installer package from Adobe.  Start it up.  It
+will extract itself to a temporary folder in your profile, probably
+somewhere like
+<kbd>C:\Program&nbsp;Files\Documents&nbsp;and&nbsp;Settings\Administrator\Local&nbsp;Settings\Temp</kbd>.
+But the installer will delete the temporary folder when it is
+finished, so do
+<b>not</b> complete the installation.  Instead, copy the temporary
+folder somewhere else while the installer is running.
+
+<p>This temporary folder is just a copy of the Acrobat Reader CD-ROM;
+this is our installation tree.  From here, you can follow the
+instructions in Adobe's <a
+href="http://www.adobe.com/support/techdocs/2cc1e.htm">"Using a
+setup.iss file for a Silent Installation of Acrobat Reader in
+Windows"</a> document.  It is an <a href="#installshield"
+>InstallShield</a> app.
+
+<tr><td valign="middle">Example
+<td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/acrobat-reader.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">acrobat-reader.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="activeperl">ActiveState Perl (ActivePerl)</h2>
+<table border cellpadding=4>
+<tr><td valign="middle">Availability
+<td><a href="http://www.activestate.com/Products/ActivePerl/">Open Source</a>
+<tr><td valign="middle">Details
+<td><p>Just download the MSI file.
+
+<p>Most of the options are <a
+href="http://aspn.activestate.com/ASPN/Perl/Reference/Products/ActivePerl/install.html#windows%20installers"
+>documented</a>, except for <kbd>PERL_EXT</kbd>, which tells the
+installer to make ActivePerl the default handler for .pl files (highly
+recommended).
+
+<tr><td valign="middle">Example
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/perl.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">perl.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="att-global-dialer">AT&amp;T Global Network Dialer</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><ahref="http://help.attbusiness.net/">Free Download</a> (but
+requires the service)
+
+<tr><td valign="middle">Details
+
+<td><p>The downloaded installer is named <kbd>ncsetup.exe</kbd>; you
+probably want to rename it to <kbd>att-5.0.5.exe</kbd> or somesuch.
+Running "strings" on the executable reveals that it was created by <a
+href="#wise">Wise Installmaster</a>, so the <kbd>/s</kbd> flag will do
+the trick.
+
+<tr><td valign="middle">Example
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/att.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">att.bat</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="directx">DirectX 8.1</h2>
+<table border cellpadding=4>
+<tr><td valign="middle">Availability
+<td><a
+href="http://www.microsoft.com/windows/directx/downloads/drx81.asp"
+>Free Download</a>
+<tr><td valign="middle">Details
+
+<td><p>The downloaded installer is named DX81NTeng.exe.  Run
+<kbd>DX81NTeng.exe&nbsp;/c&nbsp;/t:<var>path</var></kbd> to extract
+the tree to <var>path</var>.  From that tree, run
+<kbd>dxsetup&nbsp;/silent&nbsp;/install</kbd>.
+
+<tr><td valign="middle">Example
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/directx81.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup">directx81.bat</a>
+
+</table>
+
+<hr>
+<address>
+Patrick J. LoPresti <a
+href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
+</address>
+</body>
+</html>
