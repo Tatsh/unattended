@@ -10,6 +10,7 @@
 
 :: "Update for Windows Media Player 9 Series"
 :: URL|ENU|http://download.microsoft.com/download/7/0/D/70D0BAC6-A68B-4CB6-94AB-E0DF8C0EFCAF/WindowsMedia9-KB837272-ENU.exe|updates/mediaplayer9/windowsmedia9-kb837272-enu.exe
+:: URL|RUS|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/WindowsMedia9-KB837272-RUS_b6fe29ce412032622728fa1eb4cc7a0.exe|updates/mediaplayer9/windowsmedia9-kb837272-rus.exe
 :: <http://support.microsoft.com/?id=837272>
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb837272-%WINLANG%.exe /passive /n /norestart"
 
@@ -267,6 +268,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 :: "Vulnerability in Help and Support Center Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-015.mspx>
 :: URL|ENU|http://download.microsoft.com/download/a/f/a/afa937e7-e7f4-4fe8-8324-6e322f7ab542/WindowsXP-KB840374-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb840374-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/b/a/f/baf12958-e3c1-439d-a4c9-78d60bc0f1b5/WindowsXP-KB840374-x86-RUS.EXE|updates/winxpsp1/windowsxp-kb840374-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb840374-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-012 (828741)
