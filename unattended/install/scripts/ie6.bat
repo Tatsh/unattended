@@ -102,30 +102,30 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dah
 :: Microsoft Security Bulletin MS02-009
 :: "Incorrect VBScript Handling in IE can Allow Web Pages to Read Local Files"
 :: <http://www.microsoft.com/technet/security/bulletin/MS02-009.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=08e148e3-03c9-43a9-98be-6a4065fe99d3>
-:: URL|ARA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/AR/vbs56nar.exe|updates/ie6sp1/ara/vbs56n.exe
-:: URL|CSY|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/CS/vbs56ncs.exe|updates/ie6sp1/csy/vbs56n.exe
-:: URL|DAN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/DA/vbs56nda.exe|updates/ie6sp1/dan/vbs56n.exe
-:: URL|DEU|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/DE/vbs56nde.exe|updates/ie6sp1/deu/vbs56n.exe
-:: URL|ELL|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/EL/vbs56nel.exe|updates/ie6sp1/ell/vbs56n.exe
-:: URL|ENU|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/EN-US/vbs56nen.exe|updates/ie6sp1/enu/vbs56n.exe
-:: URL|ESN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/ES/vbs56nes.exe|updates/ie6sp1/esn/vbs56n.exe
-:: URL|FIN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/FI/vbs56nfi.exe|updates/ie6sp1/fin/vbs56n.exe
-:: URL|FRA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/FR/vbs56nfr.exe|updates/ie6sp1/fra/vbs56n.exe
-:: URL|HEB|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/HE/vbs56nhe.exe|updates/ie6sp1/heb/vbs56n.exe
-:: URL|HUN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/HU/vbs56nhu.exe|updates/ie6sp1/hun/vbs56n.exe
-:: URL|ITA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/IT/vbs56nit.exe|updates/ie6sp1/ita/vbs56n.exe
-:: URL|JPN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/JA/vbs56njp.exe|updates/ie6sp1/jpn/vbs56n.exe
-:: URL|KOR|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/KO/vbs56nko.exe|updates/ie6sp1/kor/vbs56n.exe
-:: URL|NLD|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/NL/vbs56nnl.exe|updates/ie6sp1/nld/vbs56n.exe
-:: URL|NOR|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/NO/vbs56nno.exe|updates/ie6sp1/nor/vbs56n.exe
-:: URL|PLK|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/PL/vbs56npl.exe|updates/ie6sp1/plk/vbs56n.exe
-:: URL|PTB|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/PT-BR/vbs56nptb.exe|updates/ie6sp1/ptb/vbs56n.exe
-:: URL|PTG|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/PT/vbs56nptg.exe|updates/ie6sp1/ptg/vbs56n.exe
-:: URL|RUS|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/RU/vbs56nru.exe|updates/ie6sp1/rus/vbs56n.exe
-:: URL|SVE|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/SV/vbs56nsv.exe|updates/ie6sp1/sve/vbs56n.exe
-:: URL|TRK|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/TR/vbs56ntr.exe|updates/ie6sp1/trk/vbs56n.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\vbs56n.exe /q /r:n"
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=08e148e3-03c9-43a9-98be-6a4065fe99d3>
+:: URL|ARA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/AR/vbs56nar.exe|updates/ie6sp1/vbs56nara.exe
+:: URL|CSY|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/CS/vbs56ncs.exe|updates/ie6sp1/vbs56ncsy.exe
+:: URL|DAN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/DA/vbs56nda.exe|updates/ie6sp1/vbs56ndan.exe
+:: URL|DEU|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/DE/vbs56nde.exe|updates/ie6sp1/vbs56ndeu.exe
+:: URL|ELL|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/EL/vbs56nel.exe|updates/ie6sp1/vbs56nell.exe
+:: URL|ENU|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/EN-US/vbs56nen.exe|updates/ie6sp1/vbs56nenu.exe
+:: URL|ESN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/ES/vbs56nes.exe|updates/ie6sp1/vbs56nesn.exe
+:: URL|FIN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/FI/vbs56nfi.exe|updates/ie6sp1/vbs56nfin.exe
+:: URL|FRA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/FR/vbs56nfr.exe|updates/ie6sp1/vbs56nfra.exe
+:: URL|HEB|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/HE/vbs56nhe.exe|updates/ie6sp1/vbs56nheb.exe
+:: URL|HUN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/HU/vbs56nhu.exe|updates/ie6sp1/vbs56nhun.exe
+:: URL|ITA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/IT/vbs56nit.exe|updates/ie6sp1/vbs56nita.exe
+:: URL|JPN|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/JA/vbs56njp.exe|updates/ie6sp1/jpn/vbs56njp.exe
+:: URL|KOR|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/KO/vbs56nko.exe|updates/ie6sp1/vbs56nkor.exe
+:: URL|NLD|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/NL/vbs56nnl.exe|updates/ie6sp1/vbs56nnld.exe
+:: URL|NOR|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/NO/vbs56nno.exe|updates/ie6sp1/vbs56nnor.exe
+:: URL|PLK|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/PL/vbs56npl.exe|updates/ie6sp1/vbs56nplk.exe
+:: URL|PTB|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/PT-BR/vbs56nptb.exe|updates/ie6sp1/vbs56nptb.exe
+:: URL|PTG|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/PT/vbs56nptg.exe|updates/ie6sp1/vbs56nptg.exe
+:: URL|RUS|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/RU/vbs56nru.exe|updates/ie6sp1/vbs56nrus.exe
+:: URL|SVE|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/SV/vbs56nsv.exe|updates/ie6sp1/vbs56nsve.exe
+:: URL|TRK|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/TR/vbs56ntr.exe|updates/ie6sp1/vbs56ntrk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\vbs56n%WINLANG%.exe /q /r:n"
 
 :: Internet Explorer 6 Service Pack 1
 :: <http://support.microsoft.com/?kbid=326489>
