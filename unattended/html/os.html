@@ -232,8 +232,14 @@ the <code>install.sh</code> script.
 
 <p>To create the floppy disk images, you will need the <a
 href="http://mtools.linux.lu/">Mtools</a> suite installed on your Unix
-box.  (You probably already have them; type <kbd>mcopy</kbd> to find
-out.)
+box.  You probably already have them; type <kbd>mcopy</kbd> to find
+out.
+
+<p>(Oh, did I mention you actually <b>need</b> a Unix box?  The
+bootdisk is the only part of this project which requires one.  If you
+are a Windows wizard interested in making this procedure work using
+Windows only, <a href="mailto:patl@users.sourceforge.net">contact
+me</a> and we can collaborate.  It should not be very difficult.)
 
 <p>To create the ISO image (optional), you will need the <a
 href="http://www.andante.org/mkisofs.html">mkisofs</a> utility.
@@ -300,13 +306,12 @@ href="http://syslinux.zytor.com/memdisk.php">memdisk</a> utilities
 from the excellent <a href="http://syslinux.zytor.com/">SYSLINUX</a>
 package.  (Do not be fooled by the name; SYSLINUX is a very powerful
 boot loader whose use goes far beyond Linux.  It is perfect for this
-application, for example.)  Download the SYSLINUX package, and copy
-the <code>isolinux</code> and <code>memdisk</code> applications to the
-<code>iso</code> directory.  Then type <kbd>make iso</kbd>.  You should end
-up with a <code>bootdisk.iso</code> image, suitable for burning to a
-CD-ROM.  Booting this CD-ROM will give you a choice of "virtual
-floppies" to boot; choose the one with the right driver for your
-network card.
+application, for example.)  These tools are included in the
+distribution.  From the <code>bootdisk</code> directory, just type
+<kbd>make iso</kbd>.  You should end up with a
+<code>bootdisk.iso</code> image, suitable for burning to a CD-ROM.
+Booting this CD-ROM will give you a choice of "virtual floppies" to
+boot; choose the one with the right driver for your network card.
 
 <h2 id="netboot">Booting from the network</h2>
 
@@ -442,9 +447,9 @@ directory and offer to let you edit it.
 file", is the key to this whole process.  Normally, <em>Windows
 Setup</em> tosses up lots of dialogs to ask you questions like, "What
 is your name?", "What is your license key?", and so on.  By passing
-the right flags to the installer (<code>i386\winnt.exe</code>),
-<code>install.sh</code> will cause <em>Windows Setup</em> to consult
-this file for the answers instead.
+the right flags to the installer (<code>i386\winnt.exe</code>), we
+will cause <em>Windows Setup</em> to consult this file for the answers
+instead.
 
 <a name="guide"></a>
 <p>The best documentation for the answer file is Microsoft's own
