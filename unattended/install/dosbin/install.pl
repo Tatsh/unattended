@@ -431,23 +431,31 @@ sub create_postinst_bat () {
 
     # Top-level installation script
     my $top = $u->{'_meta'}->{'top'};
-    if (defined $top) {
-        my @scripts = split /;/, $top;
+    my $middle = $u->{'_meta'}->{'middle'};
+    my $bottom = $u->{'_meta'}->{'bottom'};
+    if ($top ne '' || $middle ne '' || $bottom ne '') {
+        my @top_scripts = split /;/, $top;
+        my @middle_scripts = split /;/, $middle;
+        my @bottom_scripts = split /;/, $bottom;
         my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
         push @postinst_lines,
         ('call %Z%\\scripts\\perl.bat',
          'PATH=%Z%\\bin;%PATH%',
-         # Last step is always a reboot
+         # Last step is always a reboot.
          'todo.pl .reboot',
-         # After installing and just before reboot re-enable System Restore
+         # After installing, re-enable System Restore.
          'todo.pl "srconfig.pl --enable"',
-         # Antepenultimate step is to delete credentials file
+         # Antepenultimate step is to delete credentials file.
          "todo.pl \"del $tempcred\"",
-         # Next-to-last step is to disable automatic logon
+         # Before that, disable automatic logon.
          'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
+         # Before that, run the "cleanup" scripts.
+         (map { "todo.pl $_" } reverse @bottom_scripts),
+         # Before that, run the optional scripts.
+         (map { "todo.pl $_" } reverse @middle_scripts),
          # First step is to perform top-level install of master and
          # optional scripts.
-         (map { "todo.pl $_" } reverse @scripts),
+         (map { "todo.pl $_" } reverse @top_scripts),
          # Before installing disable System Restore.
          'todo.pl "srconfig.pl --disable"',
          '',
@@ -612,11 +620,16 @@ $u->{'_meta'}->{'replace_mbr'} =
             ('Replace Master Boot Record (if unsure, say yes)');
     };
 
-$u->comments ('_meta', 'top') = ['Scripts run by postinst.bat'];
+$u->comments ('_meta', 'top') = ['First script run by postinst.bat'];
+$u->sort_index ('_meta', 'top') = 1;
+$u->comments ('_meta', 'middle') = ['Optional script(s) run by postinst.bat'];
+$u->sort_index ('_meta', 'middle') = 2;
+$u->comments ('_meta', 'bottom') = ['Last script(s) run by postinst.bat'];
+$u->sort_index ('_meta', 'bottom') = 3;
 
 # Go through the first line (head) of each script and slurp out the
-# description.
-sub _top_helper ($$) {
+# line matching the desired token.
+sub _script_sel_helper ($$) {
     my ($token, $heads) = @_;
     my %ret;
     
@@ -636,7 +649,7 @@ sub _top_helper ($$) {
 $u->{'_meta'}->{'top'} =
     sub {
         my $bat_heads = batfile_first_lines ();
-        my %master_choices = _top_helper ('MASTER', $bat_heads);
+        my %master_choices = _script_sel_helper ('MASTER', $bat_heads);
 
         # Backwards compatibility hack.  Remove someday (FIXME).
         scalar keys %master_choices > 0
@@ -651,13 +664,21 @@ $u->{'_meta'}->{'top'} =
         my $master = menu_choice (@choices, 'none' => undef);
 
         defined $master
-            or return undef;
+            or $master = '';
 
-        my %optional_choices = _top_helper ('OPTIONAL', $bat_heads);
+        return $master;
+    };
+
+$u->{'_meta'}->{'middle'} =
+    sub {
+        my $bat_heads = batfile_first_lines ();
+        my %optional_choices = _script_sel_helper ('OPTIONAL', $bat_heads);
         my @options = multi_choice ('Choose optional scripts to run.',
                                     sort keys %optional_choices);
-        return join ';', ($master, map { $optional_choices{$_} } @options);
+        return join ';', map { $optional_choices{$_} } @options;
     };
+
+$u->{'_meta'}->{'bottom'} = '';
 
 # Default is to fetch these from environment set up by autoexec.bat.
 $u->comments ('_meta', 'z_path') = ['UNC path to install share'];
