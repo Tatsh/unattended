@@ -147,32 +147,32 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb873379-client-%WINLANG%.
 todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb833858-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb833858.txt /p VSDEBUGop.msp REBOOT=ReallySuppress\""
 
 if not %WINVER%. == win2ksp4. goto did832668
-:: Office XP Alternative User Input Update: KB832668
-:: <http://support.microsoft.com?kbid=832668>
+:: Office XP Alternative User Input Update: KB832668 (Updated Nov 9th, 2004)
+:: <http://support.microsoft.com/kb/832668>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=3489d806-be63-4253-9120-5e5a2d81dfa9>
-:: URL|ARA|http://download.microsoft.com/download/1/4/1/141c2914-9aea-4840-9571-3ec4f0895716/OfficeXP-kb832668-client-ara.exe|updates/officexp/officexp-kb832668-client-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/1/4/3/143ad906-7f7d-4d24-84db-ee012d52d8ab/OfficeXP-kb832668-client-csy.exe|updates/officexp/officexp-kb832668-client-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/b/e/e/bee66948-8097-41c8-be97-0287309a7e47/OfficeXP-kb832668-client-dan.exe|updates/officexp/officexp-kb832668-client-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/7/4/c/74cd80fd-30a0-4618-923e-e1732c1c80c7/OfficeXP-kb832668-client-deu.exe|updates/officexp/officexp-kb832668-client-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/9/c/d/9cdf7142-d568-4d86-b8b4-a40692b5cdcf/OfficeXP-kb832668-client-ell.exe|updates/officexp/officexp-kb832668-client-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-client-enu.exe|updates/officexp/officexp-kb832668-client-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/9/8/3/983e49af-8d3c-4572-97ad-c7540b993f3d/OfficeXP-kb832668-client-esn.exe|updates/officexp/officexp-kb832668-client-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/4/8/a/48a1866a-a380-4193-baef-07d2c0a7fae9/OfficeXP-kb832668-client-fin.exe|updates/officexp/officexp-kb832668-client-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/c/a/2/ca2a607c-5cdb-40e3-9912-b759d61a8116/OfficeXP-kb832668-client-fra.exe|updates/officexp/officexp-kb832668-client-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/e/e/0/ee053cdb-86b2-4bce-8d95-8b36ec2ecb22/OfficeXP-kb832668-client-heb.exe|updates/officexp/officexp-kb832668-client-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/e/c/5/ec521a0d-34c1-4e76-a3ef-ed96bfe5dd26/OfficeXP-kb832668-client-hun.exe|updates/officexp/officexp-kb832668-client-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/0/6/4/06482cb4-1239-4a98-8fce-d0318f51a67c/OfficeXP-kb832668-client-ita.exe|updates/officexp/officexp-kb832668-client-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/8/f/6/8f67ceed-e904-44aa-83c6-3d737f2516b2/OfficeXP-kb832668-client-jpn.exe|updates/officexp/officexp-kb832668-client-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/b/f/6/bf6f2317-c553-48d4-b6a8-34d381cd6c18/OfficeXP-kb832668-client-kor.exe|updates/officexp/officexp-kb832668-client-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/2/7/5/275715fb-38b2-41b2-9e84-b834669d2d3e/OfficeXP-kb832668-client-nld.exe|updates/officexp/officexp-kb832668-client-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/2/2/2/222b6dba-5a76-4785-acfb-7b0a02400014/OfficeXP-kb832668-client-nor.exe|updates/officexp/officexp-kb832668-client-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/b/f/3/bf37f38b-063d-4183-a512-67cf3298e2da/OfficeXP-kb832668-client-plk.exe|updates/officexp/officexp-kb832668-client-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/5/8/5/585c2c75-6278-4f91-974f-f4a0682c7bdd/OfficeXP-kb832668-client-ptb.exe|updates/officexp/officexp-kb832668-client-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/a/c/6/ac6bc597-cdee-42dc-a956-d154f099df8f/OfficeXP-kb832668-client-ptg.exe|updates/officexp/officexp-kb832668-client-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/0/0/1/001d1235-bba6-45ae-9f4a-a447a8dd3674/OfficeXP-kb832668-client-rus.exe|updates/officexp/officexp-kb832668-client-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/8/0/1/801bf89e-a6d4-453a-a271-846701ef9d75/OfficeXP-kb832668-client-sve.exe|updates/officexp/officexp-kb832668-client-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/3/4/6/34650f2a-093f-42c6-bc18-21bd2a866fb7/OfficeXP-kb832668-client-trk.exe|updates/officexp/officexp-kb832668-client-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\officexp\OfficeXP-kb832668-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb832668.txt /p MSCTF.msp REBOOT=ReallySuppress\""
+:: URL|ARA|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/ara/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|CSY|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/csy/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|DAN|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/dan/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|DEU|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/deu/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/ell/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|ENU|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/esn/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|FIN|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/fin/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/fra/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|HEB|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/heb/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|HUN|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/hun/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|ITA|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/ita/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|JPN|http://download.microsoft.com/download/8/f/6/8f67ceed-e904-44aa-83c6-3d737f2516b2/OfficeXP-kb832668-v2-fullfile-jpn.exe|updates/officexp/officexp-kb832668-v2-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/b/f/6/bf6f2317-c553-48d4-b6a8-34d381cd6c18/OfficeXP-kb832668-v2-fullfile-kor.exe|updates/officexp/officexp-kb832668-v2-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/nld/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|NOR|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/nor/officexp-kb832668-v2-fullfile-enu.exe
+:: No Download found for PLK.
+:: URL|PTB|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/ptb/officexp-kb832668-v2-fullfile-enu.exe
+:: No Download found for PTG.
+:: URL|RUS|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/rus/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|SVE|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/sve/officexp-kb832668-v2-fullfile-enu.exe
+:: URL|TRK|http://download.microsoft.com/download/5/c/a/5ca0ee42-b7f8-4953-b808-b01ce9bfe2ac/OfficeXP-kb832668-v2-fullfile-enu.exe|updates/officexp/trk/officexp-kb832668-v2-fullfile-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\OfficeXP-kb832668-v2-fullfile-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb832668.txt /p MSCTF.msp REBOOT=ReallySuppress\""
 :did832668
 
 :: Office XP Service Pack 3 (SP3)
