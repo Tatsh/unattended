@@ -30,15 +30,10 @@
 ::
 :: Preparation-Howto:
 ::
-:: 1. Start thunderbird-100-%WINLANG%.exe manually and wait the installer files to be unpacked.
-::    (DO NOT close the installer, just leave it opened.)
-:: 2. Open the temporary files folder on your system.
-:: 3. Locate a sub-directory that contains *.xpi files.
-:: 4. Copy all files except SETUPSRC.DLL and SETUP.EXE to %Z%\packages\mozilla\thunderbird\
-::    (DO NOT overwrite the existing files in that directory!)
-:: 5. Cancel the running installer.
+:: 1. Download the official installer using /install/tools/prepare
+:: 2. Run the script "patch-installer.bat" in /packages/mozilla/thunderbird
 ::
 ::
 @echo off
 
-todo.pl "%Z%\packages\nozilla\thunderbird\setup.exe -ms -ira"
+todo.pl "%Z%\packages\nozilla\thunderbird-100-%WINLANG%.exe -ms -ira"
