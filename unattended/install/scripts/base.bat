@@ -1,4 +1,4 @@
-:: BASE: Perform a basic workstation installation
+:: MASTER: Perform a basic workstation installation
 
 :: Re-enable System Restore.  (FIXME: This really should be at the
 :: very end of the installation.)
