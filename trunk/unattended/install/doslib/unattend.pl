@@ -33,7 +33,7 @@ sub get_info ($$) {
 sub force ($) {
     my ($val) = @_;
     ref $val eq 'CODE'
-        and $val = force ($val);
+        and $val = &$val ();
     ref $val eq 'CODE'
         and die 'INTERNAL ERROR';
     return $val;
