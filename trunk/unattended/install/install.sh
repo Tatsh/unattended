@@ -143,7 +143,7 @@ fi
 unattend_src=Z:\\unattend.txt
 unattend_dst="$netinst\\unattend.txt"
 echo -n "Copying $unattend_src to $unattend_dst..."
-cp $unattend_src $unattend_dst
+xcopy $unattend_src $unattend_dst
 echo "done."
 
 if [ -f $unattend_dst ] ; then
@@ -157,7 +157,7 @@ fi
 
 todo_src=z:\\bin\\todo.pl
 echo -n "Copying $todo_src to $netinst..."
-cp $todo_src $netinst
+xcopy $todo_src $netinst
 echo "done."
 
 toplev="$netinst\\toplev.bat"
