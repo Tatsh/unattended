@@ -238,6 +238,12 @@ if (exists $opts{'go'}) {
                 $err_to_ignore = $1;
                 $cmd = $2;
             }
+            elsif ($cmd =~ /^\.sleep\s+(\d+)$/) {
+                my ($secs) = $1;
+                print "Sleeping $secs seconds...";
+                sleep $secs;
+                print "done.\n";
+            }
             else {
                 die "Unrecognized dot-command $cmd";
             }

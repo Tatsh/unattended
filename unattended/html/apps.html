@@ -173,23 +173,6 @@ reboots.
 
 </ul>
 
-<h2>The <code>.reboot</code> directive</h2>
-
-<p>In addition to simple commands, the to-do list may contain
-<em>directives</em> for <code>todo.pl</code>.  Directives always start
-with a dot.  The simplest directive is <code>.reboot</code>, which
-instructs <code>todo.pl</code> to reboot the machine after first
-patching the registry to cause <b>itself</b> to run the next time
-the current user logs in.
-
-<p>In other words, <code>.reboot</code> provides a controlled
-mechanism for rebooting in the middle of installing multiple
-applications.  This is important, because uncontrolled reboots can
-create race conditions as the OS kills all the processes with
-indeterminate ordering and timing.  When you write a script to install
-an application, you should suppress any reboots performed by the
-installer and use the <code>.reboot</code> directive instead.
-
 <h2>The <code>.ignore-err</code> directive</h2>
 
 <p>Like its author, <code>todo.pl</code> is nigh-pathologically
@@ -216,6 +199,42 @@ invocation like this:
 the to-do list.  When <code>todo.pl</code> processes this line, it
 will invoke <code>foo.exe</code>, silently ignoring exit status zero
 or 37.  It will still treat other status codes as errors.
+
+<h2>The <code>.reboot</code> directive</h2>
+
+<p>In addition to simple commands, the to-do list may contain
+<em>directives</em> for <code>todo.pl</code>.  Directives always start
+with a dot.  The simplest directive is <code>.reboot</code>, which
+instructs <code>todo.pl</code> to reboot the machine after first
+patching the registry to cause <b>itself</b> to run the next time
+the current user logs in.
+
+<p>In other words, <code>.reboot</code> provides a controlled
+mechanism for rebooting in the middle of installing multiple
+applications.  This is important, because uncontrolled reboots can
+create race conditions as the OS kills all the processes with
+indeterminate ordering and timing.  When you write a script to install
+an application, you should suppress any reboots performed by the
+installer and use the <code>.reboot</code> directive instead.
+
+<h2>The <code>.sleep</code> directive</h2>
+
+<p>If you ever have to use this directive, then you are doing
+something wrong, because there is no such thing as a guaranteed time
+bound for most operations.
+
+<p>Unfortunately, some installers make it impossible to do things
+right.  For example, they might fork a subprocess and exit.  In this
+case, the most convenient thing might be to delay a while.  Just make
+sure you delay long enough.
+
+<p>This directive simply takes an integer number of seconds as
+argument.  For example, to sleep 37 seconds, you would do:
+
+<pre>
+    todo.pl ".sleep 37"
+</pre>
+
 
 <h2>The environment</h2>
 
