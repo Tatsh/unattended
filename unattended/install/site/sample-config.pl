@@ -1,244 +1,194 @@
-# This file is a great working example.  It expects 2 files to 
-# exist in the z:\site directory.  Namely hardware.csv and software.csv.
+# This module needs to include a config-<configtype>.pl 
+# module that defineds two subroutines.  On called 'setup'
+# that calls setups up the interface to that module and
+# another called 'lookup_value' that returns a value for
+# a given Lookup,Property pair.
 #
-# These files should look like the following:
+# Be sure to also look at the config-csv.pl/config-mysql.pl
+# in the lib directory for setup instructions.
 #
-# hardware.csv contains the MAC to user,organization,computer names.
-# MAC needs to be in all caps as show below.
+# The following table shows what Lookup values are used for a
+# given Property value.  The order shown is the order searched.
+# The search ends when a valid entry is returned.
 #
-# hardware.csv
-# ============
-# "MAC","Name","Owner","Organization"
-# "0003473ECA3C","Comp_1","John Doe","Acme, Inc."
-#
-# software.csv contains the key and password for software. Owner can be
-# one of MAC, username, computer name, or organization.  Key and password
-# are searched in that order.  In the example below all computers in
-# "Acme, Inc." that install Windows XP will have the password of "secret".
-# That is unless they override it in a more specific line (MAC,user,computer).
-#
-# software.csv
-# ============
-# "Owner","Software","Key","Password"
-# "Comp_1","Windows XP Professional","ABCDE-FGHIJ-KLMNO-PQRST-UVWXY",""
-# "Acme, Inc.","Windows XP Professional","","secret"
-#
-# If any of the above values aren't defined/found then the usual question
-# will be asked.  If all the values are filled out and the [_meta] section
-# is setup correctly then the only question you will be asked is what OS to
-# install.
-#
-# Also at the very bottom of this script is a routine to include ALL drivers
-# found under the OS installation point.
+# Property                 Lookup Order
+# =====================    ========================================================
+# ComputerName             <macaddr>,Default
+# FullName                 <macaddr>,<ComputerName>,Default
+# OrgName                  <macaddr>,<ComputerName>,<FullName>,Default
+# JoinDomain               <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# JoinWorkgroup            <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# AdminPassword            <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# OS_media                 <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# <os_name> ProductKey     <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# <os_name> ProductID      <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# top_scripts              <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# middle_scripts           <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# bottom_scripts           <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# ntp_servers              <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
+# DriverPath               <macaddr>,<ComputerName>,<os_name>,Default
 
 use warnings;
 use strict;
-use Carp;
 
-# Where do we store our hardware/software information.
-my $hard_inv = 'z:\\site\\hardware.csv';
-my $soft_inv = 'z:\\site\\software.csv';
+# Set db for mysql interface
+#require "config-mysql.pl";
+#CONFIG->setup('DBI:mysql:database=unattended;host=192.168.2.1', 'username', 'password');
 
-# Look up an entry in a hash, bombing out if it does not exist.
-sub hash_ref ($$) {
-    my ($hash, $key) = @_;
+# Setup db for CSV interface
+require "config-csv.pl";
+CONFIG->setup(dos_to_host('z:\site\unattend.csv'), '', '');
 
-    my $type = ref $hash;
-    $type eq 'HASH'
-        or croak "You blew it: What should be a hash is a $type";
-
-    (exists $hash->{$key})
-        or croak "$key not found in hash -- bailing out";
-    return $hash->{$key};
+# Lookup property value using all possible owners
+sub lookup_property ($) {
+    my ($property) = @_;
+    defined $property
+        or return undef;
+    foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                        $u->{'UserData'}->{'ComputerName'},
+                        $u->{'UserData'}->{'FullName'},
+                        $u->{'UserData'}->{'OrgName'},
+                        'Default') {
+        my $value = CONFIG->lookup_value($lookup, $property);
+        defined $value
+            and return $value;
+    }
+    return undef;
 }
 
-# Asset stuff
-require 'csv.pl';
-
-# Routine to canonicalize field names for indexing purposes.
-sub canonicalize_field ($) {
-    my ($val) = @_;
-    # Convert to lower case.
-    $val = lc $val;
-    # Local custom: Comments may appear in parens.  Strip them.
-    $val =~ s/\s*\(.*?\)//g;
-    return $val;
-}
-
-# Read hardware inventory list, and index it by mac.
-my $hardware = CSV->read_file (dos_to_host($hard_inv));
-my $hard_by_mac = $hardware->index_by ('MAC', \&canonicalize_field);
-
-# Read software inventory list, and index it by Machine (or hardware mac).
-my $software = CSV->read_file (dos_to_host($soft_inv));
-my $soft_by_machine = $software->index_by ('Owner', \&canonicalize_field);
-
-# Compute owner name from inventory sheet, if possible.
-$u->push_value ('UserData', 'FullName', 
-    sub {
-        my $mac = $u->{'_meta'}->{'macaddr'};
-        defined $mac
-            or return undef;
-        my $systems = $hard_by_mac->{lc($mac)};
-        defined $systems
-            or return undef;
-        scalar @$systems > 1
-            and die "MAC $mac found more than once in $hard_inv -- bailing";
-        my $owner = hash_ref (${@$systems}[0], 'Owner');
-        $owner =~ /\S/
-            or undef $owner;
-        defined $owner
-            and print "Found owner name for $mac: $owner\n";
-        return $owner;
-    });
-
-# Compute organization name from inventory sheet, if possible.
-$u->push_value ('UserData', 'OrgName', 
-    sub {
-        my $mac = $u->{'_meta'}->{'macaddr'};
-        defined $mac
-            or return undef;
-        my $systems = $hard_by_mac->{lc($mac)};
-        defined $systems
-            or return undef;
-        scalar @$systems > 1
-            and die "MAC $mac found more than once in $hard_inv -- bailing";
-        my $organization = hash_ref (${@$systems}[0], 'Organization');
-        $organization =~ /\S/
-            or undef $organization;
-        defined $organization
-            and print "Found organization name for $mac: $organization\n";
-        return $organization;
-    });
-
-# Compute computer name from inventory sheet, if possible.
+# Lookup computer name from database, if possible.
 $u->push_value ('UserData', 'ComputerName', 
     sub {
-        my $mac = $u->{'_meta'}->{'macaddr'};
-        defined $mac
-            or return undef;
-        my $systems = $hard_by_mac->{lc($mac)};
-        defined $systems
-            or return undef;
-        scalar @$systems > 1
-            and die "MAC $mac found more than once in $hard_inv -- bailing";
-        my $name = hash_ref (${@$systems}[0], 'Name');
-        $name =~ /\S/
-            or undef $name;
-        defined $name
-            and print "Found hostname for $mac: $name\n";
-        return $name;
-    });
-
-# Compute admin password from inventory sheet, if possible.
-$u->push_value ('GuiUnattended', 'AdminPassword', 
-    sub {
-        my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
-        my $os_name = $media_obj->name ();
-        foreach my $name ($u->{'_meta'}->{'macaddr'}, 
-                          $u->{'UserData'}->{'ComputerName'},
-                          $u->{'UserData'}->{'FullName'},
-                          $u->{'UserData'}->{'OrgName'}) {
-            defined $name
-                or next;
-            my $licenses = $soft_by_machine->{lc($name)} || [ ];
-            my $password;
-            foreach my $license (@$licenses) {
-                my $desc = hash_ref ($license, 'Software');
-                $os_name =~ /^$desc/i
-                    or next;
-                $password = hash_ref ($license, 'Password');
-                $password =~ /\S/
-                    and last;
-                undef $password;
-            }
-            if (defined $password) {
-                print "Found admin password for $name: ********\n";
-                return $password;
-            }
+        foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                            'Default') {
+            my $value = CONFIG->lookup_value($lookup, 'ComputerName');
+            defined $value
+                and return $value;
         }
         return undef;
     });
 
-# Compute product Key from inventory sheet, if possible.
+# Lookup owner name from database, if possible.
+$u->push_value ('UserData', 'FullName', 
+    sub {
+        foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                            $u->{'UserData'}->{'ComputerName'},
+                            'Default') {
+            my $value = CONFIG->lookup_value($lookup, 'FullName');
+            defined $value
+                and return $value;
+        }
+        return undef;
+    });
+
+# Lookup organization name from database, if possible.
+$u->push_value ('UserData', 'OrgName', 
+    sub {
+        foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                            $u->{'UserData'}->{'ComputerName'},
+                            $u->{'UserData'}->{'FullName'},
+                            'Default') {
+            my $value = CONFIG->lookup_value($lookup, 'OrgName');
+            defined $value
+                and return $value;
+        }
+        return undef;
+    });
+
+# Lookup Domain from database, if possible.
+$u->push_value ('Identification', 'JoinDomain', sub { return lookup_property('JoinDomain'); });
+
+# Lookup Workgroup from database, if possible.
+$u->push_value ('Identification', 'JoinWorkgroup', sub { return lookup_property('JoinWorkgroup'); });
+
+# Lookup Admin password from database, if possible.
+$u->push_value ('GuiUnattended', 'AdminPassword', sub { return lookup_property('AdminPassword'); });
+
+# Lookup OS Directory from database, if possible.
+$u->push_value ('_meta', 'OS_media', 
+    sub { 
+        my $os_dir = $u->{'_meta'}->{'OS_dir'};
+        defined $os_dir
+            or return undef;
+        my $os_media = lookup_property('OS_media');
+        defined $os_media
+            or return undef;
+        $os_media =~ /^[a-z]:/i
+            or $os_media = $os_dir . '\\' . $os_media;
+        opendir OSMEDIA, dos_to_host ($os_media)
+            or return undef;
+        closedir OSMEDIA;
+        return $os_media;
+    });
+
+# Lookup product Key from database, if possible.
 $u->push_value ('UserData', 'ProductKey', 
     sub {
         my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
         my $os_name = $media_obj->name ();
-        $os_name =~ /Windows 2000/
-            and return undef;
-        foreach my $name ($u->{'_meta'}->{'macaddr'}, 
-                          $u->{'UserData'}->{'ComputerName'},
-                          $u->{'UserData'}->{'FullName'},
-                          $u->{'UserData'}->{'OrgName'}) {
-            defined $name
-                or next;
-            my $licenses = $soft_by_machine->{lc($name)} || [ ];
-            my $key;
-            foreach my $license (@$licenses) {
-                my $desc = hash_ref ($license, 'Software');
-                $os_name =~ /^$desc/i
-                    or next;
-                $key = hash_ref ($license, 'Key');
-                $key =~ /\S/
-                    and last;
-                undef $key;
-            }
-            if (defined $key) {
-                print "Found product key for $name: $key\n";
-                return $key;
-            }
-        }
-        return undef;
+        defined $os_name
+            or return undef;
+        return lookup_property("$os_name ProductKey");
     });
 
-# Compute product ID from inventory sheet, if possible.
+# Lookup product ID from database, if possible.
 $u->push_value ('UserData', 'ProductID', 
     sub {
         my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
         my $os_name = $media_obj->name ();
-        $os_name =~ /Windows 2000/
+        defined $os_name
             or return undef;
-        foreach my $name ($u->{'_meta'}->{'macaddr'}, 
-                          $u->{'UserData'}->{'ComputerName'},
-                          $u->{'UserData'}->{'FullName'},
-                          $u->{'UserData'}->{'OrgName'}) {
-            defined $name
-                or next;
-            my $licenses = $soft_by_machine->{lc($name)} || [ ];
-            my $key;
-            foreach my $license (@$licenses) {
-                my $desc = hash_ref ($license, 'Software');
-                $os_name =~ /^$desc/i
-                    or next;
-                $key = hash_ref ($license, 'Key');
-                $key =~ /\S/
-                    and last;
-                undef $key;
-            }
-            if (defined $key) {
-                print "Found product ID for $name: $key\n";
-                return $key;
-            }
-        }
-        return undef;
+        return lookup_property("$os_name ProductID");
     });
 
-# Include all drivers found under OS dir (uncomment to use)
-#$u->push_value ('Unattended', 'OemPnPDriversPath', 
-#    sub {
-#        my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
-#        my @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1);
-#        # No driver directories means no drivers path
-#        scalar @pnp_driver_dirs > 0
-#            or return undef;
-#        print "...found some driver directories.\n";
-#        my $drivers = join ';', @pnp_driver_dirs;
-#        # Setup does not like empty OemPnPDriversPath
-#        $drivers =~ /\S/
-#            or undef $drivers;
-#        return $drivers;
-#    });
+# Lookup "Top" level scripts from database, if possible.
+$u->push_value ('_meta', 'top', sub { lookup_property('top_scripts'); });
+
+# Lookup "Middle" level scripts from database, if possible.
+$u->push_value ('_meta', 'middle', sub { lookup_property('middle_scripts'); });
+
+# Lookup "Bottom" level scripts from database, if possible.
+$u->push_value ('_meta', 'bottom', sub { lookup_property('bottom_scripts'); });
+
+# Lookup NTP Servers from database, if possible.
+$u->push_value ('_meta', 'ntp_servers', sub { lookup_property('ntp_servers'); });
+
+# Find all relevant drivers for this machine
+$u->push_value ('Unattended', 'OemPnPDriversPath', 
+    sub {
+        my $os_media = $u->{'_meta'}->{'OS_media'};
+        defined $os_media
+            or return undef;
+        my $media_obj = Unattend::WinMedia->new ($os_media);
+        defined $media_obj
+            or return undef;
+        my $os_name = $media_obj->name ();
+        my $os_drivers;
+        foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                            $u->{'UserData'}->{'ComputerName'},
+                            "$os_name",
+                            'Default') {
+            $os_drivers = CONFIG->lookup_value($lookup, 'DriverPath');
+            defined $os_drivers
+                and last;
+        }
+        defined $os_drivers
+            or return undef;
+        $os_drivers =~ /^[a-z]:/i
+            or $os_drivers = $os_media . '\\$i386\\$oem$\\$1\\' . $os_drivers;
+        opendir OSDRIVERS, dos_to_host ($os_drivers)
+            or return undef;
+        closedir OSDRIVERS;
+        my @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1, $os_drivers);
+        scalar @pnp_driver_dirs > 0
+            or return undef;
+        print "...found some driver directories.\n";
+        if ($os_drivers ne $os_media . '\\$i386\\$oem$\\$1\\' . $os_drivers) {
+            print 'Copying $os_drivers to C:\\ (Still Broken)'; # FIXME
+        }
+        my $drivers = join ';', @pnp_driver_dirs;
+        return $drivers;
+    });
 
 # Make this file evaluate to "true".
 1;
