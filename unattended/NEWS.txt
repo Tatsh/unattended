@@ -1,3 +1,17 @@
+*** Changes in version 2.5b (2003-Mar-11)
+
+Fix long-standing bug where autoexec.bat would append a random number
+to system.ini (to randomize hostname), which only works on the first
+boot.  Although not a problem for CD and network-based installs, this
+breaks for normal floppies.  Thanks to Scott Card.
+
+Fix isoboot.msg to correctly describe timeout (two minutes, not five).
+Also thanks to Scott Card.
+
+Fix silly bug in path to "pico".  Thanks again to (wait for it...)
+Scott Card.
+
+
 *** Changes in version 2.5 (2003-Mar-09)
 
 Use DJGPP Pico instead of FreeDOS edit.exe to edit files.  Document
