@@ -1,5 +1,5 @@
 :: Install all updates for Windows XP
-
+@Echo off
 :: After installing SP1, install updates for winxpsp1.
 todo.pl winxpsp1-updates.bat
 

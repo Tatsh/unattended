@@ -1,5 +1,5 @@
 :: Install IE6
-
+@Echo off
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 

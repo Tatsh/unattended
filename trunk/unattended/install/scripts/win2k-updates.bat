@@ -1,5 +1,5 @@
 :: Install all updates for Windows 2000
-
+@Echo off
 :: After installing SP4, install updates for win2ksp4
 todo.pl win2ksp4-updates.bat
 

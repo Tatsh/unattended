@@ -1,5 +1,5 @@
 :: MASTER: Perform a basic workstation installation
-
+@Echo off
 :: Set Automatic Updates to download automatically but prompt before install.
 todo.pl "auconfig.pl 3"
 

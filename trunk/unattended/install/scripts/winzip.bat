@@ -1,5 +1,5 @@
 :: Install WinZip
-
+@Echo off
 :: To prepare: first download WinZip from www.winzip.com
 :: and run a setup to the %Z%\packages\WinZip directory.
 :: NOTE: I have no idea (yet) how this affects a valid (site)license
