@@ -4,4 +4,4 @@ todo.pl "shortcut.pl \"%ProgramFiles%\"\OpenOffice.org\program\soffice.exe speci
 
 todo.pl "shortcut.pl \"%ProgramFiles%\"\OpenOffice.org\program\soffice.exe special:AllUsersPrograms\OpenOffice"
 
-todo.pl "%Z_PATH%\packages\OpenOffice\install\setup.exe -r:z:\scripts\openoffice.txt -debug"
+todo.pl "%Z_PATH%\packages\OpenOffice\install\setup.exe -r:%Z%\scripts\openoffice.txt -debug"

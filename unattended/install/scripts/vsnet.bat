@@ -6,7 +6,7 @@ set VSNETDIR=%Z_PATH%\packages\VSNET
 :: reverse order.
 
 :: The last thing to do is install Visual Studio proper.
-todo.pl "AutoIt z:\scripts\vsnet.aut"
+todo.pl "AutoIt %Z%\scripts\vsnet.aut"
 
 :: Before that, install the Visual J# core.
 :: (.NET needs to be installed before this)

@@ -1,6 +1,6 @@
 :: Install Notes 5.0.8, then update it to the current release.
 
-z:
+%Z%
 cd \packages\Lotus\notes5.0.8\Clients\W32Intel
 
 :: The magic -SMS flag permits "start /wait" to work.

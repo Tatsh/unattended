@@ -6,4 +6,4 @@ todo.pl winxpsp1-updates.bat
 :: Install Service Pack 1.
 :: See <http://support.microsoft.com/?kbid=262839> for a description
 :: of the switches.
-todo.pl "z:\packages\winxp\sp1\i386\update\update.exe /n /q /u /z" .reboot
+todo.pl "%Z%\packages\winxp\sp1\i386\update\update.exe /n /q /u /z" .reboot
