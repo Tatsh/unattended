@@ -16,7 +16,7 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB823980-x86-ENU.exe /u 
 :: Critical update 821557
 :: "An Unchecked Buffer in the Windows Shell Could Permit Your System to Be Compromised"
 :: <http://support.microsoft.com/default.aspx?kbid=821557>
-todo.pl "z:\packages\winxpsp1\WindowsXP-KB821557-x86-ENU.exe /u /z"
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB821557-x86-ENU.exe /u /z" .reboot
 
 :: Recommended update 821253
 :: "Update For Windows Error Reporting"
