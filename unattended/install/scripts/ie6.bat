@@ -14,9 +14,10 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 :: <http://support.microsoft.com/?kbid=318203>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dahotfix /q /n\""
 
-:: Critical update 824145
+:: Critical update 824145 (MS03-048)
 :: "November, 2003, Cumulative Patch for Internet Explorer"
 :: <http://support.microsoft.com/?kbid=824145>
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-048.asp>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
 
 :: Critical update 318089
