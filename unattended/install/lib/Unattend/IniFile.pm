@@ -261,7 +261,7 @@ sub read ($$;$) {
     my $comments = [ ];
 
     my $sect_re = (defined $sect_pattern
-                   ? qr{^$sect_pattern\z}i
+                   ? qr{^(?:$sect_pattern)\z}i
                    : qr{.?});
 
     my $acc = new ref $self;
