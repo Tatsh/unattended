@@ -105,7 +105,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"o
 todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\o2ksp3.txt /p MAINSP3.msp REBOOT=ReallySuppress\""
 
 :: Install SR-1a
-:: URL|DEU|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/DE/O2KSR1ADL.EXE|updates/office2k/deu/o2ksr1adl.exe
+:: URL|DEU|http://download.microsoft.com/download/office2000prem/SP/1/WIN98/DE/O2KSR1aDL.EXE|updates/office2k/deu/o2ksr1adl.exe
 :: URL|ENU|http://download.microsoft.com/download/office2000prem/adminup2/SR-1a/WIN98/EN-US/O2KSR1aDL.EXE|updates/office2k/enu/o2ksr1adl.exe
 :: URL|FRA|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/FR/O2KSR1ADL.EXE|updates/office2k/fra/o2ksr1adl.exe
 :: URL|ITA|http://download.microsoft.com/download/office2000prem/SP/SR-1a/Win98/IT/O2KSR1ADL.EXE|updates/office2k/ita/o2ksr1adl.exe
