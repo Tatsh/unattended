@@ -34,6 +34,43 @@ sub value ($$$) : lvalue {
     $$ref;
 }
 
+sub _force ($) {
+    my ($value) = @_;
+
+    ref $value eq 'Unattend::Promise'
+        and $value = $value->force ();
+
+    return $value;
+}
+
+sub forced_value ($$$) {
+    my ($self, $section, $key) = @_;
+
+    my $vals = $self->{_vals};
+    (exists $vals->{$section})
+        && (exists $vals->{$section}->{$key})
+        or return undef;
+
+    return _force ($self->value ($section, $key));
+}
+
+sub push_value ($$$$) {
+    my ($self, $section, $key, $value) = @_;
+
+    my $orig_value = $self->value ($section, $key);
+
+    # Convert value into a Promise
+    $self->value ($section, $key) = $value;
+    $value = $self->value ($section, $key);
+
+    $self->value ($section, $key) =
+        sub {
+            my $forced = _force ($value);
+            return (defined $forced ? $forced : _force ($orig_value));
+        };
+}
+
+# Return the magic scalar representing "no value"
 sub no_value ($) {
     my ($self) = @_;
     return $no_val_ref;
@@ -148,9 +185,11 @@ sub merge ($$) {
 }
 
 # Characters needing no quotes on output
-my $nq_out_chars = qr{[a-zA-Z0-9_.,/\-%]};
+my $nq_out_chars = qr{[a-zA-Z0-9_.,:/\-%\\]};
 # Characters needing no quotes on input
 my $nq_in_chars = qr{$nq_out_chars};
+
+# Regexp matching a single token (key or value)
 my $token = qr{(?:\".*?\"|$nq_in_chars+?)};
 
 sub read ($$;$) {
@@ -244,7 +283,7 @@ sub _dump_comments ($$;$) {
     my @ret;
 
     my $indent = $global_indent;
-    my $comments = $self->comments (@sect_key);
+    my $comments = $self->_canonical_comments (@sect_key);
 
     if (!exists $sect_key[1]) {
         # Section data.
@@ -258,7 +297,7 @@ sub _dump_comments ($$;$) {
     # Format the comments.  Make sure they are preceeded by the
     # comment character.
     foreach my $comment (@$comments) {
-        $comment =~ /^\s*;|(?:\s*\z)/
+        $comment =~ /^\s*(?:;|\z)/
             or $comment = "; $comment";
         push @ret, "$indent$comment";
     }
@@ -266,7 +305,7 @@ sub _dump_comments ($$;$) {
     return @ret;
 }
 
-sub dump ($) {
+sub generate ($) {
     my ($self) = @_;
     my @ret;
 
@@ -278,7 +317,7 @@ sub dump ($) {
         foreach my $key (sort { $self->sort_index ($section, $a)
                                     <=> $self->sort_index ($section, $b) }
                          $self->keys ($section)) {
-            my $value = $self->value ($section, $key);
+            my $value = $self->forced_value ($section, $key);
             defined $value
                 or next;
             push @ret, $self->_dump_comments ($section, $key);
