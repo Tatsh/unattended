@@ -1,7 +1,10 @@
-:: Install post-SP3 hotfixes for Win2k SP3
+:: Install hotfixes for Win2k SP3
+
+:: Typical flags for these include /u ("unattended mode"), /o
+:: ("overwrite OEM files"), and /z ("suppress reboot")
 
 :: Note that since we are pushing these commands onto the to-do stack,
-:: they will be executed in the opposite order
+:: they will be executed in the opposite order.
 
 :: Q324380
 :: <http://www.microsoft.com/windows2000/downloads/security/q324380/>
