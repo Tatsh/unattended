@@ -50,16 +50,16 @@ went searching for ways to make the installation process routine.
 booting, and the amazingly under-documented silent installation
 procedures for various Windows applications.
 
-<p>Microsoft has their own solutions to these problems, involving
-things like <a
+<p>Microsoft has their own solution to this problem, involving things
+like <a
 href="http//:www.microsoft.com/windows2000/technologies/directory/ad/"
 >"Active Directory"</a> and <a
 href="http://www.microsoft.com/windows2000/en/datacenter/help/sag_RIS_Default_topnode.htm">"RIS"</a>
 and <a href="http://www.microsoft.com/smserver/">"SMS"</a>.  I
-consider those technologies are too heavyweight and complex, so this
+consider those technologies too heavyweight and complex, so this
 system does not depend on them.
 
-<p>Some approaches to these problems involve drive imaging (also known
+<p>Some approaches to this problem involve drive imaging (also known
 as "cloning").  This system is not one of them.  Workstation cloning
 has several drawbacks, including <a
 href="http://service2.symantec.com/SUPPORT/ghost.nsf/docid/1999050308324125"
@@ -87,11 +87,12 @@ installer switches for Windows apps</a> particularly handy.)
 <a href="https://sourceforge.net/project/showfiles.php?group_id=62053"
 >download page</a> to download the distribution.  Each release has two
 components: The main distribution
-(<code>unattended-<var>ver</var>.tar.gz</code>), and the pre-built
-disk images (<code>unattended-images-<var>ver</var>.tar.gz</code>).
-If you have a Unix machine with the right tools, you can build the
-disk images from the main distribution; but for now, you should
-probably just download both and extract them to the same folder.
+(<code>unattended-<var>version</var>.tar.gz</code>), and the pre-built
+disk images
+(<code>unattended-images-<var>version</var>.tar.gz</code>).  If you
+have a Unix machine with the right tools, you can build the disk
+images from the main distribution; but for now, you should probably
+just download both and extract them to the same folder.
 
 <p>Next, read the rest of this documentation.  The overall process
 consists of two steps:
@@ -111,19 +112,22 @@ harder.)
 
 <p>Note that these steps describe the process which we are automating.
 Once you finish the preparatory work, the actual process of installing
-a workstation will be 1)&nbsp;Boot from floppy or CD or network;
+a workstation will be 1)&nbsp;Boot from floppy, CD, or network;
 2)&nbsp;Answer some questions; 3)&nbsp;Have a cup of tea.
 
-<p>Note that this project is still in its testing stage, so do not be
-surprised if you encounter problems.  Please use the links on the <a
+<p>This system is still relatively new, so do not be surprised or
+dismayed if you encounter problems.  Just use the links on the <a
 href="https://sourceforge.net/projects/unattended/" >project page</a>
-to submit bug reports and feature requests.  You can also <a
+to submit a bug report or feature request.  Developers might be
+interested in browsing <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/">
-browse the CVS repository</a>; just click on a revision number to view
-the corresponding file.
+the CVS repository</a>; just click on a revision number to view the
+corresponding file.  I am looking for co-developers; contact me if you
+are interested.
 
-<p>And please <a href="mailto:patl@users.sourceforge.net">let me
-know</a> what you think.  Thanks!
+<p>And in any event, please <a
+href="mailto:patl@users.sourceforge.net">let me know</a> what you
+think; user feedback is my primary motivation.  Thanks!
 
 <h1>Related sites</h1>
 
