@@ -13,7 +13,7 @@ cwd := $(shell pwd)
 
 dir := unattended-${ver}
 
-really := echo
+really := echo XXX
 
 checkver:
 	@if [ "${ver}" == "" ] ; then					\
