@@ -173,6 +173,10 @@ reboots.
 
 </ul>
 
+<p>In addition to simple commands, the to-do list may contain
+<em>directives</em> for <code>todo.pl</code>.  Directives always start
+with a dot.
+
 <h2>The <code>.ignore-err</code> directive</h2>
 
 <p>Like its author, <code>todo.pl</code> is nigh-pathologically
@@ -202,31 +206,27 @@ or 37.  It will still treat other status codes as errors.
 
 <h2>The <code>.reboot</code> directive</h2>
 
-<p>In addition to simple commands, the to-do list may contain
-<em>directives</em> for <code>todo.pl</code>.  Directives always start
-with a dot.  The simplest directive is <code>.reboot</code>, which
-instructs <code>todo.pl</code> to reboot the machine after first
-patching the registry to cause <b>itself</b> to run the next time
-the current user logs in.
+The <code>.reboot</code> directive instructs <code>todo.pl</code> to
+reboot the machine after first patching the registry to cause
+<b>itself</b> to run the next time the current user logs in.
 
-<p>In other words, <code>.reboot</code> provides a controlled
-mechanism for rebooting in the middle of installing multiple
-applications.  This is important, because uncontrolled reboots can
-create race conditions as the OS kills all the processes with
-indeterminate ordering and timing.  When you write a script to install
-an application, you should suppress any reboots performed by the
-installer and use the <code>.reboot</code> directive instead.
+<p>In other words, <code>.reboot</code> provides a controlled, fully
+synchronous mechanism for rebooting the machine and resuming where you
+left off.  This is important, because uncontrolled reboots create race
+conditions as the OS kills all processes with indeterminate ordering
+and timing.  When you write a script to install an application, you
+must suppress any reboots performed by the installer and use the
+<code>.reboot</code> directive instead.
 
 <h2>The <code>.sleep</code> directive</h2>
 
 <p>If you ever have to use this directive, then you are doing
 something wrong, because there is no such thing as a guaranteed time
-bound for most operations.
+bound for any Windows operation.
 
 <p>Unfortunately, some installers make it impossible to do things
 right.  For example, they might fork a subprocess and exit.  In this
-case, the most convenient thing might be to delay a while.  Just make
-sure you delay long enough.
+case, the most convenient thing might be to delay a while.
 
 <p>This directive simply takes an integer number of seconds as
 argument.  For example, to sleep 37 seconds, you would do:
@@ -265,7 +265,7 @@ string representing the version of Windows:
 </dl>
 
 <p>...and so on.  This variable is useful in scripts whose behavior
-needs to vary based on OS; e.g., a script for installing hotfixes.
+needs to vary based on OS; e.g., when installing hotfixes.
 
 <h3><code>Z_PATH</code></h3>
 
@@ -339,16 +339,16 @@ executing it.  The <code>directx81.bat</code> script itself starts by
 pushing <code>.reboot</code> onto the front of the to-do list.
 
 <p>At this point, the to-do list contains <code>.reboot</code>
-followed by <code>ie6.bat</code>, and we are still in the middle of
-executing the <code>direct81.bat</code> script itself.
+followed by <code>acrobat-reader.bat</code>, and we are still in the
+middle of executing the <code>direct81.bat</code> script itself.
 
 <p>Next, <code>directx81.bat</code> installs DirectX, waits for the
 installation to finish, and exits.  The <code>todo.pl</code> script
-now removes the <code>.reboot</code> directive and processes it,
-arranging to run itself on boot and rebooting the machine.  After the
-reboot completes, <code>todo.pl</code> starts again, removes
-<code>acrobat-reader.bat</code> from the to-do list and executes it.
-And so on.
+now removes and processes the <code>.reboot</code> directive; namely,
+it arranges to run itself after the next logon and then reboots the
+machine.  After the reboot, <code>todo.pl</code> starts up again,
+removes <code>acrobat-reader.bat</code> from the to-do list and
+executes it.  And so on.
 
 <p>The final result is that DirectX&nbsp;8.1 and Acrobat Reader are
 both installed, even though the machine had to reboot in the middle.
@@ -438,7 +438,7 @@ XP, and it is available as a free download for NT.
 <dl>
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/auconfig.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->auconfig.pl</a>
+name="auconfig" >auconfig.pl</a>
 
 <dd>Configures the Automatic Updates feature introduced with Windows
 2000 Service Pack 3.  The registry settings it tweaks are not really
@@ -467,17 +467,29 @@ displaying a boot menu with an unbootable "Previous Operating System
 on C:\" option.  This even happens if I wipe the disk with zeroes
 first.  This script edits the hidden system file <code>boot.ini</code>
 to get rid of the useless menu option.
-<p>
 
+<p>
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/defrag.aut?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>defrag.aut</a>
+
+<dd>This is an <a href="installers.html#autoit">AutoIt</a> script to
+defragment the primary hard drive from a command prompt.  Since we use
+a FAT partition which is converted to NTFS, the initial installation
+tends to be somewhat fragmented.  I like to run a disk defragmentation
+before installing any software or hotfixes (to collect the free
+space), then again just before delivering the machine to the user.
+
+<p>
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/hidepw.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >hidepw.pl</a>
 
-<dd>According to Microsoft's <a href="os.html#guide"><em>Guide to
-Unattended Setup</em></a>, passwords in the <code>unattend.txt</code>
-file are erased when the installation finishes.  I have not found this
-to be true.  So I wrote this script to replace all passwords in
-<code>unattend.txt</code> with X marks.
+<dd>According to Microsoft's <a href="advanced.html#guide"><em>Guide
+to Unattended Setup</em></a>, passwords in the
+<code>unattend.txt</code> file are erased when the installation
+finishes.  I have not found this to be true.  So I wrote this script
+to replace all passwords in <code>unattend.txt</code> with X marks.
 <p>
 
 <dt><a
@@ -537,6 +549,7 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 command-line.  There are probably other tools out there to do this,
 but I got tired of looking for them and wrote my own.
 
+<p>
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/win2ksp3-notips.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >win2ksp3-notips.pl</a>
@@ -553,6 +566,7 @@ approaches I have seen to this involve copying <code>NTUSER.DAT</code>
 from some other profile to the default user profile, but with Perl,
 you can edit this registry hive directly.
 
+<p>
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/winxpsp1-notips.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >winxpsp1-notips.pl</a>
@@ -560,6 +574,44 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 <dd>Similarly, but for Windows XP Service Pack 1.  (Work in
 progress...)
 <p>
+
+<p>
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/with-env.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+name="with-env" >with-env.pl</a>
+
+<dd>This script allows the output of one command to specify the
+environment for a second command.  The script takes two arguments,
+which are the commands to run.  The first command should output one or
+more lines of lines of the form:
+
+<pre>
+  VAR=VALUE
+</pre>
+
+<p>The script will parse this output, set the corresponding variables
+in the local environment, and execute the second command.
+
+<p>You might be wondering why anybody would want this.  Well, the
+Windows command prompt is a pretty weak scripting language, but I
+cannot bring myself to depend on something else when I have Perl
+around.  So, for example, I have a Perl script at my site
+(<code>z:\site\officexp-key.pl</code>) which looks up the
+Office&nbsp;XP product key for the current machine in a software
+license spreadsheet, and prints a single line of the form
+<code>PIDKEY=xxx</code>.  Then I invoke <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/officexp.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>officexp.bat</a> from <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>sales.bat</a> like this:
+
+<pre>
+  with-env.pl z:\site\officexp-key.pl officexp.bat
+</pre>
+
+<p>The result is that the correct product key for Office is provided
+at installation time so that the user is not prompted for it later.
+Isn't software licensing fun?
 
 </dl>
 
