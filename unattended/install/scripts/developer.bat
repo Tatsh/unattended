@@ -1,3 +1,3 @@
 :: Install a developer workstaion
 
-todo.pl base.bat emacs.bat cygwin.bat vc6.bat %WINVER%-symbols.bat
+todo.pl base.bat emacs.bat cygwin.bat vc6.bat msdn.bat %WINVER%-symbols.bat
