@@ -36,6 +36,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsMedia9-KB819639-x86-%WINLANG%.e
 :: "Vulnerability in DirectPlay Could Allow Denial of Service"
 :: URL|ENU|http://download.microsoft.com/download/5/8/4/584e3b1c-37ed-4845-8c04-232858b468e9/DirectX90-KB839643-x86-ENU.EXE|updates/common/directx90-kb839643-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/9/9/9/9999fcb4-634c-4f42-ba72-d049b9b69a53/WindowsXP-KB839643-x86-NLD.EXE|updates/common/directx90-kb839643-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/3/7/d/37d80c86-9d35-41b3-b30e-e9643e6710aa/WindowsServer2003-KB839643-x86-RUS.EXE|updates/common/directx90-kb839643-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\directx90-kb839643-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Microsoft DirectX 9.0b update

@@ -77,7 +77,7 @@ todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /
 :: URL|FRA|http://download.microsoft.com/download/3/0/9/3092ebce-3f0e-40f4-b545-97da552af376/WindowsXP-KB839643-x86-FRA.EXE|updates/common/directx90-kb839643-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/b/6/f/b6f0db61-cfee-4b26-8883-7a24b0b310f7/WindowsXP-KB839643-x86-ITA.EXE|updates/common/directx90-kb839643-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/9/9/9/9999fcb4-634c-4f42-ba72-d049b9b69a53/WindowsXP-KB839643-x86-NLD.EXE|updates/common/directx90-kb839643-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/7/5/c/75cb3158-3a0b-4f08-a0c2-28232be58c4d/WindowsXP-KB839643-x86-RUS.EXE|updates/common/directx90-kb839643-x86-rus.exe
+:: URL|RUS|http://download.microsoft.com/download/e/4/3/e43f9076-ce5e-42f4-b5a8-817b0555c55e/Windows2000-KB839643-x86-RUS.EXE|updates/common/directx90-kb839643-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\directx90-kb839643-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Microsoft DirectX 9.0b update
