@@ -149,12 +149,74 @@ sub do_move ($) {
     -d $to_dir
         or mkpath $to_dir;
 
-    unlink $to
+    ! -e $to || unlink $to
         or die "Unable to delete $to: $^E";
     rename $from, $to
         or die "Unable to rename $from to $to: $^E";
     symlink $link, $from
         or die "Unable to create symlink $from -> $link: $^E";
+}
+
+# Replace a directory of links with a single link, if possible.
+sub consolidate ($);  # recursive
+sub consolidate ($) {
+    my ($dir) = @_;
+
+    my $c_dir = catdir ($source, $dir);
+    opendir DIR, $c_dir
+        or die "Unable to opendir $c_dir: $^E";
+    my @ents = readdir DIR;
+    closedir DIR
+        or die "Unable to closedir $c_dir: $^E";
+
+    # First, try to consolidate our subdirectories.
+    foreach my $ent (@ents) {
+        $ent eq '.' || $ent eq '..'
+            and next;
+        my $c_ent = catdir ($c_dir, $ent);
+        -l $c_ent
+            and next;
+        -d _
+            and consolidate (catdir ($dir, $ent));
+    }
+
+    # Next, collect the directory portions of the link targets.  Bail
+    # out if we contain anything which is not a link.
+    my %link_target_dirs;
+
+    foreach my $ent (@ents) {
+        $ent eq '.' || $ent eq '..'
+            and next;
+        my $c_ent = catdir ($c_dir, $ent);
+        -l $c_ent
+            or return;
+        my $target = readlink $c_ent;
+        defined $c_ent
+            or die "Unable to readlink $c_ent: $^E";
+        my $target_dir = dirname ($target);
+        $link_target_dirs{$target_dir} = 1;
+        # We could be more clever about relative links here, maybe...
+    }
+
+    scalar keys %link_target_dirs == 1
+        or return;
+
+    my $target_dir = (keys %link_target_dirs)[0];
+
+    # OK, let's do it.
+    foreach my $ent (@ents) {
+        $ent eq '.' || $ent eq '..'
+            and next;
+        my $c_ent = catdir ($c_dir, $ent);
+        unlink $c_ent
+            or die "Unable to delete $c_ent: $^E";
+    }
+
+    rmdir $c_dir
+        or die "Unable to rmdir $c_dir: $^E";
+
+    symlink $target_dir, $c_dir
+        or die "Unable to create symlink $c_dir -> $target_dir: $^E";
 }
 
 foreach my $action (@opt_actions) {
@@ -167,6 +229,8 @@ foreach my $to_move (keys %to_move) {
 #    print "$to_move\n";
     do_move ($to_move);
 }
+
+consolidate ('');
 
 exit 0;
 
