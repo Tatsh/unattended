@@ -1,0 +1,12 @@
+bin
+contrib
+copying*
+djgpp.env
+gnu
+include
+info
+lib
+man
+manifest
+readme.1st
+tmp

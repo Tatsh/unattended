@@ -1,0 +1,5 @@
+*.img
+isolinux.bin
+isolinux.cfg
+isoboot.msg
+memdisk
