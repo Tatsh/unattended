@@ -21,6 +21,8 @@ WinWait, Cygwin Setup, Select Packages
 ; select "install all"
 WinActivate, Cygwin Setup, Select Packages
 LeftClick, 60, 130
+; Wait ten seconds to ensure events are received in proper order (yuck)
+Sleep, 10000
 Send, !n
 
 WinWait, Cygwin Setup, Create Icons
