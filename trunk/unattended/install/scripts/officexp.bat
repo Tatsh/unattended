@@ -37,4 +37,4 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb832668-client-%WINLANG%.
 :: <http://support.microsoft.com/?id=832671>
 todo.pl ".reboot-on 194 %Z%\updates\officexp\officexpsp3-kb832671-fullfile-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\oxpsp3.txt /p MAINSP3ff.msp REBOOT=ReallySuppress\""
 
-todo.pl "%Z%\packages\officexp\setup.exe /qb /l* %SystemDrive%\netinst\logs\officexp.txt ADDLOCAL=ALL NOUSERNAME=1 PIDKEY=%PIDKEY%"
+todo.pl ".reboot-on 194 %Z%\packages\officexp\setuppls.exe /qb /l* %SystemDrive%\netinst\logs\officexp.txt ADDLOCAL=ALL NOUSERNAME=1 PIDKEY=%PIDKEY%"
