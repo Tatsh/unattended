@@ -125,6 +125,12 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
+:: Recommended update MS04-019 (842526)
+:: "Vulnerability in Utility Manager Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-019.mspx>
+:: URL|ENU|http://download.microsoft.com/download/3/b/6/3b627f83-d5e4-46fb-9fd0-4a1330c57981/Windows2000-KB842526-x86-ENU.EXE|updates/win2ksp4/windows2000-kb842526-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842526-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Recommended Update MS04-014 (837001)
 :: "Vulnerability in the Microsoft Jet ... could permit code execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
