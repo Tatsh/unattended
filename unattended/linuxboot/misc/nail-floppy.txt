@@ -46,6 +46,10 @@ lib/modules/2.6.5/modules.usbmap
 
 lib/modules/2.6.5/kernel/drivers/net
 
+lib/modules/2.6.5/kernel/drivers/usb/core
+lib/modules/2.6.5/kernel/drivers/usb/host
+lib/modules/2.6.5/kernel/drivers/usb/input
+
 lib/modules/2.6.5/kernel/lib/crc32.ko
 
 sbin/cardmgr
