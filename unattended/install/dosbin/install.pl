@@ -839,7 +839,7 @@ sub create_postinst_bat () {
      (map { "todo.pl $_" } reverse @middle_scripts),
      # First step is to perform top-level install of master and
      # optional scripts.
-     (map { "todo.pl $_" } reverse @top_scripts));
+     (map { "todo.pl $_" } reverse @top_scripts);
 
     push @postinst_lines,
      # Before installing disable System Restore.
@@ -847,7 +847,7 @@ sub create_postinst_bat () {
      # First thing is to clean up installation mess.
      'todo.pl hidepw.pl bootini.pl fixtz.pl',
      '',
-     'todo.pl --go');
+     'todo.pl --go';
 
     my $postinst;
 
