@@ -184,10 +184,11 @@ cautious about error checking.  Any command which exits with a
 non-zero status will cause the script to halt and print a diagnostic.
 
 <p>Some installers always exit with zero status, even when they fail.
-There is not much we can do about this.
+There is not much we can do about this, and it keeps us awake at
+night.
 
-<p>On the other hand, some installers always exit with a non-zero
-status even when they succeed.  For such installers, you can use the
+<p>Contrariwise, some installers always exit with a non-zero status
+even when they succeed.  For such installers, you can use the
 <code>.ignore-err</code> directive to ignore only the expected exit
 status, while still halting if any unexpected errors occur.
 
@@ -363,8 +364,8 @@ Pack&nbsp;1.  All this script does is push a bunch of items onto the
 to-do list, including the occasional <code>.reboot</code> directive.
 
 <p>This example illustrates how to add a command with arguments to the
-to-do list by putting it in quotes.  Without quotes, spaces separate
-multiple commands.
+to-do list by putting it in quotes.  Without the quotes, spaces would
+separate multiple commands.
 
 <p>This example also illustrates the use of the
 <code>.ignore-err</code> directive.
@@ -493,32 +494,68 @@ to replace all passwords in <code>unattend.txt</code> with X marks.
 <p>
 
 <dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/instances.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+name="instances">instances.pl</a>
+
+<dd>WMI has many useful <a
+href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/wmi_classes.asp"
+>classes</a>.  This is a generic script to enumerate the instances of
+any WMI class.
+
+<p>Running <kbd>instances.pl&nbsp;--help</kbd> will give you brief
+usage instructions.  Try running it with arguments like <a
+href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_process.asp"
+>Win32_Process</a>, <a
+href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_operatingsystem.asp"
+>Win32_OperatingSystem</a>, <a
+href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_bios.asp"
+>Win32_BIOS</a>, or <a
+href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/win32_baseboard.asp"
+>Win32_BaseBoard</a>.
+<p>
+
+ <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/instsrv.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >instsrv.pl</a>
-
+ 
 <dd>The <a
 href="http://www.microsoft.com/windows2000/techinfo/reskit/">Windows
 2000 Resource Kit</a> includes a tool named <code>instsrv.exe</code>
 which lets you install a service from the command line.  It is the
-only tool I know of for doing this, but it requires that the password
-be passed to it in the clear.  The <code>instsrv.pl</code> script
-simply prompts you for a password and then invokes
-<code>instsrv.exe</code>.  This does mean you need the Resource Kit to
-use this script.  (Yes, strictly speaking, using this script means
-your installation will no longer be "fully unattended".  But I do not
-like embedding passwords in world-readable scripts, and I hate using
-the GUI.)
+only such tool I could find, but invoking it requires including the
+password on the command line.  The <code>instsrv.pl</code> script uses
+WMI to perform the same task, but it prompts you for the password
+instead of using a command-line argument.
+
+<p>Yes, strictly speaking, using this script means your installation
+will no longer be "fully unattended".  But I do not like embedding
+passwords in world-readable scripts, and I hate using the GUI.
 
 <p>
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/setenv.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 name="setenv" >setenv.pl</a>
 
-<dd>This script takes two arguments, an environment variable name and
-a value.  It sets the corresponding "System" variable to have that
+<dd>This script takes two arguments, a variable name and a value.  It
+sets the corresponding "System" environment variable to have that
 value, just as if you had set it from the GUI.  This script can also
 set variables for specific users and variables on remote machines; run
 it with <kbd>--help</kbd> for more information.
+
+<p>
+<dt><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/shortcut.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+name="shortcut" >shortcut.pl</a>
+
+<dd>This script creates a Windows shortcut.  What makes it interesting
+is that it uses <a href="http://msdn.microsoft.com/scripting/">Windows
+Script Host</a> so that it can locate the various <a
+href="http://msdn.microsoft.com/library/en-us/script56/html/wsprospecialfolders.asp"
+>special folders</a> for you.  So, for example, you could use
+<code>shortcut.pl&nbsp;"C:\Foo\foo.exe"&nbsp;special:AllUsersDesktop</code>
+to create a desktop shortcut for all users.
+
+<p>Run <code>shortcut.pl&nbsp;--help</code> for documentation.
 
 <p>
 <dt><a
@@ -540,6 +577,7 @@ error checking.  Run <code>shutdown.pl&nbsp;--help</code> for details.
 use the <code>.reboot</code> directive to <a href="#todo">todo.pl</a>
 instead.  But I am including it anyway for the heck of it.)
 
+<p>
 <dt><a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/startup-type.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" name="startup-type"
 >startup-type.pl</a>
