@@ -267,15 +267,13 @@ lsmod | grep -q "^scsi_mod[[:space:]]" \
 # Load EDD module, which we use to locate the boot disk and to
 # determine the legacy disk geometry.
 echo "*** Now we will load the EDD module..."
-modprobe edd \
-    || die "'modprobe edd' exited with status $?"
+load_modules edd
 
 sleep 2         # paranoia
 
+echo "*** ...and locate the boot device"
 hda=`find-boot-device` \
     || die "*** find-boot-device failed"
-
-echo "*** Using $hda as boot device"
 
 make-blkdev-nodes "$hda" \
     || die "*** Unable to make-blkdev-nodes $hda.  So close!  Oh, well."
