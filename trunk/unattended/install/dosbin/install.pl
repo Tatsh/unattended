@@ -20,7 +20,12 @@ use vars qw ($u);
 # Scaffolding (FIXME)
 sub get_value ($$) {
     my ($section, $key) = @_;
-    return $u->values ($section, $key);
+    return $u->value ($section, $key);
+}
+
+sub get_value_noforce ($$) {
+    my ($section, $key) = @_;
+    return $u->value ($section, $key);
 }
 
 sub set_value ($$$) {
