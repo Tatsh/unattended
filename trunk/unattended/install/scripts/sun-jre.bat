@@ -1,11 +1,12 @@
 :: OPTIONAL: Install Sun Java Virtual Machine
 
-:: URL|ALL|http://public.www.planetmirror.com/pub/java-sun/J2SE/5.0/win32/jre-1_5_0-windows-i586.exe|packages/jre-1_5_0-windows-i586.exe
+:: URL|ALL|http://jdl.sun.com/webapps/download/AutoDL?BundleId=9833|packages/jre1.5.0.msi
 
 :: Download from <http://java.sun.com/j2se/1.5.0/download.jsp>.
 
-:: See
+:: See:
+:: <http://java.sun.com/j2se/1.5.0/docs/guide/deployment/deployment-guide/upgrade-guide/deployment.html>
 :: <http://java.sun.com/j2se/1.5.0/docs/guide/deployment/deployment-guide/silent.html>
-:: for installation switches.
+
 @Echo off
-todo.pl "%Z%\packages\jre-1_5_0-windows-i586.exe /s /v\"/qb IEXPLORER=1 MOZILLA=1 NETSCAPE6=1 REBOOT=ReallySuppress JAVAUPDATE=0 WEBSTARTICON=0\""
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\sun-jre.txt /i %Z%\packages\jre1.5.0.msi IEXPLORER=1 MOZILLA=1 NETSCAPE6=1 REBOOT=ReallySuppress JAVAUPDATE=0"
