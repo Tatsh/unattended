@@ -1,4 +1,4 @@
-** Changes in version 4.4 (2004-Aug-??)
+** Changes in version 4.4 (2004-Aug-06)
 
 (Linux) Fix serious bug in find-modules-pci script, which prevented us
 from loading the correct mass storage driver on certain systems
@@ -10,18 +10,18 @@ support SMB signing, and Windows Server 2003 requires it by default.
 (Linux) Implement and use new script "find-boot-device" to find the
 Linux device corresponding to the boot device (BIOS disk 80h).
 
-(Linux) Upgrade to BusyBox 1.00-rc2, klibc 0.152, nano 1.2.4,
-pcmcia-cs 3.2.8, Samba 3.0.5, DBI 1.43, and DBD::mysql 2.9004.
-
 (Linux) Ensure dmfe driver loads before tulip, since the latter does
 not work right on some hardware.
+
+(Linux) Upgrade to BusyBox 1.00-rc2, klibc 0.152, nano 1.2.4,
+pcmcia-cs 3.2.8, Samba 3.0.5, DBI 1.43, and DBD::mysql 2.9004.
 
 (DOS) Upgrade emm386.exe to latest test release.  Downgrade umbpci to
 3.56 (latest stable release).
 
 Upgrade Z:\dosbin\format.exe to FreeDOS format 0.91r.
 
-Upgrade downloads+scripts for Adobe Reader 6.02, Mozilla 1.7.1,
+Upgrade downloads+scripts for Adobe Reader 6.02, Mozilla 1.7.2,
 ActiveState Perl 5.8.4 build 810, PHP 4.3.8, and Sun JRE 1.4.2_05.
 New script (opera.bat) from Niels Richthof.
 
