@@ -1,0 +1,46 @@
+TODO.txt for Unattended.
+Last change: $Id: TODO.txt,v 1.1 2004-08-04 20:16:07 nrichthof Exp $
+
+This is a list of known bugs, current work and desired improvements.
+To make it a little bit accessible, the items are grouped by
+subject. In the first column of the line a classification is used to
+be able to look for "the next thing to do":
+
+Priority classification:
+8   next release
+7   as soon as possible
+6   soon
+5   should be included
+4   nice to have
+3   consider including
+2   maybe not
+1   probably not
+-   unclassified
+
+
+-------------------- Known bugs and current work -----------------------
+
+
+
+--------------------------- linuxboot-cd -------------------------------
+
+7   save debug-info of linuxboot on a writeable server share
+
+
+--------------------------- dosboot-disks ------------------------------
+
+
+------------------- software-installation scripts ----------------------
+
+5   update to Autoit version 3
+
+----------------------- helper tools/scripts ---------------------------
+
+4   tool for merging TXTSETUP.OEM files / creating merged $oem$-directories
+8   script for updating software-installation-scripts from the cvs
+    repository
+
+-------------------------- miscellaneous -------------------------------
+
+3   add wireless lan support (see FAQ)
+3   using CVTAREA for FAT -> NTFS conversion (see FAQ)
