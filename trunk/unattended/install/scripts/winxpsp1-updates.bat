@@ -6,6 +6,13 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update 823718
+:: "Security Update for Microsoft Data Access Components"
+:: (This will be superseded if MDAC 2.8 is installed later, but no
+:: harm done.)
+:: <http://support.microsoft.com/?kbid=823718>
+todo.pl "z:\packages\winxpsp1\Q823718_MDAC_SecurityPatch.exe /q /c:\"dahotfix.exe /q /n\""
+
 :: Recommended update 817778
 :: "Advanced Networking Pack for Windows XP"
 :: <http://support.microsoft.com/?kbid=817778>
@@ -97,9 +104,10 @@ todo.pl "z:\packages\winxpsp1\msjavwu.exe /q /r:n"
 
 :: Critical update 331953
 :: "Flaw in RPC Endpoint Mapper Could Allow Denial of Service Attacks"
-:: Superseded by 823980!
+:: (Supposedly superseded by 823980, but Windows Update gets confused
+:: unless you install both.)
 :: <http://support.microsoft.com/?kbid=331953>
-:: todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q331953_WXP_SP2_x86_ENU.exe /u /n /z" .reboot
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q331953_WXP_SP2_x86_ENU.exe /u /n /z" .reboot
 
 :: Recommended update 815485
 :: WPA Wireless Security Update for Windows XP
