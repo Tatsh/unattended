@@ -11,6 +11,7 @@ bin/find-modules-pci
 bin/gzip
 bin/loadkeys
 bin/mkdir
+bin/mount
 bin/sh
 
 etc/extra.pcimap
@@ -33,19 +34,19 @@ lib/libnss_files.so
 lib/libresolv.so
 
 # Should not hard-wire kernel version here.  FIXME!
-lib/modules/2.6.4/modules.alias
-lib/modules/2.6.4/modules.ccwmap
-lib/modules/2.6.4/modules.dep
-lib/modules/2.6.4/modules.ieee1394map
-lib/modules/2.6.4/modules.inputmap
-lib/modules/2.6.4/modules.isapnpmap
-lib/modules/2.6.4/modules.pcimap
-lib/modules/2.6.4/modules.symbols
-lib/modules/2.6.4/modules.usbmap
+lib/modules/2.6.5/modules.alias
+lib/modules/2.6.5/modules.ccwmap
+lib/modules/2.6.5/modules.dep
+lib/modules/2.6.5/modules.ieee1394map
+lib/modules/2.6.5/modules.inputmap
+lib/modules/2.6.5/modules.isapnpmap
+lib/modules/2.6.5/modules.pcimap
+lib/modules/2.6.5/modules.symbols
+lib/modules/2.6.5/modules.usbmap
 
-lib/modules/2.6.4/kernel/drivers/net
+lib/modules/2.6.5/kernel/drivers/net
 
-lib/modules/2.6.4/kernel/lib/crc32.ko
+lib/modules/2.6.5/kernel/lib/crc32.ko
 
 sbin/cardmgr
 sbin/insmod
