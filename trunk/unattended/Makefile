@@ -54,10 +54,10 @@ release: checkver
 
 diff: checkver
 	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&	\
-	cvs diff -u -r$(tag)::
+	cvs diff -u -r$$tag::
 
 log: checkver
 	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&	\
-	cvs log -N -S -r$(tag)::
+	cvs log -N -S -r$$tag::
 
 .PHONY: default checkver release diff log
