@@ -21,7 +21,7 @@ todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini \"%ProgramFiles%\
 :nolangpack
 
 :: install patch
-:: URL|ALL|http://mesh.dl.sourceforge.net/sourceforge/pdfcreator/Patch02-PDFCreator-0_8_0.exe|packages/Patch02-PDFCreator-0_8_0.exe
+:: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/Patch02-PDFCreator-0_8_0.exe|packages/pdfcreator/Patch02-PDFCreator-0_8_0.exe
 todo.pl "%Z%\packages\pdfcreator\Patch02-PDFCreator-0_8_0.exe /sp- /silent /norestart"
 
 :: Install PDFCreator
