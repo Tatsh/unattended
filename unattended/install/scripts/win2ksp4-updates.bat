@@ -79,22 +79,17 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
+:: Recommended Update MS04-014 (837001)
+:: "Vulnerability in the Microsoft Jet ... could permit code execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
+:: URL|ENU|http://download.microsoft.com/download/f/2/0/f20ae35d-b404-4021-9d9c-daab1f376462/Windows2000-KB837001-x86-ENU.EXE|updates/win2ksp4/windows2000-kb837001-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Root Certificates Update
 :: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_1848da0ef19bb020cccdbbc1ee0311b.exe|updates/win2ksp4/rootsupd.exe
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/4702.htm>
 :: (download only available from Windows Catalog)
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\rootsupd.exe /q /r:n"
-
-:: Recommended update 829558
-:: URL|ENU|http://download.microsoft.com/download/9/d/c/9dcd9e1c-badc-4fe4-a52e-8f2fdfb652db/Windows2000-KB829558-x86-ENU.exe|updates/win2ksp4/windows2000-kb829558-x86-enu.exe
-:: URL|DEU|http://download.microsoft.com/download/9/0/d/90da6be3-e800-42ca-a060-44fe494c00bd/Windows2000-KB829558-x86-DEU.exe|updates/win2ksp4/windows2000-kb829558-x86-deu.exe
-:: URL|NLD|http://download.microsoft.com/download/9/d/c/9dcd9e1c-badc-4fe4-a52e-8f2fdfb652db/Windows2000-KB829558-x86-ENU.exe|updates/win2ksp4/windows2000-kb829558-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/c/0/8/c087b4be-191c-41cc-8a43-08a3726468ff/Windows2000-KB829558-x86-RUS.exe|updates/win2ksp4/windows2000-kb829558-x86-rus.exe
-:: URL|FRA|http://download.microsoft.com/download/a/8/9/a89f7c9e-2378-4acf-9771-8312e767afe6/Windows2000-KB829558-x86-FRA.exe|updates/win2ksp4/windows2000-kb829558-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/8/5/5/855508d0-a9f2-4739-9d13-59f62b8dcf47/Windows2000-KB829558-x86-ITA.exe|updates/win2ksp4/windows2000-kb829558-x86-ita.exe
-:: "Update for Jet 4.0 Service Pack 8"
-:: <http://support.microsoft.com/?kbid=829558>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB829558-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 822831
 :: URL|ENU|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/Windows2000-KB822831-x86-ENU_5eedf6f038fd4a414a14b6625993217.exe|updates/win2ksp4/windows2000-kb822831-x86-enu.exe
@@ -134,12 +129,13 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: Critical update MS04-012 (828741)
 :: "Cumulative Update for Microsoft RPC/DCOM"
 :: (Worst Windows security hole, ever.  Again.  And again.)
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-012.mspx>
 :: URL|ENU|http://download.microsoft.com/download/5/6/c/56cdedb2-fa2e-45ba-9a75-1b0335484386/Windows2000-KB828741-x86-ENU.EXE|updates/win2ksp4/windows2000-kb828741-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-011 (835732)
 :: "Security Update for Microsoft Windows"  (no, really?)
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-011.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-011.mspx>
 :: URL|ENU|http://download.microsoft.com/download/f/a/a/faa796aa-399d-437a-9284-c3536e9f2e6e/Windows2000-KB835732-x86-ENU.EXE|updates/win2ksp4/windows2000-kb835732-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 

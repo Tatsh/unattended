@@ -103,6 +103,12 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
+:: Recommended Update MS04-014 (837001)
+:: "Vulnerability in the Microsoft Jet ... could permit code execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
+:: URL|ENU|http://download.microsoft.com/download/6/8/d/68d5abd5-da33-4403-a55a-af5625bb8d2d/WindowsXP-KB837001-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb837001-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Recommended update 826942
 :: URL|ENU|http://download.microsoft.com/download/2/2/3/2237d088-7840-4f77-a90d-55bdf1ccbc1c/WindowsXP-KB826942-x86-ENU.exe|updates/winxpsp1/windowsxp-kb826942-x86-enu.exe
 :: URL|NLD|http://download.microsoft.com/download/4/4/6/446daee0-4814-4792-aee4-2e7e98f417f3/WindowsXP-KB826942-x86-NLD.exe|updates/winxpsp1/windowsxp-kb826942-x86-nld.exe
@@ -167,17 +173,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB817778-x86-%WINLANG%.ex
 :: "Update For Windows Error Reporting"
 :: <http://support.microsoft.com/?kbid=821253>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB821253-x86-%WINLANG%.exe /u /n /z"
-
-:: Recommended update 829558
-:: URL|ENU|http://download.microsoft.com/download/a/d/f/adfdf363-0b09-4f39-bf89-1b4bc234fe97/WindowsXP-KB829558-x86-ENU.exe|updates/winxpsp1/windowsxp-kb829558-x86-enu.exe
-:: URL|NLD|http://download.microsoft.com/download/c/f/c/cfc414f5-4dd4-41dd-b3d6-6cb5dbb04673/WindowsXP-KB829558-x86-NLD.exe|updates/winxpsp1/windowsxp-kb829558-x86-nld.exe
-:: URL|FRA|http://download.microsoft.com/download/f/7/7/f77c74f4-db3b-412b-865b-88612129131f/WindowsXP-KB829558-x86-FRA.exe|updates/winxpsp1/windowsxp-kb829558-x86-fra.exe
-:: URL|RUS|http://download.microsoft.com/download/5/7/8/578da5fa-2914-426f-8a2b-efe632617d6c/WindowsXP-KB829558-x86-RUS.exe|updates/winxpsp1/windowsxp-kb829558-x86-rus.exe
-:: URL|DEU|http://download.microsoft.com/download/2/1/0/2100a24e-20c5-44d1-932d-6838fb08b516/WindowsXP-KB829558-x86-DEU.exe|updates/winxpsp1/windowsxp-kb829558-x86-deu.exe
-:: URL|ITA|http://download.microsoft.com/download/8/0/6/806e89f5-8f9c-408b-bc78-aaa04ede5bac/WindowsXP-KB829558-x86-ITA.exe|updates/winxpsp1/windowsxp-kb829558-x86-ita.exe
-:: "Update for Jet 4.0 Service Pack 8"
-:: <http://support.microsoft.com/?kbid=829558>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB829558-x86-%WINLANG%.exe /u /n /z"
 
 :: Recommended update 820291
 :: URL|ENU|http://download.microsoft.com/download/a/1/3/a134a6a3-a69f-4b19-9292-35eae0b3e7fe/WindowsXP-KB820291-x86-ENU.exe|updates/winxpsp1/windowsxp-kb820291-x86-enu.exe
