@@ -182,10 +182,10 @@ to the target folder.
 <h3 id="drivers">Add device drivers</h3>
 
 <p>This step may be optional, depending on your hardware and which
-version of Windows you are trying to install.  Windows generally ships
-with a fairly rich collection of drivers, supporting most of the
-hardware which was current at the time.  However, if you are
-installing, say, Windows 2000 on a recent system (especially a
+version of Windows you are trying to install.  Each release of Windows
+generally ships with a fairly large collection of drivers, supporting
+most of the hardware which was current at the time.  However, if you
+are installing, say, Windows 2000 on a recent system (especially a
 laptop), you may find that it does not support some or all of your
 hardware.
 
@@ -271,7 +271,13 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootd
 >autoexec.bat</a> or <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/bootdisk/template/config.sys?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >config.sys</a>, just edit them there and run
-<kbd>make&nbsp;images</kbd> again.
+<kbd>make&nbsp;images</kbd> again.  (Most of the binaries on the
+bootdisk are just Microsoft's <a
+href="ftp://ftp.microsoft.com/bussys/clients/msclient/" >MSCLIENT</a>
+distribution.  The one exception is <code>random.com</code>, a very
+handy utility from <a
+href="http://home.mnet-online.de/horst.muc/horst.htm">Horst
+Schaeffer's collection</a>.)
 
 <p>Once you have picked the correct floppy image for your network
 card, you will need to write it to a floppy.  How you do this depends
