@@ -22,3 +22,5 @@ start /wait 5.0.10.exe /nouser
 if errorlevel 1 exit 1
 start /wait 5.0.11.exe /nouser
 if errorlevel 1 exit 1
+start /wait 5.0.12.exe /nouser
+if errorlevel 1 exit 1
