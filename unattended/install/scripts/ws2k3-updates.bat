@@ -5,6 +5,35 @@
 
 :: Extra Updates
 
+:: Security Update for Windows Server 2003 (KB839645)
+:: Microsoft Security Bulletin MS04-024
+:: "Vulnerability in Windows Shell Could Allow Remote Code Execution (839645)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=41C7BB26-3500-4492-A447-33440C404E4F>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/9/2/e/92ea5917-3629-4ea9-b25b-024de937589e/WindowsServer2003-KB839645-x86-csy.exe|updates/ws2k3/windowsserver2003-kb839645-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/6/c/8/6c8e5679-2ad4-493b-881e-02be5ffe9f13/WindowsServer2003-KB839645-x86-deu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/e/7/9/e79e9c09-1755-4ecc-8ccd-fc915c9e0cbf/WindowsServer2003-KB839645-x86-enu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/0/3/f/03f9545f-b7c0-4d59-902d-a0262c1d4c7b/WindowsServer2003-KB839645-x86-esn.exe|updates/ws2k3/windowsserver2003-kb839645-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/6/3/4/634bc8d8-c2bd-4fad-a0de-ec6e3bd9fc53/WindowsServer2003-KB839645-x86-fra.exe|updates/ws2k3/windowsserver2003-kb839645-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/c/2/7/c27e3c0b-4e84-4c84-aa71-da95d873754d/WindowsServer2003-KB839645-x86-hun.exe|updates/ws2k3/windowsserver2003-kb839645-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/a/c/8/ac80d8d0-76e2-4777-9e37-7db67790ae66/WindowsServer2003-KB839645-x86-ita.exe|updates/ws2k3/windowsserver2003-kb839645-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/a/5/6/a5696969-42c4-4110-b910-868174a16830/WindowsServer2003-KB839645-x86-jpn.exe|updates/ws2k3/windowsserver2003-kb839645-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/e/b/0ebbabb2-23dc-4af2-8b74-e91867f66862/WindowsServer2003-KB839645-x86-kor.exe|updates/ws2k3/windowsserver2003-kb839645-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/6/0/a/60aa3daf-2a7f-4aa1-bcc4-8c4cefce77d5/WindowsServer2003-KB839645-x86-nld.exe|updates/ws2k3/windowsserver2003-kb839645-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/a/e/b/aeb9cb1c-fe50-4209-99b2-2206eed9e755/WindowsServer2003-KB839645-x86-plk.exe|updates/ws2k3/windowsserver2003-kb839645-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/8/0/4/80460b51-93cb-46b7-be40-2672270fa073/WindowsServer2003-KB839645-x86-ptb.exe|updates/ws2k3/windowsserver2003-kb839645-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/c/2/8c2ad4cb-19e0-4c46-84cf-58d59bf61a75/WindowsServer2003-KB839645-x86-ptg.exe|updates/ws2k3/windowsserver2003-kb839645-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/c/9/e/c9e871e2-1062-4ffd-aecd-4970db36f31f/WindowsServer2003-KB839645-x86-rus.exe|updates/ws2k3/windowsserver2003-kb839645-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/5/d/85d11553-fa4d-4e7d-a66d-d44a9f46fd12/WindowsServer2003-KB839645-x86-sve.exe|updates/ws2k3/windowsserver2003-kb839645-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/b/a/7/ba7ae4e4-80ec-4806-8825-2b6d99ea2c44/WindowsServer2003-KB839645-x86-trk.exe|updates/ws2k3/windowsserver2003-kb839645-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB839645-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows Media Player 9 Series (KB885492)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=A52279DC-3B6C-4720-8192-45657EDBB14F>
 :: URL|ARA|http://download.microsoft.com/download/b/7/3/b73c1061-2f5c-4e10-985b-0533a981c613/WindowsMedia9-KB885492-x86-ARA.exe|updates/mediaplayer9/windowsmedia9-kb885492-x86-ara.exe
@@ -1094,6 +1123,35 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB830352-x86-%WINLAN
 :: URL|SVE|http://download.microsoft.com/download/9/2/d/92d30293-0cb6-4628-adfb-83632d7d452e/SVE_Q832483_MDAC_x86.EXE|updates/common/sve_q832483_mdac_x86.exe
 :: URL|TRK|http://download.microsoft.com/download/3/d/2/3d280430-d7f7-41a1-a6fe-450d67093ee6/TRK_Q832483_MDAC_x86.EXE|updates/common/trk_q832483_mdac_x86.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%_Q832483_MDAC_x86.EXE /q /c:\"dahotfix.exe /q /n\""
+
+:: Security Update for Microsoft Windows Server 2003: KB824141
+:: Microsoft Security Bulletin MS03-045
+:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution   (824141)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=02F97DE4-29DF-4D33-A33B-E7630349E69E>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/0/8/4/084b555b-5240-4aaa-a256-b2b4903d85b1/WindowsServer2003-KB824141-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb824141-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/1/7/d/17d1c750-6d98-481a-b476-40d4b9b879ad/WindowsServer2003-KB824141-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb824141-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/0/d/0/0d03f099-3673-42ca-81f9-5533fc5c18fb/WindowsServer2003-KB824141-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb824141-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/d/1/dd1ac549-bc7b-4a88-9057-51b7c33abf3e/WindowsServer2003-KB824141-x86-ESN.exe|updates/ws2k3/windowsserver2003-kb824141-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/e/f/a/efad9955-6f61-4245-8b73-fba773c74a1d/WindowsServer2003-KB824141-x86-FRA.exe|updates/ws2k3/windowsserver2003-kb824141-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/5/a/a/5aa5bfc5-1661-47d3-94b4-ebb951fe56bc/WindowsServer2003-KB824141-x86-HUN.exe|updates/ws2k3/windowsserver2003-kb824141-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/e/3/9e3d8b27-84b1-4c86-9ea3-046ff7c92f24/WindowsServer2003-KB824141-x86-ITA.exe|updates/ws2k3/windowsserver2003-kb824141-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/e/9/4e953019-3b01-4557-abc2-d7afee2235d9/WindowsServer2003-KB824141-x86-JPN.exe|updates/ws2k3/windowsserver2003-kb824141-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/1/3/f/13f2cb36-c8a1-4fa0-b3ae-3ef12fedec55/WindowsServer2003-KB824141-x86-KOR.exe|updates/ws2k3/windowsserver2003-kb824141-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/d/4/ad404828-d17a-47ad-b137-1e1cca3d8599/WindowsServer2003-KB824141-x86-NLD.exe|updates/ws2k3/windowsserver2003-kb824141-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/d/2/e/d2e27561-0b46-428f-9534-c3de73a37446/WindowsServer2003-KB824141-x86-PLK.exe|updates/ws2k3/windowsserver2003-kb824141-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/5/e/a/5eabf192-fde2-4ca6-a9cf-580ead595ffc/WindowsServer2003-KB824141-x86-PTB.exe|updates/ws2k3/windowsserver2003-kb824141-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/3/5/b3513400-6469-4aa4-b423-ba4dcf70ac84/WindowsServer2003-KB824141-x86-PTG.exe|updates/ws2k3/windowsserver2003-kb824141-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/9/2/3/9231c10e-4176-434a-8b00-57416e199076/WindowsServer2003-KB824141-x86-RUS.exe|updates/ws2k3/windowsserver2003-kb824141-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/4/b/9/4b96ae18-ad12-4117-bd3b-4b1f337bfae0/WindowsServer2003-KB824141-x86-SVE.exe|updates/ws2k3/windowsserver2003-kb824141-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/2/e/e/2eee76b0-4067-444f-a9f9-24884fdf8b1c/WindowsServer2003-KB824141-x86-TRK.exe|updates/ws2k3/windowsserver2003-kb824141-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824141-x86-%WINLANG%.exe /u /n /z"
 
 :: Security Update for Windows Server 2003 (KB824105)
 :: Microsoft Security Bulletin MS03-034
