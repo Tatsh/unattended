@@ -6,6 +6,11 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Recommended update 817778
+:: "Advanced Networking Pack for Windows XP"
+:: <http://support.microsoft.com/?kbid=817778>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB817778-x86-ENU.exe /u /n /z" .reboot
+
 :: Critical update 819696
 :: "Unchecked Buffer in DirectX Could Enable System Compromise"
 :: <http://support.microsoft.com/?kbid=819696>
@@ -74,7 +79,7 @@ todo.pl ".ignore-err 194 z:\packages\winxpsp1\Q817287.exe /q /r:n" .reboot
 :: "Flaw in the Microsoft VM Could Enable System Compromise"
 :: <http://support.microsoft.com/?kbid=816093>
 :: (download only available from Windows Catalog)
-todo.pl "z:\packages\winxpsp1\msjavwu.exe /q:a /r:n"
+todo.pl "z:\packages\winxpsp1\msjavwu.exe /q /r:n"
 
 :: Critical update 331953
 :: "Flaw in RPC Endpoint Mapper Could Allow Denial of Service Attacks"
