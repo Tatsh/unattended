@@ -17,11 +17,11 @@ my %regexp_map =
      'ita' => qr{Sistema operativo precedente su},
      );
 
-
 my $bootini = 'C:\\boot.ini';
 
 my $lang = (exists $ENV{'WINLANG'} ? $ENV{'WINLANG'} : 'enu');
 
+my $langstr = (exists $regexp_map{$lang} ? $regexp_map{$lang} : $regexp_map{'enu'});
 
 sub reset_attribs () {
     system 'attrib', '+h', '+s', $bootini;
@@ -37,7 +37,7 @@ system 'attrib', '-h', '-s', $bootini;
 open BOOTINI, $bootini
     or die "Unable to open $bootini for reading: $^E";
 
-my @lines = grep { $_ !~ $regexp_map{$ENV{'WINLANG'}} } <BOOTINI>;
+my @lines = grep { $_ !~ $langstr } <BOOTINI>;
 
 close BOOTINI
     or die "Unable to close $bootini: $^E";
