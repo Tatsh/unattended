@@ -155,8 +155,8 @@ $(call copy_exe, $(bash)/bash, stage1/bin/bash)
 ## dosemu
 build-$(dosemu)/bin/dosemu.bin:
 	mkdir -p build-$(dosemu)
-	cd build-$(dosemu)
-	&& $(cwd)/$(dosemu)/configure --without-x
+	cd build-$(dosemu)				\
+	&& $(cwd)/$(dosemu)/configure --without-x	\
 	&& make
 
 $(call copy_exe,build-$(dosemu)/bin/dosemu.bin,stage1/usr/bin/dosemu.bin)
