@@ -253,8 +253,8 @@ if (exists $opts{'go'}) {
 
         print "Running: $cmd\n";
         my $ret = system $cmd;
-        $ret == 0 || ($ret / 256) == $err_to_ignore
-            or die "$cmd failed, status ", $ret / 256, '.', $ret % 256;
+        $ret == 0 || ($ret >> 8) == $err_to_ignore
+            or die "$cmd failed, status ", $ret >> 8, '.', $ret % 256;
     }
 }
 else {
