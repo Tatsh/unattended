@@ -314,10 +314,19 @@ sub do_cmd ($) {
         }
     }
     else {
-        print "Running: $cmd\n";
-        my $ret = system $cmd;
-        ($ignore_err{$ret >> 8})
-            or die "$cmd failed, status ", $ret >> 8, ' (', $ret % 256, ')';
+        while (1) {
+            print "Running: $cmd\n";
+            my $ret = system $cmd;
+            ($ignore_err{$ret >> 8})
+                and last;
+            print "$cmd failed, status ", $ret >> 8, ' (', $ret % 256, ')', "\n";
+            print "R)etry A)bort I)gnore ?\n";
+            my $key = uc(getc(STDIN));
+            $key eq 'A'
+                and die;
+            $key eq 'I'
+                and last;
+      }
     }
 }
 
