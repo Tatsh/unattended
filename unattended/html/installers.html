@@ -652,27 +652,6 @@ href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/script
 >sshd.bat</a></td></tr>
 
 </table>
-<div><br /></div><hr class="half" />
-<h2 id="directx">DirectX 8.1</h2>
-<table border="solid" cellpadding="1em">
-<tr><td valign="middle">Availability</td>
-<td><a
-href="http://www.microsoft.com/windows/directx/downloads/drx81.asp"
->Free Download</a></td></tr>
-<tr><td valign="middle">Details</td>
-
-<td><p>The downloaded installer is named DX81NTeng.exe.  Run
-<kbd>DX81NTeng.exe&nbsp;/c&nbsp;/t:<var>path</var></kbd> to extract
-the tree to <var>path</var>.  From that tree, run
-<kbd>dxsetup&nbsp;/silent&nbsp;/install</kbd>.</p>
-
-</td></tr>
-<tr><td valign="middle">Example</td>
-<td><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/directx81.bat?view=auto"
->directx81.bat</a></td></tr>
-
-</table>
 
 <div><br /></div><hr class="half" />
 <h2 id="emacs">Emacs</h2>
@@ -690,7 +669,7 @@ somewhere like <code>C:\emacs-21.3</code>, then run the
 <code>bin\addpm.exe</code> helper to add the Emacs icon to the Start
 menu.</p>
 
-<p>Using <a href="seven-zip">7-zip</a>, extraction takes two steps: One
+<p>Using <a href="#seven-zip">7-zip</a>, extraction takes two steps: One
 to extract the <code>.tar</code> file from the <code>.tar.gz</code>
 file, and another to extract the distribution itself from the
 <code>.tar</code> file.</p>
@@ -755,7 +734,7 @@ download</a>.</p></td></tr>
 <tr><td valign="middle">Details</td>
 
 <td><p>The master <code>setup.exe</code> is just an <a
-href="http:#installshield">InstallShield</a> executable.  Use the
+href="#installshield">InstallShield</a> executable.  Use the
 <code>/s&nbsp;/sms</code> (and perhaps the <code>/f1</code>)
 switches.</p>
 
@@ -783,11 +762,6 @@ Download</a></td></tr>
 <td><p>Typical <a href="#hotfixes">random Microsoft package</a>.  For
 unattended install, run with
 <code>/q&nbsp;/c:"setup&nbsp;/qn1"</code>.</p></td></tr>
-
-<tr><td valign="middle">Example</td>
-<td><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/mdac.bat?view=auto"
->mdac.bat</a></td></tr>
 
 </table>
 
@@ -835,12 +809,6 @@ href="http://msdn.microsoft.com/netframework/downloads/redist.aspx"
 
 <p>Run <code>dotnetfx.exe&nbsp;/q&nbsp;/c:"install&nbsp;/q"</code> to
 perform a silent installation.</p></td></tr>
-
-<tr><td valign="middle">Example</td>
-
-<td><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/dotnet.bat?view=auto"
->dotnet.bat</a></td></tr>
 
 </table>
 
@@ -1179,9 +1147,9 @@ improvements over 1.0, so read the discussion to the end.</p>
 
 <tr><td valign="middle">Example</td>
 <td><a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/openoffice.bat?view=auto"
->openoffice.bat</a>, <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/openoffice.txt?view=auto"
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/officeop.bat?view=auto"
+>officeop.bat</a>, <a
+href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/packages/openoffice/officeop.txt?view=auto"
 >openoffice.txt</a></td></tr>
 
 </table>
@@ -1215,9 +1183,7 @@ little time...</p>
 <tr><td valign="middle">Example</td>
 <td><a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/php.bat?view=auto"
->php.bat</a>, <a
-href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/php.aut?view=auto"
->php.aut</a></td></tr>
+>php.bat</a></td></tr>
 
 </table>
 
