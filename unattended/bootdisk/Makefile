@@ -6,6 +6,9 @@ drivers   := $(shell grep ^[[:alnum:]] DRIVERS.txt \
 # Universal drivers
 universal := $(shell grep ^[[:alnum:]] DRIVERS.txt \
 		| grep -w -i universal | cut -f1 -d' ')
+# Default universal driver
+univ_driver := $(shell grep ^[[:alnum:]] DRIVERS.txt \
+		| grep -w -i universal | head -1 | cut -f1 -d' ')
 
 # Compressed disk image files (images/*.imz)
 images := $(patsubst %,images/%.imz,$(drivers) $(universal))
@@ -61,8 +64,7 @@ iso/isolinux/%.imz: images/%.imz
 	cp $< $@
 
 iso/isolinux/memdisk: memdisk
-	ln -f $< $@.tmp
-	mv $@.tmp $@
+	cp $< $@
 
 bootdisk.iso: $(patsubst images/%.imz,iso/isolinux/%.imz,$(images)) \
 			iso/isolinux/memdisk iso/isolinux/isolinux.cfg \
@@ -102,9 +104,14 @@ iso/isolinux/isolinux.bin: isolinux.bin
 	@echo "done"
 
 # TFTP boot (PXE) targets
-tftpboot: memdisk tftpboot/pxelinux.cfg/default
-	ln -f memdisk tftpboot
-	@touch $@
+tftpboot: $(patsubst images/%.imz,tftpboot/%.imz,$(images)) \
+		tftpboot/memdisk tftpboot/pxelinux.cfg/default
+
+tftpboot/%.imz: images/%.imz
+	cp $< $@
+
+tftpboot/memdisk: memdisk
+	cp $< $@
 
 tftpboot/pxelinux.cfg/default: pxelinux.cfg
 	@echo -n "Making $@..."
@@ -121,6 +128,10 @@ tftpboot/pxelinux.cfg/default: pxelinux.cfg
 		echo "    kernel memdisk" >> $@.tmp ;			  \
 		echo "    append initrd=$$driver.imz keeppxe" >> $@.tmp ; \
 	done
+	@echo >> $@.tmp ;
+	@echo "label inst" >> $@.tmp ;
+	@echo "    kernel memdisk" >> $@.tmp ;
+	@echo "    append initrd=${univ_driver}.imz keeppxe" >> $@.tmp ; 
 	@mv $@.tmp $@
 	@echo "done"
 
