@@ -32,7 +32,7 @@ echo "4) Autopartition (4G C:, rest D:) and reboot"
 echo "5) Autopartition (4G C:, 4G D:, rest E:) and reboot"
 echo "6) Run fdisk interactively and reboot"
 echo "X) Exit this program"
-choice /c:12345x "Select:"
+choice /c:123456x "Select:"
 
 ret=$?
 
