@@ -1,3 +1,52 @@
+** Changes in version 2.7 (2003-Jul-06)
+
+NOTE: This release has many changes.  You will need to refresh your
+install share (Z: drive) and your boot disk.  You will also need to
+move your OS media directories (Z:\winxp, Z:\win2ksp4, etc.) to live
+under Z:\os.
+
+Create module Unattend::WinMedia to hold all knowledge about Windows
+installation media.  This module knows how to detect Windows version,
+service pack, and media type (retail, OEM, volume).  Also knows how to
+grovel $OEM$/$1 for drivers and how to parse TXTSETUP.OEM for text
+mode drivers.
+
+Use new WinMedia module to automatically recognize all OS media
+directories when offering selection of operating systems.
+
+Move OS media directories to live under Z:\os instead of at Z: root.
+Change os.html page to reflect new layout.  Aside from being cleaner,
+this layout makes it less expensive/dangerous to scan all directories
+looking for media.
+
+New parameter [_meta]/edit_files.  Set to 0 to skip question about
+editing files.  Useful for fully unattended installs.
+
+Add support for auto-generating [MassStorageDrivers] and
+[OEMBootFiles] sections, based on contents of $OEM$/TEXTMODE.  See
+<http://support.microsoft.com/?kbid=288344> and
+<http://sourceforge.net/mailarchive/message.php?msg_id=5410366>.
+
+Eliminate argument limit for menu_choice().  Create new function
+multi_choice(), also with no argument limit.  Use these for
+OemPnPDriversPath, [MassStorageDrivers], etc.
+
+Redesign, again, the Unattend::IniFile interface.  I think I like the
+design now; maybe I will even document it someday...
+
+Add support for SiS 900 family of network adapters.
+
+Remove hard-coded references to A: from various files (autoexec.bat,
+system.in_, install.pl).  Goal is to be "boot drive agnostic", which
+will help with several future projects.
+
+Change instsrv.pl to set startup type to "Automatic" by default.
+
+Add Adobe Reader section to installers.html.  Thanks to Nils Østbjerg.
+(Documentation is good.  Must find more time to write docs.)
+
+Various bug fixes.
+
 ** Changes in version 2.6 (2003-Jun-29)
 
 NOTE: There are many changes in this release.  You will need to
