@@ -50,7 +50,13 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLAN
 
 :: Critical Updates
 
-:: Critical update 835732 (MS04-011)
+:: Critical update MS04-012 (828741)
+:: "Cumulative Update for Microsoft RPC/DCOM"
+:: (Worst Windows security hole, ever.  Again.  And again.)
+:: URL|ENU|http://download.microsoft.com/download/0/0/9/00972728-4bf7-4a73-b17e-85b81e10ab96/WindowsServer2003-KB828741-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb828741-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update MS04-011 (835732)
 :: "Security Update for Microsoft Windows"  (no, really?)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-011.asp>
 :: URL|ENU|http://download.microsoft.com/download/4/d/7/4d74d7ae-e1f7-4c0b-b6e3-ed05f5a3c580/WindowsServer2003-KB835732-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb835732-x86-enu.exe
@@ -120,10 +126,4 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB828035-x86-%WINLAN
 :: <http://www.microsoft.com/technet/security/bulletin/ms03-041.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB823182-x86-%WINLANG%.exe /u /n /z"
 
-:: Critical update 824146
-:: URL|ENU|http://download.microsoft.com/download/5/7/d/57d367eb-ee72-41d6-99ec-e96724655976/WindowsServer2003-KB824146-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb824146-x86-enu.exe
-:: URL|RUS|http://download.microsoft.com/download/0/f/c/0fca7ecb-3305-4bbb-8a16-6d18abbf4f9a/WindowsServer2003-KB824146-x86-RUS.exe|updates/ws2k3/windowsserver2003-kb824146-x86-rus.exe
-:: "A Buffer Overrun in RPCSS May Allow Code Execution"
-:: (Worst Windows security hole, ever.  Again.)
-:: <http://support.microsoft.com/?kbid=824146>
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB824146-x86-%WINLANG%.exe /u /n /z"
