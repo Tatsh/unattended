@@ -31,8 +31,12 @@ images/%.img: .stamp-template drivers/%.dos
 				mmd x:/$$filename ;			\
 				continue ;				\
 			fi ;						\
-			sed s/@driver@/$$driver_uc/g < $$filename |	\
-				mcopy - x:/$$filename	;		\
+			case $$filename in				\
+			  *.ini | *.in_ ) 				\
+			    sed s/@driver@/$$driver_uc/g < $$filename |	\
+			    mcopy - x:/$$filename	;;		\
+			  *) mcopy $$filename x:/$$filename;; 		\
+			esac; 						\
 		done) &&						\
 	mcopy drivers/$$driver.dos x:/net/$$driver.dos &&		\
 	rm $$tmpfile
