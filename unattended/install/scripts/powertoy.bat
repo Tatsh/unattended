@@ -1,4 +1,4 @@
-:: Install Windows PowerToys
+:: OPTIONAL: Install Windows PowerToys
 
 :: Windows Power Toys for XP
 :: <http://www.microsoft.com/windowsxp/pro/downloads/powertoys.asp>
