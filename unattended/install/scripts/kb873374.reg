@@ -1,0 +1,5 @@
+REGEDIT4
+
+; Pretend stupid GDI+ Tool already ran
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\GdiDetectionTool]
+"GDITool"=dword:00000001
