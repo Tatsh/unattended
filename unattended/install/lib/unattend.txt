@@ -38,6 +38,10 @@
     YResolution=768
     Vrefresh=75
 
+[LicenseFilePrintData]
+    AutoMode=PerServer
+    AutoUsers=5
+
 [Networking]
     InstallDefaultComponents=Yes
 
