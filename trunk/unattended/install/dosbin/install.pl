@@ -1,6 +1,6 @@
-
 use warnings;
 use strict;
+
 use Carp;
 use File::Spec::Win32;
 use File::Basename;
@@ -16,6 +16,7 @@ fileparse_set_fstype ('MSWin32');
 
 # Global variable holding unattend.txt file which we are generating.
 use vars qw ($u);
+$u = new Unattend::IniFile;
 
 # Scaffolding (FIXME)
 sub get_value ($$) {
@@ -30,12 +31,17 @@ sub get_value_noforce ($$) {
 
 sub set_value ($$$) {
     my ($section, $key, $value) = @_;
-    $u->values ($section, $key) = $value;
+    $u->value ($section, $key) = $value;
 }
 
 sub set_comments ($$$) {
     my ($section, $key, $comments) = @_;
     $u->comments ($section, $key) = $comments;
+}
+
+sub push_value ($$$) {
+    my ($section, $key, $value) = @_;
+    $u->push_value ($section, $key, $value);
 }
 
 ## Handy general-purpose subroutines for asking questions.
@@ -651,9 +657,6 @@ set_value ('UserData', 'ProductKey',
 
 ## Now the meat of the script.
 
-# Create a fresh IniFile object.
-$u = new Unattended::IniFile;
-
 # Read master unattend.txt.
 $u->read ('z:\\doslib\\unattend.txt');
 
@@ -733,13 +736,13 @@ foreach my $dir ($netinst, "$netinst\\logs") {
 # Create unattend.txt file.
 my $unattend_txt = "$netinst\\unattend.txt";
 
-my $unattend_contents = generate_unattend_txt ();
+my @unattend_contents = $u->generate ();
 
 print "Creating $unattend_txt...";
 
 open UNATTEND, ">$unattend_txt"
     or die "Unable to open $unattend_txt for writing: $^E";
-print UNATTEND $unattend_contents
+print UNATTEND @unattend_contents
     or die "Unable to write to $unattend_txt: $^E";
 close UNATTEND
     or die "Unable to close $unattend_txt: $^E";
