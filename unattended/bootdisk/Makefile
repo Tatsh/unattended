@@ -52,7 +52,7 @@ images/%.imz: .stamp-template template/version.bat empty-boot.img.gz \
 	export MTOOLSRC=$$mtoolsrc &&					\
 	gzip -d -c empty-boot.img.gz >| $$destdir/$$driver.img &&	\
 	(cd template &&							\
-	 find . -name CVS -prune -o -mindepth 1 -print | sort |		\
+	 find . -mindepth 1 -name CVS -prune -o -print | sort |		\
 		while read filename ; do				\
 			if [ -d $$filename ] ; then			\
 				mmd x:/$$filename ;			\
