@@ -8,19 +8,6 @@
 
 :: Extra Updates
 
-:: Windows Messenger Update
-:: (This will be disabled in the notips script)
-:: <http://www.microsoft.com/windowsxp/windowsmessenger/>
-todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /r:n"
-
-:: Microsoft DirectX 9.0b update
-:: <http://www.microsoft.com/directx/>
-:: Download the redistributable for developers (dx90b_redist.exe) and
-:: extract it to %Z%\packages\DirectX9\%WINLANG%
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=a6dee0db-dcce-43ea-87bb-7c7e1fd1eaa2>
-:: (Requires .NET to be installed first for managed DX)
-todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
-
 :: Windows Journal Viewer update
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
 todo.pl ".reboot-on 194 %Z%\updates\common\journal_viewer_%WINLANG%.exe /q /c:\"msiexec /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
@@ -40,6 +27,19 @@ todo.pl "regedit /s %Z%\packages\mediaplayer9\mediaplayer9.reg"
 :: Media Player 9.0
 :: <http://www.microsoft.com/windows/windowsmedia/>
 todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\MPSetupXP.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
+
+:: Windows Messenger Update
+:: (This will be disabled in the notips script)
+:: <http://www.microsoft.com/windowsxp/windowsmessenger/>
+todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /r:n"
+
+:: Microsoft DirectX 9.0b update
+:: <http://www.microsoft.com/directx/>
+:: Download the redistributable for developers (dx90b_redist.exe) and
+:: extract it to %Z%\packages\DirectX9\%WINLANG%
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=a6dee0db-dcce-43ea-87bb-7c7e1fd1eaa2>
+:: (Requires .NET to be installed first for managed DX)
+todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
 :: Microsoft .NET framework
 :: <http://msdn.microsoft.com/netframework/downloads/>
