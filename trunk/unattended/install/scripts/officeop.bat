@@ -1,5 +1,6 @@
 :: OPTIONAL: Install OpenOffice.org
-:: URL|ALL|http://www.ibiblio.org/pub/mirrors/openoffice/stable/1.1.0/OOo_1.1.0_Win32Intel_install.zip|packages/openoffice/ooo_1.1.0_win32intel_install.zip
+:: URL|ENU|http://www.ibiblio.org/pub/mirrors/openoffice/stable/1.1.0/OOo_1.1.0_Win32Intel_install.zip|packages/openoffice/ooo_1.1.0_win32intel_install_enu.zip
+:: URL|DEU|http://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/localized/de/1.1.0/OOo_1.1.0_Win32Intel_install_de.zip|packages/openoffice/ooo_1.1.0_win32intel_install_deu.zip
 
 todo.pl "shortcut.pl \"%ProgramFiles%\"\OpenOffice.org\program\soffice.exe special:AllUsersDesktop\OpenOffice"
 
