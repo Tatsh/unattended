@@ -384,9 +384,35 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /
 
 :: Critical Updates
 
-:: Critical update MS04-033 (873376)
+:: Critical update MS04-037 (841356)
+:: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-037.mspx>
+:: URL|ARA|http://download.microsoft.com/download/2/b/0/2b05f432-fd52-4f3d-9778-15d6fa9b733f/WindowsXP-KB841356-x86-ara.exe|updates/winxpsp1/windowsxp-kb841356-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/4/6/a4689760-b694-409e-8324-f83e4147a089/WindowsXP-KB841356-x86-csy.exe|updates/winxpsp1/windowsxp-kb841356-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/5/6/c/56c0b1a4-cfcc-42a6-874d-890aebc6edf4/WindowsXP-KB841356-x86-dan.exe|updates/winxpsp1/windowsxp-kb841356-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/8/8/b/88b82001-52da-46ba-80bb-84e7a3172746/WindowsXP-KB841356-x86-deu.exe|updates/winxpsp1/windowsxp-kb841356-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/d/f/6/df6f942d-6f08-40e1-ab6e-d828af0d58db/WindowsXP-KB841356-x86-ell.exe|updates/winxpsp1/windowsxp-kb841356-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/5/6/b/56bbf80b-8644-45e0-a3c1-97de09f6fce5/WindowsXP-KB841356-x86-enu.exe|updates/winxpsp1/windowsxp-kb841356-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/d/d/1dd323a6-d485-4fbe-b4b0-6cc19bc2df14/WindowsXP-KB841356-x86-esn.exe|updates/winxpsp1/windowsxp-kb841356-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/7/7/e/77ee4bec-033d-4225-a6f4-43133a0cf38e/WindowsXP-KB841356-x86-fin.exe|updates/winxpsp1/windowsxp-kb841356-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/0/d/a0d52803-174d-4645-8881-6605fb91c082/WindowsXP-KB841356-x86-fra.exe|updates/winxpsp1/windowsxp-kb841356-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/f/e/b/febc4529-e814-418c-8775-92de7a713298/WindowsXP-KB841356-x86-heb.exe|updates/winxpsp1/windowsxp-kb841356-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/2/6/2/262786ee-4e75-4339-a519-685c269b3f91/WindowsXP-KB841356-x86-hun.exe|updates/winxpsp1/windowsxp-kb841356-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/7/6/976382f0-08bc-43c1-9de7-f8fcd4c51ffb/WindowsXP-KB841356-x86-ita.exe|updates/winxpsp1/windowsxp-kb841356-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/c/5/1c5c96ce-a872-4e3e-a7a0-66c396c0d35e/WindowsXP-KB841356-x86-jpn.exe|updates/winxpsp1/windowsxp-kb841356-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/1/f/b/1fb2c3b1-6031-4b18-8518-827c7811139f/WindowsXP-KB841356-x86-kor.exe|updates/winxpsp1/windowsxp-kb841356-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/1/0/6/1069d703-8d56-4551-ba28-c42edafbf71c/WindowsXP-KB841356-x86-nld.exe|updates/winxpsp1/windowsxp-kb841356-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/e/c/f/ecfea6f3-124d-4e6d-a840-af7a1bb890ae/WindowsXP-KB841356-x86-plk.exe|updates/winxpsp1/windowsxp-kb841356-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/f/2/7/f2771c10-b714-405c-bf10-42a1aa58c56c/WindowsXP-KB841356-x86-ptg.exe|updates/winxpsp1/windowsxp-kb841356-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/d/c/8/dc8212e8-cc89-483f-9ad7-983dce480a5c/WindowsXP-KB841356-x86-ptb.exe|updates/winxpsp1/windowsxp-kb841356-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/f/f/5/ff5e135a-8d2b-4483-b874-1386f25e75ea/WindowsXP-KB841356-x86-rus.exe|updates/winxpsp1/windowsxp-kb841356-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/f/e/efe4fab8-581f-4baa-aaed-5e013b3fdeb6/WindowsXP-KB841356-x86-sve.exe|updates/winxpsp1/windowsxp-kb841356-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/c/4/ec42edc7-ba25-4d85-9817-a8902e00ec2e/WindowsXP-KB841356-x86-trk.exe|updates/winxpsp1/windowsxp-kb841356-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb841356-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update MS04-034 (873376)
 :: "Vulnerability in Compressed Folders Could Allow Remote Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-033.mspx>
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-034.mspx>
 :: URL|ARA|http://download.microsoft.com/download/4/8/d/48de2d45-757a-4cbf-87b2-8b89f6ad6b6c/WindowsXP-KB873376-x86-ara.exe|updates/winxpsp1/windowsxp-kb873376-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/8/f/0/8f040bd8-84bf-45d1-b21d-0af1e0bf4b99/WindowsXP-KB873376-x86-csy.exe|updates/winxpsp1/windowsxp-kb873376-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/c/c/e/ccee4c57-0a03-40fe-accd-912d9e2c1379/WindowsXP-KB873376-x86-dan.exe|updates/winxpsp1/windowsxp-kb873376-x86-dan.exe
@@ -516,19 +542,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb824151-x86-%WINLANG%.ex
 :: URL|CHS|http://download.microsoft.com/download/0/6/9/069a5152-2932-4407-be60-adbc9e8fa4f7/WindowsXP-KB833987-x86-CHS.EXE|updates/winxpsp1/windowsxp-kb833987-x86-CHS.exe
 :: URL|CHT|http://download.microsoft.com/download/3/6/7/367a66c0-c34c-4e2d-a851-29aa23ae4e06/WindowsXP-KB833987-x86-CHT.EXE|updates/winxpsp1/windowsxp-kb833987-x86-CHT.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB833987-x86-%WINLANG%.exe /passive /n /norestart"
-
-
-:: Critical update MS04-024 (839645)
-:: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
-:: URL|DEU|http://download.microsoft.com/download/c/f/4/cf4aa9d6-f05b-48a8-804b-46a3a2dd87fa/WindowsXP-KB839645-x86-deu.exe|updates/winxpsp1/windowsxp-kb839645-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/d/0/3/d03971cd-ae3d-49ab-bec2-44ce3911fa76/WindowsXP-KB839645-x86-enu.exe|updates/winxpsp1/windowsxp-kb839645-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/c/9/9/c990ed3f-4ba1-4a28-81c0-ac9689e30a69/windowsxp-kb839645-X86-ESN.exe|updates/winxpsp1/windowsxp-kb839645-x86-esn.exe
-:: URL|FRA|http://download.microsoft.com/download/7/3/2/7329c960-07e4-4535-a601-de926b8382cd/windowsxp-kb839645-X86-FRA.exe|updates/winxpsp1/windowsxp-kb839645-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/3/e/b/3eb56030-c519-4f41-8d7f-82705105796a/windowsxp-kb839645-X86-ITA.exe|updates/winxpsp1/windowsxp-kb839645-x86-ita.exe
-:: URL|NLD|http://download.microsoft.com/download/3/5/c/35ca1eb2-44fa-4151-8317-f0d63d4e4cf8/windowsxp-kb839645-X86-NLD.exe|updates/winxpsp1/windowsxp-kb839645-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/3/b/e/3be1b343-a7ed-4b91-a6d2-f3bbe3acbdf9/windowsxp-kb839645-X86-RUS.exe|updates/winxpsp1/windowsxp-kb839645-x86-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB839645-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-023 (840315)
 :: "Vulnerability in HTML Help Could Allow Code Execution"
