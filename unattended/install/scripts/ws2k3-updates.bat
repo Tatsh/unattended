@@ -45,6 +45,12 @@ todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
 :: Recommended Updates
 
+:: Recommended update MS04-024 (839645)
+:: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
+:: URL|ENU|http://download.microsoft.com/download/e/7/9/e79e9c09-1755-4ecc-8ccd-fc915c9e0cbf/WindowsServer2003-KB839645-x86-enu.exe|updates/ws2k3/windowsserver2003-kb839645-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb839645-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Recommended Update MS04-014 (837001)
 :: "Vulnerability in the Microsoft Jet ... could permit code execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
