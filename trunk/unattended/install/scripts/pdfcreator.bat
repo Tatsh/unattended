@@ -20,6 +20,10 @@ if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini goto nolangpack
 todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini \"%ProgramFiles%\PDFCreator\languages\""
 :nolangpack
 
+:: install patch
+:: URL|ALL|http://mesh.dl.sourceforge.net/sourceforge/pdfcreator/Patch02-PDFCreator-0_8_0.exe|packages/Patch02-PDFCreator-0_8_0.exe
+todo.pl "%Z%\packages\pdfcreator\Patch02-PDFCreator-0_8_0.exe /sp- /silent /norestart"
+
 :: Install PDFCreator
 :: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_0_GNUGhostscript.exe|packages/pdfcreator/pdfcreator-0_8_0_gnughostscript.exe
 todo.pl "%Z%\packages\pdfcreator\PDFCreator-0_8_0_GNUGhostscript.exe /sp- /silent /norestart"
