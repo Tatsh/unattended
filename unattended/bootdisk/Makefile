@@ -48,28 +48,31 @@ bootdisk.iso: .stamp-images memdisk iso/isolinux/isolinux.cfg \
 			iso/isolinux/isoboot.msg
 	ln -f images/*.img memdisk iso/isolinux
 	@echo -n "Making $@..."
-	@mkisofs -quiet -o $@ \
+	@mkisofs -quiet -o $@.tmp \
                 -b isolinux/isolinux.bin -c isolinux/boot.cat \
                 -no-emul-boot -boot-load-size 4 -boot-info-table \
 		iso > /dev/null
-	@echo "done"
+	@mv $@.tmp $@
+	@echo "...done making $@"
 
 iso/isolinux/isolinux.cfg: isolinux.cfg
 	@echo -n "Making $@..."
-	@cat $< >| $@
+	@cat $< >| $@.tmp
 	@for driver in ${drivers} ; do					\
-		echo >> $@ ;						\
-		echo "label $$driver" >> $@ ;				\
-		echo "        kernel memdisk" >> $@ ;			\
-		echo "        append initrd=$$driver.img" >> $@ ;	\
+		echo >> $@.tmp ;					\
+		echo "label $$driver" >> $@.tmp ;			\
+		echo "        kernel memdisk" >> $@.tmp ;		\
+		echo "        append initrd=$$driver.img" >> $@.tmp ;	\
 	done
+	@mv $@.tmp $@
 	@echo "done"
 
 iso/isolinux/isoboot.msg: isoboot.msg DRIVERS.txt
 	@echo -n "Making $@..."
-	@cat isoboot.msg >| $@
-	@echo >> $@
-	@grep ^[[:alnum:]] < DRIVERS.txt >> $@
+	@cat isoboot.msg >| $@.tmp
+	@echo >> $@.tmp
+	@grep ^[[:alnum:]] < DRIVERS.txt >> $@.tmp
+	@mv $@.tmp $@
 	@echo "done"
 
 # TFTP boot (PXE) targets
@@ -82,11 +85,12 @@ tftpboot: .stamp-tftpboot
 
 tftpboot/pxelinux.cfg/default: pxelinux.cfg
 	@echo -n "Making $@..."
-	@cat $< >| $@
-	@echo >> $@
-	@echo "label inst" >> $@
-	@echo "        kernel memdisk" >> $@
-	@echo "        append initrd=${univ_driver}.img keeppxe" >> $@
+	@cat $< >| $@.tmp
+	@echo >> $@.tmp
+	@echo "label inst" >> $@.tmp
+	@echo "        kernel memdisk" >> $@.tmp
+	@echo "        append initrd=${univ_driver}.img keeppxe" >> $@.tmp
+	@mv $@.tmp $@
 	@echo "done"
 
 clean:
