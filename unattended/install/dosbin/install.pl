@@ -265,7 +265,7 @@ sub run_command ($@) {
 
     my $tmpfile = '\\tmp.txt';
 
-    my $ret = system "$cmd > $tmpfile";
+    my $ret = system "$cmd > $tmpfile < nul";
     my $status = $ret >> 8;
     (exists $status_hash{$status})
         or die "$cmd > $tmpfile failed, unexpected status $status";
@@ -569,11 +569,13 @@ $u->{'_meta'}->{'format_cmd'} =
 
 $u->{'_meta'}->{'ipaddr'} =
     sub {
-        # Parse file written by autoexec.bat.
+        # Parse file written by autoexec.bat
         my $ipconfig = '\\ipconfig.txt';
-        foreach my $line (read_file ($ipconfig)) {
-            $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
-                and return $1;
+        if (-e $ipconfig) {
+            foreach my $line (read_file ($ipconfig)) {
+                $line =~ /^\s*IP Address\s+:\s+([\d.]+)\r?$/
+                    and return $1;
+            }
         }
         warn "Unable to get IP address from $ipconfig";
         return undef;
