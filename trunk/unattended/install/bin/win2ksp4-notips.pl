@@ -27,29 +27,29 @@ my $ntuser_key = $reg{'Users'}->Load ($ntuser_dat, 'NTUSER')
 foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
     $reg_key->{'Console/'} = {
         # Set scroll buffer to 2000 lines for console
-        '/ScreenBufferSize' => [ pack('L', 131072080), REG_DWORD ],
+#        '/ScreenBufferSize' => [ pack('L', 131072080), REG_DWORD ],
         # Allow users to use mouse to edit in console
-        '/QuickEdit' => [ pack('L', 1), REG_DWORD ],
+#        '/QuickEdit' => [ pack('L', 1), REG_DWORD ],
     } or die "Unable to set User/Console/ registry settings: $^E";
 
     $reg_key->{'Control Panel/'} = {
         'Desktop/' => {
             # Enable killing tasks that don't respond
-            '/AutoEndTasks' => "1",
+#            '/AutoEndTasks' => "1",
             # Turn on font smoothing
-            '/FontSmoothing' => "2",
+#            '/FontSmoothing' => "2",
             # Disable screen saver
-            '/ScreenSaveActive' => [ pack('L', 0), REG_DWORD ],
+#            '/ScreenSaveActive' => [ pack('L', 0), REG_DWORD ],
             # Timeout for responding is 5 seconds
-            '/WaitToKillAppTimeout' => "5000",
+#            '/WaitToKillAppTimeout' => "5000",
         },
         'Keyboard/' => {
             # Make windows remember the state of numlock
-            '/InitialKeyboardIndicators' => "2",
+#            '/InitialKeyboardIndicators' => "2",
         },
         'PowerCfg/' => {
             # Change power policy to Always On
-            '/CurrentPowerPolicy' => "3",
+#            '/CurrentPowerPolicy' => "3",
         },
     } or die "Unable to set User/Control Panel/ registry settings: $^E";
 
@@ -57,11 +57,11 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
         'Microsoft/' => {
             'Command Processor/' => {
                 # Enable UNC paths to be used on the command line
-                '/DisableUNCCheck' => [ pack('L', 1), REG_DWORD],
+#                '/DisableUNCCheck' => [ pack('L', 1), REG_DWORD],
             },
             'Ftp/' => {
                 # Enable pasive FTP
-                '/Use PASV' => 'yes',
+#                '/Use PASV' => 'yes',
             },
             'Internet Connection Wizard/' => {
                 # Disable Internet Connection Wizard
@@ -70,31 +70,31 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
             'Internet Explorer/' => {
                 'Main/' => {
                     # Reuse Internet Explorer windows when possible
-                    '/AllowWindowReuse' => [ pack('L', 1), REG_DWORD ],
+#                    '/AllowWindowReuse' => [ pack('L', 1), REG_DWORD ],
                     # Show images the size that they should be
-                    '/Enable AutoImageResize' => 'no',
+#                    '/Enable AutoImageResize' => 'no',
                     # Don't display errors on page dialog
-                    '/Error Dlg Displayed On Every Error' => 'no',
+#                    '/Error Dlg Displayed On Every Error' => 'no',
                     # Don't display errors on page dialog window
-                    '/Error Dlg Details Pane Open' => 'no',
+#                    '/Error Dlg Details Pane Open' => 'no',
                     # Render screen before drawing
-                    '/Force Offscreen Composition' => [ pack('L', 1), REG_DWORD ],
+#                    '/Force Offscreen Composition' => [ pack('L', 1), REG_DWORD ],
                     # Don't remember passwords
-                    '/FormSuggest Passwords' => 'no',
+#                    '/FormSuggest Passwords' => 'no',
                     # Don't prompt to remember passwords
-                    '/FormSuggest PW Ask' => 'no',
+#                    '/FormSuggest PW Ask' => 'no',
                     # Close downloads windows when complete
-                    '/NotifyDownloadComplete' => 'no',
+#                    '/NotifyDownloadComplete' => 'no',
                     # Show Image placeholders
-                    '/Show Image Placeholders' => [ pack('L', 1), REG_DWORD ],
+#                    '/Show Image Placeholders' => [ pack('L', 1), REG_DWORD ],
                     # Don't ask to auto fill out forms
-                    '/Use FormSuggest' => 'no',
+#                    '/Use FormSuggest' => 'no',
                     # Don't use search assistant in Internet Explorer
-                    '/Use Search Asst' => 'no',
+#                    '/Use Search Asst' => 'no',
                 },
                 'IntelliForms/' => {
                     # Don't ask to auto fill out forms
-                    '/AskUser' => [ pack('L', 0), REG_DWORD ],
+#                    '/AskUser' => [ pack('L', 0), REG_DWORD ],
                 },
             },
             'MediaPlayer/' => {
@@ -105,40 +105,40 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
             },
             'Telnet/' => {
                 # Enable smoother scrolling in telnet
-                '/SmoothScroll' => [ pack('L', 1), REG_DWORD],
+#                '/SmoothScroll' => [ pack('L', 1), REG_DWORD],
             },
             'Windows/' => {
                 'CurrentVersion/' => {
                     'Explorer/' => {
                         'Advanced/' => {
                             # Disable Thumbnail caching
-                            '/DisableThumbnailCache' => [ pack('L', 1), REG_DWORD ],
+#                            '/DisableThumbnailCache' => [ pack('L', 1), REG_DWORD ],
                             # Display path names correctly
-                            '/DontPrettyPath' => [ pack('L', 1), REG_DWORD ],
+#                            '/DontPrettyPath' => [ pack('L', 1), REG_DWORD ],
                             # Show Hidden and System Files
-                            '/Hidden' => [ pack('L', 1), REG_DWORD ],
+#                            '/Hidden' => [ pack('L', 1), REG_DWORD ],
                             # Restore folders on startup
-                            '/PersistBrowsers' => [ pack('L', 1), REG_DWORD ],
+#                            '/PersistBrowsers' => [ pack('L', 1), REG_DWORD ],
                             # Launch explorer windows in separate processes
-                            '/SeparateProcess' => [ pack('L', 1), REG_DWORD ],
+#                            '/SeparateProcess' => [ pack('L', 1), REG_DWORD ],
                             # Display contents of system folders
-                            '/WebViewBarricade' => [ pack('L', 1), REG_DWORD ],
+#                            '/WebViewBarricade' => [ pack('L', 1), REG_DWORD ],
                         },
                         'AutoComplete/' => {
                             # Turn on auto completion of commands
-                            '/Append Completion' => 'yes',
+#                            '/Append Completion' => 'yes',
                             # Turn on auto suggestion for commands
-                            '/AutoSuggest' => 'yes',
+#                            '/AutoSuggest' => 'yes',
                         },
                         'CabinetState/' => {
                             # Show full path in title bar for explorer windows
-                            '/FullPath' => [ pack('L', 1), REG_DWORD ],
+#                            '/FullPath' => [ pack('L', 1), REG_DWORD ],
                         },
                         # Don't prefix shortcuts with "Shortcut to.."
-                        '/Link' => [ pack('L', 0), REG_BINARY ],
+#                        '/Link' => [ pack('L', 0), REG_BINARY ],
                         'SmallIcons/' => {
                             # Show Small Icons in Internet Explorer
-                            '/SmallIcons' => 'yes',
+#                            '/SmallIcons' => 'yes',
                         },
                         'Tips/' => {
                             # Disable tips
@@ -150,34 +150,34 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
                             'Cache/' => {
                                 'Content/' => {
                                     # Only cache 100Mb of internet pages
-                                    '/CacheLimit' => [ pack('L', 102400), REG_DWORD ],
+#                                    '/CacheLimit' => [ pack('L', 102400), REG_DWORD ],
                                 },
                             },
                         },
                         'Cache/' => {
                             # Empty Temporary Internet Files when browser exits
-                            '/Persistent' => [ pack('L', 0), REG_DWORD ],
+#                            '/Persistent' => [ pack('L', 0), REG_DWORD ],
                         },
                         # Don't cache Encrypted pages
-                        '/DisableCachingOfSSLPages' => [ pack('L', 1), REG_DWORD ],
+#                        '/DisableCachingOfSSLPages' => [ pack('L', 1), REG_DWORD ],
                         # Don't show privacy reminder
-                        '/PrivDiscUiShown' => [ pack('L', 1), REG_DWORD ],
+#                        '/PrivDiscUiShown' => [ pack('L', 1), REG_DWORD ],
                         # Check for newer of page on every visit
-                        '/SyncMode5' => [ pack('L', 3), REG_DWORD ],
+#                        '/SyncMode5' => [ pack('L', 3), REG_DWORD ],
                         # Don't warn when crossing from http to https
-                        '/WarnOnZoneCrossing' => [ pack('L', 0), REG_DWORD ],
+#                        '/WarnOnZoneCrossing' => [ pack('L', 0), REG_DWORD ],
                         'Zones/' => {
                             '3/' => {
                                 # Don't prompt on form submission
-                                '/1601' => [ pack('L', 0), REG_DWORD ],
+#                                '/1601' => [ pack('L', 0), REG_DWORD ],
                             },
                         },
                     },
                     'Policies/Explorer/' => {
                         # Don't include machine name in shortcuts
-                        '/LinkResolveIgnoreLinkInfo' => [ pack('L', 0), REG_DWORD ],
+#                        '/LinkResolveIgnoreLinkInfo' => [ pack('L', 0), REG_DWORD ],
                         # Don't do an exaustive search if lnk is broken
-                        '/NoResolveSearch' => [ pack('L', 1), REG_DWORD ],
+#                        '/NoResolveSearch' => [ pack('L', 1), REG_DWORD ],
                     },
                 },
             },
@@ -185,7 +185,7 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
     } or die "Unable to set User/Software/Microsoft/ registry settings: $^E";
 
     # Set Screen Saver to None
-    delete $reg_key->{'Control Panel/Desktop//SCRNSAVE.EXE'};
+#    delete $reg_key->{'Control Panel/Desktop//SCRNSAVE.EXE'};
 
     # Don't run Internet Connection Wizard
     delete $reg_key->{'Software/Microsoft/Windows/CurrentVersion/RunOnce//^SetupICWDesktop'};
@@ -212,10 +212,10 @@ $reg{'LMachine'}->{'Software/'} = {
                 'Explorer/' => {
                     'AlwaysUnloadDLL/' => {
                         # Unload DLL's once all applications using them are done
-                        '/' => "1",
+#                        '/' => "1",
                     },
                     # Show drive letters first on shares
-                    '/ShowDriverLettersFirst' => [ pack('L', 1), REG_DWORD ],
+#                    '/ShowDriverLettersFirst' => [ pack('L', 1), REG_DWORD ],
                 },
             },
         },
@@ -225,7 +225,7 @@ $reg{'LMachine'}->{'Software/'} = {
             'Windows/' => {
                 'Installer/' => {
                     # Enable administrators to install appliations over Terminal Services
-                    '/EnableAdminTSRemote' => [ pack('L', 1), REG_DWORD ],
+#                    '/EnableAdminTSRemote' => [ pack('L', 1), REG_DWORD ],
                 },
             },
         },
@@ -237,7 +237,7 @@ $reg{'LMachine'}->{'System/'} = {
         'Control/' => {
             'FileSystem/' => {
                 # Disable NTFS Last Access updates
-                '/NtfsDisableLastAccessUpdate' => [ pack('L', 1), REG_DWORD ],
+#                '/NtfsDisableLastAccessUpdate' => [ pack('L', 1), REG_DWORD ],
             },
         },
         'Services/' => {
@@ -254,7 +254,7 @@ foreach my $networkadapter (keys( %{$reg{'LMachine/System/CurrentControlSet/Cont
     if ( defined $reg{'LMachine/System/CurrentControlSet/Control/Network/{4D36E972-E325-11CE-BFC1-08002BE10318}/'.$networkadapter.'Connection/'} ) {
         $reg{'LMachine/System/CurrentControlSet/Control/Network/{4D36E972-E325-11CE-BFC1-08002BE10318}/'.$networkadapter} = {
             'Connection/' => {
-                '/ShowIcon' => [ pack('L', 1), REG_DWORD],
+#                '/ShowIcon' => [ pack('L', 1), REG_DWORD],
              },
         };
     }
@@ -264,15 +264,15 @@ foreach my $networkadapter (keys( %{$reg{'LMachine/System/CurrentControlSet/Cont
 foreach my $mounts ( grep( /:$/, keys( %{$reg{'LMachine/System/MountedDevices/'}} ) ) ) {
     if ( $reg{'LMachine/System/MountedDevices/'.$mounts} =~ /[Cc].[Dd].[Rr].[Oo].[Mm]/ ) {
         my $oldcdrom = delete $reg{'LMachine/System/MountedDevices/'.$mounts};
-        $reg{'LMachine/System/MountedDevices//\\DosDevices\\R:'} = [ $oldcdrom, REG_BINARY ];
-        $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Setup//Installation Sources'} = [ ['R:\\i386'], REG_MULTI_SZ ];
-        $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Setup//ServicePackSourcePath'} = 'R:\\';
-        $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Setup//SourcePath'} = 'R:\\';
+#        $reg{'LMachine/System/MountedDevices//\\DosDevices\\R:'} = [ $oldcdrom, REG_BINARY ];
+#        $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Setup//Installation Sources'} = [ ['R:\\i386'], REG_MULTI_SZ ];
+#        $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Setup//ServicePackSourcePath'} = 'R:\\';
+#        $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Setup//SourcePath'} = 'R:\\';
         last;
     }
 }
 
 # Don't browse for Scheduled Tasks in Network Neighborhood
-delete $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Explorer/RemoteComputer/NameSpace/{D6277990-4C6A-11CF-8D87-00AA0060F5BF}/'};
+#delete $reg{'LMachine/Software/Microsoft/Windows/CurrentVersion/Explorer/RemoteComputer/NameSpace/{D6277990-4C6A-11CF-8D87-00AA0060F5BF}/'};
 
 exit 0;
