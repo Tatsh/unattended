@@ -11,6 +11,7 @@ use Win32::NetResource; # for get_drive_path
 
 # Location of the "to do" list.
 my $todo = 'c:\\netinst\\todo.txt';
+my $maptodo = 'c:\\netinst\\maptodo.pl';
 
 # Your usual option-processing sludge.
 my %opts;
@@ -202,6 +203,7 @@ my %ignore_err = (0 => 1);
 sub do_cmd ($);
 sub do_cmd ($) {
     my ($cmd) = @_;
+    my ($zpath) = get_drive_path ('z:');
 
     if ($cmd =~ /^\./) {
         if ($cmd eq '.reboot') {
@@ -210,7 +212,7 @@ sub do_cmd ($) {
             if (!defined $next_cmd || $next_cmd ne '.reboot') {
                 # Arrange to run
                 # ourselves after reboot.
-                run_at_logon ("$0 --go");
+                run_at_logon ("$maptodo z $zpath");
                 reboot (5);
                 die "Internal error";
             }
@@ -218,7 +220,7 @@ sub do_cmd ($) {
         elsif ($cmd =~ /^\.expect-reboot\s+(.*)$/) {
             my $new_cmd = $1;
             # Arrange to run ourselves after reboot.
-            run_at_logon ("$0 --go");
+            run_at_logon ("$maptodo z $zpath");
             do_cmd ($new_cmd);
             print "Expecting previous command to reboot; exiting.\n";
             exit 0;
