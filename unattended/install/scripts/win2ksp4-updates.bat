@@ -131,16 +131,11 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
-:: Critical update 828028 (MS04-007)
-:: URL|ENU|http://download.microsoft.com/download/5/d/b/5db25f4e-76fb-4cc7-85f3-ca6f797f0982/Windows2000-KB828028-x86-ENU.EXE|updates/win2ksp4/windows2000-kb828028-x86-enu.exe
-:: URL|DEU|http://download.microsoft.com/download/7/6/f/76f60bc2-4933-4d2d-ad51-5c173c34e7d9/Windows2000-KB828028-x86-DEU.EXE|updates/win2ksp4/windows2000-kb828028-x86-deu.exe
-:: URL|NLD|http://download.microsoft.com/download/1/6/f/16f178d9-8171-42e4-b9fc-293f6069453d/Windows2000-KB828028-x86-NLD.EXE|updates/win2ksp4/windows2000-kb828028-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/e/3/4/e343a120-2e47-4d50-9584-d7382464305d/Windows2000-KB828028-x86-RUS.EXE|updates/win2ksp4/windows2000-kb828028-x86-rus.exe
-:: URL|FRA|http://download.microsoft.com/download/7/6/6/766b0e9b-fc0d-4435-98e9-d03d5f20e9a7/Windows2000-KB828028-x86-FRA.EXE|updates/win2ksp4/windows2000-kb828028-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/1/c/9/1c9ceaae-bf8f-4f01-a104-6b3c821a8539/Windows2000-KB828028-x86-ITA.EXE|updates/win2ksp4/windows2000-kb828028-x86-ita.exe
-:: "ASN.1 Vulnerability Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS04-007.mspx>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
+:: Critical update 835732 (MS04-011)
+:: "Security Update for Microsoft Windows"  (no, really?)
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-011.asp>
+:: URL|ENU|http://download.microsoft.com/download/f/a/a/faa796aa-399d-437a-9284-c3536e9f2e6e/Windows2000-KB835732-x86-ENU.EXE|updates/win2ksp4/windows2000-kb835732-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
 :: URL|ENU|http://download.microsoft.com/download/c/2/4/c245528e-a1e4-492e-bcf4-e004a052d93b/ENU_Q832483_MDAC_x86.EXE|updates/common/enu_q832483_mdac_x86.exe
@@ -232,17 +227,6 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB826232-x86-%WINLANG%.
 :: "Buffer Overrun in the HTML Converter Could Allow Code Execution"
 :: <http://support.microsoft.com/?kbid=823559>
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB823559-x86-%WINLANG%.exe /u /n /z"
-
-:: Critical update 824141 (MS03-045)
-:: URL|ENU|http://download.microsoft.com/download/5/0/a/50acd5b3-b7e4-4262-8e0b-eb7dada676f4/Windows2000-KB824141-x86-ENU.exe|updates/win2ksp4/windows2000-kb824141-x86-enu.exe
-:: URL|DEU|http://download.microsoft.com/download/e/f/4/ef41af0b-bd00-4508-b868-addd5e0cce0c/Windows2000-KB824141-x86-DEU.exe|updates/win2ksp4/windows2000-kb824141-x86-deu.exe
-:: URL|NLD|http://download.microsoft.com/download/7/6/e/76ecf6b4-9760-47b3-8736-0070b6b77c57/Windows2000-KB824141-x86-NLD.exe|updates/win2ksp4/windows2000-kb824141-x86-nld.exe
-:: URL|RUS|http://download.microsoft.com/download/b/b/3/bb33d214-f378-461c-a888-974935ae9740/Windows2000-KB824141-x86-RUS.exe|updates/win2ksp4/windows2000-kb824141-x86-rus.exe
-:: URL|FRA|http://download.microsoft.com/download/b/7/9/b795b288-9ded-4efa-a8a3-91ef51d0388c/Windows2000-KB824141-x86-FRA.exe|updates/win2ksp4/windows2000-kb824141-x86-fra.exe
-:: URL|ITA|http://download.microsoft.com/download/8/4/f/84f0f2e7-f6e3-4e17-a77a-7d90619a9c7a/Windows2000-KB824141-x86-ITA.exe|updates/win2ksp4/windows2000-kb824141-x86-ita.exe
-:: "Buffer Overrun in the ListBox and in the ComboBox Control Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS03-045.mspx>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB824141-x86-%WINLANG%.exe /u /n /z"
 
 :: Critical update 825119 (MS03-044)
 :: URL|ENU|http://download.microsoft.com/download/7/a/5/7a57524c-8aba-474b-9333-ae1d61f020c9/Windows2000-KB825119-x86-ENU.exe|updates/win2ksp4/windows2000-kb825119-x86-enu.exe
