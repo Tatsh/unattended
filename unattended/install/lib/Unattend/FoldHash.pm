@@ -8,20 +8,26 @@ use Carp;
 
 require Tie::Hash;
 
-use fields qw (hash dnames fold);
+# For some reason, "use fields" causes Perl 5.8.3 to warn about the
+# deprecated use of pseudo-hashes.  Work around this bug by using
+# constants and array accesses.
+
+use constant HASH => 0;
+use constant DNAMES => 1;
+use constant FOLD => 2;
 
 sub TIEHASH {
     my ($class, $fold) = @_;
     # Default folding scheme is to convert to lower-case
     defined $fold
         or $fold = sub { lc $_[0] };
-    my $self = fields::new ($class);
+    my $self = [ ];
     my %hash;
     tie %hash, 'Tie::StdHash';
-    $self->{hash} = tied %hash;
-    $self->{dnames} = { };
-    $self->{fold} = $fold;
-    return $self;
+    $self->[HASH] = tied %hash;
+    $self->[DNAMES] = { };
+    $self->[FOLD] = $fold;
+    return bless $self, $class;
 }
 
 # Return display name for a key.
@@ -29,47 +35,47 @@ sub _dname ($$) {
     my ($self, $canon_key) = @_;
     
     return (defined $canon_key
-            ? $self->{dnames}->{$canon_key}
+            ? $self->[DNAMES]->{$canon_key}
             : undef);
 }
 
 sub FETCH {
     my ($self, $key) = @_;
-    my $canon_key = $self->{fold} ($key);
+    my $canon_key = $self->[FOLD] ($key);
 
-    return $self->{hash}->FETCH ($canon_key);
+    return $self->[HASH]->FETCH ($canon_key);
 }
 
 sub STORE {
     my ($self, $key, $value) = @_;
-    my $canon_key = $self->{fold} ($key);
+    my $canon_key = $self->[FOLD] ($key);
 
     # Since this is a store, record the display name.
-    $self->{dnames}->{$canon_key} = $key;
-    return $self->{hash}->STORE ($canon_key, $value);
+    $self->[DNAMES]->{$canon_key} = $key;
+    return $self->[HASH]->STORE ($canon_key, $value);
 }
 
 sub DELETE {
     my ($self, $key) = @_;
-    my $canon_key = $self->{fold} ($key);
-    return $self->{hash}->DELETE ($canon_key);
+    my $canon_key = $self->[FOLD] ($key);
+    return $self->[HASH]->DELETE ($canon_key);
 }
 
 sub CLEAR {
     my ($self) = @_;
-    $self->{dnames} = { };
-    return $self->{hash}->CLEAR ();
+    $self->[DNAMES] = { };
+    return $self->[HASH]->CLEAR ();
 }
 
 sub EXISTS {
     my ($self, $key) = @_;
-    my $canon_key = $self->{fold} ($key);
-    return $self->{hash}->EXISTS ($canon_key);
+    my $canon_key = $self->[FOLD] ($key);
+    return $self->[HASH]->EXISTS ($canon_key);
 }
 
 sub FIRSTKEY {
     my ($self) = @_;
-    my $canon_key = $self->{hash}->FIRSTKEY ();
+    my $canon_key = $self->[HASH]->FIRSTKEY ();
 
     # Return the key's display name.
     return $self->_dname ($canon_key);
@@ -77,9 +83,9 @@ sub FIRSTKEY {
 
 sub NEXTKEY {
     my ($self, $lastkey) = @_;
-    my $canon_lastkey = $self->{fold} ($lastkey);
+    my $canon_lastkey = $self->[FOLD] ($lastkey);
 
-    my $canon_key = $self->{hash}->NEXTKEY ($canon_lastkey);
+    my $canon_key = $self->[HASH]->NEXTKEY ($canon_lastkey);
 
     # Return the key's display name.
     return $self->_dname ($canon_key);
