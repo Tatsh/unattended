@@ -4,8 +4,7 @@ use strict;
 use Carp;
 use File::Spec::Win32;
 use File::Basename;
-
-require 'unattend.pl';
+use Unattended::IniFile;
 
 # File::Spec is supposed to auto-detect the OS and adapt
 # appropriately, but it does not recognize a $^O value of "dos".  Work
@@ -14,6 +13,25 @@ my $file_spec = 'File::Spec::Win32';
 
 # Similarly for File::Basename.
 fileparse_set_fstype ('MSWin32');
+
+# Global variable holding unattend.txt file which we are generating.
+use vars qw ($u);
+
+# Scaffolding (FIXME)
+sub get_value ($$) {
+    my ($section, $key) = @_;
+    return $u->values ($section, $key);
+}
+
+sub set_value ($$$) {
+    my ($section, $key, $value) = @_;
+    $u->values ($section, $key) = $value;
+}
+
+sub set_comments ($$$) {
+    my ($section, $key, $comments) = @_;
+    $u->comments ($section, $key) = $comments;
+}
 
 ## Handy general-purpose subroutines for asking questions.
 
@@ -423,14 +441,14 @@ sub create_postinst_bat () {
     return $postinst;
 }
 
-set_comments ('_meta', '',
-              "; This section is for informational purposes.\n"
-              . "; Windows Setup does not use it.\n");
+$u->comments ('_meta') =
+    ['This section is for informational purposes.',
+     'Windows Setup does not use it.'];
 
-set_comments ('_meta', 'fdisk_lba',
-              "    ; Use extended INT13 BIOS calls for fdisk?\n");
+$u->comments ('_meta') =
+    ['Use extended INT13 BIOS calls for fdisk?'];
 
-set_value ('_meta', 'fdisk_lba', \&ask_fdisk_lba);
+$u->value ('_meta', 'fdisk_lba') = \&ask_fdisk_lba;
 
 set_value ('_meta', 'fdisk_cmds', \&ask_fdisk_cmds);
 
@@ -628,13 +646,16 @@ set_value ('UserData', 'ProductKey',
 
 ## Now the meat of the script.
 
+# Create a fresh IniFile object.
+$u = new Unattended::IniFile;
+
 # Read master unattend.txt.
-read_unattend_txt ('z:\\doslib\\unattend.txt');
+$u->read ('z:\\doslib\\unattend.txt');
 
 # Read site-specific unattend.txt, if it exists.
 my $site_unattend_txt = 'z:\\site\\unattend.txt';
 -e ($site_unattend_txt)
-    and read_unattend_txt ($site_unattend_txt);
+    and $u->read ($site_unattend_txt);
 
 # Read site-specific Perl configuration file.
 my $site_conf = 'z:\\site\\config.pl';
@@ -690,7 +711,7 @@ defined $format_cmd
     and system $format_cmd;
 
 # Overwrite MBR, if desired.
-get_value ('_meta', 'replace_mbr')
+$u->value ('_meta', 'replace_mbr')
     and system ('fdisk /mbr');
 
 # Create C:\netinst and subdirectories.
