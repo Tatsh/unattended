@@ -1,0 +1,17 @@
+:: Perform post-install Cygwin configuration.
+
+:: Untar our local additions to the tree
+z:\scripts\todo.pl "c:\cygwin\bin\bash.exe --login -c 'tar -C / -xvzf /cygdrive/z/packages/curlstuff.tar.gz'"
+
+:: Add curlbot entry to /etc/passwd.  The messy string comes from
+:: running "mkpasswd -d -u curlbot" under Cygwin.  Unfortunately, this
+:: must be run from a valid domain account, so we cannot do this while
+:: building the workstation.  Hm, perhaps we could do it when we start
+:: ssh...  FIXME
+z:\scripts\todo.pl "c:\cygwin\bin\bash.exe --login -c 'grep -q curlbot /etc/passwd || echo curlbot:unused_by_nt/2000/xp:11427:10513:Curl Q. Robot,U-CURL\curlbot,S-1-5-21-223763145-1258644291-1338337383-1427:/u/curlbot:/bin/bash >> /etc/passwd'
+
+:: Populate /etc/group similarly (mkgroup -d)
+z:\scripts\todo.pl "c:\cygwin\bin\bash.exe --login -c 'grep -q 10513 /etc/group|| echo Domain Users:S-1-5-21-223763145-1258644291-1338337383-513:10513: >> /etc/group"'
+
+:: Set up mounts (/projects, /releases, etc.)
+z:\scripts\todo.pl "c:\cygwin\bin\mount.exe -b -f -s P: /projects" "c:\cygwin\bin\mount.exe -b -f -s R: /releases" "c:\cygwin\bin\mount.exe -b -f -s S: /software" "c:\cygwin\bin\mount.exe -b -f -s U: /u"
