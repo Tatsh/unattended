@@ -16,6 +16,32 @@
 :: URL|RUS|http://download.microsoft.com/download/c/3/9/c399ed2c-7e22-446d-98c0-e1a1f93eeb03/IE6.0sp1-KB871260-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb871260-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB871260-x86-%WINLANG%.exe /q /r:n"
 
+:: Critical update MS04-028 (833987)
+:: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-028.mspx>
+:: URL|ARA|http://download.microsoft.com/download/3/6/9/3696bf6d-50d0-4939-8bd7-83a14429a44f/IE6.0sp1-KB833989-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/5/0/650fb3da-fc6e-46ed-86d5-097ee0801810/IE6.0sp1-KB833989-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/1/6/9/16980ea5-5817-4bb8-8f97-9be01ed3d384/IE6.0sp1-KB833989-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/1/9/d/19d4d74b-7f5b-4bda-be60-04908b03bd36/IE6.0sp1-KB833989-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/a/e/6/ae6f77c2-dc8b-42c1-86df-ed8e4c776b7c/IE6.0sp1-KB833989-x86-ELL.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/e/c/9/ec9eff7c-b230-438a-8fe8-9f0f091c7e7b/IE6.0sp1-KB833989-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/f/2/2f23a53e-2ae6-4fd4-872e-4063c20ebfea/IE6.0sp1-KB833989-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/8/4/e/84e5d060-e32d-4958-9b6d-3d331457496f/IE6.0sp1-KB833989-x86-FIN.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/f/3/c/f3cae457-d015-4f84-91c1-af0d33e309d4/IE6.0sp1-KB833989-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/9/6/f/96f4f152-d4a0-43ab-b9e2-54dc3f3f514e/IE6.0sp1-KB833989-x86-HEB.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/0/2/d/02dd0c0e-3bbd-4b73-97cd-3290f78c33cf/IE6.0sp1-KB833989-x86-HUN.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/6/7/6/676348bc-8e17-4cd2-9ca0-784664e805f9/IE6.0sp1-KB833989-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/3/5/0352cfba-44a8-49b0-8d0b-70fb3ecd0233/IE6.0sp1-KB833989-x86-JPN.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/1/a/e/1aec0482-c026-4166-9605-bfbd60a1a43a/IE6.0sp1-KB833989-x86-KOR.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/b/e/3/be3eb09a-341f-41ec-aa73-59cc380295e9/IE6.0sp1-KB833989-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/6/1/5/6159a4e4-536a-456b-83ab-80d74abfb63b/IE6.0sp1-KB833989-x86-PLK.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/0/3/7/0370ef29-87ec-4393-95df-d3c1993a0810/IE6.0sp1-KB833989-x86-PTG.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/c/a/f/caf0655d-12a4-4ac9-8009-c042b417909a/IE6.0sp1-KB833989-x86-PTB.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/a/5/0/a509b099-c436-429d-b485-8a737047745f/IE6.0sp1-KB833989-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/9/4/9/949a1dae-e689-4eb9-bc7c-1b0b3a38501f/IE6.0sp1-KB833989-x86-SVE.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/1/b/31ba0179-f926-4695-b872-0951d16f037f/IE6.0sp1-KB833989-x86-TRK.exe|updates/ie6sp1/ie6.0sp1-kb833989-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb833989-x86-%WINLANG%.exe /q /r:n"
+
 :: Critical update MS04-025 (867801)
 :: "Cumulative Security Update for Internet Explorer"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-025.mspx>
