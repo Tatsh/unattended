@@ -259,8 +259,11 @@ sub _find_oem_pnp_dirs ($) {
     my %dirs;
 
     foreach my $file (@files) {
-        my (undef, $dir) = $file_spec->splitpath ($file);
-        $dirs{$file_spec->abs2rel ($dir, $base)} = undef;
+        my $rel_path = $file_spec->abs2rel ($file, $base);
+        my (undef, $rel_dir) = $file_spec->splitpath ($rel_path);
+        # Remove trailing slash
+        $rel_dir = $file_spec->catdir ($rel_dir);
+        $dirs{$rel_dir} = undef;
     }
 
     return keys %dirs;
