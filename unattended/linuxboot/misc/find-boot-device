@@ -80,7 +80,7 @@ sub get_bios_dev_info ($) {
 # /sys/block.
 sub get_linux_dev_info ($) {
     my ($dir) = @_;
-    my %ret;
+    my %ret = ();
 
     my $size = read_line (File::Spec->catfile ($dir, 'size'));
     defined $size
@@ -130,7 +130,7 @@ sub check ($$$$) {
 # and Linux device.
 sub compute_similarity ($$) {
     my ($bios_dev, $linux_dev) = @_;
-    my $ret;
+    my $ret = 0;
 
     # Having the size match is very, very important.
     #$ret += check ($bios_dev, $linux_dev, 'size', 1024);
@@ -205,7 +205,7 @@ my @devices = sort compare (keys %linux_devices);
 my $device = $devices[0];
 
 defined $device
-    or die "Unable to determine boot device";
+    or die 'Unable to determine boot device';
 
 $device =~ s/!/\//g;
 
