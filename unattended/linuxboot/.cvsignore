@@ -22,6 +22,11 @@ tftpboot
 stage*
 dosboot
 fake*
+DBD*
+DBI*
+pmtools*
+wireless_tools*
+mysql*
 initrd
 linuxboot.iso
 pci.ids*
