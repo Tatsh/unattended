@@ -707,6 +707,8 @@ $(call copy_file,misc/udhcpc-script,stage1/etc/udhcpc-script)
 
 $(call copy_file,misc/nsswitch.conf,stage1/etc/nsswitch.conf)
 
+$(call copy_file,misc/protocols,stage1/etc/protocols)
+
 $(call copy_file,misc/freedos-mbr.bin,stage1/usr/lib/freedos-mbr.bin)
 
 # Some apps (namely dosemu) need getpwnam() etc. to work
