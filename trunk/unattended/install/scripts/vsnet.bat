@@ -5,11 +5,13 @@ set VSNETDIR=%Z_PATH%\packages\VSNET
 :: Lots of prereqs here.  Remember that these are actually executed in
 :: reverse order.
 
-:: Security update MS04-017
-:: "Visual Studio .NET 2003 Crystal Reports Security Update"
+:: Visual Studio .NET 2003 Crystal Reports Security Update
+:: Microsoft Security Bulletin MS04-017
+:: "Vulnerability in Crystal Reports Web Viewer Could Allow Information Disclosure and Denial of Service (842689)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-017.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=659CA40E-808D-431D-A7D3-33BC3ACE922D&displaylang=en>
 :: URL|ALL|http://download.microsoft.com/download/0/5/d/05d3fd51-4b60-49e1-a762-afa47ac5ec6b/VS7.1-KB841870-X86.exe|updates/common/vs7.1-kb841870-x86.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\vs7.1-kb841870-x86.exe /q"
+todo.pl ".reboot-on 194 %Z%\updates\common\VS7.1-KB841870-X86.exe /q"
 
 :: Install Visual Studio proper.
 todo.pl "AutoIt %Z%\scripts\vsnet.aut"
