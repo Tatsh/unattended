@@ -24,7 +24,7 @@ package CSV;
 use Carp;
 
 # Parse a single line from a CSV file and return an array of its
-# fields.  Unlikely to be called  externally.
+# items.  Unlikely to be called externally.
 sub parse_line ($) {
     my ($line) = @_;
 
@@ -72,14 +72,20 @@ sub read_file ($$) {
     # Read first line to get field names.
     my $first_line = <CSV_FILE>;
     my @field_names = parse_line ($first_line);
+
+    # Check for duplicate field names.
+    my %names;
+    foreach my $name (@field_names) {
+        (exists $names{$name})
+            and die "Duplicate field name \"$name\" in $filename";
+        $names{$name} = undef;
+    }
+
     my $num_fields = scalar @field_names;
-
-    # FIXME: Should check for duplicate field names.
-
     while (my $line = <CSV_FILE>) {
         my @fields = parse_line ($line);
         $num_fields == scalar @fields
-            or die "Wrong number of fields (expected $num_fields):\n$line\n ";
+            or die "Wrong number of items (expected $num_fields):\n$line\n ";
         my $record = { };
         foreach my $i (0 .. $num_fields - 1) {
             my $field_name = $field_names[$i];
