@@ -1,4 +1,8 @@
-This directory holds patches (mostly hotfixes and other updates)
-specific to Internet Explorer v6 Service Pack 1.  You need to 
-download them from Microsoft, and possibly modify the scripts 
-in install/scripts/ to invoke them.
+This directory holds the install files for Internet Explorer
+v6 Service Pack 1.  You need to download it from Microsoft
+and then run:
+
+ie6setup.exe /c:"ie6wzd.exe /d /s:""#E"
+
+You might also need to modify the script in install/scripts/
+to install it.
