@@ -2,9 +2,8 @@
 
 Major changes to the boot disk in this release.  You will need to
 refresh pretty much everything.  On the DOS side, we have switched to
-using FreeDOS for the boot disk.  We also have a new experimental
-Linux boot disk based on Linux.  We expect to support both
-indefinitely.
+using FreeDOS for the boot disk.  We also have a new experimental boot
+disk based on Linux.  We expect to support both indefinitely.
 
 Many changes to install.pl to support running under Linux.
 
