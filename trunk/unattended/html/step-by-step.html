@@ -4,6 +4,7 @@
 <head>
 <title>Step-By-Step Unattended Preperation Guide</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="Unattended.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -53,11 +54,11 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
  <table width="522" border="0">
    <tr>
      <td width="78">&nbsp;</td>
-     <td width="428"> $ is a command typed into the cygwin bash prompt</td>
+     <td width="428" class="CygwinCommands"> $ is a command typed into the cygwin bash prompt</td>
    </tr>
    <tr>
      <td>&nbsp;</td>
-     <td> c:\&gt; is a command typed into the CMD prompt</td>
+     <td class="Win32Commands"> c:\&gt; is a command typed into the CMD prompt</td>
    </tr>
  </table>
  <h2> Overview - What can unattended do after it is setup?</h2>
@@ -80,7 +81,7 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
    </tr>
    <tr>
      <td>&nbsp;</td>
-     <td>b. Load a network card driver<</td>
+     <td>b. Load a network card driver</td>
    </tr>
    <tr>
      <td>&nbsp;</td>
@@ -135,7 +136,7 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
  <table width="673" border="0">
     <tr>
       <td width="260">&nbsp;</td>
-      <td width="403">a. authenticate using information written by the OS Setup portion></td>
+      <td width="403">a. authenticate using information written by the OS Setup portion</td>
     </tr>
 </table>
   <table width="673" border="0">
@@ -168,7 +169,7 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       <td width="351">z:\bin\todo.pl --go</td>
     </tr>
   </table>
-  <p>
+ 
   <h2>1. Prepare the Unattended Server</h2>
  <table width="522" border="0">
    <tr>
@@ -191,13 +192,13 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
    </tr>
    <tr>
      <td>&nbsp;</td>
-     <td>unattended-x.xx.tar.gz</td>
+     <td>unattended-x.xx.zip</td>
    </tr>
  </table>
  <table width="613" border="0">
    <tr>
      <td width="100" height="25">&nbsp;</td>
-     <td width="503"><h3>b. Unzip the Unattended-x.xx.tar.gz file to c:\unattended </h3></td>
+     <td width="503"><h3>b. Unzip the Unattended-x.xx.zip file to c:\unattended </h3></td>
    </tr>
  </table>
  <table width="833" border="0">
@@ -210,7 +211,7 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
  <table width="673" border="0">
     <tr>
       <td width="172">&nbsp;</td>
-      <td width="491">$ tar -xfz unattended-x.xx.tar.gz /cygdrive/c/unattended/</td>
+      <td width="491" class="CygwinCommands">$ unzip unattended-x.xx.zip /cygdrive/c/unattended/</td>
     </tr>
 </table>
   <table width="613" border="0">
@@ -225,10 +226,10 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       <td width="493"><h4>I. Create the SMB file share for unattended</h4></td>
     </tr>
   </table>
-  <table width="673" border="0">
+  <table width="816" border="0">
     <tr>
       <td width="231">&nbsp;</td>
-      <td width="432">c:\&gt; net share install=c:\unattended\unattended-x.xx\install</td>
+      <td width="575" class="Win32Commands">c:\&gt; net share install=c:\unattended\unattended-x.xx\install</td>
     </tr>
   </table>
   <table width="816" border="0">
@@ -249,14 +250,14 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       <td width="489">a. Change the permissions on the files to allow the appropriate user to access it.</td>
     </tr>
   </table>
-  <table width="750" border="0">
+  <table width="868" border="0">
     <tr>
       <td width="312">&nbsp;</td>
-      <td width="428">c:\&gt; set unattendeduser=guest</td>
+      <td width="546" class="Win32Commands">c:\&gt; set unattendeduser=guest</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td>c:\&gt; cacls c:\unattended\unattended-x.xx /T /E /G:%unattendeduser%</td>
+      <td class="Win32Commands">c:\&gt; cacls c:\unattended\unattended-x.xx /T /E /G:%unattendeduser%</td>
     </tr>
   </table>
   <table width="759" border="0">
@@ -265,14 +266,14 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       <td width="489">b. (optional) If you will be using the guest account then make sure it is enabled</td>
     </tr>
   </table>
-  <table width="750" border="0">
+  <table width="868" border="0">
     <tr>
       <td width="312">&nbsp;</td>
-      <td width="428">c:\&gt; net user guest /ACTIVE:YES /DOMAIN</td>
+      <td width="546" class="Win32Commands">c:\&gt; net user guest /ACTIVE:YES /DOMAIN</td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td>c:\&gt; cacls c:\unattended\unattended-x.xx /T /E /G:%unattendeduser%</td>
+      <td class="Win32Commands">c:\&gt; cacls c:\unattended\unattended-x.xx /T /E /G:%unattendeduser%</td>
     </tr>
   </table>
   <p>&nbsp;</p>
@@ -296,13 +297,13 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td>unattended-x.xx-dosboot.tar.gz </td>
+      <td>unattended-x.xx-dosboot.zip</td>
     </tr>
   </table>
   <table width="673" border="0">
     <tr>
       <td width="162">&nbsp;</td>
-      <td width="501"> <h4>II. Unzip unattended-x.xx-dosboot.tar.gz to c:\unattended\ </h4></td>
+      <td width="501"> <h4>II. Unzip unattended-x.xx-dosboot.zip to c:\unattended\ </h4></td>
     </tr>
   </table>
   <table width="875" border="0">
@@ -311,10 +312,10 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       <td width="653">*** WARNING - If you dont yet have cygwin installed you cannot use cygwin to extract the archive ***</td>
     </tr>
   </table>
-  <table width="673" border="0">
+  <table width="875" border="0">
     <tr>
       <td width="231">&nbsp;</td>
-      <td width="432">$ tar -xfz unattended-x.xx-dosboot.tar.gz /cygdrive/c/unattended/</td>
+      <td width="634" class="CygwinCommands">$ unzip unattended-x.xx-dosboot.zip /cygdrive/c/unattended/</td>
     </tr>
   </table>
   <table width="873" border="0">
@@ -409,13 +410,13 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td>unattended-x.xx-linuxboot.tar.gz</td>
+      <td>unattended-x.xx-linuxboot.zip</td>
     </tr>
   </table>
   <table width="673" border="0">
     <tr>
       <td width="162">&nbsp;</td>
-      <td width="501"><h4> II. Unzip unattended-x.xx-linuxboot.tar.gz to c:\unattended\</h4></td>
+      <td width="501"><h4> II. Unzip unattended-x.xx-linuxboot.zip to c:\unattended\</h4></td>
     </tr>
   </table>
   <table width="875" border="0">
@@ -424,10 +425,14 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       <td width="653">*** WARNING - If you dont yet have cygwin installed you cannot use cygwin to extract the archive ***</td>
     </tr>
   </table>
-  <table width="673" border="0">
+  <table width="821" border="0">
     <tr>
       <td width="231">&nbsp;</td>
-      <td width="432">$ tar -xfz unattended-x.xx-linuxboot.tar.gz /cygdrive/c/unattended/</td>
+      <td width="580" class="CygwinCommands">$ cd /cygdrive/c/unattended/ </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td class="CygwinCommands">$ unzip unattended-x.xx-linuxboot.zip</td>
     </tr>
   </table>
   <table width="821" border="0">
@@ -469,8 +474,10 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
   	
 
  
-    <p>&nbsp;</p>
-    <h2>3. Prepare the Unattended OS Distribution Point</h2>
+    <blockquote>
+        <p>&nbsp;</p>
+        <h2>3. Prepare the Unattended OS Distribution Point</h2>
+    </blockquote>
     <table width="673" border="0">
       <tr>
         <td width="100">&nbsp;</td>
@@ -503,10 +510,12 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
         <td width="566">note: install.pl knows what os is in the folder based on folder content not on the folder name</td>
       </tr>
     </table>
-    <br>
-    <br>
-    <h2>4. Unattended Updates and application dependencies</h2>
-
+    <blockquote>
+      <p><br>
+          <br>
+      </p>
+      <h2>4. Unattended Updates and application dependencies</h2>
+    </blockquote>
     <table width="884" border="0">
       <tr>
         <td width="93">&nbsp;</td>
@@ -534,11 +543,11 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>$ cd /cygdrive/c/unattended/unattended-x.xx/install</td>
+        <td class="CygwinCommands">$ cd /cygdrive/c/unattended/unattended-x.xx/install</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>$ ./prepare        </td>
+        <td class="CygwinCommands">$ ./prepare        </td>
       </tr>
     </table>
     <table width="886" border="0">
@@ -556,11 +565,11 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
     <table width="886" border="0">
       <tr>
         <td width="231">&nbsp;</td>
-        <td width="645">$ cd /cygdrive/c/unattended/unattended-x.xx/install</td>
+        <td width="645" class="CygwinCommands">$ cd /cygdrive/c/unattended/unattended-x.xx/install</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>$ ./check</td>
+        <td class="CygwinCommands">$ ./check</td>
       </tr>
     </table>
     <table width="722" border="0">
@@ -575,7 +584,9 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
         <td width="550"><h4> II. Repeat step 5b until all Updates / Applications you need have no missing files</h4></td>
       </tr>
     </table>
-    <h2>5. Test Unattended</h2>
+    <blockquote>
+      <h2>5. Test Unattended</h2>
+    </blockquote>
     <table width="673" border="0">
       <tr>
         <td width="100">&nbsp;</td>
@@ -626,7 +637,9 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
         <td width="563"><h3>b. more documentation goes here </h3> </td>
       </tr>
     </table>
-    <h2>6. Customize Unattended (needs more information, incomplete)</h2>
+    <blockquote>
+      <h2>6. Customize Unattended (needs more information, incomplete)</h2>
+    </blockquote>
     <table width="879" border="0">
       <tr>
         <td width="100">&nbsp;</td>
@@ -655,16 +668,16 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
         <td width="428">I. change the default UNC to \\yourservername\yoursharename</td>
       </tr>
     </table>
-    <table width="891" border="0">
+    <table width="1066" border="0">
       <tr>
-        <td width="394">&nbsp;</td>
-        <td width="487">c:\&gt; notepad c:\unattended\unattended-x.xx\bootdisk\template\autoexec.bat</td>
+        <td width="393">&nbsp;</td>
+        <td width="663" class="Win32Commands">c:\&gt; notepad c:\unattended\unattended-x.xx\bootdisk\template\autoexec.bat</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
         <td>SET Z_PATH=\\[YourServerName]\install</td>
       </tr>
-    </table>
+</table>
     <table width="750" border="0">
       <tr>
         <td width="312">&nbsp;</td>
@@ -721,32 +734,32 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
         <td width="487">a. Rebuild the floppy images</td>
       </tr>
     </table>
-    <table width="889" border="0">
+    <table width="941" border="0">
       <tr>
         <td width="467">&nbsp;</td>
-        <td width="412">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk</td>
+        <td width="464" class="CygwinCommands">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>$ make images</td>
+        <td class="CygwinCommands">$ make images</td>
       </tr>
     </table>
-    <table width="891" border="0">
+    <table width="941" border="0">
       <tr>
         <td width="394">&nbsp;</td>
-        <td width="487">b. Find the new floppy images</td>
+        <td width="537">b. Find the new floppy images</td>
       </tr>
     </table>
-    <table width="889" border="0">
+    <table width="991" border="0">
       <tr>
-        <td width="467">&nbsp;</td>
-        <td width="412">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk/images</td>
+        <td width="494">&nbsp;</td>
+        <td width="487" class="CygwinCommands">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk/images</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>$ ls</td>
+        <td class="CygwinCommands">$ ls</td>
       </tr>
-    </table>
+</table>
     <table width="891" border="0">
       <tr>
         <td width="394">&nbsp;</td>
@@ -775,30 +788,30 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
         <td width="487">a. Rebuild the cdrom iso image </td>
       </tr>
     </table>
-    <table width="889" border="0">
+    <table width="927" border="0">
       <tr>
         <td width="467">&nbsp;</td>
-        <td width="412">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk</td>
+        <td width="450" class="CygwinCommands">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>$ make iso </td>
+        <td class="CygwinCommands">$ make iso </td>
       </tr>
     </table>
-    <table width="891" border="0">
+    <table width="926" border="0">
       <tr>
         <td width="394">&nbsp;</td>
-        <td width="487">b. Find the new cdrom iso image</td>
+        <td width="522">b. Find the new cdrom iso image</td>
       </tr>
     </table>
-    <table width="889" border="0">
+    <table width="926" border="0">
       <tr>
         <td width="467">&nbsp;</td>
-        <td width="412">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk/</td>
+        <td width="449" class="CygwinCommands">$ cd /cygdrive/c/unattended/unattended-x.xx/bootdisk/</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>$ ls bootdisk.iso </td>
+        <td class="CygwinCommands">$ ls bootdisk.iso </td>
       </tr>
     </table>
     <table width="891" border="0">
@@ -829,35 +842,39 @@ href="http://unattended.sourceforge.net/" >Unattended, a Windows deployment syst
         <td width="501"><h4>III. Create a site specific unattended.txt in z:\site\</h4></td>
       </tr>
     </table>
-    <p>If you have any questions about Unattended or this document feel free to ask questions by joining the <a href="https://lists.sourceforge.net/lists/listinfo/unattended-info/">mailing list</a>.</p>
-    <p>--------------------------------------------------------<br>
-    Changelog <br>
-    --------------------------------------------------------</p>
-    <strong>3/19/2004 Rev 0.06</strong><br>
-Converted to HTML<br>
-Fix Typos<br>
-	<p><strong>3/19/2004 Rev 0.05</strong><br>
-      Added ./check to section 5. Unattended Updates and application dependencies<br>
-      Renamed most sections to be more clear<br>
-      clarified slightly what was server side and what was workstation side<br>
-      starting to flesh out section 7. Customize Unattended<br>
-      Cleanup and restructure section 1. Overview - What can unattended do after it is setup?\<br>
-      Added http://unattended.sourceforge.net/installers.html to the documentation section </p>
-	<p><strong>3/18/2004 Rev 0.04</strong><br>
-    After receiving comments from Sylvain<br>
-    added section about ./prepare<br>
-    added note to boot disk sections about making floppies/cdrom<br>
-    added note about PXE booting<br>
-    re-organize 2. Unattended Setup, made it more clear that guest was not a requirement<br>
-    add cygwin as a requirement for installation, it makes life so much easier, and allows the ./prepare script to run<br>
-    fix the unzip steps to use cygwin tar</p>
-    <p><strong>3/17/2004 Rev 0.02</strong><br>
-    General Cleanup<br>
-    Document restructured</p>
-    <p><strong>3/13/2004 rev 0.01</strong><br>
-    Rough Draft - 1st revision<br>
-    dos djgpp perl installation is still a work in progress</p>
-    <p>&nbsp; </p>
-</blockquote>
+    <blockquote>
+      <p>If you have any questions about Unattended or this document feel free to ask questions by joining the <a href="https://lists.sourceforge.net/lists/listinfo/unattended-info/">mailing list</a>.</p>
+      <p>--------------------------------------------------------<br>
+      Changelog <br>
+      --------------------------------------------------------</p>
+      <p><strong>3/20/2004 Rev 0.07</strong><br>
+      Updated the download and extraction steps for all achives. Version 4.0b is now distributed as .zip files </p>
+      <p><strong>3/19/2004 Rev 0.06</strong><br>
+    Converted to HTML<br>
+    Fix Typos<br>
+      </p>
+      <p><strong>3/19/2004 Rev 0.05</strong><br>
+        Added ./check to section 5. Unattended Updates and application dependencies<br>
+        Renamed most sections to be more clear<br>
+        clarified slightly what was server side and what was workstation side<br>
+        starting to flesh out section 7. Customize Unattended<br>
+        Cleanup and restructure section 1. Overview - What can unattended do after it is setup?\<br>
+        Added http://unattended.sourceforge.net/installers.html to the documentation section </p>
+      <p><strong>3/18/2004 Rev 0.04</strong><br>
+      After receiving comments from Sylvain<br>
+      added section about ./prepare<br>
+      added note to boot disk sections about making floppies/cdrom<br>
+      added note about PXE booting<br>
+      re-organize 2. Unattended Setup, made it more clear that guest was not a requirement<br>
+      add cygwin as a requirement for installation, it makes life so much easier, and allows the ./prepare script to run<br>
+      fix the unzip steps to use cygwin tar</p>
+      <p><strong>3/17/2004 Rev 0.02</strong><br>
+      General Cleanup<br>
+      Document restructured</p>
+      <p><strong>3/13/2004 rev 0.01</strong><br>
+      Rough Draft - 1st revision<br>
+      dos djgpp perl installation is still a work in progress</p>
+      <p>&nbsp; </p>
+    </blockquote>
 </body>
 </html>
