@@ -158,7 +158,7 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 >unattend.txt</a> file.
 
 <dt><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/site/"
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/site/"
 >site</a>
 
 <dd>Directory containing your site-specific customizations.  If you
@@ -168,31 +168,12 @@ the <a href="advanced.html">advanced configuration</a> document for
 details.
 
 <dt><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/win2k/"
->win2k</a>
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/os/"
+>os</a>
 
-<dd>Directory holding a copy of the <code>i386</code> folder from a
-Windows 2000 CD-ROM.  You will need to populate this if you want to
-install Win2k (as <a href="#cd-rom">described below</a>).
-
-<dt><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/win2ksp3/"
->win2ksp3</a>
-
-<dd>Just like <code>win2k</code>, but with Service Pack 3 already
-integrated (also <a href="#service-pack">described below</a>).
-
-<dt><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/winxp/"
->winxp</a>
-
-<dd>Similarly, but for Windows XP.
-
-<dt><a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/winxpsp1/"
->winxpsp1</a>
-
-<dd>Similarly, but for Windows XP with integrated Service Pack 1.
+<dd>Directory containing Windows installation media (i.e., copies of
+the CD-ROMs).  You need to populate this with one or more copies of
+Windows; <a href="#cd-rom">see below</a>.
 
 </dl>
 
@@ -232,10 +213,20 @@ to worry about this, because Windows (like DOS) is not case-sensitive.
 
 
 <h2 id="cd-rom">Copy the Windows CD-ROM to the share</h2>
-<p>Copy the <code>i386</code> folder from your Windows CD-ROM to the
-appropriate subdirectory of the <code>Z:</code> drive.  For example,
-for Windows XP, copy the <code>i386</code> folder to
-<code>Z:\winxp</code> (thus creating <code>Z:\winxp\i386</code>).
+
+<p>Create a subdirectory under <code>Z:\os</code> to hold a copy of
+your Windows CD.  You should probably give the directory a meaningful
+name, like <code>winxp</code> or <code>win2ksp4</code>, but it does
+not matter much because the <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>install.pl</a> script will figure out what it is no matter how you
+name it.
+
+<p>Next, copy the <code>i386</code> folder from your Windows CD-ROM to
+the new directory.  (You can copy the whole CD-ROM, but only the
+<code>i386</code> directory matters.)  For example, for Windows XP,
+you would copy the <code>i386</code> folder to
+<code>Z:\os\winxp</code>, thus creating <code>Z:\os\winxp\i386</code>.
 
 <h3 id="service-pack">Integrate the service pack (optional)</h3>
 
@@ -243,22 +234,15 @@ for Windows XP, copy the <code>i386</code> folder to
 apply any other hotfix later.  But combining the service pack into the
 distribution point now will make installation faster.
 
-<p>NOTE: You <b>cannot</b> do this with an OEM version of Windows XP
-(I am unsure about Windows 2000).  The slipstreaming process will
-appear to work, but after the first reboot during installation the
-installer will abort saying, "The file vga.sys is corrupted".  For an
-OEM installation of XP, your only option is to apply the service pack
-after installing the OS; see the <a
+<p>NOTE: You <b>cannot</b> do this with certain OEM versions of
+Windows XP (I am unsure about Windows 2000).  The slipstreaming
+process will appear to work, but after the first reboot during
+installation the installer will abort saying, "The file vga.sys is
+corrupted".  For an OEM installation of XP, your only option is to
+apply the service pack after installing the OS; see the <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/winxp-updates.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >winxp-updates.bat</a> script and the <a href="apps.html">application
 installation document</a> for details.
-
-<p>Because of this limitation, you may want to name the installation
-point <code>winxpoem</code> instead of <code>winxp</code> to
-distinguish between them.  The <a
-href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/install.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
->install.pl</a> script will recognize this name so that it can display
-it to you properly.
 
 <p>If you are using a retail or volume-licensed OS, read on.
 
@@ -275,8 +259,9 @@ XP Service Pack 1 as an example:
 
 <ol>
 
-<li>Copy or rename <code>Z:\winxp</code> to <code>Z:\winxpsp1</code>.
-This name is not accurate yet, but it will be in a few minutes.
+<li>Copy or rename <code>Z:\os\winxp</code> to
+<code>Z:\os\winxpsp1</code>.  This name is not accurate yet, but it
+will be in a few minutes.
 
 <li>Download <a
 href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/network.asp"
@@ -293,7 +278,7 @@ be a package file, say <code>xpsp1_en_x86.exe</code>.
 
 <li>Run
 <pre>
-    c:\xpsp1\i386\update\update.exe /s:Z:\winxpsp1
+    c:\xpsp1\i386\update\update.exe /s:Z:\os\winxpsp1
 </pre>
 
 <p>This applies the service pack to the distribution point
@@ -629,10 +614,9 @@ drive.  Answer "yes".
 <h2>Choosing the operating system</h2>
 
 <p>The installation script will ask you which operating system you
-want to install.  It derives the list of choices from the directories
-in <code>Z:</code> with names like <code>win2k</code>,
-<code>win2ksp3</code>, or <code>winxpsp1</code>.  So to add a new
-operating system to the list, just create the appropriate <a
+want to install.  It derives the list of choices from scanning the
+directories under <code>Z:\os</code> looking for Windows media.  So to
+add a new operating system to the list, just create a new <a
 href="#install-share">distribution point</a>.
 
 <h2>Product key</h2>
