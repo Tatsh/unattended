@@ -8,6 +8,12 @@
 
 :: Extra Updates
 
+:: "Update for BITS 2.0 and WinHTTP 5.1"
+:: URL|ENU|http://download.microsoft.com/download/6/5/5/655b51dd-d03e-45fc-ab79-1e7889456874/WindowsXP-KB842773-x86-enu.exe|updates/winxpsp1/windowsxp-kb842773-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/8/b/f/8bfeb653-420a-43f3-bb55-75a4d43b76db/WindowsXP-KB842773-x86-nld.exe|updates/winxpsp1/windowsxp-kb842773-x86-nld.exe
+:: <http://support.microsoft.com/?id=842773>
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb842773-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: "Update for Windows Media Player 9 Series"
 :: URL|DAN|http://download.microsoft.com/download/3/8/b/38b5dccd-b255-4dd1-98e3-7944a5a0430a/WindowsMedia9-KB837272-DAN.exe|updates/mediaplayer9/windowsmedia9-kb837272-dan.exe
 :: URL|ENU|http://download.microsoft.com/download/7/0/D/70D0BAC6-A68B-4CB6-94AB-E0DF8C0EFCAF/WindowsMedia9-KB837272-ENU.exe|updates/mediaplayer9/windowsmedia9-kb837272-enu.exe
@@ -162,8 +168,9 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended update MS04-024 (839645)
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
-:: URL|ENU|http://download.microsoft.com/download/d/0/3/d03971cd-ae3d-49ab-bec2-44ce3911fa76/WindowsXP-KB839645-x86-enu.exe|updates/winspxp1/windowsxp-kb839645-x86-enu.exe
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
+:: URL|ENU|http://download.microsoft.com/download/d/0/3/d03971cd-ae3d-49ab-bec2-44ce3911fa76/WindowsXP-KB839645-x86-enu.exe|updates/winxpxp1/windowsxp-kb839645-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/3/5/c/35ca1eb2-44fa-4151-8317-f0d63d4e4cf8/windowsxp-kb839645-X86-NLD.exe|updates/winspxp1/windowsxp-kb839645-x86-nld.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB839645-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Recommended Update MS04-014 (837001)
@@ -296,6 +303,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 :: "Cumulative Security Update for Outlook Express"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-018.mspx>
 :: URL|ENU|http://download.microsoft.com/download/1/1/d/11db0514-83d8-46a8-9d71-b01a86c20711/IE6.0sp1-KB823353-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/1/2/6/126e9e94-7cc3-4e49-bf08-21bc84e6b756/IE6.0sp1-KB823353-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-nld.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /q /r:n"
 
 :: Critical update 831167
@@ -330,12 +338,14 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 :: "Vulnerability in Task Scheduler Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-022.mspx>
 :: URL|ENU|http://download.microsoft.com/download/6/f/5/6f5e3bdb-69b6-43e7-9d27-9ce2e4687fef/WindowsXP-KB841873-x86-enu.exe|updates/winxpsp1/windowsxp-kb841873-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/6/8/1/68101755-1ad4-4b74-89d5-90e61cce6578/WindowsXP-KB841873-x86-nld.exe|updates/winxpsp1/windowsxp-kb841873-x86-nld.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB841873-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-023 (840315)
 :: "Vulnerability in HTML Help Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-023.mspx>
 :: URL|ENU|http://download.microsoft.com/download/6/9/f/69f464c5-3341-4249-8697-456a88456b37/WindowsXP-KB840315-x86-enu.exe|updates/winxpsp1/windowsxp-kb840315-x86-enu.exe
+:: URL|NLD|http://download.microsoft.com/download/b/f/9/bf90bb40-5ecc-4f3a-b6cc-44d8597552ac/WindowsXP-KB840315-x86-nld.exe|updates/winxpsp1/windowsxp-kb840315-x86-nld.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB840315-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 870669
