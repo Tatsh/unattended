@@ -159,7 +159,7 @@ toplev="$netinst\\toplev.bat"
 echo -n "Creating default $toplev file..."
 echo "set top=$top" >> $toplev
 echo >> $toplev
-echo "net use z: \\\\ntinstall\\install /persistent:yes" >> $toplev
+echo "net use z: $INSTALL /persistent:yes" >> $toplev
 echo "call z:\\scripts\\perl.bat" >> $toplev
 echo "z:\\bin\\todo.pl %top%.bat \"autolog.pl --disable\" .reboot" >> $toplev
 for user in $admin_users ; do
