@@ -64,19 +64,18 @@ unattended installation process is:
 <li>Generate <code>unattend.txt</code>
 
 <li>Run <em>Windows&nbsp;Setup</em> with appropriate switches to make
-it get answers from <code>unattend.txt</code> instead of from dialog
-boxes
+it get answers from <code>unattend.txt</code> instead of dialog boxes
 
 </ol>
 
 <p>These are the steps which Unattended performs for you.  It uses DOS
-to provide access to the OS installation media and hard drive, it uses
-a Perl script to create the <code>unattend.txt</code> file, and it
+to provide access to the OS installation media and hard drive; it uses
+a Perl script to create the <code>unattend.txt</code> file; and it
 knows how to invoke <em>Windows&nbsp;Setup</em> appropriately.
 
 <p>You do not need to understand the contents of
 <code>unattend.txt</code> to use Unattended, but you should learn
-about it eventually.  See the <a href="advanced.html">advanced
+about it eventually anyway.  See the <a href="advanced.html">advanced
 configuration</a> document for information and references.
 
 
@@ -97,6 +96,9 @@ to.)
 as it already provides the necessary information to the machine you
 are installing.
 
+<p>You will need a Windows file server (or a Unix box running <a
+href="http://www.samba.org/">Samba</a>).
+
 <p>Initiating an installation by booting directly from the network
 (optional) requires some more infrastructure; namely, a TFTP server
 and the ability to configure the DHCP server itself.  <a
@@ -111,13 +113,12 @@ local disk directory, but we are going to use a network share.
 
 <h2>Create the install share (Z: drive)</h2>
 <p>Copy the <code>install</code> directory tree from this distribution
-to a Windows file server (or a Unix box running <a
-href="http://www.samba.org/">Samba</a>), and export it read-only with
-guest access permitted.  When you later boot from the boot disk, it
-will ask you for the full Windows name of this share; the default it
-assumes is <code>\\ntinstall\install</code>.  The boot disk maps this
-share as the <code>Z:</code> drive, and that is how we will refer to
-it from now on.
+to the file server, and export it read-only with guest access
+permitted.  When you later boot from the boot disk, it will ask you
+for the full Windows UNC name of this share; the default it assumes is
+<code>\\ntinstall\install</code>.  The boot disk maps this share as
+the <code>Z:</code> drive, and that is how we will refer to it from
+now on.
 
 <p>This procedure relies on the following files and directories from
 the <code>Z:</code> drive:
@@ -220,8 +221,8 @@ href="ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu/perl561b.zip"
 
 <h2 id="cd-rom">Copy the Windows CD-ROM to the share</h2>
 <p>Copy the <code>i386</code> folder from your Windows CD-ROM to the
-appropriate subdirectory of the <code>install</code> share.  For
-example, for Windows XP, copy the <code>i386</code> folder to
+appropriate subdirectory of the <code>Z:</code> drive.  For example,
+for Windows XP, copy the <code>i386</code> folder to
 <code>Z:\winxp</code> (thus creating <code>Z:\winxp\i386</code>).
 
 <h3 id="service-pack">Integrate the service pack (optional)</h3>
@@ -277,11 +278,11 @@ installer.
 
 <p>This step may be optional, depending on your hardware and which
 version of Windows you are trying to install.  Each release of Windows
-generally ships with a fairly large collection of drivers, supporting
-most of the hardware which was current at the time.  However, if you
-are installing and older OS on a recent system, especially a laptop,
-you may find that the OS lacks built-in support for some or all of
-your hardware.
+ships with a fairly large collection of drivers, supporting most of
+the hardware which was current at the time.  However, if you are
+installing an older OS on a recent system, especially a laptop, you
+may find that the OS lacks built-in support for some or all of your
+hardware.
 
 <p>You can add device drivers after the OS is installed, of course.
 But if you want to automate both OS and application installation, and
@@ -313,8 +314,9 @@ href="#answer-file"><code>unattend.txt</code></a> file.
 holds the Intel&nbsp;Pro/100 network family drivers, and we have a
 folder named <code>Z:\win2ksp3\i386\$oem$\$1\drivers\video\T22</code>
 which holds the video drivers for the IBM ThinkPad T22 laptop.  Both
-of these paths, starting with <code>drivers/</code> level, appear in
-<code>OemPnPDriversPath</code> in our <code>unattend.txt</code> file.
+of these paths, starting from the <code>drivers\</code> level, appear
+in <code>OemPnPDriversPath</code> in our <code>unattend.txt</code>
+file.
 
 <h1 id="bootdisk">Create the bootdisk</h1>
 
@@ -412,7 +414,7 @@ Intel's <em>Preboot eXecution Environment</em> (PXE) specification.
 If you are a masochist, you can download the PXE specification from <a
 href="http://www.intel.com/labs/manage/wfm/wfmspecs.htm">Intel's WFM
 site</a>.  But the basic idea is pretty simple: Configure your DHCP
-server to provide <em>filename</em> and <em>next-server</em> DHCP
+server to provide <em>next-server</em> and <em>filename</em> DHCP
 options naming the TFTP server and <code>pxelinux.0</code> file,
 respectively.  Do not let the name fool you; <code>pxelinux.0</code>
 has nothing to do with Linux.  It comes from the <a
