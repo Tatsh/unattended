@@ -9,7 +9,7 @@
 :: Critical update 814078
 :: "Flaw in Windows Script Engine May Allow Code to Run"
 :: <http://support.microsoft.com/?kbid=814078>
-todo.pl ".ignore-err 194 z:\packages\winxpsp1\js56nen.exe /u /o /z"
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\js56nen.exe /q /r:n"
 
 :: Critical update 814033
 :: "Cannot Install Driver Updates from the Windows Update Web Site"
