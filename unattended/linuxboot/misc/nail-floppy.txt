@@ -52,6 +52,13 @@ lib/modules/2.6.6/kernel/drivers/usb/input
 
 lib/modules/2.6.6/kernel/lib/crc32.ko
 
+# For gathering diagnostics when network refuses to start.
+lib/modules/2.6.6/kernel/drivers/block/floppy.ko
+lib/modules/2.6.6/kernel/fs/fat/fat.ko
+lib/modules/2.6.6/kernel/fs/msdos/fat.ko
+lib/modules/2.6.6/kernel/fs/vfat/fat.ko
+lib/modules/2.6.6/kernel/fs/nls/nls_iso8859-1.ko
+
 sbin/cardmgr
 sbin/insmod
 sbin/modprobe
