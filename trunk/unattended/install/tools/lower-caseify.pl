@@ -1,5 +1,12 @@
 #!/usr/bin/perl
 
+# This scripts renames a folder and of its subfolders to lower case.
+# To use this script to fix an OS installation point, simply:
+#
+# 1) Install ActiveState Perl and associate .pl files with it.
+#
+# 2) Run "lower-caseify.pl Z:\os\winxpsp2" (or whatever).
+
 use warnings;
 use strict;
 use File::Spec;
