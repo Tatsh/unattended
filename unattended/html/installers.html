@@ -34,18 +34,20 @@ applications</a>.
 <hr>
 <h1>General information</h1>
 
-<p>There are several utilities commonly used to create installers for
-Windows applications.  Sometimes it will be obvious from the
-installer's splash screen which utility was used; sometimes you can
-figure it out by running <a
+<p>There are several systems which vendors use to create installers
+for their applications.  To make an educated guess about how to run an
+installer unattended, you need to know which system was used to create
+it.  Sometimes this will be obvious from the installer's splash
+screen; sometimes you can figure it out by running <a
 href="http://www.gnu.org/manual/binutils-2.12/html_node/binutils_9.html"
->strings</a>; and sometimes you just have to guess.
+>strings</a>; and sometimes you will have to guess.
 
-<p>Sure, you can run the installer with the <kbd>/?</kbd> switch to
-learn which other switches it supports.  But if you really expect this
-to work, then you have not been using Windows for very long.  In my
-experience, the odds are about 1 in 4 that <kbd>/?</kbd> will tell you
-anything at all, even when there is something to tell.
+<p>Of course, you can try running the installer with the <kbd>/?</kbd>
+switch to find out which other switches it supports.  But if you
+really expect this to work, then you have not been using Windows for
+very long.  In my experience, the odds are about 1 in 4 that
+<kbd>/?</kbd> will tell you anything at all, even when there is
+something to tell.
 
 <h2 id="msi">MSI packages</h2>
 
@@ -71,7 +73,7 @@ are supported depends on the package.  For example, this command:
     msiexec /qb /l* perl-log.txt /i ActivePerl.msi PERL_PATH=Yes PERL_EXT=Yes
 </pre>
 
-...is how you install ActiveState Perl, instructing the MSI package to
+<p>...is how you install ActiveState Perl, instructing the MSI package to
 add Perl.exe to your <code>PATH</code> and to associate
 <code>.pl</code> files with it. (<a href="#activeperl">See below</a>
 for more on Perl.)
@@ -82,7 +84,7 @@ software or apply patches.  Neat, huh?  Too bad nobody uses it.
 <h2 id="installshield">InstallShield</h2>
 
 <p><a href="http://www.installshield.com/">InstallShield</a> is one of
-the oldest and most widely used application packaging utilities.
+the oldest and most widely used application packaging systems.
 
 <p>Installers created by InstallShield recognize the <kbd>/r</kbd>,
 <kbd>/s</kbd>, <kbd>/sms</kbd>, <kbd>/f1</kbd>, and <kbd>/f2</kbd>
@@ -201,6 +203,34 @@ grepping for "Inno".
 
 <p>Inno Setup installers use the <kbd>/silent</kbd> switch for
 unattended installations.
+
+<h2 id="nsis">Nullsoft Scriptable Install System</h2>
+
+<p>The <a href="http://nsis.sourceforge.net/">Nullsoft Scriptable
+Install System</a> (NSIS) is another open source installation system.
+It was created by the <a href="http://www.winamp.com/">WinAmp</a>
+authors to distribute that application, but it is now a
+general-purpose installation system which anyone might use.
+
+<p>When an NSIS installer runs, it creates a little window which says
+<code>verifying&nbsp;installer:&nbsp;N%</code>, where <code>N</code>
+counts from 0 to 100.  So you can recognize these installers by this
+behavior.  (Or you can run "strings" and grep for "NSIS".)
+
+<p>NSIS installers recognize <kbd>/S</kbd> for silent installation,
+<kbd>/NCRC</kbd> to suppress the CRC (verification) step, and
+<kbd>/D=<var>dir</var></kbd> to specify the "output directory",
+whatever that means.  These options are <em>case-sensitive</em>, so be
+sure to type them in upper case.
+
+<p>Incidentally, all <kbd>/S</kbd> does is change the installer
+script's <a
+href="http://nsis.sourceforge.net/Docs/Chapter4.html#4.8.1.33"
+>SilentInstall attribute</a> from "normal" to "silent".  What effect
+this has, exactly, depends on the person who wrote the script.  If
+<kbd>/S</kbd> does not perform a silent install, consider submitting a
+bug report to the installer's creator.
+
 
 <h2 id="hotfixes">Microsoft hotfixes and older packages</h2>
 
