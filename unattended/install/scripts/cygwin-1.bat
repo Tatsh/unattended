@@ -8,7 +8,7 @@ todo.pl "c:\cygwin\bin\mount.exe -b -f -s P: /projects" "c:\cygwin\bin\mount.exe
 todo.pl "C:\cygwin\bin\bash.exe --login -c 'cd / && chown -R Administrators .'"
 
 :: Copy over our local additions to the tree
-todo.pl "c:\cygwin\bin\bash.exe --login -c 'cp -a /cygdrive/z/packages/curlstuff/. /.'"
+todo.pl "c:\cygwin\bin\bash.exe --login -c 'cp -a `cygpath -u %Z%`/packages/curlstuff/. /.'"
 
 :: Configure sshd
 todo.pl "c:\cygwin\bin\bash.exe --login -c 'ssh-host-config --no'"
