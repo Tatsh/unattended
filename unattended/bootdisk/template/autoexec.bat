@@ -56,8 +56,8 @@ call temp.bat
 
 set Z_USER=%user%
 set Z_DOMAIN=%domain%
-unset user
-unset domain
+set user=
+set domain=
 
 :: LOGON
 echo Starting network....
