@@ -12,9 +12,13 @@ This top-level directory contains:
 
   Makefile    - A Makefile for my use, not yours; sorry
 
-  bootdisk/   - Directory holding the boot disk sources and Makefile
+  bootdisk/   - Directory holding the DOS-based boot disk sources and
+                Makefile
+
+  linuxboot/  - Directory holding the Linux-based boot disk sources
+                and Makefile
 
   install/    - Directory holding the initial \\ntinstall\install
                 share, aka. Z:\ drive; see the documentation
 
-  html/       - A copy of the Web pages as previously mentioned
+  html/       - A copy of the Web site as of this release
