@@ -6,6 +6,7 @@
 :: Critical update MS04-013 (837009)
 :: "Cumulative Security Update for Outlook Express"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-013.mspx>
+:: URL|DEU|http://download.microsoft.com/download/4/d/e/4dec9a9c-8916-4cc5-a779-769a2715d095/OE6.0sp1-KB837009-x86-DEU.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/8/1/0/81030a34-d638-494c-aaaa-9babb069304a/OE6.0sp1-KB837009-x86-ENU.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\oe6.0sp1-kb837009-x86-%WINLANG%.exe /q /r:n"
 
