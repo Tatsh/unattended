@@ -443,33 +443,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\hu1002_pro.exe /q"
 :: URL|TRK|http://download.microsoft.com/download/a/8/0/a80021b0-b230-4e9f-b103-2c564a0da9d1/Q322011_WXP_SP2_x86_TRK.exe|updates/winxpsp1/q322011_wxp_sp2_x86_trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
 
-:: Update for Background Intelligent Transfer Service (BITS) 2.0 (KB883357)
-:: <http://support.microsoft.com/?kbid=883357>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=8dbcae14-2dac-4445-91ec-54c042ad6729>
-:: URL|ARA|http://download.microsoft.com/download/1/5/7/157628ca-a352-44c6-9e97-39293de97e12/WindowsXP-KB883357-x86-ara.exe|updates/winxpsp1/windowsxp-kb883357-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/2/f/8/2f898d57-0cbd-4cd2-b6b3-8a54abf165b1/WindowsXP-KB883357-x86-csy.exe|updates/winxpsp1/windowsxp-kb883357-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/9/9/3/993c224e-4e76-4e59-9c97-913727f533ee/WindowsXP-KB883357-x86-dan.exe|updates/winxpsp1/windowsxp-kb883357-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/0/3/1/03118601-c3c0-4d03-8883-2266aac7b674/WindowsXP-KB883357-x86-deu.exe|updates/winxpsp1/windowsxp-kb883357-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/c/6/d/c6dfa9c4-ca46-43af-b131-48b62168c4ce/WindowsXP-KB883357-x86-ell.exe|updates/winxpsp1/windowsxp-kb883357-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/3/c/e/3ce4e2a6-cdf8-4ba1-94b0-e4e96b4b64ac/WindowsXP-KB883357-x86-enu.exe|updates/winxpsp1/windowsxp-kb883357-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/e/5/1/e519394f-b38d-42f0-8ef1-160e37b5ce98/WindowsXP-KB883357-x86-esn.exe|updates/winxpsp1/windowsxp-kb883357-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/a/3/1/a31f0e7d-9d52-4c30-8f47-52b86ebd7885/WindowsXP-KB883357-x86-fin.exe|updates/winxpsp1/windowsxp-kb883357-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/c/c/9/cc94804e-eb16-4348-bae6-2c46fb368700/WindowsXP-KB883357-x86-fra.exe|updates/winxpsp1/windowsxp-kb883357-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/d/0/8/d082a4fd-396b-40e8-a2c3-8047cfa31df7/WindowsXP-KB883357-x86-heb.exe|updates/winxpsp1/windowsxp-kb883357-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/c/d/9/cd93fd13-effa-43f0-a9fe-23d4536836d6/WindowsXP-KB883357-x86-hun.exe|updates/winxpsp1/windowsxp-kb883357-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/2/e/32e28a84-ea03-493a-92a2-2e38ded44e12/WindowsXP-KB883357-x86-ita.exe|updates/winxpsp1/windowsxp-kb883357-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/5/0/450ee812-5be3-4a1f-aeab-c96c5cfb546b/WindowsXP-KB883357-x86-jpn.exe|updates/winxpsp1/windowsxp-kb883357-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/6/1/1/61192962-8e3d-4349-ab1c-e22bb65eacb3/WindowsXP-KB883357-x86-kor.exe|updates/winxpsp1/windowsxp-kb883357-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/f/2/1/f21f9986-8130-4e77-8ea7-74fafe67370d/WindowsXP-KB883357-x86-nld.exe|updates/winxpsp1/windowsxp-kb883357-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/0/2/d/02d932b7-23ee-47e7-a521-1f41294b7a4a/WindowsXP-KB883357-x86-nor.exe|updates/winxpsp1/windowsxp-kb883357-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/1/c/e/1cec122c-bacc-4b01-9613-8c257fda160d/WindowsXP-KB883357-x86-plk.exe|updates/winxpsp1/windowsxp-kb883357-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/a/6/6/a66f3f6b-0fed-4a66-b89b-521169aba40c/WindowsXP-KB883357-x86-ptb.exe|updates/winxpsp1/windowsxp-kb883357-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/c/c/f/ccf8037e-26f8-4c03-9902-7b2a8d851071/WindowsXP-KB883357-x86-ptg.exe|updates/winxpsp1/windowsxp-kb883357-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/b/6/6/b666dc18-dec1-4582-b196-3ddce7b2c707/WindowsXP-KB883357-x86-rus.exe|updates/winxpsp1/windowsxp-kb883357-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/1/d/a1d31b13-7eee-4c68-b1b7-e2b0b21b2956/WindowsXP-KB883357-x86-sve.exe|updates/winxpsp1/windowsxp-kb883357-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/8/5/9/859df18f-aa90-4783-b110-c88c25c759bc/WindowsXP-KB883357-x86-trk.exe|updates/winxpsp1/windowsxp-kb883357-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB883357-x86-%WINLANG%.exe /passive /n /norestart"
-
 :: Update for Background Intelligent Transfer Service (BITS) 2.0 and WinHTTP 5.1 (KB842773)
 :: <http://support.microsoft.com/default.aspx?kbid=842773>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b93356b1-ba43-480f-983d-eb19368f9047>
