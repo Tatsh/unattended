@@ -1238,6 +1238,50 @@ while (1) {
     $u->{'_meta'}->{'fdisk_cmds'} = \&ask_fdisk_cmds;
 }
 
+# On Linux, we may need to correct the kernel's notion of the disk
+# geometry.  Otherwise the disk partitioning tool may create a
+# partition which Windows cannot boot.
+if ($is_linux) {
+    my $bios_head = $ENV{'LEGACY_BIOS_HEAD'};
+    my $bios_sect = $ENV{'LEGACY_BIOS_SECT'};
+
+    if (defined $bios_head && defined $bios_sect) {
+        my $hda = readlink ('/dev/dsk');
+        defined $hda
+            or die "readlink /dev/dsk failed: $^E";
+
+        # Get size of disk in sectors.
+        my $size_file = "/sys/block/$hda/size";
+        open SIZE, $size_file
+            or die "Unable to open $size_file for reading: $^E";
+        my $size = <SIZE>;
+        defined $size
+            or die "Unable to read $size_file: $^E";
+        close SIZE
+            or die "Unable to close $size_file: $^E";
+        chomp $size;
+        $size =~ /^0x/
+            and $size = hex $size;
+
+        my $cylinders = $size / $bios_head / $bios_sect;
+
+        my $settings_file = "/proc/ide/$hda/settings";
+
+        if (-e $settings_file) {
+            print "Setting C/H/S to $cylinders/$bios_head/$bios_sect...\n";
+            $size == $cylinders * $bios_head * $bios_sect
+                or print "Odd.  C/H/S does not multiply out to $size.\n";
+
+            open SETTINGS, ">$settings_file"
+                or die "Unable to open $settings_file for writing: $^E";
+            printf SETTINGS "bios_cyl:%d bios_head:%d bios_sect:%d\n",
+            $cylinders, $bios_head, $bios_sect;
+            close SETTINGS
+                or die "Unable to close $settings_file: $^E";
+        }
+    }
+}
+
 # Run the fdisk commands.
 foreach my $cmd (split /;/, $fdisk_cmds) {
     system ($is_linux
