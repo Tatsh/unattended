@@ -299,6 +299,13 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 
 :: Critical Updates
 
+:: Critical update 870669
+:: "How to disable the ADODB.Stream object from Internet Explorer"
+:: (aka. "the zero-day exploit")
+:: <http://support.microsoft.com/?kbid=818043>
+:: (download URLs in win2ksp4-updates.bat)
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB870669-x86-%WINLANG%.exe /q /r:n"
+
 :: MS04-015
 :: "Vulnerability in Help and Support Center Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-015.mspx>

@@ -180,6 +180,13 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: Critical update 870669
+:: "How to disable the ADODB.Stream object from Internet Explorer"
+:: (aka. "the zero-day exploit")
+:: <http://support.microsoft.com/?kbid=818043>
+:: URL|ENU|http://download.microsoft.com/download/e/5/5/e55bbf16-ae16-4d58-8f75-3233ec146255/Windows-KB870669-x86-ENU.exe|updates/common/windows-kb870669-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB870669-x86-%WINLANG%.exe /q /r:n"
+
 :: Critical update MS04-012 (828741)
 :: "Cumulative Update for Microsoft RPC/DCOM"
 :: (Worst Windows security hole, ever.  Again.  And again.)
