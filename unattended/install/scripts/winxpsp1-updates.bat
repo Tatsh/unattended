@@ -126,11 +126,6 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q824145.exe /q /r:n"
 
 :: Critical Updates
 
-:: Critical update 810217 (MS03-051)
-:: "FrontPage 2000 Server Extensions ... November 2003 Security Patch"
-:: <http://support.microsoft.com/?kbid=810217>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.exe /u /n /z"
-
 :: Download from <http://www.microsoft.com/data/>.  Rename
 :: mdac_typ.exe to something more descriptive.
 todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /qn1\""
@@ -140,10 +135,21 @@ todo.pl ".reboot-on 194 %Z%\packages\mdac\%WINLANG%\mdac-2.8.exe /q /c:\"setup /
 :: <http://support.microsoft.com/?kbid=824105>
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB824105-x86-%WINLANG%.exe /u /n /z"
 
+:: Critical update 810217 (MS03-051)
+:: "uffer Overrun in Microsoft FrontPage Server Extensions Could Allow Code Execution"
+:: <http://support.microsoft.com/?kbid=810217>
+:: (Only install if FrontPage Server Extenstions are installed)
+if not exist "%CommonProgramFiles%\Microsoft Shared\Web Server Extensions\40\bin\FP4awel.dll" goto nofpse
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB810217-x86-%WINLANG%.exe /u /n /z"
+:nofpse
+
 :: Critical update 811114
 :: "May 2003 Cumulative Patch for Internet Information Services (IIS)"
 :: <http://support.microsoft.com/?kbid=811114>
+:: (Only install if IIS has been installed)
+if not exist %SystemRoot%\System32\INetSrv\IISAdmin.dll goto noiis
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q811114_WXP_SP2_x86_%WINLANG%.exe /u /n /z"
+:noiis
 
 :: Critical update 816093
 :: "Flaw in Microsoft VM Could Enable System Compromise"
