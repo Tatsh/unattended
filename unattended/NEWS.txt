@@ -1,3 +1,40 @@
+** Changes in version 2.7a (2003-Jul-07)
+
+Fix lurking bug in todo.pl; use ($ret >> 8) instead of ($ret / 256)
+because we want an integer.
+
+Fix bug where multi_choice() would return undef instead of an empty
+list when called with no arguments.  This had the side-effect of
+always prompting about "RETAIL" drivers.  Thanks to Shad Lords.
+
+Add new "lang_dirs" method to Unattend::WinMedia.  Use it to set
+/rx:... option to winnt.exe.  Useful for internationalization; see
+<http://www.microsoft.com/globaldev/reference/win2k/setup/specify.mspx>.
+
+Edit Unattend::IniFile::force() method to recognize recursion when
+forcing promises, and to return undef when it happens.  This makes the
+recursion bottom out, which mostly does what you want...
+
+Rewrite ProductKey and ProductID to be mutually recursive.  Now if you
+set either one, you will not be prompted for the other.
+
+Add "JoinWorkgroup" question, and make it mutually recursive with
+JoinDomain.  If you set either one, you will not be prompted for the
+other.  Thanks to Shad Lords.
+
+Fix crash when you set a value in [_meta] section but do not include
+comments.  Thanks to Shad Lords.
+
+Recognize Pid of 55274270 as Volume media.  Also, fix bug where we
+printed '$pid' instead of the pid itself or unknown media (duh).
+Thanks to Shad Lords.
+
+Create new "fixtz.pl" script to work around daylight saving bug in XP
+unattended installation.  Invoke it from base.bat.
+
+Fix bugs in sshd.bat script.
+
+
 ** Changes in version 2.7 (2003-Jul-06)
 
 NOTE: This release has many changes.  You will need to refresh your
