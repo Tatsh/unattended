@@ -5,8 +5,7 @@
 # unattended cvs repository.
 #
 # This scripts crawles through your script directory, and
-# tries to update every found file from the cvs. You can
-# define exceptions in this script.
+# tries to update every found file from the cvs.
 #
 # Warning #1: this scripts overwrites YOUR changes to official
 # script files without any warning! Please double-check that
