@@ -3,12 +3,11 @@ DOS=HIGH,UMB
 
 ;; Pick exactly one of these XMS providers
 DEVICE=himem64.exe
-;DEVICE=A:\fdxxms.sys bios ps
 ;DEVICE=himem.sys /testmem:off
 
-;; UMB provider
+;; Pick zero or one of these UMB providers
 ;DEVICE=umbpci.sys
-DEVICE=emm386.exe NOEMS
+DEVICE=emm386.exe NOEMS X=TEST
 
 ;; MSCLIENT networking gadget
 DEVICEHIGH=\net\ifshlp.sys
