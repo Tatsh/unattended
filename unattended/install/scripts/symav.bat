@@ -1,3 +1,3 @@
 :: OPTIONAL: Install Symantec Anti-Virus Corporate Edition Client
 @Echo off
-todo.pl "%Z%\packages\savceclt.exe /qn /l:%SystemDrive%\netinst\logs\savceclt.txt /v:2"
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\sav.txt /i \"%Z%\packages\sav-9.0\Symantec AntiVirus.msi\" RUNLIVEUPDATE=0 REBOOT=ReallySuppress
