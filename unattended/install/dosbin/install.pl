@@ -404,28 +404,6 @@ sub create_postinst_bat () {
     # Compute contents of postinst.bat script.
     my @postinst_lines;
 
-    # Basic framework:  mapznrun, permcreds, tempcreds
-    print 'Copying z:\\bin\\mapznrun.bat...';
-    copy ('z:\\bin\\mapznrun.bat', $file_spec->catfile ($netinst,
-                                                        'mapznrun.bat'))
-        or die "Unable to copy mapznrun.bat";
-    print "done.\n";
-
-    my $z_path = $u->{'_meta'}->{'z_path'};
-    my $permcreds = $file_spec->catfile ($netinst, 'permcreds.bat');
-    print "Creating $permcreds...";
-    write_file ($permcreds,["SET Z=Z:",
-                            "SET Z_PATH=$z_path"]);
-    print "done.";
-
-    my $z_user = $u->{'_meta'}->{'z_user'};
-    my $z_pass = $u->{'_meta'}->{'z_password'};
-    my $tempcreds = $file_spec->catfile ($netinst, 'tempcreds.bat');
-    print "Creating $tempcreds...";
-    write_file ($permcreds, ["SET Z_USER=$z_user",
-                             "SET Z_PASS=$z_pass"]);
-    print "done.";
-
     # Local admins
     my $admin_group = get_value('_meta', 'local_admin_group');
     my $admins = get_value ('_meta', 'local_admins');
@@ -441,8 +419,6 @@ sub create_postinst_bat () {
     my $ntp_servers = get_value ('_meta', 'ntp_servers');
     defined $ntp_servers && $ntp_servers ne ''
         and push @postinst_lines, "net time /setsntp:\"$ntp_servers\"";
-
-    my $netinst = $u->{'_meta'}->{'netinst'};
 
     # Top-level installation script
     my $top = get_value ('_meta', 'top');
@@ -460,7 +436,8 @@ sub create_postinst_bat () {
 
     }
 
-    my $postinst = $file_spec->catfile ($netinst, 'postinst.bat');
+    my $postinst = $file_spec->catfile ($u->{'meta'}->{'netinst'},
+                                        'postinst.bat');
     if (scalar @postinst_lines > 0) {
         print "Creating $postinst...";
         write_file ($postinst, @postinst_lines);
@@ -470,7 +447,7 @@ sub create_postinst_bat () {
         undef $postinst;
     }
 
-    return defined $postinst ? "$netinst\\mapznrun.bat $postinst" : undef;
+    return $postinst;
 }
 
 $u->comments ('_meta') =
@@ -559,7 +536,7 @@ $u->{'_meta'}->{'local_admin_group'} =
         my $def = 'Administrators';
         my $answer =
             simple_q ("Enter local Administrators group name (default=$def):");
-        return (defined $answer ? $answer : $default);
+        return (defined $answer ? $answer : $def);
     };
 
 set_comments ('_meta', 'local_admins',
@@ -603,6 +580,8 @@ $u->comments ('_meta', 'autolog') =
 # default setting of last user who logged on.
 $u->{'_meta'}->{'autolog'} = 'autolog.pl --logon=0';
 
+$u->{'_meta'}->{'postinst'} = \&create_postinst_bat;
+
 # Default is to fetch these from environment set up by autoexec.bat.
 $u->comments ('_meta', 'z_path') = ['UNC path to install share'];
 (defined $ENV{'Z_PATH'})
@@ -638,10 +617,46 @@ set_value ('UserData', 'ComputerName',
                return $name;
            });
 
-set_comments ('GuiRunOnce', 'Command0',
-              "    ; Command which runs after OS installation finishes\n");
+$u->comments ('GuiRunOnce', 'Command0') =
+    ["Command which runs after OS installation finishes"];
 
-set_value ('GuiRunOnce', 'Command0', \&create_postinst_bat);
+$u->{'GuiRunOnce'}->{'Command0'} =
+    sub {
+        my $postinst = $u->{'_meta'}->{'postinst'};
+        defined $postinst
+            or return undef;
+        
+        my $netinst = $u->{'_meta'}->{'netinst'};
+
+        # Basic framework for mapping Z: drive
+        # mapznrun
+        print 'Copying z:\\bin\\mapznrun.bat...';
+        copy ('z:\\bin\\mapznrun.bat', $file_spec->catfile ($netinst,
+                                                            'mapznrun.bat'))
+            or die "Unable to copy mapznrun.bat";
+        print "done.\n";
+
+        # permcred
+        my $z_path = $u->{'_meta'}->{'z_path'};
+        my $permcred = $file_spec->catfile ($netinst, 'permcred.bat');
+        print "Creating $permcred...";
+        write_file ($permcred,
+                    "SET Z=Z:",
+                    "SET Z_PATH=$z_path");
+        print "done.\n";
+
+        # tempcred
+        my $z_user = $u->{'_meta'}->{'z_user'};
+        my $z_pass = $u->{'_meta'}->{'z_password'};
+        my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
+        print "Creating $tempcred...";
+        write_file ($tempcred,
+                    "SET Z_USER=$z_user",
+                    "SET Z_PASS=$z_pass");
+        print "done.";
+
+        return "$mapznrun $postinst";
+    };
 
 set_value ('GuiUnattended', 'AdminPassword',
            sub {
@@ -875,14 +890,14 @@ print "done.\n";
 # .bat script (doit.bat) and run it.
 my $doit = "$netinst\\doit.bat";
 print "Creating $doit...";
-write_file ($doit, split /;/, get_value('_meta', 'doit_cmds'));
+write_file ($doit, split /;/, $u->{'_meta'}->{'doit_cmds'});
 print "done.\n";
 
 my @edit_choices;
 
 push @edit_choices, ("Edit $unattend_txt" => $unattend_txt);
 
-my $postinst = get_value ('GuiRunOnce', 'Command0');
+my $postinst = $u->{'_meta'}->{'postinst'};
 defined $postinst
     and push (@edit_choices,
               "Edit $postinst (will run after OS install is done)"
