@@ -76,7 +76,7 @@ $u->push_value ('_meta', 'fdisk_cmds',
                             $u->{'UserData'}->{'ComputerName'},
                             "$os_name",
                             'Default') {
-            $value = CONFIG->lookup_value($lookup, 'Partitions');
+            my $value = CONFIG->lookup_value($lookup, 'Partitions');
             defined $value
                 and return $value;
         }
