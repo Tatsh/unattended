@@ -214,9 +214,9 @@ if (exists $opts{'go'}) {
                 reboot (5);
                 die "Internal error";
             }
-            elsif ($cmd =~ /^\.ign-err\s+(\d+)\s+(.*)$/) {
-                $err_to_ignore = $2;
-                $cmd = $1;
+            elsif ($cmd =~ /^\.ignore-err\s+(\d+)\s+(.*)$/) {
+                $err_to_ignore = $1;
+                $cmd = $2;
             }
             else {
                 die "Unrecognized dot-command $cmd";
