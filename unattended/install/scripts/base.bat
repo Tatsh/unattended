@@ -4,7 +4,7 @@
 todo.pl "auconfig.pl 3"
 
 :: Install popular applications.
-todo.pl adobe-reader.bat vnc.bat mozilla.bat 7-zip.pl php.bat openoffice.bat
+todo.pl adobe-reader.bat tightvnc.bat mozilla.bat 7-zip.pl php.bat openoffice.bat
 
 :: Update windows and turn off annoying stuff.
 todo.pl %%WINVER%%-updates.bat %%WINVER%%-notips.pl .reboot
