@@ -221,7 +221,7 @@ sys_block=/sys/block
     || die "Internal error: $sys_block not found?"
 
 mass_device_names="amiraid/ar0 ataraid/d0 cciss/c0d0 i2o/hda \
-        ida/c0d0 rd/c0d0 hda sda"
+        ida/c0d0 rd/c0d0 hda sda hdc"
 
 unset did_something
 
