@@ -8,7 +8,7 @@ $page['next']  = 'apps.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: installers.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: installers.php,v 1.2 2005-03-11 16:45:41 nrichthof Exp $';
 $sections[]    = array ('Introduction', 'intro');
 $sections[]    = array ('General information', 'general');
 $sections[]    = array ('If all else fails...', 'fail');
@@ -347,18 +347,19 @@ $content       = <<<EOT
 
 
       <h2 id="autoit">AutoIt</h2>
-      <p><a href="http://www.hiddensoft.com/AutoIt/" rel="external">AutoIt2</a> is a free
+      <p><a href="http://www.hiddensoft.com/AutoIt3/" rel="external">AutoIt</a> is a free
         tool which can  simulate  key  presses  and  mouse  clicks,  following  a  script
-        customarily named with a <code>.aut</code>  extension.  Most  installers  have  a
-        sufficiently simple and consistent interface that  a  very  short  AutoIt  script
-        suffices to automate their installation.</p>
+        customarily named with a  <code>.aut</code>  or  a  <code>.au3</code>  extension.
+        Most installers have a sufficiently simple and consistent interface that  a  very
+        short AutoIt script suffices to automate their installation.</p>
 
-      <p>The AutoIt distribution includes very good <a href="http://www.hiddensoft.com/AutoIt/Docs/"
-        rel="external">documentation</a>.  The  Unattended  distribution  includes  <code
-        >AutoIt.exe</code> in version 2. The current version is version 3,  which  has  a
-        redesigned script format. We <a href="http://www.mail-archive.com/unattended-devel@lists.sourceforge.net/msg00212.html"
-        rel="external">plan</a> to switch to AutoIt3 in the future. AutoIt3  can  coexist
-        with AutoIt2, simply put <code>AutoIt3.exe</code> into <code>Z:\\bin</code>.</p>
+      <p>The AutoIt distribution includes very good <a href="http://www.autoitscript.com/autoit3/docs/"
+        rel="external">documentation</a>.   The  Unattended  distribution  includes  both
+        versions 2 (AutoIt.exe) and  3 (AutoIt3.exe).  These  versions  differ  in  their
+        script formats.  Currently,  all scripts that are  shipped  with  Unattended  are
+        written for version 2, but we <a href="http://www.mail-archive.com/unattended-devel@lists.sourceforge.net/msg00212.html"
+        rel="external">plan</a> to switch to version 3 in the future and advise to create
+        new scripts only in version 3.</p>
 
       <p>AutoIt scripts do have drawbacks.</p>
 
