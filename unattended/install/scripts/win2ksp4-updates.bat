@@ -336,6 +336,16 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb841533-x86-%WINLANG%.
 :: URL|TRK|http://download.microsoft.com/download/1/2/9/129abba3-4df7-4148-85ca-577ddd26dd27/Windows2000-KB824151-x86-TRK.EXE|updates/win2ksp4/windows2000-kb824151-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb824151-x86-%WINLANG%.exe /passive /n /norestart"
 
+:: Critical update 873374 (GDI+ Detection Tool)
+:: <http://support.microsoft.com/kb/873374>
+:: What a load of crap.  All this "tool" does is check to see if you
+:: have various Microsoft products installed, then throw up a dialog
+:: directing you to their Web page on the topic.  For a fresh
+:: installation which applies the relevant updates, this is useless,
+:: so just this once we violate our principles and patch the registry
+:: directly.
+todo.pl "regedit /s %Z%\scripts\kb873374.reg"
+
 :: Critical update MS04-023 (840315)
 :: "Vulnerability in HTML Help Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-023.mspx>
