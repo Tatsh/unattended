@@ -125,6 +125,12 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
+:: Recommended update MS04-020 (841872)
+:: "Vulnerability in POSIX Could Allow Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/MS04-020.mspx>
+:: URL|ENU|http://download.microsoft.com/download/7/9/c/79c0720a-3c99-4a5b-87ed-2fc6e1bc0426/Windows2000-KB841872-x86-ENU.EXE|updates/win2ksp4/windows2000-kb841872-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB841872-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Recommended update MS04-019 (842526)
 :: "Vulnerability in Utility Manager Could Allow Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-019.mspx>
