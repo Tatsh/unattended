@@ -9,6 +9,7 @@ todo.pl "%Z%\packages\AdobeReader\update_602.exe /S /v/qn"
 :: URL|ENU|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/enu/AdbeRdr60_enu_full.exe|packages/adobereader/adberdr60_enu_full.exe
 :: URL|DEU|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/deu/AdbeRdr60_deu_full.exe|packages/adobereader/adberdr60_deu_full.exe
 :: URL|NLD|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/nld/AdbeRdr60_nld_full.exe|packages/adobereader/adberdr60_nld_full.exe
+:: URL|NOR|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/nor/AdbeRdr60_nor_full.exe|packages/adobereader/adberdr60_nor_full.exe
 :: URL|FRA|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/fra/AdbeRdr60_fra_full.exe|packages/adobereader/adberdr60_fra_full.exe
 :: URL|ITA|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/ita/AdbeRdr60_ita_full.exe|packages/adobereader/adberdr60_ita_full.exe
 :: URL|RUS|http://ardownload.adobe.com/pub/adobe/reader/win/6.x/6.0/enu/AdbeRdr60_enu_full.exe|packages/adobereader/adberdr60_rus_full.exe
