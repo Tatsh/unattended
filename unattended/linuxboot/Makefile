@@ -108,7 +108,7 @@ stage1 += stage1/.stamp-modules
 ## klibc
 
 $(klibc)/ash/sh:
-	cd $(klibc) && ln -sf $(cwd)/$(linux) ./linux	\
+	cd $(klibc) && ln -nsf $(cwd)/$(linux) ./linux	\
 	&& make
 	[ -e $@ ]
 
@@ -134,7 +134,7 @@ $(bash)/bash:
 $(call copy_exe, $(bash)/bash, stage1/bin/bash)
 
 stage1/bin/sh: stage1/bin/bash
-	ln -s `basename $<` $@.tmp
+	ln -ns `basename $<` $@.tmp
 	mv $@.tmp $@
 
 stage1 += stage1/bin/bash stage1/bin/sh
@@ -557,7 +557,7 @@ download-$(strip $(1)) :  ;						\
 	esac								\
 	&& { echo $$$$prog ;						\
 	$$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }		\
-	&& { [ "$$$$sub" == . ] || ln -sf "$$$$sub" "$$$$what" ; }	\
+	&& { [ "$$$$sub" == . ] || ln -nsf "$$$$sub" "$$$$what" ; }	\
 	&& { [ "$$$$sub" != . ] || [ "$(dest)" == . ] 			\
 		|| ln -sf $(dest)/$$$$what . ; }			\
 	&& rm $$$$temp ;						\
@@ -596,7 +596,8 @@ $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
 $(call download_rule, $(samba), tar.bz2, http://www.samba.org/samba/ftp/)
 
-symlink_targets=$(addprefix symlink-,$(packages))
+symlink_targets=$(addprefix symlink-,$(packages))	\
+	symlink-build-$(glibc) symlink-build-$(dosemu)
 
 $(symlink_targets):
 	@if [ -z "$(dest)" ] || [ "$(dest)" == . ] ; then	\
@@ -608,7 +609,7 @@ $(symlink_targets):
 		echo "$(dest)/$$target does not exist!" ;	\
 		exit 1 ;					\
 	fi							\
-	&& ln -sf "$(dest)/$$target" "$$target.tmp"		\
+	&& ln -nsf "$(dest)/$$target" "$$target.tmp"		\
 	&& mv "$$target.tmp" "$$target"
 
 symlinks: $(symlink_targets)
