@@ -1,6 +1,8 @@
 bash=bash-2.05b
 busybox=busybox-1.00-pre7
 dosemu=dosemu-1.2.0
+# libuuid.so (from e2fsprogs) is required by parted
+e2fsprogs=e2fsprogs-1.34
 glibc=glibc-2.3.2
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%, glibc-linuxthreads-%, $(glibc)))
@@ -15,6 +17,7 @@ samba=samba-3.0.2a
 cwd:=$(shell pwd)
 
 download_targets=$(patsubst %,download-%,$(bash) $(busybox) $(dosemu)	\
+	$(e2fsprogs)							\
 	$(glibc) $(glibc-linuxthreads) $(klibc) $(linux)		\
 	$(module-init-tools) $(parted) $(pciutils) $(pcmcia-cs)		\
 	$(samba)							\
@@ -81,6 +84,8 @@ $(call download_rule, $(bash), tar.gz, http://ftp.gnu.org/gnu/bash/)
 $(call download_rule, $(busybox), tar.bz2, http://busybox.net/downloads/)
 $(call download_rule, $(dosemu), tgz,					\
 	http://dl.sourceforge.net/sourceforge/dosemu/)
+$(call download_rule, $(e2fsprogs), tar.gz,			\
+	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 # Awful hack
 $(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
@@ -224,8 +229,18 @@ stage1/var/lib/dosemu/drives/dosboot.img: dosboot/autoexec.bat \
 	rm $$tmpfile
 	mv $@.tmp $@
 
-stage1 := $(stage1) stage1/var/lib/dosemu/drives/dosboot.img
+stage1 += stage1/var/lib/dosemu/drives/dosboot.img
 
+## e2fsprogs (just libuuid.so, required for parted)
+$(e2fsprogs)/lib/libuuid.so:
+	cd $(e2fsprogs)				\
+	&& ./configure --enable-elf-shlibs	\
+	&& ./make
+	[ -e $@ ]
+
+$(call copy_exe,$(e2fsprogs)/lib/libuuid.so,stage1/lib/libuuid.so)
+
+stage1_libs += stage1/lib/libuuid.so
 
 ## glibc
 build-$(glibc)/libc.so:
@@ -279,10 +294,7 @@ glibc_libs=$(patsubst %, stage1/lib/%,				\
 	libnss_dns.so libnss_files.so libcrypt.so		\
 	)
 
-stage1/etc/ld.so.cache: $(glibc_libs)
-	ldconfig -r stage1
-
-stage1 := $(stage1) $(glibc_libs) stage1/etc/ld.so.cache
+stage1_libs += $(glibc_libs)
 
 ## BusyBox
 $(busybox)/.config: misc/busybox-config
@@ -296,22 +308,24 @@ stage1/bin/busybox: $(busybox)/busybox
 	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
 	cmp $< $@
 
-# Other stuff needs this
-stage1/bin/true: stage1/bin/busybox
-	[ -e $@ ]
-
 stage1 := $(stage1) stage1/bin/busybox
 
 ## parted
-$(parted)/parted/parted:
+$(parted)/parted/.libs/parted:
 	cd $(parted)							     \
-	&& ./configure --disable-nls --without-readline	--enable-part-static \
+	&& ./configure --disable-nls --without-readline \
 	&& make
 	[ -e $@ ]
 
-$(call copy_exe, $(parted)/parted/parted, stage1/usr/sbin/parted)
+$(parted)/libparted/.libs/libparted.so: $(parted)/parted/.libs/parted
+	[ -e $@ ] && touch $@
+
+$(call copy_exe, $(parted)/parted/.libs/parted, stage1/usr/sbin/parted)
+$(call copy_exe, $(parted)/libparted/.libs/libparted.so, \
+	stage1/lib/libparted.so)
 
 stage1 += stage1/usr/sbin/parted
+stage1_libs += stage1/lib/libparted.so
 
 ## pciutils
 $(pciutils)/lspci:
@@ -413,6 +427,13 @@ stage1 := $(stage1) stage1/linuxrc stage1/bin/find-modules-pci \
 		stage1/etc/passwd
 
 ## Stage 1
+stage1/etc/ld.so.cache: $(stage1_libs)
+	rm -f $@
+	ldconfig -r stage1
+	[ -e $@ ]
+
+stage1 += stage1/etc/ld.so.cache
+
 stage1: $(stage1)
 #	stage1/bin/mount
 
