@@ -1,6 +1,6 @@
 ; AutoIt script to install Cygwin
 
-Run, z:\\packages\\cygwin\\setup.exe
+Run, %Z%\\packages\\cygwin\\setup.exe
 
 WinWait, Cygwin Setup, This wizard will guide you
 Send, !n
@@ -14,7 +14,7 @@ Send, !n
 
 WinWait, Select Local Package Directory, Select Local Package Directory
 ; Use proper package directory
-Send, z:\\packages\\cygwin!n
+Send, %Z%\\packages\\cygwin!n
 
 WinWait, Select Packages
 ; Make sure the Window is active, then click in the right place to
