@@ -6,6 +6,11 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Recommended update 822603
+:: "Windows XP SP1 USB 1.1 and 2.0 Update"
+:: <http://support.microsoft.com/?kbid=822603>
+todo.pl ".ignore-err 194 z:\packages\winxpsp1\WindowsXP-KB822603-x86-ENU.exe /u /n /z" .reboot
+
 :: Critical update 824146
 :: "A Buffer Overrun in RPCSS May Allow Code Execution"
 :: (Worst Windows security hole, ever.  Again.)
