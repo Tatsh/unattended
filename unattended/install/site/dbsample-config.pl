@@ -185,6 +185,7 @@ $u->push_value ('Unattended', 'OemPnPDriversPath',
         if (defined $template && lc($template) ne 'all') {
             print "Found template type for $mac: $template\n";
             @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1, dos_to_host($driver_path . '\\' . $template));
+# TODO: Must still copy dos_to_host($driver_path.'\\'.$template) over to dos_to_host('c:\')
         } else {
             @pnp_driver_dirs = $media_obj->oem_pnp_dirs (1);
         }
