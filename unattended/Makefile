@@ -1,8 +1,8 @@
 default:
 	@echo "This Makefile is for the maintainer (sorry)"
 	@echo "Please read the documentation under html/"
-	@echo "or at http://unattended.sourceforge.net"
-	@echo "(Or did you mean to 'cd bootdisk' first?)"
+	@echo "or at http://unattended.sourceforge.net/"
+	@echo "(Did you mean to 'cd bootdisk' first?)"
 	exit 1
 
 cvs := :pserver:anonymous@cvs.unattended.sourceforge.net:/cvsroot/unattended
