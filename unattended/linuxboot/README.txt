@@ -1,10 +1,19 @@
 This is an initial effort to create a Linux-based boot disk for
-Unattended.  Unless you like playing with pre-pre-alpha releases, you
-probably want to leave this directory now and poke around elsewhere in
-the distribution.
+Unattended.  Unless you like playing with alpha releases, you probably
+want to leave this directory now and poke around elsewhere in the
+distribution.
 
-If you still have more than a passing interest, please subscribe to
-the unattended-devel mailing list
+To use the Linux-based boot disk, just burn the ISO image
+(linuxboot.iso) to CD and boot from it.  Or copy the contents of the
+tftpboot/ directory to your TFTP server and use PXE to boot it.
+
+That is all for now.  If you want to contribute to the development of
+this boot disk, read on.
+
+======================================================================
+
+If your interest here is more than passing, please subscribe to the
+unattended-devel mailing list
 (https://lists.sourceforge.net/lists/listinfo/unattended-devel/) and
 browse its archives.
 
@@ -13,8 +22,8 @@ OK, this is the Plan.  We boot a diskless Linux 2.6.x kernel, use the
 network hardware and load its driver(s), use udhcpc (from BusyBox) to
 grab a DHCP lease, use smbmount to map the install share on /z, use
 sysfs and modules.pcimap again to autodetect the mass storage hardware
-and load its driver(s), use Parted to partition the disk, run
-install.pl to generate unattend.txt, and finally use dosemu to run
+and load its driver(s), run install.pl to partition the disk (using
+Parted) and generate unattend.txt, and finally use dosemu to run
 winnt.exe which will start the real Windows installation.
 
 It works for me.
