@@ -317,8 +317,8 @@ export Z_PATH Z_USER Z_PASS
 mkdir /c
 
 if perl -I/z/lib /z/dosbin/install.pl ; then
-    dosemu.bin \
-        || die "'dosemu.bin' exited with status $?"
+    # Always exits non-zero.  FIXME.
+    dosemu.bin
     sync
     reboot
 fi
