@@ -214,18 +214,14 @@ sub canonicalize_user ($$) {
     return $user;
 }
 
-# Read a file.  Return array of lines (minus line endings).
+# Read a file.  Return array of its lines.
 sub read_file ($) {
     my ($file) = @_;
-    my @ret;
 
     open FILE, $file
         or croak "Unable to open $file for reading: $^E";
 
-    while (my $line = <FILE>) {
-        chomp $line;
-        push @ret, $line;
-    }
+    my @ret = <FILE>;
 
     close FILE
         or croak "Unable to close $file: $^E";
