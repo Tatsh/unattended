@@ -50,7 +50,8 @@ sub get_bios_dev_info ($) {
 
     my $host_bus = read_line (File::Spec->catfile ($dir, 'host_bus'));
     if (defined $host_bus) {
-        if ($host_bus =~ /^PCI\s+($hex+):($hex+)\.(\d+)\s+channel:\s+(\d+)$/) {
+        if ($host_bus =~ 
+            /^PCIX?\s+($hex+):($hex+)\.(\d+)\s+channel:\s+(\d+)$/) {
             @ret{'pci_bus', 'pci_slot', 'pci_function', 'pci_domain'} =
                 ($1, $2, $3, $4);
         }
