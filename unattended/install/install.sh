@@ -196,7 +196,7 @@ src_tree=Z:\\win2ksp3\\i386
 # available for winnt.exe to work.  So we just drop the command in a
 # .bat script and run it.
 
-echo -n "Writing install command to doit.bat..."
-echo "$src_tree\\winnt /s:$src_tree /u:$unattend_dst" > C:\\doit.bat
+echo -n "Writing install command to $netinst\\doit.bat..."
+echo "$src_tree\\winnt /s:$src_tree /u:$unattend_dst" > $netinst\\doit.bat
 echo "done."
 exit 0

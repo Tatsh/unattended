@@ -1,5 +1,6 @@
 set PATH=A:\;A:\NET
 PROMPT $P$G
+:: Randomize hostname
 RANDOM 65535 >> \net\system.ini
 UMB.COM
 LH NET INITIALIZE /DYNAMIC
@@ -19,6 +20,6 @@ lh cwsdpmi -p -s-
 bash Z:\install.sh
 if errorlevel 1 goto end
 cwsdpmi -u
-c:\doit.bat
+c:\netinst\doit.bat
 
 :end
