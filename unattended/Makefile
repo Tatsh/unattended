@@ -60,4 +60,4 @@ log: checkver
 	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&	\
 	cvs log -N -S -r$(tag)::
 
-.PHONY: default checkver release diff
+.PHONY: default checkver release diff log
