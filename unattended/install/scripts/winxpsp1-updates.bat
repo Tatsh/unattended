@@ -19,7 +19,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\mmssetup.exe /q"
 :: extract it to %Z%\packages\DirectX.
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=a6dee0db-dcce-43ea-87bb-7c7e1fd1eaa2>
 :: (Requires .NET to be installed first for managed DX)
-todo.pl ".expect-reboot AutoIt %Z%\scripts\directx9.aut"
+todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
 :: Windows Journal Viewer update
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
