@@ -1,0 +1,13 @@
+REGEDIT4
+
+; Set the parameters for srvany.exe
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\cygwin-sshd\Parameters]
+"Application"="c:\\winnt\\system32\\cmd /c"
+"AppParameters"="c:\\cygwin\\usr\\local\\etc\\cygwin-sshd.bat"
+
+; Add some settings to the environment.
+; CYGWIN=tty is required for runwin to work, among other things.
+; ESHELL is used by Emacs.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment]
+"CYGWIN"="tty"
+"ESHELL"="c:\\cygwin\\bin\\bash.exe"
