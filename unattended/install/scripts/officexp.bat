@@ -5,6 +5,32 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Office XP Update: KB837253
+:: <http://support.microsoft.com/kb/837253>
+:: URL|ARA|http://download.microsoft.com/download/6/0/4/60464ed9-d9c3-439a-964e-b571dd13eae7/officexp-kb837253-client-ara.exe|updates/officexp/officexp-kb837253-client-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/4/2/4/424a024f-136d-465a-a1ef-6ed85f761db5/officexp-kb837253-client-csy.exe|updates/officexp/officexp-kb837253-client-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/d/d/0dd7012f-d3f5-4967-b531-05be82ed9027/officexp-kb837253-client-dan.exe|updates/officexp/officexp-kb837253-client-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/6/6/4/664a13f4-3bd4-4f10-bb19-2b09320c1b44/officexp-kb837253-client-deu.exe|updates/officexp/officexp-kb837253-client-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/7/3/57367af5-1454-4170-baac-a24e5b4116b5/officexp-kb837253-client-ell.exe|updates/officexp/officexp-kb837253-client-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/5/4/e/54ed43c3-dfe0-408d-beeb-99672b7033d8/officexp-kb837253-client-enu.exe|updates/officexp/officexp-kb837253-client-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/3/7/137a7668-78b2-4d23-b012-e274c635436c/officexp-kb837253-client-esn.exe|updates/officexp/officexp-kb837253-client-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/9/7/597e4ee3-6f9a-4119-b5c8-fa5be6242724/officexp-kb837253-client-fin.exe|updates/officexp/officexp-kb837253-client-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/e/2/b/e2bd081a-33d4-4e70-b039-4a9554492fcf/officexp-kb837253-client-fra.exe|updates/officexp/officexp-kb837253-client-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/8/4/88432498-35f7-4433-96ef-a729a5532b4d/officexp-kb837253-client-heb.exe|updates/officexp/officexp-kb837253-client-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/8/1/9/8195ea52-cb7b-4643-bca4-8a136ec42412/officexp-kb837253-client-hun.exe|updates/officexp/officexp-kb837253-client-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/8/4/c/84ce8dc1-29c8-408a-ad23-1260a7d24a71/officexp-kb837253-client-ita.exe|updates/officexp/officexp-kb837253-client-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/b/4/8b452413-a207-44c7-8c85-b1e54ccfb0fb/officexp-kb837253-client-jpn.exe|updates/officexp/officexp-kb837253-client-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/c/0/9c03422f-bab3-400d-8b37-85098d5702b5/officexp-kb837253-client-kor.exe|updates/officexp/officexp-kb837253-client-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/e/0/ce026c6a-4b9a-4a80-b6fc-b79d4427b88e/officexp-kb837253-client-nld.exe|updates/officexp/officexp-kb837253-client-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/e/a/7/ea7412af-1368-4c76-8415-fa490a93a7b6/officexp-kb837253-client-plk.exe|updates/officexp/officexp-kb837253-client-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/1/6/4/1643808d-b751-4f4c-af5c-5035e8165675/officexp-kb837253-client-ptg.exe|updates/officexp/officexp-kb837253-client-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/1/1/3/1139edd8-457a-4812-a4db-48050b7eb09f/officexp-kb837253-client-ptb.exe|updates/officexp/officexp-kb837253-client-ptb.exe
+:: URL|ROM|http://download.microsoft.com/download/8/a/0/8a0f79fb-b527-4bbf-8638-baaa04d2be4e/officexp-kb837253-client-rom.exe|updates/officexp/officexp-kb837253-client-rom.exe
+:: URL|RUS|http://download.microsoft.com/download/d/0/2/d02c53ab-b033-46a9-8175-d5f9f5cd4438/officexp-kb837253-client-rus.exe|updates/officexp/officexp-kb837253-client-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/4/c/9/4c9727a6-aca7-46a1-abf7-13a8d6902f2d/officexp-kb837253-client-sve.exe|updates/officexp/officexp-kb837253-client-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/4/f/54fc725a-c04e-4394-a5c8-22968e5ab8ae/officexp-kb837253-client-trk.exe|updates/officexp/officexp-kb837253-client-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb837253-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb837253.txt /p OFFICESPSop.msp REBOOT=ReallySuppress\""
+
 :: Bizarre update only for XP SP2
 :: <http://support.microsoft.com/kb/885884>
 if not %WINVER%. == winxpsp2. goto did885884
