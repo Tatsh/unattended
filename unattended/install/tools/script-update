@@ -5,7 +5,8 @@
 # unattended cvs repository.
 #
 # This scripts crawles through your script directory, and
-# tries to update every found file from the cvs.
+# tries to update every found file from the cvs. You can
+# define exceptions in this script.
 #
 # Warning #1: this scripts overwrites YOUR changes to official
 # script files without any warning! Please double-check that
@@ -21,8 +22,12 @@
 # This happens from time to time.
 #
 
+# exceptions
+#exceptions=( "win2ksp4-updates.bat" "win2ksp4-symbols.bat" )
+exceptions=( )
+
 # HTTP-Link to the cvs-repository (WITHOUT trailing "/scripts")
-CVSLINK="http://cvs.sourceforge.net/viewcvs.py/*checkout*/unattended/unattended/install"
+CVSLINK="http://cvs.sourceforge.net/viewcvs.py/*checkout*/unattended/unattended/install/scripts"
 
 # paths to needed programs
 WGET=$(which wget)
@@ -31,11 +36,12 @@ GREP=$(which grep)
 SORT=$(which sort)
 
 # Change to the scripts directory so paths are correct
-cd "$(dirname "$0")"/..
+cd "$(dirname "$0")"/../scripts
 
 # crawl through the script-dir
-for file in $($FIND scripts -type f | $GREP -v CVS | $SORT)
+for file in $($FIND . -type f | $GREP -v CVS | $SORT)
 do
+    if [[ "${exceptions[@]%%${file##./}}" != "${exceptions[@]}" ]]; then continue; fi
     if $WGET --output-document "$file.$$.tmp" $CVSLINK/$file?rev=HEAD
     then
         mv "$file.$$.tmp" "$file"
