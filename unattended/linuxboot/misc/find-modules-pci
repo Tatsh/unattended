@@ -58,7 +58,7 @@ map_modules_pci ()
 	fi
 
 	if [ $cmp_subdevice -ne $pci_any \
-            -a $cmp_subdevice -ne $device ]; then
+            -a $cmp_subdevice -ne $subdevice ]; then
 	    continue
 	fi
 
