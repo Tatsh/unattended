@@ -1,17 +1,17 @@
 # This file is a great working example.  It expects 2 files to 
-# exist in the z:\site directory.  Namely hardware.cvs and software.cvs.
+# exist in the z:\site directory.  Namely hardware.csv and software.csv.
 #
 # These files should look like the following:
 #
-# hardware.cvs contains the MAC to user,organization,computer names.
+# hardware.csv contains the MAC to user,organization,computer names.
 # MAC needs to be in all caps as show below.
 #
-# hardware.cvs
+# hardware.csv
 # ============
 # "MAC","Name","Owner","Organization"
 # "0003473ECA3C","Comp_1","John Doe","Acme, Inc."
 #
-# software.cvs contains the key and password for software. Owner can be
+# software.csv contains the key and password for software. Owner can be
 # one of MAC, username, computer name, or organization.  Key and password
 # are searched in that order.  In the example below all computers in
 # "Acme, Inc." that install Windows XP will have the password of "secret".
