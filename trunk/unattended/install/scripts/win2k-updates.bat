@@ -7,7 +7,7 @@ todo.pl win2ksp4-updates.bat
 :: <http://support.microsoft.com/?kbid=884016>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=5fbc5470-b259-4733-a914-a956122e08e8>
 :: URL|ALL|http://download.microsoft.com/download/9/e/1/9e14751c-f897-4bbd-af7a-890d9a0f5430/WindowsInstaller-KB884016-v2-x86.exe|packages/windowsinstaller/WindowsInstaller-KB884016-v2-x86.exe
-todo.pl "%Z%\packages\windowsinstaller\WindowsInstaller-KB884016-v2-x86.exe /passive /norestart"
+todo.pl ".reboot-on 194 %Z%\packages\windowsinstaller\WindowsInstaller-KB884016-v2-x86.exe /passive /norestart"
 
 :: Windows 2000 Service Pack 4 Network Install for IT Professionals
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=1001AAF1-749F-49F4-8010-297BD6CA33A0>
