@@ -3,16 +3,16 @@ busybox=busybox-1.00
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.18
 dbd-mysql=DBD-mysql-2.9005_3
-dbi=DBI-1.46
-dmidecode=dmidecode-2.5
+dbi=DBI-1.47
+dmidecode=dmidecode-2.6
 dosemu=dosemu-1.2.2
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.35
-glibc=glibc-20041122
+e2fsprogs=e2fsprogs-1.36
+glibc=glibc-2.3.4
 # Awful hack
-#glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
+glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.10
+linux=linux-2.6.11
 module-init-tools=module-init-tools-3.1
 mysql=mysql-4.0.23a
 nano=nano-1.2.4
@@ -24,7 +24,7 @@ perl=perl-5.8.6
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.3202
 pmtools=pmtools-20031210
-samba=samba-3.0.10
+samba=samba-3.0.11
 wireless_tools=wireless_tools.27
 zlib=zlib-1.2.2
 
@@ -243,12 +243,12 @@ stage1 += stage1/lib/libuuid.so
 
 ## glibc
 # Configure switches cheerfully stolen from LFS project
-# (http://www.linuxfromscratch.org/lfs/view/unstable/chapter05/glibc.html).
+# (http://www.linuxfromscratch.org/lfs/view/development/chapter05/glibc.html).
 build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
 	    --prefix=/usr					\
-	    --enable-add-ons --disable-profile			\
+	    --disable-profile  --enable-add-ons			\
             --enable-kernel=2.6.0				\
 	    --without-gd --without-cvs				\
             --without-selinux					\
@@ -807,9 +807,9 @@ download-pci.ids:
 
 
 download_targets=$(addprefix download-,$(packages) pci.ids)
-#download_targets += download-$(glibc-linuxthreads)
+download_targets += download-$(glibc-linuxthreads)
 
-#download-$(glibc-linuxthreads) : download-$(glibc)
+download-$(glibc-linuxthreads) : download-$(glibc)
 
 download: $(download_targets)
 
@@ -827,12 +827,12 @@ $(call download_rule, $(dosemu), tgz,					\
 	http://dl.sourceforge.net/sourceforge/dosemu/)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
-#$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
-$(call cvs_rule, $(glibc), libc, \
-	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
+#$(call cvs_rule, $(glibc), libc, \
+#	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
+$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 # Awful hack
-#$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
-#	http://ftp.gnu.org/gnu/glibc/, $(glibc))
+$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
+	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(linux), tar.bz2,		\
@@ -885,7 +885,7 @@ symlinks: $(symlink_targets)
 # Blow away everything we do not want to ship.
 tidy:
 	rm -rf $(patsubst symlink-%,%,$(symlink_targets))
-#	rm -f $(glibc-linuxthreads)
+	rm -f $(glibc-linuxthreads)
 	rm -rf dosboot iso
 	rm -rf .stamp-stage1 stage2 .stamp-stage2
 	rm -f devices.cpio initrd
