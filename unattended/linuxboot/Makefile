@@ -1,25 +1,27 @@
-bash=bash-2.05b
+#bash=bash-2.05b
+bash=bash-3.0
 busybox=busybox-1.00
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.18
 dbd-mysql=DBD-mysql-2.9004
-dbi=DBI-1.43
+dbi=DBI-1.45
 dmidecode=dmidecode-2.4
 #dosemu=dosemu-1.2.1
 dosemu=dosemu-20040723
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
-glibc=glibc-20040723
+glibc=glibc-20041012
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-klibc=klibc-0.157
+#klibc=klibc-0.157
+klibc=klibc-0.181
 linux=linux-2.6.8.1
 module-init-tools=module-init-tools-3.0
-mysql=mysql-4.0.20
+mysql=mysql-4.0.21
 nano=nano-1.2.4
 ncurses=ncurses-5.4
-parted=parted-1.6.11
+parted=parted-1.6.15
 perl=perl-5.8.5
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.3202
@@ -136,11 +138,19 @@ $(call copy_exe,$(klibc)/utils/static/mount,stage1/bin/mount)
 stage1 += stage1/bin/ash stage1/bin/gzip stage1/bin/mkdir stage1/bin/mount
 
 ## bash
-$(bash)/bash:
+#$(bash)/bash:
+#	cd $(bash)							\
+#	    && bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
+#	    	--build=i586-linux					\
+#            && make
+
+$(bash)/bash: fakeinclude/stdio.h
 	cd $(bash)							\
-	    && bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
-	    	--build=i586-linux					\
-            && make
+	&& CFLAGS="$(fakelib_cflags)"					\
+		bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
+		--build=i586-linux					\
+	&& make
+	[ -e $@ ] && touch $@
 
 $(call copy_exe, $(bash)/bash, stage1/bin/bash)
 
@@ -196,7 +206,7 @@ build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
 	mkdir -p $(dir $@)
 	cd $(dir $@)							\
 	&& CC="$(CC) $(fakelib_cflags)" $(cwd)/$(dosemu)/configure	\
-		--without-x --without-gpm --build=i586-linux
+		--without-x --without-slangdir --without-gpm --build=i586-linux
 	[ -e $@ ]
 
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
@@ -392,7 +402,7 @@ $(nano)/nano: fakeinclude/stdio.h fakeinclude/curses.h
 	&& CFLAGS="$(fakelib_cflags)"					    \
 		./configure --prefix=/usr				    \
 			--disable-browser --disable-mouse --disable-speller \
-			--build=i586-linux	\
+			--build=i586-linux				    \
 	&& make
 	[ -e $@ ] && touch $@
 
