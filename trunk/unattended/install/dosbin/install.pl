@@ -86,19 +86,16 @@ sub full_os_name ($) {
 # Read the current partition table and return it as a human-readable
 # string.
 sub read_partition_table () {
-    my $pid = open FDISK, '-|'
-        or die "Unable to fork: $^E";
+    # Sigh.  DJGPP Perl does not support pipes...
+    my $tmpfile = 'A:\\fdisktmp.txt';
+    system "fdisk /info /tech > $tmpfile";
+    open TMP, $tmpfile
+        or die "Unable to open $tmpfile for reading: $^E";
 
-    if ($pid == 0 ) {
-        # Child
-        exec 'fdisk', '/info', '/tech';
-        die "Unable to exec fdisk: $^E";
-    }
+    my $ret = join '', <TMP>;
 
-    my $ret = join '', <FDISK>;
-
-    # Omit error check here because we like to test under Windows...
-    close FDISK;
+    close TMP
+        or die "Unable to close $tmpfile read: $^E";
 
     return $ret;
 }
@@ -133,7 +130,7 @@ sub ask_fdisk_cmds () {
              'fdisk /pri:4096;fdisk /pri:4096 /spec:7;fdisk /pri:100,100 /spec:7'
              );
         if (defined $cmds) {
-            print "WARNING: This operation destroys the disk!";
+            print "WARNING: This operation erases the disk!";
             yes_no_choice ("Are you sure")
                 or next;
         }
@@ -353,7 +350,7 @@ get_value ('_meta', 'fdisk_lba')
 my $partition_table = read_partition_table ();
 
 # Display it.
-print "\nCurrent partition table:\n\n";
+print "\nCurrent partition table:";
 print $partition_table;
 print "\n";
 
@@ -366,11 +363,15 @@ foreach my $cmd (split /;/, $fdisk_cmds) {
 }
 
 # If partition table has changed, reboot.
+print "\nRe-checking partition table...";
 if ($partition_table ne read_partition_table ()) {
-    print "Partition table has changed, rebooting...\n";
+    print "changed.  Rebooting...\n";
     sleep 5;
     system ('fdisk /reboot');
     die "Internal error";
+}
+else {
+    print "no change.  Continuing.\n";
 }
 
 # Run formatting command, if any.
