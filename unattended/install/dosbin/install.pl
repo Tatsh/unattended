@@ -5,6 +5,7 @@ use Carp;
 use File::Spec::Win32;
 use File::Basename;
 use Unattend::IniFile;
+use Unattend::WinMedia;
 
 # File::Spec is supposed to auto-detect the OS and adapt
 # appropriately, but it does not recognize a $^O value of "dos".  Work
@@ -307,22 +308,39 @@ sub ask_os () {
     my $os_dir = get_value ('_meta', 'os_dir');
     opendir OSDIR, $os_dir
         or die "Unable to opendir $os_dir: $^E";
-    my @ents = map { lc; } readdir OSDIR;
-    closedir OSDIR, $os_dir
-        or die "Unable to closedir $os_dir: $^E";
-    my @oses = grep { defined full_os_name ($_); } @ents;
-    exists $oses[0]
-        or die "Unable to find any OS directories under $os_dir; bailing";
-    unless (exists $oses[1]) {
-        print "$oses[0] is the only OS directory under $os_dir; using it.\n";
-        return $oses[0];
+
+    my @media_objs;
+    while (my $ent = readdir OSDIR) {
+        $ent eq '.' || $ent eq '..'
+            and next;
+        -d $ent
+            or next;
+        my $full_path = $file_spec->catdir ($os_dir, $ent);
+        my $media = Unattend::WinMedia->new ($full_path);
+        defined $media
+            or next;
+        push @media_objs, $media;
     }
-    # Remove trailing backslash
-    $os_dir =~ s/\\*$//;
+
+    closedir OSDIR
+        or die "Unable to closedir $os_dir: $^E";
+
+    exists $media_objs[0]
+        or die "Unable to find any OS directories under $os_dir; bailing";
+    unless (exists $media_objs[1]) {
+        my $only = $media_objs[0]->path ();
+        print "$only is the only OS directory under $os_dir; using it.\n";
+        return $only;
+    }
+
     print "Please choose the OS to install:\n";
-    return menu_choice (map { full_os_name ($_) . " ($os_dir\\$_)"
-                                  => $_ }
-                        sort @oses);
+    my $choice =
+        menu_choice (map { $_->full_name () . ' (' . $_->path () . ')'
+                               => $_ }
+                        sort { $a->full_name () cmp $b->full_name () }
+                        @media_objs);
+    $choice->cache ();
+    return $choice->path ();
 }
 
 # Which directories to include in OemPnPDriversPath
