@@ -185,6 +185,10 @@ echo "*** By Jove, I think we've got it!"
 # FIXME: Bad hack to work around dosemu bug running over network
 rm /usr/bin/dosemu.bin
 cp /z/linuxaux/usr/bin/dosemu.bin /usr/bin/dosemu.bin
+rm -f /var/lib /var/lib/dosemu /var/lib/dosemu/drives \
+    /var/lib/dosemu/drives/dosboot.img
+mkdir -p /var/lib/dosemu/drives
+cp /z/linuxaux/var/lib/dosemu/drives/dosboot.img /var/lib/dosemu/drives/.
 
 # install.pl relies on these environment variables
 export Z_PATH Z_USER Z_PASS
