@@ -1,3 +1,39 @@
+** Changes in version 3.0 (2003-Sep-14)
+
+NOTE: This release has many changes.  You will need to refresh your
+install share (Z: drive) and your boot disk.
+
+Add support for using arbitrary username, password, and share name for
+mapping Z: drive.
+
+Make Windows 2000 work again.
+
+Eliminate calls to get_value, set_value, etc. in favor of direct
+access to $u object in install.pl.  The old functions are now
+deprecated and will whine (but still work) if called.
+
+Make "--day" and "--time" options to auconfig.pl actually work.  Add
+"--remote" option.
+
+Add full automation for autoexec.bat.  Thanks to Godfrey in New
+Zealand.
+
+Add support for recognizing Russian Windows media.  Thanks to Eugene
+Kotlyarov.
+
+Make name of "Administrators" group configurable via
+[_meta]/local_admin_group.  Useful for installing non-English (e.g.,
+Russian) systems.  Thanks to Eugene Kotlyarov.
+
+Add latest round of 2000 and XP hotfixes.
+
+Add latest Office XP hotfixes.
+
+Sync with version 8.2 of Intel DOS drivers (e100b.dos, e1000.dos).
+
+Sync with SYSLINUX 2.06.
+
+
 ** Changes in version 2.8 (2003-Aug-24)
 
 (NOTE: There are many patches and to-do items still in the queue, but
