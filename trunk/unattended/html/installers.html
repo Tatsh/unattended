@@ -629,6 +629,68 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 </table>
 
 <br><hr width="50%">
+<h2 id="msdn">MSDN Library</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+
+<td><a href="http://msdn.microsoft.com/subscriptions/">Subscription
+based</a>, although you can <a
+href="http://msdn.microsoft.com/library/">browse it online</a>.
+
+<tr><td valign="middle">Details
+
+<td>NOTE: The following applies to the April 2002 edition of the MSDN
+Library.  I make no promises about other editions, although I would be
+happy to hear about your experiences with them.
+
+<p>The good news is that the MSDN Library comes with an <a
+href="#msi">MSI</a> package.  The bad news is that when you try to
+install it with <code>msiexec</code>, a little dialog box appears
+telling you to run the provided <code>setup.exe</code> instead.
+
+<p>Naturally, <code>setup.exe</code> responds to <kbd>/?</kbd> with
+"Incorrect command line parameters", so you have to guess what it
+wants.  It turns out that it will take any arguments you give and pass
+them on to <code>msiexec</code>.  So we can just run
+<code>setup.exe&nbsp;/qb</code> and be done with it, right?  Wrong.
+Before running <code>msiexec</code>, <code>setup.exe</code> forks
+itself into the background, so <code>start&nbsp;/wait</code> returns
+immediately instead of waiting.
+
+<p>But we do not give up that easily.
+
+<p>If you run <code>setup.exe</code> with the
+<kbd>/l*v&nbsp;<var>logfile</var></kbd> option, you can learn quite a
+bit about what it is doing.  In particular, you can discover that
+<code>setup.exe</code> simply passes a <code>SETUP_EXE=yes</code>
+property to the underlying <code>msiexec</code> process.
+
+<p>In other words, all you have to do is run
+<code>msiexec&nbsp;/qb&nbsp;/i&nbsp;msdn.msi&nbsp;SETUP_EXE=yes</code>,
+and the installation proceeds without a hitch.
+
+<p>You may be wondering: If setting one useless property is all
+<code>setup.exe</code> does, why does Microsoft want you to use it?
+The answer is that the MSDN Library requires IE6, and
+<code>setup.exe</code> will install it for you if necessary.  So, you
+should make sure you have IE6 installed before you attempt this
+procedure, because I have no idea what will happen otherwise.
+
+<p>Incidentally, this will perform a "Default" installation of MSDN
+Library, which means that most of the files will not be installed
+locally but rather loaded from the source as required.  So choose the
+path to that <code>msdn.msi</code> package carefully, because that is
+the path MSDN will use whenever it needs something.
+
+<tr><td valign="middle">Example
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/msdn.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>msdn.bat</a>
+
+</table>
+
+<br><hr width="50%">
 <h2 id="mozilla">Mozilla</h2>
 <table border cellpadding=4>
 
