@@ -14,7 +14,7 @@ use File::Path;
 # Your usual option-processing sludge.
 my %opts;
 GetOptions (\%opts, 'help|h|?', 'arguments=s', 'description=s',
-            'hotkey=s', 'workingdirectory=s')
+            'hotkey=s', 'icon=s', 'workingdirectory=s')
     or pod2usage (2);
 
 (exists $opts{'help'})
@@ -86,7 +86,9 @@ print "Creating shortcut $full_shortcut -> $target\n";
 my $obj = $wsh_shell->CreateShortcut ($full_shortcut);
 $obj->{TargetPath} = $target;
 $obj->{WindowStyle} = 1;
-$obj->{IconLocation} = "$target, 0";
+$obj->{IconLocation} = (exists $opts{'icon'}
+                        ? $opts{'icon'}
+                        : "$target, 0");
 $obj->{WorkingDirectory} = (exists $opts{'workingdirectory'}
                             ? $opts{'workingdirectory'}
                             : $target_dir);
@@ -120,6 +122,7 @@ Options (may be abbreviated):
  --arguments <args>       Use <args> as arguments to target
  --description <desc>     Set description (aka. "infotip") to <desc>
  --hotkey <key>           Set hotkey (aka. "keyboard shortcut") to <key>
+ --icon <iconfile>        Set <iconfile> as the file containing the icon
  --workingdirectory <dir> Set working directory to <dir>
 
 =head1 DESCRIPTION
