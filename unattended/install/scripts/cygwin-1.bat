@@ -1,8 +1,5 @@
 :: Perform post-install Cygwin configuration.
 
-:: Install xwinclip
-todo.pl "c:\cygwin\bin\bash.exe --login -c 'cd /usr/X11R6/bin && cp /cygdrive/z/packages/xwinclip-Test06.exe.bz2 . && bunzip2 xwinclip-Test06.exe.bz2 && mv xwinclip-Test06.exe xwinclip.exe'"
-
 :: Untar our local additions to the tree
 todo.pl "c:\cygwin\bin\bash.exe --login -c 'tar -C / -xvzf /cygdrive/z/packages/curlstuff.tar.gz'"
 
