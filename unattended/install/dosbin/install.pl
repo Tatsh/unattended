@@ -364,6 +364,59 @@ sub write_file ($@) {
         or die "Unable to close $file: $^E";
 }
 
+# Write a new master boot record.
+sub linux_write_mbr ($) {
+    my ($boot_file) = @_;
+
+    $is_linux
+        or croak 'internal error';
+
+    use bytes;
+    use Fcntl;
+
+    my $mbr_size = 446;
+    my $sect_size = 512;
+
+    my $bootsect = '';
+    my $disk = '/dev/dsk';
+
+    # Read the current master boot sector
+    sysopen DISK, $disk, O_RDONLY
+        or die "Unable to open $disk for reading: $^E";
+    sysread DISK, $bootsect, $sect_size
+        or die "Unable to read from $disk: $^E";
+    close DISK
+        or die "Unable to close $disk: $^E";
+
+    my $new_mbr = '';
+    # Overwrite the MBR portion
+    open BOOT, $boot_file
+        or croak "Unable to open $boot_file for reading: $^E";
+    read BOOT, $new_mbr, $mbr_size
+        or die "Unable to read from $boot_file: $^E";
+    close BOOT
+        or croak "Unable to close $boot_file: $^E";
+
+    print "Installing $boot_file as MBR...\n";
+
+    substr($bootsect, 0, $mbr_size,
+           substr($new_mbr, 0, $mbr_size));
+
+    # Set the magic cookie to indicate a valid boot sector
+    substr($bootsect, -2, 1, chr 0x55);
+    substr($bootsect, -1, 1, chr 0xAA);
+
+    # Write out the new master boot sector
+    sysopen DISK, $disk, O_WRONLY
+        or die "Unable to open $disk for writing: $^E";
+    syswrite DISK, $bootsect, $sect_size
+        or die "Unable to write boot sector to $disk: $^E";
+    close DISK
+        or die "Unable to close write to $disk: $^E";
+
+    print "...done.\n";
+}
+
 # Run a command and return the output.  We need this function because
 # pipes and backticks do not work under DJGPP Perl.
 # Only works under DOS.
@@ -1225,7 +1278,8 @@ my $format_cmd = $u->{'_meta'}->{'format_cmd'};
 # Overwrite MBR, if desired.
 if ($u->{'_meta'}->{'replace_mbr'}) {
     if ($is_linux) {
-        print "*** FIXME: Must handle MBR here (yowza)!\n";
+        linux_write_mbr ('/usr/lib/freedos-mbr.bin');
+#        linux_write_mbr ('/usr/lib/booteasy.bin');
     }
     else {
         system ('fdisk /mbr');
