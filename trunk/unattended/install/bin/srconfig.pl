@@ -47,7 +47,7 @@ my $sr_set = $computer->ExecQuery ('SELECT * from meta_class WHERE __this ISA "S
 my @srs = Win32::OLE::Enum->All ($sr_set);
 
 if (scalar @srs < 1) {
-    print "$me: SystemRestore class not found; nothing to do.";
+    print "$me: SystemRestore class not found; nothing to do.\n";
     exit 0;
 }
 
