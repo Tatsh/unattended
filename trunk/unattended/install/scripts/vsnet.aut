@@ -28,9 +28,17 @@ WinWaitClose, Select a destination folder
 ; Back to Options Page.
 WinActivate, Options Page
 ; Toggle twice to select all VC++ components.
-Send, {DOWN}{DOWN}{DOWN}{SPACE}{SPACE}
+Send, {DOWN}{DOWN}{DOWN}
+Sleep, 3000
+Send, {SPACE}
+Sleep, 3000
+Send, {SPACE}
+Sleep, 3000
 ; Deselect server components
-Send, s{SPACE}
+Send, s
+Sleep, 3000
+Send, {SPACE}
+Sleep, 3000
 ; Proceed with installation
 Send, {TAB}{TAB}{TAB}{TAB}{TAB}{SPACE}
 
