@@ -15,10 +15,21 @@ my $todo = 'c:\\netinst\\todo.txt';
 # Location of "mapznrun" script
 my $mapznrun = 'c:\\netinst\\mapznrun.bat';
 
+# Determine alternate letter for z: drive and store it in Z
+# environment variable (unless it is already set).
+unless (exists $ENV{'Z'}) {
+    # Try to get drive letter from the path to this script.
+    use File::Spec;
+    my ($vol, undef, undef) = File::Spec->splitpath ($0);
+    $ENV{'Z'} = $vol;
+}
+
+my $z = $ENV{'Z'};
+
 unless (-e $mapznrun) {
-    print "Hm, no $mapznrun file.  Attempting to copy from Z:\\bin...";
+    print "Hm, no $mapznrun file.  Attempting to copy from $z\\bin...";
     use File::Copy;
-    copy 'z:\\bin\\mapznrun.bat', $mapznrun
+    copy '$z\\bin\\mapznrun.bat', $mapznrun
         or die "copy failed ($^E); bailing";
 }
 
@@ -265,13 +276,13 @@ if (exists $opts{'go'}) {
     $ENV{'_IN_TODO'} = 'yes';
 
     # Add "bin" and "scripts" directories to PATH.
-    $ENV{'PATH'} = "Z:\\bin;Z:\\scripts;$ENV{'PATH'}";
+    $ENV{'PATH'} = "$z\\bin;$z\\scripts;$ENV{'PATH'}";
 
     # Set handy "WINVER" environment variable.
     $ENV{'WINVER'} = get_windows_version ();
 
     # Set handy "Z_PATH" environment variable.
-    $ENV{'Z_PATH'} = get_drive_path ('Z:');
+    $ENV{'Z_PATH'} = get_drive_path ($z);
 
     # Disable running ourselves after reboot.
     run_at_logon ();
