@@ -38,7 +38,9 @@ todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\MPSetup.EXE /Q /R:N /C:\"setup
 
 :: Microsoft .NET framework
 :: <http://msdn.microsoft.com/netframework/downloads/>
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\dotnetfx.exe /q /c:\"install /q\""
+:: (Click on "How to get the .NET framework", and download the
+:: "Microsoft .NET Framework 1.1 Redistributable".)
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\%WINLANG%\dotnetfx.exe /q /c:\"install /q\""
 
 :: Recommended Updates
 
