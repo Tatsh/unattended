@@ -2,7 +2,8 @@ bash=bash-2.05b
 busybox=busybox-1.00-pre10
 dbd-mysql=DBD-mysql-2.9003
 dbi=DBI-1.42
-dosemu=dosemu-1.2.1
+#dosemu=dosemu-1.2.1
+dosemu=dosemu-20040606
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
 glibc=glibc-2.3.2
@@ -678,13 +679,16 @@ download-$(strip $(1)) :  ;						\
 	&& rm $$$$temp ;						\
 	}
 
-# Special rule to fetch updated pci.ids file
-download-pci.ids:
-	[ -e pci.ids ]							     \
-	|| { rm -f $@.tmp.bz2						     \
-	     && wget -O $@.tmp.bz2 http://pciids.sourceforge.net/pci.ids.bz2 \
-	     && bunzip2 $@.tmp.bz2					     \
-	     && mv $@.tmp pci.ids ; }
+cvs_rule=							\
+download-$(strip $(1)) : ;					\
+	what=$(strip $(1)) && module=$(strip $(2))		\
+	&& repo=$(strip $(3)) && date=$$$${what\#\#*-}	\
+	&& { [ -d "$$$$what" ] && exit 0 || : ; }		\
+	&& cd $(dest)						\
+	&& [ ! -e $$$$module ]					\
+	&& cvs -z 9 -d $$$$repo checkout -D $$$$date $$$$module	\
+	&& mv $$$$module $$$$what				\
+	&& [ "$(dest)" == . ] || ln -sf $(dest)/$$$$what $(cwd)
 
 # Special rule for glibc (checkout from CVS based on date).
 # download-$(glibc):
@@ -695,8 +699,18 @@ download-pci.ids:
 # 	&& mv libc $(glibc)
 # 	[ "$(dest)" == . ] || ln -sf $(dest)/$(glibc) $(glibc)
 
-download_targets=$(addprefix download-,$(packages) $(glibc-linuxthreads) \
-			pci.ids)
+# Special rule to fetch updated pci.ids file
+download-pci.ids:
+	[ -e pci.ids ]							     \
+	|| { rm -f $@.tmp.bz2						     \
+	     && wget -O $@.tmp.bz2 http://pciids.sourceforge.net/pci.ids.bz2 \
+	     && bunzip2 $@.tmp.bz2					     \
+	     && mv $@.tmp pci.ids ; }
+
+
+
+download_targets=$(addprefix download-,$(packages) pci.ids)
+#download_targets += download-$(glibc-linuxthreads)
 
 download-$(glibc-linuxthreads) : download-$(glibc)
 
@@ -708,8 +722,10 @@ $(call download_rule, $(dbd-mysql), tar.gz, \
 	http://www.cpan.org/authors/id/R/RU/RUDY/)
 $(call download_rule, $(dbi), tar.gz, \
 	http://www.cpan.org/authors/id/T/TI/TIMB/)
-$(call download_rule, $(dosemu), tgz,					\
-	http://dl.sourceforge.net/sourceforge/dosemu/)
+#$(call download_rule, $(dosemu), tgz,					\
+#	http://dl.sourceforge.net/sourceforge/dosemu/)
+$(call cvs_rule, $(dosemu), dosemu,				\
+	:pserver:anonymous@cvs.sourceforge.net:/cvsroot/dosemu)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
