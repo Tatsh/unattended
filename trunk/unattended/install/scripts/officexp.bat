@@ -17,7 +17,7 @@ todo.pl "%Z%\updates\officexp\Officexp-kb830346-client-%WINLANG%.exe /q /c:\"msi
 
 :: "Office XP Web Services Security Patch: November 11, 2003"
 :: <http://support.microsoft.com/?kbid=812708>
-:: (No security bulletin?)
+:: <http://www.microsoft.com/technet/security/bulletin/MS03-051.asp>
 :: (You may need to rename this from -ENG.exe to -ENU.exe)
 todo.pl "%Z%\updates\officexp\officexp-kb812708-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* c:\netinst\logs\fp5autlop.txt /p FP5AUTLop.msp\""
 
