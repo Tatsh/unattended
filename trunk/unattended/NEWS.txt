@@ -7,7 +7,7 @@ Moving ever closer to total non-interaction...
 
 Update win2ksp3-hotfixes.pl.
 
-Add support for Netgear FA311 network card.
+Add support for Netgear FA311/FA312 network cards.
 
 Fix various minor bugs.
 
