@@ -18,7 +18,7 @@ system 'attrib', '-h', '-s', $bootini;
 open BOOTINI, $bootini
     or die "Unable to open $bootini for reading: $^E";
 
-my @lines = grep { $_ !~ /Previous Operating System on/ } <BOOTINI>;
+my @lines = grep { $_ !~ /Previous Operating System on|SystŠme d'exploitation pr‚c‚dent sur/ } <BOOTINI>;
 
 close BOOTINI
     or die "Unable to close $bootini: $^E";
