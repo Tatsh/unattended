@@ -78,7 +78,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb867460-x86-%WINLAN
 :: Recommended Update MS04-014 (837001)
 :: "Vulnerability in the Microsoft Jet ... could permit code execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
-:: URL|DEU|http://download.microsoft.com/download/0/2/3/023c61e4-f328-429a-bfb0-a290de811b3a/WindowsServer2003-KB837001-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-enu.exe
+:: URL|DEU|http://download.microsoft.com/download/0/2/3/023c61e4-f328-429a-bfb0-a290de811b3a/WindowsServer2003-KB837001-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/a/1/0/a1080cda-4801-4a0c-8692-0d9773b1cca5/WindowsServer2003-KB837001-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/6/a/e/6aeaaa8a-ff6b-404f-b1c5-43fc7eebbe91/WindowsServer2003-KB837001-x86-ESN.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-esn.exe
 :: URL|FRA|http://download.microsoft.com/download/f/2/9/f292adf9-f7a0-4b71-8a48-67c6af85b5c7/WindowsServer2003-KB837001-x86-FRA.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-fra.exe
