@@ -14,8 +14,6 @@ glibc=glibc-20041012
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-#klibc=klibc-0.157
-klibc=klibc-0.188
 linux=linux-2.6.9
 module-init-tools=module-init-tools-3.0
 mysql=mysql-4.0.21
@@ -35,7 +33,7 @@ zlib=zlib-1.2.2
 cwd:=$(shell pwd)
 
 packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		    \
-	$(dmidecode) $(dosemu) $(e2fsprogs) $(glibc) $(kbd) $(klibc)	    \
+	$(dmidecode) $(dosemu) $(e2fsprogs) $(glibc) $(kbd)		    \
 	$(linux) $(module-init-tools) $(mysql) $(nano) $(ncurses) $(parted) \
 	$(perl) $(perl-ldap) $(pciutils) $(pcmcia-cs) $(pmtools) $(samba)   \
 	$(wireless_tools) $(zlib)
@@ -112,30 +110,6 @@ stage1/.stamp-modules: $(linux)/arch/i386/boot/bzImage stage1/sbin/depmod
 	touch $@
 
 stage1 += stage1/.stamp-modules
-
-## klibc
-
-$(klibc)/ash/sh: $(linux)/arch/i386/boot/bzImage
-	rm -f $@
-	cd $(klibc) && ln -nsf $(cwd)/$(linux) ./linux	\
-	&& make
-	[ -e $@ ]
-
-$(call copy_exe,$(klibc)/ash/sh,stage1/bin/ash)
-
-$(klibc)/gzip/gzip: $(klibc)/ash/sh
-	[ -e $@ ] && touch $@
-$(call copy_exe,$(klibc)/gzip/gzip,stage1/bin/gzip)
-
-$(klibc)/utils/static/mkdir: $(klibc)/ash/sh
-	[ -e $@ ] && touch $@
-$(call copy_exe,$(klibc)/utils/static/mkdir,stage1/bin/mkdir)
-
-$(klibc)/utils/static/mount: $(klibc)/ash/sh
-	[ -e $@ ] && touch $@
-$(call copy_exe,$(klibc)/utils/static/mount,stage1/bin/mount)
-
-stage1 += stage1/bin/ash stage1/bin/gzip stage1/bin/mkdir stage1/bin/mount
 
 ## bash
 #$(bash)/bash:
@@ -871,8 +845,6 @@ $(call cvs_rule, $(glibc), libc, \
 #	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
-$(call download_rule, $(klibc), tar.bz2,		\
-	http://ftp.kernel.org/pub/linux/libs/klibc/)
 $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
