@@ -5,6 +5,22 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: "Access 2002 Snapshot Viewer Security Patch: September 3, 2003"
+:: <http://support.microsoft.com/?kbid=826923>
+todo.pl "z:\packages\officexp-kb826923-client-enu.exe /q /c:\"msiexec /qb /p SNAPVIEWop.msp\""
+
+:: "WordPerfect 5.x Converter Security Patch: September 3, 2003"
+:: <http://support.microsoft.com/?kbid=824938>
+todo.pl "z:\packages\officexp-kb824938-client-enu.exe /q /c:\"msiexec /qb /p MSCONVop.msp\""
+
+:: "Word 2002 Security Patch: September 3, 2003"
+:: <http://support.microsoft.com/?kbid=824934>
+todo.pl "z:\packages\officexp-kb824934-client-enu.exe /q /c:\"msiexec /qb /p WINWORDop.msp\""
+
+:: "Office XP Security Patch: September 3, 2003"
+:: <http://support.microsoft.com/?kbid=822036>
+todo.pl "z:\packages\OfficeXP-KB822036-Client-ENU.exe /q /c:\"msiexec /qb /p VBE6op.msp\""
+
 :: Outlook 2002 Update: January 22, 2003
 :: <http://support.microsoft.com/?kbid=812262>
 :: <http://office.microsoft.com/downloads/2002/olk1006.aspx>
