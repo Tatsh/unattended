@@ -62,7 +62,7 @@ todo.pl "%Z%\updates\office2k\Office2000-KB822035-Client-%WINLANG%.exe /q /c:\"m
 
 :: Install the "Outlook 2000 Update: December 18, 2002"
 :: URL|ENU|http://download.microsoft.com/download/f/1/d/f1d8421a-2b76-4603-808b-39d8dcc74038/Olk0901.exe|updates/office2k/enu/olk0901.exe
-:: URL|DEU|http://download.microsoft.com/download/2/2/3/223520df-1403-4406-a29c-549d147dba05/olk0901.exe|updates/office2k/deu/olk0901_deu.exe
+:: URL|DEU|http://download.microsoft.com/download/2/2/3/223520df-1403-4406-a29c-549d147dba05/olk0901.exe|updates/office2k/deu/olk0901.exe
 :: URL|NLD|http://download.microsoft.com/download/9/3/e/93e84ec0-9f9e-466e-8e1b-9a4f3ac53c0c/Olk0901.exe|updates/office2k/nld/olk0901.exe
 :: URL|RUS|http://download.microsoft.com/download/c/f/0/cf0e4961-c166-4200-b346-bb52873f70a3/Olk0901.exe|updates/office2k/rus/olk0901.exe
 :: <http://support.microsoft.com/?kbid=811167>
