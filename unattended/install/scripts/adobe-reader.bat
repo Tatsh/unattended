@@ -1,4 +1,4 @@
 :: Install Adobe Reader
 
-todo.pl "%Z%\packages\AdobeReader\AdbeRdr60_enu_full.exe -p\"-s /v\\\"/qn\\\"\""
-
+:: Download from <http://www.adobe.com/products/acrobat/alternate.html>
+todo.pl "%Z%\packages\AdobeReader\AdbeRdr60_%WINLANG%_full.exe -p\"-s /v\\\"/qn\\\"\""
