@@ -7,28 +7,27 @@ default:
 
 cvs := :pserver:anonymous@cvs.unattended.sourceforge.net:/cvsroot/unattended
 
-release: check-version unattended-${ver}.tar.gz
+dir = unattended-${ver}
 
-unattended-${ver}.tar.gz: FORCE
-	dir=`pwd` &&							\
+release:
+	@if [ "${ver}" == "" ] ; then					\
+		echo "You forgot to set the 'ver' variable" ;		\
+		exit 1 ;						\
+	fi
 	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
 	cd $$temp &&							\
 	cvs -z3 -d${cvs} checkout unattended &&				\
-	mv unattended unattended-${ver} &&				\
-	tar --exclude CVS -cvzf unattended-${ver}.tar.gz		\
-		unattended-${ver} &&					\
+	mv unattended ${dir} &&						\
+	tar --exclude CVS -cvzf ${dir}.tar.gz ${dir} &&			\
+	sleep 2 &&							\
+	cd ${dir}/bootdisk &&						\
+	make &&								\
+	cd ../.. &&							\
+	tar --exclude CVS --newer ./${dir}.tar.gz -cvzf			\
+		${dir}-images.tar.gz ${dir} &&				\
 	ncftpput -p patl@users.sourceforge.net upload.sourceforge.net	\
-		/incoming unattended-${ver}.tar.gz &&			\
+		/incoming ${dir}.tar.gz ${dir}-images.tar.gz &&		\
 	cd / &&								\
 	rm -rf $$temp
 
-
-check-version:
-	@if [ "${ver}" == "" ] ; then				\
-		echo "You forgot to set the 'ver' variable" ;	\
-		exit 1 ;					\
-	fi
-
-.PHONY: default release check-version
-
-FORCE:
+.PHONY: default release
