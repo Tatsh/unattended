@@ -170,6 +170,12 @@ done
 
 unset PASSWD
 
+[ -f /z/dosbin/install.pl ] \
+    || die "Invalid install share: /z/dosbin/install.pl not found."
+
+[ -d /z/linuxaux ] \
+    || die "Invalid install share: /z/linuxaux directory not found."
+
 echo "*** Excellent.  Now, let's see about mass storage controllers..."
 
 # PCI classes 0x01nnnn are mass storage controllers.
