@@ -410,7 +410,7 @@ stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 
 ## pcmcia-cs (PCMCIA Card Services, particularly cardmgr)
 $(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/i386/boot/bzImage
-	rm $@
+	rm -f $@
 	cd $(pcmcia-cs)						\
 	&& make clean						\
 	&& ./Configure --noprompt --kernel=$(cwd)/$(linux)	\
@@ -654,7 +654,8 @@ symlinks: $(symlink_targets)
 
 # Blow away everything we do not want to ship.
 tidy:
-	rm -f $(patsubst symlink-%,%,$(symlink_targets))
+	rm -rf $(patsubst symlink-%,%,$(symlink_targets))
+	rm -f $(glibc-linuxthreads)
 	rm -rf dosboot iso
 	rm -rf stage2 .stamp-stage2
 	rm -f devices.cpio initrd
