@@ -11,32 +11,30 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
-::Office 2003 Security Update: KB838905
-:: URL|ARA|http://download.microsoft.com/download/a/2/6/a26531ac-3c75-471c-87e2-e1c191340838/office2003-kb838905-client-ara.exe|updates/office2003/office2003-kb838905-client-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/5/8/5/585ef2b3-3fd6-4dc7-b94b-39a608954725/office2003-kb838905-client-csy.exe|updates/office2003/office2003-kb838905-client-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/b/e/8/be8276a8-ab5a-4fcf-85f5-f2851a2eabdd/office2003-kb838905-client-dan.exe|updates/office2003/office2003-kb838905-client-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/a/2/e/a2ed81f9-a976-4d73-a826-3df34cd0edc4/office2003-kb838905-client-deu.exe|updates/office2003/office2003-kb838905-client-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/0/4/5/04586b40-261a-4243-b4f8-ceac0b82c012/office2003-kb838905-client-ell.exe|updates/office2003/office2003-kb838905-client-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/7/f/c/7fc52236-a81d-4e26-b6b3-06e2133f6541/office2003-kb838905-client-enu.exe|updates/office2003/office2003-kb838905-client-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/b/1/b/b1baeb5e-ca4e-42f8-b036-b1d7a13b4d9d/office2003-kb838905-client-esn.exe|updates/office2003/office2003-kb838905-client-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/0/8/1/081dfc10-adc6-4805-9ff4-9e2a2584b48f/office2003-kb838905-client-fin.exe|updates/office2003/office2003-kb838905-client-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/d/2/b/d2bc25d0-4bdb-40c2-bf40-70718453a56f/office2003-kb838905-client-fra.exe|updates/office2003/office2003-kb838905-client-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/8/a/b/8ab6e60e-8da6-4148-9757-87906b5f0848/office2003-kb838905-client-heb.exe|updates/office2003/office2003-kb838905-client-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/a/e/d/aed5e979-3e09-494b-8051-b48130875b2d/office2003-kb838905-client-hun.exe|updates/office2003/office2003-kb838905-client-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/4/5/b/45bee7e6-22b1-452f-bd3e-08ffe41e63f4/office2003-kb838905-client-ita.exe|updates/office2003/office2003-kb838905-client-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/3/4/4349bacc-6ab7-483e-be0c-6ccc9dce82f9/office2003-kb838905-client-jpn.exe|updates/office2003/office2003-kb838905-client-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/c/d/0cd0392c-141d-4cde-8f58-d0db73f79cc9/office2003-kb838905-client-kor.exe|updates/office2003/office2003-kb838905-client-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/0/5/9/05990737-5d40-4618-81fa-b82bd059414f/office2003-kb838905-client-nld.exe|updates/office2003/office2003-kb838905-client-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/9/f/b/9fb6e6f8-f523-4a72-9029-c6d18abbf7d5/office2003-kb838905-client-plk.exe|updates/office2003/office2003-kb838905-client-plk.exe
-:: URL|PRG|http://download.microsoft.com/download/0/d/f/0df0b178-8253-4935-a40a-165100f56166/office2003-kb838905-client-ptg.exe|updates/office2003/office2003-kb838905-client-ptg.exe
-:: URL|PTB|http://download.microsoft.com/download/8/3/4/8342dac1-687e-4877-862c-ea16de7049d0/office2003-kb838905-client-ptb.exe|updates/office2003/office2003-kb838905-client-ptb.exe
-:: URL|ROM|http://download.microsoft.com/download/b/4/6/b468fdf7-f779-4a1e-978d-83bc73cb9b19/office2003-kb838905-client-rom.exe|updates/office2003/office2003-kb838905-client-rom.exe
-:: URL|RUS|http://download.microsoft.com/download/a/4/4/a446a6c4-7192-4429-8267-c12bcb94f024/office2003-kb838905-client-rus.exe|updates/office2003/office2003-kb838905-client-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/e/8/4/e84ec9e9-ad5f-4709-b5f2-03fd294b883b/office2003-kb838905-client-sve.exe|updates/office2003/office2003-kb838905-client-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/2/0/2/2025cb9d-cf5d-45c9-8165-eaba71df1558/office2003-kb838905-client-trk.exe|updates/office2003/office2003-kb838905-client-trk.exe
-:: <http://support.microsoft.com/?id=838905>
-todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb838905-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb838905.txt /p MSCONVff.msp REBOOT=ReallySuppress\""
-
+:: Update for Outlook 2003: Junk E-mail Filter (KB870765)
+:: URL|ARA|http://download.microsoft.com/download/b/e/7/be7e1918-4b3b-4954-80a8-677afc40a81e/office2003-kb870765-fullfile-ara.exe|updates/office2003/office2003-kb870765-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/0/6/0/06014eed-0960-4d07-b03d-a9cf1abf1653/office2003-kb870765-fullfile-csy.exe|updates/office2003/office2003-kb870765-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/d/3/e/d3e84b9b-71eb-4fbd-8fdd-e315e0db5df4/office2003-kb870765-fullfile-dan.exe|updates/office2003/office2003-kb870765-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/5/1/2/5127e720-3b0c-4cc6-affd-340cd1c0d5c9/office2003-kb870765-fullfile-deu.exe|updates/office2003/office2003-kb870765-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/6/7/2/672c0432-6303-48cc-b0a5-eeb5f0ed69b2/office2003-kb870765-fullfile-ell.exe|updates/office2003/office2003-kb870765-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/8/6/c/86cadd9d-0995-45e1-b1b6-05f0cb8a7ee2/office2003-kb870765-fullfile-enu.exe|updates/office2003/office2003-kb870765-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/5/1/2517edee-b902-4aee-a3f8-55298c0e812b/office2003-kb870765-fullfile-esn.exe|updates/office2003/office2003-kb870765-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/e/4/c/e4c6b6fc-9073-4f63-9ff0-f3e5e705f2f3/office2003-kb870765-fullfile-fin.exe|updates/office2003/office2003-kb870765-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/8/2/b/82b3a332-ace4-41a9-a286-f42d1c9b8148/office2003-kb870765-fullfile-fra.exe|updates/office2003/office2003-kb870765-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/2/7/a/27af2df4-71fe-4ac7-917f-7a3322386864/office2003-kb870765-fullfile-heb.exe|updates/office2003/office2003-kb870765-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/7/c/a7ce9a81-c940-4a2b-9ace-10b0dca7717c/office2003-kb870765-fullfile-hun.exe|updates/office2003/office2003-kb870765-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/c/7/f/c7f1da5f-5ae7-4f69-a863-2110ba1a40fe/office2003-kb870765-fullfile-ita.exe|updates/office2003/office2003-kb870765-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/6/d/f6d6f42f-38a1-4d70-b8eb-74f65e9ef18e/office2003-kb870765-fullfile-jpn.exe|updates/office2003/office2003-kb870765-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/c/3/b/c3b5f798-665c-44ff-8d7d-d8d8ba5f2a0a/office2003-kb870765-fullfile-kor.exe|updates/office2003/office2003-kb870765-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/b/b/6/bb647828-78c2-4fb3-8966-4f22c426dc3a/office2003-kb870765-fullfile-nld.exe|updates/office2003/office2003-kb870765-fullfile-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/4/c/a/4ca2a8a9-3d5f-45bf-be40-810c99b1d9ef/office2003-kb870765-fullfile-plk.exe|updates/office2003/office2003-kb870765-fullfile-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/3/5/4/3542f9d3-6ce3-408a-8f66-8526aa421f72/office2003-kb870765-fullfile-ptg.exe|updates/office2003/office2003-kb870765-fullfile-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/6/f/7/6f70db5d-373b-4445-94ec-623e1f9aebce/office2003-kb870765-fullfile-ptb.exe|updates/office2003/office2003-kb870765-fullfile-ptb.exe
+:: URL|ROM|http://download.microsoft.com/download/1/2/9/129ae0f2-0987-4080-acec-ce2748c59445/office2003-kb870765-fullfile-rom.exe|updates/office2003/office2003-kb870765-fullfile-rom.exe
+:: URL|RUS|http://download.microsoft.com/download/1/5/8/1581f369-f54c-4fed-9fce-79fd6b622115/office2003-kb870765-fullfile-rus.exe|updates/office2003/office2003-kb870765-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/2/4/8/2483f581-51e6-428f-8a56-d940359f966f/office2003-kb870765-fullfile-sve.exe|updates/office2003/office2003-kb870765-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/3/1/13114bc4-e03e-4462-ba7b-207802629433/office2003-kb870765-fullfile-trk.exe|updates/office2003/office2003-kb870765-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb870765-fullfile-%WINLANG%.exe /q /r:n"
 
 ::"Security Update for Office 2003: WordPerfect 5.x Converter (KB873378)"
 :: URL|ARA|http://download.microsoft.com/download/3/6/c/36c7f39b-e86c-4aff-a492-6a5b7348814c/office2003-kb873378-fullfile-ara.exe|updates/office2003/office2003-kb873378-fullfile-ara.exe
@@ -62,7 +60,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb838905-client-%WINLA
 :: URL|SVE|http://download.microsoft.com/download/4/8/6/486eecdc-60b3-4cf7-bb07-8abbc8d95847/office2003-kb873378-fullfile-sve.exe|updates/office2003/office2003-kb873378-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/a/b/a/abaa75f1-d58c-4eb8-8804-2f45ef2510da/office2003-kb873378-fullfile-trk.exe|updates/office2003/office2003-kb873378-fullfile-trk.exe
 :: <http://support.microsoft.com/?id=873378>
-todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb873378-fullfile-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb873378.txt /p MSCONVff.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb873378-fullfile-%WINLANG%.exe /r:n /q"
 
 
 :: Office 2003 Service Pack 1 (842532)
@@ -73,7 +71,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb873378-fullfile-%WIN
 :: URL|FRA|http://download.microsoft.com/download/d/d/2/dd218791-3d92-4eab-a27a-afce9b06f105/Office2003SP1-kb842532-fullfile-fra.exe|updates/office2003/office2003sp1-kb842532-fullfile-fra.exe
 :: URL|NLD|http://download.microsoft.com/download/b/f/b/bfb399e8-9954-4b39-854a-98b0cde40ee6/Office2003SP1-kb842532-fullfile-nld.exe|updates/office2003/office2003sp1-kb842532-fullfile-nld.exe
 :: URL|RUS|http://download.microsoft.com/download/9/b/1/9b1e99d3-c605-40ae-953d-95250265d75a/Office2003SP1-kb842532-fullfile-rus.exe|updates/office2003/office2003sp1-kb842532-fullfile-rus.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2003\Office2003SP1-kb842532-fullfile-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\ofc2003sp1.txt /p MAINSP1ff.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2003\Office2003SP1-kb842532-fullfile-%WINLANG%.exe /r:n /q"
 
 :: Add "PIDKEY=<key>" to this command line, where <key> is your
 :: product key without hyphens.
