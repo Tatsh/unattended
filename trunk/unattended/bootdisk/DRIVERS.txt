@@ -33,7 +33,7 @@ el90x    3com 3c59x/3c90x family of PCI and CardBus adapters
 fetnd    VIA Rhine family (e.g., D-Link DFE-530TX)
 
 # http://www.netgear.com/support/products/FA310.asp
-ngrpci    Netgear FA310
+ngrpci   Netgear FA310
 
 # http://www.google.com/search?q=pcntnd.dos+site%3Aamd.com
 pcntnd   AMD PCNet family (also VMWare)
