@@ -1,0 +1,3 @@
+[Environment]
+  InstallationMode=INSTALL_NORMAL
+  DestinationPath=C:\Program Files\OpenOffice.org
