@@ -8,6 +8,9 @@
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-013.mspx>
 :: URL|DEU|http://download.microsoft.com/download/4/d/e/4dec9a9c-8916-4cc5-a779-769a2715d095/OE6.0sp1-KB837009-x86-DEU.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-deu.exe
 :: URL|ENU|http://download.microsoft.com/download/8/1/0/81030a34-d638-494c-aaaa-9babb069304a/OE6.0sp1-KB837009-x86-ENU.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-enu.exe
+:: URL|FRA|http://download.microsoft.com/download/3/0/b/30b10402-b8af-4579-9e03-e20dc4eee64c/OE6.0sp1-KB837009-x86-FRA.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-fra.exe
+:: URL|NLD|http://download.microsoft.com/download/a/5/9/a5965948-4e22-438d-b3d0-fe475ba26970/OE6.0sp1-KB837009-x86-NLD.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-nld.exe
+:: URL|RUS|http://download.microsoft.com/download/4/f/2/4f2c896d-a6c4-4d83-a990-50d9e19706f5/OE6.0sp1-KB837009-x86-RUS.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\oe6.0sp1-kb837009-x86-%WINLANG%.exe /q /r:n"
 
 :: Critical update 831167
