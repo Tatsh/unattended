@@ -384,6 +384,58 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /
 
 :: Critical Updates
 
+:: Critical update MS04-031 (841533)
+:: "Vulnerability in NetDDE Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-031.mspx>
+:: URL|ARA|http://download.microsoft.com/download/6/2/7/6277c692-afd6-4e5d-9680-ce0c8edc9ca0/WindowsXP-KB841533-x86-ara.exe|updates/winxpsp1/windowsxp-kb841533-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/9/3/b/93b16a99-0819-4acc-a309-7b783494b9ed/WindowsXP-KB841533-x86-csy.exe|updates/winxpsp1/windowsxp-kb841533-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/e/9/0e98f5ee-9b49-4125-9ab5-093be271f8e3/WindowsXP-KB841533-x86-dan.exe|updates/winxpsp1/windowsxp-kb841533-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/6/3/3/6339781d-2552-442e-8772-7468e2a1f223/WindowsXP-KB841533-x86-deu.exe|updates/winxpsp1/windowsxp-kb841533-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/f/6/b/f6bf4e14-b717-4afd-82a6-ab48abbba98f/WindowsXP-KB841533-x86-ell.exe|updates/winxpsp1/windowsxp-kb841533-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/5/8/9/5891c9c4-1211-441b-9d32-4ca0096681f2/WindowsXP-KB841533-x86-enu.exe|updates/winxpsp1/windowsxp-kb841533-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/f/c/c/fcc9d526-fbc3-4403-9106-2723b9efd4a6/WindowsXP-KB841533-x86-esn.exe|updates/winxpsp1/windowsxp-kb841533-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/f/0/2/f02b4239-b029-4ec4-8319-f9d2f9e9b01f/WindowsXP-KB841533-x86-fin.exe|updates/winxpsp1/windowsxp-kb841533-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/b/3/4b3a3b74-4084-4a70-b914-33f9ff3db43b/WindowsXP-KB841533-x86-fra.exe|updates/winxpsp1/windowsxp-kb841533-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/7/5/6/75621ad1-5b55-4e27-9cbe-810097e6cd8a/WindowsXP-KB841533-x86-heb.exe|updates/winxpsp1/windowsxp-kb841533-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/9/1/1/911206e2-4489-4a8b-8f6e-a93e7a6cad15/WindowsXP-KB841533-x86-hun.exe|updates/winxpsp1/windowsxp-kb841533-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/4/4/3445cc43-f61c-44c1-b038-d5b1ea07bdba/WindowsXP-KB841533-x86-ita.exe|updates/winxpsp1/windowsxp-kb841533-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/c/6/d/c6d67a47-5426-4e14-ad3f-bd3073027e99/WindowsXP-KB841533-x86-jpn.exe|updates/winxpsp1/windowsxp-kb841533-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/1/0/010b9338-9deb-4754-8c24-0a082ac43769/WindowsXP-KB841533-x86-kor.exe|updates/winxpsp1/windowsxp-kb841533-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/9/8/a98f63dc-928d-4dff-9939-8534e47d7100/WindowsXP-KB841533-x86-nld.exe|updates/winxpsp1/windowsxp-kb841533-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/b/c/f/bcfd9de5-6589-462f-86a6-11df04eda773/WindowsXP-KB841533-x86-plk.exe|updates/winxpsp1/windowsxp-kb841533-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/b/1/b/b1bcae79-c7ce-41b8-bcfd-5e2486e64e58/WindowsXP-KB841533-x86-ptg.exe|updates/winxpsp1/windowsxp-kb841533-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/a/7/d/a7dfe1b4-5785-466b-952a-b86379e71541/WindowsXP-KB841533-x86-ptb.exe|updates/winxpsp1/windowsxp-kb841533-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/f/f/9/ff90ab76-c6f8-4d77-8f42-2bbe6b0d1780/WindowsXP-KB841533-x86-rus.exe|updates/winxpsp1/windowsxp-kb841533-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/8/f/68f2ed3d-4ceb-4467-8841-895d8d3ad30d/WindowsXP-KB841533-x86-sve.exe|updates/winxpsp1/windowsxp-kb841533-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/e/7/6e7a73a2-86d7-4e79-bd42-a3fb85c51d20/WindowsXP-KB841533-x86-trk.exe|updates/winxpsp1/windowsxp-kb841533-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb841533-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update MS04-030 (824151)
+:: "Vulnerability in WebDAV XML Message Handler Could Lead to a DoS"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-030.mspx>
+:: URL|ARA|http://download.microsoft.com/download/0/2/8/02880381-281d-41e2-8928-b534a64bdc1e/WindowsXP-KB824151-x86-ara.exe|updates/winxpsp1/windowsxp-kb824151-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/3/6/d/36d257d8-aa31-4f33-af65-42d609470094/WindowsXP-KB824151-x86-csy.exe|updates/winxpsp1/windowsxp-kb824151-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/e/b/8/eb86bb52-15e4-4e70-a191-4e3786a09806/WindowsXP-KB824151-x86-dan.exe|updates/winxpsp1/windowsxp-kb824151-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/d/6/f/d6fdc74d-baa1-4c27-b29c-16b60fcc85e2/WindowsXP-KB824151-x86-deu.exe|updates/winxpsp1/windowsxp-kb824151-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/a/5/c/a5cad35b-9044-4388-9d1c-bb132f2a69dc/WindowsXP-KB824151-x86-ell.exe|updates/winxpsp1/windowsxp-kb824151-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/f/7/6/f765818f-4b08-4ecf-a5b4-a7998c9d1594/WindowsXP-KB824151-x86-enu.exe|updates/winxpsp1/windowsxp-kb824151-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/7/2/c72f31f4-bce7-4103-8c4d-99ff4ef59197/WindowsXP-KB824151-x86-esn.exe|updates/winxpsp1/windowsxp-kb824151-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/2/d/b/2db373ee-5fee-46cc-8e5a-bb90ae05289d/WindowsXP-KB824151-x86-fin.exe|updates/winxpsp1/windowsxp-kb824151-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/6/8/9/68924f4c-da7c-481c-b735-cd3e60bc14f6/WindowsXP-KB824151-x86-fra.exe|updates/winxpsp1/windowsxp-kb824151-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/6/4/464dfe22-ce3a-4ca3-aa68-d24b6b364065/WindowsXP-KB824151-x86-heb.exe|updates/winxpsp1/windowsxp-kb824151-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/f/d/8/fd8f6a68-1cdf-4fc7-9cc2-0b1323f49c11/WindowsXP-KB824151-x86-hun.exe|updates/winxpsp1/windowsxp-kb824151-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/6/5/1/6512bfbc-fbad-417e-8c5d-520c3066181b/WindowsXP-KB824151-x86-ita.exe|updates/winxpsp1/windowsxp-kb824151-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/c/8/8/c880c354-d102-4d65-b4c0-cfdcfa63c45d/WindowsXP-KB824151-x86-jpn.exe|updates/winxpsp1/windowsxp-kb824151-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/6/7/567a2255-8807-49ce-8510-a98258b238d8/WindowsXP-KB824151-x86-kor.exe|updates/winxpsp1/windowsxp-kb824151-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/1/d/f1de782e-f6aa-41d5-9668-578b14641ffa/WindowsXP-KB824151-x86-nld.exe|updates/winxpsp1/windowsxp-kb824151-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/3/6/9/3697b54d-a79a-4b57-8fe7-229573bd12f7/WindowsXP-KB824151-x86-plk.exe|updates/winxpsp1/windowsxp-kb824151-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/6/3/e/63ed9656-418e-48ce-9a72-a167bce03d8e/WindowsXP-KB824151-x86-ptg.exe|updates/winxpsp1/windowsxp-kb824151-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/e/8/a/e8a53934-3b8f-4491-a3d1-c36ae7b8381c/WindowsXP-KB824151-x86-ptb.exe|updates/winxpsp1/windowsxp-kb824151-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/9/c/c/9cc00470-97b9-43a5-82ee-e72ca91edc5f/WindowsXP-KB824151-x86-rus.exe|updates/winxpsp1/windowsxp-kb824151-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/c/6/3/c6362722-2f97-48d3-9e9b-e0f2a955641b/WindowsXP-KB824151-x86-sve.exe|updates/winxpsp1/windowsxp-kb824151-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/4/d/a/4dae4ddc-6387-4b27-af27-48fed94e7777/WindowsXP-KB824151-x86-trk.exe|updates/winxpsp1/windowsxp-kb824151-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb824151-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-028
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-028.mspx>

@@ -103,6 +103,48 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLAN
 
 :: Critical Updates
 
+:: Critical update MS04-031 (841533)
+:: "Vulnerability in NetDDE Could Allow Remote Code Execution"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-031.mspx>
+:: URL|CSY|http://download.microsoft.com/download/8/4/b/84b59268-2ead-4a95-9a6b-390d61892c9b/WindowsServer2003-KB841533-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/0/5/f/05fa6e7a-642b-4b1e-9e61-d917b0d8ef00/WindowsServer2003-KB841533-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/0/6/5/0650631d-e64b-44ab-9783-84bc0653f512/WindowsServer2003-KB841533-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/b/5/2b5b7b53-1843-4797-91ef-29f67675020d/WindowsServer2003-KB841533-x86-esn.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/0/e/4/0e42c969-9c78-45ed-8164-4ed93f2e899c/WindowsServer2003-KB841533-x86-fra.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/b/5/3/b5326c1d-7480-410e-ab38-d83ebb661458/WindowsServer2003-KB841533-x86-hun.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/8/6/d/86d5eeaf-fe4f-4f39-bcd2-00bd6e9cc3f6/WindowsServer2003-KB841533-x86-ita.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/8/8/888a44de-529b-44fe-9492-11e0f7eb51ea/WindowsServer2003-KB841533-x86-jpn.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/a/e/0/ae09ffa4-1b07-4219-a325-c4f53f4393f6/WindowsServer2003-KB841533-x86-kor.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/1/7/a17417b3-6cc5-4ad2-b38d-1fe76f92f821/WindowsServer2003-KB841533-x86-nld.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/1/8/8/18827c62-9ba0-4666-a05b-2c4b014d9561/WindowsServer2003-KB841533-x86-plk.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/7/4/3/74338923-94ad-42ae-bba9-59fd2c86a44e/WindowsServer2003-KB841533-x86-ptg.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/2/7/9/2790c4c2-f4e0-48ee-94af-95d5030c554e/WindowsServer2003-KB841533-x86-ptb.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/f/0/1/f01cd95e-08d9-4dfb-bba0-20e4fa0c9800/WindowsServer2003-KB841533-x86-rus.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/b/6/4/b640fb16-dd46-4318-bb41-4494f27f48fc/WindowsServer2003-KB841533-x86-sve.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/c/f/6cf30c0c-cc1e-45a8-a7e8-725ef373fd93/WindowsServer2003-KB841533-x86-trk.EXE|updates/ws2k3/windowsserver2003-kb841533-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb841533-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Critical update MS04-030 (824151)
+:: "Vulnerability in WebDAV XML Message Handler Could Lead to a DoS"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-030.mspx>
+:: URL|CSY|http://download.microsoft.com/download/9/b/a/9ba46d67-c776-4bde-8003-4893e37903be/WindowsServer2003-KB824151-x86-csy.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/2/c/8/2c8cd07c-6cdb-41e6-8b68-abb7b33e8b35/WindowsServer2003-KB824151-x86-deu.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/8/8/c/88cd7fa0-f5be-4d95-b54c-13ca4a8d9f0f/WindowsServer2003-KB824151-x86-enu.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/5/0/450a1a41-1c81-4a9b-93ca-a461a0a1a818/WindowsServer2003-KB824151-x86-esn.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/9/6/2/9626e7f9-a2d5-4b15-8a8f-ce6274fdd42a/WindowsServer2003-KB824151-x86-fra.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/5/f/a/5fa0c6a2-adaa-47ec-ad13-f8b40c046c75/WindowsServer2003-KB824151-x86-hun.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/5/1/6/5165b454-f080-4d18-88d4-fe80713a691c/WindowsServer2003-KB824151-x86-ita.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/8/f/e8f12583-b213-4e45-8e02-53ab7f3b14d0/WindowsServer2003-KB824151-x86-jpn.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/2/c/b/2cb9f006-c2cd-4d23-8f9e-03456af465b3/WindowsServer2003-KB824151-x86-kor.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/1/a/3/1a315df2-3f85-4b71-9a14-ebd8a58b590d/WindowsServer2003-KB824151-x86-nld.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/e/2/0/e207bdc5-8a4c-442d-9677-3afc5caf569e/WindowsServer2003-KB824151-x86-plk.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-plk.exe
+:: URL|PRG|http://download.microsoft.com/download/7/8/1/781f5774-0192-46c8-818b-33a7f6fecca5/WindowsServer2003-KB824151-x86-ptg.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-ptg.exe
+:: URL|PTB|http://download.microsoft.com/download/b/8/8/b88e68fc-9c19-4d39-892e-c230695f6fab/WindowsServer2003-KB824151-x86-ptb.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-ptb.exe
+:: URL|RUS|http://download.microsoft.com/download/6/2/5/625627dc-2d75-43e1-a9e8-4301ff8b9d2e/WindowsServer2003-KB824151-x86-rus.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/d/1/ed1c3454-c2b8-4d4b-b68c-45e4593ea2e6/WindowsServer2003-KB824151-x86-sve.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/f/5/0/f501f9ce-1aa3-4800-ae25-c100bc349330/WindowsServer2003-KB824151-x86-trk.EXE|updates/ws2k3/windowsserver2003-kb824151-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb824151-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Critical update MS04-024 (839645)
 :: "Vulnerability in Windows Shell Could Allow Remote Code Execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-024.mspx>
