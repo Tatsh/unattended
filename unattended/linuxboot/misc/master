@@ -88,7 +88,7 @@ echo "*** Next, we'll look for PCI Ethernet hardware..."
 # FIXME: How do we handle multiple drivers for same device (e100/eepro100).
 load_modules "$(find-modules-pci 0x02 0x00)"
 
-    echo "*** And I suppose we may as well look for PCMCIA devices..."
+echo "*** And I suppose we may as well look for PCMCIA devices..."
 if [ -e /var/run/did_cardmgr ] ; then
     echo "*** (cardmgr already run; skipping)"
 else
