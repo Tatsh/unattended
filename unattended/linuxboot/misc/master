@@ -256,56 +256,38 @@ load_modules "$storage_modules"
 lsmod | grep -q "^scsi_mod[[:space:]]" \
     && load_modules sd_mod
 
-sys_block=/sys/block
-
-[ -d $sys_block ] \
-    || die "Internal error: $sys_block not found?"
-
-mass_device_names="amiraid/ar0 ataraid/d0 cciss/c0d0 i2o/hda \
-        ida/c0d0 rd/c0d0 hda sda hdc"
-
-unset did_something
-
-for hda in $mass_device_names ; do
-    make-blkdev-nodes "$hda" \
-        || continue
-
-    did_something=1
-
-    unset p
-
-    # Devices like /dev/sda have partition names like /dev/sda1, while
-    # devices like /dev/rd/c0d0 have partition names like
-    # /dev/rd/c0d0p1.  That is, we must append "pX" if the last
-    # character is a digit.  See disk_name() in
-    # linux/fs/partitions/check.c.
-    [[ $hda = *[0-9] ]] \
-        && p=p
-
-    # DOSEMU skips exactly eight characters into the device name to
-    # read the partition number.  Yes, really.  So we have to use a
-    # name like "/dev/dsk", not "/dev/disk".
-    ln -sf $hda /dev/dsk
-    for part in 1 2 3 4 5 6 7 8 9 ; do
-        ln -sf $hda$p$part /dev/dsk$part
-    done
-    break
-done
-
-if [ -z "$did_something" ] ; then
-    echo "Hm, found no hard drives ($mass_device_names) under $sys_block"
-    echo "Your $sys_block contains:"
-    ls $sys_block
-    die "So close!  Oh, well."
-fi
-
-# Obtain and export the legacy BIOS disk geometry, which is needed by
-# our partitioning tools.
-echo "*** Now we'll load the EDD module..."
+# Load EDD module, which we use to locate the boot disk and to
+# determine the legacy disk geometry.
+echo "*** Now we will load the EDD module..."
 modprobe edd \
     || die "'modprobe edd' exited with status $?"
 
 sleep 2         # paranoia
+
+hda=`find-boot-device` \
+    || die "*** find-boot-device failed"
+
+echo "*** Using $hda as boot device"
+
+make-blkdev-nodes "$hda" \
+    || die "*** Unable to make-blkdev-nodes $hda.  So close!  Oh, well."
+
+unset p
+
+# Devices like /dev/sda have partition names like /dev/sda1, while
+# devices like /dev/rd/c0d0 have partition names like /dev/rd/c0d0p1.
+# That is, we must append "pX" if the last character is a digit.  See
+# disk_name() in linux/fs/partitions/check.c.
+[[ $hda = *[0-9] ]] \
+    && p=p
+
+# DOSEMU skips exactly eight characters into the device name to read
+# the partition number.  Yes, really.  So we have to use a name like
+# "/dev/dsk", not "/dev/disk".
+ln -sf $hda /dev/dsk
+for part in 1 2 3 4 5 6 7 8 9 ; do
+    ln -sf $hda$p$part /dev/dsk$part
+done
 
 edd_dir=/sys/firmware/edd/int13_dev80
 echo "*** ...and look for legacy BIOS disk geometry in $edd_dir"
