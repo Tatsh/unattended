@@ -1014,33 +1014,41 @@ be a "self contained" .msi file that has no external dependencies.
 
 <tr><td valign="middle">Details
 
-<td><p>OpenOffice.org uses a custom installer which it inherited from
+<td>(NOTE: This is not pretty.  There is a project at <a
+href="http://installation.openoffice.org/"
+>http://installation.openoffice.org/</a> which is supposed to improve
+matters.)
+
+<p>OpenOffice.org uses a custom installer which it inherited from
 StarOffice.  The installation can be automated using a "response
-file", for which the only documentation I can find is <a
+file", which is more-or-less documented in the <a
 href="http://installation.openoffice.org/01RESPONSE_SO52_final_rev2.pdf"
->this PDF file</a> from <a href="http://installation.openoffice.org/"
->http://installation.openoffice.org/</a>.
+>StarOffice 5.2 Admnistration Guide</a> and the <a
+href="http://docs-pdf.sun.com/816-7522/816-7522.pdf">StarOffice 6.0
+Administration Guide</a> from Sun.
+
 
 <p>A minimal response file appears to consist of an
 <code>[Environment]</code> section with settings for
-<code>InstallationMode</code> and <code>DestinationPath</code>.  (I
+<code>InstallationMode</code> and <code>DestinationPath</code>.  I
 have no idea why the destination path is needed; you would think it
-would have some kind of default.)
+would have some kind of default.
 
 <p>Unfortunately, this only does a proper installation for the current
 user, not for all users.  The closest thing I have found is to
 manually create a <a href="apps.html#shortcut">shortcut</a> on the
 "All Users" Desktop and in the Start Menu; this is what the example
-script does.  The first time a user invokes the shortcut, she can
-click "repair installation" to get OpenOffice installed for herself.
+script does.
 
-<p>If you find a better way to install OpenOffice for all users,
-please let me know.
-
-<p>Note: By default, OpenOffice installs a "QuickStarter" which runs
-every time you log in; it has a little icon which shows up in the
-system tray.  I hate things like that, so the example
+<p>By default, OpenOffice installs a "QuickStarter" which runs every
+time you log in; it has a little icon which shows up in the system
+tray.  I hate things like that, so the example
 <code>openoffice.txt</code> file shows you how to turn it off.
+
+<p>For a more complete discussion of these issues, see <a
+href="http://www.oooforum.org/forum/viewtopic.php?t=606">this&nbsp;thread</a>
+on the OpenOffice.org forum.  Note that OpenOffice 1.1 has some
+improvements over 1.0, so read the discussion to the end.
 
 <tr><td valign="middle">Example <td><a
 href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/openoffice.bat?rev=HEAD&amp;view=auto"
