@@ -27,7 +27,7 @@ Fix crash when you set a value in [_meta] section but do not include
 comments.  Thanks to Shad Lords.
 
 Recognize Pid of 55274270 as Volume media.  Also, fix bug where we
-printed '$pid' instead of the pid itself or unknown media (duh).
+printed '$pid' instead of the pid itself for unknown media (duh).
 Thanks to Shad Lords.
 
 Create new "fixtz.pl" script to work around daylight saving bug in XP
