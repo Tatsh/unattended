@@ -45,7 +45,7 @@ todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /
 todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 
 :: Microsoft .NET framework
-o: URL|ENU|http://download.microsoft.com/download/a/a/c/aac39226-8825-44ce-90e3-bf8203e74006/dotnetfx.exe|updates/common/enu/dotnetfx.exe
+:: URL|ENU|http://download.microsoft.com/download/a/a/c/aac39226-8825-44ce-90e3-bf8203e74006/dotnetfx.exe|updates/common/enu/dotnetfx.exe
 :: <http://msdn.microsoft.com/netframework/downloads/>
 :: (Click on "How to get the .NET framework", and download the
 :: "Microsoft .NET Framework 1.1 Redistributable".)
