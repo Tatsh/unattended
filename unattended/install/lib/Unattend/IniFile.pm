@@ -6,6 +6,7 @@ package Unattend::IniFile;
 use warnings;
 use strict;
 use Carp;
+use Tie::RefHash;
 
 # We cannot "use fields" here because we want to overload the hash
 # dereference operator.  So, we use an array as our representation,
@@ -33,11 +34,11 @@ sub new ($;@) {
     my $self = [ ];
 
     # Initialize all of our slots with hashes.
-    tie %{$self->[SECTIONS]}, 'Unattend::InfFile::_Hash';
-    tie %{$self->[COMMENTS]}, 'Unattend::InfFile::_Hash';
-    tie %{$self->[SECTION_COMMENTS]}, 'Unattend::InfFile::_Hash';
-    tie %{$self->[SORT_INDEX]}, 'Unattend::InfFile::_Hash';
-    tie %{$self->[SECTION_SORT_INDEX]}, 'Unattend::InfFile::_Hash';
+    tie %{$self->[SECTIONS]}, 'Unattend::IniFile::_Hash';
+    tie %{$self->[COMMENTS]}, 'Unattend::IniFile::_Hash';
+    tie %{$self->[SECTION_COMMENTS]}, 'Unattend::IniFile::_Hash';
+    tie %{$self->[SORT_INDEX]}, 'Unattend::IniFile::_Hash';
+    tie %{$self->[SECTION_SORT_INDEX]}, 'Unattend::IniFile::_Hash';
 
     bless $self, $class;
 
@@ -61,12 +62,34 @@ sub noforce ($$;$) {
     }
 }
 
-# Force a value returned by noforce.
+# Return true if argument (returned by noforce) is a promise.
+sub is_promise ($) {
+    my ($arg) = @_;
+    return ref $arg eq 'Unattend::Promise';
+}
+
+# Helper hash to detect recursive forcing of promises.
+my %recursion_detect;
+tie %recursion_detect, Tie::RefHash;
+
+# Force a value returned by noforce.  Also detect recursive loops, to
+# return undef when they happen.
 sub force ($) {
     my ($value) = @_;
 
-    ref $value eq 'Unattend::Promise'
-        and $value = $value->force ();
+    if (is_promise ($value)) {
+        if ($recursion_detect{$value}) {
+            # We are in the process of evaluating this promise, so cause
+            # the recursion to "bottom out" by returning undef.
+            $value = undef;
+
+        }
+        else {
+            # Remember we were here so that we can detect loops.
+            local $recursion_detect{$value} = 1;
+            $value = $value->force ();
+        }
+    }
 
     return $value;
 }
@@ -150,8 +173,10 @@ sub max_index ($) {
         $ret < $index
             and $ret = $index;
         my $sec_hash = $self->noforce ($section);
-        defined $sec_hash && ref $sec_hash ne 'Unattend::Promise'
+
+        defined $sec_hash && !is_promise ($sec_hash)
             or next;
+
         foreach my $key (keys %{$sec_hash}) {
             $index = $self->sort_index ($section, $key);
             $ret < $index
@@ -185,7 +210,7 @@ sub merge ($$) {
         $self->sort_index ($section) += $other_max_index;
         # Too much duplicated code!  FIXME
         my $sec_hash = $self->noforce ($section);
-        defined $sec_hash && ref $sec_hash ne 'Unattend::Promise'
+        defined $sec_hash && !is_promise ($sec_hash)
             or next;
         foreach my $key (keys %{$sec_hash}) {
             $self->sort_index ($section, $key) += $other_max_index;
@@ -194,7 +219,7 @@ sub merge ($$) {
 
     foreach my $section (keys %{$other}) {
         # BIG HACK FIXME FIXME FIXME
-        ref $self->noforce ($section) eq 'Unattend::Promise'
+        is_promise ($self->noforce ($section))
             and $self->{$section} = { };
         # Merge the section comments.
         $self->comments ($section) =
@@ -419,7 +444,7 @@ sub generate ($) {
 # Promise and store that instead.  When fetched, the Promise is
 # forced.
 
-package Unattend::InfFile::_Hash;
+package Unattend::IniFile::_Hash;
 use Unattend::FoldHash;
 use base qw(Unattend::FoldHash::Nestable);
 use Unattend::Promise;
@@ -439,11 +464,9 @@ sub FETCH ($$) {
 
     my $value = $self->SUPER::FETCH ($key);
 
-    if (ref $value eq 'Unattend::Promise') {
-        $value = $value->force ();
-        # Cache it for efficiency, and also to convert hashes to
-        # folded hashes.
-        $self->SUPER::STORE ($key, $value);
+    if (Unattend::IniFile::is_promise ($value) {
+        # Store it back to automatically convert hashes to FoldHashes.
+        $self->SUPER::STORE ($key, Unattend::IniFile::force ($value));
     }
 
     return $self->SUPER::FETCH ($key);
