@@ -8,6 +8,17 @@
 
 :: Extra Updates
 
+:: Windows Media Connect
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=56fd1b34-48ba-424b-9227-7c10e2e9fff1>
+:: URL|ALL|http://download.microsoft.com/download/4/7/a/47aa030d-4070-4d2e-b1b8-1cf92cb4f29f/wmcsetup.exe|updates/winxpsp2/wmcsetup.exe
+:: This is really annoying.  As far as I can tell, this installer
+:: always pops up a dialog box when System Restore is disabled, no
+:: matter how you invoke it.  To work around this, we ought to save
+:: the System Restore configuration, enable it, run the installer, and
+:: restore the configuration.  Instead we just enable, install, and
+:: disable.  FIXME.
+todo.pl "srconfig.pl --enable" ".reboot-on 194 %Z%\updates\winxpsp2\wmcsetup.exe /q /r:n" "srconfig.pl --disable"
+
 :: Windows Media Player 10
 :: <http://www.microsoft.com/windowsmedia/>
 :: URL|DAN|http://download.microsoft.com/download/B/C/8/BC8860E7-0773-4AA7-A421-FB7|packages/mediaplayer10/dan/mp10setup.exe
