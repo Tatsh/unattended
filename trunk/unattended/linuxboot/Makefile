@@ -144,8 +144,10 @@ $(busybox)/.config: misc/busybox-config
 	cp -f $< $@
 	cd $(busybox) && make oldconfig
 
+# BusyBox has some broken dependencies (changing CONFIG_INIT from on
+# to off does not rebuilt reboot.o), hence the "make clean" here.
 $(busybox)/busybox: $(busybox)/.config
-	cd $(busybox) && make
+	cd $(busybox) && make clean && make
 
 stage1/bin/busybox: $(busybox)/busybox
 	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
@@ -256,7 +258,6 @@ fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so
 # "Fake" headers, too
 fakeinclude/stdio.h: fakelib/libc.so
 	mkdir -p $(dir $@)
-	: # install-headers updates the timestamp on libc.so.  Unbelievable.
 	cd build-$(glibc)						 \
 		&& make inst_includedir=$(cwd)/$(dir $@) install-headers
 	[ -e $@ ] && touch $@
@@ -462,6 +463,8 @@ $(call copy_file,misc/extra.pcimap,stage1/etc/extra.pcimap)
 
 $(call copy_file,misc/master,stage1/etc/master)
 
+$(call copy_file,misc/modprobe.conf,stage1/etc/modprobe.conf)
+
 $(call copy_file,misc/udhcpc-script,stage1/etc/udhcpc-script)
 
 $(call copy_file,misc/nsswitch.conf,stage1/etc/nsswitch.conf)
@@ -473,9 +476,9 @@ $(call copy_file,misc/passwd,stage1/etc/passwd)
 
 stage1 += stage1/linuxrc stage1/bin/find-modules-pci			\
 		stage1/bin/make-blkdev-nodes stage1/etc/extra.pcimap	\
-		stage1/etc/master stage1/etc/udhcpc-script		\
-		stage1/etc/nsswitch.conf stage1/etc/passwd		\
-		stage1/usr/lib/freedos-mbr.bin
+		stage1/etc/master stage1/etc/modprobe.conf		\
+		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf	\
+		stage1/etc/passwd stage1/usr/lib/freedos-mbr.bin
 
 ## Stage 1
 stage1: $(stage1)
@@ -612,7 +615,7 @@ $(symlink_targets):
 
 symlinks: $(symlink_targets)
 
-# Blow away everything we do not want to ship
+# Blow away everything we do not want to ship.
 tidy:
 	rm -f $(patsubst symlink-%,%,$(symlink_targets))
 	rm -rf dosboot iso
