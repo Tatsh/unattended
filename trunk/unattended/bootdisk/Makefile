@@ -15,7 +15,7 @@ images: $(images)
 	@find template -newer $@ -print | sed s/.\*/$@/ | xargs -r touch
 
 # Images targets
-images/%.img: .stamp-template drivers/%.dos
+images/%.img: .stamp-template empty-boot.img.gz drivers/%.dos
 	@echo -n "Making $@..."
 	@driver=`basename "$@" .img` &&					\
 	driver_uc=`echo $$driver | tr [[:lower:]] [[:upper:]]`		\
