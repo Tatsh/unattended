@@ -136,7 +136,8 @@ sub sort_index : lvalue {
     $$ref;
 }
 
-# Return the largest sort index of any section or section+key pair.
+# Return the largest sort index of any section or section+key pair,
+# but without "forcing" any sections.
 sub max_index ($) {
     my ($self) = @_;
     my $ret = 0;
@@ -145,7 +146,10 @@ sub max_index ($) {
         my $index = $self->sort_index ($section);
         $ret < $index
             and $ret = $index;
-        foreach my $key (keys %{$self->{$section}}) {
+        my $sec_hash = $self->noforce ($section);
+        defined $sec_hash && ref $sec_hash ne 'Unattend::Promise'
+            or next;
+        foreach my $key (keys %{$sec_hash}) {
             $index = $self->sort_index ($section, $key);
             $ret < $index
                 and $ret = $index;
@@ -175,12 +179,19 @@ sub merge ($$) {
     # Offset our sort indices so that we will sort after other
     foreach my $section (keys %{$self}) {
         $self->sort_index ($section) += $other_max_index;
-        foreach my $key (keys %{$self->{$section}}) {
+        # Too much duplicated code!  FIXME
+        my $sec_hash = $self->noforce ($section);
+        defined $sec_hash && ref $sec_hash ne 'Unattend::Promise'
+            or next;
+        foreach my $key (keys %{$sec_hash}) {
             $self->sort_index ($section, $key) += $other_max_index;
         }
     }
 
     foreach my $section (keys %{$other}) {
+        # BIG HACK FIXME FIXME FIXME
+        ref $self->noforce ($section) eq 'Unattend::Promise'
+            and $self->{$section} = { };
         # Merge the section comments.
         $self->comments ($section) =
             _merge_comments ($self->comments ($section),
@@ -366,7 +377,7 @@ sub generate ($) {
     foreach my $section (sort { $self->sort_index ($a)
                                     <=> $self->sort_index ($b) }
                          keys %{$self}) {
-        defined $section
+        (defined $self->{$section})
             or next;
         push @ret, $self->_dump_comments ($section);
         push @ret, "[$section]";
