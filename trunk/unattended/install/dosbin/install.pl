@@ -405,30 +405,33 @@ sub create_postinst_bat () {
     my @postinst_lines;
 
     # Local admins
-    my $admin_group = get_value('_meta', 'local_admin_group');
-    my $admins = get_value ('_meta', 'local_admins');
+    my $admin_group = $u->{'_meta'}->{'local_admin_group'};
+    my $admins = $u->{'_meta'}->{'local_admins'};
     my @admins = (defined $admins ? split / /, $admins : ());
     @admins = map { canonicalize_user
-                        (get_value ('Identification', 'JoinDomain'),
+                        ($u->{'Identification'}->{'JoinDomain'},
                          $_) } @admins;
     foreach my $admin (@admins) {
         push @postinst_lines, "net localgroup $admin_group $admin /add";
     }
 
     # NTP servers
-    my $ntp_servers = get_value ('_meta', 'ntp_servers');
+    my $ntp_servers = $u->{'_meta'}->{'ntp_servers'};
     defined $ntp_servers && $ntp_servers ne ''
         and push @postinst_lines, "net time /setsntp:\"$ntp_servers\"";
 
     # Top-level installation script
-    my $top = get_value ('_meta', 'top');
+    my $top = $u->{'_meta'}->{'top'};
     if (defined $top) {
         push @postinst_lines,
-        ('PATH=z:\\bin;%PATH%',
+        ('call z:\\bin\\perl.bat',
+         'PATH=z:\\bin;%PATH%',
          # Last step is always a reboot
          'todo.pl .reboot',
+         # Antepenultimate step is to delete credentials file
+         "todo.pl \"del $tempcreds\"",
          # Next-to-last step is to disable automatic logon
-         'todo.pl "' . get_value ('_meta', 'autolog') . '"',
+         'todo.pl "' . $u->{'_meta'}->{'autolog'} . '"',
          # First step is to perform top-level install
          "todo.pl $top",
          '',
@@ -436,15 +439,14 @@ sub create_postinst_bat () {
 
     }
 
-    my $postinst = $file_spec->catfile ($u->{'_meta'}->{'netinst'},
-                                        'postinst.bat');
+    my $postinst;
+
     if (scalar @postinst_lines > 0) {
+        my $netinst = $u->{'_meta'}->{'netinst'};
+        $postinst = $file_spec->catfile ($netinst, 'postinst.bat');
         print "Creating $postinst...";
         write_file ($postinst, @postinst_lines);
         print "done.\n";
-    }
-    else {
-        undef $postinst;
     }
 
     return $postinst;
@@ -459,14 +461,14 @@ $u->comments ('_meta', 'fdisk_lba') =
 
 $u->{'_meta'}->{'fdisk_lba'} = \&ask_fdisk_lba;
 
-set_value ('_meta', 'fdisk_cmds', \&ask_fdisk_cmds);
+$u->{'_meta'}->{'fdisk_cmds'} = \&ask_fdisk_cmds;
 
-set_value ('_meta', 'format_cmd',
-           sub {
-               return (yes_no_choice ('Format C: drive')
-                       ? 'format /y /q /v: c:'
-                       : undef);
-           });
+$u->{'_meta'}->{'format_cmd'} =
+    sub {
+        return (yes_no_choice ('Format C: drive')
+                ? 'format /y /q /v: c:'
+                : undef);
+    };
 
 $u->{'_meta'}->{'ipaddr'} =
     sub {
@@ -493,40 +495,38 @@ $u->{'_meta'}->{'macaddr'} =
         return undef;
     };
 
-set_value ('_meta', 'replace_mbr',
-           sub {
-               return yes_no_choice
-                   ('Replace Master Boot Record (if unsure, say yes)');
-           });
+$u->{'_meta'}->{'replace_mbr'} =
+    sub {
+        return yes_no_choice
+            ('Replace Master Boot Record (if unsure, say yes)');
+    };
 
-set_comments ('_meta', 'OS_dir',
-              "    ; Directory holding OS media directories\n");
-set_value ('_meta', 'OS_dir', 'z:\\os\\');
+$u->comments ('_meta', 'OS_dir') = ['Directory holding OS media directories'];
+$u->{'_meta'}->{'OS_dir'} = 'z:\\os\\';
 
-set_value ('_meta', 'OS_media', \&ask_os);
+$u->{'_meta'}->{'OS_media'} = \&ask_os;
 
-set_comments ('_meta', 'top',
-              "    ; Script run by postinst.bat\n");
+$u->comments ('_meta', 'top') = ['Script run by postinst.bat'];
 
-set_value ('_meta', 'top',
-           sub {
-               print "Choose post-installation script to run:\n";
-               my @scripts = ('base.bat', 'sales.bat', 'developer.bat',
-                              'build-server.bat', 'training.bat');
-               my @choices = map { my $full = "Z:\\scripts\\$_";
-                                   ($full => $full);
-                               } @scripts;
-               return menu_choice (@choices, 'none' => undef);
-           });
+$u->{'_meta'}->{'top'} =
+    sub {
+        print "Choose post-installation script to run:\n";
+        my @scripts = ('base.bat', 'sales.bat', 'developer.bat',
+                       'build-server.bat', 'training.bat');
+        my @choices = map { my $full = "Z:\\scripts\\$_";
+                            ($full => $full);
+                        } @scripts;
+        return menu_choice (@choices, 'none' => undef);
+    };
 
-set_comments ('_meta', 'ntp_servers',
-              "    ; NTP servers, separated by commas or spaces\n");
+$u->comments ('_meta', 'ntp_servers') =
+    ['NTP servers, separated by commas or spaces'];
 
-set_value ('_meta', 'ntp_servers',
-           sub {
-               return simple_q
-                   ("Enter NTP servers, separated by commas or spaces (default=none):");
-           });
+$u->{'_meta'}->{'ntp_servers'} =
+    sub {
+        return simple_q
+            ("Enter NTP servers, separated by spaces (default=none):");
+    };
 
 $u->comments ('_meta', 'local_admin_group') =
     ['Name of local Administrators group.  Depends on language...'];
@@ -622,40 +622,49 @@ $u->comments ('GuiRunOnce', 'Command0') =
 
 $u->{'GuiRunOnce'}->{'Command0'} =
     sub {
+        my $ret;
         my $postinst = $u->{'_meta'}->{'postinst'};
-        defined $postinst
-            or return undef;
-        
-        my $netinst = $u->{'_meta'}->{'netinst'};
 
-        # Basic framework for mapping Z: drive
-        # mapznrun
-        my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
-        print 'Copying $mapznrun...';
-        copy ('z:\\bin\\mapznrun.bat', $mapznrun)
-            or die "Unable to copy mapznrun.bat";
-        print "done.\n";
+        if (!defined $postinst) {
+            undef $ret;
+        }
+        elsif (!defined $u->{'_meta'}->{'top'}) {
+            # No toplevel script means no invocation of todo.pl,
+            # so no need to use mapznrun.bat.
+            $ret = $postinst;
+        }
+        else {
+            my $netinst = $u->{'_meta'}->{'netinst'};
+            # Basic framework for mapping Z: drive
+            my $mapznrun = $file_spec->catfile ($netinst, 'mapznrun.bat');
+            print 'Copying $mapznrun...';
+            copy ('z:\\bin\\mapznrun.bat', $mapznrun)
+                or die "Unable to copy mapznrun.bat";
+            print "done.\n";
 
-        # permcred
-        my $z_path = $u->{'_meta'}->{'z_path'};
-        my $permcred = $file_spec->catfile ($netinst, 'permcred.bat');
-        print "Creating $permcred...";
-        write_file ($permcred,
-                    "SET Z=Z:",
-                    "SET Z_PATH=$z_path");
-        print "done.\n";
+            # "Permanent" credentials (drive letter, UNC path)
+            my $z_path = $u->{'_meta'}->{'z_path'};
+            my $permcred = $file_spec->catfile ($netinst, 'permcred.bat');
+            print "Creating $permcred...";
+            write_file ($permcred,
+                        "SET Z=Z:",
+                        "SET Z_PATH=$z_path");
+            print "done.\n";
 
-        # tempcred
-        my $z_user = $u->{'_meta'}->{'z_user'};
-        my $z_pass = $u->{'_meta'}->{'z_password'};
-        my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
-        print "Creating $tempcred...";
-        write_file ($tempcred,
-                    "SET Z_USER=$z_user",
-                    "SET Z_PASS=$z_pass");
-        print "done.\n";
+            # "Temporary" credentials (username, password)
+            my $z_user = $u->{'_meta'}->{'z_user'};
+            my $z_pass = $u->{'_meta'}->{'z_password'};
+            my $tempcred = $file_spec->catfile ($netinst, 'tempcred.bat');
+            print "Creating $tempcred...";
+            write_file ($tempcred,
+                        "SET Z_USER=$z_user",
+                        "SET Z_PASS=$z_pass");
+            print "done.\n";
 
-        return "$mapznrun $postinst";
+            $ret = "$mapznrun $postinst";
+        }
+
+        return $ret;
     };
 
 set_value ('GuiUnattended', 'AdminPassword',
