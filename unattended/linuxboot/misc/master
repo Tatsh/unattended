@@ -122,12 +122,16 @@ while : ; do
 
     smbmount_opts="username=$Z_USER,ro,ttl=2400000"
 
-    echo "*** Trying smbmount $Z_PATH /z -o $smbmount_opts,password=..."
+    echo "*** Trying smbmount $Z_PATH /z -o $smbmount_opts"
 
-    smbmount "$Z_PATH" /z -o "$smbmount_opts,password=$Z_PASS" \
+    export PASSWD="$Z_PASS"
+    smbmount "$Z_PATH" /z -o "$smbmount_opts" \
         && break
+    unset PASSWD
     echo "Failed to mount /z.  Retrying..."
 done
+
+unset PASSWD
 
 echo "*** Excellent.  Now, let's see about mass storage controllers..."
 
