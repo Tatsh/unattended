@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Unattended, A Windows deployment system: Advanced Configuration</title>
+</head>
+<body>
+
+<p>This document is part of <a
+href="http://unattended.sourceforge.net/">Unattended, a Windows
+deployment system</a>.
+
+<hr>
+
+<h1>Introduction</h1>
+
+<p>This document describes advanced configuration options for the
+Unattended system.  These options will make using the system more
+convenient, but they are not mandatory.
+
+<p>This document is divided into:
+<ol>
+<li><a href="#basic">Basic customizations</a>
+<li><a href="#answer-file">Details of the answer file</a>
+<li><a href="#advanced">Advanced configuration</a>
+</ol>
+
+<h1 id="basic">Basic customizations</h1>
+
+<p>Unattended's master installation script reads one or more prototype
+<code>unattend.txt</code> files, asks a few questions, then merges all
+of this information into a generated <code>unattend.txt</code> file to
+direct the OS installation.
+
+<p>The script first reads <code>z:\doslib\unattend.txt</code> to
+gather an initial collection of default settings.  You should not need
+to edit this file.
+
+<p>Next, the script reads <code>z:\site\unattend.txt</code>, if it
+exists.  So to perform simple customizations, just create and populate
+<code>z:\site\unattend.txt</code>.  The values you put there will
+override the defaults and cause the installation script to skip any
+corresponding questions.  Do not worry about creating a "complete"
+answer file; if you fail to provide some required value, the
+installation script will prompt you for it.
+
+<p>A complete description of <code>unattend.txt</code> is <a
+href="#answer-file">below</a>, but here is a simple example to get you
+started.
+
+<p>Suppose you want to use the same organization name, product key,
+domain name, domain joining account, and time zone for multiple
+installations.  You would put these lines into
+<code>z:\site\unattend.txt</code>:
+
+<pre>
+[UserData]
+    OrgName="FooBar, Incorporated"
+    ProductKey=XXXXX-YYYYY-ZZZZZ-00000-11111
+
+[Identification]
+    JoinDomain=FOOBAR
+    DomainAdmin=FOOBAR\wsadmin
+
+[GuiUnattended]
+    ; U.S. Pacific
+    TimeZone=004
+</pre>
+
+<p>The installation script will skip all of the corresponding
+questions, but still ask you (e.g.) for the password to the
+<code>FOOBAR\wsadmin</code> account.  You can pre-record that too by
+setting the <em>DomainAdminPassword</em> key, if you do not mind
+having the password on the network in cleartext.
+
+<p>Note that the installation script tries hard to preserve comments,
+so feel free to use them liberally.
+
+<h1 id="answer-file">The <code>unattend.txt</code> file</h1>
+
+<p>To become a true master of unattended installation, you need to
+become familiar with the nuances of <code>unattend.txt</code> files.
+
+<h2>Quick reference</h2>
+
+<p>The basic syntax of <code>unattend.txt</code> is pretty simple; it
+is a collection of [<em>section</em>] headers and
+<em>key</em>=<em>value</em> pairs.  Lines starting with semicolon are
+comments.  See the default <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/doslib/unattend.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>unattend.txt</a> file for an example.
+
+<p>Most of the master installation script's questions are simply
+providing values for certain required keys.  These keys include:
+
+<dl>
+<dt><em>[UserData] FullName</em>
+<dd>The full name of the user.
+
+<dt><em>[UserData] OrgName</em>
+<dd>The organization name of the user.
+
+<dt><em>[UserData] ComputerName</em>
+<dd>The name of the computer.  A value of "*" tells
+<em>Windows&nbsp;Setup</em> to pick a random name.
+
+<dt><em>[UserData] ProductKey</em>
+<dd>Your 25-character Windows XP software license key, just as it
+appears on the license.  For Windows 2000, this variable is named
+<em>ProductID</em>.
+
+<dt><em>[GuiUnattended] AdminPassword</em>
+<dd>The password for the local Administrator account.
+
+<dt><em>[GuiUnattended] TimeZone</em>
+
+<dd>The time zone setting.  This is a numeric value; see the <a
+href="timezones.html">table of index numbers</a> for a complete list.
+The default value for Unattended is 35 (U.S. Eastern).
+
+<dt><em>[GuiUnattended] AutoLogon</em>
+
+<dd>If set to "yes", Setup will patch the registry to logon
+automatically as Administrator, skipping the logon screen, at every
+reboot.  This setting is useful for automatically doing other things
+once the OS install is done.  You can use the <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/bin/autolog.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>autolog.pl</a> script in <code>Z:\bin</code> to enable or disable
+this registry setting after the OS is installed.
+
+<dt><em>[Identification] JoinDomain</em>
+<dd>If present, tells Setup to join this computer to a domain.
+
+<dt><em>[Identification] DomainAdmin/DomainAdminPassword</em>
+
+<dd>These work in conjunction with <em>JoinDomain</em>.  They specify
+the domain account and password to use to join the computer to the
+domain.  Note that <em>DomainAdmin</em> must be in fully-specified
+<code>DOMAIN\user</code> form.  (The installation script will take
+care of this for you.)
+
+<dt><em>[Unattended] OemPnpDriversPath</em>
+
+<dd>Specifies additions to the search path for Plug&amp;Play drivers.
+Elements of this path are separated by semicolons.  Windows uses this
+path when searching for a driver for a piece of hardware.  These paths
+are relative to the <code>C:</code> drive, and are usually used in
+conjunction with the <a href="os.html#drivers"
+><code>$oem$/$1</code></a> mechanism.
+
+<dt><em>GuiRunOnce</em>
+
+<dd>This section lists one or more commands to run the first time a
+user logs into the machine following the OS installation.  In
+conjunction with the <em>AutoLogon</em> key, this is the hook we use
+to install hotfixes and applications after the OS installation
+finishes.  Unattended puts the single command
+<code>c:\netinst\postinst.bat</code> here, which is a batch file
+generated by the installation script.
+
+</dl>
+
+<p>These are just a few of the important keys; there are others, but
+many of them are optional.
+
+<h2>Microsoft's documentation</h2>
+
+<p>The most thorough documentation for the answer file is Microsoft's
+own, but unfortunately, it is a bit annoying to obtain.  There are
+different versions for Windows 2000 and Windows XP, although the
+answer files are very similar.
+
+<dl>
+<dt><em>Windows 2000 Guide to Unattended Setup</em>
+
+<dd>Unfortunately, as far as I know, you cannot download this document
+directly; you must first download and install the <a
+href="http://www.microsoft.com/windows2000/downloads/servicepacks/sp3/supporttools.asp"
+>Windows 2000 SP3 Support Tools</a>, then use Internet Explorer to
+extract the <code>unattend.doc</code> file from the
+<code>deploy.cab</code> archive.  You can also find
+<code>deploy.cab</code> on the Windows 2000 CD in the
+<code>support\tools</code> folder.
+
+<dt><em>Microsoft Windows Preinstallation Reference</em>
+
+<dd>This document is also unavailable for direct download.  You must
+first download the <a
+href="http://www.microsoft.com/WindowsXP/pro/downloads/servicepacks/sp1/deploytools.asp"
+>Windows XP SP1 Corporate Deployment Tools</a>, also known as
+<code>deploy.cab</code>.  Then use Internet Explorer to extract
+<code>ref.chm</code>, a Windows Help file, which you can double-click
+to browse.
+</dl>
+
+<p>(Personally, I find the Windows 2000 Word document easier to read.)
+
+
+<h1>Advanced configuration</h1>
+
+<p>(If you do not know Perl, you should probably just skip this
+section.)
+
+<p>After reading <code>z:\doslib\unattend.txt</code> and
+<code>z:\site\unattend.txt</code>, the installation script will
+<b>execute</b> the file <code>z:\site\config.pl</code>, if it exists.
+This file is a snippet of Perl code which can set any values it wants
+based on any criteria it wants.  It can even use the built-in routines
+to read and parse additional <code>unattend.txt</code> files.  In
+short, it can pretty much modify the behavior of the installation
+script in an infinite variety of ways.
+
+<p>But I am tired of writing, and I really want to get this release
+out the door.  So full documentation for this section will have to
+wait.
+
+<hr>
+<address>
+Patrick J. LoPresti <a
+href="mailto:patl@users.sourceforge.net">patl@users.sourceforge.net</a>
+</address>
+
+<A href="http://sourceforge.net/"> <IMG align="right"
+src="http://sourceforge.net/sflogo.php?group_id=62053&amp;type=5"
+width="210" height="62" border="0" alt="SourceForge Logo"></A>
+
+</body>
+</html>
