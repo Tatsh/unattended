@@ -9,12 +9,13 @@ use bytes;
 # browse the "terminal" font and you will find the ASCII numbers you
 # need
 my %regexp_map =
-    ('enu' => qr{Previous Operating System on},
+    ('deu' => qr{Vorheriges Betriebssystem auf},
+     'enu' => qr{Previous Operating System on},
      'esn' => qr{Sistema operativo anterior en},
-     'deu' => qr{Vorheriges Betriebssystem auf},
      'fra' => qr{Syst\x8Ame d\'exploitation pr\x82c\x82dent sur},
-     'nld' => qr{Vorig besturingssysteem op},
      'ita' => qr{Sistema operativo precedente su},
+     'nld' => qr{Vorig besturingssysteem op},
+     'nor' => qr{Tidligere operativsystem p\x86},
      );
 
 my $bootini = 'C:\\boot.ini';
