@@ -21,17 +21,17 @@ $u = new Unattend::IniFile;
 # Scaffolding (FIXME)
 sub get_value ($$) {
     my ($section, $key) = @_;
-    return $u->forced_value ($section, $key);
+    return $u->{$section}->{$key};
 }
 
 sub get_value_noforce ($$) {
     my ($section, $key) = @_;
-    return $u->value ($section, $key);
+    return $u->noforce ($section, $key);
 }
 
 sub set_value ($$$) {
     my ($section, $key, $value) = @_;
-    $u->value ($section, $key) = $value;
+    $u->{$section}->{$key} = $value;
 }
 
 sub set_comments ($$$) {
@@ -459,7 +459,7 @@ $u->comments ('_meta') =
 $u->comments ('_meta', 'fdisk_lba') =
     ['Use extended INT13 BIOS calls for fdisk?'];
 
-$u->value ('_meta', 'fdisk_lba') = \&ask_fdisk_lba;
+$u->{'_meta'}->{'fdisk_lba'} = \&ask_fdisk_lba;
 
 set_value ('_meta', 'fdisk_cmds', \&ask_fdisk_cmds);
 
@@ -722,7 +722,7 @@ defined $format_cmd
     and system $format_cmd;
 
 # Overwrite MBR, if desired.
-$u->value ('_meta', 'replace_mbr')
+($u->{'_meta'}->{'replace_mbr'})
     and system ('fdisk /mbr');
 
 # Create C:\netinst and subdirectories.
