@@ -15,6 +15,7 @@ etc/extra.pcimap
 etc/ld.so.cache
 etc/master
 
+etc/modprobe.conf
 etc/nsswitch.conf
 etc/passwd
 etc/pcmcia
