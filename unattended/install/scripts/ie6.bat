@@ -3,6 +3,12 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Critical update MS04-013 (837009)
+:: "Cumulative Security Update for Outlook Express"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-013.mspx>
+:: URL|ENU|http://download.microsoft.com/download/8/1/0/81030a34-d638-494c-aaaa-9babb069304a/OE6.0sp1-KB837009-x86-ENU.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\oe6.0sp1-kb837009-x86-%WINLANG%.exe /passive /q /r:n"
+
 :: Critical update 832894 (MS04-004)
 :: URL|ENU|http://download.microsoft.com/download/9/b/3/9b3f16b4-a907-468b-8283-c050d1ea4948/Q832894.exe|updates/ie6sp1/enu/q832894.exe
 :: URL|DEU|http://download.microsoft.com/download/0/f/1/0f134842-5111-4f87-a2b3-e01c8f80e5b9/Q832894.exe|updates/ie6sp1/deu/q832894.exe
@@ -14,18 +20,6 @@
 :: <http://support.microsoft.com/?kbid=832894>
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-004.asp>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
-
-:: Critical update 330994
-:: URL|ENU|http://download.microsoft.com/download/1/5/f/15f23ca7-965e-4a10-95a5-5b3d6a83f218/q330994.exe|updates/ie6sp1/enu/q330994.exe
-:: URL|DEU|http://download.microsoft.com/download/f/5/6/f5628ef3-76cd-45e4-966a-e93c43bf8256/q330994.exe|updates/ie6sp1/deu/q330994.exe
-:: URL|NLD|http://download.microsoft.com/download/b/4/6/b4667035-5df2-420a-bfd7-b8ab5542eb80/q330994.exe|updates/ie6sp1/nld/q330994.exe
-:: URL|RUS|http://download.microsoft.com/download/6/5/6/656e2c57-570f-460f-90f6-bcd542f3fe73/q330994.exe|updates/ie6sp1/rus/q330994.exe
-:: URL|FRA|http://download.microsoft.com/download/d/7/2/d727f4ed-92a4-4d60-8be2-8e42e891cc8e/q330994.exe|updates/ie6sp1/fra/q330994.exe
-:: URL|ITA|http://download.microsoft.com/download/9/d/1/9d13668b-df1c-483a-813b-60991cf7a044/q330994.exe|updates/ie6sp1/ita/q330994.exe
-:: "April 2003, Cumulative Patch for Outlook Express"
-:: <http://support.microsoft.com/?kbid=330994>
-:: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 
 :: Critical update Q318203/Q317244
 :: URL|ALL|http://download.microsoft.com/download/xml/Patch/3.0/W9XNT4MeXP/EN-US/Q318203_MSXML30_x86.exe|updates/ie6sp1/q318203_msxml30_x86.exe

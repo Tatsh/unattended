@@ -220,6 +220,12 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 
 :: IE Critical Updates
 
+:: Critical update MS04-013 (837009)
+:: "Cumulative Security Update for Outlook Express"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-013.mspx>
+:: URL|ENU|http://download.microsoft.com/download/8/1/0/81030a34-d638-494c-aaaa-9babb069304a/OE6.0sp1-KB837009-x86-ENU.exe|updates/ie6sp1/oe6.0sp1-kb837009-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\oe6.0sp1-kb837009-x86-%WINLANG%.exe /passive /q /r:n"
+
 :: Critical update 832894 (MS04-004)
 :: URL|ENU|http://download.microsoft.com/download/9/b/3/9b3f16b4-a907-468b-8283-c050d1ea4948/Q832894.exe|updates/ie6sp1/enu/q832894.exe
 :: URL|NLD|http://download.microsoft.com/download/2/e/d/2ed7c7e7-4922-48c6-bf4f-c32b76cba519/Q832894.exe|updates/ie6sp1/nld/q832894.exe
@@ -232,29 +238,19 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Q322011_WXP_SP2_x86_%WINLANG%.exe /
 :: <http://www.microsoft.com/technet/security/bulletin/MS04-004.mspx>
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\Q832894.exe /q /r:n"
 
-:: Critical update 330994
-:: URL|ENU|http://download.microsoft.com/download/1/5/f/15f23ca7-965e-4a10-95a5-5b3d6a83f218/q330994.exe|updates/ie6sp1/enu/q330994.exe
-:: URL|NLD|http://download.microsoft.com/download/b/4/6/b4667035-5df2-420a-bfd7-b8ab5542eb80/q330994.exe|updates/ie6sp1/nld/q330994.exe
-:: URL|FRA|http://download.microsoft.com/download/d/7/2/d727f4ed-92a4-4d60-8be2-8e42e891cc8e/q330994.exe|updates/ie6sp1/fra/q330994.exe
-:: URL|RUS|http://download.microsoft.com/download/6/5/6/656e2c57-570f-460f-90f6-bcd542f3fe73/q330994.exe|updates/ie6sp1/rus/q330994.exe
-:: URL|DEU|http://download.microsoft.com/download/5/4/0/54004389-93a8-4a66-a4f5-9d8c80166d3f/q330994.exe|updates/ie6sp1/deu/q330994.exe
-:: URL|ITA|http://download.microsoft.com/download/9/d/1/9d13668b-df1c-483a-813b-60991cf7a044/q330994.exe|updates/ie6sp1/ita/q330994.exe
-:: "April 2003, Cumulative Patch for Outlook Express"
-:: <http://support.microsoft.com/?kbid=330994>
-:: <http://www.microsoft.com/windows/ie/downloads/critical/330994/>
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 
 :: Critical Updates
 
 :: Critical update MS04-012 (828741)
 :: "Cumulative Update for Microsoft RPC/DCOM"
 :: (Worst Windows security hole, ever.  Again.  And again.)
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-012.mspx>
 :: URL|ENU|http://download.microsoft.com/download/8/c/9/8c9f999d-c55b-4e09-8cc0-b75bcf7368cc/WindowsXP-KB828741-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb828741-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-011 (835732)
 :: "Security Update for Microsoft Windows"  (no, really?)
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-011.asp>
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-011.mspx>
 :: URL|ENU|http://download.microsoft.com/download/6/1/5/615a50e9-a508-4d67-b53c-3a43455761bf/WindowsXP-KB835732-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb835732-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 
