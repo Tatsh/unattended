@@ -1,5 +1,6 @@
 :: OPTIONAL: Install Sun Java Virtual Machine
 
+:: URL|ALL|http://java.sun.com/webapps/download/AutoDL?BundleId=9504|packages/j2re-1_4_2_03-windows-i586-p.exe
 :: Download from <http://java.sun.com/j2se/downloads/>
 
 :: See
