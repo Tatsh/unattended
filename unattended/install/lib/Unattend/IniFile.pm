@@ -70,7 +70,7 @@ sub is_promise ($) {
 
 # Helper hash to detect recursive forcing of promises.
 my %recursion_detect;
-tie %recursion_detect, Tie::RefHash;
+tie %recursion_detect, 'Tie::RefHash';
 
 # Force a value returned by noforce.  Also detect recursive loops, to
 # return undef when they happen.
@@ -464,7 +464,7 @@ sub FETCH ($$) {
 
     my $value = $self->SUPER::FETCH ($key);
 
-    if (Unattend::IniFile::is_promise ($value) {
+    if (Unattend::IniFile::is_promise ($value)) {
         # Store it back to automatically convert hashes to FoldHashes.
         $self->SUPER::STORE ($key, Unattend::IniFile::force ($value));
     }
