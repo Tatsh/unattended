@@ -5,6 +5,12 @@ set VSNETDIR=%Z_PATH%\packages\VSNET
 :: Lots of prereqs here.  Remember that these are actually executed in
 :: reverse order.
 
+:: Visual Studio .NET 2003 GDIPLUS.DLL Security Update
+:: Microsoft Security Bulletin MS04-028
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-028.mspx>
+:: URL|ALL|http://download.microsoft.com/download/c/9/5/c956e5c8-11aa-4707-97e1-be9d8bc2b48f/VS7.1-KB830348-X86.exe|updates/common/vs7.1-kb830348-x86.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\VS7.1-KB830348-X86.exe /q"
+
 :: Visual Studio .NET 2003 Crystal Reports Security Update
 :: Microsoft Security Bulletin MS04-017
 :: "Vulnerability in Crystal Reports Web Viewer Could Allow Information Disclosure and Denial of Service (842689)"
