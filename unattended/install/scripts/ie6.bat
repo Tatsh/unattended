@@ -12,6 +12,7 @@
 :: URL|FRA|http://download.microsoft.com/download/b/e/5/be582337-3c44-4c71-8690-d43b12fb1cd5/IE6.0sp1-KB871260-x86-FRA.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/9/a/8/9a8a2bbb-cb4c-44cb-9a5b-ce6d21c094b1/IE6.0sp1-KB871260-x86-ITA.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/3/3/f/33fb37e1-73d4-4a48-8755-f13b5466df75/IE6.0sp1-KB871260-x86-NLD.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/8/4/9/84989cf0-46f3-470e-96fa-524249f0da8a/IE6.0sp1-KB871260-x86-NOR.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-nor.exe
 :: URL|RUS|http://download.microsoft.com/download/c/3/9/c399ed2c-7e22-446d-98c0-e1a1f93eeb03/IE6.0sp1-KB871260-x86-RUS.exe|updates/ie6sp1/IE6.0sp1-KB871260-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB871260-x86-%WINLANG%.exe /q /r:n"
 
@@ -24,6 +25,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB871260-x86-%WINLANG%.exe /
 :: URL|FRA|http://download.microsoft.com/download/1/c/e/1ce19499-c3a6-473a-b325-0d0a63209436/IE6.0sp1-KB867801-x86-FRA.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/2/7/8/278341ee-3086-49b3-8904-cfc4e980a312/IE6.0sp1-KB867801-x86-ITA.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/c/5/a/c5a8a5d1-438c-4381-b93c-a6b05e6c740b/IE6.0sp1-KB867801-x86-NLD.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/8/a/68a8b217-cabd-4f3a-88ec-3216850e1b38/IE6.0sp1-KB867801-x86-NOR.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-rus.exe
 :: URL|RUS|http://download.microsoft.com/download/4/8/a/48ad1d78-0044-44f6-b7f2-dbb9c0ef5b79/IE6.0sp1-KB867801-x86-RUS.exe|updates/ie6sp1/IE6.0sp1-KB867801-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867801-x86-%WINLANG%.exe /q /r:n"
 
@@ -36,6 +38,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867801-x86-%WINLANG%.exe /
 :: URL|FRA|http://download.microsoft.com/download/8/7/9/87905b08-6524-4743-b2f5-b5b18dfb92b3/IE6.0sp1-KB823353-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-fra.exe
 :: URL|ITA|http://download.microsoft.com/download/1/c/5/1c547819-2093-411c-8985-95234e582e56/IE6.0sp1-KB823353-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-ita.exe
 :: URL|NLD|http://download.microsoft.com/download/1/2/6/126e9e94-7cc3-4e49-bf08-21bc84e6b756/IE6.0sp1-KB823353-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/4/8/5/485fe40d-0aca-43ce-99a9-f6ffd2d45bd6/IE6.0sp1-KB823353-x86-NOR.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-nor.exe
 :: URL|RUS|http://download.microsoft.com/download/5/e/6/5e6f2c0e-4db3-4310-893e-cff856dd97db/IE6.0sp1-KB823353-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb823353-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\ie6.0sp1-kb823353-x86-%WINLANG%.exe /q /r:n"
 
@@ -56,6 +59,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\Q318203_MSXML30_x86.exe /q:a /c:\"dah
 :: URL|FRA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/FR/vbs56nfr.exe|updates/ie6sp1/vbs56nfra.exe
 :: URL|ITA|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/IT/vbs56nit.exe|updates/ie6sp1/vbs56nita.exe
 :: URL|NLD|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/NL/vbs56nnl.exe|updates/ie6sp1/vbs56nnld.exe
+:: URL|NOR|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/NO/vbs56nno.exe|updates/ie6sp1/vbs56nnor.exe
 :: URL|RUS|http://download.microsoft.com/download/IE60/Patch/Q318089/NT5XP/RU/vbs56nru.exe|updates/ie6sp1/vbs56nrus.exe
 :: NOTE: You must rename this to use the three-letter language
 :: abbreviation instead of two.  For example, for English you would
@@ -71,5 +75,6 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\vbs56n%WINLANG%.exe /q /r:n"
 :: URL|FRA|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/FR/ie6setup.exe|packages/ie6sp1/fra/ie6setup.exe
 :: URL|ITA|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/IT/ie6setup.exe|packages/ie6sp1/ita/ie6setup.exe
 :: URL|NLD|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/NL/ie6setup.exe|packages/ie6sp1/nld/ie6setup.exe
+:: URL|NOR|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/NO/ie6setup.exe|packages/ie6sp1/nor/ie6setup.exe
 :: URL|RUS|http://download.microsoft.com/download/ie6sp1/finrel/6_sp1/W98NT42KMeXP/RU/ie6setup.exe|packages/ie6sp1/rus/ie6setup.exe
 todo.pl ".reboot-on 194 %Z%\packages\ie6sp1\%WINLANG%\IE6setup.exe /q /r:n"
