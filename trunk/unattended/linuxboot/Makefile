@@ -632,6 +632,7 @@ stage1/usr/local:
 	mkdir -p $@
 
 .stamp-stage1: $(stage1) stage1/usr/local
+	rm -rf $(stage1)/opt/perl/man
 	touch $@
 
 stage1: .stamp-stage1
