@@ -13,7 +13,7 @@ glibc=glibc-20040723
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-klibc=klibc-0.152
+klibc=klibc-0.157
 linux=linux-2.6.8.1
 module-init-tools=module-init-tools-3.0
 mysql=mysql-4.0.20
