@@ -55,14 +55,11 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837001-x86-%WINLAN
 
 :: IE Critical Updates
 
-:: Critical update 832894 (MS04-004)
-:: URL|DEU|http://download.microsoft.com/download/e/b/a/ebaea9fb-1c1d-474e-bf5b-da2a86275642/WindowsServer2003-KB832894-x86-DEU.EXE|updates/ws2k3/windowsserver2003-kb832894-x86-deu.exe
-:: URL|ENU|http://download.microsoft.com/download/a/f/3/af318e61-4d69-42c3-90b9-e99676a5540c/WindowsServer2003-KB832894-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb832894-x86-enu.exe
-:: URL|RUS|http://download.microsoft.com/download/f/d/0/fd057ecd-364b-488e-84b1-dbf7da606e3b/WindowsServer2003-KB832894-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb832894-x86-rus.exe
-:: URL|ITA|http://download.microsoft.com/download/5/4/5/5459da6f-cf87-499a-9759-bd0e38ec10ec/WindowsServer2003-KB832894-x86-ITA.EXE|updates/ws2k3/windowsserver2003-kb832894-x86-ita.exe
-:: "February, 2004, Cumulative Patch for Internet Explorer"
-:: <http://www.microsoft.com/technet/security/bulletin/MS04-004.mspx>
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLANG%.exe /passive /n /norestart"
+:: Critical update MS04-025 (867801)
+:: "Cumulative Security Update for Internet Explorer"
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-025.mspx>
+:: URL|ENU|http://download.microsoft.com/download/2/a/e/2ae9e877-f448-49b4-8505-6c7feaf3d3eb/WindowsServer2003-KB867801-x86-enu.exe|updates/ws2k3/windowsserver2003-kb867801-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB867801-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical Updates
 
