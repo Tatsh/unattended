@@ -34,6 +34,7 @@ todo.pl ".expect-reboot AutoIt %Z%\scripts\%WINLANG%\directx9.aut"
 :: "Vulnerability in the Microsoft Jet ... could permit code execution"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-014.mspx>
 :: URL|ENU|http://download.microsoft.com/download/a/1/0/a1080cda-4801-4a0c-8692-0d9773b1cca5/WindowsServer2003-KB837001-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/5/e/4/5e4198ce-ab91-4e71-8b89-98c4a5eba820/WindowsServer2003-KB837001-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb837001-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: IE Critical Updates
@@ -52,6 +53,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLAN
 :: "Cumulative Security Update for Outlook Express"
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-013.mspx>
 :: URL|ENU|http://download.microsoft.com/download/2/f/e/2fe46d88-aca5-4f1d-ac42-4febc172d5bc/WindowsServer2003-KB837009-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb837009-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/b/1/2/b120a57c-2d85-40e3-ad45-d13c16d7ecc3/WindowsServer2003-KB837009-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb837009-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837009-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-012 (828741)
@@ -59,12 +61,14 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb837009-x86-%WINLAN
 :: (Worst Windows security hole, ever.  Again.  And again.)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-012.mspx>
 :: URL|ENU|http://download.microsoft.com/download/0/0/9/00972728-4bf7-4a73-b17e-85b81e10ab96/WindowsServer2003-KB828741-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb828741-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/a/a/3/aa367f17-7a54-462e-b3af-81b858c0a63b/WindowsServer2003-KB828741-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb828741-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb828741-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update MS04-011 (835732)
 :: "Security Update for Microsoft Windows"  (no, really?)
 :: <http://www.microsoft.com/technet/security/bulletin/ms04-011.mspx>
 :: URL|ENU|http://download.microsoft.com/download/4/d/7/4d74d7ae-e1f7-4c0b-b6e3-ed05f5a3c580/WindowsServer2003-KB835732-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb835732-x86-enu.exe
+:: URL|RUS|http://download.microsoft.com/download/b/8/8/b88965b4-f742-495c-9a40-43c344336057/WindowsServer2003-KB835732-x86-RUS.EXE|updates/ws2k3/windowsserver2003-kb835732-x86-rus.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 830352 (MS04-006)
