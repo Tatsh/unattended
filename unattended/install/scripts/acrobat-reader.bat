@@ -4,6 +4,6 @@
 :: URL|NLD|http://download.adobe.com/pub/adobe/acrobatreader/win/5.x/5.1/AcroReader51_NLD_full.exe|packages/adobereader/acroreader51_nld_full.exe
 :: URL|FRA|http://download.adobe.com/pub/adobe/acrobatreader/win/5.x/5.1/AcroReader51_FRA_full.exe|packages/adobereader/acroreader51_fra_full.exe
 
-start /wait %Z%\packages\AdobeReader\AcroReader51_%WINLANG%_full.exe /a /s /sms /f1%Z%\packages\AdobeReader\acrobat.iss /f2c:\netinst\logs\acrobat.txt
+start /wait %Z%\packages\AdobeReader\AcroReader51_%WINLANG%_full.exe /a /s /sms /f1%Z%\packages\AdobeReader\acrobat.iss /f2%SystemDrive%\netinst\logs\acrobat.txt
 
 if errorlevel 1 exit 1
