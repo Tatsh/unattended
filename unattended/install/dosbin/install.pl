@@ -208,8 +208,10 @@ set_value ('_meta', 'local_admins',
                defined $dom
                    or return undef;
                print "Enter users to add to local Administrators group.\n";
-               my $users = simple_q
+               my @users = split ' ', simple_q
                    ("Type 0 or more usernames, separated by spaces:\n");
+               my $users = join ' ', map { canonicalize_user ($dom, $_)
+                                           } @users;
                return $users;
            });
 
