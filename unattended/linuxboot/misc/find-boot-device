@@ -55,6 +55,10 @@ sub get_bios_dev_info ($) {
             @ret{'pci_bus', 'pci_slot', 'pci_function', 'pci_domain'} =
                 ($1, $2, $3, $4);
         }
+# Uncomment this once we know what to look for under /sys/block.
+#        elsif ($host_bus =~ /^SATA\s+device:s+(\d+)$/) {
+#            @ret{'sata_device'} = $1;
+#        }
         else {
             warn "*** Unrecognized bus type in $dir/host_bus\n";
         }
