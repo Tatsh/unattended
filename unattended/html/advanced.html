@@ -216,6 +216,22 @@ usually used in conjunction with the <a href="os.html#drivers"
     OemPnPDriversPath="drivers\net\eepro;drivers\video\nVidia"
 </pre>
 
+<h2>Windows XP look and feel</h2>
+
+<p>The <code>[Shell]</code> section controls the general look and feel
+of Windows XP.  To use the classic Windows Start menu (with
+<em>My&nbsp;Computer</em> and <em>My&nbsp;Documents</em> on the
+desktop), and to use the "classic Windows visual style":
+
+<pre>
+[Shell]
+    ; Use classic start menu
+    DefaultStartPanelOff=Yes
+    ; Use classic visual style
+    DefaultThemesOff=Yes
+</pre>
+
+
 <h1>The [_meta] section</h1>
 
 <p>Unattended adds some functionality on top of
