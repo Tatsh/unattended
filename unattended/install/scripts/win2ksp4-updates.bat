@@ -11,7 +11,7 @@
 :: Extra Updates
 
 :: Windows Journal Viewer update
-:: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/5850.htm>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=fad44098-8b73-4e06-96d4-d1eb70eacb44>
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* c:\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 
 :: "Update for Windows Media Player Script Commands"
