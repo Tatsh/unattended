@@ -3,31 +3,31 @@ bash=bash-3.0
 busybox=busybox-1.00
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.18
-dbd-mysql=DBD-mysql-2.9004
-dbi=DBI-1.45
+dbd-mysql=DBD-mysql-2.9005_3
+dbi=DBI-1.46
 dmidecode=dmidecode-2.5
-#dosemu=dosemu-1.2.1
-dosemu=dosemu-20040723
+dosemu=dosemu-1.2.2
+#dosemu=dosemu-20040723
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.35
-glibc=glibc-20040723
+glibc=glibc-20041122
 # Awful hack
 #glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.9
+linux=linux-2.6.10-rc3
 module-init-tools=module-init-tools-3.1
 mysql=mysql-4.0.22
 nano=nano-1.2.4
 ncurses=ncurses-5.4
-parted=parted-1.6.18
+parted=parted-1.6.20
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.8
-perl=perl-5.8.5
+perl=perl-5.8.6
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.3202
 pmtools=pmtools-20031210
-samba=samba-3.0.9
-wireless_tools=wireless_tools.26
+samba=samba-3.0.10
+wireless_tools=wireless_tools.27
 zlib=zlib-1.2.2
 
 cwd:=$(shell pwd)
@@ -250,9 +250,11 @@ build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
 	    --prefix=/usr					\
+	    --enable-add-ons --disable-profile			\
+            --enable-kernel=2.6.0				\
+	    --without-gd --without-cvs				\
+            --without-selinux					\
 	    --with-headers=$(cwd)/$(linux)/include		\
-	    --enable-add-ons=nptl --with-tls			\
-	    --disable-profile --without-gd --without-cvs	\
 	    --build=i586-linux					\
 	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
 	&& make
@@ -796,15 +798,6 @@ download-$(strip $(1)) : ;						\
 	&& mv $$$$module $$$$what					\
 	&& { [ "$(dest)" == . ] || ln -sf $(dest)/$$$$what $(cwd) ; }
 
-# Special rule for glibc (checkout from CVS based on date).
-# download-$(glibc):
-# 	[ ! -e "$(dest)/libc" ]
-# 	cd $(dest)							\
-# 	&& cvs -z 9 -d :pserver:anoncvs@sources.redhat.com:/cvs/glibc	\
-# 		checkout -D $(patsubst glibc-%,%,$(glibc)) libc		\
-# 	&& mv libc $(glibc)
-# 	[ "$(dest)" == . ] || ln -sf $(dest)/$(glibc) $(glibc)
-
 # Special rule to fetch updated pci.ids file
 download-pci.ids:
 	@[ -e pci.ids ]							     \
@@ -832,10 +825,10 @@ $(call download_rule, $(dbi), tar.gz, \
 	http://www.cpan.org/authors/id/T/TI/TIMB/)
 $(call download_rule, $(dmidecode), tar.bz2,	\
 	http://nongnu.org/download/dmidecode/)
-#$(call download_rule, $(dosemu), tgz,					\
-#	http://dl.sourceforge.net/sourceforge/dosemu/)
-$(call cvs_rule, $(dosemu), dosemu,				\
-	:pserver:anonymous@cvs.sourceforge.net:/cvsroot/dosemu)
+$(call download_rule, $(dosemu), tgz,					\
+	http://dl.sourceforge.net/sourceforge/dosemu/)
+#$(call cvs_rule, $(dosemu), dosemu,				\
+#	:pserver:anonymous@cvs.sourceforge.net:/cvsroot/dosemu)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
 #$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
@@ -846,8 +839,10 @@ $(call cvs_rule, $(glibc), libc, \
 #	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
+#$(call download_rule, $(linux), tar.bz2,		\
+#	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 $(call download_rule, $(linux), tar.bz2,		\
-	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
+	http://ftp.kernel.org/pub/linux/kernel/v2.6/testing/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
