@@ -246,16 +246,11 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\%WINLANG%\q330994.exe /q /r:n"
 
 :: Critical Updates
 
-:: Critical update 828028 (MS04-007)
-:: URL|ENU|http://download.microsoft.com/download/d/0/4/d044a7f5-b5ae-4e1f-b6ae-4edb4dd3e32a/WindowsXP-KB828028-x86-ENU.exe|updates/winxpsp1/windowsxp-kb828028-x86-enu.exe
-:: URL|NLD|http://download.microsoft.com/download/5/7/8/578bacfa-fe7c-4715-a76f-e6b4c8d6df04/WindowsXP-KB828028-x86-NLD.exe|updates/winxpsp1/windowsxp-kb828028-x86-nld.exe
-:: URL|FRA|http://download.microsoft.com/download/e/1/f/e1f3f56b-16a1-4f23-bc18-ac544eee9ed5/WindowsXP-KB828028-x86-FRA.exe|updates/winxpsp1/windowsxp-kb828028-x86-fra.exe
-:: URL|RUS|http://download.microsoft.com/download/b/3/6/b3612f63-7b00-466d-8d6e-d168d7dfda82/WindowsXP-KB828028-x86-RUS.exe|updates/winxpsp1/windowsxp-kb828028-x86-rus.exe
-:: URL|DEU|http://download.microsoft.com/download/9/7/7/9779bab7-d62c-4378-95f5-ec2344a6973e/WindowsXP-KB828028-x86-DEU.exe|updates/winxpsp1/windowsxp-kb828028-x86-deu.exe
-:: URL|ITA|http://download.microsoft.com/download/5/5/4/554b0347-f6c3-4a8d-89a8-7b9880ab4545/WindowsXP-KB828028-x86-ITA.exe|updates/winxpsp1/windowsxp-kb828028-x86-ita.exe
-:: "ASN.1 Vulnerability Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-007.mspx>
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
+:: Critical update 835732 (MS04-011)
+:: "Security Update for Microsoft Windows"  (no, really?)
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-011.asp>
+:: URL|ENU|http://download.microsoft.com/download/6/1/5/615a50e9-a508-4d67-b53c-3a43455761bf/WindowsXP-KB835732-x86-ENU.EXE|updates/winxpsp1/windowsxp-kb835732-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\windowsxp-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 832483 (MS04-003)
 :: URL|ENU|http://download.microsoft.com/download/c/2/4/c245528e-a1e4-492e-bcf4-e004a052d93b/ENU_Q832483_MDAC_x86.EXE|updates/common/enu_q832483_mdac_x86.exe

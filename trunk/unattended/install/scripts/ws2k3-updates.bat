@@ -50,13 +50,11 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB832894-x86-%WINLAN
 
 :: Critical Updates
 
-:: Critical update 828028 (MS04-007)
-:: URL|ENU|http://download.microsoft.com/download/4/a/0/4a0ebe1e-ad89-4408-84d1-9325022a1e23/WindowsServer2003-KB828028-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb828028-x86-enu.exe
-:: URL|RUS|http://download.microsoft.com/download/6/2/b/62bb56bc-5c07-4cf8-9ea4-cd411ac49bf6/WindowsServer2003-KB828028-x86-RUS.exe|updates/ws2k3/windowsserver2003-kb828028-x86-rus.exe
-:: URL|ITA|http://download.microsoft.com/download/e/6/4/e64b407c-ef63-4419-b624-93e7ac1d73ee/WindowsServer2003-KB828028-x86-ITA.exe|updates/ws2k3/windowsserver2003-kb828028-x86-ita.exe
-:: "ASN.1 Vulnerability Could Allow Code Execution"
-:: <http://www.microsoft.com/technet/security/bulletin/MS04-007.mspx>
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB828028-x86-%WINLANG%.exe /passive /n /norestart"
+:: Critical update 835732 (MS04-011)
+:: "Security Update for Microsoft Windows"  (no, really?)
+:: <http://www.microsoft.com/technet/security/bulletin/ms04-011.asp>
+:: URL|ENU|http://download.microsoft.com/download/4/d/7/4d74d7ae-e1f7-4c0b-b6e3-ed05f5a3c580/WindowsServer2003-KB835732-x86-ENU.EXE|updates/ws2k3/windowsserver2003-kb835732-x86-enu.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\windowsserver2003-kb835732-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical update 830352 (MS04-006)
 :: URL|ENU|http://download.microsoft.com/download/2/b/f/2bf1da36-6368-4e92-9dd2-daa388450028/WindowsServer2003-KB830352-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb830352-x86-enu.exe
