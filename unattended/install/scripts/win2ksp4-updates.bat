@@ -158,7 +158,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842526-x86-%WINLANG%.
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb837001-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Root Certificates Update
-:: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_1848da0ef19bb020cccdbbc1ee0311b.exe|updates/win2ksp4/rootsupd.exe
+:: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_afc57447f7caadd3253333e35777fcd.exe|updates/win2ksp4/rootsupd.exe
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/4702.htm>
 :: (download only available from Windows Catalog)
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\rootsupd.exe /q /r:n"
