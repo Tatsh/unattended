@@ -23,12 +23,12 @@ Such instructions are useful for automating these installations.
 <em>unattended</em> installation is one which does not require user
 interaction, and a <em>silent</em> (or <em>quiet</em>) installation is
 one which does not display any indication of its progress.  However,
-most vendors treat these words as synonyms.
+most people use these terms interchangeably.
 
-<p>Here, we are interested not only in unattended installations, but
-also in waiting for the installation to finish and suppressing any
-automatic reboot.  These are both necessary to create a system for <a
-href="apps.html">reliably installing multiple applications</a>.
+<p>Here, we are interested not only in performing unattended
+installations, but also in waiting for those installations to finish
+and suppressing reboot they might want to perform.  This is necessary
+for <a href="apps.html">reliably installing multiple applications</a>.
 
 <hr>
 <h1>General information</h1>
@@ -222,7 +222,7 @@ They support the <kbd>/t:<var>path</var></kbd> switch, to specify the
 temporary folder name, and the <kbd>/c:<var>command</var></kbd> switch
 to specify the command to run.  Specifying just <kbd>/c</kbd>
 suppresses running the command at all, so you can use
-<kbd>/c&nbsp;/t:<var>path</var></kbd> to extract the hotfix so you can
+<kbd>/c&nbsp;/t:<var>path</var></kbd> to extract the hotfix just to
 look at it.
 
 <p>These packages support the <kbd>/q</kbd> switch for quiet
@@ -327,9 +327,12 @@ competitor to <a href="http://www.winzip.com/">WinZip</a>.  It uses
 its own self-extracting installation scheme.
 
 <p>For unattended operation, run it with switches
-<code>-y&nbsp;/Q</code>.  Yes, that's "dash y slash Q", as described
-<a
-href="http://sourceforge.net/tracker/?func=detail&amp;atid=114481&amp;aid=599673&amp;group_id=14481">here</a>.
+<code>-y&nbsp;/q&nbsp;/r:n</code>.  Yes, that is "dash-y slash-q
+slash-r-colon-n", as described <a
+href="https://sourceforge.net/tracker/?func=detail&amp;atid=114481&amp;aid=599673&amp;group_id=14481"
+>here</a> and <a
+href="https://sourceforge.net/tracker/index.php?func=detail&amp;aid=665810&amp;group_id=14481&amp;atid=114481"
+> here</a>.
 
 <tr><td valign="middle">Example
 <td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/7-zip.pl?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >7-zip.pl</a>
@@ -732,7 +735,7 @@ of SP5, run <code>setupsp5.exe&nbsp;/qn1</code>.  You may also provide
 the <code>/g</code> switch to specify a log file.
 
 <p>But oh, if only it were that simple.  If you are installing on
-Windows 2000, you will find that the <code>/qn1</code> flag does not
+Windows 2000, you will find that the <code>/qn1</code> switch does not
 actually work, because the installer insists on popping up a useless
 warning that your version of MDAC is out-of-date.  The solution to
 this?  <a href="#mdac">Update MDAC</a> to the latest version before
@@ -830,8 +833,20 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 
 <tr><td valign="middle">Details
 
-<td><p>For unattended install, run with <code>-ma</code> option.  (Is
-this documented somewhere?)
+<td><p>For unattended install, run with <code>-ma</code> and
+<code>-ira</code> options.  This is not exactly well-documented; <a
+href="http://groups.google.com/groups?selm=a6ijed%243723%40ripley.netscape.com"
+>this old USENET post</a> is all I can find.
+
+<p>I am not sure what <code>-ira</code> does, exactly, but without it
+the Mozilla installer fires up Mozilla just before exiting.  This is
+annoying because the windows Mozilla puts up can interfere with other
+things, like <a href="#autoit">AutoIt</a> scripts.  With
+<code>-ira</code>, this does not happen, and I have noticed no bad
+side-effects, so there we are.  (If anybody has definitive information
+here, I would love to hear it.)
+
+<p>Many thanks to Marcus Greil for pointing out the available options.
 
 <tr><td valign="middle">Example
 <td><a href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/mozilla.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup" >mozilla.bat</a>
@@ -900,6 +915,34 @@ href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/insta
 >openoffice.bat</a>, <a
 href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/openoffice.txt?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
 >openoffice.txt</a>
+
+</table>
+
+<br><hr width="50%">
+<h2 id="php">PHP</h2>
+<table border cellpadding=4>
+
+<tr><td valign="middle">Availability
+<td><a href="http://www.php.net/">Free Download</a>
+
+<tr><td valign="middle">Details
+
+<td><p>Uses <a href="#wise">Wise Installmaster</a>, so responds to the
+<code>/s</code> switch.  Unfortunately, the PHP folks seem to have
+done something wrong, because the installer still pops up a dialog
+box.  I have reported this as <a
+href="http://bugs.php.net/bug.php?id=20775" >a bug</a> and hope to see
+them fix it someday.
+
+<p>Meanwhile, an <a href="#autoit">AutoIt</a> script seems the best
+approach.
+
+<tr><td valign="middle">Example
+<td><a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/php.bat?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>php.bat</a>, <a
+href="http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/unattended/unattended/install/scripts/php.aut?rev=HEAD&amp;content-type=text/vnd.viewcvs-markup"
+>php.aut</a>
 
 </table>
 
