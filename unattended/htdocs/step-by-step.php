@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.2 2005-01-17 20:22:16 nrichthof Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.3 2005-04-07 17:59:38 nrichthof Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -198,21 +198,20 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         directory; that is the directory you need to copy to the OS  distribution  point.
         </p>
       <p>To where should you copy it, exactly? That is a long story...</p>
-      <p>Under the  <code>i386</code>  folder  on  the  distribution
-        point,  create  a  folder  named  <code>$oem$</code>.  Under
-        <strong>that</strong> folder, create a folder named <code>$1</code>.
-        Yes, really. <strong>Windows&nbsp;Setup</strong> will copy everything  below  the
-        <code>$1</code>  folder   to   the   <code>%SystemDrive%</code>  (normally  <code
-        >C:</code>) during installation. See Microsoft's <a href="http://www.microsoft.com/resources/documentation/WindowsServ/2003/all/deployguide/en-us/acicb_ui_wbgu.asp"
+      <p>Under the <code>i386</code> folder on the distribution point,  create  a  folder
+        named  <code>\$oem\$</code>.  Under <strong>that</strong> folder, create a folder
+        named <code>\$1</code>.  Yes, really.   <strong>Windows&nbsp;Setup</strong>  will
+        copy   everything    below    the    <code>\$1</code>   folder   to   the   <code
+        >%SystemDrive%</code>  (normally  <code>C:</code>) during installation. See Microsoft's <a href="http://www.microsoft.com/resources/documentation/WindowsServ/2003/all/deployguide/en-us/acicb_ui_wbgu.asp"
         rel="external">description of the distribution share</a> for the gory details.</p
         >
-      <p>You may put your driver folder  anywhere  you  like  under  the  <code>$1</code>
+      <p>You may put your driver folder  anywhere  you  like  under  the  <code>\$1</code>
         folder, and you may add as many driver folders as you like. The <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
         >install.pl</a> script will automatically scan for all driver  folders  and offer
         to add  them   to   the   <code>OemPnPDriversPath</code>  setting  in  the  <code
         >unattend.txt</code> file for you.</p>
       <p><strong>Note</strong>: The total absolute length of any file name, including the
-        leading <code>\\os\\...\\$oem$</code> portion, must not exceed 64  characters  or
+        leading <code>\\os\\...\\\$oem\$</code> portion, must not exceed 64 characters or
         winnt.exe will get an error when it tries to copy the file.</p>
       <h3>Populate packages directory</h3>
       <p>All our OS-update scripts and many of our application  install  scripts  contain
