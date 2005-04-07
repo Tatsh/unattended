@@ -1,7 +1,5 @@
 :: OPTIONAL: Install Firefox
-:: URL|AFK|http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0.1/win32/af-ZA/Firefox%20Setup%201.0.1.exe|packages/mozilla/firefox-101-afk.exe
 :: URL|CAT|http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0.2/win32/ca-AD/Firefox%20Setup%201.0.2.exe|packages/mozilla/firefox-102-cat.exe
-:: URL|CHS|http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0.1/win32/zh-CN/Firefox%20Setup%201.0.1.exe|packages/mozilla/firefox-101-chs.exe
 :: URL|CHT|http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0.2/win32/zh-TW/Firefox%20Setup%201.0.2.exe|packages/mozilla/firefox-102-cht.exe
 :: URL|CSY|http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0.2/win32/cs-CZ/Firefox%20Setup%201.0.2.exe|packages/mozilla/firefox-102-csy.exe
 :: URL|DAN|http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/1.0.2/win32/da-DK/Firefox%20Setup%201.0.2.exe|packages/mozilla/firefox-102-dan.exe
@@ -32,4 +30,4 @@
 
 
 @Echo off
-todo.pl "%Z%\packages\mozilla\firefox-10?-%WINLANG%.exe -ms -ira"
+todo.pl "%Z%\packages\mozilla\firefox-102-%WINLANG%.exe -ms -ira"
