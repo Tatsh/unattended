@@ -38,32 +38,32 @@ lib/libnss_files.so
 lib/libresolv.so
 
 # Should not hard-wire kernel version here.  FIXME!
-lib/modules/2.6.11.5/modules.alias
-lib/modules/2.6.11.5/modules.ccwmap
-lib/modules/2.6.11.5/modules.dep
-lib/modules/2.6.11.5/modules.ieee1394map
-lib/modules/2.6.11.5/modules.inputmap
-lib/modules/2.6.11.5/modules.isapnpmap
-lib/modules/2.6.11.5/modules.pcimap
-lib/modules/2.6.11.5/modules.symbols
-lib/modules/2.6.11.5/modules.usbmap
+lib/modules/2.6.11.6/modules.alias
+lib/modules/2.6.11.6/modules.ccwmap
+lib/modules/2.6.11.6/modules.dep
+lib/modules/2.6.11.6/modules.ieee1394map
+lib/modules/2.6.11.6/modules.inputmap
+lib/modules/2.6.11.6/modules.isapnpmap
+lib/modules/2.6.11.6/modules.pcimap
+lib/modules/2.6.11.6/modules.symbols
+lib/modules/2.6.11.6/modules.usbmap
 
-lib/modules/2.6.11.5/kernel/drivers/net
+lib/modules/2.6.11.6/kernel/drivers/net
 
-lib/modules/2.6.11.5/kernel/drivers/usb/core
-lib/modules/2.6.11.5/kernel/drivers/usb/host
-lib/modules/2.6.11.5/kernel/drivers/usb/input
+lib/modules/2.6.11.6/kernel/drivers/usb/core
+lib/modules/2.6.11.6/kernel/drivers/usb/host
+lib/modules/2.6.11.6/kernel/drivers/usb/input
 
-lib/modules/2.6.11.5/kernel/lib/crc32.ko
+lib/modules/2.6.11.6/kernel/lib/crc32.ko
 
-lib/modules/2.6.11.5/kernel/fs/cifs
+lib/modules/2.6.11.6/kernel/fs/cifs
 
 # For gathering diagnostics when network refuses to start.
-lib/modules/2.6.11.5/kernel/drivers/block/floppy.ko
-lib/modules/2.6.11.5/kernel/fs/fat/fat.ko
-lib/modules/2.6.11.5/kernel/fs/msdos/msdos.ko
-lib/modules/2.6.11.5/kernel/fs/vfat/vfat.ko
-lib/modules/2.6.11.5/kernel/fs/nls/nls_iso8859-1.ko
+lib/modules/2.6.11.6/kernel/drivers/block/floppy.ko
+lib/modules/2.6.11.6/kernel/fs/fat/fat.ko
+lib/modules/2.6.11.6/kernel/fs/msdos/msdos.ko
+lib/modules/2.6.11.6/kernel/fs/vfat/vfat.ko
+lib/modules/2.6.11.6/kernel/fs/nls/nls_iso8859-1.ko
 
 sbin/acpidmp
 sbin/cardmgr
