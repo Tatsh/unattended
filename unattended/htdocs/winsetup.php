@@ -8,7 +8,7 @@ $page['next']  = 'timezones.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: winsetup.php,v 1.2 2005-03-08 22:07:54 nrichthof Exp $';
+$cvs           = '$Id: winsetup.php,v 1.3 2005-04-07 17:59:37 nrichthof Exp $';
 $sections[]    = array ('User, Organization, and Computer Name', 'uname');
 $sections[]    = array ('Product Key', 'pkey');
 $sections[]    = array ('Local Administrator Password', 'adminpw');
@@ -85,7 +85,7 @@ $content       = <<<EOT
         of  this path are separated by semicolons.  Windows uses this path when searching
         for a driver for a piece of hardware. These elements are relative  to  the  <code
         >C:</code>  drive,   and  are  usually  used   in   conjunction   with   the   <a
-        href="step-by-step.php#drivers" ><code>$oem$/$1</code></a> mechanism.</p>
+        href="step-by-step.php#drivers" ><code>\$oem\$/\$1</code></a> mechanism.</p>
       <p>For example:</p>
       <pre class="code">[Unattended]
     OemPnPDriversPath="drivers\\net\\eepro;drivers\\video\\nVidia"</pre>
