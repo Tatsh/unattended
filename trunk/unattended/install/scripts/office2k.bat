@@ -286,4 +286,17 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\O2KSR1aDL.EXE /t:%TEMP%\o
 :: "REMOVE=WinFax" means do not install the Symantec Fax Starter
 :: Edition.  (It shows up as a printer and is therefore annoying.)
 :: Thanks to Justin Beckley.
-todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REMOVE=WinFax REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1"
+
+:: Edit install/site/keys.bat and provide your license key
+call %Z%\site\keys.bat
+if %office2k%==xxxxxxx goto nokey
+
+todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\office.txt /i %Z_PATH%\packages\office2k\data1.msi ADDLOCAL=ALL REMOVE=WinFax REBOOT=ReallySuppress NOUSERNAME=1 ALLUSERS=1 DISABLEADVTSHORTCUTS=1 PIDKEY=%office2k%"
+
+if errorlevel 1 exit 1
+exit 0
+
+:nokey
+@echo *** Unable to get Office license key
+@echo ***  (did you forget to edit %Z%\site\keys.bat?)
+exit 2
