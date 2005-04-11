@@ -30,15 +30,15 @@ if errorlevel 1 exit 1
 :: No Download found for TRK.
 todo.pl "%Z%\updates\vs6\%WINLANG%\setupsp6.exe /qn1 /g %SystemDrive%\netinst\logs\vs6sp6.txt" .reboot
 
-:: NOTE: You must create %Z%\site\vs6_key.bat to set the vs6_key
+:: NOTE: You must edit %Z%\site\keyd.bat to set the vs6
 :: variable to your license key
-call %Z%\site\vs6_key.bat
-if %vs6_key%.==. goto nokey
-todo.pl "%Z%\packages\vs6\acmboot.exe /qn1 /g %SystemDrive%\netinst\logs\vs6.txt /k %vs6_key%" .reboot
+call %Z%\site\keys.bat
+if %vs6%==xxxxxxx goto nokey
+todo.pl "%Z%\packages\vs6\acmboot.exe /qn1 /g %SystemDrive%\netinst\logs\vs6.txt /k %vs6%" .reboot
 if errorlevel 1 exit 1
 exit 0
 
 :nokey
 @echo *** Unable to get VS6 license key
-@echo ***  (did you forget to create %Z%\site\vs6_key.bat?)
+@echo ***  (did you forget to edit %Z%\site\keys.bat?)
 exit 2

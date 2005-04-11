@@ -259,6 +259,16 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\OfficeXP-kb832668-v2-fullfile-%WINL
 :: URL|TRK|http://download.microsoft.com/download/8/0/4/804be6c3-1403-4479-a050-b7c0a8daae3b/OfficeXpSp3-kb832671-client-trk.exe|updates/officexp/officexpsp3-kb832671-client-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\officexp\OfficeXpSp3-kb832671-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb832671.txt /p MAINSP3op.msp REBOOT=ReallySuppress\""
 
-:: Add "PIDKEY=<key>" to this command line, where <key> is your
-:: product key without hyphens.
-todo.pl ".reboot-on 194 %Z%\packages\officexp\setuppls.exe /qb /l* %SystemDrive%\netinst\logs\officexp.txt ADDLOCAL=ALL NOUSERNAME=1"
+:: Edit install/site/keys.bat and provide your license key
+call %Z%\site\keys.bat
+if %officexp%==xxxxxxx goto nokey
+
+todo.pl ".reboot-on 194 %Z%\packages\officexp\setuppls.exe /qb /l* %SystemDrive%\netinst\logs\officexp.txt ADDLOCAL=ALL NOUSERNAME=1 PIDKEY=%officexp%"
+
+if errorlevel 1 exit 1
+exit 0
+
+:nokey
+@echo *** Unable to get Office license key
+@echo ***  (did you forget to edit %Z%\site\keys.bat?)
+exit 2
