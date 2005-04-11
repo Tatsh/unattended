@@ -87,6 +87,16 @@ todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb891067-fullfile-%WIN
 :: URL|TRK|http://download.microsoft.com/download/b/3/8/b3814d31-f19f-4523-99ec-4d8e68fb0401/Office2003SP1-kb842532-client-trk.exe|updates/office2003/office2003sp1-kb842532-client-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\office2003\Office2003SP1-kb842532-client-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb842532.txt /p MAINSP1op.msp REBOOT=ReallySuppress\""
 
-:: Add "PIDKEY=<key>" to this command line, where <key> is your
-:: product key without hyphens.
-todo.pl ".reboot-on 194 %Z%\packages\office2003\setup.exe /qb /l* %SystemDrive%\netinst\logs\office2003.txt ADDLOCAL=ALL NOUSERNAME=1"
+:: Edit install/site/keys.bat and provide your license key
+call %Z%\site\keys.bat
+if %office2k3%==xxxxxxx goto nokey
+
+todo.pl ".reboot-on 194 %Z%\packages\office2003\setup.exe /qb /l* %SystemDrive%\netinst\logs\office2003.txt ADDLOCAL=ALL NOUSERNAME=1 PIDKEY=%office2k3%"
+
+if errorlevel 1 exit 1
+exit 0
+
+:nokey
+@echo *** Unable to get Office license key
+@echo ***  (did you forget to edit %Z%\site\keys.bat?)
+exit 2
