@@ -30,7 +30,7 @@ if errorlevel 1 exit 1
 :: No Download found for TRK.
 todo.pl "%Z%\updates\vs6\%WINLANG%\setupsp6.exe /qn1 /g %SystemDrive%\netinst\logs\vs6sp6.txt" .reboot
 
-:: NOTE: You must edit %Z%\site\keyd.bat to set the vs6
+:: NOTE: You must edit %Z%\site\keys.bat to set the vs6
 :: variable to your license key
 call %Z%\site\keys.bat
 if %vs6%==xxxxxxx goto nokey
