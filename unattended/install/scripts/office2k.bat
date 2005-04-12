@@ -5,6 +5,34 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for Word 2000 (KB887977)
+:: Description of the security update for Microsoft Word 2000: April 12, 2005
+:: <http://support.microsoft.com/kb/887977>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=9F4B6868-2F94-478F-B0BC-0DA3E0571523>
+:: URL|ARA|http://download.microsoft.com/download/2/2/f/22f209cb-479a-4ac5-971f-417df57ddbc4/office2000-kb887977-client-ara.exe|updates/office2k/office2000-kb887977-client-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/5/c/d/5cdb4452-60c7-4b03-b647-337e8a914f29/office2000-kb887977-client-csy.exe|updates/office2k/office2000-kb887977-client-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/f/f/0/ff093f4d-6b0f-4791-afd5-4aea987c76f7/office2000-kb887977-client-dan.exe|updates/office2k/office2000-kb887977-client-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/7/6/f/76f6ed8c-ecfe-4220-abb8-b4cab007a6d5/office2000-kb887977-client-deu.exe|updates/office2k/office2000-kb887977-client-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/a/1/f/a1f64503-d433-4410-9354-dca385e66fdb/office2000-kb887977-client-ell.exe|updates/office2k/office2000-kb887977-client-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/5/f/25fb0117-a114-46df-968e-c76d9cddd3cd/office2000-kb887977-client-enu.exe|updates/office2k/office2000-kb887977-client-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/3/e/d3e71005-94f1-4d99-8764-83b6480ac364/office2000-kb887977-client-esn.exe|updates/office2k/office2000-kb887977-client-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/c/7/c/c7ccec3a-27c8-472d-9816-d3125ec1f99c/office2000-kb887977-client-fin.exe|updates/office2k/office2000-kb887977-client-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/8/9/e/89e63842-15d8-4485-a829-6a97d4d7f24e/office2000-kb887977-client-fra.exe|updates/office2k/office2000-kb887977-client-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/9/9/7/997c286b-a7ef-4701-b470-ab24fc437166/office2000-kb887977-client-heb.exe|updates/office2k/office2000-kb887977-client-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/9/0/a90f2c50-6511-4b94-9f5c-4442e29a3711/office2000-kb887977-client-hun.exe|updates/office2k/office2000-kb887977-client-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/1/d/3/1d3ac148-55b7-4c0a-86c9-52c6f57b4756/office2000-kb887977-client-ita.exe|updates/office2k/office2000-kb887977-client-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/8/0/1804eab9-f17d-4336-a1e8-42a9284508b4/office2000-kb887977-client-jpn.exe|updates/office2k/office2000-kb887977-client-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/6/e/06e97b34-b8f8-43fd-9529-0e515f2ed677/office2000-kb887977-client-kor.exe|updates/office2k/office2000-kb887977-client-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/4/7/d47f2ccb-cf62-40f4-9358-70fd9e92e389/office2000-kb887977-client-nld.exe|updates/office2k/office2000-kb887977-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/7/a/4/7a4ea829-4359-4dcf-b6d9-73419c9f562d/office2000-kb887977-client-nor.exe|updates/office2k/office2000-kb887977-client-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/d/d/7/dd791f92-3e4f-4216-99a9-7786472d9f64/office2000-kb887977-client-plk.exe|updates/office2k/office2000-kb887977-client-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/4/4/4/4444474b-d9f5-4e30-a574-3fae66c65616/office2000-kb887977-client-ptb.exe|updates/office2k/office2000-kb887977-client-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/c/7/e/c7e3ba3f-ace2-42cb-ad5e-6e2a6d3c5775/office2000-kb887977-client-ptg.exe|updates/office2k/office2000-kb887977-client-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/c/2/0c206421-ac61-4e4f-86f6-3c4724b3edff/office2000-kb887977-client-rus.exe|updates/office2k/office2000-kb887977-client-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/e/4/fe47611e-db36-4036-b5d4-9faf4eac3147/office2000-kb887977-client-sve.exe|updates/office2k/office2000-kb887977-client-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/4/7/c/47ccac8c-504a-4b20-96f7-2b22ae734da8/office2000-kb887977-client-trk.exe|updates/office2k/office2000-kb887977-client-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb887977-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb887977.txt /p WINWORDop.msp REBOOT=ReallySuppress\""
+
 :: Security Update for Excel 2000 (KB873372)
 :: <http://support.microsoft.com/?kbid=873372>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=B0C40C24-4DDE-45AF-8433-6DBDDD030C30>
