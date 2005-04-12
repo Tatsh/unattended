@@ -5,6 +5,34 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for Word 2002 (KB887978)
+:: Description of the security update for Word 2002: April 12, 2005
+:: <http://support.microsoft.com/kb/887978>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=34998255-E004-4A29-9418-35C5818E54CB>
+:: URL|ARA|http://download.microsoft.com/download/a/f/a/afae17d3-8dd3-47a6-95b8-a46146eb67be/officexp-kb887978-client-ara.exe|updates/officexp/officexp-kb887978-client-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/3/a/63a8d15a-64f3-415e-abda-028dd5e4f2d4/officexp-kb887978-client-csy.exe|updates/officexp/officexp-kb887978-client-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/3/a/0/3a0efa51-5872-4228-985e-8100190e455d/officexp-kb887978-client-dan.exe|updates/officexp/officexp-kb887978-client-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/7/b/c/7bcff9ce-90a0-4a73-bc31-dda1c556f4af/officexp-kb887978-client-deu.exe|updates/officexp/officexp-kb887978-client-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/7/5/f/75f1e760-577b-4932-a7db-4a1400d35e3b/officexp-kb887978-client-ell.exe|updates/officexp/officexp-kb887978-client-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/f/b/3fb3ccec-212b-426e-872c-ec8153e881c4/officexp-kb887978-client-enu.exe|updates/officexp/officexp-kb887978-client-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/5/f/d5f7a996-9cf2-47e7-a42f-a26903c10ab3/officexp-kb887978-client-esn.exe|updates/officexp/officexp-kb887978-client-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/9/a/99a58227-a779-4506-94f0-b4755ef79697/officexp-kb887978-client-fin.exe|updates/officexp/officexp-kb887978-client-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/d/f/0/df00bd5c-114a-4741-8b4f-a3a7fbfc02e7/officexp-kb887978-client-fra.exe|updates/officexp/officexp-kb887978-client-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/c/3/0/c3073af6-1b0b-4ba7-a46f-da3769c6e96b/officexp-kb887978-client-heb.exe|updates/officexp/officexp-kb887978-client-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/c/0/7c0b1c6c-e503-4646-a0ed-42392d22ce08/officexp-kb887978-client-hun.exe|updates/officexp/officexp-kb887978-client-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/1/b/6/1b61b9a9-bcc2-4ba9-bd49-33a0dac569d4/officexp-kb887978-client-ita.exe|updates/officexp/officexp-kb887978-client-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/3/c/53ca7c7e-a833-40dc-ac5e-5219dbc18f4d/officexp-kb887978-client-jpn.exe|updates/officexp/officexp-kb887978-client-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/f/6/5f6205c5-5a91-4b4e-9c6b-ca2d8a2ae540/officexp-kb887978-client-kor.exe|updates/officexp/officexp-kb887978-client-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/7/d/3/7d3144cb-c8e1-4173-87e7-db0ab48bcdf4/officexp-kb887978-client-nld.exe|updates/officexp/officexp-kb887978-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/0/b/5/0b5c0a81-755b-4380-90a0-7c037f4242e6/officexp-kb887978-client-nor.exe|updates/officexp/officexp-kb887978-client-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/f/8/0/f8077a69-4418-447b-89d4-bbf28aabb1fe/officexp-kb887978-client-plk.exe|updates/officexp/officexp-kb887978-client-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/5/8/e/58e2b91d-1182-4751-8062-557d0ed026ba/officexp-kb887978-client-ptb.exe|updates/officexp/officexp-kb887978-client-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/9/8/898b9eb0-84a2-41a1-b36a-d3e4402dc90c/officexp-kb887978-client-ptg.exe|updates/officexp/fficexp-kb887978-client-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/6/c/4/6c4a5c14-7d67-435f-9d9d-f621b25c5798/officexp-kb887978-client-rus.exe|updates/officexp/officexp-kb887978-client-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/5/1/1/511ee030-05fc-4089-8f1d-6f4307a74fca/officexp-kb887978-client-sve.exe|updates/officexp/officexp-kb887978-client-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/d/5/7/d5776ad7-f516-497d-b3b2-1fa76e6dde70/officexp-kb887978-client-trk.exe|updates/officexp/officexp-kb887978-client-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-kb887978-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb887978.txt /p WINWORDop.msp REBOOT=ReallySuppress\""
+
 :: Security Update for SharePoint Team Services (KB890829)
 :: Description of the Security Update for SharePoint Team Services: February 8, 2005
 :: <http://support.microsoft.com/kb/890829>
