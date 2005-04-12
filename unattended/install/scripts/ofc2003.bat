@@ -5,6 +5,34 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for Word 2003 (KB887979)
+:: Description of the security update for Word 2003: April 12, 2005
+:: <http://support.microsoft.com/kb/887979>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=9158279D-4421-4932-9318-02CA829A9B43>
+:: URL|ARA|http://download.microsoft.com/download/f/1/3/f13720d1-67da-406a-967f-02a4131eac4c/office2003-kb887979-client-ara.exe|updates/office2003-kb887979-client-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/4/a/b/4ab15b9c-c0fb-44e6-b65a-2023a48f851e/office2003-kb887979-client-csy.exe|updates/office2003-kb887979-client-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/2/6/e/26e9f1e7-b268-4652-9256-fa4e17d4cd07/office2003-kb887979-client-dan.exe|updates/office2003-kb887979-client-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/4/7/f/47fa54f8-b474-4e8d-8e60-c15c7f1b4ca2/office2003-kb887979-client-deu.exe|updates/office2003-kb887979-client-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/a/a/9/aa95ed8f-764e-4cc0-8bb1-4a70453affb4/office2003-kb887979-client-ell.exe|updates/office2003-kb887979-client-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/9/e/29eb1bcc-bed2-42d2-a72e-360622a194a3/office2003-kb887979-client-enu.exe|updates/office2003-kb887979-client-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/e/f/2ef015e6-c4f5-453a-85eb-ce20bf625553/office2003-kb887979-client-esn.exe|updates/office2003-kb887979-client-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/d/7/2/d72db936-3725-4f59-9237-bbb71a83072e/office2003-kb887979-client-fin.exe|updates/office2003-kb887979-client-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/f/0/7/f076a433-0e15-48f7-ad3b-511fe37fa617/office2003-kb887979-client-fra.exe|updates/office2003-kb887979-client-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/9/d/6/9d617d4d-bb2b-4e2b-8c2c-e763d230001b/office2003-kb887979-client-heb.exe|updates/office2003-kb887979-client-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/e/d/3/ed3a21c1-2a7a-4508-8bc6-510a6586c2a3/office2003-kb887979-client-hun.exe|updates/office2003-kb887979-client-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/e/c/5/ec50b178-8eef-4720-876f-6a8a7c314d57/office2003-kb887979-client-ita.exe|updates/office2003-kb887979-client-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/9/d/4/9d4c551b-f9b4-4160-b52a-173003cf8ba9/office2003-kb887979-client-jpn.exe|updates/office2003-kb887979-client-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/1/1/411e84e9-02b2-4851-948b-3ff483532ccf/office2003-kb887979-client-kor.exe|updates/office2003-kb887979-client-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/2/3/1/23173470-205f-4db1-9055-a280ff86fd88/office2003-kb887979-client-nld.exe|updates/office2003-kb887979-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/9/c/1/9c1c0bf8-4eb3-47f4-bcce-8b06a7032afd/office2003-kb887979-client-nor.exe|updates/office2003-kb887979-client-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/0/1/f/01f0af4d-8106-418a-a3d3-81aa94862226/office2003-kb887979-client-plk.exe|updates/office2003-kb887979-client-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/0/8/e/08e1bc25-62a7-4d3f-b8b8-c8bbcd9fb34b/office2003-kb887979-client-ptb.exe|updates/office2003-kb887979-client-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/e/b/bebf8262-f86d-455f-b403-3532b990595b/office2003-kb887979-client-ptg.exe|updates/office2003-kb887979-client-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/d/2/6/d26baf0b-9427-4e6d-9ba8-b1a80a426c80/office2003-kb887979-client-rus.exe|updates/office2003-kb887979-client-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/d/6/6d62c6d7-6230-4aae-b614-d45305c204f1/office2003-kb887979-client-sve.exe|updates/office2003-kb887979-client-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/8/c/d/8cdd9869-3324-4888-9bb6-26685ff3d7eb/office2003-kb887979-client-trk.exe|updates/office2003-kb887979-client-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-kb887979-client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb887979.txt /p WINWORDop.msp REBOOT=ReallySuppress\""
+
 :: Update for Office 2003 (KB885828)
 :: <http://support.microsoft.com/?kbid=885828>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=160FB267-810B-4B40-BC34-E55E25D07A7E>
