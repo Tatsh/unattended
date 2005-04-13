@@ -6,6 +6,7 @@
 todo.pl .reboot
 
 :: Security Update for Word 2002 (KB887978)
+:: Microsoft Security Bulletin MS05-023
 :: Description of the security update for Word 2002: April 12, 2005
 :: <http://support.microsoft.com/kb/887978>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=34998255-E004-4A29-9418-35C5818E54CB>
