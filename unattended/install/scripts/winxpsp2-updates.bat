@@ -683,35 +683,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB887472-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/a/7/9/a798552f-83ca-4d28-b5ef-100160b26a71/WindowsXP-KB888302-x86-TRK.exe|updates/common/windowsxp-kb888302-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB888302-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Security Update for Windows XP (KB890047)
-:: Microsoft Security Bulletin MS05-008
-:: "Vulnerability in Windows Shell Could Allow Remote Code Execution (890047)"
-:: <http://go.microsoft.com/fwlink/?LinkId=38516>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=865B5D9D-FC5B-4F91-A860-2C35A025A907>
-:: URL|ARA|http://download.microsoft.com/download/0/f/3/0f33dbfe-5ebb-4b4e-8039-3f807d2639a2/WindowsXP-KB890047-X86-ARA.exe|updates/common/windowsxp-kb890047-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/b/4/a/b4ab7d01-774e-4860-a097-28e56d0173de/WindowsXP-KB890047-X86-CSY.exe|updates/common/windowsxp-kb890047-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/3/9/d/39d5cc00-d618-40c9-89cf-6c51579e5262/WindowsXP-KB890047-X86-DAN.exe|updates/common/windowsxp-kb890047-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/a/2/6a26631c-5f65-488b-be59-628a74244f10/WindowsXP-KB890047-X86-DEU.exe|updates/common/windowsxp-kb890047-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/7/d/e/7dea926a-dfdb-4d2f-99d2-88f89524230b/WindowsXP-KB890047-X86-ELL.exe|updates/common/windowsxp-kb890047-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/9/f/2/9f2227c8-baf2-4515-8626-06f1830b24c4/WindowsXP-KB890047-X86-ENU.exe|updates/common/windowsxp-kb890047-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/c/2/6/c26097b7-e262-449d-9f64-535f16048f4a/WindowsXP-KB890047-X86-ESN.exe|updates/common/windowsxp-kb890047-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/9/9/c/99c0d61c-44d4-4c42-ae88-7152a4190e96/WindowsXP-KB890047-X86-FIN.exe|updates/common/windowsxp-kb890047-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/4/c/e/4cee57c4-3fd7-415f-a807-a58f0176a20b/WindowsXP-KB890047-X86-FRA.exe|updates/common/windowsxp-kb890047-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/e/b/6/eb60037c-37d6-4d49-810b-242bfc40df68/WindowsXP-KB890047-X86-HEB.exe|updates/common/windowsxp-kb890047-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/c/8/3/c834f49e-f7cb-4c0e-91c2-47400a2cda2a/WindowsXP-KB890047-X86-HUN.exe|updates/common/windowsxp-kb890047-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/f/c/f/fcfa6e98-684f-4300-856c-f3c9eaf3d3d7/WindowsXP-KB890047-X86-ITA.exe|updates/common/windowsxp-kb890047-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/0/4/a/04aafcec-68d8-4d2a-b163-18fc35533fa9/WindowsXP-KB890047-X86-JPN.exe|updates/common/windowsxp-kb890047-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/5/5/45576473-1011-4081-b97c-41c6766b8c4c/WindowsXP-KB890047-X86-KOR.exe|updates/common/windowsxp-kb890047-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/e/8/2/e8213911-94dd-4267-bade-c45c024d09fe/WindowsXP-KB890047-X86-NLD.exe|updates/common/windowsxp-kb890047-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/5/e/d/5ed66f28-d980-489f-a030-40a591475d97/WindowsXP-KB890047-X86-NOR.exe|updates/common/windowsxp-kb890047-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/8/3/c/83caeaef-037d-4271-adc6-814ce5b92806/WindowsXP-KB890047-X86-PLK.exe|updates/common/windowsxp-kb890047-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/4/2/4/424daa58-7636-40f9-b3a4-54c7177a6056/WindowsXP-KB890047-X86-PTB.exe|updates/common/windowsxp-kb890047-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/f/e/9/fe90ecbe-70cb-4ee9-a065-939eb65f28f8/WindowsXP-KB890047-X86-PTG.exe|updates/common/windowsxp-kb890047-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/a/3/0/a30dcec5-ad91-4f37-8335-16c1829dc433/WindowsXP-KB890047-X86-RUS.exe|updates/common/windowsxp-kb890047-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/2/e/c/2ece03c4-c166-4c6d-a4a9-82b059851ca8/WindowsXP-KB890047-X86-SVE.exe|updates/common/windowsxp-kb890047-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/b/c/a/bca5ed6f-3089-4a1e-bc19-e0b38ca9e416/WindowsXP-KB890047-X86-TRK.exe|updates/common/windowsxp-kb890047-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB890047-X86-%WINLANG%.exe /passive /n /norestart"
-
 :: Microsoft(R) Windows(R) Malicious Software Removal Tool (KB890830)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
 :: <http://support.microsoft.com/kb/890830>
