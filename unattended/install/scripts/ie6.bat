@@ -4,6 +4,7 @@
 :: they will be executed in the opposite order.
 
 :: Cumulative Security Update for Internet Explorer 6 Service Pack 1 for Windows XP and Windows 2000 (KB890923)
+:: Microsoft Security Bulletin MS05-020
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=92E5A83D-9131-4B20-915A-A444C51656DC>
 :: URL|ARA|http://download.microsoft.com/download/7/e/7/7e743cfa-38dc-4292-9bdd-daf3bc7136de/IE6.0sp1-KB890923-Windows-2000-XP-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb890923-windows-2000-xp-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/c/b/2/cb2d061b-0a5e-4926-be19-a3e12cd64cc2/IE6.0sp1-KB890923-Windows-2000-XP-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb890923-windows-2000-xp-x86-csy.exe
@@ -28,35 +29,6 @@
 :: URL|SVE|http://download.microsoft.com/download/0/6/e/06e5fc5c-aeae-4ae2-adb2-6fb2c7333e67/IE6.0sp1-KB890923-Windows-2000-XP-x86-SVE.exe|updates/ie6sp1/ie6.0sp1-kb890923-windows-2000-xp-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/e/a/3/ea3e3ce9-b740-42c5-b842-3dd93b7e6ca6/IE6.0sp1-KB890923-Windows-2000-XP-x86-TRK.exe|updates/ie6sp1/ie6.0sp1-kb890923-windows-2000-xp-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB890923-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: Cumulative Security Update for Internet Explorer 6 Service Pack 1 for Windows XP and Windows 2000 (KB867282)
-:: Microsoft Security Bulletin MS05-014
-:: "Cumulative Security Update for Internet Explorer (867282)"
-:: <http://go.microsoft.com/fwlink/?LinkId=37180>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=E473CD05-3320-4322-B437-F3A61E62F567>
-:: URL|ARA|http://download.microsoft.com/download/7/2/6/726ea44d-6134-4752-b0bd-6f4cda1774df/IE6.0sp1-KB867282-Windows-2000-XP-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/d/4/a/d4a51a4b-b599-471b-9a92-e4c0cf16a6fa/IE6.0sp1-KB867282-Windows-2000-XP-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/1/c/3/1c341ce2-065f-4d5a-90c3-8631d459c525/IE6.0sp1-KB867282-Windows-2000-XP-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/8/f/6/8f6c5ed5-c120-4765-b22a-cfa636cd2908/IE6.0sp1-KB867282-Windows-2000-XP-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/4/1/2/4125ad71-91d5-44f9-b07f-67d7975de511/IE6.0sp1-KB867282-Windows-2000-XP-x86-ELL.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/d/3/2/d3228e08-71d4-4920-ab7d-9ddb23ffe44a/IE6.0sp1-KB867282-Windows-2000-XP-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/7/7/9/779718fe-83df-499d-9c84-0e419ea04048/IE6.0sp1-KB867282-Windows-2000-XP-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/f/d/a/fda553ae-469b-4c16-82e0-9a2cb9259cc1/IE6.0sp1-KB867282-Windows-2000-XP-x86-FIN.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/c/8/1/c818df13-709f-4380-8db2-00e12169e5fe/IE6.0sp1-KB867282-Windows-2000-XP-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/e/4/b/e4ba0fee-feec-41e7-9874-40e08508020a/IE6.0sp1-KB867282-Windows-2000-XP-x86-HEB.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/0/f/1/0f16404b-6976-4681-8992-247b59beb99c/IE6.0sp1-KB867282-Windows-2000-XP-x86-HUN.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/d/f/3/df34ab01-33cc-47d3-b8ec-8a9e1372da67/IE6.0sp1-KB867282-Windows-2000-XP-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/7/c/b/7cb4670b-f2b8-4080-9163-ecd91d01fdb5/IE6.0sp1-KB867282-Windows-2000-XP-x86-JPN.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/e/b/e/ebeb944f-ddf8-4436-b750-c2a8119a2c95/IE6.0sp1-KB867282-Windows-2000-XP-x86-KOR.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/7/a/8/7a800661-e60a-4f8b-8931-637239ba1110/IE6.0sp1-KB867282-Windows-2000-XP-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/2/2/e/22efa581-10cd-490d-a84c-aaff3aa76b35/IE6.0sp1-KB867282-Windows-2000-XP-x86-NOR.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/b/5/e/b5ee4930-08bf-4f22-98e6-b02da208c7bb/IE6.0sp1-KB867282-Windows-2000-XP-x86-PLK.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/f/b/8/fb84b84f-191b-4539-a06f-31f3fbed551b/IE6.0sp1-KB867282-Windows-2000-XP-x86-PTB.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/5/0/5/505bd614-21f3-432e-8268-118f463f1587/IE6.0sp1-KB867282-Windows-2000-XP-x86-PTG.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/f/6/7/f67a0502-3721-44c4-9b16-d1c0947ec40e/IE6.0sp1-KB867282-Windows-2000-XP-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/8/3/1/83173162-c98d-46fc-9a61-e7b8efd3b623/IE6.0sp1-KB867282-Windows-2000-XP-x86-SVE.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/3/5/7/35719fa9-daea-432a-9a74-889e7143f3a0/IE6.0sp1-KB867282-Windows-2000-XP-x86-TRK.exe|updates/ie6sp1/ie6.0sp1-kb867282-windows-2000-xp-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB867282-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Internet Explorer 6 Service Pack 1 (KB833989)
 :: Microsoft Security Bulletin MS04-028
