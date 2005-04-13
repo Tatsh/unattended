@@ -1,4 +1,40 @@
-** Changes in version 4.6 (2004-Jan-02)
+** Changes in version 4.7 (2005-Apr-??)
+
+Add support for DVD-based installs (ekot).
+
+Fix Adobe Reader 7.0 installation script.
+
+Add (commented-out) automatic update to spybot.bat (nrichthof).
+
+Create ws2k3sp1-notips.pl script (nrichthof).
+
+Upgrade to Opera 7.54u2 and PDFCreator 0.81-rc5 (ekot).
+
+Upgrade to PuTTY 0.58, Winamp 5.08c (nrichthof).
+
+Upgrade to Perl 5.8.6 build 811, Windows Installer 3.1, and Sun JRE
+1.5.0_02.
+
+Integrate February, March, and April 2005 updates from Microsoft
+(nrichthof, mostly).
+
+Get Office and Visual Studio keys from Z:\site\keys.bat (nrichthof).
+
+Fix OpenOffice install for international users (nrichthof).
+
+(Linux) Upgrade to DBD::mysql 2.9006, DBI 1.48, dmidecode 2.6,
+e2fsprogs 1.36, glibc 2.3.5, Linux 2.6.11.7, MySQL 4.0.24, Parted
+1.6.22, and Samba 3.0.13.
+
+(Linux) Disable console blanking.
+
+(DOS) Upgrade to FreeDOS kernel 2.0.35.a, EMM386 1.15, and FORMAT
+0.91t.
+
+(DOS) Update Intel PRO/1000 driver.
+
+
+** Changes in version 4.6 (2005-Jan-02)
 
 (Linux) Add g(un)zip to boot disk since it is needed for non-English
 keyboard support.
