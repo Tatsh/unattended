@@ -620,6 +620,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB892944-x86-%WINLANG%.
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB890859-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Security Update for Windows 2000 (KB893066)
+:: Microsoft Security Bulletin MS05-019
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=0C534EE0-DE5B-4002-BB69-C63ED03D5D9D>
 :: URL|ARA|http://download.microsoft.com/download/3/5/a/35acec01-651c-4aff-9495-51207aaca13d/Windows2000-KB893066-x86-ARA.EXE|updates/win2ksp4/windows2000-kb893066-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/9/4/d/94d65bbe-0ad4-482b-84b4-b88432b54840/Windows2000-KB893066-x86-CSY.EXE|updates/win2ksp4/windows2000-kb893066-x86-csy.exe
