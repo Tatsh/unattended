@@ -643,6 +643,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB823353-x86-%WINLANG%.exe /
 :: Critical Updates
 
 :: Security Update for Windows XP (KB893086)
+:: Microsoft Security Bulletin MS05-016
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=51679BB1-A61B-47AC-A943-F9F306EF987B>
 :: URL|ARA|http://download.microsoft.com/download/a/0/c/a0c52995-055f-49fc-9926-a2cf452e6a57/WindowsXP-KB893086-x86-ARA.exe|updates/winxpsp2/windowsxp-kb893086-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/4/d/5/4d5317b0-d3b8-42e8-8348-ca5dfdd582b8/WindowsXP-KB893086-x86-CSY.exe|updates/winxpsp2/windowsxp-kb893086-x86-csy.exe
@@ -695,6 +696,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB893086-x86-%WINLANG%.ex
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB892944-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB890859)
+:: Microsoft Security Bulletin MS05-018
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=F0683E2B-8E8F-474F-B8D8-46C4C33FCE99>
 :: URL|ARA|http://download.microsoft.com/download/6/6/7/667e3876-2c9e-48f8-a11e-6f784e833f08/WindowsXP-KB890859-x86-ARA.exe|updates/winxpsp2/windowsxp-kb890859-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/f/d/9/fd9b929c-be15-444f-92c9-1eb5788927b1/WindowsXP-KB890859-x86-CSY.exe|updates/winxpsp2/windowsxp-kb890859-x86-csy.exe
@@ -944,35 +946,6 @@ todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.2-%WINLANG%.exe /
 :: URL|SVE|http://download.microsoft.com/download/9/8/a/98a92aec-fdab-4d0f-aaa3-0f8d7c6ea4d9/WindowsXP-KB871250-x86-SVE.exe|updates/winxpsp1/windowsxp-kb871250-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/9/c/f/9cf2f0b9-e759-4309-8b07-4bece24d7351/WindowsXP-KB871250-x86-TRK.exe|updates/winxpsp1/windowsxp-kb871250-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB871250-x86-%WINLANG%.exe /passive /n /norestart"
-
-:: Security Update for Windows XP (KB891711)
-:: Microsoft Security Bulletin MS05-002
-:: "Vulnerability in Cursor and Icon Format Handling Could Allow Remote Code Execution (891711)"
-:: <http://www.microsoft.com/technet/Security/bulletin/ms05-002.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=8850954D-57D9-4D23-9AA1-1CCF6085A057>
-:: URL|ARA|http://download.microsoft.com/download/b/2/1/b216dfee-6c10-487b-8325-e333ae21b161/WindowsXP-KB891711-x86-ARA.exe|updates/winxpsp1/windowsxp-kb891711-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/a/3/4/a349bbd7-8b1b-4780-a98a-a3b9bcd03d03/WindowsXP-KB891711-x86-CSY.exe|updates/winxpsp1/windowsxp-kb891711-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/e/6/1/e614b32f-2244-4438-a46e-860f9c86c966/WindowsXP-KB891711-x86-DAN.exe|updates/winxpsp1/windowsxp-kb891711-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/8/2/c/82cab6b2-60bf-4d5a-903d-85b366f62ac2/WindowsXP-KB891711-x86-DEU.exe|updates/winxpsp1/windowsxp-kb891711-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/d/4/f/d4f93f8a-5ad6-4a89-ac01-356f226bffc9/WindowsXP-KB891711-x86-ELL.exe|updates/winxpsp1/windowsxp-kb891711-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/d/2/b/d2b2a03d-e617-4bff-aeeb-e3d45110b7d6/WindowsXP-KB891711-x86-ENU.exe|updates/winxpsp1/windowsxp-kb891711-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/c/6/8/c688b134-c66e-445b-9352-c3e3a10e9589/WindowsXP-KB891711-x86-ESN.exe|updates/winxpsp1/windowsxp-kb891711-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/3/6/f/36f145e9-61a6-4f60-947a-b0efabd07882/WindowsXP-KB891711-x86-FIN.exe|updates/winxpsp1/windowsxp-kb891711-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/a/a/6/aa6be7c3-e89c-4675-8dd7-563419c708f1/WindowsXP-KB891711-x86-FRA.exe|updates/winxpsp1/windowsxp-kb891711-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/8/0/3/803874a2-a1b8-43a2-92de-bfa01f27745d/WindowsXP-KB891711-x86-HEB.exe|updates/winxpsp1/windowsxp-kb891711-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/3/e/8/3e8bf03c-25cc-4370-9f4d-5227ebf7666e/WindowsXP-KB891711-x86-HUN.exe|updates/winxpsp1/windowsxp-kb891711-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/e/c/3ec21056-8024-4177-90dd-7c2cb3e33be8/WindowsXP-KB891711-x86-ITA.exe|updates/winxpsp1/windowsxp-kb891711-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/0/2/1/021d999b-ab73-47c3-95b0-42c408fbe6a3/WindowsXP-KB891711-x86-JPN.exe|updates/winxpsp1/windowsxp-kb891711-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/6/5/3/6537f510-e2bd-41b4-82f6-ee1b0bdf72ab/WindowsXP-KB891711-x86-KOR.exe|updates/winxpsp1/windowsxp-kb891711-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/a/2/7/a27bb73d-d69a-40da-8bfa-649c004e3f51/WindowsXP-KB891711-x86-NLD.exe|updates/winxpsp1/windowsxp-kb891711-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/2/b/5/2b5152f8-3fa4-4385-b418-d0879da3de34/WindowsXP-KB891711-x86-NOR.exe|updates/winxpsp1/windowsxp-kb891711-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/c/8/7/c87f4e17-2174-4664-9c2d-7b10b65461fe/WindowsXP-KB891711-x86-PLK.exe|updates/winxpsp1/windowsxp-kb891711-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/d/7/8d7d218c-a237-4b76-b145-747087422185/WindowsXP-KB891711-x86-PTB.exe|updates/winxpsp1/windowsxp-kb891711-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/c/e/d/cedcdd88-b753-4058-be2b-7229980a736b/WindowsXP-KB891711-x86-PTG.exe|updates/winxpsp1/windowsxp-kb891711-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/a/c/c/acc45fbf-8b25-4a17-829d-2d689bd6689b/WindowsXP-KB891711-x86-RUS.exe|updates/winxpsp1/windowsxp-kb891711-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/a/6/aa6832c9-8aae-404d-86be-4680eae21478/WindowsXP-KB891711-x86-SVE.exe|updates/winxpsp1/windowsxp-kb891711-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/4/f/c/4fcfd110-f3de-418b-a9b8-cf7d9bbd922e/WindowsXP-KB891711-x86-TRK.exe|updates/winxpsp1/windowsxp-kb891711-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB891711-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB890175)
 :: Microsoft Security Bulletin MS05-001
