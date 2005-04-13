@@ -670,6 +670,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB823353-x86-%WINLANG%.exe /
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB893086-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB892944)
+:: Microsoft Security Bulletin MS05-017
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=D72B7198-93A8-4652-B505-8E51FC5EEAC3>
 :: URL|ARA|http://download.microsoft.com/download/0/8/f/08f538bb-4078-43c7-bb6e-2b57bb85d68f/WindowsXP-KB892944-x86-ARA.exe|updates/winxpsp1/windowsxp-kb892944-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/1/3/2/132c8833-03e2-46eb-aaca-f3c995d73743/WindowsXP-KB892944-x86-CSY.exe|updates/winxpsp1/windowsxp-kb892944-x86-csy.exe
@@ -723,6 +724,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB892944-x86-%WINLANG%.ex
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB890859-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB893066)
+:: Microsoft Security Bulletin MS05-019
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=B6D0437E-5A9E-4AA9-9E84-802A1BC5436C>
 :: URL|ARA|http://download.microsoft.com/download/0/5/b/05b8a1cc-9078-4839-b714-8482540db41b/WindowsXP-KB893066-x86-ARA.exe|updates/winxpsp2/windowsxp-kb893066-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/8/c/b/8cb3f481-56b2-418d-bbdb-9d0447d49eec/WindowsXP-KB893066-x86-CSY.exe|updates/winxpsp2/windowsxp-kb893066-x86-csy.exe
