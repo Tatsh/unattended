@@ -14,7 +14,9 @@ for (;!e.atEnd();e.moveNext())
   if (x.MediaLoaded) {
     if (fso.FileExists(x.Drive + "\\" + WScript.Arguments(0))) {
       WshShell.Run("subst "+WScript.Arguments(1) + " " + x.Drive + "\\");
-      var setzpath = fso.CreateTextFile("c:\\netinst\\setzpath.bat", true);
+      var WshSysEnv = WshShell.Environment("SYSTEM");
+      var SystemDrive = WshSysEnv("SystemDrive");
+      var setzpath = fso.CreateTextFile(SystemDrive+"\\netinst\\setzpath.bat", true);
       setzpath.WriteLine("SET Z_PATH="+x.Drive);
       setzpath.Close();
     }
