@@ -8,7 +8,7 @@
 :: FIX: Updates for Windows Media Player 9 Series and for Windows Media Player 10
 :: <http://support.microsoft.com/kb/892313>
 :: URL|ALL|http://download.microsoft.com/download/d/3/0/d3083344-cf7e-4020-a73f-b204259406e7/windowsxp-kb892313-x86-enu.exe|updates/mediaplayer9/windowsxp-kb892313-x86-enu.exe
-todo.pl ".reboot-in 194 %Z%\mediaplayer9\windowsmedia9-kb892313-x86-enu.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\mediaplayer9\windowsmedia9-kb892313-x86-enu.exe /passive /n /norestart"
 
 :: Windows Script update to version 5.6.0.8825
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=C717D943-7E4B-4622-86EB-95A22B832CAA&displaylang=en>
