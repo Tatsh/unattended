@@ -1,7 +1,7 @@
 bash=bash-3.0
 busybox=busybox-1.00
 # Convert::ASN1 is required by perl-ldap
-convert-asn1=Convert-ASN1-0.18
+convert-asn1=Convert-ASN1-0.19
 dbd-mysql=DBD-mysql-2.9006
 dbi=DBI-1.48
 dmidecode=dmidecode-2.6
@@ -14,7 +14,7 @@ glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 linux=linux-2.6.11.7
 module-init-tools=module-init-tools-3.1
-mysql=mysql-4.0.24
+mysql=mysql-4.1.11
 nano=nano-1.2.4
 ncurses=ncurses-5.4
 parted=parted-1.6.22
@@ -22,9 +22,9 @@ pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.8.6
 # perl-ldap aka. Net::LDAP
-perl-ldap=perl-ldap-0.3202
+perl-ldap=perl-ldap-0.33
 pmtools=pmtools-20031210
-samba=samba-3.0.13
+samba=samba-3.0.14a
 wireless_tools=wireless_tools.27
 zlib=zlib-1.2.2
 
@@ -846,7 +846,7 @@ $(call download_rule, $(linux), tar.bz2,		\
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
-	http://www.signal42.com/mirrors/mysql/Downloads/MySQL-4.0/)
+	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-4.1/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v1.2/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
