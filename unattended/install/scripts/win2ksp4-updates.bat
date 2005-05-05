@@ -543,6 +543,32 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: Update for Background Intelligent Transfer Service (BITS) 2.0 and WinHTTP 5.1 Windows 2000 (KB842773)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=3ee866a0-3a09-4fdf-8bdb-c906850ab9f2&Hash=LBCVL37>
+:: URL|ARA|http://download.microsoft.com/download/f/b/c/fbc2c087-a5d4-42c5-83cf-4600152c3a07/Windows2000-KB842773-x86-ARA.EXE|updates/win2ksp4/windows2000-kb842773-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/4/a/c/4ac038c2-8833-49f1-ab69-3aef91c5b5b6/Windows2000-KB842773-x86-CSY.EXE|updates/win2ksp4/windows2000-kb842773-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/8/2/a82bdace-20a0-4ccc-a93d-6690fab4667f/Windows2000-KB842773-x86-DAN.EXE|updates/win2ksp4/windows2000-kb842773-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/e/d/1/ed199e9f-ebd0-4b34-8ca8-d69eea8b2259/Windows2000-KB842773-x86-DEU.EXE|updates/win2ksp4/windows2000-kb842773-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/9/4/9/94990555-16d7-449b-9842-43dc68dfc92d/Windows2000-KB842773-x86-ELL.EXE|updates/win2ksp4/windows2000-kb842773-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/5/d/8/5d802926-6bab-45fa-b96e-bee15413523b/Windows2000-KB842773-x86-ENU.EXE|updates/win2ksp4/windows2000-kb842773-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/b/8/a/b8a3ac5f-724d-419d-b814-9e213e028e5c/Windows2000-KB842773-x86-ESN.EXE|updates/win2ksp4/windows2000-kb842773-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/6/b/96bbab51-4836-42f6-986a-222799eeac8b/Windows2000-KB842773-x86-FIN.EXE|updates/win2ksp4/windows2000-kb842773-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/5/3/c/53cc1706-fedc-47f7-9267-b0520ff4919a/Windows2000-KB842773-x86-FRA.EXE|updates/win2ksp4/windows2000-kb842773-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/2/4/424aa370-0645-46a1-adf6-d309cfd40f25/Windows2000-KB842773-x86-HEB.EXE|updates/win2ksp4/windows2000-kb842773-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/6/e/4/6e42e066-8924-428c-aff3-618d56c68e43/Windows2000-KB842773-x86-HUN.EXE|updates/win2ksp4/windows2000-kb842773-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/5/3/4/5344b939-7a96-4768-8158-dc20ce1a861e/Windows2000-KB842773-x86-ITA.EXE|updates/win2ksp4/windows2000-kb842773-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/2/8/82894b43-427e-4816-851f-80b0b800087c/Windows2000-KB842773-x86-JPN.EXE|updates/win2ksp4/windows2000-kb842773-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/f/c/d/fcdd2ef4-7ce4-474a-8e02-7a2fff6738ca/Windows2000-KB842773-x86-KOR.EXE|updates/win2ksp4/windows2000-kb842773-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/e/8/1/e813531f-b6ac-4d25-a076-cb233cdd0957/Windows2000-KB842773-x86-NLD.EXE|updates/win2ksp4/windows2000-kb842773-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/0/9/6/096851e1-ff40-4e5f-aa73-3c021cd51725/Windows2000-KB842773-x86-NOR.EXE|updates/win2ksp4/windows2000-kb842773-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/5/e/7/5e7091ba-d606-4121-adb3-824e17ba57b9/Windows2000-KB842773-x86-PLK.EXE|updates/win2ksp4/windows2000-kb842773-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/c/6/f/c6f3b412-0f6c-49e1-b3ee-33f0827ac9e1/Windows2000-KB842773-x86-PTB.EXE|updates/win2ksp4/windows2000-kb842773-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/b/8/7b840fce-e60d-49dd-addc-c6adc5336d6c/Windows2000-KB842773-x86-PTG.EXE|updates/win2ksp4/windows2000-kb842773-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/f/0/c/f0c9b95f-002a-4688-bb41-2d725c8a3e78/Windows2000-KB842773-x86-RUS.EXE|updates/win2ksp4/windows2000-kb842773-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/6/5/a6581c7d-a698-4721-b137-9e014bc01492/Windows2000-KB842773-x86-SVE.EXE|updates/win2ksp4/windows2000-kb842773-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/5/9/559f49e6-e84c-484b-abbf-f1bd9075ed8e/Windows2000-KB842773-x86-TRK.EXE|updates/win2ksp4/windows2000-kb842773-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842773-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Security Update for Windows 2000 (KB893086)
 :: Microsoft Security Bulletin MS05-016
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=A7511A19-ADD5-4793-92AC-25E953CE405C>
