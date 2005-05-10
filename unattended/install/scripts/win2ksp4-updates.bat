@@ -543,6 +543,32 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: Security Update for Windows 2000 (KB894320)
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=67581D32-743F-44FF-9B53-30277C196923>
+:: URL|ARA|http://download.microsoft.com/download/6/1/c/61cfce8e-e89c-444f-85e3-6daa30d6bc1c/Windows2000-KB894320-x86-ARA.EXE|updates/win2ksp4/windows2000-kb894320-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/1/7/e/17e2f467-5b0e-47de-99cc-8a0b705cd6a6/Windows2000-KB894320-x86-CSY.EXE|updates/win2ksp4/windows2000-kb894320-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/b/e/abe4c513-0f0d-4e8b-a5a5-527c281f86e1/Windows2000-KB894320-x86-DAN.EXE|updates/win2ksp4/windows2000-kb894320-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/7/e/f7ef43bb-4e1a-450c-ac1d-f29da0517e20/Windows2000-KB894320-x86-DEU.EXE|updates/win2ksp4/windows2000-kb894320-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/e/c/f/ecf927b3-5ffb-46ce-ac7d-e2220d9e922f/Windows2000-KB894320-x86-ELL.EXE|updates/win2ksp4/windows2000-kb894320-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/d/a/f/dafda7aa-7103-45f9-9491-387e5f3faec5/Windows2000-KB894320-x86-ENU.EXE|updates/win2ksp4/windows2000-kb894320-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/8/f/c8fc354b-3112-4011-80de-daa7ab3f26f2/Windows2000-KB894320-x86-ESN.EXE|updates/win2ksp4/windows2000-kb894320-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/f/b/6/fb64d7c5-e3be-4606-9162-a3966d10743e/Windows2000-KB894320-x86-FIN.EXE|updates/win2ksp4/windows2000-kb894320-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/9/e/8/9e87b1f9-8617-4b89-b5f6-46747ae0fd24/Windows2000-KB894320-x86-FRA.EXE|updates/win2ksp4/windows2000-kb894320-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/3/e/43eec1d0-a16a-424d-8058-c692d80da4bb/Windows2000-KB894320-x86-HEB.EXE|updates/win2ksp4/windows2000-kb894320-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/6/2/a629a572-4bb0-4cbc-9c4a-9451f5c1fc05/Windows2000-KB894320-x86-HUN.EXE|updates/win2ksp4/windows2000-kb894320-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/f/c/a/fca6abf1-025d-4d61-9a5d-b45de734501e/Windows2000-KB894320-x86-ITA.EXE|updates/win2ksp4/windows2000-kb894320-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/c/4/fc4240d4-9198-43c7-943a-213cf6eb1c98/Windows2000-KB894320-x86-JPN.EXE|updates/win2ksp4/windows2000-kb894320-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/2/a/7/2a7bae02-5796-49fa-a7c5-8f1082cb8369/Windows2000-KB894320-x86-KOR.EXE|updates/win2ksp4/windows2000-kb894320-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/5/c/d/5cdefe70-6e0a-4a9e-ba31-dbacb1425cf1/Windows2000-KB894320-x86-NLD.EXE|updates/win2ksp4/windows2000-kb894320-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/7/0/670d897a-0a38-44f0-84b1-671256610340/Windows2000-KB894320-x86-NOR.EXE|updates/win2ksp4/windows2000-kb894320-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/2/c/22c5806b-1275-4867-b8ba-51136122f710/Windows2000-KB894320-x86-PLK.EXE|updates/win2ksp4/windows2000-kb894320-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/e/2/be2ea408-20af-4712-98ae-4ab2d39a6dce/Windows2000-KB894320-x86-PTB.EXE|updates/win2ksp4/windows2000-kb894320-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/9/1/f/91f87a12-f450-479a-8042-10bdaa00a791/Windows2000-KB894320-x86-PTG.EXE|updates/win2ksp4/windows2000-kb894320-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/a/d/0adf8eeb-0024-43f6-a953-aa5a88e9fa6f/Windows2000-KB894320-x86-RUS.EXE|updates/win2ksp4/windows2000-kb894320-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/2/4/0/240bbf17-9fec-4859-a077-872a2746ce7b/Windows2000-KB894320-x86-SVE.EXE|updates/win2ksp4/windows2000-kb894320-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/9/c/59c9ab5d-840c-4cf5-8434-432c560cd843/Windows2000-KB894320-x86-TRK.EXE|updates/win2ksp4/windows2000-kb894320-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB894320-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Update for Background Intelligent Transfer Service (BITS) 2.0 and WinHTTP 5.1 Windows 2000 (KB842773)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=3ee866a0-3a09-4fdf-8bdb-c906850ab9f2&Hash=LBCVL37>
 :: URL|ARA|http://download.microsoft.com/download/f/b/c/fbc2c087-a5d4-42c5-83cf-4600152c3a07/Windows2000-KB842773-x86-ARA.EXE|updates/win2ksp4/windows2000-kb842773-x86-ara.exe
