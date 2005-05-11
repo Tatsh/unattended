@@ -12,19 +12,16 @@ ping -n 10 localhost > nul
 :: URL|ALL|http://download.microsoft.com/download/WindowsInstaller/Install/2.0/NT45/EN-US/InstMsiW.exe|packages/windowsinstaller/instmsiw.exe
 %Z%\packages\windowsinstaller\InstMsiW.exe /q /c:"msiinst.exe /i instmsi.msi /q"
 
-:: Windows Installer 3.0 only installs on Win2000 SP3 or SP4,
-:: Win2003Server, WinXP, WinXP SP1
-:: (so we install version 2.0 and then upgrade to installer3 in
-:: win2k-updates.bat)
-
+:: Windows Installer 3.0 only installs on Win2000 SP3 or SP4, Win2003Server, WinXP, WinXP SP1
+:: (so we install version 2.0 and then upgrade to installer3 in win2k-updates.bat)
 if "%WINVER%" == "win2k" goto skipinstaller3
 
-:: Windows Installer 3.1 Redistributable
-:: <http://support.microsoft.com/kb/893803>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=889482FC-5F56-4A38-B838-DE776FD4138C>
+:: Windows Installer 3.0 Redistributable
+:: <http://support.microsoft.com/?kbid=884016>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=5fbc5470-b259-4733-a914-a956122e08e8>
 :: Doesn't hurt to install this as it exits nicely if not needed (Except on win2k).
-:: URL|ALL|http://download.microsoft.com/download/1/4/7/147ded26-931c-4daf-9095-ec7baf996f46/WindowsInstaller-KB893803-x86.exe|packages/windowsinstaller/windowsinstaller-kb893803-x86.exe
-%Z%\packages\windowsinstaller\windowsinstaller-kb893803-x86.exe /passive /norestart
+:: URL|ALL|http://download.microsoft.com/download/9/e/1/9e14751c-f897-4bbd-af7a-890d9a0f5430/WindowsInstaller-KB884016-v2-x86.exe|packages/windowsinstaller/WindowsInstaller-KB884016-v2-x86.exe
+%Z%\packages\windowsinstaller\WindowsInstaller-KB884016-v2-x86.exe /passive /norestart
 :skipinstaller3
 
 :: URL|ALL|http://downloads.activestate.com/ActivePerl/Windows/5.8/ActivePerl-5.8.6.811-MSWin32-x86-122208.msi|packages/activeperl-5.8.6.811-mswin32-x86-122208.msi
