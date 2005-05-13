@@ -32,10 +32,10 @@
 :: URL|TRK|http://download.microsoft.com/download/5/7/a/57adc2cb-e2d2-442b-a320-0911bcdef93a/WindowsServer2003-KB842773-x86-trk.exe|updates/ws2k3sp1/windowsserver2003-kb842773-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB842773-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: FIX: Updates for Windows Media Player 9 Series and for Windows Media Player 10
+:: FIX: Updates for Windows Media Player 10
 :: <http://support.microsoft.com/kb/892313>
-:: URL|ALL|http://download.microsoft.com/download/c/a/c/cac342d1-db54-4620-8af2-b7f52d48632e/windowsmedia9-kb892313-x86-enu.exe|updates/mediaplayer9/windowsmedia9-kb892313-x86-enu.exe
-todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb892313-x86-enu.exe /passive /n /norestart"
+:: URL|ALL|http://download.microsoft.com/download/9/9/c/99c6e0be-19ec-4ffd-b44a-c9b8f2886200/windowsmedia10-kb892313-x86-intl.exe|updates/mediaplayer10/windowsmedia10-kb892313-x86-intl.exe
+todo.pl ".reboot-on 194 %Z%\updates\mediaplayer10\windowsmedia10-kb892313-x86-intl.exe /passive /n /norestart"
 
 :: Recommended Updates
 
