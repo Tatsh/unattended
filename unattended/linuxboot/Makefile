@@ -8,6 +8,7 @@ dmidecode=dmidecode-2.6
 dosemu=dosemu-1.2.2
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.37
+expat=expat-1.95.8
 glibc=glibc-2.3.5
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
@@ -23,6 +24,8 @@ pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.8.6
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.33
+perl-xml-parser=XML-Parser-2.34
+perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20031210
 samba=samba-3.0.14a
 wireless_tools=wireless_tools.27
@@ -30,11 +33,12 @@ zlib=zlib-1.2.2
 
 cwd:=$(shell pwd)
 
-packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		    \
-	$(dmidecode) $(dosemu) $(e2fsprogs) $(glibc) $(kbd)		    \
-	$(linux) $(module-init-tools) $(mysql) $(nano) $(ncurses) $(parted) \
-	$(perl) $(perl-ldap) $(pciutils) $(pcmcia-cs) $(pmtools) $(samba)   \
-	$(wireless_tools) $(zlib)
+packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		   \
+	$(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(glibc) $(kbd)	   \
+	$(linux) $(module-init-tools) $(mysql) $(nano) $(ncurses)$(parted) \
+	$(perl) $(perl-ldap) $(perl-xml-parser) $(perl-xml-xpath)	   \
+	$(pciutils) $(pcmcia-cs) $(pmtools) $(samba) $(wireless_tools)	   \
+	$(zlib) 
 
 CC=gcc
 
@@ -588,6 +592,50 @@ stage1/.stamp-perl-ldap: $(perl-ldap)/Makefile
 stage1 += stage1/.stamp-perl-ldap
 
 
+## Perl XML::Parser module
+
+# FIXME: We should probably use this PERL_SRC hack for all of the Perl
+# modules.  (Our current hack does not work when top-level module has
+# subdirectories with their own Makefile.PL.)
+$(perl-xml-parser)/Makefile: stage1/opt/perl/bin/perl stage1/lib/libexpat.so
+	cd $(dir $@)					\
+	&& $(perlrun) Makefile.PL PERL_SRC=$(cwd)/$(perl) DESTDIR=$(cwd)/stage1
+	[ -e $@ ]
+
+stage1/.stamp-perl-xml-parser: $(perl-xml-parser)/Makefile
+	rm -f $@                                                        
+	cd $(perl-xml-parser)                                           \
+	&& make PERL="$(perlrun)"                                       \
+		LDLOADLIBS="$(fakelib_cflags)"                          \
+		CC="$(CC) $(fakelib_cflags) -I$(cwd/fakeinclude) -I$(cwd/expat/lib)" \
+	&& make PERL="$(perlrun)" install
+	touch $@
+
+stage1 += stage1/.stamp-perl-xml-parser
+
+
+## Perl XML::XPath module
+
+$(perl-xml-xpath)/Makefile: stage1/opt/perl/bin/perl stage1/lib/libexpat.so
+	cd $(dir $@)                                                    \
+	&& eval `$(perlrun) -V:archlib`                                 \
+	&& { [ -n "$$archlib" ] || exit 37; }                           \
+	&& $(perlrun) Makefile.PL 					\
+	PERL_ARCHLIB=$(cwd)/stage1/opt/perl/lib/5.8.6/i586-linux-thread-multi/ \
+	DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)			\
+	[ -e $@ ]
+
+stage1/.stamp-perl-xml-xpath: $(perl-xml-xpath)/Makefile
+	rm -f $@                                                        
+	cd $(perl-xml-xpath)                                         \
+	&& make PERL="$(perlrun)"                                       \
+		LDLOADLIBS="$(fakelib_cflags)"                          \
+		CC="$(CC) $(fakelib_cflags) -I$(cwd/fakeinclude) -I$(cwd/expat/lib)" \
+	&& make PERL="$(perlrun)" install
+	touch $@
+
+stage1 += stage1/.stamp-perl-xml-xpath
+
 ## Samba
 
 # Without -rdynamic, CP850.so craps out with "undefined symbol:
@@ -659,6 +707,18 @@ fakeinclude/zlib.h: $(zlib)/zlib.h $(zlib)/zconf.h
 $(call copy_lib,$(zlib)/$(zlib_so),stage1/lib/libz.so)
 
 stage1 += stage1/lib/libz.so
+
+## libexpat
+$(expat)/.libs/libexpat.so.0.5.0:
+	cd $(expat)						\
+	&& ./configure --prefix=/				\
+	&& make
+
+$(call copy_lib,$(expat)/.libs/libexpat.so.0.5.0,stage1/lib/libexpat.so)
+$(call copy_file,$(expat)/libs/expat.h,fakeinclude/expat.h)
+$(call copy_file,$(expat)/libs/expat_external.h,fakeinclude/expat_external.h)
+
+stage1 += stage1/lib/libexpat.so
 
 
 ## devices
@@ -831,6 +891,8 @@ $(call download_rule, $(dosemu), tgz,					\
 	http://dl.sourceforge.net/sourceforge/dosemu/)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
+$(call download_rule, $(expat), tar.gz, \
+	http://dl.sourceforge.net/sourceforge/expat/)
 #$(call cvs_rule, $(glibc), libc, \
 #	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
@@ -857,13 +919,16 @@ $(call download_rule, $(pcmcia-cs), tar.gz,			\
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
 $(call download_rule, $(perl-ldap), tar.gz, \
 	http://www.cpan.org/authors/id/G/GB/GBARR/)
+$(call download_rule, $(perl-xml-parser), tar.gz, \
+	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
+$(call download_rule, $(perl-xml-xpath), tar.gz, \
+	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
 $(call download_rule, $(pmtools), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
 $(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
-
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
