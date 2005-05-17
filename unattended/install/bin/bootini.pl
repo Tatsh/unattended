@@ -16,6 +16,7 @@ my %regexp_map =
      'ita' => qr{Sistema operativo precedente su},
      'nld' => qr{Vorig besturingssysteem op},
      'nor' => qr{Tidligere operativsystem p\x86},
+     'ptb' => qr{Sistema operacional anterior na},
      );
 
 my $bootini = 'C:\\boot.ini';
