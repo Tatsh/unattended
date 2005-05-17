@@ -256,28 +256,28 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\o2ksp3.exe /r:n /q /c:\"o
 :: Office 2000 Update: Service Pack 3 (SP3)
 :: <http://support.microsoft.com?kbid=326585>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=5C011C70-47D0-4306-9FA4-8E92D36332FE>
-:: URL|ARA|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/ara/o2ksp3.exe
-:: URL|CSY|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/csy/o2ksp3.exe
-:: URL|DAN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/dan/o2ksp3.exe
-:: URL|DEU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/deu/o2ksp3.exe
-:: URL|ELL|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/ell/o2ksp3.exe
+:: URL|ARA|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/AR/O2kSp3.exe|updates/office2k/ara/o2ksp3.exe
+:: URL|CSY|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/CS/O2kSp3.exe|updates/office2k/csy/o2ksp3.exe
+:: URL|DAN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/DA/O2kSp3.exe|updates/office2k/dan/o2ksp3.exe
+:: URL|DEU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/DE/O2kSp3.exe|updates/office2k/deu/o2ksp3.exe
+:: URL|ELL|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EL/O2kSp3.exe|updates/office2k/ell/o2ksp3.exe
 :: URL|ENU|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/enu/o2ksp3.exe
-:: URL|ESN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/esn/o2ksp3.exe
-:: URL|FIN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/fin/o2ksp3.exe
-:: URL|FRA|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/fra/o2ksp3.exe
-:: URL|HEB|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/heb/o2ksp3.exe
-:: URL|HUN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/hun/o2ksp3.exe
-:: URL|ITA|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/ita/o2ksp3.exe
-:: URL|JPN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/jpn/o2ksp3.exe
-:: URL|KOR|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/kor/o2ksp3.exe
-:: URL|NLD|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/nld/o2ksp3.exe
-:: URL|NOR|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/nor/o2ksp3.exe
-:: URL|PLK|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/plk/o2ksp3.exe
-:: URL|PTB|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/ptb/o2ksp3.exe
-:: URL|PTG|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/ptg/o2ksp3.exe
-:: URL|RUS|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/rus/o2ksp3.exe
-:: URL|SVE|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/sve/o2ksp3.exe
-:: URL|TRK|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/EN-US/O2kSp3.exe|updates/office2k/trk/o2ksp3.exe
+:: URL|ESN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/ES/O2kSp3.exe|updates/office2k/esn/o2ksp3.exe
+:: URL|FIN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/FI/O2kSp3.exe|updates/office2k/fin/o2ksp3.exe
+:: URL|FRA|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/FR/O2kSp3.exe|updates/office2k/fra/o2ksp3.exe
+:: URL|HEB|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/HE/O2kSp3.exe|updates/office2k/heb/o2ksp3.exe
+:: URL|HUN|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/HU/O2kSp3.exe|updates/office2k/hun/o2ksp3.exe
+:: URL|ITA|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/IT/O2kSp3.exe|updates/office2k/ita/o2ksp3.exe
+:: URL|JPN|http://download.microsoft.com/download/office2000pro/Update/O2kSp3/W9X2KMeXP/JA/O2kSp3.exe|updates/office2k/jpn/o2ksp3.exe
+:: URL|KOR|http://download.microsoft.com/download/office2000pro/Update/O2kSp3/W9X2KMeXP/KO/O2kSp3.exe|updates/office2k/kor/o2ksp3.exe
+:: URL|NLD|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/NL/O2kSp3.exe|updates/office2k/nld/o2ksp3.exe
+:: URL|NOR|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/NO/O2kSp3.exe|updates/office2k/nor/o2ksp3.exe
+:: URL|PLK|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/PL/O2kSp3.exe|updates/office2k/plk/o2ksp3.exe
+:: URL|PTB|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/PT-BR/O2kSp3.exe|updates/office2k/ptb/o2ksp3.exe
+:: URL|PTG|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/PT/O2kSp3.exe|updates/office2k/ptg/o2ksp3.exe
+:: URL|RUS|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/RU/O2kSp3.exe|updates/office2k/rus/o2ksp3.exe
+:: URL|SVE|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/SV/O2kSp3.exe|updates/office2k/sve/o2ksp3.exe
+:: URL|TRK|http://download.microsoft.com/download/office2000/SP/3/WIN98MeXP/TR/O2kSp3.exe|updates/office2k/trk/o2ksp3.exe
 todo.pl ".reboot-on 194 %Z%\updates\office2k\%WINLANG%\O2kSp3.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\o2ksp3.txt /p MAINSP3.msp REBOOT=ReallySuppress\""
 
 :: Office 2000 SR-1a Administrator Updates
