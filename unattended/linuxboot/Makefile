@@ -33,12 +33,12 @@ zlib=zlib-1.2.2
 
 cwd:=$(shell pwd)
 
-packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		   \
-	$(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(glibc) $(kbd)	   \
-	$(linux) $(module-init-tools) $(mysql) $(nano) $(ncurses)$(parted) \
-	$(perl) $(perl-ldap) $(perl-xml-parser) $(perl-xml-xpath)	   \
-	$(pciutils) $(pcmcia-cs) $(pmtools) $(samba) $(wireless_tools)	   \
-	$(zlib) 
+packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		\
+	$(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(glibc) $(kbd)	\
+	$(linux) $(module-init-tools) $(mysql) $(nano) $(ncurses)	\
+	$(parted) $(perl) $(perl-ldap) $(perl-xml-parser)		\
+	$(perl-xml-xpath) $(pciutils) $(pcmcia-cs) $(pmtools)		\
+	$(samba) $(wireless_tools) $(zlib) 
 
 CC=gcc
 
