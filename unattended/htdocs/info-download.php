@@ -8,7 +8,7 @@ $page['next']  = 'step-by-step.php';
 $page['last']  = 'faq.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: info-download.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: info-download.php,v 1.2 2005-05-20 07:47:30 nrichthof Exp $';
 $sections[]    = array ('unattended-&lt;version&gt;.zip', 'unattended');
 $sections[]    = array ('unattended-&lt;version&gt;-dosboot.zip', 'unattended-dosboot');
 $sections[]    = array ('unattended-&lt;version&gt;-linuxboot.zip', 'unattended-linuxboot');
@@ -45,6 +45,10 @@ $content       = <<<EOT
           href="http://www.delorie.com/pub/djgpp/current/v2apps/pico396b.zip"
           >v2apps/pico396b.zip</a>)</li>
         </ul>
+      <h1 id="snapshot">daily CVS snapshot</h1>
+      <p>Everyone, who prefers bleeding edge software, can use our <a href="/testing/unattended-daily-snapshot.tar.gz"
+        >daily CVS snapshot</a>. This archive does not contain binaries, you will have to
+        compile them by yourself.</p>
 EOT;
 
 include ('page.inc');

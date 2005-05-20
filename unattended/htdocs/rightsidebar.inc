@@ -29,6 +29,10 @@
           <a href="info-download.php#supportfiles">info</a> | <a
             href="info-download.php#supportfiles"
             >download</a></div>
+        <div class="sideBarText"><strong>daily CVS snapshot</strong><br />
+          <a href="info-download.php#snapshot">info</a> | <a
+            href="/testing/unattended-daily-snapshot.tar.gz"
+            >download</a></div>
 
         <?= $addbox ?>
       </div>
