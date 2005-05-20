@@ -13,7 +13,7 @@ glibc=glibc-2.3.5
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.11.9
+linux=linux-2.6.11.10
 module-init-tools=module-init-tools-3.1
 mysql=mysql-4.1.11
 nano=nano-1.2.4
