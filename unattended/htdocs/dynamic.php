@@ -8,7 +8,7 @@ $page['next']  = 'installers.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: dynamic.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: dynamic.php,v 1.2 2005-05-22 15:03:42 nrichthof Exp $';
 $sections[]    = array ('Dynamic configuration with server-side perl scripts', 'start');
 $sections[]    = array ('How the installation script works', 'howitworks');
 $sections[]    = array ('Using a database', 'database');
@@ -252,18 +252,65 @@ use Net::hostent;
 
 
       <h1 id="database">Using a database</h1>
-      <p>Probably the best solution for you might be the  storage  of  all  values  in  a
-        database (or a flat file with similar structure). Using a database enables you to
-        maintain  every  combination  or  configuration  one  can  image   for  countless
-        workstations.</p>
-      <p>In the Unattended distribution you can find a  sample-config.pl  (together  with
-        the database-modules conf-mysql.pl and conf-csv.pl) which  is  written  for  this
-        purpose and can be used out-of-the-box. You must  simply  decide  which  type  of
-        database (CSV-file or MySQL-Database) you want to use and configure that. Replace
-        the config.pl with sample-config.pl thereafter and you are finished.</p>
-      <p>The perl files are commented - in sample-config.pl you will find instructions to
-        configure your choice of database. In the module files you will find the database
-        structure that is needed.</p>
+      <p>If you wish to store and organize installation settings for a  large  number  of
+        computers you are best off with a database of some sort. This is where Unattended
+        really shines in large organizations.</p>
+
+      <p>Unattended offers two options:</p>
+      <ul>
+        <li>MySQL Database</li>
+        <li>CSV Flat File</li>
+      </ul>
+
+      <h2>Setting up a CSV flat file system</h2>
+      <ul>
+        <li>Edit <code>site/unattend.csv</code> based upon the format  described  at  the
+          beginning  of  <code>lib/conf-csv.pl</code>  and  the  Lookups  and  Properties
+          described in the beginning of <code>site/sample-config.pl</code>  and  populate
+          it with your data.</li>
+        <li>Done!</li>
+      </ul>
+
+      <h2>Setting up a MySQL system</h2>
+      <ul>
+        <li>Set up the MySQL Database on a server using the comments  at the beginning of
+          <code>lib/conf-mysql.pl</code>.</li>
+        <li>Populate the database to suit your needs. Use the guidelines at the beginning
+          of <code>site/sample-config.pl</code> and look at <code>site/unattend.csv</code
+          > for examples.
+      <pre class="code">mv site/config.pl site/orig-config.pl
+cp site/sample-config.pl site/config.pl
+</pre></li>
+
+        <li>Edit site/config.pl.</li>
+        <li>Uncomment the two lines under <code># Set db for mysql interface</code>.</li>
+        <li>Comment out the two lines under <code>#  Setup  db  for  CSV  interface</code
+          >.</li>
+        <li>Edit the second line with the correct mysql host, username, and password.</li
+          >
+        <li>Make sure the MySQL server can be reached by any client you install.</li>
+        <li>Done!</li>
+       </ul>
+
+       <h2>Making the most of your Database</h2>
+
+       <p>If you prefer to have a more straightforward list of  MAC  addresses associated
+         with computer names, organization names, passwords, etc., you  could create this
+         list and then generate the MySQL DB or CSV file  that  Unattended  prefers  from
+         this list.</p>
+
+       <h2>Further development</h2>
+       <p>If you wish to modify <code>unattend.txt</code> setting  that  Unattended  does
+         not have properties for, you can use a database to generate the Unattended MySQL
+         database linking MAC addresses -&gt; computer names  and  computer  names  -&gt;
+         specific <code>unattend.txt</code> file. Then you use your  master  database  to
+         generate these unattend.txt files.</p>
+
+       <p>In Active Directory environments, remember you don't need to do everything with
+         Unattended.  Software  can be added and settings configured with  Group  Policy.
+         With the <code>ComputerName</code> and <code>MachineObjectOU</code> you can  add
+         the computer directly to the <code>OU</code> you want it in.</p>
+      
       <p>If you developed other database-modules (e.g. for LDAP or PostgreSQL or  such) to
         meet your environment, we would love to hearing  from  you  and  appreciate  your
         contribution!</p>
