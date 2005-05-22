@@ -8,7 +8,7 @@ $page['next']  = 'unattendtxt.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: faq.php,v 1.2 2005-01-16 19:00:25 nrichthof Exp $';
+$cvs           = '$Id: faq.php,v 1.3 2005-05-22 17:22:35 nrichthof Exp $';
 $sections[]    = array ('Frequently Asked Questions', 'faq');
 $content       = <<<EOT
 
@@ -51,6 +51,7 @@ $content       = <<<EOT
       <a href="#7_3">[7.3] How do I control the volume (disable sound) unattended?</a><br />
       <a href="#7_4">[7.4] How do I add multiple third-party mass-storage drivers?</a><br />
       <a href="#7_5">[7.5] How do I keep the OS- and software-installation-scripts up-to-date?</a><br />
+      <a href="#7_6">[7.6] How do I create a user and prevent expiration of his password?</a><br />
 
       <h2>[8] Can I...?</h2>
       <a href="#8_1">[8.1] Can I use Cygwin to rebuild the disk images on Windows?</a><br />
@@ -345,6 +346,32 @@ unattended acpi=off
        <p>You can exclude certain scripts from being updated. But  be  warned:  sometimes
        the scripts in the cvs get broken. Usually they get fixed very soon thereafter, so
        check back soon if you get problems after a script update.</p>
+
+      <hr />
+
+      <a name="7_6"></a><h3>[7.6] How do I create a user and prevent  expiration  of  his
+        password?</h3>
+      <p>You can use the <code>net user</code> command to  create  a  user. Unfortunately
+        there is no option to prevent the expiration of the password.</p>
+      <p>You can use the following <a href="http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg04108.html"
+        rel="external">perl script</a> to correct that:</p>
+<pre class="code">
+use Warnings;
+use Win32::NetAdmin;
+
+my \$user = shift;
+
+if (\$user) {
+    my (\$password, \$passwordAge, \$privilege, \$homeDir, \$comment, \$flags, \$scriptPath);
+    Win32::NetAdmin::UserGetAttributes(&quot;&quot;, \$user, \$password, \$passwordAge, \$privilege,
+        \$homeDir, \$comment, \$flags, \$scriptPath);
+    \$flags = \$flags | UF_DONT_EXPIRE_PASSWD;
+    Win32::NetAdmin::UserSetAttributes(&quot;&quot;, \$user, \$password, \$passwordAge, \$privilege,
+        \$homeDir, \$comment, \$flags, \$scriptPath);
+} else {
+    print &quot;You must pass a username as an argument.\\n&quot;
+}
+</pre>
 
       <hr />
 
