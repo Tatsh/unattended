@@ -8,7 +8,7 @@ $page['next']  = 'unattendtxt.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: faq.php,v 1.3 2005-05-22 17:22:35 nrichthof Exp $';
+$cvs           = '$Id: faq.php,v 1.4 2005-05-23 21:06:40 nrichthof Exp $';
 $sections[]    = array ('Frequently Asked Questions', 'faq');
 $content       = <<<EOT
 
@@ -372,6 +372,11 @@ if (\$user) {
     print &quot;You must pass a username as an argument.\\n&quot;
 }
 </pre>
+      <p>Alternatively you can use the command:</p>
+<pre class="code">
+net accounts /maxpwage:unlimited
+</pre>
+      <p>Unfortunately, this command affects all user accounts.</p>
 
       <hr />
 
