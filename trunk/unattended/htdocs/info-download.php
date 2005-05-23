@@ -8,11 +8,12 @@ $page['next']  = 'step-by-step.php';
 $page['last']  = 'faq.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: info-download.php,v 1.2 2005-05-20 07:47:30 nrichthof Exp $';
+$cvs           = '$Id: info-download.php,v 1.3 2005-05-23 21:12:22 nrichthof Exp $';
 $sections[]    = array ('unattended-&lt;version&gt;.zip', 'unattended');
 $sections[]    = array ('unattended-&lt;version&gt;-dosboot.zip', 'unattended-dosboot');
 $sections[]    = array ('unattended-&lt;version&gt;-linuxboot.zip', 'unattended-linuxboot');
 $sections[]    = array ('support files', 'supportfiles');
+$sections[]    = array ('daily CVS snapshot', 'snapshot');
 $content       = <<<EOT
       <h1 id="unattended" style="border-top: none; padding-top: 0;">unattended-&lt;version&gt;.zip</h1>
       <p>This is the main distribution file. It contains the complete directory structure
@@ -45,6 +46,7 @@ $content       = <<<EOT
           href="http://www.delorie.com/pub/djgpp/current/v2apps/pico396b.zip"
           >v2apps/pico396b.zip</a>)</li>
         </ul>
+
       <h1 id="snapshot">daily CVS snapshot</h1>
       <p>Everyone, who prefers bleeding edge software, can use our <a href="/testing/unattended-daily-snapshot.tar.gz"
         >daily CVS snapshot</a>. This archive does not contain binaries, you will have to
