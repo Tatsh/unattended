@@ -507,7 +507,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB890859-x86-%WINLANG%.ex
 :: URL|JPN|http://download.microsoft.com/download/e/0/1/e01a2d3b-73da-41f4-858b-03746a6b8258/WindowsXP-KB893066-x86-JPN.exe|updates/winxpsp2/windowsxp-kb893066-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/b/d/5/bd563027-e426-4a59-8ba6-f03dd4ae5536/WindowsXP-KB893066-x86-KOR.exe|updates/winxpsp2/windowsxp-kb893066-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/d/d/2/dd2b5c02-3fe6-4756-8eeb-8f352e8e3c44/WindowsXP-KB893066-x86-NLD.exe|updates/winxpsp2/windowsxp-kb893066-x86-nld.exe
-:: No Download found for NOR.
+:: URL|NOR|http://download.microsoft.com/download/d/c/9/dc94d039-8392-4554-83ad-7c1d2b26cece/WindowsXP-KB893066-x86-NOR.exe|updates/winxpsp2/windowsxp-kb893066-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/c/7/d/c7dbbca3-a182-4071-b8ad-ed1de5473b6b/WindowsXP-KB893066-x86-PLK.exe|updates/winxpsp2/windowsxp-kb893066-x86-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/2/a/7/2a7f4cb8-907e-486d-b8a5-68413e20a7f3/WindowsXP-KB893066-x86-PTB.exe|updates/winxpsp2/windowsxp-kb893066-x86-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/8/5/3/853cb847-bceb-493c-942c-7f7ff79dff47/WindowsXP-KB893066-x86-PTG.exe|updates/winxpsp2/windowsxp-kb893066-x86-ptg.exe
