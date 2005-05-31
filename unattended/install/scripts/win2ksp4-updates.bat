@@ -94,33 +94,6 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB839645-x86-%WINLANG%.
 :: URL|TRK|http://download.microsoft.com/download/c/6/5/c655c76c-5894-45c0-8761-bf2494a1091f/Windows2000-KB888113-x86-TRK.EXE|updates/win2ksp4/windows2000-kb888113-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB888113-x86-%WINLANG%.EXE /passive /n /norestart"
 
-:: Update for Windows Media Player 9 Series (KB837272)
-:: <http://support.microsoft.com/?kbid=837272>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=c70948a7-a1a8-4a34-86b4-3cde0c688576>
-:: URL|ARA|http://download.microsoft.com/download/3/f/1/3f18f365-1e69-4195-a47c-e558f5472eec/WindowsMedia9-KB837272-ARA.exe|updates/mediaplayer9/windowsmedia9-kb837272-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/d/2/4/d24a8206-8b11-4549-a4e2-06d6c2d9f25b/WindowsMedia9-KB837272-CSY.exe|updates/mediaplayer9/windowsmedia9-kb837272-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/3/8/b/38b5dccd-b255-4dd1-98e3-7944a5a0430a/WindowsMedia9-KB837272-DAN.exe|updates/mediaplayer9/windowsmedia9-kb837272-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/b/0/0/b001504d-10bd-402f-94b3-2015abf87cd2/WindowsMedia9-KB837272-DEU.exe|updates/mediaplayer9/windowsmedia9-kb837272-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/1/8/3/1838a38a-ec61-4ad5-8c85-5fb1e9f22279/WindowsMedia9-KB837272-ELL.exe|updates/mediaplayer9/windowsmedia9-kb837272-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/7/0/d/70d0bac6-a68b-4cb6-94ab-e0df8c0efcaf/WindowsMedia9-KB837272-ENU.exe|updates/mediaplayer9/windowsmedia9-kb837272-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/b/4/2/b4201cf1-2863-4e9d-9fc4-df7e46536e29/WindowsMedia9-KB837272-ESN.exe|updates/mediaplayer9/windowsmedia9-kb837272-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/b/f/1/bf1703bc-37b7-424a-bdde-6002b926369b/WindowsMedia9-KB837272-FIN.exe|updates/mediaplayer9/windowsmedia9-kb837272-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/0/b/b/0bbce627-51cf-416c-bb79-1bc58bd09e4b/WindowsMedia9-KB837272-FRA.exe|updates/mediaplayer9/windowsmedia9-kb837272-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/6/0/0/6009d868-9332-4eef-b237-cffecd8372a6/WindowsMedia9-KB837272-HEB.exe|updates/mediaplayer9/windowsmedia9-kb837272-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/d/3/8/d38bf853-6174-4201-a25a-5f80530ebd1d/WindowsMedia9-KB837272-HUN.exe|updates/mediaplayer9/windowsmedia9-kb837272-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/1/a/31a3658f-e8e2-4b37-90d7-02edc118767d/WindowsMedia9-KB837272-ITA.exe|updates/mediaplayer9/windowsmedia9-kb837272-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/b/1/1/b11862c1-a228-4a32-b60b-74c223b8dbf4/WindowsMedia9-KB837272-JPN.exe|updates/mediaplayer9/windowsmedia9-kb837272-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/8/3/b/83b831a8-aa21-45e0-a130-946fcb4170a5/WindowsMedia9-KB837272-KOR.exe|updates/mediaplayer9/windowsmedia9-kb837272-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/3/7/0/370f42db-fcd5-48d3-b798-56ef8f258206/WindowsMedia9-KB837272-NLD.exe|updates/mediaplayer9/windowsmedia9-kb837272-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/b/7/e/b7e3b44c-6625-4a01-89fb-12dbbd735355/WindowsMedia9-KB837272-NOR.exe|updates/mediaplayer9/windowsmedia9-kb837272-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/f/c/6/fc621fee-b6ec-477d-80c6-cb9598845bf7/WindowsMedia9-KB837272-PLK.exe|updates/mediaplayer9/windowsmedia9-kb837272-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/d/2/3/d2314a0d-e696-47f5-9e50-0b9beb662699/WindowsMedia9-KB837272-PTB.exe|updates/mediaplayer9/windowsmedia9-kb837272-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/a/9/7a97c270-8637-4140-b78b-62e106037bec/WindowsMedia9-KB837272-PTG.exe|updates/mediaplayer9/windowsmedia9-kb837272-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/3/c/6/3c6b5375-05af-4fef-8dd0-595506d9e59b/WindowsMedia9-KB837272-RUS.exe|updates/mediaplayer9/windowsmedia9-kb837272-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/2/d/d/2ddf4ddb-afd6-43c5-a51e-958c69109d37/WindowsMedia9-KB837272-SVE.exe|updates/mediaplayer9/windowsmedia9-kb837272-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/6/0/2/60294d64-b0fd-4ec2-88c0-4203303fb0f9/WindowsMedia9-KB837272-TRK.exe|updates/mediaplayer9/windowsmedia9-kb837272-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB837272-%WINLANG%.exe /passive /n /norestart"
-
 :: Security Update for Windows Journal Viewer (KB886179)
 :: Microsoft Security Bulletin MS04-028
 :: "Buffer Overrun in JPEG Processing (GDI+) Could Allow Code Execution (833987)"
