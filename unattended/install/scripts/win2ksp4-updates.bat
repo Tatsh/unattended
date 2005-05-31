@@ -5,10 +5,10 @@
 
 :: Extra Updates
 
-:: FIX: Updates for Windows Media Player 10
+:: FIX: Updates for Windows Media Player 9
 :: <http://support.microsoft.com/kb/892313>
-:: URL|ALL|http://download.microsoft.com/download/9/9/c/99c6e0be-19ec-4ffd-b44a-c9b8f2886200/windowsmedia10-kb892313-x86-intl.exe|updates/mediaplayer10/windowsmedia10-kb892313-x86-intl.exe
-todo.pl ".reboot-on 194 %Z%\updates\mediaplayer10\windowsmedia10-kb892313-x86-intl.exe /passive /n /norestart"
+:: URL|ALL|http://download.microsoft.com/download/8/c/b/8cb07a83-3b1c-4a95-a1c7-4e788c113829/windowsmedia9-kb892313-x86-intl.exe|updates/mediaplayer9/windowsmedia9-kb892313-x86-intl.exe
+todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb892313-x86-intl.exe /passive /n /norestart"
 
 :: Security Update for Windows Media Player 9 Series (KB885492)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=A52279DC-3B6C-4720-8192-45657EDBB14F>
