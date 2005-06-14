@@ -1619,5 +1619,5 @@ todo.pl ie6.bat
 :: Root Certificates Update
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/4702.htm>
 :: (download only available from Windows Catalog)
-:: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_94e9af610087f43b1b637bb5c0e8146.exe|updates/win2ksp4/rootsupd.exe
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\rootsupd.exe /q /r:n"
+:: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3-19990518/cabpool/rootsupd_01280a8f5016385d37148d4976e6f73.exe|updates/win2ksp4/rootsupd-2.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\rootsupd-2.exe /q /r:n"
