@@ -21,5 +21,5 @@ todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0_8_0.ini \"%ProgramFiles%\
 :nolangpack
 
 :: Install PDFCreator
-:: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_1_GPLGhostscript.exe|packages/pdfcreator/pdfcreator-0_8_1_rc5_gplghostscript.exe
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-0_8_1_rc5_gplghostscript.exe /sp- /silent /norestart"
+:: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_8_1_GPLGhostscript.exe|packages/pdfcreator/pdfcreator-0_8_1_rc7_gplghostscript.exe
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-0_8_1_rc7_gplghostscript.exe /sp- /silent /norestart"
