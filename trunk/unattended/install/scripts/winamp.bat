@@ -15,5 +15,5 @@ if not exist %Z%\packages\winamp\langpack-%WINLANG%.exe goto nolangpack
 todo.pl "%Z%\packages\winamp\langpack-%WINLANG%.exe /S"
 :nolangpack
 
-:: URL|ALL|http://download.nullsoft.com/winamp/client/winamp509_full_emusic-8basic.exe|packages/winamp/winamp509-full.exe
-todo.pl "%Z%\packages\winamp\winamp509-full.exe /S /install=SFQR"
+:: URL|ALL|http://download.nullsoft.com/winamp/client/winamp5093_full_emusic-7plus.exe|packages/winamp/winamp5093-full.exe
+todo.pl "%Z%\packages\winamp\winamp5093-full.exe /S /install=SFQR"
