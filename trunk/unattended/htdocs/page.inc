@@ -69,7 +69,7 @@
         <a href="lists.php">Mailing lists</a> |
         <a href="links.php">Links</a> |
         <a href="faq.php">FAQ</a> |
-        <a href="http://www.ubertechnique.com/unattended/FrontPage" rel="external">Wiki</a>
+        <a href="http://ubertechnique.com/unattended/FrontPage" rel="external">Wiki</a>
       </div>
     </div>
 
