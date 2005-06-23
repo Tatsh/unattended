@@ -8,7 +8,7 @@ $page['next']  = 'step-by-step.php';
 $page['last']  = 'faq.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: sitemap.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: sitemap.php,v 1.2 2005-06-23 16:31:10 nrichthof Exp $';
 $sections[]    = array ('Site map', 'sitemap');
 $content       = <<<EOT
       <h1 style="border-top: none; padding-top: 0;">Site map</h1>
@@ -57,7 +57,7 @@ $content       = <<<EOT
         </li>
         <li>Wiki
           <ul>
-            <li><a href="http://www.ubertechnique.com/unattended/FrontPage" rel="external">Wiki</a></li>
+            <li><a href="http://ubertechnique.com/unattended/FrontPage" rel="external">Wiki</a></li>
           </ul>
         </li>
       </ul>
