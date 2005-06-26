@@ -8,7 +8,7 @@ $page['next']  = 'installers.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: dynamic.php,v 1.2 2005-05-22 15:03:42 nrichthof Exp $';
+$cvs           = '$Id: dynamic.php,v 1.3 2005-06-26 11:24:12 nrichthof Exp $';
 $sections[]    = array ('Dynamic configuration with server-side perl scripts', 'start');
 $sections[]    = array ('How the installation script works', 'howitworks');
 $sections[]    = array ('Using a database', 'database');
@@ -264,10 +264,16 @@ use Net::hostent;
 
       <h2>Setting up a CSV flat file system</h2>
       <ul>
+        <li>Make a backup of the original <code>config.pl</code> and replace it with  the
+          cvs flat file-enabled sample:
+      <pre class="code">mv site/config.pl site/orig-config.pl
+cp site/sample-config.pl site/config.pl
+</pre></li>
+
         <li>Edit <code>site/unattend.csv</code> based upon the format  described  at  the
           beginning  of  <code>lib/conf-csv.pl</code>  and  the  Lookups  and  Properties
-          described in the beginning of <code>site/sample-config.pl</code>  and  populate
-          it with your data.</li>
+          described  in  the  beginning  of  (the  new)  <code>site/config.pl</code>  and
+          populate it with your data.</li>
         <li>Done!</li>
       </ul>
 
@@ -277,7 +283,9 @@ use Net::hostent;
           <code>lib/conf-mysql.pl</code>.</li>
         <li>Populate the database to suit your needs. Use the guidelines at the beginning
           of <code>site/sample-config.pl</code> and look at <code>site/unattend.csv</code
-          > for examples.
+          > for examples.</li>
+        <li>Make a backup of the original <code>config.pl</code> and replace it with  the
+          database-enabled sample:
       <pre class="code">mv site/config.pl site/orig-config.pl
 cp site/sample-config.pl site/config.pl
 </pre></li>
