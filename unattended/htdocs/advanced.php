@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: advanced.php,v 1.3 2005-06-29 17:42:07 nrichthof Exp $';
+$cvs           = '$Id: advanced.php,v 1.4 2005-06-29 22:51:44 nrichthof Exp $';
 $sections[]    = array ('Integrate a service pack', 'slipstream');
 $sections[]    = array ('Integrate other hotfixes', 'hotfixes');
 $sections[]    = array ('Modifying the boot disk', 'modify');
@@ -190,9 +190,9 @@ $content       = <<<EOT
       <p>Second, you will need to configure your DHCP server.  Most modern network  cards
         support booting directly  from  the  network  following  Intel's  <strong>Preboot
         eXecution Environment</strong>  (PXE) specification.  If you are a masochist, you
-        can obtain the entire PXE specification from <a href="ftp://download.intel.com/labs/manage/wfm/download/pxespec.pdf"
-        rel="external">Intel's site</a>.  But the basic idea is pretty simple:  Configure
-        your  DHCP   server   to   provide   <strong>next-server</strong>   and   <strong
+        can obtain the entire <a href="http://www.pix.net/software/pxeboot/archive/pxespec.pdf"
+        rel="external">PXE specification</a>.  But  the  basic  idea  is  pretty  simple:
+        Configure your DHCP server to provide  <strong>next-server</strong>  and  <strong
         >filename</strong> DHCP options  identifying  your  TFTP  server  and  the  <code
         >pxelinux.0</code> file, respectively. (Do not let   the  name  fool  you;  <code
         >pxelinux.0</code>  has  nothing  to  do  with  Linux.   It  comes  from  the  <a
