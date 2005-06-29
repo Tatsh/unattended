@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: advanced.php,v 1.4 2005-06-29 22:51:44 nrichthof Exp $';
+$cvs           = '$Id: advanced.php,v 1.5 2005-06-29 23:11:11 nrichthof Exp $';
 $sections[]    = array ('Integrate a service pack', 'slipstream');
 $sections[]    = array ('Integrate other hotfixes', 'hotfixes');
 $sections[]    = array ('Modifying the boot disk', 'modify');
@@ -36,7 +36,7 @@ $content       = <<<EOT
         included in  Windows  2000  and  installed  after  the  Windows  installation  by
         Unattended. Windows update will demand that package again. For  more information,
         <a rel="external" href="http://www.heise.de/security/news/foren/go.shtml?read=1&amp;msg_id=8296723&amp;forum_id=80992"
-        >see here</a> (sorry, only in german).
+        >see here</a> (sorry, only in german).</p>
 
       <p>If you are using a retail or volume-licensed OS, read on.</p>
 
