@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: advanced.php,v 1.2 2005-02-16 18:08:55 nrichthof Exp $';
+$cvs           = '$Id: advanced.php,v 1.3 2005-06-29 17:42:07 nrichthof Exp $';
 $sections[]    = array ('Integrate a service pack', 'slipstream');
 $sections[]    = array ('Integrate other hotfixes', 'hotfixes');
 $sections[]    = array ('Modifying the boot disk', 'modify');
@@ -28,6 +28,15 @@ $content       = <<<EOT
         only option is to apply the service pack after installing the OS; see the <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/winxp-updates.bat?rev=HEAD&amp;view=auto"
         >winxp-updates.bat</a> script and the <a href="apps.php">application installation
         document</a> for more information.</p>
+
+      <p><strong>NOTE</strong>: On 2005-06-28, Microsoft published  a  rollup package for
+        Windows 2000 SP4. Although it is possible to slipstream this package into Windows
+        2000 with Service Pack 4, <strong>we do not recommend</strong> it. The problem is
+        that this  package  contains  fixes  for  Internet Explorer 6 SP1  which  is  not
+        included in  Windows  2000  and  installed  after  the  Windows  installation  by
+        Unattended. Windows update will demand that package again. For  more information,
+        <a rel="external" href="http://www.heise.de/security/news/foren/go.shtml?read=1&amp;msg_id=8296723&amp;forum_id=80992"
+        >see here</a> (sorry, only in german).
 
       <p>If you are using a retail or volume-licensed OS, read on.</p>
 
