@@ -216,7 +216,7 @@ foreach my $reg_key ($cuser_key, $defuser_key, $ntuser_key) {
                         'CabinetState/' => {
                             # Show full path in title bar for explorer windows
                             '/FullPath' => [ pack('L', 1), REG_DWORD ],
-                            # 
+                            #
                             '/Settings' => [ pack('LLL', 0x2000c, 0x77e7011b, 0x60), REG_BINARY ],
                             # Use classic search find files and computers
                             '/Use Search Asst' => 'no',
@@ -403,7 +403,9 @@ $reg{'LMachine'}->{'Software/'} = {
             'CurrentVersion/' => {
                 'WinLogon/' => {
                     # Disable Fast User Switching
-                    '/AllowMultipleTSSessions' => [ pack('L', 0), REG_DWORD ], 
+                    '/AllowMultipleTSSessions' => [ pack('L', 0), REG_DWORD ],
+                    # Disable Welcome screen (with the list of users)
+                    '/LogonType' => [ pack('L', 0), REG_DWORD ],
                 },
             },
         },
