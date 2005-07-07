@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: advanced.php,v 1.5 2005-06-29 23:11:11 nrichthof Exp $';
+$cvs           = '$Id: advanced.php,v 1.6 2005-07-07 21:33:22 nrichthof Exp $';
 $sections[]    = array ('Integrate a service pack', 'slipstream');
 $sections[]    = array ('Integrate other hotfixes', 'hotfixes');
 $sections[]    = array ('Modifying the boot disk', 'modify');
@@ -193,11 +193,11 @@ $content       = <<<EOT
         can obtain the entire <a href="http://www.pix.net/software/pxeboot/archive/pxespec.pdf"
         rel="external">PXE specification</a>.  But  the  basic  idea  is  pretty  simple:
         Configure your DHCP server to provide  <strong>next-server</strong>  and  <strong
-        >filename</strong> DHCP options  identifying  your  TFTP  server  and  the  <code
-        >pxelinux.0</code> file, respectively. (Do not let   the  name  fool  you;  <code
-        >pxelinux.0</code>  has  nothing  to  do  with  Linux.   It  comes  from  the  <a
-        href="http://syslinux.zytor.com/"   rel="external">SYSLINUX</a>    package,    an
-        excellent general-purpose boot loader.)</p>
+        >filename</strong> DHCP options  (options  number  066  and  067  under  windows)
+        identifying your TFTP server and the  <code>pxelinux.0</code> file, respectively.
+        (Do not let the name fool you; <code>pxelinux.0</code>  has  nothing  to  do with
+        Linux.  It  comes  from  the <a href="http://syslinux.zytor.com/"  rel="external"
+        >SYSLINUX</a> package, an excellent general-purpose boot loader.)</p>
 
       <p>Finally, you will need to convince your machine to boot from the  network.  Even
         if your machine has PXE support, actually enabling it can take  some  work.  Many
