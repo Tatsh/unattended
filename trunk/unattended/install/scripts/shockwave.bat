@@ -1,8 +1,6 @@
 :: Install Shockwave10 player
-::URL|ALL|http://fpdownload.macromedia.com/get/shockwave/default/english/win95nt/10.1.0.011/Shockwave_Installer_Full.exe|packages/macromedia/shockwave_installer_full.exe
-::
-:: Download from <http://www.macromedia.com/downloads/>
+::URL|ALL|http://download.macromedia.com/pub/shockwave/default/english/win95nt/latest/mm_fl_sw_installer.msi|packages/macromedia/mm_fl_sw_installer.msi
 
 @Echo off
 
-todo.pl "%Z%\packages\macromedia\shockwave_installer_full.exe /s"
+todo.pl "start /wait msiexec /qb /l* %SystemDrive%\netinst\logs\shockwave.txt /i %Z%\packages\macromedia\mm_fl_sw_installer.msi"
