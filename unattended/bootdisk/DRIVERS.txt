@@ -35,6 +35,9 @@ el94x    3com 3c94x/3c2000 family of gigabit adapters
 # <http://www.viaarena.com/?PageID=71>
 fetnd    VIA VT86C100A/6102/6105 "Rhine" family (e.g., D-Link DFE-530TX)
 
+# http://www.marvell.com/drivers/driverDisplay.do?dId=113&pId=16
+yuknd    Marvell(R) Yukon(R) Ethernet Controller
+
 # http://www.netgear.com/support/products/FA310.asp
 ngrpci   Netgear FA310
 
@@ -56,3 +59,4 @@ sis900   SiS 900 family
 # disk, last seen at
 # <http://support.3com.com/infodeli/tools/nic/mba.htm>.
 undis3c  "Universal" NDIS UNDI driver (3com)
+
