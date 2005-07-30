@@ -29,7 +29,7 @@ perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20031210
 samba=samba-3.0.14a
 wireless_tools=wireless_tools.27
-zlib=zlib-1.2.2
+zlib=zlib-1.2.3
 
 cwd:=$(shell pwd)
 
