@@ -5,6 +5,34 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for Word 2002 (KB895589)
+:: Description of the security update for Word 2002: July 12, 2005
+:: <http://support.microsoft.com/kb/895589>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=A7E7D2C5-1E2A-4FFB-8FC2-B2B217015820>
+:: URL|ARA|http://download.microsoft.com/download/b/a/3/ba302ca9-833d-4e84-b1c7-acc9b86e9463/officexp-KB895589-Client-ARA.exe|updates/officexp/officexp-kb895589-client-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/7/2/a72a15d1-aaed-4f5e-b790-d9066e649277/officexp-KB895589-Client-CSY.exe|updates/officexp/officexp-kb895589-client-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/c/9/e/c9e648da-976a-4d2f-86de-b195e2f7550d/officexp-KB895589-Client-DAN.exe|updates/officexp/officexp-kb895589-client-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/3/b/b/3bb240be-9d8e-4ca7-b41e-032c3ea6a836/officexp-KB895589-Client-DEU.exe|updates/officexp/officexp-kb895589-client-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/c/c/9/cc907998-2f26-4530-b5ef-31a7abfb188c/officexp-KB895589-Client-ELL.exe|updates/officexp/officexp-kb895589-client-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/7/d/7/7d776de4-db44-4e6d-948a-9196f556b5eb/officexp-KB895589-Client-ENU.exe|updates/officexp/officexp-kb895589-client-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/0/8/b/08ba779a-eca0-40c4-be3a-bfc962e646bb/officexp-KB895589-Client-ESN.exe|updates/officexp/officexp-kb895589-client-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/f/5/2/f52473f6-069a-4b94-bb88-c2003d1b9e00/officexp-KB895589-Client-FIN.exe|updates/officexp/officexp-kb895589-client-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/9/f/c/9fcae719-76a0-4320-ae5d-d3e8ceb9be73/officexp-KB895589-Client-FRA.exe|updates/officexp/officexp-kb895589-client-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/a/0/1/a01d02fe-fb38-4c7c-ba16-8a69199b9093/officexp-KB895589-Client-HEB.exe|updates/officexp/officexp-kb895589-client-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/e/9/2/e924cba1-a80f-452c-8ff8-3e81ccaf087f/officexp-KB895589-Client-HUN.exe|updates/officexp/officexp-kb895589-client-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/9/c/09ca1c6b-fae5-4578-be85-a9daf1741abc/officexp-KB895589-Client-ITA.exe|updates/officexp/officexp-kb895589-client-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/b/9/c/b9c02d1d-ff33-4e68-aae3-aa44d822c5b5/officexp-KB895589-Client-JPN.exe|updates/officexp/officexp-kb895589-client-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/c/2/c/c2c05bbb-38ee-40bf-8c35-8fd58c0f9902/officexp-KB895589-Client-KOR.exe|updates/officexp/officexp-kb895589-client-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/d/e/fdea0cac-018d-4b35-8450-694714813124/officexp-KB895589-Client-NLD.exe|updates/officexp/officexp-kb895589-client-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/4/d/6/4d6d9592-b57f-4c34-be2e-7475986a8987/officexp-KB895589-Client-NOR.exe|updates/officexp/officexp-kb895589-client-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/f/6/0/f60d7806-e980-4851-bd9e-f224f5712c9f/officexp-KB895589-Client-PLK.exe|updates/officexp/officexp-kb895589-client-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/f/2/2f2ceb48-a11b-45bb-88f1-f3a68cb441ec/officexp-KB895589-Client-PTB.exe|updates/officexp/officexp-kb895589-client-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/0/e/f0e73723-2314-4188-a932-1db88eb40a44/officexp-KB895589-Client-PTG.exe|updates/officexp/officexp-kb895589-client-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/6/1/5/6156069f-1249-45c7-baec-bf43e0b51a77/officexp-KB895589-Client-RUS.exe|updates/officexp/officexp-kb895589-client-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/a/1/fa1b3d4a-acd0-4ccf-8c40-cf6d6b30ebf2/officexp-KB895589-Client-SVE.exe|updates/officexp/officexp-kb895589-client-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/9/2/a/92adcb3e-4707-4122-a598-d474e92e26f3/officexp-KB895589-Client-TRK.exe|updates/officexp/officexp-kb895589-client-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB895589-Client-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb895589.txt /p WINWORDop.msp REBOOT=ReallySuppress\""
+
 :: Security Update for Word 2002 (KB887978)
 :: Microsoft Security Bulletin MS05-023
 :: Description of the security update for Word 2002: April 12, 2005
