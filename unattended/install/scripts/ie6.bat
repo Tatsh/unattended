@@ -3,31 +3,31 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
-:: Cumulative Security Update for Internet Explorer 6 Service Pack 1 for Windows XP and Windows 2000 (KB883939)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=a1809b9b-9b0f-4a9c-84a5-56b774920313>
-:: URL|ARA|http://download.microsoft.com/download/5/9/8/59847eb7-07c4-4691-b9d3-1be2a2568f1a/IE6.0sp1-KB883939-Windows-2000-XP-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/d/b/6/db65a856-ddab-4fab-a332-d97531133c44/IE6.0sp1-KB883939-Windows-2000-XP-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/c/2/9/c297f04c-3eb9-41c9-892e-d4c26006dd65/IE6.0sp1-KB883939-Windows-2000-XP-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/d/1/f/d1fdb71b-7ec4-4718-9c2a-8a191bfe556e/IE6.0sp1-KB883939-Windows-2000-XP-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/4/5/1/451096ba-bd05-49d0-8716-e821f3a95bf3/IE6.0sp1-KB883939-Windows-2000-XP-x86-ELL.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/8/8/b/88bb71d0-2051-481b-a6ca-4fdc9d8285da/IE6.0sp1-KB883939-Windows-2000-XP-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/5/a/25a85ddb-77bf-4896-9d23-1c3366de56ac/IE6.0sp1-KB883939-Windows-2000-XP-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/b/f/1/bf152b22-2f5e-468e-804f-1f594ad9df71/IE6.0sp1-KB883939-Windows-2000-XP-x86-FIN.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/8/f/f/8ff4ebef-faa7-40df-91db-e43ac6f889af/IE6.0sp1-KB883939-Windows-2000-XP-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/8/3/0/83013760-c719-4cb1-a205-b352a52f6534/IE6.0sp1-KB883939-Windows-2000-XP-x86-HEB.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/b/8/d/b8d6615a-3ee8-44e1-8dbe-d5fb5d16256c/IE6.0sp1-KB883939-Windows-2000-XP-x86-HUN.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/6/7/0/6701681f-3908-4d19-b775-4ec17d6dadff/IE6.0sp1-KB883939-Windows-2000-XP-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/6/5/c/65c8be4b-81d4-4e7e-b2f3-5dc23f34fff0/IE6.0sp1-KB883939-Windows-2000-XP-x86-JPN.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/e/b/e/ebe4dd59-0d9b-418c-9cce-7d462d2e6006/IE6.0sp1-KB883939-Windows-2000-XP-x86-KOR.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/b/e/e/beed5048-4ca5-40d0-a5cd-c39b0f5763bf/IE6.0sp1-KB883939-Windows-2000-XP-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/1/7/8/17883cef-1535-4214-92cc-ce111884cca4/IE6.0sp1-KB883939-Windows-2000-XP-x86-NOR.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/d/7/2/d7240bbb-4d1c-40da-8238-2e88ea6ff493/IE6.0sp1-KB883939-Windows-2000-XP-x86-PLK.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/e/4/a/e4a7ec3c-655b-425d-b1e3-5ed4a2c7996f/IE6.0sp1-KB883939-Windows-2000-XP-x86-PTB.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/b/1/7b151c2a-a584-4149-a605-4627ade6d5bf/IE6.0sp1-KB883939-Windows-2000-XP-x86-PTG.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/a/e/c/aec23b84-d06c-49b9-8016-a9d2ef2b6219/IE6.0sp1-KB883939-Windows-2000-XP-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/7/5/4/754e0ef8-1bce-4f1d-8a0d-6f95290628f8/IE6.0sp1-KB883939-Windows-2000-XP-x86-SVE.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/2/7/7/277a5963-ab43-4a1e-8520-b610c880bca0/IE6.0sp1-KB883939-Windows-2000-XP-x86-TRK.exe|updates/ie6sp1/ie6.0sp1-kb883939-windows-2000-xp-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB883939-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
+:: Cumulative Security Update for Internet Explorer 6 Service Pack 1 for Windows XP and Windows 2000 (KB896727)
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=68300B15-1CF9-45FB-875E-2EF6D2FBC9ED>
+:: URL|ARA|http://download.microsoft.com/download/2/c/3/2c389c6a-818f-4b4b-8e04-db0f40231297/IE6.0sp1-KB896727-Windows-2000-XP-x86-ARA.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/8/b/68bbc203-dc93-4575-b1b7-59c291082014/IE6.0sp1-KB896727-Windows-2000-XP-x86-CSY.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/b/7/4/b74a0793-7da0-40b3-97a8-a4ceec571a6a/IE6.0sp1-KB896727-Windows-2000-XP-x86-DAN.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/c/9/9/c99aa0d3-3e6a-416b-860f-f789ade5edbc/IE6.0sp1-KB896727-Windows-2000-XP-x86-DEU.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/c/d/5cdf3719-f5ca-4dd1-8289-815930c870a9/IE6.0sp1-KB896727-Windows-2000-XP-x86-ELL.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/c/a/7/ca75a00b-8d38-4254-a737-b7f8efb4e104/IE6.0sp1-KB896727-Windows-2000-XP-x86-ENU.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/5/b/6/5b6f389a-9ded-4b3e-bfdd-a21bdaa85216/IE6.0sp1-KB896727-Windows-2000-XP-x86-ESN.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/a/2/0/a20b707d-fffa-4e2e-af9f-e134c70a76d7/IE6.0sp1-KB896727-Windows-2000-XP-x86-FIN.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/e/4/1/e412d691-b1a9-46cf-a315-105936d376e5/IE6.0sp1-KB896727-Windows-2000-XP-x86-FRA.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/e/d/3ed3ee13-e01d-4d08-aefb-d7704e410a65/IE6.0sp1-KB896727-Windows-2000-XP-x86-HEB.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/0/a/c/0ac03278-9f74-43c6-b689-29957e61e677/IE6.0sp1-KB896727-Windows-2000-XP-x86-HUN.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/f/8/1/f818a3b5-f83f-41f0-9a25-ae0f367242e8/IE6.0sp1-KB896727-Windows-2000-XP-x86-ITA.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/f/8/1f83043d-985b-4327-bc50-7952750a0f57/IE6.0sp1-KB896727-Windows-2000-XP-x86-JPN.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/e/5/6e5e6387-cee1-47eb-9aca-8f520a8b2565/IE6.0sp1-KB896727-Windows-2000-XP-x86-KOR.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/3/1/03198c8b-d194-433c-a39f-ac0ee1ed6bd7/IE6.0sp1-KB896727-Windows-2000-XP-x86-NLD.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/1/6/51640875-84db-4637-a565-1cf5b6101487/IE6.0sp1-KB896727-Windows-2000-XP-x86-NOR.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/b/3/9/b3980da2-e135-4a17-906e-4204d7d39d14/IE6.0sp1-KB896727-Windows-2000-XP-x86-PLK.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/3/c/a3c24f4b-fec4-4b1f-bd68-5b2046dd87af/IE6.0sp1-KB896727-Windows-2000-XP-x86-PTB.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/1/e/2/1e287985-6f43-424f-89c5-ac78542f0360/IE6.0sp1-KB896727-Windows-2000-XP-x86-PTG.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/3/b/3/3b38c321-78b7-4e28-aac6-a477b6927177/IE6.0sp1-KB896727-Windows-2000-XP-x86-RUS.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/3/7/a370862e-be19-4e9f-826c-19f483b1c2bf/IE6.0sp1-KB896727-Windows-2000-XP-x86-SVE.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/c/0/f/c0f25922-e6da-4271-9051-3fa2df5a2a5b/IE6.0sp1-KB896727-Windows-2000-XP-x86-TRK.exe|updates/ie6sp1/ie6.0sp1-kb896727-windows-2000-xp-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB896727-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Cumulative Security Update for Outlook Express 6 Service Pack 1 (KB897715)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=89e4d8ee-4d8e-4660-a53d-28502b3d2518>
