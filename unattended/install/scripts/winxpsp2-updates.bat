@@ -239,31 +239,59 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
-:: Cumulative Security Update for Internet Explorer for Windows XP Service Pack 2 (KB883939)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=36ec67ca-94f6-4e55-adcd-4406a3d6aade>
-:: URL|ARA|http://download.microsoft.com/download/f/e/7/fe7b0eaf-7278-48e1-9d84-dfe9b9516eec/WindowsXP-KB883939-x86-ARA.exe|updates/winxpsp2/windowsxp-kb883939-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/7/f/3/7f302af6-1325-4745-9bfb-72dcc8cd9d51/WindowsXP-KB883939-x86-CSY.exe|updates/winxpsp2/windowsxp-kb883939-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/5/c/2/5c288517-cce7-45ae-b128-3e3d438d5a31/WindowsXP-KB883939-x86-DAN.exe|updates/winxpsp2/windowsxp-kb883939-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/e/1/5/e155c547-ba52-4dc3-bab1-81fbffd97d1c/WindowsXP-KB883939-x86-DEU.exe|updates/winxpsp2/windowsxp-kb883939-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/3/a/2/3a2c1cee-6e15-4b70-96e7-1cac458b7240/WindowsXP-KB883939-x86-ELL.exe|updates/winxpsp2/windowsxp-kb883939-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/e/6/a/e6ab9d30-f492-4007-932a-7e3b264a05e0/WindowsXP-KB883939-x86-ENU.exe|updates/winxpsp2/windowsxp-kb883939-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/d/6/4/d6422b09-0a5c-47ed-b506-40b42adec1f4/WindowsXP-KB883939-x86-ESN.exe|updates/winxpsp2/windowsxp-kb883939-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/6/8/9/689c5739-bb46-4971-b34d-99aa4bc20814/WindowsXP-KB883939-x86-FIN.exe|updates/winxpsp2/windowsxp-kb883939-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/f/a/4/fa4a35e2-7afa-413c-9868-633e96c2dff7/WindowsXP-KB883939-x86-FRA.exe|updates/winxpsp2/windowsxp-kb883939-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/1/e/3/1e3c5cd2-1f56-4ede-bf11-57916463ece8/WindowsXP-KB883939-x86-HEB.exe|updates/winxpsp2/windowsxp-kb883939-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/5/e/3/5e323c08-f854-4f96-94f4-1bf27e6c3530/WindowsXP-KB883939-x86-HUN.exe|updates/winxpsp2/windowsxp-kb883939-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/a/b/b/abbabbf2-b7c9-42f1-832c-290700dc0c89/WindowsXP-KB883939-x86-ITA.exe|updates/winxpsp2/windowsxp-kb883939-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/a/d/3/ad301b4c-f55b-42d6-9f7a-981631b51d67/WindowsXP-KB883939-x86-JPN.exe|updates/winxpsp2/windowsxp-kb883939-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/1/3/9/139ad0d7-7cc6-44fa-bf3a-04816524bdd2/WindowsXP-KB883939-x86-KOR.exe|updates/winxpsp2/windowsxp-kb883939-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/8/7/7/87700168-aeb0-4aaa-91cf-1c9d2fe6e5dd/WindowsXP-KB883939-x86-NLD.exe|updates/winxpsp2/windowsxp-kb883939-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/f/f/d/ffd76437-2018-483e-9d94-58125f4097d7/WindowsXP-KB883939-x86-NOR.exe|updates/winxpsp2/windowsxp-kb883939-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/5/7/5/5756353d-afe4-46da-bf3e-ade907390f62/WindowsXP-KB883939-x86-PLK.exe|updates/winxpsp2/windowsxp-kb883939-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/3/7/83743259-c622-4d62-82a9-f185271f7cfe/WindowsXP-KB883939-x86-PTB.exe|updates/winxpsp2/windowsxp-kb883939-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/6/e/8/6e84280f-92de-4d1b-acef-dda464b239d2/WindowsXP-KB883939-x86-PTG.exe|updates/winxpsp2/windowsxp-kb883939-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/4/0/8/4081d7fd-b9ca-4501-82df-2ebed7b4321e/WindowsXP-KB883939-x86-RUS.exe|updates/winxpsp2/windowsxp-kb883939-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/f/b/3/fb34b274-2fd9-4c38-9387-268413079d94/WindowsXP-KB883939-x86-SVE.exe|updates/winxpsp2/windowsxp-kb883939-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/4/0/5/4051ae4c-df77-4a9a-8420-6733f3b56670/WindowsXP-KB883939-x86-TRK.exe|updates/winxpsp2/windowsxp-kb883939-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB883939-x86-%WINLANG%.exe /passive /n /norestart"
+:: Security Update for Windows XP (KB899587)
+:: Microsoft Security Bulletin MS05-042
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=DD24F6FA-F6BB-4358-8C2F-7F6AB405981A>
+:: URL|ARA|http://download.microsoft.com/download/1/5/f/15f68c81-d5b3-43cb-8e44-bf4544fb5513/WindowsXP-KB899587-x86-ARA.exe|updates/common/windowsxp-kb899587-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/3/4/3/3434b5b1-c449-4ad0-84f7-233326f0628c/WindowsXP-KB899587-x86-CSY.exe|updates/common/windowsxp-kb899587-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/2/b/b/2bbc599e-4779-4067-9096-831ec1deab2e/WindowsXP-KB899587-x86-DAN.exe|updates/common/windowsxp-kb899587-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/3/9/039184c2-4bed-4725-ab27-70bae71ea3ed/WindowsXP-KB899587-x86-DEU.exe|updates/common/windowsxp-kb899587-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/b/7/e/b7e1c25f-3ba2-4e3c-9d2e-82935e6e3c43/WindowsXP-KB899587-x86-ELL.exe|updates/common/windowsxp-kb899587-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/4/3/0/430cb1fd-38b9-4dbc-9077-0cad900ca5e5/WindowsXP-KB899587-x86-ENU.exe|updates/common/windowsxp-kb899587-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/e/e/7ee61dc4-99b8-4fc5-ac5e-70aede6ba2f6/WindowsXP-KB899587-x86-ESN.exe|updates/common/windowsxp-kb899587-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/4/7/7/4777f688-817b-4701-932b-e10a85ad049f/WindowsXP-KB899587-x86-FIN.exe|updates/common/windowsxp-kb899587-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/7/1/d/71d3a5bc-5107-4be4-8a71-4ba6987de1f6/WindowsXP-KB899587-x86-FRA.exe|updates/common/windowsxp-kb899587-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/6/9/869f9dd2-13b1-4a62-abed-f40e2f08378d/WindowsXP-KB899587-x86-HEB.exe|updates/common/windowsxp-kb899587-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/9/e/4/9e444fc4-bc0a-488f-8041-9cd0800832ba/WindowsXP-KB899587-x86-HUN.exe|updates/common/windowsxp-kb899587-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/1/3/6/136cc78b-09d3-4b47-9157-b62558c01a99/WindowsXP-KB899587-x86-ITA.exe|updates/common/windowsxp-kb899587-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/c/2/d/c2da9f92-22b3-410d-ac5d-22c7b7c67428/WindowsXP-KB899587-x86-JPN.exe|updates/common/windowsxp-kb899587-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/2/0/620cee12-2880-4f01-8b95-882367adb4a3/WindowsXP-KB899587-x86-KOR.exe|updates/common/windowsxp-kb899587-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/6/f/d6f103e4-b7f9-4a8a-935b-693b24029584/WindowsXP-KB899587-x86-NLD.exe|updates/common/windowsxp-kb899587-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/c/a/b/cab91bd1-11fc-490e-a10a-b73f0e2eda20/WindowsXP-KB899587-x86-NOR.exe|updates/common/windowsxp-kb899587-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/d/c/7/dc759e11-73b8-45e6-8a1f-ff713fcbb4d6/WindowsXP-KB899587-x86-PLK.exe|updates/common/windowsxp-kb899587-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/5/5/b5590f11-1851-4a9c-9ffc-5df4cc72d93d/WindowsXP-KB899587-x86-PTB.exe|updates/common/windowsxp-kb899587-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/a/e/9/ae95c21f-f4b0-45eb-980e-65a6c6004993/WindowsXP-KB899587-x86-PTG.exe|updates/common/windowsxp-kb899587-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/7/9/9/79922432-bfd3-4a12-acbc-18c20c04a783/WindowsXP-KB899587-x86-RUS.exe|updates/common/windowsxp-kb899587-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/b/8/fb84ae41-6fc5-44ae-a87e-2353067eb7d3/WindowsXP-KB899587-x86-SVE.exe|updates/common/windowsxp-kb899587-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/6/9/569544ec-bc77-451e-8737-356929206370/WindowsXP-KB899587-x86-TRK.exe|updates/common/windowsxp-kb899587-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB899587-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows XP (KB899591)
+:: Microsoft Security Bulletin MS05-041
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=A229F193-DA3F-4014-925D-1EACF5BA296C>
+:: URL|ARA|http://download.microsoft.com/download/c/b/0/cb085c02-9a52-498e-9e71-6f0eeeb01c16/WindowsXP-KB899591-x86-ARA.exe|updates/common/windowsxp-kb899591-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/0/9/a090e045-9803-4f4c-8dc3-6fbb81c93d9b/WindowsXP-KB899591-x86-CSY.exe|updates/common/windowsxp-kb899591-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/4/5/4/454d00e8-9982-47be-a4d0-11d7068b8365/WindowsXP-KB899591-x86-DAN.exe|updates/common/windowsxp-kb899591-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/4/6/0467ce5e-a075-4d10-8ded-42fc78103040/WindowsXP-KB899591-x86-DEU.exe|updates/common/windowsxp-kb899591-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/d/1/2/d1222b7e-902a-40eb-9fdf-01012cb9d0bd/WindowsXP-KB899591-x86-ELL.exe|updates/common/windowsxp-kb899591-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/0/8/2/082a950a-fdec-4cb3-8e9c-69d877e4f922/WindowsXP-KB899591-x86-ENU.exe|updates/common/windowsxp-kb899591-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/f/a/4fa6a685-1f06-424f-b367-0d5da680079d/WindowsXP-KB899591-x86-ESN.exe|updates/common/windowsxp-kb899591-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/3/1/c/31c3216a-2ebd-43f3-9485-a20139d2af33/WindowsXP-KB899591-x86-FIN.exe|updates/common/windowsxp-kb899591-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/9/b/4/9b4ec667-7503-4965-a6cc-ba9c88c9e4c5/WindowsXP-KB899591-x86-FRA.exe|updates/common/windowsxp-kb899591-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/b/5/1/b5127ee2-923c-4451-9f94-394f2c12545d/WindowsXP-KB899591-x86-HEB.exe|updates/common/windowsxp-kb899591-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/4/2/742ab5e0-0e97-42d7-87d3-b20ce04166c9/WindowsXP-KB899591-x86-HUN.exe|updates/common/windowsxp-kb899591-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/b/7/db771984-3718-471d-bc2a-88fffb9919d7/WindowsXP-KB899591-x86-ITA.exe|updates/common/windowsxp-kb899591-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/a/8/1/a81e3b6a-06f3-451a-97af-c85bd708ffdb/WindowsXP-KB899591-x86-JPN.exe|updates/common/windowsxp-kb899591-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/f/1/0f1d036b-8d58-4e03-bc1a-199f5a22e131/WindowsXP-KB899591-x86-KOR.exe|updates/common/windowsxp-kb899591-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/e/a/aea52d66-d98a-4f92-9d87-78ea0f75f3d9/WindowsXP-KB899591-x86-NLD.exe|updates/common/windowsxp-kb899591-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/5/d/55d38855-2a67-42af-b830-2ed14fa14014/WindowsXP-KB899591-x86-NOR.exe|updates/common/windowsxp-kb899591-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/c/b/4/cb4f90a8-084a-4c67-8c95-7b8d94bb7413/WindowsXP-KB899591-x86-PLK.exe|updates/common/windowsxp-kb899591-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/0/b/7/0b75aab3-1a6a-4723-9539-3662eaddb373/WindowsXP-KB899591-x86-PTB.exe|updates/common/windowsxp-kb899591-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/2/0/6/206ef240-7280-4e8b-a8ca-5d986f228b92/WindowsXP-KB899591-x86-PTG.exe|updates/common/windowsxp-kb899591-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/6/3/b/63b78a0e-740e-41f6-89bd-1cfd146c9363/WindowsXP-KB899591-x86-RUS.exe|updates/common/windowsxp-kb899591-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/c/3/9/c399c1bd-8b90-4a7b-8f33-dde0f8dd4b91/WindowsXP-KB899591-x86-SVE.exe|updates/common/windowsxp-kb899591-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/8/2/382bea84-c41e-456e-9528-671c2209e77c/WindowsXP-KB899591-x86-TRK.exe|updates/common/windowsxp-kb899591-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB899591-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Microsoft Windows XP (KB896358)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=17833b94-af70-47bd-872c-033a3f0e982a>
@@ -508,61 +536,115 @@ todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB885836-x86-%WINLANG%.exe 
 
 :: IE Critical Updates
 
-:: Microsoft Security Bulletin MS04-038
-:: "Cumulative Security Update for Internet Explorer (834707)"
-:: <http://www.microsoft.com/technet/security/bulletin/ms04-038.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=CF47B515-3F51-43E1-9246-2C2264C49E2E>
-:: URL|ARA|http://download.microsoft.com/download/6/2/a/62af3ef3-224a-4a2e-9ba1-edce73ce5158/WindowsXP-KB834707-x86-ara.exe|updates/winxpsp2/windowsxp-kb834707-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/d/4/a/d4ae80d0-8a5d-42fb-be91-c26701fd8a14/WindowsXP-KB834707-x86-csy.exe|updates/winxpsp2/windowsxp-kb834707-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/a/b/e/abeebd22-63ed-457d-b0d1-b0121316c242/WindowsXP-KB834707-x86-dan.exe|updates/winxpsp2/windowsxp-kb834707-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/4/7/f/47fa7b4f-93ea-4540-bfc9-ced14c4eac11/WindowsXP-KB834707-x86-deu.exe|updates/winxpsp2/windowsxp-kb834707-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/7/5/f/75fff639-922e-4af6-8e3c-622750f233e4/WindowsXP-KB834707-x86-ell.exe|updates/winxpsp2/windowsxp-kb834707-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/2/0/a/20ae9ba5-0e55-4b53-9454-62b6ef7b1f0a/WindowsXP-KB834707-x86-enu.exe|updates/winxpsp2/windowsxp-kb834707-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/8/9/d/89d62787-4296-4906-9315-faa40c0de8a0/WindowsXP-KB834707-x86-esn.exe|updates/winxpsp2/windowsxp-kb834707-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/b/6/7/b6702fa5-dde6-48cc-88a7-eaf0ea5c0e45/WindowsXP-KB834707-x86-fin.exe|updates/winxpsp2/windowsxp-kb834707-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/1/c/a/1ca7f97c-8136-421c-9c1f-7d95176d077f/WindowsXP-KB834707-x86-fra.exe|updates/winxpsp2/windowsxp-kb834707-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/0/d/c/0dc0043f-f214-4b77-9252-c63de0e4c600/WindowsXP-KB834707-x86-heb.exe|updates/winxpsp2/windowsxp-kb834707-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/d/e/e/deec3224-2e85-400c-b082-30a936d223b3/WindowsXP-KB834707-x86-hun.exe|updates/winxpsp2/windowsxp-kb834707-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/2/6/2/262e2f1a-8cb7-485b-b2e1-b00d236f0d23/WindowsXP-KB834707-x86-ita.exe|updates/winxpsp2/windowsxp-kb834707-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/5/9/4/59442b24-95d8-494a-9ebb-709f712a6391/WindowsXP-KB834707-x86-jpn.exe|updates/winxpsp2/windowsxp-kb834707-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/2/7/4/27433f7d-72aa-4107-9264-b4f14bef8ca6/WindowsXP-KB834707-x86-kor.exe|updates/winxpsp2/windowsxp-kb834707-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/3/2/f/32f0c30f-8cf5-4c38-8280-caa505d1ee4b/WindowsXP-KB834707-x86-nld.exe|updates/winxpsp2/windowsxp-kb834707-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/4/4/d/44dbb3df-4ec5-46c8-91c5-95ed8f1f4ab6/WindowsXP-KB834707-x86-nor.exe|updates/winxpsp2/windowsxp-kb834707-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/b/d/2/bd2b59a5-10c6-4dd7-b561-37c5a892b044/WindowsXP-KB834707-x86-plk.exe|updates/winxpsp2/windowsxp-kb834707-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/0/6/2/062d6f4f-282e-4431-9bd8-49184284e6e1/WindowsXP-KB834707-x86-ptb.exe|updates/winxpsp2/windowsxp-kb834707-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/f/8/2/f826a72e-85d8-4f1e-9b19-9498789f56b8/WindowsXP-KB834707-x86-ptg.exe|updates/winxpsp2/windowsxp-kb834707-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/9/8/9/989a2945-f06f-4d45-8308-06a657645d69/WindowsXP-KB834707-x86-rus.exe|updates/winxpsp2/windowsxp-kb834707-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/a/7/aa79111a-20a6-4ae8-a01f-0ce5af38e571/WindowsXP-KB834707-x86-sve.exe|updates/winxpsp2/windowsxp-kb834707-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/d/4/5/d45c109d-1047-48c6-b021-f71d127bf1d1/WindowsXP-KB834707-x86-trk.exe|updates/winxpsp2/windowsxp-kb834707-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB834707-x86-%WINLANG%.exe /passive /n /norestart"
+:: Cumulative Security Update for Internet Explorer for Windows XP Service Pack 2 (KB896727)
+:: Microsoft Security Bulletin MS05-038
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=648B6F0E-1695-44E5-826A-43406DF4858E>
+:: URL|ARA|http://download.microsoft.com/download/7/f/1/7f1c601a-193e-4709-a578-bc6db79f9312/WindowsXP-KB896727-x86-ARA.exe|updates/winxpsp2/windowsxp-kb896727-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/e/9/be911449-f4b3-4f32-bbb5-3caa27b02dee/WindowsXP-KB896727-x86-CSY.exe|updates/winxpsp2/windowsxp-kb896727-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/8/7/3/8736d358-0094-41e2-9932-c84efa632871/WindowsXP-KB896727-x86-DAN.exe|updates/winxpsp2/windowsxp-kb896727-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/6/f/3/6f340906-7772-497b-a9c4-b19af2b0f440/WindowsXP-KB896727-x86-DEU.exe|updates/winxpsp2/windowsxp-kb896727-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/2/6/c/26cde2e0-c676-41c4-929d-f7791430f7cb/WindowsXP-KB896727-x86-ELL.exe|updates/winxpsp2/windowsxp-kb896727-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/6/9/26980f82-fad7-471a-b71c-eec70efcea7d/WindowsXP-KB896727-x86-ENU.exe|updates/winxpsp2/windowsxp-kb896727-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/d/d/2ddb3240-20ae-4680-bb77-9c1c18c733f1/WindowsXP-KB896727-x86-ESN.exe|updates/winxpsp2/windowsxp-kb896727-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/a/a/9aafc50c-0091-4310-8b27-caa8e3347691/WindowsXP-KB896727-x86-FIN.exe|updates/winxpsp2/windowsxp-kb896727-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/8/5/c/85ce02d0-23a6-475d-b010-c203b15c23f2/WindowsXP-KB896727-x86-FRA.exe|updates/winxpsp2/windowsxp-kb896727-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/2/b/d/2bde449e-3291-4647-81c5-c630459f3314/WindowsXP-KB896727-x86-HEB.exe|updates/winxpsp2/windowsxp-kb896727-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/d/5/c/d5c5b52d-6166-4d2b-a51e-dfcd651d227c/WindowsXP-KB896727-x86-HUN.exe|updates/winxpsp2/windowsxp-kb896727-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/8/a/48a2a985-8a2a-4589-bf87-915c97fb0fed/WindowsXP-KB896727-x86-ITA.exe|updates/winxpsp2/windowsxp-kb896727-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/4/c/04cfeec2-1b44-426a-bca8-394410efcf80/WindowsXP-KB896727-x86-JPN.exe|updates/winxpsp2/windowsxp-kb896727-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/c/f/4/cf4f1917-008c-4137-8d94-f765668b665f/WindowsXP-KB896727-x86-KOR.exe|updates/winxpsp2/windowsxp-kb896727-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/a/7/aa7da29c-ed65-4ebb-8f56-720e3bcea5a9/WindowsXP-KB896727-x86-NLD.exe|updates/winxpsp2/windowsxp-kb896727-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/3/6/5361e02d-1c6f-4a05-b436-46fd2eccc479/WindowsXP-KB896727-x86-NOR.exe|updates/winxpsp2/windowsxp-kb896727-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/f/6/c/f6c4ae01-1d1a-40a9-a646-d34b8d5d5b7c/WindowsXP-KB896727-x86-PLK.exe|updates/winxpsp2/windowsxp-kb896727-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/5/7/6/576eb1ee-5362-4fbe-8c26-bcd847fc540f/WindowsXP-KB896727-x86-PTB.exe|updates/winxpsp2/windowsxp-kb896727-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/0/f/c/0fc6ed02-53dc-4a89-8050-13ce1120a1aa/WindowsXP-KB896727-x86-PTG.exe|updates/winxpsp2/windowsxp-kb896727-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/9/c/e9c59dbf-8f22-485a-a366-b2d5a6b853dd/WindowsXP-KB896727-x86-RUS.exe|updates/winxpsp2/windowsxp-kb896727-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/d/d/edd43cc9-7d16-49e7-8a62-a95fdc0e13f7/WindowsXP-KB896727-x86-SVE.exe|updates/winxpsp2/windowsxp-kb896727-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/9/1/3/913be767-3f89-43ea-a1a4-1af7df181cee/WindowsXP-KB896727-x86-TRK.exe|updates/winxpsp2/windowsxp-kb896727-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB896727-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical Updates
 
-:: Security Update for JView Profiler (KB903235)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=C1381768-6C6D-4568-97B1-600DB8798EBF>
-:: URL|ARA|http://download.microsoft.com/download/c/9/6/c961d8cf-11df-4c6a-a1f5-dca63e4c7e11/WindowsXP-KB903235-x86-ARA.exe|updates/winxpsp2/windowsxp-kb903235-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/3/b/0/3b0282ed-6cdb-48c3-a9a9-8022733f493b/WindowsXP-KB903235-x86-CSY.exe|updates/winxpsp2/windowsxp-kb903235-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/4/2/9/4293beb6-ffd9-48aa-8cab-6963af42f5a2/WindowsXP-KB903235-x86-DAN.exe|updates/winxpsp2/windowsxp-kb903235-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/9/6/6/96611347-4ab0-4f19-9d06-deedd583cbc9/WindowsXP-KB903235-x86-DEU.exe|updates/winxpsp2/windowsxp-kb903235-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/b/4/9/b49b3b4e-c48f-4b65-9bdc-b5db2b4429ec/WindowsXP-KB903235-x86-ELL.exe|updates/winxpsp2/windowsxp-kb903235-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/d/c/3/dc31c892-6251-4c9b-a780-2688179229f3/WindowsXP-KB903235-x86-ENU.exe|updates/winxpsp2/windowsxp-kb903235-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/a/d/6ad9d089-ce85-4d25-a864-da144857b149/WindowsXP-KB903235-x86-ESN.exe|updates/winxpsp2/windowsxp-kb903235-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/0/5/c/05c5f46f-da36-45c2-ac1b-79eafc3498aa/WindowsXP-KB903235-x86-FIN.exe|updates/winxpsp2/windowsxp-kb903235-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/0/a/7/0a795586-571d-46d8-aab6-9d66e9f99938/WindowsXP-KB903235-x86-FRA.exe|updates/winxpsp2/windowsxp-kb903235-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/2/c/e/2ceac9a1-24f5-414e-bd4e-595bc0c94990/WindowsXP-KB903235-x86-HEB.exe|updates/winxpsp2/windowsxp-kb903235-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/9/a/b/9abc3bc8-7f39-4128-9276-b87e8886b6df/WindowsXP-KB903235-x86-HUN.exe|updates/winxpsp2/windowsxp-kb903235-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/8/3/58382be2-3b86-4297-90e0-bd27282cbc68/WindowsXP-KB903235-x86-ITA.exe|updates/winxpsp2/windowsxp-kb903235-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/b/0/3/b03db9dd-8e99-42ec-925f-a8b4e48f2007/WindowsXP-KB903235-x86-JPN.exe|updates/winxpsp2/windowsxp-kb903235-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/8/2/4/8248b1cd-41a7-46a1-a74f-a8caaecfc4b8/WindowsXP-KB903235-x86-KOR.exe|updates/winxpsp2/windowsxp-kb903235-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/7/c/1/7c181cbc-9e0c-45ad-9c4d-8a1e5fa27b78/WindowsXP-KB903235-x86-NLD.exe|updates/winxpsp2/windowsxp-kb903235-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/3/7/e/37e25567-57a0-4e72-9ed4-784776944e33/WindowsXP-KB903235-x86-NOR.exe|updates/winxpsp2/windowsxp-kb903235-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/6/6/c/66c529e5-644f-40b4-885d-177b438c3d0a/WindowsXP-KB903235-x86-PLK.exe|updates/winxpsp2/windowsxp-kb903235-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/4/4/7/447c80e6-8f11-4bc6-a0ac-598e5f22a339/WindowsXP-KB903235-x86-PTB.exe|updates/winxpsp2/windowsxp-kb903235-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/8/f/6/8f6fbbcb-2ec7-46f8-a799-ecdce46189d3/WindowsXP-KB903235-x86-PTG.exe|updates/winxpsp2/windowsxp-kb903235-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/2/6/5/26517b66-2154-4bdd-91c1-b02587d9923b/WindowsXP-KB903235-x86-RUS.exe|updates/winxpsp2/windowsxp-kb903235-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/3/8/d/38d56986-c692-4b05-a864-647c2e148a77/WindowsXP-KB903235-x86-SVE.exe|updates/winxpsp2/windowsxp-kb903235-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/6/2/3/6232cf9e-6ac3-4727-a085-30036b46a6bd/WindowsXP-KB903235-x86-TRK.exe|updates/winxpsp2/windowsxp-kb903235-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB903235-x86-%WINLANG%.exe /passive /n /norestart"
+:: Security Update for Windows XP (KB896423)
+:: Microsoft Security Bulletin MS05-043
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=EF402946-1C3B-47E9-9D51-77D890DF8725>
+:: URL|ARA|http://download.microsoft.com/download/6/2/0/620e5f57-58a4-45c5-940f-2f1137969aa0/WindowsXP-KB896423-x86-ARA.exe|updates/common/windowsxp-kb896423-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/4/7/d/47db6c34-598e-4d5a-9edf-601d1b786863/WindowsXP-KB896423-x86-CSY.exe|updates/common/windowsxp-kb896423-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/4/8/1/4819fc2c-0877-431e-9229-f2c18fd56e06/WindowsXP-KB896423-x86-DAN.exe|updates/common/windowsxp-kb896423-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/1/5/c/15c6fa0b-64bb-4541-8fa1-5070ffeda305/WindowsXP-KB896423-x86-DEU.exe|updates/common/windowsxp-kb896423-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/9/0/1/901180c5-563e-425e-99e7-5f4b50ef2421/WindowsXP-KB896423-x86-ELL.exe|updates/common/windowsxp-kb896423-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/7/a/f/7af980c5-5a65-4067-8801-1f27856ef4f3/WindowsXP-KB896423-x86-ENU.exe|updates/common/windowsxp-kb896423-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/8/f/2/8f257cb7-fc23-41b7-b240-8da5b1fe2a68/WindowsXP-KB896423-x86-ESN.exe|updates/common/windowsxp-kb896423-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/4/7/547a96ee-195b-485d-af5e-60c8a0c94d5a/WindowsXP-KB896423-x86-FIN.exe|updates/common/windowsxp-kb896423-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/c/8/2/c825048e-19df-4d0e-82e1-93d2f3550821/WindowsXP-KB896423-x86-FRA.exe|updates/common/windowsxp-kb896423-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/9/5/0/9500f91e-ef29-4eca-8f53-e42703fe2be0/WindowsXP-KB896423-x86-HEB.exe|updates/common/windowsxp-kb896423-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/3/3/9/3397c377-2c59-45e7-92a0-76a29f7660ea/WindowsXP-KB896423-x86-HUN.exe|updates/common/windowsxp-kb896423-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/2/7/b/27bf7ce7-b7f4-4d98-bb56-70dffccb4626/WindowsXP-KB896423-x86-ITA.exe|updates/common/windowsxp-kb896423-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/3/4/7/3473ce22-eca3-41a5-935d-d5c9c528222b/WindowsXP-KB896423-x86-JPN.exe|updates/common/windowsxp-kb896423-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/d/4/0/d40dbb31-f9dc-4fb2-9ca3-d5061dc82b04/WindowsXP-KB896423-x86-KOR.exe|updates/common/windowsxp-kb896423-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/7/2/5/7256869b-8bfe-4472-8e63-81f18d699a0f/WindowsXP-KB896423-x86-NLD.exe|updates/common/windowsxp-kb896423-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/9/f/8/9f85f15b-ae78-43c2-aede-fb240d82b3f6/WindowsXP-KB896423-x86-NOR.exe|updates/common/windowsxp-kb896423-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/5/1/3/513ff4a5-5122-450a-8a89-b0ef85f9e2e8/WindowsXP-KB896423-x86-PLK.exe|updates/common/windowsxp-kb896423-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/e/e/0/ee09ce87-d394-4b4d-834a-2af0a211a73a/WindowsXP-KB896423-x86-PTB.exe|updates/common/windowsxp-kb896423-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/e/3/8e34999c-0266-4d52-a429-6735eef44f0e/WindowsXP-KB896423-x86-PTG.exe|updates/common/windowsxp-kb896423-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/0/6/e0637ed9-f2c9-440d-95f2-99a86c7b6053/WindowsXP-KB896423-x86-RUS.exe|updates/common/windowsxp-kb896423-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/1/5/a15e3ebf-7171-4a25-bfce-354461a3ae67/WindowsXP-KB896423-x86-SVE.exe|updates/common/windowsxp-kb896423-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/9/c/79c3f523-4c5c-491b-9562-be96d4c9f712/WindowsXP-KB896423-x86-TRK.exe|updates/common/windowsxp-kb896423-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB896423-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows XP (KB893756)
+:: Microsoft Security Bulletin MS05-040
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=B049004B-AF28-41D7-8AE6-7A3DB15211F1>
+:: URL|ARA|http://download.microsoft.com/download/2/a/3/3a3c827e-53b3-434c-893b-77a5763cec91/WindowsXP-KB893756-x86-ARA.exe|updates/common/windowsxp-kb893756-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/8/1/68189a4b-0ab1-4c01-a420-32da9fcc0edc/WindowsXP-KB893756-x86-CSY.exe|updates/common/windowsxp-kb893756-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/d/e/9/de938fb9-c849-45f3-abb7-7d52dbf01efd/WindowsXP-KB893756-x86-DAN.exe|updates/common/windowsxp-kb893756-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/9/8/b98cb59f-0a78-4178-acfa-0492b5b82963/WindowsXP-KB893756-x86-DEU.exe|updates/common/windowsxp-kb893756-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/e/5/9/e59a560f-0601-46f3-bdba-defc6c2a8060/WindowsXP-KB893756-x86-ELL.exe|updates/common/windowsxp-kb893756-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/0/9/d/09d163d5-9793-458f-aeaa-b5c9dff72350/WindowsXP-KB893756-x86-ENU.exe|updates/common/windowsxp-kb893756-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/6/e/16e26155-db90-41cd-ab4c-9ee470913542/WindowsXP-KB893756-x86-ESN.exe|updates/common/windowsxp-kb893756-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/c/d/5/cd5b9766-e2bb-4fba-9cb1-7b5943e77405/WindowsXP-KB893756-x86-FIN.exe|updates/common/windowsxp-kb893756-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/1/d/d/1dd1d72d-d4e8-4339-b11c-0f9d5bde1209/WindowsXP-KB893756-x86-FRA.exe|updates/common/windowsxp-kb893756-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/3/6/33607282-0b98-4a46-a033-c3e6886958a9/WindowsXP-KB893756-x86-HEB.exe|updates/common/windowsxp-kb893756-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/6/0/7600901b-cef3-4342-8d49-15615d10143e/WindowsXP-KB893756-x86-HUN.exe|updates/common/windowsxp-kb893756-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/4/8/d48a22d0-0629-49ee-8a69-200382560404/WindowsXP-KB893756-x86-ITA.exe|updates/common/windowsxp-kb893756-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/c/1/4c10ddfb-83f2-4f6a-8559-bc371610634a/WindowsXP-KB893756-x86-JPN.exe|updates/common/windowsxp-kb893756-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/d/2/1/d21b7178-abc4-472a-877d-b4606545ac61/WindowsXP-KB893756-x86-KOR.exe|updates/common/windowsxp-kb893756-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/4/a/44a54eaa-32ea-4c4f-8b6f-6003c86d2c31/WindowsXP-KB893756-x86-NLD.exe|updates/common/windowsxp-kb893756-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/8/8/1/881e77a9-c6c6-4167-a206-35f4f4a3d1cd/WindowsXP-KB893756-x86-NOR.exe|updates/common/windowsxp-kb893756-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/3/7/2/37211d36-fa83-4ce1-86f3-421186caa1d7/WindowsXP-KB893756-x86-PLK.exe|updates/common/windowsxp-kb893756-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/f/6/e/f6ec43bd-4c9b-4d9b-833d-2481d66d8977/WindowsXP-KB893756-x86-PTB.exe|updates/common/windowsxp-kb893756-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/d/c/0/dc0754d7-a317-46b2-baf5-7c837c7362e0/WindowsXP-KB893756-x86-PTG.exe|updates/common/windowsxp-kb893756-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/4/1/0417efa4-a1e9-421b-b881-ef568753fe8a/WindowsXP-KB893756-x86-RUS.exe|updates/common/windowsxp-kb893756-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/5/d/3/5d3b1157-23eb-431e-92ba-00e31caa1b11/WindowsXP-KB893756-x86-SVE.exe|updates/common/windowsxp-kb893756-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/8/3/583bd861-223b-47dc-9f03-2eb496f993fe/WindowsXP-KB893756-x86-TRK.exe|updates/common/windowsxp-kb893756-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB893756-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows XP (KB899588)
+:: Microsoft Security Bulletin MS05-039 
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=9A3BFBDD-62EA-4DB2-88D2-415E095E207F>
+:: URL|ARA|http://download.microsoft.com/download/e/8/9/e893ae8f-1cea-4013-81b3-f0dba76ae603/WindowsXP-KB899588-x86-ARA.exe|updates/common/windowsxp-kb899588-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/b/3/bb31207f-4f89-4b3b-81a8-120eb77bdfbd/WindowsXP-KB899588-x86-CSY.exe|updates/common/windowsxp-kb899588-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/4/1/b/41b9c295-a277-4622-ba27-0d2fbc47edc5/WindowsXP-KB899588-x86-DAN.exe|updates/common/windowsxp-kb899588-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/8/f/6/8f65fba4-fb7e-42ee-a578-5d302c585490/WindowsXP-KB899588-x86-DEU.exe|updates/common/windowsxp-kb899588-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/9/3/8/938e3f88-0ef5-452a-a614-5583a6f2ff06/WindowsXP-KB899588-x86-ELL.exe|updates/common/windowsxp-kb899588-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/1/8/a/18a58cf1-8ee0-494d-99ec-65fe1891b965/WindowsXP-KB899588-x86-ENU.exe|updates/common/windowsxp-kb899588-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/3/2/13247a50-20b6-45ac-9588-4554efd3c11d/WindowsXP-KB899588-x86-ESN.exe|updates/common/windowsxp-kb899588-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/e/3/a/e3ada762-81a6-492f-8647-6ec08eb09177/WindowsXP-KB899588-x86-FIN.exe|updates/common/windowsxp-kb899588-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/3/7/a3704888-7b26-4d40-a8c4-16909e5b441f/WindowsXP-KB899588-x86-FRA.exe|updates/common/windowsxp-kb899588-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/d/6/3d6a281c-ab2e-448f-8c46-07ed0d50ece9/WindowsXP-KB899588-x86-HEB.exe|updates/common/windowsxp-kb899588-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/e/7/1/e715f1be-1e69-462a-9403-04da8c1dcabb/WindowsXP-KB899588-x86-HUN.exe|updates/common/windowsxp-kb899588-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/f/b/dfbe81fd-870b-4e3f-b0ba-4b58783ca2ee/WindowsXP-KB899588-x86-ITA.exe|updates/common/windowsxp-kb899588-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/f/f/8ffe6756-27dd-42bf-baf8-3ce8535ccd70/WindowsXP-KB899588-x86-JPN.exe|updates/common/windowsxp-kb899588-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/c/c/8cc6b8d2-bab7-40ce-87fd-452db00e5c4a/WindowsXP-KB899588-x86-KOR.exe|updates/common/windowsxp-kb899588-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/5/f/f5f306a9-f7e8-4b54-ba7d-afa6d948e656/WindowsXP-KB899588-x86-NLD.exe|updates/common/windowsxp-kb899588-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/a/d/b/adbb2eb9-e250-4556-b57b-a85e39018955/WindowsXP-KB899588-x86-NOR.exe|updates/common/windowsxp-kb899588-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/1/b/f/1bfaedd7-3e99-4cef-b112-6418fee37d34/WindowsXP-KB899588-x86-PLK.exe|updates/common/windowsxp-kb899588-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/6/d/26d735cf-9381-4790-a803-7aff883c4470/WindowsXP-KB899588-x86-PTB.exe|updates/common/windowsxp-kb899588-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/3/f/b/3fb0d81f-7125-41b3-bfce-1fe643d0e870/WindowsXP-KB899588-x86-PTG.exe|updates/common/windowsxp-kb899588-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/e/c/5ec87ae3-7099-4eed-8954-e2be4c7c7e6d/WindowsXP-KB899588-x86-RUS.exe|updates/common/windowsxp-kb899588-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/8/7/e87f8776-360c-4603-8873-703ad3fcaf46/WindowsXP-KB899588-x86-SVE.exe|updates/common/windowsxp-kb899588-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/0/c/8/0c826033-d5ff-4c31-840c-99ea57797203/WindowsXP-KB899588-x86-TRK.exe|updates/common/windowsxp-kb899588-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB899588-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB901214)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=C5BCF2DB-ADCE-42BD-ABEE-1380F258158B>
