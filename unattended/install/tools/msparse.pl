@@ -64,6 +64,11 @@ foreach my $k (keys (%lang)) {
 
         if (/\<a href=[\"\']([^\"\']*-client-[^\"\']*)[\"\']\>/i) {
             my $dl=$1;
+	    if ($dl =~/.*?;u=(.*)/) {
+	    	$dl=$1;
+		$dl=~s#%2f#/#g;
+		$dl=~s#%3a#:#g;
+	    }
             my @a=split(/\//,$dl);
             if ($a[$#a] =~ /$k/i) {
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
