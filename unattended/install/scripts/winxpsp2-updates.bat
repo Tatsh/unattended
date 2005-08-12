@@ -239,6 +239,33 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 
 :: Recommended Updates
 
+:: Update for Windows XP (KB894391)
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=A87B44B9-7A6A-49B6-BD89-AFAD4E049C48>
+:: URL|ARA|http://download.microsoft.com/download/d/e/2/de2155af-cea5-4abd-b034-e999aa26e1ea/WindowsXP-KB894391-x86-ARA.exe|upda s/common/windowsxp-kb894391-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/7/e/2/7e293eb6-2d8c-4689-9e1c-f87aa61f0374/WindowsXP-KB894391-x86-CSY.exe|upda s/common/windowsxp-kb894391-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/9/5/095513b9-5f5e-4ab7-87b0-1c4c30eeba1f/WindowsXP-KB894391-x86-DAN.exe|upda s/common/windowsxp-kb894391-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/8/7/087250f2-2eb3-4a4e-9ec3-28ef056b21cd/WindowsXP-KB894391-x86-DEU.exe|upda s/common/windowsxp-kb894391-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/4/d/c/4dcd4f07-c82f-4124-9b52-f8586b9085cc/WindowsXP-KB894391-x86-ELL.exe|upda s/common/windowsxp-kb894391-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/d/3/0/d30f4165-2e4e-48c3-93b3-430ebd2d3e89/WindowsXP-KB894391-x86-ENU.exe|upda s/common/windowsxp-kb894391-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/8/4/f/84f21573-1977-41b6-a74e-37c56e8775aa/WindowsXP-KB894391-x86-ESN.exe|upda s/common/windowsxp-kb894391-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/4/6/2/46220771-f5f5-4e8a-ab0a-dc5b545ae6f2/WindowsXP-KB894391-x86-FIN.exe|upda s/common/windowsxp-kb894391-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/f/2/1/f21b8972-9d0a-4a72-a88b-b319e59f3b36/WindowsXP-KB894391-x86-FRA.exe|upda s/common/windowsxp-kb894391-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/6/1/5/615e8d5e-642b-4053-b5c0-dbeb19bfab1a/WindowsXP-KB894391-x86-HEB.exe|upda s/common/windowsxp-kb894391-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/f/7/af7f5e3b-c539-4469-889f-c295467f73a3/WindowsXP-KB894391-x86-HUN.exe|upda s/common/windowsxp-kb894391-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/1/b/6/1b6b639c-db24-4fb1-9c82-c8f84d7167b2/WindowsXP-KB894391-x86-ITA.exe|upda s/common/windowsxp-kb894391-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/1/5/515fd309-b4ea-44df-8aa7-62def38d74a5/WindowsXP-KB894391-x86-JPN.exe|upda s/common/windowsxp-kb894391-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/b/e/b/beb8789f-e4ca-4c24-895c-fb7358d766ae/WindowsXP-KB894391-x86-KOR.exe|upda s/common/windowsxp-kb894391-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/6/1/d/61dd8923-d0b3-4abe-8d59-0eb34b4ad912/WindowsXP-KB894391-x86-NLD.exe|upda s/common/windowsxp-kb894391-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/7/a/9/7a9edbb1-92d5-46c8-937b-407951a7abd2/WindowsXP-KB894391-x86-NOR.exe|upda s/common/windowsxp-kb894391-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/0/b/5/0b5c3c7a-e3cc-47e5-ae4b-3713b9683de9/WindowsXP-KB894391-x86-PLK.exe|upda s/common/windowsxp-kb894391-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/9/b/a9ba3f32-c19f-4953-81fe-eeb6b7aed7ab/WindowsXP-KB894391-x86-PTB.exe|upda s/common/windowsxp-kb894391-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/2/4/8/24881030-e38e-4001-9a0f-874588b05fc4/WindowsXP-KB894391-x86-PTG.exe|upda s/common/windowsxp-kb894391-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/9/3/d/93d807e4-4a74-4648-8e72-bf2da39cd72b/WindowsXP-KB894391-x86-RUS.exe|upda s/common/windowsxp-kb894391-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/3/4/8343d7a6-9fb2-449a-83c1-7c4be5c0e2bb/WindowsXP-KB894391-x86-SVE.exe|upda s/common/windowsxp-kb894391-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/f/5/5/f55be7ff-ddcf-4c07-ae60-93d816f9609e/WindowsXP-KB894391-x86-TRK.exe|upda s/common/windowsxp-kb894391-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB894391-x86-%WINLANG%.exe /passive /n /norestart"
+
+
 :: Security Update for Windows XP (KB899587)
 :: Microsoft Security Bulletin MS05-042
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=DD24F6FA-F6BB-4358-8C2F-7F6AB405981A>
@@ -953,30 +980,30 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB887472-x86-%WINLANG%.ex
 todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB888302-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Microsoft(R) Windows(R) Malicious Software Removal Tool (KB890830)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ARA|http://download.microsoft.com/download/a/5/6/a56dc75a-7cab-40d4-9cca-1ea3de8a582e/Windows-KB890830-V1.6-ARA.exe|updates/common/windows-kb890830-v1.6-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/a/f/0/af0e0397-90da-490c-88f6-78705c41ac0a/Windows-KB890830-V1.6-CSY.exe|updates/common/windows-kb890830-v1.6-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/1/b/61b5d2c9-c676-472c-9c25-597c93d4b29b/Windows-KB890830-V1.6-DAN.exe|updates/common/windows-kb890830-v1.6-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/f/4/9/f49a9243-3c8b-45de-8d32-ec79f7e67e88/Windows-KB890830-V1.6-DEU.exe|updates/common/windows-kb890830-v1.6-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/b/3/b/b3b63fca-2d2b-4da6-9e45-652012e91eaa/Windows-KB890830-V1.6-ELL.exe|updates/common/windows-kb890830-v1.6-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.6-ENU.exe|updates/common/windows-kb890830-v1.6-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/6/7/667e46d0-f365-420f-a4a4-06b38a76c9df/Windows-KB890830-V1.6-ESN.exe|updates/common/windows-kb890830-v1.6-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/5/2/8/52886a6f-de2d-4c10-bdea-c28e1962fb01/Windows-KB890830-V1.6-FIN.exe|updates/common/windows-kb890830-v1.6-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/4/9/5/49553279-c265-4698-ae84-3bbfb692816b/Windows-KB890830-V1.6-FRA.exe|updates/common/windows-kb890830-v1.6-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/8/a/48a3aca1-0829-4df9-b8e0-7edde16f9476/Windows-KB890830-V1.6-HEB.exe|updates/common/windows-kb890830-v1.6-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/a/0/6/a06679fc-5cf4-43ce-8089-9a7d216a0364/Windows-KB890830-V1.6-HUN.exe|updates/common/windows-kb890830-v1.6-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/9/c/e/9ced6b83-4d63-4e1a-af2b-e3c43bc587cb/Windows-KB890830-V1.6-ITA.exe|updates/common/windows-kb890830-v1.6-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/e/0/7/e077a812-720f-46ef-81c3-4ac9350a4fc3/Windows-KB890830-V1.6-JPN.exe|updates/common/windows-kb890830-v1.6-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/6/4/3/643fa00a-9374-4b5d-84e5-a5a8f887c95e/Windows-KB890830-V1.6-KOR.exe|updates/common/windows-kb890830-v1.6-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/4/9/a/49a2969f-8406-4296-a2b0-f23b3f85e6b1/Windows-KB890830-V1.6-NLD.exe|updates/common/windows-kb890830-v1.6-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/d/f/0/df0c9e3e-76f3-4c4a-a8fc-52e9f26d4be3/Windows-KB890830-V1.6-NOR.exe|updates/common/windows-kb890830-v1.6-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/2/a/f/2af23822-e466-495b-89ec-b7858dfdb740/Windows-KB890830-V1.6-PLK.exe|updates/common/windows-kb890830-v1.6-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/0/f/90fc5fb1-13a1-4e9e-b8e0-958313fa6fd8/Windows-KB890830-V1.6-PTB.exe|updates/common/windows-kb890830-v1.6-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/e/3/7e3b16e2-7f75-4510-8c87-e92d18bd5fea/Windows-KB890830-V1.6-PTG.exe|updates/common/windows-kb890830-v1.6-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/8/9/1/891b30ee-2185-4ac9-ac0a-50512c6de0f9/Windows-KB890830-V1.6-RUS.exe|updates/common/windows-kb890830-v1.6-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/e/4/a/e4ab70be-a424-41d9-8261-1370c533e913/Windows-KB890830-V1.6-SVE.exe|updates/common/windows-kb890830-v1.6-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/e/6/a/e6a72381-a215-4cd1-ab8f-9403e1286e35/Windows-KB890830-V1.6-TRK.exe|updates/common/windows-kb890830-v1.6-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.6-%WINLANG%.exe /Q"
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
+:: URL|ARA|http://download.microsoft.com/download/a/5/6/a56dc75a-7cab-40d4-9cca-1ea3de8a582e/Windows-KB890830-V1.7-ARA.exe|updates/common/windows-kb890830-v1.7-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/f/0/af0e0397-90da-490c-88f6-78705c41ac0a/Windows-KB890830-V1.7-CSY.exe|updates/common/windows-kb890830-v1.7-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/6/1/b/61b5d2c9-c676-472c-9c25-597c93d4b29b/Windows-KB890830-V1.7-DAN.exe|updates/common/windows-kb890830-v1.7-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/4/9/f49a9243-3c8b-45de-8d32-ec79f7e67e88/Windows-KB890830-V1.7-DEU.exe|updates/common/windows-kb890830-v1.7-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/b/3/b/b3b63fca-2d2b-4da6-9e45-652012e91eaa/Windows-KB890830-V1.7-ELL.exe|updates/common/windows-kb890830-v1.7-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.7-ENU.exe|updates/common/windows-kb890830-v1.7-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/6/7/667e46d0-f365-420f-a4a4-06b38a76c9df/Windows-KB890830-V1.7-ESN.exe|updates/common/windows-kb890830-v1.7-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/2/8/52886a6f-de2d-4c10-bdea-c28e1962fb01/Windows-KB890830-V1.7-FIN.exe|updates/common/windows-kb890830-v1.7-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/9/5/49553279-c265-4698-ae84-3bbfb692816b/Windows-KB890830-V1.7-FRA.exe|updates/common/windows-kb890830-v1.7-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/8/a/48a3aca1-0829-4df9-b8e0-7edde16f9476/Windows-KB890830-V1.7-HEB.exe|updates/common/windows-kb890830-v1.7-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/0/6/a06679fc-5cf4-43ce-8089-9a7d216a0364/Windows-KB890830-V1.7-HUN.exe|updates/common/windows-kb890830-v1.7-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/c/e/9ced6b83-4d63-4e1a-af2b-e3c43bc587cb/Windows-KB890830-V1.7-ITA.exe|updates/common/windows-kb890830-v1.7-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/0/7/e077a812-720f-46ef-81c3-4ac9350a4fc3/Windows-KB890830-V1.7-JPN.exe|updates/common/windows-kb890830-v1.7-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/4/3/643fa00a-9374-4b5d-84e5-a5a8f887c95e/Windows-KB890830-V1.7-KOR.exe|updates/common/windows-kb890830-v1.7-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/9/a/49a2969f-8406-4296-a2b0-f23b3f85e6b1/Windows-KB890830-V1.7-NLD.exe|updates/common/windows-kb890830-v1.7-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/f/0/df0c9e3e-76f3-4c4a-a8fc-52e9f26d4be3/Windows-KB890830-V1.7-NOR.exe|updates/common/windows-kb890830-v1.7-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/a/f/2af23822-e466-495b-89ec-b7858dfdb740/Windows-KB890830-V1.7-PLK.exe|updates/common/windows-kb890830-v1.7-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/9/0/f/90fc5fb1-13a1-4e9e-b8e0-958313fa6fd8/Windows-KB890830-V1.7-PTB.exe|updates/common/windows-kb890830-v1.7-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/e/3/7e3b16e2-7f75-4510-8c87-e92d18bd5fea/Windows-KB890830-V1.7-PTG.exe|updates/common/windows-kb890830-v1.7-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/8/9/1/891b30ee-2185-4ac9-ac0a-50512c6de0f9/Windows-KB890830-V1.7-RUS.exe|updates/common/windows-kb890830-v1.7-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/4/a/e4ab70be-a424-41d9-8261-1370c533e913/Windows-KB890830-V1.7-SVE.exe|updates/common/windows-kb890830-v1.7-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/6/a/e6a72381-a215-4cd1-ab8f-9403e1286e35/Windows-KB890830-V1.7-TRK.exe|updates/common/windows-kb890830-v1.7-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.7-%WINLANG%.exe /Q"
 
 :: Security Update for Windows XP (KB890175)
 :: Microsoft Security Bulletin MS05-001
