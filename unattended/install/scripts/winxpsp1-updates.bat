@@ -952,7 +952,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\Windows-KB890830-V1.7-%WINLANG%.exe
 :: URL|RUS|http://download.microsoft.com/download/d/2/4/d245d90d-8dd5-4263-829b-a5eb2038b414/IE-KB903235-x86-RUS.exe|updates/ie6sp1/ie-kb903235-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/4/0/7/4073606c-8433-4e88-b3d5-50f80f8b42c0/IE-KB903235-x86-SVE.exe|updates/ie6sp1/ie-kb903235-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/b/5/e/b5ec6f53-62f7-48e3-9eeb-e9f937bd6f4c/IE-KB903235-x86-TRK.exe|updates/ie6sp1/ie-kb903235-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE-KB903235-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE-KB903235-x86-%WINLANG%.exe /q /r:n"
 
 :: Security Update for Windows XP (KB901214)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=C5BCF2DB-ADCE-42BD-ABEE-1380F258158B>
@@ -1086,7 +1086,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB890859-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/3/b/b/3bb13129-7119-4956-bca9-250f5e279ea1/WindowsXP-KB893066-v2-x86-RUS.exe|updates/winxpsp2/windowsxp-kb893066-v2-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/a/a/9/aa9e3304-fbd4-4c6b-9e8c-400e299f7616/WindowsXP-KB893066-v2-x86-SVE.exe|updates/winxpsp2/windowsxp-kb893066-v2-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/d/8/4/d84fc963-0289-45fd-bf00-3dee32f4b4a6/WindowsXP-KB893066-v2-x86-TRK.exe|updates/winxpsp2/windowsxp-kb893066-v2-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\install\updates\winxpsp2\WindowsXP-KB893066-v2-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB893066-v2-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB888113)
 :: Microsoft Security Bulletin MS05-015
