@@ -817,32 +817,31 @@ if not exist %SystemRoot%\System32\Msjava.dll goto nojvm
 todo.pl ".reboot-on 194 %Z%\updates\common\msjavwu.exe /q /r:n"
 :nojvm
 
-:: Update Rollup 1 for Windows 2000 SP4
-:: <http://support.microsoft.com/kb/891861>
-:: <http://www.microsoft.com/technet/security/advisory/891861.mspx>
-:: URL|ARA|http://download.microsoft.com/download/2/1/d/21d7098a-1549-4424-9d00-2a3c61575400/Windows2000-KB891861-x86-ARA.EXE|updates/win2ksp4/windows2000-kb891861-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/6/b/7/6b7ed51b-c7b2-476f-997c-9806e42a843a/Windows2000-KB891861-x86-CSY.EXE|updates/win2ksp4/windows2000-kb891861-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/5/d/6/5d67588c-60f7-42d8-82bc-86a5eb95b68a/Windows2000-KB891861-x86-DAN.EXE|updates/win2ksp4/windows2000-kb891861-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/0/9/e/09e5bcc6-3179-4fda-a64c-b700309740ac/Windows2000-KB891861-x86-DEU.EXE|updates/win2ksp4/windows2000-kb891861-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/b/d/0/bd021b03-392b-489e-a709-d655fb944418/Windows2000-KB891861-x86-ELL.EXE|updates/win2ksp4/windows2000-kb891861-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/8/4/1/841340e3-6474-4a8a-81f7-9db8eed75f4d/Windows2000-KB891861-x86-ENU.EXE|updates/win2ksp4/windows2000-kb891861-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/f/6/d/f6df7739-5bdb-4881-934d-dc251953442a/Windows2000-KB891861-x86-ESN.EXE|updates/win2ksp4/windows2000-kb891861-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/8/8/b/88b64bb9-6daa-4922-9c4e-c24483ba25fb/Windows2000-KB891861-x86-FIN.EXE|updates/win2ksp4/windows2000-kb891861-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/e/2/6/e267dac3-cadb-483e-94f6-a701fc8051f5/Windows2000-KB891861-x86-FRA.EXE|updates/win2ksp4/windows2000-kb891861-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/0/0/2/00279fa3-8aed-4925-b756-231ec147f9b7/Windows2000-KB891861-x86-HEB.EXE|updates/win2ksp4/windows2000-kb891861-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/b/f/7/bf7235d1-25e5-427a-be83-25b6988deab8/Windows2000-KB891861-x86-HUN.EXE|updates/win2ksp4/windows2000-kb891861-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/a/f/0/af0c39c0-70c0-4d83-aa17-62b0b1069f7b/Windows2000-KB891861-x86-ITA.EXE|updates/win2ksp4/windows2000-kb891861-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/9/b/3/9b30920c-c2d4-45ac-a82d-5c5ab2108408/Windows2000-KB891861-x86-JPN.EXE|updates/win2ksp4/windows2000-kb891861-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/c/e/a/cea5f2ab-6c3a-4936-a902-eca294133636/Windows2000-KB891861-x86-KOR.EXE|updates/win2ksp4/windows2000-kb891861-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/f/8/e/f8e3b409-062c-40e2-9d3d-09d85e648dc9/Windows2000-KB891861-x86-NLD.EXE|updates/win2ksp4/windows2000-kb891861-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/c/d/b/cdbf4ed8-6d97-4bb2-9964-0bd74ce4de1b/Windows2000-KB891861-x86-NOR.EXE|updates/win2ksp4/windows2000-kb891861-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/f/1/5/f156e15a-4871-40a2-9af0-9e12f444941a/Windows2000-KB891861-x86-PLK.EXE|updates/win2ksp4/windows2000-kb891861-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/5/1/9/519c8e8e-36a9-4790-934d-fa5df560090f/Windows2000-KB891861-x86-PTB.EXE|updates/win2ksp4/windows2000-kb891861-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/5/1/9/5198e451-b70a-4e85-83e7-8e25439332c4/Windows2000-KB891861-x86-PTG.EXE|updates/win2ksp4/windows2000-kb891861-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/1/b/4/1b4a9a07-9c12-4496-9961-030b0fe1169f/Windows2000-KB891861-x86-RUS.EXE|updates/win2ksp4/windows2000-kb891861-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/b/3/4/b34df96b-3d13-4ff6-824c-ceb9dc821078/Windows2000-KB891861-x86-SVE.EXE|updates/win2ksp4/windows2000-kb891861-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/e/e/8/ee86956a-6fed-4334-9c64-474ede7d2bcf/Windows2000-KB891861-x86-TRK.EXE|updates/win2ksp4/windows2000-kb891861-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB891861-x86-%WINLANG%.EXE /passive /n /norestart"
+:: Update Rollup 1 for Windows 2000 SP4 (KB891861)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=B54730CF-8850-4531-B52B-BF28B324C662>
+:: URL|ARA|http://download.microsoft.com/download/a/6/4/a647b711-1518-4a45-afe6-b3963adfbc59/Windows2000-KB891861-v2-x86-ARA.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/0/6/d/06d39b3e-b391-4870-9b65-e6b665ac33b5/Windows2000-KB891861-v2-x86-CSY.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/2/9/e/29e61e38-f31f-451c-bc6c-05a0a4f8a653/Windows2000-KB891861-v2-x86-DAN.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/6/a/3/6a358d3e-f38d-4376-a2bc-3dbf5a1411a9/Windows2000-KB891861-v2-x86-DEU.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/6/8/56864b85-c9b0-4234-a60b-46e3202e2f6f/Windows2000-KB891861-v2-x86-ELL.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/7/b/27b1d1a3-0299-4336-b88a-22b9f09817e2/Windows2000-KB891861-v2-x86-ENU.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/d/b/cdbf9256-d5da-4521-8ab8-6cfd94b44d1e/Windows2000-KB891861-v2-x86-ESN.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/1/d/4/1d482243-890e-4fba-93b1-e6f61d964a24/Windows2000-KB891861-v2-x86-FIN.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/d/e/f/def6eb0a-fc08-4cb8-a00d-7c4442ce4629/Windows2000-KB891861-v2-x86-FRA.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/c/1/9/c19d9d52-6b4f-4960-aa02-cf0e41ee7862/Windows2000-KB891861-v2-x86-HEB.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/e/8/7e8c18b2-b787-4739-8ef4-1fd6b4568454/Windows2000-KB891861-v2-x86-HUN.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/a/0/ba069a77-1a63-4a2f-82a1-fed8ef05b94c/Windows2000-KB891861-v2-x86-ITA.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/7/6/6/766502ed-965b-4b8b-a06c-67b3774be8d8/Windows2000-KB891861-v2-x86-JPN.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/1/1/8/118f78e0-a8e2-45bc-b23a-970dd36d6c53/Windows2000-KB891861-v2-x86-KOR.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/8/d/d8d77707-cf5e-4516-9b0e-fd7ec7873c3b/Windows2000-KB891861-v2-x86-NLD.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/b/d/7/bd7c71fb-571e-4010-9bd8-0358c18e4b83/Windows2000-KB891861-v2-x86-NOR.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/1/3/f/13feeade-df79-4331-9725-4bf5ccc84a26/Windows2000-KB891861-v2-x86-PLK.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/1/a/8/1a80a9ef-d2ec-4919-ab40-2e9f4e46271d/Windows2000-KB891861-v2-x86-PTB.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/c/b/5/cb594aef-4d5f-46ff-8e56-206937d4a679/Windows2000-KB891861-v2-x86-PTG.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/b/b/f/bbf1d83d-23a2-42ce-a33a-6f4cb8944508/Windows2000-KB891861-v2-x86-RUS.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/0/b/80b5081c-79fe-48b8-9a39-f105f270e32e/Windows2000-KB891861-v2-x86-SVE.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/d/9/6d9e2c02-e403-4171-b58b-84cf581cb597/Windows2000-KB891861-v2-x86-TRK.EXE|updates/win2ksp4/windows2000-kb891861-v2-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB891861-v2-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Install IE6 First
 todo.pl ie6.bat
