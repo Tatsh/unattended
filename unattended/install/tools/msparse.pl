@@ -5,29 +5,29 @@
 #
 use strict;
 my %lang=(
-	ara => 'ar', # Arabic
-	csy => 'cs', # Czech
-	dan => 'da', # Danish
-	nld => 'nl', # Dutch
-	enu => 'en', # English
-	fin => 'fi', # Finnish
-	fra => 'fr', # French
-	deu => 'de', # German
-	ell => 'el', # Greek
-	heb => 'he', # Hebrew
-	hun => 'hu', # Hungarian
-	ita => 'it', # Italian
-	jpn => 'ja', # Japanese
-	kor => 'ko', # Korean
-	nor => 'no', # Norwegian
-	plk => 'pl', # Polish
-	ptb => 'pt-br', # Portuguese (Brazilian)
-	ptg => 'pt-pt', # Portuguese (Portugal)
-	rus => 'ru', # Russian
-	esn => 'es', # Spanish
-	sve => 'sv', # Swedish
-	trk => 'tr', # Turkish
-	);
+        ara => 'ar', # Arabic
+        csy => 'cs', # Czech
+        dan => 'da', # Danish
+        nld => 'nl', # Dutch
+        enu => 'en', # English
+        fin => 'fi', # Finnish
+        fra => 'fr', # French
+        deu => 'de', # German
+        ell => 'el', # Greek
+        heb => 'he', # Hebrew
+        hun => 'hu', # Hungarian
+        ita => 'it', # Italian
+        jpn => 'ja', # Japanese
+        kor => 'ko', # Korean
+        nor => 'no', # Norwegian
+        plk => 'pl', # Polish
+        ptb => 'pt-br', # Portuguese (Brazilian)
+        ptg => 'pt-pt', # Portuguese (Portugal)
+        rus => 'ru', # Russian
+        esn => 'es', # Spanish
+        sve => 'sv', # Swedish
+        trk => 'tr', # Turkish
+        );
 #%lang=(enu => 'en');
 
 @ARGV == 2 || die "Usage: msparse.pl [microsoft family download url] [local download directory]\n\ne.g. msparse.pl \"http://www.microsoft.com/downloads/details.aspx?FamilyId=AC1141D2-6CE1-403E-832B-0574ADB0C296&displaylang=en\" updates/winxpsp1\n";
@@ -64,11 +64,11 @@ foreach my $k (keys (%lang)) {
 
         if (/\<a href=[\"\']([^\"\']*-client-[^\"\']*)[\"\']\>/i) {
             my $dl=$1;
-	    if ($dl =~/.*?;u=(.*)/) {
-	    	$dl=$1;
-		$dl=~s#%2f#/#g;
-		$dl=~s#%3a#:#g;
-	    }
+            if ($dl =~/.*?;u=(.*)/) {
+                $dl=$1;
+                $dl=~s#%2f#/#g;
+                $dl=~s#%3a#:#g;
+            }
             my @a=split(/\//,$dl);
             if ($a[$#a] =~ /$k/i) {
                 $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
@@ -83,7 +83,7 @@ foreach my $k (keys (%lang)) {
             }
         }
 
-        if (/if \(useDlWindow\(\)\) \{window.open\([\"\']([^\"\']*)[\"\']/) {
+        if (/if \((?:g_IsIE|useDlWindow\(\))\) \{window.open\([\"\']([^\"\']*)[\"\']/) {
             my $dl=$1;
             my @a=split(/\//,$dl);
             if ($a[$#a] =~ /$k/i) {
