@@ -4,30 +4,30 @@ busybox=busybox-1.00
 convert-asn1=Convert-ASN1-0.19
 dbd-mysql=DBD-mysql-2.9006
 dbi=DBI-1.48
-dmidecode=dmidecode-2.6
+dmidecode=dmidecode-2.7
 dosemu=dosemu-1.2.2
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.37
+e2fsprogs=e2fsprogs-1.38
 expat=expat-1.95.8
 glibc=glibc-2.3.5
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.11.10
+linux=linux-2.6.13.2
 module-init-tools=module-init-tools-3.1
-mysql=mysql-4.1.11
-nano=nano-1.2.4
+mysql=mysql-4.1.14
+nano=nano-1.2.5
 ncurses=ncurses-5.4
-parted=parted-1.6.22
+parted=parted-1.6.23
 pciutils=pciutils-2.1.11
 pcmcia-cs=pcmcia-cs-3.2.8
-perl=perl-5.8.6
+perl=perl-5.8.7
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.33
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20031210
-samba=samba-3.0.14a
+samba=samba-3.0.20
 wireless_tools=wireless_tools.27
 zlib=zlib-1.2.3
 
@@ -621,7 +621,7 @@ $(perl-xml-xpath)/Makefile: stage1/opt/perl/bin/perl stage1/lib/libexpat.so
 	&& eval `$(perlrun) -V:archlib`                                 \
 	&& { [ -n "$$archlib" ] || exit 37; }                           \
 	&& $(perlrun) Makefile.PL 					\
-	PERL_ARCHLIB=$(cwd)/stage1/opt/perl/lib/5.8.6/i586-linux-thread-multi/ \
+	PERL_ARCHLIB=$(cwd)/stage1/opt/perl/lib/5.8.7/i586-linux-thread-multi/ \
 	DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)			\
 	[ -e $@ ]
 
