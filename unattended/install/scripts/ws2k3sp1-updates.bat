@@ -12,6 +12,136 @@
 
 :: Critical Updates
 
+:: Security Update for Windows Server 2003 (KB905414)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=143B0289-6E60-4918-A46C-B0BE2131C7AF>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/3/5/0/350ed5cc-bb51-4e3b-8400-51e653c6c803/WindowsServer2003-KB905414-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/6/9/8/6989d096-1fe5-4753-be03-2f2f3dc69b04/WindowsServer2003-KB905414-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/a/a/f/aafc557e-fa0d-4eb7-9a87-7bf9fc474563/WindowsServer2003-KB905414-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/d/e/cdec76ca-4e13-4d83-b313-9109fdebad36/WindowsServer2003-KB905414-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/0/c/a/0caded1e-91f8-4d84-a8bb-981d584914f8/WindowsServer2003-KB905414-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/9/0/4/90422890-95a1-4c52-b65f-c7f30f26d936/WindowsServer2003-KB905414-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/a/8/4a8bf7e0-b593-4298-b096-aa460c0528c8/WindowsServer2003-KB905414-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/9/4/e946004a-de55-4e63-8c1f-698f862946c5/WindowsServer2003-KB905414-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/3/8/83850a8b-e2dd-412d-8c77-e7ab44b68481/WindowsServer2003-KB905414-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/5/a/5/5a58e69c-cae1-4ac3-a3b0-bca4132bb192/WindowsServer2003-KB905414-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/2/5/7/257a50be-7608-42f0-add8-4426c5ee4dac/WindowsServer2003-KB905414-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/e/b/3/eb3de83d-b250-478a-84d5-57c20328332f/WindowsServer2003-KB905414-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/7/b/77b082e7-9b83-4f8e-904a-7dccf1ce43c6/WindowsServer2003-KB905414-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/e/8/ee8638d3-35f4-4909-96ea-e54e47c70802/WindowsServer2003-KB905414-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/a/6/1a6072fd-6ba9-4ca7-9b5f-8ee6adadfaa7/WindowsServer2003-KB905414-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/a/3/7/a375cda6-d631-44a9-953e-8450f34c019a/WindowsServer2003-KB905414-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb905414-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB905414-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB902400)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=CA202CCC-792E-4462-9A2F-A20D1F8607F7>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/2/f/e/2fe4c3cf-99c7-4c71-8e0e-2b1c43d7cde4/WindowsServer2003-KB902400-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/4/c/9/4c92d077-9850-487a-bc81-ab805f6f5570/WindowsServer2003-KB902400-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/d/0/3/d034e2c6-163d-42c7-a995-c9ef4abc090b/WindowsServer2003-KB902400-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/7/5/2756b833-7398-415c-adab-b70b458fdc31/WindowsServer2003-KB902400-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/1/e/1/1e1c30fc-33e0-4503-a989-083cbc258746/WindowsServer2003-KB902400-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/9/a/c/9ac452f2-25f9-41e1-9d26-de576e8ffdd5/WindowsServer2003-KB902400-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/c/f/5/cf56148a-676b-405e-9a27-ee21e6ffefc6/WindowsServer2003-KB902400-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/d/3/0/d30cb86c-48ee-49fa-ab47-982ff022896f/WindowsServer2003-KB902400-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/6/f/96f630b8-4a79-4357-ad64-9a0f2335333a/WindowsServer2003-KB902400-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/3/1/0/3105094d-1f59-4a2a-a05e-4072ed3598b6/WindowsServer2003-KB902400-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/a/8/7/a8799503-2006-4a37-9baf-ea9f4253fe56/WindowsServer2003-KB902400-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/e/9/c/e9c9017f-838e-44b7-82d5-2cfc3f50b79e/WindowsServer2003-KB902400-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/d/1/5d13dd0d-7c89-4965-aadc-806c20dc0774/WindowsServer2003-KB902400-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/8/f/4/8f4a0e6a-3817-4fe3-9d90-00e3533ed488/WindowsServer2003-KB902400-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/8/0/880b9aa2-3773-458e-a877-8c2c321d13e6/WindowsServer2003-KB902400-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/c/8/0/c803c10e-ce0f-471d-828b-f44faba28923/WindowsServer2003-KB902400-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb902400-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB902400-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB901017)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=1BC06799-B9F5-416F-8965-DC0E07A24A29>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/4/1/f/41f1ed46-b238-42d0-803a-3a438ca19670/WindowsServer2003-KB901017-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/2/d/5/2d5011e1-eb18-46ac-b372-6938ed43a58c/WindowsServer2003-KB901017-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/5/6/1/56107946-eac3-4287-a93e-dcc7d6a822b8/WindowsServer2003-KB901017-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/8/8/d8855088-29d1-4114-917d-ce6cf04d47fb/WindowsServer2003-KB901017-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/f/d/e/fded5e7a-05fd-4454-96bf-1aafa1bd695a/WindowsServer2003-KB901017-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/2/b/7/2b762768-1be6-4296-8de4-0fca5652e888/WindowsServer2003-KB901017-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/7/a/5/7a5eaf27-8a28-4f88-99b3-fa6801236a08/WindowsServer2003-KB901017-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/7/e/57e9023d-2f94-4744-865d-04e9c7367459/WindowsServer2003-KB901017-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/4/4/044cffe5-e292-4164-a56e-802d3fd7792f/WindowsServer2003-KB901017-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/7/5/07507fc8-1a35-4e3e-b16a-cce38300b132/WindowsServer2003-KB901017-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/0/c/3/0c38b3db-ab71-43e8-a947-ae948fdd320f/WindowsServer2003-KB901017-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/7/b/c/7bcd81e1-5a26-4fb2-b125-1f9616d8b5ff/WindowsServer2003-KB901017-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/2/3/8/2387687e-d2f2-45f9-b081-61b4ddb5cbd7/WindowsServer2003-KB901017-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/9/2/1/921b4d72-be72-45c8-9f13-a94085ff7550/WindowsServer2003-KB901017-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/9/d/8/9d852f5a-bb0d-4c38-8d7e-ccfc2ec463ab/WindowsServer2003-KB901017-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/9/a/39a8e1f9-3369-48fe-97d8-00fa83260a9a/WindowsServer2003-KB901017-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb901017-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB901017-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB900725)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=1A4FCFDE-E549-4078-A180-076A23CB8BB7>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/0/0/f/00f5d808-1b85-47d1-b384-6cd60ab0514b/WindowsServer2003-KB900725-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/5/a/6/5a60a2a0-b30a-44fe-95a4-845c6dc239a3/WindowsServer2003-KB900725-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/d/7/c/d7cc3a05-11cc-40b9-9857-f8c04ed8229b/WindowsServer2003-KB900725-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/9/0/a/90a0a21d-cadf-4f10-8c67-a06caac0699b/WindowsServer2003-KB900725-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/8/f/3/8f34f4c9-ae83-4899-970f-06bd152bc1bb/WindowsServer2003-KB900725-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/2/b/1/2b18d41d-108d-49f2-99fe-fcb7ac80e4a2/WindowsServer2003-KB900725-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/a/8/da8cd4c2-730c-477d-8dc0-010c5ead18fd/WindowsServer2003-KB900725-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/c/6/0c62f27e-03f7-4b47-9728-0210fd86d20d/WindowsServer2003-KB900725-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/b/0/9/b093ef1c-eb1b-4b5d-a83e-7ae18bfb39d8/WindowsServer2003-KB900725-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/d/3/ad3d923e-8e48-40c8-b9c4-801a43c08632/WindowsServer2003-KB900725-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/a/8/a/a8a2e4f5-5fc3-4dc6-8a24-4f53fb68ebfa/WindowsServer2003-KB900725-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/3/7/c/37c5b124-149e-4c60-ae2d-53597f58576c/WindowsServer2003-KB900725-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/a/e/5aed4e22-52fb-43f0-8500-a413b2747561/WindowsServer2003-KB900725-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/4/e/b/4eb57625-7c97-4eae-99ab-3c2feebfaa19/WindowsServer2003-KB900725-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/9/5/3/95336907-e4cb-4370-82dc-c1686d80c23b/WindowsServer2003-KB900725-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/1/a/31a8f986-7953-47be-8095-04d04747344f/WindowsServer2003-KB900725-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb900725-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB900725-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB899589)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8AB86BA3-54CD-44D7-8016-DE6E3ED51021>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/4/c/8/4c852bc8-d454-4a6d-a521-36b2261fc949/WindowsServer2003-KB899589-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/f/f/2/ff264121-35f9-4e30-a599-4a95d38daeb5/WindowsServer2003-KB899589-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/2/3/2/232bad47-9428-40ea-8281-9d6640574050/WindowsServer2003-KB899589-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/9/3/e/93eba6b8-e795-4d79-adeb-c2d3517030bd/WindowsServer2003-KB899589-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/f/e/e/fee5de78-5924-4719-bcc2-acdc912e494c/WindowsServer2003-KB899589-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/3/3/1/33164ff5-9924-45a1-af60-84edcc8463b0/WindowsServer2003-KB899589-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/2/9/a/29a6674a-0d29-494f-a856-ad03b53ffbb7/WindowsServer2003-KB899589-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/d/8/7/d87926f1-16b9-4021-995b-d1d740a98043/WindowsServer2003-KB899589-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/9/e/09e8c79d-8f37-4fd2-b048-ccb7ab949007/WindowsServer2003-KB899589-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/b/1/db1f4fe3-920e-4bc1-99d8-621d86ede967/WindowsServer2003-KB899589-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/b/1/f/b1f12ea3-e590-4fe1-8b3a-a478832674b0/WindowsServer2003-KB899589-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/5/1/b51e6298-4682-4673-a8bb-0daf298828c9/WindowsServer2003-KB899589-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/0/6/806870b5-a748-4328-b992-3d52c1c1c670/WindowsServer2003-KB899589-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/2/8/528b2b98-a593-4585-8ae1-53a782d1f39c/WindowsServer2003-KB899589-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/8/e/88ea542f-26d6-476c-9893-672710f702cc/WindowsServer2003-KB899589-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/8/5/1/85128ad9-786b-45a9-8fb0-8332f1e3a713/WindowsServer2003-KB899589-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb899589-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB899589-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows Server 2003 (KB899588)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=6275D7B7-DAB1-47C8-8745-533EB471072C>
 :: No Download found for ARA.
@@ -168,31 +298,31 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB899587-x86-%WIN
 :: URL|TRK|http://download.microsoft.com/download/c/8/c/c8cdf114-2028-4458-a52a-030468c0bd8d/WindowsServer2003-KB896423-x86-trk.exe|updates/ws2k3sp1/windowsserver2003-kb896423-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB896423-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: MicrosoftR WindowsR Malicious Software Removal Tool (KB890830)
+:: Microsoft‚R Windows‚R Malicious Software Removal Tool (KB890830)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ARA|http://download.microsoft.com/download/a/5/6/a56dc75a-7cab-40d4-9cca-1ea3de8a582e/Windows-KB890830-V1.8-ARA.exe|updates/common/windows-kb890830-v1.8-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/a/f/0/af0e0397-90da-490c-88f6-78705c41ac0a/Windows-KB890830-V1.8-CSY.exe|updates/common/windows-kb890830-v1.8-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/1/b/61b5d2c9-c676-472c-9c25-597c93d4b29b/Windows-KB890830-V1.8-DAN.exe|updates/common/windows-kb890830-v1.8-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/f/4/9/f49a9243-3c8b-45de-8d32-ec79f7e67e88/Windows-KB890830-V1.8-DEU.exe|updates/common/windows-kb890830-v1.8-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/b/3/b/b3b63fca-2d2b-4da6-9e45-652012e91eaa/Windows-KB890830-V1.8-ELL.exe|updates/common/windows-kb890830-v1.8-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.8-ENU.exe|updates/common/windows-kb890830-v1.8-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/6/7/667e46d0-f365-420f-a4a4-06b38a76c9df/Windows-KB890830-V1.8-ESN.exe|updates/common/windows-kb890830-v1.8-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/5/2/8/52886a6f-de2d-4c10-bdea-c28e1962fb01/Windows-KB890830-V1.8-FIN.exe|updates/common/windows-kb890830-v1.8-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/4/9/5/49553279-c265-4698-ae84-3bbfb692816b/Windows-KB890830-V1.8-FRA.exe|updates/common/windows-kb890830-v1.8-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/8/a/48a3aca1-0829-4df9-b8e0-7edde16f9476/Windows-KB890830-V1.8-HEB.exe|updates/common/windows-kb890830-v1.8-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/a/0/6/a06679fc-5cf4-43ce-8089-9a7d216a0364/Windows-KB890830-V1.8-HUN.exe|updates/common/windows-kb890830-v1.8-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/9/c/e/9ced6b83-4d63-4e1a-af2b-e3c43bc587cb/Windows-KB890830-V1.8-ITA.exe|updates/common/windows-kb890830-v1.8-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/e/0/7/e077a812-720f-46ef-81c3-4ac9350a4fc3/Windows-KB890830-V1.8-JPN.exe|updates/common/windows-kb890830-v1.8-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/6/4/3/643fa00a-9374-4b5d-84e5-a5a8f887c95e/Windows-KB890830-V1.8-KOR.exe|updates/common/windows-kb890830-v1.8-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/4/9/a/49a2969f-8406-4296-a2b0-f23b3f85e6b1/Windows-KB890830-V1.8-NLD.exe|updates/common/windows-kb890830-v1.8-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/d/f/0/df0c9e3e-76f3-4c4a-a8fc-52e9f26d4be3/Windows-KB890830-V1.8-NOR.exe|updates/common/windows-kb890830-v1.8-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/2/a/f/2af23822-e466-495b-89ec-b7858dfdb740/Windows-KB890830-V1.8-PLK.exe|updates/common/windows-kb890830-v1.8-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/0/f/90fc5fb1-13a1-4e9e-b8e0-958313fa6fd8/Windows-KB890830-V1.8-PTB.exe|updates/common/windows-kb890830-v1.8-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/e/3/7e3b16e2-7f75-4510-8c87-e92d18bd5fea/Windows-KB890830-V1.8-PTG.exe|updates/common/windows-kb890830-v1.8-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/8/9/1/891b30ee-2185-4ac9-ac0a-50512c6de0f9/Windows-KB890830-V1.8-RUS.exe|updates/common/windows-kb890830-v1.8-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/e/4/a/e4ab70be-a424-41d9-8261-1370c533e913/Windows-KB890830-V1.8-SVE.exe|updates/common/windows-kb890830-v1.8-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/e/6/a/e6a72381-a215-4cd1-ab8f-9403e1286e35/Windows-KB890830-V1.8-TRK.exe|updates/common/windows-kb890830-v1.8-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.8-%WINLANG%.exe /Q"
+:: URL|ARA|http://download.microsoft.com/download/a/5/6/a56dc75a-7cab-40d4-9cca-1ea3de8a582e/Windows-KB890830-V1.9-ARA.exe|updates/common/windows-kb890830-v1.9-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/f/0/af0e0397-90da-490c-88f6-78705c41ac0a/Windows-KB890830-V1.9-CSY.exe|updates/common/windows-kb890830-v1.9-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/6/1/b/61b5d2c9-c676-472c-9c25-597c93d4b29b/Windows-KB890830-V1.9-DAN.exe|updates/common/windows-kb890830-v1.9-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/4/9/f49a9243-3c8b-45de-8d32-ec79f7e67e88/Windows-KB890830-V1.9-DEU.exe|updates/common/windows-kb890830-v1.9-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/b/3/b/b3b63fca-2d2b-4da6-9e45-652012e91eaa/Windows-KB890830-V1.9-ELL.exe|updates/common/windows-kb890830-v1.9-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.9-ENU.exe|updates/common/windows-kb890830-v1.9-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/6/7/667e46d0-f365-420f-a4a4-06b38a76c9df/Windows-KB890830-V1.9-ESN.exe|updates/common/windows-kb890830-v1.9-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/2/8/52886a6f-de2d-4c10-bdea-c28e1962fb01/Windows-KB890830-V1.9-FIN.exe|updates/common/windows-kb890830-v1.9-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/9/5/49553279-c265-4698-ae84-3bbfb692816b/Windows-KB890830-V1.9-FRA.exe|updates/common/windows-kb890830-v1.9-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/8/a/48a3aca1-0829-4df9-b8e0-7edde16f9476/Windows-KB890830-V1.9-HEB.exe|updates/common/windows-kb890830-v1.9-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/0/6/a06679fc-5cf4-43ce-8089-9a7d216a0364/Windows-KB890830-V1.9-HUN.exe|updates/common/windows-kb890830-v1.9-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/c/e/9ced6b83-4d63-4e1a-af2b-e3c43bc587cb/Windows-KB890830-V1.9-ITA.exe|updates/common/windows-kb890830-v1.9-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/0/7/e077a812-720f-46ef-81c3-4ac9350a4fc3/Windows-KB890830-V1.9-JPN.exe|updates/common/windows-kb890830-v1.9-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/4/3/643fa00a-9374-4b5d-84e5-a5a8f887c95e/Windows-KB890830-V1.9-KOR.exe|updates/common/windows-kb890830-v1.9-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/9/a/49a2969f-8406-4296-a2b0-f23b3f85e6b1/Windows-KB890830-V1.9-NLD.exe|updates/common/windows-kb890830-v1.9-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/f/0/df0c9e3e-76f3-4c4a-a8fc-52e9f26d4be3/Windows-KB890830-V1.9-NOR.exe|updates/common/windows-kb890830-v1.9-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/a/f/2af23822-e466-495b-89ec-b7858dfdb740/Windows-KB890830-V1.9-PLK.exe|updates/common/windows-kb890830-v1.9-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/9/0/f/90fc5fb1-13a1-4e9e-b8e0-958313fa6fd8/Windows-KB890830-V1.9-PTB.exe|updates/common/windows-kb890830-v1.9-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/e/3/7e3b16e2-7f75-4510-8c87-e92d18bd5fea/Windows-KB890830-V1.9-PTG.exe|updates/common/windows-kb890830-v1.9-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/8/9/1/891b30ee-2185-4ac9-ac0a-50512c6de0f9/Windows-KB890830-V1.9-RUS.exe|updates/common/windows-kb890830-v1.9-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/4/a/e4ab70be-a424-41d9-8261-1370c533e913/Windows-KB890830-V1.9-SVE.exe|updates/common/windows-kb890830-v1.9-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/6/a/e6a72381-a215-4cd1-ab8f-9403e1286e35/Windows-KB890830-V1.9-TRK.exe|updates/common/windows-kb890830-v1.9-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.9-%WINLANG%.exe /Q"
 
 :: Security Update for JView Profiler (KB903235)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=F368E231-9918-4881-9F17-60312F82183F>
