@@ -12,6 +12,32 @@
 
 :: Critical Updates
 
+:: Security Update for Windows Server 2003 (KB896424)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=CEE3DD3B-3C20-47A9-8BBD-1EA2FBB4AF96>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/9/b/1/9b16fea2-e658-44c7-a435-0d718dc2e12f/WindowsServer2003-KB896424-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/5/b/0/5b0e8feb-9bc2-41e9-b506-45455128175b/WindowsServer2003-KB896424-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/9/a/a/9aa267d0-1592-4ba8-8069-7fe62b55e004/WindowsServer2003-KB896424-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/0/0/d00af82a-f4c1-4606-a6ef-9e422d6a525f/WindowsServer2003-KB896424-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/a/e/4/ae46c20c-ac04-470b-ab5a-238baa561c2d/WindowsServer2003-KB896424-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/3/c/2/3c2ef3ee-81c8-4ebb-bec7-b7d6a1903d10/WindowsServer2003-KB896424-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/1/e/01e5b627-44e4-4a53-a2cc-0bc258d380e7/WindowsServer2003-KB896424-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/3/8/0384af1d-890c-407c-b4a8-1e98559f71e0/WindowsServer2003-KB896424-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/d/8/5d87dbac-6a13-4667-86f6-5db702867827/WindowsServer2003-KB896424-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/4/e/f4e95809-7d86-45cb-8d98-80e5038f7a92/WindowsServer2003-KB896424-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/5/b/5/5b54e592-e41b-4a21-9308-19e3c51c1a38/WindowsServer2003-KB896424-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/4/4/3/44340b64-517d-45be-82a6-e9cd11d857b9/WindowsServer2003-KB896424-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/b/3/fb315cce-500c-4657-8354-22515984e0ed/WindowsServer2003-KB896424-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/d/a/0/da0b2fae-5d65-4f41-9499-2a2d5ab6e48f/WindowsServer2003-KB896424-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/e/7/7e7f7e73-924d-4ca1-bbd6-8035dcd0a6b4/WindowsServer2003-KB896424-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/3/0/5306c181-f525-4507-9d9a-6365cae3b0b6/WindowsServer2003-KB896424-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb896424-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB896424-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows Server 2003 (KB905414)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=143B0289-6E60-4918-A46C-B0BE2131C7AF>
 :: No Download found for ARA.
@@ -298,31 +324,31 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB899587-x86-%WIN
 :: URL|TRK|http://download.microsoft.com/download/c/8/c/c8cdf114-2028-4458-a52a-030468c0bd8d/WindowsServer2003-KB896423-x86-trk.exe|updates/ws2k3sp1/windowsserver2003-kb896423-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB896423-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Microsoft‚R Windows‚R Malicious Software Removal Tool (KB890830)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ARA|http://download.microsoft.com/download/a/5/6/a56dc75a-7cab-40d4-9cca-1ea3de8a582e/Windows-KB890830-V1.9-ARA.exe|updates/common/windows-kb890830-v1.9-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/a/f/0/af0e0397-90da-490c-88f6-78705c41ac0a/Windows-KB890830-V1.9-CSY.exe|updates/common/windows-kb890830-v1.9-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/1/b/61b5d2c9-c676-472c-9c25-597c93d4b29b/Windows-KB890830-V1.9-DAN.exe|updates/common/windows-kb890830-v1.9-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/f/4/9/f49a9243-3c8b-45de-8d32-ec79f7e67e88/Windows-KB890830-V1.9-DEU.exe|updates/common/windows-kb890830-v1.9-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/b/3/b/b3b63fca-2d2b-4da6-9e45-652012e91eaa/Windows-KB890830-V1.9-ELL.exe|updates/common/windows-kb890830-v1.9-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.9-ENU.exe|updates/common/windows-kb890830-v1.9-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/6/7/667e46d0-f365-420f-a4a4-06b38a76c9df/Windows-KB890830-V1.9-ESN.exe|updates/common/windows-kb890830-v1.9-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/5/2/8/52886a6f-de2d-4c10-bdea-c28e1962fb01/Windows-KB890830-V1.9-FIN.exe|updates/common/windows-kb890830-v1.9-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/4/9/5/49553279-c265-4698-ae84-3bbfb692816b/Windows-KB890830-V1.9-FRA.exe|updates/common/windows-kb890830-v1.9-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/8/a/48a3aca1-0829-4df9-b8e0-7edde16f9476/Windows-KB890830-V1.9-HEB.exe|updates/common/windows-kb890830-v1.9-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/a/0/6/a06679fc-5cf4-43ce-8089-9a7d216a0364/Windows-KB890830-V1.9-HUN.exe|updates/common/windows-kb890830-v1.9-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/9/c/e/9ced6b83-4d63-4e1a-af2b-e3c43bc587cb/Windows-KB890830-V1.9-ITA.exe|updates/common/windows-kb890830-v1.9-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/e/0/7/e077a812-720f-46ef-81c3-4ac9350a4fc3/Windows-KB890830-V1.9-JPN.exe|updates/common/windows-kb890830-v1.9-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/6/4/3/643fa00a-9374-4b5d-84e5-a5a8f887c95e/Windows-KB890830-V1.9-KOR.exe|updates/common/windows-kb890830-v1.9-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/4/9/a/49a2969f-8406-4296-a2b0-f23b3f85e6b1/Windows-KB890830-V1.9-NLD.exe|updates/common/windows-kb890830-v1.9-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/d/f/0/df0c9e3e-76f3-4c4a-a8fc-52e9f26d4be3/Windows-KB890830-V1.9-NOR.exe|updates/common/windows-kb890830-v1.9-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/2/a/f/2af23822-e466-495b-89ec-b7858dfdb740/Windows-KB890830-V1.9-PLK.exe|updates/common/windows-kb890830-v1.9-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/0/f/90fc5fb1-13a1-4e9e-b8e0-958313fa6fd8/Windows-KB890830-V1.9-PTB.exe|updates/common/windows-kb890830-v1.9-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/e/3/7e3b16e2-7f75-4510-8c87-e92d18bd5fea/Windows-KB890830-V1.9-PTG.exe|updates/common/windows-kb890830-v1.9-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/8/9/1/891b30ee-2185-4ac9-ac0a-50512c6de0f9/Windows-KB890830-V1.9-RUS.exe|updates/common/windows-kb890830-v1.9-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/e/4/a/e4ab70be-a424-41d9-8261-1370c533e913/Windows-KB890830-V1.9-SVE.exe|updates/common/windows-kb890830-v1.9-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/e/6/a/e6a72381-a215-4cd1-ab8f-9403e1286e35/Windows-KB890830-V1.9-TRK.exe|updates/common/windows-kb890830-v1.9-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.9-%WINLANG%.exe /Q"
+:: MicrosoftÂR WindowsÂR Malicious Software Removal Tool (KB890830)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
+:: URL|ARA|http://download.microsoft.com/download/a/5/6/a56dc75a-7cab-40d4-9cca-1ea3de8a582e/Windows-KB890830-V1.10-ARA.exe|updates/common/windows-kb890830-v1.10-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/f/0/af0e0397-90da-490c-88f6-78705c41ac0a/Windows-KB890830-V1.10-CSY.exe|updates/common/windows-kb890830-v1.10-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/6/1/b/61b5d2c9-c676-472c-9c25-597c93d4b29b/Windows-KB890830-V1.10-DAN.exe|updates/common/windows-kb890830-v1.10-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/4/9/f49a9243-3c8b-45de-8d32-ec79f7e67e88/Windows-KB890830-V1.10-DEU.exe|updates/common/windows-kb890830-v1.10-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/b/3/b/b3b63fca-2d2b-4da6-9e45-652012e91eaa/Windows-KB890830-V1.10-ELL.exe|updates/common/windows-kb890830-v1.10-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.10-ENU.exe|updates/common/windows-kb890830-v1.10-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/6/7/667e46d0-f365-420f-a4a4-06b38a76c9df/Windows-KB890830-V1.10-ESN.exe|updates/common/windows-kb890830-v1.10-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/2/8/52886a6f-de2d-4c10-bdea-c28e1962fb01/Windows-KB890830-V1.10-FIN.exe|updates/common/windows-kb890830-v1.10-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/9/5/49553279-c265-4698-ae84-3bbfb692816b/Windows-KB890830-V1.10-FRA.exe|updates/common/windows-kb890830-v1.10-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/8/a/48a3aca1-0829-4df9-b8e0-7edde16f9476/Windows-KB890830-V1.10-HEB.exe|updates/common/windows-kb890830-v1.10-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/0/6/a06679fc-5cf4-43ce-8089-9a7d216a0364/Windows-KB890830-V1.10-HUN.exe|updates/common/windows-kb890830-v1.10-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/c/e/9ced6b83-4d63-4e1a-af2b-e3c43bc587cb/Windows-KB890830-V1.10-ITA.exe|updates/common/windows-kb890830-v1.10-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/0/7/e077a812-720f-46ef-81c3-4ac9350a4fc3/Windows-KB890830-V1.10-JPN.exe|updates/common/windows-kb890830-v1.10-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/4/3/643fa00a-9374-4b5d-84e5-a5a8f887c95e/Windows-KB890830-V1.10-KOR.exe|updates/common/windows-kb890830-v1.10-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/9/a/49a2969f-8406-4296-a2b0-f23b3f85e6b1/Windows-KB890830-V1.10-NLD.exe|updates/common/windows-kb890830-v1.10-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/f/0/df0c9e3e-76f3-4c4a-a8fc-52e9f26d4be3/Windows-KB890830-V1.10-NOR.exe|updates/common/windows-kb890830-v1.10-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/a/f/2af23822-e466-495b-89ec-b7858dfdb740/Windows-KB890830-V1.10-PLK.exe|updates/common/windows-kb890830-v1.10-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/9/0/f/90fc5fb1-13a1-4e9e-b8e0-958313fa6fd8/Windows-KB890830-V1.10-PTB.exe|updates/common/windows-kb890830-v1.10-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/e/3/7e3b16e2-7f75-4510-8c87-e92d18bd5fea/Windows-KB890830-V1.10-PTG.exe|updates/common/windows-kb890830-v1.10-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/8/9/1/891b30ee-2185-4ac9-ac0a-50512c6de0f9/Windows-KB890830-V1.10-RUS.exe|updates/common/windows-kb890830-v1.10-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/4/a/e4ab70be-a424-41d9-8261-1370c533e913/Windows-KB890830-V1.10-SVE.exe|updates/common/windows-kb890830-v1.10-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/6/a/e6a72381-a215-4cd1-ab8f-9403e1286e35/Windows-KB890830-V1.10-TRK.exe|updates/common/windows-kb890830-v1.10-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.10-%WINLANG%.exe /Q"
 
 :: Security Update for JView Profiler (KB903235)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=F368E231-9918-4881-9F17-60312F82183F>
