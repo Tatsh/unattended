@@ -1,4 +1,4 @@
-bash=bash-3.0
+bash=bash-3.1
 busybox=busybox-1.00
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.19
@@ -14,7 +14,7 @@ glibc=glibc-2.3.5
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 linux=linux-2.6.13.2
-module-init-tools=module-init-tools-3.1
+module-init-tools=module-init-tools-3.2.2
 mysql=mysql-4.1.14
 nano=nano-1.2.5
 ncurses=ncurses-5.4
@@ -27,7 +27,7 @@ perl-ldap=perl-ldap-0.33
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20031210
-samba=samba-3.0.20
+samba=samba-3.0.21a
 wireless_tools=wireless_tools.27
 zlib=zlib-1.2.3
 
