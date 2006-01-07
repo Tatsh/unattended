@@ -458,33 +458,6 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB819639-x86-%WIN
 :: URL|TRK|http://download.microsoft.com/download/e/a/0/ea09f0a9-901d-499b-868d-0ebef90cc329/MPsetup.exe|packages/mediaplayer9/trk/mpsetup.exe
 todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\%WINLANG%\MPSetup.EXE /Q /R:N /C:\"setup_wm.exe /DisallowSystemRestore /NoPID /SetWMPAsDefault /Q /R:N\""
 
-:: Windows Messenger 5.0
-:: <http://support.microsoft.com/?kbid=835971>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=77c3799f-6388-4193-8002-be55584c1ac1>
-:: URL|ARA|http://download.microsoft.com/download/c/7/9/c79ff519-c13f-40e7-ab58-6af498b54274/install.exe|packages/windowsmessenger/ara/install.exe
-:: URL|CSY|http://download.microsoft.com/download/3/c/f/3cfef546-47dc-419a-affa-9c1c4e311573/install.exe|packages/windowsmessenger/csy/install.exe
-:: URL|DAN|http://download.microsoft.com/download/7/8/8/788ae395-a347-4150-b560-be11794278ae/install.exe|packages/windowsmessenger/dan/install.exe
-:: URL|DEU|http://download.microsoft.com/download/4/7/a/47a642d4-5b93-4809-a7b1-517a5bb74dad/install.exe|packages/windowsmessenger/deu/install.exe
-:: URL|ELL|http://download.microsoft.com/download/d/c/0/dc091d0b-721e-4b8d-8196-552b4bf9076d/install.exe|packages/windowsmessenger/ell/install.exe
-:: URL|ENU|http://download.microsoft.com/download/4/6/c/46cfaca6-0441-49eb-b997-7432730d44df/install.exe|packages/windowsmessenger/enu/install.exe
-:: URL|ESN|http://download.microsoft.com/download/e/0/c/e0c04728-fc98-4d34-83d6-2bb70aea798a/install.exe|packages/windowsmessenger/esn/install.exe
-:: URL|FIN|http://download.microsoft.com/download/c/2/c/c2c91b79-5b2f-4011-9891-fc8b7d96ee83/install.exe|packages/windowsmessenger/fin/install.exe
-:: URL|FRA|http://download.microsoft.com/download/1/6/a/16aa5681-b844-4b6c-ade3-8b53d2b7aed5/install.exe|packages/windowsmessenger/fra/install.exe
-:: URL|HEB|http://download.microsoft.com/download/2/6/c/26cbb659-0762-4506-bae6-2900326a04ec/install.exe|packages/windowsmessenger/heb/install.exe
-:: URL|HUN|http://download.microsoft.com/download/a/3/2/a323c6df-5064-4d3b-a7ad-b503be422f50/install.exe|packages/windowsmessenger/hun/install.exe
-:: URL|ITA|http://download.microsoft.com/download/c/1/5/c153f63d-fd6e-4dd1-8e75-1449ed02eeda/install.exe|packages/windowsmessenger/ita/install.exe
-:: URL|JPN|http://download.microsoft.com/download/8/2/5/825dda8d-faf8-4b66-acd0-49f4b3b90725/install.exe|packages/windowsmessenger/jpn/install.exe
-:: URL|KOR|http://download.microsoft.com/download/d/2/c/d2c44973-bb15-4c67-8b99-653ee79fec52/install.exe|packages/windowsmessenger/kor/install.exe
-:: URL|NLD|http://download.microsoft.com/download/f/9/0/f9026035-5095-42b7-ae8a-b6c8da8a5fa7/install.exe|packages/windowsmessenger/nld/install.exe
-:: URL|NOR|http://download.microsoft.com/download/8/5/8/8585d12d-d9c0-4d08-9b47-822025d5d76b/install.exe|packages/windowsmessenger/nor/install.exe
-:: URL|PLK|http://download.microsoft.com/download/4/7/c/47c644b8-a30b-48df-bfa7-4a49cbe3f7ce/install.exe|packages/windowsmessenger/plk/install.exe
-:: URL|PTB|http://download.microsoft.com/download/e/0/e/e0e1eb16-96fa-4bf9-b1e7-20717086a181/install.exe|packages/windowsmessenger/ptb/install.exe
-:: URL|PTG|http://download.microsoft.com/download/3/e/1/3e1c2030-9345-4d30-9213-8bdd486e94e9/install.exe|packages/windowsmessenger/ptg/install.exe
-:: URL|RUS|http://download.microsoft.com/download/4/8/c/48c49ec7-9b10-4908-9ee7-14d01d835d47/install.exe|packages/windowsmessenger/rus/install.exe
-:: URL|SVE|http://download.microsoft.com/download/d/5/2/d5273d01-d95c-4251-b9bc-7e85ae067bbb/install.exe|packages/windowsmessenger/sve/install.exe
-:: URL|TRK|http://download.microsoft.com/download/4/f/8/4f8b507e-73d6-481f-9107-d226c702ebf7/install.exe|packages/windowsmessenger/trk/install.exe
-todo.pl ".reboot-on 194 %Z%\packages\windowsmessenger\%WINLANG%\install.exe /q /r:n"
-
 :: DirectX 9.0c Redistributable for Software Developers - Multilingual
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=9226a611-62fe-4f61-aba1-914185249413>
 :: (Requires .NET to be installed first for managed DX)
