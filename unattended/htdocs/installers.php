@@ -8,7 +8,7 @@ $page['next']  = 'apps.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: installers.php,v 1.3 2006-01-17 17:22:32 ekot Exp $';
+$cvs           = '$Id: installers.php,v 1.4 2006-01-17 19:37:56 ekot Exp $';
 $sections[]    = array ('Introduction', 'intro');
 $sections[]    = array ('General information', 'general');
 $sections[]    = array ('If all else fails...', 'fail');
@@ -221,8 +221,9 @@ $content       = <<<EOT
         &quot;Inno&quot;.</p>
 
       <p>The switches for Inno Setup are fully documented in the  <code>ISetup.hlp</code>
-        file in the Inno distribution.  The GnuWin32 project has put a <a  rel="external"
-        href="http://gnuwin32.sourceforge.net/setup.html">copy on the Web</a>.</p>
+        file in the Inno distribution. 
+        <a href="InnoSetup_Switches_ExitCodes.html">Here</a>, is an html version. Thanks to
+        <a href="http://sourceforge.net/users/lawmay/">Lawrence Mayer</a> for it.</p>
 
       <p>In our experience, the <code>/silent</code> switch is usually sufficient  for  a
         basic unattended installation.  But to be completely  sure,  we  recommend  <code
