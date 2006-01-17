@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html40/strict.dtd">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<STYLE type="text/css">
+DIV[class="Part"] {
+ text-align:left;
+ margin-bottom:0px;
+ margin-top:0px;
+ margin-right:0px;
+ text-indent:0px;
+ direction:ltr
+}
+H4 {
+ text-align:left;
+ margin-bottom:10px;
+ margin-top:0px;
+ margin-right:0px;
+ text-indent:0px;
+ direction:ltr
+}
+SPAN {
+ font-family:'Arial','Arial',sans-serif;
+ font-size:12pt;
+ font-style:normal;
+ font-weight:bold
+}
+P {
+ text-align:left;
+ margin-bottom:10px;
+ margin-top:0px;
+ margin-right:63px;
+ text-indent:0px;
+ direction:ltr;
+ line-height:15px
+}
+DIV[class="Sect"] {
+ text-align:left;
+ margin-bottom:0px;
+ margin-top:0px;
+ margin-right:0px;
+ text-indent:0px;
+ direction:ltr
+}
+H5 {
+ text-align:left;
+ margin-bottom:0px;
+ margin-top:0px;
+ margin-right:0px;
+ text-indent:0px;
+ direction:ltr;
+ line-height:15px
+}
+</STYLE>
+</HEAD>
+<BODY bgcolor=white text=black link=blue vlink=purple alink=fushia >
+<DIV class="Part"
+><H4>
+<SPAN style="color:#000000"
+>Setup Command Line Parameters </SPAN
+></H4>
+<P>
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>The Setup program accepts optional command line parameters. These can be useful to system administrators, and to other programs calling the Setup program. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/SP-</SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Disables the </SPAN
+><SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>This will install... Do you wish to continue?</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> prompt at the beginning of Setup. Of course, this will have no effect if the </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>DisableStartupPromp</SPAN
+><SPAN style=" font-weight:normal"
+>t </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>[Setup]</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> section directive was set to </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>yes</SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/SILENT, /VERYSILENT </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Instructs Setup to be silent or very silent. When Setup is silent the wizard and the background window are not displayed but the installation progress window is. When a setup is very silent this installation progress window is not displayed. Everything else is normal so for example error messages during installation are displayed and the startup prompt is (if you haven't disabled it with DisableStartupPrompt or the '/SP-' command line option explained above) </SPAN
+></P>
+<P style="margin-right:8px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>If a restart is necessary and the '/NORESTART' command isn't used (see below) and Setup is silent, it will display a </SPAN
+><SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>Reboot now?</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> message box. If it's very silent it will reboot without asking. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/SUPPRESSMSGBOXES </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Instructs Setup to suppress message boxes. Only has an effect when combined with '/SILENT' and '/VERYSILENT'. </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>The default response in situations where there's a choice is: <BR>-Yes in a 'Keep newer file?' situation. <BR>-No in a 'File exists, confirm overwrite.' situation. <BR>-Abort in Abort/Retry situations. <BR>-Cancel in Retry/Cancel situations. <BR>-Yes (=continue) in a <BR>DiskSpaceWarning/DirExists/DirDoesntExist/NoUninstallWarning/ExitSetupMessage/ConfirmUninstall <BR>situation. <BR>-Yes (=restart) in a FinishedRestartMessage/UninstalledAndNeedsRestart situation. <BR></SPAN
+></P>
+<P style="margin-right:22px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>5 message boxes are not suppressible</SPAN
+><SPAN style=" font-weight:normal"
+>: <BR></SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>-The About Setup message box</SPAN
+><SPAN style=" font-weight:normal"
+>. <BR></SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>-The Exit Setup? message box</SPAN
+><SPAN style=" font-weight:normal"
+>. <BR></SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>-The FileNotInDir2 message box displayed when Setup requires a new disk to be inserted and th</SPAN
+><SPAN style=" font-weight:normal"
+>e <BR></SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>disk was not found</SPAN
+><SPAN style=" font-weight:normal"
+>. <BR></SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>-Any (error) message box displayed before Setup (or Uninstall) could read the command lin</SPAN
+><SPAN style=" font-weight:normal"
+>e <BR></SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>parameters</SPAN
+><SPAN style=" font-weight:normal"
+>. <BR></SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>-Any message box displayed by [Code] support function </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>MsgBox</SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/LOG </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Causes Setup to create a log file in the user's TEMP directory detailing file installation and [Run] actions taken during the installation process. This can be a helpful debugging aid. For example, if you suspect a file isn't being replaced when you believe it should be (or vice versa), the log file will tell you if the file was really skipped, and why. </SPAN
+></P>
+<P style="margin-right:13px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>The log file is created with a unique name based on the current date. (It will not overwrite or append to existing files.) </SPAN
+></P>
+<P style="margin-right:29px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>The information contained in the log file is technical in nature and therefore not intended to be understandable by end users. Nor is it designed to be machine-parseable; the format of the file is subject to change without notice. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/LOG=&quot;</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>filename</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>&quot; </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Same as /LOG, except it allows you to specify a fixed path/filename to use for the log file. If a file with the specified name already exists it will be overwritten. If the file cannot be created, Setup will abort with an error message. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/NOCANCEL </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Prevents the user from cancelling during the installation process, by disabling the Cancel button and ignoring clicks on the close button. Useful along with '/SILENT' or '/VERYSILENT'. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/NORESTART </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Instructs Setup not to reboot even if it's necessary. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/RESTARTEXITCODE=</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>exit code </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Specifies the custom exit code that Setup is to return when a restart is needed. Useful along with '/NORESTART'. Also see </SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#008000; text-decoration:underline"
+>Setup Exit Codes</SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/LOADINF=&quot;</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>filename</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>&quot; </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Instructs Setup to load the settings from the specified file after having checked the command line. This file can be prepared using the '/SAVEINF=' command as explained below. </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Don't forget to use quotes if the filename contains spaces. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/SAVEINF=&quot;</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>filename</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>&quot; </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Instructs Setup to save installation settings to the specified file. </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Don't forget to use quotes if the filename contains spaces. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/LANG=</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>language </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Specifies the language to use. </SPAN
+><SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>language</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> specifies the internal name of the language as specified in a [Languages] section entry. </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>When a valid /LANG parameter is used, the </SPAN
+><SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>Select Language</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> dialog will be suppressed. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/DIR=&quot;</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>x</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>:\</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>dirname</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>&quot; </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Overrides the default directory name displayed on the </SPAN
+><SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>Select Destination Location</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> wizard page. A fully qualified pathname must be specified. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/GROUP=&quot;</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>folder name</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>&quot; </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Overrides the default folder name displayed on the </SPAN
+><SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>Select Start Menu Folder</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> wizard page. If the </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>[Setup]</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> section directive </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>DisableProgramGroupPage</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> was set to </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>yes</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>, this command line parameter is ignored. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/NOICONS </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Instructs Setup to initially check the </SPAN
+><SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>Don't create any icons</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> check box on the </SPAN
+><SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>Select Start Menu Folder</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> wizard page. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/COMPONENTS=&quot;</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>comma separated list of component names</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>&quot; </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Overrides the default components settings. Using this command line parameter causes Setup to automatically select a custom type. </SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/TASKS=&quot;</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>comma separated list of task names</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>&quot; </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Specifies a list of </SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#008000; text-decoration:underline"
+>tasks</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> that should be initially selected or deselected. To deselect a task, prefix its name with a &quot;!&quot; character. </SPAN
+></P>
+<P style="margin-right:29px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Only the specified tasks (and their children) will be selected; the rest will be deselected. Use the /MERGETASKS parameter instead if you want to keep the default set of tasks and only select/deselect some of them. </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>Examples: </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Deselect all tasks, then select the &quot;desktopicon&quot; and &quot;fileassoc&quot; tasks: <BR>/TASKS=&quot;desktopicon,fileassoc&quot; <BR></SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Deselect all tasks, then select a parent task item, but exclude one of its children: <BR>/TASKS=&quot;parent,!parent\child&quot; <BR></SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/MERGETASKS=&quot;</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>comma separated list of task names</SPAN
+><SPAN style="font-size:10pt; color:#000000"
+>&quot; </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Like the /TASKS parameter, except the specified tasks will be merged with the set of tasks that would have otherwise been selected by default. </SPAN
+></P>
+<P style="margin-right:4px; margin-left:23px; line-height:16px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>If </SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#008000"
+>UsePreviousTasks</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> is set to </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>yes</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>, the specified tasks will be selected/deselected after any previous tasks are restored. </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000"
+>Examples: </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Keep the default set of selected tasks, but additionally select the &quot;desktopicon&quot; and &quot;fileassoc&quot; tasks: /MERGETASKS=&quot;desktopicon,fileassoc&quot; </SPAN
+></P>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Keep the default set of selected tasks, but deselect the &quot;desktopicon&quot; task: <BR>/MERGETASKS=&quot;!desktopicon&quot; <BR></SPAN
+></P>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/PASSWORD=</SPAN
+><SPAN style="font-size:10pt; font-style:italic; color:#000000"
+>password </SPAN
+></H5>
+<P style="margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Specifies the password to use. If the </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>[Setup]</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> section directive </SPAN
+><SPAN style="font-family:'serif', 'Courier New', serif; font-size:10pt; font-weight:normal; color:#000000"
+>Password</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> was not set, this command line parameter is ignored. </SPAN
+></P>
+<P style="margin-bottom:0px; margin-right:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>When an invalid password is specified, this command line parameter is also ignored. </SPAN
+></P>
+</DIV>
+</DIV>
+</DIV>
+</div>
+<h4 style="text-align: left; text-indent: 0px; direction: ltr; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">&nbsp;</h4>
+<h4 style="text-align: left; text-indent: 0px; direction: ltr; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">
+<span style="color:#000000">Setup Exit Codes </span></h4>
+<p style="text-align: left; text-indent: 0px; direction: ltr; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">
+<span style="font-size:10pt; font-weight:normal; color:#000000">Beginning with 
+Inno Setup 3.0.3, the Setup program may return one of the following exit codes:
+</span></p>
+<p style="text-indent: -34px; text-align: left; direction: ltr; margin-left: 35px; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">
+<span style="font-size:10pt; color:#000000">0&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size:10pt; font-weight:normal; color:#000000">Setup was 
+successfully run to completion. </span></p>
+<p style="text-indent: -34px; text-align: left; direction: ltr; margin-left: 35px; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">
+<span style="font-size:10pt; color:#000000">1&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size:10pt; font-weight:normal; color:#000000">Setup failed to 
+initialize. </span></p>
+<p style="text-indent: -34px; line-height: 15px; text-align: left; direction: ltr; margin-left: 35px; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">
+<span style="font-size:10pt; color:#000000">2&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size:10pt; font-weight:normal; color:#000000">The user clicked 
+Cancel in the wizard before the actual installation started, or chose &quot;No&quot; on 
+the opening &quot;This will install...&quot; message box. </span></p>
+<p style="text-indent: -34px; line-height: 15px; text-align: left; direction: ltr; margin-left: 35px; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">
+<span style="font-size:10pt; color:#000000">3&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size:10pt; font-weight:normal; color:#000000">A fatal error 
+occurred while preparing to move to the next installation phase (for example, 
+from displaying the pre-installation wizard pages to the actual installation 
+process). This should never happen except under the most unusual of 
+circumstances, such as running out of memory or Windows resources. </span></p>
+<p style="text-indent: -34px; line-height: 15px; text-align: left; direction: ltr; margin-left: 35px; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">
+<span style="font-size:10pt; color:#000000">4&nbsp;&nbsp;&nbsp; </span>
+<span style="font-size:10pt; font-weight:normal; color:#000000">A fatal error 
+occurred during the actual installation process. </span></p>
+<p style="line-height: 15px; text-align: left; text-indent: 0px; direction: ltr; margin-left: 36px; margin-right: 0px; margin-top: 0px; margin-bottom: 9px">
+<span style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000">
+Note:</span><span style="font-size:10pt; font-weight:normal; color:#000000"> 
+Errors that cause an Abort-Retry-Ignore box to be displayed are not fatal 
+errors. If the user chooses </span>
+<span style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000">
+Abort</span><span style="font-size:10pt; font-weight:normal; color:#000000"> at 
+such a message box, exit code 5 will be returned. </span></p>
+<p style="text-indent: -34px; line-height: 15px; text-align: left; direction: ltr; margin-left: 35px; margin-right: 78px; margin-top: 0px; margin-bottom: 9px">
+<b><font size="2" face="Arial">5&nbsp;&nbsp;&nbsp; </font></b>
+<span style="font-size:10pt; font-weight:normal; color:#000000">The user clicked 
+Cancel during the actual installation process, or chose </span>
+<span style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000">
+Abort</span><span style="font-size:10pt; font-weight:normal; color:#000000"> at 
+an Abort-Retry-Ignore box. </span></p>
+<p style="text-indent: -34px; line-height: 15px; text-align: left; direction: ltr; margin-left: 35px; margin-right: 5px; margin-top: 0px; margin-bottom: 9px">
+<b><font size="2" face="Arial">6&nbsp;&nbsp;&nbsp; </font></b>
+<span style="font-size:10pt; font-weight:normal; color:#000000">The Setup 
+process was forcefully terminated by the debugger (</span><span style="font-size:10pt; font-style:italic; font-weight:normal; color:#000000">Run 
+| Terminate</span><span style="font-size:10pt; font-weight:normal; color:#000000"> 
+was used in the IDE). </span></p>
+<p style="line-height: 15px; text-align: left; text-indent: 0px; direction: ltr; margin-right: 17px; margin-top: 0px; margin-bottom: 9px">
+<span style="font-size:10pt; font-weight:normal; color:#000000">Before returning 
+an exit code of 1, 3, or 4, an error message explaining the problem will 
+normally be displayed. </span></p>
+<p style="line-height: 15px; text-align: left; text-indent: 0px; direction: ltr; margin-right: 6px; margin-top: 0px; margin-bottom: 0px">
+<span style="font-size:10pt; font-weight:normal; color:#000000">Future versions 
+of Inno Setup may return additional exit codes, so applications checking the 
+exit code should be programmed to handle unexpected exit codes gracefully. Any 
+non-zero exit code indicates that Setup was not run to completion. </span></p>
+<DIV class="Part"
+><H4>
+&nbsp;</H4>
+	<H4>
+<SPAN style="color:#000000"
+>Uninstaller Command Line Parameters </SPAN
+></H4>
+<P>
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>The uninstaller program (unins???.exe) accepts optional command line parameters. These can be useful to system administrators, and to other programs calling the uninstaller program. </SPAN
+></P>
+</DIV>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/SILENT, /VERYSILENT </SPAN
+></H5>
+<P style="margin-bottom:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>When specified, the uninstaller will not ask the user for startup confirmation or display a message stating that uninstall is complete. Shared files that are no longer in use are deleted automatically without prompting. Any critical error messages will still be shown on the screen. When '/VERYSILENT' is specified, the uninstallation progress window is not displayed. </SPAN
+></P>
+<P style="margin-bottom:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>If a restart is necessary and the '/NORESTART' command isn't used (see below) and </SPAN
+></P>
+<P style="margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>'/VERYSILENT' is specified, the uninstaller will reboot without asking. </SPAN
+></P>
+</DIV>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/SUPPRESSMSGBOXES </SPAN
+></H5>
+<P style="margin-bottom:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Instructs the uninstaller to suppress message boxes. Only has an effect when combined with '/SILENT' and '/VERYSILENT'. See '/SUPPRESSMSGBOXES' under </SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#008000; text-decoration:underline"
+>Setup Command Line Parameters</SPAN
+><SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+> for more details. </SPAN
+></P><P></P>
+</DIV>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/LOG </SPAN
+></H5>
+<P style="margin-bottom:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Causes Uninstall to create a log file in the user's TEMP directory detailing file uninstallation and </SPAN
+></P>
+<P style="margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>[UninstallRun] actions taken during the uninstallation process. This can be a helpful debugging aid. </SPAN
+></P>
+<P style="margin-bottom:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>The log file is created with a unique name based on the current date. (It will not overwrite or append </SPAN
+></P>
+<P style="margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>to existing files.) Currently, it is not possible to customize the filename. </SPAN
+></P>
+<P style="margin-right:23px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>The information contained in the log file is technical in nature and therefore not intended to be understandable by end users. Nor is it designed to be machine-parseable; the format of the file is subject to change without notice. </SPAN
+></P>
+</DIV>
+<DIV class="Sect">
+<H5>
+<SPAN style="font-size:10pt; color:#000000"
+>/NORESTART </SPAN
+></H5>
+<P style="margin-bottom:0px; margin-left:24px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Instructs the uninstaller not to reboot even if it's necessary. </SPAN
+></P>
+</DIV>
+<H4>
+&nbsp;</H4>
+<H4>
+<SPAN style="color:#000000"
+>Uninstaller Exit Codes </SPAN
+></H4>
+<P>
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Beginning with Inno Setup 4.0.8, the uninstaller will return a non-zero exit code if the user cancels or a fatal error is encountered. Programs checking the exit code to detect failure should not check for a specific non-zero value; any non-zero exit code indicates that the uninstaller was not run to completion. </SPAN
+></P>
+<P style="margin-bottom:0px; margin-right:0px">
+<SPAN style="font-size:10pt; font-weight:normal; color:#000000"
+>Note that at the moment you get an exit code back from the uninstaller, some code related to uninstallation might still be running. Because Windows doesn't allow programs to delete their own EXEs, the uninstaller creates and spawns a copy of itself in the TEMP directory. This &quot;clone&quot; performs the actual uninstallation, and at the end, terminates the original uninstaller EXE (at which point you get an exit code back), deletes it, then displays the &quot;uninstall complete&quot; message box (if it hasn't been suppressed with /SILENT or /VERYSILENT). </SPAN
+></P>
+</BODY>
+</HTML>
