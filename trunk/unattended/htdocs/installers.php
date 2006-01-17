@@ -8,7 +8,7 @@ $page['next']  = 'apps.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: installers.php,v 1.2 2005-03-11 16:45:41 nrichthof Exp $';
+$cvs           = '$Id: installers.php,v 1.3 2006-01-17 17:22:32 ekot Exp $';
 $sections[]    = array ('Introduction', 'intro');
 $sections[]    = array ('General information', 'general');
 $sections[]    = array ('If all else fails...', 'fail');
@@ -45,13 +45,13 @@ $content       = <<<EOT
         there is something to tell.</p>
 
       <h2 id="msi">MSI packages</h2>
-      <p>Microsoft's own <a href="http://www.microsoft.com/windows2000/techinfo/howitworks/management/installer.asp"
+      <p>Microsoft's own <a href="http://msdn.microsoft.com/library/en-us/msi/setup/windows_installer_start_page.asp"
         rel="external">Windows Installer Service</a> is  the  nominal  standard,  and  if
         everybody used it, there would be  no  need  for  this  document.  Unfortunately,
         Microsoft invented it too late.</p>
 
       <p>The package files have a <code>.msi</code>  extension,  and  you manipulate them
-        using the <a href="http://www.microsoft.com/TechNet/prodtechnol/winxppro/proddocs/msiexec.asp"
+        using the <a href="http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/msiexec.mspx"
         rel="external"><code>msiexec</code></a> utility.</p>
 
       <p>For installation, use the <code>/i</code> and <code>/qb</code> switches. Use the
@@ -396,7 +396,7 @@ $content       = <<<EOT
         <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/7-zip.bat?view=auto">7-Zip</a></li>
         <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/acrobat-reader.bat?view=auto">Acrobat Reader 5.1</a></li>
         <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/perl.bat?view=auto">ActiveState Perl (ActivePerl)</a></li>
-        <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/adobe-reader.bat?view=auto">Adobe Reader 6.0</a></li>
+        <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/adobe-reader.bat?view=auto">Adobe Reader 7.0</a></li>
         <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/ie6.bat?view=auto">Microsoft Internet Explorer</a></li>
       </ul>
 
