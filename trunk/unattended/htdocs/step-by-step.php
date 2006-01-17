@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.3 2005-04-07 17:59:38 nrichthof Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.4 2006-01-17 19:35:52 ekot Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -48,7 +48,9 @@ $</pre>
       <h2 id="step3">Step 3: Configure DNS</h2>
       <p>Now please extend the configuration of your dns server.  The  Unattended  server
         must be reachable  with  the  name  &quot;ntinstall&quot;.  Please  configure  an
-        appropriate alias (CNAME).</p>
+        appropriate alias (CNAME). There may be problem when connecting to Windows 2000 or
+        Windows Server 2003-based computer using this alias. Please look at following 
+        <a href="http://support.microsoft.com/kb/281308" rel="external">MS article</a></p>
       <p>You will find plenty of documentation about this on the net.</p>
 
       <h2 id="step4">Step 4: Prepare the Unattended server</h2>
