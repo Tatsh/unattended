@@ -65,9 +65,12 @@ else {
     # Create a traditional shortcut.
     $shortcut_type = '.lnk';
     # By defaut, name the shortcut after the target.
-    my $target_name;
-    ($target_name, $target_dir, undef) = fileparse ($target, qr{\..*});
-    $shortcut_name = $target_name;
+    my ($target_name, $target_ext);
+    ($target_name, $target_dir, $target_ext) = fileparse ($target, qr{\..*});
+    
+    if ($target_ext =~ m/.*/i) {
+        $shortcut_name = $target_name . $target_ext;
+    }
 }
 
 if ($shortcut =~ /\\\z/ || -d $shortcut) {
@@ -75,9 +78,14 @@ if ($shortcut =~ /\\\z/ || -d $shortcut) {
     $shortcut_dir = $shortcut;
 }
 else {
+    my $shortcut_ext;
     # Treat shortcut as a full path.
-    ($shortcut_name, $shortcut_dir, undef)
+    ($shortcut_name, $shortcut_dir, $shortcut_ext)
         = fileparse ($shortcut, qr{\..*});
+    if ($shortcut_ext =~ m/.*/i) {
+        $shortcut_name = $shortcut_name . $shortcut_ext;
+    }
+
 }
 
 defined $shortcut_name
