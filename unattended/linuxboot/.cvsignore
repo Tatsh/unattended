@@ -32,3 +32,6 @@ linuxboot.iso
 pci.ids*
 dmidecode-*
 Convert-*
+XML-*
+expat-*
+zlib-*
