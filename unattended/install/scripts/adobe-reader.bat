@@ -34,8 +34,6 @@
 
 if not exist %Z%\packages\adobereader\AdbeRdr705_%WINLANG%_full.exe goto noadberdr
 
-todo.pl ".ignore-err 255 %Z%\scripts\all\adobe-reader.bat"
-
 ::--------------------------------------------------------------------------
 :: N.B. Edit this section for a correct selection of Adobe Reader Fonts
 ::--------------------------------------------------------------------------
@@ -61,12 +59,16 @@ todo.pl ".ignore-err 255 %Z%\scripts\all\adobe-reader.bat"
 :: End of Adobe Reader Fonts installation section
 ::--------------------------------------------------------------------------------
 
+if not exist %Z%\packages\adobereader\misc\Extended_language_pack.exe goto nolangpack
 :: Install Extended Language Support Fonts Package
 todo.pl "%Z%\packages\adobereader\misc\Extended_language_pack.exe /S /v/qb"
 
+:nolangpack
+if not exist %Z%\packages\adobereader\misc\Acrd705SD.exe goto nolangsupport
 :: Install Adobe Reader 7.0.5 Language Support
 todo.pl "%Z%\packages\adobereader\misc\Acrd705SD.exe /S /v/qb"
 
+:nolangsupport
 :: Stupid Adobe installer does not wait for msiexec to finish. So we
 :: extract everything to a temporary folder, install by hand, and
 :: delete the temporary folder.
