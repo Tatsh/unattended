@@ -5,10 +5,132 @@
 
 :: Extra Updates
 
+:: Microsoft‚R Windows‚R Malicious Software Removal Tool (KB890830)
+:: <http://support.microsoft.com/?kbid=890830>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.13.exe|updates/common/windows-kb890830-v1.13.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.13.exe /Q"
+
+:: Security Update for Windows Media Player 9 (KB911565)
+:: Microsoft Security Bulletin MS06-005
+:: "Vulnerability in Windows Media Player Could Allow Remote Code Execution (911565)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS06-005.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8F9EEF16-04F7-4DA8-A0EF-1797B52D0B4B>
+:: URL|ARA|http://download.microsoft.com/download/3/5/6/356343e4-8c7d-4e05-a473-23b44b75447b/WindowsMedia9-KB911565-x86-ARA.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/4/6/e/46ea8e2c-c8c7-4f4d-94bd-90be48a50a7d/WindowsMedia9-KB911565-x86-CSY.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/8/b/a8b84ed3-15d1-4fa5-8287-e5200cdf6292/WindowsMedia9-KB911565-x86-DAN.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/d/e/7/de73b741-1711-47c0-aef2-295a5d34b086/WindowsMedia9-KB911565-x86-DEU.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/1/5/5/155dcf04-4dcf-4d8c-992b-db5824d12f13/WindowsMedia9-KB911565-x86-ELL.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/e/e/c/eeca6f33-ddce-41f7-b2d1-ce2635369d29/WindowsMedia9-KB911565-x86-ENU.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/f/c/4fc87985-f55d-4e04-9759-145acac37271/WindowsMedia9-KB911565-x86-ESN.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/6/d/a/6da1a46a-b15f-415b-a4d5-14cc217396d3/WindowsMedia9-KB911565-x86-FIN.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/1/8/a185d009-2f63-450c-ba00-fd499b21b5cb/WindowsMedia9-KB911565-x86-FRA.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/a/1/8a10a511-5162-45a9-9f6b-143fb69d81ea/WindowsMedia9-KB911565-x86-HEB.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/8/5/4/85499c3c-5486-4b80-9337-0d3762d8c8ad/WindowsMedia9-KB911565-x86-HUN.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/2/e/02e95ebb-9222-417f-8c0c-df28437ebb36/WindowsMedia9-KB911565-x86-ITA.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/b/9/6/b96699ff-f24a-45ed-9f30-f08fa29ad182/WindowsMedia9-KB911565-x86-JPN.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/2/8/1/2817ee86-c3e1-4489-bd1f-a0525bb09279/WindowsMedia9-KB911565-x86-KOR.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/6/9/0/690e99b4-5190-4fa0-acc4-7c708f103eea/WindowsMedia9-KB911565-x86-NLD.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/3/f/7/3f727a8e-c7ae-4e46-8011-698fedcb3d36/WindowsMedia9-KB911565-x86-NOR.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/a/f/3/af3daa0e-c49f-44c0-9426-9443b0d9d89a/WindowsMedia9-KB911565-x86-PLK.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/d/2/e/d2ee249b-c527-47b7-8057-0cb802e2b77c/WindowsMedia9-KB911565-x86-PTB.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/b/0/5b0346de-83fa-47bf-96f7-284ed36dac00/WindowsMedia9-KB911565-x86-PTG.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/1/3/513c43a7-45d5-436a-bf98-0ef00938b53e/WindowsMedia9-KB911565-x86-RUS.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/1/d/71d63a60-d0f1-4d51-9b8f-a10f6c000ef2/WindowsMedia9-KB911565-x86-SVE.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/6/1/16159c15-4ad1-4ced-8d42-bd1b37dea8de/WindowsMedia9-KB911565-x86-TRK.exe|updates/mediaplayer9/windowsmedia9-kb911565-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB911565-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Media Player Plug-in (KB911564)
+:: Microsoft Security Bulletin MS06-006
+:: "Vulnerability in Windows Media Player Plug-in with Non-Microsoft Internet Browsers Could Allow Remote Code Execution (911564)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS06-006.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=CCDD3D35-BE5C-4C43-8FFA-BB8570A7321C>
+:: URL|ARA|http://download.microsoft.com/download/e/1/3/e13972d9-d2c2-4a6b-9422-61ad6cce7604/WindowsMedia-KB911564-x86-ARA.exe|updates/common/windowsmedia-kb911564-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/3/a/6/3a69aa71-fea5-42b5-a204-68afc7b356e1/WindowsMedia-KB911564-x86-CSY.exe|updates/common/windowsmedia-kb911564-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/c/4/0c4b63e8-cea6-4fe2-b981-64807d16fd2c/WindowsMedia-KB911564-x86-DAN.exe|updates/common/windowsmedia-kb911564-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/d/f/5/df5650e4-9181-48d4-a87d-4a2e9469f728/WindowsMedia-KB911564-x86-DEU.exe|updates/common/windowsmedia-kb911564-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/2/d/3/2d35580b-a5af-44ed-a9c1-71a2f76e1269/WindowsMedia-KB911564-x86-ELL.exe|updates/common/windowsmedia-kb911564-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/1/5/31545397-c828-49c6-a30f-65799d411ce1/WindowsMedia-KB911564-x86-ENU.exe|updates/common/windowsmedia-kb911564-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/0/7/3/07347fca-64de-4334-b27c-4ef1f841346c/WindowsMedia-KB911564-x86-ESN.exe|updates/common/windowsmedia-kb911564-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/a/3/f/a3f9db82-fac9-444e-9304-a90403347deb/WindowsMedia-KB911564-x86-FIN.exe|updates/common/windowsmedia-kb911564-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/2/1/7/2176c540-5fce-4270-9bbb-6e3c0352c322/WindowsMedia-KB911564-x86-FRA.exe|updates/common/windowsmedia-kb911564-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/e/3/3/e33db4af-1671-4b3c-b1b5-5087e073faef/WindowsMedia-KB911564-x86-HEB.exe|updates/common/windowsmedia-kb911564-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/c/4/1/c4184039-219d-430f-a3d5-986194a3b83e/WindowsMedia-KB911564-x86-HUN.exe|updates/common/windowsmedia-kb911564-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/2/f/b2f832a4-2525-49c3-b2d3-4cfae60de14a/WindowsMedia-KB911564-x86-ITA.exe|updates/common/windowsmedia-kb911564-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/d/5/2d55d5dd-3708-46ef-9933-76b48743510d/WindowsMedia-KB911564-x86-JPN.exe|updates/common/windowsmedia-kb911564-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/6/8/868a3497-1869-4658-b232-04187b1192de/WindowsMedia-KB911564-x86-KOR.exe|updates/common/windowsmedia-kb911564-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/8/5/4/854b4b42-c716-4144-8587-2b925bebbba0/WindowsMedia-KB911564-x86-NLD.exe|updates/common/windowsmedia-kb911564-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/4/2/0/420d5a06-7ada-40cf-b234-35555abf0583/WindowsMedia-KB911564-x86-NOR.exe|updates/common/windowsmedia-kb911564-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/c/0/9/c093487c-376d-4445-8871-b03afc884409/WindowsMedia-KB911564-x86-PLK.exe|updates/common/windowsmedia-kb911564-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/f/9/7/f97fde18-a838-447d-8f13-c4bc53644f90/WindowsMedia-KB911564-x86-PTB.exe|updates/common/windowsmedia-kb911564-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/9/8/7986d2a7-7f39-46be-8d5e-146aa3853a75/WindowsMedia-KB911564-x86-PTG.exe|updates/common/windowsmedia-kb911564-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/b/0/f/b0f65a05-a4b2-432a-8c16-212592127b66/WindowsMedia-KB911564-x86-RUS.exe|updates/common/windowsmedia-kb911564-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/5/4/1541ac62-ad7d-48e8-b33d-8cfb9c7bf7f5/WindowsMedia-KB911564-x86-SVE.exe|updates/common/windowsmedia-kb911564-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/f/9/5/f958b179-94a6-4828-940b-b704c233e784/WindowsMedia-KB911564-x86-TRK.exe|updates/common/windowsmedia-kb911564-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\WindowsMedia-KB911564-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: FIX: Updates for Windows Media Player 9
 :: <http://support.microsoft.com/kb/892313>
 :: URL|ALL|http://download.microsoft.com/download/8/c/b/8cb07a83-3b1c-4a95-a1c7-4e788c113829/windowsmedia9-kb892313-x86-intl.exe|updates/mediaplayer9/windowsmedia9-kb892313-x86-intl.exe
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb892313-x86-intl.exe /passive /n /norestart"
+
+:: Security Update for Windows 2000 (KB912919)
+:: Microsoft Security Bulletin MS06-001
+:: "Vulnerability in Graphics Rendering Engine Could Allow Remote Code Execution (912919)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-001.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AA9E27BD-CB9A-4EF1-92A3-00FFE7B2AC74>
+:: URL|ARA|http://download.microsoft.com/download/a/7/d/a7dfc3d5-c4b2-4796-b0f4-4d0206e12219/Windows2000-KB912919-x86-ARA.EXE|updates/win2ksp4/windows2000-kb912919-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/d/9/bd973f4c-fe19-44c9-9664-9183b0a6d18a/Windows2000-KB912919-x86-CSY.EXE|updates/win2ksp4/windows2000-kb912919-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/7/6/d/76d2d534-c6b7-4fa9-8934-f5e050992e54/Windows2000-KB912919-x86-DAN.EXE|updates/win2ksp4/windows2000-kb912919-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/d/5/bd579181-d9fc-4610-add0-b84a74b703dc/Windows2000-KB912919-x86-DEU.EXE|updates/win2ksp4/windows2000-kb912919-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/f/7/7/f77ba539-6232-4329-8b33-80e6653679c2/Windows2000-KB912919-x86-ELL.EXE|updates/win2ksp4/windows2000-kb912919-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/8/7/287925a9-ab55-4fa3-8601-1c3af9da654c/Windows2000-KB912919-x86-ENU.EXE|updates/win2ksp4/windows2000-kb912919-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/a/5/8/a58b612b-7914-4dbd-b3b2-8bec2d234620/Windows2000-KB912919-x86-ESN.EXE|updates/win2ksp4/windows2000-kb912919-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/2/7/8/27891580-888f-46fc-abc0-6424dab1b819/Windows2000-KB912919-x86-FIN.EXE|updates/win2ksp4/windows2000-kb912919-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/e/c/8/ec885561-3337-4154-98bd-537b15b72ff2/Windows2000-KB912919-x86-FRA.EXE|updates/win2ksp4/windows2000-kb912919-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/2/a/d/2ad06fee-4e1e-4377-bada-1ab3ab514445/Windows2000-KB912919-x86-HEB.EXE|updates/win2ksp4/windows2000-kb912919-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/5/4/6/546a0798-0f94-48c7-a678-1abaaa3d75d9/Windows2000-KB912919-x86-HUN.EXE|updates/win2ksp4/windows2000-kb912919-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/1/1/0116571b-e916-4258-93b9-0866aff39bfa/Windows2000-KB912919-x86-ITA.EXE|updates/win2ksp4/windows2000-kb912919-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/6/1/c/61c28581-65f7-4fa6-af45-7d79eb8c0b53/Windows2000-KB912919-x86-JPN.EXE|updates/win2ksp4/windows2000-kb912919-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/a/3/0/a301b0ca-de63-425c-8ce0-7ac87895a41f/Windows2000-KB912919-x86-KOR.EXE|updates/win2ksp4/windows2000-kb912919-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/b/5/1/b512d9d6-043c-4e27-8ea1-0cb330f1749c/Windows2000-KB912919-x86-NLD.EXE|updates/win2ksp4/windows2000-kb912919-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/f/a/9/fa931f35-f884-4352-aa90-2b36974f8a94/Windows2000-KB912919-x86-NOR.EXE|updates/win2ksp4/windows2000-kb912919-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/7/1/1/711bdfe5-dc80-43a9-8f97-4aa35213dddb/Windows2000-KB912919-x86-PLK.EXE|updates/win2ksp4/windows2000-kb912919-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/1/1/3/113c2b5c-9e30-488c-83a5-6ccdeb60b971/Windows2000-KB912919-x86-PTB.EXE|updates/win2ksp4/windows2000-kb912919-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/4/1/3/413403b3-a5bf-4a32-8f05-3717254464b5/Windows2000-KB912919-x86-PTG.EXE|updates/win2ksp4/windows2000-kb912919-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/d/9/9/d99273ea-17dc-4fe9-b989-c8ebd541c375/Windows2000-KB912919-x86-RUS.EXE|updates/win2ksp4/windows2000-kb912919-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/3/7/9/3798cfbb-bd86-4dec-b414-3bf4e1fbf1f3/Windows2000-KB912919-x86-SVE.EXE|updates/win2ksp4/windows2000-kb912919-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/7/2/6721ede3-11b4-4622-ae9d-5720a615d295/Windows2000-KB912919-x86-TRK.EXE|updates/win2ksp4/windows2000-kb912919-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB912919-x86-%WINLANG%.EXE /passive /n /norestart"
+
+:: Security Update for Windows 2000 (KB908519)
+:: Microsoft Security Bulletin MS06-002
+:: "Vulnerability in Embedded Web Fonts Could Allow Remote Code Execution (908519)"
+:: <http://www.microsoft.com/technet/security/bulletin/MS06-002.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=DC6C2FE8-3C81-4661-994B-4146775BF590>
+:: URL|ARA|http://download.microsoft.com/download/9/6/f/96f2fcd6-69b5-4eea-8216-a5fa4c6f038a/Windows2000-KB908519-x86-ARA.EXE|updates/win2ksp4/windows2000-kb908519-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/9/e/69e10f50-eaec-4de0-bc5b-b0b82b9ba671/Windows2000-KB908519-x86-CSY.EXE|updates/win2ksp4/windows2000-kb908519-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/6/f/6/6f6cc87f-96bc-48c0-9598-55d2775cddef/Windows2000-KB908519-x86-DAN.EXE|updates/win2ksp4/windows2000-kb908519-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/8/0/b80c58e8-f5fc-4e5c-8229-f3923e6b92ea/Windows2000-KB908519-x86-DEU.EXE|updates/win2ksp4/windows2000-kb908519-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/9/f/c/9fc7213d-773e-4a41-9ea6-e5584ba94a45/Windows2000-KB908519-x86-ELL.EXE|updates/win2ksp4/windows2000-kb908519-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/4/2/6/426603e1-0d9c-4f70-90a3-716e51ca302d/Windows2000-KB908519-x86-ENU.EXE|updates/win2ksp4/windows2000-kb908519-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/9/7/1/971518db-8a81-4690-ae26-ca8d362fa406/Windows2000-KB908519-x86-ESN.EXE|updates/win2ksp4/windows2000-kb908519-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/b/5/9/b5932e14-6b68-448b-9941-6375fc9e4b02/Windows2000-KB908519-x86-FIN.EXE|updates/win2ksp4/windows2000-kb908519-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/b/3/9/b3946ce6-eed8-45c1-8eed-27e4958deb7a/Windows2000-KB908519-x86-FRA.EXE|updates/win2ksp4/windows2000-kb908519-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/e/4/1/e41ee26a-e492-4a44-814c-303dcca9c5e7/Windows2000-KB908519-x86-HEB.EXE|updates/win2ksp4/windows2000-kb908519-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/8/d/3/8d35c1d4-86de-4933-a20a-724ac643b4fa/Windows2000-KB908519-x86-HUN.EXE|updates/win2ksp4/windows2000-kb908519-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/5/9/d59aed4d-b099-42da-becb-3e54540f9bdb/Windows2000-KB908519-x86-ITA.EXE|updates/win2ksp4/windows2000-kb908519-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/3/b/f/3bf89f2e-1110-4a87-864d-f2c6277d592b/Windows2000-KB908519-x86-JPN.EXE|updates/win2ksp4/windows2000-kb908519-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/a/d/7/ad72202a-68ee-49b9-990c-7624c15c7dac/Windows2000-KB908519-x86-KOR.EXE|updates/win2ksp4/windows2000-kb908519-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/8/8/4882d86e-f5b8-4e0c-a6bb-23dc33907324/Windows2000-KB908519-x86-NLD.EXE|updates/win2ksp4/windows2000-kb908519-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/9/c/9/9c944e79-d83e-4297-88e4-5950bf082bee/Windows2000-KB908519-x86-NOR.EXE|updates/win2ksp4/windows2000-kb908519-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/d/c/2dc72748-92df-4a67-bbe0-ff1ac34ad6a7/Windows2000-KB908519-x86-PLK.EXE|updates/win2ksp4/windows2000-kb908519-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/5/a/c/5ac02cf9-798d-475a-b5ad-238335922ae9/Windows2000-KB908519-x86-PTB.EXE|updates/win2ksp4/windows2000-kb908519-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/0/6/2/0623833c-cfce-42a4-b615-8224c6010fba/Windows2000-KB908519-x86-PTG.EXE|updates/win2ksp4/windows2000-kb908519-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/c/8/9/c89baa9b-1862-48cd-ba65-93ff090f1e4f/Windows2000-KB908519-x86-RUS.EXE|updates/win2ksp4/windows2000-kb908519-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/2/0/e20a6876-7f74-4520-9669-34c800b77f03/Windows2000-KB908519-x86-SVE.EXE|updates/win2ksp4/windows2000-kb908519-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/7/3/e73d184e-5749-46cc-af43-47734e410e20/Windows2000-KB908519-x86-TRK.EXE|updates/win2ksp4/windows2000-kb908519-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB908519-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Security Update for Windows 2000 (KB896424)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=F361FCCB-B273-47E7-BB15-BC9C27073446>
