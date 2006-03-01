@@ -27,7 +27,7 @@ perl-ldap=perl-ldap-0.33
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20031210
-samba=samba-3.0.21b
+samba=samba-3.0.21c
 wireless_tools=wireless_tools.27
 zlib=zlib-1.2.3
 
