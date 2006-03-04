@@ -1,31 +1,28 @@
 :: OPTIONAL: Install Thunderbird
 ::
-:: URL|CAT|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=ca-AD|packages/mozilla/thunderbird-15-cat.exe
-:: URL|CHT|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=zh-TW|packages/mozilla/thunderbird-15-cht.exe
-:: URL|CSY|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=cs-CZ|packages/mozilla/thunderbird-15-csy.exe
-:: URL|DAN|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=da-DK|packages/mozilla/thunderbird-15-dan.exe
-:: URL|DEU|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=de-DE|packages/mozilla/thunderbird-15-deu.exe
-:: URL|ELL|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=el-GR|packages/mozilla/thunderbird-15-ell.exe
-:: URL|ENG|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=en-GB|packages/mozilla/thunderbird-15-eng.exe
-:: URL|ENU|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=en-US|packages/mozilla/thunderbird-15-enu.exe
-:: URL|ESN|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=es-ES|packages/mozilla/thunderbird-15-esn.exe
-:: URL|ESS|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=es-AR|packages/mozilla/thunderbird-15-ess.exe
-:: URL|FIN|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=fi-FI|packages/mozilla/thunderbird-15-fin.exe
-:: URL|FRA|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=fr-FR|packages/mozilla/thunderbird-15-fra.exe
-:: URL|HEB|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=he-IL|packages/mozilla/thunderbird-15-heb.exe
-:: URL|HUN|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=hu-HU|packages/mozilla/thunderbird-15-hun.exe
-:: URL|ITA|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=it-IT|packages/mozilla/thunderbird-15-ita.exe
-:: URL|JPN|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=ja-JP|packages/mozilla/thunderbird-15-jpn.exe
-:: URL|KOR|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=ko-KR|packages/mozilla/thunderbird-15-kor.exe
-:: URL|NLD|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=nl-NL|packages/mozilla/thunderbird-15-nld.exe
-:: URL|PLK|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=pl-PL|packages/mozilla/thunderbird-15-plk.exe
-:: URL|PTB|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=pt-BR|packages/mozilla/thunderbird-15-ptb.exe
-:: URL|PTG|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=pt-PT|packages/mozilla/thunderbird-15-ptg.exe
-:: URL|ROM|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=ro-RO|packages/mozilla/thunderbird-15-rom.exe
-:: URL|RUS|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=ru-RU|packages/mozilla/thunderbird-15-rus.exe
-:: URL|SLV|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=sl-SI|packages/mozilla/thunderbird-15-slv.exe
-:: URL|SVE|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=sv-SE|packages/mozilla/thunderbird-15-sve.exe
-:: URL|TRK|http://download.mozilla.org/?product=thunderbird-1.5&os=win&lang=tr-TR|packages/mozilla/thunderbird-15-trk.exe
+:: URL|CAT|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/ca/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-cat.exe
+:: URL|CSY|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/cs/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-csy.exe
+:: URL|DAN|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/da/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-dan.exe
+:: URL|DEU|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/de/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-deu.exe
+:: URL|ELL|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/el/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-ell.exe
+:: URL|ENG|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/en-GB/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-eng.exe
+:: URL|ENU|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/en-US/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-enu.exe
+:: URL|ESN|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/es-ES/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-esn.exe
+:: URL|ESS|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/es-AR/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-ess.exe
+:: URL|FIN|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/fi/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-fin.exe
+:: URL|FRA|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/fr/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-fra.exe
+:: URL|HEB|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/he/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-heb.exe
+:: URL|HUN|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/hu/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-hun.exe
+:: URL|ITA|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/it/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-ita.exe
+:: URL|JPN|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/ja/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-jpn.exe
+:: URL|KOR|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/ko/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-kor.exe
+:: URL|NLD|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/nl/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-nld.exe
+:: URL|PLK|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/pl/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-plk.exe
+:: URL|PTB|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/pt-BR/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-ptb.exe
+:: URL|RUS|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/ru/Thunderbird%20Setup%201.5.exe/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-rus.exe
+:: URL|SLV|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/sl/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-slv.exe
+:: URL|SVE|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/sv-SE/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-sve.exe
+:: URL|TRK|http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/1.5/win32/tr/Thunderbird%20Setup%201.5.exe|packages/mozilla/thunderbird-15-trk.exe
 
 @echo off
 
