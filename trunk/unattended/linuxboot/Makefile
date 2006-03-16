@@ -3,8 +3,8 @@ busybox=busybox-1.00
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.19
 dbd-mysql=DBD-mysql-2.9006
-dbi=DBI-1.48
-dmidecode=dmidecode-2.7
+dbi=DBI-1.50
+dmidecode=dmidecode-2.8
 dosemu=dosemu-1.2.2
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.38
@@ -13,13 +13,13 @@ glibc=glibc-2.3.5
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.13.2
-module-init-tools=module-init-tools-3.2.2
-mysql=mysql-4.1.14
+linux=linux-2.6.15.6
+module-init-tools=module-init-tools-3.2
+mysql=mysql-4.1.18
 nano=nano-1.2.5
-ncurses=ncurses-5.4
-parted=parted-1.6.23
-pciutils=pciutils-2.1.11
+ncurses=ncurses-5.5
+parted=parted-1.6.25.1
+pciutils=pciutils-2.2.1
 pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.8.7
 # perl-ldap aka. Net::LDAP
