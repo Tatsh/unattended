@@ -151,6 +151,7 @@ todo.pl ".reboot-on 194 %Z%\packages\mediaplayer10\%WINLANG%\mp10setup.exe /Q /R
 :: URL|TRK|http://download.microsoft.com/download/0/c/8/0c80de9b-52e9-40ac-b1e2-0ab6db59c921/HMTCDWizard_TRK.exe|updates/winxpsp1/hmtcdwizard_trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\HMTCDWizard_%WINLANG%.exe /l* %SystemDrive%\netinst\logs\hmtcdwizard.txt /qb ALLUSERS=1 REBOOT=ReallySuppress"
 
+if not exist %Z%\updates\journalviewer\%WINLANG%\setup.exe goto nojournalviewer
 :: Microsoft Windows Journal Viewer 1.5
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=fad44098-8b73-4e06-96d4-d1eb70eacb44>
 :: No Download found for ARA.
@@ -176,6 +177,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\HMTCDWizard_%WINLANG%.exe /l* %Syst
 :: No Download found for SVE.
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* %SystemDrive%\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
+:nojournalviewer
 
 if not exist %Z%\updates\common\%WINLANG%\langpack.exe goto nolangpack
 :: Microsoft .NET Framework Version 1.1 Language Pack

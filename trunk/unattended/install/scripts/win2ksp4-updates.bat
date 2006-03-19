@@ -473,6 +473,7 @@ todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\WindowsMedia9-KB885492-x86-%WIN
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\JournalViewer1.5_KB886179_%WINLANG%.exe /q /r:n"
 
+if not exist %Z%\updates\journalviewer\%WINLANG%\setup.exe goto nojournalviewer
 :: Microsoft Windows Journal Viewer 1.5
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=fad44098-8b73-4e06-96d4-d1eb70eacb44>
 :: No Download found for ARA.
@@ -498,6 +499,7 @@ todo.pl ".reboot-on 194 %Z%\updates\journalviewer\JournalViewer1.5_KB886179_%WIN
 :: No Download found for SVE.
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* %SystemDrive%\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
+:nojournalviewer
 
 :: Critical Update for Windows Media Player (All Versions) for Windows 2000, Windows XP, and Windows Server 2003 (KB828026)
 :: <http://support.microsoft.com/?kbid=828026>
