@@ -854,7 +854,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\WindowsMedia-KB911564-x86-%WINLANG%.e
 :: URL|JPN|http://download.microsoft.com/download/4/c/3/4c3b7297-91ca-4182-81d6-c31d2b7664a8/WindowsXP-KB911927-x86-JPN.exe|updates/winxpsp2/windowsxp-kb911927-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/1/5/7/15775482-a85f-4cbb-bd87-d93d4e5cc4bf/WindowsXP-KB911927-x86-KOR.exe|updates/winxpsp2/windowsxp-kb911927-x86-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/a/f/6/af68eacc-a6e3-48ff-80bc-a24bf7480640/WindowsXP-KB911927-x86-NLD.exe|updates/winxpsp2/windowsxp-kb911927-x86-nld.exe
-:: No Download found for NOR.
+:: URL|NOR|http://download.microsoft.com/download/a/1/4/a14b8c51-d62a-4d67-9d4d-7f2d8dfc7937/WindowsXP-KB911927-x86-NOR.exe|updates/winxpsp2/windowsxp-kb911927-x86-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/7/2/b/72b8efdc-8714-4e45-b251-927ab494b4ab/WindowsXP-KB911927-x86-PLK.exe|updates/winxpsp2/windowsxp-kb911927-x86-plk.exe
 :: URL|PTB|http://download.microsoft.com/download/6/e/2/6e2e8799-1284-4124-be61-603245d89e3d/WindowsXP-KB911927-x86-PTB.exe|updates/winxpsp2/windowsxp-kb911927-x86-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/a/2/d/a2d71b4e-36f9-49ae-9e44-54f52110124b/WindowsXP-KB911927-x86-PTG.exe|updates/winxpsp2/windowsxp-kb911927-x86-ptg.exe
@@ -1421,8 +1421,8 @@ todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB888302-x86-%WINLANG%.exe 
 :: MicrosoftÂR WindowsÂR Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.13.exe|updates/common/windows-kb890830-v1.13.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.13.exe /Q"
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.14.exe|updates/common/windows-kb890830-v1.14.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.14.exe /Q"
 
 :: Security Update for Windows XP (KB890175)
 :: Microsoft Security Bulletin MS05-001
