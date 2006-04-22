@@ -1088,7 +1088,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB896423-x86-%WINLANG%.exe 
 todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB893756-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB899588)
-:: Microsoft Security Bulletin MS05-039 
+:: Microsoft Security Bulletin MS05-039
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=9A3BFBDD-62EA-4DB2-88D2-415E095E207F>
 :: URL|ARA|http://download.microsoft.com/download/e/8/9/e893ae8f-1cea-4013-81b3-f0dba76ae603/WindowsXP-KB899588-x86-ARA.exe|updates/common/windowsxp-kb899588-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/b/b/3/bb31207f-4f89-4b3b-81a8-120eb77bdfbd/WindowsXP-KB899588-x86-CSY.exe|updates/common/windowsxp-kb899588-x86-csy.exe
@@ -1420,11 +1420,11 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB887472-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/a/7/9/a798552f-83ca-4d28-b5ef-100160b26a71/WindowsXP-KB888302-x86-TRK.exe|updates/common/windowsxp-kb888302-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB888302-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: MicrosoftÂR WindowsÂR Malicious Software Removal Tool (KB890830)
+:: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.14.exe|updates/common/windows-kb890830-v1.14.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.14.exe /Q"
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.15.exe|updates/common/windows-kb890830-v1.15.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.15.exe /Q"
 
 :: Security Update for Windows XP (KB890175)
 :: Microsoft Security Bulletin MS05-001

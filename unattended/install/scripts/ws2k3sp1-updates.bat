@@ -324,11 +324,11 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB899587-x86-%WIN
 :: URL|TRK|http://download.microsoft.com/download/c/8/c/c8cdf114-2028-4458-a52a-030468c0bd8d/WindowsServer2003-KB896423-x86-trk.exe|updates/ws2k3sp1/windowsserver2003-kb896423-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB896423-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Microsoft‚R Windows‚R Malicious Software Removal Tool (KB890830)
+:: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.14.exe|updates/common/windows-kb890830-v1.14.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.14.exe /Q"
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.15.exe|updates/common/windows-kb890830-v1.15.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.15.exe /Q"
 
 :: Security Update for JView Profiler (KB903235)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=F368E231-9918-4881-9F17-60312F82183F>
