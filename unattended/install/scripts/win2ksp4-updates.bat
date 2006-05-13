@@ -8,8 +8,8 @@
 :: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.15.exe|updates/common/windows-kb890830-v1.15.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.15.exe /Q"
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.16.exe|updates/common/windows-kb890830-v1.16.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.16.exe /Q"
 
 :: Security Update for Windows Media Player 9 (KB911565)
 :: Microsoft Security Bulletin MS06-005
@@ -753,6 +753,32 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z"
 
 :: Critical Updates
+
+:: Security Update for Windows 2000 (KB913580)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8B98F380-0E5C-4B80-9710-95E1B35AFD83>
+:: URL|ARA|http://download.microsoft.com/download/f/8/e/f8ee53ac-d469-4c99-b7fa-dde8a13e3a0f/Windows2000-KB913580-x86-ARA.EXE|updates/win2ksp4/windows2000-kb913580-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/8/f/c/8fce099c-0284-4c46-a2b9-05b542eb8683/Windows2000-KB913580-x86-CSY.EXE|updates/win2ksp4/windows2000-kb913580-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/4/4/a447ce52-cd21-4061-8d66-48a5e4f6a0aa/Windows2000-KB913580-x86-DAN.EXE|updates/win2ksp4/windows2000-kb913580-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/c/4/6/c46f9486-dc3a-43bf-bbed-d56fb2aaf63c/Windows2000-KB913580-x86-DEU.EXE|updates/win2ksp4/windows2000-kb913580-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/0/f/d/0fd749d8-3fa9-4937-95aa-fa2516d9015e/Windows2000-KB913580-x86-ELL.EXE|updates/win2ksp4/windows2000-kb913580-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/f/e/3/fe3bbced-6da4-4a8d-b90e-260c2ada9b6b/Windows2000-KB913580-x86-ENU.EXE|updates/win2ksp4/windows2000-kb913580-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/8/9/189731fb-2d24-48a4-8473-552513dbc031/Windows2000-KB913580-x86-ESN.EXE|updates/win2ksp4/windows2000-kb913580-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/5/a/95aa0212-542e-404a-9652-a1bb31540c25/Windows2000-KB913580-x86-FIN.EXE|updates/win2ksp4/windows2000-kb913580-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/e/e/8/ee8ea2d8-7c13-419a-a380-240c7e442362/Windows2000-KB913580-x86-FRA.EXE|updates/win2ksp4/windows2000-kb913580-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/9/0/f/90fd90d0-ccab-48bb-9daa-501cb1ec55da/Windows2000-KB913580-x86-HEB.EXE|updates/win2ksp4/windows2000-kb913580-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/c/9/0/c90b3b45-f061-4c82-84f7-341af8e47d4e/Windows2000-KB913580-x86-HUN.EXE|updates/win2ksp4/windows2000-kb913580-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/a/b/5/ab5b2152-fc11-4183-ae5e-53bae8d28baf/Windows2000-KB913580-x86-ITA.EXE|updates/win2ksp4/windows2000-kb913580-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/4/8/548946e0-9ec2-4b7a-b479-3b23ba9315d5/Windows2000-KB913580-x86-JPN.EXE|updates/win2ksp4/windows2000-kb913580-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/d/d/7/dd797224-7e72-4163-a9cc-f07e7cfb81de/Windows2000-KB913580-x86-KOR.EXE|updates/win2ksp4/windows2000-kb913580-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/5/b/05b7279f-9468-4c3e-b46e-a056d2f7bb5e/Windows2000-KB913580-x86-NLD.EXE|updates/win2ksp4/windows2000-kb913580-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/e/2/b/e2b0bdf4-4e52-45f7-965a-fd5ada8ed117/Windows2000-KB913580-x86-NOR.EXE|updates/win2ksp4/windows2000-kb913580-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/5/a/4/5a459158-2a89-43bc-9a17-5359a3ef9d8f/Windows2000-KB913580-x86-PLK.EXE|updates/win2ksp4/windows2000-kb913580-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/7/9/0/79031b81-a3fd-4928-8ea8-608f7c2d1e94/Windows2000-KB913580-x86-PTB.EXE|updates/win2ksp4/windows2000-kb913580-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/c/3/6/c366bebd-c899-4143-8bed-6678028ba7f9/Windows2000-KB913580-x86-PTG.EXE|updates/win2ksp4/windows2000-kb913580-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/1/c/51c95631-f8cb-4aff-89e0-e75380c014e2/Windows2000-KB913580-x86-RUS.EXE|updates/win2ksp4/windows2000-kb913580-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/2/a/1/2a199ce2-2400-497d-a397-59842c004b1b/Windows2000-KB913580-x86-SVE.EXE|updates/win2ksp4/windows2000-kb913580-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/c/9/3/c93f9eca-07c8-4c10-99f5-02330855b075/Windows2000-KB913580-x86-TRK.EXE|updates/win2ksp4/windows2000-kb913580-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB913580-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Security Update for Windows 2000 (KB899588)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=E39A3D96-1C37-47D2-82EF-0AC89905C88F>

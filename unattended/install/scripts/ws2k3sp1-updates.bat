@@ -12,6 +12,32 @@
 
 :: Critical Updates
 
+:: Security Update for Windows Server 2003 (KB913580)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=E70515C7-8924-46DA-8573-457957EEA0D7>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/a/4/1/a41fb31b-96c0-4ec1-bf52-cc038c93c434/WindowsServer2003-KB913580-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/b/c/4/bc4abe45-665a-40fd-814c-ebb68bd38e04/WindowsServer2003-KB913580-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/1/5/d/15da77bd-c27a-4ecf-bd3e-ad60afda6442/WindowsServer2003-KB913580-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/c/f/7cfdca32-ed09-4497-a9e0-cb132943e969/WindowsServer2003-KB913580-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/c/d/3/cd318078-b771-49d4-a721-1798b8da3992/WindowsServer2003-KB913580-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/7/1/e/71ef2310-7865-457a-992a-d860bf9156a9/WindowsServer2003-KB913580-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/c/2/4/c24b31ef-00e4-40a7-afb8-d0278b4d7a20/WindowsServer2003-KB913580-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/c/e/2ced14ba-7378-4da4-824e-5c59f8616211/WindowsServer2003-KB913580-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/6/d/86d862db-0a0e-4ec4-a33a-2f865e97385c/WindowsServer2003-KB913580-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/9/2/992648c5-3851-49e9-a0b4-9c98da2ff978/WindowsServer2003-KB913580-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/4/8/c/48cf953b-9510-487e-9d54-6d58640a8e82/WindowsServer2003-KB913580-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/c/9/c/c9cfb23a-0940-4132-b4f7-b8aaaccae569/WindowsServer2003-KB913580-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/e/d/b/edb93bb2-0616-4c6a-9c6e-88eff6eea6ba/WindowsServer2003-KB913580-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/a/a/8/aa881cb1-b527-4075-b43b-1f5a19a315b3/WindowsServer2003-KB913580-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/c/c/4/cc4a382b-896e-484a-910a-520374e7cb90/WindowsServer2003-KB913580-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/7/4/e74c2c45-c501-4046-aefb-a7a0dcef13fe/WindowsServer2003-KB913580-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb913580-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB913580-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows Server 2003 (KB896424)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=CEE3DD3B-3C20-47A9-8BBD-1EA2FBB4AF96>
 :: No Download found for ARA.
@@ -327,8 +353,8 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB896423-x86-%WIN
 :: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.15.exe|updates/common/windows-kb890830-v1.15.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.15.exe /Q"
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.16.exe|updates/common/windows-kb890830-v1.16.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.16.exe /Q"
 
 :: Security Update for JView Profiler (KB903235)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=F368E231-9918-4881-9F17-60312F82183F>
