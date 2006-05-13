@@ -772,6 +772,32 @@ todo.pl ".reboot-on 194 %Z%\updates\ie6sp1\IE6.0sp1-KB823353-x86-%WINLANG%.exe /
 
 :: Critical Updates
 
+:: Security Update for Windows XP (KB913580)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=D80B43B2-727B-46B6-82D1-F2CBD916FE32>
+:: URL|ARA|http://download.microsoft.com/download/d/e/5/de5f97fd-9bf7-4198-a8b7-e3d0e807c17d/WindowsXP-KB913580-x86-ARA.exe|updates/winxpsp2/windowsxp-kb913580-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/1/b/f/1bf7e165-5d46-44a3-b44c-fe9f5eaebd69/WindowsXP-KB913580-x86-CSY.exe|updates/winxpsp2/windowsxp-kb913580-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/8/d/a8def3a7-d7b6-45b0-a067-ca7341a60217/WindowsXP-KB913580-x86-DAN.exe|updates/winxpsp2/windowsxp-kb913580-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/6/a/d/6ad0f16c-6d7f-4968-9e19-2fd701357412/WindowsXP-KB913580-x86-DEU.exe|updates/winxpsp2/windowsxp-kb913580-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/d/3/e/d3e7e8cf-2e8f-44b5-84f3-b0206fe4a66d/WindowsXP-KB913580-x86-ELL.exe|updates/winxpsp2/windowsxp-kb913580-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/9/6/e/96ed59fb-8182-4f51-8c5e-1d14d8eca039/WindowsXP-KB913580-x86-ENU.exe|updates/winxpsp2/windowsxp-kb913580-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/1/0/2103396a-9c4f-4f08-bcc8-39e4bec16eb2/WindowsXP-KB913580-x86-ESN.exe|updates/winxpsp2/windowsxp-kb913580-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/1/2/5/125c616b-297a-4a0e-a0e3-641139a2f9f9/WindowsXP-KB913580-x86-FIN.exe|updates/winxpsp2/windowsxp-kb913580-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/a/5/aa56a13e-dff9-4109-b950-cb5fe19a4233/WindowsXP-KB913580-x86-FRA.exe|updates/winxpsp2/windowsxp-kb913580-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/0/7/8/07829107-4558-42c5-8ad9-495708d12560/WindowsXP-KB913580-x86-HEB.exe|updates/winxpsp2/windowsxp-kb913580-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/5/f/75f07bab-508e-45dd-9884-1f777e3abd2b/WindowsXP-KB913580-x86-HUN.exe|updates/winxpsp2/windowsxp-kb913580-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/5/e/b/5eb4e449-e921-4035-9ec5-315451519709/WindowsXP-KB913580-x86-ITA.exe|updates/winxpsp2/windowsxp-kb913580-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/9/6/e/96eece9a-1404-4a78-aef4-236808fd2710/WindowsXP-KB913580-x86-JPN.exe|updates/winxpsp2/windowsxp-kb913580-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/e/9/8e96731f-e3b4-4e72-9f98-c3f9a5e8a34f/WindowsXP-KB913580-x86-KOR.exe|updates/winxpsp2/windowsxp-kb913580-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/e/f/1/ef133915-fa82-4ea1-9c41-d077e1bafec9/WindowsXP-KB913580-x86-NLD.exe|updates/winxpsp2/windowsxp-kb913580-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/a/c/0/ac0a35f8-e679-4a2e-a6e9-f141660b042b/WindowsXP-KB913580-x86-NOR.exe|updates/winxpsp2/windowsxp-kb913580-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/e/3/2e31ba5f-7758-469e-ac6a-e3bd3400ab1d/WindowsXP-KB913580-x86-PLK.exe|updates/winxpsp2/windowsxp-kb913580-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/d/4/6/d46695b5-57d7-46f0-8dff-c8b3897b5311/WindowsXP-KB913580-x86-PTB.exe|updates/winxpsp2/windowsxp-kb913580-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/3/b/0/3b0fb3d7-3fed-4938-912b-e5c9fbddeacf/WindowsXP-KB913580-x86-PTG.exe|updates/winxpsp2/windowsxp-kb913580-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/d/b/c/dbc1d829-eeb3-43d4-9929-8d7a9e932153/WindowsXP-KB913580-x86-RUS.exe|updates/winxpsp2/windowsxp-kb913580-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/c/3/fc381fec-60e6-4f96-90a1-5dd2667f7044/WindowsXP-KB913580-x86-SVE.exe|updates/winxpsp2/windowsxp-kb913580-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/0/9/d/09d5d1ff-0495-4c9e-8d24-2dad3908b01a/WindowsXP-KB913580-x86-TRK.exe|updates/winxpsp2/windowsxp-kb913580-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB913580-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows XP (KB896424)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=E38372B2-3BF6-4393-B9A4-F34248C8073E>
 :: URL|ARA|http://download.microsoft.com/download/7/2/a/72a5bcdd-fb82-4011-86cf-6077357d2ddb/WindowsXP-KB896424-x86-ARA.exe|updates/winxpsp2/windowsxp-kb896424-x86-ara.exe
@@ -931,8 +957,8 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB896423-x86-%WINLANG%.ex
 :: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.15.exe|updates/common/windows-kb890830-v1.15.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.15.exe /Q"
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.16.exe|updates/common/windows-kb890830-v1.16.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.16.exe /Q"
 
 :: Security Update for JView Profiler (KB903235)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=2A506C16-01EF-4060-BCF8-6993C55840A9>
