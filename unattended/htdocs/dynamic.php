@@ -8,7 +8,7 @@ $page['next']  = 'installers.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: dynamic.php,v 1.3 2005-06-26 11:24:12 nrichthof Exp $';
+$cvs           = '$Id: dynamic.php,v 1.4 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Dynamic configuration with server-side perl scripts', 'start');
 $sections[]    = array ('How the installation script works', 'howitworks');
 $sections[]    = array ('Using a database', 'database');
@@ -17,7 +17,7 @@ $content       = <<<EOT
         server-side perl scripts</h1>
       <p>If the static configuration options provided  by  <code>unattend.txt</code>  are
         not  sufficient,  you  can  create  arbitrarily   complex   rules   using   <code
-        >Z:\\site\\config.pl</code>. This is a Perl file which <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
+        >Z:\\site\\config.pl</code>. This is a Perl file which <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
         rel="external"><code>install.pl</code></a> reads.</p>
 
       <p>To write your own config.pl, you need to know a little  Perl  and  you  need  to
@@ -25,7 +25,7 @@ $content       = <<<EOT
 
       <h1 id="howitworks">How the installation script works</h1>
       <p>The installation script generates the answer file in memory, placing it in an <a
-        href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/IniFile.pm?rev=HEAD&amp;view=auto"
+        href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/IniFile.pm?rev=HEAD&amp;view=auto"
         rel="external">Unattend::IniFile</a> object named <code>\$u</code>.</p>
 
       <p>Programmatically, this object behaves like a Perl hash (associative
@@ -126,7 +126,7 @@ use strict;
         undef.</p>
 
       <p>Finally, this code demonstrates the use of the <a
-        href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/WinMedia.pm?rev=HEAD&amp;view=auto"
+        href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/WinMedia.pm?rev=HEAD&amp;view=auto"
         >Unattend::WinMedia</a> helper object.  You create an instance of this object  by
         giving it the path to your Windows installation media  ([_meta]/OS_media  value).
         It knows lots of things about such media, including how  to  grovel  it  for  OEM
@@ -172,7 +172,7 @@ use strict;
         Windows Server 2003.  (Although the later OSes  accept  ProductID  for  backwards
         compatibility, ProductKey is now canonical and we like to be pedantic.)  The code
         dispatches on the name of the chosen operating system,  as returned by the name()
-        method of the <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/WinMedia.pm?rev=HEAD&amp;view=auto"
+        method of the <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/WinMedia.pm?rev=HEAD&amp;view=auto"
         >Unattend::WinMedia</a> object.</p>
 
       <h2>Reading different answer files based on OS type</h2>

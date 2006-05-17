@@ -8,7 +8,7 @@ $page['next']  = 'winsetup.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: unattendtxt.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: unattendtxt.php,v 1.2 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Understanding the goal', 'intro');
 $sections[]    = array ('Syntax of unattend.txt', 'syntax');
 $sections[]    = array ("Microsoft's documentation", 'msdoc');
@@ -75,7 +75,7 @@ $content       = <<<EOT
       <p>For a complete sample <code>unattend.txt</code> file,  use Unattended to install
         Windows and then examine  <code>C:\\NETINST\\UNATTEND.TXT</code>.   For a partial
         file     containing     some     of     Unattended's    defaults,      see     <a
-        href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/unattend.txt?rev=HEAD&amp;view=auto"
+        href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/unattend.txt?rev=HEAD&amp;view=auto"
         >Z:\\lib\\unattend.txt</a> from the distribution.</p>
 
       <h1 id="msdoc">Microsoft's documentation</h1>

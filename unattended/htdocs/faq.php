@@ -8,7 +8,7 @@ $page['next']  = 'unattendtxt.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: faq.php,v 1.4 2005-05-23 21:06:40 nrichthof Exp $';
+$cvs           = '$Id: faq.php,v 1.5 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Frequently Asked Questions', 'faq');
 $content       = <<<EOT
 
@@ -148,7 +148,7 @@ unattended acpi=off
          within  have   names  like  <span  class="code-inline">I386\\TXTSETUP.SIF</span>
          instead of <span class="code-inline">i386\\txtsetup.sif</span>. The solution  is
          to rename all of the files on the installation  media  to  lower  case.  The  <a
-         href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/tools/lower-caseify.pl?view=auto"
+         href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/lower-caseify.pl?rev=HEAD&amp;view=auto"
          >lower-caseify.pl</a> script automates this.</p>
 
       <hr />
@@ -179,7 +179,7 @@ unattended acpi=off
 
       <p>Adding  wireless  support  to  our  Linux  boot  disk  is  a  Simple  Matter  of
         Programming, at least for the wireless devices which Linux supports.  Call  it  a
-    <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/TODO.txt?view=auto"
+    <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/TODO.txt?rev=HEAD&amp;view=auto"
     >"to-do" item</a>. The hard part is designing and implementing  an  interface  to
     let the user set the wireless parameters (like ESSID).  If you would like to help
     tackle  this,  subscribe  to  the  <a  href="lists.php">unattended-devel  mailing
@@ -236,7 +236,7 @@ unattended acpi=off
         cluster size after NTFS conversion, at least on  Windows XP  and  Windows  Server
         2003.</p>
 
-      <p>Using CVTAREA is on our <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/TODO.txt?view=auto"
+      <p>Using CVTAREA is on our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/TODO.txt?rev=HEAD&amp;view=auto"
         >&quot;to-do&quot; list</a>.</p>
 
       <p>That  said,  I  and  others  have  installed  hundreds of machines without using
@@ -333,7 +333,7 @@ unattended acpi=off
         href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00107.html"
         rel="external">TXTSETUP.OEM</a> files,  because you must create one by hand which
         incorporates all of your drivers. Writing a tool to help automate this is on  our
-        <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/TODO.txt?view=auto"
+        <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/TODO.txt?rev=HEAD&amp;view=auto"
         >to-do list</a>.</p>
 
       <hr />
@@ -341,7 +341,7 @@ unattended acpi=off
       <a name="7_5"></a><h3>[7.5] How do I keep the OS- and software-installation-scripts
         up-to-date?</h3>
       <p>Between two releases you can update your script  files  from  our  cvs.  The  <a
-       href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/tools/script-update?view=auto"
+       href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/script-update?rev=HEAD&amp;view=auto"
        >script-update</a> script automates this.</p>
        <p>You can exclude certain scripts from being updated. But  be  warned:  sometimes
        the scripts in the cvs get broken. Usually they get fixed very soon thereafter, so
@@ -417,7 +417,7 @@ parted /dev/sda set 1 boot on
         &quot;active&quot; (bootable), respectively.  Obviously, I used Parted; you could
         presumably use <code>fdisk</code> and <code>mkdosfs</code> instead.</p>
 
-      <p>Then I wrote a script (<a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/linuxboot/tools/install-mbr.pl?rev=HEAD&amp;view=auto"
+      <p>Then I wrote a script (<a href="http://unattended.cvs.sourceforge.net/unattended/unattended/linuxboot/tools/install-mbr.pl?rev=HEAD&amp;view=auto"
         >install-mbr.pl</a>)  to  replace the  Master Boot Record.  This script is in the
         <code>linuxboot/tools</code> directory of the Unattended distribution. Just about
         any MBR should work, but I installed the one from FreeDOS:</p>
