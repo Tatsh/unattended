@@ -8,7 +8,7 @@ $page['next']  = 'apps.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: installers.php,v 1.4 2006-01-17 19:37:56 ekot Exp $';
+$cvs           = '$Id: installers.php,v 1.5 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Introduction', 'intro');
 $sections[]    = array ('General information', 'general');
 $sections[]    = array ('If all else fails...', 'fail');
@@ -394,11 +394,10 @@ $content       = <<<EOT
         application installation scripts in the CVS-repository:</p>
 
       <ul>
-        <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/7-zip.bat?view=auto">7-Zip</a></li>
-        <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/acrobat-reader.bat?view=auto">Acrobat Reader 5.1</a></li>
-        <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/perl.bat?view=auto">ActiveState Perl (ActivePerl)</a></li>
-        <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/adobe-reader.bat?view=auto">Adobe Reader 7.0</a></li>
-        <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/ie6.bat?view=auto">Microsoft Internet Explorer</a></li>
+        <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/7-zip.bat?rev=HEAD&amp;view=auto">7-Zip</a></li>
+        <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/perl.bat?rev=HEAD&amp;view=auto">ActiveState Perl (ActivePerl)</a></li>
+        <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/adobe-reader.bat?rev=HEAD&amp;view=auto">Adobe Reader 7.0</a></li>
+        <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/ie6.bat?rev=HEAD&amp;view=auto">Microsoft Internet Explorer</a></li>
       </ul>
 
       <p>And do not forget our <a href="http://www.ubertechnique.com/unattended/FrontPage"

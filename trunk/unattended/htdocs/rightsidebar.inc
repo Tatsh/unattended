@@ -6,7 +6,7 @@
         <p class="sideBarTitle">News</p>
 
         <div class="sideBarText"><strong>Changelog</strong><br />
-          <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/NEWS.txt?rev=HEAD&amp;view=auto">version 4.6</a></div>
+          <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/NEWS.txt?view=markup">version 4.6</a></div>
 
         <a href="http://sourceforge.net/news/?group_id=62053"
           class="more">more news &raquo;</a>
