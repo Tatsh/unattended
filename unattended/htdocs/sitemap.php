@@ -8,7 +8,7 @@ $page['next']  = 'step-by-step.php';
 $page['last']  = 'faq.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: sitemap.php,v 1.2 2005-06-23 16:31:10 nrichthof Exp $';
+$cvs           = '$Id: sitemap.php,v 1.3 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Site map', 'sitemap');
 $content       = <<<EOT
       <h1 style="border-top: none; padding-top: 0;">Site map</h1>
@@ -23,7 +23,7 @@ $content       = <<<EOT
         <li>Download
           <ul>
             <li><a href="http://sourceforge.net/project/showfiles.php?group_id=62053">Download the distribution</a></li>
-            <li><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/" rel="external">CVS-Repository</a></li>
+            <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/" rel="external">CVS-Repository</a></li>
           </ul>
         </li>
         <li>Documentation

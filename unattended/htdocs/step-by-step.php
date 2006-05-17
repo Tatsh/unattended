@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.4 2006-01-17 19:35:52 ekot Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.5 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -94,7 +94,7 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         >Z:</code> drive:</p>
       <dl>
         <dt><a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/djgpp/"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/djgpp/"
           >djgpp</a></dt>
         <dd>Contains parts of <a
           href="http://www.delorie.com/djgpp/" rel="external">DJGPP</a>,  a collection of
@@ -102,36 +102,36 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
           is written in Perl. This one is too big to bundle, so you will need to download
       it yourself; see below for instructions.</dd>
         <dt><a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/"
           >dosbin</a></dt>
         <dd>Directory   containing   DOS  utility  programs  (like  fdisk)  from  the  <a
           href="http://www.freedos.org/"   rel="external">FreeDOS</a>    project.    Also
-          contains <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
+          contains <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
           >install.pl</a>, the master installation script.</dd>
         <dt><a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/"
           >lib</a></dt>
         <dd>Directory containing helper files for the master  installation  script.  This
           includes the default <a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/unattend.txt?rev=HEAD&amp;view=auto"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/unattend.txt?rev=HEAD&amp;view=auto"
           >unattend.txt</a> file and the helper modules <a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/FoldHash.pm?rev=HEAD&amp;view=auto"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/FoldHash.pm?rev=HEAD&amp;view=auto"
           >Unattend::FoldHash</a>, <a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/Promise.pm?rev=HEAD&amp;view=auto"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/Promise.pm?rev=HEAD&amp;view=auto"
           >Unattend::Promise</a>, <a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/IniFile.pm?rev=HEAD&amp;view=auto"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/IniFile.pm?rev=HEAD&amp;view=auto"
           >Unattend::IniFile</a>, and <a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/lib/Unattend/WinMedia.pm?rev=HEAD&amp;view=auto"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/WinMedia.pm?rev=HEAD&amp;view=auto"
           >Unattend::WinMedia</a>.</dd>
         <dt><a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/site/"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/site/"
           >site</a></dt>
         <dd>Directory  containing  your  site-specific  customizations.   If you place an
           <code>unattend.txt</code> file here, its settings will override  the  defaults.
           More  advanced customization is possible;  see the <a  href="documentation.php"
           >detailed documentation</a> for details.</dd>
         <dt><a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/os/"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/os/"
           >os</a></dt>
         <dd>Directory   containing  Windows  installation  media  (i.e.,  copies  of  the
           CD-ROMs). You need to populate this with one or  more  copies  of  Windows;  <a
@@ -165,7 +165,7 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         CD. You should probably give the directory a  meaningful  name  like  <code>winxp
         </code> or  <code>win2ksp4</code>,  and  you  probably  want to limit the name to
         eight characters lest it look strange when viewed from DOS. (The  name  does  not
-        matter much because <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
+        matter much because <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
         >install.pl</a> will scan the contents to figure out what it   is.  However,  you
         should limit the name to 8 characters or fewer,   especially if you are using the
         Linux-based boot disk.)</p>
@@ -208,7 +208,7 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         rel="external">description of the distribution share</a> for the gory details.</p
         >
       <p>You may put your driver folder  anywhere  you  like  under  the  <code>\$1</code>
-        folder, and you may add as many driver folders as you like. The <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
+        folder, and you may add as many driver folders as you like. The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
         >install.pl</a> script will automatically scan for all driver  folders  and offer
         to add  them   to   the   <code>OemPnPDriversPath</code>  setting  in  the  <code
         >unattend.txt</code> file for you.</p>
@@ -217,7 +217,7 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         winnt.exe will get an error when it tries to copy the file.</p>
       <h3>Populate packages directory</h3>
       <p>All our OS-update scripts and many of our application  install  scripts  contain
-        urls for automatic download. Now it is time to perform this task. Our <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/tools/prepare?view=markup"
+        urls for automatic download. Now it is time to perform this task. Our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/prepare?view=markup"
       >prepare</a> script will help you with that:</p>
 <pre class="code">
     $ cd /path/to/unattended/install/tools
@@ -256,11 +256,11 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
       <p>The boot disk's entire purpose in life is to obtain access to the network,  then
       hand off control to the more powerful tools available there. Specifically, the boot
       disk  loads  the  network drivers, mounts the install share as the  <code>Z:</code>
-      drive, and then executes the Perl script <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
+      drive, and then executes the Perl script <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
       ><code>Z:\\dosbin\\install.pl</code></a>. This  script  will  ask you  a  bunch  of
       questions,   generate   <code>unattend.txt</code>,   and   launch   <strong>Windows
       Setup</strong>.</p>
-      <p>Follow along in <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/bootdisk/template/autoexec.bat?rev=HEAD&amp;view=auto"
+      <p>Follow along in <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/bootdisk/template/autoexec.bat?rev=HEAD&amp;view=auto"
       >autoexec.bat</a> if you like.</p>
 
       <h3>Mounting Z:</h3>
@@ -272,7 +272,7 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         >NET&nbsp;LOGON</code>, which initializes  the  MSCLIENT  file sharing stack.</p>
       <p>Next, the boot disk invokes <code>NET&nbsp;USE</code> to map the  install  share
       as the <code>Z:</code> drive.</p>
-      <p>Finally, the boot disk passes control to the installation script <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
+      <p>Finally, the boot disk passes control to the installation script <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
         ><code>Z:\\dosbin\\install.pl</code></a>. This script is a lot more  complicated,
         but you do not need to understand it in order to use it.</p>
       <h3>Partitioning</h3>

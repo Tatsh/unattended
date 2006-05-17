@@ -64,7 +64,7 @@
            >Download</a> |
         <a href="step-by-step.php">Installation</a> |
         <a href="documentation.php">Documentation</a> |
-        <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/"
+        <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/"
            rel="external">CVS-Repository</a> |
         <a href="lists.php">Mailing lists</a> |
         <a href="links.php">Links</a> |

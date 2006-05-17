@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: apps.php,v 1.2 2005-01-17 20:24:15 nrichthof Exp $';
+$cvs           = '$Id: apps.php,v 1.3 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Goals', 'goals');
 $sections[]    = array ('Overview', 'overview');
 $sections[]    = array ('The todo.pl driver script', 'todo');
@@ -43,8 +43,8 @@ $content       = <<<EOT
         <p>In short,  these  installation  scripts  need  to  be  able  to  invoke  other
           installation scripts.  You might expect this to be trivial, until you  remember
           that installing some software requires rebooting the machine.  So  if  (say) <a
-          href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?view=auto"
-          >sales.bat</a> begins by invoking <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?view=auto"
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;view=auto"
+          >sales.bat</a> begins by invoking <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;view=auto"
           >base.bat</a>,  which needs to reboot the machine halfway through,  how exactly
           do you resume where you left off? <a href="#todo">See below</a> for the answer.
           </p>
@@ -80,38 +80,38 @@ $content       = <<<EOT
       <h2>Structure of the <code>install</code> share</h2>
       <p>The <code>install</code> share is the one you created when you  set  up  the  <a
         href="documentation.php#osinst">automated OS installation</a>,  by simply copying
-        the <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/"
+        the <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/"
         ><code>install</code></a> directory from the Unattended distribution.</p>
 
       <p>Application  installation  relies  on  these   subdirectories   of   the   <code
         >install</code> share:</p>
 
       <dl>
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/"
         >bin</a></dt>
       <dd>Contains various utility binaries and scripts.  You should not need  to  modify
         these; if you do, please consider submitting a feature request or a patch.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/packages/"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/packages/"
         >packages</a></dt>
       <dd>Contains the installers for the  applications  themselves.  You  will  need  to
         populate this directory with the installers for your site's applications.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/"
         >scripts</a></dt>
       <dd>Contains the  scripts  for  installing  individual  applications  and  sets  of
         applications.  The contents of this directory  provides  a  fairly  rich  set  of
         examples. You will probably need to edit these or write new ones;  feel  free  to
         contribute changes and additions.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/site/"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/site/"
         >site</a></dt>
       <dd>Contains site-specific configuration data like license keys. You will  need  to
         populate this directory with the data for your site before  some  of  the  sample
         scripts will work.</dd>
       </dl>
 
-      <h1 id="todo">The <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/todo.pl?view=auto">todo.pl</a>
+      <h1 id="todo">The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/todo.pl?rev=HEAD&amp;view=auto">todo.pl</a>
         driver script</h1>
 
       <h2>One script to rule them all</h2>
@@ -262,15 +262,15 @@ $content       = <<<EOT
         will occasionally search for things there.  Since <code>Z:</code>  is  only  used
         during the installation process, users may not have it mapped, so installing from
         <code>Z:</code> can cause the application to fail later.  For such  applications,
-        <code>Z_PATH</code> provides a workaround; see <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/msdn.bat?view=auto"
+        <code>Z_PATH</code> provides a workaround; see <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/msdn.bat?rev=HEAD&amp;view=auto"
         >msdn.bat</a> for an example.</p>
 
       <h1 id="examples">Examples</h1>
-      <p>Some examples should help.  All of these are from the <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/"
+      <p>Some examples should help.  All of these are from the <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/"
         >install/scripts directory</a> in the distribution.</p>
 
       <h2>Adobe Reader</h2>
-      <p>The <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/adobe-reader.bat?view=auto"
+      <p>The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/adobe-reader.bat?rev=HEAD&amp;view=auto"
         >adobe-reader.bat</a> script installs Adobe Reader. This is about as simple as an
         installation script can get.</p>
 
@@ -285,7 +285,7 @@ $content       = <<<EOT
         >todo.pl</code>.</p>
 
       <h2>Office XP</h2>
-      <p>The <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/officexp.bat?view=auto"
+      <p>The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/officexp.bat?rev=HEAD&amp;view=auto"
         >officexp.bat</a> script installs Microsoft Office XP and  reboots  the  machine.
         First, it pushes the <code>.reboot</code> directive onto the to-do list.  Then it
         pushes directives to install each update for  Office XP.  Finally,  it pushes the
@@ -329,7 +329,7 @@ $content       = <<<EOT
         though the machine had to reboot in the middle.</p>
 
       <h2>A more complex example</h2>
-      <p>The <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/winxpsp2-updates.bat?view=auto"
+      <p>The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/winxpsp2-updates.bat?rev=HEAD&amp;view=auto"
         >winxpsp2-updates.bat</a> script installs all of Microsoft's &quot;critical&quot;
         and &quot;recommended&quot; updates for Windows XP Service Pack&nbsp;2.  All this
         script does is push a bunch    of  items  onto  the  to-do  list,  including  the
@@ -352,18 +352,18 @@ $content       = <<<EOT
         has same effect as &quot;<code>todo.pl&nbsp;Y&nbsp;X</code>&quot;.</p>
 
       <h2>A high-level example</h2>
-      <p>The <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?view=auto"
+      <p>The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;view=auto"
         >base.bat</a> script performs a &quot;base workstation&quot; installation  for  a
         organization. This includes a bunch of free software.</p>
 
       <p>This example illustrates the use of the <a href="#winver">WINVER</a> environment
         variable.  The <kbd>%WINVER%-updates.bat</kbd> name, for example,  will expand to
-        <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/win2ksp4-updates.bat?view=auto"
-        >win2ksp4-updates.bat</a> on Windows 2000 Service Pack 4 and <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/winxpsp2-updates.bat?view=auto"
+        <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/win2ksp4-updates.bat?rev=HEAD&amp;view=auto"
+        >win2ksp4-updates.bat</a> on Windows 2000 Service Pack 4 and <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/winxpsp2-updates.bat?rev=HEAD&amp;view=auto"
         >winxpsp2-updates.bat</a> on Windows XP Service Pack 2.</p>
 
       <h2>A higher-level example</h2>
-      <p>The <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?view=auto"
+      <p>The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;view=auto"
         >sales.bat</a> script performs a &quot;salesperson laptop&quot; installation  for
         a organization. As you can see, this just performs a base installation, then adds
         Microsoft Office, Lotus Notes, the AT&amp;T global network dialer,  and the Shiva
@@ -372,8 +372,8 @@ $content       = <<<EOT
 
       <p>These last two examples also illustrate how easily you   can  compose  low-level
         scripts into high-level ones, no matter how many reboots  the  low-level  scripts
-        perform.  Observe that if you make a change to the configuration in <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/base.bat?view=auto"
-        >base.bat</a>, the <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?view=auto"
+        perform.  Observe that if you make a change to the configuration in <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/base.bat?rev=HEAD&amp;view=auto"
+        >base.bat</a>, the <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;view=auto"
         >sales.bat</a> script will automatically inherit it.</p>
 
       <p>Unlimited composability is nice.</p>
@@ -396,7 +396,7 @@ $content       = <<<EOT
         XP, and it is available as a free download for NT.</p>
 
       <dl>
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/auconfig.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/auconfig.pl?rev=HEAD&amp;view=auto"
         name="auconfig">auconfig.pl</a></dt>
 
         <dd>Configures the Automatic Updates feature introduced with Windows 2000 Service
@@ -406,14 +406,14 @@ $content       = <<<EOT
           >auconfig.pl&nbsp;--help</code> for full usage instructions. Reboot to make the
           changes take effect.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/autolog.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/autolog.pl?rev=HEAD&amp;view=auto"
         name="autolog">autolog.pl</a></dt>
 
         <dd>Patches the registry to enable or  disable  the  &quot;automatic  logon&quot;
           facility.    Can  also  set  the  default  user  name  and  domain.   Run  <kbd
           >autolog.pl&nbsp;--help</kbd> for complete documentation.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/bootini.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/bootini.pl?rev=HEAD&amp;view=auto"
         name="bootini">bootini.pl</a></dt>
 
         <dd>For some reason,  all of my unattended installations end up displaying a boot
@@ -422,17 +422,17 @@ $content       = <<<EOT
           first. This script edits the hidden system file  <code>boot.ini</code>  to  get
           rid of the useless menu option.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/cert.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/cert.pl?rev=HEAD&amp;view=auto"
         name="cert">cert.pl</a></dt>
 
         <dd>This script adds a certificate to the <code>ROOT</code> certificate store. It
           depends on the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/seccrypto/security/cryptography_portal.asp"
           rel="external">CryptoAPI COM interface (CAPICOM)</a>,  which  you  must install
           first. This means just copying the DLL to the right place and  registering  it;
-          see <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/capicom.bat?view=auto"
+          see <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/capicom.bat?rev=HEAD&amp;view=auto"
           >capicom.bat</a> for a sample installation script.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/enu/defrag.aut?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/enu/defrag.aut?rev=HEAD&amp;view=auto"
         >defrag.aut</a></dt>
 
         <dd>This is an <a href="installers.php#autoit">AutoIt</a>  script  to  defragment
@@ -442,7 +442,7 @@ $content       = <<<EOT
           or hotfixes (to collect the free space),  then again just before delivering the
           machine to the user.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/hidepw.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/hidepw.pl?rev=HEAD&amp;view=auto"
         >hidepw.pl</a></dt>
 
         <dd>According to  Microsoft's  <a  href="unattendtxt.php#msdoc"><strong>Guide  to
@@ -451,7 +451,7 @@ $content       = <<<EOT
           I wrote this script to replace all passwords in <code>unattend.txt</code>  with
           X marks.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/instances.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/instances.pl?rev=HEAD&amp;view=auto"
         name="instances">instances.pl</a></dt>
 
         <dd>WMI has many useful <a href="http://msdn.microsoft.com/library/en-us/wmisdk/wmi/wmi_classes.asp"
@@ -466,7 +466,7 @@ $content       = <<<EOT
             rel="external">Win32_BaseBoard</a>.</p>
         </dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/instsrv.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/instsrv.pl?rev=HEAD&amp;view=auto"
         >instsrv.pl</a></dt>
 
         <dd>The      <a      href="http://www.microsoft.com/windows2000/techinfo/reskit/"
@@ -482,7 +482,7 @@ $content       = <<<EOT
           in world-readable scripts, and I hate using the GUI.</p>
         </dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/rdconfig.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/rdconfig.pl?rev=HEAD&amp;view=auto"
         name="rdconfig">rdconfig.pl</a></dt>
 
         <dd>This script enables or disables the Remote Desktop service (formerly known as
@@ -493,7 +493,7 @@ $content       = <<<EOT
           >rdconfig.pl&nbsp;--allow=0</kbd> to disable it. As usual, the <kbd>--help</kbd
           > switch will yield full documentation.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/setenv.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/setenv.pl?rev=HEAD&amp;view=auto"
         name="setenv">setenv.pl</a></dt>
 
         <dd>This script takes two arguments, a variable name and a  value.  It  sets  the
@@ -502,7 +502,7 @@ $content       = <<<EOT
           specific users and variables on remote machines; run it with  <kbd>--help</kbd>
           for more information.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/shortcut.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/shortcut.pl?rev=HEAD&amp;view=auto"
         name="shortcut">shortcut.pl</a></dt>
 
         <dd>This script creates a Windows shortcut.  What makes it interesting is that it
@@ -514,7 +514,7 @@ $content       = <<<EOT
 
         <p>Run <code>shortcut.pl&nbsp;--help</code> for documentation.</p></dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/shutdown.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/shutdown.pl?rev=HEAD&amp;view=auto"
         name="shutdown">shutdown.pl</a></dt>
 
         <dd>Once upon a time, you could get <code>shutdown.exe</code> from the NT or 2000
@@ -531,7 +531,7 @@ $content       = <<<EOT
           <code>.reboot</code> directive to <a href="#todo">todo.pl</a> instead. But I am
           including it anyway for the heck of it.)</p></dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/startup-type.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/startup-type.pl?rev=HEAD&amp;view=auto"
         name="startup-type">startup-type.pl</a></dt>
 
         <dd>This  script   lets   you   set   the   &quot;startup   type&quot;   (<strong
@@ -539,7 +539,7 @@ $content       = <<<EOT
           for a service from the command-line.  There are probably other tools out  there
           to do this, but I got tired of looking for them and wrote my own.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/win2ksp4-notips.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/win2ksp4-notips.pl?rev=HEAD&amp;view=auto"
         name="2k-notips">win2ksp4-notips.pl</a></dt>
 
         <dd>As you are no doubt aware, Windows displays lots of annoying first-time logon
@@ -553,12 +553,12 @@ $content       = <<<EOT
           copying <code>NTUSER.DAT</code> from some  other  profile  to  the default user
           profile, but with Perl, you can edit this registry hive directly.</p></dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/winxpsp2-notips.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/winxpsp2-notips.pl?rev=HEAD&amp;view=auto"
         name="xp-notips">winxpsp2-notips.pl</a></dt>
 
         <dd>Similarly, but for Windows XP Service Pack 2.</dd>
 
-      <dt><a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/bin/with-env.pl?view=auto"
+      <dt><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/with-env.pl?rev=HEAD&amp;view=auto"
         name="with-env">with-env.pl</a></dt>
 
         <dd>This script allows the output of one command to specify the environment for a
@@ -577,8 +577,8 @@ $content       = <<<EOT
         at  my  site  (<code>z:\\site\\officexp-key.pl</code>)  which   looks   up   the
         Office&nbsp;XP product key  for  the  current  machine  in  a  software  license
         spreadsheet, and prints a single line of the form <code>PIDKEY=xxx</code>.  Then
-        I invoke <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/officexp.bat?view=auto"
-        >officexp.bat</a> from <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/scripts/sales.bat?view=auto"
+        I invoke <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/officexp.bat?rev=HEAD&amp;view=auto"
+        >officexp.bat</a> from <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/sales.bat?rev=HEAD&amp;view=auto"
         >sales.bat</a> like this:</p>
 <pre class="code">
   with-env.pl z:\\site\\officexp-key.pl officexp.bat

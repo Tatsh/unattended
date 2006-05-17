@@ -8,7 +8,7 @@ $page['next']  = 'lists.php';
 $page['last']  = 'links.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: documentation.php,v 1.2 2005-02-19 15:28:01 nrichthof Exp $';
+$cvs           = '$Id: documentation.php,v 1.3 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('OS installation process', 'osinst');
 $sections[]    = array ('Relevant settings for Windows Setup', 'settings');
 $sections[]    = array ('Dynamic configuration with server-side perl scripts', 'dynamic');
@@ -38,7 +38,7 @@ $content       = <<<EOT
       <h1 id="dynamic">Dynamic configuration with server-side perl scripts</h1>
       <p>If the static configuration options provided  by  <code>unattend.txt</code>  are
         not   sufficient,    you   can   create   arbitrarily   complex    rules    using
-        <code>Z:\\site\\config.pl</code>. This is a Perl file which <a href="http://cvs.sourceforge.net/viewcvs.py/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
+        <code>Z:\\site\\config.pl</code>. This is a Perl file which <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
         ><code>install.pl</code></a> reads.</p>
       <ul>
         <li><a href="dynamic.php">Dynamic configuration with server-side perl scripts</a></li>
