@@ -5,9 +5,9 @@ default:
 	@echo "(Did you mean to 'cd bootdisk' or 'cd linuxboot' first?)"
 	exit 1
 
-#cvs := :pserver:anonymous@cvs.sourceforge.net:/cvsroot/unattended
+#cvs := :pserver:anonymous@unattended.cvs.sourceforge.net:/cvsroot/unattended
 # Anonymous server works, but lags main CVS.
-cvs := $$USER@cvs.sourceforge.net:/cvsroot/unattended
+cvs := $$USER@unattended.cvs.sourceforge.net:/cvsroot/unattended
 
 cwd := $(shell pwd)
 

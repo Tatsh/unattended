@@ -27,7 +27,7 @@
 exceptions=( )
 
 # HTTP-Link to the cvs-repository
-CVSLINK="http://cvs.sourceforge.net/viewcvs.py/*checkout*/unattended/unattended/install/scripts"
+CVSLINK="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts"
 
 # paths to needed programs
 WGET=$(which wget)
