@@ -5,6 +5,62 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for PowerPoint 2002 (KB916519)
+:: Description of the security update for Microsoft PowerPoint 2002: June 13, 2006
+:: <http://support.microsoft.com/kb/916519>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=60A1EB9F-F04B-4D21-A95E-CCC90D9782AB>
+:: URL|ARA|http://download.microsoft.com/download/f/0/a/f0a65a89-3550-4555-8234-b89cedffa24a/officexp-KB916519-FullFile-ARA.exe|updates/officexp/officexp-kb916519-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/8/0/a80fc67f-b60e-4364-99de-f09b86d829b1/officexp-KB916519-FullFile-CSY.exe|updates/officexp/officexp-kb916519-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/3/8/0383a89f-0ffb-4839-b6c1-7961c50b43ed/officexp-KB916519-FullFile-DAN.exe|updates/officexp/officexp-kb916519-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/2/b/e/2be7d7b2-7383-4f68-9d77-03f268b8b54a/officexp-KB916519-FullFile-DEU.exe|updates/officexp/officexp-kb916519-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/c/9/d/c9df1453-5830-4ce4-8a9a-a3fc096041a7/officexp-KB916519-FullFile-ELL.exe|updates/officexp/officexp-kb916519-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/d/0/9/d0933324-aabb-4caf-a433-5f42ababfdf5/officexp-KB916519-FullFile-ENU.exe|updates/officexp/officexp-kb916519-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/2/1/22142a34-1d6e-4e2f-ac26-a8b20ad5f047/officexp-KB916519-FullFile-ESN.exe|updates/officexp/officexp-kb916519-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/c/c/5cc9b70c-026c-4e41-af51-2a32d28f5f4e/officexp-KB916519-FullFile-FIN.exe|updates/officexp/officexp-kb916519-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/b/2/b/b2b4d9d7-704a-43e6-aac4-168762069746/officexp-KB916519-FullFile-FRA.exe|updates/officexp/officexp-kb916519-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/1/f/0/1f011b88-c123-45d9-a27f-b38a0a5317ad/officexp-KB916519-FullFile-HEB.exe|updates/officexp/officexp-kb916519-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/3/6/3/36383a6a-5a5b-4584-bfc6-ccd0f760c28c/officexp-KB916519-FullFile-HUN.exe|updates/officexp/officexp-kb916519-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/e/5/2/e523e6ec-4b1b-4566-96be-4c9e5a0c88df/officexp-KB916519-FullFile-ITA.exe|updates/officexp/officexp-kb916519-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/5/5/f5550ca4-6627-4958-ba5b-5d4b4185186c/officexp-KB916519-FullFile-JPN.exe|updates/officexp/officexp-kb916519-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/b/a/d/bade4b63-54bd-484d-8f60-6feb1b9765fe/officexp-KB916519-FullFile-KOR.exe|updates/officexp/officexp-kb916519-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/2/b/02b95861-2ffb-4e7b-9938-21db1ba8316b/officexp-KB916519-FullFile-NLD.exe|updates/officexp/officexp-kb916519-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/3/0/c/30ccf2c0-1edd-44c3-b05d-35a14cdd33b0/officexp-KB916519-FullFile-NOR.exe|updates/officexp/officexp-kb916519-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/0/4/6/0465b721-f6b1-4ece-a2f4-690ab02e504c/officexp-KB916519-FullFile-PLK.exe|updates/officexp/officexp-kb916519-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/7/3/f/73f5ebf7-dc6c-4f9b-9dde-35fd26ce4aa8/officexp-KB916519-FullFile-PTB.exe|updates/officexp/officexp-kb916519-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/e/3/fe3f36ea-1e92-421e-b2b0-36983ac31b7d/officexp-KB916519-FullFile-PTG.exe|updates/officexp/officexp-kb916519-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/f/b/efb38af3-fd13-47c8-9c77-1f9e71b81135/officexp-KB916519-FullFile-RUS.exe|updates/officexp/officexp-kb916519-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/c/0/fc0c6250-4148-4c62-a062-9384886cccd9/officexp-KB916519-FullFile-SVE.exe|updates/officexp/officexp-kb916519-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/9/d/b/9db09abd-8e5d-4cf0-aadf-ebb8a56b5afd/officexp-KB916519-FullFile-TRK.exe|updates/officexp/officexp-kb916519-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB916519-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb916520.txt /p POWERPNTff.msp REBOOT=ReallySuppress\""
+
+:: Security Update for Word 2002 (KB917335)
+:: Description of the security update for Microsoft Word 2002: June 13, 2006
+:: <http://support.microsoft.com/kb/917335>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=4CDE644B-BE05-4680-B0EF-DF563095563C>
+:: URL|ARA|http://download.microsoft.com/download/0/b/b/0bbc857e-9c32-47d5-83eb-4ad9d69d2100/officexp-KB917335-FullFile-ARA.exe|updates/officexp/officexp-kb917335-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/9/a/2/9a2f0f42-dd92-46f3-a49d-94557e1909df/officexp-KB917335-FullFile-CSY.exe|updates/officexp/officexp-kb917335-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/2/3/d/23dc83cf-76c7-459a-8481-d59365cf30d9/officexp-KB917335-FullFile-DAN.exe|updates/officexp/officexp-kb917335-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/f/4/ff48e718-8423-4dfd-acbf-350014923851/officexp-KB917335-FullFile-DEU.exe|updates/officexp/officexp-kb917335-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/2/6/3/263dbec7-3c41-447e-905a-fcc543a0808f/officexp-KB917335-FullFile-ELL.exe|updates/officexp/officexp-kb917335-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/2/1/32142319-d15c-4370-af74-bafd1422f94e/officexp-KB917335-FullFile-ENU.exe|updates/officexp/officexp-kb917335-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/a/9/7a92b5fe-6dc8-4b4e-b6d6-b69fa473b258/officexp-KB917335-FullFile-ESN.exe|updates/officexp/officexp-kb917335-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/8/c/4/8c4eec5d-9df8-4e1b-b10c-4c0aada14153/officexp-KB917335-FullFile-FIN.exe|updates/officexp/officexp-kb917335-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/6/b/c/6bc7955c-f6bb-4748-84f4-21a7cadfb1c8/officexp-KB917335-FullFile-FRA.exe|updates/officexp/officexp-kb917335-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/b/2/8b2bb713-3db3-4cf4-8200-4c3fba1adb0f/officexp-KB917335-FullFile-HEB.exe|updates/officexp/officexp-kb917335-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/c/6/7c6dcdb2-7511-4cfb-a7d4-230c0266482b/officexp-KB917335-FullFile-HUN.exe|updates/officexp/officexp-kb917335-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/d/2/dd292e4e-7fa8-40e4-af2e-8a764367c3a7/officexp-KB917335-FullFile-ITA.exe|updates/officexp/officexp-kb917335-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/3/0/530756c4-4536-42e3-b5e1-2ac5a69c692a/officexp-KB917335-FullFile-JPN.exe|updates/officexp/officexp-kb917335-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/5/9/559e242d-fa24-47db-9c6d-6f09337bcef7/officexp-KB917335-FullFile-KOR.exe|updates/officexp/officexp-kb917335-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/8/2/c82f5b16-2f17-4293-8b67-b722fa1bec5b/officexp-KB917335-FullFile-NLD.exe|updates/officexp/officexp-kb917335-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/2/7/5270df5f-33d3-42bd-9ed9-3b9fc24dbfd6/officexp-KB917335-FullFile-NOR.exe|updates/officexp/officexp-kb917335-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/d/8/2d893e26-2b9b-40de-828a-a6ba876c9371/officexp-KB917335-FullFile-PLK.exe|updates/officexp/officexp-kb917335-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/a/5/2a596fa1-e7bc-445a-9d6d-6456519ba665/officexp-KB917335-FullFile-PTB.exe|updates/officexp/officexp-kb917335-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/0/3/8034731a-e654-4c76-8036-0bb71a470313/officexp-KB917335-FullFile-PTG.exe|updates/officexp/officexp-kb917335-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/f/2/3/f23df0a0-b19d-499c-af00-daff8c85e9f4/officexp-KB917335-FullFile-RUS.exe|updates/officexp/officexp-kb917335-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/c/4/d/c4db7826-68a5-4c64-877c-d3b24e57a655/officexp-KB917335-FullFile-SVE.exe|updates/officexp/officexp-kb917335-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/b/e/a/beab7082-ec6b-48fa-93c8-837fec132637/officexp-KB917335-FullFile-TRK.exe|updates/officexp/officexp-kb917335-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB917335-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb917345.txt /p WINWORDff.msp REBOOT=ReallySuppress\""
+
 :: Security Update for Word 2002 (KB895589)
 :: Description of the security update for Word 2002: July 12, 2005
 :: <http://support.microsoft.com/kb/895589>
