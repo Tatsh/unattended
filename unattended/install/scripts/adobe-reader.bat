@@ -39,10 +39,10 @@
 :: Download Adobe Reader Korean Fonts
 ::URL|KOR|http://download.adobe.com/pub/adobe/reader/win/7x/7.0/misc/alf_kor.exe|packages/adobereader/misc/alf_kor.exe
 
-set adobe_install=%Z%\packages\adobereader\AdbeRdr708_%WINLANG%_full.exe
+set adobe_install=%Z%\packages\adobereader\AdbeRdr708_%WINLANG%.exe
 if exist %adobe_install% goto found_install
 
-set adobe_install=%Z%\packages\adobereader\AdbeRdr705_%WINLANG%_full.exe
+set adobe_install=%Z%\packages\adobereader\AdbeRdr705_%WINLANG%.exe
 if not exist %adobe_install% goto noadberdr
 
 :found_install
