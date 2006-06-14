@@ -858,6 +858,36 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: JScript 5.6 Security Update for Windows 2000 (KB917344)
+:: <http://www.microsoft.com/technet/security/Bulletin/MS06-023.mspx>
+:: URL|ARA|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-ara.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-ara.exe
+:: URL|CHS|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-chs.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-chs.exe
+:: URL|CHT|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-cht.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-cht.exe
+:: URL|CSY|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-csy.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-dan.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-deu.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-ell.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-enu.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-esn.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-fin.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-fra.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-heb.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-hun.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-ita.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-jpn.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-kor.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-nld.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-nor.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-plk.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-ptb.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-ptg.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-rus.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-rus.exe
+:: URL|SKY|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-sky.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-sky.exe
+:: URL|SLV|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-slv.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-slv.exe
+:: URL|SVE|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-sve.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-trk.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb917344-56-x86-%WINLANG%.EXE /q /r:n"
+
 :: Security Update for Windows 2000 (KB911280)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=c1af96b2-2807-444b-82df-b6b61ec63715>
 :: URL|ARA|http://download.microsoft.com/download/1/d/4/1d44757a-8b5a-4e2c-a6d3-e5fb86d1c118/Windows2000-KB911280-x86-ARA.EXE|updates/win2ksp4/windows2000-kb911280-x86-ara.exe
