@@ -116,6 +116,28 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsServer2003-KB916281-x86-%WIN
 
 :: Critical Updates
 
+:: JScript 5.6 Security Update for Windows XP (KB917344)
+:: <http://www.microsoft.com/technet/security/Bulletin/MS06-023.mspx>
+:: URL|CHS|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-CHS.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-chs.exe
+:: URL|CHT|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-CHT.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-cht.exe
+:: URL|CSY|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-csy.exe
+:: URL|DEU|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-deu.exe
+:: URL|ENU|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-esn.exe
+:: URL|FRA|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-fra.exe
+:: URL|HUN|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-nld.exe
+:: URL|PLK|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\windowsserver2003-kb917344-x86-%WINLANG%.EXE /q /r:n"
+
 :: Security Update for Windows Server 2003 (KB911280)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b4264cb9-8979-40e8-b903-bc8deda00fec>
 :: No Download found for ARA.
