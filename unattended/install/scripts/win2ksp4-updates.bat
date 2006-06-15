@@ -886,7 +886,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 :: URL|SLV|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-slv.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-slv.exe
 :: URL|SVE|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-sve.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/b/c/3/bc3a0c36-fada-497d-a3de-8b0139766f3b/Windows2000-KB917344-56-x86-trk.Exe|updates/win2ksp4/windows2000-kb917344-56-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb917344-56-x86-%WINLANG%.EXE /q /r:n"
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\windows2000-kb917344-56-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Security Update for Windows 2000 (KB911280)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=c1af96b2-2807-444b-82df-b6b61ec63715>
