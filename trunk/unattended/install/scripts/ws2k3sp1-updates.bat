@@ -136,7 +136,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsServer2003-KB916281-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\windowsserver2003-kb917344-x86-%WINLANG%.EXE /q /r:n"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\windowsserver2003-kb917344-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB911280)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b4264cb9-8979-40e8-b903-bc8deda00fec>
