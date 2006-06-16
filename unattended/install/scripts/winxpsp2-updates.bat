@@ -938,30 +938,30 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB905915-x86-%WINLANG%.ex
 
 :: JScript 5.6 Security Update for Windows XP (KB917344)
 :: <http://www.microsoft.com/technet/security/Bulletin/MS06-023.mspx>
-:: URL|ARA|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ARA.exeupdates/winxpsp2/windowsxp-kb917344-x86-ara.exe
-:: URL|CHS|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-CHS.exeupdates/winxpsp2/windowsxp-kb917344-x86-chs.exe
-:: URL|CHT|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-CHT.exeupdates/winxpsp2/windowsxp-kb917344-x86-cht.exe
-:: URL|CSY|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-CSY.exeupdates/winxpsp2/windowsxp-kb917344-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-DAN.exeupdates/winxpsp2/windowsxp-kb917344-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-DEU.exeupdates/winxpsp2/windowsxp-kb917344-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ELL.exeupdates/winxpsp2/windowsxp-kb917344-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ENU.exeupdates/winxpsp2/windowsxp-kb917344-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ESN.exeupdates/winxpsp2/windowsxp-kb917344-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-FIN.exeupdates/winxpsp2/windowsxp-kb917344-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-FRA.exeupdates/winxpsp2/windowsxp-kb917344-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-HEB.exeupdates/winxpsp2/windowsxp-kb917344-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-HUN.exeupdates/winxpsp2/windowsxp-kb917344-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ITA.exeupdates/winxpsp2/windowsxp-kb917344-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-JPN.exeupdates/winxpsp2/windowsxp-kb917344-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-KOR.exeupdates/winxpsp2/windowsxp-kb917344-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-NLD.exeupdates/winxpsp2/windowsxp-kb917344-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-NOR.exeupdates/winxpsp2/windowsxp-kb917344-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-PLK.exeupdates/winxpsp2/windowsxp-kb917344-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-PTB.exeupdates/winxpsp2/windowsxp-kb917344-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-PTG.exeupdates/winxpsp2/windowsxp-kb917344-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-RUS.exeupdates/winxpsp2/windowsxp-kb917344-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-SVE.exeupdates/winxpsp2/windowsxp-kb917344-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-TRK.exeupdates/winxpsp2/windowsxp-kb917344-x86-trk.exe
+:: URL|ARA|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ARA.exe|updates/winxpsp2/windowsxp-kb917344-x86-ara.exe
+:: URL|CHS|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-CHS.exe|updates/winxpsp2/windowsxp-kb917344-x86-chs.exe
+:: URL|CHT|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-CHT.exe|updates/winxpsp2/windowsxp-kb917344-x86-cht.exe
+:: URL|CSY|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-CSY.exe|updates/winxpsp2/windowsxp-kb917344-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-DAN.exe|updates/winxpsp2/windowsxp-kb917344-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-DEU.exe|updates/winxpsp2/windowsxp-kb917344-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ELL.exe|updates/winxpsp2/windowsxp-kb917344-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ENU.exe|updates/winxpsp2/windowsxp-kb917344-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ESN.exe|updates/winxpsp2/windowsxp-kb917344-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-FIN.exe|updates/winxpsp2/windowsxp-kb917344-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-FRA.exe|updates/winxpsp2/windowsxp-kb917344-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-HEB.exe|updates/winxpsp2/windowsxp-kb917344-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-HUN.exe|updates/winxpsp2/windowsxp-kb917344-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-ITA.exe|updates/winxpsp2/windowsxp-kb917344-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-JPN.exe|updates/winxpsp2/windowsxp-kb917344-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-KOR.exe|updates/winxpsp2/windowsxp-kb917344-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-NLD.exe|updates/winxpsp2/windowsxp-kb917344-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-NOR.exe|updates/winxpsp2/windowsxp-kb917344-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-PLK.exe|updates/winxpsp2/windowsxp-kb917344-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-PTB.exe|updates/winxpsp2/windowsxp-kb917344-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-PTG.exe|updates/winxpsp2/windowsxp-kb917344-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-RUS.exe|updates/winxpsp2/windowsxp-kb917344-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-SVE.exe|updates/winxpsp2/windowsxp-kb917344-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/4/6/b/46bf4848-a039-429d-a222-6143a12e2cdd/WindowsXP-KB917344-x86-TRK.exe|updates/winxpsp2/windowsxp-kb917344-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\windowsxp-kb917344-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Security Update for Windows XP (KB911280)
