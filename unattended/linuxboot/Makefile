@@ -13,22 +13,22 @@ glibc=glibc-2.3.5
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.15.6
-module-init-tools=module-init-tools-3.2
-mysql=mysql-4.1.18
+linux=linux-2.6.17
+module-init-tools=module-init-tools-3.2.2
+mysql=mysql-4.1.20
 nano=nano-1.2.5
 ncurses=ncurses-5.5
 parted=parted-1.6.25.1
-pciutils=pciutils-2.2.1
+pciutils=pciutils-2.2.3
 pcmcia-cs=pcmcia-cs-3.2.8
-perl=perl-5.8.7
+perl=perl-5.8.8
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.33
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20031210
-samba=samba-3.0.21c
-wireless_tools=wireless_tools.27
+samba=samba-3.0.22
+wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
 cwd:=$(shell pwd)
