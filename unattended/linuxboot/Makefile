@@ -1,5 +1,5 @@
 bash=bash-3.1
-busybox=busybox-1.00
+busybox=busybox-1.1.3
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.19
 dbd-mysql=DBD-mysql-2.9006
@@ -133,12 +133,7 @@ $(busybox)/.stamp-busybox-patch: misc/busybox-patch
 	cd $(busybox) && patch -p1 < $(cwd)/$<
 	touch $@
 
-$(busybox)/.stamp-busybox-userclass-patch: misc/busybox-userclass-patch
-	cd $(busybox) && patch -p1 < $(cwd)/$<
-	touch $@
-
-$(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch \
-			$(busybox)/.stamp-busybox-userclass-patch
+$(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch 
 	cp -f $< $@
 	cd $(busybox) && make oldconfig
 
