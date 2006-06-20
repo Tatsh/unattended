@@ -1,21 +1,107 @@
-diff -u -r busybox-1.00-orig/networking/udhcp/options.c busybox-1.00/networking/udhcp/options.c
---- busybox-1.00-orig/networking/udhcp/options.c	2004-03-15 03:29:01.000000000 -0500
-+++ busybox-1.00/networking/udhcp/options.c	2004-04-15 12:04:19.000000000 -0400
-@@ -33,7 +33,7 @@
- 	{"mtu",		OPTION_U16,				0x1a},
- 	{"broadcast",	OPTION_IP | OPTION_REQ,			0x1c},
- 	{"ntpsrv",	OPTION_IP | OPTION_LIST,		0x2a},
+diff -u -r busybox-1.1.3-orig/networking/udhcp/clientpacket.c busybox-1.1.3/networking/udhcp/clientpacket.c
+--- busybox-1.1.3-orig/networking/udhcp/clientpacket.c	2006-03-22 22:16:19.000000000 +0100
++++ busybox-1.1.3/networking/udhcp/clientpacket.c	2006-06-20 11:03:45.000000000 +0200
+@@ -74,6 +74,7 @@
+ 	if (client_config.clientid)
+ 	    add_option_string(packet->options, client_config.clientid);
+ 	if (client_config.hostname) add_option_string(packet->options, client_config.hostname);
++	if (client_config.userclass) add_option_string(packet->options, client_config.userclass);
+ 	if (client_config.fqdn) add_option_string(packet->options, client_config.fqdn);
+ 	add_option_string(packet->options, client_config.vendorclass);
+ }
+diff -u -r busybox-1.1.3-orig/networking/udhcp/dhcpc.c busybox-1.1.3/networking/udhcp/dhcpc.c
+--- busybox-1.1.3-orig/networking/udhcp/dhcpc.c	2006-03-22 22:16:19.000000000 +0100
++++ busybox-1.1.3/networking/udhcp/dhcpc.c	2006-06-20 11:06:44.000000000 +0200
+@@ -56,6 +56,7 @@
+ 	.clientid = NULL,
+ 	.vendorclass = NULL,
+ 	.hostname = NULL,
++	.userclass = NULL,
+ 	.fqdn = NULL,
+ 	.ifindex = 0,
+ 	.retries = 3,
+@@ -74,6 +75,7 @@
+ "  -H, --hostname=HOSTNAME         Client hostname\n"
+ "  -h                              Alias for -H\n"
+ "  -F, --fqdn=FQDN                 Client fully qualified domain name\n"
++"  -u, --userclass=USERCLASS       User class identifier (RFC 3004)\n"
+ "  -f, --foreground                Do not fork after getting lease\n"
+ "  -b, --background                Fork to background if lease cannot be\n"
+ "                                  immediately negotiated.\n"
+@@ -205,6 +207,7 @@
+ 		{"quit",	no_argument,		0, 'q'},
+ 		{"request",	required_argument,	0, 'r'},
+ 		{"script",	required_argument,	0, 's'},
++		{"userclass",	required_argument,	0, 'u'},
+ 		{"timeout",	required_argument,	0, 'T'},
+ 		{"version",	no_argument,		0, 'v'},
+ 		{"retries",	required_argument,	0, 't'},		
+@@ -214,7 +217,7 @@
+ 	/* get options */
+ 	while (1) {
+ 		int option_index = 0;
+-		c = getopt_long(argc, argv, "c:CV:fbH:h:F:i:np:qr:s:T:t:v", arg_options, &option_index);
++		c = getopt_long(argc, argv, "c:CV:fbH:h:F:i:np:qr:s:u:T:t:v", arg_options, &option_index);
+ 		if (c == -1) break;
+ 
+ 		switch (c) {
+@@ -290,6 +293,16 @@
+ 		case 's':
+ 			client_config.script = optarg;
+ 			break;
++		case 'u':
++                        len = strlen(optarg) > 255 ? 255 : strlen(optarg);
++                        if (client_config.userclass) free(client_config.userclass);
++                        client_config.userclass = xmalloc(len + OPT_DATA + 1);
++                        client_config.userclass[OPT_CODE] = DHCP_USER_CLASS;
++                        client_config.userclass[OPT_LEN] = len+1;
++                        client_config.userclass[OPT_DATA] = len;
++                        strncpy(client_config.userclass + OPT_DATA + 1,
++                                optarg, len);
++                        break;
+ 		case 'T':
+ 			client_config.timeout = atoi(optarg);
+ 			break;
+diff -u -r busybox-1.1.3-orig/networking/udhcp/dhcpc.h busybox-1.1.3/networking/udhcp/dhcpc.h
+--- busybox-1.1.3-orig/networking/udhcp/dhcpc.h	2006-03-22 22:16:19.000000000 +0100
++++ busybox-1.1.3/networking/udhcp/dhcpc.h	2006-06-20 11:07:05.000000000 +0200
+@@ -27,6 +27,7 @@
+ 	uint8_t *clientid;		/* Optional client id to use */
+ 	uint8_t *vendorclass;		/* Optional vendor class-id to use */
+ 	uint8_t *hostname;		/* Optional hostname to use */
++	uint8_t *userclass;		/* Optional user class id to use */
+ 	uint8_t *fqdn;			/* Optional fully qualified domain name to use */
+ 	int ifindex;			/* Index number of the interface to use */
+ 	int retries;			/* Max number of request packets */        
+diff -u -r busybox-1.1.3-orig/networking/udhcp/dhcpd.h busybox-1.1.3/networking/udhcp/dhcpd.h
+--- busybox-1.1.3-orig/networking/udhcp/dhcpd.h	2006-03-22 22:16:19.000000000 +0100
++++ busybox-1.1.3/networking/udhcp/dhcpd.h	2006-06-20 11:07:29.000000000 +0200
+@@ -63,6 +63,7 @@
+ #define DHCP_T2			0x3b
+ #define DHCP_VENDOR		0x3c
+ #define DHCP_CLIENT_ID		0x3d
++#define DHCP_USER_CLASS		0x4d
+ #define DHCP_FQDN		0x51
+ 
+ #define DHCP_END		0xFF
+diff -u -r busybox-1.1.3-orig/networking/udhcp/options.c busybox-1.1.3/networking/udhcp/options.c
+--- busybox-1.1.3-orig/networking/udhcp/options.c	2006-03-22 22:16:19.000000000 +0100
++++ busybox-1.1.3/networking/udhcp/options.c	2006-06-20 11:08:51.000000000 +0200
+@@ -35,7 +35,7 @@
+ 	{"nisdomain",	OPTION_STRING | OPTION_REQ,		0x28},
+ 	{"nissrv",	OPTION_IP | OPTION_LIST | OPTION_REQ,	0x29},
+ 	{"ntpsrv",	OPTION_IP | OPTION_LIST | OPTION_REQ,	0x2a},
 -	{"wins",	OPTION_IP | OPTION_LIST,		0x2c},
 +	{"wins",	OPTION_IP | OPTION_LIST | OPTION_REQ,	0x2c},
  	{"requestip",	OPTION_IP,				0x32},
  	{"lease",	OPTION_U32,				0x33},
  	{"dhcptype",	OPTION_U8,				0x35},
-@@ -41,6 +41,8 @@
+@@ -43,6 +43,8 @@
  	{"message",	OPTION_STRING,				0x38},
  	{"tftp",	OPTION_STRING,				0x42},
  	{"bootfile",	OPTION_STRING,				0x43},
-+	/* Steal "local" option 0xe9 (decimal 233) for Unattended */
-+	{"unattend",	OPTION_STRING | OPTION_REQ,	        0xe9},
++        /* Steal "local" option 0xe9 (decimal 233) for Unattended */
++        {"unattend",    OPTION_STRING | OPTION_REQ,             0xe9},
  	{"",		0x00,				0x00}
  };
  
