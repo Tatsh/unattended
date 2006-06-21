@@ -112,7 +112,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB918439-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/e/6/5/e65c16e1-6ee8-49ad-82c0-0ee8d1f0d7a6/WindowsServer2003-KB916281-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/7/0/c/70c26a62-e849-44d2-ab70-11da85627062/WindowsServer2003-KB916281-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/6/c/1/6c1c28f1-03e2-4e41-98b2-3cc89ba5f2cb/WindowsServer2003-KB916281-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsServer2003-KB916281-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB916281-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Critical Updates
 
