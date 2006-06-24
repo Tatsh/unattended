@@ -200,6 +200,9 @@ sub get_windows_version () {
     elsif ($product_name eq 'Microsoft Windows Server 2003') {
         $os = 'ws2k3';
     }
+    elsif ($product_name eq 'Microsoft Windows Server 2003 R2') {
+        $os = 'ws2k3';
+    }
     else {
         die "Unrecognized $pn_key: $product_name";
     }
