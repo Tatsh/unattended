@@ -6,6 +6,65 @@
 
 :: Extra Updates
 
+:: Microsoft Base Smart Card Cryptographic Service Provider Package: x86 (KB909520)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=e8095fd5-c7e5-4bee-9577-2ea6b45b41c6>
+:: URL|ARA|http://download.microsoft.com/download/2/3/9/2397e3d9-3b86-4f37-842a-ca1b1cd402f9/Windows-KB909520-v1.000-x86-ARA.exe|updates/common/windows-kb909520-v1.000-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/3/9/5/395c69dd-54c7-48ed-934a-bb7ae670d33c/Windows-KB909520-v1.000-x86-CSY.exe|updates/common/windows-kb909520-v1.000-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/b/4/6/b4690798-2ef1-4475-b904-5e8b835e2d6f/Windows-KB909520-v1.000-x86-DAN.exe|updates/common/windows-kb909520-v1.000-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/a/9/2/a92460f9-a301-4b43-ab0b-6a906ea9b6da/Windows-KB909520-v1.000-x86-DEU.exe|updates/common/windows-kb909520-v1.000-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/c/3/4/c34d9eee-a30f-4401-b35f-ab66d682c5ec/Windows-KB909520-v1.000-x86-ELL.exe|updates/common/windows-kb909520-v1.000-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/d/0/9/d094e803-479d-432c-843d-74d9fd98ff5e/Windows-KB909520-v1.000-x86-ENU.exe|updates/common/windows-kb909520-v1.000-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/5/a/4/5a49dfad-9257-448f-b228-ea94785058bd/Windows-KB909520-v1.000-x86-ESN.exe|updates/common/windows-kb909520-v1.000-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/b/c/f/bcfd983e-c364-4794-92a7-65d7fa1540ba/Windows-KB909520-v1.000-x86-FIN.exe|updates/common/windows-kb909520-v1.000-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/c/b/1/cb128eda-a65e-4894-a727-ed782bf17c24/Windows-KB909520-v1.000-x86-FRA.exe|updates/common/windows-kb909520-v1.000-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/0/a/3/0a375bcf-d43f-4a80-8369-5ee2e6804577/Windows-KB909520-v1.000-x86-HEB.exe|updates/common/windows-kb909520-v1.000-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/e/5/4/e5459060-8a8b-4cc3-bd8c-835a384e3bb0/Windows-KB909520-v1.000-x86-HUN.exe|updates/common/windows-kb909520-v1.000-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/1/8/9/1893b220-15a7-496b-bad7-af4953bb46e6/Windows-KB909520-v1.000-x86-ITA.exe|updates/common/windows-kb909520-v1.000-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/3/7/e37351ae-21c9-480d-82d4-573de3021fbc/Windows-KB909520-v1.000-x86-JPN.exe|updates/common/windows-kb909520-v1.000-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/1/6/41607f0d-1b6a-422b-b6f4-a15b2e95408e/Windows-KB909520-v1.000-x86-KOR.exe|updates/common/windows-kb909520-v1.000-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/5/8/a58a6a6f-51c0-4b8a-add4-885b98061714/Windows-KB909520-v1.000-x86-NLD.exe|updates/common/windows-kb909520-v1.000-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/e/c/b/ecb60d4e-a1cd-4e5a-9a12-751f88e221a2/Windows-KB909520-v1.000-x86-NOR.exe|updates/common/windows-kb909520-v1.000-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/d/b/4/db480179-01b6-4f95-9d9c-bb333e029683/Windows-KB909520-v1.000-x86-PLK.exe|updates/common/windows-kb909520-v1.000-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/f/f/b/ffbf3942-c5dc-440e-956e-5b263a5c2ada/Windows-KB909520-v1.000-x86-PTB.exe|updates/common/windows-kb909520-v1.000-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/6/1/a/61ae5c40-9ef4-49dc-bb38-69e13c32da7e/Windows-KB909520-v1.000-x86-PTG.exe|updates/common/windows-kb909520-v1.000-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/4/d/e4dd6c2d-433f-47df-a86a-ebbcb45e0330/Windows-KB909520-v1.000-x86-RUS.exe|updates/common/windows-kb909520-v1.000-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/d/8/ed8b84a7-b9aa-4326-99e0-d551adfb3ded/Windows-KB909520-v1.000-x86-SVE.exe|updates/common/windows-kb909520-v1.000-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/8/7/b/87bd1589-b61d-4086-a392-ce2789c76928/Windows-KB909520-v1.000-x86-TRK.exe|updates/common/windows-kb909520-v1.000-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB909520-v1.000-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: .NET Framework Version 2.0 Language Pack
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=39C8B63B-F64B-4B68-A774-B64ED0C32AE7>
+:: URL|ARA|http://download.microsoft.com/download/f/8/5/f85a7726-d456-4e28-b687-f068f908266d/langpack.exe|updates/common/ara/dotnet_20_langpack.exe
+:: URL|CSY|http://download.microsoft.com/download/e/e/9/ee99aa30-2e1f-4db8-b670-4ff086b7f775/langpack.exe|updates/common/csy/dotnet_20_langpack.exe
+:: URL|DAN|http://download.microsoft.com/download/2/d/d/2dd1f5c4-4375-4975-9caa-648c023e1324/langpack.exe|updates/common/dan/dotnet_20_langpack.exe
+:: URL|DEU|http://download.microsoft.com/download/2/9/7/29768238-56c3-4ea6-abba-4c5246f2bc81/langpack.exe|updates/common/deu/dotnet_20_langpack.exe
+:: URL|ELL|http://download.microsoft.com/download/c/b/1/cb1e7a61-c199-461c-b7bc-1bfb9fc550d2/langpack.exe|updates/common/ell/dotnet_20_langpack.exe
+:: No Language Pack needed for ENU.
+:: URL|ESN|http://download.microsoft.com/download/e/a/a/eaaf696f-3bd4-4e05-a471-d488b29ee52b/langpack.exe|updates/common/esn/dotnet_20_langpack.exe
+:: URL|FIN|http://download.microsoft.com/download/6/8/9/689f899f-957a-4494-b167-fe07de469fd2/langpack.exe|updates/common/fin/dotnet_20_langpack.exe
+:: URL|FRA|http://download.microsoft.com/download/9/9/5/995002e9-b8b9-4794-8d09-6eaa8f8b2806/langpack.exe|updates/common/fra/dotnet_20_langpack.exe
+:: URL|HEB|http://download.microsoft.com/download/0/2/4/024a2a12-2468-431d-b758-83f5c981e656/langpack.exe|updates/common/heb/dotnet_20_langpack.exe
+:: URL|HUN|http://download.microsoft.com/download/a/5/d/a5d68ee1-e4d7-44b4-b7ff-6521e0e1bd7e/langpack.exe|updates/common/hun/dotnet_20_langpack.exe
+:: URL|ITA|http://download.microsoft.com/download/d/7/7/d7712375-6a01-435d-878d-b2b7ff348e30/langpack.exe|updates/common/ita/dotnet_20_langpack.exe
+:: URL|JPN|http://download.microsoft.com/download/5/9/4/594a8f51-ba02-44ea-ba45-f8bebb19a47d/langpack.exe|updates/common/jpn/dotnet_20_langpack.exe
+:: URL|KOR|http://download.microsoft.com/download/f/2/9/f293d0f9-d815-48b4-bc03-07d5bfae279f/langpack.exe|updates/common/kor/dotnet_20_langpack.exe
+:: URL|NLD|http://download.microsoft.com/download/8/6/f/86f9563d-3a12-4a99-a4f9-522a29b8abe9/langpack.exe|updates/common/nld/dotnet_20_langpack.exe
+:: URL|NOR|http://download.microsoft.com/download/0/f/a/0faa74d8-7d06-4811-9e69-d02526d5a042/langpack.exe|updates/common/nor/dotnet_20_langpack.exe
+:: URL|PLK|http://download.microsoft.com/download/a/2/d/a2d01fc7-8c40-43d8-aeb4-0ac6181e652c/langpack.exe|updates/common/plk/dotnet_20_langpack.exe
+:: URL|PTB|http://download.microsoft.com/download/d/a/4/da4ad9d7-f0d3-4f28-866b-2bbf8636881b/langpack.exe|updates/common/ptb/dotnet_20_langpack.exe
+:: URL|PTG|http://download.microsoft.com/download/8/a/b/8ab19777-11c5-44b6-822d-f8331b371f40/langpack.exe|updates/common/ptg/dotnet_20_langpack.exe
+:: URL|RUS|http://download.microsoft.com/download/a/b/b/abbb30f4-5942-4d39-85f9-8c8b285dfc1f/langpack.exe|updates/common/rus/dotnet_20_langpack.exe
+:: URL|SVE|http://download.microsoft.com/download/b/b/7/bb78a372-4c94-43e7-8657-308da34d00b5/langpack.exe|updates/common/sve/dotnet_20_langpack.exe
+:: URL|TRK|http://download.microsoft.com/download/7/e/3/7e32373e-8594-4379-aff2-caa78c14ed62/langpack.exe|updates/common/trk/dotnet_20_langpack.exe
+if not exist %Z%\updates\common\%WINLANG%\dotnet_20_langpack.exe goto nolangpack20
+todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnet_20_langpack.exe /q /c:\"install /q\""
+:nolangpack20
+
+:: Microsoft .NET Framework Version 2.0 Redistributable Package (x86)
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=0856EACB-4362-4B0D-8EDD-AAB15C5E04F5>
+:: URL|ALL|http://download.microsoft.com/download/5/6/7/567758a3-759e-473e-bf8f-52154438565a/dotnetfx.exe|updates/common/dotnetfx_20.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx_20.exe /q /c:\"install /q\""
+
 :: Recommended Updates
 
 :: Security Update for Windows Server 2003 (KB917953)
@@ -137,6 +196,90 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB916281-x86-%WIN
 :: URL|SVE|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/8/3/2/8326e59a-0f35-4759-9f30-09ca013f5b90/WindowsServer2003-KB917344-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb917344-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\windowsserver2003-kb917344-x86-%WINLANG%.EXE /passive /n /norestart"
+
+:: Cumulative Security Update for Outlook Express for Windows Server 2003 (KB911567)
+:: Microsoft Security Bulletin MS06-016
+:: <http://www.microsoft.com/technet/security/bulletin/MS06-016.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=484DE679-5505-4196-BDD8-F7CF325AF0F5>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/6/c/8/6c8b0fc5-1d1b-46b2-9ac0-2c4d574426f7/WindowsServer2003-KB911567-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/b/3/5/b3524678-201a-40e7-b5a0-2ca1157d9c64/WindowsServer2003-KB911567-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/9/0/2/9022ff18-cca5-4b87-83d1-2548d9f43959/WindowsServer2003-KB911567-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/0/7/4076c45f-bcd2-48b3-aef2-ed15b4dba70b/WindowsServer2003-KB911567-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/f/d/b/fdbb05f8-7693-40e7-8011-7cdc98537467/WindowsServer2003-KB911567-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/4/4/1/441ad069-264b-4214-985a-01d6361a87fa/WindowsServer2003-KB911567-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/f/c/4/fc446e9a-c218-4a2f-b441-c9bbcd47f226/WindowsServer2003-KB911567-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/c/6/3/c6344ddf-161d-4aa1-b3a9-adda06edc3e4/WindowsServer2003-KB911567-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/7/5/7/75734970-da3d-4575-a6bd-0adbd28d898d/WindowsServer2003-KB911567-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/e/5/2/e52d7e55-4920-4e02-9ea8-253f9e525fc2/WindowsServer2003-KB911567-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/f/b/b/fbb2c82a-98d5-468c-a361-d50bee84c8ca/WindowsServer2003-KB911567-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/c/3/3/c3347d40-58bb-4ec3-bdf8-933a716d8d35/WindowsServer2003-KB911567-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/2/a/1/2a1640eb-eb2c-4a5c-9931-58d7d5d587fb/WindowsServer2003-KB911567-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/d/a/7/da7c7718-46cc-4f72-be7e-7c1e6e59e1e6/WindowsServer2003-KB911567-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/2/c/12cfdd3e-5bbf-4eb1-b4a3-ff517f038ce1/WindowsServer2003-KB911567-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/b/c/3/bc38a749-3d56-45de-ba66-f17cf92b477d/WindowsServer2003-KB911567-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb911567-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB911567-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB908531)
+:: Microsoft Security Bulletin MS06-015
+:: <http://www.microsoft.com/technet/security/bulletin/MS06-015.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=099EE535-8B31-4356-B3FB-EF524C20A424>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/6/0/6/606a4659-9742-4d07-afc8-a18a59d89391/WindowsServer2003-KB908531-v2-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/e/3/e/e3e7dd7e-99a9-4eb4-acaf-5671c3bf589b/WindowsServer2003-KB908531-v2-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/6/f/1/6f130581-3db7-4837-9174-c0c7169cf70a/WindowsServer2003-KB908531-v2-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/3/2/e/32ee0084-65c6-4375-b4ab-3011609c55f5/WindowsServer2003-KB908531-v2-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/4/8/8/488a4cac-ba19-4536-8b5b-37d6d6fb45f8/WindowsServer2003-KB908531-v2-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/d/4/1/d4110cc2-4954-4e5a-83fb-8a5caef9d09a/WindowsServer2003-KB908531-v2-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/e/0/1/e0163583-c5a9-4cfd-a4b5-ae6f22d4bbc7/WindowsServer2003-KB908531-v2-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/8/1/e8188855-26dd-4e0f-9aaa-6569bde3b38e/WindowsServer2003-KB908531-v2-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/c/2/6/c262f286-ac1d-4f7e-8960-12ecac742639/WindowsServer2003-KB908531-v2-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/4/0/040b8712-d4f0-4e4e-85b7-2a2f51f28182/WindowsServer2003-KB908531-v2-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/d/8/d/d8d01f3a-9f2a-4334-aaa0-98a95f9db14d/WindowsServer2003-KB908531-v2-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/1/e/d/1ed74343-39c2-4ec7-b608-0248fc715a94/WindowsServer2003-KB908531-v2-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/5/a/55a81ccf-786d-4a40-b8b5-7b6b2d947ec8/WindowsServer2003-KB908531-v2-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/2/5/a/25aa85d1-4850-4f25-92fa-21f948e5155f/WindowsServer2003-KB908531-v2-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/d/4/6d44cb5c-b003-4d6a-9028-f5b8ba38bac3/WindowsServer2003-KB908531-v2-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/2/d/0/2d08d980-4ce9-420d-b625-93f460799011/WindowsServer2003-KB908531-v2-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb908531-v2-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB908531-v2-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB911562)
+:: Microsoft Security Bulletin MS06-014
+:: <http://www.microsoft.com/technet/security/bulletin/MS06-014.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=39B29ED4-9B95-4593-BCB6-4BB03CA5F8F1>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/2/0/c/20c15d7d-bc7e-4439-b292-0a59267f5332/WindowsServer2003-KB911562-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/7/3/7/7374ed33-ccb2-4836-a447-a43a1c5e4212/WindowsServer2003-KB911562-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/1/d/b/1dbd65f4-3e1c-480e-b6a9-d9b971b62da3/WindowsServer2003-KB911562-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/3/9/139a53b8-1317-425f-bac6-0a2fc590c0f2/WindowsServer2003-KB911562-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/3/c/1/3c15f505-1932-47f3-8ffd-0d77dac52b6f/WindowsServer2003-KB911562-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/2/0/e/20e942f9-f245-4c2b-9162-4edc36f178cd/WindowsServer2003-KB911562-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/9/a/09a71b6f-20ab-477a-a87a-39c8f86592df/WindowsServer2003-KB911562-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/6/c/0/6c00d984-3d0b-40d5-bd32-20b4f6be4531/WindowsServer2003-KB911562-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/4/0/0405f701-4a70-42f8-ac77-bcede67b210d/WindowsServer2003-KB911562-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/3/6/4368c4fc-68eb-4d82-890c-e233a6d8ad16/WindowsServer2003-KB911562-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/d/b/6/db624294-ff60-4681-a0c8-3fbe2e3aeea6/WindowsServer2003-KB911562-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/7/7/2772ba69-ee88-4240-9661-c1dcf738d9b9/WindowsServer2003-KB911562-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/a/f/5afcf327-78ac-41d9-8572-b459d8444126/WindowsServer2003-KB911562-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/9/9/7/99704239-dccd-4ab9-ac46-1da62856d000/WindowsServer2003-KB911562-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/d/7/8/d7804443-cc42-4f13-9b68-61d3f748e9aa/WindowsServer2003-KB911562-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/a/e/b/aeb56bf8-6bf0-4afe-a8c7-5482344ff1ab/WindowsServer2003-KB911562-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb911562-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB911562-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB911280)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b4264cb9-8979-40e8-b903-bc8deda00fec>
