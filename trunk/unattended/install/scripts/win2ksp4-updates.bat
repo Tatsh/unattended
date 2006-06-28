@@ -674,7 +674,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnet_20_langpack.exe /q /
 :: Microsoft .NET Framework Version 2.0 Redistributable Package (x86)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=0856EACB-4362-4B0D-8EDD-AAB15C5E04F5>
 :: URL|ALL|http://download.microsoft.com/download/5/6/7/567758a3-759e-473e-bf8f-52154438565a/dotnetfx.exe|updates/common/dotnetfx_20.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx_20.exe /q /c:\"install /q\""
+todo.pl ".reboot-on 194 %Z%\updates\common\dotnetfx_20.exe /q /c:\"install /q\""
 
 if not exist %Z%\updates\common\%WINLANG%\dotnet_langpack.exe goto nolangpack
 :: Microsoft .NET Framework Version 1.1 Language Pack
@@ -1063,29 +1063,29 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB908531-v2-x86-%WINLAN
 :: Microsoft Security Bulletin MS06-014
 :: <http://www.microsoft.com/technet/security/bulletin/MS06-014.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=7358DA31-959C-4E3E-8115-51DC6D441365>
-:: URL|ARA|http://download.microsoft.com/download/2/1/b/21b4f6e1-cd34-4c96-8f22-31f7ff5cca11/MDAC281-KB911562-x86-ARA.exe|updates/win2ksp4/mdac281-kb911562-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/0/c/f/0cf61393-d7d5-403f-ad7f-5271e6ff8827/MDAC281-KB911562-x86-CSY.exe|updates/win2ksp4/mdac281-kb911562-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/e/a/7/ea711e25-d02e-4074-80c9-73312ed9c309/MDAC281-KB911562-x86-DAN.exe|updates/win2ksp4/mdac281-kb911562-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/0/9/2/09205719-7d55-4958-9eeb-516816fc3754/MDAC281-KB911562-x86-DEU.exe|updates/win2ksp4/mdac281-kb911562-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/3/4/2/3421ef79-3e8d-4952-bbfb-7428e80df62c/MDAC281-KB911562-x86-ELL.exe|updates/win2ksp4/mdac281-kb911562-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/9/a/2/9a26eb80-7f99-47a2-8b18-bbce5900d926/MDAC281-KB911562-x86-ENU.exe|updates/win2ksp4/mdac281-kb911562-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/0/6/a/06a007a8-a204-4b2e-9e7c-06160cd8083b/MDAC281-KB911562-x86-ESN.exe|updates/win2ksp4/mdac281-kb911562-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/c/6/b/c6b8eed9-785b-4f0f-a632-dab5bedcc1cb/MDAC281-KB911562-x86-FIN.exe|updates/win2ksp4/mdac281-kb911562-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/0/c/a/0cafb7b3-f798-471f-83e4-0d9810293570/MDAC281-KB911562-x86-FRA.exe|updates/win2ksp4/mdac281-kb911562-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/f/6/1/f6117a18-590a-4901-a726-08130dfdca5b/MDAC281-KB911562-x86-HEB.exe|updates/win2ksp4/mdac281-kb911562-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/f/b/7/fb749f82-2f34-4062-ac59-9ac2f3ef3dea/MDAC281-KB911562-x86-HUN.exe|updates/win2ksp4/mdac281-kb911562-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/7/e/8/7e809082-6372-410b-becc-520f890c4ffd/MDAC281-KB911562-x86-ITA.exe|updates/win2ksp4/mdac281-kb911562-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/3/0/6/3068b81b-909a-4c21-85a9-53aa51b378b4/MDAC281-KB911562-x86-JPN.exe|updates/win2ksp4/mdac281-kb911562-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/b/b/0bbb9a90-2850-49ca-9075-f8d7eec44a4c/MDAC281-KB911562-x86-KOR.exe|updates/win2ksp4/mdac281-kb911562-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/f/e/6/fe666ce2-5734-4320-b049-7c840095909e/MDAC281-KB911562-x86-NLD.exe|updates/win2ksp4/mdac281-kb911562-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/8/7/0/8707504d-45da-4b3d-a84f-3a2edee09001/MDAC281-KB911562-x86-NOR.exe|updates/win2ksp4/mdac281-kb911562-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/0/f/6/0f6216b6-3b68-4a21-be45-796525874666/MDAC281-KB911562-x86-PLK.exe|updates/win2ksp4/mdac281-kb911562-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/b/3/3/b3354b82-4a23-43a9-8bc2-f207a2a68cc1/MDAC281-KB911562-x86-PTB.exe|updates/win2ksp4/mdac281-kb911562-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/b/8/e/b8eda784-3021-417a-8b43-9630db4fec95/MDAC281-KB911562-x86-PTG.exe|updates/win2ksp4/mdac281-kb911562-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/7/0/5/7053780c-5c43-4b37-9aea-8f0c030c9d49/MDAC281-KB911562-x86-RUS.exe|updates/win2ksp4/mdac281-kb911562-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/8/6/a865cf23-437c-47f0-8916-a305374d9b3d/MDAC281-KB911562-x86-SVE.exe|updates/win2ksp4/mdac281-kb911562-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/e/1/8/e1837339-3735-49a8-8277-cb10230374f8/MDAC281-KB911562-x86-TRK.exe|updates/win2ksp4/mdac281-kb911562-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\MDAC281-KB911562-x86-%WINLANG%.exe /passive /n /norestart"
+:: URL|ARA|http://download.microsoft.com/download/a/1/f/a1fbff96-c57e-4b58-bf13-868bfbaff2f8/MDAC28-KB911562-x86-ARA.exe|updates/win2ksp4/mdac28-kb911562-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/c/3/ac37cd3c-ee95-40f1-96d7-d07a9f70d030/MDAC28-KB911562-x86-CSY.exe|updates/win2ksp4/mdac28-kb911562-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/e/c/c/ecca37bd-7770-4f9f-a3f2-02a1bf4fa871/MDAC28-KB911562-x86-DAN.exe|updates/win2ksp4/mdac28-kb911562-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/2/d/a/2da0df33-6c2e-4c8a-9e08-0e516350b47a/MDAC28-KB911562-x86-DEU.exe|updates/win2ksp4/mdac28-kb911562-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/5/f/55ff2210-caf7-40f3-9b04-994c3cd3f8c7/MDAC28-KB911562-x86-ELL.exe|updates/win2ksp4/mdac28-kb911562-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/6/5/e/65e1d31d-2105-48b9-94ab-fe89dcb28ff8/MDAC28-KB911562-x86-ENU.exe|updates/win2ksp4/mdac28-kb911562-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/a/1/a/a1a83380-ad43-4ca0-8234-9a844a0bf837/MDAC28-KB911562-x86-ESN.exe|updates/win2ksp4/mdac28-kb911562-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/9/0/5904bb4b-71c5-44c2-9391-733b00ca064c/MDAC28-KB911562-x86-FIN.exe|updates/win2ksp4/mdac28-kb911562-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/a/f/aafe3e76-7069-4bfb-bd0a-d35dce959d01/MDAC28-KB911562-x86-FRA.exe|updates/win2ksp4/mdac28-kb911562-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/6/4/46484d8c-fcbf-4ad5-bacd-5c0b84f883f6/MDAC28-KB911562-x86-HEB.exe|updates/win2ksp4/mdac28-kb911562-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/3/9/739f9817-8d0e-4afe-9061-23d359ea88ea/MDAC28-KB911562-x86-HUN.exe|updates/win2ksp4/mdac28-kb911562-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/2/1/9/219e508c-a38a-447b-bb37-b6c456207c7a/MDAC28-KB911562-x86-ITA.exe|updates/win2ksp4/mdac28-kb911562-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/9/9/299b7123-b503-4d26-8c55-3017e8960021/MDAC28-KB911562-x86-JPN.exe|updates/win2ksp4/mdac28-kb911562-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/2/4/02430034-8362-479d-87fe-bdfca23fc5eb/MDAC28-KB911562-x86-KOR.exe|updates/win2ksp4/mdac28-kb911562-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/c/f/4cf144e3-79f8-48b8-acd1-25d890f08fa2/MDAC28-KB911562-x86-NLD.exe|updates/win2ksp4/mdac28-kb911562-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/e/d/e/ede4cc43-f91c-46a1-9808-9dc8a7c3249b/MDAC28-KB911562-x86-NOR.exe|updates/win2ksp4/mdac28-kb911562-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/7/e/f/7ef4648b-bf1a-49fa-8f14-3305a66f6daf/MDAC28-KB911562-x86-PLK.exe|updates/win2ksp4/mdac28-kb911562-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/a/d/2ad2ad33-d30b-490f-af80-d2ffa30adb30/MDAC28-KB911562-x86-PTB.exe|updates/win2ksp4/mdac28-kb911562-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/d/9/0/d902857e-5ad1-4a18-a0f6-08879432d547/MDAC28-KB911562-x86-PTG.exe|updates/win2ksp4/mdac28-kb911562-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/7/d/57d66419-80a6-47ab-8ee9-9b8a987063e3/MDAC28-KB911562-x86-RUS.exe|updates/win2ksp4/mdac28-kb911562-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/e/d/8ed1f7fa-abf7-4fad-a552-1b093bddbb4c/MDAC28-KB911562-x86-SVE.exe|updates/win2ksp4/mdac28-kb911562-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/9/4/3/943250e2-8467-49eb-a865-da3af1154ef4/MDAC28-KB911562-x86-TRK.exe|updates/win2ksp4/mdac28-kb911562-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\MDAC28-KB911562-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows 2000 (KB911280)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=c1af96b2-2807-444b-82df-b6b61ec63715>
