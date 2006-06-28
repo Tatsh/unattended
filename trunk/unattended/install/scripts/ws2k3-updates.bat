@@ -19,7 +19,7 @@ todo.pl ws2k3sp1-updates.bat
 :: No Download found for FIN.
 :: URL|FRA|http://download.microsoft.com/download/2/8/5/285321e4-d555-4166-8784-63bae527817d/WindowsServer2003-KB889101-SP1-x86-FRA.exe|updates/ws2k3/windowsserver2003-kb889101-sp1-x86-fra.exe
 :: No Download found for HEB.
-:: No Download found for HUN.
+:: URL|HUN|http://download.microsoft.com/download/0/e/1/0e1ec4e7-c2f5-40cb-ac29-ec5f735d8e7d/WindowsServer2003-KB889101-SP1-x86-HUN.exe|updates/ws2k3/windowsserver2003-kb889101-sp1-x86-hun.exe
 :: URL|ITA|http://download.microsoft.com/download/b/7/0/b7096a2d-9a56-4a09-9db9-cd102c1e56bc/WindowsServer2003-KB889101-SP1-x86-ITA.exe|updates/ws2k3/windowsserver2003-kb889101-sp1-x86-ita.exe
 :: URL|JPN|http://download.microsoft.com/download/7/d/a/7dad6347-0b5f-4ad3-892a-c9661644942d/WindowsServer2003-KB889101-SP1-x86-JPN.exe|updates/ws2k3/windowsserver2003-kb889101-sp1-x86-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/1/e/f/1ef1b3e9-14cc-4250-aa90-b39cc8a5383d/WindowsServer2003-KB889101-SP1-x86-KOR.exe|updates/ws2k3/windowsserver2003-kb889101-sp1-x86-kor.exe
