@@ -126,29 +126,29 @@ todo.pl "srconfig.pl --enable" ".reboot-on 194 %Z%\updates\winxpsp2\%WINLANG%\wm
 :: "Vulnerability in Windows Media Player Could Allow Remote Code Execution (911565)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS06-005.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=182735E1-9382-4F2E-A624-D2316A96B411>
-:: URL|ARA|http://download.microsoft.com/download/8/e/8/8e8fa60e-236f-4e69-afd7-0b6cc3ff0b50/WindowsMedia10-KB911565-x86-ARA.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/d/5/c/d5c109e3-8f4a-453c-bbb6-eb54b1259bf5/WindowsMedia10-KB911565-x86-CSY.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/f/4/3/f437a4c2-a476-45dd-8101-ba3310e25bb4/WindowsMedia10-KB911565-x86-DAN.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/0/2/8/02876cab-0743-4626-98d9-62e15cb58782/WindowsMedia10-KB911565-x86-DEU.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/5/d/9/5d909827-b663-4c73-883b-b52c21f495da/WindowsMedia10-KB911565-x86-ELL.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/d/a/7/da78cee2-f32f-4a13-a5fc-f7b13269ae92/WindowsMedia10-KB911565-x86-ENU.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/d/e/c/dece24be-3685-4f27-ac4d-a03ffe8a21dc/WindowsMedia10-KB911565-x86-ESN.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/a/a/6/aa6ad39d-6a04-47ec-ba27-618ffa34c55f/WindowsMedia10-KB911565-x86-FIN.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/6/1/b/61b0dcb6-372a-4c54-b6fe-568ba384b89c/WindowsMedia10-KB911565-x86-FRA.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/d/b/6/db610f8b-cb52-4c40-9ebc-caef6d215cc1/WindowsMedia10-KB911565-x86-HEB.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/0/b/9/0b939a78-28a9-4738-9812-c69f9c405267/WindowsMedia10-KB911565-x86-HUN.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/4/e/e/4eed9c64-ff1f-4c8f-acd5-5cfececa704e/WindowsMedia10-KB911565-x86-ITA.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/f/9/0/f908f545-2fb8-4fb6-9bda-90d6ecee7df0/WindowsMedia10-KB911565-x86-JPN.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/6/a/46ab5937-72ba-4359-ac50-e40b001ab3e6/WindowsMedia10-KB911565-x86-KOR.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/d/9/0/d9028444-1e5c-40e1-ac19-e2e1d8abc3f7/WindowsMedia10-KB911565-x86-NLD.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/d/0/9/d090e230-397a-4135-bfe8-f57600c80f6e/WindowsMedia10-KB911565-x86-NOR.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/9/9/1/99148b40-04a0-4777-aef4-9f2daad3aab0/WindowsMedia10-KB911565-x86-PLK.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/1/b/7/1b7e301c-b43a-434f-a698-1885ac7005cf/WindowsMedia10-KB911565-x86-PTB.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/d/5/3/d53b580b-d9db-4dc4-a644-c276f4056335/WindowsMedia10-KB911565-x86-PTG.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/5/b/6/5b61e1f1-9f4f-4003-b000-4a8377df697c/WindowsMedia10-KB911565-x86-RUS.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/f/d/2/fd2e60f4-d011-4e61-8fca-2c49770771ce/WindowsMedia10-KB911565-x86-SVE.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/a/8/6/a86edbba-f88a-475c-bc0d-b05d2d2e56e4/WindowsMedia10-KB911565-x86-TRK.exe|updates/mediaplayer10/windowsmedia10-kb911565-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\mediaplayer10\WindowsMedia10-KB911565-x86-%WINLANG%.exe /passive /n /norestart"
+:: URL|ARA|http://download.microsoft.com/download/8/e/8/8e8fa60e-236f-4e69-afd7-0b6cc3ff0b50/WindowsMedia10-KB911565-v2-x86-ARA.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/d/5/c/d5c109e3-8f4a-453c-bbb6-eb54b1259bf5/WindowsMedia10-KB911565-v2-x86-CSY.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/f/4/3/f437a4c2-a476-45dd-8101-ba3310e25bb4/WindowsMedia10-KB911565-v2-x86-DAN.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/2/8/02876cab-0743-4626-98d9-62e15cb58782/WindowsMedia10-KB911565-v2-x86-DEU.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/d/9/5d909827-b663-4c73-883b-b52c21f495da/WindowsMedia10-KB911565-v2-x86-ELL.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/d/a/7/da78cee2-f32f-4a13-a5fc-f7b13269ae92/WindowsMedia10-KB911565-v2-x86-ENU.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/e/c/dece24be-3685-4f27-ac4d-a03ffe8a21dc/WindowsMedia10-KB911565-v2-x86-ESN.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/a/a/6/aa6ad39d-6a04-47ec-ba27-618ffa34c55f/WindowsMedia10-KB911565-v2-x86-FIN.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/6/1/b/61b0dcb6-372a-4c54-b6fe-568ba384b89c/WindowsMedia10-KB911565-v2-x86-FRA.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/d/b/6/db610f8b-cb52-4c40-9ebc-caef6d215cc1/WindowsMedia10-KB911565-v2-x86-HEB.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/0/b/9/0b939a78-28a9-4738-9812-c69f9c405267/WindowsMedia10-KB911565-v2-x86-HUN.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/e/e/4eed9c64-ff1f-4c8f-acd5-5cfececa704e/WindowsMedia10-KB911565-v2-x86-ITA.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/9/0/f908f545-2fb8-4fb6-9bda-90d6ecee7df0/WindowsMedia10-KB911565-v2-x86-JPN.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/6/a/46ab5937-72ba-4359-ac50-e40b001ab3e6/WindowsMedia10-KB911565-v2-x86-KOR.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/9/0/d9028444-1e5c-40e1-ac19-e2e1d8abc3f7/WindowsMedia10-KB911565-v2-x86-NLD.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/0/9/d090e230-397a-4135-bfe8-f57600c80f6e/WindowsMedia10-KB911565-v2-x86-NOR.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/9/9/1/99148b40-04a0-4777-aef4-9f2daad3aab0/WindowsMedia10-KB911565-v2-x86-PLK.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/1/b/7/1b7e301c-b43a-434f-a698-1885ac7005cf/WindowsMedia10-KB911565-v2-x86-PTB.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/d/5/3/d53b580b-d9db-4dc4-a644-c276f4056335/WindowsMedia10-KB911565-v2-x86-PTG.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/b/6/5b61e1f1-9f4f-4003-b000-4a8377df697c/WindowsMedia10-KB911565-v2-x86-RUS.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/d/2/fd2e60f4-d011-4e61-8fca-2c49770771ce/WindowsMedia10-KB911565-v2-x86-SVE.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/a/8/6/a86edbba-f88a-475c-bc0d-b05d2d2e56e4/WindowsMedia10-KB911565-v2-x86-TRK.exe|updates/winxpsp2/windowsmedia10-kb911565-v2-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsMedia10-KB911565-v2-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Windows Media Player 10
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=b446ae53-3759-40cf-80d5-cde4bbe07999>
