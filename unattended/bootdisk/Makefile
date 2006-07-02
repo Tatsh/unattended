@@ -23,7 +23,7 @@ images := $(patsubst %,images/%.imz,$(drivers) $(universal))
 nullstring :=
 space := $(nullstring) # one space
 
-all: images iso tftpboot
+all: images iso tftpboot dvd
 
 images: $(images)
 
@@ -181,6 +181,26 @@ tftpboot/pxelinux.cfg/default: tftpboot/msgs/information.msg
 	@mv $@.tmp $@
 	@echo "done"
 
+# DVD bootdisk images target
+dvd: dvdboot.imz
+
+dvdboot.imz: .stamp-template template/version.bat empty-boot.img.gz
+	@echo -n "Making $@..."
+	@destdir=`dirname "$@"` &&					\
+	image=`basename "$@" .imz` &&					\
+	mtoolsrc=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&			\
+	echo 'drive x:' > $$mtoolsrc &&					\
+	echo file=\"`pwd`/"$$destdir/$$image.img"\" >> $$mtoolsrc &&	\
+	export MTOOLSRC=$$mtoolsrc &&					\
+	cp empty-boot.img.gz $$destdir/$$image.img.gz &&		\
+	gzip -d -n -f $$destdir/$$image.img.gz &&			\
+	mcopy -n -o template/*.* x:/ &&					\
+	mcopy -n -o dvd-template/* x:/ &&				\
+	rm $$mtoolsrc &&						\
+	zip -9 -m -q -j $@.tmp $$destdir/$$image.img &&			\
+	mv $@.tmp $@
+	@echo "done"
+
 # Remove intermediate files which we do not want to ship
 tidy:
 	-rm -f iso/isolinux/{isolinux.cfg,isoboot.msg,*.imz,memdisk,isolinux.bin}
@@ -192,6 +212,7 @@ clean:	tidy
 	-rm -f tftpboot/msgs/{boot,additional}.msg
 	-rm -f tftpboot/unattended/{*.imz,memdisk}
 	-rm -f tftpboot/pxelinux.cfg/default
+	-rm -f dvdboot.imz
 
 FORCE:
 
