@@ -8,7 +8,7 @@ $page['next']  = 'unattendtxt.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: faq.php,v 1.5 2006-05-17 17:18:08 ekot Exp $';
+$cvs           = '$Id: faq.php,v 1.6 2006-07-03 17:27:59 nrichthof Exp $';
 $sections[]    = array ('Frequently Asked Questions', 'faq');
 $content       = <<<EOT
 
@@ -461,6 +461,8 @@ umount /mnt
         rel="external">this procedure</a>. See also <a
         href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg01477.html"
         rel="external">this thread</a> on the mailing list.</p>
+      <p>See    also    the    <a     href="http://ubertechnique.com/unattended/appsonly"
+        rel="external">appsonly-scripts</a> in our wiki.</p>
 
       <hr />
 
