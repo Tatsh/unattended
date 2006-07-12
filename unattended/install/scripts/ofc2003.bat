@@ -5,6 +5,90 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for Excel 2003 (KB918419)
+:: Description of the security update for Microsoft Office Excel 2003: July 11, 2006
+:: <http://support.microsoft.com/kb/918419>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=5788518C-0FB3-4381-BB42-BCA71A4FD646>
+:: URL|ARA|http://download.microsoft.com/download/b/5/f/b5f12e6b-f842-4c38-be81-c113b921c071/office2003-KB918419-FullFile-ARA.exe|updates/office2003/office2003-kb918419-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/2/d/62d67d48-57b6-444c-9552-a48d910c3161/office2003-KB918419-FullFile-CSY.exe|updates/office2003/office2003-kb918419-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/5/7/2/5721fb1b-bae2-4ed9-a517-f313e659b353/office2003-KB918419-FullFile-DAN.exe|updates/office2003/office2003-kb918419-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/9/2/0/920c49ed-3fff-42cc-b55d-900cf611f1d4/office2003-KB918419-FullFile-DEU.exe|updates/office2003/office2003-kb918419-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/9/6/b/96beaee1-d134-4f72-a24d-6f997f5bd01a/office2003-KB918419-FullFile-ELL.exe|updates/office2003/office2003-kb918419-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/0/1/201f36a9-915e-4e51-a9ba-468668a4db01/office2003-KB918419-FullFile-ENU.exe|updates/office2003/office2003-kb918419-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/0/9/c093abb5-c8f1-4efc-85d9-a3459f151de8/office2003-KB918419-FullFile-ESN.exe|updates/office2003/office2003-kb918419-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/a/b/9abf2e05-67d3-45e4-ada2-15a36d70f073/office2003-KB918419-FullFile-FIN.exe|updates/office2003/office2003-kb918419-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/3/d/6/3d61ed79-bc98-47a8-8e9c-f5e37d323948/office2003-KB918419-FullFile-FRA.exe|updates/office2003/office2003-kb918419-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/f/8/3f848afb-8ea7-49e2-bdd7-1dfc6be84792/office2003-KB918419-FullFile-HEB.exe|updates/office2003/office2003-kb918419-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/0/1/9/01905252-88f8-4492-b190-84746b1e9c93/office2003-KB918419-FullFile-HUN.exe|updates/office2003/office2003-kb918419-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/3/4/4343ea63-8b46-47f3-a3b3-1cd104f33e7a/office2003-KB918419-FullFile-ITA.exe|updates/office2003/office2003-kb918419-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/7/2/0/72092a5f-8643-426b-8cb1-0347c6d4c28e/office2003-KB918419-FullFile-JPN.exe|updates/office2003/office2003-kb918419-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/f/f/d/ffdda8f8-b188-41b8-a183-6c892a78df2b/office2003-KB918419-FullFile-KOR.exe|updates/office2003/office2003-kb918419-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/2/2/1/221ed56d-bf97-452a-bc9e-3d1ac71d31c2/office2003-KB918419-FullFile-NLD.exe|updates/office2003/office2003-kb918419-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/e/7/4/e74e8d68-dea0-4909-b3a2-d4e77504f8f2/office2003-KB918419-FullFile-NOR.exe|updates/office2003/office2003-kb918419-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/e/2/1/e2115743-a7a5-4fdd-812f-c3aac04e1ecc/office2003-KB918419-FullFile-PLK.exe|updates/office2003/office2003-kb918419-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/6/a/a6ac2986-ebce-4edd-8484-8ac1eb5a693f/office2003-KB918419-FullFile-PTB.exe|updates/office2003/office2003-kb918419-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/1/a/a/1aac7679-33fb-4330-9401-117e1178f1d6/office2003-KB918419-FullFile-PTG.exe|updates/office2003/office2003-kb918419-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/2/c/e2c1de7d-ac9b-4d98-a6fc-72932f01a0c8/office2003-KB918419-FullFile-RUS.exe|updates/office2003/office2003-kb918419-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/3/b/b/3bb59870-21ad-4f07-b628-26626c697a91/office2003-KB918419-FullFile-SVE.exe|updates/office2003/office2003-kb918419-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/1/9/519d40c2-9b2c-43e4-a511-c9d796568809/office2003-KB918419-FullFile-TRK.exe|updates/office2003/office2003-kb918419-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB918419-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb918419.txt /p EXCELff.msp REBOOT=ReallySuppress\""
+
+:: Security Update for Office 2003 (KB917151)
+:: Description of the security update for Office 2003: July 11, 2006
+:: <http://support.microsoft.com/kb/917151>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=1B11AC6B-4A78-4A7B-995F-94738CAFE27F>
+:: URL|ARA|http://download.microsoft.com/download/5/b/6/5b6d2119-800d-4a86-b84a-3a3a482f5bc3/office2003-KB917151-FullFile-ARA.exe|updates/office2003/office2003-kb917151-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/6/8/2/6826fd5c-f05d-4148-a33b-2954adf2cffe/office2003-KB917151-FullFile-CSY.exe|updates/office2003/office2003-kb917151-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/5/c/a5cd8114-709c-47ff-a32c-3e98a7a0ccf1/office2003-KB917151-FullFile-DAN.exe|updates/office2003/office2003-kb917151-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/e/e/7/ee7edb66-407b-47ff-b07e-5146c2a2e1d6/office2003-KB917151-FullFile-DEU.exe|updates/office2003/office2003-kb917151-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/f/2/3/f239ca03-c794-49e6-b0f1-e8691bacbe18/office2003-KB917151-FullFile-ELL.exe|updates/office2003/office2003-kb917151-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/7/5/27573ebe-4047-4ae5-89a8-c4c1cbdeaccb/office2003-KB917151-FullFile-ENU.exe|updates/office2003/office2003-kb917151-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/1/f/d1f22f2c-f997-4463-b182-2fdeae0a78c0/office2003-KB917151-FullFile-ESN.exe|updates/office2003/office2003-kb917151-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/3/5/3/353592cf-262b-4e56-aca7-4be2f9b9c9de/office2003-KB917151-FullFile-FIN.exe|updates/office2003/office2003-kb917151-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/7/e/f/7ef62393-c2d6-42a9-9192-faf2fced0fdf/office2003-KB917151-FullFile-FRA.exe|updates/office2003/office2003-kb917151-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/6/3/e/63e15032-fe72-43e5-94a7-614fc863a77c/office2003-KB917151-FullFile-HEB.exe|updates/office2003/office2003-kb917151-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/e/6/9/e69edd42-ca6a-4c24-a081-a5010bf1e428/office2003-KB917151-FullFile-HUN.exe|updates/office2003/office2003-kb917151-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/6/d/e/6de3cbcd-5a6d-4950-8e7f-32da619aa0f1/office2003-KB917151-FullFile-ITA.exe|updates/office2003/office2003-kb917151-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/e/e/9/ee9e7bad-e1f7-4785-91dc-8c7733a2052b/office2003-KB917151-FullFile-JPN.exe|updates/office2003/office2003-kb917151-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/0/c/90cef54f-24d7-41f3-a226-641c5971c5a8/office2003-KB917151-FullFile-KOR.exe|updates/office2003/office2003-kb917151-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/1/6/d165fcdd-b9a7-4dff-acb2-bdfead5ba737/office2003-KB917151-FullFile-NLD.exe|updates/office2003/office2003-kb917151-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/1/b/6/1b6e591a-a54a-40c6-803b-8967f502e818/office2003-KB917151-FullFile-NOR.exe|updates/office2003/office2003-kb917151-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/1/7/4/174d9b95-fa30-4218-b644-c64fe3653c5e/office2003-KB917151-FullFile-PLK.exe|updates/office2003/office2003-kb917151-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/8/a/a8aa2e33-8aa4-4926-a5e6-3c20e9ea7d05/office2003-KB917151-FullFile-PTB.exe|updates/office2003/office2003-kb917151-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/3/5/4/35467d01-dcbb-4dce-85df-96d74a590b13/office2003-KB917151-FullFile-PTG.exe|updates/office2003/office2003-kb917151-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/3/9/8/3984aaae-f331-413e-95b3-ed3a84b35a12/office2003-KB917151-FullFile-RUS.exe|updates/office2003/office2003-kb917151-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/c/d/d/cdd6ccb6-752f-422d-9996-66f33eabe267/office2003-KB917151-FullFile-SVE.exe|updates/office2003/office2003-kb917151-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/c/6/e/c6e13439-bc78-40d7-90bc-c97092f5f650/office2003-KB917151-FullFile-TRK.exe|updates/office2003/office2003-kb917151-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB917151-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb917151.txt /p MSO.msp REBOOT=ReallySuppress\""
+
+:: Security Update for Office 2003 (KB914455)
+:: Description of the security update for Office 2003, for Project 2003, and for  OneNote 2003: July 11, 2006
+:: <http://support.microsoft.com/kb/914455>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=66C15CD1-A33B-4EB4-9D90-87DECF053768>
+:: URL|ARA|http://download.microsoft.com/download/4/3/b/43b545dc-48f9-4e0d-af61-9535994d3be9/office2003-KB914455-FullFile-ARA.exe|updates/office2003/office2003-kb914455-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/5/d/a5de8804-936d-4363-b895-b70f9150bb18/office2003-KB914455-FullFile-CSY.exe|updates/office2003/office2003-kb914455-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/5/0/7/507d06a7-9746-4c4d-aa49-264989fa4a8b/office2003-KB914455-FullFile-DAN.exe|updates/office2003/office2003-kb914455-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/0/4/f04ef5d1-ccb0-423b-9e0d-ba4cbf7f7ca4/office2003-KB914455-FullFile-DEU.exe|updates/office2003/office2003-kb914455-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/0/b/9/0b9a3bb5-fff7-4293-bfd0-abccb0f359f3/office2003-KB914455-FullFile-ELL.exe|updates/office2003/office2003-kb914455-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/f/b/f/fbf5215b-9b62-4706-8582-1bbc5f9d1b6d/office2003-KB914455-FullFile-ENU.exe|updates/office2003/office2003-kb914455-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/7/b/d7b2505d-b0e6-4895-b903-3a130acd947c/office2003-KB914455-FullFile-ESN.exe|updates/office2003/office2003-kb914455-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/7/9/579523e5-397e-45a3-9c4f-0c0fe08ac06f/office2003-KB914455-FullFile-FIN.exe|updates/office2003/office2003-kb914455-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/9/1/2/912e2b9c-6485-4491-ae85-9f05f448b231/office2003-KB914455-FullFile-FRA.exe|updates/office2003/office2003-kb914455-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/0/1/4/01430107-6975-4be5-9e5c-e3b4362e04d9/office2003-KB914455-FullFile-HEB.exe|updates/office2003/office2003-kb914455-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/f/7/f/f7f39348-6194-404d-9cdc-136c407a2776/office2003-KB914455-FullFile-HUN.exe|updates/office2003/office2003-kb914455-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/8/5/5/855deb99-73f3-4454-bb66-b295b5db677b/office2003-KB914455-FullFile-ITA.exe|updates/office2003/office2003-kb914455-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/2/d/12da087e-7088-4785-8eaa-4919db5014ec/office2003-KB914455-FullFile-JPN.exe|updates/office2003/office2003-kb914455-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/7/c/07ce07b2-952d-4f62-8b66-28d54e7f99ba/office2003-KB914455-FullFile-KOR.exe|updates/office2003/office2003-kb914455-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/e/d/aed1fcc7-6031-4dd0-ae1d-cb94c747a3e0/office2003-KB914455-FullFile-NLD.exe|updates/office2003/office2003-kb914455-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/b/4/db4d7389-adb5-478f-8426-add1745bc981/office2003-KB914455-FullFile-NOR.exe|updates/office2003/office2003-kb914455-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/a/3/c/a3ccb499-68ca-4185-8975-765bea057c38/office2003-KB914455-FullFile-PLK.exe|updates/office2003/office2003-kb914455-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/f/7/2/f72d09a0-4e3e-4e56-b3e6-47a71a72b4f0/office2003-KB914455-FullFile-PTB.exe|updates/office2003/office2003-kb914455-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/7/c/4/7c44db94-79da-4049-b1b7-220b94534e2b/office2003-KB914455-FullFile-PTG.exe|updates/office2003/office2003-kb914455-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/8/8/d/88dfc62d-769e-4237-a8a7-83d7d5466a2c/office2003-KB914455-FullFile-RUS.exe|updates/office2003/office2003-kb914455-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/d/5/4/d5492772-17de-461c-b032-0d2b388b99ee/office2003-KB914455-FullFile-SVE.exe|updates/office2003/office2003-kb914455-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/f/e/1fe9f759-cd05-4b4f-b453-b5f07acc5eb7/office2003-KB914455-FullFile-TRK.exe|updates/office2003/office2003-kb914455-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB914455-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb914455.txt /p GPFILTff.msp REBOOT=ReallySuppress\""
+
 :: Security Update for PowerPoint 2003 (KB916518)
 :: Description of the security update for Microsoft Office PowerPoint 2003: June 13, 2006
 :: <http://support.microsoft.com/kb/916518>
