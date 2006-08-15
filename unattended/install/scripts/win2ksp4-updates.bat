@@ -553,6 +553,64 @@ if not exist %Z%\updates\journalviewer\%WINLANG%\setup.exe goto nojournalviewer
 todo.pl ".reboot-on 194 %Z%\updates\journalviewer\%WINLANG%\setup.exe /q /c:\"msiexec /l* %SystemDrive%\netinst\logs\journalviewer.txt /i \"\"Microsoft Windows Journal Viewer.msi\"\" /qn\""
 :nojournalviewer
 
+:: Security Update for Windows 2000 (KB920670)
+:: Microsoft Security Bulletin MS06-050
+:: "Vulnerabilities in Microsoft Windows Hyperlink Object Library Could Allow Remote Code Execution (920670)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-050.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=bfe3f869-08be-4f13-97a1-7274ad44c7fb>
+:: URL|ARA|http://download.microsoft.com/download/1/e/5/1e5b20f5-4bff-4d19-8657-003e7edc47be/Windows2000-KB920670-x86-ARA.EXE|updates/win2ksp4/windows2000-kb920670-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/7/a/e/7aeb6089-3178-4da0-8af5-fb8dd199a876/Windows2000-KB920670-x86-CSY.EXE|updates/win2ksp4/windows2000-kb920670-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/c/8/a/c8acdda0-8dcb-4785-800d-ee9fa672ff07/Windows2000-KB920670-x86-DAN.EXE|updates/win2ksp4/windows2000-kb920670-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/8/9/e/89ecad68-8b01-49fc-a69e-3e0e3e9d0e3d/Windows2000-KB920670-x86-DEU.EXE|updates/win2ksp4/windows2000-kb920670-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/4/f/8/4f84ea16-13db-496d-84f9-43d1258c465d/Windows2000-KB920670-x86-ELL.EXE|updates/win2ksp4/windows2000-kb920670-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/1/2/212fd127-6a0b-4a52-a0ae-c005b752c90f/Windows2000-KB920670-x86-ENU.EXE|updates/win2ksp4/windows2000-kb920670-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/b/5/e/b5e34e0a-a532-4480-88a8-bc2324881c04/Windows2000-KB920670-x86-ESN.EXE|updates/win2ksp4/windows2000-kb920670-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/a/a/d/aadc3dd7-05fe-4d9b-bb51-ffee8d1cbd01/Windows2000-KB920670-x86-FIN.EXE|updates/win2ksp4/windows2000-kb920670-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/b/0/7/b0702e93-65b5-4f37-8c0b-df5a9d584fce/Windows2000-KB920670-x86-FRA.EXE|updates/win2ksp4/windows2000-kb920670-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/1/b/41bead35-04e3-4b87-a5a4-dfd5847d12da/Windows2000-KB920670-x86-HEB.EXE|updates/win2ksp4/windows2000-kb920670-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/f/6/7/f670e9ae-c89a-45b3-9095-04fa69cf72d5/Windows2000-KB920670-x86-HUN.EXE|updates/win2ksp4/windows2000-kb920670-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/b/8/4b8b75d5-47eb-4c90-a40a-18d789cd0e99/Windows2000-KB920670-x86-ITA.EXE|updates/win2ksp4/windows2000-kb920670-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/b/f/7/bf788f2c-2dc5-461f-acbd-a6d61a690cc5/Windows2000-KB920670-x86-JPN.EXE|updates/win2ksp4/windows2000-kb920670-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/0/9/009d926a-4c8e-47fc-91cd-8c2a3e724e1e/Windows2000-KB920670-x86-KOR.EXE|updates/win2ksp4/windows2000-kb920670-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/a/d/cad524bc-2a91-4fda-9925-35d4f337ffff/Windows2000-KB920670-x86-NLD.EXE|updates/win2ksp4/windows2000-kb920670-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/2/6/b/26bb3802-424d-4398-9963-72380834054c/Windows2000-KB920670-x86-NOR.EXE|updates/win2ksp4/windows2000-kb920670-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/d/2/6/d26681df-6cc6-4286-9524-bc0a56c1640d/Windows2000-KB920670-x86-PLK.EXE|updates/win2ksp4/windows2000-kb920670-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/0/7/a/07a0b7f5-6dc2-4e9b-a920-50ca20cba93e/Windows2000-KB920670-x86-PTB.EXE|updates/win2ksp4/windows2000-kb920670-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/1/4/b/14b73342-94b6-4713-9d9d-8e79dfaf4d16/Windows2000-KB920670-x86-PTG.EXE|updates/win2ksp4/windows2000-kb920670-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/8/8/8/88810eb1-ebbd-47d3-b202-9674ef674586/Windows2000-KB920670-x86-RUS.EXE|updates/win2ksp4/windows2000-kb920670-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/3/9/b/39b3e4e1-f640-4a34-905c-2edf0a3b6fb4/Windows2000-KB920670-x86-SVE.EXE|updates/win2ksp4/windows2000-kb920670-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/1/c/71c1becd-b5fa-4bb6-b57f-0a173f5c33fb/Windows2000-KB920670-x86-TRK.EXE|updates/win2ksp4/windows2000-kb920670-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB920670-x86-%WINLANG%.EXE /passive /n /norestart"
+
+:: Security Update for Windows 2000 (KB921398)
+:: Microsoft Security Bulletin MS06-045
+:: "Vulnerability in Windows Explorer Could Allow Remote Code Execution (921398)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-045.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=38cee83e-b17a-4c08-90ce-fb836b9615ad>
+:: URL|ARA|http://download.microsoft.com/download/e/9/6/e967948b-7c54-42e0-93a0-6ee28ee66140/Windows2000-KB921398-x86-ARA.EXE|updates/win2ksp4/windows2000-kb921398-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/c/d/d/cdd87285-c515-4610-b777-38a93d82ab52/Windows2000-KB921398-x86-CSY.EXE|updates/win2ksp4/windows2000-kb921398-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/d/4/c/d4cab59b-69b3-4a2a-b7bd-abe1da62f878/Windows2000-KB921398-x86-DAN.EXE|updates/win2ksp4/windows2000-kb921398-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/e/3/a/e3a7bc35-7bc1-4e92-9417-f7cb5b3fc927/Windows2000-KB921398-x86-DEU.EXE|updates/win2ksp4/windows2000-kb921398-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/0/b/c/0bc2b7f6-f6f9-4447-9c7a-7f64c7466cdb/Windows2000-KB921398-x86-ELL.EXE|updates/win2ksp4/windows2000-kb921398-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/3/6/236323d3-fd81-43a4-a42f-31fe74705c55/Windows2000-KB921398-x86-ENU.EXE|updates/win2ksp4/windows2000-kb921398-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/b/f/dbf0084f-1939-4525-9bf9-468cbef72a1d/Windows2000-KB921398-x86-ESN.EXE|updates/win2ksp4/windows2000-kb921398-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/a/1/6/a16db879-0042-43ed-b7bb-5e281a728242/Windows2000-KB921398-x86-FIN.EXE|updates/win2ksp4/windows2000-kb921398-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/0/5/4/05436db7-eabb-4cde-ac73-885e1baf087a/Windows2000-KB921398-x86-FRA.EXE|updates/win2ksp4/windows2000-kb921398-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/d/1/4/d14d8ca4-e6c5-446f-a737-549bc14db5af/Windows2000-KB921398-x86-HEB.EXE|updates/win2ksp4/windows2000-kb921398-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/6/1/d/61d310f6-829b-4b96-80cc-778bd41369c5/Windows2000-KB921398-x86-HUN.EXE|updates/win2ksp4/windows2000-kb921398-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/c/4/c/c4c15440-6a74-4293-a73e-10112001a9c1/Windows2000-KB921398-x86-ITA.EXE|updates/win2ksp4/windows2000-kb921398-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/9/5/4/954cab28-05ec-492e-b780-dd5db52b55ce/Windows2000-KB921398-x86-JPN.EXE|updates/win2ksp4/windows2000-kb921398-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/5/2/0526eca6-a673-4be1-86d9-db4189816097/Windows2000-KB921398-x86-KOR.EXE|updates/win2ksp4/windows2000-kb921398-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/3/f/d3fa2893-ec78-4bd1-bf8c-e3dfe1863279/Windows2000-KB921398-x86-NLD.EXE|updates/win2ksp4/windows2000-kb921398-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/f/e/1/fe1e0032-8daf-4278-bf3d-3a8ca02c6cb9/Windows2000-KB921398-x86-NOR.EXE|updates/win2ksp4/windows2000-kb921398-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/7/f/f/7ff87773-5b02-4c47-86b1-aab946fb51cb/Windows2000-KB921398-x86-PLK.EXE|updates/win2ksp4/windows2000-kb921398-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/9/6/3/9632255a-dd5b-46e7-9832-6156afc30394/Windows2000-KB921398-x86-PTB.EXE|updates/win2ksp4/windows2000-kb921398-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/6/a/8/6a8791d5-9c89-4354-8a71-55069d585e06/Windows2000-KB921398-x86-PTG.EXE|updates/win2ksp4/windows2000-kb921398-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/9/c/c/9cc9a932-db92-43ed-b5be-065516bc1008/Windows2000-KB921398-x86-RUS.EXE|updates/win2ksp4/windows2000-kb921398-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/b/1/9/b198de9f-c64d-4703-9004-4248310e96d1/Windows2000-KB921398-x86-SVE.EXE|updates/win2ksp4/windows2000-kb921398-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/2/9/4/294c428f-e0c2-451d-a50f-92ae11a63501/Windows2000-KB921398-x86-TRK.EXE|updates/win2ksp4/windows2000-kb921398-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB921398-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Critical Update for Windows Media Player (All Versions) for Windows 2000, Windows XP, and Windows Server 2003 (KB828026)
 :: <http://support.microsoft.com/?kbid=828026>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=af9cf65e-0c55-452e-a0fa-3aa165e667c1>
@@ -1005,6 +1063,179 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB820888-x86-%WINLANG%.
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /u /n /z"
 
 :: Critical Updates
+
+:: Security Update for Windows 2000 (KB917422)
+:: Microsoft Security Bulletin MS06-051
+:: "Vulnerability in Windows Kernel Could Result in Remote Code Execution (917422)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-051.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=83e0c6fb-a542-463a-88fd-dc388605a8ae>
+:: URL|ARA|http://download.microsoft.com/download/c/7/c/c7c6d0a2-e798-4ef5-b2eb-9716d76fecc2/Windows2000-KB917422-x86-ARA.EXE|updates/win2ksp4/windows2000-kb917422-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/1/8/1/18171540-c5b3-47a1-a80e-d494c8019e54/Windows2000-KB917422-x86-CSY.EXE|updates/win2ksp4/windows2000-kb917422-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/4/3/a/43aeb087-8856-4d1c-b9ea-2fef04993e72/Windows2000-KB917422-x86-DAN.EXE|updates/win2ksp4/windows2000-kb917422-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/f/1/0f10d3b5-8f2b-4d16-9f10-203059babd2f/Windows2000-KB917422-x86-DEU.EXE|updates/win2ksp4/windows2000-kb917422-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/8/7/f/87ff912b-088c-4eb0-8aaf-3001f5415c69/Windows2000-KB917422-x86-ELL.EXE|updates/win2ksp4/windows2000-kb917422-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/f/c/6/fc685667-9d27-4e6a-82af-2772e69bd5c6/Windows2000-KB917422-x86-ENU.EXE|updates/win2ksp4/windows2000-kb917422-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/9/d/6/9d665f06-46ac-41dc-96de-019a9c8ef47c/Windows2000-KB917422-x86-ESN.EXE|updates/win2ksp4/windows2000-kb917422-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/6/9/969e8974-1b12-4ea8-92d9-31384643d34e/Windows2000-KB917422-x86-FIN.EXE|updates/win2ksp4/windows2000-kb917422-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/1/0/1/101be29a-e619-45c8-bbc3-b83b843326e7/Windows2000-KB917422-x86-FRA.EXE|updates/win2ksp4/windows2000-kb917422-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/2/e/0/2e09519c-6e4b-4f73-9934-da5f0010536c/Windows2000-KB917422-x86-HEB.EXE|updates/win2ksp4/windows2000-kb917422-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/6/6/3/663f4d35-47ea-40c1-ad20-da12c7adbede/Windows2000-KB917422-x86-HUN.EXE|updates/win2ksp4/windows2000-kb917422-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/6/f/b6fed0ac-e8d7-4d31-a92e-bc6334dfc5a7/Windows2000-KB917422-x86-ITA.EXE|updates/win2ksp4/windows2000-kb917422-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/a/4/f/a4f6832a-6d9e-4fac-8f9e-6b292b263dc2/Windows2000-KB917422-x86-JPN.EXE|updates/win2ksp4/windows2000-kb917422-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/a/a/f/aafcd50f-86b9-47b3-8fce-3ab511239d82/Windows2000-KB917422-x86-KOR.EXE|updates/win2ksp4/windows2000-kb917422-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/2/8/a/28ad681f-c150-46e3-90e3-76f474749a0a/Windows2000-KB917422-x86-NLD.EXE|updates/win2ksp4/windows2000-kb917422-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/3/e/c/3ecb3064-5bb6-4a9c-ba2a-790d4013a935/Windows2000-KB917422-x86-NOR.EXE|updates/win2ksp4/windows2000-kb917422-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/3/8/1/381f696d-8293-48af-970e-38d841c16ff2/Windows2000-KB917422-x86-PLK.EXE|updates/win2ksp4/windows2000-kb917422-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/3/a/23a44f0c-3a37-4312-8af8-36938ae62c0c/Windows2000-KB917422-x86-PTB.EXE|updates/win2ksp4/windows2000-kb917422-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/4/b/2/4b218645-dac5-4c21-aceb-59b3e08dc1bd/Windows2000-KB917422-x86-PTG.EXE|updates/win2ksp4/windows2000-kb917422-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/3/0/2/302006b7-412a-4d93-8c55-2282096a755a/Windows2000-KB917422-x86-RUS.EXE|updates/win2ksp4/windows2000-kb917422-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/e/a/6eac4c42-918f-440e-bb15-4f49343afa0a/Windows2000-KB917422-x86-SVE.EXE|updates/win2ksp4/windows2000-kb917422-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/f/7/9/f796192a-1482-4fcb-b1ff-dd9de31d2823/Windows2000-KB917422-x86-TRK.EXE|updates/win2ksp4/windows2000-kb917422-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB917422-x86-%WINLANG%.EXE /passive /n /norestart"
+
+:: Security Update for Windows 2000 (KB922616)
+:: Microsoft Security Bulletin MS06-046
+:: "Vulnerability in HTML Help Could Allow Remote Code Execution (922616)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-046.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=34ebe5d3-40c9-41dc-aaff-64608d3ac7b1>
+:: URL|ARA|http://download.microsoft.com/download/e/2/5/e254353b-f89f-416f-a8c2-31bbd100f378/Windows2000-KB922616-x86-ARA.EXE|updates/win2ksp4/windows2000-kb922616-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/0/4/4/044c4f51-495d-4aec-9ec5-fedebc311359/Windows2000-KB922616-x86-CSY.EXE|updates/win2ksp4/windows2000-kb922616-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/b/f/5/bf59003c-80a3-42a3-919f-a1e382336c75/Windows2000-KB922616-x86-DAN.EXE|updates/win2ksp4/windows2000-kb922616-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/d/f/2/df2a4181-ce1d-46e1-b54e-2aff158e4317/Windows2000-KB922616-x86-DEU.EXE|updates/win2ksp4/windows2000-kb922616-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/3/c/7/3c74ed51-a582-46b3-be14-39a2685c138f/Windows2000-KB922616-x86-ELL.EXE|updates/win2ksp4/windows2000-kb922616-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/0/b/5/0b544759-bafd-4756-95be-9192db941b19/Windows2000-KB922616-x86-ENU.EXE|updates/win2ksp4/windows2000-kb922616-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/5/2/b/52b73d16-8ad3-4cb3-afcb-60e72c00ea2e/Windows2000-KB922616-x86-ESN.EXE|updates/win2ksp4/windows2000-kb922616-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/b/0/5b08c974-2d83-4d8f-9d09-9f0172a01250/Windows2000-KB922616-x86-FIN.EXE|updates/win2ksp4/windows2000-kb922616-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/3/0/a/30a26616-b660-4d85-bad6-ead7d8eba20b/Windows2000-KB922616-x86-FRA.EXE|updates/win2ksp4/windows2000-kb922616-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/6/e/9/6e92f094-1be1-4a2b-beba-efd2691a4036/Windows2000-KB922616-x86-HEB.EXE|updates/win2ksp4/windows2000-kb922616-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/6/d/f/6df9353c-5573-488a-9bb4-532b2e6f7de2/Windows2000-KB922616-x86-HUN.EXE|updates/win2ksp4/windows2000-kb922616-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/5/a/9/5a9038ff-76bf-44c3-8aa1-816c484b2a52/Windows2000-KB922616-x86-ITA.EXE|updates/win2ksp4/windows2000-kb922616-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/6/3/f631b983-2d2a-47ba-bd75-bcbb77279754/Windows2000-KB922616-x86-JPN.EXE|updates/win2ksp4/windows2000-kb922616-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/d/b/6db6d9be-d666-4677-8192-25f886621567/Windows2000-KB922616-x86-KOR.EXE|updates/win2ksp4/windows2000-kb922616-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/3/5/f/35f8c061-af7b-444a-b671-44ffcd1def38/Windows2000-KB922616-x86-NLD.EXE|updates/win2ksp4/windows2000-kb922616-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/8/8/d88b807b-e70f-47bb-9f69-1e0269c68eeb/Windows2000-KB922616-x86-NOR.EXE|updates/win2ksp4/windows2000-kb922616-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/4/9/3/49322871-2612-4464-a873-a27005f3cf7b/Windows2000-KB922616-x86-PLK.EXE|updates/win2ksp4/windows2000-kb922616-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/6/4/7/647d93f0-cdb8-46b5-bbe5-f9d2b61843e9/Windows2000-KB922616-x86-PTB.EXE|updates/win2ksp4/windows2000-kb922616-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/3/3/833910fa-0e3b-414c-af0c-c2ea0a5244bf/Windows2000-KB922616-x86-PTG.EXE|updates/win2ksp4/windows2000-kb922616-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/e/1/5e1fe77f-d2b8-4bde-9e54-431d16bdb314/Windows2000-KB922616-x86-RUS.EXE|updates/win2ksp4/windows2000-kb922616-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/8/d/c/8dce6c46-150e-4e04-809d-e892518c174d/Windows2000-KB922616-x86-SVE.EXE|updates/win2ksp4/windows2000-kb922616-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/c/8/1/c81c4ab1-e8cc-4a84-8be3-7877b43f7544/Windows2000-KB922616-x86-TRK.EXE|updates/win2ksp4/windows2000-kb922616-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB922616-x86-%WINLANG%.EXE /passive /n /norestart"
+
+:: Security Update for Windows 2000 (KB917008)
+:: Microsoft Security Bulletin MS06-044
+:: "Vulnerability in Microsoft Management Console Could Allow Remote Code Execution (917008)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-044.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=87fe4c18-21dc-4d83-a1d8-503b92fdba2b>
+:: URL|ARA|http://download.microsoft.com/download/e/5/9/e5937d24-573f-4b56-b60d-80a0ac8dc96b/Windows2000-KB917008-x86-ARA.EXE|updates/win2ksp4/windows2000-kb917008-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/e/a/e/eae7c8f2-4ee1-49be-b0d4-bb3433419f99/Windows2000-KB917008-x86-CSY.EXE|updates/win2ksp4/windows2000-kb917008-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/e/c/0ec6b24b-4da0-4f62-9e05-0747b1fe7aed/Windows2000-KB917008-x86-DAN.EXE|updates/win2ksp4/windows2000-kb917008-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/7/e/2/7e2ccc7b-3773-4866-b437-45a4c32f1f23/Windows2000-KB917008-x86-DEU.EXE|updates/win2ksp4/windows2000-kb917008-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/4/7/d/47d25925-7cff-4dba-b70f-0cff2c7a5b30/Windows2000-KB917008-x86-ELL.EXE|updates/win2ksp4/windows2000-kb917008-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/d/1/5/d1555c27-be62-4a61-946d-5d2b70a52211/Windows2000-KB917008-x86-ENU.EXE|updates/win2ksp4/windows2000-kb917008-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/e/2/2e297330-a569-48c8-9287-ec30c38b19fe/Windows2000-KB917008-x86-ESN.EXE|updates/win2ksp4/windows2000-kb917008-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/c/1/8/c1803036-6ced-4cdb-b5b3-7958d6bf2636/Windows2000-KB917008-x86-FIN.EXE|updates/win2ksp4/windows2000-kb917008-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/6/0/a60d6aca-3369-47b5-8eee-262d4d3504de/Windows2000-KB917008-x86-FRA.EXE|updates/win2ksp4/windows2000-kb917008-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/f/7/a/f7a85895-11f4-4251-b68b-2afc9536e539/Windows2000-KB917008-x86-HEB.EXE|updates/win2ksp4/windows2000-kb917008-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/c/8/3/c834483b-87fe-4b7a-93e5-cd8c9f178397/Windows2000-KB917008-x86-HUN.EXE|updates/win2ksp4/windows2000-kb917008-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/7/b/37b894d6-3fe0-40f8-9b36-b7d665566032/Windows2000-KB917008-x86-ITA.EXE|updates/win2ksp4/windows2000-kb917008-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/0/9/809056f1-ac4c-4499-afce-76e8820920e3/Windows2000-KB917008-x86-JPN.EXE|updates/win2ksp4/windows2000-kb917008-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/d/b/0db21bdd-6ab0-4ec8-83e5-a5f9b5d9b1e5/Windows2000-KB917008-x86-KOR.EXE|updates/win2ksp4/windows2000-kb917008-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/b/7/cb7c0129-200f-4aba-9cd3-35cb76cf56d6/Windows2000-KB917008-x86-NLD.EXE|updates/win2ksp4/windows2000-kb917008-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/f/6/6/f66e5288-ef6a-4ee1-a6c1-43bb8e78b571/Windows2000-KB917008-x86-NOR.EXE|updates/win2ksp4/windows2000-kb917008-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/5/2/3/523e522c-23f7-46fd-a3a4-87c2f9b87da9/Windows2000-KB917008-x86-PLK.EXE|updates/win2ksp4/windows2000-kb917008-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/7/d/4/7d46dffd-68b7-4324-a192-0a712a97b0a3/Windows2000-KB917008-x86-PTB.EXE|updates/win2ksp4/windows2000-kb917008-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/9/d/9/9d9fabc4-ef25-407f-8b08-d7b0d2fa4443/Windows2000-KB917008-x86-PTG.EXE|updates/win2ksp4/windows2000-kb917008-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/1/1/f/11f985e3-2f16-40fb-a7ba-8aa5391f25ad/Windows2000-KB917008-x86-RUS.EXE|updates/win2ksp4/windows2000-kb917008-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/1/d/11dbac14-e853-4f1e-a4e9-b6197af76154/Windows2000-KB917008-x86-SVE.EXE|updates/win2ksp4/windows2000-kb917008-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/2/b/9/2b945abb-21e1-4a4f-b427-f142c831e275/Windows2000-KB917008-x86-TRK.EXE|updates/win2ksp4/windows2000-kb917008-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB917008-x86-%WINLANG%.EXE /passive /n /norestart"
+
+:: Cumulative Update for Internet Explorer 6 SP1 (KB918899)
+:: Microsoft Security Bulletin MS06-042
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-042.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B5F17679-3AA5-4D66-A81E-F990FD0B48D2>
+:: URL|ARA|http://download.microsoft.com/download/b/0/d/b0d61a7e-a96a-42b9-b572-f05c7c017f6f/IE6.0sp1-KB918899-Windows-2000-XP-x86-ARA.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/8/e/28eb0716-6c1c-4a9d-a2b9-6dc55d90c5b8/IE6.0sp1-KB918899-Windows-2000-XP-x86-CSY.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/c/c/a/ccab41f0-e2b0-4a38-8c0d-96cf9268285b/IE6.0sp1-KB918899-Windows-2000-XP-x86-DAN.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/8/a/b/8ab99015-3058-428a-a0dc-01092a140eaa/IE6.0sp1-KB918899-Windows-2000-XP-x86-DEU.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/1/c/2/1c22ff56-b8f7-4cc1-94a3-148a18fd445b/IE6.0sp1-KB918899-Windows-2000-XP-x86-ELL.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/1/3/9/1390a995-af9c-4837-b1a6-4e1dd480dc58/IE6.0sp1-KB918899-Windows-2000-XP-x86-ENU.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/0/c/60c6389a-1a2b-440f-b742-3ae0ac5792ae/IE6.0sp1-KB918899-Windows-2000-XP-x86-ESN.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/0/2/9/0296a923-e2ea-4e35-955a-e11ba962d832/IE6.0sp1-KB918899-Windows-2000-XP-x86-FIN.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/3/e/d/3edc65cf-f944-457b-99ec-90e494fae14b/IE6.0sp1-KB918899-Windows-2000-XP-x86-FRA.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/6/9/a/69a377ca-36a4-4ec8-be13-adc35bc1d168/IE6.0sp1-KB918899-Windows-2000-XP-x86-HEB.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/3/5/1/35149053-dbcd-4ef1-be46-59d415fded35/IE6.0sp1-KB918899-Windows-2000-XP-x86-HUN.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/9/f/b9fcf247-4d26-479b-97d7-0434e5305c56/IE6.0sp1-KB918899-Windows-2000-XP-x86-ITA.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/6/5/065e9fbf-0a06-4fe7-86b2-9f9fa4bb143b/IE6.0sp1-KB918899-Windows-2000-XP-x86-JPN.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/a/7/8a79a990-6e42-4868-878f-e6a638ad0dc4/IE6.0sp1-KB918899-Windows-2000-XP-x86-KOR.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/7/7/a/77ace014-0c8a-4cda-ac73-27639f6e391a/IE6.0sp1-KB918899-Windows-2000-XP-x86-NLD.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/0/5/3/0533579f-e0ec-46d3-9a06-64689af83a52/IE6.0sp1-KB918899-Windows-2000-XP-x86-NOR.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/5/4/8548114a-c5c4-47ff-9327-cd541e94a1e3/IE6.0sp1-KB918899-Windows-2000-XP-x86-PLK.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/3/9/f/39f5362e-9503-496e-ac03-230062215924/IE6.0sp1-KB918899-Windows-2000-XP-x86-PTB.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/3/8/53829788-9d41-44d2-9896-8c28f263643e/IE6.0sp1-KB918899-Windows-2000-XP-x86-PTG.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/c/0/e/c0e4e838-4c94-473d-ba04-fb2423e9a417/IE6.0sp1-KB918899-Windows-2000-XP-x86-RUS.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/f/4/af41d70c-e4ea-4a13-a03e-87c154ec4b93/IE6.0sp1-KB918899-Windows-2000-XP-x86-SVE.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/f/4/b/f4bf19a2-31ef-4dce-a445-67f1b6cd8dd4/IE6.0sp1-KB918899-Windows-2000-XP-x86-TRK.exe|updates/win2ksp4/ie6.0sp1-kb918899-windows-2000-xp-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\IE6.0sp1-KB918899-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Windows 2000 (KB920683)
+:: Microsoft Security Bulletin MS06-041
+:: "Vulnerabilities in DNS Resolution Could Allow Remote Code Execution (920683)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-041.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=144408a7-3011-458a-bc79-49b1658aa25d>
+:: URL|ARA|http://download.microsoft.com/download/a/2/7/a2788c48-fa8b-41af-94bd-88b8961322f9/Windows2000-KB920683-x86-ARA.EXE|updates/win2ksp4/windows2000-kb920683-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/3/e/c/3ec3fcbf-85db-47ca-aefc-4dc423850965/Windows2000-KB920683-x86-CSY.EXE|updates/win2ksp4/windows2000-kb920683-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/f/e/6/fe6faa6e-b0fe-45b1-a1da-524a1e63ff5f/Windows2000-KB920683-x86-DAN.EXE|updates/win2ksp4/windows2000-kb920683-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/6/3/f636236a-1d89-4d11-9c0d-3f305f97f185/Windows2000-KB920683-x86-DEU.EXE|updates/win2ksp4/windows2000-kb920683-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/e/a/b/eaba4f5f-a1b0-4df2-9fc8-4a114334619a/Windows2000-KB920683-x86-ELL.EXE|updates/win2ksp4/windows2000-kb920683-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/b/4/7/b472d553-f4d1-42a5-baf9-d58bd713e492/Windows2000-KB920683-x86-ENU.EXE|updates/win2ksp4/windows2000-kb920683-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/8/0/4/8049fd37-5702-401f-8916-cfd15cd87c42/Windows2000-KB920683-x86-ESN.EXE|updates/win2ksp4/windows2000-kb920683-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/2/0/520328ba-01ad-4dfa-a644-8295d45bd7f1/Windows2000-KB920683-x86-FIN.EXE|updates/win2ksp4/windows2000-kb920683-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/8/e/a8e85a37-3334-4ff0-adad-42213b55a03a/Windows2000-KB920683-x86-FRA.EXE|updates/win2ksp4/windows2000-kb920683-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/1/7/1/1716c0e1-49ca-4212-a3ab-85f609a8c0c3/Windows2000-KB920683-x86-HEB.EXE|updates/win2ksp4/windows2000-kb920683-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/4/4/a44d2ca3-f495-4b59-a727-efe58ce18ba3/Windows2000-KB920683-x86-HUN.EXE|updates/win2ksp4/windows2000-kb920683-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/8/5/085c99d0-04da-4071-b319-8c7a28ad66e3/Windows2000-KB920683-x86-ITA.EXE|updates/win2ksp4/windows2000-kb920683-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/5/8/e/58e8413f-c696-4e96-82f2-896137442b3c/Windows2000-KB920683-x86-JPN.EXE|updates/win2ksp4/windows2000-kb920683-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/e/6/9e619ccc-bf96-4c91-bf5d-e320238ae480/Windows2000-KB920683-x86-KOR.EXE|updates/win2ksp4/windows2000-kb920683-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/e/9/8/e98c12a0-5a4b-47d1-b57e-46b9ca0b2df9/Windows2000-KB920683-x86-NLD.EXE|updates/win2ksp4/windows2000-kb920683-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/c/f/e/cfecd372-0d5d-4da6-95cc-f9d114273a33/Windows2000-KB920683-x86-NOR.EXE|updates/win2ksp4/windows2000-kb920683-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/b/8/7/b87bc60a-f414-44fd-b956-de2a59019c6a/Windows2000-KB920683-x86-PLK.EXE|updates/win2ksp4/windows2000-kb920683-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/6/9/4/69453e8d-5fb6-4b72-8786-36feb47de5c0/Windows2000-KB920683-x86-PTB.EXE|updates/win2ksp4/windows2000-kb920683-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/2/5/52520ff4-35cd-410c-9b4e-3ed2c18cd149/Windows2000-KB920683-x86-PTG.EXE|updates/win2ksp4/windows2000-kb920683-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/2/3/d/23dd1934-3bc3-4ebd-9ba6-4df4e2dad5a6/Windows2000-KB920683-x86-RUS.EXE|updates/win2ksp4/windows2000-kb920683-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/d/a/2/da27a49e-af14-4ae6-80b7-31096b747f49/Windows2000-KB920683-x86-SVE.EXE|updates/win2ksp4/windows2000-kb920683-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/2/6/b/26b817d7-f006-494f-8710-1b20aa560f60/Windows2000-KB920683-x86-TRK.EXE|updates/win2ksp4/windows2000-kb920683-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB920683-x86-%WINLANG%.EXE /passive /n /norestart"
+
+:: Security Update for Windows 2000 (KB921883)
+:: Microsoft Security Bulletin MS06-040
+:: "Vulnerability in Server Service Could Allow Remote Code Execution (921883)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-040.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=3b61153d-359f-4441-a448-24062cb2387c>
+:: URL|ARA|http://download.microsoft.com/download/a/e/d/aed0b84d-058f-4fbe-8171-dc7730bb6f8b/Windows2000-KB921883-x86-ARA.EXE|updates/win2ksp4/windows2000-kb921883-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/5/c/5/5c5c6159-f2a8-4441-8c2c-065c366e8567/Windows2000-KB921883-x86-CSY.EXE|updates/win2ksp4/windows2000-kb921883-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/1/b/1/1b1e5571-6ae9-44b0-ace9-eb0eb1523c95/Windows2000-KB921883-x86-DAN.EXE|updates/win2ksp4/windows2000-kb921883-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/6/b/c/6bcc6ffc-40c9-4e63-81ca-4fc734137b42/Windows2000-KB921883-x86-DEU.EXE|updates/win2ksp4/windows2000-kb921883-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/3/5/9/35923f17-fb6f-4946-b413-9d3dd2259b7a/Windows2000-KB921883-x86-ELL.EXE|updates/win2ksp4/windows2000-kb921883-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/9/0/b/90b8dbba-09c1-4b27-b0c4-0cc13706823a/Windows2000-KB921883-x86-ENU.EXE|updates/win2ksp4/windows2000-kb921883-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/b/2/f/b2f1a836-fad8-4c66-be96-003a3bb18a77/Windows2000-KB921883-x86-ESN.EXE|updates/win2ksp4/windows2000-kb921883-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/b/8/c/b8c161dc-3a57-4dc1-a86f-7ee71e4f37d1/Windows2000-KB921883-x86-FIN.EXE|updates/win2ksp4/windows2000-kb921883-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/d/c/d/dcd721b7-aed9-482f-94bb-0a21e388134e/Windows2000-KB921883-x86-FRA.EXE|updates/win2ksp4/windows2000-kb921883-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/d/5/b/d5b16030-85a6-4eff-8d5e-1d3e204a1162/Windows2000-KB921883-x86-HEB.EXE|updates/win2ksp4/windows2000-kb921883-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/0/8/8/0881b1d9-040f-4299-9181-5d530c61cd92/Windows2000-KB921883-x86-HUN.EXE|updates/win2ksp4/windows2000-kb921883-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/7/d/2/7d2fe0c5-bb97-487c-97b9-d8322a9f8b69/Windows2000-KB921883-x86-ITA.EXE|updates/win2ksp4/windows2000-kb921883-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/7/d/f/7df0d800-ce52-4653-9540-d6ae02b2e7c7/Windows2000-KB921883-x86-JPN.EXE|updates/win2ksp4/windows2000-kb921883-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/a/6/6a61bb3d-c4cc-4c23-8402-44c3b0c22483/Windows2000-KB921883-x86-KOR.EXE|updates/win2ksp4/windows2000-kb921883-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/5/4/2/542ae05e-f5cf-474c-bef5-ba9212429002/Windows2000-KB921883-x86-NLD.EXE|updates/win2ksp4/windows2000-kb921883-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/7/5/67558728-1260-4c97-958a-7670e975c46f/Windows2000-KB921883-x86-NOR.EXE|updates/win2ksp4/windows2000-kb921883-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/6/9/8/698ea881-6f82-482a-8313-e28db69a04d6/Windows2000-KB921883-x86-PLK.EXE|updates/win2ksp4/windows2000-kb921883-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/1/f/b1f974cf-d0b8-4875-b953-9c4423e62841/Windows2000-KB921883-x86-PTB.EXE|updates/win2ksp4/windows2000-kb921883-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/2/c/6/2c60c43f-3c70-49c9-8bd9-37929c007ff7/Windows2000-KB921883-x86-PTG.EXE|updates/win2ksp4/windows2000-kb921883-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/9/f/0/9f06d3f3-87d0-445d-8a41-d2ffef9a40ba/Windows2000-KB921883-x86-RUS.EXE|updates/win2ksp4/windows2000-kb921883-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/e/b/6eb6de44-ac38-4799-aa6b-a14d84de3f33/Windows2000-KB921883-x86-SVE.EXE|updates/win2ksp4/windows2000-kb921883-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/2/b/2/2b209479-320f-472c-80d6-5b77706f75b8/Windows2000-KB921883-x86-TRK.EXE|updates/win2ksp4/windows2000-kb921883-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB921883-x86-%WINLANG%.EXE /passive /n /norestart"
 
 :: Security Update for Windows 2000 (KB914388)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=7a04fae4-6914-4ffa-b0ec-61b912d47873>
