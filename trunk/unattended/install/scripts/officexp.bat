@@ -5,6 +5,64 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for Office XP (KB921567)
+:: Microsoft Security Bulletin MS06-048
+:: "Vulnerabilities in Microsoft Office Could Allow Remote Code Execution (922968)"
+:: <http://www.microsoft.com/technet/security/Bulletin/MS06-048.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=A9C7E43B-A0A6-4C81-87ED-3F4DED78EAEA>
+:: No Download found for ARA.
+:: No Download found for CSY.
+:: No Download found for DAN.
+:: No Download found for DEU.
+:: URL|ELL|http://download.microsoft.com/download/e/6/c/e6c59a9e-5d77-4532-8e2e-a58568ef51c0/officexp-KB921567-FullFile-ELL.exe|updates/officexp/officexp-kb921567-fullfile-ell.exe
+:: No Download found for ENU.
+:: URL|ESN|http://download.microsoft.com/download/b/c/c/bccef0c9-8e96-47e1-acf7-f141cc5ebaff/officexp-KB921567-FullFile-ESN.exe|updates/officexp/officexp-kb921567-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/4/7/2/472e0980-0b4e-4ab3-b3b8-efdb50ac9b59/officexp-KB921567-FullFile-FIN.exe|updates/officexp/officexp-kb921567-fullfile-fin.exe
+:: No Download found for FRA.
+:: URL|HEB|http://download.microsoft.com/download/3/4/0/3402ec96-5ea5-423b-a2ec-79736c1732a2/officexp-KB921567-FullFile-HEB.exe|updates/officexp/officexp-kb921567-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/f/c/4/fc40ee5f-d1db-495e-8363-5229b436d244/officexp-KB921567-FullFile-HUN.exe|updates/officexp/officexp-kb921567-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/6/4/e/64e45dee-e249-4e29-bd3a-24466a073d4c/officexp-KB921567-FullFile-ITA.exe|updates/officexp/officexp-kb921567-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/e/d/fedc3be9-e229-4b70-8153-70ca9d6ae442/officexp-KB921567-FullFile-JPN.exe|updates/officexp/officexp-kb921567-fullfile-jpn.exe
+:: No Download found for KOR.
+:: URL|NLD|http://download.microsoft.com/download/d/d/4/dd435b1f-aed6-4583-8420-5ce17dda49b9/officexp-KB921567-FullFile-NLD.exe|updates/officexp/officexp-kb921567-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/3/d/d3d3967d-0306-42ab-8ebc-3d494f32ce4e/officexp-KB921567-FullFile-NOR.exe|updates/officexp/officexp-kb921567-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/d/0/0/d002be0b-a4f5-4525-9c79-504e71d8a53a/officexp-KB921567-FullFile-PLK.exe|updates/officexp/officexp-kb921567-fullfile-plk.exe
+:: No Download found for PTB.
+:: URL|PTG|http://download.microsoft.com/download/2/e/2/2e212aa6-2c37-465d-bdff-cb0185ae7011/officexp-KB921567-FullFile-PTG.exe|updates/officexp/officexp-kb921567-fullfile-ptg.exe
+:: No Download found for RUS.
+:: URL|SVE|http://download.microsoft.com/download/d/d/c/ddc084d9-7644-4441-8b35-b58166db6aff/officexp-KB921567-FullFile-SVE.exe|updates/officexp/officexp-kb921567-fullfile-sve.exe
+:: No Download found for TRK.
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB921567-FullFile-%WINLANG%.exe /passive /n /norestart"
+
+:: Security Update for Office XP (KB920821)
+:: Microsoft Security Bulletin MS06-047
+:: "Vulnerability in Microsoft Visual Basic for Applications Could Allow Remote Code Execution (921645)"
+:: <http://www.microsoft.com/technet/security/Bulletin/MS06-047.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B26ADC3C-1DB8-46FD-8381-B199EE351E7C>
+:: URL|ARA|http://download.microsoft.com/download/3/2/7/327d1f70-3f89-4d44-9f6d-1ab9ec4482d5/officexp-KB920821-FullFile-ARA.exe|updates/officexp/officexp-kb920821-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/f/6/bf685ec0-bd24-47f2-a94d-aab545eca714/officexp-KB920821-FullFile-CSY.exe|updates/officexp/officexp-kb920821-fullfile-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/4/9/1/491e44bb-0317-44fd-834d-4af560ead626/officexp-KB920821-FullFile-DEU.exe|updates/officexp/officexp-kb920821-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/7/1/7/7179465b-1525-41b1-9252-f34b8aae123a/officexp-KB920821-FullFile-ELL.exe|updates/officexp/officexp-kb920821-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/2/1/2213ccbd-561e-4742-b808-8ea996e4e47b/officexp-KB920821-FullFile-ENU.exe|updates/officexp/officexp-kb920821-fullfile-enu.exe
+:: No Download found for ESN.
+:: URL|FIN|http://download.microsoft.com/download/4/0/9/4094c619-c13f-4e3b-b291-78ed9169b03e/officexp-KB920821-FullFile-FIN.exe|updates/officexp/officexp-kb920821-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/0/a/6/0a661119-39e2-438e-9109-f28f52f739cf/officexp-KB920821-FullFile-FRA.exe|updates/officexp/officexp-kb920821-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/8/8/388dedc7-4de2-4f7d-83fd-9f9fa3133d4b/officexp-KB920821-FullFile-HEB.exe|updates/officexp/officexp-kb920821-fullfile-heb.exe
+:: No Download found for HUN.
+:: URL|ITA|http://download.microsoft.com/download/c/9/c/c9c005d3-6cf3-4224-bc06-95ed6d6907db/officexp-KB920821-FullFile-ITA.exe|updates/officexp/officexp-kb920821-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/b/1/4/b14fcd93-9844-4928-8118-570eaee2b85f/officexp-KB920821-FullFile-JPN.exe|updates/officexp/officexp-kb920821-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/d/e/7/de731028-dc8b-4e74-b688-e4e017928412/officexp-KB920821-FullFile-KOR.exe|updates/officexp/officexp-kb920821-fullfile-kor.exe
+:: No Download found for NLD.
+:: No Download found for NOR.
+:: No Download found for PLK.
+:: URL|PTB|http://download.microsoft.com/download/3/c/a/3ca44f89-21af-46c9-a205-9d68ccf17e18/officexp-KB920821-FullFile-PTB.exe|updates/officexp/officexp-kb920821-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/3/9/839a4a4f-7f42-4e71-a912-3bded1e74466/officexp-KB920821-FullFile-PTG.exe|updates/officexp/officexp-kb920821-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/7/d/07dbed5e-4f64-4667-a81e-ab071e179d8c/officexp-KB920821-FullFile-RUS.exe|updates/officexp/officexp-kb920821-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/c/e/9/ce9425bc-113f-406d-837d-d64dcae9db39/officexp-KB920821-FullFile-SVE.exe|updates/officexp/officexp-kb920821-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/1/e/51e7c533-d23c-44a0-860c-9e01ef63dea8/officexp-KB920821-FullFile-TRK.exe|updates/officexp/officexp-kb920821-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB920821-FullFile-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Excel 2002 (KB918420)
 :: Description of the security update for Microsoft Excel 2002: July 11, 2006
 :: <http://support.microsoft.com/kb/918420>
@@ -32,34 +90,6 @@ todo.pl .reboot
 :: URL|SVE|http://download.microsoft.com/download/c/5/b/c5b11062-1280-4128-933d-f0ab4e3e8162/officexp-KB918420-FullFile-SVE.exe|updates/officexp/officexp-kb918420-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/b/1/1b129b9e-61a1-41cf-82a5-07a9726c8d45/officexp-KB918420-FullFile-TRK.exe|updates/officexp/officexp-kb918420-fullfile-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB918420-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb918420.txt /p EXCELff.msp REBOOT=ReallySuppress\""
-
-:: Security Update for Office XP (KB917150)
-:: Description of the security update for Office XP, the security update for Project 2002, and the security update for Visio 2002: July 11, 2006
-:: <http://support.microsoft.com/kb/917150>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=266C287E-A773-4D9C-9736-EEAFB34FF893>
-:: URL|ARA|http://download.microsoft.com/download/4/f/b/4fb6aaca-543b-4565-982c-be869833471c/officexp-KB917150-FullFile-ARA.exe|updates/officexp/officexp-kb917150-fullfile-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/a/a/8/aa8e6528-80c0-40d1-b2ac-e28dac1dfa1e/officexp-KB917150-FullFile-CSY.exe|updates/officexp/officexp-kb917150-fullfile-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/8/9/2/8925b870-6fbe-4ed4-a90d-fecf73f884cc/officexp-KB917150-FullFile-DAN.exe|updates/officexp/officexp-kb917150-fullfile-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/2/f/62f5a99c-1ed4-47cb-af7a-02dba4f46789/officexp-KB917150-FullFile-DEU.exe|updates/officexp/officexp-kb917150-fullfile-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/1/4/4/1445dab5-2020-49d5-9695-efb96d874376/officexp-KB917150-FullFile-ELL.exe|updates/officexp/officexp-kb917150-fullfile-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/5/7/c/57cee7cb-7fc0-4eb1-a812-ced0abd0ac4a/officexp-KB917150-FullFile-ENU.exe|updates/officexp/officexp-kb917150-fullfile-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/4/0/240d7785-2454-4904-ac3a-25d9b567e55e/officexp-KB917150-FullFile-ESN.exe|updates/officexp/officexp-kb917150-fullfile-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/2/d/d/2dd03502-7d4c-4b0b-b662-6bd8e4212d81/officexp-KB917150-FullFile-FIN.exe|updates/officexp/officexp-kb917150-fullfile-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/e/3/0/e30f0bf1-06d2-4a71-a71f-9805126ff0cc/officexp-KB917150-FullFile-FRA.exe|updates/officexp/officexp-kb917150-fullfile-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/e/b/1/eb18ec57-4f88-4e99-a910-c51ff1e6321a/officexp-KB917150-FullFile-HEB.exe|updates/officexp/officexp-kb917150-fullfile-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/b/e/b/beb0bfcd-22e1-48dc-b238-7c8f1cbaf7c6/officexp-KB917150-FullFile-HUN.exe|updates/officexp/officexp-kb917150-fullfile-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/9/e/7/9e71ab26-4caa-4070-9f27-a065b64b2ffd/officexp-KB917150-FullFile-ITA.exe|updates/officexp/officexp-kb917150-fullfile-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/b/9/0/b906eb52-df04-42e5-b5d9-61cd89d2b3ea/officexp-KB917150-FullFile-JPN.exe|updates/officexp/officexp-kb917150-fullfile-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/a/0/4a00f108-d235-4295-96ee-cd68bb355c4f/officexp-KB917150-FullFile-KOR.exe|updates/officexp/officexp-kb917150-fullfile-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/b/a/3/ba3c9df5-aa20-4904-850e-be727c78d98f/officexp-KB917150-FullFile-NLD.exe|updates/officexp/officexp-kb917150-fullfile-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/1/9/e/19ec026d-c6a2-4b74-a71e-5a9f1496b670/officexp-KB917150-FullFile-NOR.exe|updates/officexp/officexp-kb917150-fullfile-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/2/d/0/2d072f19-d3d1-45a0-9b4d-9096c344cc97/officexp-KB917150-FullFile-PLK.exe|updates/officexp/officexp-kb917150-fullfile-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/e/b/9eb30d3f-6a19-4c49-8bff-88b619a6f6f5/officexp-KB917150-FullFile-PTB.exe|updates/officexp/officexp-kb917150-fullfile-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/d/a/9/da99d21d-7d32-4068-b987-4f6f47625b0c/officexp-KB917150-FullFile-PTG.exe|updates/officexp/officexp-kb917150-fullfile-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/e/a/5/ea5023a8-5b49-4108-bab4-de1ef7004859/officexp-KB917150-Client-RUS.exe|updates/officexp/officexp-kb917150-client-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/8/2/a82bfb7c-82d1-4265-82e2-5eea102abece/officexp-KB917150-FullFile-SVE.exe|updates/officexp/officexp-kb917150-fullfile-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/5/8/c/58c59f5c-13d4-4a0d-889a-515b4f92d26e/officexp-KB917150-FullFile-TRK.exe|updates/officexp/officexp-kb917150-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB917150-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb917150.txt /p SHAREDff.msp REBOOT=ReallySuppress\""
 
 :: Security Update for Office XP (KB914796)
 :: Description of the security update for Office XP: July 11, 2006
