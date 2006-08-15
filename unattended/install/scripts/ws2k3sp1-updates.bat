@@ -73,6 +73,64 @@ todo.pl ".reboot-on 194 %Z%\updates\common\dotnetfx_20.exe /q /c:\"install /q\""
 
 :: Recommended Updates
 
+:: Security Update for Windows Server 2003 (KB920670)
+:: Microsoft Security Bulletin MS06-050
+:: "Vulnerabilities in Microsoft Windows Hyperlink Object Library Could Allow Remote Code Execution (920670)"
+:: <http://www.microsoft.com/technet/security/Bulletin/MS06-050.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=21d1e864-4517-4353-8477-b4cd3c6187c0>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/3/b/f/3bf524da-90bb-4969-9eb4-38f5df165e21/WindowsServer2003-KB920670-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/7/2/c/72c0c492-3242-43bd-980a-a5713d532dfa/WindowsServer2003-KB920670-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/5/0/5/505e7f20-0b36-4973-a9f3-07af44400348/WindowsServer2003-KB920670-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/9/3/793cd371-496d-49fd-85e3-67ac719429b1/WindowsServer2003-KB920670-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/7/5/a/75a3c270-1d2d-445f-9602-32e33c9eed08/WindowsServer2003-KB920670-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/4/d/5/4d53c913-1be3-4945-a91b-38b9dd82041e/WindowsServer2003-KB920670-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/5/4/4/544f49c7-8c80-4bed-9262-33325a407aa3/WindowsServer2003-KB920670-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/6/b/86bcff5b-15e7-46b1-ba44-c5bab2e66aab/WindowsServer2003-KB920670-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/1/1/411c1463-745b-4b5b-ad3b-6b9c25d82c4e/WindowsServer2003-KB920670-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/4/d/c4d6eeaa-c9db-47d3-ab20-9ad5b164ae1b/WindowsServer2003-KB920670-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/8/8/4/8845724c-c696-4084-96e8-14b2e8dbdbfd/WindowsServer2003-KB920670-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/f/0/bf0c700c-a803-4486-b052-f77ec907c41b/WindowsServer2003-KB920670-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/c/0/5c0395a4-a06f-4d37-a76d-4f5870696b84/WindowsServer2003-KB920670-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/c/1/5c1fe27d-240e-477d-afa6-50c397cadb5f/WindowsServer2003-KB920670-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/9/3/9/939e3fd1-06df-45ec-9a52-926775638726/WindowsServer2003-KB920670-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/d/6/0/d605f965-9453-4dc4-b91e-f7ffcc48fd1e/WindowsServer2003-KB920670-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920670-x86-%WINLANG%.exe .exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB921398)
+:: Microsoft Security Bulletin MS06-045
+:: "Vulnerability in Windows Explorer Could Allow Remote Code Execution (921398)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-045.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=759435a3-98f9-4115-b52e-d7fa9d024f16>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/2/8/7/287aa73d-dd97-455a-989a-f35da2e820ac/WindowsServer2003-KB921398-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/1/4/c/14ccbf0b-1077-44f3-9f99-cd3b7ffbf018/WindowsServer2003-KB921398-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/6/b/b/6bbdada7-f537-48de-b8c1-9bfee7416fc4/WindowsServer2003-KB921398-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/a/e/7aef1e4e-9e25-4814-bee0-8762ccea9d39/WindowsServer2003-KB921398-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/2/b/d/2bd3b4f5-5774-4736-9959-fe3762c75d30/WindowsServer2003-KB921398-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/2/5/e/25e7da40-fd39-4a34-980a-a8eb75681569/WindowsServer2003-KB921398-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/1/f/c/1fcd12e1-f8fe-4519-afa0-74715b0ce58d/WindowsServer2003-KB921398-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/d/2/2/d227c26e-8f70-496e-991f-c3cef47d0cb9/WindowsServer2003-KB921398-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/a/2/4a25c53b-f8b5-4684-a8d1-3d8088a92fc8/WindowsServer2003-KB921398-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/2/f/f2fdc661-756d-48d1-8a03-15b1df3b6acd/WindowsServer2003-KB921398-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/4/3/8/438c833b-5b46-4b27-87f1-51e71c64eda1/WindowsServer2003-KB921398-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/d/6/b/d6bd8227-f77c-4961-91b3-94bfe209b561/WindowsServer2003-KB921398-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/1/e/5/1e5cb5f0-b574-4059-a4b8-e61208c2fa1c/WindowsServer2003-KB921398-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/7/9/3/79384063-c51d-45ba-98b4-d8aa634e5aee/WindowsServer2003-KB921398-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/1/e/a1e94aba-7adc-4e2e-ae0e-ae6629624bf4/WindowsServer2003-KB921398-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/e/8/7e82d5b4-e91b-4762-815e-e8806bf026ef/WindowsServer2003-KB921398-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB921398-x86-%WINLANG%.exe .exe /passive /n /norestart"
+
 :: Security Update for Windows Server 2003 (KB917537)
 :: <http://www.microsoft.com/technet/security/bulletin/MS06-034.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=c5e274a8-f962-4944-8878-6b88b1592bbf>
@@ -180,33 +238,181 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB914389-x86-%WIN
 :: URL|TRK|http://download.microsoft.com/download/0/d/3/0d39b9ce-8e18-447d-8a47-d2d1c56e8f84/WindowsServer2003-KB918439-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb918439-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB918439-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Cumulative Update for Internet Explorer for Windows Server 2003 (KB916281)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=CCE7C875-C9A4-4C3D-A37B-946EE5E781E7>
-:: No Download found for ARA.
-:: URL|CSY|http://download.microsoft.com/download/6/2/2/62242f11-5b10-4d26-add9-6222cccfd24d/WindowsServer2003-KB916281-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-csy.exe
-:: No Download found for DAN.
-:: URL|DEU|http://download.microsoft.com/download/b/c/2/bc2dc5ac-4483-4054-af3a-6ad6c71fad44/WindowsServer2003-KB916281-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-deu.exe
-:: No Download found for ELL.
-:: URL|ENU|http://download.microsoft.com/download/3/6/6/36626f99-8eda-4afe-83b1-71fd987798b8/WindowsServer2003-KB916281-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/8/0/28031074-9aa3-4230-abf4-bf1c22ea13a1/WindowsServer2003-KB916281-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-esn.exe
-:: No Download found for FIN.
-:: URL|FRA|http://download.microsoft.com/download/f/a/1/fa10b4c1-eff7-4c35-9b69-539950b0eec7/WindowsServer2003-KB916281-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-fra.exe
-:: No Download found for HEB.
-:: URL|HUN|http://download.microsoft.com/download/5/f/c/5fcdcb8c-626f-4de6-8127-d6fc3350c1ac/WindowsServer2003-KB916281-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/e/e/5ee4d641-ffa1-4b2d-b42a-38faadb592c8/WindowsServer2003-KB916281-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/1/f/6/1f656bde-8735-400b-9c37-72a6f8701695/WindowsServer2003-KB916281-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/2/d/b/2db408ff-fd12-4bcb-9443-484c3d7474b2/WindowsServer2003-KB916281-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/e/1/c/e1cc59cc-291e-4345-b3ab-5025d0490603/WindowsServer2003-KB916281-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-nld.exe
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/c/7/f/c7f59052-dc8e-4282-ae3a-1b5261168aa4/WindowsServer2003-KB916281-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/3/d/9/3d975b3d-7604-464a-b746-ed092602e0f6/WindowsServer2003-KB916281-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/d/0/3/d03a36f9-6727-415d-9fed-31b06adedef1/WindowsServer2003-KB916281-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/e/6/5/e65c16e1-6ee8-49ad-82c0-0ee8d1f0d7a6/WindowsServer2003-KB916281-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/7/0/c/70c26a62-e849-44d2-ab70-11da85627062/WindowsServer2003-KB916281-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/6/c/1/6c1c28f1-03e2-4e41-98b2-3cc89ba5f2cb/WindowsServer2003-KB916281-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb916281-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB916281-x86-%WINLANG%.exe /passive /n /norestart"
-
 :: Critical Updates
+
+:: Security Update for Windows Server 2003 (KB917422)
+:: Microsoft Security Bulletin MS06-051
+:: "Vulnerability in Windows Kernel Could Result in Remote Code Execution (917422)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-051.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=7d0f888b-df35-40df-baff-0bae2b921aef>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/8/c/e/8ced96f9-1b46-4c89-a0dd-7a57cc975873/WindowsServer2003-KB917422-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/8/1/7/8174778e-329f-4674-924a-c466e744225c/WindowsServer2003-KB917422-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/0/0/5/0055769c-28e5-403c-9a23-d754a41575c3/WindowsServer2003-KB917422-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/f/f/5/ff5fb286-af50-4120-ae50-96896def9758/WindowsServer2003-KB917422-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/3/e/f/3ef1c62d-c368-4720-96ef-d431c2c023b3/WindowsServer2003-KB917422-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/f/7/f/f7fab7c5-c7df-49e0-a0cf-09cbe7058c59/WindowsServer2003-KB917422-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/5/9/9/5994d7a4-8af0-4231-a7f0-cf4b636a25ad/WindowsServer2003-KB917422-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/3/c/0/3c04a3d2-6133-4b8a-8332-1709aee5b59d/WindowsServer2003-KB917422-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/1/6/5/165f225d-7650-423d-9f62-9ad3814b3852/WindowsServer2003-KB917422-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/f/d/4fdcfc43-d7a6-4237-9d14-c616d3835d1c/WindowsServer2003-KB917422-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/f/6/8/f68f3c30-cd48-43c8-8685-a9443066dbbb/WindowsServer2003-KB917422-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/2/d/22d1ea2f-1fb9-4ec5-b129-9b1de0d13ef7/WindowsServer2003-KB917422-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/1/e/b1e5cabb-e4cb-4728-89a7-963fdd53bfac/WindowsServer2003-KB917422-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/a/a/1/aa11f871-048e-42d8-b985-db175df7822e/WindowsServer2003-KB917422-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/6/c/66c3f0a2-6799-49e9-ac7d-fa1d91973d8e/WindowsServer2003-KB917422-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/e/c/d/ecd71e7b-dd7f-4f29-83c7-40ba4835d6e2/WindowsServer2003-KB917422-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB917422-x86-%WINLANG%.exe .exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB922616)
+:: Microsoft Security Bulletin MS06-046
+:: "Vulnerability in HTML Help Could Allow Remote Code Execution (922616)"
+:: <http://www.microsoft.com/technet/security/Bulletin/MS06-046.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=5132c3bc-f3af-464e-a615-60f72677bd4b>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/3/b/5/3b51da4d-bf5f-415a-916a-d8b469cfe48f/WindowsServer2003-KB922616-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/7/f/2/7f29c1a4-939e-49ca-baa6-fc59a70b47e3/WindowsServer2003-KB922616-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/3/6/2/36260000-88b0-404b-8cf4-f6f979f1b2b4/WindowsServer2003-KB922616-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/d/c/4dcdca0b-087c-446e-a5a6-8e7e7b608cee/WindowsServer2003-KB922616-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/8/8/f/88f19e85-5332-461a-95a2-a2f23e1c0f71/WindowsServer2003-KB922616-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/7/3/2/732003e2-faf3-40f5-8f40-1338dde8d08a/WindowsServer2003-KB922616-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/6/f/36f07200-e0a0-4b02-bd3d-3f2bb8f621d5/WindowsServer2003-KB922616-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/4/e/14e3184e-e90f-42f6-9ca8-79cab4ffb7d6/WindowsServer2003-KB922616-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/e/e/2/ee283d4c-9b4b-490e-834b-031ffde397c5/WindowsServer2003-KB922616-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/e/f/2/ef2749cd-0aa9-44bb-94b9-40d785acb99f/WindowsServer2003-KB922616-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/9/6/2/962d8b74-13a2-43ae-9ecb-23a5d19f9fc7/WindowsServer2003-KB922616-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/a/c/aac329fa-682c-483b-93ae-8cc369b4a0cf/WindowsServer2003-KB922616-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/a/c/d/acd29cb8-839d-40a6-99b5-7b6cfdcd10e0/WindowsServer2003-KB922616-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/3/d/03dcea65-7444-46e1-ab0a-8e2c5764ef57/WindowsServer2003-KB922616-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/0/f/e/0fe81c47-5f76-476e-a600-e727137392ad/WindowsServer2003-KB922616-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/e/2/3e2ca932-b2d7-48b7-baf9-54f09bd39bd4/WindowsServer2003-KB922616-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB922616-x86-%WINLANG%.exe .exe /passive /n /norestart"
+
+:: Security Update for Outlook Express for Windows Server 2003 (KB920214)
+:: Microsoft Security Bulletin MS06-043
+:: "Vulnerability in Microsoft Windows Could Allow Remote Code Execution (920214)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-043.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=0c7e507f-2a42-49b5-82b2-84a6ec40b895>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/b/f/d/bfdcb2e3-7385-467b-be11-345dc7436313/WindowsServer2003-KB920214-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/a/1/4/a1495c5b-f0fc-4007-99d1-b3fee6151cee/WindowsServer2003-KB920214-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/f/d/b/fdbdc638-01f8-4023-b270-06ef3ec7f8eb/WindowsServer2003-KB920214-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/a/d/a/ada335ba-d134-4f55-a2e6-8720816856cc/WindowsServer2003-KB920214-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/a/f/a/afacfa22-3668-49e3-87a4-f316e195c5e4/WindowsServer2003-KB920214-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/5/f/0/5f0e8aca-ae52-4d62-b81e-234cb7f382cd/WindowsServer2003-KB920214-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/5/0/950846c9-8836-4ea3-9156-305d2080ea7a/WindowsServer2003-KB920214-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/0/9/10955c6c-8996-41b7-acb9-ec32df3c6772/WindowsServer2003-KB920214-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/d/9/3/d93bb525-1aa3-413e-8d21-ff555f379b1e/WindowsServer2003-KB920214-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/7/0/970d7eb6-5ddb-4645-a111-ce3b0829db7a/WindowsServer2003-KB920214-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/9/c/0/9c0ea825-e093-4121-990c-ab371de1f850/WindowsServer2003-KB920214-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/0/a/5/0a598fd6-fa84-480a-922e-240742e336fc/WindowsServer2003-KB920214-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/9/8/f/98f4e19f-d595-4224-a503-e712173383bf/WindowsServer2003-KB920214-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/2/a/e2af7db8-1b36-4861-8a42-e1f59968db13/WindowsServer2003-KB920214-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/4/5/8/45865b81-12cc-4722-8114-8384b3f3241f/WindowsServer2003-KB920214-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/9/2/1/92167703-823b-4bd7-bfaf-7d0c50d6f302/WindowsServer2003-KB920214-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920214-x86-%WINLANG%.exe .exe /passive /n /norestart"
+
+:: Cumulative Update for Internet Explorer for Windows Server 2003 (KB918899)
+:: Microsoft Security Bulletin MS06-042
+:: "Cumulative Security Update for Internet Explorer (918899)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-042.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=20288DA2-A308-45C6-BD80-C68C997529BD>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/1/5/7/157b6117-7ea7-4735-a11d-518611c9bcf2/WindowsServer2003-KB918899-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/e/c/1/ec16c78c-308b-4a20-a8da-03b8ff0c8dda/WindowsServer2003-KB918899-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/e/7/6/e7609513-f591-45e2-a68b-1c8c8b6dd125/WindowsServer2003-KB918899-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/2/3/72317f82-f167-4b6e-b6f5-ba11156ac232/WindowsServer2003-KB918899-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/9/f/d/9fdea292-f7c6-4ede-8957-615214a482df/WindowsServer2003-KB918899-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/d/3/c/d3cb051e-9c7b-4a6f-b87a-db60a87e98d0/WindowsServer2003-KB918899-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/d/b/3/db39dd33-d41c-4113-a6de-b5e3378251dc/WindowsServer2003-KB918899-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/0/8/808e9f85-5563-4888-85ad-b44fcc5aa8e9/WindowsServer2003-KB918899-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/3/b/b/3bb4454e-87f9-4a9c-8f39-e1bdbacdb2f5/WindowsServer2003-KB918899-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/5/c/a/5ca5103c-74d1-47b1-b870-b8d0a418d69f/WindowsServer2003-KB918899-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/c/0/5/c051e996-e8dd-4678-89ea-70ee88270b5c/WindowsServer2003-KB918899-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/6/d/7/6d7f4053-bc84-444f-9190-2929494eeb64/WindowsServer2003-KB918899-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/3/2/53249216-c20d-4dfb-8840-95897d99e2d1/WindowsServer2003-KB918899-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/7/d/4/7d44bd05-1dcc-4692-a107-48cb8da9cca1/WindowsServer2003-KB918899-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/8/1/7818122a-c6bd-4813-8aaa-23748030db49/WindowsServer2003-KB918899-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/c/d/a/cda92507-667f-420b-a90c-54f782db0f80/WindowsServer2003-KB918899-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB918899-x86-%WINLANG%.exe .exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB920683)
+:: Microsoft Security Bulletin MS06-041
+:: "Vulnerabilities in DNS Resolution Could Allow Remote Code Execution (920683)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-041.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=6d027e72-1f94-44de-95f9-f52000a991cc>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/f/8/9/f891ce22-ee60-4227-b375-451de766a4eb/WindowsServer2003-KB920683-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/6/7/3/673da999-f36e-4f04-96a7-56d5fcb641b4/WindowsServer2003-KB920683-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/5/b/3/5b3624f3-6cb0-4a29-9e2a-48a9d6b7531f/WindowsServer2003-KB920683-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/d/d/1dd123c8-afba-407b-8d57-616b0d60a2c1/WindowsServer2003-KB920683-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/3/f/6/3f668713-333d-473e-8d15-60ccf3994a0f/WindowsServer2003-KB920683-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/8/9/f/89ff5e6c-6159-45b3-8632-35eb564d96f7/WindowsServer2003-KB920683-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/2/3/a/23ac4b89-31b9-4241-b1f9-5a3f13f3d803/WindowsServer2003-KB920683-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/6/3/26320534-fb4a-4435-ad10-b948994346de/WindowsServer2003-KB920683-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/2/1/62176519-14ef-4fc7-abed-1b3530a13d01/WindowsServer2003-KB920683-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/2/a/9/2a98231e-2d17-4137-af4c-b755e197c3f1/WindowsServer2003-KB920683-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/2/d/4/2d408397-635c-46b8-8bba-59467f881e42/WindowsServer2003-KB920683-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/8/d/c/8dcb2bb9-ad6f-4fd9-88d9-74fbf65a5440/WindowsServer2003-KB920683-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/0/4/2/042c14d3-bbed-4d8c-ae3c-73e76bb26e29/WindowsServer2003-KB920683-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/a/9/d/a9ddd43d-6ab8-40e9-9cfe-799dbb378af9/WindowsServer2003-KB920683-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/4/9/f4921d01-3424-4976-911c-576e6d949719/WindowsServer2003-KB920683-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/d/a/3dae312c-855e-4de8-84de-fdc1e1612f08/WindowsServer2003-KB920683-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920683-x86-%WINLANG%.exe .exe /passive /n /norestart"
+
+:: Security Update for Windows Server 2003 (KB921883)
+:: Microsoft Security Bulletin MS06-040
+:: "Vulnerability in Server Service Could Allow Remote Code Execution (921883)"
+:: <http://www.microsoft.com/technet/security/bulletin/ms06-040.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=a0058f39-6dea-4dfc-9dd6-4cb45b305dec>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/f/7/9/f799d334-fbf6-40b4-a8d8-9c2731d412e3/WindowsServer2003-KB921883-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/e/8/d/e8d19c2e-2818-485c-a453-2056de56f842/WindowsServer2003-KB921883-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/6/e/e/6ee2a18d-b3a7-457a-af39-fb687fd6aa91/WindowsServer2003-KB921883-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/9/5/c9577d2b-20ec-495b-b8ce-04942e5a8481/WindowsServer2003-KB921883-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/7/e/0/7e00cc5e-c31e-46cf-a099-71c007b6962e/WindowsServer2003-KB921883-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/7/e/f/7ef7fe00-1845-4f1e-a31a-e776fb51f3fb/WindowsServer2003-KB921883-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/f/f/9ffbce67-f68f-46e1-a1a1-d28a3a56ff62/WindowsServer2003-KB921883-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/d/2/2d293bbb-e4b5-45a7-b237-cc554e2162e3/WindowsServer2003-KB921883-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/1/1/6117d96c-d813-4073-80fb-95edc7ca533f/WindowsServer2003-KB921883-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/b/1/ab1a8ddb-8113-4753-87c5-f7c4ffca6e4d/WindowsServer2003-KB921883-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/6/b/8/6b8f06fb-9017-43d5-bb4c-89f02224bb39/WindowsServer2003-KB921883-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/c/3/bc368798-ff8f-4ecd-8825-8bad8b048507/WindowsServer2003-KB921883-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/0/9/8/098a07d8-7d48-40f6-aaa1-9062dee21b3b/WindowsServer2003-KB921883-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/4/f/b/4fbf200c-e52d-42d9-8497-21fde55ac574/WindowsServer2003-KB921883-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/f/1/4/f14df99d-bd54-4d6c-b6ac-7b997dec6180/WindowsServer2003-KB921883-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/d/a/1dac360f-3edd-497f-9745-aeebf711c8b8/WindowsServer2003-KB921883-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB921883-x86-%WINLANG%.exe .exe /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB914388)
 :: <http://www.microsoft.com/technet/security/bulletin/MS06-036.mspx>
