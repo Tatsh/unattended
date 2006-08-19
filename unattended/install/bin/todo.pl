@@ -246,6 +246,7 @@ sub get_windows_language () {
 
     my %lang_table = (
                       0x0401 => 'ara',
+                      0x0404 => 'cht',
                       0x0405 => 'csy',
                       0x0406 => 'dan',
                       0x0407 => 'deu',
