@@ -32,7 +32,7 @@ todo.pl .reboot
 :: URL|RUS|http://download.microsoft.com/download/4/c/d/4cd0cdeb-8f7e-4fb6-ab84-579694b54f0e/office2000-kb921568-fullfile-rus.exe|updates/office2k/office2000-kb921568-fullfile-rus.exe
 :: No Download found for SVE.
 :: URL|TRK|http://download.microsoft.com/download/6/b/3/6b3db78b-f357-4481-a921-e1de968d7ad4/office2000-kb921568-fullfile-trk.exe|updates/office2k/office2000-kb921568-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb921568-fullfile-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb921568-fullfile-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Office 2000 (KB920822)
 :: Microsoft Security Bulletin MS06-047
@@ -61,7 +61,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb921568-fullfile-%WINLA
 :: URL|RUS|http://download.microsoft.com/download/2/b/5/2b5bb1a4-32fd-42ba-bf43-97fe9d7cd8ce/office2000-kb920822-fullfile-rus.exe|updates/office2k/office2000-kb920822-fullfile-rus.exe
 :: No Download found for SVE.
 :: URL|TRK|http://download.microsoft.com/download/2/3/c/23c10bbe-3b59-4a68-a3c5-03dfc0f0c191/office2000-kb920822-fullfile-trk.exe|updates/office2k/office2000-kb920822-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb920822-fullfile-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb920822-fullfile-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Excel 2000 (KB918424)
 :: Description of the security update for Microsoft Excel 2000: July 11, 2006
