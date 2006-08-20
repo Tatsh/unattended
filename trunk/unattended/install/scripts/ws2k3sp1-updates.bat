@@ -100,7 +100,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\dotnetfx_20.exe /q /c:\"install /q\""
 :: URL|RUS|http://download.microsoft.com/download/5/c/1/5c1fe27d-240e-477d-afa6-50c397cadb5f/WindowsServer2003-KB920670-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/9/3/9/939e3fd1-06df-45ec-9a52-926775638726/WindowsServer2003-KB920670-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/d/6/0/d605f965-9453-4dc4-b91e-f7ffcc48fd1e/WindowsServer2003-KB920670-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb920670-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920670-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920670-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB921398)
 :: Microsoft Security Bulletin MS06-045
@@ -129,7 +129,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920670-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/7/9/3/79384063-c51d-45ba-98b4-d8aa634e5aee/WindowsServer2003-KB921398-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/a/1/e/a1e94aba-7adc-4e2e-ae0e-ae6629624bf4/WindowsServer2003-KB921398-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/7/e/8/7e82d5b4-e91b-4762-815e-e8806bf026ef/WindowsServer2003-KB921398-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb921398-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB921398-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB921398-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB917537)
 :: <http://www.microsoft.com/technet/security/bulletin/MS06-034.mspx>
@@ -267,7 +267,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB918439-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/a/a/1/aa11f871-048e-42d8-b985-db175df7822e/WindowsServer2003-KB917422-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/6/6/c/66c3f0a2-6799-49e9-ac7d-fa1d91973d8e/WindowsServer2003-KB917422-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/e/c/d/ecd71e7b-dd7f-4f29-83c7-40ba4835d6e2/WindowsServer2003-KB917422-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb917422-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB917422-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB917422-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB922616)
 :: Microsoft Security Bulletin MS06-046
@@ -296,7 +296,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB917422-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/0/3/d/03dcea65-7444-46e1-ab0a-8e2c5764ef57/WindowsServer2003-KB922616-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/0/f/e/0fe81c47-5f76-476e-a600-e727137392ad/WindowsServer2003-KB922616-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/3/e/2/3e2ca932-b2d7-48b7-baf9-54f09bd39bd4/WindowsServer2003-KB922616-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb922616-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB922616-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB922616-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Outlook Express for Windows Server 2003 (KB920214)
 :: Microsoft Security Bulletin MS06-043
@@ -325,7 +325,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB922616-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/e/2/a/e2af7db8-1b36-4861-8a42-e1f59968db13/WindowsServer2003-KB920214-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/4/5/8/45865b81-12cc-4722-8114-8384b3f3241f/WindowsServer2003-KB920214-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/9/2/1/92167703-823b-4bd7-bfaf-7d0c50d6f302/WindowsServer2003-KB920214-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb920214-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920214-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920214-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Cumulative Update for Internet Explorer for Windows Server 2003 (KB918899)
 :: Microsoft Security Bulletin MS06-042
@@ -354,7 +354,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920214-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/7/d/4/7d44bd05-1dcc-4692-a107-48cb8da9cca1/WindowsServer2003-KB918899-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/7/8/1/7818122a-c6bd-4813-8aaa-23748030db49/WindowsServer2003-KB918899-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/c/d/a/cda92507-667f-420b-a90c-54f782db0f80/WindowsServer2003-KB918899-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb918899-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB918899-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB918899-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB920683)
 :: Microsoft Security Bulletin MS06-041
@@ -383,7 +383,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB918899-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/a/9/d/a9ddd43d-6ab8-40e9-9cfe-799dbb378af9/WindowsServer2003-KB920683-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/f/4/9/f4921d01-3424-4976-911c-576e6d949719/WindowsServer2003-KB920683-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/3/d/a/3dae312c-855e-4de8-84de-fdc1e1612f08/WindowsServer2003-KB920683-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb920683-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920683-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920683-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB921883)
 :: Microsoft Security Bulletin MS06-040
@@ -412,7 +412,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920683-x86-%WIN
 :: URL|RUS|http://download.microsoft.com/download/4/f/b/4fbf200c-e52d-42d9-8497-21fde55ac574/WindowsServer2003-KB921883-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/f/1/4/f14df99d-bd54-4d6c-b6ac-7b997dec6180/WindowsServer2003-KB921883-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/d/a/1dac360f-3edd-497f-9745-aeebf711c8b8/WindowsServer2003-KB921883-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb921883-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB921883-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB921883-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Server 2003 (KB914388)
 :: <http://www.microsoft.com/technet/security/bulletin/MS06-036.mspx>
