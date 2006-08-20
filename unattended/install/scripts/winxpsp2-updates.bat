@@ -360,7 +360,7 @@ todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\dotnetfx.exe /q /c:\"instal
 :: URL|RUS|http://download.microsoft.com/download/c/6/f/c6f536f6-20fa-4f3e-8a4d-ceed4595657a/WindowsXP-KB920670-x86-RUS.exe|updates/winxpsp2/windowsxp-kb920670-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/9/3/3/933bf694-392d-4d5a-bade-5e0fb3d38b93/WindowsXP-KB920670-x86-SVE.exe|updates/winxpsp2/windowsxp-kb920670-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/8/4/2/84200e58-62c8-424c-b731-a63811c8e5f1/WindowsXP-KB920670-x86-TRK.exe|updates/winxpsp2/windowsxp-kb920670-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920670-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920670-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB921398)
 :: Microsoft Security Bulletin MS06-045
@@ -389,7 +389,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920670-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/5/e/c/5ec7e65f-4cb2-4903-86b1-9d4393139d4b/WindowsXP-KB921398-x86-RUS.exe|updates/winxpsp2/windowsxp-kb921398-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/5/0/8/508e8278-bbed-4f0c-968e-6a80524928ff/WindowsXP-KB921398-x86-SVE.exe|updates/winxpsp2/windowsxp-kb921398-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/f/9/c/f9c48a7e-c24f-4396-9a92-6c30573fd2b5/WindowsXP-KB921398-x86-TRK.exe|updates/winxpsp2/windowsxp-kb921398-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB921398-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB921398-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB917537)
 :: <http://www.microsoft.com/technet/security/bulletin/MS06-034.mspx>
@@ -1085,7 +1085,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB905915-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/a/d/f/adf82340-7ca4-46fc-9dad-e97ff6a3d3c9/WindowsXP-KB917422-x86-RUS.exe|updates/winxpsp2/windowsxp-kb917422-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/9/b/f/9bf13ef8-6e6a-4d4b-8239-ed7409f04b43/WindowsXP-KB917422-x86-SVE.exe|updates/winxpsp2/windowsxp-kb917422-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/4/2/7/427c7539-a3c7-413d-a5dd-64241eb89a2b/WindowsXP-KB917422-x86-TRK.exe|updates/winxpsp2/windowsxp-kb917422-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB917422-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB917422-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB922616)
 :: Microsoft Security Bulletin MS06-046
@@ -1114,7 +1114,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB917422-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/8/3/d/83d86ec8-3df7-4aa2-a08b-8e4bb551e4b0/WindowsXP-KB922616-x86-RUS.exe|updates/winxpsp2/windowsxp-kb922616-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/1/6/f/16fe340d-f454-4307-ab47-258ecb870429/WindowsXP-KB922616-x86-SVE.exe|updates/winxpsp2/windowsxp-kb922616-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/d/9/8/d98185c6-3884-41b8-91d0-43354ce24b0f/WindowsXP-KB922616-x86-TRK.exe|updates/winxpsp2/windowsxp-kb922616-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB922616-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB922616-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Outlook Express for Windows XP (KB920214)
 :: Microsoft Security Bulletin MS06-043
@@ -1143,7 +1143,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB922616-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/5/7/5/57594018-3e82-4ef0-acd9-6795a0061fac/WindowsXP-KB920214-x86-RUS.exe|updates/winxpsp2/windowsxp-kb920214-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/e/b/5/eb580446-8daa-444a-b8f0-925168f18e9e/WindowsXP-KB920214-x86-SVE.exe|updates/winxpsp2/windowsxp-kb920214-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/e/8/b/e8b84069-8aba-46da-b56a-3c2a41990f82/WindowsXP-KB920214-x86-TRK.exe|updates/winxpsp2/windowsxp-kb920214-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920214-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920214-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Cumulative Update for Internet Explorer for Windows XP Service Pack 2 (KB918899)
 :: Microsoft Security Bulletin MS06-042
@@ -1172,7 +1172,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920214-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/2/3/d/23dc34f5-3992-4b9d-aa12-48d396dcec4c/WindowsXP-KB918899-x86-RUS.exe|updates/winxpsp2/windowsxp-kb918899-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/b/1/7/b174d64c-5731-4fd1-8bd4-feba312dadd8/WindowsXP-KB918899-x86-SVE.exe|updates/winxpsp2/windowsxp-kb918899-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/0/8/8/088d5ad0-9eea-4809-aa9a-6c0d28792eb5/WindowsXP-KB918899-x86-TRK.exe|updates/winxpsp2/windowsxp-kb918899-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB918899-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB918899-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB920683)
 :: Microsoft Security Bulletin MS06-041
@@ -1201,7 +1201,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB918899-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/8/1/1/81173209-c9f1-4e5d-a1ab-95e71b93cbba/WindowsXP-KB920683-x86-RUS.exe|updates/winxpsp2/windowsxp-kb920683-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/1/8/4/184278cc-cc95-40ae-8663-e2d6169e4e6c/WindowsXP-KB920683-x86-SVE.exe|updates/winxpsp2/windowsxp-kb920683-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/e/a/1ea5d63b-cb86-442c-826b-4b0b2ce64c2e/WindowsXP-KB920683-x86-TRK.exe|updates/winxpsp2/windowsxp-kb920683-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920683-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920683-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB921883)
 :: Microsoft Security Bulletin MS06-040
@@ -1230,7 +1230,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB920683-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/f/c/4/fc49672e-2a6b-4a44-9146-108e1d912fb0/WindowsXP-KB921883-x86-RUS.exe|updates/winxpsp2/windowsxp-kb921883-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/c/2/0/c206caee-9334-4bf3-87bb-895a65324f43/WindowsXP-KB921883-x86-SVE.exe|updates/winxpsp2/windowsxp-kb921883-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/e/9/8/e98c8133-92e0-49b0-b1d9-a06a328d8710/WindowsXP-KB921883-x86-TRK.exe|updates/winxpsp2/windowsxp-kb921883-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB921883-x86-%WINLANG%.exe .exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB921883-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB914388)
 :: <http://www.microsoft.com/technet/security/bulletin/MS06-036.mspx>
