@@ -35,35 +35,6 @@ todo.pl .reboot
 :: URL|TRK|http://download.microsoft.com/download/0/8/6/0863bab5-76dc-4e33-8a1a-bb1211a436a3/office2003-KB921566-FullFile-TRK.exe|updates/office2003/office2003-kb921566-fullfile-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB921566-FullFile-%WINLANG%.exe /?"
 
-:: Security Update for Office XP (KB920821)
-:: Microsoft Security Bulletin MS06-047
-:: "Vulnerability in Microsoft Visual Basic for Applications Could Allow Remote Code Execution (921645)"
-:: <http://www.microsoft.com/technet/security/Bulletin/MS06-047.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B26ADC3C-1DB8-46FD-8381-B199EE351E7C>
-:: URL|ARA|http://download.microsoft.com/download/3/2/7/327d1f70-3f89-4d44-9f6d-1ab9ec4482d5/officexp-KB920821-FullFile-ARA.exe|updates/office2003/officexp-kb920821-fullfile-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/b/f/6/bf685ec0-bd24-47f2-a94d-aab545eca714/officexp-KB920821-FullFile-CSY.exe|updates/office2003/officexp-kb920821-fullfile-csy.exe
-:: No Download found for DAN.
-:: No Download found for DEU.
-:: URL|ELL|http://download.microsoft.com/download/7/1/7/7179465b-1525-41b1-9252-f34b8aae123a/officexp-KB920821-FullFile-ELL.exe|updates/office2003/officexp-kb920821-fullfile-ell.exe
-:: No Download found for ENU.
-:: No Download found for ESN.
-:: URL|FIN|http://download.microsoft.com/download/4/0/9/4094c619-c13f-4e3b-b291-78ed9169b03e/officexp-KB920821-FullFile-FIN.exe|updates/office2003/officexp-kb920821-fullfile-fin.exe
-:: No Download found for FRA.
-:: No Download found for HEB.
-:: URL|HUN|http://download.microsoft.com/download/1/4/5/145e57e0-784c-4d99-b60c-d8d9178bf8cc/officexp-KB920821-FullFile-HUN.exe|updates/office2003/officexp-kb920821-fullfile-hun.exe
-:: No Download found for ITA.
-:: URL|JPN|http://download.microsoft.com/download/b/1/4/b14fcd93-9844-4928-8118-570eaee2b85f/officexp-KB920821-FullFile-JPN.exe|updates/office2003/officexp-kb920821-fullfile-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/d/e/7/de731028-dc8b-4e74-b688-e4e017928412/officexp-KB920821-FullFile-KOR.exe|updates/office2003/officexp-kb920821-fullfile-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/0/8/4/084f654c-ad2b-43f9-b1e0-aac2f967befe/officexp-KB920821-FullFile-NLD.exe|updates/office2003/officexp-kb920821-fullfile-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/f/b/4/fb483ed3-1e72-4c50-8e77-4745698f0b3f/officexp-KB920821-FullFile-NOR.exe|updates/office2003/officexp-kb920821-fullfile-nor.exe
-:: No Download found for PLK.
-:: No Download found for PTB.
-:: URL|PTG|http://download.microsoft.com/download/8/3/9/839a4a4f-7f42-4e71-a912-3bded1e74466/officexp-KB920821-FullFile-PTG.exe|updates/office2003/officexp-kb920821-fullfile-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/0/7/d/07dbed5e-4f64-4667-a81e-ab071e179d8c/officexp-KB920821-FullFile-RUS.exe|updates/office2003/officexp-kb920821-fullfile-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/c/e/9/ce9425bc-113f-406d-837d-d64dcae9db39/officexp-KB920821-FullFile-SVE.exe|updates/office2003/officexp-kb920821-fullfile-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/5/1/e/51e7c533-d23c-44a0-860c-9e01ef63dea8/officexp-KB920821-FullFile-TRK.exe|updates/office2003/officexp-kb920821-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2003\officexp-KB920821-FullFile-%WINLANG%.exe /?"
-
 :: Security Update for Excel 2003 (KB918419)
 :: Description of the security update for Microsoft Office Excel 2003: July 11, 2006
 :: <http://support.microsoft.com/kb/918419>
