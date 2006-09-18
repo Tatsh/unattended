@@ -73,6 +73,33 @@ todo.pl ".reboot-on 194 %Z%\updates\common\dotnetfx_20.exe /q /c:\"install /q\""
 
 :: Recommended Updates
 
+:: Security Update for Windows Server 2003 (KB920685)
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=0182e8e7-9755-46cc-a393-c1e95fd508b2>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/5/9/8/59869671-3b58-4472-9ea7-4c15f6ee39a2/WindowsServer2003-KB920685-x86-CSY.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/5/e/7/5e7dfd6c-e782-44f6-bce6-2d3bc4160087/WindowsServer2003-KB920685-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/5/a/d/5ad774ec-7fa8-41c5-a98d-420ba7b34268/WindowsServer2003-KB920685-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/1/6/616d9e08-5aa5-4efa-b6ac-e1605a3456df/WindowsServer2003-KB920685-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/c/d/9/cd92d137-f411-42a0-8682-108db7c83b66/WindowsServer2003-KB920685-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/b/e/2/be2a92de-c2ef-4054-9788-63b69f898853/WindowsServer2003-KB920685-x86-HUN.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/5/d/0/5d0e2f52-31be-4486-9d58-4c34a06d577e/WindowsServer2003-KB920685-x86-ITA.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/7/e/6/7e6166ff-aff6-4419-8a38-73c820210106/WindowsServer2003-KB920685-x86-JPN.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/6/2/0628a1ea-3929-41fe-9d6e-09e005903872/WindowsServer2003-KB920685-x86-KOR.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/f/2/cf250220-93c1-456d-b43d-2add72648a49/WindowsServer2003-KB920685-x86-NLD.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/c/4/a/c4a04288-5137-427d-8c21-97f139ce6af3/WindowsServer2003-KB920685-x86-PLK.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/f/7/7/f7791022-6de7-4a9c-8771-94f4def377b0/WindowsServer2003-KB920685-x86-PTB.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/2/7/f275d960-2530-46ab-b098-b6e188524931/WindowsServer2003-KB920685-x86-PTG.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/2/b/3/2b39ea23-6c9b-40af-af72-4e112210ec4b/WindowsServer2003-KB920685-x86-RUS.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/d/c/7/dc7ea968-7000-4be1-beda-e249d1d78f55/WindowsServer2003-KB920685-x86-SVE.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/6/8/768d1b62-5472-4cdb-9468-9b0e44459e18/WindowsServer2003-KB920685-x86-TRK.exe|updates/ws2k3sp1/windowsserver2003-kb920685-x86-trk.exe
+
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB920685-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows Server 2003 (KB920670)
 :: Microsoft Security Bulletin MS06-050
 :: "Vulnerabilities in Microsoft Windows Hyperlink Object Library Could Allow Remote Code Execution (920670)"
