@@ -126,6 +126,33 @@ todo.pl ".reboot-on 194 %Z%\updates\common\WindowsMedia-KB911564-x86-%WINLANG%.e
 :: URL|ALL|http://download.microsoft.com/download/8/c/b/8cb07a83-3b1c-4a95-a1c7-4e788c113829/windowsmedia9-kb892313-x86-intl.exe|updates/mediaplayer9/windowsmedia9-kb892313-x86-intl.exe
 todo.pl ".reboot-on 194 %Z%\updates\mediaplayer9\windowsmedia9-kb892313-x86-intl.exe /passive /n /norestart"
 
+:: Security Update for Windows 2000 (KB920685)
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=778294ae-c5e3-4f17-b0e4-308e46e00105>
+:: URL|ARA|http://download.microsoft.com/download/b/2/f/b2fa96ce-6aa5-4352-a7de-1b8173a1566d/Windows2000-KB920685-x86-ARA.EXE|updates/win2ksp4/windows2000-kb920685-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/f/e/bfe35511-3f84-4a52-b942-1d7ee614c37e/Windows2000-KB920685-x86-CSY.EXE|updates/win2ksp4/windows2000-kb920685-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/4/c/4/4c4bb8c5-e7cb-452f-8109-3447a6a04cfe/Windows2000-KB920685-x86-DAN.EXE|updates/win2ksp4/windows2000-kb920685-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/c/9/6/c961ae1f-e1ee-4472-8cbe-f4c5934a4dd6/Windows2000-KB920685-x86-DEU.EXE|updates/win2ksp4/windows2000-kb920685-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/e/3/6/e36fc0ed-2992-409f-b140-ecfadd613173/Windows2000-KB920685-x86-ELL.EXE|updates/win2ksp4/windows2000-kb920685-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/9/8/1/981ee358-dcaa-41fc-8ad8-e30eacd6a739/Windows2000-KB920685-x86-ENU.EXE|updates/win2ksp4/windows2000-kb920685-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/1/5/9/1599bb75-e91d-434d-9833-daf6eb0fd627/Windows2000-KB920685-x86-ESN.EXE|updates/win2ksp4/windows2000-kb920685-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/4/a/0/4a0d6235-32b0-4012-87d0-8346583fdab3/Windows2000-KB920685-x86-FIN.EXE|updates/win2ksp4/windows2000-kb920685-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/e/d/d/edd1a1cf-a044-4a0b-a1dd-abdc63a4421f/Windows2000-KB920685-x86-FRA.EXE|updates/win2ksp4/windows2000-kb920685-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/b/0/6/b0669079-6390-4934-a739-e7e9c192f9e6/Windows2000-KB920685-x86-HEB.EXE|updates/win2ksp4/windows2000-kb920685-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/2/9/e/29ed5ded-536b-4eb1-8ba7-151f7cdbf9ed/Windows2000-KB920685-x86-HUN.EXE|updates/win2ksp4/windows2000-kb920685-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/b/e/0bea6a5b-d87f-4401-8e2a-eaf7c24d1e20/Windows2000-KB920685-x86-ITA.EXE|updates/win2ksp4/windows2000-kb920685-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/f/1/0f1450bc-f3c7-4c16-a5ed-3c9882dbc675/Windows2000-KB920685-x86-JPN.EXE|updates/win2ksp4/windows2000-kb920685-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/6/a/86a74fb1-51b0-4c3e-a194-0f962eda3832/Windows2000-KB920685-x86-KOR.EXE|updates/win2ksp4/windows2000-kb920685-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/1/b/d1bf8414-3728-4f00-a132-99c20df8c84a/Windows2000-KB920685-x86-NLD.EXE|updates/win2ksp4/windows2000-kb920685-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/d/9/6d9b20fc-a6ac-4c7c-bb57-cf298a89db87/Windows2000-KB920685-x86-NOR.EXE|updates/win2ksp4/windows2000-kb920685-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/c/b/4/cb4aed05-1216-425d-9d83-d6533387f544/Windows2000-KB920685-x86-PLK.EXE|updates/win2ksp4/windows2000-kb920685-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/f/a/2fa98e4b-fc38-4f82-801c-c1c11cd2616f/Windows2000-KB920685-x86-PTB.EXE|updates/win2ksp4/windows2000-kb920685-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/a/c/1/ac1d1ea3-c775-44fb-a460-faaa1558d519/Windows2000-KB920685-x86-PTG.EXE|updates/win2ksp4/windows2000-kb920685-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/1/6/e160b3a5-1e8b-403e-b22b-4a454cfb2158/Windows2000-KB920685-x86-RUS.EXE|updates/win2ksp4/windows2000-kb920685-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/7/4/e7435aa2-21ad-409f-8c76-4cf59945f88a/Windows2000-KB920685-x86-SVE.EXE|updates/win2ksp4/windows2000-kb920685-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/b/f/3bf9198e-5034-4e8d-8420-8b3077560139/Windows2000-KB920685-x86-TRK.EXE|updates/win2ksp4/windows2000-kb920685-x86-trk.exe
+
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB920685-x86-%WINLANG%.EXE /passive /n /norestart"
+
 :: Security Update for Windows 2000 (KB912919)
 :: Microsoft Security Bulletin MS06-001
 :: "Vulnerability in Graphics Rendering Engine Could Allow Remote Code Execution (912919)"
