@@ -6,7 +6,7 @@
         <p class="sideBarTitle">News</p>
 
         <div class="sideBarText"><strong>Changelog</strong><br />
-          <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/NEWS.txt?view=markup">version 4.6</a></div>
+          <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/NEWS.txt?view=auto">version 4.6</a></div>
 
         <a href="http://sourceforge.net/news/?group_id=62053"
           class="more">more news &raquo;</a>
@@ -29,10 +29,5 @@
           <a href="info-download.php#supportfiles">info</a> | <a
             href="info-download.php#supportfiles"
             >download</a></div>
-        <div class="sideBarText"><strong>daily CVS snapshot</strong><br />
-          <a href="info-download.php#snapshot">info</a> | <a
-            href="/testing/unattended-daily-snapshot.tar.gz"
-            >download</a></div>
-
         <?= $addbox ?>
       </div>
