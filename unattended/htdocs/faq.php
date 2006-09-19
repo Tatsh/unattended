@@ -8,7 +8,7 @@ $page['next']  = 'unattendtxt.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: faq.php,v 1.6 2006-07-03 17:27:59 nrichthof Exp $';
+$cvs           = '$Id: faq.php,v 1.7 2006-09-19 17:33:18 ekot Exp $';
 $sections[]    = array ('Frequently Asked Questions', 'faq');
 $content       = <<<EOT
 
@@ -61,6 +61,7 @@ $content       = <<<EOT
 
       <h2>[9] Problems with sourceforge</h2>
       <a href="#9_1">[9.1] Why is the mailing list so slow?</a><br />
+      <a href="#9_2">[9.2] Why script-update is no longer working?</a><br />
 
       <hr />
 
@@ -489,6 +490,13 @@ umount /mnt
           <pre class="code">From:&nbsp;"Patrick&nbsp;J.&nbsp;LoPresti"&nbsp;&lt;patl@users.sourceforge.net&gt;</pre>
           and dislikes <pre class="code">From:&nbsp;patl@users.sourceforge.net</pre>.</li>
         </ol>
+
+      <hr />
+
+      <a name="9_2"></a><h3>[9.2] Why script-update is no longer working?</h3>
+      <p>Sourceforge changed their CVS setup. You need to get the newer version of
+       <a href="http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/install/tools/script-update"
+        rel="external">script-update</a></p>
 EOT;
 
 include ('page.inc');
