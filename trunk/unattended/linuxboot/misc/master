@@ -387,8 +387,8 @@ perl -I/z/lib /z/dosbin/install.pl \
     || die "install.pl exited non-zero"
 
 # Determine partition number to use.
-active_part_line=`parted -s /dev/dsk print | grep '^[[:digit:]].*[[:space:]]boot'`
-active_part=${active_part_line%% *}
+active_part_line=`parted -s /dev/dsk print | grep '[[:digit:]].*[[:space:]]boot'`
+active_part=$(echo ${active_part_line} | sed 's/^ *//' | cut -d" " -f1)
 
 if [ -z "$active_part" ] ; then
     echo "Partition table:" >&2
