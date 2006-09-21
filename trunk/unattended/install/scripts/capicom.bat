@@ -8,7 +8,7 @@
 :: capicom.dll to Z:\packages.
 
 :: It sounds like a mess, but it is just following the instructions:
-:: <http://msdn.microsoft.com/library/en-us/security/Security/getting_ready_to_use_capicom.asp>
+:: <http://msdn.microsoft.com/library/en-us/seccrypto/security/getting_ready_to_use_capicom.asp>
 @Echo off
 :: Copy DLL to system32 directory and register it
 todo.pl "copy %Z%\packages\capicom.dll %SystemRoot%\system32" "regsvr32 /s %SystemRoot%\system32\capicom.dll"
