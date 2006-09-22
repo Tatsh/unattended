@@ -5,35 +5,34 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
-
 :: Security Update for Office 2003 (KB921566)
 :: Microsoft Security Bulletin MS06-048
 :: "Vulnerabilities in Microsoft Office Could Allow Remote Code Execution (922968)"
 :: <http://www.microsoft.com/technet/security/Bulletin/MS06-048.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=DE1CB2A7-5D4C-44B8-BC40-7E0A88CC3081>
 :: URL|ARA|http://download.microsoft.com/download/e/2/a/e2a52f49-8eac-4a10-882a-b4c79420a02e/office2003-KB921566-FullFile-ARA.exe|updates/office2003/office2003-kb921566-fullfile-ara.exe
-:: No Download found for CSY.
-:: No Download found for DAN.
+:: URL|CSY|http://download.microsoft.com/download/9/5/2/95298a95-56d3-4834-afb6-0d5da0564b57/office2003-KB921566-FullFile-CSY.exe|updates/office2003/office2003-kb921566-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/7/b/b/7bb07fa3-87e5-4e01-b214-158062ae32cc/office2003-KB921566-FullFile-DAN.exe|updates/office2003/office2003-kb921566-fullfile-dan.exe
 :: URL|DEU|http://download.microsoft.com/download/2/3/9/239faa9e-6641-4f1f-adc0-2c2a1f7ed8af/office2003-KB921566-FullFile-DEU.exe|updates/office2003/office2003-kb921566-fullfile-deu.exe
 :: URL|ELL|http://download.microsoft.com/download/4/a/1/4a164b38-877a-4f70-a086-1e9566dff232/office2003-KB921566-FullFile-ELL.exe|updates/office2003/office2003-kb921566-fullfile-ell.exe
 :: URL|ENU|http://download.microsoft.com/download/e/2/4/e2497130-dfb8-47e6-97e0-2be06b29b8da/office2003-KB921566-FullFile-ENU.exe|updates/office2003/office2003-kb921566-fullfile-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/b/0/8/b080cd9f-1413-45c6-955f-70b65f1da576/office2003-KB921566-FullFile-ESN.exe|updates/office2003/office2003-kb921566-fullfile-esn.exe
-:: No Download found for FIN.
+:: URL|FIN|http://download.microsoft.com/download/8/3/1/8317ca58-40d4-4497-baae-78cfad37ae41/office2003-KB921566-FullFile-FIN.exe|updates/office2003/office2003-kb921566-fullfile-fin.exe
 :: URL|FRA|http://download.microsoft.com/download/9/7/3/973b25f9-b9ad-4f05-aae0-0b97893a132f/office2003-KB921566-FullFile-FRA.exe|updates/office2003/office2003-kb921566-fullfile-fra.exe
 :: URL|HEB|http://download.microsoft.com/download/b/f/0/bf029e84-6648-4402-a197-6cc3d2708d97/office2003-KB921566-FullFile-HEB.exe|updates/office2003/office2003-kb921566-fullfile-heb.exe
 :: URL|HUN|http://download.microsoft.com/download/f/d/e/fde5a1f8-5138-4e47-bdfa-5ffbf4e1f83c/office2003-KB921566-FullFile-HUN.exe|updates/office2003/office2003-kb921566-fullfile-hun.exe
 :: URL|ITA|http://download.microsoft.com/download/5/c/7/5c70bd79-5768-445b-a305-d96fea56d8cd/office2003-KB921566-FullFile-ITA.exe|updates/office2003/office2003-kb921566-fullfile-ita.exe
 :: URL|JPN|http://download.microsoft.com/download/a/8/2/a82ebe8a-5dc4-42ed-bf38-34dedafb35c0/office2003-KB921566-FullFile-JPN.exe|updates/office2003/office2003-kb921566-fullfile-jpn.exe
-:: No Download found for KOR.
+:: URL|KOR|http://download.microsoft.com/download/5/c/5/5c506455-3cc8-4007-9601-4e3b444f4511/office2003-KB921566-FullFile-KOR.exe|updates/office2003/office2003-kb921566-fullfile-kor.exe
 :: URL|NLD|http://download.microsoft.com/download/f/1/3/f13b72fa-af61-4632-90ea-2048ce49bd41/office2003-KB921566-FullFile-NLD.exe|updates/office2003/office2003-kb921566-fullfile-nld.exe
 :: URL|NOR|http://download.microsoft.com/download/e/3/0/e301c366-d6ce-44a2-8d9d-fc8af5839e33/office2003-KB921566-FullFile-NOR.exe|updates/office2003/office2003-kb921566-fullfile-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/c/6/f/c6f77865-b4f4-4f3f-ae3d-63fad8b4d290/office2003-KB921566-FullFile-PLK.exe|updates/office2003/office2003-kb921566-fullfile-plk.exe
-:: No Download found for PTB.
+:: URL|PTB|http://download.microsoft.com/download/f/6/1/f61ece67-30fe-42dd-9cc2-bc88741dd363/office2003-KB921566-FullFile-PTB.exe|updates/office2003/office2003-kb921566-fullfile-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/c/b/e/cbe82ba4-b5f4-4f4f-b57e-7ee909666de1/office2003-KB921566-FullFile-PTG.exe|updates/office2003/office2003-kb921566-fullfile-ptg.exe
 :: URL|RUS|http://download.microsoft.com/download/c/6/1/c614cde8-45cc-4327-a351-11e475c98826/office2003-KB921566-FullFile-RUS.exe|updates/office2003/office2003-kb921566-fullfile-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/7/2/4/724b8a68-a0f3-4c58-82aa-4911ddc2bc2c/office2003-KB921566-FullFile-SVE.exe|updates/office2003/office2003-kb921566-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/0/8/6/0863bab5-76dc-4e33-8a1a-bb1211a436a3/office2003-KB921566-FullFile-TRK.exe|updates/office2003/office2003-kb921566-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB921566-FullFile-%WINLANG%.exe /?"
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB921566-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb921566.txt /p mso.msp REBOOT=ReallySuppress\""
 
 :: Security Update for Excel 2003 (KB918419)
 :: Description of the security update for Microsoft Office Excel 2003: July 11, 2006
@@ -117,7 +116,7 @@ todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB914455-FullFile-%WIN
 :: URL|RUS|http://download.microsoft.com/download/8/a/8/8a81757e-ef2c-4945-a0a1-3e2071f985a4/office2003-KB916518-FullFile-RUS.exe|updates/office2003/office2003-kb916518-fullfile-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/d/7/1/d719c107-2f00-4d09-88f5-a1a02a7909f4/office2003-KB916518-FullFile-SVE.exe|updates/office2003/office2003-kb916518-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/4/5/0/450285aa-30ee-4e5e-b6a4-142d79b0a074/office2003-KB916518-FullFile-TRK.exe|updates/office2003/office2003-kb916518-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB916518-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb916520.txt /p POWERPNTff.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB916518-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb916518.txt /p POWERPNTff.msp REBOOT=ReallySuppress\""
 
 :: Security Update for Word 2003 (KB917334)
 :: Description of the security update for Microsoft Office Word 2003: June 13, 2006
@@ -145,37 +144,37 @@ todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB916518-FullFile-%WIN
 :: URL|RUS|http://download.microsoft.com/download/c/9/4/c942ef4b-e85f-42e9-b89b-51ad80e49341/office2003-KB917334-FullFile-RUS.exe|updates/office2003/office2003-kb917334-fullfile-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/2/d/2/2d2cc7aa-2029-4f0d-8cce-3cc6f14ccc2b/office2003-KB917334-FullFile-SVE.exe|updates/office2003/office2003-kb917334-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/2/b/2/2b2dca4d-8425-41bc-bce7-64add37b02ed/office2003-KB917334-FullFile-TRK.exe|updates/office2003/office2003-kb917334-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB917334-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb917345.txt /p WINWORDff.msp REBOOT=ReallySuppress\""
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB917334-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb917334.txt /p WINWORDff.msp REBOOT=ReallySuppress\""
 
 :: Office 2003 Service Pack 2 (SP2) (KB887616)
 :: <http://support.microsoft.com/kb/887616/>
 :: URL|ARA|http://download.microsoft.com/download/8/e/d/8edf789e-6ef4-4941-b5e9-fa36445d3d10/Office2003SP2-KB887616-FullFile-ARA.exe|updates/office2003/office2003sp2-kb887616-fullfile-ara.exe
-:: No Download found for CSY.
+:: URL|CSY|http://download.microsoft.com/download/3/f/c/3fc8f5a0-35c5-4cdb-a3de-25f64f237790/Office2003SP2-KB887616-FullFile-CSY.exe|updates/office2003/office2003sp2-kb887616-fullfile-csy.exe
 :: URL|CHS|http://download.microsoft.com/download/d/b/f/dbff98f3-97ee-4c54-a10c-6c86941967d2/Office2003SP2-KB887616-FullFile-CHS.exe|updates/office2003/office2003sp2-kb887616-fullfile-chs.exe
 :: URL|CHT|http://download.microsoft.com/download/1/1/1/11116d31-5f26-44ef-b103-a7bb3f787604/Office2003SP2-KB887616-FullFile-CHT.exe|updates/office2003/office2003sp2-kb887616-fullfile-cht.exe
-:: No Download found for DAN.
+:: URL|DAN|http://download.microsoft.com/download/5/3/f/53f3bdb1-331a-46ad-9db6-c3cc81b67674/Office2003SP2-KB887616-FullFile-DAN.exe|updates/office2003/office2003sp2-kb887616-fullfile-dan.exe
 :: URL|DEU|http://download.microsoft.com/download/6/e/a/6ea242f7-0602-455c-867f-e21584adbf7a/Office2003SP2-KB887616-FullFile-DEU.exe|updates/office2003/office2003sp2-kb887616-fullfile-deu.exe
-:: No Download found for ELL.
+:: URL|ELL|http://download.microsoft.com/download/a/0/6/a0654af0-c173-452e-b821-77d101d9a9e7/Office2003SP2-KB887616-FullFile-ELL.exe|updates/office2003/office2003sp2-kb887616-fullfile-ell.exe
 :: URL|ENU|http://download.microsoft.com/download/9/b/3/9b37f157-123d-41fd-a3f4-f4aedd0cc847/Office2003SP2-KB887616-FullFile-ENU.exe|updates/office2003/office2003sp2-kb887616-fullfile-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/3/a/2/3a2db30f-d3b8-473a-8513-1b9f9aadc38c/Office2003SP2-KB887616-FullFile-ESN.exe|updates/office2003/office2003sp2-kb887616-fullfile-esn.exe
-:: No Download found for FIN.
+:: URL|FIN|http://download.microsoft.com/download/6/b/0/6b03a188-c42a-448c-9ec5-21f8b9a624ae/Office2003SP2-KB887616-FullFile-FIN.exe|updates/office2003/office2003sp2-kb887616-fullfile-fin.exe
 :: URL|FRA|http://download.microsoft.com/download/7/4/2/742ac2d1-6c14-4a81-a65c-ae984114cae6/Office2003SP2-KB887616-FullFile-FRA.exe|updates/office2003/office2003sp2-kb887616-fullfile-fra.exe
 :: URL|HEB|http://download.microsoft.com/download/2/f/8/2f88af3a-1ea9-4f9f-87ac-7a86b502b158/Office2003SP2-KB887616-FullFile-HEB.exe|updates/office2003/office2003sp2-kb887616-fullfile-heb.exe
 :: URL|HIN|http://download.microsoft.com/download/a/3/4/a34ab76a-5a9a-4951-9926-79b79280c9c2/Office2003SP2-KB887616-FullFile-HIN.exe|updates/office2003/office2003sp2-kb887616-fullfile-hin.exe
-:: No Download found for HUN.
+:: URL|HUN|http://download.microsoft.com/download/a/5/a/a5a2c098-9d25-4506-b5ad-973001483deb/Office2003SP2-KB887616-FullFile-HUN.exe|updates/office2003/office2003sp2-kb887616-fullfile-hun.exe
 :: URL|ITA|http://download.microsoft.com/download/1/a/8/1a84ecc8-8ceb-42a0-b900-44e7b3d3c97d/Office2003SP2-KB887616-FullFile-ITA.exe|updates/office2003/office2003sp2-kb887616-fullfile-ita.exe
 :: URL|JPN|http://download.microsoft.com/download/e/0/c/e0c7cde9-f23b-41b8-b86f-1e21c15fd412/Office2003SP2-KB887616-FullFile-JPN.exe|updates/office2003/office2003sp2-kb887616-fullfile-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/5/5/5/5559ca24-2c98-4737-8e10-96fa52b834d8/Office2003SP2-KB887616-FullFile-KOR.exe|updates/office2003/office2003sp2-kb887616-fullfile-kor.exe
-:: No Download found for NLD.
-:: No Download found for NOR.
-:: No Download found for PLK.
-:: No Download found for PTB.
-:: No Download found for PTG.
-:: No Download found for RUS.
-:: No Download found for SVE.
-:: URL|THA|http://download.microsoft.com/download/f/5/d/f5de014b-2098-4ff9-967e-6927184cef7f/Office2003SP2-KB887616-FullFile-THA.exe
-:: No Download found for TRK.
-:: URL|ZHH|http://download.microsoft.com/download/9/a/f/9afcce26-557b-448d-ba13-83a5a17ec8ae/Office2003SP2-KB887616-FullFile-ZHH.exe
+:: URL|NLD|http://download.microsoft.com/download/1/a/b/1ab14379-caba-4a16-bdfb-8657c68899b3/Office2003SP2-KB887616-FullFile-NLD.exe|updates/office2003/office2003sp2-kb887616-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/a/d/0/ad0d2676-1e1e-4176-9be6-726768248e2e/Office2003SP2-KB887616-FullFile-NOR.exe|updates/office2003/office2003sp2-kb887616-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/7/5/0/750da51d-8cae-4629-ac03-0f1bd47b8515/Office2003SP2-KB887616-FullFile-PLK.exe|updates/office2003/office2003sp2-kb887616-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/9/3/a/93ab2221-6c93-4afd-aa96-71c34293283c/Office2003SP2-KB887616-FullFile-PTB.exe|updates/office2003/office2003sp2-kb887616-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/6/7/b676cea2-d05e-4f59-80af-d781e19c57fd/Office2003SP2-KB887616-FullFile-PTG.exe|updates/office2003/office2003sp2-kb887616-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/5/a/e5a7e13d-a13d-4a8f-b72d-b5cb1aa0d411/Office2003SP2-KB887616-FullFile-RUS.exe|updates/office2003/office2003sp2-kb887616-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/e/e/0/ee0f2292-d506-4cd6-a5f0-e27526430a43/Office2003SP2-KB887616-FullFile-SVE.exe|updates/office2003/office2003sp2-kb887616-fullfile-sve.exe
+:: URL|THA|http://download.microsoft.com/download/f/5/d/f5de014b-2098-4ff9-967e-6927184cef7f/Office2003SP2-KB887616-FullFile-THA.exe|updates/office2003/office2003sp2-kb887616-fullfile-tha.exe
+:: URL|TRK|http://download.microsoft.com/download/1/b/e/1beadd87-1935-4be7-a599-53f00f6ce7ad/Office2003SP2-KB887616-FullFile-TRK.exe|updates/office2003/office2003sp2-kb887616-fullfile-trk.exe
+:: URL|ZHH|http://download.microsoft.com/download/9/a/f/9afcce26-557b-448d-ba13-83a5a17ec8ae/Office2003SP2-KB887616-FullFile-ZHH.exe|updates/office2003/office2003sp2-kb887616-fullfile-zhh.exe
 todo.pl ".reboot-on 194 %Z%\updates\office2003\Office2003SP2-KB887616-FullFile-%WINLANG%.exe /r:n /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb887616.txt /p MAINSP2ff.msp REBOOT=ReallySuppress\""
 
 :: Edit install/site/keys.bat and provide your license key
