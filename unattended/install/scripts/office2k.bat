@@ -11,28 +11,28 @@ todo.pl .reboot
 :: <http://www.microsoft.com/technet/security/Bulletin/MS06-048.mspx>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B7B5615B-7C20-4C49-892F-7F4CCC2D6006>
 :: URL|ARA|http://download.microsoft.com/download/d/4/7/d4742f86-fe60-43ac-b2bb-7072001f8481/office2000-kb921568-fullfile-ara.exe|updates/office2k/office2000-kb921568-fullfile-ara.exe
-:: No Download found for CSY.
-:: No Download found for DAN.
+:: URL|CSY|http://download.microsoft.com/download/c/8/c/c8c7d4c4-b288-4f79-8f19-809318e05908/office2000-kb921568-fullfile-csy.exe|updates/office2k/office2000-kb921568-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/6/1/3/6136963a-fbe7-4344-9b35-63529a8d18b5/office2000-kb921568-fullfile-dan.exe|updates/office2k/office2000-kb921568-fullfile-dan.exe
 :: URL|DEU|http://download.microsoft.com/download/c/7/0/c705526c-1ffb-4352-b78c-db85f862acad/office2000-kb921568-fullfile-deu.exe|updates/office2k/office2000-kb921568-fullfile-deu.exe
-:: No Download found for ELL.
+:: URL|ELL|http://download.microsoft.com/download/2/0/0/20060ac3-488d-4c8b-8579-9f76fe15ecef/office2000-kb921568-fullfile-ell.exe|updates/office2k/office2000-kb921568-fullfile-ell.exe
 :: URL|ENU|http://download.microsoft.com/download/5/6/9/56939857-8027-4183-9ec7-c5dada6005a9/office2000-kb921568-fullfile-enu.exe|updates/office2k/office2000-kb921568-fullfile-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/b/7/3/b73cf451-3502-4175-a098-26452686edea/office2000-kb921568-fullfile-esn.exe|updates/office2k/office2000-kb921568-fullfile-esn.exe
 :: URL|FIN|http://download.microsoft.com/download/6/b/0/6b0274a5-d88e-4eb3-a8b9-668a3154f51b/office2000-kb921568-fullfile-fin.exe|updates/office2k/office2000-kb921568-fullfile-fin.exe
 :: URL|FRA|http://download.microsoft.com/download/0/9/0/09092718-1234-4ebe-825f-8585132c9d90/office2000-kb921568-fullfile-fra.exe|updates/office2k/office2000-kb921568-fullfile-fra.exe
-:: No Download found for HEB.
-:: No Download found for HUN.
+:: URL|HEB|http://download.microsoft.com/download/d/b/8/db85e2d6-03d6-45cd-a370-fdca301a750b/office2000-kb921568-fullfile-heb.exe|updates/office2k/office2000-kb921568-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/b/7/0/b703c95f-5e81-4a64-838a-6a2f2f3c6ca5/office2000-kb921568-fullfile-hun.exe|updates/office2k/office2000-kb921568-fullfile-hun.exe
 :: URL|ITA|http://download.microsoft.com/download/b/1/b/b1b9d743-120b-4ae5-bc5d-c311295ce445/office2000-kb921568-fullfile-ita.exe|updates/office2k/office2000-kb921568-fullfile-ita.exe
-:: No Download found for JPN.
-:: No Download found for KOR.
-:: No Download found for NLD.
-:: No Download found for NOR.
+:: URL|JPN|http://download.microsoft.com/download/2/d/7/2d7e6905-ef33-4878-8e29-08021ff66ba5/office2000-kb921568-fullfile-jpn.exe|updates/office2k/office2000-kb921568-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/1/c/81c5d501-6fcb-4100-b1e9-5bbb87b49402/office2000-kb921568-fullfile-kor.exe|updates/office2k/office2000-kb921568-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/6/0/d606983c-81d4-4482-a83a-796da3b0e1ef/office2000-kb921568-fullfile-nld.exe|updates/office2k/office2000-kb921568-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/4/8/6/486ac85f-2278-455a-aabc-7511054e9b72/office2000-kb921568-fullfile-nor.exe|updates/office2k/office2000-kb921568-fullfile-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/9/8/3/983dd1f3-ac64-44b5-a3bb-ff495ebbb52d/office2000-kb921568-fullfile-plk.exe|updates/office2k/office2000-kb921568-fullfile-plk.exe
-:: No Download found for PTB.
-:: No Download found for PTG.
+:: URL|PTB|http://download.microsoft.com/download/5/f/3/5f3cf284-34f3-454c-80d9-039611985353/office2000-kb921568-fullfile-ptb.exe|updates/office2k/office2000-kb921568-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/c/6/a/c6a9769e-47bd-4a53-b2f7-081f5b82ccf2/office2000-kb921568-fullfile-ptg.exe|updates/office2k/office2000-kb921568-fullfile-ptg.exe
 :: URL|RUS|http://download.microsoft.com/download/4/c/d/4cd0cdeb-8f7e-4fb6-ab84-579694b54f0e/office2000-kb921568-fullfile-rus.exe|updates/office2k/office2000-kb921568-fullfile-rus.exe
-:: No Download found for SVE.
+:: URL|SVE|http://download.microsoft.com/download/8/2/c/82c52e7c-3b9b-42fa-a27c-3051ca292a2b/office2000-kb921568-fullfile-sve.exe|updates/office2k/office2000-kb921568-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/6/b/3/6b3db78b-f357-4481-a921-e1de968d7ad4/office2000-kb921568-fullfile-trk.exe|updates/office2k/office2000-kb921568-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb921568-fullfile-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb921568-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb921568.txt /p MSO9ff.msp REBOOT=ReallySuppress\""
 
 :: Security Update for Office 2000 (KB920822)
 :: Microsoft Security Bulletin MS06-047
@@ -42,26 +42,26 @@ todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb921568-fullfile-%WINLA
 :: URL|ARA|http://download.microsoft.com/download/d/8/0/d805e6de-8fdd-4bef-ba2b-eebc80b602c4/office2000-kb920822-fullfile-ara.exe|updates/office2k/office2000-kb920822-fullfile-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/8/3/6/8368f569-88bb-4042-afe7-bd0101d93983/office2000-kb920822-fullfile-csy.exe|updates/office2k/office2000-kb920822-fullfile-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/2/e/d/2ed5d8f6-d33e-4efd-bcdf-023d9d9bd893/office2000-kb920822-fullfile-dan.exe|updates/office2k/office2000-kb920822-fullfile-dan.exe
-:: No Download found for DEU.
+:: URL|DEU|http://download.microsoft.com/download/9/6/f/96f835a2-b850-4d36-a825-d3d8c5a8cc98/office2000-kb920822-fullfile-deu.exe|updates/office2k/office2000-kb920822-fullfile-deu.exe
 :: URL|ELL|http://download.microsoft.com/download/8/2/e/82e41a2b-5b12-4d11-a890-819163589141/office2000-kb920822-fullfile-ell.exe|updates/office2k/office2000-kb920822-fullfile-ell.exe
-:: No Download found for ENU.
+:: URL|ENU|http://download.microsoft.com/download/a/3/1/a31781b0-e3a3-440d-af3e-6f6d128022c9/office2000-kb920822-fullfile-enu.exe|updates/office2k/office2000-kb920822-fullfile-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/e/d/5/ed567c86-551d-489d-8b80-69d0cb4bb42d/office2000-kb920822-fullfile-esn.exe|updates/office2k/office2000-kb920822-fullfile-esn.exe
 :: URL|FIN|http://download.microsoft.com/download/a/2/c/a2c97517-67d2-473b-8d4e-045bed05eed5/office2000-kb920822-fullfile-fin.exe|updates/office2k/office2000-kb920822-fullfile-fin.exe
 :: URL|FRA|http://download.microsoft.com/download/4/1/7/4172ddae-e223-4c3d-a58e-4198983592a2/office2000-kb920822-fullfile-fra.exe|updates/office2k/office2000-kb920822-fullfile-fra.exe
-:: No Download found for HEB.
+:: URL|HEB|http://download.microsoft.com/download/0/b/c/0bc964fd-5822-49b7-9a67-8490b167434b/office2000-kb920822-fullfile-heb.exe|updates/office2k/office2000-kb920822-fullfile-heb.exe
 :: URL|HUN|http://download.microsoft.com/download/5/c/3/5c31fa60-8a69-4237-bcbe-89259722a9c3/office2000-kb920822-fullfile-hun.exe|updates/office2k/office2000-kb920822-fullfile-hun.exe
 :: URL|ITA|http://download.microsoft.com/download/6/7/f/67f4d441-ce33-46bc-ba14-d141e47c6251/office2000-kb920822-fullfile-ita.exe|updates/office2k/office2000-kb920822-fullfile-ita.exe
-:: No Download found for JPN.
+:: URL|JPN|http://download.microsoft.com/download/e/6/9/e69d1440-8cf3-48d9-929b-9bb149417dcc/office2000-kb920822-fullfile-jpn.exe|updates/office2k/office2000-kb920822-fullfile-jpn.exe
 :: URL|KOR|http://download.microsoft.com/download/2/4/c/24c02d88-22ed-4f7b-bcca-b33fd67fad62/office2000-kb920822-fullfile-kor.exe|updates/office2k/office2000-kb920822-fullfile-kor.exe
-:: No Download found for NLD.
+:: URL|NLD|http://download.microsoft.com/download/9/8/3/9834d335-0dd1-445d-8ca4-7fa55fc22f38/office2000-kb920822-fullfile-nld.exe|updates/office2k/office2000-kb920822-fullfile-nld.exe
 :: URL|NOR|http://download.microsoft.com/download/f/2/5/f25d5474-c600-4fe0-89d0-b114c487a921/office2000-kb920822-fullfile-nor.exe|updates/office2k/office2000-kb920822-fullfile-nor.exe
 :: URL|PLK|http://download.microsoft.com/download/8/0/9/80966cd7-63b9-4df3-9ff7-360c831ec3b3/office2000-kb920822-fullfile-plk.exe|updates/office2k/office2000-kb920822-fullfile-plk.exe
-:: No Download found for PTB.
+:: URL|PTB|http://download.microsoft.com/download/6/7/4/674f61f3-8d26-4d85-98f3-f5a0859c6464/office2000-kb920822-fullfile-ptb.exe|updates/office2k/office2000-kb920822-fullfile-ptb.exe
 :: URL|PTG|http://download.microsoft.com/download/3/d/d/3ddbc81a-400e-43ee-a82f-b03c2c683864/office2000-kb920822-fullfile-ptg.exe|updates/office2k/office2000-kb920822-fullfile-ptg.exe
 :: URL|RUS|http://download.microsoft.com/download/2/b/5/2b5bb1a4-32fd-42ba-bf43-97fe9d7cd8ce/office2000-kb920822-fullfile-rus.exe|updates/office2k/office2000-kb920822-fullfile-rus.exe
-:: No Download found for SVE.
+:: URL|SVE|http://download.microsoft.com/download/9/3/3/9338797b-85be-4375-a2a3-e488d21ce6c3/office2000-kb920822-fullfile-sve.exe|updates/office2k/office2000-kb920822-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/2/3/c/23c10bbe-3b59-4a68-a3c5-03dfc0f0c191/office2000-kb920822-fullfile-trk.exe|updates/office2k/office2000-kb920822-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb920822-fullfile-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb920822-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb920822.txt /p VBE6ff.msp REBOOT=ReallySuppress\""
 
 :: Security Update for Excel 2000 (KB918424)
 :: Description of the security update for Microsoft Excel 2000: July 11, 2006
