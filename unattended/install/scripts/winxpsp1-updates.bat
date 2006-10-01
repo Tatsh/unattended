@@ -942,6 +942,32 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB842773-v2-x86-%WINLANG%
 
 :: IE Critical Updates
 
+:: Security Update for Internet Explorer 6 Service Pack 1 for Windows XP Service Pack 1 (KB925486)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=383C13DC-51A9-4B12-89E3-871A1A3DE98F>
+:: URL|ARA|http://download.microsoft.com/download/f/c/d/fcdc8abb-5d90-4950-8bb8-7c1ade5ea174/IE6.0sp1-KB925486-WindowsXP-x86-ARA.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/a/d/2ad57ff5-9d84-44e3-b54b-0ad8558e05f4/IE6.0sp1-KB925486-WindowsXP-x86-CSY.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/b/1/6/b16faa51-c8df-4eb1-95d9-fb9c88fd3a13/IE6.0sp1-KB925486-WindowsXP-x86-DAN.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/3/d/b3d2fc4a-c8b1-4490-b36c-430f0b7ecbc3/IE6.0sp1-KB925486-WindowsXP-x86-DEU.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/b/4/5b4f893d-630c-4057-81b4-2154f88d7ac6/IE6.0sp1-KB925486-WindowsXP-x86-ELL.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/9/d/e/9de102c4-e4e4-451a-8c1a-3c3d354ef0ee/IE6.0sp1-KB925486-WindowsXP-x86-ENU.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/8/9/2/8927bd14-2276-43ec-aefa-6987a2ef9113/IE6.0sp1-KB925486-WindowsXP-x86-ESN.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/8/d/a/8da1fd4b-a38b-440a-9485-81bd07c5bf86/IE6.0sp1-KB925486-WindowsXP-x86-FIN.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/2/0/2/2024c194-f3dc-490a-8b32-ee095abe7c3e/IE6.0sp1-KB925486-WindowsXP-x86-FRA.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/b/b/b/bbbb257e-da3a-418c-b67c-28d6509206ff/IE6.0sp1-KB925486-WindowsXP-x86-HEB.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/9/a/c/9acee029-1d1b-401e-9f07-3a6ba704ab57/IE6.0sp1-KB925486-WindowsXP-x86-HUN.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/9/c/b9c07e84-e037-41bd-974a-b7d11cb1ae6c/IE6.0sp1-KB925486-WindowsXP-x86-ITA.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/3/2/3/32348a80-b16f-45ee-ad31-0221e9168ea2/IE6.0sp1-KB925486-WindowsXP-x86-JPN.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/f/6/0/f6019269-37e5-4af9-80ec-276a8fe56e01/IE6.0sp1-KB925486-WindowsXP-x86-KOR.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/d/1/5/d15468e1-22ae-4a44-b634-8f9e6f7859a0/IE6.0sp1-KB925486-WindowsXP-x86-NLD.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/0/7/7/0772109a-3a80-4b7e-a847-5ff40a586efe/IE6.0sp1-KB925486-WindowsXP-x86-NOR.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/2/c/f/2cf77ca9-ff9a-42f5-a980-66c50a9f6fd6/IE6.0sp1-KB925486-WindowsXP-x86-PLK.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/b/8/bb8e62e0-e5bd-4de2-82bf-bbfd0653f5af/IE6.0sp1-KB925486-WindowsXP-x86-PTB.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/2/c/52c7ed14-cfc4-4807-b57e-aa1076720ddc/IE6.0sp1-KB925486-WindowsXP-x86-PTG.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/2/e/52e4204b-fa50-409b-bc42-5c6c786854c7/IE6.0sp1-KB925486-WindowsXP-x86-RUS.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/a/c/7acde61b-6a1c-49ef-89e3-6bf430c09224/IE6.0sp1-KB925486-WindowsXP-x86-SVE.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/a/2/3/a233319e-bdfc-4b3c-9ba5-9ebc8f6e6fb3/IE6.0sp1-KB925486-WindowsXP-x86-TRK.exe|updates/winxpsp1/ie6.0sp1-kb925486-windowsxp-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\IE6.0sp1-KB925486-WindowsXP-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Vulnerability in ART Image Rendering Could Allow Remote Code Execution in Internet Explorer 6 Service Pack 1 (KB918439)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=F6328F82-457E-44CB-95FB-2DB0E8C9EE3C>
 :: URL|ARA|http://download.microsoft.com/download/2/6/d/26dfb52b-6732-48e3-ac57-dd52be8c2154/IE6.0sp1-KB918439-Windows-2000-XP-x86-ARA.exe|updates/winxpsp1/ie6.0sp1-kb918439-windows-2000-xp-x86-ara.exe

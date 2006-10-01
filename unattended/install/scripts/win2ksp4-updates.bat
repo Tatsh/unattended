@@ -1121,6 +1121,32 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Q818043_W2K_SP5_x86_%WINLANG%.EXE /
 
 :: Critical Updates
 
+:: Security Update for Internet Explorer 6 Service Pack 1 for Windows 2000 Service Pack 4 (KB925486)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=EA7DE30F-D765-4E5B-BFD4-64F3FED578FF>
+:: URL|ARA|http://download.microsoft.com/download/0/8/2/0821ce56-7e1d-4fec-bbb6-c0d185aac87a/IE6.0sp1-KB925486-Windows2000-x86-ARA.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/a/f/d/afdc52c0-4bb9-4cdf-b51f-dfff8f44c117/IE6.0sp1-KB925486-Windows2000-x86-CSY.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/9/8/09881088-4969-4e2a-ad87-09154bc3e89c/IE6.0sp1-KB925486-Windows2000-x86-DAN.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/6/c/b6c4454d-2c26-4016-bfde-c4e103541339/IE6.0sp1-KB925486-Windows2000-x86-DEU.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/e/7/0/e70c8849-92bd-4b2d-bec1-6726243e181f/IE6.0sp1-KB925486-Windows2000-x86-ELL.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/b/2/3b28cc6e-8217-464f-b888-f938f83a6837/IE6.0sp1-KB925486-Windows2000-x86-ENU.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/3/1/4/314e88d1-3cc1-4715-8307-a1626bd715a4/IE6.0sp1-KB925486-Windows2000-x86-ESN.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/b/f/9/bf9550b8-20a2-4d0c-9d07-923a8ba55509/IE6.0sp1-KB925486-Windows2000-x86-FIN.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/a/c/c/accb6ba3-2087-4848-8f9a-79026b971500/IE6.0sp1-KB925486-Windows2000-x86-FRA.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/0/3/9/0398505b-370a-415a-9d2d-1ec161c88c1e/IE6.0sp1-KB925486-Windows2000-x86-HEB.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/9/6/1/961ee18f-edd4-4e39-adbc-2cb96efbdd08/IE6.0sp1-KB925486-Windows2000-x86-HUN.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/9/d/09d55037-0a92-4e15-865d-7f60c67490f8/IE6.0sp1-KB925486-Windows2000-x86-ITA.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/9/f/09fd516a-fa89-4482-b0ce-8c0a8f7a2062/IE6.0sp1-KB925486-Windows2000-x86-JPN.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/2/2/9226ee29-4dfa-4474-a360-400960ad65a5/IE6.0sp1-KB925486-Windows2000-x86-KOR.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/8/f/e/8fecbf15-a175-422a-9843-7d9761abebe5/IE6.0sp1-KB925486-Windows2000-x86-NLD.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/9/e/1/9e1af608-071a-4c2b-9c16-65300646b713/IE6.0sp1-KB925486-Windows2000-x86-NOR.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/1/9/2/192806d3-c457-47d9-ae50-c39416d65976/IE6.0sp1-KB925486-Windows2000-x86-PLK.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/f/d/6/fd65f92a-1434-4f90-885e-52e6ee836c7e/IE6.0sp1-KB925486-Windows2000-x86-PTB.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/5/4/554cbd66-59ca-4497-a54f-ade81d8b9256/IE6.0sp1-KB925486-Windows2000-x86-PTG.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/2/f/e/2fe8dbc2-5d1f-40b6-a969-32a3d02c3ae9/IE6.0sp1-KB925486-Windows2000-x86-RUS.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/3/a/d/3addab0d-0bf6-458b-9b8b-b048aae713be/IE6.0sp1-KB925486-Windows2000-x86-SVE.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/a/c/7acefbcd-87e9-4859-a936-df3b2a2d121e/IE6.0sp1-KB925486-Windows2000-x86-TRK.exe|updates/win2ksp4/ie6.0sp1-kb925486-windows2000-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\IE6.0sp1-KB925486-Windows2000-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows 2000 (KB917422)
 :: Microsoft Security Bulletin MS06-051
 :: "Vulnerability in Windows Kernel Could Result in Remote Code Execution (917422)"

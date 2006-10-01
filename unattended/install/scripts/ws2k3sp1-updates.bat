@@ -239,6 +239,32 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB914389-x86-%WIN
 
 :: IE Critical Updates
 
+:: Security Update for Windows Server 2003 (KB925486)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AF8F3A58-BA7A-41BF-BB1B-3A9DDFDC3E27>
+:: No Download found for ARA.
+:: URL|CSY|http://download.microsoft.com/download/2/f/0/2f0e652b-6538-4a9f-b311-c010c0790f29/WindowsServer2003-KB925486-x86-CSY.exe|updates/ws2k3/windowsserver2003-kb925486-x86-csy.exe
+:: No Download found for DAN.
+:: URL|DEU|http://download.microsoft.com/download/5/2/4/5243333a-2bd2-4f27-a9bb-e68c69e33be7/WindowsServer2003-KB925486-x86-DEU.exe|updates/ws2k3/windowsserver2003-kb925486-x86-deu.exe
+:: No Download found for ELL.
+:: URL|ENU|http://download.microsoft.com/download/a/3/e/a3e4d793-5b79-4d08-8cd4-345d3f0c96f6/WindowsServer2003-KB925486-x86-ENU.exe|updates/ws2k3/windowsserver2003-kb925486-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/3/f/6/3f64770f-12de-4b91-8aa5-3233f130f8e9/WindowsServer2003-KB925486-x86-ESN.exe|updates/ws2k3/windowsserver2003-kb925486-x86-esn.exe
+:: No Download found for FIN.
+:: URL|FRA|http://download.microsoft.com/download/2/6/3/263101ea-c1fd-4b40-8de4-127a7fd7090a/WindowsServer2003-KB925486-x86-FRA.exe|updates/ws2k3/windowsserver2003-kb925486-x86-fra.exe
+:: No Download found for HEB.
+:: URL|HUN|http://download.microsoft.com/download/b/4/9/b498c365-bf8b-4173-a831-dd8f8f8dc8b9/WindowsServer2003-KB925486-x86-HUN.exe|updates/ws2k3/windowsserver2003-kb925486-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/c/2/bc293e4b-feeb-4a70-8a2e-192eecd6d6c6/WindowsServer2003-KB925486-x86-ITA.exe|updates/ws2k3/windowsserver2003-kb925486-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/7/0/2/702fcdf5-a337-459d-93bc-948fb691a4f2/WindowsServer2003-KB925486-x86-JPN.exe|updates/ws2k3/windowsserver2003-kb925486-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/4/7/04763188-355f-4776-916e-6737a982e8fd/WindowsServer2003-KB925486-x86-KOR.exe|updates/ws2k3/windowsserver2003-kb925486-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/2/f/92f4a039-0781-44f9-86eb-877b097dccb3/WindowsServer2003-KB925486-x86-NLD.exe|updates/ws2k3/windowsserver2003-kb925486-x86-nld.exe
+:: No Download found for NOR.
+:: URL|PLK|http://download.microsoft.com/download/4/4/7/44702c65-48c2-43dc-a7e9-88d4e18b5af0/WindowsServer2003-KB925486-x86-PLK.exe|updates/ws2k3/windowsserver2003-kb925486-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/f/0/0/f0094a99-46fd-4e98-af66-83aa492a6074/WindowsServer2003-KB925486-x86-PTB.exe|updates/ws2k3/windowsserver2003-kb925486-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/c/1/e/c1e906eb-1f77-44ec-bd30-1ae1d2019546/WindowsServer2003-KB925486-x86-PTG.exe|updates/ws2k3/windowsserver2003-kb925486-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/7/c/4/7c42bfe5-d3cf-4fc4-b92e-dd74509e8b1b/WindowsServer2003-KB925486-x86-RUS.exe|updates/ws2k3/windowsserver2003-kb925486-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/4/c/64ce2c6c-5002-45df-bb67-2119a6e781fc/WindowsServer2003-KB925486-x86-SVE.exe|updates/ws2k3/windowsserver2003-kb925486-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/d/f/7df54355-dfe9-4b74-89b1-7cf81127c2a1/WindowsServer2003-KB925486-x86-TRK.exe|updates/ws2k3/windowsserver2003-kb925486-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ws2k3\WindowsServer2003-KB925486-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Vulnerability in ART Image Rendering Could Allow Remote Code Execution in Internet Explorer for Windows Server 2003 (KB918439)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=56DF0CF2-9214-4B23-9034-C59E8B7126D6>
 :: No Download found for ARA.
