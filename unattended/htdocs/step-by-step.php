@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.5 2006-05-17 17:18:08 ekot Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.6 2006-10-01 08:19:24 ekot Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -76,7 +76,7 @@ unix extensions = off
       <h3>Windows server</h3>
       <p>Create the SMB file share:</p>
       <pre class="code">c:\\> net share install=c:\\path\\to\\unattended\\install
-c:\\> cacls c:\\path\\to\\unattended\\install /T /E /G:guest
+c:\\> cacls c:\\path\\to\\unattended\\install /T /E /G guest:R
 c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
 
       <h2 id="step5">Step 5:  Prepare  the  Operating  System (and Software) distribution
