@@ -1002,6 +1002,32 @@ todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB885836-x86-%WINLANG%.exe 
 
 :: IE Critical Updates
 
+:: Security Update for Windows XP Service Pack 2 (KB925486)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=B5F19858-4E86-4FD4-A264-E4823FF6D0A9>
+:: URL|ARA|http://download.microsoft.com/download/f/d/7/fd7aa46c-1ee6-4621-8b98-f1ccab574039/WindowsXP-KB925486-x86-ARA.exe|updates/winxpsp2/windowsxp-kb925486-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/5/f/3/5f3eb88a-cc19-41f6-8ab6-3b68c3661abc/WindowsXP-KB925486-x86-CSY.exe|updates/winxpsp2/windowsxp-kb925486-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/e/d/1/ed17c8aa-f567-41cb-aed8-9f8b86ea8e6d/WindowsXP-KB925486-x86-DAN.exe|updates/winxpsp2/windowsxp-kb925486-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/e/0/e/e0e809d4-9d72-4ff8-9881-3c3778b2d56c/WindowsXP-KB925486-x86-DEU.exe|updates/winxpsp2/windowsxp-kb925486-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/e/f/6/ef6948ee-dd5a-469e-88e2-f60fcb046ceb/WindowsXP-KB925486-x86-ELL.exe|updates/winxpsp2/windowsxp-kb925486-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/9/b/7/9b75170e-adf2-4baa-b3c0-6063dc518fa7/WindowsXP-KB925486-x86-ENU.exe|updates/winxpsp2/windowsxp-kb925486-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/c/8/9/c890c028-850c-4876-91dc-96b68e0b7c97/WindowsXP-KB925486-x86-ESN.exe|updates/winxpsp2/windowsxp-kb925486-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/b/f/1/bf1dcb95-770d-4b5c-afd0-d5d0a401f7a3/WindowsXP-KB925486-x86-FIN.exe|updates/winxpsp2/windowsxp-kb925486-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/5/c/0/5c06506b-b110-43cd-8b15-d25b0e1b1f1c/WindowsXP-KB925486-x86-FRA.exe|updates/winxpsp2/windowsxp-kb925486-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/7/1/5/7150b3be-616d-44ab-a10e-3334bda55eb3/WindowsXP-KB925486-x86-HEB.exe|updates/winxpsp2/windowsxp-kb925486-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/b/b/abb43fdd-50a8-4913-ae42-7f4074873ecf/WindowsXP-KB925486-x86-HUN.exe|updates/winxpsp2/windowsxp-kb925486-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/2/6/6/2660b20d-8d58-4d49-9262-d056f78ecca9/WindowsXP-KB925486-x86-ITA.exe|updates/winxpsp2/windowsxp-kb925486-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/2/1/821e7808-b1a2-407f-bc28-9d9bf3032cee/WindowsXP-KB925486-x86-JPN.exe|updates/winxpsp2/windowsxp-kb925486-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/0/a/0/0a01cf2a-ddad-45c5-93e3-fe6e52b7cef9/WindowsXP-KB925486-x86-KOR.exe|updates/winxpsp2/windowsxp-kb925486-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/7/2/7/7275c376-723b-4101-9116-8e60ba880267/WindowsXP-KB925486-x86-NLD.exe|updates/winxpsp2/windowsxp-kb925486-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/f/b/2/fb228314-bd7b-4f22-b861-fa214c44c63e/WindowsXP-KB925486-x86-NOR.exe|updates/winxpsp2/windowsxp-kb925486-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/f/d/1/fd19c803-8ca8-4468-b604-1848f2886d7a/WindowsXP-KB925486-x86-PLK.exe|updates/winxpsp2/windowsxp-kb925486-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/a/8/f/a8f922c2-29cb-48e8-a778-10ea297a167e/WindowsXP-KB925486-x86-PTB.exe|updates/winxpsp2/windowsxp-kb925486-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/d/3/a/d3ae4edf-2779-49a7-83d1-c4f1a7acfada/WindowsXP-KB925486-x86-PTG.exe|updates/winxpsp2/windowsxp-kb925486-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/d/1/4/d1475305-dc92-437f-bf41-3095f86c0cdb/WindowsXP-KB925486-x86-RUS.exe|updates/winxpsp2/windowsxp-kb925486-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/c/f/acf5a34a-5376-46df-8774-11f99793b316/WindowsXP-KB925486-x86-SVE.exe|updates/winxpsp2/windowsxp-kb925486-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/4/e/34e1e887-697d-4509-ac03-c86b38e55bb8/WindowsXP-KB925486-x86-TRK.exe|updates/winxpsp2/windowsxp-kb925486-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB925486-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Vulnerability in ART Image Rendering Could Allow Remote Code Execution in Internet Explorer for Windows XP Service Pack 2 (KB918439)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=71022EA1-94CB-4FE9-B89E-46876D068B9A>
 :: URL|ARA|http://download.microsoft.com/download/5/0/a/50ab4fbe-87c9-4640-980e-386b43b2e3bc/WindowsXP-KB918439-x86-ARA.exe|updates/winxpsp2/windowsxp-kb918439-x86-ara.exe
