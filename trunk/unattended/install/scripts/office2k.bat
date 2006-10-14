@@ -5,6 +5,119 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+
+:: Security Update for Office 2000 (KB923274)
+:: Description of the security update for Office 2000: October 10, 2006
+:: <http://support.microsoft.com/kb/923274>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=E0C7E1E4-7859-4C7E-898E-1CF05014885B>
+:: URL|ARA|http://download.microsoft.com/download/1/9/4/194e3c77-9759-46b1-b642-3994f48e5e90/office2000-kb923274-fullfile-ara.exe|updates/office2k/office2000-kb923274-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/d/1/5/d15671cb-80e2-4733-81e3-af8e3026d552/office2000-kb923274-fullfile-csy.exe|updates/office2k/office2000-kb923274-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/3/d/8/3d8883ff-f3b2-4b81-9981-b9154ea21d28/office2000-kb923274-fullfile-dan.exe|updates/office2k/office2000-kb923274-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/7/4/0/7401dd70-b36a-46ea-98dc-df305b0c30b0/office2000-kb923274-fullfile-deu.exe|updates/office2k/office2000-kb923274-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/a/b/a/aba28ad1-a2f9-4851-855b-3f4beb29c210/office2000-kb923274-fullfile-ell.exe|updates/office2k/office2000-kb923274-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/5/a/a/5aa36269-5b5a-4597-b91d-a0e213f656e3/office2000-kb923274-fullfile-enu.exe|updates/office2k/office2000-kb923274-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/5/1/651e5fd9-ad98-420c-a9c8-62386f9ff8f8/office2000-kb923274-fullfile-esn.exe|updates/office2k/office2000-kb923274-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/3/0/1/3018beed-c2bd-4f6e-b776-78a3164dd605/office2000-kb923274-fullfile-fin.exe|updates/office2k/office2000-kb923274-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/2/7/a/27a485bd-8d9d-479c-80e8-c2b81264fb53/office2000-kb923274-fullfile-fra.exe|updates/office2k/office2000-kb923274-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/6/e/6/6e62409b-ef77-4c68-a39a-c982d39a8481/office2000-kb923274-fullfile-heb.exe|updates/office2k/office2000-kb923274-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/4/c/f/4cf19a59-0793-428c-b591-afb1e50b2330/office2000-kb923274-fullfile-hun.exe|updates/office2k/office2000-kb923274-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/e/2/3/e23925f4-1591-4ac1-8b08-8d90b4c7c2fc/office2000-kb923274-fullfile-ita.exe|updates/office2k/office2000-kb923274-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/a/a/6/aa676044-af22-4f32-bb91-6856676891ef/office2000-kb923274-fullfile-jpn.exe|updates/office2k/office2000-kb923274-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/f/2/e/f2e638a8-04a1-4c09-b457-6df34a01b66d/office2000-kb923274-fullfile-kor.exe|updates/office2k/office2000-kb923274-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/a/3/fa38e81c-1d22-4cd2-9f7a-cd276fc6ad21/office2000-kb923274-fullfile-nld.exe|updates/office2k/office2000-kb923274-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/a/4/f/a4faa2f7-297d-46c0-983f-a1d5cef52902/office2000-kb923274-fullfile-nor.exe|updates/office2k/office2000-kb923274-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/7/2/8723d03e-9eb6-4457-8ca9-f335ec8b2e5e/office2000-kb923274-fullfile-plk.exe|updates/office2k/office2000-kb923274-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/8/4/b84cce9d-5a7c-4309-a423-5166399b55c1/office2000-kb923274-fullfile-ptb.exe|updates/office2k/office2000-kb923274-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/6/f/e/6fe945bd-3255-4c97-adef-12987c7398d2/office2000-kb923274-fullfile-ptg.exe|updates/office2k/office2000-kb923274-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/3/9/2/39211079-8946-4313-a873-0af758b0138b/office2000-kb923274-fullfile-rus.exe|updates/office2k/office2000-kb923274-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/3/e/0/3e050cf0-1d84-4e87-b7af-349776bfba58/office2000-kb923274-fullfile-sve.exe|updates/office2k/office2000-kb923274-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/c/b/1cb3b60c-7740-4384-80b7-e71b6fabf124/office2000-kb923274-fullfile-trk.exe|updates/office2k/office2000-kb923274-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb923274-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb923274.txt /p MSO9ff.msp REBOOT=ReallySuppress\""
+
+:: Security Update for PowerPoint 2000 (KB923093)
+:: Description of the security update for PowerPoint 2000: October 10, 2006
+:: <http://support.microsoft.com/kb/923093>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=14A61FDA-BFE2-47CA-8313-40B772359994>
+:: URL|ARA|http://download.microsoft.com/download/5/9/4/594d494c-3cff-4de1-8cf1-0538976be228/office2000-kb923093-fullfile-ara.exe|updates/office2k/office2000-kb923093-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/1/4/214ee1cb-15f6-4939-b723-39b3c543a6bf/office2000-kb923093-fullfile-csy.exe|updates/office2k/office2000-kb923093-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/7/b/f/7bf46cc2-d739-4126-8f67-3fdad475c6a1/office2000-kb923093-fullfile-dan.exe|updates/office2k/office2000-kb923093-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/7/5/f/75f1f72f-1821-4866-9ed4-b8b82b8917d8/office2000-kb923093-fullfile-deu.exe|updates/office2k/office2000-kb923093-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/a/7/8/a78bb909-be1e-49f0-9673-8b7b2889d761/office2000-kb923093-fullfile-ell.exe|updates/office2k/office2000-kb923093-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/0/0/30086a1e-2005-46a4-a7cc-76a596e3eac8/office2000-kb923093-fullfile-enu.exe|updates/office2k/office2000-kb923093-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/5/d/75dc2fbb-8ec9-496e-b602-1beac00dc9a3/office2000-kb923093-fullfile-esn.exe|updates/office2k/office2000-kb923093-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/0/8/a/08a50968-e0e6-4b4f-b883-1b7e28fa6787/office2000-kb923093-fullfile-fin.exe|updates/office2k/office2000-kb923093-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/6/1/d/61dc1075-57a7-4256-bd81-a0ea737dfa08/office2000-kb923093-fullfile-fra.exe|updates/office2k/office2000-kb923093-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/5/1/1/5115b41a-cfe8-43d8-b63d-0c4a322e94ce/office2000-kb923093-fullfile-heb.exe|updates/office2k/office2000-kb923093-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/5/b/c/5bcf33c2-971c-4957-b5f7-2e04a20da85a/office2000-kb923093-fullfile-hun.exe|updates/office2k/office2000-kb923093-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/0/a/0/0a072d9e-dcb2-49c8-acff-65806f0a4328/office2000-kb923093-fullfile-ita.exe|updates/office2k/office2000-kb923093-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/b/e/1bedc252-f5ef-4f81-a9b3-8eb5299cd369/office2000-kb923093-fullfile-jpn.exe|updates/office2k/office2000-kb923093-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/b/a/6/ba6f1f88-8ccf-4a34-838c-d3dd3dce14de/office2000-kb923093-fullfile-kor.exe|updates/office2k/office2000-kb923093-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/b/c/2/bc26949d-4c5f-491f-8c27-5812e82c44cf/office2000-kb923093-fullfile-nld.exe|updates/office2k/office2000-kb923093-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/a/a/8/aa8b89da-26cd-4783-80cc-a4081c7c3449/office2000-kb923093-fullfile-nor.exe|updates/office2k/office2000-kb923093-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/d/8/e/d8e949f3-8142-47c7-9a02-9705516e1cfd/office2000-kb923093-fullfile-plk.exe|updates/office2k/office2000-kb923093-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/8/5/2854ebaa-5e6b-44f3-afb5-b31db20ae8b4/office2000-kb923093-fullfile-ptb.exe|updates/office2k/office2000-kb923093-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/4/2/b424051c-3fa9-417b-af2c-7e1774334ccc/office2000-kb923093-fullfile-ptg.exe|updates/office2k/office2000-kb923093-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/f/c/5/fc5d2422-5d99-4404-8cd3-2305626becb2/office2000-kb923093-fullfile-rus.exe|updates/office2k/office2000-kb923093-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/a/4/aa455199-b6f0-40ec-b99e-54463d7d9f03/office2000-kb923093-fullfile-sve.exe|updates/office2k/office2000-kb923093-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/6/d/36da3480-b571-4062-be8d-91c25d27e92e/office2000-kb923093-fullfile-trk.exe|updates/office2k/office2000-kb923093-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb923093-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb923093.txt /p POWERPNTff.msp REBOOT=ReallySuppress\""
+
+:: Security Update for Excel 2000 (KB923090)
+:: Description of the security update for Excel 2000: October 10, 2006
+:: <http://support.microsoft.com/kb/923090>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=A4B2A672-481B-4AF6-89FE-DE8D321D99E0>
+:: URL|ARA|http://download.microsoft.com/download/8/3/f/83f5fe5b-c4c1-486e-b5c3-2edcb2f363ca/office2000-kb923090-fullfile-ara.exe|updates/office2k/office2000-kb923090-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/5/1/251cee0b-2d56-4d69-ae59-e63416e05a03/office2000-kb923090-fullfile-csy.exe|updates/office2k/office2000-kb923090-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/7/b/6/7b619eda-824e-4f3c-8f9e-71ff1b47a765/office2000-kb923090-fullfile-dan.exe|updates/office2k/office2000-kb923090-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/f/6/2/f62bc228-f10e-4342-adb3-a1878132d58b/office2000-kb923090-fullfile-deu.exe|updates/office2k/office2000-kb923090-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/7/9/2/7927cf6c-7d91-4803-aa0f-e54955fb550f/office2000-kb923090-fullfile-ell.exe|updates/office2k/office2000-kb923090-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/6/d/36d75630-5526-404e-aea4-24fb5c8cce1f/office2000-kb923090-fullfile-enu.exe|updates/office2k/office2000-kb923090-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/d/7/f/d7f593af-6301-47de-afac-1098eb0a4aa1/office2000-kb923090-fullfile-esn.exe|updates/office2k/office2000-kb923090-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/6/6/9/669ebc84-c817-49a3-9ada-25bb56112909/office2000-kb923090-fullfile-fin.exe|updates/office2k/office2000-kb923090-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/3/c/9/3c92cbb2-ec49-453b-9227-5b724aa4cf8e/office2000-kb923090-fullfile-fra.exe|updates/office2k/office2000-kb923090-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/7/3/3/733f4cdc-2beb-4d0d-b066-6afa7d782770/office2000-kb923090-fullfile-heb.exe|updates/office2k/office2000-kb923090-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/7/d/8/7d8e9d7b-7f9c-45d3-9c80-17a5e0c3b1c2/office2000-kb923090-fullfile-hun.exe|updates/office2k/office2000-kb923090-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/d/5/bd59a942-c808-4aaa-9423-a84b6683d329/office2000-kb923090-fullfile-ita.exe|updates/office2k/office2000-kb923090-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/6/c/4/6c476c27-36b3-454d-a6da-6cc014ebbeac/office2000-kb923090-fullfile-jpn.exe|updates/office2k/office2000-kb923090-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/1/a/f/1aff0471-c94a-469b-a3f0-11228c16404e/office2000-kb923090-fullfile-kor.exe|updates/office2k/office2000-kb923090-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/f/1/4/f14a72c9-8a22-4bc3-ab3e-2e0df721ebae/office2000-kb923090-fullfile-nld.exe|updates/office2k/office2000-kb923090-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/d/f/d/dfd2acf1-4ae1-48f3-a275-81e74536bac6/office2000-kb923090-fullfile-nor.exe|updates/office2k/office2000-kb923090-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/c/4/3/c4349882-560f-4292-98b6-2b14d07aec73/office2000-kb923090-fullfile-plk.exe|updates/office2k/office2000-kb923090-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/d/1/e/d1ec2d93-670e-40af-abcd-ec2589535eef/office2000-kb923090-fullfile-ptb.exe|updates/office2k/office2000-kb923090-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/5/b/6/5b6689de-32a5-49a3-8a90-bf71bf1269fe/office2000-kb923090-fullfile-ptg.exe|updates/office2k/office2000-kb923090-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/e/8/8/e88bdd7e-0a26-4903-85aa-a6f3c4acccb1/office2000-kb923090-fullfile-rus.exe|updates/office2k/office2000-kb923090-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/7/5/0/750d42eb-fc2b-4028-afd6-9309dcf904bb/office2000-kb923090-fullfile-sve.exe|updates/office2k/office2000-kb923090-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/b/7/7/b77073db-a4a0-4d0b-afd1-2597276fea62/office2000-kb923090-fullfile-trk.exe|updates/office2k/office2000-kb923090-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb923090-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb923090.txt /p EXCELff.msp REBOOT=ReallySuppress\""
+
+:: Security Update for Word 2000 (KB920910)
+:: Description of the security update for Word 2000: October 10, 2006
+:: <http://support.microsoft.com/kb/920910>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=CFC85449-4941-4DA5-A919-1DA388054E83>
+:: URL|ARA|http://download.microsoft.com/download/4/8/e/48e3344f-e0c1-416a-a2e0-ab9adbbe7267/office2000-kb920910-fullfile-ara.exe|updates/office2k/office2000-kb920910-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/8/e/b8e7c9d1-5200-4a24-a233-8b598c4758bd/office2000-kb920910-fullfile-csy.exe|updates/office2k/office2000-kb920910-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/c/c/2/cc2db217-c44c-4902-b571-7cea45d48e9f/office2000-kb920910-fullfile-dan.exe|updates/office2k/office2000-kb920910-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/b/6/e/b6eb8a24-06c4-4b33-a94b-f7c672ba6ba8/office2000-kb920910-fullfile-deu.exe|updates/office2k/office2000-kb920910-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/e/3/9/e39b0204-1cf1-43e5-b18c-84f5dafac27e/office2000-kb920910-fullfile-ell.exe|updates/office2k/office2000-kb920910-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/c/8/7/c87a6cc3-0614-47d0-8b31-ba8851b48197/office2000-kb920910-fullfile-enu.exe|updates/office2k/office2000-kb920910-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/8/c/28cb3d49-4d31-4dc7-95fa-852676e25742/office2000-kb920910-fullfile-esn.exe|updates/office2k/office2000-kb920910-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/3/a/e/3ae48f25-f2a8-4fa7-9079-933165b3bcf6/office2000-kb920910-fullfile-fin.exe|updates/office2k/office2000-kb920910-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/c/b/d/cbdfa597-513f-42e1-b755-639327893210/office2000-kb920910-fullfile-fra.exe|updates/office2k/office2000-kb920910-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/6/6/8/668d993c-e46a-40d5-ba3d-86324928cff1/office2000-kb920910-fullfile-heb.exe|updates/office2k/office2000-kb920910-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/2/8/e/28e0c362-2cd6-4711-b7b8-a9181b6e04fe/office2000-kb920910-fullfile-hun.exe|updates/office2k/office2000-kb920910-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/4/2/2/422fc12c-31a6-422e-b946-29a856ceeb8d/office2000-kb920910-fullfile-ita.exe|updates/office2k/office2000-kb920910-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/e/e/fee61057-b6d1-4719-9642-f19c9ab68e9c/office2000-kb920910-fullfile-jpn.exe|updates/office2k/office2000-kb920910-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/6/5/d/65dede86-e30c-424e-9579-f6ccf1cf59d1/office2000-kb920910-fullfile-kor.exe|updates/office2k/office2000-kb920910-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/f/b/9fb7c735-ddb0-48c3-9c9f-6a25181666e6/office2000-kb920910-fullfile-nld.exe|updates/office2k/office2000-kb920910-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/9/0/1/901d3138-2b78-4df8-9e63-79e9f5c293d1/office2000-kb920910-fullfile-nor.exe|updates/office2k/office2000-kb920910-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/a/3/8a34b9e4-f4b3-44c1-9ec0-f2f07c638b56/office2000-kb920910-fullfile-plk.exe|updates/office2k/office2000-kb920910-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/4/1/f/41fd75f2-1e14-4ff2-9868-dbd6dc56d45a/office2000-kb920910-fullfile-ptb.exe|updates/office2k/office2000-kb920910-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/9/1/a/91a3e3e3-afa5-4f04-8ca3-9cc8bd3cccfe/office2000-kb920910-fullfile-ptg.exe|updates/office2k/office2000-kb920910-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/d/9/6/d96b3833-4774-466c-9097-920121422eb7/office2000-kb920910-fullfile-rus.exe|updates/office2k/office2000-kb920910-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/7/8/17808db9-67ab-4447-b487-bcbf3632249e/office2000-kb920910-fullfile-sve.exe|updates/office2k/office2000-kb920910-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/f/a/5/fa58597b-42fe-473b-ab2a-931698d577c4/office2000-kb920910-fullfile-trk.exe|updates/office2k/office2000-kb920910-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2k\office2000-kb920910-fullfile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb920910.txt /p WINWORDff.msp REBOOT=ReallySuppress\""
+
 :: Security Update for Office 2000 (KB921568)
 :: Microsoft Security Bulletin MS06-048
 :: "Vulnerabilities in Microsoft Office Could Allow Remote Code Execution (922968)"
