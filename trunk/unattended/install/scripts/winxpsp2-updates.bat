@@ -1553,7 +1553,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\windowsxp-kb917344-x86-%WINLANG%.EX
 :: URL|RUS|http://download.microsoft.com/download/0/a/1/0a15c44e-072a-4f2d-b6e6-4795b8768d1b/Windows-KB913433-x86-RUS.exe|updates/winxpsp2/windows-kb913433-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/2/b/5/2b51e248-4749-496b-b0a5-ad79c97434e4/Windows-KB913433-x86-SVE.exe|updates/winxpsp2/windows-kb913433-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/a/5/c/a5c8aada-85a0-4e86-8ae0-ce4aba6b91f9/Windows-KB913433-x86-TRK.exe|updates/winxpsp2/windows-kb913433-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\Windows-KB913433-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\Windows-KB913433-x86-%WINLANG%.exe /q"
 
 :: Cumulative Security Update for Outlook Express for Windows XP (KB911567)
 :: Microsoft Security Bulletin MS06-016
