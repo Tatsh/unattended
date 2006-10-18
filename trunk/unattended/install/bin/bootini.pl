@@ -9,7 +9,8 @@ use bytes;
 # browse the "terminal" font and you will find the ASCII numbers you
 # need
 my %regexp_map =
-    ('deu' => qr{Vorheriges Betriebssystem auf},
+    ('dan' => qr{Tidligere operativsystem p\x86},
+     'deu' => qr{Vorheriges Betriebssystem auf},
      'enu' => qr{Previous Operating System on},
      'esn' => qr{Sistema operativo anterior en},
      'fra' => qr{Syst\x8Ame d\'exploitation pr\x82c\x82dent sur},
