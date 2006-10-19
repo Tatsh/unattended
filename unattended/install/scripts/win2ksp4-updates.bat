@@ -1619,7 +1619,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB911280-v2-x86-%WINLAN
 :: URL|RUS|http://download.microsoft.com/download/1/8/c/18c04bd5-b06a-4f12-b0b6-890a3f754dc2/IE6.0sp1-KB918439-Windows-2000-XP-x86-RUS.exe|updates/win2ksp4/ie6.0sp1-kb918439-windows-2000-xp-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/1/f/2/1f2bb7de-d837-47a2-b690-bb7edccc07a4/IE6.0sp1-KB918439-Windows-2000-XP-x86-SVE.exe|updates/win2ksp4/ie6.0sp1-kb918439-windows-2000-xp-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/b/f/f/bffc18c4-1258-4f3e-bf4b-0502361a7e28/IE6.0sp1-KB918439-Windows-2000-XP-x86-TRK.exe|updates/win2ksp4/ie6.0sp1-kb918439-windows-2000-xp-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\IE6.0sp1-KB918439-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\IE6.0sp1-KB918439-Windows-2000-XP-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows 2000 (KB913580)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8B98F380-0E5C-4B80-9710-95E1B35AFD83>
