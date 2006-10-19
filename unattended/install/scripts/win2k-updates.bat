@@ -3,11 +3,12 @@
 :: After installing SP4, install updates for win2ksp4
 todo.pl win2ksp4-updates.bat
 
-:: Windows Installer 3.0 Redistributable
-:: <http://support.microsoft.com/?kbid=884016>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=5fbc5470-b259-4733-a914-a956122e08e8>
-:: URL|ALL|http://download.microsoft.com/download/9/e/1/9e14751c-f897-4bbd-af7a-890d9a0f5430/WindowsInstaller-KB884016-v2-x86.exe|packages/windowsinstaller/WindowsInstaller-KB884016-v2-x86.exe
-todo.pl ".reboot-on 194 %Z%\packages\windowsinstaller\WindowsInstaller-KB884016-v2-x86.exe /passive /norestart"
+:: Windows Installer 3.1 Redistributable
+:: only installs on Win2000 SP3 or SP4, so installing it after SP4
+:: <http://support.microsoft.com/kb/893803>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=889482FC-5F56-4A38-B838-DE776FD4138C>
+:: URL|ALL|http://download.microsoft.com/download/1/4/7/147ded26-931c-4daf-9095-ec7baf996f46/WindowsInstaller-KB893803-v2-x86.exe|packages/windowsinstaller/windowsinstaller-kb893803-v2-x86.exe
+todo.pl ".reboot-on 194 %Z%\packages\windowsinstaller\windowsinstaller-kb893803-v2-x86.exe /passive /norestart"
 
 :: Windows 2000 Service Pack 4 Network Install for IT Professionals
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=1001AAF1-749F-49F4-8010-297BD6CA33A0>
