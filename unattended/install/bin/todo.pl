@@ -390,6 +390,19 @@ sub do_cmd ($;$) {
 
             $ret = $status;
         }
+        elsif ($cmd =~ /^\.ignore-all-err\s+(.*)$/) {
+            my $new_cmd = $1;
+            my $status = do_cmd ($new_cmd, 1);
+            my $real_status = $status >> 8;
+
+            if ($real_status == 0) {
+                $ret = 0;
+            } elsif ($real_status == 1) {
+                $ret = 1;
+            } else {
+                $ret = 0;
+            }
+        }
         elsif ($cmd =~ /^\.sleep\s+(\d+)$/) {
             my ($secs) = $1;
             print "Sleeping $secs seconds...";
