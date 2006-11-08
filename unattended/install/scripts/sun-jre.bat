@@ -5,10 +5,10 @@
 :: See:
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://java.com/en/download/help/silent_install.xml>
-:: URL|ALL|http://jdl.sun.com/webapps/download/AutoDL?BundleId=10650|packages/jre/jre1.5.0_08.msi
+:: URL|ALL|http://jdl.sun.com/webapps/download/AutoDL?BundleId=10752|packages/jre/jre1.5.0_09.msi
 
 @Echo off
-todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\sun-jre.txt /i %Z%\packages\jre\jre1.5.0_08.msi IEXPLORER=1 MOZILLA=1 REBOOT=Suppress JAVAUPDATE=0"
+todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\sun-jre.txt /i %Z%\packages\jre\jre1.5.0_09.msi IEXPLORER=1 MOZILLA=1 REBOOT=Suppress JAVAUPDATE=0"
 
 :: Deinstall older Versions if you wish
 :: (last numbers schema according to above mentioned pages: 1.5.0_04 -> 15004 etc.):
