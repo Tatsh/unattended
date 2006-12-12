@@ -8,7 +8,7 @@ $page['next']  = 'apps.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: installers.php,v 1.5 2006-05-17 17:18:08 ekot Exp $';
+$cvs           = '$Id: installers.php,v 1.6 2006-12-12 17:58:05 ekot Exp $';
 $sections[]    = array ('Introduction', 'intro');
 $sections[]    = array ('General information', 'general');
 $sections[]    = array ('If all else fails...', 'fail');
@@ -66,7 +66,7 @@ $content       = <<<EOT
         Perl.exe to your <code>PATH</code> and to associate <code>.pl</code>  files  with
         it.</p>
 
-      <p>Perhaps the most important common property is the <a href="http://msdn.microsoft.com/library/en-us/msi/setup/reboot_property.asp"
+      <p>Perhaps the most important common property is the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/msi/setup/reboot.asp"
         rel="external">REBOOT property</a>, which you can use to suppress  any  automatic
         reboot the MSI package might try to perform.  So in general,  you want to provide
         the  <code>/i</code>,  <code>/qb</code>,  and  <code>REBOOT=ReallySuppress</code>
