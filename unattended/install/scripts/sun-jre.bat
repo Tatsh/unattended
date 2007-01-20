@@ -5,7 +5,7 @@
 :: See:
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://java.com/en/download/help/silent_install.xml>
-:: URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=10879|packages/jre/jre1.5.0_10.msi
+:: URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=10881|packages/jre/jre1.5.0_10.msi
 
 @Echo off
 todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\sun-jre.txt /i %Z%\packages\jre\jre1.5.0_10.msi IEXPLORER=1 MOZILLA=1 REBOOT=Suppress JAVAUPDATE=0"
