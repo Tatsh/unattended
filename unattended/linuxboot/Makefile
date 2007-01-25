@@ -9,11 +9,11 @@ dosemu=dosemu-1.2.2
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.38
 expat=expat-1.95.8
-glibc=glibc-2.3.5
+glibc=glibc-2.3.6
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.17
+linux=linux-2.6.19.2
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-4.1.20
 nano=nano-1.2.5
@@ -27,7 +27,7 @@ perl-ldap=perl-ldap-0.33
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20031210
-samba=samba-3.0.23c
+samba=samba-3.0.23d
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
@@ -158,12 +158,16 @@ $(call copy_exe,$(dmidecode)/dmidecode,stage1/usr/sbin/dmidecode)
 stage1 += stage1/usr/sbin/dmidecode
 
 ## dosemu
+$(dosemu)/.stamp-dosemu-gcc4-patch: misc/dosemu-gcc4-patch
+	cd $(dosemu) && patch -p1 < $(cwd)/$<
+	touch $@
 
 $(dosemu)/.stamp-dosemu-nolock-patch: misc/dosemu-nolock-patch
 	cd $(dosemu) && patch -p1 < $(cwd)/$<
 	touch $@
 
-build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
+build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-gcc4-patch \
+         $(dosemu)/.stamp-dosemu-nolock-patch \
 			$(dosemu)/configure
 	rm -f $@
 	mkdir -p $(dir $@)
@@ -612,12 +616,8 @@ stage1 += stage1/.stamp-perl-xml-parser
 ## Perl XML::XPath module
 
 $(perl-xml-xpath)/Makefile: stage1/opt/perl/bin/perl stage1/lib/libexpat.so
-	cd $(dir $@)                                                    \
-	&& eval `$(perlrun) -V:archlib`                                 \
-	&& { [ -n "$$archlib" ] || exit 37; }                           \
-	&& $(perlrun) Makefile.PL 					\
-	PERL_ARCHLIB=$(cwd)/stage1/opt/perl/lib/5.8.7/i586-linux-thread-multi/ \
-	DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)			\
+	 cd $(dir $@)                                    \
+	 && $(perlrun) Makefile.PL PERL_SRC=$(cwd)/$(perl) DESTDIR=$(cwd)/stage1
 	[ -e $@ ]
 
 stage1/.stamp-perl-xml-xpath: $(perl-xml-xpath)/Makefile
