@@ -1113,6 +1113,32 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB918439-x86-%WINLANG%.ex
 
 :: Critical Updates
 
+:: Security Update for Windows XP Service Pack 2 (KB929969)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=81FB6A72-AC8A-4B28-905F-A44691D69432>
+:: URL|ARA|http://download.microsoft.com/download/c/7/b/c7b74b40-d692-489e-8b12-c0db5f647db0/WindowsXP-KB929969-x86-ARA.exe|updates/winxpsp2/windowsxp-kb929969-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/8/f/3/8f311618-ef8e-4535-9ff9-de9ea33e2a06/WindowsXP-KB929969-x86-CSY.exe|updates/winxpsp2/windowsxp-kb929969-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/8/5/2/852e67b7-3278-45ec-9403-f584a8aa02b3/WindowsXP-KB929969-x86-DAN.exe|updates/winxpsp2/windowsxp-kb929969-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/a/f/1/af164d42-f7a8-4cf1-8478-dee7d017fcfd/WindowsXP-KB929969-x86-DEU.exe|updates/winxpsp2/windowsxp-kb929969-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/7/a/d/7ada5f88-3c0a-4e4c-9270-2ff2a3870e5d/WindowsXP-KB929969-x86-ELL.exe|updates/winxpsp2/windowsxp-kb929969-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/a/4/4/a44b9b3f-cc2d-4b94-aa78-b5bdd7c8912d/WindowsXP-KB929969-x86-ENU.exe|updates/winxpsp2/windowsxp-kb929969-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/4/a/b/4abf8f95-6c20-4c9b-8efd-00b3821500d2/WindowsXP-KB929969-x86-ESN.exe|updates/winxpsp2/windowsxp-kb929969-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/c/9/a/c9a7c42f-df96-4b8f-8df0-85a40fbb362f/WindowsXP-KB929969-x86-FIN.exe|updates/winxpsp2/windowsxp-kb929969-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/c/6/a/c6adda7f-b54d-44da-9144-6e3610adeb23/WindowsXP-KB929969-x86-FRA.exe|updates/winxpsp2/windowsxp-kb929969-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/d/3/6/d365dcb3-dd9b-49e2-846b-da2d611df9a5/WindowsXP-KB929969-x86-HEB.exe|updates/winxpsp2/windowsxp-kb929969-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/8/d/e/8de8fa79-49f2-4476-aae8-c0794f1f42a3/WindowsXP-KB929969-x86-HUN.exe|updates/winxpsp2/windowsxp-kb929969-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/a/6/1/a6108524-48a8-4e33-abc6-e12de3cd5223/WindowsXP-KB929969-x86-ITA.exe|updates/winxpsp2/windowsxp-kb929969-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/a/7/fa7358d1-a1c9-4b53-a079-ad61c83af527/WindowsXP-KB929969-x86-JPN.exe|updates/winxpsp2/windowsxp-kb929969-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/1/1/91143fff-8176-47d7-ad2b-607590a7c167/WindowsXP-KB929969-x86-KOR.exe|updates/winxpsp2/windowsxp-kb929969-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/5/4/1/5418e16e-e491-4d1b-9051-e045f249efa4/WindowsXP-KB929969-x86-NLD.exe|updates/winxpsp2/windowsxp-kb929969-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/a/9/4/a944b035-67d7-4ca5-8ee3-2a61fab1c40f/WindowsXP-KB929969-x86-NOR.exe|updates/winxpsp2/windowsxp-kb929969-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/b/0/0/b00f70b6-227e-483e-818c-fe6c13380a75/WindowsXP-KB929969-x86-PLK.exe|updates/winxpsp2/windowsxp-kb929969-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/4/8/2/4827db4e-71b9-4ca9-9ffe-fdb422010a07/WindowsXP-KB929969-x86-PTB.exe|updates/winxpsp2/windowsxp-kb929969-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/3/4/6/34694096-9d41-47f1-981c-262d4e9bb551/WindowsXP-KB929969-x86-PTG.exe|updates/winxpsp2/windowsxp-kb929969-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/7/1/2/7122f6b6-1a45-49c1-885e-2960c934baeb/WindowsXP-KB929969-x86-RUS.exe|updates/winxpsp2/windowsxp-kb929969-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/c/3/ac30277f-94f8-4d76-a0b1-a1e863ae18dc/WindowsXP-KB929969-x86-SVE.exe|updates/winxpsp2/windowsxp-kb929969-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/1/1/1/111d985c-9bc9-425d-9082-5d2bd74a64c8/WindowsXP-KB929969-x86-TRK.exe|updates/winxpsp2/windowsxp-kb929969-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB929969-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Vulnerabilities in Microsoft XML Core Services 4.0 Could Allow Remote Code Execution (927978)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=24B7D141-6CDF-4FC4-A91B-6F18FE6921D4>
 :: No Download found for ARA.
@@ -2351,8 +2377,8 @@ todo.pl ".reboot-on 194 %Z%\updates\common\WindowsXP-KB888302-x86-%WINLANG%.exe 
 :: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.23.exe|updates/common/windows-kb890830-v1.23.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.23.exe /Q"
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.24.exe|updates/common/windows-kb890830-v1.24.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB890830-V1.24.exe /Q"
 
 :: Security Update for Windows XP (KB890175)
 :: Microsoft Security Bulletin MS05-001
