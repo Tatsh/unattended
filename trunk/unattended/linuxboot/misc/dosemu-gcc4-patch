@@ -1,0 +1,529 @@
+diff -ruN dosemu-1.2.2.orig/src/base/init/config.c dosemu-1.2.2/src/base/init/config.c
+--- dosemu-1.2.2.orig/src/base/init/config.c	2004-02-10 20:45:49.000000000 +0100
++++ dosemu-1.2.2/src/base/init/config.c	2006-01-24 06:51:59.000000000 +0100
+@@ -406,7 +406,7 @@
+   char *opt;
+   int runningsuid = can_do_root_stuff && !under_root_login;
+ 
+-  static char * get_option(char *key, int with_arg)
++  char * get_option(char *key, int with_arg)
+   {
+     char *p;
+     char *basename;
+diff -ruN dosemu-1.2.2.orig/src/dosext/dpmi/dpmi.c dosemu-1.2.2/src/dosext/dpmi/dpmi.c
+--- dosemu-1.2.2.orig/src/dosext/dpmi/dpmi.c	2004-07-05 09:19:23.000000000 +0200
++++ dosemu-1.2.2/src/dosext/dpmi/dpmi.c	2006-01-24 06:36:17.000000000 +0100
+@@ -2939,7 +2939,7 @@
+ #endif
+ {
+ 
+-#define LWORD32(x,y) {if (DPMI_CLIENT.is_32) (unsigned long) _##x y; else _LWORD(x) y;}
++#define LWORD32(x,y) {if (DPMI_CLIENT.is_32) _##x y; else _LWORD(x) y;}
+ #define _LWECX	   (DPMI_CLIENT.is_32 ^ prefix67 ? _ecx : _LWORD(ecx))
+ #define set_LWECX(x) {if (DPMI_CLIENT.is_32 ^ prefix67) _ecx=(x); else _LWORD(ecx) = (x);}
+ 
+diff -ruN dosemu-1.2.2.orig/src/dosext/dpmi/msdos.c dosemu-1.2.2/src/dosext/dpmi/msdos.c
+--- dosemu-1.2.2.orig/src/dosext/dpmi/msdos.c	2004-07-05 09:24:34.000000000 +0200
++++ dosemu-1.2.2/src/dosext/dpmi/msdos.c	2006-01-24 06:33:37.000000000 +0100
+@@ -1477,28 +1477,28 @@
+     *segment = (*lp >> 16) & 0xffff;
+     switch (reg) {
+ 	case 0:
+-	    (unsigned short)_LWORD(eax) = offset;
++	    _LWORD(eax) = offset;
+ 	    break;
+ 	case 1:
+-	    (unsigned short)_LWORD(ecx) = offset;
++	    _LWORD(ecx) = offset;
+ 	    break;
+ 	case 2:
+-	    (unsigned short)_LWORD(edx) = offset;
++	    _LWORD(edx) = offset;
+ 	    break;
+ 	case 3:
+-	    (unsigned short)_LWORD(ebx) = offset;
++	    _LWORD(ebx) = offset;
+ 	    break;
+ 	case 4:
+-	    (unsigned short)_LWORD(esp) = offset;
++	    _LWORD(esp) = offset;
+ 	    break;
+ 	case 5:
+-	    (unsigned short)_LWORD(ebp) = offset;
++	    _LWORD(ebp) = offset;
+ 	    break;
+ 	case 6:
+-	    (unsigned short)_LWORD(esi) = offset;
++	    _LWORD(esi) = offset;
+ 	    break;
+ 	case 7:
+-	    (unsigned short)_LWORD(edi) = offset;
++	    _LWORD(edi) = offset;
+ 	    break;
+ 	}
+     return len;
+diff -ruN dosemu-1.2.2.orig/src/env/video/X.c dosemu-1.2.2/src/env/video/X.c
+--- dosemu-1.2.2.orig/src/env/video/X.c	2004-07-04 07:39:55.000000000 +0200
++++ dosemu-1.2.2/src/env/video/X.c	2006-01-24 06:58:45.000000000 +0100
+@@ -422,6 +422,7 @@
+ #endif
+ 
+ Display *display;		/* used in plugin/?/keyb_X_keycode.c */
++#define screen private_screen	/* conflicts with src/include/emu.h */
+ static int screen;
+ static Visual *visual;
+ static Window rootwindow, mainwindow, parentwindow, normalwindow, fullscreenwindow;
+@@ -443,6 +444,7 @@
+ static Font vga_font;
+ static Atom proto_atom = None, delete_atom = None;
+ static XFontStruct *font = NULL;
++#define font_height private_font_height /* conflicts with src/include/video.h */
+ static int font_width, font_height, font_shift, shift_x, shift_y;
+ static int prev_cursor_row = -1, prev_cursor_col = -1;
+ static ushort prev_cursor_shape = NO_CURSOR;
+diff -ruN dosemu-1.2.2.orig/src/env/video/matrox.h dosemu-1.2.2/src/env/video/matrox.h
+--- dosemu-1.2.2.orig/src/env/video/matrox.h	2004-01-17 22:59:09.000000000 +0100
++++ dosemu-1.2.2/src/env/video/matrox.h	2006-01-24 06:10:09.000000000 +0100
+@@ -64,9 +64,6 @@
+ #define RAMDAC_OFFSET		0x3c00
+ 
+ 
+-extern int MGAchipset;
+-extern u_char *MGAMMIOBase;
+-
+ extern void vga_init_matrox(void);
+ 
+ extern void matrox_set_bank_read(u_char bank);
+diff -ruN dosemu-1.2.2.orig/src/include/dos2linux.h dosemu-1.2.2/src/include/dos2linux.h
+--- dosemu-1.2.2.orig/src/include/dos2linux.h	2004-01-17 22:59:10.000000000 +0100
++++ dosemu-1.2.2/src/include/dos2linux.h	2006-01-24 06:34:37.000000000 +0100
+@@ -94,8 +94,6 @@
+ #define	sft_fd(sft)		(*(u_char *)&sft[sft_fd_off])
+ 
+ typedef u_char *cds_t;
+-extern cds_t cds_base;
+-extern cds_t cds;
+ extern int cds_current_path_off;
+ extern int cds_rootlen_off;
+ extern int cds_record_size;
+diff -ruN dosemu-1.2.2.orig/src/plugin/commands/comcom.c dosemu-1.2.2/src/plugin/commands/comcom.c
+--- dosemu-1.2.2.orig/src/plugin/commands/comcom.c	2004-05-19 11:05:32.000000000 +0200
++++ dosemu-1.2.2/src/plugin/commands/comcom.c	2006-01-24 06:53:33.000000000 +0100
+@@ -256,7 +256,7 @@
+ 	int screenw, screenpage, posx, posy, leftmostx, linelen;
+ 	int dumbterm = config.cardtype == CARD_NONE;
+ 
+-	static void start_line(void)
++	void start_line(void)
+ 	{
+ 		screenw = com_biosvideo(0x0f00) >> 8;
+ 		if (dumbterm) screenw = 79;
+@@ -271,14 +271,14 @@
+ 		if (!attrib) attrib = 7;
+ 	}
+ 
+-	static void putkey(int key)
++	void putkey(int key)
+ 	{
+ 		LWORD(ebx) = screenpage;
+ 		com_biosvideo((key & 255) | 0x0e00);
+ 		cursor++;
+ 	}
+ 
+-	static void setcursorpos(int x)
++	void setcursorpos(int x)
+ 	{
+ 		HI(dx) = posy;
+ 		LO(dx) = posx + x;
+@@ -286,7 +286,7 @@
+ 		com_biosvideo(0x200);
+ 	}
+ 
+-	static void refresh_dumb(int len)
++	void refresh_dumb(int len)
+ 	{
+ 		static char bspaces[128] = "";
+ 		int commonlen, i;
+@@ -313,7 +313,7 @@
+ 		lastblen = len;
+ 	}
+ 
+-	static void update_display(int forcerefresh)
++	void update_display(int forcerefresh)
+ 	{
+ 		int len;
+ 
+@@ -373,7 +373,7 @@
+ 		setcursorpos(cursor);
+ 	}
+ 
+-	static void insert(int c)
++	void insert(int c)
+ 	{
+ 		int i, j = winstart + cursor;
+ 		for (i = count; i > j; i--) p[i] = p[i-1];
+@@ -382,7 +382,7 @@
+ 		cursor++;
+ 	}
+ 
+-	static void insertstring(const char *s, const int len)
++	void insertstring(const char *s, const int len)
+ 	{
+ 		int i, j = winstart + cursor;
+ 
+@@ -394,7 +394,7 @@
+ 		cursor += len;
+ 	}
+ 
+-	static void delete(int pos)
++	void delete(int pos)
+ 	{
+ 		int i, j = cursor+pos+winstart;
+ 		if (j < 0) return;
+@@ -409,7 +409,7 @@
+ 		}
+ 	}
+ 
+-	static void replace_line(char *line)
++	void replace_line(char *line)
+ 	{
+ 		memcpy(buf, line, line[0]+2);
+ 		p = buf+1;
+@@ -421,7 +421,7 @@
+ 		}
+ 	}
+ 
+-	static void from_history(int direction)
++	void from_history(int direction)
+ 	{
+ 		if (history_empty) return;
+ 		switch (lastkey) {
+@@ -447,7 +447,7 @@
+ 		replace_line(history[histl]);
+ 	}
+ 
+-	static int readline(char *buf)
++	int readline(char *buf)
+ 	{
+ 		int c, d;
+ 
+@@ -811,7 +811,7 @@
+ 	int ret, this_echo;
+ 	char *p;
+ 
+-	static void substitute_positional(char **t_, char **s_)
++	void substitute_positional(char **t_, char **s_)
+ 	{
+ 		struct batchdata *pd = bdta->parent;
+ 		char *s = *s_, *t = *t_, *p;
+@@ -832,7 +832,7 @@
+ 		return;
+ 	}
+ 
+-	static void substitute_env(char **t, char **s_, char *p)
++	void substitute_env(char **t, char **s_, char *p)
+ 	{
+ 		char *s = *s_;
+ 		char buf[128];
+@@ -860,7 +860,7 @@
+ 		*s_ = p + 1;
+ 	}
+ 
+-	static void variable_substitution(void)
++	void variable_substitution(void)
+ 	{
+ 		char buf[1024];	/* big enough to catch overflows */
+ 		char *s = STR0A, *p, *t;
+@@ -917,7 +917,7 @@
+ 		LEN0A = len;
+ 	}
+ 
+-	static void echo_handling(void)
++	void echo_handling(void)
+ 	{
+ 		this_echo = STR0A[0] != '@';
+ 		if (!this_echo) {
+@@ -1321,7 +1321,7 @@
+ 	int repli, replen;
+ 	char replbuf[256], callbuf[256];
+ 
+-	static void do_command(char *varcontents)
++	void do_command(char *varcontents)
+ 	{
+ 		int i, j, vlen = strlen(varcontents);
+ 		anyDTA saved_dta;
+@@ -1544,7 +1544,7 @@
+ 	char s[256];
+ 	int len, opt_p;
+ 
+-	static int delit(void)
++	int delit(void)
+ 	{
+ 		if (dta->attrib & DOS_ATTR_PROTECTED) return 0;
+ 		strcpy(s+len, dta->name);
+@@ -1611,7 +1611,7 @@
+ 	int excmask = DOS_ATTR_HIDDEN | DOS_ATTR_SYSTEM;
+ 	char commastring [100];
+ 
+-	static int expand_wild(char *b)
++	int expand_wild(char *b)
+ 	{
+ 		if (isalpha(b[0]) && (b[1]==':')) {
+ 			char buf[256];
+@@ -1635,7 +1635,7 @@
+ 		return com_exist_file(b) ? 0 : DOS_ENOENT;
+ 	}
+ 
+-	static void cache_it(void)
++	void cache_it(void)
+ 	{
+ 		if (cachei >= maxfiles) return; /* ... silently */
+ 		if (!dta->attrib) dta->attrib = 0x80;
+@@ -1654,14 +1654,14 @@
+ 		memcpy(cache+(cachei++), &dta->attrib, sizeof(struct tiny_dta));
+ 	}
+ 
+-	static void sort_it(void)
++	void sort_it(void)
+ 	{
+ 		if (!cachei) return;
+ 		qsort(cache, cachei, sizeof(struct tiny_dta), qsort_dircmp);
+ 	}
+ 
+ 	/* returns num as a string, with commas separating groups of 3 digits */
+-	static char *get_comma_string (const unsigned num)
++	char *get_comma_string (const unsigned num)
+ 	{
+ 		int i;
+ 		char *s;
+@@ -1686,12 +1686,12 @@
+ 		return commastring;
+ 	}
+ 
+-	static void displ_b(int i)
++	void displ_b(int i)
+ 	{
+ 		com_printf("%s\n", cache[i].name);
+ 	}
+ 
+-	static void displ_w(int i)
++	void displ_w(int i)
+ 	{
+ 		struct tiny_dta *e = &cache[i];
+ 		char b[32];
+@@ -1704,7 +1704,7 @@
+ 		else com_printf("%-16s", f);
+ 	}
+ 
+-	static void displ(int i)
++	void displ(int i)
+ 	{
+ 		struct tiny_dta *e = &cache[i];
+ 		int d = e->filedate;
+@@ -1730,7 +1730,7 @@
+ 		);
+ 	}
+ 
+-	static void displ_header(void)
++	void displ_header(void)
+ 	{
+ 		char *volume = "no label", *p;
+ 		char drive[] = "X:\\*.*";
+@@ -1748,7 +1748,7 @@
+ 		com_printf(" Directory of %s\n\n", dirname);
+ 	}
+ 
+-	static void displ_footer(void)
++	void displ_footer(void)
+ 	{
+ 		unsigned info[4];
+ 		int ret;
+@@ -1761,7 +1761,7 @@
+ 						num_dirs, get_comma_string (info[0] * info[1] * info[2]));
+ 	}
+ 
+-	static void display_it(void)
++	void display_it(void)
+ 	{
+ 		int i;
+ 		void (*xx)(int);
+@@ -1780,7 +1780,7 @@
+ 		displ_footer();
+ 	}
+ 
+-	static void flush_it(void)
++	void flush_it(void)
+ 	{
+ 		com_printf("\n");
+ 	}
+@@ -1853,7 +1853,7 @@
+ 	char *w;
+ 	int i, j;
+ 
+-	static int next_wild(void)
++	int next_wild(void)
+ 	{
+ 		int i;
+ 		if (*s && *w1) {
+@@ -1906,7 +1906,7 @@
+ 	int len1, len2, blen1, blen2;
+ 	int ret;
+ 
+-	static int rename_it(void)
++	int rename_it(void)
+ 	{
+ 		char b[256];
+ 		int l = rename_wild(b, dta->name, b1, b2);
+@@ -1987,7 +1987,7 @@
+ 	char targd[256], targ[128];
+ 	char buf[256], *s;
+ 
+-	static int appendbslash(char *b)
++	int appendbslash(char *b)
+ 	{
+ 		int l = strlen(b);
+ 		if (!l || (b[l-1] != '\\')) {
+@@ -1997,7 +1997,7 @@
+ 		return l;
+ 	}
+ 
+-	static int exist_dir(char *b)
++	int exist_dir(char *b)
+ 	{
+ 		if (isalpha(b[0]) && (b[1]==':') && (b[2]=='\\') && !b[3]) {
+ 			char dummy[256];
+@@ -2006,7 +2006,7 @@
+ 		return com_exist_dir(b);
+ 	}
+ 
+-	static int expand_drive(char *b)
++	int expand_drive(char *b)
+ 	{
+ 		if (isalpha(b[0]) && (b[1]==':') && !b[2]) {
+ 			if (com_getdriveandpath(toupper(b[0]) -'A' +1, b))
+@@ -2016,7 +2016,7 @@
+ 		return 0;
+ 	}
+ 
+-	static int set_target_to_CWD(void)
++	int set_target_to_CWD(void)
+ 	{
+ 		if (com_getdriveandpath(0, targd)) return com_errno;
+ 		targdlen = appendbslash(targd);
+@@ -2029,7 +2029,7 @@
+ 		return 0;
+ 	}
+ 
+-	static int print_summary(int retcode)
++	int print_summary(int retcode)
+ 	{
+ 		if (!fcount) return retcode;
+ 		com_fprintf(2,
+@@ -2037,7 +2037,7 @@
+ 		return retcode;
+ 	}
+ 
+-	static void touch_all(void)
++	void touch_all(void)
+ 	{
+ 		int i, dlen, fd;
+ 		char dir[256];
+@@ -2064,7 +2064,7 @@
+ 		}
+ 	}
+ 
+-	static int overwrite_check(char *name)
++	int overwrite_check(char *name)
+ 	{
+ 		/* NOTE: destroyes DTA */
+ 		int c;
+@@ -2086,7 +2086,7 @@
+ 		return 0;
+ 	}
+ 
+-	static int same_file(char *a, char *b)
++	int same_file(char *a, char *b)
+ 	{
+ 		int ret;
+ 		char n1[256], n2[256];
+@@ -2098,7 +2098,7 @@
+ 		return ret;
+ 	}
+ 
+-	static int single_copy(char *a, char *b, int textmode)
++	int single_copy(char *a, char *b, int textmode)
+ 	{
+ 		anyDTA saved_dta = PSP_DTA;
+ 		int fdi, fdo;
+@@ -2155,7 +2155,7 @@
+ 	}
+ 
+ 
+-	static int single_append(char *t, char *s, int textmode)
++	int single_append(char *t, char *s, int textmode)
+ 	{
+ 		anyDTA saved_dta = PSP_DTA;
+ 		int ret, err, fdo, fdi;
+@@ -2186,7 +2186,7 @@
+ 		return ret;
+ 	}
+ 
+-	static int copy_wild(int matched)
++	int copy_wild(int matched)
+ 	{
+ 		char *w1, *w2;
+ 		char s[256];
+@@ -2194,7 +2194,7 @@
+ 		int (*docopy)(void);
+ 		int (*initialcombine)(void);
+ 
+-		static int matchcopy(void)
++		int matchcopy(void)
+ 		{
+ 			char b[256];
+ 			int l = rename_wild(b, dta->name, w1, w2);
+@@ -2204,7 +2204,7 @@
+ 			return single_copy(targd, s, src[0].istext);
+ 		}
+ 
+-		static int dircopy(void)
++		int dircopy(void)
+ 		{
+ 			strcpy(s+slen, dta->name);
+ 			strcpy(targd+targdlen, dta->name);
+@@ -2212,7 +2212,7 @@
+ 		}
+ 
+ 
+-		static int combine(void)
++		int combine(void)
+ 		{
+ 			int i, l;
+ 			char s2[256], b[256];
+@@ -2255,7 +2255,7 @@
+ 		return com_errno = 0;
+ 	}
+ 
+-	static int combine_to_single(void)
++	int combine_to_single(void)
+ 	{
+ 		int i;
+ 		int slen;
+@@ -2610,7 +2610,7 @@
+ 	char buf[128];
+ 	int ret, option_q = 0;
+ 
+-	static int changedate(char *s)
++	int changedate(char *s)
+ 	{
+ 		int month, day, year;
+ 		char *p = s;
+@@ -2665,7 +2665,7 @@
+ 	char buf[128];
+ 	int option_q = 0;
+ 
+-	static int entertime(char *s)
++	int entertime(char *s)
+ 	{
+ 		int hour, min, sec;
+ 		char *p;
