@@ -885,7 +885,7 @@ $(call download_rule, $(dmidecode), tar.bz2,	\
 $(call download_rule, $(dosemu), tgz,					\
 	http://dl.sourceforge.net/sourceforge/dosemu/)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
-	http://surfnet.dl.sourceforge.net/sourceforge/e2fsprogs/)
+	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
 $(call download_rule, $(expat), tar.gz, \
 	http://dl.sourceforge.net/sourceforge/expat/)
 #$(call cvs_rule, $(glibc), libc, \
