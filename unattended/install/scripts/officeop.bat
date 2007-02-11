@@ -40,9 +40,13 @@ todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -y -o\"%ProgramFiles%\OpenOffice.org 2.1\
 
 todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -o\"%ProgramFiles%\OpenOffice.org 2.1\"\share\dict\ooo %Z%\packages\openoffice\share_dict_ooo\%WINLANG%-pack.zip"
 
+goto dict_conf_ok
+
 :dict_conf_missing
 @echo %Z%\packages\openoffice\share_dict_ooo\%WINLANG%.lst is missing.
 @echo See example on the wiki http://ubertechnique.com/unattended/OpenOffice210
+
+:dict_conf_ok
 
 if exist "%Z%\packages\openoffice\OOo_2.1.0_Win32Intel_install_%WINLANG%.exe" goto localizedbinary
 
