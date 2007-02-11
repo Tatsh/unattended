@@ -427,7 +427,7 @@ $(pciutils)/lspci:
 
 $(call copy_exe, $(pciutils)/lspci, stage1/sbin/lspci)
 
-$(call copy_file,pci.ids,stage1/usr/share/pci.ids)
+$(call copy_file,$(pciutils)/pci.ids,stage1/usr/share/pci.ids)
 
 stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 
