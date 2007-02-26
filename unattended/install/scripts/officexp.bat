@@ -65,29 +65,29 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB923092-FullFile-%WINLANG
 :: Description of the security update for Excel 2002: October 10, 2006
 :: <http://support.microsoft.com/kb/923089>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=D86620E8-C77A-45A9-9FF3-0A6AAF308984>
-:: URL|ARA|http://download.microsoft.com/download/d/4/b/d4bc614e-d0b2-4da9-9680-95868cd16355/officexp-KB923089-FullFile-ARA.exe|updates/officexp/officexp-kb923089-fullfile-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/9/5/f/95ff882e-6bac-4a9f-a478-b0c513388674/officexp-KB923089-FullFile-CSY.exe|updates/officexp/officexp-kb923089-fullfile-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/0/b/f/0bfe19dd-391c-44bc-8938-1ec6422cc69e/officexp-KB923089-FullFile-DAN.exe|updates/officexp/officexp-kb923089-fullfile-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/c/e/e/cee16bf9-2daa-4b10-9dc0-246d93ffa855/officexp-KB923089-FullFile-DEU.exe|updates/officexp/officexp-kb923089-fullfile-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/1/1/a/11a54d73-3c0c-4283-8e4f-9fd1fac68c76/officexp-KB923089-FullFile-ELL.exe|updates/officexp/officexp-kb923089-fullfile-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/6/e/4/6e483fd2-420f-45e2-9d21-e725f461c097/officexp-KB923089-FullFile-ENU.exe|updates/officexp/officexp-kb923089-fullfile-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/e/f/5/ef59ed32-2108-4f4d-a936-185186e669ce/officexp-KB923089-FullFile-ESN.exe|updates/officexp/officexp-kb923089-fullfile-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/5/f/e/5fe4cc08-388e-428e-be35-dd1e4f876f32/officexp-KB923089-FullFile-FIN.exe|updates/officexp/officexp-kb923089-fullfile-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/e/b/b/ebb8ceef-b836-41c3-b76a-d7a287cbc078/officexp-KB923089-FullFile-FRA.exe|updates/officexp/officexp-kb923089-fullfile-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/d/2/7/d27478a8-bfa3-428e-a8ce-97a9d463be9a/officexp-KB923089-FullFile-HEB.exe|updates/officexp/officexp-kb923089-fullfile-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/1/3/8/13865a7c-b64b-4fb7-a865-ee732b9e3d8a/officexp-KB923089-FullFile-HUN.exe|updates/officexp/officexp-kb923089-fullfile-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/4/3/34387431-81e9-459d-a632-cf815a8886e5/officexp-KB923089-FullFile-ITA.exe|updates/officexp/officexp-kb923089-fullfile-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/3/3/3/3339fb54-65f2-4ac6-9365-05375ba51402/officexp-KB923089-FullFile-JPN.exe|updates/officexp/officexp-kb923089-fullfile-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/d/e/5/de5fba07-bdf0-4566-ab28-134a47f7beb0/officexp-KB923089-FullFile-KOR.exe|updates/officexp/officexp-kb923089-fullfile-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/4/1/6/41676842-9139-4cd8-95d3-2c0cf2d6b935/officexp-KB923089-FullFile-NLD.exe|updates/officexp/officexp-kb923089-fullfile-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/1/c/1/1c107411-6b1a-4dc6-8218-3f36ee25c0fe/officexp-KB923089-FullFile-NOR.exe|updates/officexp/officexp-kb923089-fullfile-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/8/d/a/8da4de80-b215-444e-a910-35b2a23f4736/officexp-KB923089-FullFile-PLK.exe|updates/officexp/officexp-kb923089-fullfile-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/2/0/0/200c6851-06c8-46fa-829e-a7871792baca/officexp-KB923089-FullFile-PTB.exe|updates/officexp/officexp-kb923089-fullfile-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/f/f/3/ff3988f1-a4a7-4d19-98ec-970cbdce9842/officexp-KB923089-FullFile-PTG.exe|updates/officexp/officexp-kb923089-fullfile-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/2/5/4/25446a57-3eff-4dd3-9218-d1a2ed3509a2/officexp-KB923089-FullFile-RUS.exe|updates/officexp/officexp-kb923089-fullfile-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/f/4/af46dc4b-1c25-41ed-a963-57195ebe6bab/officexp-KB923089-FullFile-SVE.exe|updates/officexp/officexp-kb923089-fullfile-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/7/c/a/7ca6e25f-3acb-4564-a8be-b01ebeb82753/officexp-KB923089-FullFile-TRK.exe|updates/officexp/officexp-kb923089-fullfile-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB923089-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb923089.txt /p EXCEL.msp REBOOT=ReallySuppress\""
+:: URL|ARA|http://download.microsoft.com/download/d/4/b/d4bc614e-d0b2-4da9-9680-95868cd16355/officexp-KB923089-v2-FullFile-ARA.exe|updates/officexp/officexp-kb923089-v2-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/9/5/f/95ff882e-6bac-4a9f-a478-b0c513388674/officexp-KB923089-v2-FullFile-CSY.exe|updates/officexp/officexp-kb923089-v2-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/b/f/0bfe19dd-391c-44bc-8938-1ec6422cc69e/officexp-KB923089-v2-FullFile-DAN.exe|updates/officexp/officexp-kb923089-v2-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/c/e/e/cee16bf9-2daa-4b10-9dc0-246d93ffa855/officexp-KB923089-v2-FullFile-DEU.exe|updates/officexp/officexp-kb923089-v2-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/1/1/a/11a54d73-3c0c-4283-8e4f-9fd1fac68c76/officexp-KB923089-v2-FullFile-ELL.exe|updates/officexp/officexp-kb923089-v2-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/6/e/4/6e483fd2-420f-45e2-9d21-e725f461c097/officexp-KB923089-v2-FullFile-ENU.exe|updates/officexp/officexp-kb923089-v2-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/e/f/5/ef59ed32-2108-4f4d-a936-185186e669ce/officexp-KB923089-v2-FullFile-ESN.exe|updates/officexp/officexp-kb923089-v2-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/f/e/5fe4cc08-388e-428e-be35-dd1e4f876f32/officexp-KB923089-v2-FullFile-FIN.exe|updates/officexp/officexp-kb923089-v2-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/e/b/b/ebb8ceef-b836-41c3-b76a-d7a287cbc078/officexp-KB923089-v2-FullFile-FRA.exe|updates/officexp/officexp-kb923089-v2-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/d/2/7/d27478a8-bfa3-428e-a8ce-97a9d463be9a/officexp-KB923089-v2-FullFile-HEB.exe|updates/officexp/officexp-kb923089-v2-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/1/3/8/13865a7c-b64b-4fb7-a865-ee732b9e3d8a/officexp-KB923089-v2-FullFile-HUN.exe|updates/officexp/officexp-kb923089-v2-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/4/3/34387431-81e9-459d-a632-cf815a8886e5/officexp-KB923089-v2-FullFile-ITA.exe|updates/officexp/officexp-kb923089-v2-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/3/3/3/3339fb54-65f2-4ac6-9365-05375ba51402/officexp-KB923089-v2-FullFile-JPN.exe|updates/officexp/officexp-kb923089-v2-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/d/e/5/de5fba07-bdf0-4566-ab28-134a47f7beb0/officexp-KB923089-v2-FullFile-KOR.exe|updates/officexp/officexp-kb923089-v2-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/1/6/41676842-9139-4cd8-95d3-2c0cf2d6b935/officexp-KB923089-v2-FullFile-NLD.exe|updates/officexp/officexp-kb923089-v2-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/1/c/1/1c107411-6b1a-4dc6-8218-3f36ee25c0fe/officexp-KB923089-v2-FullFile-NOR.exe|updates/officexp/officexp-kb923089-v2-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/d/a/8da4de80-b215-444e-a910-35b2a23f4736/officexp-KB923089-v2-FullFile-PLK.exe|updates/officexp/officexp-kb923089-v2-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/2/0/0/200c6851-06c8-46fa-829e-a7871792baca/officexp-KB923089-v2-FullFile-PTB.exe|updates/officexp/officexp-kb923089-v2-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/f/3/ff3988f1-a4a7-4d19-98ec-970cbdce9842/officexp-KB923089-v2-FullFile-PTG.exe|updates/officexp/officexp-kb923089-v2-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/2/5/4/25446a57-3eff-4dd3-9218-d1a2ed3509a2/officexp-KB923089-v2-FullFile-RUS.exe|updates/officexp/officexp-kb923089-v2-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/f/4/af46dc4b-1c25-41ed-a963-57195ebe6bab/officexp-KB923089-v2-FullFile-SVE.exe|updates/officexp/officexp-kb923089-v2-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/c/a/7ca6e25f-3acb-4564-a8be-b01ebeb82753/officexp-KB923089-v2-FullFile-TRK.exe|updates/officexp/officexp-kb923089-v2-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB923089-v2-FullFile-%WINLANG%.exe /q /c:\"msiexec /qb /l* %SystemDrive%\netinst\logs\kb923089.txt /p EXCEL.msp REBOOT=ReallySuppress\""
 
 :: Security Update for Word 2002 (KB920817)
 :: Description of the security update for Word 2002: October 10, 2006
