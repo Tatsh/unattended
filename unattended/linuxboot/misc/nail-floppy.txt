@@ -65,7 +65,7 @@ lib/modules/2.6.20.1/kernel/fs/msdos/msdos.ko
 lib/modules/2.6.20.1/kernel/fs/vfat/vfat.ko
 lib/modules/2.6.20.1/kernel/fs/nls/nls_iso8859-1.ko
 
-sbin/acpidmp
+sbin/acpidump
 sbin/cardmgr
 sbin/insmod
 sbin/iwconfig
