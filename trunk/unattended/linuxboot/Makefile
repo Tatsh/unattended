@@ -7,9 +7,10 @@ dbi=DBI-1.54
 dmidecode=dmidecode-2.9
 dosemu=dosemu-1.2.2
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.38
-expat=expat-1.95.8
+e2fsprogs=e2fsprogs-1.39
+expat=expat-2.0.0
 glibc=glibc-2.3.6
+#glibc=glibc-2.5
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
@@ -17,16 +18,16 @@ linux=linux-2.6.20.1
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-4.1.22
 nano=nano-1.2.5
-ncurses=ncurses-5.5
-parted=parted-1.6.25.1
-pciutils=pciutils-2.2.3
+ncurses=ncurses-5.6
+parted=parted-1.8.2
+pciutils=pciutils-2.2.4
 pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.8.8
 # perl-ldap aka. Net::LDAP
-perl-ldap=perl-ldap-0.33
+perl-ldap=perl-ldap-0.34
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
-pmtools=pmtools-20031210
+pmtools=pmtools-20061130
 samba=samba-3.0.24
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
@@ -458,15 +459,15 @@ stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 	stage1/etc/pcmcia/config.opts stage1/var/run \
 	stage1/etc/pcmcia/network
 
-## pmtools (acpidmp, for diagnostics)
-$(pmtools)/acpidmp/acpidmp: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
+## pmtools (acpidump, for diagnostics)
+$(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
 	cd $(dir $@)							  \
 	&& make clean							  \
 	&& make CFLAGS="$(fakelib_cflags$) -I$(cwd)/$(linux)/include -O2"
 	[ -e $@ ]
 
-$(call copy_exe,$(pmtools)/acpidmp/acpidmp,stage1/sbin/acpidmp)
-stage1 += stage1/sbin/acpidmp
+$(call copy_exe,$(pmtools)/acpidump/acpidump,stage1/sbin/acpidump)
+stage1 += stage1/sbin/acpidump
 
 ## Perl
 $(perl)/perl: fakeinclude/stdio.h
@@ -704,12 +705,12 @@ $(call copy_lib,$(zlib)/$(zlib_so),stage1/lib/libz.so)
 stage1 += stage1/lib/libz.so
 
 ## libexpat
-$(expat)/.libs/libexpat.so.0.5.0:
+$(expat)/.libs/libexpat.so.1.5.0:
 	cd $(expat)						\
 	&& ./configure --prefix=/				\
 	&& make
 
-$(call copy_lib,$(expat)/.libs/libexpat.so.0.5.0,stage1/lib/libexpat.so)
+$(call copy_lib,$(expat)/.libs/libexpat.so.1.5.0,stage1/lib/libexpat.so)
 $(call copy_file,$(expat)/libs/expat.h,fakeinclude/expat.h)
 $(call copy_file,$(expat)/libs/expat_external.h,fakeinclude/expat_external.h)
 
