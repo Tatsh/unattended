@@ -60,7 +60,7 @@ release: checkver
 
 diff: checkver
 	tag=`echo REL_$(prev) | sed s/\\\\./_/g` &&	\
-	cvs diff -u -r$$tag::
+	cvs diff -u -r$$tag
 
 log: checkver
 	tag=`echo REL_$(prev) | sed s/\\\\./_/g` &&	\
