@@ -87,7 +87,7 @@ usr/lib/valid.dat
 
 usr/share/kbd/keymaps
 
-usr/share/lshw/pci.ids
+usr/share/pci.ids
 
 usr/var/locks
 
