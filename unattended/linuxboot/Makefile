@@ -463,7 +463,7 @@ stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 $(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
 	cd $(dir $@)							  \
 	&& make clean							  \
-	&& make CFLAGS="$(fakelib_cflags$) -I$(cwd)/$(linux)/include -O2"
+	&& make CFLAGS="-Wall -Wstrict-prototypes -Wdeclaration-after-statement -Os -s -D_LINUX -DDEFINE_ALTERNATE_TYPES $(fakelib_cflags$) -I../include -I$(cwd)/$(linux)/include -O2"
 	[ -e $@ ]
 
 $(call copy_exe,$(pmtools)/acpidump/acpidump,stage1/sbin/acpidump)
