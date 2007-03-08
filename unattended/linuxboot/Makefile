@@ -307,7 +307,7 @@ $(call copy_lib, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
 ## libcap (just libcap.so.1, required for samba)
 $(libcap)/libcap/libcap.so.1: build-$(glibc)/libc.so
 	cd $(libcap)						\
-	&& make
+	&& make CFLAGS="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
 	[ -e $@ ]
 
 $(call copy_lib,$(libcap)/libcap/libcap.so.1,stage1/lib/libcap.so.1)
