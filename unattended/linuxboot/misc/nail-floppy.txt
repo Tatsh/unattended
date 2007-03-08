@@ -29,10 +29,11 @@ etc/udhcpc-script
 
 lib/ld-linux.so
 lib/libc.so
+lib/libcap.so.1 # Samba
 lib/libm.so
 lib/libcrypt.so # Samba
 lib/libdl.so
-lib/libnsl.so   # Samba again
+lib/libnsl.so   # Samba
 lib/libnss_dns.so
 lib/libnss_files.so
 lib/libresolv.so
