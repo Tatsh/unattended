@@ -14,6 +14,8 @@ glibc=glibc-2.3.6
 # Awful hack
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
+# libcap.so is required by smbclient
+libcap=libcap-1.10
 linux=linux-2.6.20.1
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-4.1.22
@@ -36,8 +38,8 @@ cwd:=$(shell pwd)
 
 packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		\
 	$(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(glibc) $(kbd)	\
-	$(linux) $(module-init-tools) $(mysql) $(nano) $(ncurses)	\
-	$(parted) $(perl) $(perl-ldap) $(perl-xml-parser)		\
+	$(linux) $(libcap) $(module-init-tools) $(mysql) $(nano)	\
+	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
 	$(perl-xml-xpath) $(pciutils) $(pcmcia-cs) $(pmtools)		\
 	$(samba) $(wireless_tools) $(zlib) 
 
@@ -301,6 +303,16 @@ stage1/etc/ld.so.conf:
 build-$(glibc)/elf/ld.so: build-$(glibc)/libc.so
 
 $(call copy_lib, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
+
+## libcap (just libcap.so.1, required for samba)
+$(libcap)/libcap/libcap.so.1: build-$(glibc)/libc.so
+	cd $(libcap)						\
+	&& make
+	[ -e $@ ]
+
+$(call copy_lib,$(libcap)/libcap/libcap.so.1,stage1/lib/libcap.so.1)
+
+stage1 += stage1/lib/libcap.so.1
 
 # Bash needs libdl
 build-$(glibc)/dlfcn/libdl.so: build-$(glibc)/libc.so
@@ -832,7 +844,7 @@ download-$(strip $(1)) :  ;						\
 	&& [ -d $$$$what ]						\
 	|| { [ -n "$$$$sub" ] || sub=.					\
 	&& temp=`mktemp /var/tmp/dl.XXXXXX`				\
-	&& wget --passive-ftp --timeout 10 -O $$$$temp 			\
+	&& wget --passive-ftp --timeout 30 -O $$$$temp 			\
 		$$$$url$$$$what.$$$$suffix    				\
 	&& case $$$$suffix in						\
 		*.gz|tgz) prog="gzip -d -c" ;;				\
@@ -898,6 +910,8 @@ $(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
 	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/utils/kbd/)
+$(call download_rule, $(libcap), tar.bz2,		\
+	http://ftp.kernel.org/pub/linux/libs/security/linux-privs/kernel-2.4/)
 $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
 #$(call download_rule, $(linux), tar.bz2,		\
