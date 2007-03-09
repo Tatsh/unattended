@@ -307,7 +307,7 @@ $(call copy_lib, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
 ## libcap (just libcap.so.1, required for samba)
 $(libcap)/libcap/libcap.so.1: build-$(glibc)/libc.so
 	cd $(libcap)						\
-	&& make CFLAGS="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
+	&& make IFLAGS="$(fakelib_cflags) -I$(libcap)/libcap/include" LDFLAGS="$(fakelib_cflags)"
 	[ -e $@ ]
 
 $(call copy_lib,$(libcap)/libcap/libcap.so.1,stage1/lib/libcap.so.1)
@@ -400,7 +400,7 @@ $(ncurses)/lib/libncurses.so: fakeinclude/stdio.h
 		./configure --prefix=/usr --with-shared			\
 			--without-normal --without-debug		\
 			--disable-database --with-fallbacks=linux	\
-			--build=i586-linux				\
+			--build=i586-linux --without-hashed-db		\
 	&& make
 	[ -e $@ ] && touch $@
 
@@ -418,7 +418,7 @@ stage1 += stage1/usr/lib/libncurses.so
 $(parted)/parted/.libs/parted: fakeinclude/stdio.h stage1/lib/libuuid.so \
 				stage1/lib/libdl.so
 	cd $(parted)						\
-	&& CFLAGS="$(fakelib_cflags)"				\
+	&& CFLAGS="$(fakelib_cflags) -I$(cwd)/$(e2fsprogs)/lib"	\
 		./configure --disable-nls --without-readline	\
 			--build=i586-linux			\
 	&& make
@@ -619,7 +619,7 @@ stage1/.stamp-perl-xml-parser: $(perl-xml-parser)/Makefile
 	cd $(perl-xml-parser)                                           \
 	&& make PERL="$(perlrun)"                                       \
 		LDLOADLIBS="$(fakelib_cflags)"                          \
-		CC="$(CC) $(fakelib_cflags) -I$(cwd/fakeinclude) -I$(cwd/expat/lib)" \
+		CC="$(CC) $(fakelib_cflags) -I$(cwd)/$(expat)/lib"	 \
 	&& make PERL="$(perlrun)" install
 	touch $@
 
