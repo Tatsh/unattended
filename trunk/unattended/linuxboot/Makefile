@@ -176,7 +176,8 @@ build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
 # If it is non-zero, they do something weird which breaks for us.  So
 # we force it to be zero.
-build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status
+build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status	\
+				stage1/lib/libdl.so
 	rm -f $@
 	cd build-$(dosemu)					\
 	&& make MAKELEVEL=0 
