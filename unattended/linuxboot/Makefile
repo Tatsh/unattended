@@ -172,7 +172,7 @@ build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
 	cd $(dir $@)							\
 	&& CC="$(CC) $(fakelib_cflags)" $(cwd)/$(dosemu)/configure	\
 		--without-x --without-gpm --build=i586-linux		\
-		--with-slangdir=$(cwd)/$(slang)
+		--prefix=/usr --with-slangdir=$(cwd)/$(slang)
 	[ -e $@ ]
 
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
@@ -189,9 +189,9 @@ $(call copy_exe,build-$(dosemu)/bin/dosemu.bin,stage1/usr/bin/dosemu.bin)
 
 stage1 += stage1/usr/bin/dosemu.bin
 
-$(call copy_file,build-$(dosemu)/bin/libplugin_term.so,stage1/lib/dosemu/libplugin_term.so)
+$(call copy_file,build-$(dosemu)/bin/libplugin_term.so,stage1/usr/lib/dosemu/libplugin_term.so)
 
-stage1 += stage1/lib/dosemu/libplugin_term.so
+stage1 += stage1/usr/lib/dosemu/libplugin_term.so
 
 $(call copy_file,misc/dosemu.conf,stage1/etc/dosemu/dosemu.conf)
 
