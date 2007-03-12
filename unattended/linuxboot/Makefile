@@ -1,11 +1,11 @@
 bash=bash-3.2
-busybox=busybox-1.1.3
+busybox=busybox-1.4.1
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
 dbi=DBI-1.54
 dmidecode=dmidecode-2.9
-dosemu=dosemu-1.2.2
+dosemu=dosemu-1.3.4
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.39
 expat=expat-2.0.0
@@ -16,10 +16,10 @@ glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 # libcap.so is required by smbclient
 libcap=libcap-1.10
-linux=linux-2.6.20.1
+linux=linux-2.6.20.2
 module-init-tools=module-init-tools-3.2.2
-mysql=mysql-4.1.22
-nano=nano-1.2.5
+mysql=mysql-5.0.37
+nano=nano-2.0.3
 ncurses=ncurses-5.6
 parted=parted-1.8.2
 pciutils=pciutils-2.2.4
@@ -147,7 +147,7 @@ $(busybox)/busybox: $(busybox)/.config fakeinclude/stdio.h
 	&& make CFLAGS_EXTRA="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
 
 stage1/bin/busybox: $(busybox)/busybox
-	cd $(busybox) && make PREFIX=$(cwd)/stage1 install
+	cd $(busybox) && make CONFIG_PREFIX=$(cwd)/stage1 install
 	cmp $< $@
 
 stage1 += stage1/bin/busybox
@@ -160,17 +160,11 @@ $(dmidecode)/dmidecode:
 $(call copy_exe,$(dmidecode)/dmidecode,stage1/usr/sbin/dmidecode)
 stage1 += stage1/usr/sbin/dmidecode
 
-## dosemu
-$(dosemu)/.stamp-dosemu-gcc4-patch: misc/dosemu-gcc4-patch
-	cd $(dosemu) && patch -p1 < $(cwd)/$<
-	touch $@
-
 $(dosemu)/.stamp-dosemu-nolock-patch: misc/dosemu-nolock-patch
 	cd $(dosemu) && patch -p1 < $(cwd)/$<
 	touch $@
 
-build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-gcc4-patch \
-         $(dosemu)/.stamp-dosemu-nolock-patch \
+build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
 			$(dosemu)/configure
 	rm -f $@
 	mkdir -p $(dir $@)
@@ -379,7 +373,7 @@ stage1/bin/loadkeys: $(kbd)/src/loadkeys
 stage1 += stage1/bin/loadkeys
 
 ## nano
-$(nano)/nano: fakeinclude/stdio.h fakeinclude/curses.h
+$(nano)/src/nano: fakeinclude/stdio.h fakeinclude/curses.h
 	cd $(nano)							    \
 	&& CFLAGS="$(fakelib_cflags)"					    \
 		./configure --prefix=/usr				    \
@@ -388,7 +382,7 @@ $(nano)/nano: fakeinclude/stdio.h fakeinclude/curses.h
 	&& make
 	[ -e $@ ] && touch $@
 
-$(call copy_exe, $(nano)/nano, stage1/usr/bin/nano)
+$(call copy_exe, $(nano)/src/nano, stage1/usr/bin/nano)
 
 stage1 += stage1/usr/bin/nano
 
@@ -919,8 +913,8 @@ $(call download_rule, $(linux), tar.bz2,		\
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
-	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-4.1/)
-$(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v1.2/)
+	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-5.0/)
+$(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
 $(call download_rule, $(pciutils), tar.bz2,			\
