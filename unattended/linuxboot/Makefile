@@ -31,6 +31,7 @@ perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20061130
 samba=samba-3.0.24
+slang=slang-2.0.7
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
@@ -41,7 +42,7 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		\
 	$(linux) $(libcap) $(module-init-tools) $(mysql) $(nano)	\
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
 	$(perl-xml-xpath) $(pciutils) $(pcmcia-cs) $(pmtools)		\
-	$(samba) $(wireless_tools) $(zlib) 
+	$(samba) $(slang) $(wireless_tools) $(zlib) 
 
 CC=gcc
 
@@ -170,7 +171,8 @@ build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
 	mkdir -p $(dir $@)
 	cd $(dir $@)							\
 	&& CC="$(CC) $(fakelib_cflags)" $(cwd)/$(dosemu)/configure	\
-		--without-x --without-slangdir --without-gpm --build=i586-linux
+		--without-x --without-gpm --build=i586-linux		\
+		--with-slangdir=$(cwd)/$(slang)
 	[ -e $@ ]
 
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
@@ -186,6 +188,10 @@ build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status	\
 $(call copy_exe,build-$(dosemu)/bin/dosemu.bin,stage1/usr/bin/dosemu.bin)
 
 stage1 += stage1/usr/bin/dosemu.bin
+
+$(call copy_file,build-$(dosemu)/bin/libplugin_term.so,stage1/lib/dosemu/libplugin_term.so)
+
+stage1 += stage1/lib/dosemu/libplugin_term.so
 
 $(call copy_file,misc/dosemu.conf,stage1/etc/dosemu/dosemu.conf)
 
@@ -932,6 +938,8 @@ $(call download_rule, $(perl-xml-xpath), tar.gz, \
 $(call download_rule, $(pmtools), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/)
+$(call download_rule, $(slang), tar.bz2, 	\
+	ftp://space.mit.edu/pub/davis/slang/v2.0/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
 $(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
