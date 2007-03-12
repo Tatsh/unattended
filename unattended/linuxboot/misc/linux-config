@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.20
-# Tue Feb 20 11:21:43 2007
+# Linux kernel version: 2.6.20.2
+# Mon Mar 12 09:00:39 2007
 #
 CONFIG_X86_32=y
 CONFIG_GENERIC_TIME=y
@@ -682,6 +682,11 @@ CONFIG_I2O_BUS=m
 CONFIG_I2O_BLOCK=m
 CONFIG_I2O_SCSI=m
 CONFIG_I2O_PROC=m
+
+#
+# Macintosh device drivers
+#
+# CONFIG_MAC_EMUMOUSEBTN is not set
 
 #
 # Network device support
