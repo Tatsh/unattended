@@ -1,6 +1,6 @@
 diff -u -r busybox-1.4.1-orig/include/usage.h busybox-1.4.1/include/usage.h
 --- busybox-1.4.1-orig/include/usage.h	2007-01-24 14:34:48.000000000 -0700
-+++ busybox-1.4.1/include/usage.h	2007-03-12 08:02:11.000000000 -0600
++++ busybox-1.4.1/include/usage.h	2007-03-12 14:37:54.000000000 -0600
 @@ -3313,6 +3313,7 @@
         "	-p,--pidfile=file	Store process ID of daemon in file\n" \
         "	-r,--request=IP		IP address to request (default: none)\n" \
@@ -11,7 +11,7 @@ diff -u -r busybox-1.4.1-orig/include/usage.h busybox-1.4.1/include/usage.h
         "	-b,--background	Fork to background if lease cannot be immediately negotiated\n" \
 diff -u -r busybox-1.4.1-orig/networking/udhcp/clientpacket.c busybox-1.4.1/networking/udhcp/clientpacket.c
 --- busybox-1.4.1-orig/networking/udhcp/clientpacket.c	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/clientpacket.c	2007-03-12 07:54:03.000000000 -0600
++++ busybox-1.4.1/networking/udhcp/clientpacket.c	2007-03-12 14:37:54.000000000 -0600
 @@ -51,6 +51,7 @@
  	if (client_config.clientid)
  		add_option_string(packet->options, client_config.clientid);
@@ -22,7 +22,7 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/clientpacket.c busybox-1.4.1/netw
  }
 diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.c busybox-1.4.1/networking/udhcp/dhcpc.c
 --- busybox-1.4.1-orig/networking/udhcp/dhcpc.c	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/dhcpc.c	2007-03-12 08:04:30.000000000 -0600
++++ busybox-1.4.1/networking/udhcp/dhcpc.c	2007-03-12 14:42:28.000000000 -0600
 @@ -125,7 +125,7 @@
  int udhcpc_main(int argc, char *argv[])
  {
@@ -32,7 +32,20 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.c busybox-1.4.1/networking/
  	unsigned long t1 = 0, t2 = 0, xid = 0;
  	unsigned long start = 0, lease = 0;
  	long now;
-@@ -177,6 +177,7 @@
+@@ -156,9 +156,10 @@
+ 		OPT_R = 1 << 12,
+ 		OPT_r = 1 << 13,
+ 		OPT_s = 1 << 14,
+-		OPT_T = 1 << 15,
+-		OPT_t = 1 << 16,
++		OPT_u = 1 << 15,
++		OPT_T = 1 << 16,
+ 		OPT_v = 1 << 17,
++		OPT_t = 1 << 18,
+ 	};
+ #if ENABLE_GETOPT_LONG
+ 	static const struct option arg_options[] = {
+@@ -177,6 +178,7 @@
  		{ "release",    no_argument,            0, 'R' },
  		{ "request",    required_argument,      0, 'r' },
  		{ "script",     required_argument,      0, 's' },
@@ -40,7 +53,7 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.c busybox-1.4.1/networking/
  		{ "timeout",    required_argument,      0, 'T' },
  		{ "version",    no_argument,            0, 'v' },
  		{ "retries",    required_argument,      0, 't' },
-@@ -195,10 +196,10 @@
+@@ -195,10 +197,10 @@
  #if ENABLE_GETOPT_LONG
  	applet_long_options = arg_options;
  #endif
@@ -53,7 +66,7 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.c busybox-1.4.1/networking/
  		);
  
  	if (opt & OPT_c)
-@@ -236,6 +237,8 @@
+@@ -236,6 +238,8 @@
  	if (opt & OPT_r)
  		requested_ip = inet_addr(str_r);
  	// if (opt & OPT_s) client_config.script = ...
@@ -64,7 +77,7 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.c busybox-1.4.1/networking/
  	if (opt & OPT_t)
 diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.h busybox-1.4.1/networking/udhcp/dhcpc.h
 --- busybox-1.4.1-orig/networking/udhcp/dhcpc.h	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/dhcpc.h	2007-03-12 08:05:21.000000000 -0600
++++ busybox-1.4.1/networking/udhcp/dhcpc.h	2007-03-12 14:37:54.000000000 -0600
 @@ -26,6 +26,7 @@
  	uint8_t *clientid;              /* Optional client id to use */
  	uint8_t *vendorclass;           /* Optional vendor class-id to use */
@@ -75,18 +88,18 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.h busybox-1.4.1/networking/
  	int retries;                    /* Max number of request packets */
 diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpd.h busybox-1.4.1/networking/udhcp/dhcpd.h
 --- busybox-1.4.1-orig/networking/udhcp/dhcpd.h	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/dhcpd.h	2007-03-12 08:05:53.000000000 -0600
++++ busybox-1.4.1/networking/udhcp/dhcpd.h	2007-03-12 14:43:26.000000000 -0600
 @@ -57,6 +57,7 @@
  #define DHCP_T2			0x3b
  #define DHCP_VENDOR		0x3c
  #define DHCP_CLIENT_ID		0x3d
-+#define DHCP_USER_CLASS		0x4d
++#define DHCP_USERCLASS		0x4d
  #define DHCP_FQDN		0x51
  
  #define DHCP_END		0xFF
 diff -u -r busybox-1.4.1-orig/networking/udhcp/options.c busybox-1.4.1/networking/udhcp/options.c
 --- busybox-1.4.1-orig/networking/udhcp/options.c	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/options.c	2007-03-12 08:10:26.000000000 -0600
++++ busybox-1.4.1/networking/udhcp/options.c	2007-03-12 14:37:54.000000000 -0600
 @@ -32,7 +32,7 @@
  	{"nisdomain",   OPTION_STRING | OPTION_REQ,             0x28},
  	{"nissrv",      OPTION_IP | OPTION_LIST | OPTION_REQ,   0x29},
