@@ -37,9 +37,9 @@
 @Echo off
 
 :: detect current patchlevel for your language
-if exist "%Z%\packages\mozilla\firefox-2002-%WINLANG%.exe" goto v20
+if exist "%Z%\packages\mozilla\firefox-2003-%WINLANG%.exe" goto v20
 goto v20
-if exist "%Z%\packages\mozilla\firefox-1507-%WINLANG%.exe" goto v15
+if exist "%Z%\packages\mozilla\firefox-15011-%WINLANG%.exe" goto v15
 goto v15
 
 
@@ -48,7 +48,7 @@ todo.pl "%Z%\packages\mozilla\firefox-2003-%WINLANG%.exe -ms -ira"
 goto end_of_script
 
 :v15
-todo.pl "%Z%\packages\mozilla\firefox-15010-%WINLANG%.exe -ms -ira"
+todo.pl "%Z%\packages\mozilla\firefox-15011-%WINLANG%.exe -ms -ira"
 goto end_of_script
 
 :end_of_script
