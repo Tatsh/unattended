@@ -8,7 +8,7 @@ $page['next']  = 'links.php';
 $page['last']  = 'links.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: lists.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
+$cvs           = '$Id: lists.php,v 1.2 2007-04-01 08:01:47 ekot Exp $';
 $sections[]    = array ('General informations', 'info');
 $sections[]    = array ('Developer mailinglist', 'devel');
 $sections[]    = array ('CVS commits', 'cvs');
@@ -35,7 +35,7 @@ $content       = <<<EOT
         time, you can subscribe to the CVS commit logs.<br />[ <a
     href="https://lists.sourceforge.net/lists/listinfo/unattended-cvs/"
         title="subscribe to unattended-cvs" rel="external">subscribe</a> | <a
-    href="http://sourceforge.net/mailarchive/forum.php?forum=unattended-cvs"
+    href="http://sourceforge.net/mailarchive/forum.php?forum_name=unattended-cvs"
     rel="external">list archive</a> ]</p>
 
       <br /><br />
