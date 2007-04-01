@@ -38,14 +38,14 @@ fetnd    VIA VT86C100A/6102/6105 "Rhine" family (e.g., D-Link DFE-530TX)
 # http://www.marvell.com/drivers/driverDisplay.do?dId=113&pId=16
 yuknd    Marvell(R) Yukon(R) Ethernet Controller
 
-# http://www.netgear.com/support/products/FA310.asp
+# http://kbserver.netgear.com/products/FA310.asp
 ngrpci   Netgear FA310
 
 # http://www.google.com/search?q=pcntnd.dos+site%3Aamd.com
 pcntnd   AMD PCNet family (also VMWare)
 
-# <http://www.realtek.com.tw/downloads/downloads1-3.aspx?Keyword=rtl8139>
-# <http://www.realtek.com.tw/downloads/downloads1-3.aspx?Keyword=rtl8169>
+# <http://www.realtek.com.tw/search/default.aspx?keyword=rtl8139>
+# <http://www.realtek.com.tw/search/default.aspx?keyword=rtl8169>
 # (thanks to Eugene Kotlyarov)
 rtsnd    Realtek RTL8139 family (e.g., D-Link DFE-530TX+)
 rtgbnd   Realtek RTL8169/8110S Gigabit family
