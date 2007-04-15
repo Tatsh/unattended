@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.6 2006-10-01 08:19:24 ekot Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.7 2007-04-15 12:27:38 ekot Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -117,6 +117,8 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
           >unattend.txt</a> file and the helper modules <a
           href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/FoldHash.pm?rev=HEAD&amp;view=auto"
           >Unattend::FoldHash</a>, <a
+          href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/HotKey.pm?rev=HEAD&amp;view=auto"
+          >Unattend::HotKey</a>, <a
           href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/Promise.pm?rev=HEAD&amp;view=auto"
           >Unattend::Promise</a>, <a
           href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/lib/Unattend/IniFile.pm?rev=HEAD&amp;view=auto"
