@@ -43,9 +43,19 @@ $url =~ s/\&\&+/\&/g;
 $url =~ s/\?\&/\?/;
 $url =~ s/\&$//;
 
+my $devnull;
+my $eol;
+if ($^O eq "MSWin32") {
+  $devnull = "nul";
+  $eol = "\n";
+} else {
+  $devnull = "/dev/null";
+  $eol = "\r\n";
+}
+
 my ($urls, $title1, $title2, $desc, $link, $run, $recheck);
 foreach my $k (keys (%lang)) {
-    open(f,"wget -O - \"$url\&displaylang=$lang{$k}\" 2> /dev/null|");
+    open(f,"wget -O - \"$url\&displaylang=$lang{$k}\" 2>$devnull |");
     while(<f>) {
         chomp;
         if ($k =~ /enu/i) {
@@ -159,7 +169,7 @@ if (defined $link) {
 
         undef $title2;
         undef $desc;
-        open(f,"wget -O - \"$link\" 2> /dev/null |");
+        open(f,"wget -O - \"$link\" 2> $devnull |");
         while(<f>) {
             defined $title2
                 or $title2 = "$1" if /\<h1.*?\>(.*?)(?:\<\/h1\>|$)/;
@@ -192,17 +202,17 @@ if (defined $link) {
     $link =~ s/ +$//g;
 }
 
-print "\n";
-print ":: $title1\n" if defined $title1;
-print ":: $title2\n" if defined $title2;
-print ":: \"$desc\"\n" if defined $desc;
-print ":: <$link>\n" if defined $link;
-print ":: <$url>\n" if defined $url;
+print "$eol";
+print ":: $title1$eol" if defined $title1;
+print ":: $title2$eol" if defined $title2;
+print ":: \"$desc\"$eol" if defined $desc;
+print ":: <$link>$eol" if defined $link;
+print ":: <$url>$eol" if defined $url;
 foreach (sort keys %lang) {
     if (defined $urls->{uc($_)}) {
-        print ":: $urls->{uc($_)}\n";
+        print ":: $urls->{uc($_)}$eol";
     } else {
-        print ":: No Download found for " . uc($_) . ".\n";
+        print ":: No Download found for " . uc($_) . ".$eol";
     }
 }
-print "todo.pl \".reboot-on 194 %Z%\\$run /?\"\n" if defined $run;
+print "todo.pl \".reboot-on 194 %Z%\\$run /?\"$eol" if defined $run;
