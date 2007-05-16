@@ -5,7 +5,7 @@ convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
 dbi=DBI-1.54
 dmidecode=dmidecode-2.9
-dosemu=dosemu-1.4.0
+dosemu=dosemu-1.3.4
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.39
 expat=expat-2.0.0
@@ -30,7 +30,7 @@ perl-ldap=perl-ldap-0.34
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20061130
-samba=samba-3.0.24
+samba=samba-3.0.25
 slang=slang-2.0.7
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
@@ -167,19 +167,25 @@ $(dosemu)/.stamp-dosemu-nolock-patch: misc/dosemu-nolock-patch
 	cd $(dosemu) && patch -b -p1 < $(cwd)/$<
 	touch $@
 
-fakelib/libslang.a: $(slang)/configure
+fakeinclude/slang.h: $(slang)/src/slang.h
+	cp $< $@
+	[ -e $@ ] && touch $@
+
+$(slang)/src/objs/libslang.a: $(slang)/configure
 	rm -f $@
-	cd $(cwd)/$(slang)	\
-	&& CC="$(CC) $(fakelib_cflags)" ./configure	\
-		--prefix=/usr 	\
-	&& make	\
-	&& ln src/objs/libslang.a $(cwd)/fakelib	\
-	&& ln src/slang.h $(cwd)/fakeinclude
+	cd $(slang)						\
+	&& CC="$(CC) $(fakelib_cflags)" ./configure		\
+		--prefix=/usr 					\
+	&& make
 	[ -e $@ ]
 
+# "Fake" library to link against
+$(call copy_file, $(slang)/src/objs/libslang.a, \
+	fakelib/libslang.a)
 
-build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
-			$(dosemu)/configure fakelib/libslang.a
+build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch	\
+			$(dosemu)/configure fakelib/libslang.a		\
+			fakeinclude/slang.h
 	rm -f $@
 	mkdir -p $(dir $@)
 	cd $(dir $@)							\
