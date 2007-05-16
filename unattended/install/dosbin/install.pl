@@ -403,7 +403,7 @@ sub run_command ($@) {
 
     my %status_hash = map { $_ => undef } @expected_statuses;
 
-    my $tmpfile = '\\tmp.txt';
+    my $tmpfile = $u->{'_meta'}->{'tmpdrive'}.'\\tmp.txt';
 
     my $ret = system "$cmd > $tmpfile < nul";
     my $status = $ret >> 8;
@@ -1077,6 +1077,11 @@ $u->{'_meta'}->{'ntp_servers'} =
             ("Enter NTP servers, separated by spaces (default=none):");
     };
 
+$u->comments ('_meta', 'tmpdrive') = [ 'Drive used for temporary files in DOS' ];
+(defined $ENV{'TMPDRIVE'})
+   or $ENV{'TMPDRIVE'}='';
+$u->{'_meta'}->{'tmpdrive'} = $ENV{'TMPDRIVE'};
+
 $u->comments ('_meta', 'dos_zdrv') = [ 'Install share drive letter in DOS' ];
 (defined $ENV{'DOS_ZDRV'})
    or $ENV{'DOS_ZDRV'}='Z:';
@@ -1592,8 +1597,18 @@ $u->generate ();
 
 # Batch script to run after this script exits.
 my $doit = "$netinst\\doit.bat";
-$is_linux
-    and push @doit_cmds, 'xcopy /s /e /y Y:\\ C:\\';
+if($is_linux) {
+	# xcopy will copy a file that will prevent a cycling of DOSemu
+	# this is tested as the first command
+	# The filename itself
+	my $noCycling = "$netinst\\" . int(rand(10000000)) . ".tmp";
+    # First of all, if the checkpoint file exist, leave DOSEmu
+    unshift @doit_cmds, "IF EXIST $noCycling EXITEMU";
+    push @doit_cmds, 'xcopy /s /e /y Y:\\ C:\\';
+    # have the XCOPY command copy over the checkpoint file
+    write_file($noCycling, 'prevent cycling of DOSemu');
+}
+
 push @doit_cmds, split /;/, $u->{'_meta'}->{'doit_cmds'};
 print "Creating $doit...";
 write_file ($doit, @doit_cmds);
