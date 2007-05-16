@@ -5,7 +5,7 @@ convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
 dbi=DBI-1.54
 dmidecode=dmidecode-2.9
-dosemu=dosemu-1.3.4
+dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.39
 expat=expat-2.0.0
@@ -16,7 +16,7 @@ glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 # libcap.so is required by smbclient
 libcap=libcap-1.10
-linux=linux-2.6.20.2
+linux=linux-2.6.21.1
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.37
 nano=nano-2.0.3
@@ -34,6 +34,8 @@ samba=samba-3.0.24
 slang=slang-2.0.7
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
+
+keep-archives=1
 
 cwd:=$(shell pwd)
 
@@ -134,7 +136,7 @@ stage1 += stage1/bin/bash stage1/bin/sh
 
 ## BusyBox
 $(busybox)/.stamp-busybox-patch: misc/busybox-patch
-	cd $(busybox) && patch -p1 < $(cwd)/$<
+	cd $(busybox) && patch -b -p1 < $(cwd)/$<
 	touch $@
 
 $(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch 
@@ -162,17 +164,28 @@ $(call copy_exe,$(dmidecode)/dmidecode,stage1/usr/sbin/dmidecode)
 stage1 += stage1/usr/sbin/dmidecode
 
 $(dosemu)/.stamp-dosemu-nolock-patch: misc/dosemu-nolock-patch
-	cd $(dosemu) && patch -p1 < $(cwd)/$<
+	cd $(dosemu) && patch -b -p1 < $(cwd)/$<
 	touch $@
 
+fakelib/libslang.a: $(slang)/configure
+	rm -f $@
+	cd $(cwd)/$(slang)	\
+	&& CC="$(CC) $(fakelib_cflags)" ./configure	\
+		--prefix=/usr 	\
+	&& make	\
+	&& ln src/objs/libslang.a $(cwd)/fakelib	\
+	&& ln src/slang.h $(cwd)/fakeinclude
+	[ -e $@ ]
+
+
 build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch \
-			$(dosemu)/configure
+			$(dosemu)/configure fakelib/libslang.a
 	rm -f $@
 	mkdir -p $(dir $@)
 	cd $(dir $@)							\
 	&& CC="$(CC) $(fakelib_cflags)" $(cwd)/$(dosemu)/configure	\
 		--without-x --without-gpm --build=i586-linux		\
-		--prefix=/usr --with-slangdir=$(cwd)/$(slang)
+		--prefix=/usr
 	[ -e $@ ]
 
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
@@ -182,7 +195,8 @@ build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status	\
 				stage1/lib/libdl.so
 	rm -f $@
 	cd build-$(dosemu)					\
-	&& make MAKELEVEL=0 
+	&& make MAKELEVEL=0 				\
+	&& cp commands/exitemu.com $(cwd)/../install/dosbin/exitemu.com
 	[ -e $@ ]
 
 $(call copy_exe,build-$(dosemu)/bin/dosemu.bin,stage1/usr/bin/dosemu.bin)
@@ -306,7 +320,11 @@ build-$(glibc)/elf/ld.so: build-$(glibc)/libc.so
 $(call copy_lib, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
 
 ## libcap (just libcap.so.1, required for samba)
-$(libcap)/libcap/libcap.so.1: build-$(glibc)/libc.so
+$(libcap)/.stamp-libcap-patch: misc/libcap-patch
+	cd $(libcap) && patch -b -p1 < $(cwd)/$<
+	touch $@
+
+$(libcap)/libcap/libcap.so.1: build-$(glibc)/libc.so $(libcap)/.stamp-libcap-patch
 	cd $(libcap)						\
 	&& make IFLAGS="$(fakelib_cflags) -I$(libcap)/libcap/include" LDFLAGS="$(fakelib_cflags)"
 	[ -e $@ ]
@@ -856,7 +874,10 @@ download-$(strip $(1)) :  ;						\
 	&& { [ "$$$$sub" == . ] || ln -nsf "$$$$sub" "$$$$what" ; }	\
 	&& { [ "$$$$sub" != . ] || [ "$(dest)" == . ]			\
 		|| ln -sf $(dest)/$$$$what . ; }			\
-	&& rm $$$$temp ;						\
+	&& if [ "$(keep-archives)" == "1" ] ; then			\
+		mv -f $$$$temp /var/tmp/$$$$what.$$$$suffix;		\
+	else rm $$$$temp ;						\
+	fi								\
 	}
 
 cvs_rule=								\
