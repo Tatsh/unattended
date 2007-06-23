@@ -1,14 +1,14 @@
 :: OPTIONAL: Install Sun Java Virtual Machine
 
-:: Download from <http://java.sun.com/j2se/1.5.0/download.jsp>.
+:: Download from <http://java.sun.com/javase/downloads/index.jsp>.
 
 :: See:
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://java.com/en/download/help/silent_install.xml>
-:: URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=11029|packages/jre/jre1.5.0_11.msi
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=11147|packages/jre/jre1.6.0_1.msi
 
 @Echo off
-todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\sun-jre.txt /i %Z%\packages\jre\jre1.5.0_11.msi IEXPLORER=1 MOZILLA=1 REBOOT=Suppress JAVAUPDATE=0"
+todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\sun-jre.txt /i %Z%\packages\jre\jre1.6.0_1.msi IEXPLORER=1 MOZILLA=1 REBOOT=Suppress JAVAUPDATE=0"
 
 :: Deinstall older Versions if you wish
 :: (last numbers schema according to above mentioned pages: 1.5.0_09 -> 15009 etc.):
