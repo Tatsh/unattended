@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.8 2007-06-23 09:12:47 ekot Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.9 2007-06-23 09:16:20 ekot Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -223,7 +223,7 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         update your scripts to current CVS version, using our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/script-update?view=markup"
       >script-update</a> script, and then update packages using
 our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/prepare?view=markup"
-      >prepare</a> script will help you with that:</p>
+      >prepare</a> script:</p>
 <pre class="code">
     $ cd /path/to/unattended/install/tools
     $ ./script-update
