@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.7 2007-04-15 12:27:38 ekot Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.8 2007-06-23 09:12:47 ekot Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -219,10 +219,14 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         winnt.exe will get an error when it tries to copy the file.</p>
       <h3>Populate packages directory</h3>
       <p>All our OS-update scripts and many of our application  install  scripts  contain
-        urls for automatic download. Now it is time to perform this task. Our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/prepare?view=markup"
+        urls for automatic download. Now it is time to perform this task. First you should
+        update your scripts to current CVS version, using our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/script-update?view=markup"
+      >script-update</a> script, and then update packages using
+our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/prepare?view=markup"
       >prepare</a> script will help you with that:</p>
 <pre class="code">
     $ cd /path/to/unattended/install/tools
+    $ ./script-update
     $ ./prepare
     [... output ...]
     $
