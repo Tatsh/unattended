@@ -1,13 +1,13 @@
 :: OPTIONAL: Install Microsoft Remote Desktop Client
 
-:: Remote Desktop Connection for Windows Server 2003 [5.2.3790]
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=a8255ffc-4b4a-40e7-a706-cde7e9b57e79>
+:: Remote Desktop Connection for Windows [6.0.2600.0]
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=80111f21-d48d-426e-96c2-08aa2bd23a49>
 :: No Download found for ARA.
 :: URL|CSY|http://download.microsoft.com/download/9/e/f/9ef7a8cb-0033-456c-913c-8f0ce9eb2f55/msrdpcli.exe|packages/rdpclient/csy/msrdpcli.exe
 :: No Download found for DAN.
 :: URL|DEU|http://download.microsoft.com/download/1/6/a/16a9c57d-d6b4-4cc8-84d5-e9f37c54057a/msrdpcli.exe|packages/rdpclient/deu/msrdpcli.exe
 :: No Download found for ELL.
-:: URL|ENU|http://download.microsoft.com/download/8/b/d/8bd667e9-dcce-475b-8c49-dc6331e63c47/msrdpcli.exe|packages/rdpclient/enu/msrdpcli.exe
+:: URL|ENU|http://download.microsoft.com/download/8/e/8/8e88f947-3b95-49b8-a76d-b647bb86e4b4/msrdpcli.exe|packages/rdpclient/enu/msrdpcli.exe
 :: URL|ESN|http://download.microsoft.com/download/5/7/4/5743190e-abac-404f-83fd-84281bea1306/msrdpcli.exe|packages/rdpclient/esn/msrdpcli.exe
 :: No Download found for FIN.
 :: URL|FRA|http://download.microsoft.com/download/e/5/c/e5c34dae-d539-4873-80a3-6916ef7c5d78/msrdpcli.exe|packages/rdpclient/fra/msrdpcli.exe
