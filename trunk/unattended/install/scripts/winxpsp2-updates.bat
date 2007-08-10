@@ -32,30 +32,29 @@
 todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB909520-v1.000-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Media Player 6.4 for Windows (KB925398)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=e63ccdc3-a2ed-4ef6-b8a1-3f8be4b2726d>
-:: URL|ARA|http://download.microsoft.com/download/1/3/4/13453fe5-2b85-4f09-be81-f9e2f2fe9d45/WindowsMedia6-KB925398-x86-ARA.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/4/d/3/4d3f2c99-fb40-4456-962a-2feb8725c058/WindowsMedia6-KB925398-x86-CSY.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/d/a/1/da14568d-c7a3-4fb7-9fdb-f6c54debc0a5/WindowsMedia6-KB925398-x86-DAN.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/e/2/6/e26b930b-8fd1-4f75-b01b-46c9407daedf/WindowsMedia6-KB925398-x86-DEU.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/c/9/4/c94a858b-0af7-47d1-9cad-b0ff93a3411e/WindowsMedia6-KB925398-x86-ELL.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/e/6/7/e6763a48-52bf-49cb-b111-1873472a5d1c/WindowsMedia6-KB925398-x86-ENU.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/3/a/23ae934b-6ca9-4aea-93b8-bed5b0fd2d96/WindowsMedia6-KB925398-x86-ESN.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/6/b/7/6b792d85-3d1c-4110-8bce-e3d15041ee4f/WindowsMedia6-KB925398-x86-FIN.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/1/1/0/110a4204-cf15-4899-9be7-30f00ec348bb/WindowsMedia6-KB925398-x86-FRA.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/0/1/4017e984-6769-4c14-9e2c-587bf19d50c0/WindowsMedia6-KB925398-x86-HEB.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/c/f/b/cfb87523-e956-40b2-a88d-2e0bffce81ae/WindowsMedia6-KB925398-x86-HUN.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/b/f/4/bf4eace6-e32a-4265-a1a8-6622f5ac1a8c/WindowsMedia6-KB925398-x86-ITA.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/0/1/9/019ef9ba-392a-46ea-b0a3-94a197e16461/WindowsMedia6-KB925398-x86-JPN.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/c/e/2/ce2ed78c-5454-44bc-bd51-2c640192fe4d/WindowsMedia6-KB925398-x86-KOR.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/9/1/1/911f8503-a742-4d21-9ae7-a41c9f898430/WindowsMedia6-KB925398-x86-NLD.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/7/3/3/7334c6a2-c9a8-4415-9c56-53b8ca0fe044/WindowsMedia6-KB925398-x86-NOR.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/f/9/c/f9c224cf-3861-46af-b107-df836f2c8d40/WindowsMedia6-KB925398-x86-PLK.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/f/a/8fa20d9f-f96d-42bd-a97b-7201e1afdad3/WindowsMedia6-KB925398-x86-PTB.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/b/e/b/bebfa173-9d00-4bba-b43a-0814f210e8a1/WindowsMedia6-KB925398-x86-PTG.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/6/7/6/6763b591-c339-44d0-8184-76e714fc8979/WindowsMedia6-KB925398-x86-RUS.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/0/3/c/03c1a585-917b-4048-919f-252df918f18e/WindowsMedia6-KB925398-x86-SVE.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/6/4/c/64c1d46d-900c-4539-a074-32bf700d8f5d/WindowsMedia6-KB925398-x86-TRK.exe|updates/winxpsp2/windowsmedia6-kb925398-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsMedia6-KB925398-x86-%WINLANG%.exe /passive /n /norestart"
+:: URL|ARA|http://download.microsoft.com/download/1/3/4/13453fe5-2b85-4f09-be81-f9e2f2fe9d45/WindowsMedia6-KB925398-v2-x86-ARA.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/4/d/3/4d3f2c99-fb40-4456-962a-2feb8725c058/WindowsMedia6-KB925398-v2-x86-CSY.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/d/a/1/da14568d-c7a3-4fb7-9fdb-f6c54debc0a5/WindowsMedia6-KB925398-v2-x86-DAN.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/e/2/6/e26b930b-8fd1-4f75-b01b-46c9407daedf/WindowsMedia6-KB925398-v2-x86-DEU.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/c/9/4/c94a858b-0af7-47d1-9cad-b0ff93a3411e/WindowsMedia6-KB925398-v2-x86-ELL.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/e/6/7/e6763a48-52bf-49cb-b111-1873472a5d1c/WindowsMedia6-KB925398-v2-x86-ENU.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/3/a/23ae934b-6ca9-4aea-93b8-bed5b0fd2d96/WindowsMedia6-KB925398-v2-x86-ESN.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/6/b/7/6b792d85-3d1c-4110-8bce-e3d15041ee4f/WindowsMedia6-KB925398-v2-x86-FIN.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/1/1/0/110a4204-cf15-4899-9be7-30f00ec348bb/WindowsMedia6-KB925398-v2-x86-FRA.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/0/1/4017e984-6769-4c14-9e2c-587bf19d50c0/WindowsMedia6-KB925398-v2-x86-HEB.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/c/f/b/cfb87523-e956-40b2-a88d-2e0bffce81ae/WindowsMedia6-KB925398-v2-x86-HUN.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/f/4/bf4eace6-e32a-4265-a1a8-6622f5ac1a8c/WindowsMedia6-KB925398-v2-x86-ITA.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/0/1/9/019ef9ba-392a-46ea-b0a3-94a197e16461/WindowsMedia6-KB925398-v2-x86-JPN.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/c/e/2/ce2ed78c-5454-44bc-bd51-2c640192fe4d/WindowsMedia6-KB925398-v2-x86-KOR.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/1/1/911f8503-a742-4d21-9ae7-a41c9f898430/WindowsMedia6-KB925398-v2-x86-NLD.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/7/3/3/7334c6a2-c9a8-4415-9c56-53b8ca0fe044/WindowsMedia6-KB925398-v2-x86-NOR.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/f/9/c/f9c224cf-3861-46af-b107-df836f2c8d40/WindowsMedia6-KB925398-v2-x86-PLK.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/8/f/a/8fa20d9f-f96d-42bd-a97b-7201e1afdad3/WindowsMedia6-KB925398-v2-x86-PTB.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/b/e/b/bebfa173-9d00-4bba-b43a-0814f210e8a1/WindowsMedia6-KB925398-v2-x86-PTG.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/6/7/6/6763b591-c339-44d0-8184-76e714fc8979/WindowsMedia6-KB925398-v2-x86-RUS.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/0/3/c/03c1a585-917b-4048-919f-252df918f18e/WindowsMedia6-KB925398-v2-x86-SVE.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/4/c/64c1d46d-900c-4539-a074-32bf700d8f5d/WindowsMedia6-KB925398-v2-x86-TRK.exe|updates/winxpsp2/windowsmedia6-kb925398-v2-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsMedia6-KB925398-v2-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows Media Player 10 for Windows XP (KB917734)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=0f641572-74fd-4281-953f-6f2f12e001e0>
