@@ -1649,7 +1649,7 @@ while ($u->{'_meta'}->{'edit_files'}) {
     defined $file
         or last;
     if ($is_linux) {
-        system 'nano', '--dos', '--nowrap', dos_to_host ($file);
+        system 'nano', '--nowrap', dos_to_host ($file);
     }
     else {
         system 'pico', '-w', $file;
