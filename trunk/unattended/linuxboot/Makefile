@@ -1,5 +1,5 @@
 bash=bash-3.2
-busybox=busybox-1.4.1
+busybox=busybox-1.6.1
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
@@ -30,7 +30,7 @@ perl-ldap=perl-ldap-0.34
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20061130
-samba=samba-3.0.25
+samba=samba-3.0.25b
 slang=slang-2.0.7
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
