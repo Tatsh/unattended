@@ -3,11 +3,11 @@ busybox=busybox-1.6.1
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
-dbi=DBI-1.54
+dbi=DBI-1.58
 dmidecode=dmidecode-2.9
-dosemu=dosemu-1.3.4
+dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.39
+e2fsprogs=e2fsprogs-1.40.2
 expat=expat-2.0.1
 glibc=glibc-2.3.6
 #glibc=glibc-2.5
@@ -15,21 +15,23 @@ glibc=glibc-2.3.6
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 # libcap.so is required by smbclient
-libcap=libcap-1.10
+# But not longer necesary for 2.6 kernel
+#libcap=libcap-1.10
 linux=linux-2.6.21.1
 module-init-tools=module-init-tools-3.2.2
-mysql=mysql-5.0.37
-nano=nano-2.0.3
+mysql=mysql-5.0.45
+nano=nano-2.0.6
 ncurses=ncurses-5.6
-parted=parted-1.8.2
-pciutils=pciutils-2.2.4
+#parted=parted-1.8.8
+parted=parted-1.6.22
+pciutils=pciutils-2.2.6
 pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.8.8
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.34
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
-pmtools=pmtools-20061130
+pmtools=pmtools-20070511
 samba=samba-3.0.25b
 slang=slang-2.0.7
 wireless_tools=wireless_tools.28
@@ -41,7 +43,7 @@ cwd:=$(shell pwd)
 
 packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		\
 	$(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(glibc) $(kbd)	\
-	$(linux) $(libcap) $(module-init-tools) $(mysql) $(nano)	\
+	$(linux)  $(module-init-tools) $(mysql) $(nano)	\
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
 	$(perl-xml-xpath) $(pciutils) $(pcmcia-cs) $(pmtools)		\
 	$(samba) $(slang) $(wireless_tools) $(zlib) 
@@ -325,19 +327,20 @@ build-$(glibc)/elf/ld.so: build-$(glibc)/libc.so
 
 $(call copy_lib, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
 
-## libcap (just libcap.so.1, required for samba)
-$(libcap)/.stamp-libcap-patch: misc/libcap-patch
-	cd $(libcap) && patch -b -p1 < $(cwd)/$<
-	touch $@
+## libcap (just libcap.so.1, required for samba) 
+# Not necesary for 2.6
+#$(libcap)/.stamp-libcap-patch: misc/libcap-patch
+#	cd $(libcap) && patch -b -p1 < $(cwd)/$<
+#	touch $@
+#
+#$(libcap)/libcap/libcap.so.1: build-$(glibc)/libc.so $(libcap)/.stamp-libcap-patch
+#	cd $(libcap)						\
+#	&& make IFLAGS="$(fakelib_cflags) -I$(libcap)/libcap/include" LDFLAGS="$(fakelib_cflags)"
+#	[ -e $@ ]
 
-$(libcap)/libcap/libcap.so.1: build-$(glibc)/libc.so $(libcap)/.stamp-libcap-patch
-	cd $(libcap)						\
-	&& make IFLAGS="$(fakelib_cflags) -I$(libcap)/libcap/include" LDFLAGS="$(fakelib_cflags)"
-	[ -e $@ ]
+#$(call copy_lib,$(libcap)/libcap/libcap.so.1,stage1/lib/libcap.so.1)
 
-$(call copy_lib,$(libcap)/libcap/libcap.so.1,stage1/lib/libcap.so.1)
-
-stage1 += stage1/lib/libcap.so.1
+#stage1 += stage1/lib/libcap.so.1
 
 # Bash needs libdl
 build-$(glibc)/dlfcn/libdl.so: build-$(glibc)/libc.so
