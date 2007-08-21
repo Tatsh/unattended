@@ -87,8 +87,8 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.h busybox-1.4.1/networking/
  	int ifindex;                    /* Index number of the interface to use */
  	int retries;                    /* Max number of request packets */
 diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpd.h busybox-1.4.1/networking/udhcp/dhcpd.h
---- busybox-1.4.1-orig/networking/udhcp/dhcpd.h	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/dhcpd.h	2007-03-12 14:43:26.000000000 -0600
+--- busybox-1.4.1-orig/networking/udhcp/options.h	2007-01-24 14:34:34.000000000 -0700
++++ busybox-1.4.1/networking/udhcp/options.h	2007-03-12 14:43:26.000000000 -0600
 @@ -57,6 +57,7 @@
  #define DHCP_T2			0x3b
  #define DHCP_VENDOR		0x3c
@@ -97,15 +97,14 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpd.h busybox-1.4.1/networking/
  #define DHCP_FQDN		0x51
  
  #define DHCP_END		0xFF
-diff -u -r busybox-1.4.1-orig/networking/udhcp/options.c busybox-1.4.1/networking/udhcp/options.c
---- busybox-1.4.1-orig/networking/udhcp/options.c	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/options.c	2007-03-12 14:37:54.000000000 -0600
+--- busybox-1.6.1/networking/udhcp/options.c	2007-06-30 17:06:30.000000000 +0200
++++ options.c.ori	2007-08-21 03:04:12.641055160 +0200
 @@ -32,7 +32,7 @@
  	{"nisdomain",   OPTION_STRING | OPTION_REQ,             0x28},
  	{"nissrv",      OPTION_IP | OPTION_LIST | OPTION_REQ,   0x29},
  	{"ntpsrv",      OPTION_IP | OPTION_LIST | OPTION_REQ,   0x2a},
 -	{"wins",        OPTION_IP | OPTION_LIST,                0x2c},
-+	{"wins",        OPTION_IP | OPTION_LIST | OPTION_REQ,   0x2c},
++        {"wins",        OPTION_IP | OPTION_LIST | OPTION_REQ,   0x2c},
  	{"requestip",   OPTION_IP,                              0x32},
  	{"lease",       OPTION_U32,                             0x33},
  	{"dhcptype",    OPTION_U8,                              0x35},
@@ -113,8 +112,8 @@ diff -u -r busybox-1.4.1-orig/networking/udhcp/options.c busybox-1.4.1/networkin
  	{"tftp",        OPTION_STRING,                          0x42},
  	{"bootfile",    OPTION_STRING,                          0x43},
  	{"userclass",   OPTION_STRING,                          0x4D},
-+	/* Steal "local" option 0xe9 (decimal 233) for Unattended */
-+	{"unattend",    OPTION_STRING | OPTION_REQ,             0xe9},
- 	/* MSIE's "Web Proxy Autodiscovery Protocol" support */
- 	{"wpad",        OPTION_STRING,                          0xfc},
- 	{"",            0x00,                                   0x00}
++        /* Steal "local" option 0xe9 (decimal 233) for Unattended */
++        {"unattend",    OPTION_STRING | OPTION_REQ,             0xe9},
+ #if ENABLE_FEATURE_RFC3397
+ 	{"search",      OPTION_STR1035 | OPTION_LIST | OPTION_REQ, 0x77},
+ #endif
