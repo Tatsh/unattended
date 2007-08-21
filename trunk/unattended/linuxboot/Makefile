@@ -17,7 +17,7 @@ kbd=kbd-1.12
 # libcap.so is required by smbclient
 # But not longer necesary for 2.6 kernel
 #libcap=libcap-1.10
-linux=linux-2.6.21.1
+linux=linux-2.6.22.3
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.45
 nano=nano-2.0.6
