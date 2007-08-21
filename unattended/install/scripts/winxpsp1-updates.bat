@@ -1443,7 +1443,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\MDAC28-KB911562-x86-%WINLANG%.exe /
 :: URL|RUS|http://download.microsoft.com/download/7/e/0/7e073b72-b33b-4a96-a861-89842b46fd7f/WindowsXP-KB911280-v2-x86-RUS.exe|updates/winxpsp1/windowsxp-kb911280-v2-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/4/d/3/4d36f9dd-9c71-485b-91aa-ad2441690c62/WindowsXP-KB911280-v2-x86-SVE.exe|updates/winxpsp1/windowsxp-kb911280-v2-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/4/3/f/43f9a41c-1ff3-4b5e-b9d6-8188af4e7803/WindowsXP-KB911280-v2-x86-TRK.exe|updates/winxpsp1/windowsxp-kb911280-v2-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\win2ksp2\WindowsXP-KB911280-v2-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp1\WindowsXP-KB911280-v2-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Windows XP (KB913580)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=D80B43B2-727B-46B6-82D1-F2CBD916FE32>
