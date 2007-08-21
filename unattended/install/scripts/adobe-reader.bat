@@ -3,27 +3,27 @@
 
 :: Download Adobe Reader 7.0.x full version
 :: URL|ARA|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.5/ara/AdbeRdr705_ara_full.exe|packages/adobereader/adberdr705_ara.exe
-:: URL|CHS|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/chs/AdbeRdr709_zh_CN.exe|packages/adobereader/adberdr708_chs.exe
-:: URL|CHT|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/cht/AdbeRdr709_zh_TW.exe|packages/adobereader/adberdr708_cht.exe
+:: URL|CHS|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/chs/AdbeRdr709_zh_CN.exe|packages/adobereader/adberdr709_chs.exe
+:: URL|CHT|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/cht/AdbeRdr709_zh_TW.exe|packages/adobereader/adberdr709_cht.exe
 :: URL|CSY|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.5/cze/AdbeRdr705_cze_full.exe|packages/adobereader/adberdr705_csy.exe
-:: URL|DAN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/dan/AdbeRdr709_da_DK.exe|packages/adobereader/adberdr708_dan.exe
-:: URL|NLD|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/nld/AdbeRdr709_nl_NL.exe|packages/adobereader/adberdr708_nld.exe
-:: URL|ENU|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/enu/AdbeRdr709_en_US.exe|packages/adobereader/adberdr708_enu.exe
-:: URL|FIN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/suo/AdbeRdr709_fi_FI.exe|packages/adobereader/adberdr708_fin.exe
-:: URL|FRA|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/fra/AdbeRdr709_fr_FR.exe|packages/adobereader/adberdr708_fra.exe
-:: URL|DEU|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/deu/AdbeRdr709_de_DE.exe|packages/adobereader/adberdr708_deu.exe
+:: URL|DAN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/dan/AdbeRdr709_da_DK.exe|packages/adobereader/adberdr709_dan.exe
+:: URL|NLD|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/nld/AdbeRdr709_nl_NL.exe|packages/adobereader/adberdr709_nld.exe
+:: URL|ENU|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/enu/AdbeRdr709_en_US.exe|packages/adobereader/adberdr709_enu.exe
+:: URL|FIN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/suo/AdbeRdr709_fi_FI.exe|packages/adobereader/adberdr709_fin.exe
+:: URL|FRA|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/fra/AdbeRdr709_fr_FR.exe|packages/adobereader/adberdr709_fra.exe
+:: URL|DEU|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/deu/AdbeRdr709_de_DE.exe|packages/adobereader/adberdr709_deu.exe
 :: URL|ELL|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.5/gre/AdbeRdr705_gre_full.exe|packages/adobereader/adberdr705_ell.exe
 :: URL|HEB|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.5/heb/AdbeRdr705_heb_full.exe|packages/adobereader/adberdr705_heb.exe
 :: URL|HUN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.5/hun/AdbeRdr705_hun_full.exe|packages/adobereader/adberdr705_hun.exe
-:: URL|ITA|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/ita/AdbeRdr709_it_IT.exe|packages/adobereader/adberdr708_ita.exe
-:: URL|JPN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/jpn/AdbeRdr709_ja_JP.exe|packages/adobereader/adberdr708_jpn.exe
-:: URL|KOR|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/kor/AdbeRdr709_ko_KR.exe|packages/adobereader/adberdr708_kor.exe
-:: URL|NOR|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/nor/AdbeRdr709_no_NO.exe|packages/adobereader/adberdr708_nor.exe
+:: URL|ITA|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/ita/AdbeRdr709_it_IT.exe|packages/adobereader/adberdr709_ita.exe
+:: URL|JPN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/jpn/AdbeRdr709_ja_JP.exe|packages/adobereader/adberdr709_jpn.exe
+:: URL|KOR|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/kor/AdbeRdr709_ko_KR.exe|packages/adobereader/adberdr709_kor.exe
+:: URL|NOR|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/nor/AdbeRdr709_no_NO.exe|packages/adobereader/adberdr709_nor.exe
 :: URL|PLK|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.5/pol/AdbeRdr705_pol_full.exe|packages/adobereader/adberdr705_plk.exe
-:: URL|PTB|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/ptb/AdbeRdr709_pt_BR.exe|packages/adobereader/adberdr708_ptb.exe
+:: URL|PTB|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/ptb/AdbeRdr709_pt_BR.exe|packages/adobereader/adberdr709_ptb.exe
 :: URL|RUS|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.5/rus/AdbeRdr705_rus_full.exe|packages/adobereader/adberdr705_rus.exe
-:: URL|ESN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/esp/AdbeRdr709_es_ES.exe|packages/adobereader/adberdr708_esn.exe
-:: URL|SVE|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/sve/AdbeRdr709_sv_SE.exe|packages/adobereader/adberdr708_sve.exe
+:: URL|ESN|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/esp/AdbeRdr709_es_ES.exe|packages/adobereader/adberdr709_esn.exe
+:: URL|SVE|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.9/sve/AdbeRdr709_sv_SE.exe|packages/adobereader/adberdr709_sve.exe
 :: URL|TRK|http://ardownload.adobe.com/pub/adobe/reader/win/7x/7.0.5/tur/AdbeRdr705_tur_full.exe|packages/adobereader/adberdr705_trk.exe
 
 :: Download Adobe Reader 7.0.x Language Support
