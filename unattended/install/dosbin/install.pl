@@ -634,7 +634,7 @@ sub convert_fdisk_parted ($) {
     elsif ($ptype eq 'log') { $parttype = 'logical' }
     elsif ($ptype eq 'ext') { $parttype = 'extended'; $fs='' }
 
-        $ret = "$parted mkpart $parttype $fs $start $end";
+        $ret = "$parted mkpartfs $parttype $fs $start $end";
     }
     else {
         die "Unable to convert '$fdisk_cmd' to Parted commands; bailing";
