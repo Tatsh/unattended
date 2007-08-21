@@ -8,7 +8,7 @@ dmidecode=dmidecode-2.9
 dosemu=dosemu-1.3.4
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.39
-expat=expat-2.0.0
+expat=expat-2.0.1
 glibc=glibc-2.3.6
 #glibc=glibc-2.5
 # Awful hack
@@ -742,12 +742,12 @@ $(call copy_lib,$(zlib)/$(zlib_so),stage1/lib/libz.so)
 stage1 += stage1/lib/libz.so
 
 ## libexpat
-$(expat)/.libs/libexpat.so.1.5.0:
+$(expat)/.libs/libexpat.so.1.5.2:
 	cd $(expat)						\
 	&& ./configure --prefix=/				\
 	&& make
 
-$(call copy_lib,$(expat)/.libs/libexpat.so.1.5.0,stage1/lib/libexpat.so)
+$(call copy_lib,$(expat)/.libs/libexpat.so.1.5.2,stage1/lib/libexpat.so)
 $(call copy_file,$(expat)/libs/expat.h,fakeinclude/expat.h)
 $(call copy_file,$(expat)/libs/expat_external.h,fakeinclude/expat_external.h)
 
