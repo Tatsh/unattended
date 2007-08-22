@@ -87,7 +87,7 @@ usr/lib/lowcase.dat
 usr/lib/upcase.dat
 usr/lib/valid.dat
 
-usr/share/keymaps
+usr/share/keymaps/i386/
 
 usr/share/pci.ids
 
