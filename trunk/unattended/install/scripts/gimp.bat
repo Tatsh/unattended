@@ -3,12 +3,12 @@
 ::URL|ALL|http://dl.sourceforge.net/sourceforge/gimp-win/gtk+-2.10.13-setup.exe|packages/gtk/gtk+-2.10.13-setup.exe
 ::URL|ALL|http://dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.17-i586-setup.exe|packages/gimp/gimp-2.2.17-i586-setup.exe
 ::URL|ALL|http://dl.sourceforge.net/sourceforge/gimp-win/gimp-gap-2.2.0-setup.zip|packages/gimp/gimp-gap-2.2.0-setup.zip
-::URL|ALL|http://dl.sourceforge.net/sourceforge/gimp-win/gimp-help-2-0.12-setup.exe|packages/gimp/gimp-help-2-0.12-setup.exe
+::URL|ALL|http://dl.sourceforge.net/sourceforge/gimp-win/gimp-help-2-0.13-setup.exe|packages/gimp/gimp-help-2-0.13-setup.exe
 
 :: Run the unzipped installers
 
 todo.pl "start /wait %TEMP%\gimp-gap-2.2.0-setup.exe SP- /SILENT /NORESTART"
-todo.pl "start /wait %Z%\packages\gimp\gimp-help-2-0.12-setup.exe SP- /SILENT /NORESTART"
+todo.pl "start /wait %Z%\packages\gimp\gimp-help-2-0.13-setup.exe SP- /SILENT /NORESTART"
 todo.pl "start /wait %Z%\packages\gimp\gimp-2.2.17-i586-setup.exe SP- /SILENT /NORESTART"
 todo.pl "start /wait %Z%\packages\gtk\gtk+-2.10.13-setup.exe /SP- /VERYSILENT /NORESTART"
 
