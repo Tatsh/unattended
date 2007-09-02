@@ -56,6 +56,9 @@ lib/modules/2.6.22.3/kernel/drivers/usb/core
 lib/modules/2.6.22.3/kernel/drivers/usb/host
 lib/modules/2.6.22.3/kernel/drivers/usb/input
 
+#we need usbhid for usb-only systems (keyboards)
+lib/modules/2.6.22.3/kernel/drivers/hid/usbhid
+
 lib/modules/2.6.22.3/kernel/lib/crc32.ko
 
 lib/modules/2.6.22.3/kernel/fs/cifs
