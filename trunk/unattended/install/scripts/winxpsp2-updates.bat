@@ -58,6 +58,31 @@ todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB909520-v1.000-x86-%WINLANG%
 :: URL|TRK|http://download.microsoft.com/download/d/9/d/d9dc4044-193b-4254-a764-c9284e35208f/WindowsXP-KB938127-x86-TRK.exe|updates/winxpsp2/windowsxp-kb938127-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB938127-x86-%WINLANG%.exe /passive /n /norestart"
 
+:: Security Update for Windows Media Player 10 for Windows XP (KB936782)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=48f5a9d3-b859-4cb6-a68e-abde76a14782>
+:: URL|ARA|http://download.microsoft.com/download/d/8/a/d8a59feb-1606-4f18-8c30-e787c2b014eb/WindowsMedia10-KB936782-x86-ARA.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/7/4/3/7436f6ab-5396-46ec-a3b4-c776c8f995cd/WindowsMedia10-KB936782-x86-CSY.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/e/9/f/e9f6602c-c513-447d-9612-4c24c2065f95/WindowsMedia10-KB936782-x86-DAN.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/1/8/f/18f67e3d-6bd7-4822-91b6-cbbaeccaec50/WindowsMedia10-KB936782-x86-DEU.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/2/1/a/21a81e3b-4490-421a-9ccf-02583dcd5384/WindowsMedia10-KB936782-x86-ELL.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/2/7/3/2739ed8d-1a58-42a0-8c98-1b208ae7de55/WindowsMedia10-KB936782-x86-ENU.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/2/0/b/20b7d0c3-a809-4943-88f9-03e5eef0583a/WindowsMedia10-KB936782-x86-ESN.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/9/f/a/9fac61dc-9002-4b52-b329-c795940495bd/WindowsMedia10-KB936782-x86-FIN.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/7/a/47a073f1-d2d5-4bba-b123-7d97a8cf3a86/WindowsMedia10-KB936782-x86-FRA.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/8/0/88055afc-1dff-4682-9f82-8a953fa1cdff/WindowsMedia10-KB936782-x86-HEB.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/1/8/c/18c7c880-de7b-4b27-b317-99eb68ad2151/WindowsMedia10-KB936782-x86-HUN.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/0/0/300a2a19-28e6-4830-9bcc-893b6cdd81cb/WindowsMedia10-KB936782-x86-ITA.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/8/f/0/8f02f7f6-f502-48c7-af0c-ac42932417c3/WindowsMedia10-KB936782-x86-JPN.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/e/0/7/e07c4dc8-eade-4e6e-a95e-fc7327e37a3b/WindowsMedia10-KB936782-x86-KOR.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/3/9/4/394a4c46-e777-45e0-9f27-6a0ab2a817ba/WindowsMedia10-KB936782-x86-NLD.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/4/4/0/440cbeaf-4ee1-44e9-a2e3-46ac46bbb782/WindowsMedia10-KB936782-x86-NOR.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/a/1/8a10de8e-2d0e-433c-a53b-428368c9736e/WindowsMedia10-KB936782-x86-PLK.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/e/2/c/e2c0ae5c-ebbc-4fac-b8e4-fbf22368d1e7/WindowsMedia10-KB936782-x86-PTB.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/6/2/6/6263b492-5d56-43f8-8448-c52ef8d0ffeb/WindowsMedia10-KB936782-x86-PTG.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/4/a/0/4a000cda-67cd-41dc-8cd1-a30ea0b63449/WindowsMedia10-KB936782-x86-RUS.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/a/5/1/a51b45f4-84e7-4c70-8919-ab37874bfc16/WindowsMedia10-KB936782-x86-SVE.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/0/f/2/0f220c02-7678-4e43-9fe2-c723b4dfe730/WindowsMedia10-KB936782-x86-TRK.exe|updates/winxpsp2/windowsmedia10-kb936782-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsMedia10-KB936782-x86-%WINLANG%.exe /passive /n /norestart"
 :: Security Update for Windows XP (KB921503)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=6e8de050-8589-4831-ae19-075c93509485>
 :: URL|ARA|http://download.microsoft.com/download/9/9/1/99138b08-06ec-40e5-91de-4d67fdefe001/WindowsXP-KB921503-x86-ARA.exe|updates/winxpsp2/windowsxp-kb921503-x86-ara.exe
@@ -1815,6 +1840,8 @@ todo.pl ".reboot-on 194 %kb927978% /q reboot=reallysuppress /l*v %SystemDrive%\n
 :: URL|TRK|http://download.microsoft.com/download/d/8/c/d8cb55cf-5a1f-49c5-bd09-0809cee9ff88/WindowsXP-KB926255-x86-TRK.exe|updates/winxpsp2/windowsxp-kb926255-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB926255-x86-%WINLANG%.exe /passive /n /norestart"
 
+:: Security Update for Windows XP (KB923689)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=19ca4b44-2b60-4270-9c42-f5063c627f91>
 :: URL|ARA|http://download.microsoft.com/download/c/d/0/cd08bac5-145d-4360-adb6-7a7796f57b24/WindowsXP-KB923689-v2-x86-ARA.exe|updates/winxpsp2/windowsxp-kb923689-v2-x86-ara.exe
 :: URL|CSY|http://download.microsoft.com/download/9/1/c/91c647d8-352f-437a-89d1-7e0bdf3573d7/WindowsXP-KB923689-v2-x86-CSY.exe|updates/winxpsp2/windowsxp-kb923689-v2-x86-csy.exe
 :: URL|DAN|http://download.microsoft.com/download/4/1/7/417c120d-c1e2-4227-acf0-047cdb1b3446/WindowsXP-KB923689-v2-x86-DAN.exe|updates/winxpsp2/windowsxp-kb923689-v2-x86-dan.exe
@@ -1838,6 +1865,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB926255-x86-%WINLANG%.ex
 :: URL|SVE|http://download.microsoft.com/download/2/9/7/2977123f-b24f-438c-b201-b820f0467710/WindowsXP-KB923689-v2-x86-SVE.exe|updates/winxpsp2/windowsxp-kb923689-v2-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/3/a/a/3aa38c72-638d-4e9d-9f0d-d44e9a38de5d/WindowsXP-KB923689-v2-x86-TRK.exe|updates/winxpsp2/windowsxp-kb923689-v2-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB923689-v2-x86-%WINLANG%.exe /passive /n /norestart"
+
 
 :: Security Update for Windows XP (KB924270)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=f4c8e767-4ed2-4e36-aa43-612f3017efc7>
