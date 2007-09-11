@@ -188,6 +188,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB938829-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/b/2/3/b23f8e27-f3e4-4880-8bed-be09b1ead9e4/WindowsXP-KB937143-x86-TRK.exe|updates/winxpsp2/windowsxp-kb937143-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB937143-x86-%WINLANG%.exe /passive /n /norestart"
 
+if not exist %SystemRoot%\System32\INetSrv\IISAdmin.dll goto noiis
 :: Security Update for Windows XP (KB939373)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=fccbfe90-f838-47df-8310-352e2fb47132>
 :: URL|ARA|http://download.microsoft.com/download/f/4/f/f4f5769b-ab57-4ffb-9ec5-13391075ea88/WindowsXP-KB939373-x86-ARA.exe|updates/winxpsp2/windowsxp-kb939373-x86-ara.exe
@@ -213,6 +214,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB937143-x86-%WINLANG%.ex
 :: URL|SVE|http://download.microsoft.com/download/a/8/f/a8fdab79-7418-44f6-8745-ae726e3f6a09/WindowsXP-KB939373-x86-SVE.exe|updates/winxpsp2/windowsxp-kb939373-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/c/3/3/c33255f3-0298-46a3-8d05-f94ac802f83b/WindowsXP-KB939373-x86-TRK.exe|updates/winxpsp2/windowsxp-kb939373-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB939373-x86-%WINLANG%.exe /passive /n /norestart"
+:noiis
 :: Security Update for Windows XP (KB935840)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8615e6f3-415b-4c23-ba52-7eef70a11d77>
 :: URL|ARA|http://download.microsoft.com/download/c/7/2/c72ac405-9eaf-4927-9b10-0c88d73b0776/WindowsXP-KB935840-x86-ARA.exe|updates/winxpsp2/windowsxp-kb935840-x86-ara.exe
