@@ -4,6 +4,7 @@
 ::URL|ALL|http://dl.sourceforge.net/sourceforge/gimp-win/gimp-2.2.17-i586-setup.exe|packages/gimp/gimp-2.2.17-i586-setup.exe
 ::URL|ALL|http://dl.sourceforge.net/sourceforge/gimp-win/gimp-gap-2.2.0-setup.zip|packages/gimp/gimp-gap-2.2.0-setup.zip
 ::URL|ALL|http://dl.sourceforge.net/sourceforge/gimp-win/gimp-help-2-0.13-setup.exe|packages/gimp/gimp-help-2-0.13-setup.exe
+@echo off
 
 :: Run the unzipped installers
 
