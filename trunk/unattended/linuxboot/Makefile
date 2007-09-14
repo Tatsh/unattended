@@ -966,7 +966,7 @@ $(call download_rule, $(perl-xml-xpath), tar.gz, \
 	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
 $(call download_rule, $(pmtools), tar.bz2,			\
 	http://ftp.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
-$(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/)
+$(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/stable/)
 $(call download_rule, $(slang), tar.bz2, 	\
 	ftp://space.mit.edu/pub/davis/slang/v2.0/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
