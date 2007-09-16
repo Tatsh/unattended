@@ -143,7 +143,7 @@ for iface in eth0 eth1 eth2 ; do
             # Break to top level.
             break 2
         fi
-        if [ $SECONDS -ge $(($start + 10)) ] ; then
+        if [ $SECONDS -ge $(($start + 60)) ] ; then
             echo "*** DHCP on $iface failed.  Giving up."
             break
         fi
