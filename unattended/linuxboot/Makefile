@@ -953,7 +953,7 @@ $(call download_rule, $(mysql), tar.gz, \
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, 			\
-        http://unattended.cvs.sourceforge.net/unattended/unattended/linuxboot/misc/)
+        http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/linuxboot/misc/)
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
