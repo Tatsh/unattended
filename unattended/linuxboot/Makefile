@@ -502,7 +502,7 @@ stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 $(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
 	cd $(dir $@)							  \
 	&& make clean							  \
-	&& make 							  \
+	&& make
 	[ -e $@ ]
 
 $(call copy_exe,$(pmtools)/acpidump/acpidump,stage1/sbin/acpidump)
