@@ -86,6 +86,31 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB938127-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/d/a/b/dab8f522-7fe8-435f-a665-f18fba643991/WindowsXP-KB936021-x86-TRK.exe|updates/winxpsp2/windowsxp-kb936021-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB936021-x86-%WINLANG%.exe /passive /n /norestart"
 
+:: Update for Windows XP (KB927891)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=7A81B0CD-A0B9-497E-8A89-404327772E5A>
+:: URL|ARA|http://download.microsoft.com/download/4/7/2/4725e34a-0772-43f4-95fd-a0aa7ed0e4aa/WindowsXP-KB927891-v3-x86-ARA.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/b/b/5/bb50a443-8bc9-4b22-997e-5178844a5b40/WindowsXP-KB927891-v3-x86-CSY.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/0/b/8/0b89926e-4136-41a1-9e9f-39307efd7b02/WindowsXP-KB927891-v3-x86-DAN.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/9/b/8/9b881632-1679-4346-85a8-4959b61f866c/WindowsXP-KB927891-v3-x86-DEU.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/1/c/c/1cc69a4f-e658-42a2-9be3-0150b3a5ad19/WindowsXP-KB927891-v3-x86-ELL.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/6/9/6/696893f5-39f4-4a0a-888e-f654e8ac85b8/WindowsXP-KB927891-v3-x86-ENU.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/9/7/797d7a9d-5e30-45e1-a84a-56c65f513dd2/WindowsXP-KB927891-v3-x86-ESN.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/2/6/5/265b6ad3-b525-46b5-b3a9-ece9fb98e61b/WindowsXP-KB927891-v3-x86-FIN.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/6/b/5/6b51d0b3-cae7-4400-87cb-b8ab0d22dcd1/WindowsXP-KB927891-v3-x86-FRA.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/5/e/d/5ed073e1-753e-4d30-b83c-270b4ae79d60/WindowsXP-KB927891-v3-x86-HEB.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/3/3/7/337b40ba-8681-4a2b-883d-789d1697f169/WindowsXP-KB927891-v3-x86-HUN.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/6/8/4/684baeb8-656a-4752-bf9f-0db7f8dedc47/WindowsXP-KB927891-v3-x86-ITA.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/f/3/4/f3482283-9cbf-489a-a091-ea229bb30eeb/WindowsXP-KB927891-v3-x86-JPN.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/b/7/8b7c6ff9-5d4e-49a9-b7b8-4806f9a36c52/WindowsXP-KB927891-v3-x86-KOR.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/9/4/e/94ecccd8-f426-4a57-89f2-e7b81f56e3c9/WindowsXP-KB927891-v3-x86-NLD.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/b/6/c/b6c58eb4-6733-47e2-b460-8d113901be90/WindowsXP-KB927891-v3-x86-NOR.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/a/0/2/a02128a7-b2a6-4c1b-b893-395531a4aff5/WindowsXP-KB927891-v3-x86-PLK.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/f/7/d/f7d5616d-60d2-4c71-9e95-8cb954c4b89c/WindowsXP-KB927891-v3-x86-PTB.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/6/8/f68aae44-6b87-4671-9145-9e24e26126a3/WindowsXP-KB927891-v3-x86-PTG.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/f/a/e/fae75719-7e62-424c-94b1-1717c32c2161/WindowsXP-KB927891-v3-x86-RUS.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/5/2/0/520bab10-76f2-49e3-bfdc-38dc3d2dde54/WindowsXP-KB927891-v3-x86-SVE.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/d/a/8/da8917ae-148f-407f-a591-6f1d817ece95/WindowsXP-KB927891-v3-x86-TRK.exe|updates/winxpsp2/windowsxp-kb927891-v3-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB927891-v3-x86-%WINLANG%.exe /passive /n /norestart"
 
 :: Security Update for Flash Player (KB923789)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=93208e57-5f14-4fb2-bc0c-2c4f3c56274a>
