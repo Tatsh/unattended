@@ -3,6 +3,8 @@
 :: Note that since we are pushing these commands onto the to-do stack,
 :: they will be executed in the opposite order.
 
+:: Windows Media stuff
+todo.pl "%Z%\scripts\winxpsp2-mediaplayer.bat"
 :: Extra Updates
 
 :: Microsoft Base Smart Card Cryptographic Service Provider Package: x86 (KB909520)
