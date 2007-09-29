@@ -8,7 +8,7 @@ todo.pl "%Z%\scripts\winxpsp2-mediaplayer.bat"
 
 :: Microsoft Security Bulletins
 :: http://www.microsoft.com/technet/security/current.aspx
-todo.pl "%Z%\scripts\winxpsp2-sb0708.bat"
+todo.pl "%Z%\scripts\winxpsp2-up0708.bat"
 
 :: Extra Updates
 
@@ -117,7 +117,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB927891-v3-x86-%WINLANG%
 :: URL|RUS|http://download.microsoft.com/download/7/0/4/704e0538-3050-4a4a-9033-00dac3f952f4/WindowsXP-KB923789-x86-RUS.exe|updates/winxpsp2/windowsxp-kb923789-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/0/4/7/04783fb2-7068-49eb-ae1d-da945198a133/WindowsXP-KB923789-x86-SVE.exe|updates/winxpsp2/windowsxp-kb923789-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/f/b/0/fb0c7ec4-8e28-4fa2-9b21-517702d7acf7/WindowsXP-KB923789-x86-TRK.exe|updates/winxpsp2/windowsxp-kb923789-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB923789-x86-%WINLANG%.exe /passive /n /norestart"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB923789-x86-%WINLANG%.exe /Q"
 
 
 
