@@ -8,6 +8,7 @@ todo.pl "%Z%\scripts\winxpsp2-mediaplayer.bat"
 
 :: Microsoft Security Bulletins
 :: http://www.microsoft.com/technet/security/current.aspx
+todo.pl "%Z%\scripts\winxpsp2-up0710.bat"
 todo.pl "%Z%\scripts\winxpsp2-up0708.bat"
 
 :: Extra Updates
