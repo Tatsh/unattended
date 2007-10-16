@@ -17,7 +17,7 @@ kbd=kbd-1.12
 # libcap.so is required by smbclient
 # But not longer necesary for 2.6 kernel
 #libcap=libcap-1.10
-linux=linux-2.6.22.6
+linux=linux-2.6.23.1
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.45
 nano=nano-2.0.6
@@ -272,6 +272,7 @@ stage1 += stage1/lib/libuuid.so
 ## glibc
 # Configure switches cheerfully stolen from LFS project
 # (http://www.linuxfromscratch.org/lfs/view/development/chapter05/glibc.html).
+# FIXME:  this 2.6.0 needs update???????
 build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
@@ -939,11 +940,11 @@ $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 $(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
 	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
-	http://ftp.kernel.org/pub/linux/utils/kbd/)
+	http://ftp.eu.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(libcap), tar.bz2,		\
-	http://ftp.kernel.org/pub/linux/libs/security/linux-privs/kernel-2.4/)
+	http://ftp.eu.kernel.org/pub/linux/libs/security/linux-privs/kernel-2.4/)
 $(call download_rule, $(linux), tar.bz2,		\
-	http://ftp.kernel.org/pub/linux/kernel/v2.6/)
+	http://ftp.eu.kernel.org/pub/linux/kernel/v2.6/)
 #$(call download_rule, $(linux), tar.bz2,		\
 #	http://ftp.kernel.org/pub/linux/kernel/v2.6/testing/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \

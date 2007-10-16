@@ -40,35 +40,35 @@ lib/libresolv.so
 lib/libz.so  # lspci
 
 # Should not hard-wire kernel version here.  FIXME!
-lib/modules/2.6.22.6/modules.alias
-lib/modules/2.6.22.6/modules.ccwmap
-lib/modules/2.6.22.6/modules.dep
-lib/modules/2.6.22.6/modules.ieee1394map
-lib/modules/2.6.22.6/modules.inputmap
-lib/modules/2.6.22.6/modules.isapnpmap
-lib/modules/2.6.22.6/modules.pcimap
-lib/modules/2.6.22.6/modules.symbols
-lib/modules/2.6.22.6/modules.usbmap
+lib/modules/2.6.23.1/modules.alias
+lib/modules/2.6.23.1/modules.ccwmap
+lib/modules/2.6.23.1/modules.dep
+lib/modules/2.6.23.1/modules.ieee1394map
+lib/modules/2.6.23.1/modules.inputmap
+lib/modules/2.6.23.1/modules.isapnpmap
+lib/modules/2.6.23.1/modules.pcimap
+lib/modules/2.6.23.1/modules.symbols
+lib/modules/2.6.23.1/modules.usbmap
 
-lib/modules/2.6.22.6/kernel/drivers/net
+lib/modules/2.6.23.1/kernel/drivers/net
 
-lib/modules/2.6.22.6/kernel/drivers/usb/core
-lib/modules/2.6.22.6/kernel/drivers/usb/host
-lib/modules/2.6.22.6/kernel/drivers/usb/input
+lib/modules/2.6.23.1/kernel/drivers/usb/core
+lib/modules/2.6.23.1/kernel/drivers/usb/host
+lib/modules/2.6.23.1/kernel/drivers/usb/input
 
 #we need usbhid for usb-only systems (keyboards)
-lib/modules/2.6.22.6/kernel/drivers/hid/usbhid
+lib/modules/2.6.23.1/kernel/drivers/hid/usbhid
 
-lib/modules/2.6.22.6/kernel/lib/crc32.ko
+lib/modules/2.6.23.1/kernel/lib/crc32.ko
 
-lib/modules/2.6.22.6/kernel/fs/cifs
+lib/modules/2.6.23.1/kernel/fs/cifs
 
 # For gathering diagnostics when network refuses to start.
-lib/modules/2.6.22.6/kernel/drivers/block/floppy.ko
-lib/modules/2.6.22.6/kernel/fs/fat/fat.ko
-lib/modules/2.6.22.6/kernel/fs/msdos/msdos.ko
-lib/modules/2.6.22.6/kernel/fs/vfat/vfat.ko
-lib/modules/2.6.22.6/kernel/fs/nls/nls_iso8859-1.ko
+lib/modules/2.6.23.1/kernel/drivers/block/floppy.ko
+lib/modules/2.6.23.1/kernel/fs/fat/fat.ko
+lib/modules/2.6.23.1/kernel/fs/msdos/msdos.ko
+lib/modules/2.6.23.1/kernel/fs/vfat/vfat.ko
+lib/modules/2.6.23.1/kernel/fs/nls/nls_iso8859-1.ko
 
 sbin/acpidump
 sbin/cardmgr
