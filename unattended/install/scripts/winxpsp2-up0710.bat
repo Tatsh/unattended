@@ -1,30 +1,4 @@
 
-:: Security Update for Windows XP (KB923810) - English
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=be52f740-e9c9-4228-95c0-00995213bbd0>
-:: URL|ARA|http://download.microsoft.com/download/4/c/3/4c3eb646-4028-4ef4-992c-00264a3a344c/WindowsXP-KB923810-x86-ARA.exe|updates/winxpsp2/windowsxp-kb923810-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/2/9/e/29ea8dd7-8242-496b-857d-bb43892779f5/WindowsXP-KB923810-x86-CSY.exe|updates/winxpsp2/windowsxp-kb923810-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/f/1/6f1b37b4-2868-4f6c-ac0e-e7a0d38ed0dc/WindowsXP-KB923810-x86-DAN.exe|updates/winxpsp2/windowsxp-kb923810-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/5/1/8/518531a1-72df-4c36-9fb0-05ad80eb0af2/WindowsXP-KB923810-x86-DEU.exe|updates/winxpsp2/windowsxp-kb923810-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/a/8/f/a8f45eb0-f731-49f7-bba5-618eb13d54e3/WindowsXP-KB923810-x86-ELL.exe|updates/winxpsp2/windowsxp-kb923810-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/6/1/c/61cb7c72-4d7a-4b20-8638-7d59bba31781/WindowsXP-KB923810-x86-ENU.exe|updates/winxpsp2/windowsxp-kb923810-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/e/e/b/eeb1f7de-7555-4b77-ae2a-4083eeb4b4db/WindowsXP-KB923810-x86-ESN.exe|updates/winxpsp2/windowsxp-kb923810-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/9/e/5/9e5ed9ef-7c57-4c9d-8d34-ab9252bd65b6/WindowsXP-KB923810-x86-FIN.exe|updates/winxpsp2/windowsxp-kb923810-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/8/5/e/85ef64f2-cf3c-43be-91a2-4d3dd639bb71/WindowsXP-KB923810-x86-FRA.exe|updates/winxpsp2/windowsxp-kb923810-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/9/2/7/927e14a4-f9a9-407a-971d-508624aebc23/WindowsXP-KB923810-x86-HEB.exe|updates/winxpsp2/windowsxp-kb923810-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/0/8/6/0861feb5-d8e2-4fa1-9db8-d6e36b4cb56c/WindowsXP-KB923810-x86-HUN.exe|updates/winxpsp2/windowsxp-kb923810-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/b/4/3/b4317977-eb6d-4ee8-bee0-a379230d9b3b/WindowsXP-KB923810-x86-ITA.exe|updates/winxpsp2/windowsxp-kb923810-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/f/9/b/f9b13888-5c54-47e5-bfe1-3fd5cd4bbaab/WindowsXP-KB923810-x86-JPN.exe|updates/winxpsp2/windowsxp-kb923810-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/a/7/8/a78d1c79-e6fe-48aa-9dd7-9ef017f091a8/WindowsXP-KB923810-x86-KOR.exe|updates/winxpsp2/windowsxp-kb923810-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/0/e/4/0e4b28a1-542a-45c8-9d73-3318deae8c43/WindowsXP-KB923810-x86-NLD.exe|updates/winxpsp2/windowsxp-kb923810-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/c/f/a/cfae4792-a88b-4349-a4eb-8efb9acce768/WindowsXP-KB923810-x86-NOR.exe|updates/winxpsp2/windowsxp-kb923810-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/8/2/d/82d3e1f4-029e-4aa0-acc2-8baf162f73e6/WindowsXP-KB923810-x86-PLK.exe|updates/winxpsp2/windowsxp-kb923810-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/c/e/a/ceaba7e1-6739-478b-867c-31c905676d7c/WindowsXP-KB923810-x86-PTB.exe|updates/winxpsp2/windowsxp-kb923810-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/5/a/c/5ac1b54d-8c25-4117-be9f-3bae534c366b/WindowsXP-KB923810-x86-PTG.exe|updates/winxpsp2/windowsxp-kb923810-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/1/9/a/19a7d998-afa5-415a-a911-88d39648f7dd/WindowsXP-KB923810-x86-RUS.exe|updates/winxpsp2/windowsxp-kb923810-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/1/c/c/1ccca480-99eb-46b7-b6d9-687465a9ab4d/WindowsXP-KB923810-x86-SVE.exe|updates/winxpsp2/windowsxp-kb923810-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/5/d/1/5d156f0d-9b19-4407-b424-7b1446a39028/WindowsXP-KB923810-x86-TRK.exe|updates/winxpsp2/windowsxp-kb923810-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB923810-x86-%WINLANG%.exe /passive /n /norestart"
-
 :: Security Update for Outlook Express for Windows XP (KB941202)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=3ed7f466-78c7-4251-ba24-8ae71ad54e18>
 :: URL|ARA|http://download.microsoft.com/download/5/6/8/5684d320-df39-494c-9edc-a45d3db0e7dc/WindowsXP-KB941202-x86-ARA.exe|updates/winxpsp2/windowsxp-kb941202-x86-ara.exe
