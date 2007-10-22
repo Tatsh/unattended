@@ -2,9 +2,6 @@
 @Echo off
 :: Reminder: Commands will be executed in reverse order.
 
-:: Reboot after installing everything (superstition).
-todo.pl .reboot
-
 :: Office 2003 Service Pack 3 (SP3)
 :: Description of Office 2003 Service Pack 3
 :: "SUMMARY"
