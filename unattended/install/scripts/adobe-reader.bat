@@ -8,7 +8,7 @@
 :: URL|CSY|http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.0/cs_CZ/AdbeRdr80_cs_CZ.exe|packages/adobereader/adberdr80_csy.exe
 :: URL|DAN|http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/dan/AdbeRdr810_da_DK.exe|packages/adobereader/adberdr810_dan.exe
 :: URL|NLD|http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/nld/AdbeRdr810_nl_NL.exe|packages/adobereader/adberdr810_nld.exe
-:: URL|ENU|http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/enu/AdbeRdr810_en_US.exe|packages/adobereader/adberdr810_enu.exe
+:: URL|ENU|http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/enu/AdbeRdr811_en_US.exe|packages/adobereader/adberdr811_enu.exe
 :: URL|FIN|http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/suo/AdbeRdr810_fi_FI.exe|packages/adobereader/adberdr810_fin.exe
 :: URL|FRA|http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/fra/AdbeRdr810_fr_FR.exe|packages/adobereader/adberdr810_fra.exe
 :: URL|DEU|http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/deu/AdbeRdr810_de_DE.exe|packages/adobereader/adberdr810_deu.exe
@@ -38,6 +38,9 @@
 :: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/8.x/8.1/misc/FontPack810_zh_CN.msi|packages/adobereader/misc/fontpack810_chs.msi
 :: Download Adobe Reader Taiwanese Fonts
 :: ULR|TWS|ftp://ftp.adobe.com/pub/adobe/reader/win/8.x/8.1/misc/FontPack810_zh_TW.msi|packages/adobereader/misc/fontpack810_nan.msi
+
+set adobe_install=%Z%\packages\adobereader\AdbeRdr811_%WINLANG%.exe
+if exist %adobe_install% goto found_install
 
 set adobe_install=%Z%\packages\adobereader\AdbeRdr810_%WINLANG%.exe
 if exist %adobe_install% goto found_install
