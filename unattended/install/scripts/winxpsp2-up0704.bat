@@ -1,3 +1,29 @@
+:: Security Update for Windows XP (KB931784)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=eeaee4a7-4858-4b6b-9c6d-a9f1eae19b51>
+:: URL|ARA|http://download.microsoft.com/download/2/9/1/29185766-c478-4eff-9d9c-5de78bd9accb/WindowsXP-KB931784-x86-ARA.exe|updates/winxpsp2/windowsxp-kb931784-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/0/f/c/0fcd95c7-5c83-4f8e-8619-f4ad0edc5c7c/WindowsXP-KB931784-x86-CSY.exe|updates/winxpsp2/windowsxp-kb931784-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/9/7/2/972507da-c842-49fe-b7b6-3aca18e9cc26/WindowsXP-KB931784-x86-DAN.exe|updates/winxpsp2/windowsxp-kb931784-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/c/4/9/c49ae609-2f45-4ff0-89ef-c484bc1279da/WindowsXP-KB931784-x86-DEU.exe|updates/winxpsp2/windowsxp-kb931784-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/e/7/7/e77d22dc-7303-4fdd-8fd1-0ef6d98fd2d2/WindowsXP-KB931784-x86-ELL.exe|updates/winxpsp2/windowsxp-kb931784-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/e/1/d/e1d5f9e9-34fb-4262-9daa-4b34195561f5/WindowsXP-KB931784-x86-ENU.exe|updates/winxpsp2/windowsxp-kb931784-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/d/8/7d82554d-acb2-4e13-9699-9e382e213cab/WindowsXP-KB931784-x86-ESN.exe|updates/winxpsp2/windowsxp-kb931784-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/5/d/4/5d4b47ac-6293-4537-a770-3048fedf3c77/WindowsXP-KB931784-x86-FIN.exe|updates/winxpsp2/windowsxp-kb931784-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/8/3/5/83565939-fe1f-46f5-8675-4aa87459db23/WindowsXP-KB931784-x86-FRA.exe|updates/winxpsp2/windowsxp-kb931784-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/d/b/d/dbd83f37-1e3e-45db-84d1-3e46331f369c/WindowsXP-KB931784-x86-HEB.exe|updates/winxpsp2/windowsxp-kb931784-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/8/1/d/81d17da4-7ba0-4e22-b8dd-9fb22771ef6b/WindowsXP-KB931784-x86-HUN.exe|updates/winxpsp2/windowsxp-kb931784-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/b/0/d/b0d0d406-63b1-4f94-8c09-831d4fc951f8/WindowsXP-KB931784-x86-ITA.exe|updates/winxpsp2/windowsxp-kb931784-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/3/3/233588a9-93da-4b00-b9e0-79ce8e4115c6/WindowsXP-KB931784-x86-JPN.exe|updates/winxpsp2/windowsxp-kb931784-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/6/2/56205dfe-3639-4df9-80fb-c12486d3f642/WindowsXP-KB931784-x86-KOR.exe|updates/winxpsp2/windowsxp-kb931784-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/c/d/d/cdda243b-202b-4891-9caa-f616eb79e415/WindowsXP-KB931784-x86-NLD.exe|updates/winxpsp2/windowsxp-kb931784-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/f/0/8/f08053ee-1d32-4263-a299-0394f05e9262/WindowsXP-KB931784-x86-NOR.exe|updates/winxpsp2/windowsxp-kb931784-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/f/b/8fb9f7c2-df52-479e-8a0b-64e29eee4d17/WindowsXP-KB931784-x86-PLK.exe|updates/winxpsp2/windowsxp-kb931784-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/1/6/6/166d71c7-6ea2-4224-b4de-97b44bf5797a/WindowsXP-KB931784-x86-PTB.exe|updates/winxpsp2/windowsxp-kb931784-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/6/c/86cee28b-6f2e-4bc2-bd6d-17bd8deeaf3d/WindowsXP-KB931784-x86-PTG.exe|updates/winxpsp2/windowsxp-kb931784-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/4/d/0/4d0fee4a-7372-41e9-8a7d-dc1e5cb34e6a/WindowsXP-KB931784-x86-RUS.exe|updates/winxpsp2/windowsxp-kb931784-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/c/0/d/c0dc1baa-f7a7-42cc-999f-80f97250e596/WindowsXP-KB931784-x86-SVE.exe|updates/winxpsp2/windowsxp-kb931784-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/0/f/f/0ff1eab0-f05d-400f-985c-e23481c9e529/WindowsXP-KB931784-x86-TRK.exe|updates/winxpsp2/windowsxp-kb931784-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB931784-x86-%WINLANG%.exe /passive /n /norestart"
+
 :: Security Update for Windows XP (KB930178)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=69876449-25d1-41b4-b7c8-2b7fb40e59ee>
 :: URL|ARA|http://download.microsoft.com/download/0/1/4/01477a13-f7a8-4602-bc2f-54ec53e06765/WindowsXP-KB930178-x86-ARA.exe|updates/winxpsp2/windowsxp-kb930178-x86-ara.exe
