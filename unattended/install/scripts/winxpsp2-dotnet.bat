@@ -1,3 +1,8 @@
+:: NDP 2.0 ASP.Net Security Update (KB917283)
+:: <http://www.microsoft.com/technet/security/bulletin/MS06-033.mspx>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=56A1777B-9758-489F-8BE8-5177AAF488D1>
+:: URL|ALL|http://download.microsoft.com/download/1/8/5/185ebe2d-6dda-4300-bda5-64f527f3367d/NDP20-KB917283-X86.exe|updates/common/ndp20-kb917283-x86.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\ndp20-kb917283-x86.exe /passive /q /norestart"
 
 :: .NET Framework Version 2.0 Language Pack
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=39C8B63B-F64B-4B68-A774-B64ED0C32AE7>
