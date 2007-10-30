@@ -74,8 +74,9 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB926255-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/1/0/4/10446fa8-4d0d-4e10-ba87-09ae00b59219/WindowsXP-KB926247-x86-RUS.exe|updates/winxpsp2/windowsxp-kb926247-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/a/0/a/a0a30a4e-f06e-490f-9d5a-bcde0fbdb951/WindowsXP-KB926247-x86-SVE.exe|updates/winxpsp2/windowsxp-kb926247-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/a/d/3/ad3992a5-4ae5-4db4-8792-5daf0d93a3ba/WindowsXP-KB926247-x86-TRK.exe|updates/winxpsp2/windowsxp-kb926247-x86-trk.exe
+if not exist %SystemRoot%\System32\snmp.exe goto nosnmp
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB926247-x86-%WINLANG%.exe /passive /n /norestart"
-
+:nosnmp
 :: Cumulative Update for Internet Explorer for Windows XP Service Pack 2 (KB925454)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=8B321744-B55E-4696-8B2C-B1D31672DA06>
 :: URL|ARA|http://download.microsoft.com/download/7/0/7/707af9e3-87dc-4e4f-882b-414563f0f952/WindowsXP-KB925454-x86-ARA.exe|updates/winxpsp2/windowsxp-kb925454-x86-ara.exe
