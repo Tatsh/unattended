@@ -26,13 +26,13 @@
 ::URL|PLK|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.9/win32/pl/Firefox%20Setup%202.0.0.9.exe|packages/mozilla/firefox-2009-plk.exe
 ::URL|PTB|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.9/win32/pt-BR/Firefox%20Setup%202.0.0.9.exe|packages/mozilla/firefox-2009-ptb.exe
 ::URL|PTG|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.9/win32/pt-PT/Firefox%20Setup%202.0.0.9.exe|packages/mozilla/firefox-2009-ptg.exe
+:: URL|ROM|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.9/win32/ro/Firefox%20Setup%202.0.0.9.exe|packages/mozilla/firefox-2009-rom.exe
 ::URL|RUS|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.9/win32/ru/Firefox%20Setup%202.0.0.9.exe|packages/mozilla/firefox-2009-rus.exe
 ::URL|SLV|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.9/win32/sl/Firefox%20Setup%202.0.0.9.exe|packages/mozilla/firefox-2009-slv.exe
 ::URL|SVE|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.9/win32/sv-SE/Firefox%20Setup%202.0.0.9.exe|packages/mozilla/firefox-2009-sve.exe
 ::URL|TRK|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/2.0.0.9/win32/tr/Firefox%20Setup%202.0.0.9.exe|packages/mozilla/firefox-2009-trk.exe
 
 :: Firefox 1.5
-:: URL|ROM|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/1.5.0.12/win32/ro/Firefox%20Setup%201.5.0.12.exe|packages/mozilla/firefox-15012-rom.exe
 
 @Echo off
 
