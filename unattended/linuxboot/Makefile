@@ -3,7 +3,7 @@ busybox=busybox-1.6.1
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
-dbi=DBI-1.58
+dbi=DBI-1.601
 dmidecode=dmidecode-2.9
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
@@ -23,7 +23,7 @@ mysql=mysql-5.0.45
 nano=nano-2.0.6
 ncurses=ncurses-5.6
 parted=parted-1.6.22
-pciutils=pciutils-2.2.6
+pciutils=pciutils-2.2.9
 pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.8.8
 # perl-ldap aka. Net::LDAP
@@ -31,7 +31,7 @@ perl-ldap=perl-ldap-0.34
 perl-xml-parser=XML-Parser-2.34
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20070511
-samba=samba-3.0.25b
+samba=samba-3.0.26a
 slang=slang-2.0.7
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
@@ -136,6 +136,7 @@ stage1/bin/sh: stage1/bin/bash
 stage1 += stage1/bin/bash stage1/bin/sh
 
 ## BusyBox
+# This patch is to allow "udchpc --userclass=Unattended"
 $(busybox)/.stamp-busybox-patch: misc/busybox-patch
 	cd $(busybox) && patch -b -p1 < $(cwd)/$<
 	touch $@
