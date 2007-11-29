@@ -76,9 +76,11 @@ if not exist %adobe_install% goto noadberdr
 
 if not exist %Z%\packages\adobereader\misc\fontpack810_xtd_lang.msi goto nolangsupport
 :: Install Extended Language Support Fonts Package
-todo.pl "start /wait %Z%\packages\adobereader\misc\fontpack810_xtd_lang.msi /qb"
+todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\fontpack810_xtd_lang.msi"
 
 :nolangsupport
+:: Please do not start anything unless necesary
+todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 todo.pl "start /wait %adobe_install% /SAll"
 goto done
 
