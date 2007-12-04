@@ -638,7 +638,7 @@ sub convert_fdisk_parted ($) {
     elsif ($ptype eq 'log') { $parttype = 'logical' }
     elsif ($ptype eq 'ext') { $parttype = 'extended'; $fs='' }
 
-        $ret = "$parted mkpartfs $parttype $fs $start $end";
+        $ret = "$parted mkpart $parttype $fs $start $end";
        print "DEBUG: $ret \n";
     }
     else {
