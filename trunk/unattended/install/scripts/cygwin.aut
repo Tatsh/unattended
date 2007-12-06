@@ -6,7 +6,7 @@
 
 Run, %Z%\\packages\\cygwin\\setup.exe
 
-WinWait, Cygwin Setup, This wizard will guide you
+WinWait, Cygwin Setup
 Send, {ENTER}
 
 WinWait, Cygwin Setup - Choose Installation Type
@@ -24,17 +24,13 @@ WinWait, Cygwin Setup - Select Packages
 ; Make sure the Window is active, then click in the right place to
 ; select "install all"
 WinActivate, Select Packages
-LeftClick, 60, 135
+LeftClick, 70, 135
 
 ; Wait ten seconds to ensure selection is noticed (yuck)
 Sleep, 10000
 Send, {ENTER}
 
-WinWait, Cygwin Setup - Create Icons
+WinWait, Cygwin Setup - Installation Status and Create Icons
 Send, {ENTER}
 
-WinWait, Cygwin Setup, Installation Complete
-WinActivate, Cygwin Setup, Installation Complete
-Send, {ENTER}
-
-WinWaitClose, Cygwin Setup, Installation Complete
+WinWaitClose, Cygwin Setup, Installation Status and Create Icons
