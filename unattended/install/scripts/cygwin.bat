@@ -1,4 +1,7 @@
 :: Install Cygwin
+:: HOME: http://www.cygwin.com/
+:: URL|ALL|http://www.cygwin.com/setup.exe|packages/cywin/setup.exe
+
 @Echo off
 :: After installing Cygwin package, configure it.
 :: (ESHELL is used by Emacs.)
