@@ -51,28 +51,3 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB941202-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/7/b/b/7bb3f307-72fb-41fd-a21d-9f9d689c40b6/WindowsXP-KB933729-x86-TRK.exe|updates/winxpsp2/windowsxp-kb933729-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB933729-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Cumulative Security Update for Internet Explorer for Windows XP Service Pack 2 (KB939653)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=513A8320-6D36-4FC9-A38A-867192B55B53>
-:: URL|ARA|http://download.microsoft.com/download/0/e/5/0e53c0b8-1c81-40cf-9537-a242e93c5d31/WindowsXP-KB939653-x86-ARA.exe|updates/winxpsp2/windowsxp-kb939653-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/c/d/9/cd902701-8bdf-46e9-831b-ba60828308ff/WindowsXP-KB939653-x86-CSY.exe|updates/winxpsp2/windowsxp-kb939653-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/a/d/6adae00d-37f6-4aef-9be4-292032a695a9/WindowsXP-KB939653-x86-DAN.exe|updates/winxpsp2/windowsxp-kb939653-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/c/d/6cdcb904-87e1-4093-8843-10d85018ba95/WindowsXP-KB939653-x86-DEU.exe|updates/winxpsp2/windowsxp-kb939653-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/f/6/d/f6d76716-b2a7-41b5-af83-86609236f3b0/WindowsXP-KB939653-x86-ELL.exe|updates/winxpsp2/windowsxp-kb939653-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/1/4/f/14fc331a-8c4c-4ede-a706-4f8b25bb97c3/WindowsXP-KB939653-x86-ENU.exe|updates/winxpsp2/windowsxp-kb939653-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/a/4/4/a44a403f-db0a-4c96-a29c-df20660bf1f6/WindowsXP-KB939653-x86-ESN.exe|updates/winxpsp2/windowsxp-kb939653-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/0/c/0/0c05d4a6-4f21-4e60-bfb9-afbc97a676c0/WindowsXP-KB939653-x86-FIN.exe|updates/winxpsp2/windowsxp-kb939653-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/5/2/c/52c6d1bc-d1cc-4959-b909-e914aadc18b8/WindowsXP-KB939653-x86-FRA.exe|updates/winxpsp2/windowsxp-kb939653-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/0/1/a/01a3324b-117a-4334-a28f-998aa2ba29e4/WindowsXP-KB939653-x86-HEB.exe|updates/winxpsp2/windowsxp-kb939653-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/f/e/0/fe0a9875-e8a7-40d3-939f-0b148df6d630/WindowsXP-KB939653-x86-HUN.exe|updates/winxpsp2/windowsxp-kb939653-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/0/3/4/034a37c6-577d-4ac2-8248-da93cb702cc7/WindowsXP-KB939653-x86-ITA.exe|updates/winxpsp2/windowsxp-kb939653-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/9/3/6/93679b89-b1fe-4dcd-a350-f67cc3da5cf8/WindowsXP-KB939653-x86-JPN.exe|updates/winxpsp2/windowsxp-kb939653-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/1/e/3/1e3e75f6-d3cb-4b68-b97e-225152ef0009/WindowsXP-KB939653-x86-KOR.exe|updates/winxpsp2/windowsxp-kb939653-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/3/b/f/3bff89db-18d0-4151-9378-eee8c27944ec/WindowsXP-KB939653-x86-NLD.exe|updates/winxpsp2/windowsxp-kb939653-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/5/8/2/582c8c14-42c5-4732-b29b-2f8290381592/WindowsXP-KB939653-x86-NOR.exe|updates/winxpsp2/windowsxp-kb939653-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/6/5/f/65f78812-d805-4201-9334-03dc98f207a6/WindowsXP-KB939653-x86-PLK.exe|updates/winxpsp2/windowsxp-kb939653-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/4/7/b/47b8fb15-de15-43a9-83a9-b623a7fe46c4/WindowsXP-KB939653-x86-PTB.exe|updates/winxpsp2/windowsxp-kb939653-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/0/f/0/0f0263c8-266e-469f-9feb-e4ba9687fe92/WindowsXP-KB939653-x86-PTG.exe|updates/winxpsp2/windowsxp-kb939653-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/6/6/2/662429fa-40a8-40d2-87d4-40ca9206c03a/WindowsXP-KB939653-x86-RUS.exe|updates/winxpsp2/windowsxp-kb939653-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/b/4/1/b41af4df-fdfa-41b1-9809-4f3364868250/WindowsXP-KB939653-x86-SVE.exe|updates/winxpsp2/windowsxp-kb939653-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/0/a/3/0a3a3237-9b3f-4be7-a206-032fb8000a83/WindowsXP-KB939653-x86-TRK.exe|updates/winxpsp2/windowsxp-kb939653-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB939653-x86-%WINLANG%.exe /passive /n /norestart"
