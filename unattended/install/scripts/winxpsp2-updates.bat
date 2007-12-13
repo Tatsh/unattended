@@ -12,6 +12,7 @@ todo.pl "%Z%\scripts\winxpsp2-dotnet.bat"
 
 :: Microsoft Security Bulletins
 :: http://www.microsoft.com/technet/security/current.aspx
+todo.pl "%Z%\scripts\winxpsp2-up0712.bat"
 todo.pl "%Z%\scripts\winxpsp2-up0711.bat"
 todo.pl "%Z%\scripts\winxpsp2-up0710.bat"
 todo.pl "%Z%\scripts\winxpsp2-up0708.bat"
