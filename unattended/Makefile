@@ -4,10 +4,10 @@ default:
 	@echo "or at http://unattended.sourceforge.net/"
 	@echo "(Did you mean to 'cd bootdisk' or 'cd linuxboot' first?)"
 	exit 1
-
+sfuser := $$USER
 #cvs := :pserver:anonymous@unattended.cvs.sourceforge.net:/cvsroot/unattended
 # Anonymous server works, but lags main CVS.
-cvs := $$USER@unattended.cvs.sourceforge.net:/cvsroot/unattended
+cvs := ${sfuser}@unattended.cvs.sourceforge.net:/cvsroot/unattended
 
 cwd := $(shell pwd)
 
@@ -51,7 +51,7 @@ release: checkver
 	find $(dir) -name CVS -prune -o -newer $(dir)-dosboot.zip	\
 			-type f -not -name .\* -print |			\
 		zip $(dir)-linuxboot.zip -9 -q -@ &&			\
-	$(really) ncftpput -p $$USER@users.sourceforge.net		\
+	$(really) ncftpput -p ${sfuser}@users.sourceforge.net		\
 		upload.sourceforge.net /incoming			\
 		${dir}.zip ${dir}-dosboot.zip				\
 		${dir}-linuxboot.zip &&					\
