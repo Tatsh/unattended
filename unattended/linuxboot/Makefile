@@ -17,7 +17,7 @@ kbd=kbd-1.12
 # libcap.so is required by smbclient
 # But not longer necesary for 2.6 kernel
 #libcap=libcap-1.10
-linux=linux-2.6.23.1
+linux=linux-2.6.23.11
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.45
 nano=nano-2.0.6
@@ -941,15 +941,13 @@ $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 $(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
 	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
-	http://ftp.eu.kernel.org/pub/linux/utils/kbd/)
-$(call download_rule, $(libcap), tar.bz2,		\
-	http://ftp.eu.kernel.org/pub/linux/libs/security/linux-privs/kernel-2.4/)
+	http://ftp.all.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(linux), tar.bz2,		\
-	http://ftp.eu.kernel.org/pub/linux/kernel/v2.6/)
+	http://ftp.all.kernel.org/pub/linux/kernel/v2.6/)
 #$(call download_rule, $(linux), tar.bz2,		\
-#	http://ftp.kernel.org/pub/linux/kernel/v2.6/testing/)
+#	http://ftp.all.kernel.org/pub/linux/kernel/v2.6/testing/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
-	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
+	http://ftp.all.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
 	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-5.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
@@ -957,7 +955,7 @@ $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, 			\
         http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/linuxboot/misc/)
 $(call download_rule, $(pciutils), tar.bz2,			\
-	http://ftp.kernel.org/pub/software/utils/pciutils/)
+	http://ftp.all.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
@@ -968,7 +966,7 @@ $(call download_rule, $(perl-xml-parser), tar.gz, \
 $(call download_rule, $(perl-xml-xpath), tar.gz, \
 	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
 $(call download_rule, $(pmtools), tar.bz2,			\
-	http://ftp.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
+	http://ftp.all.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/stable/)
 $(call download_rule, $(slang), tar.bz2, 	\
 	ftp://space.mit.edu/pub/davis/slang/v2.0/)
