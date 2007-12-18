@@ -42,7 +42,7 @@ cd "$(dirname "$0")"/../scripts
 for file in $($FIND . -type f | $GREP -v CVS | $SORT)
 do
     if [[ "${exceptions[@]%%${file##./}}" != "${exceptions[@]}" ]]; then continue; fi
-    if $WGET --output-document "$file.$$.tmp" $CVSLINK/$file?rev=HEAD
+    if $WGET --output-document "$file.$$.tmp" $CVSLINK/$file?revision=HEAD
     then
         mv "$file.$$.tmp" "$file"
     else
