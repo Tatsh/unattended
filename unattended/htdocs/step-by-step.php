@@ -8,7 +8,7 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.9 2007-06-23 09:16:20 ekot Exp $';
+$cvs           = '$Id: step-by-step.php,v 1.10 2007-12-20 00:53:49 jjp3 Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');
@@ -96,7 +96,7 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
         <dt><a
           href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/djgpp/"
           >djgpp</a></dt>
-        <dd>Contains parts of <a
+        <dd>Only needed when boot disk is a floppy. Contains parts of <a
           href="http://www.delorie.com/djgpp/" rel="external">DJGPP</a>,  a collection of
       Unix tools  for DOS.  DJGPP is  required because the master installation script
           is written in Perl. This one is too big to bundle, so you will need to download
