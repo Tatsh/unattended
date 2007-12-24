@@ -2,7 +2,7 @@
 
 :: Full install sets Localized Binaries for 2.3.0
 :: http://wiki.services.openoffice.org/wiki/OOoRelease23
-:: URL|ALL|http://ftp.services.openoffice.org/pub/OpenOffice.org/stable/2.3.0/OOo_2.3.0_Win32Intel_install_en-US.exe|packages/openoffice/OOo_2.3.0_Win32Intel_install_enu.exe
+:: URL|ALL|http://ftp.services.openoffice.org/pub/OpenOffice.org/stable/2.3.1/OOo_2.3.1_Win32Intel_install_en-US.exe|packages/openoffice/OOo_2.3.1_Win32Intel_install_enu.exe
 :: URL|DAN|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/da/2.3.0/OOo_2.3.0_Win32Intel_install_da.exe|packages/openoffice/OOo_2.3.0_Win32Intel_install_dan.exe
 :: URL|DEU|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/de/2.3.0/OOo_2.3.0_Win32Intel_install_de.exe|packages/openoffice/OOo_2.3.0_Win32Intel_install_deu.exe
 :: URL|ESN|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/es/2.3.0/OOo_2.3.0_Win32Intel_install_es.exe|packages/openoffice/OOo_2.3.0_Win32Intel_install_esn.exe
@@ -73,7 +73,7 @@ goto mainbinary
 @echo No language pack for %WINLANG%
 
 :mainbinary
-todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.3.0_Win32Intel_install_enu.exe /S /v\"/qb ALLUSERS=1  SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1 \""
+todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.3.1_Win32Intel_install_enu.exe /S /v\"/qb ALLUSERS=1  SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1 \""
 goto exit
 
 :localizedbinary
