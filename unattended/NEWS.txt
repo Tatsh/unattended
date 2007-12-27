@@ -1,4 +1,4 @@
-** Changes in version 4.7 (2007-Dec-??)
+** Changes in version 4.7 (2007-Dec-27
 
 Too many changes to keep track of.  Just hoping to get something out
 that is updated.  Should support a little bit more hardware.
