@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project default="docs" basedir="." name="unattended">
+  <target name="init">
+  <!-- ===============================================================
+       Set properties
+       =============================================================== -->
+    <property environment="env"/>
+    <property name="docs.home" value="htdocs"/>
+    <property name="sf.home" value="shell.sourceforge.net:/home/groups/u/un/unattended"/>
+    <property name="sf.user" value="${env.USER}"/>
+  </target>
+  <target name="docs" depends="init">
+
+  <!-- ===============================================================
+      Copy Docs
+       =============================================================== -->
+   <echo message="Copying Docs" />
+     <exec dir="." executable="rsync" os="Linux" failonerror="true">
+             <arg value="-a" />
+             <arg value="-vC" />
+             <arg value="${docs.home}" />
+             <arg value="${sf.user}@${sf.home}" />
+     </exec>
+  </target>
+</project>
