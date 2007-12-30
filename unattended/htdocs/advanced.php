@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: advanced.php,v 1.8 2007-12-30 13:06:58 jjp3 Exp $';
+$cvs           = '$Id: advanced.php,v 1.9 2007-12-30 23:51:51 jjp3 Exp $';
 $sections[]    = array ('Integrate a service pack', 'slipstream');
 $sections[]    = array ('Integrate other hotfixes', 'hotfixes');
 $sections[]    = array ('Modifying the boot disk', 'modify');
@@ -201,12 +201,18 @@ $content       = <<<EOT
 
         <p><strong>How it could look like, using DNSmasq (don't let the name fool you, it's a dhcp-server) and atfpd</strong>:
         Additional/modified lines for dnsmasq.conf:
+<pre class="code">
         dhcp-option=13,25 //Size of pxelinux.0 in bytes, divided by 512
         dhcp-option=66,192.168.0.20 // IP of the tftp-server
         dhcp-boot=pxelinux.0,ntinstall,192.168.0.20 // Bootfilename, dns & IP of the tftp-server
+</pre>
 
         Line for atftpd @ inetd.conf:
-        tftp            dgram   udp     wait    nobody /usr/sbin/tcpd /usr/sbin/in.tftpd --tftpd-timeout 300 --retry-timeout 5     --mcast-port 1758 --mcast-addr 192.168.0.0-255 --mcast-ttl 1 --maxthread 100 --verbose=5  /home/christof/unattended-4.7/linuxboot/tftpboot</p>
+<pre class="code">
+  tftp dgram   udp     wait    nobody /usr/sbin/tcpd /usr/sbin/in.tftpd --tftpd-timeout 300 
+--retry-timeout 5     --mcast-port 1758 --mcast-addr 192.168.0.0-255 --mcast-ttl 1 --maxthread 100 
+--verbose=5  /home/christof/unattended-4.7/linuxboot/tftpboot</p>
+</pre>
 
       <p>Finally, you will need to convince your machine to boot from the  network.  Even
         if your machine has PXE support, actually enabling it can take  some  work.  Many
