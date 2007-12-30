@@ -8,7 +8,7 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: advanced.php,v 1.7 2006-05-17 17:18:08 ekot Exp $';
+$cvs           = '$Id: advanced.php,v 1.8 2007-12-30 13:06:58 jjp3 Exp $';
 $sections[]    = array ('Integrate a service pack', 'slipstream');
 $sections[]    = array ('Integrate other hotfixes', 'hotfixes');
 $sections[]    = array ('Modifying the boot disk', 'modify');
@@ -185,7 +185,7 @@ $content       = <<<EOT
       <p>First, you will need a TFTP server. Copy the files and folders  from  the  <code
         >tftpboot</code> directory to the TFTP server's root directory. <a href="http://tftpd32.jounin.net/"
         rel="external">Tftpd32</a> is a good TFTP server  for   Windows  which  has  been
-        reported to work.</p>
+        reported to work. For Linux you could use atftpd which also works fine, under debian for example, you can get it with "apt-get install atftpd". be sure that you edit your config (especially the tftproot) right!</p>
 
       <p>Second, you will need to configure your DHCP server.  Most modern network  cards
         support booting directly  from  the  network  following  Intel's  <strong>Preboot
@@ -197,7 +197,16 @@ $content       = <<<EOT
         identifying your TFTP server and the  <code>pxelinux.0</code> file, respectively.
         (Do not let the name fool you; <code>pxelinux.0</code>  has  nothing  to  do with
         Linux.  It  comes  from  the <a href="http://syslinux.zytor.com/"  rel="external"
-        >SYSLINUX</a> package, an excellent general-purpose boot loader.)</p>
+        >SYSLINUX</a> package, an excellent general-purpose boot loader.) Get the package and extract pxelinux.0 to your tftproot.</p>
+
+        <p><strong>How it could look like, using DNSmasq (don't let the name fool you, it's a dhcp-server) and atfpd</strong>:
+        Additional/modified lines for dnsmasq.conf:
+        dhcp-option=13,25 //Size of pxelinux.0 in bytes, divided by 512
+        dhcp-option=66,192.168.0.20 // IP of the tftp-server
+        dhcp-boot=pxelinux.0,ntinstall,192.168.0.20 // Bootfilename, dns & IP of the tftp-server
+
+        Line for atftpd @ inetd.conf:
+        tftp            dgram   udp     wait    nobody /usr/sbin/tcpd /usr/sbin/in.tftpd --tftpd-timeout 300 --retry-timeout 5     --mcast-port 1758 --mcast-addr 192.168.0.0-255 --mcast-ttl 1 --maxthread 100 --verbose=5  /home/christof/unattended-4.7/linuxboot/tftpboot</p>
 
       <p>Finally, you will need to convince your machine to boot from the  network.  Even
         if your machine has PXE support, actually enabling it can take  some  work.  Many
