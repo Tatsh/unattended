@@ -227,7 +227,7 @@ while : ; do
         || domain=${Z_USER%%\\*}        # everyting before first backslash
 
     # Default mount options: username, read-only mount
-    mount_opts="username=$username,ro"
+    mount_opts="username=$username,ro,nocase"
 
     # Append domain (workgroup), if any.
     [ -n "$domain" ] \
@@ -248,16 +248,11 @@ while : ; do
     # In case something broken is already mounted on /z
     umount /z >/dev/null 2>&1
 
-    echo "*** Trying smbmount $Z_PATH /z -o ttl=600000,$mount_opts"
-
-    if smbmount "$Z_PATH" /z -o "ttl=600000,$mount_opts" ; then
-        check_z \
-            && break
-        echo "*** smbmount \"succeeded\", but /z/dosbin/install.pl not found"
-        umount /z
-    else
-        echo "*** smbmount failed."
-    fi
+    echo "*** Trying mount.cifs $Z_PATH /z -o $mount_opts"
+	#to use real nocase we have to disable unix extensions before
+	#first modprobe cifs
+        modprobe cifs
+        echo 0 > /proc/fs/cifs/LinuxExtensionsEnabled
 
     echo "*** Trying mount.cifs $Z_PATH /z -o $mount_opts"
 
