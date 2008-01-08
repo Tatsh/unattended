@@ -182,7 +182,10 @@ sub menu_choice (@) {
     my $count = scalar @args / 2;
 
     # Choices to display per page
-    my $per_page = 15;
+    my $per_page = 20;
+    
+    #Array with 20 Options
+    my %hexarray = (10,'A',11,'B',12,'C',13,'D',14,'E',15,'F',16,'G',17,'H',18,'I',19,'J',20,'K');
 
     my $pages = int(($count + $per_page - 1) / $per_page);
 
@@ -201,7 +204,11 @@ sub menu_choice (@) {
         # Generate current page of choices.
         while ($i < $per_page && $start + $i < $count) {
             my $elt = 2 * ($start + $i);
-            my $hexd = sprintf '%X', $i+1;
+            #my $hexd = sprintf '%X', $i+1;
+            my $hexd = $i+1;
+            if ($hexd>9) {
+            	$hexd = $hexarray{$hexd};
+            }
             print "$hexd) $args[$elt]\n";
             $choices .= $hexd;
             # Capture value for sub below
