@@ -1,30 +1,4 @@
 
-:: Security Update for Windows XP (KB917953)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=b62abe8e-4735-4934-a66e-5b957986efbf>
-:: URL|ARA|http://download.microsoft.com/download/c/2/2/c2261463-8460-449e-ba11-8ce4394f7646/WindowsXP-KB917953-x86-ARA.exe|updates/winxpsp2/windowsxp-kb917953-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/e/6/f/e6f5eb04-bd9e-4bb0-a432-4c994d32b561/WindowsXP-KB917953-x86-CSY.exe|updates/winxpsp2/windowsxp-kb917953-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/3/b/c/3bc8b213-ab3e-4027-914a-394f96f67989/WindowsXP-KB917953-x86-DAN.exe|updates/winxpsp2/windowsxp-kb917953-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/9/6/3/9632c689-403a-4049-a6c0-9bcbf54e967c/WindowsXP-KB917953-x86-DEU.exe|updates/winxpsp2/windowsxp-kb917953-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/8/3/2/8322f9c3-7ae6-4fdb-87c9-90958d0b92f4/WindowsXP-KB917953-x86-ELL.exe|updates/winxpsp2/windowsxp-kb917953-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/0/0/7/007eec69-c7a8-4503-b46b-50996c16fc87/WindowsXP-KB917953-x86-ENU.exe|updates/winxpsp2/windowsxp-kb917953-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/a/4/b/a4bd7d4d-ed07-413a-b492-d2a614b07563/WindowsXP-KB917953-x86-ESN.exe|updates/winxpsp2/windowsxp-kb917953-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/2/e/f/2efc4204-3e04-4798-b670-374effa8c625/WindowsXP-KB917953-x86-FIN.exe|updates/winxpsp2/windowsxp-kb917953-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/6/7/8/678fcca2-fc1e-424b-ba69-e9211af2eccc/WindowsXP-KB917953-x86-FRA.exe|updates/winxpsp2/windowsxp-kb917953-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/c/3/9/c3939588-faea-455c-8ef9-18193e79e691/WindowsXP-KB917953-x86-HEB.exe|updates/winxpsp2/windowsxp-kb917953-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/f/4/3/f43cd1d8-ff5a-4617-9e7e-944a9d988f26/WindowsXP-KB917953-x86-HUN.exe|updates/winxpsp2/windowsxp-kb917953-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/8/a/3/8a374c15-5347-4acc-84be-003676a169a4/WindowsXP-KB917953-x86-ITA.exe|updates/winxpsp2/windowsxp-kb917953-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/a/1/b/a1b8b762-2235-4dd5-8e11-122d1c22566a/WindowsXP-KB917953-x86-JPN.exe|updates/winxpsp2/windowsxp-kb917953-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/5/e/2/5e2bf670-de79-4edd-bd70-ee6727527394/WindowsXP-KB917953-x86-KOR.exe|updates/winxpsp2/windowsxp-kb917953-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/8/2/4/8244399b-9b9d-4056-aa26-f1e1cd092c35/WindowsXP-KB917953-x86-NLD.exe|updates/winxpsp2/windowsxp-kb917953-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/6/f/1/6f1a484e-779b-429b-89f4-312b08ce3779/WindowsXP-KB917953-x86-NOR.exe|updates/winxpsp2/windowsxp-kb917953-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/6/f/8/6f8b5516-8649-45e0-b2b2-17b0830e912a/WindowsXP-KB917953-x86-PLK.exe|updates/winxpsp2/windowsxp-kb917953-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/a/8/b/a8b9b1e2-61ce-4470-91ad-9ab03694e670/WindowsXP-KB917953-x86-PTB.exe|updates/winxpsp2/windowsxp-kb917953-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/2/a/7/2a7f46a6-6c2f-43cb-8ac7-3c3ce2cc7da0/WindowsXP-KB917953-x86-PTG.exe|updates/winxpsp2/windowsxp-kb917953-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/a/7/2/a727fa54-1c11-45a1-8e9d-879d2c3a5bbf/WindowsXP-KB917953-x86-RUS.exe|updates/winxpsp2/windowsxp-kb917953-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/1/e/b/1eb8baca-452d-4408-bf95-87c732336cc1/WindowsXP-KB917953-x86-SVE.exe|updates/winxpsp2/windowsxp-kb917953-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/8/2/a/82a5f929-88ce-4273-a388-cb1e6c1297a4/WindowsXP-KB917953-x86-TRK.exe|updates/winxpsp2/windowsxp-kb917953-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB917953-x86-%WINLANG%.exe /passive /n /norestart"
-
 :: Security Update for Windows XP (KB914389)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=c17ddc07-204b-4a7f-8c5a-36b7865a030c>
 :: URL|ARA|http://download.microsoft.com/download/7/0/7/707bf992-2dab-4054-8089-f3eff11e7b95/WindowsXP-KB914389-x86-ARA.exe|updates/winxpsp2/windowsxp-kb914389-x86-ara.exe
