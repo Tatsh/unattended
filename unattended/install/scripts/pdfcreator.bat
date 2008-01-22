@@ -2,7 +2,8 @@
 :: HOME: http://www.pdfforge.org/
 @echo off
 
-:: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0.9.5_GPLGhostscript.exe|packages/pdfcreator/pdfcreator-0.9.5_gplghostscript.exe
+http://prdownloads.sourceforge.net/pdfcreator/PDFCreator-0_9_5_setup.exe?download
+:: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_9_5_setup.exe|packages/pdfcreator/pdfcreator-0.9.5.setup.exe
 
 :: Install language files
 :: URL|CHS|http://www.pdfforge.org/files/translations/0.9.5/chinese_simplified.ini|packages/pdfcreator/lang-chs-0.9.5.ini
@@ -20,4 +21,4 @@ todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0.9.5.ini \"%ProgramFiles%\
 :nolangpack
 
 :: Install PDFCreator
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-0.9.5_gplghostscript.exe /sp- /silent /norestart"
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-0.9.5.setup.exe /sp- /silent /norestart"
