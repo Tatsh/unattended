@@ -1,6 +1,6 @@
 :: OPTIONAL: Install Ghostscript and GSview
-:: URL|ALL|ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs854/gs854w32.exe|packages/ghostscript/gs.exe
-:: URL|ALL|ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv48w32.exe|packages/ghostscript/gv.exe
+:: URL|ALL|http://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs861/gs861w32.exe|packages/ghostscript/gs.exe
+:: URL|ALL|http://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv49w32.exe|packages/ghostscript/gv.exe
 :: Then manually extract to gs and gv folders in the same path
 
 todo.pl "%TEMP%\gv\setup.exe \"%ProgramFiles%\""
