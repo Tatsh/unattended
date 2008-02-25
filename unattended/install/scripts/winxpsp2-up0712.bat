@@ -1,30 +1,4 @@
 
-:: Cumulative Security Update for Internet Explorer for Windows XP Service Pack 2 (KB942615)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=6E4EBAFC-34C3-4DC7-B712-152C611D3F0A>
-:: URL|ARA|http://download.microsoft.com/download/2/c/5/2c583ab5-d89c-43bd-986a-18dc44eb92a3/WindowsXP-KB942615-x86-ARA.exe|updates/winxpsp2/windowsxp-kb942615-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/c/9/9/c994f5aa-2b0e-4a62-bc11-543e9d87fe09/WindowsXP-KB942615-x86-CSY.exe|updates/winxpsp2/windowsxp-kb942615-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/f/7/6f7fea13-620a-4cc8-9bef-e578cd4704ca/WindowsXP-KB942615-x86-DAN.exe|updates/winxpsp2/windowsxp-kb942615-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/8/c/9/8c960900-0937-4e65-863c-32abcb38d75b/WindowsXP-KB942615-x86-DEU.exe|updates/winxpsp2/windowsxp-kb942615-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/d/9/5/d9560241-296f-4f1d-bedf-81bf291a90e9/WindowsXP-KB942615-x86-ELL.exe|updates/winxpsp2/windowsxp-kb942615-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/3/a/d/3add927d-65b4-4809-b609-6bc960963c11/WindowsXP-KB942615-x86-ENU.exe|updates/winxpsp2/windowsxp-kb942615-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/b/6/c/b6c25e59-a5b2-4a9c-88be-b791e164af6a/WindowsXP-KB942615-x86-ESN.exe|updates/winxpsp2/windowsxp-kb942615-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/a/8/4/a844d3e7-b2ce-4c28-bc24-664ec500646e/WindowsXP-KB942615-x86-FIN.exe|updates/winxpsp2/windowsxp-kb942615-x86-fin.exe
-:: No Download found for FRA.
-:: URL|HEB|http://download.microsoft.com/download/7/6/f/76f8717f-5299-4a45-8709-89b1c1495386/WindowsXP-KB942615-x86-HEB.exe|updates/winxpsp2/windowsxp-kb942615-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/f/1/5/f15ffd3f-b45c-4f31-b4c9-9ad3a364a5b2/WindowsXP-KB942615-x86-HUN.exe|updates/winxpsp2/windowsxp-kb942615-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/2/a/0/2a0ec292-7314-484c-9d39-da965d68a78c/WindowsXP-KB942615-x86-ITA.exe|updates/winxpsp2/windowsxp-kb942615-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/7/b/a/7ba12544-2660-4aa2-bfc2-51d45e3f603d/WindowsXP-KB942615-x86-JPN.exe|updates/winxpsp2/windowsxp-kb942615-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/6/1/4616e528-0d21-42da-a04d-4e312e9e187a/WindowsXP-KB942615-x86-KOR.exe|updates/winxpsp2/windowsxp-kb942615-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/f/c/4/fc4067f9-190a-46cc-931d-be9a2247d672/WindowsXP-KB942615-x86-NLD.exe|updates/winxpsp2/windowsxp-kb942615-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/8/f/c/8fc375ae-046d-4294-92d4-d72c2935d3cb/WindowsXP-KB942615-x86-NOR.exe|updates/winxpsp2/windowsxp-kb942615-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/a/7/3/a738e600-4b64-459c-b15f-de3959e74a1f/WindowsXP-KB942615-x86-PLK.exe|updates/winxpsp2/windowsxp-kb942615-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/0/4/5/04571bbd-5233-4750-8f76-4b2a80ed7946/WindowsXP-KB942615-x86-PTB.exe|updates/winxpsp2/windowsxp-kb942615-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/f/e/c/feca3e0b-ea0d-4050-b785-40a2517eb493/WindowsXP-KB942615-x86-PTG.exe|updates/winxpsp2/windowsxp-kb942615-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/c/f/4/cf4d8c7f-3cd5-4751-bce5-d442ee330d6f/WindowsXP-KB942615-x86-RUS.exe|updates/winxpsp2/windowsxp-kb942615-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/d/4/f/d4fa562a-999a-4456-a5e4-82073be40b63/WindowsXP-KB942615-x86-SVE.exe|updates/winxpsp2/windowsxp-kb942615-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/d/5/a/d5a4feef-df97-4a2c-ba82-fed90ad0497e/WindowsXP-KB942615-x86-TRK.exe|updates/winxpsp2/windowsxp-kb942615-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB942615-x86-%WINLANG%.exe /passive /n /norestart"
-
 :: Security Update for Windows XP (KB941569)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=bece702a-6e61-433e-8275-20f4e84f2c92>
 :: URL|ARA|http://download.microsoft.com/download/e/2/8/e28d752a-29ce-499d-93ce-83d300c8b59c/WindowsXP-KB941569-x86-ARA.exe|updates/winxpsp2/windowsxp-kb941569-x86-ara.exe
