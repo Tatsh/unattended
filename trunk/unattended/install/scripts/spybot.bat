@@ -1,6 +1,6 @@
 :: OPTIONAL: Install Spybot - Search & Destroy
 :: HOME: http://www.safer-networking.org/
-:: URL|ALL|http://www.spybotupdates.biz/files/spybotsd15.exe|packages/spybotsd/spybotsd15.exe
+:: URL|ALL|http://www.spybotupdates.com/files/spybotsd152.exe|packages/spybotsd/spybotsd152.exe
 :: URL|ALL|http://www.spybotupdates.com/updates/files/spybotsd_includes.exe|packages/spybotsd/spybotsd_includes-071128.exe
 :: URL|ALL|http://www.spybotupdates.com/updates/files/spybotsd_tools.exe|packages/spybotsd/spybotsd_tools.exe
 :: URL|ALL|http://www.spybotupdates.com/updates/files/spybotsd_advcheck.exe|packages/spybotsd/spybotsd_advcheck.exe
@@ -20,7 +20,7 @@ todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -y -o\"%ProgramFiles%\Spybot~1\Includes\"
 todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -y -o\"%ProgramFiles%\Spybot~1\Includes\" %Z%\packages\spybotsd\clsid.zip" 
 
 :: By default does not try to update or startup the teatimer task (as in 1.4)
-todo.pl "%Z%\packages\spybotsd\spybotsd15.exe /sp- /silent /norestart /components=\"main\" /tasks=\"!lauchteatimer\""
+todo.pl "%Z%\packages\spybotsd\spybotsd152.exe /sp- /silent /norestart /components=\"main\" /tasks=\"!lauchteatimer\""
 
 :: Install 7zip if it isn't already
 todo.pl 7-zip.bat
