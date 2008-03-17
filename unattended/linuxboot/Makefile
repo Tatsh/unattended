@@ -1,13 +1,13 @@
 bash=bash-3.2
-busybox=busybox-1.6.1
+busybox=busybox-1.9.1
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
-dbi=DBI-1.601
+dbi=DBI-1.602
 dmidecode=dmidecode-2.9
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.40.2
+e2fsprogs=e2fsprogs-1.40.8
 expat=expat-2.0.1
 #glibc version to use: 2.3.6 for Debian Etch, 2.4.1 for Debian Lenny. 
 # 2.x.x for RHx
@@ -21,20 +21,21 @@ kbd=kbd-1.12
 #libcap=libcap-1.10
 linux=linux-2.6.24.3
 module-init-tools=module-init-tools-3.2.2
-mysql=mysql-5.0.45
-nano=nano-2.0.6
+mysql=mysql-5.0.51a
+nano=nano-2.0.7
 ncurses=ncurses-5.6
 parted=parted-1.6.22
-pciutils=pciutils-2.2.9
+pciutils=pciutils-2.2.10
 pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.10.0
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.34
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
-pmtools=pmtools-20070511
-samba=samba-3.0.27a
+pmtools=pmtools-20071116
+samba=samba-3.0.28a
 slang=slang-2.0.7
+syslinux=syslinux-3.62
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
@@ -47,7 +48,7 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		\
 	$(linux)  $(module-init-tools) $(mysql) $(nano)	\
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
 	$(perl-xml-xpath) $(pciutils) $(pcmcia-cs) $(pmtools)		\
-	$(samba) $(slang) $(wireless_tools) $(zlib) 
+	$(samba) $(slang) $(syslinux) $(wireless_tools) $(zlib)
 
 CC=gcc
 
@@ -106,12 +107,12 @@ $(linux)/.config: misc/linux-config
 	cp -f $< $@
 	cd $(linux) && make oldconfig
 
-$(linux)/arch/i386/boot/bzImage: $(linux)/.config
+$(linux)/arch/x86/boot/bzImage: $(linux)/.config
 	rm -f $@
 	cd $(linux) && make
 	[ -e $@ ]
 
-stage1/.stamp-modules: $(linux)/arch/i386/boot/bzImage stage1/sbin/depmod
+stage1/.stamp-modules: $(linux)/arch/x86/boot/bzImage stage1/sbin/depmod
 	cd $(linux) && make INSTALL_MOD_PATH=$(cwd)/stage1	\
 			    DEPMOD=$(cwd)/stage1/sbin/depmod	\
 			    modules_install
@@ -139,11 +140,12 @@ stage1 += stage1/bin/bash stage1/bin/sh
 
 ## BusyBox
 # This patch is to allow "udchpc --userclass=Unattended"
-$(busybox)/.stamp-busybox-patch: misc/busybox-patch
-	cd $(busybox) && patch -b -p1 < $(cwd)/$<
-	touch $@
+#$(busybox)/.stamp-busybox-patch: misc/busybox-patch
+#	cd $(busybox) && patch -b -p1 < $(cwd)/$<
+#	touch $@
 
-$(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch 
+#$(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch 
+$(busybox)/.config: misc/busybox-config
 	cp -f $< $@
 	cd $(busybox) && make oldconfig
 
@@ -276,7 +278,7 @@ stage1 += stage1/lib/libuuid.so
 # Configure switches cheerfully stolen from LFS project
 # (http://www.linuxfromscratch.org/lfs/view/development/chapter05/glibc.html).
 # FIXME:  this 2.6.0 needs update???????
-build-$(glibc)/libc.so: $(linux)/arch/i386/boot/bzImage
+build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
 	    --prefix=/usr					\
@@ -476,7 +478,7 @@ $(call copy_file,$(pciutils)/pci.ids,stage1/usr/share/pci.ids)
 stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 
 ## pcmcia-cs (PCMCIA Card Services, particularly cardmgr)
-$(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/i386/boot/bzImage
+$(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/x86/boot/bzImage
 	rm -f $@
 	cd $(pcmcia-cs)						\
 	&& make clean						\
@@ -503,7 +505,7 @@ stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
 	stage1/etc/pcmcia/network
 
 ## pmtools (acpidump, for diagnostics)
-$(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
+$(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
 	cd $(dir $@)							  \
 	&& make clean							  \
 	&& make
@@ -714,7 +716,7 @@ stage1 += stage1/sbin/mount.cifs
 
 
 ## wireless_tools
-$(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/i386/boot/bzImage
+$(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
 	cd $(wireless_tools)				\
 	&& make clean					\
 	&& make KERNEL_SRC=$(cwd)/$(linux)		\
@@ -837,7 +839,7 @@ initrd: devices.cpio .stamp-stage2
 
 ## ISO image targets
 
-$(call copy_file,$(linux)/arch/i386/boot/bzImage,iso/isolinux/bzImage)
+$(call copy_file,$(linux)/arch/x86/boot/bzImage,iso/isolinux/bzImage)
 
 $(call link_file,initrd,iso/isolinux/initrd)
 
@@ -975,6 +977,8 @@ $(call download_rule, $(pmtools), tar.bz2,			\
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/stable/)
 $(call download_rule, $(slang), tar.bz2, 	\
 	ftp://space.mit.edu/pub/davis/slang/v2.0/)
+$(call download_rule, $(syslinux), tar.gz, \
+        http://ftp.all.kernel.org/pub/linux/utils/boot/syslinux/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
 $(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
