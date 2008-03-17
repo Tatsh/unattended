@@ -9,6 +9,8 @@ dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.40.2
 expat=expat-2.0.1
+#glibc version to use: 2.3.6 for Debian Etch, 2.4.1 for Debian Lenny. 
+# 2.x.x for RHx
 glibc=glibc-2.3.6
 #glibc=glibc-2.5
 # Awful hack
@@ -17,7 +19,7 @@ kbd=kbd-1.12
 # libcap.so is required by smbclient
 # But not longer necesary for 2.6 kernel
 #libcap=libcap-1.10
-linux=linux-2.6.23.11
+linux=linux-2.6.24.3
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.45
 nano=nano-2.0.6
@@ -25,10 +27,10 @@ ncurses=ncurses-5.6
 parted=parted-1.6.22
 pciutils=pciutils-2.2.9
 pcmcia-cs=pcmcia-cs-3.2.8
-perl=perl-5.8.8
+perl=perl-5.10.0
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.34
-perl-xml-parser=XML-Parser-2.34
+perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20070511
 samba=samba-3.0.27a
@@ -945,7 +947,7 @@ $(call download_rule, $(kbd), tar.bz2,			\
 $(call download_rule, $(linux), tar.bz2,		\
 	http://ftp.all.kernel.org/pub/linux/kernel/v2.6/)
 #$(call download_rule, $(linux), tar.bz2,		\
-#	http://ftp.all.kernel.org/pub/linux/kernel/v2.6/testing/)
+# 	http://ftp.all.kernel.org/pub/linux/kernel/v2.6/testing/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.all.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
