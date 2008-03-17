@@ -136,7 +136,7 @@ for iface in eth0 eth1 eth2 ; do
     echo "*** Trying DHCP on $iface..."
     start=$SECONDS
     while : ; do
-        if udhcpc --interface=$iface --userclass=Unattended \
+        if udhcpc --interface=$iface \
             --now --script=/etc/udhcpc-script ; then
             echo "*** DHCP on $iface worked!"
             got_lease=1
