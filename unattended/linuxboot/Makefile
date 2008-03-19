@@ -426,7 +426,7 @@ $(call copy_exe, $(nano)/src/nano, stage1/usr/bin/nano)
 stage1 += stage1/usr/bin/nano
 
 ## ncurses
-$(ncurses)/lib/libncurses.so: fakeinclude/stdio.h
+$(ncurses)/lib/libncursesw.so: fakeinclude/stdio.h
 	cd $(ncurses)							\
 	&& CFLAGS="$(fakelib_cflags)"					\
 	LDFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)"	\
@@ -434,17 +434,18 @@ $(ncurses)/lib/libncurses.so: fakeinclude/stdio.h
 			--without-normal --without-debug		\
 			--disable-database --with-fallbacks=linux	\
 			--build=i586-linux --without-hashed-db		\
+			--enable-widec					\
 	&& make
 	[ -e $@ ] && touch $@
 
-fakeinclude/curses.h: stage1/usr/lib/libncurses.so
+fakeinclude/curses.h: stage1/usr/lib/libncursesw.so
 	cd $(ncurses)						\
 	&& make includedir=$(cwd)/$(dir $@) install.includes
 	[ -e $@ ] && touch $@
 
-$(call copy_lib, $(ncurses)/lib/libncurses.so, stage1/usr/lib/libncurses.so)
+$(call copy_lib, $(ncurses)/lib/libncursesw.so, stage1/usr/lib/libncursesw.so)
 
-stage1 += stage1/usr/lib/libncurses.so
+stage1 += stage1/usr/lib/libncursesw.so
 
 ## parted
 
