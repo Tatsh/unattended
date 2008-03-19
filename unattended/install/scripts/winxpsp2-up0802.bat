@@ -77,6 +77,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB943055-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/9/e/9/9e933fe2-5af6-4c6f-95bf-9f4e5b9d837f/WindowsXP-KB946026-x86-TRK.exe|updates/winxpsp2/windowsxp-kb946026-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB946026-x86-%WINLANG%.exe /passive /n /norestart"
 
+if not exist %SystemRoot%\System32\INetSrv\IISAdmin.dll goto noiis
 :: Security Update for Windows XP (KB942830) - English
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=2b498065-d682-4227-b23e-d234d7d6a3fe>
 :: URL|ARA|http://download.microsoft.com/download/c/9/c/c9ced49f-ee6f-4945-9e8e-b9845b38e432/WindowsXP-KB942830-x86-ARA.exe|updates/winxpsp2/windowsxp-kb942830-x86-ara.exe
@@ -128,3 +129,4 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB942830-x86-%WINLANG%.ex
 :: URL|SVE|http://download.microsoft.com/download/0/f/e/0fe879a3-8b6f-4727-97b6-eef118d76953/WindowsXP-KB942831-x86-SVE.exe|updates/winxpsp2/windowsxp-kb942831-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/a/1/4/a14cdc4a-320d-4156-a45c-40eb37d9f01c/WindowsXP-KB942831-x86-TRK.exe|updates/winxpsp2/windowsxp-kb942831-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB942831-x86-%WINLANG%.exe /passive /n /norestart"
+:noiis
