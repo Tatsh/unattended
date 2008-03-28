@@ -40,7 +40,7 @@ lib/libresolv.so
 lib/libz.so  # lspci
 
 # Should not hard-wire kernel version here.  FIXME!
-lib/modules/2.6.24.3
+lib/modules/2.6.24.4
 
 sbin/acpidump
 sbin/cardmgr
