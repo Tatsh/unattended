@@ -943,7 +943,7 @@ $(call download_rule, $(expat), tar.gz, \
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 # Awful hack
 $(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
-#	http://ftp.gnu.org/gnu/glibc/, $(glibc))
+	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.all.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(linux), tar.bz2,		\
