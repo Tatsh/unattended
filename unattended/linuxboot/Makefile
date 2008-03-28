@@ -11,10 +11,9 @@ e2fsprogs=e2fsprogs-1.40.8
 expat=expat-2.0.1
 #glibc version to use: 2.3.6 for Debian Etch, 2.4.1 for Debian Lenny. 
 # 2.x.x for RHx
-glibc=glibc-2.6.1
+glibc=glibc-2.5
 # Awful hack 
-# Commented out for glibc261
-#glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
+glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
 # libcap.so is required by smbclient
 # But not longer necesary for 2.6 kernel
@@ -917,11 +916,9 @@ download-pci.ids:
 
 
 download_targets=$(addprefix download-,$(packages) pci.ids)
-# Commented out for glibc261
-#download_targets += download-$(glibc-linuxthreads)
+download_targets += download-$(glibc-linuxthreads)
 
-# Commented out for glibc261
-#download-$(glibc-linuxthreads) : download-$(glibc)
+download-$(glibc-linuxthreads) : download-$(glibc)
 
 download: $(download_targets)
 
@@ -945,8 +942,7 @@ $(call download_rule, $(expat), tar.gz, \
 #	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 # Awful hack
-# Commented out for glibc261
-#$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
+$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
 #	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://ftp.all.kernel.org/pub/linux/utils/kbd/)
@@ -1008,8 +1004,7 @@ symlinks: $(symlink_targets)
 # Blow away everything we do not want to ship.
 tidy:
 	rm -rf $(patsubst symlink-%,%,$(symlink_targets))
-# Commented out for glibc261
-#	rm -f $(glibc-linuxthreads)
+	rm -f $(glibc-linuxthreads)
 	rm -rf dosboot iso
 	rm -rf .stamp-stage1 stage2 .stamp-stage2
 	rm -f devices.cpio initrd
