@@ -593,7 +593,7 @@ sub convert_fdisk_parted ($) {
 
     if ($cmd =~ /^\/clear\s+1\z/i) {
         $ret = "$parted mklabel msdos";
-       print "DEBUG: $ret";
+       print "DEBUG: $ret \n";
     }
     elsif ($cmd =~ /^\/delete\s+\/pri:(\d+)\z/i) {
         $ret = "$parted rm $1";
