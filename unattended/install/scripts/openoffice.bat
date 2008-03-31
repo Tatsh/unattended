@@ -21,9 +21,8 @@
 :: URL|CHT|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/zh-tw/2.4.0/OOo_2.4.0_Win32Intel_install_zh-TW.exe|packages/openoffice/OOo_2.4.0_Win32Intel_install_cht.exe
 
 :: Language packs Binaries for 2.4.0
-:: URL|AFK|http://ftp5.gwdg.de/pub/openoffice/extended/2.4.0rc6/OOo_2.4.0rc6_20080314_Win32Intel_langpack_af.exe|packages/openoffice/OOo_2.4.0rc6_20080314_Win32Intel_langpack_af.exe
-:: URL|MKI|http://ftp5.gwdg.de/pub/openoffice/extended/2.4.0rc6/OOo_2.4.0rc6_20080314_Win32Intel_langpack_mk.exe|packages/openoffice/OOo_2.4.0rc6_20080314_Win32Intel_langpack_mk.exe
-:: URL|VIT||http://ftp5.gwdg.de/pub/openoffice/extended/2.4.0rc6/OOo_2.4.0rc6_20080314_Win32Intel_langpack_vit.exe|packages/openoffice/OOo_2.4.0rc6_20080314_Win32Intel_langpack_vit.exe
+:: Those are used when there is no localized binary
+:: URL|ESN|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/es/2.4.0/OOo_2.4.0_Win32Intel_langpack_es.exe|packages/openoffice/OOo_2.4.0_Win32Intel_langpack_esn.exe
 
 
 :: Dictionaries packs
@@ -48,7 +47,7 @@ if not exist "%Z%\packages\openoffice\share_dict_ooo\%WINLANG%.lst" goto dict_co
 todo.pl "type %Z%\packages\openoffice\share_dict_ooo\%WINLANG%.lst >> \"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo\dictionary.lst"
 
 :: There are zip files within the packs
-todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -y -o\"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo \"%ProgramFiles%\OpenOffice.org 2.3\"\share\dict\ooo\*.zip"
+todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -y -o\"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo \"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo\*.zip"
 
 todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -o\"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo %Z%\packages\openoffice\share_dict_ooo\%WINLANG%-pack.zip"
 
@@ -57,20 +56,22 @@ goto dict_conf_ok
 :dict_conf_missing
 @echo %Z%\packages\openoffice\share_dict_ooo\%WINLANG%.lst is missing.
 @echo See example on the wiki http://ubertechnique.com/unattended/OpenOffice
+@echo Please report it back!
 
 :dict_conf_ok
 
 if exist "%Z%\packages\openoffice\OOo_2.4.0_Win32Intel_install_%WINLANG%.exe" goto localizedbinary
 
-:: This code does not run right now
+:: Install Langpack
 :: some languages does not have a localized version, they need to install enu version and a langpack
-if not exist "%Z%\packages\openoffice\OOo_2.4.0rc6_20080314_Win32Intel_langpack_%WINLANG%.exe" goto nolangpack
+if not exist "%Z%\packages\openoffice\OOo_2.4.0_Win32Intel_langpack_%WINLANG%.exe" goto nolangpack
 
-todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.4.0rc6_20080314_Win32Intel_langpack_%WINLANG%.exe /S "
+todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.4.0_Win32Intel_langpack_%WINLANG%.exe /S "
 goto mainbinary
 
 :nolangpack
 @echo No language pack for %WINLANG%
+@echo Please report it back to the list!
 
 :mainbinary
 todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.4.0_Win32Intel_install_enu.exe /S /v\"/qb ALLUSERS=1  SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1 \""
