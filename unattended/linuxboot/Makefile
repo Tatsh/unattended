@@ -23,7 +23,7 @@ module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.51a
 nano=nano-2.0.7
 ncurses=ncurses-5.6
-parted=parted-1.6.22
+parted=parted-1.8.8
 pciutils=pciutils-2.2.10
 pcmcia-cs=pcmcia-cs-3.2.8
 perl=perl-5.10.0
@@ -448,12 +448,14 @@ stage1 += stage1/usr/lib/libncursesw.so
 
 ## parted
 
+#FIXME: --disable-Werror added to compile parted 1.8.8 with gcc 4.2.1 and later
+#       This will probably be fixed in a later version of parted
 $(parted)/parted/.libs/parted: fakeinclude/stdio.h stage1/lib/libuuid.so \
 				stage1/lib/libdl.so
 	cd $(parted)						\
 	&& CFLAGS="$(fakelib_cflags) -I$(cwd)/$(e2fsprogs)/lib"	\
 		./configure --disable-nls --without-readline	\
-			--build=i586-linux			\
+		--build=i586-linux --disable-Werror		\
 	&& make
 	[ -e $@ ]
 
@@ -956,8 +958,7 @@ $(call download_rule, $(mysql), tar.gz, \
 	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-5.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
-$(call download_rule, $(parted), tar.gz, 			\
-        http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/linuxboot/misc/)
+$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.all.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
