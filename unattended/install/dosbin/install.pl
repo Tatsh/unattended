@@ -512,15 +512,18 @@ sub find_free_space ($) {
     my ($ext_start, $ext_end);
 
     # Read the current partition table.
-    my $cmd = 'parted -s /dev/dsk print';
+    my $cmd = 'parted -s /dev/dsk unit MB print';
     open PARTED, "$cmd|"
         or die "Unable to fork: $^E";
 
+    my $bexpr = '(\d+[.|,]?\d*)[B|k|M|G]\w?'; #regex-part for disksize-numbers
+
     while (my $line = <PARTED>) {
-        my ($start, $end, $parttype) =
-            ($line =~ /^\d+\s+(\d+\.\d{3})\s+(\d+\.\d{3})\s+(primary|logical|extended)/);
+        my ($start, $end, $partsize, $parttype) =
+            ($line =~ m/^\s?\d+\s+$bexpr\s+$bexpr\s+$bexpr\s+(primary|logical|extended)/);
         defined $start && defined $end && defined $parttype
             or next;
+
 print "DEBUG: PARTED_VAR START:$start END:$end PARTTYPE:$parttype \n" ;
         if ($logical && $parttype eq 'extended') {
             # If multiple extended partitions (weird), use the first.
