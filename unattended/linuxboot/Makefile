@@ -1,5 +1,5 @@
 bash=bash-3.2
-busybox=busybox-1.9.1
+busybox=busybox-1.9.2
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
