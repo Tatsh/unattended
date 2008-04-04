@@ -1001,8 +1001,20 @@ $u->comments ('_meta', 'fdisk_confirm') =
 
 $u->{'_meta'}->{'fdisk_confirm'} = 1;
 
+$u->comments ('_meta', 'ntinstall_cmd') =
+    ['System command to run in place of winnt under dosemu? (linuxboot only)'];
+$u->{'_meta'}->{'ntinstall_cmd'} =
+    sub {
+        return (yes_no_choice ('Use nt5x-install script - (DOSEMU alternative)')
+                ? 'nt5x-install'
+                : undef);
+    };
+
 $u->{'_meta'}->{'format_cmd'} =
     sub {
+        if (defined $u->{'_meta'}->{'ntinstall_cmd'}) {
+            return undef;
+        }
         return (yes_no_choice ('Format C: drive')
                 ? 'format /y /z:seriously /q /u /a /v: c:'
                 : undef);
@@ -1502,10 +1514,22 @@ if ($is_linux) {
             close SETTINGS
                 or die "Unable to close $settings_file: $^E";
             print "done.\n";
+            # Disk geometry is now fixed, no need to hack disk geo into the partition:
+            $u->{'_meta'}->{'fix_disk_geo_heads'} = "";
+            $u->{'_meta'}->{'fix_disk_geo_sectors'} = "";
         }
         else {
             # Non-IDE disk.  Should probably sanity-check kernel
             # geometry against legacy BIOS geometry here.  FIXME.
+            # Send partition geometry via unatted.txt so we can
+            # hack it into partition after the dosemu run.
+            # FIXME Should we ask the user before we do this?
+            if (not defined $u->{'_meta'}->{'fix_disk_geo_heads'}) {
+                $u->{'_meta'}->{'fix_disk_geo_heads'} = $bios_head;
+            }
+            if (not defined $u->{'_meta'}->{'fix_disk_geo_sectors'}) {
+                $u->{'_meta'}->{'fix_disk_geo_sectors'} = $bios_sect;
+            }
         }
     }
 }
