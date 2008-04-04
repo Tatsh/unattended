@@ -15,9 +15,6 @@ glibc=glibc-2.3.6
 # Awful hack Comment out if glibc > 2.4. 2.4 does not support linuxthreads. 
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-# libcap.so is required by smbclient
-# But not longer necesary for 2.6 kernel
-#libcap=libcap-1.10
 linux=linux-2.6.24.4
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.51a
@@ -331,21 +328,6 @@ stage1/etc/ld.so.conf:
 build-$(glibc)/elf/ld.so: build-$(glibc)/libc.so
 
 $(call copy_lib, build-$(glibc)/elf/ld.so, stage1/lib/ld-linux.so)
-
-## libcap (just libcap.so.1, required for samba) 
-# Not necesary for 2.6
-#$(libcap)/.stamp-libcap-patch: misc/libcap-patch
-#	cd $(libcap) && patch -b -p1 < $(cwd)/$<
-#	touch $@
-#
-#$(libcap)/libcap/libcap.so.1: build-$(glibc)/libc.so $(libcap)/.stamp-libcap-patch
-#	cd $(libcap)						\
-#	&& make IFLAGS="$(fakelib_cflags) -I$(libcap)/libcap/include" LDFLAGS="$(fakelib_cflags)"
-#	[ -e $@ ]
-
-#$(call copy_lib,$(libcap)/libcap/libcap.so.1,stage1/lib/libcap.so.1)
-
-#stage1 += stage1/lib/libcap.so.1
 
 # Bash needs libdl
 build-$(glibc)/dlfcn/libdl.so: build-$(glibc)/libc.so
