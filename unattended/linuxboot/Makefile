@@ -777,6 +777,16 @@ $(call copy_file,misc/protocols,stage1/etc/protocols)
 
 $(call copy_file,misc/freedos-mbr.bin,stage1/usr/lib/freedos-mbr.bin)
 
+$(call copy_file,misc/ntldrbin/ntldr_boot_code_install,stage1/usr/lib/ntldrbin/ntldr_boot_code_install)
+
+$(call copy_file,misc/ntldrbin/ntldr_boot_code_sektor0,stage1/usr/lib/ntldrbin/ntldr_boot_code_sektor0)
+
+$(call copy_file,misc/ntldrbin/ntldr_boot_code_sektor12,stage1/usr/lib/ntldrbin/ntldr_boot_code_sektor12)
+
+$(call copy_file,misc/nt5x-install,stage1/usr/bin/nt5x-install)
+
+$(call copy_file,misc/unatt-functions.sh,stage1/usr/lib/unatt-functions.sh)
+
 # Some apps (namely dosemu) need getpwnam() etc. to work
 $(call copy_file,misc/passwd,stage1/etc/passwd)
 
@@ -786,7 +796,12 @@ stage1 += stage1/init stage1/usr/bin/find-boot-device			\
 		stage1/etc/master stage1/etc/modprobe.conf		\
 		stage1/etc/module-order.txt				\
 		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf	\
-		stage1/etc/passwd stage1/usr/lib/freedos-mbr.bin
+		stage1/etc/passwd stage1/usr/lib/freedos-mbr.bin	\
+		stage1/usr/lib/ntldrbin/ntldr_boot_code_install         \
+		stage1/usr/lib/ntldrbin/ntldr_boot_code_sektor0         \
+		stage1/usr/lib/ntldrbin/ntldr_boot_code_sektor12        \
+		stage1/usr/lib/unatt-functions.sh                       \
+		stage1/usr/bin/nt5x-install
 
 # /etc/version
 stage1/etc/version: FORCE
