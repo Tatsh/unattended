@@ -979,9 +979,32 @@ $u->{'_meta'}->{'doit_cmds'} =
         validate_old_dos_dir ($src_tree);
         $src_tree =~ /\\$/
             or $src_tree .= '\\';
-        $src_tree .= 'i386';
         my $dos_zdrv = $u->{'_meta'}->{'dos_zdrv'};
-        return "$dos_zdrv;cd $src_tree;winnt $lang_opts /s:$src_tree /u:$unattend_txt";
+        my $cmpnents = "";
+        my $winnt_path = "winnt";
+        my $winnt_opts = "";
+
+        # Create the correct string for the cmpnents directory. This will
+        # either be Z:\os... or /z/os... depending on the boot disk.
+        if ($is_linux) {
+            (my $linux_tree = $src_tree) =~ s#\\#/#g;
+            $linux_tree =~ s#$dos_zdrv#/z#g;
+
+            $cmpnents = $linux_tree . "cmpnents";
+        } else {
+            $cmpnents = $src_tree . "cmpnents";
+        }
+
+        # Test to see if the cmpnents directory exists - if so we have 
+        # XP Tablet and need to call the installer with different arguments.
+        if ( -e $cmpnents ) {
+            $winnt_path = "i386\\winnt";
+            $winnt_opts = "/2";
+        } else {
+            $src_tree .= 'i386';
+        }
+
+        return "$dos_zdrv;cd $src_tree;$winnt_path $winnt_opts $lang_opts /s:$src_tree /u:$unattend_txt";
     };
 
 $u->comments ('_meta', 'edit_files') =
