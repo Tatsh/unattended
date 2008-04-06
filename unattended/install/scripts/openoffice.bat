@@ -16,13 +16,12 @@
 :: URL|PLK|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/pl/2.4.0/OOo_2.4.0_Win32Intel_install_pl.exe|packages/openoffice/OOo_2.4.0_Win32Intel_install_plk.exe
 :: URL|RUS|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/ru/2.4.0/OOo_2.4.0_Win32Intel_install_ru.exe|packages/openoffice/OOo_2.4.0_Win32Intel_install_rus.exe
 :: URL|SVE|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/sv/2.4.0/OOo_2.4.0_Win32Intel_install_sv.exe|packages/openoffice/OOo_2.4.0_Win32Intel_install_sve.exe
-:: URL|PTB|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/pt-BR/2.3.1/OOo_2.3.1_Win32Intel_install_pt-BR.exe|packages/openoffice/OOo_2.3.1_Win32Intel_install_ptb.exe
+:: URL|PTB|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/pt-BR/2.4.0/OOo_2.4.0_Win32Intel_install_pt-BR.exe|packages/openoffice/OOo_2.4.0_Win32Intel_install_ptb.exe
 :: URL|CHS|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/zh-cn/2.2.1/OOo_2.2.1_Win32Intel_install_zh-CN.exe|packages/openoffice/OOo_2.2.1_Win32Intel_install_chs.exe
 :: URL|CHT|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/zh-tw/2.2.1/OOo_2.2.1_Win32Intel_install_zh-TW.exe|packages/openoffice/OOo_2.2.1_Win32Intel_install_cht.exe
 
 :: Language packs Binaries for 2.4.0
-:: Those are used when there is no localized binary
-:: URL|ESN|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/es/2.4.0/OOo_2.4.0_Win32Intel_langpack_es.exe|packages/openoffice/OOo_2.4.0_Win32Intel_langpack_esn.exe
+:: Those are used when there is no localized binary (usually OOo_2.4.0_Win32Intel_langpack_$LANG.exe)
 
 
 :: Dictionaries packs
