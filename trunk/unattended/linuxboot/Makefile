@@ -860,10 +860,11 @@ iso: linuxboot.iso
 ## tftpboot targets
 
 $(call link_file,iso/isolinux/bzImage,tftpboot/bzImage)
+$(call link_file,$(syslinux)/pxelinux.0,tftpboot/pxelinux.0)
 $(call link_file,iso/isolinux/initrd,tftpboot/initrd)
 $(call link_file,iso/isolinux/isolinux.cfg,tftpboot/pxelinux.cfg/default)
 
-tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default
+tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default tftpboot/pxelinux.0
 
 ## Maintainer targets
 
