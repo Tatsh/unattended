@@ -3,11 +3,15 @@
 # Change to the scripts directory so paths are correct
 cd "$(dirname "$0")"/..
 
+# Pass some options to Wget 
+if [ "$1" == "--fake-bts" ]; then shift; WGET_OPS="--referer=http://driverpacks.net/DriverPacks/overview.php  -U \"Mozilla/5.0\""; else WGET_OPS=""; fi
+
 # Do not download, only check validity of URL
 if [ "$1" == "--check-only" ]; then shift; SPIDER="--spider"; else SPIDER=""; fi
 
+
 # Default to ENU if nothing passed in as first arg
-if [ ".$1" == "." ]; then WINLANG="ENU"; else WINLANG="$1"; fi
+if [ ".$1" == "." ]; then WINLANG="ESN"; else WINLANG="$1"; fi
 
 for cmdfile in `egrep -lri "URL\|($WINLANG|ALL)" scripts/$2`; do
 
@@ -15,9 +19,9 @@ for cmdfile in `egrep -lri "URL\|($WINLANG|ALL)" scripts/$2`; do
 
   # Look for URL|LANG in scripts/ + second arg
   for needed in `egrep -hri "URL\|($WINLANG|ALL)" $cmdfile | tr ' ' '~'`; do
-      url=`echo "$needed" | cut -d\| -f3 | tr '~' ' ' | perl -pe 's/\r//;s/^ *//;s/ *$//'`
-      file=`echo "$needed" | cut -d\| -f4 | tr '~' ' '  | perl -pe 's/\r//;s/^ *//;s/ *$//;s/([^\/]*\/*)$/lc($1)/eg'`
-      path=`echo "$file" | perl -pe 's#(.*/).*#$1#'`
+      url=`echo -ne "$needed" | cut -d\| -f3 | tr '~' ' ' | perl -pe 's/[\r\n]//g;s/^ *//;s/ *$//'`
+      file=`echo -ne "$needed" | cut -d\| -f4 | tr '~' ' '  | perl -pe 's/[\r\n]//g;s/^ *//;s/ *$//;s/([^\/]*\/*)$/lc($1)/eg'`
+      path=`echo -ne "$file" | perl -pe 's#(.*/).*#$1#'`
 
       if [ ! "$SPIDER" == "" ]; then
         wget $SPIDER --passive-ftp "$url" ;
@@ -27,7 +31,8 @@ for cmdfile in `egrep -lri "URL\|($WINLANG|ALL)" scripts/$2`; do
       mkdir -p "$path"
       # Download file if it doesn't exist
       if [ ! -f "$file" ] ; then
-          if wget $SPIDER --passive-ftp -O "$file.$$.tmp" "$url" ; then
+#if wget  --referer=http://driverpacks.net/DriverPacks/overview.php  -U "Mozilla/5.0 (X11; U; Linux i686; es-ES; rv:1.8.1.3) Gecko/20060601 Firefox/2.0.0.3 (Ubuntu-edgy)" --passive-ftp -O "$file.$$.tmp" "$url" ; then
+          if wget $SPIDER $WGET_OPS --passive-ftp -O "$file.$$.tmp" "$url" ; then
               mv "$file.$$.tmp" "$file"
           else
               rm -f "$file.$$.tmp"
