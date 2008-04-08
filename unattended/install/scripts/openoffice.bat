@@ -32,6 +32,11 @@
 :: URL|RUS|http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/ru_RU-pack.zip|packages/openoffice/share_dict_ooo/rus-pack.zip
 :: URL|SVE|http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/sv_SE-pack.zip|packages/openoffice/share_dict_ooo/sve-pack.zip
 
+:: Extension to read ooxml files. Need more info about how to installed
+:: URL|ALL|http://download.go-oo.org/tstnvl/odf-converter/odf-converter-1.1-7.oxt|packages/openoffice/ext/odf-converter-1.1-7
+.oxt
+
+
 @Echo off
 :: comment it out if you want a shortcut on the desktop
 ::todo.pl "shortcut.pl \"%ProgramFiles%\OpenOffice.org 2.4\"\program\soffice.exe special:AllUsersDesktop\OpenOffice"
