@@ -529,6 +529,7 @@ perllib=$(cwd)/stage1/opt/perl/lib/$(patsubst perl-%,%,$(perl))
 perlrun=$(cwd)/stage1/opt/perl/bin/perl -I$(cwd)/stage1/opt/perl/lib/site_perl -I$(perllib)
 
 ## mysql
+# It has a dependency on ncurses-dev fakeinclude/curses.h could fixed
 $(mysql)/Makefile: stage1/opt/perl/bin/perl fakeinclude/zlib.h
 	cd $(dir $@) \
 	&& CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)" \
