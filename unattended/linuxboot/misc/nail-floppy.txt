@@ -37,6 +37,7 @@ lib/libnsl.so   # Samba
 lib/libnss_dns.so
 lib/libnss_files.so
 lib/libresolv.so
+lib/librt.so
 lib/libz.so  # lspci
 
 # Should not hard-wire kernel version here.  FIXME!
