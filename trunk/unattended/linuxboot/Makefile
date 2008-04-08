@@ -334,6 +334,11 @@ build-$(glibc)/dlfcn/libdl.so: build-$(glibc)/libc.so
 
 $(call copy_lib, build-$(glibc)/dlfcn/libdl.so, stage1/lib/libdl.so)
 
+# DOSemu needs librt
+build-$(glibc)/rt/librt.so: build-$(glibc)/libc.so
+
+$(call copy_lib, build-$(glibc)/rt/librt.so, stage1/lib/librt.so)
+
 # Samba needs libresolv, libnss_*, libnsl, libcrypt
 build-$(glibc)/resolv/libresolv.so: build-$(glibc)/libc.so
 
@@ -367,7 +372,7 @@ stage1 +=							\
 	$(patsubst %, stage1/lib/%,				\
 	  libc.so ld-linux.so libdl.so libresolv.so libnsl.so	\
 	  libnss_dns.so libnss_files.so libcrypt.so		\
-	  libm.so libutil.so libpthread.so			\
+	  libm.so libutil.so libpthread.so librt.so		\
 	)
 
 ## kbd
