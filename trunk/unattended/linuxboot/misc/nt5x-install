@@ -163,6 +163,12 @@ else
 fi
 
 copy_files "$OS_INSTALL_DIR/" "/c/\$win_nt\$.~ls/" 1 "Copy system"
+
+if [ -d "$OS_DIR/cmpnents" ]
+then
+	copy_files "$OS_DIR/cmpnents/" "/c/\$win_nt\$.~ls/" 1 "Copy cmpnents"
+fi
+
 if [ "$ARCH" == "amd64" ]
 then
 	copy_files "$OS_DIR/i386/" "/c/\$win_nt\$.~ls/" 1 "Copy i386 system"
