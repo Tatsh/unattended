@@ -1,30 +1,3 @@
-
-:: Cumulative Security Update for Internet Explorer for Windows XP Service Pack 2 (KB944533)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=BB2AA3CB-021F-4890-AB20-2A51F8E17554>
-:: URL|ARA|http://download.microsoft.com/download/e/4/a/e4ac21a0-74a0-4071-83ab-3a1ed67b3274/WindowsXP-KB944533-x86-ARA.exe|updates/winxpsp2/windowsxp-kb944533-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/2/7/f/27f9a6da-c96a-4cc2-8d99-2dbeb694a6c0/WindowsXP-KB944533-x86-CSY.exe|updates/winxpsp2/windowsxp-kb944533-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/1/3/a/13a4eacb-292a-4513-8f0e-e299bbd4bc34/WindowsXP-KB944533-x86-DAN.exe|updates/winxpsp2/windowsxp-kb944533-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/9/d/9/9d9892a5-6cae-4e9e-9a30-d1d3b9ebe91f/WindowsXP-KB944533-x86-DEU.exe|updates/winxpsp2/windowsxp-kb944533-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/7/3/9/739e0daa-7ee9-4e05-8204-46221e6c8869/WindowsXP-KB944533-x86-ELL.exe|updates/winxpsp2/windowsxp-kb944533-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/c/7/c/c7c3d934-0af9-4e72-ac42-6f676c6af56a/WindowsXP-KB944533-x86-ENU.exe|updates/winxpsp2/windowsxp-kb944533-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/e/4/6/e46e3f3d-e135-44d3-add7-f4203f17f5fd/WindowsXP-KB944533-x86-ESN.exe|updates/winxpsp2/windowsxp-kb944533-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/b/5/0/b507405c-5216-4a7d-9ddf-03ee8e7f8a8d/WindowsXP-KB944533-x86-FIN.exe|updates/winxpsp2/windowsxp-kb944533-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/2/b/6/2b603367-5a97-4ad2-b6ca-e1afc84ca7a6/WindowsXP-KB944533-x86-FRA.exe|updates/winxpsp2/windowsxp-kb944533-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/a/b/4abff5a6-c412-4179-a549-46e9d392311c/WindowsXP-KB944533-x86-HEB.exe|updates/winxpsp2/windowsxp-kb944533-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/b/3/2/b3215e8e-bef1-46a9-8aa1-3a236ee669b7/WindowsXP-KB944533-x86-HUN.exe|updates/winxpsp2/windowsxp-kb944533-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/a/7/4/a7470582-fdbc-4ab9-8e79-db2625e1f2f3/WindowsXP-KB944533-x86-ITA.exe|updates/winxpsp2/windowsxp-kb944533-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/e/c/e/ecef86a3-7cf0-421a-b6a2-aab7941a18b0/WindowsXP-KB944533-x86-JPN.exe|updates/winxpsp2/windowsxp-kb944533-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/9/7/c/97c34d88-2bb5-449e-9e5e-a87fb88c84de/WindowsXP-KB944533-x86-KOR.exe|updates/winxpsp2/windowsxp-kb944533-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/b/6/d/b6d6d1c8-76e2-40c5-879d-78e3d70f3101/WindowsXP-KB944533-x86-NLD.exe|updates/winxpsp2/windowsxp-kb944533-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/3/a/b/3abc26f0-f705-4b3e-a2c7-820f76f208e7/WindowsXP-KB944533-x86-NOR.exe|updates/winxpsp2/windowsxp-kb944533-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/8/6/f/86f8e202-ba8c-4f05-a6f5-6b3690a28bee/WindowsXP-KB944533-x86-PLK.exe|updates/winxpsp2/windowsxp-kb944533-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/1/c/b/1cbcff29-3e42-4600-921e-99e5251c4850/WindowsXP-KB944533-x86-PTB.exe|updates/winxpsp2/windowsxp-kb944533-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/5/0/1/5012cde5-bf45-4900-b738-1b9eb27198c9/WindowsXP-KB944533-x86-PTG.exe|updates/winxpsp2/windowsxp-kb944533-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/f/e/3/fe3b24d4-07f8-4818-9694-63e0e33800cf/WindowsXP-KB944533-x86-RUS.exe|updates/winxpsp2/windowsxp-kb944533-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/5/3/a/53a2eb52-3552-485c-a35f-3bb2835c46b2/WindowsXP-KB944533-x86-SVE.exe|updates/winxpsp2/windowsxp-kb944533-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/d/2/c/d2c6cbe1-02bb-4ac8-8ec5-330b7b87d617/WindowsXP-KB944533-x86-TRK.exe|updates/winxpsp2/windowsxp-kb944533-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB944533-x86-%WINLANG%.exe /passive /n /norestart"
-
 :: Security Update for Windows XP (KB943055)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=5c331a3a-93e0-42e4-9cd1-4e32ebdda38d>
 :: URL|ARA|http://download.microsoft.com/download/d/e/8/de8f3864-8cb3-41f2-a2a9-8a3abb8d8335/WindowsXP-KB943055-x86-ARA.exe|updates/winxpsp2/windowsxp-kb943055-x86-ara.exe

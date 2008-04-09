@@ -4,8 +4,8 @@
 :: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.39.exe|updates/common/kb890830/windows-kb890830-v1.39.exe
-todo.pl ".reboot-on 194 %Z%\updates\common\kb890830\Windows-KB890830-V1.39.exe /Q"
+:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V1.40.exe|updates/common/kb890830/windows-kb890830-v1.40.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\kb890830\Windows-KB890830-V1.40.exe /Q"
 
 :: Microsoft Base Smart Card Cryptographic Service Provider Package: x86 (KB909520)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=e8095fd5-c7e5-4bee-9577-2ea6b45b41c6>
