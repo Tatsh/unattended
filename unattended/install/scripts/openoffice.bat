@@ -23,15 +23,6 @@
 :: Language packs Binaries for 2.4.0
 :: Those are used when there is no localized binary (usually OOo_2.4.0_Win32Intel_langpack_$LANG.exe)
 
-
-:: Dictionaries packs
-:: URL|ESN|http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/es_ES-pack.zip|packages/openoffice/share_dict_ooo/esn-pack.zip
-:: URL|FRA|http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/fr_FR-pack.zip|packages/openoffice/share_dict_ooo/fra-pack.zip
-:: URL|NOR|http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/no_NO-pack.zip|packages/openoffice/share_dict_ooo/nor-pack.zip
-:: URL|PLK|http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/pl_PL-pack.zip|packages/openoffice/share_dict_ooo/plk-pack.zip
-:: URL|RUS|http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/ru_RU-pack.zip|packages/openoffice/share_dict_ooo/rus-pack.zip
-:: URL|SVE|http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/sv_SE-pack.zip|packages/openoffice/share_dict_ooo/sve-pack.zip
-
 :: Extension to read ooxml files. Need more info about how to installed
 :: URL|ALL|http://download.go-oo.org/tstnvl/odf-converter/odf-converter-1.1-7.oxt|packages/openoffice/ext/odf-converter-1.1-7
 .oxt
@@ -44,25 +35,6 @@
 ::Skip registration
 :: FIXME: This does not seem to work
 ::todo.pl "copy %Z%\packages\openoffice\Setup.xcu \"%ProgramFiles%\OpenOffice.org 2.4\"\share\registry\data\org\openoffice\
-
-:: Install local dictionaries. Make sure that you have created a %WINLANG%.lst file.
-if not exist "%Z%\packages\openoffice\share_dict_ooo\%WINLANG%.lst" goto dict_conf_missing
-
-todo.pl "type %Z%\packages\openoffice\share_dict_ooo\%WINLANG%.lst >> \"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo\dictionary.lst"
-
-:: There are zip files within the packs
-todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -y -o\"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo \"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo\*.zip"
-
-todo.pl "\"%ProgramFiles%\7-Zip\7z\" x -o\"%ProgramFiles%\OpenOffice.org 2.4\"\share\dict\ooo %Z%\packages\openoffice\share_dict_ooo\%WINLANG%-pack.zip"
-
-goto dict_conf_ok
-
-:dict_conf_missing
-@echo %Z%\packages\openoffice\share_dict_ooo\%WINLANG%.lst is missing.
-@echo See example on the wiki http://ubertechnique.com/unattended/OpenOffice
-@echo Please report it back!
-
-:dict_conf_ok
 
 if exist "%Z%\packages\openoffice\OOo_2.4.0_Win32Intel_install_%WINLANG%.exe" goto localizedbinary
 
@@ -87,5 +59,3 @@ goto exit
 
 :exit
 
-:: Install 7zip if it isn't already
-todo.pl 7-zip.bat
