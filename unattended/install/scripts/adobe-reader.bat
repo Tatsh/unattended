@@ -78,6 +78,8 @@ if not exist %Z%\packages\adobereader\misc\fontpack812_xtd_lang.msi goto nolangs
 todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\fontpack810_xtd_lang.msi"
 
 :nolangsupport
+:: There is not need for a link on the desktop. It is a doument centric application
+todo.pl "unlink.pl special:AllUsersDesktop\"\Adobe Reader 8.lnk\"" 
 :: Please do not start anything unless necesary
 todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 todo.pl "start /wait %adobe_install% /SAll"
