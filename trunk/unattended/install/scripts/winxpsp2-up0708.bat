@@ -53,32 +53,6 @@ todo.pl ".reboot-on 194 %KB936181% /q reboot=reallysuppress /l*v %SystemDrive%\n
 :: URL|TRK|http://download.microsoft.com/download/b/2/3/b23f8e27-f3e4-4880-8bed-be09b1ead9e4/WindowsXP-KB937143-x86-TRK.exe|updates/winxpsp2/windowsxp-kb937143-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB937143-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Security Update for Windows XP (KB938829) - English
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=dc29475d-c0bb-4d35-8dd6-4ca1cac32315>
-:: URL|ARA|http://download.microsoft.com/download/3/f/c/3fcbbb7c-cad5-4390-af20-e9b8b6e881ba/WindowsXP-KB938829-x86-ARA.exe|updates/winxpsp2/windowsxp-kb938829-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/f/7/1/f712fd21-9194-4b9c-ad45-ef7c845a2d52/WindowsXP-KB938829-x86-CSY.exe|updates/winxpsp2/windowsxp-kb938829-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/1/d/a/1dab0a97-92e6-43de-bce8-356c623ef50c/WindowsXP-KB938829-x86-DAN.exe|updates/winxpsp2/windowsxp-kb938829-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/a/a/8/aa88830a-8285-492a-9c59-3e8459c92ed3/WindowsXP-KB938829-x86-DEU.exe|updates/winxpsp2/windowsxp-kb938829-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/8/b/e/8bee7b02-46de-49cb-ad90-cabbf32ddd39/WindowsXP-KB938829-x86-ELL.exe|updates/winxpsp2/windowsxp-kb938829-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/5/4/7/54797ac0-4407-4642-9530-9f70f6ba9ded/WindowsXP-KB938829-x86-ENU.exe|updates/winxpsp2/windowsxp-kb938829-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/5/8/4/584eb46b-939b-4f86-b06b-2131ea7edc29/WindowsXP-KB938829-x86-ESN.exe|updates/winxpsp2/windowsxp-kb938829-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/b/e/1/be122a26-e163-4494-b78b-7f3b02ef0f76/WindowsXP-KB938829-x86-FIN.exe|updates/winxpsp2/windowsxp-kb938829-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/2/8/f/28fc2a6d-429f-405b-9f5d-a402a27c13a8/WindowsXP-KB938829-x86-FRA.exe|updates/winxpsp2/windowsxp-kb938829-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/6/5/6/656816dd-aaef-462f-a95f-271e209b92d2/WindowsXP-KB938829-x86-HEB.exe|updates/winxpsp2/windowsxp-kb938829-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/5/0/c/50c3d4b9-817c-4afb-b999-5ee147e45001/WindowsXP-KB938829-x86-HUN.exe|updates/winxpsp2/windowsxp-kb938829-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/9/2/d/92db57c4-07aa-4d30-9dd6-e3885af59c1e/WindowsXP-KB938829-x86-ITA.exe|updates/winxpsp2/windowsxp-kb938829-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/0/d/2/0d293634-d761-4a8e-b800-37e275ce1db8/WindowsXP-KB938829-x86-JPN.exe|updates/winxpsp2/windowsxp-kb938829-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/e/7/0/e7076d3b-25d5-4a13-8301-6f5427047e8f/WindowsXP-KB938829-x86-KOR.exe|updates/winxpsp2/windowsxp-kb938829-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/8/3/9/8393adae-0d03-422e-9c0f-c28a488363c6/WindowsXP-KB938829-x86-NLD.exe|updates/winxpsp2/windowsxp-kb938829-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/b/7/0/b7038773-daeb-4d98-acb6-b05b8341de9c/WindowsXP-KB938829-x86-NOR.exe|updates/winxpsp2/windowsxp-kb938829-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/c/4/a/c4ac150d-e0b3-4521-a876-7d2c2a104dbb/WindowsXP-KB938829-x86-PLK.exe|updates/winxpsp2/windowsxp-kb938829-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/f/9/7/f971fd67-fdc4-4902-a3ab-54406186473c/WindowsXP-KB938829-x86-PTB.exe|updates/winxpsp2/windowsxp-kb938829-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/c/f/9/cf992094-1e63-4f17-b78f-316705f0599d/WindowsXP-KB938829-x86-PTG.exe|updates/winxpsp2/windowsxp-kb938829-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/3/1/6/3163d945-7129-479e-870a-9feb73b462a2/WindowsXP-KB938829-x86-RUS.exe|updates/winxpsp2/windowsxp-kb938829-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/0/4/a0493244-b027-471a-bcc2-12534be2aeba/WindowsXP-KB938829-x86-SVE.exe|updates/winxpsp2/windowsxp-kb938829-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/2/5/b/25b6e064-31f3-4133-9ab7-6261879ec64b/WindowsXP-KB938829-x86-TRK.exe|updates/winxpsp2/windowsxp-kb938829-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB938829-x86-%WINLANG%.exe /passive /n /norestart"
-
 
 :: Security Update for Windows XP Service Pack 2 (KB938127)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=4447D74F-09EA-4BE0-9DAE-C243CE657FB7>
