@@ -136,13 +136,12 @@ stage1/bin/sh: stage1/bin/bash
 stage1 += stage1/bin/bash stage1/bin/sh
 
 ## BusyBox
-# This patch is to allow "udchpc --userclass=Unattended"
-#$(busybox)/.stamp-busybox-patch: misc/busybox-patch
-#	cd $(busybox) && patch -b -p1 < $(cwd)/$<
-#	touch $@
+# This patch makes udhcpc fetch option 233 from the dhcp server
+$(busybox)/.stamp-busybox-patch: misc/busybox-patch
+	cd $(busybox) && patch -b -p1 < $(cwd)/$<
+	touch $@
 
-#$(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch 
-$(busybox)/.config: misc/busybox-config
+$(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch 
 	cp -f $< $@
 	cd $(busybox) && make oldconfig
 
