@@ -30,9 +30,20 @@ sub new ($$) {
 
     my Unattend::WinMedia $self = fields::new ($class);
 
-    my $txtsetup = $file_spec->catfile ($path, 'i386', 'txtsetup.sif');
-    my $setupp = $file_spec->catfile ($path, 'i386', 'setupp.ini');
-    my $prodspec = $file_spec->catfile ($path, 'i386', 'prodspec.ini');
+    my $txtsetup;
+    my $setupp;
+    my $prodspec;
+
+    if (-d &$dos_to_host ($file_spec->catfile( $path, 'amd64'))) {
+        $txtsetup = $file_spec->catfile ($path, 'amd64', 'txtsetup.sif');
+        $setupp = $file_spec->catfile ($path, 'amd64', 'setupp.ini');
+        $prodspec = $file_spec->catfile ($path, 'amd64', 'prodspec.ini');
+    }
+    else {
+        $txtsetup = $file_spec->catfile ($path, 'i386', 'txtsetup.sif');
+        $setupp = $file_spec->catfile ($path, 'i386', 'setupp.ini');
+        $prodspec = $file_spec->catfile ($path, 'i386', 'prodspec.ini');
+    }
     -f &$dos_to_host ($txtsetup) && -f &$dos_to_host($setupp)
         && -f &$dos_to_host ($prodspec)
         or return undef;
@@ -135,6 +146,8 @@ sub service_pack ($) {
 
 my %pid_table =
     (
+     # Windows Server 2003, Standard x64 Edition
+     '76869270' => 'Volume',
      # Windows Server 2003
      '69763000' => 'Trial',
      '69753000' => 'Retail',
@@ -277,8 +290,13 @@ sub oem_pnp_dirs ($;$$) {
     my $verbose = shift;
     my $oem_system_dir = shift;
 
-    defined $oem_system_dir
-        or $oem_system_dir = $file_spec->catdir ($self->path (), 'i386', '$oem$', '$1');
+    if (not defined $oem_system_dir) {
+	if (-d &$dos_to_host ($file_spec->catfile($self->path (), 'amd64'))) {
+	    $oem_system_dir = $file_spec->catdir ($self->path (), 'amd64', '$oem$', '$1');
+	} else {
+	    $oem_system_dir = $file_spec->catdir ($self->path (), 'i386', '$oem$', '$1');
+	}
+    }
 
     $verbose
         and print "Looking for drivers under $oem_system_dir...\n";
@@ -296,7 +314,11 @@ sub oem_pnp_dirs ($;$$) {
 sub _textmode_dir ($) {
     my Unattend::WinMedia ($self) = @_;
     
-    return $file_spec->catdir ($self->path, 'i386', '$oem$','textmode');
+    if (-d &$dos_to_host ($file_spec->catfile( $self->path (), 'amd64'))) {
+      return $file_spec->catdir ($self->path, 'amd64', '$oem$','textmode');
+    } else {
+      return $file_spec->catdir ($self->path, 'i386', '$oem$','textmode');
+    }
 }
 
 # Return the names of drivers from the [scsi] section of txtsetup.oem.
@@ -387,7 +409,7 @@ sub textmode_retail_drivers ($;$) {
     return @ret;
 }
 
-# Return the subdirectories of i386 which exist and hold language
+# Return the subdirectories of i386 or amd64 which exist and hold language
 # files.
 sub lang_dirs ($;$) {
     my Unattend::WinMedia ($self) = shift;
@@ -395,7 +417,12 @@ sub lang_dirs ($;$) {
     my @ret;
     
     my $dir = 'lang';
-    my $full_path = $file_spec->catdir ($self->path (), 'i386', $dir);
+    my $full_path;
+    if (-d &$dos_to_host ($file_spec->catfile( $self->path (), 'amd64'))) {
+        $full_path = $file_spec->catdir ($self->path (), 'amd64', $dir);
+    } else {
+        $full_path = $file_spec->catdir ($self->path (), 'i386', $dir);
+    }
     $verbose
         and print "Looking for $full_path...\n";
 

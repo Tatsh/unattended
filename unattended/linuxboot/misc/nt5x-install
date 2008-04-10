@@ -173,8 +173,8 @@ if [ "$ARCH" == "amd64" ]
 then
 	copy_files "$OS_DIR/i386/" "/c/\$win_nt\$.~ls/" 1 "Copy i386 system"
 fi
-copy_files "/c/\$win_nt\$.~ls/i386/" "/c/\$win_nt\$.~bt/" 2 "Copy installation files."
-copy_files "/c/\$win_nt\$.~ls/i386/system32/" "/c/\$win_nt\$.~bt/system32/" 2 "Copy system32."
+copy_files "/c/\$win_nt\$.~ls/$ARCH/" "/c/\$win_nt\$.~bt/" 2 "Copy $ARCH installation files."
+copy_files "/c/\$win_nt\$.~ls/$ARCH/system32/" "/c/\$win_nt\$.~bt/system32/" 2 "Copy $ARCH system32."
 copy_files "$OS_DIR/i386/ntldr" "/c/" 3 "Copy ntldr."
 copy_files "$OS_DIR/i386/ntdetect.com" "/c/" 3 "Copy ntdetect.com."
 copy_files "$OS_DIR/i386/setupldr.bin" "/c/\$ldr\$" 3 "Copy setupldr.bin."
@@ -189,7 +189,7 @@ write_ini_entry /c/netinst/unattend.txt "Data" "OriTyp" "5"
 copy_files "/c/netinst/unattend.txt" "/c/\$win_nt\$.~bt/winnt.sif" 3 "Copy winnt.sif."
 
 #move files/drivers to the right place.....
-message "Move driver direcory"
+message "Move driver directory"
 mv /c/\$win_nt\$.~ls/$ARCH/\$[Oo][eE][mM]\$/* /c/\$/  
 
 message "Syncing disk -aiaparanoia :-)"
