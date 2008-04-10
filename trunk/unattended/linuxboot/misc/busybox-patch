@@ -1,119 +1,19 @@
-diff -u -r busybox-1.4.1-orig/include/usage.h busybox-1.4.1/include/usage.h
---- busybox-1.4.1-orig/include/usage.h	2007-01-24 14:34:48.000000000 -0700
-+++ busybox-1.4.1/include/usage.h	2007-03-12 14:37:54.000000000 -0600
-@@ -3313,6 +3313,7 @@
-        "	-p,--pidfile=file	Store process ID of daemon in file\n" \
-        "	-r,--request=IP		IP address to request (default: none)\n" \
-        "	-s,--script=file	Run file at dhcp events (default: /usr/share/udhcpc/default.script)\n" \
-+       "	-u,--userclass=USERCLASS	User class identifier (RFC 3004)\n" \
-        "	-t,--retries=NUM	Send up to NUM request packets\n"\
-        "	-f,--foreground	Do not fork after getting lease\n" \
-        "	-b,--background	Fork to background if lease cannot be immediately negotiated\n" \
-diff -u -r busybox-1.4.1-orig/networking/udhcp/clientpacket.c busybox-1.4.1/networking/udhcp/clientpacket.c
---- busybox-1.4.1-orig/networking/udhcp/clientpacket.c	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/clientpacket.c	2007-03-12 14:37:54.000000000 -0600
-@@ -51,6 +51,7 @@
- 	if (client_config.clientid)
- 		add_option_string(packet->options, client_config.clientid);
- 	if (client_config.hostname) add_option_string(packet->options, client_config.hostname);
-+	if (client_config.userclass) add_option_string(packet->options, client_config.userclass);
- 	if (client_config.fqdn) add_option_string(packet->options, client_config.fqdn);
- 	add_option_string(packet->options, client_config.vendorclass);
- }
-diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.c busybox-1.4.1/networking/udhcp/dhcpc.c
---- busybox-1.4.1-orig/networking/udhcp/dhcpc.c	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/dhcpc.c	2007-03-12 14:42:28.000000000 -0600
-@@ -125,7 +125,7 @@
- int udhcpc_main(int argc, char *argv[])
- {
- 	uint8_t *temp, *message;
--	char *str_c, *str_V, *str_h, *str_F, *str_r, *str_T, *str_t;
-+	char *str_c, *str_V, *str_h, *str_F, *str_r, *str_u, *str_T, *str_t;
- 	unsigned long t1 = 0, t2 = 0, xid = 0;
- 	unsigned long start = 0, lease = 0;
- 	long now;
-@@ -156,9 +156,10 @@
- 		OPT_R = 1 << 12,
- 		OPT_r = 1 << 13,
- 		OPT_s = 1 << 14,
--		OPT_T = 1 << 15,
--		OPT_t = 1 << 16,
-+		OPT_u = 1 << 15,
-+		OPT_T = 1 << 16,
- 		OPT_v = 1 << 17,
-+		OPT_t = 1 << 18,
- 	};
- #if ENABLE_GETOPT_LONG
- 	static const struct option arg_options[] = {
-@@ -177,6 +178,7 @@
- 		{ "release",    no_argument,            0, 'R' },
- 		{ "request",    required_argument,      0, 'r' },
- 		{ "script",     required_argument,      0, 's' },
-+		{ "userclass",  required_argument,      0, 'u' },
- 		{ "timeout",    required_argument,      0, 'T' },
- 		{ "version",    no_argument,            0, 'v' },
- 		{ "retries",    required_argument,      0, 't' },
-@@ -195,10 +197,10 @@
- #if ENABLE_GETOPT_LONG
- 	applet_long_options = arg_options;
- #endif
--	opt = getopt32(argc, argv, "c:CV:fbH:h:F:i:np:qRr:s:T:t:v",
-+	opt = getopt32(argc, argv, "c:CV:fbH:h:F:i:np:qRr:s:u:T:t:v",
- 		&str_c, &str_V, &str_h, &str_h, &str_F,
- 		&client_config.interface, &client_config.pidfile, &str_r,
--		&client_config.script, &str_T, &str_t
-+		&client_config.script, &str_u, &str_T, &str_t
- 		);
- 
- 	if (opt & OPT_c)
-@@ -236,6 +238,8 @@
- 	if (opt & OPT_r)
- 		requested_ip = inet_addr(str_r);
- 	// if (opt & OPT_s) client_config.script = ...
-+	if (opt & OPT_u)
-+		client_config.userclass = alloc_dhcp_option(DHCP_USERCLASS, str_u, 0);
- 	if (opt & OPT_T)
- 		client_config.timeout = xatoi_u(str_T);
- 	if (opt & OPT_t)
-diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpc.h busybox-1.4.1/networking/udhcp/dhcpc.h
---- busybox-1.4.1-orig/networking/udhcp/dhcpc.h	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/dhcpc.h	2007-03-12 14:37:54.000000000 -0600
-@@ -26,6 +26,7 @@
- 	uint8_t *clientid;              /* Optional client id to use */
- 	uint8_t *vendorclass;           /* Optional vendor class-id to use */
- 	uint8_t *hostname;              /* Optional hostname to use */
-+	uint8_t *userclass;             /* Optional user class id to use */
- 	uint8_t *fqdn;                  /* Optional fully qualified domain name to use */
- 	int ifindex;                    /* Index number of the interface to use */
- 	int retries;                    /* Max number of request packets */
-diff -u -r busybox-1.4.1-orig/networking/udhcp/dhcpd.h busybox-1.4.1/networking/udhcp/dhcpd.h
---- busybox-1.4.1-orig/networking/udhcp/options.h	2007-01-24 14:34:34.000000000 -0700
-+++ busybox-1.4.1/networking/udhcp/options.h	2007-03-12 14:43:26.000000000 -0600
-@@ -57,6 +57,7 @@
- #define DHCP_T2			0x3b
- #define DHCP_VENDOR		0x3c
- #define DHCP_CLIENT_ID		0x3d
-+#define DHCP_USERCLASS		0x4d
- #define DHCP_FQDN		0x51
- 
- #define DHCP_END		0xFF
---- busybox-1.6.1/networking/udhcp/options.c	2007-06-30 17:06:30.000000000 +0200
-+++ options.c.ori	2007-08-21 03:04:12.641055160 +0200
-@@ -32,7 +32,7 @@
- 	{"nisdomain",   OPTION_STRING | OPTION_REQ,             0x28},
- 	{"nissrv",      OPTION_IP | OPTION_LIST | OPTION_REQ,   0x29},
- 	{"ntpsrv",      OPTION_IP | OPTION_LIST | OPTION_REQ,   0x2a},
--	{"wins",        OPTION_IP | OPTION_LIST,                0x2c},
-+        {"wins",        OPTION_IP | OPTION_LIST | OPTION_REQ,   0x2c},
- 	{"requestip",   OPTION_IP,                              0x32},
- 	{"lease",       OPTION_U32,                             0x33},
- 	{"dhcptype",    OPTION_U8,                              0x35},
-@@ -43,6 +43,8 @@
- 	{"tftp",        OPTION_STRING,                          0x42},
- 	{"bootfile",    OPTION_STRING,                          0x43},
- 	{"userclass",   OPTION_STRING,                          0x4D},
-+        /* Steal "local" option 0xe9 (decimal 233) for Unattended */
-+        {"unattend",    OPTION_STRING | OPTION_REQ,             0xe9},
+--- busybox-1.9.2/networking/udhcp/options.c.orginal	2008-04-09 22:00:49.000000000 +0200
++++ busybox-1.9.2/networking/udhcp/options.c	2008-04-09 22:11:12.000000000 +0200
+@@ -46,6 +46,8 @@
  #if ENABLE_FEATURE_RFC3397
- 	{"search",      OPTION_STR1035 | OPTION_LIST | OPTION_REQ, 0x77},
+ 	{ OPTION_STR1035 | OPTION_LIST            , 0x77 }, /* search             */
  #endif
++	/* Steal "local" option 0xe9 (decimal 233) for Unattended */
++	{ OPTION_STRING               | OPTION_REQ, 0xe9 }, /* unattend           */
+ 	/* MSIE's "Web Proxy Autodiscovery Protocol" support */
+ 	{ OPTION_STRING                           , 0xfc }, /* wpad               */
+ 
+@@ -95,6 +97,7 @@
+ #if ENABLE_FEATURE_RFC3397
+ 	"search" "\0"
+ #endif
++	"unattend" "\0"
+ 	/* MSIE's "Web Proxy Autodiscovery Protocol" support */
+ 	"wpad" "\0"
+ 	;
