@@ -24,9 +24,10 @@
 :: Those are used when there is no localized binary (usually OOo_2.4.0_Win32Intel_langpack_$LANG.exe)
 
 :: Extension to read ooxml files. Need more info about how to installed
-:: URL|ALL|http://download.go-oo.org/tstnvl/odf-converter/odf-converter-1.1-7.oxt|packages/openoffice/ext/odf-converter-1.1-7
-.oxt
+:: URL|ALL|http://download.go-oo.org/tstnvl/odf-converter/odf-converter-1.1-7.oxt|packages/openoffice/ext/odf-converter-1.1-7.oxt
 
+:: Extension to read ooxml files. Need more info about how to installed
+:: URL|ESN|http://extensions.services.openoffice.org/files/301/1/Sun_ODF_Template_Pack_es.oxt|packages/openoffice/ext/sun-odf-template-pack-esn.oxt
 
 @Echo off
 :: comment it out if you want a shortcut on the desktop
