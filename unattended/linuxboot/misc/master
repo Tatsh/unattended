@@ -254,8 +254,6 @@ while : ; do
         modprobe cifs
         echo 0 > /proc/fs/cifs/LinuxExtensionsEnabled
 
-    echo "*** Trying mount.cifs $Z_PATH /z -o $mount_opts"
-
     if mount.cifs "$Z_PATH" /z -o "$mount_opts" ; then
         check_z \
             && break
