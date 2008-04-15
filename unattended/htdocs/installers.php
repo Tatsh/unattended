@@ -8,7 +8,7 @@ $page['next']  = 'apps.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: installers.php,v 1.6 2006-12-12 17:58:05 ekot Exp $';
+$cvs           = '$Id: installers.php,v 1.7 2008-04-15 06:36:53 jjp3 Exp $';
 $sections[]    = array ('Introduction', 'intro');
 $sections[]    = array ('General information', 'general');
 $sections[]    = array ('If all else fails...', 'fail');
@@ -254,7 +254,7 @@ $content       = <<<EOT
         program will be installed. These options are <strong>case-sensitive</strong>,  so
         be sure to type them in upper case.</p>
 
-      <p>Incidentally, all <code>/S</code> does is change the installer script's <a href="http://nsis.sourceforge.net/Docs/Chapter4.html#4.8.1.34"
+      <p>Incidentally, all <code>/S</code> does is change the installer script's <a href="http://nsis.sourceforge.net/Docs/Chapter4.html#4.8.1.36"
         rel="external">SilentInstall    attribute</a>    from    &quot;normal&quot;    to
         &quot;silent&quot;. What effect this has, exactly,  depends  on  the  person  who
         wrote the script. If <code>/S</code> does not perform a silent install,  consider
