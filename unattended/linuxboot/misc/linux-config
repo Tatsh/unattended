@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.24.4
-# Mon Apr 14 14:24:08 2008
+# Tue Apr 15 12:12:59 2008
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -94,7 +94,8 @@ CONFIG_RT_MUTEXES=y
 # CONFIG_TINY_SHMEM is not set
 CONFIG_BASE_SMALL=0
 CONFIG_MODULES=y
-# CONFIG_MODULE_UNLOAD is not set
+CONFIG_MODULE_UNLOAD=y
+# CONFIG_MODULE_FORCE_UNLOAD is not set
 CONFIG_MODVERSIONS=y
 # CONFIG_MODULE_SRCVERSION_ALL is not set
 CONFIG_KMOD=y
