@@ -41,7 +41,7 @@ lib/librt.so
 lib/libz.so  # lspci
 
 # Should not hard-wire kernel version here.  FIXME!
-lib/modules/2.6.24.4
+lib/modules/2.6.25
 
 sbin/acpidump
 sbin/cardmgr
