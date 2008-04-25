@@ -2,8 +2,7 @@
 :: HOME: http://www.pdfforge.org/
 @echo off
 
-http://prdownloads.sourceforge.net/pdfcreator/PDFCreator-0_9_5_setup.exe?download
-:: URL|ALL|http://dl.sourceforge.net/sourceforge/pdfcreator/PDFCreator-0_9_5_setup.exe|packages/pdfcreator/pdfcreator-0.9.5.setup.exe
+:: URL|ALL|http://downloads.sourceforge.net/pdfcreator/PDFCreator-0_9_5_setup.exe|packages/pdfcreator/pdfcreator-0.9.5.setup.exe
 
 :: Install language files
 :: URL|CHS|http://www.pdfforge.org/files/translations/0.9.5/chinese_simplified.ini|packages/pdfcreator/lang-chs-0.9.5.ini
