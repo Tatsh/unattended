@@ -824,7 +824,7 @@ sub create_postinst_bat () {
 
     # Local admins
     my $admins = $u->{'_meta'}->{'local_admins'};
-    my @admins = (defined $admins ? split / /, $admins : ());
+    my @admins = (defined $admins ? split /;/, $admins : ());
     @admins = map { canonicalize_user
                         ($u->{'Identification'}->{'JoinDomain'},
                          $_) } @admins;
