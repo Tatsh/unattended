@@ -20,7 +20,7 @@ module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.51a
 nano=nano-2.0.7
 ncurses=ncurses-5.6
-parted=parted-1.8.8
+parted=parted-1.6.22
 pciutils=pciutils-2.2.10
 pcmcia-cs=pcmcia-cs-3.2.8
 #for gcc 4.2 and up use per-5.10.0
@@ -962,7 +962,8 @@ $(call download_rule, $(mysql), tar.gz, \
 	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-5.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
-$(call download_rule, $(parted), tar.gz, http://ftp.gnu.org/gnu/parted/)
+$(call download_rule, $(parted), tar.gz, 			\
+        http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/linuxboot/misc/)
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.all.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
