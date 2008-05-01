@@ -1,6 +1,6 @@
-** Changes in version 4.8 (2008-
-Kernel 2.6.24.4  (enable more network drivers)
-Busybox 1.9.2 (remove support for --userclass=Unattended)
+** Changes in version 4.8 (2008-Apr-
+Kernel 2.6.25  (enable more network drivers)
+Busybox 1.9.2 
 dbi 1.602 e2fsprogs-1.40.8 mysql-5.0.51a nano-2.0.7 pciutils-2.2.10
 pmtools-20071116 samba-3.0.28a
 Scribus added
