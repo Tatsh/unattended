@@ -389,15 +389,7 @@ ntinstall_cmd=`parse_ini_file /c/netinst/unattend.txt _meta ntinstall_cmd`
 
 if [ -z "$ntinstall_cmd" ]
 then  
-    #Run the orginal dosemu:
-
-    # FIXME: Bad hack to work around dosemu bug running over network
-    rm /usr/bin/dosemu.bin
-    cp /z/linuxaux/usr/bin/dosemu.bin /usr/bin/dosemu.bin
-    rm -f /var/lib /var/lib/dosemu /var/lib/dosemu/drives \
-       /var/lib/dosemu/drives/dosboot.img >/dev/null 2>&1
-    mkdir -p /var/lib/dosemu/drives
-    cp /z/linuxaux/var/lib/dosemu/drives/dosboot.img /var/lib/dosemu/drives/.
+    #Run the original dosemu:
 
     cp /etc/dosemu/dosemu.conf /tmp
     echo \$_hdimage = \"/dev/dsk$active_part\" >> /tmp/dosemu.conf
