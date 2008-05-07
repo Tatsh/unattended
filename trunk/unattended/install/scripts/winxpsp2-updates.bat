@@ -28,4 +28,4 @@ echo *** INSTALLING JUST SERVICE PACK 3, THIS SYSTEM SHOULD BECOME SP3 ***
 :: URL|RUS|http://download.microsoft.com/download/c/f/6/cf65d224-3ce2-4aaf-8e74-caa4987477c8/WindowsXP-KB936929-SP3-x86-RUS.exe|updates/winxp/windowsxp-kb936929-sp3-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/8/4/d/84d118c8-e8be-4c40-adc7-10a9b8159a0f/WindowsXP-KB936929-SP3-x86-SVE.exe|updates/winxp/windowsxp-kb936929-sp3-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/4/7/9/4797a8f7-bf89-45ae-ad3d-900d0714096e/WindowsXP-KB936929-SP3-x86-TRK.exe|updates/winxp/windowsxp-kb936929-sp3-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\windowsxp\WindowsXP-KB936929-SP3-x86-%WINLANG%.exe /norestart /passive /nobackup"
+todo.pl ".reboot-on 194 %Z%\updates\winxp\WindowsXP-KB936929-SP3-x86-%WINLANG%.exe /norestart /passive /nobackup"
