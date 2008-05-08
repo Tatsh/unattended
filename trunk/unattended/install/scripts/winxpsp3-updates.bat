@@ -5,4 +5,7 @@
 
 todo.pl "%Z%\scripts\winxpsp3-extras.bat"
 :: Install all updates for Windows XP SP3
+:: Get a list from Microsoft Security Bulletins
+:: http://www.microsoft.com/technet/security/current.aspx
+
 @Echo off
