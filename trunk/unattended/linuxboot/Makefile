@@ -15,7 +15,7 @@ glibc=glibc-2.3.6
 # Awful hack Comment out if glibc > 2.4. 2.4 does not support linuxthreads. 
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.25
+linux=linux-2.6.25.2
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.51a
 nano=nano-2.0.7
