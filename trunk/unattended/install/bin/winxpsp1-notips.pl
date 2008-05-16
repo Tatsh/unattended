@@ -391,7 +391,7 @@ $reg{'LMachine'}->{'Software/'} = {
                         '/' => "1",
                     },
                     # Show drive letters first on shares
-                    '/ShowDriverLettersFirst' => [ pack('L', 1), REG_DWORD ],
+                    '/ShowDriveLettersFirst' => [ pack('L', 1), REG_DWORD ],
                 },
                 'UnreadMail/' => {
                     # Don't display count of unread mail
