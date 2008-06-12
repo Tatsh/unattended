@@ -23,7 +23,7 @@
 :: URL|RUS|http://download.microsoft.com/download/d/f/3/df36b8be-4b1d-4c0e-92f0-4b31e012b87d/WindowsXP-KB950762-x86-RUS.exe|updates/winxpsp3/windowsxp-kb950762-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/3/1/4/314a443f-a1f8-4ab1-aeb9-e30a93fe19de/WindowsXP-KB950762-x86-SVE.exe|updates/winxpsp3/windowsxp-kb950762-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/0/f/9/0f9a867d-3f64-41e4-9265-2c2e379ef711/WindowsXP-KB950762-x86-TRK.exe|updates/winxpsp3/windowsxp-kb950762-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950762-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950762-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB951698)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=7aaa6427-1e22-4566-960c-836a3b9e5f36>
@@ -49,7 +49,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950762-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/1/d/b/1dbe30c8-a17c-4e98-bd48-6ebec1e18313/WindowsXP-KB951698-x86-RUS.exe|updates/winxpsp3/windowsxp-kb951698-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/3/5/b/35b7196e-6564-4ecb-b8ae-59299f279dfa/WindowsXP-KB951698-x86-SVE.exe|updates/winxpsp3/windowsxp-kb951698-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/d/c/9/dc93d377-00b5-4442-bf6c-38262f3c9dfe/WindowsXP-KB951698-x86-TRK.exe|updates/winxpsp3/windowsxp-kb951698-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951698-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951698-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Cumulative Security Update for Internet Explorer for Windows XP (KB950759)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=CC325017-3A48-4475-90E4-0C79A002FCE3>
@@ -75,7 +75,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951698-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/e/5/d/e5d93f51-cbcf-4307-82ba-ece11c433da1/WindowsXP-KB950759-x86-RUS.exe|updates/winxpsp3/windowsxp-kb950759-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/6/3/d/63def16f-d50e-42f7-9869-388f616c8595/WindowsXP-KB950759-x86-SVE.exe|updates/winxpsp3/windowsxp-kb950759-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/c/3/2/c32b51bb-0b61-4d25-8ca0-87d6f7733d61/WindowsXP-KB950759-x86-TRK.exe|updates/winxpsp3/windowsxp-kb950759-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950759-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950759-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB951376)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=980bb421-950f-4825-8039-44cc961a47b8>
@@ -101,4 +101,4 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950759-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/a/8/f/a8feb24f-315d-4d5f-8a9b-7256182f8876/WindowsXP-KB951376-x86-RUS.exe|updates/winxpsp3/windowsxp-kb951376-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/b/a/2/ba204119-feae-4cba-b9f4-bc0c52125540/WindowsXP-KB951376-x86-SVE.exe|updates/winxpsp3/windowsxp-kb951376-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/0/c/9/0c9ff669-9849-47f2-b5e5-2ddbedfbee07/WindowsXP-KB951376-x86-TRK.exe|updates/winxpsp3/windowsxp-kb951376-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951376-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951376-x86-%WINLANG%.exe /norestart /passive /nobackup
