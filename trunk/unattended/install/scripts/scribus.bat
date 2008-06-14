@@ -1,7 +1,7 @@
 :: OPTIONAL:  Install Scribus
 :: HOME: http://www.scribus.net/
 
-:: URL|All|http://dl.sourceforge.net/sourceforge/scribus/scribus-1.3.3.11-win32-install.exe|packages/scribus/scribus-1.3.3.11-win32-install.exe
+:: URL|All|http://downloads.sourceforge.net/sourceforge/scribus/scribus-1.3.3.11-win32-install.exe|packages/scribus/scribus-1.3.3.11-win32-install.exe
 @Echo off
 
 
