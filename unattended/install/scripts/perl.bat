@@ -4,7 +4,7 @@
 :: <http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg01259.html>.
 @Echo off
 
-ping -n 20 localhost > nul
+ping -n 15 localhost > nul
 
 :: Windows Installer 2.0 Redistributable for Windows NT 4.0 and 2000
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=4B6140F9-2D36-4977-8FA1-6F8A0F5DCA8F>
