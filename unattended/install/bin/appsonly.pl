@@ -5,7 +5,7 @@
 # some documentation included in appsonly.bat
 # Download of appsonly.bat, appsonly.pl and some "helper" apps:
 # http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/
-# Release 2008.02.07
+# Release 2008.07.03
 
 use Win32::NetResource;
 #use warnings;
@@ -150,7 +150,10 @@ sub menu_choice (@) {
 
         print "X) Exit this program\n";
         $choices .= 'X';
-        $choice_map[$i] = sub { print "Exiting.\n"; exit 1; };
+        
+        # user has chosen exit -> disable autologin
+        $choice_map[$i] = sub { print "Exiting.\n"; system ("%z_path%\\bin\\autolog.pl --logon=0") ; exit 1; };
+        
         $i++;
 
         my $sel = choice ('Select: ', $choices);
@@ -233,6 +236,9 @@ chdir "$ENV{Z}\\scripts";
 # select multiple bat files
 @selectedfiles = multi_choice('Please choose app(s) to install.', @batfiles);
 
+# put command to disable autologin (after all installs) onto the to-do stack
+system ("%z_path%\\bin\\todo.pl", "autolog.pl --logon=0");
+
 # call todo.pl for any selected bat file and call it once with --go
 $i = 0;
 #print $#selectedfiles;
@@ -242,5 +248,6 @@ while ($i <= $#selectedfiles)
   system ("%z_path%\\bin\\todo.pl", $selectedfiles[$i]);
   $i++;
 }
+
 system ("%z_path%\\bin\\todo.pl", "--go");
 
