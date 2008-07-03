@@ -1,7 +1,7 @@
 echo off
 REM batch file for apps-only-installs
 REM contributed by Gerhard Hofmann, gerhard.hofmann@planat.de
-REM Release 2006.03.27
+REM Release 2008.07.03
 REM History
 REM =======
 REM 01-Feb-2005
@@ -41,6 +41,8 @@ REM optional deletion of existing drive mappings (will "free" drive z:)
 REM
 REM 02-Jul-2008
 REM *** integration of appsonly script into official CVS repository ***
+REM 03-Jul-2008
+REM autologin now always turned off after application installation
 
 
 REM ==== conf. section begin ====
