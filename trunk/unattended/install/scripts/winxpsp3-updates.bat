@@ -8,6 +8,7 @@ todo.pl "%Z%\scripts\winxpsp3-extras.bat"
 :: Get a list from Microsoft Security Bulletins
 :: http://www.microsoft.com/technet/security/current.aspx
 
+todo.pl "%Z%\scripts\winxpsp3-up0807.bat"
 todo.pl "%Z%\scripts\winxpsp3-up0806.bat"
 
 :: This update should not be applied but to keep windows update happy
