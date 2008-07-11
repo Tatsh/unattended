@@ -1,7 +1,7 @@
 echo off
 REM batch file for apps-only-installs
 REM contributed by Gerhard Hofmann, gerhard.hofmann@planat.de
-REM Release 2008.07.03
+REM Release 2008.07.11
 REM History
 REM =======
 REM 01-Feb-2005
@@ -43,6 +43,9 @@ REM 02-Jul-2008
 REM *** integration of appsonly script into official CVS repository ***
 REM 03-Jul-2008
 REM autologin now always turned off after application installation
+REM 11-Jul-2008
+REM added possibility to directly pass autologin password and up to 8 .bat
+REM file names (suppresses any dialogs)
 
 
 REM ==== conf. section begin ====
@@ -58,6 +61,9 @@ REM place appsonly.bat, appsonly.pl, choice.exe, setenv.exe, pathman.exe into \\
 REM invoke the script with -> Start -> Run -> \\server\install\bin\appsonly.bat
 REM    - OR -
 REM double click appsonly.bat to run from an already mapped network drive
+REM
+REM avoiding dialogs:
+REM  \\server\install\bin\appsonly.bat autologinpassword scriptfile1.bat scriptfile2.bat...
 
 
 REM delete existing mappings if configured
@@ -101,11 +107,25 @@ if errorlevel 1 goto end
 
 REM set Z, Z_USER, Z_PATH variables permanently for PCs
 REM where OS was *not* installed with unattended
+REM set some variables *only for the current* to directly pass
+REM parameters (autologin password, .bat file names) to appsonly.pl
 set path=%path%;%scriptdir%\bin
 setenv -m Z_USER %username%
 setenv -m Z_PATH %scriptdir%
 set Z_PATH=%scriptdir%
 setenv -m Z %Z%
+REM pass command line arguments (if given) to appsonly.pl
+REM for installs without any dialogs
+set autologinpwd=%1
+set script1=%2
+set script2=%3
+set script3=%4
+set script4=%5
+set script5=%6
+set script6=%7
+set script7=%8
+set script8=%9
+
 
 REM check for existing todo.txt
 if not exist %SystemDrive%\netinst\todo.txt goto proceed
