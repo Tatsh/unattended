@@ -5,7 +5,7 @@
 # some documentation included in appsonly.bat
 # Download of appsonly.bat, appsonly.pl and some "helper" apps:
 # http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/
-# Release 2008.07.03
+# Release 2008.07.11
 
 use Win32::NetResource;
 #use warnings;
@@ -206,26 +206,30 @@ sub choice ($;$) {
 
 
 # set autologin
-print "enable autologin (y/n)? ";
-chomp ($autologin = <STDIN>);
-if ($autologin eq "y")
+# autologinpwd passed from appsonly.bat? If yes, skip dialog
+if ($ENV{autologinpwd} eq "")
 {
-  print "autologin user will be: $ENV{USERNAME}\n";
-  print "autologin domain will be: $ENV{USERDOMAIN}\n";
+  print "enable autologin (y/n)? ";
+  chomp ($autologin = <STDIN>);
+  if ($autologin eq "y")
+  {
+    print "autologin user will be: $ENV{USERNAME}\n";
+    print "autologin domain will be: $ENV{USERDOMAIN}\n";
 
-  print "autologin password: \n";
-  $cons = new Win32::Console(STD_INPUT_HANDLE); 
-  $oldMode = $cons->Mode; 
-  $cons->Mode(~(ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT) & $oldMode ); 
-  while (1) 
-  { 
-    $char = $cons->InputChar(1) ;
-    last if ord $char == 13 ; 
-    print '*' ; 
-    $autologinpwd .= $char ; 
-  } 
-  $cons->Mode($oldMode) ; 
-  system("%z%\\bin\\autolog.pl --logon=1 --user=$ENV{USERNAME} --domain=$ENV{USERDOMAIN} --password=$autologinpwd");
+    print "autologin password: \n";
+    $cons = new Win32::Console(STD_INPUT_HANDLE); 
+    $oldMode = $cons->Mode; 
+    $cons->Mode(~(ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT) & $oldMode ); 
+    while (1) 
+    { 
+      $char = $cons->InputChar(1) ;
+      last if ord $char == 13 ; 
+      print '*' ; 
+      $autologinpwd .= $char ; 
+    } 
+    $cons->Mode($oldMode) ; 
+    system("%z%\\bin\\autolog.pl --logon=1 --user=$ENV{USERNAME} --domain=$ENV{USERDOMAIN} --password=$autologinpwd");
+  }
 }
 
 # generate list of all bat files in the scripts directory
@@ -233,8 +237,48 @@ chdir "$ENV{Z}\\scripts";
 @batfiles = glob("*.bat");
 
 
+# if .bat file names were passed from appsonly.bat -> use the given .bat file names
+# in other case, show the multiple choice dialog
 # select multiple bat files
-@selectedfiles = multi_choice('Please choose app(s) to install.', @batfiles);
+if ($ENV{script1} eq "") 
+{
+  @selectedfiles = multi_choice('Please choose app(s) to install.', @batfiles);
+}
+else
+{
+  if ($ENV{script8} ne "")
+  {
+  	push @selectedfiles, $ENV{script8};
+  }
+  if ($ENV{script7} ne "")
+  {
+  	push @selectedfiles, $ENV{script7};
+  }
+  if ($ENV{script6} ne "")
+  {
+  	push @selectedfiles, $ENV{script6};
+  }
+  if ($ENV{script5} ne "")
+  {
+  	push @selectedfiles, $ENV{script5};
+  }
+  if ($ENV{script4} ne "")
+  {
+  	push @selectedfiles, $ENV{script4};
+  }
+  if ($ENV{script3} ne "")
+  {
+  	push @selectedfiles, $ENV{script3};
+  }
+  if ($ENV{script2} ne "")
+  {
+  	push @selectedfiles, $ENV{script2};
+  }
+  if ($ENV{script1} ne "")
+  {
+  	push @selectedfiles, $ENV{script1};
+  }
+}
 
 # put command to disable autologin (after all installs) onto the to-do stack
 system ("%z_path%\\bin\\todo.pl", "autolog.pl --logon=0");
