@@ -2,6 +2,7 @@
 :: HOME: http://www.inkscape.org/
 
 :: URL|All|http://downloads.sourceforge.net/inkscape/Inkscape-0.46.win32.exe|packages/inkscape/inkscape-0.46.win32.exe
+:: URL|All|http://download.openclipart.org/downloads/openclipart-clipart-2007-02-05.tar.gz|packages/inkscape/openclipart-clipart-2007-02-05.tar.gz
 :: URL|All|http://www.openclipart.org/downloads/0.18/openclipart-0.18-win32.exe|packages/inkscape/openclipart-0.18-win32.exe
 @Echo off
 
