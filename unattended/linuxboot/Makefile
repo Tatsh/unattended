@@ -1,13 +1,13 @@
 bash=bash-3.2
-busybox=busybox-1.9.2
+busybox=busybox-1.11.1
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.21
 dbd-mysql=DBD-mysql-2.9008
-dbi=DBI-1.602
+dbi=DBI-1.605
 dmidecode=dmidecode-2.9
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.40.8
+e2fsprogs=e2fsprogs-1.40.11
 expat=expat-2.0.1
 #use a glibc version as close to the building host as possible
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
@@ -15,24 +15,24 @@ glibc=glibc-2.3.6
 # Awful hack Comment out if glibc > 2.4. 2.4 does not support linuxthreads. 
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.25.2
+linux=linux-2.6.26
 module-init-tools=module-init-tools-3.2.2
-mysql=mysql-5.0.51a
+mysql=mysql-5.0.51b
 nano=nano-2.0.7
 ncurses=ncurses-5.6
 parted=parted-1.6.22
-pciutils=pciutils-2.2.10
+pciutils=pciutils-3.0.0
 pcmcia-cs=pcmcia-cs-3.2.8
 #for gcc 4.2 and up use per-5.10.0
 perl=perl-5.8.8
 # perl-ldap aka. Net::LDAP
-perl-ldap=perl-ldap-0.34
+perl-ldap=perl-ldap-0.36
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20071116
-samba=samba-3.0.28a
+samba=samba-3.0.31
 slang=slang-2.0.7
-syslinux=syslinux-3.62
+syslinux=syslinux-3.70
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
