@@ -5,7 +5,7 @@
 # some documentation included in appsonly.bat
 # Download of appsonly.bat, appsonly.pl and some "helper" apps:
 # http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/
-# Release 2008.07.11
+# Release 2008.07.29
 
 use Win32::NetResource;
 #use warnings;
@@ -230,6 +230,11 @@ if ($ENV{autologinpwd} eq "")
     $cons->Mode($oldMode) ; 
     system("%z%\\bin\\autolog.pl --logon=1 --user=$ENV{USERNAME} --domain=$ENV{USERDOMAIN} --password=$autologinpwd");
   }
+}
+else
+{
+	$autologinpwd = $ENV{autologinpwd};
+	system("%z%\\bin\\autolog.pl --logon=1 --user=$ENV{USERNAME} --domain=$ENV{USERDOMAIN} --password=$autologinpwd");
 }
 
 # generate list of all bat files in the scripts directory

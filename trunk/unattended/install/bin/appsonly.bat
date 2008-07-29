@@ -1,7 +1,7 @@
 echo off
 REM batch file for apps-only-installs
 REM contributed by Gerhard Hofmann, gerhard.hofmann@planat.de
-REM Release 2008.07.11
+REM Release 2008.07.29
 REM History
 REM =======
 REM 01-Feb-2005
@@ -46,7 +46,8 @@ REM autologin now always turned off after application installation
 REM 11-Jul-2008
 REM added possibility to directly pass autologin password and up to 8 .bat
 REM file names (suppresses any dialogs)
-
+REM 29-Jul-2008
+REM fix: autologin now correcty set when providing autologin password by command line argument
 
 REM ==== conf. section begin ====
 REM delete existing mappings? (no/yes)
