@@ -20,29 +20,36 @@
 :: URL|CHS|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/zh-cn/2.4.0/OOo_2.4.0_Win32Intel_install_zh-CN.exe|packages/openoffice/OOo_2.4.0_Win32Intel_install_chs.exe
 :: URL|CHT|http://ftp.services.openoffice.org/pub/OpenOffice.org/localized/zh-tw/2.4.0/OOo_2.4.0_Win32Intel_install_zh-TW.exe|packages/openoffice/OOo_2.4.0_Win32Intel_install_cht.exe
 
-:: Extension to read ooxml files. Need more info about how to installed
-:: URL|ALL|http://download.go-oo.org/tstnvl/odf-converter/odf-converter-1.1-7.oxt|packages/openoffice/ext/odf-converter-1.1-7.oxt
+:: ==== EXTENSIONS ====
+:: Extension to read ooxml files.
+:: URL|ALL|http://download.go-oo.org/tstnvl/odf-converter/odf-converter-1.1.1-1.oxt|packages/openoffice/ext/odf-converter-1.1.1-1.oxt
+:: Extension to deactivate First Time Wizard
+:: URL|ALL|http://wiki.services.openoffice.org/w/images/5/5b/DisableFirstStartWzd.oxt|packages/openoffice/ext/DisableFirstStartWzd.oxt
 
-:: Extension to read ooxml files. Need more info about how to installed
+
+:: ==== TEMPLATES ====
 :: URL|ESN|http://extensions.services.openoffice.org/files/301/1/Sun_ODF_Template_Pack_es.oxt|packages/openoffice/ext/sun-odf-template-pack-esn.oxt
 
 @Echo off
 :: comment it out if you want a shortcut on the desktop
 ::todo.pl "shortcut.pl \"%ProgramFiles%\OpenOffice.org 2.4\"\program\soffice.exe special:AllUsersDesktop\OpenOffice"
 
-::Skip registration
-:: FIXME: This does not seem to work
-::todo.pl "copy %Z%\packages\openoffice\Setup.xcu \"%ProgramFiles%\OpenOffice.org 2.4\"\share\registry\data\org\openoffice\
+:: Extension to read ooxml files.
+::todo.pl "start /D\"%ProgramFiles%\OpenOffice.org 2.4\"\program unopkg.com add --shared %Z%\packages\openoffice\ext\odf-converter-1.1.1-1.oxt"
+
+::Skip FirstTimeWizard
+todo.pl "start /D\"%ProgramFiles%\OpenOffice.org 2.4\"\program unopkg.com add --shared %Z%\packages\openoffice\ext\DisableFirstStartWzd.oxt"
+
 
 :: Sometimes languages does not have up to the last version
 if exist "%Z%\packages\openoffice\OOo_2.4.1_Win32Intel_install_%WINLANG%.exe" goto newversion
 
 :oldversion
-todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.4.0_Win32Intel_install_%WINLANG%.exe /S /v\"/qb ALLUSERS=1  SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1 \""
+todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.4.0_Win32Intel_install_%WINLANG%.exe /S /v /qb \"ALLUSERS=1 SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1\""
 goto exit
 
 :newversion
-todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.4.1_Win32Intel_install_%WINLANG%.exe /S /v\"/qb ALLUSERS=1  SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1 \""
+todo.pl ".ignore-err 2 %Z%\packages\openoffice\OOo_2.4.1_Win32Intel_install_%WINLANG%.exe /S /v /qb \"ALLUSERS=1 SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1\""
 goto exit
 
 :exit
