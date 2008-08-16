@@ -51,32 +51,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950762-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/d/c/9/dc93d377-00b5-4442-bf6c-38262f3c9dfe/WindowsXP-KB951698-x86-TRK.exe|updates/winxpsp3/windowsxp-kb951698-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951698-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Cumulative Security Update for Internet Explorer for Windows XP (KB950759)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=CC325017-3A48-4475-90E4-0C79A002FCE3>
-:: URL|ARA|http://download.microsoft.com/download/2/5/c/25cc8b38-07c4-43bf-8d36-a5d2390eaa84/WindowsXP-KB950759-x86-ARA.exe|updates/winxpsp3/windowsxp-kb950759-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/c/e/3/ce39d49f-deac-4af8-9e21-fe37671fdcf1/WindowsXP-KB950759-x86-CSY.exe|updates/winxpsp3/windowsxp-kb950759-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/d/2/0/d206c349-cf16-479f-8299-fc8815bb17f9/WindowsXP-KB950759-x86-DAN.exe|updates/winxpsp3/windowsxp-kb950759-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/8/1/1/811da6ef-dfde-4d9c-822d-c0c654502b49/WindowsXP-KB950759-x86-DEU.exe|updates/winxpsp3/windowsxp-kb950759-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/f/b/7/fb7556c3-8e48-4530-9de1-bc21433624e6/WindowsXP-KB950759-x86-ELL.exe|updates/winxpsp3/windowsxp-kb950759-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/2/2/5/2255ad65-47ba-44f1-9e88-feba8f019c55/WindowsXP-KB950759-x86-ENU.exe|updates/winxpsp3/windowsxp-kb950759-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/8/7/c/87c9f443-12a8-4dff-81ea-f4c632de416f/WindowsXP-KB950759-x86-ESN.exe|updates/winxpsp3/windowsxp-kb950759-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/3/e/3/3e34a3cc-988b-4dd9-a08f-722f409bc6d0/WindowsXP-KB950759-x86-FIN.exe|updates/winxpsp3/windowsxp-kb950759-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/c/8/9/c8925676-0475-4ee9-a031-46ac055a80c4/WindowsXP-KB950759-x86-FRA.exe|updates/winxpsp3/windowsxp-kb950759-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/6/2/3/623ec0b9-d393-419b-bdb9-046921c149ba/WindowsXP-KB950759-x86-HEB.exe|updates/winxpsp3/windowsxp-kb950759-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/e/7/1/e71e88e7-be19-437a-b2a9-4720b813fae4/WindowsXP-KB950759-x86-HUN.exe|updates/winxpsp3/windowsxp-kb950759-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/1/7/e/17ed85de-216e-4c1a-8de6-d99a692c4351/WindowsXP-KB950759-x86-ITA.exe|updates/winxpsp3/windowsxp-kb950759-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/2/5/8/25822a72-3f0a-4cef-9e93-6e67496b54ae/WindowsXP-KB950759-x86-JPN.exe|updates/winxpsp3/windowsxp-kb950759-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/7/6/c/76c16997-0110-4f4a-be52-b0f7be61903b/WindowsXP-KB950759-x86-KOR.exe|updates/winxpsp3/windowsxp-kb950759-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/2/3/8/2381a484-c428-4526-998d-8e1ede1b6ac4/WindowsXP-KB950759-x86-NLD.exe|updates/winxpsp3/windowsxp-kb950759-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/3/c/a/3ca2e3e2-cc8c-4d6e-a2d3-c1935bc2304f/WindowsXP-KB950759-x86-NOR.exe|updates/winxpsp3/windowsxp-kb950759-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/3/a/5/3a5d5e8d-fa8a-4410-8d2a-d550ebc5511b/WindowsXP-KB950759-x86-PLK.exe|updates/winxpsp3/windowsxp-kb950759-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/f/a/9/fa9da2cf-edfe-4f40-b9eb-fcf5bee52970/WindowsXP-KB950759-x86-PTB.exe|updates/winxpsp3/windowsxp-kb950759-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/a/3/1/a315c2fe-6fcf-4f1d-b73d-10e206319d6c/WindowsXP-KB950759-x86-PTG.exe|updates/winxpsp3/windowsxp-kb950759-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/e/5/d/e5d93f51-cbcf-4307-82ba-ece11c433da1/WindowsXP-KB950759-x86-RUS.exe|updates/winxpsp3/windowsxp-kb950759-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/6/3/d/63def16f-d50e-42f7-9869-388f616c8595/WindowsXP-KB950759-x86-SVE.exe|updates/winxpsp3/windowsxp-kb950759-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/c/3/2/c32b51bb-0b61-4d25-8ca0-87d6f7733d61/WindowsXP-KB950759-x86-TRK.exe|updates/winxpsp3/windowsxp-kb950759-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950759-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB951376)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=980bb421-950f-4825-8039-44cc961a47b8>
 :: URL|ARA|http://download.microsoft.com/download/4/4/2/4428dfb3-ab42-4c4a-b1af-ab760b626318/WindowsXP-KB951376-v2-x86-ARA.exe|updates/winxpsp3/windowsxp-kb951376-v2-x86-ara.exe
