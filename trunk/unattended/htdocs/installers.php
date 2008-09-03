@@ -8,7 +8,7 @@ $page['next']  = 'apps.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: installers.php,v 1.7 2008-04-15 06:36:53 jjp3 Exp $';
+$cvs           = '$Id: installers.php,v 1.8 2008-09-03 15:28:49 jjp3 Exp $';
 $sections[]    = array ('Introduction', 'intro');
 $sections[]    = array ('General information', 'general');
 $sections[]    = array ('If all else fails...', 'fail');
@@ -400,7 +400,7 @@ $content       = <<<EOT
         <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/ie6.bat?rev=HEAD&amp;view=auto">Microsoft Internet Explorer</a></li>
       </ul>
 
-      <p>And do not forget our <a href="http://www.ubertechnique.com/unattended/FrontPage"
+      <p>And do not forget our <a href="http://ubertechnique.com/unattended/FrontPage"
         rel="external">Wiki</a>, which is  a  very  good  source  of  additional  install
         scripts.</p>
 EOT;
