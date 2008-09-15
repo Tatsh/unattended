@@ -15,9 +15,9 @@ glibc=glibc-2.3.6
 # Awful hack Comment out if glibc > 2.4. 2.4 does not support linuxthreads. 
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.26
+linux=linux-2.6.26.2
 module-init-tools=module-init-tools-3.2.2
-mysql=mysql-5.0.51b
+mysql=mysql-5.0.67
 nano=nano-2.0.7
 ncurses=ncurses-5.6
 parted=parted-1.6.22
@@ -32,7 +32,7 @@ perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20071116
 samba=samba-3.0.31
 slang=slang-2.0.7
-syslinux=syslinux-3.70
+syslinux=syslinux-3.71
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
@@ -939,11 +939,11 @@ $(call download_rule, $(dbi), tar.gz, \
 $(call download_rule, $(dmidecode), tar.bz2,	\
 	http://nongnu.org/download/dmidecode/)
 $(call download_rule, $(dosemu), tgz,					\
-	http://dl.sourceforge.net/sourceforge/dosemu/)
+	http://downloads.sourceforge.net/sourceforge/dosemu/)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
-	http://dl.sourceforge.net/sourceforge/e2fsprogs/)
+	http://downloads.sourceforge.net/sourceforge/e2fsprogs/)
 $(call download_rule, $(expat), tar.gz, \
-	http://dl.sourceforge.net/sourceforge/expat/)
+	http://downloads.sourceforge.net/sourceforge/expat/)
 #$(call cvs_rule, $(glibc), libc, \
 #	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
@@ -967,7 +967,7 @@ $(call download_rule, $(parted), tar.gz, 			\
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.all.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
-	http://dl.sourceforge.net/sourceforge/pcmcia-cs/)
+	http://downloads.sourceforge.net/sourceforge/pcmcia-cs/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
 $(call download_rule, $(perl-ldap), tar.gz, \
 	http://www.cpan.org/authors/id/G/GB/GBARR/)
