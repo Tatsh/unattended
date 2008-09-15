@@ -7,7 +7,7 @@ dbi=DBI-1.605
 dmidecode=dmidecode-2.9
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.40.11
+e2fsprogs=e2fsprogs-1.41.1
 expat=expat-2.0.1
 #use a glibc version as close to the building host as possible
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
@@ -939,11 +939,11 @@ $(call download_rule, $(dbi), tar.gz, \
 $(call download_rule, $(dmidecode), tar.bz2,	\
 	http://nongnu.org/download/dmidecode/)
 $(call download_rule, $(dosemu), tgz,					\
-	http://downloads.sourceforge.net/sourceforge/dosemu/)
+	http://downloads.sourceforge.net/dosemu/)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
-	http://downloads.sourceforge.net/sourceforge/e2fsprogs/)
+	http://downloads.sourceforge.net/e2fsprogs/)
 $(call download_rule, $(expat), tar.gz, \
-	http://downloads.sourceforge.net/sourceforge/expat/)
+	http://downloads.sourceforge.net/expat/)
 #$(call cvs_rule, $(glibc), libc, \
 #	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
@@ -967,7 +967,7 @@ $(call download_rule, $(parted), tar.gz, 			\
 $(call download_rule, $(pciutils), tar.bz2,			\
 	http://ftp.all.kernel.org/pub/software/utils/pciutils/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
-	http://downloads.sourceforge.net/sourceforge/pcmcia-cs/)
+	http://downloads.sourceforge.net/pcmcia-cs/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
 $(call download_rule, $(perl-ldap), tar.gz, \
 	http://www.cpan.org/authors/id/G/GB/GBARR/)
