@@ -15,14 +15,13 @@ glibc=glibc-2.3.6
 # Awful hack Comment out if glibc > 2.4. 2.4 does not support linuxthreads. 
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.26.2
+linux=linux-2.6.26.5
 module-init-tools=module-init-tools-3.2.2
 mysql=mysql-5.0.67
 nano=nano-2.0.7
 ncurses=ncurses-5.6
 parted=parted-1.6.22
 pciutils=pciutils-3.0.0
-pcmcia-cs=pcmcia-cs-3.2.8
 #for gcc 4.2 and up use per-5.10.0
 perl=perl-5.8.8
 # perl-ldap aka. Net::LDAP
@@ -44,7 +43,7 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		\
 	$(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(glibc) $(kbd)	\
 	$(linux)  $(module-init-tools) $(mysql) $(nano)	\
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
-	$(perl-xml-xpath) $(pciutils) $(pcmcia-cs) $(pmtools)		\
+	$(perl-xml-xpath) $(pciutils) $(pmtools)		\
 	$(samba) $(slang) $(syslinux) $(wireless_tools) $(zlib)
 
 CC=gcc
@@ -465,33 +464,6 @@ $(call copy_exe, $(pciutils)/lspci, stage1/sbin/lspci)
 $(call copy_file,$(pciutils)/pci.ids,stage1/usr/share/pci.ids)
 
 stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
-
-## pcmcia-cs (PCMCIA Card Services, particularly cardmgr)
-$(pcmcia-cs)/cardmgr/cardmgr: $(linux)/arch/x86/boot/bzImage
-	rm -f $@
-	cd $(pcmcia-cs)						\
-	&& make clean						\
-	&& ./Configure --noprompt --kernel=$(cwd)/$(linux)	\
-		--nox11 --srctree				\
-	&& make all
-	[ -e $@ ]
-
-stage1/var/run:
-	mkdir -p $@
-
-$(call copy_exe,$(pcmcia-cs)/cardmgr/cardmgr,stage1/sbin/cardmgr)
-$(call copy_file,$(pcmcia-cs)/etc/config,stage1/etc/pcmcia/config)
-$(call copy_file,$(pcmcia-cs)/etc/config.opts,stage1/etc/pcmcia/config.opts)
-
-stage1/etc/pcmcia/network:
-	echo "#!/bin/sh" >| $@.tmp
-	echo "exit 0" >> $@.tmp
-	chmod +x $@.tmp
-	mv $@.tmp $@
-
-stage1 += stage1/sbin/cardmgr stage1/etc/pcmcia/config \
-	stage1/etc/pcmcia/config.opts stage1/var/run \
-	stage1/etc/pcmcia/network
 
 ## pmtools (acpidump, for diagnostics)
 $(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage

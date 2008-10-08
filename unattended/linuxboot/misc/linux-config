@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# Linux kernel version: 2.6.26
-# Wed Jul 16 10:07:40 2008
+# Linux kernel version: 2.6.26.5
+# Wed Oct  8 11:32:39 2008
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -778,7 +778,7 @@ CONFIG_I2O_SCSI=m
 CONFIG_I2O_PROC=m
 # CONFIG_MACINTOSH_DRIVERS is not set
 CONFIG_NETDEVICES=y
-# CONFIG_NETDEVICES_MULTIQUEUE is not set
+CONFIG_NETDEVICES_MULTIQUEUE=y
 # CONFIG_DUMMY is not set
 # CONFIG_BONDING is not set
 # CONFIG_MACVLAN is not set
