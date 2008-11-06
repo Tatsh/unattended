@@ -103,28 +103,3 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951066-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/8/f/e/8febc7ef-9176-4584-9489-0b5fc95c77e6/WindowsXP-KB952954-x86-TRK.exe|updates/winxpsp3/windowsxp-kb952954-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB952954-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Cumulative Security Update for Internet Explorer for Windows XP (KB953838)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=69AF2F30-138E-4B15-AB8D-4FCE44CC0BC2>
-:: URL|ARA|http://download.microsoft.com/download/4/a/1/4a1c7100-6a5d-4946-8e61-e937842a3682/WindowsXP-KB953838-x86-ARA.exe|updates/winxpsp3/windowsxp-kb953838-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/a/7/c/a7c7a176-49ad-4fda-9116-9d3aeb5d0966/WindowsXP-KB953838-x86-CSY.exe|updates/winxpsp3/windowsxp-kb953838-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/1/b/0/1b0ccf58-437c-49b1-b56c-cd5270e3ea8e/WindowsXP-KB953838-x86-DAN.exe|updates/winxpsp3/windowsxp-kb953838-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/0/6/5/06503d7d-93ed-401c-8efe-b1da875bf32d/WindowsXP-KB953838-x86-DEU.exe|updates/winxpsp3/windowsxp-kb953838-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/2/5/8/2582d84e-07d3-49b7-a32f-c378e7140176/WindowsXP-KB953838-x86-ELL.exe|updates/winxpsp3/windowsxp-kb953838-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/3/9/3/3933471e-a08e-4640-8980-d3d3eb5b3c34/WindowsXP-KB953838-x86-ENU.exe|updates/winxpsp3/windowsxp-kb953838-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/e/c/4/ec4b7cca-f73a-4f32-b4df-9cff8442cd53/WindowsXP-KB953838-x86-ESN.exe|updates/winxpsp3/windowsxp-kb953838-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/6/0/f/60f621f7-f268-42f4-b313-d5ca4e1e31b0/WindowsXP-KB953838-x86-FIN.exe|updates/winxpsp3/windowsxp-kb953838-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/d/8/9/d8966013-a83d-4599-8d00-afbffb266a0b/WindowsXP-KB953838-x86-FRA.exe|updates/winxpsp3/windowsxp-kb953838-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/1/9/1/1910d43d-2d9d-45bc-bc38-63327ee822aa/WindowsXP-KB953838-x86-HEB.exe|updates/winxpsp3/windowsxp-kb953838-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/2/f/3/2f39305e-d86b-41ba-bc9a-552595f3ddbf/WindowsXP-KB953838-x86-HUN.exe|updates/winxpsp3/windowsxp-kb953838-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/7/b/e/7bee87a9-02fe-473c-a488-b6784d9223f9/WindowsXP-KB953838-x86-ITA.exe|updates/winxpsp3/windowsxp-kb953838-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/e/6/1/e6142bb7-8073-41da-bbb7-dcf8ffc2b80f/WindowsXP-KB953838-x86-JPN.exe|updates/winxpsp3/windowsxp-kb953838-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/3/4/d/34dd17cc-51ee-48d6-8ce6-716a5ceb38ce/WindowsXP-KB953838-x86-KOR.exe|updates/winxpsp3/windowsxp-kb953838-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/9/e/b/9eb52a14-6c12-46bd-809d-b39522b92995/WindowsXP-KB953838-x86-NLD.exe|updates/winxpsp3/windowsxp-kb953838-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/5/7/6/57667ebf-3b98-4c7e-acff-507fb08c9659/WindowsXP-KB953838-x86-NOR.exe|updates/winxpsp3/windowsxp-kb953838-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/a/5/7/a57387ee-cc14-4935-967d-c0ac26314e8c/WindowsXP-KB953838-x86-PLK.exe|updates/winxpsp3/windowsxp-kb953838-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/3/f/93f4eb4a-49b5-4124-8af6-bc387b087fd3/WindowsXP-KB953838-x86-PTB.exe|updates/winxpsp3/windowsxp-kb953838-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/1/b/c/1bc2941e-edc6-4649-8151-158dade78907/WindowsXP-KB953838-x86-PTG.exe|updates/winxpsp3/windowsxp-kb953838-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/b/3/2/b32d99c7-15c6-4bf9-b1b6-e6c12c09ba6c/WindowsXP-KB953838-x86-RUS.exe|updates/winxpsp3/windowsxp-kb953838-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/0/2/4/0249e6d1-b8ac-4fd3-8d82-8479f174150d/WindowsXP-KB953838-x86-SVE.exe|updates/winxpsp3/windowsxp-kb953838-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/3/d/8/3d892c57-c8b0-4fe1-88c0-66656ac0cf54/WindowsXP-KB953838-x86-TRK.exe|updates/winxpsp3/windowsxp-kb953838-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB953838-x86-%WINLANG%.exe /norestart /passive /nobackup"
