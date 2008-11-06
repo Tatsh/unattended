@@ -5,6 +5,34 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for Microsoft Excel 2002 (KB955464)
+:: MS08-057: Description of the security update for Excel 2002: October 14, 2008
+:: "INTRODUCTION"
+:: <http://support.microsoft.com/kb/955464>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=27cedef1-c47c-472c-a343-cd9b4ebc2bba>
+:: URL|ARA|http://download.microsoft.com/download/f/9/d/f9d09542-60f6-4aca-935f-05d95929749e/officexp-KB955464-FullFile-ARA.exe|updates/officexp/officexp-kb955464-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/1/e/6/1e6e08b8-e5f8-4071-9ac3-0771c27346ca/officexp-KB955464-FullFile-CSY.exe|updates/officexp/officexp-kb955464-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/a/5/4/a5494b66-fe05-4f6e-97f5-81db7f32a11a/officexp-KB955464-FullFile-DAN.exe|updates/officexp/officexp-kb955464-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/9/0/f/90f29f94-c779-4bb4-8813-2fa3ee427034/officexp-KB955464-FullFile-DEU.exe|updates/officexp/officexp-kb955464-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/4/2/a/42a09fef-1401-44d8-b29a-906af6ebb83c/officexp-KB955464-FullFile-ELL.exe|updates/officexp/officexp-kb955464-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/1/f/2/1f258569-fd40-41d0-b7e7-1daa162f4e1e/officexp-KB955464-FullFile-ENU.exe|updates/officexp/officexp-kb955464-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/c/9/6c9429a7-ec55-4298-a9c4-429ed8989c24/officexp-KB955464-FullFile-ESN.exe|updates/officexp/officexp-kb955464-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/3/2/7/327a7039-9bb8-4510-a429-87ec37b2a886/officexp-KB955464-FullFile-FIN.exe|updates/officexp/officexp-kb955464-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/b/1/0/b1007b88-eb17-44e5-8c7a-411778084f13/officexp-KB955464-FullFile-FRA.exe|updates/officexp/officexp-kb955464-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/f/7/5/f758d04f-849a-4549-a95d-00f693aac14b/officexp-KB955464-FullFile-HEB.exe|updates/officexp/officexp-kb955464-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/a/8/b/a8bc7df8-3621-438f-bdc8-d4a2e7754a60/officexp-KB955464-FullFile-HUN.exe|updates/officexp/officexp-kb955464-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/c/c/a/cca47147-903f-4874-9dc2-63f3233561b7/officexp-KB955464-FullFile-ITA.exe|updates/officexp/officexp-kb955464-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/4/b/14b09acd-0cf2-47b7-96c9-9929de158816/officexp-KB955464-FullFile-JPN.exe|updates/officexp/officexp-kb955464-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/4/5/4/4543ad0d-9a9d-4112-9d40-af84a5e147aa/officexp-KB955464-FullFile-KOR.exe|updates/officexp/officexp-kb955464-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/0/f/00f5681f-54e4-486b-91a5-7bea3a330b0f/officexp-KB955464-FullFile-NLD.exe|updates/officexp/officexp-kb955464-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/1/9/51938dda-aeb2-4a48-8a31-763d4c0c1969/officexp-KB955464-FullFile-NOR.exe|updates/officexp/officexp-kb955464-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/c/4/b/c4b3370b-b6ed-4d81-a571-c811f67a80c7/officexp-KB955464-FullFile-PLK.exe|updates/officexp/officexp-kb955464-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/b/1/8/b18b26e6-2477-4451-931e-4fa60b9fc349/officexp-KB955464-FullFile-PTB.exe|updates/officexp/officexp-kb955464-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/3/f/d/3fd24cf2-b229-43e5-aa60-d5a008508902/officexp-KB955464-FullFile-PTG.exe|updates/officexp/officexp-kb955464-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/6/d/1/6d172cff-3d18-41f4-bdfc-77aa4b2ba22a/officexp-KB955464-FullFile-RUS.exe|updates/officexp/officexp-kb955464-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/2/0/8/208f4e6e-ecee-413c-bb4f-3e3a3ab3aafa/officexp-KB955464-FullFile-SVE.exe|updates/officexp/officexp-kb955464-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/a/a/6aa89695-14cd-49c9-9743-bcf114cf6f23/officexp-KB955464-FullFile-TRK.exe|updates/officexp/officexp-kb955464-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB955464-FullFile-%WINLANG%.exe /Q"
 :: Office XP Service Pack 3 (SP3)
 :: <http://support.microsoft.com/?kbid=832671>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=85af7bfd-6f69-4289-8bd1-eb966bcdfb5e>
