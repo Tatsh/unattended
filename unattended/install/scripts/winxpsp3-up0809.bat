@@ -23,7 +23,7 @@
 :: URL|RUS|http://download.microsoft.com/download/1/a/d/1adfaa6b-5688-40e4-82d9-aae32f2ecc8a/WindowsMedia9-KB954156-x86-RUS.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/4/7/2/472e9b60-164b-42d5-830c-2ade64a08411/WindowsMedia9-KB954156-x86-SVE.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/4/9/b/49b89d94-d25e-4504-a13b-73b23ae8cba4/WindowsMedia9-KB954156-x86-TRK.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\windowsmedia9-kb954156-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\windowsmedia9-kb954156-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB938464)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=e0bd6fbe-f46e-4961-9a79-49ec77d39439>
@@ -49,4 +49,5 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\windowsmedia9-kb954156-x86-%WINLANG
 :: URL|RUS|http://download.microsoft.com/download/f/e/c/fec45297-41a6-4b25-aa41-a60c309f85ab/WindowsXP-KB938464-x86-RUS.exe|updates/winxpsp3/windowsxp-kb938464-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/8/a/4/8a48db02-bd85-4447-b895-f16d7fabfcd9/WindowsXP-KB938464-x86-SVE.exe|updates/winxpsp3/windowsxp-kb938464-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/5/a/9/5a9bbe2d-958b-4be6-be10-4b3ec7e8b9e4/WindowsXP-KB938464-x86-TRK.exe|updates/winxpsp3/windowsxp-kb938464-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB938464-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB938464-x86-%WINLANG%.exe /norestart /passive /nobackup"
+
