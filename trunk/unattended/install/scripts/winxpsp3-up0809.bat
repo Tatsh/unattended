@@ -1,30 +1,3 @@
-
-:: Security Update for Windows Media Encoder 9 Series for Windows XP (KB954156)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=57bcb3c2-49d3-4f18-8d03-36abd03d7403>
-:: URL|ARA|http://download.microsoft.com/download/5/b/c/5bc4e835-6fa6-45d2-b823-1d0a55e1c308/WindowsMedia9-KB954156-x86-ARA.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/6/7/d/67de660b-ea5e-47cf-84f3-29c4743c28c9/WindowsMedia9-KB954156-x86-CSY.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/f/5/b/f5bca709-f2fe-4214-9d0b-d6477c9c8e16/WindowsMedia9-KB954156-x86-DAN.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/2/7/5/275d349c-d175-4ff1-aca3-70a67b5d5b16/WindowsMedia9-KB954156-x86-DEU.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/a/4/a/a4ae9daa-66af-40e3-aac7-0d2be3ab2a82/WindowsMedia9-KB954156-x86-ELL.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/2/b/2/2b252ed6-39fe-423d-a74e-d48c85d24c2a/WindowsMedia9-KB954156-x86-ENU.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/0/e/f/0efb403b-9c9d-442a-ac65-c5d621503f36/WindowsMedia9-KB954156-x86-ESN.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/a/8/9/a892538d-cfbc-43e0-a09f-6fbafa602230/WindowsMedia9-KB954156-x86-FIN.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/c/3/7/c37f7b3c-2095-47b2-88b1-2badb7b1b524/WindowsMedia9-KB954156-x86-FRA.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/f/5/7/f57f0a40-f01f-4fed-9936-3a7e227d7d89/WindowsMedia9-KB954156-x86-HEB.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/f/8/9/f890d1a3-4431-45af-af0c-f9ca75d18bb5/WindowsMedia9-KB954156-x86-HUN.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/0/3/0/030af31a-85a4-4320-9f91-388fd7cd6eb4/WindowsMedia9-KB954156-x86-ITA.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/3/9/f/39f9d4d1-758f-4adc-9228-2f51da99da86/WindowsMedia9-KB954156-x86-JPN.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/f/9/1/f912f7db-c53a-4ef9-ae9a-50c2ef8cee42/WindowsMedia9-KB954156-x86-KOR.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/d/6/d/d6dbff52-2414-49e5-85ab-55fc74284413/WindowsMedia9-KB954156-x86-NLD.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-nld.exe
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/d/5/3/d53a0719-2b87-4b6e-bf7f-1ffccbabcbdb/WindowsMedia9-KB954156-x86-PLK.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/d/8/5/d85dddae-b56c-4462-992d-59cd34f91a88/WindowsMedia9-KB954156-x86-PTB.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/b/2/c/b2c83842-5b42-40c5-a7c2-0cc843986ff7/WindowsMedia9-KB954156-x86-PTG.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/1/a/d/1adfaa6b-5688-40e4-82d9-aae32f2ecc8a/WindowsMedia9-KB954156-x86-RUS.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/4/7/2/472e9b60-164b-42d5-830c-2ade64a08411/WindowsMedia9-KB954156-x86-SVE.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/4/9/b/49b89d94-d25e-4504-a13b-73b23ae8cba4/WindowsMedia9-KB954156-x86-TRK.exe|updates/winxpsp3/windowsmedia9-kb954156-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\windowsmedia9-kb954156-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB938464)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=e0bd6fbe-f46e-4961-9a79-49ec77d39439>
 :: URL|ARA|http://download.microsoft.com/download/e/a/7/ea7593d8-7420-403d-b096-a26db4e1cb38/WindowsXP-KB938464-x86-ARA.exe|updates/winxpsp3/windowsxp-kb938464-x86-ara.exe
