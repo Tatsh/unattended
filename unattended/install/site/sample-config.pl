@@ -130,6 +130,9 @@ $u->push_value ('Identification', 'JoinWorkgroup', sub { return lookup_property(
 
 # Lookup Admin password from database, if possible.
 $u->push_value ('GuiUnattended', 'AdminPassword', sub { return lookup_property('AdminPassword'); });
+# Lookup Timezone, if possible.^M
+$u->push_value ('GuiUnattended', 'TimeZone', sub { return lookup_property('TimeZone'); });^M
+
 
 # Lookup OS Directory from database, if possible.
 $u->push_value ('_meta', 'OS_media', 
