@@ -1,10 +1,10 @@
 :: OPTIONAL: Install Emacs for Windows
 ::
-:: URL|ALL|http://mirrors.usc.edu/pub/gnu/windows/emacs/emacs-22.1-bin-i386.zip|packages/emacs/emacs-22.1-bin-i386.zip
+:: URL|ALL|http://mirrors.usc.edu/pub/gnu/windows/emacs/emacs-22.3-bin-i386.zip|packages/emacs/emacs-22.3-bin-i386.zip
 :: 
 @Echo off
 set zip="%ProgramFiles%\7-ZIP\7z.exe"
-set prog=emacs-22.1
+set prog=emacs-22.3
 
 c:
 cd \
