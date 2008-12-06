@@ -1,16 +1,13 @@
 :: OPTIONAL: Install Sun Java Virtual Machine
 
-:: Download from <http://java.sun.com/javase/downloads/index.jsp>.
-
 :: See:
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://java.com/en/download/help/silent_install.xml>
-::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=23089|packages/jre/jre1.6.0_7.msi
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=26223|packages/jre/jre-6u11-windows-i586-p-s.exe
 
 @Echo off
-todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\sun-jre.txt /i %Z%\packages\jre\jre1.6.0_7.msi IEXPLORER=1 MOZILLA=1 REBOOT=Suppress JAVAUPDATE=0"
+todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableAutoUpdateCheck\" /t REG_DWORD /d 0"
+todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableJavaUpdate\" /t REG_DWORD /d 0"
 
-:: Deinstall older Versions if you wish
-:: (last numbers schema according to above mentioned pages: 1.5.0_09 -> 15009 etc.):
-:: todo.pl ".ignore-err 69 msiexec.exe /qn /x {3248F0A8-6813-11D6-A77B-00B0D0150090} REBOOT=Suppress"
-:: todo.pl ".ignore-err 69 msiexec.exe /qn /x {3248F0A8-6813-11D6-A77B-00B0D0150100} REBOOT=Suppress"
+todo.pl "%Z%\packages\jre\jre-6u11-windows-i586-p-s.exe /s IEXPLORER=1 MOZILLA=1 REBOOT=ReallySuppress JAVAUPDATE=0 WEBSTARTICON=0"
+
