@@ -1,3 +1,12 @@
+:: Install IE7
+@Echo off
+:: Windows Internet Explorer 7 for Windows XP^M
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=9AE91EBE-3385-447C-8A30-081805B2F90B>
+: Active X plugin for IE
+
+:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/current/licensing/win/install_flash_player_10_active_x.exe|packages/macromedia/install_flash_player_10_active_x.exe
+todo.pl "%Z%\packages\macromedia\install_flash_player_10_active_x.exe /s"
+
 
 :: Cumulative Security Update for Internet Explorer 7 for Windows XP (KB953838)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=8e2125c7-52cb-4052-82a3-2d3c6a953752>
