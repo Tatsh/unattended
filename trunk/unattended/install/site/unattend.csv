@@ -11,6 +11,6 @@
 "computer2","Windows 2000 Professional ProductID","ABCDE-ABCDE-ABCDE-ABCDE-ABCDE"
 "computer1","JoinWorkgroup","workgroup"
 "Computer User 2","JoinDomain","mydomain"
-"Default","ntp_servers","tick.usno.navy.mil"
+"Default","ntp_servers","pool.ntp.org"
 "Default","top_scripts","base.bat"
 "computer2","middle_scripts","office2k.bat"
