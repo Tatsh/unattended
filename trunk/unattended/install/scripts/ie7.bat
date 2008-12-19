@@ -86,6 +86,6 @@ todo.pl ".reboot-on 194 %Z%\updates\ie7\IE7-WindowsXP-KB938127-v2-x86-%WINLANG%.
 :: URL|TRK|http://download.microsoft.com/download/4/e/7/4e77d531-5c33-4f9b-a5c9-ea29fb79cc56/IE7-WindowsXP-x86-trk.exe|packages/ie7/ie7-windowsxp-x86-trk.exe
 
 ::It would be nice to be able to get rid of the phishing filter dialog that pops up on a user's first login
-todo.pl "reg add \"HKU\Software\Microsoft\Internet Explorer\PhishingFilter\" /v Enabled /t REG_DWORD /d 2 /f"
+todo.pl "reg add \"HKCU\Software\Microsoft\Internet Explorer\PhishingFilter\" /v Enabled /t REG_DWORD /d 2 /f"
 
 todo.pl ".reboot-on 194 %Z%\packages\ie7\ie7-windowsxp-x86-%WINLANG%.exe /passive /nobackup /norestart"
