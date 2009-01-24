@@ -717,17 +717,17 @@ sub validate_old_dos_dir ($) {
 
     foreach my $dir (@dirs) {
         my $failure = '';
-        my ($base, $ext) = $dir =~ /^(.*)(?:\.(.*))?\z/;
+        my ($base, $ext) = $dir =~ /^(.*?)(?:\.(.*))?\z/;
 
         # Check "impossible" cases first.
         $base =~ /\\/
-            || defined $ext && ($ext =~ /\\/ || $ext =~ /\./)
+            || defined $ext && ($ext =~ /\\/)
             and die 'Internal error';
 
         if (length $base > 8) {
             $failure = "'$base' has more than eight characters";
         }
-        elsif ($base =~ /\./) {
+        elsif ($ext =~ /\./) {
             $failure = "'$dir' contains more than one dot";
         }
         elsif (defined $ext) {
