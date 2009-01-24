@@ -1390,6 +1390,7 @@ $u->{'UserData'}->{'ProductID'} =
         $name =~ /Windows 2000/ || $name =~ /Windows NT/
             or return undef;
 
+            print "OS-ProductID:", $name ,"\n";
         return simple_q ($product_key_q);
     };
 
@@ -1403,6 +1404,7 @@ $u->{'UserData'}->{'ProductKey'} =
         $name =~ /Windows 2000/ || $name =~ /Windows NT/
             and return undef;
 
+            print "OS-ProductKey:", $name ,"\n";
         # Only ask for ProductKey if we lack a ProductID.
         my $product_id = $u->{'UserData'}->{'ProductID'};
         defined $product_id
