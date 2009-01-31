@@ -848,27 +848,31 @@ tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default tftpboo
 # Macro to generate download-foo rule to download and unpack a package
 # FIXME - This is horrid
 dest=.
+downloadcache=/var/tmp
 download_rule=								\
 download-$(strip $(1)) :  ;						\
 	@what=$(strip $(1)) && suffix=$(strip $(2))			\
 	&& url=$(strip $(3)) && sub=$(strip $(4))			\
+	&& target=$(downloadcache)/$$$$what.$$$$suffix			\
 	&& [ -d $$$$what ]						\
-	|| { [ -n "$$$$sub" ] || sub=.					\
-	&& temp=`mktemp /var/tmp/dl.XXXXXX`				\
+	|| { [ -f $$$$target ]						\
+	|| { temp=`mktemp /var/tmp/dl.XXXXXX`				\
 	&& wget --passive-ftp --timeout 30 -O $$$$temp 			\
 		$$$$url$$$$what.$$$$suffix    				\
+	&& mv -f $$$$temp $$$$target; }					\
 	&& case $$$$suffix in						\
 		*.gz|tgz) prog="gzip -d -c" ;;				\
 		*.bz2) prog="bzcat -c" ;;				\
 		*) prog=cat ;;						\
 	esac								\
-	&& { $$$$prog $$$$temp | tar -C $(dest)/$$$$sub -xvf - ; }	\
-	&& { [ "$$$$sub" == . ] || ln -nsf "$$$$sub" "$$$$what" ; }	\
-	&& { [ "$$$$sub" != . ] || [ "$(dest)" == . ]			\
+	&& [ "x$$$$sub" != "x" ] || sub=.				\
+	&& { $$$$prog $$$$target | tar -C $(dest)/$$$$sub -xvf - ; }	\
+	&& echo sub:$$$$sub						\
+	&& { [ "x$$$$sub" = "x." ] || ln -nsf "$$$$sub" "$$$$what" ; }	\
+	&& { [ "x$$$$sub" != "x." ] || [ "$(dest)" = . ]		\
 		|| ln -sf $(dest)/$$$$what . ; }			\
-	&& if [ "$(keep-archives)" == "1" ] ; then			\
-		mv -f $$$$temp /var/tmp/$$$$what.$$$$suffix;		\
-	else rm $$$$temp ;						\
+	&& if [ "x$(keep-archives)" != "x1" ] ; then			\
+		rm $$target ;						\
 	fi								\
 	}
 
