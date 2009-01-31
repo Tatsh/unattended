@@ -41,6 +41,19 @@ If you want to download the packages into a different directory and
 create symlinks from here to there, use "make
 dest=/path/to/scratch/directory download" instead.
 
+By default, the source packages are kept after being unpacked.  If you
+want then removed, add "keep-archives=0" to the make variables.
+
+By default, if a source package is found in the directory specified by
+downloadcache (default /var/tmp), that is used instead of downloading
+the file again.  So, if you have a fresh checkout of unattended and
+all of the required source files, nothing more should get downloaded.
+This is particularly handy when you want to do a completely clean
+rebuild.
+
+Summarizing the options for "make download":
+make dest=/scratch/dir keep-archives=1 downloadcache=/path/mycache download
+
 Do "make iso" to build linuxboot.iso.  Do "make tftpboot" to populate
 the tftpboot/ directory.  A simple "make" does both.
 
