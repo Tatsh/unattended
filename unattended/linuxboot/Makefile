@@ -11,11 +11,11 @@ e2fsprogs=e2fsprogs-1.41.3
 expat=expat-2.0.1
 #use a glibc version as close to the building host as possible
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
-glibc=glibc-2.3.6
+glibc=glibc-2.6.1
 # Awful hack Comment out if glibc > 2.4. 2.4 does not support linuxthreads. 
 glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
 kbd=kbd-1.12
-linux=linux-2.6.27.12
+linux=linux-2.6.28.3
 module-init-tools=module-init-tools-3.5
 mysql=mysql-5.0.67
 nano=nano-2.0.9
@@ -272,8 +272,9 @@ stage1 += stage1/lib/libuuid.so
 ## glibc
 # Configure switches cheerfully stolen from LFS project
 # (http://www.linuxfromscratch.org/lfs/view/development/chapter05/glibc.html).
-# FIXME:  this 2.6.0 needs update???????
 build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage
+	cd $(cwd)/$(linux)&& make INSTALL_HDR_PATH=dest headers_install  
+	cd ..
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
 	    --prefix=/usr					\
@@ -281,7 +282,7 @@ build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage
             --enable-kernel=2.6.0				\
 	    --without-gd --without-cvs				\
             --without-selinux					\
-	    --with-headers=$(cwd)/$(linux)/include		\
+	    --with-headers=$(cwd)/$(linux)/dest/include		\
 	    --build=i586-linux					\
 	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
 	&& make
@@ -872,7 +873,7 @@ download-$(strip $(1)) :  ;						\
 	&& { [ "x$$$$sub" != "x." ] || [ "$(dest)" = . ]		\
 		|| ln -sf $(dest)/$$$$what . ; }			\
 	&& if [ "x$(keep-archives)" != "x1" ] ; then			\
-		rm $$target ;						\
+		rm $$$$target ;						\
 	fi								\
 	}
 
