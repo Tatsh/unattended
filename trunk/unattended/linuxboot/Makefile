@@ -23,7 +23,7 @@ ncurses=ncurses-5.6
 parted=parted-1.6.22
 pciutils=pciutils-3.0.3
 #for gcc 4.2 and up use per-5.10.0
-perl=perl-5.8.8
+perl=perl-5.8.9
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.39
 perl-xml-parser=XML-Parser-2.36
@@ -47,6 +47,11 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		\
 	$(samba) $(slang) $(syslinux) $(wireless_tools) $(zlib)
 
 CC=gcc
+
+# uncomment one of the following two lines depending on what the binary to make iso
+# images on your system is called.
+mkisofs=mkisofs
+#mkisofs=genisoimage
 
 # Macro to generate rule for copying single file
 copy_file=					\
@@ -827,7 +832,7 @@ $(call copy_file,../bootdisk/isolinux.bin,iso/isolinux/isolinux.bin)
 
 linuxboot.iso: iso/isolinux/bzImage iso/isolinux/initrd \
 	iso/isolinux/isolinux.cfg iso/isolinux/isolinux.bin
-	mkisofs -quiet -o $@.tmp -m CVS					\
+	$(mkisofs) -quiet -o $@.tmp -m CVS				\
                 -b isolinux/isolinux.bin -c isolinux/boot.cat		\
                 -no-emul-boot -boot-load-size 4 -boot-info-table	\
 		iso > /dev/null
