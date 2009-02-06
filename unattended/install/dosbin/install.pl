@@ -930,7 +930,7 @@ sub dhcp_settings () {
         or croak 'Internal error';
     if (!defined $_dhcp_settings) {
         $_dhcp_settings = { };
-        my $dhcp = '/var/run/dhcp.out';
+        my $dhcp = '/tmp/dhcp.out';
         if (open DHCP, $dhcp) {
             while (my $line = <DHCP>) {
                 chomp $line;
