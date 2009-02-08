@@ -13,7 +13,7 @@ expat=expat-2.0.1
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
 glibc=glibc-2.6.1
 # Awful hack Comment out if glibc > 2.4. 2.4 does not support linuxthreads. 
-glibc-linuxthreads=$(strip $(patsubst glibc-%,glibc-linuxthreads-%,$(glibc)))
+glibc-linuxthreads=glibc-linuxthreads-2.6.1
 kbd=kbd-1.12
 linux=linux-2.6.28.3
 module-init-tools=module-init-tools-3.5
@@ -492,7 +492,7 @@ $(perl)/perl: fakeinclude/stdio.h
 		-Dlibpth="$(cwd)/fakelib $(cwd)/stage1/lib"		\
 		-Ud_sethostent_r -Ud_setprotoent_r -Ud_setservent_r	\
 		-Ud_endhostent_r -Ud_endprotoent_r -Ud_endservent_r	\
-		-Darchname=i586-linux					\
+		-Darchname=i586-linux -Ud_eaccess			\
 		-Accflags="$(fakelib_cflags)"				\
 		-deO							\
 	&& make
