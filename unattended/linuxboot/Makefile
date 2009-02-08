@@ -48,10 +48,13 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbi)		\
 
 CC=gcc
 
-# uncomment one of the following two lines depending on what the binary to make iso
-# images on your system is called.
-mkisofs=mkisofs
-#mkisofs=genisoimage
+# Debian/Ubuntu systems likely use genisoimage to create iso files
+# otherwise try to use mkisofs
+ifneq ("$(strip $(wildcard /usr/bin/genisoimage))","")
+  mkisofs=genisoimage
+else
+  mkisofs=mkisofs
+endif
 
 # Macro to generate rule for copying single file
 copy_file=					\
