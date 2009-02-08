@@ -15,9 +15,14 @@
 :: URL|SKY|http://www.pdfforge.org/files/translations/0.9.6/slovenian.ini|packages/pdfcreator/lang-sky-0.9.6.ini
 :: URL|SVE|http://www.pdfforge.org/files/translations/0.9.6/swedish.ini|packages/pdfcreator/lang-sve-0.9.6.ini
 :: URL|TRK|http://www.pdfforge.org/files/translations/0.9.6/turkish.ini|packages/pdfcreator/lang-trk-0.9.6.ini
-if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-0.9.6.ini goto nolangpack
-todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0.9.6.ini \"%ProgramFiles%\PDFCreator\languages\""
+:: if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-0.9.6.ini goto nolangpack
+:: todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0.9.6.ini \"%ProgramFiles%\PDFCreator\languages\""
 :nolangpack
+:: Uninstall toolbar
+todo.pl "%WINDIR%\PDFCreator_Toolbar_Uninstaller_6390.exe -s"
+
 
 :: Install PDFCreator
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-0.9.6.setup.exe /sp- /silent /norestart"
+:: Use this sintax if you want your language installed:
+::todo.pl "%Z%\packages\pdfcreator\pdfcreator-0.9.6.setup.exe /silent /LANG=Spanish"
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-0.9.6.setup.exe /silent /LANG=Spanish"
