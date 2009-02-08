@@ -2,6 +2,3 @@
 echo *** UPDATE YOUR SCRIPTS USE php.bat INSTEAD ***
 todo.pl php.bat
 
-:: URL|ALL|http://static.php.net/www.php.net/distributions/php-5.2.5-win32-installer.msi|packages/php/php-5.2.5-win32-installer.msi
-@Echo off
-todo.pl ".reboot-on 194 msiexec /qb /l* %SystemDrive%\netinst\logs\php5.txt /i %Z%\packages\php\php-5.2.5-win32-installer.msi"
