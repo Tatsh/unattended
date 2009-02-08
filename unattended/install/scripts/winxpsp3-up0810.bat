@@ -25,32 +25,6 @@
 :: URL|TRK|http://download.microsoft.com/download/6/d/2/6d257eeb-dc91-4b68-80eb-c83ff72a8479/WindowsXP-KB958644-x86-TRK.exe|updates/winxpsp3/windowsxp-kb958644-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB958644-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Cumulative Security Update for Internet Explorer for Windows XP (KB956390)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=A7F0F47B-B1EE-4516-9FBF-BF8E579963D0>
-:: URL|ARA|http://download.microsoft.com/download/f/e/d/fed32ec2-343a-4717-9b0d-07b9a02d26b8/WindowsXP-KB956390-x86-ARA.exe|updates/winxpsp3/windowsxp-kb956390-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/7/4/f/74f7d6de-6a96-4c11-9985-5bb4bff1c91f/WindowsXP-KB956390-x86-CSY.exe|updates/winxpsp3/windowsxp-kb956390-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/c/2/1/c21585cd-c6b9-487f-883d-d30437e9bb98/WindowsXP-KB956390-x86-DAN.exe|updates/winxpsp3/windowsxp-kb956390-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/5/a/4/5a48a47d-f228-4da6-8a82-d54350e83052/WindowsXP-KB956390-x86-DEU.exe|updates/winxpsp3/windowsxp-kb956390-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/b/8/2/b82d0ca3-4dc5-4b51-a91a-ad593f65bc3d/WindowsXP-KB956390-x86-ELL.exe|updates/winxpsp3/windowsxp-kb956390-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/c/f/4cf3fd3b-a024-494a-b285-49f5920016e8/WindowsXP-KB956390-x86-ENU.exe|updates/winxpsp3/windowsxp-kb956390-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/7/3/c/73c272bd-c796-4553-b23b-ea59b0c41e4b/WindowsXP-KB956390-x86-ESN.exe|updates/winxpsp3/windowsxp-kb956390-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/a/d/3/ad3aca86-f6ae-42fc-956d-cad0951b52a6/WindowsXP-KB956390-x86-FIN.exe|updates/winxpsp3/windowsxp-kb956390-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/3/8/5/38576d91-cd49-4c4f-ae97-4e45ae6fdf44/WindowsXP-KB956390-x86-FRA.exe|updates/winxpsp3/windowsxp-kb956390-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/2/0/e/20e01698-189c-4ed9-8e39-e73ebd54ca92/WindowsXP-KB956390-x86-HEB.exe|updates/winxpsp3/windowsxp-kb956390-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/c/c/0/cc057341-4ca5-4286-8017-cc6c4efc1598/WindowsXP-KB956390-x86-HUN.exe|updates/winxpsp3/windowsxp-kb956390-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/9/f/59fd34e6-7c5b-4c24-92cc-da5c6e14c878/WindowsXP-KB956390-x86-ITA.exe|updates/winxpsp3/windowsxp-kb956390-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/9/d/b/9db0a35a-7a4f-4335-98fa-c4170eb3bbf5/WindowsXP-KB956390-x86-JPN.exe|updates/winxpsp3/windowsxp-kb956390-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/d/b/6/db61ed26-1835-42ff-b16a-8af55c015f7c/WindowsXP-KB956390-x86-KOR.exe|updates/winxpsp3/windowsxp-kb956390-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/6/9/4/6940d982-77c5-4470-b8b0-7ecf2a2b6695/WindowsXP-KB956390-x86-NLD.exe|updates/winxpsp3/windowsxp-kb956390-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/8/f/c/8fcb00d1-d02c-4240-beb3-193d8035971a/WindowsXP-KB956390-x86-NOR.exe|updates/winxpsp3/windowsxp-kb956390-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/b/8/8/b887ee4e-d900-4328-9e5a-d7c31c85fbe8/WindowsXP-KB956390-x86-PLK.exe|updates/winxpsp3/windowsxp-kb956390-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/f/f/5/ff5ca02e-21c4-4c57-a52e-d3417f5a5433/WindowsXP-KB956390-x86-PTB.exe|updates/winxpsp3/windowsxp-kb956390-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/5/5/755d5930-e62a-4725-9aa6-a2c081c6f152/WindowsXP-KB956390-x86-PTG.exe|updates/winxpsp3/windowsxp-kb956390-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/a/b/e/abee7f5c-c040-49a2-84ee-d3c0cd923eb3/WindowsXP-KB956390-x86-RUS.exe|updates/winxpsp3/windowsxp-kb956390-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/6/b/1/6b1974cf-b66a-43f2-8421-ea0f78f526ca/WindowsXP-KB956390-x86-SVE.exe|updates/winxpsp3/windowsxp-kb956390-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/1/5/3/1534b32c-efce-4fd2-b545-683d9723160d/WindowsXP-KB956390-x86-TRK.exe|updates/winxpsp3/windowsxp-kb956390-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB956390-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB956803)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b16d9dac-c430-4dd8-a1e5-9a614801f1d9>
 :: URL|ARA|http://download.microsoft.com/download/1/d/4/1d4eccc3-0df1-494c-816c-28343ed85c44/WindowsXP-KB956803-x86-ARA.exe|updates/winxpsp3/windowsxp-kb956803-x86-ara.exe
