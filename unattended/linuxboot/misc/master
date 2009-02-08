@@ -115,14 +115,6 @@ network_modules="$(find-modules-pci 0x02 0x00)"
 network_modules="$network_modules $(find-modules-pci 0x06 0x80)"
 load_modules "$(sort_modules $network_modules)"
 
-echo "*** And I suppose we may as well look for PCMCIA devices..."
-if [ -e /var/run/did_cardmgr ] ; then
-    echo "*** (cardmgr already run; skipping)"
-else
-    cardmgr -o
-    touch /var/run/did_cardmgr
-fi
-
 echo "*** Now that we have loaded the modules (maybe), let's try DHCP..."
 unset got_lease
 for iface in eth0 eth1 eth2 ; do
