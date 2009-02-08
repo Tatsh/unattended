@@ -12,8 +12,6 @@ expat=expat-2.0.1
 #use a glibc version as close to the building host as possible
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
 glibc=glibc-2.6.1
-# Awful hack Comment out if glibc > 2.4. 2.4 does not support linuxthreads. 
-glibc-linuxthreads=glibc-linuxthreads-2.6.1
 kbd=kbd-1.12
 linux=linux-2.6.28.3
 module-init-tools=module-init-tools-3.5
@@ -907,9 +905,6 @@ download-pci.ids:
 
 
 download_targets=$(addprefix download-,$(packages) pci.ids)
-download_targets += download-$(glibc-linuxthreads)
-
-download-$(glibc-linuxthreads) : download-$(glibc)
 
 download: $(download_targets)
 
@@ -932,9 +927,6 @@ $(call download_rule, $(expat), tar.gz, \
 #$(call cvs_rule, $(glibc), libc, \
 #	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
-# Awful hack
-$(call download_rule, $(glibc-linuxthreads), tar.bz2,	\
-	http://ftp.gnu.org/gnu/glibc/, $(glibc))
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://www.all.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(linux), tar.bz2,		\
