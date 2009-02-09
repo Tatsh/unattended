@@ -394,11 +394,9 @@ stage1/bin/loadkeys: $(kbd)/src/loadkeys
 	cd $(kbd)				\
 	&& make DESTDIR=$(cwd)/stage1 install
 	rm -rf stage1/usr/share/locale
-	rm stage1/usr/bin/{deallocvt,dumpkeys,fgconsole,getkeycodes}	\
-		stage1/usr/bin/{kbdrate,loadunimap,mapscrn}		\
-		stage1/usr/bin/psf*table				\
-		stage1/usr/bin/{resizecons,setkeycodes,setleds}		\
-		stage1/usr/bin/{setmetamode,showconsolefont,showkey}
+	cd stage1/usr/bin && rm deallocvt dumpkeys fgconsole 		\
+		getkeycodes kbdrate loadunimap mapscrn psf*table 	\
+		setkeycodes setleds setmetamode showconsolefont showkey
 	[ -e $@ ]
 
 stage1 += stage1/bin/loadkeys
