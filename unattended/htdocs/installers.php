@@ -8,7 +8,7 @@ $page['next']  = 'apps.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: installers.php,v 1.8 2008-09-03 15:28:49 jjp3 Exp $';
+$cvs           = '$Id: installers.php,v 1.9 2009-02-11 01:05:30 jjp3 Exp $';
 $sections[]    = array ('Introduction', 'intro');
 $sections[]    = array ('General information', 'general');
 $sections[]    = array ('If all else fails...', 'fail');
@@ -35,7 +35,7 @@ $content       = <<<EOT
         applications. To make an educated guess about how to run an installer unattended,
         you need to know which system was used to  create  it.  Sometimes  this  will  be
         obvious from the installer's splash screen; sometimes you can figure  it  out  by
-        running <a href="http://www.gnu.org/software/binutils/manual/html_chapter/binutils_7.html"
+        running <a href="http://sourceware.org/binutils/docs/binutils/strings.html"
         rel="external">strings</a>; and sometimes you will have to guess.</p>
 
       <p>Of course, you can try running the installer with the  <code>/?</code> switch to
@@ -45,18 +45,18 @@ $content       = <<<EOT
         there is something to tell.</p>
 
       <h2 id="msi">MSI packages</h2>
-      <p>Microsoft's own <a href="http://msdn.microsoft.com/library/en-us/msi/setup/windows_installer_start_page.asp"
+      <p>Microsoft's own <a href="http://msdn.microsoft.com/en-us/library/cc185688(VS.85).aspx"
         rel="external">Windows Installer Service</a> is  the  nominal  standard,  and  if
         everybody used it, there would be  no  need  for  this  document.  Unfortunately,
         Microsoft invented it too late.</p>
 
       <p>The package files have a <code>.msi</code>  extension,  and  you manipulate them
-        using the <a href="http://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/msiexec.mspx"
+        using the <a href="http://technet.microsoft.com/es-es/library/bb490936(en-us).aspx"
         rel="external"><code>msiexec</code></a> utility.</p>
 
       <p>For installation, use the <code>/i</code> and <code>/qb</code> switches. Use the
         <code>/l*</code> switch to produce a log file.  You can provide named options (or
-        &quot;<a  href="http://msdn.microsoft.com/library/en-us/msi/setup/properties.asp"
+        &quot;<a  href="http://msdn.microsoft.com/en-us/library/aa370889(VS.85).aspx"
         rel="external">properties</a>&quot;) at  the  end  of  the  command  line;  which
         properties are supported depends on the package. For example, this command:</p>
 <pre class="code">
