@@ -192,6 +192,15 @@ copy_files "/c/netinst/unattend.txt" "/c/\$win_nt\$.~bt/winnt.sif" 3 "Copy winnt
 message "Move driver directory"
 mv /c/\$win_nt\$.~ls/$ARCH/\$[Oo][eE][mM]\$/* /c/\$/  
 
+#Copy textmode drivers into /c/$win_nt$.~bt/$oem$/ 
+#Do not move them instead, as it wont work.
+if [ -d "/c/\$/textmode/" ]
+then
+  message "Copy TEXTMODE driver directory"
+  mkdir /c/\$win_nt\$.~bt/\$oem\$/  
+  cp /c/\$/[Tt][Ee][Xx][Tt][Mm][Oo][Dd][Ee]/* /c/\$win_nt\$.~bt/\$oem\$/  
+fi
+
 message "Syncing disk -aiaparanoia :-)"
 sync
 
