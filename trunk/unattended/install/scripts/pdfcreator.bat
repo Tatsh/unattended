@@ -18,9 +18,10 @@
 :: if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-0.9.6.ini goto nolangpack
 :: todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-0.9.6.ini \"%ProgramFiles%\PDFCreator\languages\""
 :nolangpack
-:: Uninstall toolbar
-todo.pl "%WINDIR%\PDFCreator_Toolbar_Uninstaller_6390.exe -s"
 
+:: Uninstall toolbar
+todo.pl "%WINDIR%\PDFCreator_Toolbar_Uninstaller.exe -s"
+todo.pl "ren %WINDIR%\PDFCreator_Toolbar_Uninstaller_????.exe %WINDIR%\PDFCreator_Toolbar_Uninstaller.exe"
 
 :: Install PDFCreator
 :: Use this sintax if you want your language installed:
