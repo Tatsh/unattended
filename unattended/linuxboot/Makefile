@@ -8,19 +8,22 @@ dbi=DBI-1.607
 dmidecode=dmidecode-2.10
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.41.3
+e2fsprogs=e2fsprogs-1.41.4
 expat=expat-2.0.1
 #use a glibc version as close to the building host as possible
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
 glibc=glibc-2.6.1
+# TODO: kbd-1.15
 kbd=kbd-1.12
 linux=linux-2.6.28.7
+# TODO: module-init-tools-3.6
 module-init-tools=module-init-tools-3.5
 mysql=mysql-5.0.77
 nano=nano-2.0.9
+# TODO: ncurses-5.7
 ncurses=ncurses-5.6
 parted=parted-1.6.22
-pciutils=pciutils-3.0.3
+pciutils=pciutils-3.1.2
 #for gcc 4.2 and up use per-5.10.0
 #dbd-pgpp requires IO::Socket that is core in Perl 5.10.0
 perl=perl-5.10.0
@@ -29,9 +32,10 @@ perl-ldap=perl-ldap-0.39
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20071116
+# TODO: samba-3.3.1
 samba=samba-3.0.32
 slang=slang-2.0.7
-syslinux=syslinux-3.72
+syslinux=syslinux-3.73
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
