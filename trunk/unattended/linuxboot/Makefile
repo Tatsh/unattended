@@ -1,11 +1,11 @@
 bash=bash-3.2
-busybox=busybox-1.13.0
+busybox=busybox-1.13.2
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.22
 dbd-mysql=DBD-mysql-2.9008
-dbd-pgpp=DBD-PgPP-0.05
+dbd-pgpp=DBD-PgPP-0.06
 dbi=DBI-1.607
-dmidecode=dmidecode-2.9
+dmidecode=dmidecode-2.10
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.41.3
@@ -14,9 +14,9 @@ expat=expat-2.0.1
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
 glibc=glibc-2.6.1
 kbd=kbd-1.12
-linux=linux-2.6.28.3
+linux=linux-2.6.28.7
 module-init-tools=module-init-tools-3.5
-mysql=mysql-5.0.67
+mysql=mysql-5.0.77
 nano=nano-2.0.9
 ncurses=ncurses-5.6
 parted=parted-1.6.22
@@ -989,7 +989,7 @@ $(call download_rule, $(pmtools), tar.bz2,			\
 	http://ftp.all.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/stable/)
 $(call download_rule, $(slang), tar.bz2, 	\
-	ftp://space.mit.edu/pub/davis/slang/v2.0/)
+	http://downloads.sourceforge.net/dosemu/)
 $(call download_rule, $(syslinux), tar.gz, \
         http://ftp.all.kernel.org/pub/linux/utils/boot/syslinux/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
