@@ -57,6 +57,12 @@ make dest=/scratch/dir keep-archives=1 downloadcache=/path/mycache download
 Do "make iso" to build linuxboot.iso.  Do "make tftpboot" to populate
 the tftpboot/ directory.  A simple "make" does both.
 
+The build may complete faster if you do a parallel make with "make -j 4".
+On a modern, multi-core system with lots of RAM you may be able to use
+a higher value for the -j parameter.  The proper value for -j depends
+on the specs of the computer doing the build.
+
+
 For more details, read the Makefile and other sources.  Hey, what do
 you expect on the bleeding edge?
 
