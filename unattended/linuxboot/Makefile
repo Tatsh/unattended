@@ -301,7 +301,7 @@ build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage
             --enable-kernel=2.6.0				\
 	    --without-gd --without-cvs				\
             --without-selinux					\
-	    --with-headers=$(cwd)/$(linux)/dest/include		\
+	    --includedir=$(cwd)/$(linux)/dest/include		\
 	    --build=i586-linux					\
 	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
 	&& $(MAKE)
