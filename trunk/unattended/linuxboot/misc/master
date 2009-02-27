@@ -429,6 +429,6 @@ umount /c
 
 echo "all done!"
 
-reboot
+reboot -f
 
 exec bash
