@@ -22,7 +22,8 @@ ncurses=ncurses-5.6
 parted=parted-1.6.22
 pciutils=pciutils-3.0.3
 #for gcc 4.2 and up use per-5.10.0
-perl=perl-5.8.9
+#dbd-pgpp requires IO::Socket that is core in Perl 5.10.0
+perl=perl-5.10.0
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.39
 perl-xml-parser=XML-Parser-2.36
