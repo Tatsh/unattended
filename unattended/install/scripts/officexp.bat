@@ -2,6 +2,9 @@
 @Echo off
 :: Reminder: Commands will be executed in reverse order.
 
+:: Uncomment it if you want the compatibility pack installed
+:: todo.pl docxconverter.bat
+
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
