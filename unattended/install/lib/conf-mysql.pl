@@ -46,13 +46,15 @@ sub lookup_value ($$) {
         or return undef;
     return undef
         unless defined $lookup && defined $property;
+    # To avoid issues with different drivers return the field names in different cases, force to lower case
+    $dbh->{FetchHashKeyName} = 'NAME_lc';
     my $sth = $dbh->prepare("SELECT Value FROM unattended WHERE Lookup = '$lookup' and Property = '$property';")
         or return undef;
     $sth->execute
         or return undef;
     my $ref = $sth->fetchrow_hashref()
         or return undef;
-    my $value = $ref->{'Value'}
+    my $value = $ref->{'value'}
         or return undef;
     $value =~ /\S/
         or return undef;
