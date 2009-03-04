@@ -40,6 +40,10 @@ use strict;
 #require "conf-mysql.pl";
 #CONFIG->setup('DBI:mysql:database=unattended;host=192.168.2.1', 'username', 'password');
 
+# Set db for PostgreSQL interface
+#require "conf-mysql.pl";
+#CONFIG->setup('dbi:PgPP:dbname=unattended;host=192.168.2.1', 'username', 'password');
+
 # Setup db for CSV interface
 require "conf-csv.pl";
 CONFIG->setup(dos_to_host('z:\\site\\unattend.csv'), '', '');
