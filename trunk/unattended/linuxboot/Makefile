@@ -300,6 +300,7 @@ build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage
 	    --without-gd --without-cvs				\
             --without-selinux					\
 	    --includedir=$(cwd)/$(linux)/dest/include		\
+	    --with-headers=$(cwd)/$(linux)/dest/include		\
 	    --build=i586-linux					\
 	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
 	&& $(MAKE)
