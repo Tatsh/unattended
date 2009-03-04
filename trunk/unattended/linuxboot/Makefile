@@ -292,8 +292,6 @@ stage1 += stage1/lib/libuuid.so
 # Configure switches cheerfully stolen from LFS project
 # (http://www.linuxfromscratch.org/lfs/view/development/chapter05/glibc.html).
 build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage
-	cd $(cwd)/$(linux)&& make INSTALL_HDR_PATH=dest headers_install  
-	cd ..
 	mkdir -p build-$(glibc)
 	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
 	    --prefix=/usr					\
