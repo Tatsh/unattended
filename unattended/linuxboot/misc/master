@@ -149,8 +149,8 @@ done
 
 # Having obtained a lease, read its info.  In particular, here we set
 # "unattend" to the value from local DHCP option 233.
-[ -f /var/run/dhcp.out ] \
-    && . /var/run/dhcp.out
+[ -f /tmp/dhcp.out ] \
+    && . /tmp/dhcp.out
 
 # Configure the keyboard again, in case it was provided via DHCP.
 kbd=$(get_cmdline_param kbd)
