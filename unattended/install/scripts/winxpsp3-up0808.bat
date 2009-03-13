@@ -128,4 +128,4 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB952954-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/f/1/0/f108b89f-1a7f-48e3-a926-170428e4f62e/WindowsXP-KB951978-x86-RUS.exe|updates/winxpsp3/windowsxp-kb951978-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/6/2/4/6249b844-3639-4425-87d5-843839ebb19d/WindowsXP-KB951978-x86-SVE.exe|updates/winxpsp3/windowsxp-kb951978-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/f/3/3/f337effe-c62f-4381-931f-3c95541d5d55/WindowsXP-KB951978-x86-TRK.exe|updates/winxpsp3/windowsxp-kb951978-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\winxpsp3\updates\WindowsXP-KB951978-x86-%WINLANG%.exe /norestart /passive /nobackup"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951978-x86-%WINLANG%.exe /norestart /passive /nobackup"

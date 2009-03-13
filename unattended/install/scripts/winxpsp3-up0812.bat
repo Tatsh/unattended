@@ -101,7 +101,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB960714-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/8/E/F/8EFEFEA6-6CEF-4E76-81DE-B8D79D0646C1/WindowsXP-KB954600-x86-RUS.exe|updates/winxpsp3/windowsxp-kb954600-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/F/9/A/F9A6B89A-4EDE-4FC9-91BB-5FD37184BAFC/WindowsXP-KB954600-x86-SVE.exe|updates/winxpsp3/windowsxp-kb954600-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/0/A/10AC06C8-7E31-457F-9DB3-D837FC219553/WindowsXP-KB954600-x86-TRK.exe|updates/winxpsp3/windowsxp-kb954600-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\winxpsp3\updates\WindowsXP-KB954600-x86-%WINLANG%.exe /norestart /passive /nobackup"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB954600-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP Service Pack 3 (KB952069)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=AD76FCF3-A2F9-4E36-BD1B-C1536749173C>
@@ -127,4 +127,4 @@ todo.pl ".reboot-on 194 %Z%\winxpsp3\updates\WindowsXP-KB954600-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/2/C/1/2C1E0659-3D9E-4486-9E18-A79D6D3EC760/WindowsXP-WindowsMedia-KB952069-v2-x86-RUS.exe|updates/winxpsp3/windowsxp-windowsmedia-kb952069-v2-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/C/7/9/C7956C36-6D74-48B3-BEC3-5DC8B11B0195/WindowsXP-WindowsMedia-KB952069-v2-x86-SVE.exe|updates/winxpsp3/windowsxp-windowsmedia-kb952069-v2-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/7/5/2/752C4550-E163-42C7-8B4F-C7AC5AAB1619/WindowsXP-WindowsMedia-KB952069-v2-x86-TRK.exe|updates/winxpsp3/windowsxp-windowsmedia-kb952069-v2-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\winxpsp3\updates\WindowsXP-WindowsMedia-KB952069-v2-x86-%WINLANG%.exe /norestart /passive /nobackup"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB952069-v2-x86-%WINLANG%.exe /norestart /passive /nobackup"
