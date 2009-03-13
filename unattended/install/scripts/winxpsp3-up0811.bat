@@ -75,4 +75,4 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB955069-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/e/8/f/e8fa64e0-b2d2-4836-83f6-b12c8f719017/WindowsXP-KB954459-x86-RUS.exe|updates/winxpsp3/windowsxp-kb954459-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/c/8/5/c85aea73-b4c1-4279-92c8-b6652d21cb75/WindowsXP-KB954459-x86-SVE.exe|updates/winxpsp3/windowsxp-kb954459-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/8/b/b/8bb52e17-6af2-434e-ad67-f0c886d260f0/WindowsXP-KB954459-x86-TRK.exe|updates/winxpsp3/windowsxp-kb954459-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\winxpsp3\updates\WindowsXP-KB954459-x86-%WINLANG%.exe /norestart /passive /nobackup"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB954459-x86-%WINLANG%.exe /norestart /passive /nobackup"
