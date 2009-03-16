@@ -2,29 +2,29 @@
 @Echo Off
 
 :: Download Adobe Reader full version
-:: URL|ARA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/ar_AE/AdbeRdr9.1_ar_AE.exe|packages/adobereader/adberdr91_ara.exe
-:: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/chs/AdbeRdr9.1_zh_CN.exe|packages/adobereader/adberdr91_chs.exe
-:: URL|CHT|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/cht/AdbeRdr9.1_zh_TW.exe|packages/adobereader/adberdr91_cht.exe
-:: URL|CSY|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/cs_CZ/AdbeRdr9.1_cs_CZ.exe|packages/adobereader/adberdr91_csy.exe
-:: URL|DAN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/dan/AdbeRdr9.1_da_DK.exe|packages/adobereader/adberdr91_dan.exe
-:: URL|NLD|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/nld/AdbeRdr9.1_nl_NL.exe|packages/adobereader/adberdr91_nld.exe
-:: URL|ENU|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/enu/AdbeRdr9.1_en_US.exe|packages/adobereader/adberdr91_enu.exe
-:: URL|FIN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/suo/AdbeRdr9.1_fi_FI.exe|packages/adobereader/adberdr91_fin.exe
-:: URL|FRA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/fra/AdbeRdr9.1_fr_FR.exe|packages/adobereader/adberdr91_fra.exe
-:: URL|DEU|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/deu/AdbeRdr9.1_de_DE.exe|packages/adobereader/adberdr91_deu.exe
-:: URL|ELL|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/el_GR/AdbeRdr9.1_el_GR.exe|packages/adobereader/adberdr91_ell.exe
-:: URL|HEB|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/he_IL/AdbeRdr9.1_he_IL.exe|packages/adobereader/adberdr91_heb.exe
-:: URL|HUN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/hu_HU/AdbeRdr9.1_hu_HU.exe|packages/adobereader/adberdr91_hun.exe
-:: URL|ITA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/ita/AdbeRdr9.1_it_IT.exe|packages/adobereader/adberdr91_ita.exe
-:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/jpn/AdbeRdr9.1_ja_JP.exe|packages/adobereader/adberdr91_jpn.exe
-:: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/kor/AdbeRdr9.1_ko_KR.exe|packages/adobereader/adberdr91_kor.exe
-:: URL|NOR|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/nor/AdbeRdr9.1_nb_NO.exe|packages/adobereader/adberdr91_nor.exe
-:: URL|PLK|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/pl_PL/AdbeRdr9.1_pl_PL.exe|packages/adobereader/adberdr91_plk.exe
-:: URL|PTB|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/ptb/AdbeRdr9.1_pt_BR.exe|packages/adobereader/adberdr91_ptb.exe
-:: URL|RUS|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/ru_RU/AdbeRdr9.1_ru_RU.exe|packages/adobereader/adberdr91_rus.exe
-:: URL|ESN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/esp/AdbeRdr9.1_es_ES.exe|packages/adobereader/adberdr91_esn.exe
-:: URL|SVE|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/sve/AdbeRdr9.1_sv_SE.exe|packages/adobereader/adberdr91_sve.exe
-:: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.10/sve/AdbeRdr9.1_sv_SE.exe|packages/adobereader/adberdr91_trk.exe
+:: URL|ARA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/ar_AE/AdbeRdr910_ar_AE.exe|packages/adobereader/adberdr91_ara.exe
+:: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/chs/AdbeRdr910_zh_CN.exe|packages/adobereader/adberdr91_chs.exe
+:: URL|CHT|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/cht/AdbeRdr910_zh_TW.exe|packages/adobereader/adberdr91_cht.exe
+:: URL|CSY|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/cs_CZ/AdbeRdr910_cs_CZ.exe|packages/adobereader/adberdr91_csy.exe
+:: URL|DAN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/dan/AdbeRdr910_da_DK.exe|packages/adobereader/adberdr91_dan.exe
+:: URL|NLD|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/nld/AdbeRdr910_nl_NL.exe|packages/adobereader/adberdr91_nld.exe
+:: URL|ENU|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/enu/AdbeRdr910_en_US.exe|packages/adobereader/adberdr91_enu.exe
+:: URL|FIN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/suo/AdbeRdr910_fi_FI.exe|packages/adobereader/adberdr91_fin.exe
+:: URL|FRA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/fra/AdbeRdr910_fr_FR.exe|packages/adobereader/adberdr91_fra.exe
+:: URL|DEU|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/deu/AdbeRdr910_de_DE.exe|packages/adobereader/adberdr91_deu.exe
+:: URL|ELL|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/el_GR/AdbeRdr910_el_GR.exe|packages/adobereader/adberdr91_ell.exe
+:: URL|HEB|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/he_IL/AdbeRdr910_he_IL.exe|packages/adobereader/adberdr91_heb.exe
+:: URL|HUN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/hu_HU/AdbeRdr910_hu_HU.exe|packages/adobereader/adberdr91_hun.exe
+:: URL|ITA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/ita/AdbeRdr910_it_IT.exe|packages/adobereader/adberdr91_ita.exe
+:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/jpn/AdbeRdr910_ja_JP.exe|packages/adobereader/adberdr91_jpn.exe
+:: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/kor/AdbeRdr910_ko_KR.exe|packages/adobereader/adberdr91_kor.exe
+:: URL|NOR|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/nor/AdbeRdr910_nb_NO.exe|packages/adobereader/adberdr91_nor.exe
+:: URL|PLK|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/pl_PL/AdbeRdr910_pl_PL.exe|packages/adobereader/adberdr91_plk.exe
+:: URL|PTB|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/ptb/AdbeRdr910_pt_BR.exe|packages/adobereader/adberdr91_ptb.exe
+:: URL|RUS|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/ru_RU/AdbeRdr910_ru_RU.exe|packages/adobereader/adberdr91_rus.exe
+:: URL|ESN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/esp/AdbeRdr910_es_ES.exe|packages/adobereader/adberdr91_esn.exe
+:: URL|SVE|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/sve/AdbeRdr910_sv_SE.exe|packages/adobereader/adberdr91_sve.exe
+:: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.1/sve/AdbeRdr910_sv_SE.exe|packages/adobereader/adberdr91_trk.exe
 
 
 :: Download Adobe Reader 9.0.x Language Support
