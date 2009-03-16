@@ -183,12 +183,16 @@ $(dosemu)/.stamp-dosemu-nolock-patch: misc/dosemu-nolock-patch
 	cd $(dosemu) && patch -b -p1 < $(cwd)/$<
 	touch $@
 
+$(dosemu)/.stamp-dosemu-configure-patch: misc/dosemu-configure-patch
+	cd $(dosemu) && patch -b -p1 < $(cwd)/$<
+	touch $@
+
 fakeinclude/slang.h: $(slang)/src/slang.h
 	mkdir -p $(dir $@)
 	cp $< $@
 	[ -e $@ ] && touch $@
 
-$(slang)/src/objs/libslang.a: $(slang)/configure
+$(slang)/src/objs/libslang.a: stage1/lib/libdl.so $(slang)/configure
 	rm -f $@
 	cd $(slang)						\
 	&& CC="$(CC) $(fakelib_cflags)" ./configure		\
@@ -200,13 +204,20 @@ $(slang)/src/objs/libslang.a: $(slang)/configure
 $(call copy_file, $(slang)/src/objs/libslang.a, \
 	fakelib/libslang.a)
 
+# dosemu:
+# - use slang of build environment (not system's one): patched 
+#   configure script to create our custom options (--with-slangdir 
+#   option does not work for us).
 build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch	\
+			$(dosemu)/.stamp-dosemu-configure-patch		\
 			$(dosemu)/configure fakelib/libslang.a		\
 			fakeinclude/slang.h
 	rm -f $@
 	mkdir -p $(dir $@)
 	cd $(dir $@)							\
 	&& CC="$(CC) $(fakelib_cflags)" $(cwd)/$(dosemu)/configure	\
+		--with-slang-inc=$(cwd)/fakeinclude			\
+		--with-slang-lib=$(cwd)/fakelib				\
 		--without-x --without-gpm --build=i586-linux		\
 		--prefix=/usr
 	[ -e $@ ]
@@ -473,7 +484,7 @@ stage1 += stage1/usr/sbin/parted stage1/lib/libparted.so
 
 ## pciutils
 $(pciutils)/lspci:
-	$(MAKE) -C $(pciutils) PREFIX=/usr
+	$(MAKE) -C $(pciutils) PREFIX=/usr HOST="i586--linux" RELEASE="$(subst linux-,,$(linux))" OPT="$(fakelib_cflags)"
 	[ -e $@ ]
 
 $(call copy_exe, $(pciutils)/lspci, stage1/sbin/lspci)
