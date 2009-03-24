@@ -51,32 +51,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB958644-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/3/7/6/376a71fb-45dc-4a24-9923-24c27992459c/WindowsXP-KB956803-x86-TRK.exe|updates/winxpsp3/windowsxp-kb956803-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB956803-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Security Update for Windows XP (KB954211)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=7718bf14-c26c-43f3-be67-4c79ab5b2607>
-:: URL|ARA|http://download.microsoft.com/download/a/5/0/a5059573-33bb-4739-a6d5-272325ab9781/WindowsXP-KB954211-x86-ARA.exe|updates/winxpsp3/windowsxp-kb954211-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/7/3/0/7304015c-ebf1-40cb-977c-63edf6fd7f35/WindowsXP-KB954211-x86-CSY.exe|updates/winxpsp3/windowsxp-kb954211-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/d/c/b/dcbb2c33-61a9-4ba3-ae19-0ccfcd6003f6/WindowsXP-KB954211-x86-DAN.exe|updates/winxpsp3/windowsxp-kb954211-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/b/9/0/b9077dbc-df04-413f-b8c2-654c96b14ade/WindowsXP-KB954211-x86-DEU.exe|updates/winxpsp3/windowsxp-kb954211-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/4/1/3/413f4c64-a983-4c75-b660-e1e5959ef3f4/WindowsXP-KB954211-x86-ELL.exe|updates/winxpsp3/windowsxp-kb954211-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/2/5/3/25324004-a2df-4163-95f5-ae9127b0f3ad/WindowsXP-KB954211-x86-ENU.exe|updates/winxpsp3/windowsxp-kb954211-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/5/b/25b491ad-6d07-485c-850a-9ca7f5ebf8cf/WindowsXP-KB954211-x86-ESN.exe|updates/winxpsp3/windowsxp-kb954211-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/c/6/c/c6cff53e-1d84-477b-b2ff-3a769feade26/WindowsXP-KB954211-x86-FIN.exe|updates/winxpsp3/windowsxp-kb954211-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/3/c/3/3c3add60-4b1f-466a-aa69-417ce2cb0f73/WindowsXP-KB954211-x86-FRA.exe|updates/winxpsp3/windowsxp-kb954211-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/f/e/5/fe5ee4d9-6883-4b9c-a3cf-96c7cef287fe/WindowsXP-KB954211-x86-HEB.exe|updates/winxpsp3/windowsxp-kb954211-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/d/a/2/da260f49-c1c3-416a-b887-aaa616e1728e/WindowsXP-KB954211-x86-HUN.exe|updates/winxpsp3/windowsxp-kb954211-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/a/8/b/a8ba474a-31d5-4307-9684-1dcb02b6bd8e/WindowsXP-KB954211-x86-ITA.exe|updates/winxpsp3/windowsxp-kb954211-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/8/5/4/8540452d-7854-46ae-af61-80ffc3e14312/WindowsXP-KB954211-x86-JPN.exe|updates/winxpsp3/windowsxp-kb954211-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/c/5/c/c5cec36b-6715-44b0-8644-9205cd83db17/WindowsXP-KB954211-x86-KOR.exe|updates/winxpsp3/windowsxp-kb954211-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/c/a/1/ca164a4d-e2b2-484c-bc21-a49766d391a7/WindowsXP-KB954211-x86-NLD.exe|updates/winxpsp3/windowsxp-kb954211-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/c/8/1/c814e2ba-330d-48a3-80c4-7af156381d6b/WindowsXP-KB954211-x86-NOR.exe|updates/winxpsp3/windowsxp-kb954211-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/7/a/f/7afc1bd2-8172-4e3c-a79f-7e2a528dd511/WindowsXP-KB954211-x86-PLK.exe|updates/winxpsp3/windowsxp-kb954211-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/3/1/831f225e-3d9b-48fc-a16f-1f862d84f8c7/WindowsXP-KB954211-x86-PTB.exe|updates/winxpsp3/windowsxp-kb954211-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/9/d/d/9dd901fc-54ad-4c26-832a-4864b4ffaa12/WindowsXP-KB954211-x86-PTG.exe|updates/winxpsp3/windowsxp-kb954211-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/f/4/9/f49d556c-adb5-4c6a-94fd-818f31b832f9/WindowsXP-KB954211-x86-RUS.exe|updates/winxpsp3/windowsxp-kb954211-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/2/4/e/24e2417a-313e-4a67-afea-fd345000763d/WindowsXP-KB954211-x86-SVE.exe|updates/winxpsp3/windowsxp-kb954211-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/0/e/0/0e001218-19ca-466a-9538-3124946b47e2/WindowsXP-KB954211-x86-TRK.exe|updates/winxpsp3/windowsxp-kb954211-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB954211-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB953155)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=e7ef571f-c9e8-4e14-95a3-3eeaec55b784>
 :: URL|ARA|http://download.microsoft.com/download/d/8/3/d833c84c-8b9d-4eee-b8b2-7e826ce36af3/WindowsXP-KB953155-x86-ARA.exe|updates/winxpsp3/windowsxp-kb953155-x86-ara.exe
