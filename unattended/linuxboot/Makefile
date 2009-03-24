@@ -51,6 +51,7 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
 	$(samba) $(slang) $(syslinux) $(wireless_tools) $(zlib)
 
 CC=gcc
+CXX=g++
 
 # Debian/Ubuntu systems likely use genisoimage to create iso files
 # otherwise try to use mkisofs
@@ -97,7 +98,7 @@ all: iso tftpboot
 ## module-init-tools (depmod et. al.)
 
 $(module-init-tools)/depmod:
-	cd $(module-init-tools) && ./configure --prefix=/ 	\
+	cd $(module-init-tools) && CC=$(CC) ./configure --prefix=/ 	\
 		--build=i586-linux && $(MAKE)
 	[ -e $@ ]
 
@@ -112,18 +113,19 @@ stage1 += stage1/sbin/depmod
 ## Linux
 
 $(linux)/.config: misc/linux-config
-	$(MAKE) -C $(linux) mrproper
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux) mrproper
 	cp -f $< $@
-	$(MAKE) -C $(linux) ARCH=i386 oldconfig
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux) ARCH=i386 oldconfig
 
 $(linux)/arch/x86/boot/bzImage: $(linux)/.config
 	rm -f $@
-	$(MAKE) -C $(linux) ARCH=i386
-	$(MAKE) -C $(linux) INSTALL_HDR_PATH=dest ARCH=i386 headers_install  
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux) ARCH=i386
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux) INSTALL_HDR_PATH=dest ARCH=i386 headers_install  
 	[ -e $@ ]
 
 stage1/.stamp-modules: $(linux)/arch/x86/boot/bzImage stage1/sbin/depmod
-	$(MAKE) -C $(linux) INSTALL_MOD_PATH=$(cwd)/stage1	\
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux)		\
+			    INSTALL_MOD_PATH=$(cwd)/stage1	\
 			    DEPMOD=$(cwd)/stage1/sbin/depmod	\
 			    ARCH=i386				\
 			    modules_install
@@ -132,10 +134,11 @@ stage1/.stamp-modules: $(linux)/arch/x86/boot/bzImage stage1/sbin/depmod
 stage1 += stage1/.stamp-modules
 
 ## bash
+## FIXME configure loading emacs shared files from system
 
 $(bash)/bash: fakeinclude/stdio.h
 	cd $(bash)							\
-	&& CFLAGS="$(fakelib_cflags)"					\
+	&& CC=$(CC) CFLAGS="$(fakelib_cflags)"				\
 		bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
 		--build=i586-linux					\
 	&& $(MAKE)
@@ -157,23 +160,23 @@ $(busybox)/.stamp-busybox-patch: misc/busybox-patch
 
 $(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch 
 	cp -f $< $@
-	$(MAKE) -C $(busybox) oldconfig
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(busybox) oldconfig
 
 # BusyBox has some broken dependencies (changing CONFIG_INIT to off
 # does not rebuild reboot.o), hence the "make clean" here.
 $(busybox)/busybox: $(busybox)/.config fakeinclude/stdio.h
-	$(MAKE) -C $(busybox) clean
-	$(MAKE) -C $(busybox) CFLAGS_EXTRA="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(busybox) clean
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(busybox) CFLAGS_EXTRA="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
 
 stage1/bin/busybox: $(busybox)/busybox
-	$(MAKE) -C $(busybox) CONFIG_PREFIX=$(cwd)/stage1 install
+	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(busybox) CONFIG_PREFIX=$(cwd)/stage1 install
 	cmp $< $@
 
 stage1 += stage1/bin/busybox
 
 ## dmidecode
 $(dmidecode)/dmidecode:
-	$(MAKE) -C $(dir $@)
+	$(MAKE) CC=$(CC) -C $(dir $@)
 	[ -e $@ ]
 
 $(call copy_exe,$(dmidecode)/dmidecode,stage1/usr/sbin/dmidecode)
@@ -290,8 +293,8 @@ stage1 += stage1/var/lib/dosemu/drives/dosboot.img
 
 ## e2fsprogs (just libuuid.so, required for parted)
 $(e2fsprogs)/lib/libuuid.so:
-	cd $(e2fsprogs)						\
-	&& ./configure --enable-elf-shlibs --build=i586-linux	\
+	cd $(e2fsprogs)							\
+	&& CC=$(CC) ./configure --enable-elf-shlibs --build=i586-linux	\
 	&& $(MAKE)
 	[ -e $@ ]
 
@@ -299,12 +302,17 @@ $(call copy_lib,$(e2fsprogs)/lib/libuuid.so,stage1/lib/libuuid.so)
 
 stage1 += stage1/lib/libuuid.so
 
+$(glibc)/.stamp-glibc-gen-translit.pl-patch:
+	sed -ie "s/ gcc -E / $(CC) -E /" $(glibc)/locale/gen-translit.pl
+	touch $@
+
 ## glibc
 # Configure switches cheerfully stolen from LFS project
 # (http://www.linuxfromscratch.org/lfs/view/development/chapter05/glibc.html).
-build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage
+build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage	\
+			$(glibc)/.stamp-glibc-gen-translit.pl-patch
 	mkdir -p build-$(glibc)
-	cd build-$(glibc) && $(cwd)/$(glibc)/configure		\
+	cd build-$(glibc) && CC=$(CC) $(cwd)/$(glibc)/configure	\
 	    --prefix=/usr					\
 	    --disable-profile  --enable-add-ons			\
             --enable-kernel=2.6.0				\
@@ -408,8 +416,8 @@ $(kbd)/src/loadkeys: fakeinclude/stdio.h
 	rm -f $@
 	cd $(kbd)					\
 	&& export CFLAGS="$(fakelib_cflags) -O2"	\
-	&& ./configure					\
-	&& $(MAKE) CFLAGS="$$CFLAGS"
+	&& CC=$(CC) ./configure				\
+	&& $(MAKE) CC=$(CC) CFLAGS="$$CFLAGS"
 	[ -e $@ ]
 
 stage1/bin/loadkeys: $(kbd)/src/loadkeys
@@ -427,7 +435,7 @@ stage1 += stage1/bin/loadkeys
 ## nano
 $(nano)/src/nano: fakeinclude/stdio.h fakeinclude/curses.h
 	cd $(nano)							    \
-	&& CFLAGS="$(fakelib_cflags)"					    \
+	&& CC=$(CC) CFLAGS="$(fakelib_cflags)"				    \
 		./configure --prefix=/usr				    \
 			--disable-browser --disable-mouse --disable-speller \
 			--build=i586-linux				    \
@@ -441,7 +449,7 @@ stage1 += stage1/usr/bin/nano
 ## ncurses
 $(ncurses)/lib/libncursesw.so: fakeinclude/stdio.h
 	cd $(ncurses)							\
-	&& CFLAGS="$(fakelib_cflags)"					\
+	&& CC=$(CC) CXX=$(CXX) CFLAGS="$(fakelib_cflags)"		\
 	LDFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)"	\
 		./configure --prefix=/usr --with-shared			\
 			--without-normal --without-debug		\
@@ -466,10 +474,11 @@ stage1 += stage1/usr/lib/libncursesw.so
 #       This will probably be fixed in a later version of parted
 $(parted)/parted/.libs/parted: fakeinclude/stdio.h stage1/lib/libuuid.so \
 				stage1/lib/libdl.so
-	cd $(parted)						\
-	&& CFLAGS="$(fakelib_cflags) -I$(cwd)/$(e2fsprogs)/lib"	\
-		./configure --disable-nls --without-readline	\
-		--build=i586-linux --disable-Werror		\
+	cd $(parted)							\
+	&& CC=$(CC) CXX=$(CXX)						\
+		CFLAGS="$(fakelib_cflags) -I$(cwd)/$(e2fsprogs)/lib"	\
+		./configure --disable-nls --without-readline		\
+		--build=i586-linux --disable-Werror			\
 	&& $(MAKE)
 	[ -e $@ ]
 
@@ -484,7 +493,8 @@ stage1 += stage1/usr/sbin/parted stage1/lib/libparted.so
 
 ## pciutils
 $(pciutils)/lspci:
-	$(MAKE) -C $(pciutils) PREFIX=/usr HOST="i586--linux" RELEASE="$(subst linux-,,$(linux))" OPT="$(fakelib_cflags)"
+	$(MAKE) CC=$(CC) -C $(pciutils) PREFIX=/usr HOST="i586--linux"	\
+		RELEASE="$(subst linux-,,$(linux))" OPT="$(fakelib_cflags)"
 	[ -e $@ ]
 
 $(call copy_exe, $(pciutils)/lspci, stage1/sbin/lspci)
@@ -497,7 +507,7 @@ stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 $(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
 	cd $(dir $@)							  \
 	&& $(MAKE) clean						  \
-	&& $(MAKE)
+	&& $(MAKE) CC=$(CC)
 	[ -e $@ ]
 
 $(call copy_exe,$(pmtools)/acpidump/acpidump,stage1/sbin/acpidump)
@@ -507,7 +517,7 @@ stage1 += stage1/sbin/acpidump
 $(perl)/perl: fakeinclude/stdio.h
 	rm -f $@
 	cd $(perl)							\
-	&& ./Configure -Dusethreads -Dprefix=/opt/perl			\
+	&& ./Configure -Dcc=$(CC) -Dusethreads -Dprefix=/opt/perl	\
 		-Dlibpth="$(cwd)/fakelib $(cwd)/stage1/lib"		\
 		-Ud_sethostent_r -Ud_setprotoent_r -Ud_setservent_r	\
 		-Ud_endhostent_r -Ud_endprotoent_r -Ud_endservent_r	\
@@ -535,8 +545,9 @@ perlrun=$(cwd)/stage1/opt/perl/bin/perl -I$(cwd)/stage1/opt/perl/lib/site_perl -
 ## mysql
 # It has a dependency on ncurses-dev fakeinclude/curses.h could fixed
 $(mysql)/Makefile: stage1/opt/perl/bin/perl fakeinclude/zlib.h
-	cd $(dir $@) \
-	&& CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)" \
+	cd $(dir $@)							\
+	&& CC=$(CC) CXX=$(CXX)						\
+		CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)"	\
 		./configure --prefix=/ --without-server --build=i586-linux
 
 $(mysql)/libmysql/.libs/libmysqlclient.so: $(mysql)/Makefile
@@ -692,7 +703,7 @@ stage1 += stage1/.stamp-perl-xml-xpath
 # so ensure that the kernel is built first
 $(samba)/source/config.status: stage1/.stamp-modules
 	cd $(samba)/source					\
-	    && LDFLAGS=-rdynamic ./configure --prefix=/usr	\
+	    && CC=$(CC) LDFLAGS=-rdynamic ./configure --prefix=/usr	\
 	        --disable-cups --without-readline		\
 		--without-ldap --without-krb5 --without-ads	\
 		--without-utmp --with-included-popt		\
@@ -731,9 +742,9 @@ stage1 += stage1/sbin/mount.cifs
 ## wireless_tools
 $(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
 	cd $(wireless_tools)				\
-	&& $(MAKE) clean					\
+	&& $(MAKE) clean				\
 	&& $(MAKE) KERNEL_SRC=$(cwd)/$(linux)		\
-		CFLAGS="$(fakelib_cflags) -O2 -Wall"
+		CC=$(CC) CFLAGS="$(fakelib_cflags) -O2 -Wall"
 	[ -e $@ ]
 
 $(wireless_tools)/iwlist: $(wireless_tools)/iwconfig
@@ -750,8 +761,8 @@ zlib_so := libz.so.$(zlib_ver)
 $(zlib)/$(zlib_so): fakeinclude/stdio.h
 	rm -f $@
 	cd $(zlib)						\
-	&& $(MAKE) CFLAGS="-O $(fakelib_cflags)"			\
-		LDSHARED="cc -shared -Wl,-soname,libz.so.1"	\
+	&& $(MAKE) CC=$(CC) CFLAGS="-O $(fakelib_cflags)"	\
+		LDSHARED="$(CC) -shared -Wl,-soname,libz.so.1"	\
 		$(zlib_so)
 
 fakeinclude/zlib.h: $(zlib)/zlib.h $(zlib)/zconf.h
@@ -765,7 +776,7 @@ stage1 += stage1/lib/libz.so
 ## libexpat
 $(expat)/.libs/libexpat.so.1.5.2:
 	cd $(expat)						\
-	&& ./configure --prefix=/				\
+	&& CC=$(CC) ./configure --prefix=/			\
 	&& $(MAKE)
 
 $(call copy_lib,$(expat)/.libs/libexpat.so.1.5.2,stage1/lib/libexpat.so)
