@@ -15,7 +15,7 @@ expat=expat-2.0.1
 glibc=glibc-2.6.1
 # TODO: kbd-1.15
 kbd=kbd-1.12
-linux=linux-2.6.28.7
+linux=linux-2.6.29
 # TODO: module-init-tools-3.6
 module-init-tools=module-init-tools-3.5
 mysql=mysql-5.0.77
@@ -303,7 +303,7 @@ $(call copy_lib,$(e2fsprogs)/lib/libuuid.so,stage1/lib/libuuid.so)
 stage1 += stage1/lib/libuuid.so
 
 $(glibc)/.stamp-glibc-gen-translit.pl-patch:
-	sed -ie "s/ gcc -E / $(CC) -E /" $(glibc)/locale/gen-translit.pl
+	sed -ie "s| gcc -E | $(CC) -E |" $(glibc)/locale/gen-translit.pl
 	touch $@
 
 ## glibc
