@@ -23,7 +23,7 @@
 :: URL|RUS|http://download.microsoft.com/download/1/A/7/1A76C570-F37E-4C1A-867E-F5A22D1C85F9/WindowsXP-KB958690-x86-RUS.exe|updates/winxpsp3/windowsxp-kb958690-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/6/D/B/6DBDD7E7-31E4-4A04-8419-1292BBDBB0D7/WindowsXP-KB958690-x86-SVE.exe|updates/winxpsp3/windowsxp-kb958690-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/E/3/0/E30F086B-88BF-4929-BDF9-5754CAE73295/WindowsXP-KB958690-x86-TRK.exe|updates/winxpsp3/windowsxp-kb958690-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB958690-x86-%WINLANG%.exe /passive /nobackup"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB958690-x86-%WINLANG%.exe  /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB960225)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=942d87f6-3cb1-4d36-a70a-70d9c34488f3>
@@ -49,4 +49,4 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB958690-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/E/B/5/EB5A05EB-8C67-4E84-B323-8E96BE68E619/WindowsXP-KB960225-x86-RUS.exe|updates/winxpsp3/windowsxp-kb960225-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/8/6/1/8618A65E-15A9-4852-9D7E-B47392CEBE3D/WindowsXP-KB960225-x86-SVE.exe|updates/winxpsp3/windowsxp-kb960225-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/7/5/175CDEFA-CE5B-4F8D-A295-742641A0890C/WindowsXP-KB960225-x86-TRK.exe|updates/winxpsp3/windowsxp-kb960225-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB960225-x86-%WINLANG%.exe /passive /nobackup"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB960225-x86-%WINLANG%.exe /norestart /passive /nobackup"
