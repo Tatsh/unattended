@@ -35,7 +35,7 @@ pmtools=pmtools-20071116
 # TODO: samba-3.3.1
 samba=samba-3.0.32
 slang=slang-2.0.7
-syslinux=syslinux-3.73
+syslinux=syslinux-3.75
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
