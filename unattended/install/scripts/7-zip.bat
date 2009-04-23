@@ -4,7 +4,6 @@
 @Echo off
 
 if exist "%ProgramFiles%\7-ZIP\7z.exe" goto done
-todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\7zip.txt /i %Z%\packages\sevenzip\7z465.msi REBOOT=ReallySuppress"
 
 REM Set 7zip as default archived file manager
 SETLOCAL
@@ -19,5 +18,7 @@ FOR %%j IN (%Extn%) DO (
 )
 REG ADD %SC%\7-Zip.001\DefaultIcon /VE /D "\"%PROGRAMFILES%\7-Zip\Formats\split.dll\"" /F
 ENDLOCAL
+
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\7zip.txt /i %Z%\packages\sevenzip\7z465.msi REBOOT=ReallySuppress"
 
 :done
