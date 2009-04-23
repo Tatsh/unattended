@@ -15,7 +15,7 @@ expat=expat-2.0.1
 glibc=glibc-2.6.1
 # TODO: kbd-1.15
 kbd=kbd-1.12
-linux=linux-2.6.29
+linux=linux-2.6.29.1
 # TODO: module-init-tools-3.6
 module-init-tools=module-init-tools-3.5
 mysql=mysql-5.0.77
