@@ -1,13 +1,17 @@
-** Changes in version 4.8 (2008-Apr-
-Kernel 2.6.25.1  (enable more network drivers)
-Busybox 1.9.2 
-dbi 1.602 e2fsprogs-1.40.8 mysql-5.0.51a nano-2.0.7 pciutils-2.2.10
-pmtools-20071116 samba-3.0.28a
+** Changes in version 4.8 (2009-Apr-
+Kernel 2.6.29.1  (enable more network drivers)
 Scribus added
 use cifs instead of smbfs 
 ntinstall5. Alternate instalation process to dos emulator.
 Windows XP SP3 included.
 create a dotnet.bat instead of installing from the windows updates.
+Added Ie7 and Office Compatibility Pack.
+Updated several programs (Openoffice 3.0) to latest stable version
+Windows XP SP3 Security updates up to March 2009
+Several programs  linuxboot upgrade to latest stable versions.
+Linux boot build process tested in other linux distributions
+Support for postgres as well as mysql for configurations.
+"make download" is now cached (no need to download same file again) 
 
 ** Changes in version 4.7 (2007-Dec-27)
 

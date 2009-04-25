@@ -5,7 +5,7 @@
 
   <p class="sideBarTitle">News</p>
 
-  <div class="sideBarText"><strong>Release Candidate Ready</strong><br/>
+  <div class="sideBarText"><strong>Release Candidate</strong><br/>
      <a href="http://unattended.sourceforge.net/testing/48rc6/">4.8 RC6</a>
   </div>
   <div class="sideBarText"><strong>Changelog</strong><br />
