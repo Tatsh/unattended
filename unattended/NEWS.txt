@@ -1,4 +1,4 @@
-** Changes in version 4.8 (2009-Apr-
+** Changes in version 4.8 (2009-Apr-29)
 Kernel 2.6.29.1  (enable more network drivers)
 Scribus added
 use cifs instead of smbfs 
