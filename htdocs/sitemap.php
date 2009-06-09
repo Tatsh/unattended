@@ -23,7 +23,7 @@ $content       = <<<EOT
         <li>Download
           <ul>
             <li><a href="http://sourceforge.net/project/showfiles.php?group_id=62053">Download the distribution</a></li>
-            <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/" rel="external">CVS-Repository</a></li>
+            <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/" rel="external">Code Repository</a></li>
           </ul>
         </li>
         <li>Documentation
