@@ -27,7 +27,7 @@
 exceptions=( )
 
 # HTTP-Link to the cvs-repository
-CVSLINK="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts"
+CVSLINK="https://unattended.svn.sourceforge.net/svnroot/unattended/trunk/install/scripts"
 
 # paths to needed programs
 WGET=$(which wget)
@@ -39,10 +39,10 @@ SORT=$(which sort)
 cd "$(dirname "$0")"/../scripts
 
 # crawl through the script-dir
-for file in $($FIND . -type f | $GREP -v CVS | $SORT)
+for file in $($FIND . -type f -name "*.bat" | $GREP -v .svn | $SORT)
 do
     if [[ "${exceptions[@]%%${file##./}}" != "${exceptions[@]}" ]]; then continue; fi
-    if $WGET --output-document "$file.$$.tmp" $CVSLINK/$file?revision=HEAD
+    if $WGET --output-document "$file.$$.tmp" $CVSLINK/$file
     then
         mv "$file.$$.tmp" "$file"
     else
