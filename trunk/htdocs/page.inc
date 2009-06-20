@@ -64,12 +64,12 @@
            >Download</a> |
         <a href="step-by-step.php">Installation</a> |
         <a href="documentation.php">Documentation</a> |
-        <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/"
-           rel="external">CVS-Repository</a> |
+        <a href="https://sourceforge.net/scm?type=svn&group_id=62053"
+           rel="external">Repository</a> |
         <a href="lists.php">Mailing lists</a> |
         <a href="links.php">Links</a> |
         <a href="faq.php">FAQ</a> |
-        <a href="http://ubertechnique.com/unattended/FrontPage" rel="external">Wiki</a>
+        <a href="https://sourceforge.net/apps/trac/unattended/" rel="external">Wiki</a>
       </div>
     </div>
 

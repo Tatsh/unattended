@@ -28,4 +28,7 @@
     <a href="info-download.php#supportfiles">info</a> | <a 
        href="info-download.php#supportfiles" >download</a></div>
         <?= $addbox ?>
+  <div class="sideBarText">
+<script type="text/javascript" src="http://www.ohloh.net/p/10536/widgets/project_thin_badge.js"></script>
+  </div>
   </div>
