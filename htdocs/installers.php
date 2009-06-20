@@ -391,13 +391,13 @@ $content       = <<<EOT
 
       <h1 id="examples">Examples</h1>
       <p>To pique your inspiration  you  should  have  a  closer  look  on  some  of  our
-        application installation scripts in the CVS-repository:</p>
+        application installation scripts in the SVN repository:</p>
 
       <ul>
-        <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/7-zip.bat?rev=HEAD&amp;view=auto">7-Zip</a></li>
-        <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/perl.bat?rev=HEAD&amp;view=auto">ActiveState Perl (ActivePerl)</a></li>
-        <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/adobe-reader.bat?rev=HEAD&amp;view=auto">Adobe Reader 7.0</a></li>
-        <li><a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/ie6.bat?rev=HEAD&amp;view=auto">Microsoft Internet Explorer</a></li>
+        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/7-zip.bat?rev=HEAD&amp;view=auto">7-Zip</a></li>
+        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/perl.bat?rev=HEAD&amp;view=auto">ActiveState Perl (ActivePerl)</a></li>
+        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/adobe-reader.bat?rev=HEAD&amp;view=auto">Adobe Reader 7.0</a></li>
+        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/ie6.bat?rev=HEAD&amp;view=auto">Microsoft Internet Explorer</a></li>
       </ul>
 
       <p>And do not forget our <a href="http://ubertechnique.com/unattended/FrontPage"
