@@ -220,9 +220,9 @@ c:\\> net user guest /ACTIVE:YES /DOMAIN</pre>
       <h3>Populate packages directory</h3>
       <p>All our OS-update scripts and many of our application  install  scripts  contain
         urls for automatic download. Now it is time to perform this task. First you should
-        update your scripts to current CVS version, using our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/script-update?view=markup"
+        update your scripts to current SVN version, using our <a href="http://unattended.svn.sourceforge.net/unattended/trunk/install/tools/script-update?view=markup"
       >script-update</a> script, and then update packages using
-our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/prepare?view=markup"
+our <a href="http://unattended.svn.sourceforge.net/unattended/trunk/install/tools/prepare?view=markup"
       >prepare</a> script:</p>
 <pre class="code">
     $ cd /path/to/unattended/install/tools
