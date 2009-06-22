@@ -8,7 +8,6 @@ $page['next']  = 'advanced.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: advanced.php,v 1.9 2007-12-30 23:51:51 jjp3 Exp $';
 $sections[]    = array ('Integrate a service pack', 'slipstream');
 $sections[]    = array ('Integrate other hotfixes', 'hotfixes');
 $sections[]    = array ('Modifying the boot disk', 'modify');
@@ -25,7 +24,7 @@ $content       = <<<EOT
         versions of Windows XP (we are  unsure  about  Windows 2000).  The  process  will
         appear to work, but after the first  reboot  the  installer  will  abort  saying,
         &quot;The file vga.sys is corrupted&quot;.  For an OEM installation of  XP,  your
-        only option is to apply the service pack after installing the OS; see the <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/scripts/winxp-updates.bat?rev=HEAD&amp;view=auto"
+        only option is to apply the service pack after installing the OS; see the <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/winxp-updates.bat?rev=HEAD&amp;view=auto"
         >winxp-updates.bat</a> script and the <a href="apps.php">application installation
         document</a> for more information.</p>
 
@@ -132,16 +131,16 @@ $content       = <<<EOT
         >tftpboot</code>directory. And simply typing <kbd>make</kbd> will do  all  these.
         </p>
 
-      <p>The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/bootdisk/DRIVERS.txt?rev=HEAD&amp;view=auto"
+      <p>The <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/bootdisk/DRIVERS.txt"
         rel="external"><code>DRIVERS.txt</code></a> file defines  the  supported  network
         drivers and the <code>drivers</code> subdirectory contains them.  To  add  a  new
         driver,  put   it   in   the   <code>drivers</code>   directory,   update   <code
         >DRIVERS.txt</code>, and type <kbd>make</kbd>.</p>
 
-      <p>The <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/bootdisk/template/"
+      <p>The <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/bootdisk/template/"
         ><code>template</code></a> subdirectory contains  the  files  on  the  boot  disk
-        itself. For example, if you want to change <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/bootdisk/template/autoexec.bat?rev=HEAD&amp;view=auto"
-        >autoexec.bat</a> or <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/bootdisk/template/config.sys?rev=HEAD&amp;view=auto"
+        itself. For example, if you want to change <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/bootdisk/template/autoexec.bat"
+        >autoexec.bat</a> or <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/bootdisk/template/config.sys"
         >config.sys</a>,   just  edit  them  under  <code>template</code>  and  run  <kbd
         >make</kbd>.</p>
 
