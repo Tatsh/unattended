@@ -8,7 +8,6 @@ $page['next']  = 'step-by-step.php';
 $page['last']  = 'faq.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: sitemap.php,v 1.3 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Site map', 'sitemap');
 $content       = <<<EOT
       <h1 style="border-top: none; padding-top: 0;">Site map</h1>

@@ -8,7 +8,6 @@ $page['next']  = 'step-by-step.php';
 $page['last']  = 'faq.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: info-download.php,v 1.3 2005-05-23 21:12:22 nrichthof Exp $';
 $sections[]    = array ('unattended-&lt;version&gt;.zip', 'unattended');
 $sections[]    = array ('unattended-&lt;version&gt;-dosboot.zip', 'unattended-dosboot');
 $sections[]    = array ('unattended-&lt;version&gt;-linuxboot.zip', 'unattended-linuxboot');

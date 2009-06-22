@@ -6,7 +6,7 @@
   <p class="sideBarTitle">News</p>
 
   <div class="sideBarText"><strong>Changelog</strong><br />
-    <a href="http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/NEWS.txt?revision=HEAD">version 4.8</a>
+    <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/NEWS.txt">version 4.8</a>
   </div>
   <a href="http://sourceforge.net/news/?group_id=62053" class="more">more news &raquo;</a>
 

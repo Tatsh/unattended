@@ -8,7 +8,6 @@ $page['next']  = '';
 $page['last']  = '';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: links.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
 $sections[]    = array ('Related sites', 'related');
 $sections[]    = array ('Extra documents', 'extra');
 $content       = <<<EOT

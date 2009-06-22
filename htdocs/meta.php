@@ -8,7 +8,6 @@ $page['next']  = 'dynamic.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: meta.php,v 1.2 2006-05-17 17:18:08 ekot Exp $';
 $sections[]    = array ('Partitioning and formatting', 'part');
 $sections[]    = array ('Post-install scripts, Local Administrators, NTP servers, final edits', 'scripts');
 $sections[]    = array ('Other keys', 'other');
@@ -18,7 +17,7 @@ $content       = <<<EOT
         >.   This functionality is controlled by a new section of the  answer  file,  the
         <code>[_meta]</code>  section.   This   section    is    ignored    by    <strong
         >Windows&nbsp;Setup</strong>; it exists solely to let you provide answers to some
-        of the new questions <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/dosbin/install.pl?rev=HEAD&amp;view=auto"
+        of the new questions <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/dosbin/install.pl"
         ><code>install.pl</code></a> asks.</p>
 
       <h2 id="part">Partitioning and formatting</h2>
