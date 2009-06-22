@@ -8,7 +8,6 @@ $page['next']  = 'meta.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: timezones.php,v 1.1 2005-01-16 04:23:06 nrichthof Exp $';
 $sections[]    = array ('', '');
 $sections[]    = array ('', '');
 $sections[]    = array ('', '');

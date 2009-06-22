@@ -8,7 +8,6 @@ $page['next']  = 'faq.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: step-by-step.php,v 1.11 2009-02-28 18:04:07 jjp3 Exp $';
 $sections[]    = array ('Step 0: Requirements', 'step0');
 $sections[]    = array ('Step 1: Download', 'step1');
 $sections[]    = array ('Step 2: Unpack', 'step2');

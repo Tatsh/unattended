@@ -8,7 +8,6 @@ $page['next']  = 'unattendtxt.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: faq.php,v 1.7 2006-09-19 17:33:18 ekot Exp $';
 $sections[]    = array ('Frequently Asked Questions', 'faq');
 $content       = <<<EOT
 
@@ -149,7 +148,7 @@ unattended acpi=off
          within  have   names  like  <span  class="code-inline">I386\\TXTSETUP.SIF</span>
          instead of <span class="code-inline">i386\\txtsetup.sif</span>. The solution  is
          to rename all of the files on the installation  media  to  lower  case.  The  <a
-         href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/lower-caseify.pl?rev=HEAD&amp;view=auto"
+         href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/tools/lower-caseify.pl"
          >lower-caseify.pl</a> script automates this.</p>
 
       <hr />
@@ -180,7 +179,7 @@ unattended acpi=off
 
       <p>Adding  wireless  support  to  our  Linux  boot  disk  is  a  Simple  Matter  of
         Programming, at least for the wireless devices which Linux supports.  Call  it  a
-    <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/TODO.txt?rev=HEAD&amp;view=auto"
+    <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/TODO.txt"
     >"to-do" item</a>. The hard part is designing and implementing  an  interface  to
     let the user set the wireless parameters (like ESSID).  If you would like to help
     tackle  this,  subscribe  to  the  <a  href="lists.php">unattended-devel  mailing
@@ -237,7 +236,7 @@ unattended acpi=off
         cluster size after NTFS conversion, at least on  Windows XP  and  Windows  Server
         2003.</p>
 
-      <p>Using CVTAREA is on our <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/TODO.txt?rev=HEAD&amp;view=auto"
+      <p>Using CVTAREA is on our <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/TODO.txt"
         >&quot;to-do&quot; list</a>.</p>
 
       <p>That  said,  I  and  others  have  installed  hundreds of machines without using
@@ -334,7 +333,7 @@ unattended acpi=off
         href="http://www.mail-archive.com/unattended-info@lists.sourceforge.net/msg00107.html"
         rel="external">TXTSETUP.OEM</a> files,  because you must create one by hand which
         incorporates all of your drivers. Writing a tool to help automate this is on  our
-        <a href="http://unattended.cvs.sourceforge.net/unattended/unattended/TODO.txt?rev=HEAD&amp;view=auto"
+        <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/TODO.txt"
         >to-do list</a>.</p>
 
       <hr />
@@ -342,7 +341,7 @@ unattended acpi=off
       <a name="7_5"></a><h3>[7.5] How do I keep the OS- and software-installation-scripts
         up-to-date?</h3>
       <p>Between two releases you can update your script  files  from  our  cvs.  The  <a
-       href="http://unattended.cvs.sourceforge.net/unattended/unattended/install/tools/script-update?rev=HEAD&amp;view=auto"
+       href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/tools/script-update"
        >script-update</a> script automates this.</p>
        <p>You can exclude certain scripts from being updated. But  be  warned:  sometimes
        the scripts in the cvs get broken. Usually they get fixed very soon thereafter, so
@@ -418,7 +417,7 @@ parted /dev/sda set 1 boot on
         &quot;active&quot; (bootable), respectively.  Obviously, I used Parted; you could
         presumably use <code>fdisk</code> and <code>mkdosfs</code> instead.</p>
 
-      <p>Then I wrote a script (<a href="http://unattended.cvs.sourceforge.net/unattended/unattended/linuxboot/tools/install-mbr.pl?rev=HEAD&amp;view=auto"
+      <p>Then I wrote a script (<a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/linuxboot/tools/install-mbr.pl"
         >install-mbr.pl</a>)  to  replace the  Master Boot Record.  This script is in the
         <code>linuxboot/tools</code> directory of the Unattended distribution. Just about
         any MBR should work, but I installed the one from FreeDOS:</p>
@@ -495,7 +494,7 @@ umount /mnt
 
       <a name="9_2"></a><h3>[9.2] Why script-update is no longer working?</h3>
       <p>Sourceforge changed their CVS setup. You need to get the newer version of
-       <a href="http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/install/tools/script-update"
+       <a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/tools/script-update"
         rel="external">script-update</a></p>
 EOT;
 

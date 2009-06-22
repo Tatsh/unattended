@@ -8,7 +8,6 @@ $page['next']  = 'links.php';
 $page['last']  = 'links.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: lists.php,v 1.2 2007-04-01 08:01:47 ekot Exp $';
 $sections[]    = array ('General informations', 'info');
 $sections[]    = array ('Developer mailinglist', 'devel');
 $sections[]    = array ('CVS commits', 'cvs');

@@ -8,7 +8,6 @@ $page['next']  = 'documentation.php';
 $page['last']  = 'links.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: index.php,v 1.2 2005-01-17 18:06:19 nrichthof Exp $';
 $sections[]    = array ('Introduction', 'introduction');
 $sections[]    = array ('Why should I use it?', 'motivation');
 $sections[]    = array ('How to start', 'howtostart');

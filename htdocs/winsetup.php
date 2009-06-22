@@ -8,7 +8,6 @@ $page['next']  = 'timezones.php';
 $page['last']  = 'advanced.php';
 $page['toc']   = 'sitemap.php';
 $page['index'] = 'sitemap.php';
-$cvs           = '$Id: winsetup.php,v 1.3 2005-04-07 17:59:37 nrichthof Exp $';
 $sections[]    = array ('User, Organization, and Computer Name', 'uname');
 $sections[]    = array ('Product Key', 'pkey');
 $sections[]    = array ('Local Administrator Password', 'adminpw');
