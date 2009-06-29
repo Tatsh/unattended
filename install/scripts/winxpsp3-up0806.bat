@@ -25,32 +25,6 @@
 :: URL|TRK|http://download.microsoft.com/download/0/f/9/0f9a867d-3f64-41e4-9265-2c2e379ef711/WindowsXP-KB950762-x86-TRK.exe|updates/winxpsp3/windowsxp-kb950762-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950762-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Security Update for Windows XP (KB951698)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=7aaa6427-1e22-4566-960c-836a3b9e5f36>
-:: URL|ARA|http://download.microsoft.com/download/8/4/b/84b2aa7e-fffe-456f-87c4-7f96b3a48946/WindowsXP-KB951698-x86-ARA.exe|updates/winxpsp3/windowsxp-kb951698-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/6/c/a/6ca77d40-5bb0-49ce-9612-42b1ae6a4a5f/WindowsXP-KB951698-x86-CSY.exe|updates/winxpsp3/windowsxp-kb951698-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/8/9/9/8999df94-f9af-40b6-af09-bc33652d27ff/WindowsXP-KB951698-x86-DAN.exe|updates/winxpsp3/windowsxp-kb951698-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/b/e/8/be8d7e25-96bd-4ada-a5e0-bcb935e4a244/WindowsXP-KB951698-x86-DEU.exe|updates/winxpsp3/windowsxp-kb951698-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/f/a/c/fac125e9-6daa-4ba8-9ff5-f4368c45b8f7/WindowsXP-KB951698-x86-ELL.exe|updates/winxpsp3/windowsxp-kb951698-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/3/1/5/315c86ba-2910-47f0-9f02-b5616511536d/WindowsXP-KB951698-x86-ENU.exe|updates/winxpsp3/windowsxp-kb951698-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/1/0/b/10b8fdd1-008b-41e5-abf0-f8182a368808/WindowsXP-KB951698-x86-ESN.exe|updates/winxpsp3/windowsxp-kb951698-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/3/8/0/380e8c23-e5d3-49af-ae7e-eeb8b87014a0/WindowsXP-KB951698-x86-FIN.exe|updates/winxpsp3/windowsxp-kb951698-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/3/a/2/3a25b118-ad9e-4494-ae71-b6e2d2a60bc0/WindowsXP-KB951698-x86-FRA.exe|updates/winxpsp3/windowsxp-kb951698-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/0/0/f/00f08ac0-279a-494b-965f-a0e9c1f9bc9c/WindowsXP-KB951698-x86-HEB.exe|updates/winxpsp3/windowsxp-kb951698-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/1/9/d/19df9276-d6a8-47b2-971a-66aafe42bda5/WindowsXP-KB951698-x86-HUN.exe|updates/winxpsp3/windowsxp-kb951698-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/6/5/4/65486978-b3dc-4ecb-87da-781b85ebce6a/WindowsXP-KB951698-x86-ITA.exe|updates/winxpsp3/windowsxp-kb951698-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/0/a/1/0a118d30-7414-4ea7-9f32-c7165451b981/WindowsXP-KB951698-x86-JPN.exe|updates/winxpsp3/windowsxp-kb951698-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/8/e/f/8ef3f301-fd77-497b-af48-61b02e2ac8fa/WindowsXP-KB951698-x86-KOR.exe|updates/winxpsp3/windowsxp-kb951698-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/d/2/0/d20c442f-451f-4f6d-9d5e-d1d632632603/WindowsXP-KB951698-x86-NLD.exe|updates/winxpsp3/windowsxp-kb951698-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/b/b/6/bb632dbf-de09-449d-b2fc-3a3463e06618/WindowsXP-KB951698-x86-NOR.exe|updates/winxpsp3/windowsxp-kb951698-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/e/6/a/e6a05546-829f-4379-8ddb-a26478512e44/WindowsXP-KB951698-x86-PLK.exe|updates/winxpsp3/windowsxp-kb951698-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/7/e/2/7e23b5ec-611e-4444-89b6-d736efa0e420/WindowsXP-KB951698-x86-PTB.exe|updates/winxpsp3/windowsxp-kb951698-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/c/4/7/c47c80b2-82ae-4b51-ab40-de0f00911da1/WindowsXP-KB951698-x86-PTG.exe|updates/winxpsp3/windowsxp-kb951698-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/1/d/b/1dbe30c8-a17c-4e98-bd48-6ebec1e18313/WindowsXP-KB951698-x86-RUS.exe|updates/winxpsp3/windowsxp-kb951698-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/3/5/b/35b7196e-6564-4ecb-b8ae-59299f279dfa/WindowsXP-KB951698-x86-SVE.exe|updates/winxpsp3/windowsxp-kb951698-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/d/c/9/dc93d377-00b5-4442-bf6c-38262f3c9dfe/WindowsXP-KB951698-x86-TRK.exe|updates/winxpsp3/windowsxp-kb951698-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951698-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB951376)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=980bb421-950f-4825-8039-44cc961a47b8>
 :: URL|ARA|http://download.microsoft.com/download/4/4/2/4428dfb3-ab42-4c4a-b1af-ab760b626318/WindowsXP-KB951376-v2-x86-ARA.exe|updates/winxpsp3/windowsxp-kb951376-v2-x86-ara.exe
