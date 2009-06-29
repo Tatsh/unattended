@@ -5,9 +5,36 @@
 :: Uncomment it if you want the compatibility pack installed
 :: todo.pl docxconverter.bat 
 
+:: Security Update for Microsoft PowerPoint 2003 (KB957784)
+:: MS09-017: Description of the security update for PowerPoint 2003: May 12, 2009
+:: <http://support.microsoft.com/kb/957784>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=ccfa978b-3340-40db-a45d-c880ba36b106>
+:: URL|ARA|http://download.microsoft.com/download/5/3/E/53E33A40-9ED9-45F0-B03E-A77D7CA6B3E6/office2003-KB957784-FullFile-ARA.exe|updates/office2003/office2003-kb957784-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/D/E/A/DEAE31B6-F659-416D-8635-FA8A7355BFA6/office2003-KB957784-FullFile-CSY.exe|updates/office2003/office2003-kb957784-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/6/C/C/6CC1A1C5-0D11-4373-A97A-ED982D2A5A27/office2003-KB957784-FullFile-DAN.exe|updates/office2003/office2003-kb957784-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/5/7/3/5730B63F-F5C6-499C-A625-20BC4EC9DCAC/office2003-KB957784-FullFile-DEU.exe|updates/office2003/office2003-kb957784-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/D/A/7/DA70F160-9B8E-4839-AF63-A63AF9EEED09/office2003-KB957784-FullFile-ELL.exe|updates/office2003/office2003-kb957784-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/4/E/2/4E21AFC4-32AB-4F9B-B247-9A800483A800/office2003-KB957784-FullFile-ENU-CSA.exe|updates/office2003/office2003-kb957784-fullfile-enu-csa.exe
+:: URL|ESN|http://download.microsoft.com/download/8/8/B/88B06531-D302-44B4-82E8-D4E5A47E4AAE/office2003-KB957784-FullFile-ESN.exe|updates/office2003/office2003-kb957784-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/7/8/7/78749335-47B8-4E28-A6B4-B0984A66079A/office2003-KB957784-FullFile-FIN.exe|updates/office2003/office2003-kb957784-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/5/8/D/58D1EDF0-2A29-4612-8FF2-F49B2BDB6BDD/office2003-KB957784-FullFile-FRA.exe|updates/office2003/office2003-kb957784-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/C/F/9/CF90C4E9-CDDA-47F9-A14D-25A16B554A49/office2003-KB957784-FullFile-HEB.exe|updates/office2003/office2003-kb957784-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/6/6/2/662BEBF1-99EE-464C-B9FD-827541EF06B9/office2003-KB957784-FullFile-HUN.exe|updates/office2003/office2003-kb957784-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/7/B/97B97D56-D8B4-4DD6-8458-276103695B9C/office2003-KB957784-FullFile-ITA.exe|updates/office2003/office2003-kb957784-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/3/6/6/3660D5C5-3E64-4619-A1C6-886B4847787C/office2003-KB957784-FullFile-JPN.exe|updates/office2003/office2003-kb957784-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/3/3/2/3323766A-9B85-42A6-9746-00E39656F197/office2003-KB957784-FullFile-KOR.exe|updates/office2003/office2003-kb957784-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/E/F/5/EF584017-65BD-4CF4-B405-DA212706E9D7/office2003-KB957784-FullFile-NLD.exe|updates/office2003/office2003-kb957784-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/F/8/3/F83A4C18-C696-4F7D-9F9B-54704175D4D0/office2003-KB957784-FullFile-NOR.exe|updates/office2003/office2003-kb957784-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/E/8/B/E8BE3DA1-F5C0-410C-830D-0A5CA2D45766/office2003-KB957784-FullFile-PLK.exe|updates/office2003/office2003-kb957784-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/3/D/7/3D7F6C1B-87AA-425E-A8B7-5FC46E1D5532/office2003-KB957784-FullFile-PTB.exe|updates/office2003/office2003-kb957784-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/E/3/6/E36BD2FD-E484-4D6A-8A3D-69D7D2394AF8/office2003-KB957784-FullFile-PTG.exe|updates/office2003/office2003-kb957784-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/5/8/C/58C9C2E8-E3C3-494F-9BAE-E5D69F82D9D7/office2003-KB957784-FullFile-RUS.exe|updates/office2003/office2003-kb957784-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/5/4/4/544E3E3C-906B-41FC-90F7-CE584413800F/office2003-KB957784-FullFile-SVE.exe|updates/office2003/office2003-kb957784-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/6/3/4/63418A24-AFB3-46E3-8CAD-850F5A2CB4C6/office2003-KB957784-FullFile-TRK.exe|updates/office2003/office2003-kb957784-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB957784-FullFile-%WINLANG%.exe /Q"
+
 :: Security Update for Microsoft Office Excel 2003 (KB959995)
 :: MS09-009: Description of the security update for Excel 2003: April 14, 2009
-:: "<span><a href="javascript:void(0);">On This Page</a></span><div class="sectionpreview_closed"></div>"
 :: <http://support.microsoft.com/kb/959995>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=d9dbfa63-c0cb-4c84-9b8a-6e52568045b0>
 :: URL|ARA|http://download.microsoft.com/download/B/8/E/B8E86FB8-41D0-40A3-9358-130518DBF72D/office2003-KB959995-FullFile-ARA.exe|updates/office2003/office2003-kb959995-fullfile-ara.exe
