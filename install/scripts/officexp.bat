@@ -8,9 +8,36 @@
 :: Reboot after installing everything (superstition).
 todo.pl .reboot
 
+:: Security Update for Microsoft PowerPoint 2002 (KB948995)
+:: MS08-051: Description of the security update for PowerPoint 2002: August 12, 2008
+:: <http://support.microsoft.com/kb/948995>
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=f8921074-7985-4d42-ac2b-d2f3b1d466ba>
+:: URL|ARA|http://download.microsoft.com/download/7/e/9/7e9bc634-bfc7-48f7-8781-b59b3073945e/officexp-KB948995-FullFile-ARA.exe|updates/officexp/officexp-kb948995-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/7/4/f/74f9e39f-3ee4-4fab-927d-929833ae6979/officexp-KB948995-FullFile-CSY.exe|updates/officexp/officexp-kb948995-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/c/a/e/cae7381e-e3a7-497e-9b82-a77dea02bc4c/officexp-KB948995-FullFile-DAN.exe|updates/officexp/officexp-kb948995-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/8/9/b/89bdfe73-d1c9-4ae1-bc0f-9838ba7f22d1/officexp-KB948995-FullFile-DEU.exe|updates/officexp/officexp-kb948995-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/0/2/e/02e4a38b-80b5-4adc-8629-b512ac6d7393/officexp-KB948995-FullFile-ELL.exe|updates/officexp/officexp-kb948995-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/d/e/0/de0d0235-5bd1-4390-8f93-211afe2d4a7f/officexp-KB948995-FullFile-ENU.exe|updates/officexp/officexp-kb948995-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/7/8/4/7847eb0b-889b-4162-85ac-84fab5a4605e/officexp-KB948995-FullFile-ESN.exe|updates/officexp/officexp-kb948995-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/f/c/6/fc64e861-3f64-41b5-909b-f584c24309a5/officexp-KB948995-FullFile-FIN.exe|updates/officexp/officexp-kb948995-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/e/2/b/e2bb2115-2141-4558-9f6b-aafc079b548f/officexp-KB948995-FullFile-FRA.exe|updates/officexp/officexp-kb948995-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/3/6/9/369a5b2a-1568-46c7-89c9-13e3e5dfae02/officexp-KB948995-FullFile-HEB.exe|updates/officexp/officexp-kb948995-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/2/6/f/26f85e5d-a888-4d1e-9c79-d6e9e6456c1a/officexp-KB948995-FullFile-HUN.exe|updates/officexp/officexp-kb948995-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/9/a/2/9a2b21d1-6ed7-417b-9cd8-de95a72e36af/officexp-KB948995-FullFile-ITA.exe|updates/officexp/officexp-kb948995-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/a/2/0/a205ec9e-0e40-405f-80be-1cee0e6c3847/officexp-KB948995-FullFile-JPN.exe|updates/officexp/officexp-kb948995-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/9/5/4/954276d6-eec2-498b-aee4-9fb541cb7077/officexp-KB948995-FullFile-KOR.exe|updates/officexp/officexp-kb948995-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/a/d/2/ad2c5353-4746-4ccb-ad1a-238882b8310a/officexp-KB948995-FullFile-NLD.exe|updates/officexp/officexp-kb948995-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/5/3/2/532f741c-6a8e-47f9-9daf-c6736001e098/officexp-KB948995-FullFile-NOR.exe|updates/officexp/officexp-kb948995-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/3/6/1/36166fd0-3424-4698-93c1-f678f92e848c/officexp-KB948995-FullFile-PLK.exe|updates/officexp/officexp-kb948995-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/0/e/0/0e0da286-4eca-4fef-9516-52e86f6a61b6/officexp-KB948995-FullFile-PTB.exe|updates/officexp/officexp-kb948995-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/f/1/2/f12c9715-61dd-4496-a916-fa1db35b6815/officexp-KB948995-FullFile-PTG.exe|updates/officexp/officexp-kb948995-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/0/7/e/07e85a20-474d-4fde-be69-d1c5af04661b/officexp-KB948995-FullFile-RUS.exe|updates/officexp/officexp-kb948995-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/2/3/6/236c3e4e-65b5-48aa-8f8d-f9a0d050c6a3/officexp-KB948995-FullFile-SVE.exe|updates/officexp/officexp-kb948995-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/3/d/f/3dff532a-d0ea-45b3-92fc-8ff5946754d9/officexp-KB948995-FullFile-TRK.exe|updates/officexp/officexp-kb948995-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB948995-FullFile-%WINLANG%.exe /Q"
+
 :: Security Update for Microsoft Excel 2002 (KB959988)
 :: MS09-009: Description of the security update for Excel 2002: April 14, 2009
-:: "<span><a href="javascript:void(0);">On This Page</a></span><div class="sectionpreview_closed"></div>"
 :: <http://support.microsoft.com/kb/959988>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=9a52bf4b-05f6-4b73-94b9-28ed7e20f86c>
 :: URL|ARA|http://download.microsoft.com/download/8/C/9/8C975620-5810-4212-9EAF-001D9A589F9E/officexp-KB959988-FullFile-ARA.exe|updates/officexp/officexp-kb959988-fullfile-ara.exe
