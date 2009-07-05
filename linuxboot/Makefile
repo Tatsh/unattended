@@ -12,10 +12,10 @@ e2fsprogs=e2fsprogs-1.41.4
 expat=expat-2.0.1
 #use a glibc version as close to the building host as possible
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
-glibc=glibc-2.6.1
+glibc=glibc-2.10.1
 # TODO: kbd-1.15
 kbd=kbd-1.12
-linux=linux-2.6.29.1
+linux=linux-2.6.30.1
 # TODO: module-init-tools-3.6
 module-init-tools=module-init-tools-3.5
 mysql=mysql-5.0.77
@@ -315,7 +315,7 @@ build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage	\
 	cd build-$(glibc) && CC=$(CC) $(cwd)/$(glibc)/configure	\
 	    --prefix=/usr					\
 	    --disable-profile  --enable-add-ons			\
-            --enable-kernel=2.6.0				\
+            --enable-kernel=2.6.18				\
 	    --without-gd --without-cvs				\
             --without-selinux					\
 	    --includedir=$(cwd)/$(linux)/dest/include		\
