@@ -69,7 +69,7 @@
         <a href="lists.php">Mailing lists</a> |
         <a href="links.php">Links</a> |
         <a href="faq.php">FAQ</a> |
-        <a href="https://sourceforge.net/apps/trac/unattended/" rel="external">Wiki</a>
+        <a href="http://sourceforge.net/apps/trac/unattended/" rel="external">Wiki</a>
       </div>
     </div>
 
