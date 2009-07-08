@@ -23,4 +23,4 @@ This top-level directory contains:
   install/    - Directory holding the initial \\ntinstall\install
                 share, aka. Z:\ drive; see the documentation
 
-  html/       - A copy of the Web site as of this release
+  htdocs/      - A copy of the Web site as of this release
