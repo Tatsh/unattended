@@ -32,8 +32,7 @@ perl-ldap=perl-ldap-0.39
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20071116
-# TODO: samba-3.3.1
-samba=samba-3.0.32
+samba=samba-3.3.6
 slang=slang-2.0.7
 syslinux=syslinux-3.75
 wireless_tools=wireless_tools.28
@@ -732,7 +731,7 @@ stage1 += stage1/usr/lib/smb.conf
 
 # CIFS support.  We fall back on this if smbmount fails.
 $(samba)/source/client/mount.cifs: fakeinclude/stdio.h
-	$(CC) -O2 $(fakelib_cflags) -o $@ $@.c
+	$(CC) -O2 $(fakelib_cflags) -o $@ $(samba)/source/client/mtab.o $@.c
 
 $(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
 
