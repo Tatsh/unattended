@@ -61,7 +61,7 @@ $</pre>
       <pre class="code">[global]
 ...
 guest account   = guest
-unix extensions = off
+unix extensions = no
 ...
 [install]
    comment  = Unattended
