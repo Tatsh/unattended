@@ -1,3 +1,2 @@
-This directory holds installers (mostly service packs) specific to
-Microsoft Office 2000.  You need to download them from Microsoft,
-and possibly modify install/scripts/office2k.bat to invoke them.
+This directory holds a copy of the Microsoft Office 2000
+installation media.  Just copy the entire CD to this directory.

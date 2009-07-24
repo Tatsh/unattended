@@ -1,3 +1,2 @@
-This directory holds installers (mostly service packs) specific to
-Microsoft Office XP.  You need to download them from Microsoft,
-and possibly modify install/scripts/officexp.bat to invoke them.
+This directory holds a copy of the Microsoft Office XP
+installation media.  Just copy the entire CD to this directory.
