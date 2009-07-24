@@ -1,3 +1,2 @@
-This directory holds installers (mostly service packs) specific to
-Microsoft Visio 2002.  You need to download them from Microsoft,
-and possibly modify install/scripts/visio2002.bat to invoke them.
+This directory holds a copy of the Microsoft Visio Professional 2002
+installation media.  Just copy the entire CD to this directory.
