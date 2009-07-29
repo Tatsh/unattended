@@ -201,6 +201,27 @@ then
   cp /c/\$/[Tt][Ee][Xx][Tt][Mm][Oo][Dd][Ee]/* /c/\$win_nt\$.~bt/\$oem\$/  
 fi
 
+#add files/drivers from windows drivers scan...
+#NOTE: we directly copy files into /c/\$\$1 (shortcut) since code
+#      just above is moving other drivers into this target directory.
+message "Copy drivers from scan of windows drivers"
+dir_map_drv_scan=`parse_ini_file /c/netinst/unattend.txt _meta scan_windrivers_dest_map`
+if [ "$dir_map_drv_scan" = "" ]; then
+	echo "(no driver to copy)."
+else
+	# NOTE: provide UNIX paths to copy_files
+	echo $dir_map_drv_scan | sed -e 's,\\,/,g' -e 's/@/\n/g'| while read map
+	do
+		drv_src=`echo $map | awk -F: '{print $1}'`
+		drv_dst="/c/\$/\$1/`echo $map | awk -F: '{print $2}'`"
+		# workaround: do not use copy_files():
+		#   command 'copy_files dir1 1 dir2' copies <dir1> as <dir2>/<dir1> !
+		#   so perform copy directly
+		mkdir -p `dirname "$drv_dst"` || die "failed to create dir. `dirname $drv_dst`"
+		cp -Lr "$drv_src" "$drv_dst" || die "recursive directory copy failed"
+	done
+fi
+
 message "Syncing disk -aiaparanoia :-)"
 sync
 
