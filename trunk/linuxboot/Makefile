@@ -15,10 +15,10 @@ expat=expat-2.0.1
 glibc=glibc-2.10.1
 # TODO: kbd-1.15
 kbd=kbd-1.12
-linux=linux-2.6.30.1
+linux=linux-2.6.30.3
 # TODO: module-init-tools-3.6
 module-init-tools=module-init-tools-3.5
-mysql=mysql-5.0.77
+mysql=mysql-5.0.83
 nano=nano-2.0.9
 # TODO: ncurses-5.7
 ncurses=ncurses-5.6
@@ -34,7 +34,8 @@ perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20071116
 samba=samba-3.3.6
 slang=slang-2.0.7
-syslinux=syslinux-3.75
+syslinux=syslinux-3.82
+usbutils=usbutils-0.84
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
@@ -47,7 +48,7 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
 	$(linux)  $(module-init-tools) $(mysql) $(nano)	\
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
 	$(perl-xml-xpath) $(pciutils) $(pmtools)		\
-	$(samba) $(slang) $(syslinux) $(wireless_tools) $(zlib)
+	$(samba) $(slang) $(syslinux) $(usbutils) $(wireless_tools) $(zlib)
 
 CC=gcc
 CXX=g++
@@ -708,8 +709,6 @@ $(samba)/source/config.status: stage1/.stamp-modules
 		--without-utmp --with-included-popt		\
 		--build=i586-linux
 
-samba_progs=bin/smbmount bin/smbmnt bin/smbumount
-
 # Without "make installmodules" (which installs CP850.so), smbmount
 # prints a tremendous number of "convert_string_internal: Conversion
 # not supported" errors.
@@ -724,7 +723,7 @@ stage1/usr/lib/smb.conf: $(samba)/source/config.status
 		    DESTDIR=$(cwd)/stage1			\
 		    installbin installdat installmodules
 	ln -sf ../usr/bin/smbmount stage1/sbin/mount.smbfs
-	find stage1/ -name \*.old -print0 | xargs -r -0 rm
+	find stage1 -name \*.old -print0 | xargs -r -0 rm
 	touch $@
 
 stage1 += stage1/usr/lib/smb.conf
@@ -784,6 +783,24 @@ $(call copy_file,$(expat)/lib/expat_external.h,fakeinclude/expat_external.h)
 
 stage1 += stage1/lib/libexpat.so
 
+## usbutils
+## FIXME: we build against the libusb of the host system... 
+##        that's why we generate a static binary (500K in size).
+##        Do not use usb.ids.gz, so build without libz (-40K).
+$(usbutils)/lsusb:
+	cd $(usbutils)						\
+	&& CC=$(CC) CFLAGS="$(fakelib_cflags)" LDFLAGS=-static 	\
+		./configure --prefix=/usr --disable-zlib	\
+	&& $(MAKE)
+
+$(call copy_exe, $(usbutils)/lsusb, stage1/sbin/lsusb)
+
+stage1 += stage1/sbin/lsusb
+
+## usb.ids: cf. target download-usb.ids for its retrieval
+$(call copy_file,usb.ids,stage1/usr/share/usb.ids)
+
+stage1 += stage1/usr/share/usb.ids
 
 ## devices
 devices.cpio: misc/devices.txt
@@ -957,9 +974,14 @@ download-pci.ids:
 	     && bunzip2 $@.tmp.bz2					     \
 	     && mv $@.tmp pci.ids ; }
 
+# Special rule to fetch updated usb.ids file
+download-usb.ids:
+	@[ -e usb.ids ]							\
+	|| { rm -f $@.tmp						\
+	     && wget -O $@.tmp http://www.linux-usb.org/usb.ids		\
+	     && mv $@.tmp usb.ids ; }
 
-
-download_targets=$(addprefix download-,$(packages) pci.ids)
+download_targets=$(addprefix download-,$(packages) pci.ids usb.ids)
 
 download: $(download_targets)
 
@@ -1018,12 +1040,14 @@ $(call download_rule, $(syslinux), tar.gz, \
         http://ftp.all.kernel.org/pub/linux/utils/boot/syslinux/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
+$(call download_rule, $(usbutils), tar.gz,	\
+	http://downloads.sourceforge.net/linux-usb/)
 $(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
 	symlink-fakelib symlink-fakeinclude symlink-stage1	\
-	symlink-pci.ids
+	symlink-pci.ids symlink-usb.ids
 
 $(symlink_targets):
 	@if [ -z "$(dest)" ] || [ "$(dest)" == . ] ; then	\
