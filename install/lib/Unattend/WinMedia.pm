@@ -163,6 +163,8 @@ my %pid_table =
      '51882335' => 'Retail',
      '51883270' => 'Volume',
      '82503OEM' => 'OEM',
+     # XP Sp3 Hungarian
+     '55920270' => 'Volume',
      # 2k Adv Server
      '51879000' => 'Retail',
      '51879270' => 'Volume',
