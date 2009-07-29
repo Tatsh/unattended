@@ -351,6 +351,14 @@ if [ -w "/proc/ide/$hda/settings" ] ; then
     echo "done."
 fi
 
+# PCI class 0x0403 are Audio controllers.
+echo "*** Load Audio Controller support for ALSA HDAUDIO support..."
+load_modules "$(find-modules-pci 0x04 0x03)"
+
+# required by lsusb
+echo "*** Mount /proc/bus/usb..."
+[ -f /proc/bus/usb/devices ] || mount -t usbfs none /proc/bus/usb
+
 echo "*** By Jove, I think we've got it!"
 
 # install.pl relies on these environment variables
