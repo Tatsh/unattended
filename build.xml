@@ -6,20 +6,64 @@
        =============================================================== -->
     <property environment="env"/>
     <property name="docs.home" value="htdocs"/>
-    <property name="sf.home" value="shell.sourceforge.net:/home/groups/u/un/unattended"/>
-    <property name="sf.user" value="${env.USER}"/>
+    <property name="release.version" value="48rc6"/>
+    <property name="release.tmp" value="/var/tmp/unattended.${release.version}"/>
+    <property name="drivers.home" value="install/wdm"/>
+    <property name="sf.home" value="web.sourceforge.net:/home/groups/u/un/unattended"/>
+    <property name="sf.user" value="jjp3,unattended"/>
   </target>
-  <target name="docs" depends="init">
 
+  <target name="docs" depends="init">
   <!-- ===============================================================
       Copy Docs
        =============================================================== -->
    <echo message="Copying Docs" />
      <exec dir="." executable="rsync" os="Linux" failonerror="true">
              <arg value="-a" />
+             <arg value="--bwlimit=20" />
              <arg value="-vC" />
              <arg value="${docs.home}" />
              <arg value="${sf.user}@${sf.home}" />
+     </exec>
+  </target>
+
+  <target name="testing" depends="init">
+  <!-- ===============================================================
+      Copy Testing Release
+       =============================================================== -->
+   <echo message="Copying Testing Release ${release.version}" />
+     <exec dir="." executable="rsync" os="Linux" failonerror="true">
+             <arg value="-a" />
+             <arg value="-vC" />
+             <arg value="--bwlimit=20" />
+             <arg value="--include=*.zip" />
+             <arg value="${release.tmp}/" />
+             <arg value="${sf.user}@${sf.home}/${docs.home}/testing/${release.version}/" />
+     </exec>
+  </target>
+
+  <target name="extract-drivers" depends="init">
+  <!-- ===============================================================
+      Extract Drivers
+       =============================================================== -->
+   <echo message="Removing old drivers" />
+     <exec dir="." executable="rm" os="Linux" failonerror="true" >
+             <arg value="-rf" />
+             <arg value="${drivers.home}/D/" />
+     </exec>
+   <echo message="Uncompress drivers " />
+     <exec dir="." executable="7z" os="Linux" failonerror="true" output="drivers.log">
+             <arg value="x" />
+             <arg value="-an" />
+             <arg value="-y" />
+             <arg value="-ai!${drivers.home}/dp_chipset_wnt5_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_cpu_wnt5_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_graphics_a_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_graphics_b_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_lan_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_sound_a_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_sound_b_*.7z" />
+             <arg value="-o${drivers.home}" />
      </exec>
   </target>
 </project>
