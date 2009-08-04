@@ -51,32 +51,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB923561-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/2/9/E/29E7261B-9E41-4EC3-8CD1-EAA96E23FD6A/WindowsXP-KB960803-x86-TRK.exe|updates/winxpsp3/windowsxp-kb960803-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB960803-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Security Update for Windows XP (KB961373)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=feb5d821-f210-40e8-b1aa-2ca3170df8df>
-:: URL|ARA|http://download.microsoft.com/download/4/7/7/477A8738-AF33-49E4-B61D-BE6EBC2FE833/WindowsXP-KB961373-x86-ARA.exe|updates/winxpsp3/windowsxp-kb961373-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/C/B/A/CBAB70BF-6000-4781-82E3-3EA5B93A67C1/WindowsXP-KB961373-x86-CSY.exe|updates/winxpsp3/windowsxp-kb961373-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/F/1/7/F178F116-7B63-4A98-A387-484D21FF427F/WindowsXP-KB961373-x86-DAN.exe|updates/winxpsp3/windowsxp-kb961373-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/E/0/A/E0A844D5-C78B-4256-9528-DC881801097A/WindowsXP-KB961373-x86-DEU.exe|updates/winxpsp3/windowsxp-kb961373-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/6/2/B/62B175FD-B831-4691-938A-B80965F4F0AE/WindowsXP-KB961373-x86-ELL.exe|updates/winxpsp3/windowsxp-kb961373-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/3/1/4/31488E52-F4E1-43EB-9745-5D0D1F156685/WindowsXP-KB961373-x86-ENU.exe|updates/winxpsp3/windowsxp-kb961373-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/0/E/B/0EBB1017-0F41-484D-9748-1636F7088993/WindowsXP-KB961373-x86-ESN.exe|updates/winxpsp3/windowsxp-kb961373-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/E/D/B/EDB34360-1908-4CCE-8CE7-C0DE648CA079/WindowsXP-KB961373-x86-FIN.exe|updates/winxpsp3/windowsxp-kb961373-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/2/E/2/2E2A4E14-2AE7-428F-A3C2-1251A5525FE8/WindowsXP-KB961373-x86-FRA.exe|updates/winxpsp3/windowsxp-kb961373-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/2/5/7/257742F2-1168-45AC-B613-EE6DE9110066/WindowsXP-KB961373-x86-HEB.exe|updates/winxpsp3/windowsxp-kb961373-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/4/1/6/41611751-D70E-49C0-A0FE-FA8666553EE7/WindowsXP-KB961373-x86-HUN.exe|updates/winxpsp3/windowsxp-kb961373-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/A/4/6/A46885A6-4CC7-49BF-94CD-823B094FAFF9/WindowsXP-KB961373-x86-ITA.exe|updates/winxpsp3/windowsxp-kb961373-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/1/6/1/161F6D95-F07C-41AE-93DF-718B7B992ED7/WindowsXP-KB961373-x86-JPN.exe|updates/winxpsp3/windowsxp-kb961373-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/3/D/1/3D112F36-7A16-46FB-85E7-CBB515871AF6/WindowsXP-KB961373-x86-KOR.exe|updates/winxpsp3/windowsxp-kb961373-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/9/7/D/97D58EF7-95EF-4FB6-AECA-862C79033A39/WindowsXP-KB961373-x86-NLD.exe|updates/winxpsp3/windowsxp-kb961373-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/4/F/A/4FA6DB5D-F461-4E14-8467-50B611283D17/WindowsXP-KB961373-x86-NOR.exe|updates/winxpsp3/windowsxp-kb961373-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/E/D/0/ED0C2C49-2940-477E-91E1-B7B4C050D22B/WindowsXP-KB961373-x86-PLK.exe|updates/winxpsp3/windowsxp-kb961373-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/7/A/97A501DE-B755-499E-A967-2C2607ED0727/WindowsXP-KB961373-x86-PTB.exe|updates/winxpsp3/windowsxp-kb961373-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/8/F/5/8F5B5187-4F25-44E7-A369-5D303A2B4E2F/WindowsXP-KB961373-x86-PTG.exe|updates/winxpsp3/windowsxp-kb961373-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/2/1/6/216EA34A-076B-48FD-9968-6F60217C5AB9/WindowsXP-KB961373-x86-RUS.exe|updates/winxpsp3/windowsxp-kb961373-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/1/2/E/12ED91C5-BA96-4229-A03D-A2AE193A240D/WindowsXP-KB961373-x86-SVE.exe|updates/winxpsp3/windowsxp-kb961373-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/1/2/9/129C0262-34AB-4E13-8D78-2EC4ADEA2E97/WindowsXP-KB961373-x86-TRK.exe|updates/winxpsp3/windowsxp-kb961373-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB961373-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB952004)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=90FE715E-8190-43E9-9C43-DF5BE564D923>
 :: URL|ARA|http://download.microsoft.com/download/5/D/A/5DA0C00B-AB9D-45B5-9F31-EB7B6338492D/WindowsXP-KB952004-x86-ARA.exe|updates/winxpsp3/windowsxp-kb952004-x86-ara.exe

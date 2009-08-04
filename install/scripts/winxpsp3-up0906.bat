@@ -25,32 +25,6 @@
 :: URL|TRK|http://download.microsoft.com/download/A/A/3/AA3C4D60-F8AB-435D-AA82-53675C41C6E1/WindowsXP-KB961501-x86-TRK.exe|updates/winxpsp3/windowsxp-kb961501-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB961501-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Cumulative Security Update for Internet Explorer for Windows XP (KB969897)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=3d7f63ee-d7c3-48a5-902e-60625405e97d>
-:: URL|ARA|http://download.microsoft.com/download/A/8/7/A87B4C33-BB44-4D18-827C-9C926ED91956/WindowsXP-KB969897-x86-ARA.exe|updates/winxpsp3/windowsxp-kb969897-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/1/5/E/15E9E2D3-B7B0-4795-BF06-EF71C36CF771/WindowsXP-KB969897-x86-CSY.exe|updates/winxpsp3/windowsxp-kb969897-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/4/D/8/4D849524-89AF-41E7-B060-FD1B8B70C186/WindowsXP-KB969897-x86-DAN.exe|updates/winxpsp3/windowsxp-kb969897-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/4/1/3/413E1196-DA39-4B9A-8BE8-B0823B62BA9E/WindowsXP-KB969897-x86-DEU.exe|updates/winxpsp3/windowsxp-kb969897-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/F/3/D/F3DA606C-5A19-4342-B0A0-6A3B91A50B75/WindowsXP-KB969897-x86-ELL.exe|updates/winxpsp3/windowsxp-kb969897-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/0/5/2/05253594-0A69-4961-B602-E6271CCEF071/WindowsXP-KB969897-x86-ENU.exe|updates/winxpsp3/windowsxp-kb969897-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/0/B/D/0BD69C97-C4A3-457E-863E-42423B6E334B/WindowsXP-KB969897-x86-ESN.exe|updates/winxpsp3/windowsxp-kb969897-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/E/5/8/E5896D4F-2E53-4E1A-9B96-69902630C805/WindowsXP-KB969897-x86-FIN.exe|updates/winxpsp3/windowsxp-kb969897-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/D/4/A/D4AB6A7A-85E9-4C60-8754-A36F10239DEA/WindowsXP-KB969897-x86-FRA.exe|updates/winxpsp3/windowsxp-kb969897-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/3/F/43F20E7B-58F5-4FDC-A0A0-15FDCE29C7B2/WindowsXP-KB969897-x86-HEB.exe|updates/winxpsp3/windowsxp-kb969897-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/0/7/6/076AC995-78C3-4EED-89A4-6AFD3E2031F1/WindowsXP-KB969897-x86-HUN.exe|updates/winxpsp3/windowsxp-kb969897-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/B/1/5B1361BC-95D1-41CA-9B62-272AEC5C4084/WindowsXP-KB969897-x86-ITA.exe|updates/winxpsp3/windowsxp-kb969897-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/B/E/8/BE861315-C8AF-4F93-B051-7BA2CF1FB096/WindowsXP-KB969897-x86-JPN.exe|updates/winxpsp3/windowsxp-kb969897-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/9/8/A/98A8C70B-95A4-42B0-A31D-3E90FC185B11/WindowsXP-KB969897-x86-KOR.exe|updates/winxpsp3/windowsxp-kb969897-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/E/B/4/EB4D8CBC-0F59-4643-963C-73A6E3E235E1/WindowsXP-KB969897-x86-NLD.exe|updates/winxpsp3/windowsxp-kb969897-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/8/0/8/808EE17D-BFBC-4E4E-A70F-34973C8A23CB/WindowsXP-KB969897-x86-NOR.exe|updates/winxpsp3/windowsxp-kb969897-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/1/F/A/1FAAF5A0-541D-4732-B436-DB654479B728/WindowsXP-KB969897-x86-PLK.exe|updates/winxpsp3/windowsxp-kb969897-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/7/6/A/76ABC8F7-F3F8-40D6-BD0E-919E0B8E45C0/WindowsXP-KB969897-x86-PTB.exe|updates/winxpsp3/windowsxp-kb969897-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/A/F/7/AF7087BB-7BB8-4329-AE5A-7166516B1099/WindowsXP-KB969897-x86-PTG.exe|updates/winxpsp3/windowsxp-kb969897-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/9/D/B/9DBB8F08-3F05-4888-9361-3BF34E04E2C3/WindowsXP-KB969897-x86-RUS.exe|updates/winxpsp3/windowsxp-kb969897-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/9/0/F/90FC05A3-C0E0-49F3-BCCE-FE43ABBBDC67/WindowsXP-KB969897-x86-SVE.exe|updates/winxpsp3/windowsxp-kb969897-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/2/E/C/2EC07142-AA44-4BA8-B8B1-BFA689451E03/WindowsXP-KB969897-x86-TRK.exe|updates/winxpsp3/windowsxp-kb969897-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB969897-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB970238)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=f033fa78-c451-44f8-aa6c-a49622c37f40>
 :: URL|ARA|http://download.microsoft.com/download/9/A/B/9ABC941B-7C91-48A6-B401-4EDEBAD0F025/WindowsXP-KB970238-x86-ARA.exe|updates/winxpsp3/windowsxp-kb970238-x86-ara.exe
