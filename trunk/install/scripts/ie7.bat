@@ -7,6 +7,32 @@
 :: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/current/licensing/win/install_flash_player_10_active_x.exe|packages/macromedia/install_flash_player_10_active_x.exe
 todo.pl "%Z%\packages\macromedia\install_flash_player_10_active_x.exe /s"
 
+:: Cumulative Security Update for Internet Explorer 7 for Windows XP (KB969897)
+:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=827b735c-660b-4723-b688-3297e107153a>
+:: URL|ARA|http://download.microsoft.com/download/7/A/C/7AC96D88-0539-40B8-9D02-706342A7E372/IE7-WindowsXP-KB969897-x86-ARA.exe|updates/ie7/ie7-windowsxp-kb969897-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/2/3/5/2358C9E7-739B-44E5-B68A-ED15C57AE4A0/IE7-WindowsXP-KB969897-x86-CSY.exe|updates/ie7/ie7-windowsxp-kb969897-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/F/7/2/F7200E02-9DD1-48F4-B877-A9E1193907CB/IE7-WindowsXP-KB969897-x86-DAN.exe|updates/ie7/ie7-windowsxp-kb969897-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/9/7/6/976CE071-6020-41DF-AAF2-D045785EC727/IE7-WindowsXP-KB969897-x86-DEU.exe|updates/ie7/ie7-windowsxp-kb969897-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/4/4/3/44376430-A63D-41CA-97C2-50BA11798B1D/IE7-WindowsXP-KB969897-x86-ELL.exe|updates/ie7/ie7-windowsxp-kb969897-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/7/2/4/724E163A-A43C-44B9-A245-0FE2B3217835/IE7-WindowsXP-KB969897-x86-ENU.exe|updates/ie7/ie7-windowsxp-kb969897-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/5/9/1/591C5B40-58FD-4860-8B03-55C72A8057A3/IE7-WindowsXP-KB969897-x86-ESN.exe|updates/ie7/ie7-windowsxp-kb969897-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/A/6/C/A6C6A761-933C-4770-9CF2-CA5164785877/IE7-WindowsXP-KB969897-x86-FIN.exe|updates/ie7/ie7-windowsxp-kb969897-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/1/2/E/12E892E6-0FF9-409A-8635-6EA240CA32C0/IE7-WindowsXP-KB969897-x86-FRA.exe|updates/ie7/ie7-windowsxp-kb969897-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/1/9/819D3E21-FFED-4E7C-9253-2077AACF3156/IE7-WindowsXP-KB969897-x86-HEB.exe|updates/ie7/ie7-windowsxp-kb969897-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/4/C/5/4C5202EA-E707-4FAF-97CC-6D5A503D3E7A/IE7-WindowsXP-KB969897-x86-HUN.exe|updates/ie7/ie7-windowsxp-kb969897-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/3/3/2/3322750B-E1A5-44F3-B95E-455D3666C561/IE7-WindowsXP-KB969897-x86-ITA.exe|updates/ie7/ie7-windowsxp-kb969897-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/4/D/A/4DA73311-534A-4584-B9C4-9CF75CB44DA8/IE7-WindowsXP-KB969897-x86-JPN.exe|updates/ie7/ie7-windowsxp-kb969897-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/E/E/1/EE16EFE6-5F1C-4B84-87A0-3994AA8CF573/IE7-WindowsXP-KB969897-x86-KOR.exe|updates/ie7/ie7-windowsxp-kb969897-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/4/0/B/40B5CD6A-FF40-4041-BA4B-B2BC5D3DCF6C/IE7-WindowsXP-KB969897-x86-NLD.exe|updates/ie7/ie7-windowsxp-kb969897-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/E/9/3/E9392754-408A-4448-A899-18B65C4A9BC5/IE7-WindowsXP-KB969897-x86-NOR.exe|updates/ie7/ie7-windowsxp-kb969897-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/0/2/1/021FE07D-409A-4EA2-A074-26A96F7DEBA5/IE7-WindowsXP-KB969897-x86-PLK.exe|updates/ie7/ie7-windowsxp-kb969897-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/A/E/D/AEDBEE5C-A054-47D3-AB39-AD6F58DE363E/IE7-WindowsXP-KB969897-x86-PTB.exe|updates/ie7/ie7-windowsxp-kb969897-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/8/D/E/8DECD057-D052-425E-987B-2C6B0E264549/IE7-WindowsXP-KB969897-x86-PTG.exe|updates/ie7/ie7-windowsxp-kb969897-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/C/7/B/C7B79BEE-DC8A-4C78-9BA0-C957163A3A29/IE7-WindowsXP-KB969897-x86-RUS.exe|updates/ie7/ie7-windowsxp-kb969897-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/D/0/1D080372-DB18-45E6-BFE1-0B4616634241/IE7-WindowsXP-KB969897-x86-SVE.exe|updates/ie7/ie7-windowsxp-kb969897-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/5/6/5/565A3515-8204-44FD-83BD-C90C44FA0C08/IE7-WindowsXP-KB969897-x86-TRK.exe|updates/ie7/ie7-windowsxp-kb969897-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\ie7\IE7-WindowsXP-KB969897-x86-%WINLANG%.exe /?"
+
 
 :: Cumulative Security Update for Internet Explorer 7 for Windows XP (KB961260)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=8cd902ec-e018-4b61-80f9-825d973f998e>
@@ -32,7 +58,7 @@ todo.pl "%Z%\packages\macromedia\install_flash_player_10_active_x.exe /s"
 :: URL|RUS|http://download.microsoft.com/download/4/B/3/4B321D4D-B659-4DEC-9AB1-5B4E01D647F0/IE7-WindowsXP-KB961260-x86-RUS.exe|updates/ie7/ie7-windowsxp-kb961260-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/3/9/6/396D7258-A6C1-459A-8750-5011C8C46E42/IE7-WindowsXP-KB961260-x86-SVE.exe|updates/ie7/ie7-windowsxp-kb961260-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/4/9/2/49286D18-1486-4D59-8C64-566C6552DE41/IE7-WindowsXP-KB961260-x86-TRK.exe|updates/ie7/ie7-windowsxp-kb961260-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie7\IE7-WindowsXP-KB961260-x86-%WINLANG%.exe /passive /nobackup"
+todo.pl ".reboot-on 194 %Z%\updates\ie7\IE7-WindowsXP-KB961260-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Cumulative Security Update for Internet Explorer 7 for Windows XP (KB953838)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=8e2125c7-52cb-4052-82a3-2d3c6a953752>
@@ -115,3 +141,4 @@ todo.pl ".reboot-on 194 %Z%\updates\ie7\IE7-WindowsXP-KB938127-v2-x86-%WINLANG%.
 todo.pl "reg add \"HKCU\Software\Microsoft\Internet Explorer\PhishingFilter\" /v Enabled /t REG_DWORD /d 2 /f"
 
 todo.pl ".reboot-on 194 %Z%\packages\ie7\ie7-windowsxp-x86-%WINLANG%.exe /passive /nobackup /norestart"
+
