@@ -77,32 +77,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB960803-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/1/2/9/129C0262-34AB-4E13-8D78-2EC4ADEA2E97/WindowsXP-KB961373-x86-TRK.exe|updates/winxpsp3/windowsxp-kb961373-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB961373-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Cumulative Security Update for Internet Explorer for Windows XP (KB963027)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=052c29fc-e8df-402c-9ab1-1079bc738e1b>
-:: URL|ARA|http://download.microsoft.com/download/4/C/D/4CDACABD-7F54-4E64-99BA-28B40F485794/WindowsXP-KB963027-x86-ARA.exe|updates/winxpsp3/windowsxp-kb963027-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/6/E/4/6E40054F-7412-4572-9A3E-AB19A7C5CFA6/WindowsXP-KB963027-x86-CSY.exe|updates/winxpsp3/windowsxp-kb963027-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/7/4/8/74831421-6505-48A5-884B-7F0BA455A466/WindowsXP-KB963027-x86-DAN.exe|updates/winxpsp3/windowsxp-kb963027-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/1/6/2/1626C426-6CF8-4C50-9763-9EE1383A15C5/WindowsXP-KB963027-x86-DEU.exe|updates/winxpsp3/windowsxp-kb963027-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/3/8/A/38A5F02B-D1D9-4BD7-9805-482CAB4A7394/WindowsXP-KB963027-x86-ELL.exe|updates/winxpsp3/windowsxp-kb963027-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/6/8/3/683EF04C-F675-4A52-A2E4-86B01C484F22/WindowsXP-KB963027-x86-ENU.exe|updates/winxpsp3/windowsxp-kb963027-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/B/9/9/B995EE37-92A0-4B7C-AC13-BBF564267CD2/WindowsXP-KB963027-x86-ESN.exe|updates/winxpsp3/windowsxp-kb963027-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/6/F/F/6FF9CE12-2D00-4556-957E-CDC2DDA7841C/WindowsXP-KB963027-x86-FIN.exe|updates/winxpsp3/windowsxp-kb963027-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/5/4/A/54A91A4C-FD89-4159-9CB8-1BD2EE99B6E1/WindowsXP-KB963027-x86-FRA.exe|updates/winxpsp3/windowsxp-kb963027-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/B/F/F/BFFF7825-1E81-4B97-A582-CAB9B6221DF1/WindowsXP-KB963027-x86-HEB.exe|updates/winxpsp3/windowsxp-kb963027-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/A/7/F/A7F97F5F-9975-4307-A54C-2084F70CB369/WindowsXP-KB963027-x86-HUN.exe|updates/winxpsp3/windowsxp-kb963027-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/0/9/1/0919F30C-3ED0-472D-981F-CA45E8CBAA4E/WindowsXP-KB963027-x86-ITA.exe|updates/winxpsp3/windowsxp-kb963027-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/7/A/A/7AAF3195-BF28-4520-BA38-5EE9D54076ED/WindowsXP-KB963027-x86-JPN.exe|updates/winxpsp3/windowsxp-kb963027-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/8/D/6/8D69586E-1D73-49F1-B94F-9A0387D54931/WindowsXP-KB963027-x86-KOR.exe|updates/winxpsp3/windowsxp-kb963027-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/9/D/C/9DCCDEFB-31D3-4BE9-B29C-F989EF2607CB/WindowsXP-KB963027-x86-NLD.exe|updates/winxpsp3/windowsxp-kb963027-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/5/4/C/54C1E18A-7279-478D-8AFC-734732AFCFE4/WindowsXP-KB963027-x86-NOR.exe|updates/winxpsp3/windowsxp-kb963027-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/4/7/6/4769FD43-0E41-4545-AC5E-96F85C003642/WindowsXP-KB963027-x86-PLK.exe|updates/winxpsp3/windowsxp-kb963027-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/C/9/1/C918D982-F9C1-4232-80A0-50FECBF315B8/WindowsXP-KB963027-x86-PTB.exe|updates/winxpsp3/windowsxp-kb963027-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/5/B/F/5BFA88DE-A56F-4067-9F68-7AA1E3F56203/WindowsXP-KB963027-x86-PTG.exe|updates/winxpsp3/windowsxp-kb963027-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/2/2/D/22D01EF9-8808-4740-91F9-E978DE2BCF07/WindowsXP-KB963027-x86-RUS.exe|updates/winxpsp3/windowsxp-kb963027-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/3/7/2/3726786B-3004-4D20-88DD-3CDBE66B44AF/WindowsXP-KB963027-x86-SVE.exe|updates/winxpsp3/windowsxp-kb963027-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/D/9/0/D9015559-ED36-4639-809D-477D54BEBC65/WindowsXP-KB963027-x86-TRK.exe|updates/winxpsp3/windowsxp-kb963027-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB963027-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB952004)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=90FE715E-8190-43E9-9C43-DF5BE564D923>
 :: URL|ARA|http://download.microsoft.com/download/5/D/A/5DA0C00B-AB9D-45B5-9F31-EB7B6338492D/WindowsXP-KB952004-x86-ARA.exe|updates/winxpsp3/windowsxp-kb952004-x86-ara.exe
