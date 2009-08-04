@@ -51,28 +51,3 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950762-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/0/c/9/0c9ff669-9849-47f2-b5e5-2ddbedfbee07/WindowsXP-KB951376-v2-x86-TRK.exe|updates/winxpsp3/windowsxp-kb951376-v2-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951376-v2-x86-%WINLANG%.exe /norestart /passive /nobackup
 
-:: Cumulative Security Update for ActiveX Killbits for Windows XP (KB950760)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=2D8957C2-E473-4DCA-8D68-19FDAEA36E26>
-:: URL|ARA|http://download.microsoft.com/download/c/d/5/cd541c19-3ec0-41cf-96b2-f5eb048b3ebb/WindowsXP-KB950760-x86-ARA.exe|updates/winxpsp3/windowsxp-kb950760-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/6/2/7/627c4763-86de-47ed-9055-3eb9043f48e7/WindowsXP-KB950760-x86-CSY.exe|updates/winxpsp3/windowsxp-kb950760-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/4/a/9/4a995144-f811-499e-91cb-1ec885af68cd/WindowsXP-KB950760-x86-DAN.exe|updates/winxpsp3/windowsxp-kb950760-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/f/8/d/f8dc1de6-da07-4e2e-97aa-588ee9cd3c32/WindowsXP-KB950760-x86-DEU.exe|updates/winxpsp3/windowsxp-kb950760-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/0/2/c/02c2c809-6a14-4eea-a980-3aeb2614d42f/WindowsXP-KB950760-x86-ELL.exe|updates/winxpsp3/windowsxp-kb950760-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/c/6/e/c6e4b3e0-0af6-4ac8-92f7-5f7e8d471fb2/WindowsXP-KB950760-x86-ENU.exe|updates/winxpsp3/windowsxp-kb950760-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/9/7/0/9705c7ba-0341-4f74-8ca6-42e05f81b1e9/WindowsXP-KB950760-x86-ESN.exe|updates/winxpsp3/windowsxp-kb950760-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/2/3/c/23cc83fe-e039-4566-815b-7fb901dc57d6/WindowsXP-KB950760-x86-FIN.exe|updates/winxpsp3/windowsxp-kb950760-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/7/2/d/72d1f6f7-0b7e-44d2-96ff-b0f932e8d335/WindowsXP-KB950760-x86-FRA.exe|updates/winxpsp3/windowsxp-kb950760-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/0/2/2/0225661e-233a-423d-a413-df65c581c0c9/WindowsXP-KB950760-x86-HEB.exe|updates/winxpsp3/windowsxp-kb950760-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/1/0/a/10a289ed-2d0c-4ad0-88e0-128cb8def9d9/WindowsXP-KB950760-x86-HUN.exe|updates/winxpsp3/windowsxp-kb950760-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/e/b/4/eb46e90a-2a12-48db-8240-e8ea8dd1ebf3/WindowsXP-KB950760-x86-ITA.exe|updates/winxpsp3/windowsxp-kb950760-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/e/c/c/eccdcb7a-035f-4693-84b3-91dab74e11da/WindowsXP-KB950760-x86-JPN.exe|updates/winxpsp3/windowsxp-kb950760-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/c/b/0cb64dec-36c8-48fb-831a-ac279fa888b5/WindowsXP-KB950760-x86-KOR.exe|updates/winxpsp3/windowsxp-kb950760-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/8/e/b/8eb5a542-01e1-405e-a3c0-134a54683a83/WindowsXP-KB950760-x86-NLD.exe|updates/winxpsp3/windowsxp-kb950760-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/9/e/8/9e8e5204-1ff6-4b88-8579-53f219c9157c/WindowsXP-KB950760-x86-NOR.exe|updates/winxpsp3/windowsxp-kb950760-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/3/a/6/3a699525-9c76-45a9-b910-136f8e24fe98/WindowsXP-KB950760-x86-PLK.exe|updates/winxpsp3/windowsxp-kb950760-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/3/3/e/33e3f567-a192-4030-8c52-c3f7c3933de8/WindowsXP-KB950760-x86-PTB.exe|updates/winxpsp3/windowsxp-kb950760-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/5/8/8/5886b530-45ef-479a-877f-a890514d024f/WindowsXP-KB950760-x86-PTG.exe|updates/winxpsp3/windowsxp-kb950760-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/0/2/a/02a79458-e8c1-4bba-a910-fecbc0dd24cb/WindowsXP-KB950760-x86-RUS.exe|updates/winxpsp3/windowsxp-kb950760-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/a/6/c/a6c8a8f7-772a-4d72-9f15-b4d02103d28d/WindowsXP-KB950760-x86-SVE.exe|updates/winxpsp3/windowsxp-kb950760-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/6/9/7/697cb2b7-f980-4721-9af5-2e66a6ee05bc/WindowsXP-KB950760-x86-TRK.exe|updates/winxpsp3/windowsxp-kb950760-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950760-x86-%WINLANG%.exe /norestart /passive /nobackup"
