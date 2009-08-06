@@ -31,7 +31,7 @@ todo.pl "%Z%\packages\macromedia\install_flash_player_10_active_x.exe /s"
 :: URL|RUS|http://download.microsoft.com/download/C/7/B/C7B79BEE-DC8A-4C78-9BA0-C957163A3A29/IE7-WindowsXP-KB969897-x86-RUS.exe|updates/ie7/ie7-windowsxp-kb969897-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/1/D/0/1D080372-DB18-45E6-BFE1-0B4616634241/IE7-WindowsXP-KB969897-x86-SVE.exe|updates/ie7/ie7-windowsxp-kb969897-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/5/6/5/565A3515-8204-44FD-83BD-C90C44FA0C08/IE7-WindowsXP-KB969897-x86-TRK.exe|updates/ie7/ie7-windowsxp-kb969897-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\ie7\IE7-WindowsXP-KB969897-x86-%WINLANG%.exe /?"
+todo.pl ".reboot-on 194 %Z%\updates\ie7\IE7-WindowsXP-KB969897-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 
 :: Cumulative Security Update for Internet Explorer 7 for Windows XP (KB961260)
