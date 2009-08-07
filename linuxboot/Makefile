@@ -15,7 +15,8 @@ expat=expat-2.0.1
 glibc=glibc-2.10.1
 # TODO: kbd-1.15
 kbd=kbd-1.12
-linux=linux-2.6.30.3
+libusb=libusb-0.1.12
+linux=linux-2.6.30.4
 # TODO: module-init-tools-3.6
 module-init-tools=module-init-tools-3.5
 mysql=mysql-5.0.83
@@ -48,7 +49,8 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
 	$(linux)  $(module-init-tools) $(mysql) $(nano)	\
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
 	$(perl-xml-xpath) $(pciutils) $(pmtools)		\
-	$(samba) $(slang) $(syslinux) $(usbutils) $(wireless_tools) $(zlib)
+	$(samba) $(slang) $(syslinux) $(libusb) $(usbutils)	\
+	$(wireless_tools) $(zlib)
 
 CC=gcc
 CXX=g++
@@ -783,14 +785,28 @@ $(call copy_file,$(expat)/lib/expat_external.h,fakeinclude/expat_external.h)
 
 stage1 += stage1/lib/libexpat.so
 
+## libusb
+$(libusb)/.libs/libusb-0.1.so.4.4.4:
+	cd $(libusb)						\
+	&& CC=$(CC) ./configure --disable-static		\
+	                        --build=i586-linux		\
+	                        --disable-dependency-tracking	\
+	&&  $(MAKE)
+	[ -e $@ ]
+
+$(call copy_lib,$(libusb)/.libs/libusb-0.1.so.4.4.4,stage1/lib/libusb.so)
+$(call copy_file,$(libusb)/usb.h,fakeinclude/usb.h)
+stage1 += stage1/lib/libusb.so
+
 ## usbutils
-## FIXME: we build against the libusb of the host system... 
-##        that's why we generate a static binary (500K in size).
-##        Do not use usb.ids.gz, so build without libz (-40K).
-$(usbutils)/lsusb:
-	cd $(usbutils)						\
-	&& CC=$(CC) CFLAGS="$(fakelib_cflags)" LDFLAGS=-static 	\
-		./configure --prefix=/usr --disable-zlib	\
+##   use LIBUSB_CFLAGS and LIBUSB_LIBS to avoid pkg-config usage.
+##   FIXME '-lusb' is sufficient since usage of fakelib_cflags for CFLAGS.
+
+$(usbutils)/lsusb: stage1/lib/libusb.so fakeinclude/usb.h
+	cd $(usbutils)							\
+	&& CC=$(CC) CFLAGS="$(fakelib_cflags)"				\
+	   LIBUSB_CFLAGS="-I$(cwd)/fakeinclude" LIBUSB_LIBS="-lusb"	\
+		./configure --prefix=/usr				\
 	&& $(MAKE)
 
 $(call copy_exe, $(usbutils)/lsusb, stage1/sbin/lsusb)
@@ -798,9 +814,9 @@ $(call copy_exe, $(usbutils)/lsusb, stage1/sbin/lsusb)
 stage1 += stage1/sbin/lsusb
 
 ## usb.ids: cf. target download-usb.ids for its retrieval
-$(call copy_file,usb.ids,stage1/usr/share/usb.ids)
+$(call copy_file,usb.ids.gz,stage1/usr/share/usb.ids.gz)
 
-stage1 += stage1/usr/share/usb.ids
+stage1 += stage1/usr/share/usb.ids.gz
 
 ## devices
 devices.cpio: misc/devices.txt
@@ -975,13 +991,13 @@ download-pci.ids:
 	     && mv $@.tmp pci.ids ; }
 
 # Special rule to fetch updated usb.ids file
-download-usb.ids:
-	@[ -e usb.ids ]							\
+download-usb.ids.gz:
+	@[ -e usb.ids.gz ]						\
 	|| { rm -f $@.tmp						\
 	     && wget -O $@.tmp http://www.linux-usb.org/usb.ids		\
-	     && mv $@.tmp usb.ids ; }
+	     && gzip -c $@.tmp > usb.ids.gz ; rm $@.tmp ; }
 
-download_targets=$(addprefix download-,$(packages) pci.ids usb.ids)
+download_targets=$(addprefix download-,$(packages) pci.ids usb.ids.gz)
 
 download: $(download_targets)
 
@@ -1008,6 +1024,8 @@ $(call download_rule, $(expat), tar.gz, \
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 $(call download_rule, $(kbd), tar.bz2,			\
 	http://www.all.kernel.org/pub/linux/utils/kbd/)
+$(call download_rule, $(libusb), tar.gz,	\
+	http://downloads.sourceforge.net/libusb/)
 $(call download_rule, $(linux), tar.bz2,		\
 	http://www.all.kernel.org/pub/linux/kernel/v2.6/)
 #$(call download_rule, $(linux), tar.bz2,		\
@@ -1047,7 +1065,7 @@ $(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
 	symlink-fakelib symlink-fakeinclude symlink-stage1	\
-	symlink-pci.ids symlink-usb.ids
+	symlink-pci.ids symlink-usb.ids.gz
 
 $(symlink_targets):
 	@if [ -z "$(dest)" ] || [ "$(dest)" == . ] ; then	\
