@@ -5,9 +5,35 @@
 :: Uncomment it if you want the compatibility pack installed
 :: todo.pl docxconverter.bat 
 
+:: Security Update for Microsoft Office Web Components (KB947319)
+:: MS09-043: Description of the security update for Office 2003 Web Components and Office XP Web Components in Office 2003: August 11, 2009
+:: <http://support.microsoft.com/kb/947319>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=95c94c9a-6aca-42fb-9679-3234f06c72f7>
+:: URL|ARA|http://download.microsoft.com/download/F/9/1/F9130AA7-B60D-4CBB-8E64-695F831EB467/office2003-KB947319-FullFile-ARA.exe|updates/office2003/office2003-kb947319-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/E/8/4/E84C7BF6-ACDC-400C-A73D-95D3EE7E031C/office2003-KB947319-FullFile-CSY.exe|updates/office2003/office2003-kb947319-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/4/B/7/4B70BC6E-9297-47C8-ABEE-244BD3DDC6C6/office2003-KB947319-FullFile-DAN.exe|updates/office2003/office2003-kb947319-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/B/5/5/B55D6C63-8A40-4B5B-9BFD-1B3DD06BA771/office2003-KB947319-FullFile-DEU.exe|updates/office2003/office2003-kb947319-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/E/6/7/E6768F1B-9FE6-4A58-8342-88E376D82912/office2003-KB947319-FullFile-ELL.exe|updates/office2003/office2003-kb947319-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/8/3/5/83574009-9F5C-4EBE-AE78-9467810FAD19/office2003-KB947319-FullFile-ENU.exe|updates/office2003/office2003-kb947319-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/F/4/D/F4D46C21-2F57-4092-BB00-C5306CF9A5D9/office2003-KB947319-FullFile-ESN.exe|updates/office2003/office2003-kb947319-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/E/A/2/EA222EE6-48E5-473C-B0A4-A37F9D9AA8FC/office2003-KB947319-FullFile-FIN.exe|updates/office2003/office2003-kb947319-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/5/F/8/5F862447-B0D4-437C-8458-2BC4083419B1/office2003-KB947319-FullFile-FRA.exe|updates/office2003/office2003-kb947319-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/3/B/83B5DEC7-6A17-4FE6-BFF0-BE3A3C30CBCD/office2003-KB947319-FullFile-HEB.exe|updates/office2003/office2003-kb947319-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/5/A/1/5A1902F6-3946-4C1D-8761-9C7D5B2850EA/office2003-KB947319-FullFile-HUN.exe|updates/office2003/office2003-kb947319-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/F/F/5/FF5C3F94-276E-44FC-97A4-AC55B61BCEC1/office2003-KB947319-FullFile-ITA.exe|updates/office2003/office2003-kb947319-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/3/B/3/3B3BB3D0-FBFA-4ECC-9CDA-552D67BFF7DA/office2003-KB947319-FullFile-JPN.exe|updates/office2003/office2003-kb947319-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/D/4/9/D49758B2-23B7-4603-9960-E1A18FA57ACF/office2003-KB947319-FullFile-KOR.exe|updates/office2003/office2003-kb947319-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/3/C/03C73740-2931-49CB-9724-6A6ED0646BD3/office2003-KB947319-FullFile-NLD.exe|updates/office2003/office2003-kb947319-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/3/4/C/34CCED31-9036-4BC2-9F40-7AB805D5DDCD/office2003-KB947319-FullFile-NOR.exe|updates/office2003/office2003-kb947319-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/4/F/2/4F2EF0B8-EAFB-4B0F-BB06-13F5FF2F3469/office2003-KB947319-FullFile-PLK.exe|updates/office2003/office2003-kb947319-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/F/2/B/F2B38F64-F785-42B2-9BCC-87033977AC37/office2003-KB947319-FullFile-PTB.exe|updates/office2003/office2003-kb947319-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/D/D/E/DDEA2145-DF77-4DD3-A5D7-A8DFF9F26FD6/office2003-KB947319-FullFile-PTG.exe|updates/office2003/office2003-kb947319-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/2/F/3/2F36B14F-F1B9-48BA-B2E1-D15CBE70B5A0/office2003-KB947319-FullFile-RUS.exe|updates/office2003/office2003-kb947319-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/A/8/6A8B140C-C213-4378-977F-E7F9907F724D/office2003-KB947319-FullFile-SVE.exe|updates/office2003/office2003-kb947319-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/A/2/0/A201EE48-6D0A-47CB-9BDA-9A4400876BDC/office2003-KB947319-FullFile-TRK.exe|updates/office2003/office2003-kb947319-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB947319-FullFile-%WINLANG%.exe /Q"
 :: Security Update for Microsoft Office Word 2003 (KB969603)
 :: MS09-027: Description of the security update for Word 2003: June 9, 2009
-:: "<span><a href="javascript:void(0);">On This Page</a></span><div class="sectionpreview_closed"></div>"
 :: <http://support.microsoft.com/kb/969603>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=7cbc2587-2c8c-49b4-9f40-e4cdccb61ecd>
 :: URL|ARA|http://download.microsoft.com/download/C/9/0/C90E8DF1-064A-4E0A-B29D-2B98A4A0B890/office2003-KB969603-FullFile-ARA.exe|updates/office2003/office2003-kb969603-fullfile-ara.exe
