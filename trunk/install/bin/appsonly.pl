@@ -4,8 +4,8 @@
 # pathman.exe into \\server\install\bin
 # some documentation included in appsonly.bat
 # Download of appsonly.bat, appsonly.pl and some "helper" apps:
-# http://unattended.cvs.sourceforge.net/unattended/unattended/install/bin/
-# Release 2008.07.29
+# http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/bin
+# Release 2009.08.19
 
 use Win32::NetResource;
 #use warnings;
@@ -286,7 +286,11 @@ else
 }
 
 # put command to disable autologin (after all installs) onto the to-do stack
+# delete Z, Z_PATH, Z_USER variables at the end, see http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg08693.html
 system ("%z_path%\\bin\\todo.pl", "autolog.pl --logon=0");
+system ("%z_path%\\bin\\todo.pl", "setenv -m Z -delete");
+system ("%z_path%\\bin\\todo.pl", "setenv -m Z_USER -delete");
+system ("%z_path%\\bin\\todo.pl" , "setenv -m Z_PATH -delete");
 
 # call todo.pl for any selected bat file and call it once with --go
 $i = 0;
