@@ -1,29 +1,29 @@
 
-:: Security Update for Windows XP (KB958469)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=cf9f9898-10c8-45ab-9df3-85e0b37e6046>
-:: URL|ARA|http://download.microsoft.com/download/9/2/5/92571D4B-2D67-4AA0-9FFD-A805121D598B/WindowsXP-KB958469-x86-ARA.exe|updates/winxpsp3/windowsxp-kb958469-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/9/8/A/98AD2CB1-164D-434E-8D7D-5F97A9B005C4/WindowsXP-KB958469-x86-CSY.exe|updates/winxpsp3/windowsxp-kb958469-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/D/B/6DB20146-EFC7-4DEA-9423-D8198E9DC6E2/WindowsXP-KB958469-x86-DAN.exe|updates/winxpsp3/windowsxp-kb958469-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/E/9/0/E9011DC5-92F5-4269-9B10-11E53F768E9D/WindowsXP-KB958469-x86-DEU.exe|updates/winxpsp3/windowsxp-kb958469-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/D/E/4/DE4B2FCF-A713-4CD6-8ADF-3DCB92F47BBC/WindowsXP-KB958469-x86-ELL.exe|updates/winxpsp3/windowsxp-kb958469-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/9/6/1/961D26FA-0DCF-460C-A360-942D7CC2E7DA/WindowsXP-KB958469-x86-ENU.exe|updates/winxpsp3/windowsxp-kb958469-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/C/4/7/C47D84ED-4C64-44F8-A620-F7A7197C4D67/WindowsXP-KB958469-x86-ESN.exe|updates/winxpsp3/windowsxp-kb958469-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/D/0/3/D0322F9A-9C18-4486-9AC7-553E95AC571E/WindowsXP-KB958469-x86-FIN.exe|updates/winxpsp3/windowsxp-kb958469-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/7/3/5/73545C1B-093F-447C-BD27-69C234A5A5CE/WindowsXP-KB958469-x86-FRA.exe|updates/winxpsp3/windowsxp-kb958469-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/2/7/7/277C40CE-0F1E-42FE-8807-D1DA4CEB2B34/WindowsXP-KB958469-x86-HEB.exe|updates/winxpsp3/windowsxp-kb958469-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/5/1/C/51C3419F-62E0-45B4-90B3-7C517B671F23/WindowsXP-KB958469-x86-HUN.exe|updates/winxpsp3/windowsxp-kb958469-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/2/3/B/23B89876-AD9F-4AEF-8ACA-4B660CC51DE4/WindowsXP-KB958469-x86-ITA.exe|updates/winxpsp3/windowsxp-kb958469-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/5/8/1/581FC229-6C48-44B4-A9F5-4F4C0BC44903/WindowsXP-KB958469-x86-JPN.exe|updates/winxpsp3/windowsxp-kb958469-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/8/8/C/88C639AB-CEF1-4FBE-9EBE-5CD33695F6F7/WindowsXP-KB958469-x86-KOR.exe|updates/winxpsp3/windowsxp-kb958469-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/B/2/4/B24CC1AE-BCCE-49E2-9A2E-A569D7889F7E/WindowsXP-KB958469-x86-NLD.exe|updates/winxpsp3/windowsxp-kb958469-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/E/D/7/ED7BCD8B-50FF-42E0-AED5-3537BC0189DA/WindowsXP-KB958469-x86-NOR.exe|updates/winxpsp3/windowsxp-kb958469-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/B/5/5/B552767C-3D87-450B-9E05-9AD660399B6E/WindowsXP-KB958469-x86-PLK.exe|updates/winxpsp3/windowsxp-kb958469-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/6/E/86ED79EA-C33D-423F-8557-2CA66282BBE8/WindowsXP-KB958469-x86-PTB.exe|updates/winxpsp3/windowsxp-kb958469-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/2/8/7/287E60B9-086A-4C7D-9A10-95652ED22D58/WindowsXP-KB958469-x86-PTG.exe|updates/winxpsp3/windowsxp-kb958469-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/1/D/C/1DC6459B-6A0D-4C8C-8CA1-467D0D84E1FA/WindowsXP-KB958469-x86-RUS.exe|updates/winxpsp3/windowsxp-kb958469-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/D/D/0/DD07143F-85BB-4849-BD80-A6E5C8C3327A/WindowsXP-KB958469-x86-SVE.exe|updates/winxpsp3/windowsxp-kb958469-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/D/7/5/D75D0DA7-C450-4E2D-9FEA-8250105AAA40/WindowsXP-KB958469-x86-TRK.exe|updates/winxpsp3/windowsxp-kb958469-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB958469-x86-%WINLANG%.exe /Q"
+:: Security Update for Windows XP (KB956744)
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=d1f82d76-eeb2-4ff4-9d2c-46882f214719>
+:: URL|ARA|http://download.microsoft.com/download/8/9/0/890831D5-8845-4E8E-AE68-F0A8F645BE9D/WindowsXP-KB956744-x86-ARA.exe|updates/winxpsp3/windowsxp-kb956744-x86-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/3/2/A/32A5FA3D-A9C0-4C4C-B04E-A993DEC5C37E/WindowsXP-KB956744-x86-CSY.exe|updates/winxpsp3/windowsxp-kb956744-x86-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/1/5/D/15D864F5-D1AE-47FC-AE48-D9D133908272/WindowsXP-KB956744-x86-DAN.exe|updates/winxpsp3/windowsxp-kb956744-x86-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/1/0/C/10C2569C-EEA9-46DC-8404-3C6134765F68/WindowsXP-KB956744-x86-DEU.exe|updates/winxpsp3/windowsxp-kb956744-x86-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/7/E/C/7EC551FC-0A07-4B23-8B56-7DBDF889A27D/WindowsXP-KB956744-x86-ELL.exe|updates/winxpsp3/windowsxp-kb956744-x86-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/3/B/5/3B56DC2D-8130-4EF8-8C44-58A813BB5102/WindowsXP-KB956744-x86-ENU.exe|updates/winxpsp3/windowsxp-kb956744-x86-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/D/B/C/DBCC429B-C2D3-42E2-AB13-6B1D37837232/WindowsXP-KB956744-x86-ESN.exe|updates/winxpsp3/windowsxp-kb956744-x86-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/7/F/6/7F648CBE-D989-41FF-9C1D-69D7C6E7C11D/WindowsXP-KB956744-x86-FIN.exe|updates/winxpsp3/windowsxp-kb956744-x86-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/6/B/B/6BBD32B9-EA09-4A4D-A2C0-30EAEA295CAA/WindowsXP-KB956744-x86-FRA.exe|updates/winxpsp3/windowsxp-kb956744-x86-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/8/1/9/8198AB30-4AD2-4EA2-B497-AFAD53121FFE/WindowsXP-KB956744-x86-HEB.exe|updates/winxpsp3/windowsxp-kb956744-x86-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/3/E/8/3E8169E2-A329-4EFF-AD48-C28715A755A4/WindowsXP-KB956744-x86-HUN.exe|updates/winxpsp3/windowsxp-kb956744-x86-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/E/3/E/E3EFB5A3-FF37-4AF0-9D6D-4054F2E2DDC6/WindowsXP-KB956744-x86-ITA.exe|updates/winxpsp3/windowsxp-kb956744-x86-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/9/1/6/916C9994-9D08-4CAB-B938-68EB7A2E03AE/WindowsXP-KB956744-x86-JPN.exe|updates/winxpsp3/windowsxp-kb956744-x86-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/5/D/2/5D2EA167-32D6-48E4-AD4B-08CC109D209D/WindowsXP-KB956744-x86-KOR.exe|updates/winxpsp3/windowsxp-kb956744-x86-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/A/7/0A7E1DAF-C46F-46E3-96CE-E3DDD75186E7/WindowsXP-KB956744-x86-NLD.exe|updates/winxpsp3/windowsxp-kb956744-x86-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/A/3/6A35B424-404A-4FB2-8573-50D3214FD1EA/WindowsXP-KB956744-x86-NOR.exe|updates/winxpsp3/windowsxp-kb956744-x86-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/8/C/88C91699-AF0C-4F62-B8F4-E16843B76A10/WindowsXP-KB956744-x86-PLK.exe|updates/winxpsp3/windowsxp-kb956744-x86-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/B/F/1/BF15008B-49FB-4C82-8883-9B83C959CD70/WindowsXP-KB956744-x86-PTB.exe|updates/winxpsp3/windowsxp-kb956744-x86-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/9/9/F/99FE0BB2-A720-4787-A2E2-694277A8663E/WindowsXP-KB956744-x86-PTG.exe|updates/winxpsp3/windowsxp-kb956744-x86-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/A/6/D/A6DB16C5-661D-4FF4-9F8B-CFAE7839AE87/WindowsXP-KB956744-x86-RUS.exe|updates/winxpsp3/windowsxp-kb956744-x86-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/1/D/9/1D9883E6-A0F9-4295-AD2B-06AF30C17210/WindowsXP-KB956744-x86-SVE.exe|updates/winxpsp3/windowsxp-kb956744-x86-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/D/4/B/D4BD8C76-D25A-4AA1-9776-D4FA2FB8C619/WindowsXP-KB956744-x86-TRK.exe|updates/winxpsp3/windowsxp-kb956744-x86-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB956744-x86-%WINLANG%.exe /Q"
 
 :: Security Update for Windows XP (KB971557)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=2e8a68ee-eb24-424c-b084-450636ccaeec>
