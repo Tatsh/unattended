@@ -1,7 +1,7 @@
 echo off
 REM batch file for apps-only-installs
 REM contributed by Gerhard Hofmann, gerhard.hofmann@planat.de
-REM Release 2008.07.29
+REM Release 2009.08.19
 REM History
 REM =======
 REM 01-Feb-2005
@@ -48,6 +48,10 @@ REM added possibility to directly pass autologin password and up to 8 .bat
 REM file names (suppresses any dialogs)
 REM 29-Jul-2008
 REM fix: autologin now correcty set when providing autologin password by command line argument
+REM 19-aug-2009
+REM WIKI entry was moved to http://sourceforge.net/apps/trac/unattended/wiki/appsonly
+REM delete Z, Z_PATH, Z_USER variables at the end, see http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg08693.html
+
 
 REM ==== conf. section begin ====
 REM delete existing mappings? (no/yes)
