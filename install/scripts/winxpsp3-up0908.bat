@@ -23,7 +23,7 @@
 :: URL|RUS|http://download.microsoft.com/download/A/6/D/A6DB16C5-661D-4FF4-9F8B-CFAE7839AE87/WindowsXP-KB956744-x86-RUS.exe|updates/winxpsp3/windowsxp-kb956744-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/1/D/9/1D9883E6-A0F9-4295-AD2B-06AF30C17210/WindowsXP-KB956744-x86-SVE.exe|updates/winxpsp3/windowsxp-kb956744-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/D/4/B/D4BD8C76-D25A-4AA1-9776-D4FA2FB8C619/WindowsXP-KB956744-x86-TRK.exe|updates/winxpsp3/windowsxp-kb956744-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB956744-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB956744-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB971557)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=2e8a68ee-eb24-424c-b084-450636ccaeec>
@@ -49,7 +49,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB956744-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/8/3/3/83363D24-ED96-408F-8F19-CB9C26258DA6/WindowsXP-KB971557-x86-RUS.exe|updates/winxpsp3/windowsxp-kb971557-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/B/E/F/BEFDB374-A0F2-4CBD-969B-2922E54567AB/WindowsXP-KB971557-x86-SVE.exe|updates/winxpsp3/windowsxp-kb971557-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/D/4/9/D49140CD-1C7A-4255-9DFE-C20B184FC88C/WindowsXP-KB971557-x86-TRK.exe|updates/winxpsp3/windowsxp-kb971557-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971557-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971557-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP Service Pack 3 (KB973540)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=ec84c98b-6bc7-442f-9280-d6e204280b2f>
@@ -75,7 +75,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971557-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/0/8/0/08063A04-0075-4645-8126-5E01B832C8B2/WindowsXP-WindowsMedia-KB973540-x86-RUS.exe|updates/winxpsp3/windowsxp-windowsmedia-kb973540-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/B/2/8/B286E639-3BE9-40D6-A16F-FDCBD56341A0/WindowsXP-WindowsMedia-KB973540-x86-SVE.exe|updates/winxpsp3/windowsxp-windowsmedia-kb973540-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/B/7/1/B7166714-9A4E-46EF-87FF-F8DF73C2B1D4/WindowsXP-WindowsMedia-KB973540-x86-TRK.exe|updates/winxpsp3/windowsxp-windowsmedia-kb973540-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB973540-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB973540-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB971657)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=9c0e5bff-c248-4e87-a83b-82ba52f5299d>
@@ -101,7 +101,7 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB973540-x86
 :: URL|RUS|http://download.microsoft.com/download/C/2/E/C2E1206E-7C47-46C7-8813-36EC952C013C/WindowsXP-KB971657-x86-RUS.exe|updates/winxpsp3/windowsxp-kb971657-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/7/E/9/7E91705B-F855-4EAA-BDA0-D159E0A20803/WindowsXP-KB971657-x86-SVE.exe|updates/winxpsp3/windowsxp-kb971657-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/C/B/3/CB33B6E8-7675-410C-AB62-F4402F4B80D6/WindowsXP-KB971657-x86-TRK.exe|updates/winxpsp3/windowsxp-kb971657-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971657-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971657-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB960859)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b3331388-1e52-4924-b512-23275a8fde84>
@@ -127,4 +127,4 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971657-x86-%WINLANG%.ex
 :: URL|RUS|http://download.microsoft.com/download/A/4/1/A41AEED9-8C58-4EF1-B3E8-E9F828C558A0/WindowsXP-KB960859-x86-RUS.exe|updates/winxpsp3/windowsxp-kb960859-x86-rus.exe
 :: URL|SVE|http://download.microsoft.com/download/E/B/F/EBF2FBD4-E6BD-49EE-92B1-AA142AB058A3/WindowsXP-KB960859-x86-SVE.exe|updates/winxpsp3/windowsxp-kb960859-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/1/1/E/11E08C90-7E11-4F78-B3FC-A481C1D64882/WindowsXP-KB960859-x86-TRK.exe|updates/winxpsp3/windowsxp-kb960859-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB960859-x86-%WINLANG%.exe /Q"
+todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB960859-x86-%WINLANG%.exe /norestart /passive /nobackup"
