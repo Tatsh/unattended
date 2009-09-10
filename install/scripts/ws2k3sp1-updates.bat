@@ -972,7 +972,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB913580-x86-%WIN
 :: No Download found for DAN.
 :: URL|DEU|http://download.microsoft.com/download/5/b/0/5b0e8feb-9bc2-41e9-b506-45455128175b/WindowsServer2003-KB896424-v2-x86-DEU.exe|updates/ws2k3sp1/windowsserver2003-kb896424-v2-x86-deu.exe
 :: No Download found for ELL.
-:: URL|ENU|http://download.microsoft.com/download/9/a/a/9aa267d0-1592-4ba8-8069-7fe62b55e004/WindowsServer2003-KB896424-v2-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb896424-v2-x86-enu.exe
+:: URL|ENU|http://download.microsoft.com/download/1/0/3/10380A4C-3C15-44ED-8E3F-35A047EA3E31/WindowsServer2003-KB896424-v2-x86-ENU.exe|updates/ws2k3sp1/windowsserver2003-kb896424-v2-x86-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/d/0/0/d00af82a-f4c1-4606-a6ef-9e422d6a525f/WindowsServer2003-KB896424-v2-x86-ESN.exe|updates/ws2k3sp1/windowsserver2003-kb896424-v2-x86-esn.exe
 :: No Download found for FIN.
 :: URL|FRA|http://download.microsoft.com/download/a/e/4/ae46c20c-ac04-470b-ab5a-238baa561c2d/WindowsServer2003-KB896424-v2-x86-FRA.exe|updates/ws2k3sp1/windowsserver2003-kb896424-v2-x86-fra.exe
@@ -1280,7 +1280,7 @@ todo.pl ".reboot-on 194 %Z%\updates\ws2k3sp1\WindowsServer2003-KB896423-x86-%WIN
 :: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-V2.11.exe|updates/common/kb890830/windows-kb890830-v2.11.exe
+:: URL|ALL|http://download.microsoft.com/download/4/A/A/4AA524C6-239D-47FF-860B-5B397199CBF8/windows-kb890830-v2.14.exe|updates/common/kb890830/windows-kb890830-v2.11.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\kb890830\Windows-KB890830-V2.11.exe /Q"
 
 :: Security Update for JView Profiler (KB903235)
