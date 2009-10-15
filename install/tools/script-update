@@ -2,10 +2,10 @@
 
 #
 # This script updates your script files from the official
-# unattended cvs repository.
+# unattended repository.
 #
 # This scripts crawles through your script directory, and
-# tries to update every found file from the cvs. You can
+# tries to update every found file from the repository. You can
 # define exceptions in this script.
 #
 # Warning #1: this scripts overwrites YOUR changes to official
@@ -13,21 +13,21 @@
 # none of your own-written scripts accidentially have the same
 # name than any of the official scripts.
 #
-# Warning #2: it does not add scripts in the cvs that are
+# Warning #2: it does not add scripts in the repository that are
 # not found in your script directory. You have to download
 # new scripts once manually.
 #
 # Warning #3: you might want to call it as cron job, but
-# please be not surprised by broken scripts in the cvs.
+# please be not surprised by broken scripts.
 # This happens from time to time.
 #
 
-# exceptions
-#exceptions=( "win2ksp4-updates.bat" "win2ksp4-symbols.bat" )
+#  you can write exceptions like this:
+# exceptions=( "win2ksp4-updates.bat" "win2ksp4-symbols.bat" )
 exceptions=( )
 
 # HTTP-Link to the cvs-repository
-CVSLINK="https://unattended.svn.sourceforge.net/svnroot/unattended/trunk/install/scripts"
+SVNLINK="https://unattended.svn.sourceforge.net/svnroot/unattended/trunk/install/scripts"
 
 # paths to needed programs
 WGET=$(which wget)
@@ -42,7 +42,7 @@ cd "$(dirname "$0")"/../scripts
 for file in $($FIND . -type f -name "*.bat" | $GREP -v .svn | $SORT)
 do
     if [[ "${exceptions[@]%%${file##./}}" != "${exceptions[@]}" ]]; then continue; fi
-    if $WGET --output-document "$file.$$.tmp" $CVSLINK/$file
+    if $WGET --output-document "$file.$$.tmp" $SVNLINK/$file
     then
         mv "$file.$$.tmp" "$file"
     else
