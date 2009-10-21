@@ -788,6 +788,74 @@ sub ask_os () {
     return $choice->path ();
 }
 
+# retrieve the Windows Collection drivers Automated scan engine
+sub windrivers_scan() {
+
+   if (! $is_linux) {
+       print "Automated choose in Windows driver(s) collection unavailable.\n";
+       return undef;
+   }
+
+   ## Path to Windows driver(s) collection
+   my $drvroot = $u->{'_temp'}->{'scan_windrivers_path'};
+   opendir DRVROOT, $drvroot
+     or return undef;
+   closedir DRVROOT;
+
+   print "...Search for Windows drivers in collection below $drvroot ...\n";
+   print "(this may take a while if you do not use cache file)\n";
+   my $eng = dos_to_host (
+                 $file_spec->catdir (
+                     $u->{'_meta'}->{'dos_zdrv'},
+                     'dosbin', 
+                     'search-win-drivers.pl'));
+   my $cmd_scan = "$eng $u->{'_temp'}->{'scan_windrivers_options'} -d $drvroot" ;
+   my $raw = `$cmd_scan`;
+
+   # just compute how many driver(s) found
+   my $out = $raw;
+   $out =~ s/#.*\n//mg ;  # strip comment outputs, we want only driver paths
+   my @dlist = ();
+   if ( $out ne '' ) {
+       @dlist = split /\n/, $out;
+   }
+   print "...found ", scalar @dlist, " Windows drivers to use.\n";
+
+   return $raw;
+}
+
+
+sub windrivers_scan_dest_map() {
+
+   # generate a string of '<drv>:<dest>@<drv>:<dest> ...'
+   # (use '@' as seperator since parse_ini_file() of unatt-functions.sh treats ';' as comments)
+   my $raw = $u->{'_temp'}->{'scan_windrivers'};
+   ( my $out = $raw )  =~ s/#.*\n//mg ;  # strip comment outputs
+   if ( $out eq '' ) {
+       return '';
+   }
+   my %dlist = map { $_ => "" } split /\n/, $out;
+
+   # Generate destination directory names for these path of drivers.
+   # To ensure that dest. dir names are unique, use the hash 'index' 
+   # as names.
+   # Files copies of these folders are done by windows installation files 
+   # on hard-methods (dosemu | nt5x-install)
+
+   my $index = 0;
+   my $ret = "";
+   foreach my $drv (keys %dlist) {
+       $index += 1;
+       $dlist{$drv} = $file_spec->catdir(
+                          $u->{'_temp'}->{'scan_windrivers_dest'},
+                          $index);
+       $ret .= "@" . $drv . ":" . $dlist{$drv} ;
+   }
+   $ret =~ s/^@//;
+   return $ret;
+}
+
+
 # Which directories to include in OemPnPDriversPath
 sub ask_oem_pnp_drivers_path () {
     my $media_obj = Unattend::WinMedia->new ($u->{'_meta'}->{'OS_media'});
@@ -1280,6 +1348,7 @@ $u->{'_temp'}->{'guirunonce'} =
             copy (dos_to_host ("$dos_zdrv\\bin\\mapznrun.bat"),
                   dos_to_host ($mapznrun))
                 or die "Unable to copy $dos_zdrv\\bin\\mapznrun.bat to $mapznrun";
+            print "done.\n";
 
             my $mapcd = $file_spec->catfile ($netinst, 'mapcd.js');
             print "Copying $mapcd...";
@@ -1371,6 +1440,29 @@ $u->{'Identification'}->{'DomainAdminPassword'} =
         return password_q
             ("Enter DomainAdminPassword for $admin account: ");
     };
+
+$u->comments ('_temp', 'scan_windrivers_path') = 
+    ['Directory holding Windows drivers collection'];
+$u->{'_temp'}->{'scan_windrivers_path'} = 
+    sub { return $file_spec->catdir ( $u->{'_meta'}->{'dos_zdrv'}, "site", "win_drivers"); };
+
+$u->comments ('_temp', 'scan_windrivers_options') = 
+    ['Option(s) to scan engine of Windows driver(s) (search-win-drivers.pl)'];
+$u->{'_temp'}->{'scan_windrivers_options'} = '' ; 
+
+$u->comments ('_temp', 'scan_windrivers_dest') = 
+    ['Directory holding the found Windows drivers on hard drvive (relative to \)'];
+$u->{'_temp'}->{'scan_windrivers_dest'} = 'drvscan' ;
+
+# use '_meta' section since used by DOSEMU|nt5x-install script
+$u->comments ('_meta', 'scan_windrivers_dest_map') = 
+    ['Maps between found Windows drivers paths',
+     'and their destination path on hard-drive (below $oem$\$1)'];
+$u->{'_meta'}->{'scan_windrivers_dest_map'} = \&windrivers_scan_dest_map;
+
+$u->comments ('_temp', 'scan_windrivers') = 
+    ['Retrieve automated scan output of Windows drivers (lspci based)'];
+$u->{'_temp'}->{'scan_windrivers'} = \&windrivers_scan;
 
 $u->{'Unattended'}->{'OemPnPDriversPath'} = \&ask_oem_pnp_drivers_path;
 
@@ -1670,6 +1762,33 @@ if($is_linux) {
 	my $noCycling = "$netinst\\" . int(rand(10000000)) . ".tmp";
     # First of all, if the checkpoint file exist, leave DOSEmu
     unshift @doit_cmds, "IF EXIST $noCycling EXITEMU";
+    # DOSEMU: copy driver files found by the scan driver system.
+    # - files will be present on the C: drive (newly formated) 
+    #   BEFORE winnt.exe is launched ... but it's not a problem (checked)
+    #   We also could have installed these driver files after the use
+    #   of dosemu in /etc/master script.
+    # - limitation of DOS 8.3 files and length of path makes painfull
+    #   to perform the driver copy by DOS/XCOPY.
+    #   workaround: create symlinks in Y: drive (/c/) and let XCOPY 
+    #   works: symlinks are automagically "translated" into real 
+    #   folders and files onto the FAT filesystem of the hard drive.
+    # - no troubles with $oem$\$1\drivers and scan_windrivers_dest_map 
+    #   also set to 'drivers': winnt.exe just merge the content of 
+    #   these folders (into c:\drivers).
+    if ( (! defined $u->{'_meta'}->{'ntinstall_cmd'})
+         and ( $u->{'_temp'}->{'scan_windrivers'} ne '' )) {
+
+       mkdir "/c/" . $u->{'_temp'}->{'scan_windrivers_dest'}
+           or die "FAILED: $^E";
+
+       for my $e (split /@/, $u->{'_meta'}->{'scan_windrivers_dest_map'}) {
+         (my $i, my $d) = split /:/, $e ;
+         # convert $d into a full unix path 
+         $d =~ s#\\#/#g ;
+         $d = "/c/" . $d;
+         system "ln -s $i $d" ;
+       }
+    }
     push @doit_cmds, 'xcopy /s /e /y Y:\\ C:\\';
     # have the XCOPY command copy over the checkpoint file
     write_file($noCycling, 'prevent cycling of DOSemu');
@@ -1695,6 +1814,29 @@ defined $postinst
 
 push @edit_choices, ("Edit $doit (will run when you select Continue)"
                      => $doit);
+
+# Scan of Windows drivers:
+# - write output log : only once c:\netinst exists.
+# - Update OemPnPDriversPath if needed
+if ( $u->{'_temp'}->{'scan_windrivers'} ne '' ) {
+
+   my $raw_file = $file_spec->catfile ($u->{'_meta'}->{'netinst'}, 
+                                       'logs', 'drivers.log');
+   print "Write Windows drivers scan raw output into $raw_file...";
+   write_file( $raw_file, split /\n/, $u->{'_temp'}->{'scan_windrivers'});
+   print "done.\n";
+
+   if ( $u->{'_meta'}->{'scan_windrivers_dest_map'} eq '' ) {
+       print "(Scan of Windows driver(s): no driver path(s) to add to OemPnPDriversPath )\n";
+   }
+   else {
+       print "Update 'OemPnPDriversPath' with new windows driver path(s)...\n";
+       for my $e (split /@/, $u->{'_meta'}->{'scan_windrivers_dest_map'}) {
+           (my $i, my $d) = split /:/, $e ;
+           $u->{'Unattended'}->{'OemPnPDriversPath'} .= ";" . $d ;
+       }
+   }
+}
 
 # Create unattend.txt file.
 print "Creating $unattend_txt...";
