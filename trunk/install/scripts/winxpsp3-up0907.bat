@@ -9,7 +9,7 @@
 :: URL|ENU|http://download.microsoft.com/download/4/B/B/4BBFCBF5-4299-4A60-A562-E4CFA95C1A63/WindowsXP-KB961371-v2-x86-ENU.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/0/C/A/0CA3C719-F379-49D7-8276-5C147435A14A/WindowsXP-KB961371-v2-x86-ESN.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-esn.exe
 :: URL|FIN|http://download.microsoft.com/download/7/0/4/704500E9-2971-4170-90B6-A3924E0201EC/WindowsXP-KB961371-v2-x86-FIN.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-fin.exe
-:: No Download found for FRA.
+:: URL|FRA|http://download.microsoft.com/download/D/7/E/D7E83071-985B-4EB8-B8CB-C6E37E721DE0/WindowsXP-KB961371-v2-x86-FRA.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-fra.exe
 :: URL|HEB|http://download.microsoft.com/download/8/6/2/862B90DA-E3CB-4A8F-9E52-562DCFDF4D2E/WindowsXP-KB961371-v2-x86-HEB.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-heb.exe
 :: URL|HUN|http://download.microsoft.com/download/2/B/1/2B19F78A-8608-42D6-B5F7-5EFAAC535E5F/WindowsXP-KB961371-v2-x86-HUN.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-hun.exe
 :: URL|ITA|http://download.microsoft.com/download/6/D/D/6DD9DA19-F5F0-4EDF-80AC-BBDF26982F1D/WindowsXP-KB961371-v2-x86-ITA.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-ita.exe
