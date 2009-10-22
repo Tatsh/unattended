@@ -1,22 +1,28 @@
 #! /usr/bin/env perl
 #
-# TODO - display details on matching drivers/devices.
-# TODO - parse INF code & cache: more subroutines to simplify reading ?
-# TODO - option to disable use of cache file.
+# TODO - hardcoded 'FUNC_01' inside InfString for HDAUDIO device.
+# TODO - command-line option to search for a particular InfString (no hw scan).
+# TODO - display which device match without their subsystem.
 # TODO - cache: document in online help of this file.
-# TODO - How to check Windows OS flavor(s) in order to decide (un)matching drivers: XP, 2k, 2003, 2008, Vista.
+# TODO - keep the driver model in cache in order to choose (un)matching drivers 
+#        depending on OS to install: 2k/XP/2003, Vista/2008/7.
 # TODO - extend -c option to '<bus>:<class>:<vendor>:<dev>' to exclude
 #        (with usage like 'PCI::8086:' for excluding a particular vendor).
 # TODO - option to exclude a particular device.
 # TODO - scan SCSI bus devices (with lsscsi) ?
 # TODO - what about virtual devices and/or virtual buses ?  example: VMware mouse pointer driver
 # TODO - HDAUDIO bus: display the PCI device(s) that provide this kind of bus(es) ?
-# TODO - update online documentation.
 # TODO - Microsoft documentation also list alternate ways to write INF strings, like
 #        'PCI\CC_...' or 'USB\SUBCLASS_...'. Do we need to support them, since it seems that 
 #        no drivers are currenlty using these forms ?
 # 
 # Changelog:
+#   20090811 - removed POD documentation, provides a basic online help.
+#   20090810 - display which device(s) matchs a given driver.
+#   20090810 - Windows/Activeperl can be use to to cache file generation.
+#   20090808 - BUGFIX: Also use SubSystem information of a device. 
+#              If not driver match, search again for this device but without the SubSystem part.
+#   20090807 - Partial code rewrite; added get_infstr() to calculate InfString.
 #   20090420 - Use cache file present at any sub-level of a given drivers collection.
 #   20090417 - Support of multiple drivers root paths.
 #   20090416 - Added cache file mechanism (to avoid parsing .INF files everytime)
@@ -38,7 +44,7 @@
 # Coding rules:
 #   - output convention: only matching folder(s) are displayed (without '#') 
 #     for easy parsing  by install.pl script.
-#     so use out() function to print STDOUT comment(s).
+#     so use the out() function to print STDOUT comment(s).
 #   - a given hardware device can match several Windows driver(s) (.INF files), 
 #     a given .INF file can support several hardware device(s).
 #   - the INF file parsing will stop on the first device that match, since the goal
@@ -134,20 +140,20 @@
 #
 #   - output on DELL Latitude E4300:
 #     $ lsusb
-#     Bus 008 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub  [1]
+# [1] Bus 008 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 #     Bus 007 Device 004: ID 0c45:63fe Microdia
-#     Bus 007 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub  [1]
-#     Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub  [1]
-#     Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub  [1]
+# [1] Bus 007 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+# [1] Bus 006 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+# [1] Bus 005 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 #     Bus 004 Device 002: ID 046d:c016 Logitech Inc. M-UV69a/HP M-UV96 Optical Wheel Mouse
-#     Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub  [1]
+# [1] Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 #     Bus 003 Device 002: ID 0a5c:5800 Broadcom Corp.
-#     Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub  [1]
-#     Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub  [1]
+# [1] Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+# [1] Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 #     Bus 001 Device 004: ID 413c:8162 DELL Computer Corp.
 #     Bus 001 Device 003: ID 413c:8161 DELL Computer Corp.
 #     Bus 001 Device 002: ID 0a5c:4500 Broadcom Corp.
-#     Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub  [1]
+# [1] Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 #
 #     [1] : These entries are discarted since they are internal to Linux kernel
 #           (to describe USB topology like root and hubs): no Windows .INF file 
@@ -157,8 +163,33 @@
 use warnings;
 use strict;
 use Getopt::Long;
-use Pod::Usage;
 use File::Spec;
+
+# Windows: cache file generation via stdout must be unix like (carriage return)
+#   ref: http://www.xav.com/perl/faq/Windows/ActivePerl-Winfaq8.html#Reading_from_and_writing_to_file
+binmode(STDOUT);
+
+################################################################################
+## usage()
+################################################################################
+sub usage() {
+
+  print  "Find which Windows driver(s) may match the platform's hardware devices.\n"
+        . "(PCI, HDAUDIO or USB devices)\n"
+        . "\n"
+        . "Usage: search-win-drivers.pl [-h] [-g] [-t] [-c <cid>] [-d <dir>] ...\n"
+        . "\n"
+        . "  -h ................ this help\n"
+        . "  -c <cid> .......... Exclude device of Class ID <cid> from search.\n"
+        . "  -d <dir> .......... Windows driver collection path to use.\n"
+        . "  -g ................ generate cache file for <path> (to STDOUT)\n"
+        . "  -t ................ test mode: no hardware scanning performed\n"
+        . "\n"
+        . "Default driver collection path: /z/site/win_drivers\n"
+        ;
+
+  exit(1);
+} #usage()
 
 ################################################################################
 ## out()
@@ -181,19 +212,55 @@ sub display_hash {
 } # display_hash()
 
 ################################################################################
+## get_infstr()
+################################################################################
+sub get_infstr($) {
+    my ($d) = @_;
+    my $str = "";
+
+    if ( $d->{'bustype'} eq "PCI" ) {
+        $str = sprintf("PCI\\VEN_%s&DEV_%s", $d->{'vendor'}, $d->{'device'});
+        if ( $d->{'svendor'} ne "" ) {
+            $str .= sprintf("&SUBSYS_%s%s", $d->{'svendor'}, $d->{'sdevice'}) ;
+        }
+    }
+
+    elsif ( $d->{'bustype'} eq "HDAUDIO" ) {
+        # FIXME how to calculate 'FUNC_' ? Currently: hardcoded 'FUNC_01'
+        $str = sprintf("HDAUDIO\\FUNC_01&VEN_%s&DEV_%s", $d->{'vendor'}, $d->{'device'});
+        if ( $d->{'svendor'} ne "" ) {
+            $str .= sprintf("&SUBSYS_%s%s", $d->{'svendor'}, $d->{'sdevice'}) ;
+        }
+    }
+
+    elsif ( $d->{'bustype'} eq "USB" ) {
+        $str = sprintf("USB\\VID_%s&PID_%s", $d->{'vendor'}, $d->{'device'});
+    }
+
+    else {
+        out(sprintf("ERROR: unknown bus type '%s'", $d->{"bustype"}));
+        exit(1);
+    }
+
+    return $str;
+} # get_infstr()
+
+################################################################################
 ## display_device()
 ################################################################################
 sub display_device($) {
     my ($d) = @_;
-    out(sprintf("- desc=%s", $d->{"desc"}));
-    out(sprintf("  bustype=%s busid=%s vendor=%s device=%s class=%s"
-                , $d->{"bustype"}
-                , $d->{"busid"}
-                , $d->{"vendor"}
-                , $d->{"device"}
-                , $d->{"class"}
+    out(sprintf("- desc=%s", $d->{'desc'}));
+    out(sprintf("  bustype=%s busid=%s vendor=%s device=%s class=%s subsys=%s%s"
+                , $d->{'bustype'}
+                , $d->{'busid'}
+                , $d->{'vendor'}
+                , $d->{'device'}
+                , $d->{'class'}
+                , $d->{'svendor'}
+                , $d->{'sdevice'}
                ));
-    out(sprintf("  infstr=%s", $d->{"infstr"}));
+    out(sprintf("  infstr=%s", $d->{'infstr'}));
 } # display_device()
 
 ################################################################################
@@ -327,7 +394,7 @@ sub parse_infiles($$) {
         }
       } # foreach
     } # while
-    out("- parsed $infnb .INF files, added " . ( scalar(@$infdatas_ref) - $infdatas_nb_orig ) . " INF strings.");
+    out("- parsed $infnb .INF files, added " . ( scalar(@$infdatas_ref) - $infdatas_nb_orig ) . " INF strings. (no cache)");
     return 0;
 } # parse_infiles()
 
@@ -351,78 +418,92 @@ sub parse_hardware($$) {
         out("TEST MODE: NO hardware scanning: manually defining hardware devices");
     
         push @dev, { "bustype" => "PCI"
-                   , "busid"  => "SELFTEST"
-                   , "vendor" => "n/a"
-                   , "device" => "n/a"
-                   , "class"  => "0300"
-                   , "infstr" => "PCI\\VEN_10DE&DEV_00F0"
-                   , "desc"   => "NVIDIA Device ID 0x00F0"
+                   , "busid"   => "SELFTEST"
+                   , "vendor"  => "10DE"
+                   , "device"  => "00F1"
+                   , "class"   => "0300"
+                   , "svendor" => ""
+                   , "sdevice" => ""
+                   , "infstr"  => "PCI\\VEN_10DE&DEV_00F1"
+                   , "desc"    => "NVIDIA Device ID 0x00F1"
                    };
 	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
 	out("          that (only) match DriverPacks-20080530/D/G/N1/nv4_go.inf");
 
         push @dev, { "bustype" => "PCI"
-                   , "busid"  => "SELFTEST"
-                   , "vendor" => "n/a"
-                   , "device" => "n/a"
-                   , "class"  => "0200"
-                   , "infstr" => "PCI\\VEN_14e4&DEV_1677"
-                   , "desc"   => "Broadcom Corp... NetXtreme BCM5751 Gigabit Ethernet PCI Express (rev 01)"
+                   , "busid"   => "SELFTEST"
+                   , "vendor"  => "14e4"
+                   , "device"  => "1677"
+                   , "class"   => "0200"
+                   , "svendor" => ""
+                   , "sdevice" => ""
+                   , "infstr"  => "PCI\\VEN_14e4&DEV_1677"
+                   , "desc"    => "Broadcom Corp... NetXtreme BCM5751 Gigabit Ethernet PCI Express (rev 01)"
                    };
 	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
 	out("          that (only) match DriverPacks-20080530/D/L/B1/b57win32.inf");
         
         push @dev, { "bustype" => "PCI"
-                   , "busid"  => "SELFTEST"
-                   , "vendor" => "n/a"
-                   , "device" => "n/a"
-                   , "class"  => "0200"
-                   , "infstr" => "PCI\\VEN_14e4&DEV_1677"
-                   , "desc"   => "Broadcom Corp... NetXtreme BCM5751 Gigabit Ethernet PCI Express (rev 01)"
+                   , "busid"   => "SELFTEST"
+                   , "vendor"  => "14e4"
+                   , "device"  => "1677"
+                   , "class"   => "0200"
+                   , "svendor" => ""
+                   , "sdevice" => ""
+                   , "infstr"  => "PCI\\VEN_14e4&DEV_1677"
+                   , "desc"    => "Broadcom Corp... NetXtreme BCM5751 Gigabit Ethernet PCI Express (rev 01)"
                    };
 	out("SELFTEST: add 2nd $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
 	out("          that (only) match DriverPacks-20080530/D/L/B1/b57win32.inf");
 	
         push @dev, { "bustype" => "PCI"
-                   , "busid"  => "SELFTEST-UTF16le_infFILE"
-                   , "vendor" => "n/a"
-                   , "device" => "n/a"
-                   , "class"  => "n/a"
-                   , "infstr" => "PCI\\VEN_1148&DEV_4320"
-                   , "desc"   => "Allied Telesis AT-2916T"
+                   , "busid"   => "SELFTEST-UTF16le_infFILE"
+                   , "vendor"  => "1148"
+                   , "device"  => "4320"
+                   , "class"   => "n/a"
+                   , "svendor" => ""
+                   , "sdevice" => ""
+                   , "infstr"  => "PCI\\VEN_1148&DEV_4320"
+                   , "desc"    => "Allied Telesis AT-2916T"
                    };
 	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
 	out("          that (only) match DriverPacks-20080530/D/L/M/yk50x86.inf (UTF-16le encoding)");
     
         push @dev, { "bustype" => "PCI"
-                   , "busid"  => "SELFTEST-non-HDAUDIO_infFILE"
-                   , "vendor" => "n/a"
-                   , "device" => "n/a"
-                   , "class"  => "n/a"
-                   , "infstr" => "PCI\\VEN_1014&DEV_0581"
-                   , "desc"   => "Analog Devices AD1981B"
+                   , "busid"   => "SELFTEST-non-HDAUDIO_infFILE"
+                   , "vendor"  => "1014"
+                   , "device"  => "0581"
+                   , "class"   => "n/a"
+                   , "svendor" => ""
+                   , "sdevice" => ""
+                   , "infstr"  => "PCI\\VEN_1014&DEV_0581"
+                   , "desc"    => "Analog Devices AD1981B"
                    };
 	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
 	out("          that (only) match win_drivers/__FIXME__/_FIXME_.inf (audio non-HAUDIO)");
     
         push @dev, { "bustype" => "HDAUDIO"
-                   , "busid"  => "SELFTEST-HDAUDIO_infFILE"
-                   , "vendor" => "n/a"
-                   , "device" => "n/a"
-                   , "class"  => "n/a"
-                   , "infstr" => "HDAUDIO\\FUNC_01&VEN_8384&DEV_7690&SUBSYS_102801C2"
-                   , "desc"   => "SigmaTel STAC9200"
+                   , "busid"   => "SELFTEST-HDAUDIO_infFILE"
+                   , "vendor"  => "8384"
+                   , "device"  => "7690"
+                   , "class"   => "n/a"
+                   , "svendor" => ""
+                   , "sdevice" => ""
+                   , "infstr"  => "HDAUDIO\\FUNC_01&VEN_8384&DEV_7690&SUBSYS_102801C2"
+                   , "desc"    => "SigmaTel STAC9200"
                    };
 	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
 	out("          that (only) match dell/audio-sigmatel-92xx/WDM/STHDA.inf");
     
         push @dev, { "bustype" => "HDAUDIO"
-                   , "busid"  => "SELFTEST-HDAUDIO_infFILE"
-                   , "vendor" => "n/a"
-                   , "device" => "n/a"
-                   , "class"  => "n/a"
-                   , "infstr" => "HDAUDIO\\FUNC_01&VEN_111D&DEV_76B2&SUBSYS_10280250"
-                   , "desc"   => "IDT 92HD71B7X from Intel Corporation 82801I (ICH9 Family) HD Audio Controller (rev 03)"
+                   , "busid"   => "SELFTEST-HDAUDIO_infFILE"
+                   , "vendor"  => "111D"
+                   , "device"  => "76B2"
+                   , "class"   => "n/a"
+                   , "svendor" => "1028"
+                   , "sdevice" => "0250"
+                   , "infstr"  => "HDAUDIO\\FUNC_01&VEN_111D&DEV_76B2&SUBSYS_10280250"
+                   , "desc"    => "IDT 92HD71B7X from Intel Corporation 82801I (ICH9 Family) HD Audio Controller (rev 03)"
                    };
 	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
 	out("          that (only) match DELL/IDT_92HDXXX-HD-AUDIO_A05_R206244.EXE/WDM/STWRT.inf");
@@ -442,62 +523,69 @@ sub parse_hardware($$) {
     foreach my $l (split /\n/, $lspci_n_out) {
         chomp $l;
   
-        ## retrieve BusID, PCI_CLASS, PCI_VENDOR, PCI_DEVICE
+        ## retrieve BusID, PCI_CLASS, PCI_VENDOR, PCI_DEVICE, SUBSYS_DEVICE, SUBSYS_VENDOR
         ## generate the corresponding string for search in .INF file(s)
         ## retrieve the human device description
-  
-        ## WARNING: 'lspci -n' does not ouput 'Class' on some platform(s) between busid and classid
-        $l =~ s/Class //i;
-
-        #$l =~ /^([\da-f]{2}:[\da-f]{2}\.[\da-f]) Class ([\da-f]{4}): ([\da-f]{4}):([\da-f]{4})/i;
-
-	## FIXME output of lspci is not portable amoung linux flavors.
-	##   --> parse 'lspci -m [-n] output instead ?
-	##   --> parse /proc/bus/pci instead of lspci ?
-	##   - examples:
-	##     - f10/ppc> lspci
-	##       0000:00:0b.0 Host bridge: Apple Computer Inc. UniNorth 2 AGP
-	##       0000:00:10.0 VGA compatible controller: ATI Technologies Inc RV350 [Mobility Radeon 9600 M10]
-	##     - f10/ppc> lspci -n
-	##       0000:00:0b.0 0600: 106b:0034
-	##       0000:00:10.0 0300: 1002:4e50
-	##     - f10/ppc> lspci -n -m
-	##       00:0b.0 "0600" "106b" "0034" "" ""
-	##       00:10.0 "0300" "1002" "4e50" "1002" "4e50"
-	##     - ce4/i386> lspci
-	##       00:00.0 Host bridge: Intel Corporation 82915G/P/GV/GL/PL/910GL Memory Controller Hub (rev 04)
-	##       00:01.0 PCI bridge: Intel Corporation 82915G/P/GV/GL/PL/910GL PCI Express Root Port (rev 04)
-	##     - ce4/i386> lspci -n
-	##       00:00.0 Class 0600: 8086:2580 (rev 04)
-	##       00:01.0 Class 0604: 8086:2581 (rev 04)
-	##     - ce4/i386> lspci -n -m
-	##       00:00.0 "Class 0600" "8086" "2580" -r04 "103c" "3005"
-	##       00:01.0 "Class 0604" "8086" "2581" -r04 "" ""
-
-	## FIXME wish: use map() function instead
+	##
+	## lspci(8) 3.0.0 output format:
+	##   Some of the arguments are positional: 
+	##   slot, class, vendor, name, device name, subsystem vendor name, subsystem name
+	##   (the last two are empty if the device has no subsystem); 
+	##   the remaining arguments are option-like: 
+	##      -r<n> revision number <n>
+	##      -p<m> programming interface <m>
+	##   The relative order of positional arguments and options is undefined.
+	##
+	## lspci output examples:
+	##
+	## - centos4/i386> rpm -q pciutils
+	##   pciutils-2.1.99.test8-3.4
+	##   centos4/i386> lspci -n -m
+	##   00:00.0 "Class 0600" "8086" "2580" -r04 "103c" "3005"
+	##   00:1c.1 "Class 0604" "8086" "2662" -r03 "" ""
+	##   00:1d.0 "Class 0c03" "8086" "2658" -r03 "103c" "3005"
+	##   00:1d.2 "Class 0c03" "8086" "265a" -r03 "103c" "3005"
+	##   00:1f.1 "Class 0101" "8086" "266f" -r03 -p8a "103c" "3005"
+	##   00:1f.3 "Class 0c05" "8086" "266a" -r03 "" ""
+	##   01:00.0 "Class 0300" "1002" "7187" "1028" "0402"
+	##   40:00.0 "Class 0200" "14e4" "1677" -r01 "103c" "3005"
+	##
+	## - debian5/i386> dpkg -l pciutils
+	##   pciutils 1:3.0.0-6
+	##   debian5/i386> lspci -n -m
+	##   00:00.0 "0600" "8086" "7190" -r01 "15ad" "1976"
+	##   00:01.0 "0604" "8086" "7191" -r01 "" ""
+	##   00:07.0 "0601" "8086" "7110" -r08 "15ad" "1976"
+	##   00:07.1 "0101" "8086" "7111" -r01 -p8a "15ad" "1976"
+	##   00:07.3 "0680" "8086" "7113" -r08 "15ad" "1976"
+	##   00:0f.0 "0300" "15ad" "0405" "15ad" "0405"
+	##   00:10.0 "0100" "1000" "0030" -r01 "" ""
+	##   00:11.0 "0200" "1022" "2000" -r10 "1022" "2000"
+	
+	## WARNING: old lspci version output "Class" prepend to classid.
+	$l =~ s/Class //i;
+	
+	## FIXME I wish I use map() function instead
 	my @dt = () ;
 	foreach my $e (split(/ +/, $l)) {
 		$e =~ s/"//g;
+		next if $e =~ /^-/ ;  # do not care of options
 		push @dt, $e;
 	}
-        my $bustype = "PCI" ;
-        my $busid  = $dt[0];
-        my $class  = $dt[1];
-        my $vendor = $dt[2];
-        my $device = $dt[3];
-        my $infstr = "$bustype\\VEN_$vendor&DEV_$device";
+	my %h = ();
+	$h{'bustype'} = "PCI";
+	$h{'busid'}   = $dt[0];
+	$h{'class'}   = $dt[1];
+	$h{'vendor'}  = $dt[2];
+	$h{'device'}  = $dt[3];
+	$h{'sdevice'} = $dt[4];
+	$h{'svendor'} = $dt[5];
+	$h{'infstr'}  = &get_infstr(\%h) ;
 
-        $lspci_out =~ /^$busid .+: (.+)/mi;
-        my $desc = $1;
+        $lspci_out =~ /^$h{'busid'} .+: (.+)/mi;
+        $h{'desc'} = $1;
 
-        push @dev, { "bustype" => $bustype
-                   , "busid"   => $busid
-                   , "vendor"  => $vendor
-                   , "device"  => $device
-                   , "class"   => $class
-                   , "infstr"  => $infstr
-                   , "desc"    => $desc
-                   };
+	push @dev,\%h ; 
     }
     out(sprintf("  found %d PCI device(s) on current hardware platform.", scalar @dev));
   
@@ -535,16 +623,16 @@ sub parse_hardware($$) {
                 $r_{$1} = $2 ; 
             }
             close FILE;
-            my %h = ( "bustype" => "HDAUDIO"
-                  , "busid"   => $r_{'Address'}
-                  , "vendor"  => sprintf("%04x", hex($r_{'Vendor Id'}) >> 16 )
-                  , "device"  => sprintf("%04x", hex($r_{'Vendor Id'}) &  0x0000ffff )
-                  , "class"   => sprintf("%08x", hex($r_{'Subsystem Id'}))
-                  , "desc"    => $r_{'Codec'}
+            my %h = ( 'bustype' => "HDAUDIO"
+                    , 'busid'   => $r_{'Address'}
+                    , 'class'   => ""
+                    , 'vendor'  => sprintf("%04x", hex($r_{'Vendor Id'}) >> 16 )
+                    , 'device'  => sprintf("%04x", hex($r_{'Vendor Id'}) &  0x0000ffff )
+                    , 'svendor' => sprintf("%04x", hex($r_{'Subsystem Id'}) >> 16 )
+                    , 'sdevice' => sprintf("%04x", hex($r_{'Subsystem Id'}) &  0x0000ffff )
+                    , 'desc'    => $r_{'Codec'}
                   );
-            ## FIXME INFSTR: how calculate FUNC_ ? we use "FUNC_01" hardcoded right now
-            ## FIXME INFSTR: include SUBSYS_ ?
-            $h{"infstr"} = sprintf("HDAUDIO\\FUNC_01&VEN_%s&DEV_%s&SUBSYS_%s",$h{'vendor'}, $h{'device'}, $h{'class'}); 
+            $h{'infstr'}  = &get_infstr(\%h) ;
             push @dev, \%h ;
         }
     }
@@ -569,25 +657,21 @@ sub parse_hardware($$) {
         my $dev_nousb = scalar @dev;    # without USB device(s)
 	foreach my $l (split /\n/, $lsusb_out) {
             chomp $l;
+	    my %h = ();
             $l =~ /^Bus ([\da-f]+) Device ([\da-f]+): ID ([\da-f]+):([\da-f]+) (.*)/i;
-            my $bustype = "USB";
-            my $busid   = "$1:$2" ;
-            my $class   = "n/a" ;
-            my $vendor  = $3 ;
-            my $device  = $4 ;
-            my $desc    = $5 ;
-            my $infstr  = "$bustype\\VID_$vendor&PID_$device" ;
+            $h{'bustype'} = "USB";
+            $h{'busid'}   = "$1:$2";
+            $h{'class'}   = "n/a" ;
+            $h{'vendor'}  = $3 ;
+            $h{'device'}  = $4 ;
+            $h{'svendor'} = "";
+            $h{'sdevice'} = "";
+            $h{'desc'}    = $5 ;
+            $h{'infstr'}  = &get_infstr(\%h) ;
 
             ## discard 'Linux Foundation' stuff.
-            ($vendor eq "1d6b") or 
-                push @dev, { "bustype" => $bustype
-                           , "busid"   => $busid
-                           , "vendor"  => $vendor
-                           , "device"  => $device
-                           , "class"   => $class
-                           , "infstr"  => $infstr
-                           , "desc"    => $desc
-                           };
+            ($h{'vendor'} eq "1d6b") or push @dev,\%h ; 
+
         }
         out(sprintf("  found %d USB usable devices on current hardware platform.", scalar(@dev) - $dev_nousb));
     }
@@ -597,7 +681,7 @@ sub parse_hardware($$) {
 } # parse_hardware()
 
 ################################################################################
-## main loop!~ /\.inf$/i
+## main loop
 ################################################################################
 
 # parse command-line args.
@@ -609,10 +693,10 @@ my $mode = "";
 
 my @opt_excludes_tmp = ();
 GetOptions (\%opts, 'help|h|?', 'd=s@', 't', 'g', 'c=s' => \@opt_excludes_tmp )
-    or pod2usage (1);
+    or usage();
 
 (exists $opts{'help'})
-    and pod2usage ('-exitstatus' => 0, '-verbose' => 2);
+    and usage();
 
 (exists $opts{'t'}) and $mode = "test";
 
@@ -628,7 +712,7 @@ GetOptions (\%opts, 'help|h|?', 'd=s@', 't', 'g', 'c=s' => \@opt_excludes_tmp )
 out("Check root paths of Windows drivers...");
 if ( scalar(@{$opts{'d'}}) eq 0 ) {
   out("- use default path list");
-  $opts{'d'} = [ '/z/drivers' ] ;
+  $opts{'d'} = [ '/z/site/win_drivers' ] ;
 }
 # keep unique list and check existence of paths
 my %uniqpaths = ();
@@ -670,6 +754,7 @@ if (exists $opts{'g'}) {
   my $cache_version = 1 ;
   my $host_name = `hostname` ;
   chomp $host_name;
+
   foreach my $rootpath (@{$opts{'d'}}) {
     out("");
     out("Generated cache file of INF strings from Windows drivers - DO NOT EDIT");
@@ -678,15 +763,23 @@ if (exists $opts{'g'}) {
     out("** THIS OUTPUT should be saved into file:");
     out("** $rootpath/search-win-drivers.cache");
     out("");
+
+    # display some stats
     my @infstrfiles = () ;
     &parse_infiles($rootpath,\@infstrfiles,0) && exit 1;
+
     out("");
-    my $absrootpath = File::Spec->rel2abs($rootpath) ;
     print "__cache_version__" . "@@" . "$cache_version\n";
+
+    my $absrootpath = File::Spec->rel2abs($rootpath) ;
     foreach my $l (@infstrfiles) {
       # cache file: stored relative paths
       my ($data,$p) = split(/@@/, $l);
       $p = File::Spec->abs2rel($p, $absrootpath);
+
+      # Paths have to be written with Unix filepath separator
+      $p = File::Spec::Unix->catfile(File::Spec->splitdir($p));
+
       print "$data" . "@@" . "$p\n";
     }
     out("");
@@ -718,33 +811,35 @@ undef @opt_excludes_tmp;
 ## retrieve devices list from hardware scan
 my @devices = &parse_hardware($mode);
 
-## perform exclusions based on classID
+## Walk on devices:
+## - perform exclusions based on classID
+## - keep only unique device(s) based on their InfString
 out("Hardware device list:");
 my @dev_checked = ();
+my %infstrlist = ();
 foreach my $d (@devices) {
     display_device($d);
-    if (exists $opt_excludes{$d->{"class"}}) {
+    if (exists $opt_excludes{$d->{'class'}}) {
         out("  ==> device EXCLUDED from search because of its classID.");
+    }
+    elsif (exists $infstrlist{ $d->{'infstr'}}) {
+        out("  ==> device EXCLUDED from search because another one has the same InfString.");
     }
     else {
         push @dev_checked, $d ;
+        $infstrlist{ $d->{'infstr'}} = 0;
     }
 }
 @devices = @dev_checked;
 undef @dev_checked;
+undef %infstrlist;
 
-out(sprintf("%d hardware device(s) to consider.", scalar @devices));
+out(sprintf("%d distinct hardware devices to consider.", scalar @devices));
 
-## Walk on device(s): list unique infstr string
-my %infstrlist = ();
-foreach my $d (@devices) {
-    $infstrlist{ $d->{"infstr"}} = 0;
-}
-out(sprintf("%d distinct INF string(s) for hardware devices.", scalar keys %infstrlist));
+## Load listing of "available" infstrings from drivers in folders
+## Note: paths are RELATIVE TO repository root folder in 
+##       @infstrfiles array of strings.
 
-
-## Load listing of "available" infstrings from drivers in folder 
-## FIXME paths are RELATIVE TO repository root folder in @infstrfiles array of strings.
 my @infstrfiles = () ;
 out("");
 foreach my $folder (@{$opts{'d'}}) {
@@ -755,31 +850,74 @@ foreach my $folder (@{$opts{'d'}}) {
   exit $r if ( $r ne 0) ;
 }
 
-## core loop: search for matching between INF strings from drivers 
-##            and current platform devices
-## infmatchdirlist : hash of driver folders that match any of platform devices
-## inf_str_no_match: hash of platform devices that did not match any driver
+## Core loop: Walk on each devices to check
+##   - Search for matching with INF strings from drivers
+##   - infmatchdirlist : hash of driver folders that match any of platform devices
+##   - dev_nomatch: array of platform devices that did not match any driver
 
-out("Search matching drivers for current hardware platform");
+out("");
+out("Search matching drivers for current hardware platform...");
 my %infmatchdirlist = () ;
-my %inf_str_no_match = %infstrlist;
-for my $s (keys %infstrlist) {
-  ( my $token = $s ) =~ s/\\/\\\\/g;
+my @dev_nomatch = () ;
 
-  ## walk on all drivers INF strings for the current device.
-  ## each matching driver folder is store only once (in hash infmatchdirlist)
-  foreach my $line (@infstrfiles) {
+foreach my $d (@devices) {
 
-    if ( $line =~ /^$token/i ) {
-      my ( $str, $fold ) = split(/@@/, $line);
-      $infmatchdirlist{$fold} = 1;
-      delete $inf_str_no_match{$s};
-      # FIXME the same infstring may appears several time for a given folder 
-      #       since we search only on subpart of what the @infstrlist contains
-      #out("- folder: $fold");
-      #out("   match: '$s'");
+    ( my $token = $d->{'infstr'} ) =~ s/\\/\\\\/g ;
+
+    ## Walk on all INF strings of drivers to the current device.
+    ## Each matching driver folder is stored only once (hash infmatchdirlist)
+    my $match = 0 ;
+    foreach my $line (@infstrfiles) {
+        if ( $line =~ /^$token/i ) {
+            $match = 1 ;
+            my ( $str, $fold ) = split(/@@/, $line);
+            # store matching InfString for display
+            if ( ! exists $infmatchdirlist{$fold}) {
+              %{$infmatchdirlist{$fold}} = ();
+            }
+            $infmatchdirlist{$fold}{$d->{'infstr'}} = 1 ;
+        }
     }
-  }
+
+    # this device matched at least once, check next one.
+    next if ( $match eq 1 );
+
+    ## current device does not match: check if it matchs
+    ## without its subsystem infortmation.
+    ## FIXME do we should provide a way to disable it ?
+
+    # same device without subsystem information
+    my %dnsubsys = %{$d} ;
+    $dnsubsys{'svendor'} = "" ;
+    $dnsubsys{'infstr'} = get_infstr(\%dnsubsys);
+
+    # shortcut: if current device has already no subsystem 
+    # information, it's useless to find a match a second time
+    # (especially if no cache file are available)
+    if ( $dnsubsys{'infstr'} eq $d->{'infstr'} ) {
+        push @dev_nomatch, $d;
+        next;
+    }
+
+    # have to check if this 'short' version match
+    ( $token = $dnsubsys{'infstr'} ) =~ s/\\/\\\\/g ;
+
+    # Walk on all INF strings of drivers for 'short' version
+    # as usual, keep all match
+    foreach my $line (@infstrfiles) {
+        if ( $line =~ /^$token/i ) {
+            $match = 1;
+            my ( $str, $fold ) = split(/@@/, $line);
+            # store matching InfString for display
+            if ( ! exists $infmatchdirlist{$fold}) {
+              %{$infmatchdirlist{$fold}} = ();
+            }
+            $infmatchdirlist{$fold}{$dnsubsys{'infstr'}} = 1 ;
+        }
+    }
+
+    # this device has still no match: register this.
+    push @dev_nomatch, $d if ( $match eq 0);
 }
 
 ## output list of driver folders that match
@@ -788,273 +926,24 @@ for my $e ( sort keys %infmatchdirlist) {
   print "$e\n";
 }
 
-## list unamatched devices
-out(sprintf("Enumerate unmatched devices: %d devices", scalar (keys %inf_str_no_match)));
-if ( scalar (keys %inf_str_no_match) > 0 ) {
-    out("   (might be handled directly by Windows or indirectly by matching drivers above).");
+## detail on matching file/device
+out("");
+for my $e ( sort keys %infmatchdirlist) {
+  out("- folder: $e");
+  foreach my $i (keys %{$infmatchdirlist{$e}} ) {
+    out("  match : $i");
+  }
 }
-for my $s (keys %inf_str_no_match) {
-    foreach my $d (@devices) {
-      if ( $d->{"infstr"} eq $s ) {
-          out("- unmatch device: $s (desc: '$d->{'desc'}')");
-          last;
-          }
-    }
+
+## list unamatched devices
+out("");
+out(sprintf("Unmatched devices: %d devices", scalar (@dev_nomatch)));
+if ( scalar (scalar @dev_nomatch) > 0 ) {
+    out("- They do not match even without their SubSystem part");
+    out("- they might be handled directly by Windows or indirectly by the matching drivers.");
+}
+for my $d (@dev_nomatch) {
+  out("unmatch: $d->{'infstr'} (desc: '$d->{'desc'}')");
 }
 
 exit 0;
-
-__END__
-
-==head1 NAME
-search-win-drivers.pl - Find Windows drivers that match hardware devices.
-
-=head1 SYNOPSIS
-
-search-win-drivers.pl <options> 
-
-=head1 OPTIONS
-
-=over 12
-
-=item --help
-
-Display this help and exit
-
-=item -t
-
-test mode: 
-no platform hardware scanning is performed (devices are defined inside), 
-parse of INF file(s) is done, 
-exclusions are checked.
-
-=item -d <dir>
-
-Windows driver collection root path. Default is F</z/site/win_drivers/>.
-
-=item -c <cid>[,<cid>]
-
-Exclude device(s) of class ID <cid>  (several are possible)
-
-=item -g
-
-Generate a cache file of INF strings present below the Windows driver collection root path.
-Its output should be saved as file F<search-win-drivers.cache> in the Windows driver collection root path.
-If this file is present, no .INF files scanning will be done by the client, but rather using the content of this cache file.
-Do not forget to regenerate this cache file each you add/delete/update drivers below the collection root path.
-This option can be used on ANY system since it just parse .INF file content.
-
-=back
-
-=head1 DESCRIPTION
-
-Find the Windows(TM) hardware driver(s) that match the platform hardware devices
-(PCI, HDAUDIO and USB devices). 
-
-In default mode, this script output a list of (parent) folder(s) that contains
-matching *.INF files for the hardware devices it's running on.
-
-Primarily designed to take advantage of the DriverPacks.net collection of
-Windows driver(s) , without the need of complicated maintenance steps to use
-them.
-
-Platform PCI devices identifiers are retrieved by parsing entries of
-F</sbin/lspci> command output (C<PCI_VENDOR>, C<PCI_DEVICE>, C<PCI_CLASS>).
-
-Search is then performed recursively onto the content of *.INF file(s) of
-Windows driver(s) collection, via the magic string
-"B<PCI\VEN_>[PCI_VENDOR]B<&DEV_>[PCI_DEVICE]".
-
-Each time a particular .INF file matches any of the PCI devices, the search
-stops for its parent directory. This imply the following assumptions:
-
-=over 2 
-
-=item - 
-
-a matching device may make appears several drivers; in this case, ALL these
-drivers will be provided to Windows, that will use its own rules to decide
-which driver to use; this script is just a HINT of which drivers are SUPPOSED 
-to work under Windows.
-
-=item - 
-
-as soon as a PCI entry match a driver, no more search is performed for that
-driver; so some devices may not have any match, but the general case is to have
-several devices depdending on the same driver (think about Intel ICH* chipset:
-have one driver for several PCI dev.).
-
-=back
-
-=head1 HOWTO Setup a Windows drivers collection
-
-Simply put all the drivers you need to be used in its own folder below
-the root directory of the driver collection F<unattended/install/site/win_drivers/>.
-
-You can also use the DriverPacks.net collection of Windows drivers: retrieve
-all the I<.7z> files from their web site L<http://driverPacks.net/> then
-uncompress all these archive file(s) into the default driver root path
-F<unattended/install/site/win_drivers/>. As of writing, their full drivers
-collection take about 1.3GB of hard drive space:
-
- $ mkdir -p unattended/install/site/win_drivers/DriverPacks-20080530
- $ cd unattended/install/site/win_drivers/DriverPacks-20080530
- $ ls ..../download/DriverPacks/*.7z | xargs -n 1 /usr/bin/7za x
-
-=head1 LIMITATIONS AND KNOWN BUGS
-
-=over 2 
-
-=item - 
-
-works only with linux boot of Unattended project.
-
-=item - 
-
-Don't know what happens if Mass Storage devices are present; no interaction
-with TXTSETUP.OEM is done. Perharps should we filter PCI devices to only
-non-storage devices ?
-
-=item - 
-
-no check of different flavours of Windows (2k,XP,2k3,etc): should we parse the
-content of .inf files to see on which system the check driver is applying to ?
-
-=item - 
-
-rely only on PCI_VENDOR and PCI_DEVICE, no use of
-PCI_SUBSYS,PCI_SUBDEV,PCI_CLASS (need to use F</sys/bus/pci>).
-
-=item - 
-
-check only PCI devices; /sys/bus/{usb,scsi,pci_express} have different
-semantics.
-
-=item - 
-
-probably have to allow unsigned drivers to be used.
-
-=back
-
-=head1 EXAMPLES
-
-=over 2 
-
-=item - 
-
-To check how devices of your current platform match with your Windows drivers
-collection, boot it with your unattended installation and go onto shell prompt
-([Clt]-[Alt]-[F2]):
-
-  $ /z/dosbin/search-win-drivers.pl -d /z/site/win_drivers
-  # Check root paths of Windows drivers...
-  # Windows drivers collections to use: /z/site/win_drivers
-  # - Check PCI devices (via lspci output command)...
-  #   found 18 PCI device(s) on current hardware platform.
-  # - Check HDAUDIO devices...
-  #   found 0 HDaudio codec (on 1 sound card).
-  # - Check USB devices...
-  #   found 6 USB usable devices on current hardware platform.
-  # Hardware device list:
-  # - desc=Intel Corporation 82915G/P/GV/GL/PL/910GL Memory Controller Hub (rev 04)
-  #   bustype=PCI busid=00:00.0 vendor=8086 device=2580 class=0600
-  #   infstr=PCI\VEN_8086&DEV_2580
-  # - desc=Intel Corporation 82915G/P/GV/GL/PL/910GL PCI Express Root Port (rev 04)
-  #   bustype=PCI busid=00:01.0 vendor=8086 device=2581 class=0604
-  #   infstr=PCI\VEN_8086&DEV_2581
-  # - desc=Intel Corporation 82801FB/FBM/FR/FW/FRW (ICH6 Family) PCI Express Port 1 (rev 03)
-  #   bustype=PCI busid=00:1c.0 vendor=8086 device=2660 class=0604
-  #   infstr=PCI\VEN_8086&DEV_2660
-  <snip output>
-  # - desc=Intel Corporation 82801FB/FBM/FR/FW/FRW (ICH6 Family) AC'97 Audio Controller (rev 03)
-  #   bustype=PCI busid=00:1e.2 vendor=8086 device=266e class=0401
-  #   infstr=PCI\VEN_8086&DEV_266e
-  # - desc=Intel Corporation 82801FB/FW (ICH6/ICH6W) SATA Controller (rev 03)
-  #   bustype=PCI busid=00:1f.2 vendor=8086 device=2651 class=0101
-  #   infstr=PCI\VEN_8086&DEV_2651
-  # - desc=ATI Technologies Inc RV516 [Radeon X1300/X1550 Series]
-  #   bustype=PCI busid=01:00.0 vendor=1002 device=7187 class=0300
-  #   infstr=PCI\VEN_1002&DEV_7187
-  # - desc=ATI Technologies Inc RV516 [Radeon X1300/X1550 Series] (Secondary)
-  #   bustype=PCI busid=01:00.1 vendor=1002 device=71a7 class=0380
-  #   infstr=PCI\VEN_1002&DEV_71a7
-  # - desc=Broadcom Corporation NetXtreme BCM5751 Gigabit Ethernet PCI Express (rev 01)
-  #   bustype=PCI busid=40:00.0 vendor=14e4 device=1677 class=0200
-  #   infstr=PCI\VEN_14e4&DEV_1677
-  # - desc=Primax Electronics, Ltd
-  #   bustype=USB busid=003:003 vendor=0461 device=4d15 class=n/a
-  #   infstr=USB\VID_0461&PID_4d15
-  # 24 hardware device(s) to consider.
-  # 20 distinct INF string(s) for hardware devices.
-  #
-  # loading INF strings from Windows drivers collection...
-  # - path: /z/site/win_drivers
-  # Parse .INF files below folder /z/site/win_drivers ...
-  # - load cache file '/z/site/win_drivers/DriverPacks/search-win-drivers.cache' ...
-  # - added 33365 INF strings
-  # - load cache file '/z/site/win_drivers/dell/search-win-drivers.cache' ...
-  # - added 1132 INF strings
-  # - parsed 11 .INF files, added 9 INF strings.
-  # Search matching drivers for current hardware platform
-  # 34 driver folders to use:
-  /z/site/win_drivers/DriverPacks/D/C/I/2k
-  /z/site/win_drivers/DriverPacks/D/C/I/2k3
-  /z/site/win_drivers/DriverPacks/D/C/I/xp
-  /z/site/win_drivers/DriverPacks/D/G/A1
-  <snip output>
-  /z/site/win_drivers/DriverPacks/D/S/SMS
-  /z/site/win_drivers/DriverPacks/D/S/V2
-  /z/site/win_drivers/DriverPacks/D/S/zC
-  /z/site/win_drivers/DriverPacks/D/S/zD2
-  /z/site/win_drivers/dell/chipset-intel-M-45series/files/All
-  # Enumerate unmatched devices: 1 devices
-  #    (might be handled directly by Windows or indirectly by matching drivers above).
-  # - unmatch device: USB\VID_0461&PID_4d15 (desc: 'Primax Electronics, Ltd ')
-
-=back
-
-=head1 SEE ALSO
-
-=over 2 
-
-=item - 
-
-Microsoft INF file documentation:
-
-
-- Windows Driver Kit: Creating an inf file:
-L<http://msdn.microsoft.com/en-us/library/ms790220.aspx>
-
-- Windows Driver Kit: Device Identification Strings:
-L<http://msdn.microsoft.com/en-us/library/ms791083.aspx>
-
-- INF file are case insensitive:
-L<http://msdn.microsoft.com/en-us/library/ms790225.aspx>
-
-- "High Definition Audio DDI":
-L<http://msdn.microsoft.com/en-us/library/ms790041.aspx>
-
-=item - 
-
-PCI classID : see file F</usr/share/hwdata/pci.ids> .
- Some well known values:
- C 01  Mass storage controller
-         00  SCSI storage controller
-         01  IDE interface
-         02  Floppy disk controller
-         03  IPI bus controller
-         04  RAID bus controller
-         05  ATA controller
-                 20  ADMA single stepping
-                 40  ADMA continuous operation
-         06  SATA controller
-                 00  Vendor specific
-                 01  AHCI 1.0
-         07  Serial Attached SCSI controller
-         80  Mass storage controller
-
-=item - 
-
-wipe out Windows and migrate to GNU/Linux ;-)
-
-=back
