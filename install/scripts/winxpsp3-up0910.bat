@@ -1,30 +1,3 @@
-
-:: Security Update for Windows 2000, Windows XP and Windows 2003 (KB969878)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=4fe0dff5-04d9-4409-8d1d-52419537126b>
-:: URL|ARA|http://download.microsoft.com/download/1/6/A/16A3F47B-4CDC-4709-9C43-E9ED69AE727B/WindowsMedia9-KB969878-x86-ARA.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/9/F/B/9FB811A1-6D0B-4A10-B6B3-1BE972F363E9/WindowsMedia9-KB969878-x86-CSY.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/2/5/3/253287E2-8D78-44FD-8614-5B77690E6685/WindowsMedia9-KB969878-x86-DAN.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/7/D/9/7D979F82-708A-4B6A-9136-DBCAE1965037/WindowsMedia9-KB969878-x86-DEU.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/F/D/C/FDC0725F-41BB-4E23-9F35-B809F27DEDB6/WindowsMedia9-KB969878-x86-ELL.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/2/8/C/28C2F33D-766F-4FE3-BE8C-DDFDF74CA53B/WindowsMedia9-KB969878-x86-ENU.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/C/3/1/C3179A30-4D98-4835-9EA3-0ED81300947D/WindowsMedia9-KB969878-x86-ESN.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/D/8/5/D859AAEA-A1BA-4697-8D44-9A075981C086/WindowsMedia9-KB969878-x86-FIN.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/E/3/3/E3391716-C418-4FD1-B8D0-659F099B63D4/WindowsMedia9-KB969878-x86-FRA.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/4/F/44F34F5B-FC31-4BCD-837B-C6D0E4E8F0CF/WindowsMedia9-KB969878-x86-HEB.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/2/2/5/2250D5E3-1899-412A-8CE3-7462588A191A/WindowsMedia9-KB969878-x86-HUN.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/5/7/357619EF-69C4-4579-B2F4-5CA90AF200E1/WindowsMedia9-KB969878-x86-ITA.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/A/B/4AB8E07C-813A-4F1C-977B-A9460270CED6/WindowsMedia9-KB969878-x86-JPN.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/6/9/B/69B46077-CA7E-47D4-9C11-BBF56BD0B157/WindowsMedia9-KB969878-x86-KOR.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/D/1/B/D1B1459D-23EF-41B7-874E-15122F53E8EF/WindowsMedia9-KB969878-x86-NLD.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/7/9/1/791246C2-4686-4B90-BD85-D412BF422ADD/WindowsMedia9-KB969878-x86-NOR.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/3/B/6/3B6C2A7E-5E95-41D4-AA67-423C964BACAA/WindowsMedia9-KB969878-x86-PLK.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/D/8/8D842ADA-E1F6-4DED-A311-FDFF02D2E6FD/WindowsMedia9-KB969878-x86-PTB.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/9/3/1/931FE319-F43A-48DB-BFAA-9EE6B42B6CA5/WindowsMedia9-KB969878-x86-PTG.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/E/D/6/ED61CBF2-149D-4D3D-BCAD-1C0530E84099/WindowsMedia9-KB969878-x86-RUS.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/0/0/D/00D16879-6A20-4017-80BE-1D486F521910/WindowsMedia9-KB969878-x86-SVE.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/F/1/6/F16AAF14-CB3D-435F-8659-BE9BBA9A35D7/WindowsMedia9-KB969878-x86-TRK.exe|updates/winxpsp3/windowsmedia9-kb969878-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsMedia9-KB969878-x86-%WINLANG%.exe  /norestart /passive /nobackup"
-
 :: Security Update for Windows Media Format Runtime 9, 9.5 &amp; 11 for Windows XP SP 3 (KB954155)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=746d3440-5a6a-421e-9286-7b534a1dfe54>
 :: URL|ARA|http://download.microsoft.com/download/3/4/3/3436EE58-A2DD-41E7-9BD2-719CB75515AA/WindowsXP-WindowsMedia-KB954155-x86-ARA.exe|updates/winxpsp3/windowsxp-windowsmedia-kb954155-x86-ara.exe
@@ -180,3 +153,4 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB973525-x86-%WINLANG%.ex
 :: URL|SVE|http://download.microsoft.com/download/0/1/1/01167BB5-A355-4E7C-9269-A7CB8DAB05CA/WindowsXP-KB958869-x86-SVE.exe|updates/winxpsp3/windowsxp-kb958869-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/3/7/E/37E96778-48B2-4D62-AC78-96246DEBADA6/WindowsXP-KB958869-x86-TRK.exe|updates/winxpsp3/windowsxp-kb958869-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB958869-x86-%WINLANG%.exe  /norestart /passive /nobackup"
+
