@@ -39,7 +39,7 @@
 if exist "%Z%\packages\openoffice\OOo_3.1.1_Win32Intel_install_%WINLANG%.exe" goto newversion
 
 set ooo_install=%Z%\packages\openoffice\OOo_3.1.0_Win32Intel_install_%WINLANG%.exe
-set ooo_link=special:AllUsersDesktop\"\OpenOffice.org 3.0.lnk\"
+set ooo_link=special:AllUsersDesktop\"\OpenOffice.org 3.1.lnk\"
 goto oldversion
 
 :newversion
