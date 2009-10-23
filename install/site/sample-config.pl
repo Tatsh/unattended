@@ -134,8 +134,8 @@ $u->push_value ('Identification', 'JoinWorkgroup', sub { return lookup_property(
 
 # Lookup Admin password from database, if possible.
 $u->push_value ('GuiUnattended', 'AdminPassword', sub { return lookup_property('AdminPassword'); });
-# Lookup Timezone, if possible.^M
-$u->push_value ('GuiUnattended', 'TimeZone', sub { return lookup_property('TimeZone'); });^M
+# Lookup Timezone, if possible.
+$u->push_value ('GuiUnattended', 'TimeZone', sub { return lookup_property('TimeZone'); });
 
 
 # Lookup OS Directory from database, if possible.
@@ -242,6 +242,26 @@ foreach my $lookup ("$os_name",
     -e ($unattended_txt)
         and $u->read ($unattended_txt);
 }
+
+## Windows drivers scanning: uncomment to DISABLE its usage
+#$u->{'_temp'}->{'scan_windrivers'} = '';
+    
+## Windows drivers scanning: drivers collection root path:
+## default is "/z/drivers"  (in search-win-drivers.pl):
+$u->{'_temp'}->{'scan_windrivers_path'} = "/z/drivers/" ;
+    
+    ## Windows drivers scanning: use our patched version of ntx5-install
+    #$u->{'_meta'}->{'ntinstall_cmd'} = '/z/site/nt5x-install' ;
+    
+    ## Windows drivers scanning:
+    ##   howto exclude PCI_CLASSID Ethernet Controller (0x0200)
+    ##   from search of Windows Drivers scanning
+    #$u->{'_temp'}->{'scan_windrivers_options'} = '-c 0200' ;
+    
+    ## Windows drivers scanning: where to store matching driver(s)
+    ##   (relative to %systemdrive% once Windows is installed):
+    ## default is 'drv-scan' (in dosbin/install.pl)
+    #$u->{'_temp'}->{'scan_windrivers_dest'} = 'drvscan' ;
 
 # Make this file evaluate to "true".
 1;
