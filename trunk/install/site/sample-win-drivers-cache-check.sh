@@ -13,7 +13,7 @@
 ## ROOTDRIVERs: where to find search-win-drivers.cache file(s)
 ## CACHEGEN: full path to search-win-drivers.pl 
 
-ROOTDRIVERS=/distrib/windows/unattended/install/site/win_drivers
+ROOTDRIVERS=/distrib/windows/unattended/install/site/drivers
 CACHEGEN=/distrib/windows/unattended/install/dosbin/search-win-drivers.pl
 
 if [ ! -d "${ROOTDRIVERS}" ]; then
