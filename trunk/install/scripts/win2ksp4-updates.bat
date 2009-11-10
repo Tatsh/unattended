@@ -857,11 +857,11 @@ todo.pl ".reboot-on 194 %Z%\packages\mediaplayer9\%WINLANG%\MPSetup.EXE /Q /R:N 
 :: DirectX 9.0c Redistributable for Software Developers - Multilingual
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=9226a611-62fe-4f61-aba1-914185249413>
 :: (Requires .NET to be installed first for managed DX)
-:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|packages/directx9/directx_9c_redist.exe
+:: URL|ALL|http://download.microsoft.com/download/8/1/e/81ed90eb-dd87-4a23-aedc-298a9603b4e4/directx_9c_redist.exe|updates/directx9/directx_9c_redist.exe
 :: Here we extract the installer to %TEMP%, run it, and delete it.
 todo.pl "rmdir /s /q \"%TEMP%\dx9c\""
 todo.pl ".reboot-on 1 \"%TEMP%\dx9c\dxsetup.exe\" /silent /installmanageddx"
-todo.pl "%Z%\packages\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
+todo.pl "%Z%\updates\directx9\directx_9c_redist.exe /q /c /t:\"%TEMP%\dx9c\""
 
 :: .NET Framework Version 2.0 Language Pack
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=39C8B63B-F64B-4B68-A774-B64ED0C32AE7>
