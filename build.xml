@@ -8,7 +8,7 @@
     <property name="docs.home" value="htdocs"/>
     <property name="release.version" value="48rc6"/>
     <property name="release.tmp" value="/var/tmp/unattended.${release.version}"/>
-    <property name="drivers.home" value="install/wdm"/>
+    <property name="drivers.home" value="install/drivers"/>
     <property name="sf.home" value="web.sourceforge.net:/home/groups/u/un/unattended"/>
     <property name="sf.user" value="jjp3,unattended"/>
   </target>
@@ -52,18 +52,28 @@
              <arg value="${drivers.home}/D/" />
      </exec>
    <echo message="Uncompress drivers " />
-     <exec dir="." executable="7z" os="Linux" failonerror="true" output="drivers.log">
+     <exec dir="." executable="7z" os="Linux" failonerror="true" output="extract-drivers.log">
              <arg value="x" />
              <arg value="-an" />
              <arg value="-y" />
-             <arg value="-ai!${drivers.home}/dp_chipset_wnt5_*.7z" />
-             <arg value="-ai!${drivers.home}/dp_cpu_wnt5_*.7z" />
-             <arg value="-ai!${drivers.home}/dp_graphics_a_*.7z" />
-             <arg value="-ai!${drivers.home}/dp_graphics_b_*.7z" />
-             <arg value="-ai!${drivers.home}/dp_lan_*.7z" />
-             <arg value="-ai!${drivers.home}/dp_sound_a_*.7z" />
-             <arg value="-ai!${drivers.home}/dp_sound_b_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_chipset_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_cpu_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_graphics_a_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_graphics_b_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_sound_a_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_sound_b_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_lan_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_wlan_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_modem_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_misc_wnt5_x86-32_*.7z" />
              <arg value="-o${drivers.home}" />
      </exec>
+   <echo message="Setting up permissions" />
+    <chmod perm="go+r" type="both">
+       <fileset dir="${drivers.home}"/>
+    </chmod>
+    <chmod perm="go+x" type="dir">
+       <fileset dir="${drivers.home}"/>
+    </chmod>
   </target>
 </project>
