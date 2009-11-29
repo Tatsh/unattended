@@ -197,17 +197,17 @@ sub get_windows_version () {
     elsif ($product_name eq 'Microsoft Windows XP') {
         $os = 'winxp';
     }
-    elsif ($product_name eq 'Microsoft Windows Server 2003') {
+    elsif ($product_name =~ m/Microsoft Windows Server 2003/) {
         $os = 'ws2k3';
     }
-    elsif ($product_name eq 'Microsoft Windows Server 2003 R2') {
-        $os = 'ws2k3';
-    }
-    elsif ($product_name eq 'Windows Vista (TM) Business') {
+    elsif ($product_name =~ m/Windows Vista/) {
         $os = 'vista';
     }
-    elsif ($product_name eq 'Windows Vista (TM) Ultimate') {
-        $os = 'vista';
+    elsif ($product_name =~ m/Windows Server 2008/) {
+        $os = 'ws2k8';
+    }
+    elsif ($product_name =~ m/Windows 7/) {
+        $os = 'win7';
     }
     else {
         die "Unrecognized $pn_key: $product_name";
