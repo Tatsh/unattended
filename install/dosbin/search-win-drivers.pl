@@ -1,6 +1,5 @@
 #! /usr/bin/env perl
 #
-# TODO - hardcoded 'FUNC_01' inside InfString for HDAUDIO device.
 # TODO - command-line option to search for a particular InfString (no hw scan).
 # TODO - display which device match without their subsystem.
 # TODO - cache: document in online help of this file.
@@ -17,6 +16,9 @@
 #        no drivers are currenlty using these forms ?
 # 
 # Changelog:
+#   20091130 - comments revisited.
+#   20091130 - default drivers path: use /z/drivers/ (instead of /z/site/win_drivers/).
+#   20090925 - removed hardcoding of "FUNC_01" in HDAUDIO devices: computed instead.
 #   20090811 - removed POD documentation, provides a basic online help.
 #   20090810 - display which device(s) matchs a given driver.
 #   20090810 - Windows/Activeperl can be use to to cache file generation.
@@ -50,25 +52,23 @@
 #   - the INF file parsing will stop on the first device that match, since the goal
 #     of this script is to display all the matching Windows driver(s).
 #
+# Windows .INF files:
+#
+#   - Some drivers provides .INF encoded in UTF16le format.
+#     This tool handles this encoding format. 
+#     To read this kind of files from *unix system, tip is to use command:
+#       $ strings --encoding l <inffile>
+#
 # HDAUDIO support: 
 #
 #   - we need to retrieve informations on HDaudio device(s), such as HDAUDIO vendor ID,
 #     HDAUDIO {model,subsys} ID.
 #     HDAUDIO bus is hanlded by a PCI device, and it can't easily be parsed ala "lspci".
-#     So we can use the alsa sound kernel modules to retrieve these informations 
+#     So we can use the ALSA sound kernel modules to retrieve these informations 
 #     or try to discover the HDAUDIO bus and devices by ourself...
-#     ALSA usage is a little problematic: the sound card must be alsa-supported in order to 
+#     ALSA usage is a little problematic: the sound card must be ALSA-supported in order to 
 #     retrieve its HDAUDIO-identfiers, no ? For the moment, this is not yet a problem since we 
 #     have only Intel based HDAUDIO devices.
-#
-#   - alsa also handle (win) modem: on IBM x41s laptop/ce5:
-#
-#       $cat /proc/asound/card1/codec97#0/mc97#1-1
-#       1-1/0: Conexant id 23
-#
-#       Extended modem ID: codec=1 LIN1
-#       Modem status     : PRA(GPIO) PRB(res) PRC(ADC1) PRD(DAC1) PRE(ADC2) PRF(DAC2) PRG(HADC) PRH(HDAC)
-#       Line1 rate       : 8000Hz
 #
 #   - according to kernel-doc-2.6.18/Documentation/sound/alsa/Procfile.txt, 
 #     HD-Audio Codec informations can be retrieved from files /proc/asound/card*/codec#*
@@ -78,16 +78,17 @@
 #     see file /usr/share/doc/kernel-doc-2.6.18/Documentation/sound/alsa/hda_codec.txt
 #              ("Notes on Universal Interface for Intel High Definition Audio Codec")
 #
-#   - tests with SigmaTel STAC9200 - DELL Latitude D530
-#       $ cat /proc/asound/card0/codec#0
+#   - tests with SigmaTel STAC9200 - DELL Latitude D520 / D530
+#       $ head /proc/asound/card0/codec#0
 #       Codec: SigmaTel STAC9200
 #       Address: 0
+#       Function Id: 0x1
 #       Vendor Id: 0x83847690
 #       Subsystem Id: 0x102801c2
 #       Revision Id: 0x102201
 #       <snip>
 #
-#       $ cat win_drivers/dell/audio-sigmatel-92xx/WDM/STHDA.inf:
+#       $ cat drivers/dell/audio-sigmatel-92xx/WDM/STHDA.inf:
 #       <snip>
 #       [Sigmatel]
 #       %ST.DeviceDesc%=STHDA,HDAUDIO\FUNC_01&VEN_8384&DEV_7690&SUBSYS_102801B5
@@ -95,7 +96,8 @@
 #       %ST.DeviceDesc%=STHDA,HDAUDIO\FUNC_01&VEN_8384&DEV_7690&SUBSYS_102801C2
 #       <snip>
 #
-#   - test of IBM x41s laptop/ce5:
+#   - test on IBM x41s laptop with CentOS5:
+#     please notice that AC97 audio devices are matched by their PCI devices, not via HDAUDIO bus.
 #       $ lspci  |grep -i audio
 #       00:1e.2 Multimedia audio controller: Intel Corporation 82801FB/FBM/FR/FW/FRW (ICH6 Family) AC'97 Audio Controller (rev 03)
 #
@@ -109,26 +111,56 @@
 #       ADC resolution   : 16-bit
 #       3D enhancement   : No 3D Stereo Enhancement
 #
-#   - output of DELL precision M4400 laptop/CentOS4:
-#       $ lspci  |grep -i audio
-#       00:1b.0 Audio device: Intel Corporation 82801I (ICH9 Family) HD Audio Controller (rev 03)
+#   - ALSA also handle (win)modem: booted with CentOS5:
+#
+#       $ head /proc/asound/card1/codec97#0/mc97#1-1
+#       1-1/0: Conexant id 23
+#
+#       Extended modem ID: codec=1 LIN1
+#       Modem status     : PRA(GPIO) PRB(res) PRC(ADC1) PRD(DAC1) PRE(ADC2) PRF(DAC2) PRG(HADC) PRH(HDAC)
+#       Line1 rate       : 8000Hz
+#
+#   - DELL precision M4300 laptop (Unattended booted):
+#     this hardware has both a HDaudio sound card and a HDaudio modem: see Function Id.
+#
+#       $ lspci |grep -i audio
+#       01:1b.0 Audio device: Intel Corporation 82801H (ICH8 Family) HD Audio Controller (rev 02)
 #
 #       $ head /proc/asound/card0/codec#0
-#       Codec: IDT 92HD71B7X
+#       Codec: Sigmatel STAC9205
 #       Address: 0
-#       Vendor Id: 0x111d76b2
-#       Subsystem Id: 0x10280250
-#       Revision Id: 0x100302
+#       Function Id: 0x1
+#       Vendor Id: 0x838476a0
+#       Subsystem Id: 0x102801ff
+#       Revision Id: 0x100204
 #       No Modem Function Group found
 #       Default PCM:
 #           rates [0x7e0]: 44100 48000 88200 96000 176400 192000
 #           bits [0xe]: 16 20 24
-#           formats [0x1]: PCM
 #
-#       ==> match with file win_drivers/dell/HDAUDIO-IDT-92HDxxx-A06/WDM/STHDA64.INF
+#       $ head /proc/asound/card0/codec#1
+#       Codec: Conextant ID 2c06
+#       Address: 1
+#       Function Id: 0x2
+#       Vendor Id: 0x14f12c06
+#       Subsystem Id: 0x14f1000f
+#       Revision Id: 0x100000
+#       Modem Function Group: 0x2
 #
+#       Matching drivers: DriverPacks/S/z1 and dell/modem-conextant-d330-dell-m4300-R167368
 #
-# USB support
+#       $ strings --encoding l DriverPacks/S/z1/STHDA.INF
+#       <snip>
+#       %ST.DeviceDesc%=STHDA,HDAUDIO\FUNC_01&VEN_8384&DEV_76A0&SUBSYS_102801FF
+#       <snip>
+#
+#       $ cat dell/modem-conextant-d330-dell-m4300-R167368/del000f5.inf
+#       <snip>
+#       [HSF_MODEM]
+#       %HSFModem%  = ModemX, HDAUDIO\FUNC_02&VEN_14F1&DEV_2C06&SUBSYS_14F1000F
+#       <snip>
+#
+# USB support:
 #
 #   - more and more devices are now plugged "behind" the USB bus on laptops,
 #     like fingerprint reader or bluetooth bus.
@@ -165,7 +197,7 @@ use strict;
 use Getopt::Long;
 use File::Spec;
 
-# Windows: cache file generation via stdout must be unix like (carriage return)
+# Cache file: Unix format (on stdout), even generated from a Windows system.
 #   ref: http://www.xav.com/perl/faq/Windows/ActivePerl-Winfaq8.html#Reading_from_and_writing_to_file
 binmode(STDOUT);
 
@@ -185,7 +217,7 @@ sub usage() {
         . "  -g ................ generate cache file for <path> (to STDOUT)\n"
         . "  -t ................ test mode: no hardware scanning performed\n"
         . "\n"
-        . "Default driver collection path: /z/site/win_drivers\n"
+        . "Default driver collection path: /z/drivers\n"
         ;
 
   exit(1);
@@ -226,8 +258,7 @@ sub get_infstr($) {
     }
 
     elsif ( $d->{'bustype'} eq "HDAUDIO" ) {
-        # FIXME how to calculate 'FUNC_' ? Currently: hardcoded 'FUNC_01'
-        $str = sprintf("HDAUDIO\\FUNC_01&VEN_%s&DEV_%s", $d->{'vendor'}, $d->{'device'});
+        $str = sprintf("HDAUDIO\\FUNC_%s&VEN_%s&DEV_%s", $d->{'hdfunc'}, $d->{'vendor'}, $d->{'device'});
         if ( $d->{'svendor'} ne "" ) {
             $str .= sprintf("&SUBSYS_%s%s", $d->{'svendor'}, $d->{'sdevice'}) ;
         }
@@ -480,7 +511,7 @@ sub parse_hardware($$) {
                    , "desc"    => "Analog Devices AD1981B"
                    };
 	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
-	out("          that (only) match win_drivers/__FIXME__/_FIXME_.inf (audio non-HAUDIO)");
+	out("          that (only) match drivers/__FIXME__/_FIXME_.inf (audio non-HAUDIO)");
     
         push @dev, { "bustype" => "HDAUDIO"
                    , "busid"   => "SELFTEST-HDAUDIO_infFILE"
@@ -507,6 +538,20 @@ sub parse_hardware($$) {
                    };
 	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
 	out("          that (only) match DELL/IDT_92HDXXX-HD-AUDIO_A05_R206244.EXE/WDM/STWRT.inf");
+
+        push @dev, { "bustype" => "HDAUDIO"
+                   , "busid"   => "SELFTEST-HDAUDIO_infFILE"
+                   , "vendor"  => "14f1"
+                   , "device"  => "2c06"
+                   , "class"   => "n/a"
+                   , "hdfunc"  => "0x2"
+                   , "svendor" => "14f1"
+                   , "sdevice" => "000f"
+                   , "infstr"  => "HDAUDIO\\FUNC_02&VEN_14f1&DEV_2c06&SUBSYS_14f1000f"
+                   , "desc"    => "Conextant ID 2c06"
+                   };
+	out("SELFTEST: add $dev[$#dev]->{'bustype'} device '$dev[$#dev]->{'desc'}'");
+	out("          that (only) match dell/modem-conextant-d330-dell-m4300-R167368/del000f5.inf");
     
         return @dev;
     }
@@ -618,14 +663,16 @@ sub parse_hardware($$) {
             open FILE, $c;
             while ( my $l = <FILE> ) {
                 chomp $l;
-                $l =~ /^(Codec|Address|Vendor Id|Subsystem Id): (.+)/ ;
+                $l =~ /^(Codec|Address|Function Id|Vendor Id|Subsystem Id): (.+)/ ;
                 next if not defined($1);
                 $r_{$1} = $2 ; 
             }
             close FILE;
+            # 'hdfunc' is specific to HDaudio device(s)
             my %h = ( 'bustype' => "HDAUDIO"
                     , 'busid'   => $r_{'Address'}
                     , 'class'   => ""
+                    , 'hdfunc'  => sprintf("%02x", hex($r_{'Function Id'}))
                     , 'vendor'  => sprintf("%04x", hex($r_{'Vendor Id'}) >> 16 )
                     , 'device'  => sprintf("%04x", hex($r_{'Vendor Id'}) &  0x0000ffff )
                     , 'svendor' => sprintf("%04x", hex($r_{'Subsystem Id'}) >> 16 )
@@ -712,7 +759,7 @@ GetOptions (\%opts, 'help|h|?', 'd=s@', 't', 'g', 'c=s' => \@opt_excludes_tmp )
 out("Check root paths of Windows drivers...");
 if ( scalar(@{$opts{'d'}}) eq 0 ) {
   out("- use default path list");
-  $opts{'d'} = [ '/z/site/win_drivers' ] ;
+  $opts{'d'} = [ '/z/drivers' ] ;
 }
 # keep unique list and check existence of paths
 my %uniqpaths = ();
