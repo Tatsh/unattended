@@ -197,13 +197,13 @@ sub get_windows_version () {
     elsif ($product_name eq 'Microsoft Windows XP') {
         $os = 'winxp';
     }
-    elsif ($product_name =~ m/Microsoft Windows Server 2003/) {
+    elsif ($product_name =~ m/Windows Server.*(2003)/) {
         $os = 'ws2k3';
     }
-    elsif ($product_name =~ m/Windows Vista/) {
+    elsif ($product_name =~ m/Vista/) {
         $os = 'vista';
     }
-    elsif ($product_name =~ m/Windows Server 2008/) {
+    elsif ($product_name =~ m/Windows Server.*(2008)/) {
         $os = 'ws2k8';
     }
     elsif ($product_name =~ m/Windows 7/) {
