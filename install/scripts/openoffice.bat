@@ -24,35 +24,42 @@
 
 :: ==== EXTENSIONS ====
 :: Extension to deactivate First Time Wizard
-:: URL|ALL|http://wiki.services.openoffice.org/w/images/5/5b/DisableFirstStartWzd.oxt|packages/openoffice/ext/DisableFirstStartWzd.oxt
+:: http://wiki.services.openoffice.org/wiki/Documentation/Administration_Guide/Deactivating_Registration_Wizard
+:: URL|ALL|http://wiki.services.openoffice.org/w/images/a/a0/DisableFirstStartWzd_ooo31.oxt|packages/openoffice/ext/DisableFirstStartWzd_ooo31.oxt
+:: PDF Import Extension
+:: http://extensions.services.openoffice.org/project/pdfimport
 :: URL|ALL|http://extensions.services.openoffice.org/files/874/6/sun-pdfimport.oxt|packages/openoffice/ext/sun-pdfimport.oxt
 
 
-
 :: ==== TEMPLATES ====
+:: FIXME: some template pack has several version. We forget about those to keep it simple
 :: URL|ESN|http://extensions.services.openoffice.org/files/301/1/Sun_ODF_Template_Pack_es.oxt|packages/openoffice/ext/sun-odf-template-pack-esn.oxt
-
+:: URL|ENU|http://extensions.services.openoffice.org/files/950/0/Sun_ODF_Template_Pack2_en-US.oxt|packages/openoffice/ext/sun-odf-template-pack-enu.oxt
+:: URL|DEU|http://extensions.services.openoffice.org/files/955/0/Sun_ODF_Template_Pack2_de.oxt|packages/openoffice/ext/sun-odf-template-pack-deu.oxt
+:: URL|FRA|http://extensions.services.openoffice.org/files/297/0/Sun_ODF_Template_Pack_fr.oxt|packages/openoffice/ext/sun-odf-template-pack-fra.oxt
+:: URL|ITA|http://extensions.services.openoffice.org/files/299/0/Sun_ODF_Template_Pack_it.oxt|packages/openoffice/ext/sun-odf-template-pack-ita.oxt
 
 @Echo off
 
-:: Sometimes languages does not have up to the last version
-if exist "%Z%\packages\openoffice\OOo_3.1.1_Win32Intel_install_%WINLANG%.exe" goto newversion
-
-set ooo_install=%Z%\packages\openoffice\OOo_3.1.0_Win32Intel_install_%WINLANG%.exe
-set ooo_link=special:AllUsersDesktop\"\OpenOffice.org 3.1.lnk\"
-goto oldversion
-
-:newversion
-set ooo_install=%Z%\packages\openoffice\OOo_3.1.1_Win32Intel_install_%WINLANG%.exe
-set ooo_link=special:AllUsersDesktop\"\OpenOffice.org 3.1.lnk\"
+:: Copy templates if they exists
+:: FIXME: It ask for confirmation
+:: if not exist "%Z%\packages\openoffice\ext\sun-odf-template-pack-%WINLANG%.oxt" goto notemplate
+:: todo.pl "start /D\"%ProgramFiles%\OpenOffice.org 3\program\" unopkg.com add --shared %Z%\packages\openoffice\ext\sun-odf-template-pack-%WINLANG%.oxt"
+:notemplate
 
 ::Skip FirstTimeWizard
-todo.pl "start /D\"%ProgramFiles%\OpenOffice.org 3\program\" unopkg.com add --shared %Z%\packages\openoffice\ext\DisableFirstStartWzd.oxt"
+todo.pl "start /D\"%ProgramFiles%\OpenOffice.org 3\program\" unopkg.com add --shared %Z%\packages\openoffice\ext\DisableFirstStartWzd_ooo31.oxt"
+
+:: MAIN PROGRAM - Sometimes i18n version does not have the most up to date.
+if not exist "%Z%\packages\openoffice\OOo_3.1.1_Win32Intel_install_%WINLANG%.exe" goto oldversion
+set ooo_install=%Z%\packages\openoffice\OOo_3.1.1_Win32Intel_install_%WINLANG%.exe
+
+:oldversion
+set ooo_install=%Z%\packages\openoffice\OOo_3.1.0_Win32Intel_install_%WINLANG%.exe
+set ooo_link=special:AllUsersDesktop\"\OpenOffice.org 3.1.lnk\"
 
 :: Remove link from desktop 
 todo.pl "unlink.pl %ooo_link%"
-
-:oldversion
 
 todo.pl ".ignore-err 2 %ooo_install% /S /v /qb \"ALLUSERS=1 SELECT_WORD=1 SELECT_EXCEL=1 SELECT_POWERPOINT=1\""
 
