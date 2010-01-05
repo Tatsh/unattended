@@ -6,7 +6,7 @@
        =============================================================== -->
     <property environment="env"/>
     <property name="docs.home" value="htdocs"/>
-    <property name="release.version" value="48rc6"/>
+    <property name="release.version" value="49rc1"/>
     <property name="release.tmp" value="/var/tmp/unattended.${release.version}"/>
     <property name="drivers.home" value="install/drivers"/>
     <property name="sf.home" value="web.sourceforge.net:/home/groups/u/un/unattended"/>
@@ -68,6 +68,8 @@
              <arg value="-ai!${drivers.home}/dp_misc_wnt5_x86-32_*.7z" />
              <arg value="-o${drivers.home}" />
      </exec>
+  </target>
+  <target name="perms-drivers" depends="init">
    <echo message="Setting up permissions" />
     <chmod perm="go+r" type="both">
        <fileset dir="${drivers.home}"/>
