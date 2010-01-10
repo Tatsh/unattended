@@ -1,42 +1,43 @@
-bash=bash-3.2
+bash=bash-4.1
+#TODO:busybox=busybox-1.15.3
 busybox=busybox-1.13.2
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.22
 dbd-mysql=DBD-mysql-2.9008
-dbd-pgpp=DBD-PgPP-0.06
-dbi=DBI-1.607
+dbd-pgpp=DBD-PgPP-0.07
+dbi=DBI-1.609
 dmidecode=dmidecode-2.10
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.41.4
+e2fsprogs=e2fsprogs-1.41.9
 expat=expat-2.0.1
 #use a glibc version as close to the building host as possible
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
-glibc=glibc-2.10.1
-# TODO: kbd-1.15
+glibc=glibc-2.11.1
+# TODO: kbd-1.15.1
 kbd=kbd-1.12
+#TODO:libusb-1.0.6
 libusb=libusb-0.1.12
-linux=linux-2.6.32
-# TODO: module-init-tools-3.6
+linux=linux-2.6.32.3
+# TODO: module-init-tools-3.11.1
 module-init-tools=module-init-tools-3.5
-mysql=mysql-5.0.83
+mysql=mysql-5.0.88
 nano=nano-2.0.9
 # TODO: ncurses-5.7
 ncurses=ncurses-5.6
+#TODO: parted 1.9.0
 parted=parted-1.6.22
-pciutils=pciutils-3.1.2
-#for gcc 4.2 and up use per-5.10.0
-#dbd-pgpp requires IO::Socket that is core in Perl 5.10.0
-perl=perl-5.10.0
+pciutils=pciutils-3.1.4
+perl=perl-5.10.1
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.39
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20071116
-samba=samba-3.3.6
+samba=samba-3.4.4
 slang=slang-2.0.7
-syslinux=syslinux-3.82
-usbutils=usbutils-0.84
+syslinux=syslinux-3.84
+usbutils=usbutils-0.86
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.3
 
@@ -50,7 +51,7 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
 	$(perl-xml-xpath) $(pciutils) $(pmtools)		\
 	$(samba) $(slang) $(syslinux) $(libusb) $(usbutils)	\
-	$(wireless_tools) $(zlib)
+	$(wireless_tools) $(zlib) 
 
 CC=gcc
 CXX=g++
@@ -703,8 +704,8 @@ stage1 += stage1/.stamp-perl-xml-xpath
 # Without -rdynamic, CP850.so craps out with "undefined symbol:
 # smb_register_charset".
 # so ensure that the kernel is built first
-$(samba)/source/config.status: stage1/.stamp-modules
-	cd $(samba)/source					\
+$(samba)/source3/config.status: stage1/.stamp-modules
+	cd $(samba)/source3					\
 	    && CC=$(CC) LDFLAGS=-rdynamic ./configure --prefix=/usr	\
 	        --disable-cups --without-readline		\
 		--without-ldap --without-krb5 --without-ads	\
@@ -717,8 +718,8 @@ $(samba)/source/config.status: stage1/.stamp-modules
 # There seems to be a bug in the Samba makefile so we need to do
 # a make proto before the regular make in the case that we are doing
 # a parallel build
-stage1/usr/lib/smb.conf: $(samba)/source/config.status
-	cd $(samba)/source					\
+stage1/usr/lib/smb.conf: $(samba)/source3/config.status
+	cd $(samba)/source3					\
 	    && $(MAKE) proto					\
 	    && $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)"	\
 	    && $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)"	\
@@ -731,10 +732,10 @@ stage1/usr/lib/smb.conf: $(samba)/source/config.status
 stage1 += stage1/usr/lib/smb.conf
 
 # CIFS support.  We fall back on this if smbmount fails.
-$(samba)/source/client/mount.cifs: fakeinclude/stdio.h
-	$(CC) -O2 $(fakelib_cflags) -o $@ $(samba)/source/client/mtab.o $@.c
+$(samba)/source3/client/mount.cifs: fakeinclude/stdio.h
+	$(CC) -O2 $(fakelib_cflags) -o $@ $(samba)/source3/client/mtab.o $@.c
 
-$(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
+$(call copy_exe,$(samba)/source3/client/mount.cifs,stage1/sbin/mount.cifs)
 
 stage1 += stage1/sbin/mount.cifs
 
@@ -933,10 +934,11 @@ iso: linuxboot.iso
 
 $(call link_file,iso/isolinux/bzImage,tftpboot/bzImage)
 $(call copy_file,$(syslinux)/core/pxelinux.0,tftpboot/pxelinux.0)
+$(call copy_file,$(syslinux)/com32/menu/menu.c32,tftpboot/menu.c32)
 $(call link_file,iso/isolinux/initrd,tftpboot/initrd)
 $(call link_file,iso/isolinux/isolinux.cfg,tftpboot/pxelinux.cfg/default)
 
-tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default tftpboot/pxelinux.0
+tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default tftpboot/pxelinux.0 tftpboot/menu.c32
 
 ## Maintainer targets
 
