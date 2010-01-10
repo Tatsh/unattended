@@ -5,9 +5,7 @@ default:
 	@echo "(Did you mean to 'cd bootdisk' or 'cd linuxboot' first?)"
 	exit 1
 sfuser := $$USER
-#cvs := :pserver:anonymous@unattended.cvs.sourceforge.net:/cvsroot/unattended
-# Anonymous server works, but lags main CVS.
-cvs := ${sfuser}@unattended.cvs.sourceforge.net:/cvsroot/unattended
+svnroot := https://unattended.svn.sourceforge.net:/svnroot/unattended
 
 cwd := $(shell pwd)
 
@@ -27,20 +25,21 @@ checkver:
 
 release: checkver
 	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&			\
-	$(really) cvs tag $$tag . &&					\
+	$(really) svn copy ${svnroot}/trunk ${svroot}/$$tag . &&	\
 	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
 	cd $$temp &&							\
-	cvs -z3 -d${cvs} checkout unattended &&				\
+	svn co ${svnroot}/trunk unattended &&				\
 	echo -e "$(ver)\r" > unattended/install/version.txt &&		\
 	mv unattended $(dir) &&						\
-	find $(dir) -name CVS -prune -o -type f				\
+        find $(dir) -name .svn -prune  -exec rm -rf {} \;  &&          \
+	find $(dir) -name .svn -prune -o -type f			\
 			-not -name .\* -print |				\
 		zip $(dir).zip -9 -q -@	&&				\
 	sleep 2 &&							\
 	pushd ${dir}/bootdisk &&					\
 	make && make tidy &&						\
 	popd &&								\
-	find $(dir) -name CVS -prune -o -newer $(dir).zip		\
+	find $(dir) -name .svn -prune -o -newer $(dir).zip		\
 			-type f -not -name .\* -print |			\
 		zip $(dir)-dosboot.zip -9 -q -@ &&			\
 	sleep 2 &&							\
@@ -48,7 +47,7 @@ release: checkver
 	make dest=$(cwd)/linuxboot symlinks &&				\
 	make && make tidy &&						\
 	popd &&								\
-	find $(dir) -name CVS -prune -o -newer $(dir)-dosboot.zip	\
+	find $(dir) -name .svn -prune -o -newer $(dir)-dosboot.zip	\
 			-type f -not -name .\* -print |			\
 		zip $(dir)-linuxboot.zip -9 -q -@ &&			\
 	$(really) ncftpput -p ${sfuser}@users.sourceforge.net		\
@@ -60,10 +59,11 @@ release: checkver
 
 diff: checkver
 	tag=`echo REL_$(prev) | sed s/\\\\./_/g` &&	\
-	cvs diff -u -r$$tag
+	svn diff -u -r$$tag
 
 log: checkver
 	tag=`echo REL_$(prev) | sed s/\\\\./_/g` &&	\
-	cvs log -N -S -r$$tag::
+	svn log -N -S -r$$tag::
 
 .PHONY: default checkver release diff log
+
