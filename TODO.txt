@@ -17,7 +17,6 @@ Priority classification:
 1   probably not
 -   unclassified
 
-
 -------------------- Known bugs and current work -----------------------
 
 6   Windows Server 2003 and Office XP don't play nice together
@@ -25,20 +24,12 @@ Priority classification:
 
 --------------------------- linuxboot-cd -------------------------------
 
-7   save debug-info of linuxboot on a writeable server share
-
 --------------------------- dosboot-disks ------------------------------
 
 6   Initial copying of files works but many times after reboot can't find
     files or just hangs.  Not sure why.  (Maybe something to do with case?)
 
-------------------- software-installation scripts ----------------------
-
-5   update to Autoit version 3
-
 ----------------------- helper tools/scripts ---------------------------
-
-4   tool for merging TXTSETUP.OEM files / creating merged $oem$-directories
 
 -------------------------- miscellaneous -------------------------------
 
