@@ -34,19 +34,39 @@ WGET=$(which wget)
 FIND=$(which find)
 GREP=$(which grep)
 SORT=$(which sort)
+SVN=$(which svn)
 
 # Change to the scripts directory so paths are correct
 cd "$(dirname "$0")"/../scripts
+
+
+if [ ! -f $SVN ]
+then
+   echo \****** INSTALL SVN ON YOUR SYSTEM *************\*
+fi
+
+#If there is SVN information when use svn as it has better support
+if [ -f .svn ]
+then
+    $SVN up
+    exit 0
+else
+    echo \****** MISING SVN INFO *************\*
+    echo \*            RUN:
+    echo \*   mv scripts scripts.old
+    echo \*   svn co $SVNLINK scripts 
+    echo \****** MISING SVN INFO *************\*
+fi
+
 
 # crawl through the script-dir
 for file in $($FIND . -type f -name "*.bat" | $GREP -v .svn | $SORT)
 do
     if [[ "${exceptions[@]%%${file##./}}" != "${exceptions[@]}" ]]; then continue; fi
-    if $WGET --output-document "$file.$$.tmp" $SVNLINK/$file
+    if $WGET $1 --output-document "$file.$$.tmp" $SVNLINK/$file
     then
         mv "$file.$$.tmp" "$file"
     else
         rm -f "$file.$$.tmp"
     fi
 done
-
