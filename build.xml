@@ -9,7 +9,8 @@
     <property name="release.version" value="49rc1"/>
     <property name="release.tmp" value="/var/tmp/unattended.${release.version}"/>
     <property name="drivers.home" value="install/drivers"/>
-    <property name="sf.home" value="web.sourceforge.net:/home/groups/u/un/unattended"/>
+    <property name="sf.web" value="web.sourceforge.net:/home/groups/u/un/unattended/htdocs"/>
+    <property name="sf.frs" value="frs.sourceforge.net:/home/pfs/project/u/un/unattended"/>
     <property name="sf.user" value="jjp3,unattended"/>
   </target>
 
@@ -23,7 +24,7 @@
              <arg value="--bwlimit=20" />
              <arg value="-vC" />
              <arg value="${docs.home}" />
-             <arg value="${sf.user}@${sf.home}" />
+             <arg value="${sf.user}@${sf.web}" />
      </exec>
   </target>
 
@@ -38,7 +39,7 @@
              <arg value="--bwlimit=20" />
              <arg value="--include=*.zip" />
              <arg value="${release.tmp}/" />
-             <arg value="${sf.user}@${sf.home}/${docs.home}/testing/${release.version}/" />
+             <arg value="${sf.user}@${sf.web}/testing/${release.version}/" />
      </exec>
   </target>
 
