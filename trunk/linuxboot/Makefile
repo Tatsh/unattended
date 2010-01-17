@@ -1,6 +1,5 @@
 bash=bash-4.1
-#TODO:busybox=busybox-1.15.3
-busybox=busybox-1.13.2
+busybox=busybox-1.15.3
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.22
 dbd-mysql=DBD-mysql-2.9008
@@ -14,13 +13,12 @@ expat=expat-2.0.1
 #use a glibc version as close to the building host as possible
 # 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
 glibc=glibc-2.11.1
-# TODO: kbd-1.15.1
-kbd=kbd-1.12
+# TODO: kbd-1.15.1 Missing configure
+kbd=kbd-1.15
 #TODO:libusb-1.0.6
 libusb=libusb-0.1.12
 linux=linux-2.6.32.3
-# TODO: module-init-tools-3.11.1
-module-init-tools=module-init-tools-3.5
+module-init-tools=module-init-tools-3.11.1
 mysql=mysql-5.0.88
 nano=nano-2.0.9
 # TODO: ncurses-5.7
@@ -34,7 +32,7 @@ perl-ldap=perl-ldap-0.39
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 pmtools=pmtools-20071116
-samba=samba-3.4.4
+samba=samba-3.3.10
 slang=slang-2.0.7
 syslinux=syslinux-3.84
 usbutils=usbutils-0.86
@@ -100,12 +98,12 @@ all: iso tftpboot
 
 ## module-init-tools (depmod et. al.)
 
-$(module-init-tools)/depmod:
+$(module-init-tools)/build/depmod:
 	cd $(module-init-tools) && CC=$(CC) ./configure --prefix=/ 	\
 		--build=i586-linux && $(MAKE)
 	[ -e $@ ]
 
-stage1/sbin/depmod: $(module-init-tools)/depmod
+stage1/sbin/depmod: $(module-init-tools)/build/depmod
 	$(MAKE) -C $(module-init-tools) DESTDIR=$(cwd)/stage1 install
 	rm stage1/sbin/insmod.static
 	[ -e $@ ]
@@ -419,16 +417,17 @@ $(kbd)/src/loadkeys: fakeinclude/stdio.h
 	rm -f $@
 	cd $(kbd)					\
 	&& export CFLAGS="$(fakelib_cflags) -O2"	\
-	&& CC=$(CC) ./configure				\
+	&& CC=$(CC) ./configure --prefix=/		\
 	&& $(MAKE) CC=$(CC) CFLAGS="$$CFLAGS"
 	[ -e $@ ]
 
+## TODO: get more info about why we are deleting some files
 stage1/bin/loadkeys: $(kbd)/src/loadkeys
 	rm -f $@
 	cd $(kbd)				\
 	&& $(MAKE) DESTDIR=$(cwd)/stage1 install
 	rm -rf stage1/usr/share/locale
-	cd stage1/usr/bin && rm deallocvt dumpkeys fgconsole 		\
+	cd stage1/bin && rm deallocvt dumpkeys fgconsole 		\
 		getkeycodes kbdrate loadunimap mapscrn psf*table 	\
 		setkeycodes setleds setmetamode showconsolefont showkey
 	[ -e $@ ]
@@ -704,8 +703,8 @@ stage1 += stage1/.stamp-perl-xml-xpath
 # Without -rdynamic, CP850.so craps out with "undefined symbol:
 # smb_register_charset".
 # so ensure that the kernel is built first
-$(samba)/source3/config.status: stage1/.stamp-modules
-	cd $(samba)/source3					\
+$(samba)/source/config.status: stage1/.stamp-modules
+	cd $(samba)/source					\
 	    && CC=$(CC) LDFLAGS=-rdynamic ./configure --prefix=/usr	\
 	        --disable-cups --without-readline		\
 		--without-ldap --without-krb5 --without-ads	\
@@ -718,8 +717,8 @@ $(samba)/source3/config.status: stage1/.stamp-modules
 # There seems to be a bug in the Samba makefile so we need to do
 # a make proto before the regular make in the case that we are doing
 # a parallel build
-stage1/usr/lib/smb.conf: $(samba)/source3/config.status
-	cd $(samba)/source3					\
+stage1/usr/lib/smb.conf: $(samba)/source/config.status
+	cd $(samba)/source					\
 	    && $(MAKE) proto					\
 	    && $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)"	\
 	    && $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)"	\
@@ -732,10 +731,10 @@ stage1/usr/lib/smb.conf: $(samba)/source3/config.status
 stage1 += stage1/usr/lib/smb.conf
 
 # CIFS support.  We fall back on this if smbmount fails.
-$(samba)/source3/client/mount.cifs: fakeinclude/stdio.h
-	$(CC) -O2 $(fakelib_cflags) -o $@ $(samba)/source3/client/mtab.o $@.c
+$(samba)/source/client/mount.cifs: fakeinclude/stdio.h
+	$(CC) -O2 $(fakelib_cflags) -o $@ $(samba)/source/client/mtab.o $@.c
 
-$(call copy_exe,$(samba)/source3/client/mount.cifs,stage1/sbin/mount.cifs)
+$(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
 
 stage1 += stage1/sbin/mount.cifs
 
@@ -1014,7 +1013,7 @@ $(call download_rule, $(dbd-pgpp), tar.gz, \
 $(call download_rule, $(dbi), tar.gz, \
 	http://www.cpan.org/authors/id/T/TI/TIMB/)
 $(call download_rule, $(dmidecode), tar.bz2,	\
-	http://nongnu.org/download/dmidecode/)
+	http://savannah.nongnu.org/download/dmidecode/)
 $(call download_rule, $(dosemu), tgz,					\
 	http://downloads.sourceforge.net/dosemu/)
 $(call download_rule, $(e2fsprogs), tar.gz,			\
