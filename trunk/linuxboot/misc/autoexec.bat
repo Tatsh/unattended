@@ -1,7 +1,5 @@
 
-echo Hey there
-
 set PATH=%PATH%;Z:\dosbin
 
-:: And away we go
+:: execute doit.bat
 if exist Y:\netinst\doit.bat Y:\netinst\doit.bat
