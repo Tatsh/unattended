@@ -1789,6 +1789,7 @@ if($is_linux) {
          system "ln -s $i $d" ;
        }
     }
+    # copy contents from Y: (/c under linux) the new C:
     push @doit_cmds, 'xcopy /s /e /y Y:\\ C:\\';
     # have the XCOPY command copy over the checkpoint file
     write_file($noCycling, 'prevent cycling of DOSemu');
