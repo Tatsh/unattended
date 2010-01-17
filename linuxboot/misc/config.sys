@@ -1,7 +1,8 @@
 LASTDRIVE=Z
 DOS=HIGH,UMB
 
+; Redirect /z under linux for to Z: to dos
 install=\lredir.com Z: linux\fs\z
 
-; Bad hack, but it works.
+; Redirect /c under linux as Y: on dos
 install=\lredir.com Y: linux\fs\c
