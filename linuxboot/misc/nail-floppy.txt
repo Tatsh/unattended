@@ -30,6 +30,7 @@ etc/udhcpc-script
 #Make the linuxboot less depent on the linuxaux
 lib
 usr
+var
 
 #lib/ld-linux.so
 #lib/libc.so
