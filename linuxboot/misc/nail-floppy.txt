@@ -56,7 +56,7 @@ sbin/iwlist
 sbin/lspci
 sbin/modprobe
 
-#usr/bin/openvt
+bin/openvt
 
 # Samba junk
 sbin/mount.cifs
