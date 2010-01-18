@@ -25,7 +25,7 @@ checkver:
 
 release: checkver
 	tag=`echo REL_$(ver) | sed s/\\\\./_/g` &&			\
-	$(really) svn copy ${svnroot}/trunk ${svroot}/$$tag . &&	\
+	$(really) svn copy ${svnroot}/trunk ${svnroot}/tags/$$tag  &&	\
 	temp=`mktemp -d /var/tmp/unattended.XXXXXX` &&			\
 	cd $$temp &&							\
 	svn co ${svnroot}/trunk unattended &&				\
