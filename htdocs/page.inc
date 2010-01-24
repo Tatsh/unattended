@@ -122,8 +122,8 @@ foreach ($sections as $section)
       <div>
         <span class="cvs"><?= $cvs ?></span>
         <span class="webdesign doNotPrint">Original webdesign <a
-          href="http://www.oswd.org/viewdesign.phtml?id=1192" rel="external">Gila</a>  by
-          <a href="http://www.oswd.org/userinfo.phtml?user=haran" rel="external">haran</a
+          href="http://www.oswd.org/design/information/id/1192/" rel="external">Gila</a>  by
+          <a href="http://www.oswd.org/user/profile/id/3013" rel="external">haran</a
           > taken from <a href="http://www.oswd.org/" rel="external"><acronym
           title="Open Source Web Design">OSWD</acronym></a></span>
       </div>
