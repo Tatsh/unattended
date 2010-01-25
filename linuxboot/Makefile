@@ -10,20 +10,18 @@ dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.41.9
 expat=expat-2.0.1
-#use a glibc version as close to the building host as possible
-# 2.3.6 for Debian Etch, FC4. 2.6.1 for Debian Lenny. 
 glibc=glibc-2.11.1
 # TODO: kbd-1.15.1 Missing configure
 kbd=kbd-1.15
 #TODO:libusb-1.0.6
 libusb=libusb-0.1.12
-linux=linux-2.6.30.10
+linux=linux-2.6.32.5
 module-init-tools=module-init-tools-3.11.1
 mysql=mysql-5.0.88
 nano=nano-2.0.9
 # TODO: ncurses-5.7
 ncurses=ncurses-5.6
-#TODO: parted 1.9.0
+#TODO: parted 1.9.0 - NTLDR not found
 parted=parted-1.6.22
 pciutils=pciutils-3.1.4
 perl=perl-5.10.1
@@ -836,8 +834,6 @@ $(call copy_file,misc/extra.pcimap,stage1/etc/extra.pcimap)
 
 $(call copy_file,misc/master,stage1/etc/master)
 
-$(call copy_file,misc/modprobe.conf,stage1/etc/modprobe.conf)
-
 $(call copy_file,misc/module-order.txt,stage1/etc/module-order.txt)
 
 $(call copy_file,misc/udhcpc-script,stage1/etc/udhcpc-script)
@@ -864,7 +860,7 @@ $(call copy_file,misc/passwd,stage1/etc/passwd)
 stage1 += stage1/init stage1/usr/bin/find-boot-device			\
 		stage1/bin/find-modules-pci				\
 		stage1/bin/make-blkdev-nodes stage1/etc/extra.pcimap	\
-		stage1/etc/master stage1/etc/modprobe.conf		\
+		stage1/etc/master 		\
 		stage1/etc/module-order.txt				\
 		stage1/etc/udhcpc-script stage1/etc/nsswitch.conf	\
 		stage1/etc/passwd stage1/usr/lib/freedos-mbr.bin	\
