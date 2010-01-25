@@ -219,7 +219,8 @@ while : ; do
         || domain=${Z_USER%%\\*}        # everyting before first backslash
 
     # Default mount options: username, read-only mount
-    mount_opts="username=$username,ro,nocase"
+    # TODO: Ticket #12 noserverino has problems with hard links
+    mount_opts="username=$username,ro,nocase,noserverino"
 
     # Append domain (workgroup), if any.
     [ -n "$domain" ] \
