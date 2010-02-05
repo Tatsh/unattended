@@ -2,7 +2,7 @@
 :: HOME: http://www.pdfforge.org/
 @echo off
 
-:: URL|ALL|http://downloads.sourceforge.net/pdfcreator/PDFCreator-0_9_8_setup.exe|packages/pdfcreator/pdfcreator-0.9.8.setup.exe
+:: URL|ALL|http://downloads.sourceforge.net/pdfcreator/PDFCreator-0_9_9_setup.exe|packages/pdfcreator/pdfcreator-0.9.9.setup.exe
 
 :: Install language files
 :: URL|CHS|http://www.pdfforge.org/files/translations/0.9.6/chinese_simplified.ini|packages/pdfcreator/lang-chs-0.9.6.ini
@@ -20,6 +20,6 @@
 :nolangpack
 
 :: Install PDFCreator
-:: Use this sintax if you want your language installed:
+:: Use this syntax if you want your language installed:
 ::todo.pl "%Z%\packages\pdfcreator\pdfcreator-0.9.6.setup.exe /silent /LANG=Spanish"
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-0.9.8.setup.exe /silent /components=\"!toolbar\" /tasks=\"!desktop_icon\""
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-0.9.9.setup.exe /silent /components=\"!toolbar\" /tasks=\"!desktop_icon\""
