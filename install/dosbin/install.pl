@@ -727,12 +727,12 @@ sub validate_old_dos_dir ($) {
         if (length $base > 8) {
             $failure = "'$base' has more than eight characters";
         }
-        elsif ($ext =~ /\./) {
-            $failure = "'$dir' contains more than one dot";
-        }
         elsif (defined $ext) {
             if (length $ext > 3) {
                 $failure = "Extension '$ext' has more than three characters";
+            }
+            elsif ($ext =~ /\./) {
+                $failure = "'$dir' contains more than one dot";
             }
         }
         $failure eq ''
