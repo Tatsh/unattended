@@ -28,7 +28,7 @@
 :: URL|ALL|http://wiki.services.openoffice.org/w/images/a/a0/DisableFirstStartWzd_ooo31.oxt|packages/openoffice/ext/DisableFirstStartWzd_ooo31.oxt
 :: PDF Import Extension
 :: http://extensions.services.openoffice.org/project/pdfimport
-:: URL|ALL|http://extensions.services.openoffice.org/files/874/6/sun-pdfimport.oxt|packages/openoffice/ext/sun-pdfimport.oxt
+:: URL|ALL|http://extensions.services.openoffice.org/e-files/874/26/sun-pdfimport.oxt|packages/openoffice/ext/sun-pdfimport.oxt
 
 
 :: ==== TEMPLATES ====
