@@ -15,7 +15,7 @@ glibc=glibc-2.11.1
 kbd=kbd-1.15
 #TODO:libusb-1.0.6
 libusb=libusb-0.1.12
-linux=linux-2.6.32.5
+linux=linux-2.6.32.7
 module-init-tools=module-init-tools-3.11.1
 mysql=mysql-5.0.88
 nano=nano-2.0.9
@@ -913,7 +913,9 @@ $(call link_file,initrd,iso/isolinux/initrd)
 
 $(call copy_file,misc/isolinux.cfg,iso/isolinux/isolinux.cfg)
 
-$(call copy_file,../bootdisk/isolinux.bin,iso/isolinux/isolinux.bin)
+$(call copy_file,$(syslinux)/com32/menu/menu.c32,isolinux/menu.c32)
+
+$(call copy_file,$(syslinux)/core/isolinux.bin,iso/isolinux/isolinux.bin)
 
 linuxboot.iso: iso/isolinux/bzImage iso/isolinux/initrd \
 	iso/isolinux/isolinux.cfg iso/isolinux/isolinux.bin
