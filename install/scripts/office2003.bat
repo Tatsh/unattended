@@ -440,3 +440,32 @@ todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB973475-FullFile-%WIN
 :: URL|SVE|http://download.microsoft.com/download/0/5/4/05423613-1C2E-4F74-9113-8EC7FFDAC0B1/office2003-KB973443-FullFile-SVE.exe|updates/office2003/office2003-kb973443-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/C/1/1/C1197653-B3DD-4268-BC75-54FAF455F0E7/office2003-KB973443-FullFile-TRK.exe|updates/office2003/office2003-kb973443-fullfile-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB973443-FullFile-%WINLANG%.exe /Q"
+
+:: Security Update for Microsoft Office 2003 (KB975051)
+:: MS09-073: Description of the security update for Office 2003: December 8, 2009
+:: "<span><a href="javascript:void(0);">On This Page</a></span><div class="sectionpreview_closed"></div>"
+:: <http://support.microsoft.com/kb/975051>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=b4a4126c-b0b3-4db2-b6f5-0e67519c2a5f>
+:: URL|ARA|http://download.microsoft.com/download/3/1/A/31A4A002-BA31-4B8D-9725-5FA8E690E65D/office2003-KB975051-FullFile-ARA.exe|updates/office2003/office2003-kb975051-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/9/3/A/93A05205-B3CF-4B0D-9103-78D1F60D6168/office2003-KB975051-FullFile-CSY.exe|updates/office2003/office2003-kb975051-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/2/3/C/23C89840-1789-4B54-999D-B3FC0C30CCA0/office2003-KB975051-FullFile-DAN.exe|updates/office2003/office2003-kb975051-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/6/F/0/6F00C18E-8860-414C-A8BA-DE64B6CAF13C/office2003-KB975051-FullFile-DEU.exe|updates/office2003/office2003-kb975051-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/5/E/E/5EEBDF76-7B7A-4460-8D34-94241240BBEC/office2003-KB975051-FullFile-ELL.exe|updates/office2003/office2003-kb975051-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/9/A/8/9A872E65-757E-495F-93E1-1605BEA0D43E/office2003-KB975051-FullFile-ENU.exe|updates/office2003/office2003-kb975051-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/6/9/2/692D8FF9-34B4-4BB4-A252-DFBD2B44CC1D/office2003-KB975051-FullFile-ESN.exe|updates/office2003/office2003-kb975051-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/4/5/8/458276B3-FB94-4E47-8AFC-6D9BC0087A62/office2003-KB975051-FullFile-FIN.exe|updates/office2003/office2003-kb975051-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/8/3/48395DF8-268D-4F95-96BB-19EB84A78F6E/office2003-KB975051-FullFile-FRA.exe|updates/office2003/office2003-kb975051-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/2/A/3/2A3A506E-AE67-4CFB-9BE6-692F55FBF29D/office2003-KB975051-FullFile-HEB.exe|updates/office2003/office2003-kb975051-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/D/0/E/D0E4F542-DE97-44E7-828E-28698A09520A/office2003-KB975051-FullFile-HUN.exe|updates/office2003/office2003-kb975051-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/2/3/9/239D2371-D5CE-4D52-9AF7-A7B416B9AA43/office2003-KB975051-FullFile-ITA.exe|updates/office2003/office2003-kb975051-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/2/6/8/268A0040-7CEE-4579-9BD8-C1AD3983B955/office2003-KB975051-FullFile-JPN.exe|updates/office2003/office2003-kb975051-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/8/B/0/8B015E36-8D96-43EB-8E12-EA048F1C9112/office2003-KB975051-FullFile-KOR.exe|updates/office2003/office2003-kb975051-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/A/0/0/A00FE63B-F499-4A13-932A-EA363F0F757F/office2003-KB975051-FullFile-NLD.exe|updates/office2003/office2003-kb975051-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/6/8/B/68B7706E-817F-42F4-AC92-F963B134B8FE/office2003-KB975051-FullFile-NOR.exe|updates/office2003/office2003-kb975051-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/8/5/8/85835AA6-04A3-4B3B-864E-69781CD611E4/office2003-KB975051-FullFile-PLK.exe|updates/office2003/office2003-kb975051-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/7/A/D/7ADF3A6B-353C-42D0-A9A9-45F6C232317F/office2003-KB975051-FullFile-PTB.exe|updates/office2003/office2003-kb975051-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/3/F/4/3F46BE01-DFF0-477B-A351-F5B5A0B94FF8/office2003-KB975051-FullFile-PTG.exe|updates/office2003/office2003-kb975051-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/4/E/A/4EA92185-CCC1-4698-BF7C-04E1AFFE5754/office2003-KB975051-FullFile-RUS.exe|updates/office2003/office2003-kb975051-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/6/5/1/6515AD55-CBF2-462E-B004-091C4D2B9BBA/office2003-KB975051-FullFile-SVE.exe|updates/office2003/office2003-kb975051-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/7/5/7/7570E7D9-4D68-4446-82E2-9FA38A8BA444/office2003-KB975051-FullFile-TRK.exe|updates/office2003/office2003-kb975051-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\office2003\office2003-KB975051-FullFile-%WINLANG%.exe /?"

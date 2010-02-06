@@ -76,32 +76,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB975025-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/F/0/D/F0DD4843-266C-4C8C-B729-4AD8592686DD/WindowsXP-KB974112-x86-TRK.exe|updates/winxpsp3/windowsxp-kb974112-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB974112-x86-%WINLANG%.exe  /norestart /passive /nobackup"
 
-:: Cumulative Security Update for Internet Explorer for Windows XP (KB974455)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=9aacf890-afb4-46a7-a13f-dd9fe3c0ca4a>
-:: URL|ARA|http://download.microsoft.com/download/6/6/5/6652C250-8A55-4741-9931-A2C4A0B6D503/WindowsXP-KB974455-x86-ARA.exe|updates/winxpsp3/windowsxp-kb974455-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/F/E/F/FEF51903-E6E5-4D60-81E2-940946B3E2D1/WindowsXP-KB974455-x86-CSY.exe|updates/winxpsp3/windowsxp-kb974455-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/7/F/7/7F778F15-F5A3-40D1-9194-D08449BBFAE7/WindowsXP-KB974455-x86-DAN.exe|updates/winxpsp3/windowsxp-kb974455-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/C/B/7/CB7BF638-9440-414D-9088-4B9E1DB5B815/WindowsXP-KB974455-x86-DEU.exe|updates/winxpsp3/windowsxp-kb974455-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/2/A/2/2A2584E1-A5EE-452A-8CDD-E50F52D0AFBA/WindowsXP-KB974455-x86-ELL.exe|updates/winxpsp3/windowsxp-kb974455-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/8/5/48536572-5EDF-4DB4-A8E7-E7AA89F9E178/WindowsXP-KB974455-x86-ENU.exe|updates/winxpsp3/windowsxp-kb974455-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/8/D/0/8D0FAF16-4336-4AF0-AE7C-18B05CF9D818/WindowsXP-KB974455-x86-ESN.exe|updates/winxpsp3/windowsxp-kb974455-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/1/1/3/1135A55D-6EEA-4729-A4FF-7FCB835AC8E2/WindowsXP-KB974455-x86-FIN.exe|updates/winxpsp3/windowsxp-kb974455-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/F/7/6/F76A5C32-174A-4836-A5BD-87D9FA6344CD/WindowsXP-KB974455-x86-FRA.exe|updates/winxpsp3/windowsxp-kb974455-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/3/8/7/3872E3AB-C94A-48C6-8CD3-F1CB03A531D0/WindowsXP-KB974455-x86-HEB.exe|updates/winxpsp3/windowsxp-kb974455-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/C/5/D/C5D7A211-0A19-4D2D-990E-67DE58053F72/WindowsXP-KB974455-x86-HUN.exe|updates/winxpsp3/windowsxp-kb974455-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/F/3/B/F3B4D81F-DACC-4C68-BA24-3AD2C953B916/WindowsXP-KB974455-x86-ITA.exe|updates/winxpsp3/windowsxp-kb974455-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/3/3/0/330D774A-3C4E-4BF9-9A1E-1821BFB05AA6/WindowsXP-KB974455-x86-JPN.exe|updates/winxpsp3/windowsxp-kb974455-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/E/A/8/EA811D1D-7A7A-44F8-B864-DB9A9B9E8A30/WindowsXP-KB974455-x86-KOR.exe|updates/winxpsp3/windowsxp-kb974455-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/6/2/7/627B1200-D614-41CD-9FA8-D73CBBEEA2CE/WindowsXP-KB974455-x86-NLD.exe|updates/winxpsp3/windowsxp-kb974455-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/B/B/F/BBF340C6-04E8-45E7-A4D6-24EF036E57D1/WindowsXP-KB974455-x86-NOR.exe|updates/winxpsp3/windowsxp-kb974455-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/9/F/3/9F32F9A0-CC54-4F2D-A019-7724F649C8D4/WindowsXP-KB974455-x86-PLK.exe|updates/winxpsp3/windowsxp-kb974455-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/1/C/E/1CEE5AA7-FD2F-4428-A591-3AE056705933/WindowsXP-KB974455-x86-PTB.exe|updates/winxpsp3/windowsxp-kb974455-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/D/C/6/DC64C054-9682-48ED-A650-CE2BD4019F81/WindowsXP-KB974455-x86-PTG.exe|updates/winxpsp3/windowsxp-kb974455-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/D/1/E/D1EF0CDE-819C-4A10-90A7-06C07406AAA2/WindowsXP-KB974455-x86-RUS.exe|updates/winxpsp3/windowsxp-kb974455-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/C/5/B/C5B5D038-D381-4E0C-94B7-7EA615196D2B/WindowsXP-KB974455-x86-SVE.exe|updates/winxpsp3/windowsxp-kb974455-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/7/1/4/7148DB03-C7D5-41BE-AA86-1C8D36C25E42/WindowsXP-KB974455-x86-TRK.exe|updates/winxpsp3/windowsxp-kb974455-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB974455-x86-%WINLANG%.exe  /norestart /passive /nobackup"
-
 :: Cumulative Security Update for ActiveX Killbits for Windows XP (KB973525)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=171d43d3-669c-4923-b266-e47591833c05>
 :: URL|ARA|http://download.microsoft.com/download/1/0/B/10BC1692-8BDD-4FFA-A58C-D0A7211855ED/WindowsXP-KB973525-x86-ARA.exe|updates/winxpsp3/windowsxp-kb973525-x86-ara.exe

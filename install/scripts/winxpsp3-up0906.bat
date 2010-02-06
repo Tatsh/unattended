@@ -51,28 +51,3 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB961501-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/A/0/3/A03F13F3-5A56-419F-92F2-3DA50D89CB02/WindowsXP-KB970238-x86-TRK.exe|updates/winxpsp3/windowsxp-kb970238-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB970238-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Security Update for Windows XP (KB968537)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=6349e046-a3f8-4ae5-b8c3-c9879cc99e8f>
-:: URL|ARA|http://download.microsoft.com/download/1/7/8/178B7268-0163-4C77-95FA-4A12A18C6EEF/WindowsXP-KB968537-x86-ARA.exe|updates/winxpsp3/windowsxp-kb968537-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/F/9/2/F92DF595-0BEA-4AFC-89D1-C9DA6E27D824/WindowsXP-KB968537-x86-CSY.exe|updates/winxpsp3/windowsxp-kb968537-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/4/8/0/480BE9A5-1FF2-4E23-9860-7AE761C81324/WindowsXP-KB968537-x86-DAN.exe|updates/winxpsp3/windowsxp-kb968537-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/0/9/4/0949B501-DCAC-4876-93C1-03EADDAB6464/WindowsXP-KB968537-x86-DEU.exe|updates/winxpsp3/windowsxp-kb968537-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/C/B/3/CB3C07F5-923B-4533-A55A-29F3899E0F2F/WindowsXP-KB968537-x86-ELL.exe|updates/winxpsp3/windowsxp-kb968537-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/9/D/2/9D2EC126-7130-49A5-87A8-7AC43128A9FA/WindowsXP-KB968537-x86-ENU.exe|updates/winxpsp3/windowsxp-kb968537-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/4/0/1/401EA78D-8A2D-4FD3-92DC-2553E31AC78F/WindowsXP-KB968537-x86-ESN.exe|updates/winxpsp3/windowsxp-kb968537-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/0/2/B/02B6D0DF-50C6-4881-B544-46A53AB8ACF6/WindowsXP-KB968537-x86-FIN.exe|updates/winxpsp3/windowsxp-kb968537-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/7/5/1/7517061E-2848-4EBA-A89F-8C4A642FA670/WindowsXP-KB968537-x86-FRA.exe|updates/winxpsp3/windowsxp-kb968537-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/8/6/D/86DA8748-6222-4F4A-BFA8-7C775C5D8540/WindowsXP-KB968537-x86-HEB.exe|updates/winxpsp3/windowsxp-kb968537-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/C/A/D/CAD18552-B2BD-40BC-9B96-10777C091C1C/WindowsXP-KB968537-x86-HUN.exe|updates/winxpsp3/windowsxp-kb968537-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/4/C/54C2E23C-A71B-4917-96E7-12C8C50149A7/WindowsXP-KB968537-x86-ITA.exe|updates/winxpsp3/windowsxp-kb968537-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/1/D/6/1D6F3C11-A4D1-4DC7-BF1A-472A7A0C5F85/WindowsXP-KB968537-x86-JPN.exe|updates/winxpsp3/windowsxp-kb968537-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/E/7/1/E714D91F-DF3D-44E1-8A14-16921BD12BFA/WindowsXP-KB968537-x86-KOR.exe|updates/winxpsp3/windowsxp-kb968537-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/6/B/8/6B81A926-4084-43B3-A6FB-CFD09EE34B81/WindowsXP-KB968537-x86-NLD.exe|updates/winxpsp3/windowsxp-kb968537-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/F/E/F/FEF74D85-E83D-4C47-AB3E-6121A85F7CF6/WindowsXP-KB968537-x86-NOR.exe|updates/winxpsp3/windowsxp-kb968537-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/4/2/B/42BE899D-898E-4B9E-87E2-F0FFECA5391A/WindowsXP-KB968537-x86-PLK.exe|updates/winxpsp3/windowsxp-kb968537-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/3/A/7/3A7CE341-CBBB-4EA5-BF48-97FD7764C2D1/WindowsXP-KB968537-x86-PTB.exe|updates/winxpsp3/windowsxp-kb968537-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/E/3/C/E3C14F0E-2EAF-48E1-9CA6-0BABC3B6D985/WindowsXP-KB968537-x86-PTG.exe|updates/winxpsp3/windowsxp-kb968537-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/F/0/7/F0733039-6413-4B16-A242-F137BB033AF9/WindowsXP-KB968537-x86-RUS.exe|updates/winxpsp3/windowsxp-kb968537-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/6/5/1/651FDFAE-4DBE-4E0E-98E5-CBB2591769B5/WindowsXP-KB968537-x86-SVE.exe|updates/winxpsp3/windowsxp-kb968537-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/D/4/7/D47517C6-FAE6-40BE-A878-0C647BC28964/WindowsXP-KB968537-x86-TRK.exe|updates/winxpsp3/windowsxp-kb968537-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB968537-x86-%WINLANG%.exe /norestart /passive /nobackup"
