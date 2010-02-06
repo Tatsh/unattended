@@ -38,7 +38,6 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB947320-FullFile-%WINLANG
 
 :: Security Update for Office Web Components 2000 for Microsoft Office XP (KB932031)
 :: MS08-017: Description of the security update for the Office XP Web Components: March 11, 2008
-:: "<span><a href="javascript:void(0);">On This Page</a></span><div class="sectionpreview_closed"></div>"
 :: <http://support.microsoft.com/kb/932031>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=f54d2a5e-c0ed-4f70-9746-38dd61c8e9d7>
 :: URL|ARA|http://download.microsoft.com/download/c/7/4/c748e1da-1695-49f9-a6dd-39c3b039b067/officexp-KB932031-FullFile-ARA.exe|updates/officexp/officexp-kb932031-fullfile-ara.exe
@@ -67,7 +66,6 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB932031-FullFile-%WINLANG
 
 :: Security Update for Microsoft Office XP (KB957646)
 :: MS09-024: Description of the security update for Office XP: June 9, 2009
-:: "<span><a href="javascript:void(0);">On This Page</a></span><div class="sectionpreview_closed"></div>"
 :: <http://support.microsoft.com/kb/957646>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b0ba8c9e-75ee-46bd-9e92-d4e6599309ad>
 :: URL|ARA|http://download.microsoft.com/download/3/3/A/33A0B243-F350-4037-A50C-AD831D3F8713/officexp-KB957646-FullFile-ARA.exe|updates/officexp/officexp-kb957646-fullfile-ara.exe
@@ -529,7 +527,6 @@ exit 2
 
 :: Security Update for Microsoft Excel 2002 (KB973471)
 :: MS09-067: Description of the security update for Excel 2002: November 10, 2009
-:: "<span><a href="javascript:void(0);">On This Page</a></span><div class="sectionpreview_closed"></div>"
 :: <http://support.microsoft.com/kb/973471>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=5672c8fc-8509-4962-ad86-ebc0f2575043>
 :: URL|ARA|http://download.microsoft.com/download/3/C/8/3C84E2DB-8F5F-42E9-ABE7-8CD835C3D2AB/officexp-KB973471-FullFile-ARA.exe|updates/officexp/officexp-kb973471-fullfile-ara.exe
@@ -558,7 +555,6 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB973471-FullFile-%WINLANG
 
 :: Security Update for Microsoft Word 2002 (KB973444)
 :: MS09-068: Description of the security update for Word 2002: November 10, 2009
-:: "<span><a href="javascript:void(0);">On This Page</a></span><div class="sectionpreview_closed"></div>"
 :: <http://support.microsoft.com/kb/973444>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=0369fae5-958b-4eba-83a4-9c07e701c273>
 :: URL|ARA|http://download.microsoft.com/download/F/4/2/F42DA16E-E090-409E-9BD4-9F0C5AF95C1B/officexp-KB973444-FullFile-ARA.exe|updates/officexp/officexp-kb973444-fullfile-ara.exe
@@ -584,3 +580,31 @@ todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB973471-FullFile-%WINLANG
 :: URL|SVE|http://download.microsoft.com/download/C/1/5/C1535CA5-DD21-4DBE-8969-83847ACAD05E/officexp-KB973444-FullFile-SVE.exe|updates/officexp/officexp-kb973444-fullfile-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/2/5/9/259C8574-1641-4B15-B86D-5698C72DB3B8/officexp-KB973444-FullFile-TRK.exe|updates/officexp/officexp-kb973444-fullfile-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB973444-FullFile-%WINLANG%.exe /Q"
+
+:: Security Update for Microsoft Office XP (KB975008)
+:: MS09-073: Description of the security update for Office XP: December 8, 2009
+:: <http://support.microsoft.com/kb/975008>
+:: <http://www.microsoft.com/downloads/details.aspx?familyid=bc3ec3ba-2cec-43ab-b184-c222794231f2>
+:: URL|ARA|http://download.microsoft.com/download/C/B/E/CBE22790-FF1A-4A24-A50E-E5D85CADCCEB/officexp-KB975008-FullFile-ARA.exe|updates/officexp/officexp-kb975008-fullfile-ara.exe
+:: URL|CSY|http://download.microsoft.com/download/D/E/7/DE726D28-1E65-485D-969C-0821D4673E23/officexp-KB975008-FullFile-CSY.exe|updates/officexp/officexp-kb975008-fullfile-csy.exe
+:: URL|DAN|http://download.microsoft.com/download/E/F/1/EF1389BB-4063-428F-A921-B7259AEED8E9/officexp-KB975008-FullFile-DAN.exe|updates/officexp/officexp-kb975008-fullfile-dan.exe
+:: URL|DEU|http://download.microsoft.com/download/0/8/5/08559736-123A-4A4F-91C8-C75C5C03C4E7/officexp-KB975008-FullFile-DEU.exe|updates/officexp/officexp-kb975008-fullfile-deu.exe
+:: URL|ELL|http://download.microsoft.com/download/E/0/0/E003F9FC-07A0-4011-8B28-1229003D94A1/officexp-KB975008-FullFile-ELL.exe|updates/officexp/officexp-kb975008-fullfile-ell.exe
+:: URL|ENU|http://download.microsoft.com/download/6/0/E/60E85231-7077-4D25-B87F-D1FB4D143BE8/officexp-KB975008-FullFile-ENU.exe|updates/officexp/officexp-kb975008-fullfile-enu.exe
+:: URL|ESN|http://download.microsoft.com/download/9/2/A/92AEC279-D4C9-480D-B041-CA7B32AEB483/officexp-KB975008-FullFile-ESN.exe|updates/officexp/officexp-kb975008-fullfile-esn.exe
+:: URL|FIN|http://download.microsoft.com/download/2/1/D/21DF7361-8A59-41FB-8035-E5C2106D5BD3/officexp-KB975008-FullFile-FIN.exe|updates/officexp/officexp-kb975008-fullfile-fin.exe
+:: URL|FRA|http://download.microsoft.com/download/4/D/E/4DEB8DF9-2F7D-4AA2-B644-D2B8C3E35409/officexp-KB975008-FullFile-FRA.exe|updates/officexp/officexp-kb975008-fullfile-fra.exe
+:: URL|HEB|http://download.microsoft.com/download/4/3/C/43C86F73-08D1-4E9E-B689-776F7A6C5E9D/officexp-KB975008-FullFile-HEB.exe|updates/officexp/officexp-kb975008-fullfile-heb.exe
+:: URL|HUN|http://download.microsoft.com/download/B/B/B/BBBBE19F-CF92-4233-97D4-58B8FD5C8527/officexp-KB975008-FullFile-HUN.exe|updates/officexp/officexp-kb975008-fullfile-hun.exe
+:: URL|ITA|http://download.microsoft.com/download/C/1/F/C1FD2CB9-A625-444A-89EF-66287D170766/officexp-KB975008-FullFile-ITA.exe|updates/officexp/officexp-kb975008-fullfile-ita.exe
+:: URL|JPN|http://download.microsoft.com/download/1/F/E/1FEC733D-DC26-4BA2-A296-CA72096D653A/officexp-KB975008-FullFile-JPN.exe|updates/officexp/officexp-kb975008-fullfile-jpn.exe
+:: URL|KOR|http://download.microsoft.com/download/2/1/6/216AB723-2AF5-49B0-A517-BEB135CEBDCA/officexp-KB975008-FullFile-KOR.exe|updates/officexp/officexp-kb975008-fullfile-kor.exe
+:: URL|NLD|http://download.microsoft.com/download/0/4/7/04716B68-F01D-4B4B-93E7-914D13DE30E0/officexp-KB975008-FullFile-NLD.exe|updates/officexp/officexp-kb975008-fullfile-nld.exe
+:: URL|NOR|http://download.microsoft.com/download/1/0/5/1059B9F9-5706-4847-A0C3-7854F7AF6ED5/officexp-KB975008-FullFile-NOR.exe|updates/officexp/officexp-kb975008-fullfile-nor.exe
+:: URL|PLK|http://download.microsoft.com/download/0/A/3/0A374A4E-BD63-49AE-9840-369F4007C48F/officexp-KB975008-FullFile-PLK.exe|updates/officexp/officexp-kb975008-fullfile-plk.exe
+:: URL|PTB|http://download.microsoft.com/download/0/9/9/099E245F-A204-4E68-BDA1-AFBE9881BBA2/officexp-KB975008-FullFile-PTB.exe|updates/officexp/officexp-kb975008-fullfile-ptb.exe
+:: URL|PTG|http://download.microsoft.com/download/6/3/3/633BF481-C274-47CD-A6FF-4F5C99BC3BB5/officexp-KB975008-FullFile-PTG.exe|updates/officexp/officexp-kb975008-fullfile-ptg.exe
+:: URL|RUS|http://download.microsoft.com/download/4/9/4/494D3932-103E-4123-86F2-D04EE0A7EC7E/officexp-KB975008-FullFile-RUS.exe|updates/officexp/officexp-kb975008-fullfile-rus.exe
+:: URL|SVE|http://download.microsoft.com/download/3/9/B/39BA87A7-CED5-4F86-AD79-42B30258F163/officexp-KB975008-FullFile-SVE.exe|updates/officexp/officexp-kb975008-fullfile-sve.exe
+:: URL|TRK|http://download.microsoft.com/download/2/6/2/2627E762-4E60-4899-8E12-FA915B4EAE00/officexp-KB975008-FullFile-TRK.exe|updates/officexp/officexp-kb975008-fullfile-trk.exe
+todo.pl ".reboot-on 194 %Z%\updates\officexp\officexp-KB975008-FullFile-%WINLANG%.exe /Q"
