@@ -925,7 +925,7 @@ linuxboot.iso: iso/isolinux/bzImage iso/isolinux/initrd \
 		iso > /dev/null
 	mv $@.tmp $@
 
-iso: linuxboot.iso
+iso: linuxboot.iso iso/isolinux/isolinux.bin
 
 ## tftpboot targets
 
