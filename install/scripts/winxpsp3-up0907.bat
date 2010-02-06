@@ -1,30 +1,4 @@
 
-:: Security Update for Windows XP (KB961371)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=6914167b-6961-480c-a4d4-808cd58a035b>
-:: URL|ARA|http://download.microsoft.com/download/A/4/A/A4A2284C-23C3-4FEA-B0FA-8416137FB40B/WindowsXP-KB961371-v2-x86-ARA.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/C/0/3/C035534D-65C7-45E0-86E3-0865240E2566/WindowsXP-KB961371-v2-x86-CSY.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/E/E/3/EE38935E-F2FD-4093-B1C6-3E95A7D7A5CE/WindowsXP-KB961371-v2-x86-DAN.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/7/F/0/7F047B5F-DEC4-4D2F-8DB5-12C1561E49F4/WindowsXP-KB961371-v2-x86-DEU.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/1/8/4/184C6AC0-6186-4556-AC91-2ACA91A12C5F/WindowsXP-KB961371-v2-x86-ELL.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/B/B/4BBFCBF5-4299-4A60-A562-E4CFA95C1A63/WindowsXP-KB961371-v2-x86-ENU.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/0/C/A/0CA3C719-F379-49D7-8276-5C147435A14A/WindowsXP-KB961371-v2-x86-ESN.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/7/0/4/704500E9-2971-4170-90B6-A3924E0201EC/WindowsXP-KB961371-v2-x86-FIN.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/D/7/E/D7E83071-985B-4EB8-B8CB-C6E37E721DE0/WindowsXP-KB961371-v2-x86-FRA.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/8/6/2/862B90DA-E3CB-4A8F-9E52-562DCFDF4D2E/WindowsXP-KB961371-v2-x86-HEB.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/2/B/1/2B19F78A-8608-42D6-B5F7-5EFAAC535E5F/WindowsXP-KB961371-v2-x86-HUN.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/6/D/D/6DD9DA19-F5F0-4EDF-80AC-BBDF26982F1D/WindowsXP-KB961371-v2-x86-ITA.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/0/3/0/0309DC9C-AB05-4C64-84E5-12BA0B83A7B5/WindowsXP-KB961371-v2-x86-JPN.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/D/9/E/D9E9B059-5F40-47C3-84C6-D4950529474D/WindowsXP-KB961371-v2-x86-KOR.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/8/6/6/866B90D1-8F37-48E0-BC31-39780D3FC30B/WindowsXP-KB961371-v2-x86-NLD.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/B/1/E/B1E02DE1-CDC3-49DB-AD58-1B7A61900D1A/WindowsXP-KB961371-v2-x86-NOR.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/4/A/D/4ADD9A38-5252-42D1-8FD8-BB07323FB5E0/WindowsXP-KB961371-v2-x86-PLK.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/0/7/E/07E3BBB2-A6A5-457C-9139-6F2AC8151C8F/WindowsXP-KB961371-v2-x86-PTB.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/9/D/9/9D992194-A123-4995-B580-2F01C790E474/WindowsXP-KB961371-v2-x86-PTG.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/A/8/F/A8FBC8BE-A1E6-411D-9050-038A3AB769D8/WindowsXP-KB961371-v2-x86-RUS.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/D/0/8/D08BA8A5-BA4B-4D74-8AC3-2FA995637748/WindowsXP-KB961371-v2-x86-SVE.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/A/1/C/A1CBE2C1-E5FE-47A1-AB2B-CA998C9BA9D6/WindowsXP-KB961371-v2-x86-TRK.exe|updates/winxpsp3/windowsxp-kb961371-v2-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB961371-v2-x86-%WINLANG%.exe  /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB971633)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=09d585cb-481d-4767-875e-9c6ebe456b80>
 :: URL|ARA|http://download.microsoft.com/download/3/2/4/324449F6-FE50-4857-946C-C7DD4D9EB5D2/WindowsXP-KB971633-x86-ARA.exe|updates/winxpsp3/windowsxp-kb971633-x86-ara.exe
