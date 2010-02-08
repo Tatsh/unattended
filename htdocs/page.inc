@@ -60,7 +60,7 @@
       <div class="subHeader">
         <span class="doNotDisplay">Navigation: </span>
         <a href="index.php">Introduction</a> |
-        <a href="http://sourceforge.net/project/showfiles.php?group_id=62053"
+        <a href="https://sourceforge.net/projects/unattended/files/"
            >Download</a> |
         <a href="step-by-step.php">Installation</a> |
         <a href="documentation.php">Documentation</a> |
