@@ -913,7 +913,7 @@ $(call link_file,initrd,iso/isolinux/initrd)
 
 $(call copy_file,misc/isolinux.cfg,iso/isolinux/isolinux.cfg)
 
-$(call copy_file,$(syslinux)/com32/menu/menu.c32,isolinux/menu.c32)
+$(call copy_file,$(syslinux)/com32/menu/menu.c32,iso/isolinux/menu.c32)
 
 $(call copy_file,$(syslinux)/core/isolinux.bin,iso/isolinux/isolinux.bin)
 
