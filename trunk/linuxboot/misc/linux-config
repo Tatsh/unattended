@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.32.5
-# Mon Jan 25 08:17:07 2010
+# Mon Feb  8 02:38:16 2010
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -1315,8 +1315,8 @@ CONFIG_USB=m
 #
 # Miscellaneous USB options
 #
-# CONFIG_USB_DEVICEFS is not set
-# CONFIG_USB_DEVICE_CLASS is not set
+CONFIG_USB_DEVICEFS=y
+CONFIG_USB_DEVICE_CLASS=y
 # CONFIG_USB_DYNAMIC_MINORS is not set
 # CONFIG_USB_MON is not set
 # CONFIG_USB_WUSB_CBAF is not set
