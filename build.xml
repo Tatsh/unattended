@@ -6,7 +6,7 @@
        =============================================================== -->
     <property environment="env"/>
     <property name="docs.home" value="htdocs"/>
-    <property name="release.version" value="49rc2"/>
+    <property name="release.version" value="49rc3"/>
     <property name="release.tmp" value="/var/tmp/unattended.${release.version}"/>
     <property name="drivers.home" value="install/drivers"/>
     <property name="sf.web" value="web.sourceforge.net:/home/groups/u/un/unattended/htdocs"/>
@@ -21,7 +21,7 @@
    <echo message="Copying Docs" />
      <exec dir="." executable="rsync" os="Linux" failonerror="true">
              <arg value="-a" />
-             <arg value="--bwlimit=20" />
+             <arg value="--bwlimit=30" />
              <arg value="-vC" />
              <arg value="${docs.home}" />
              <arg value="${sf.user}@${sf.web}" />
