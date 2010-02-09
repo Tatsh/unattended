@@ -522,7 +522,7 @@ sub find_free_space ($) {
         defined $start && defined $end && defined $parttype
             or next;
 
-print "DEBUG: PARTED_VAR START:$start END:$end PARTTYPE:$parttype \n" ;
+# print "DEBUG: PARTED_VAR START:$start END:$end PARTTYPE:$parttype \n" ;
         if ($logical && $parttype eq 'extended') {
             # If multiple extended partitions (weird), use the first.
             defined $ext_start && defined $ext_end
@@ -591,19 +591,19 @@ sub convert_fdisk_parted ($) {
 
     if ($cmd =~ /^\/clear\s+1\z/i) {
         $ret = "$parted mklabel msdos";
-       print "DEBUG: $ret \n";
+#        print "DEBUG: $ret \n";
     }
     elsif ($cmd =~ /^\/delete\s+\/pri:(\d+)\z/i) {
         $ret = "$parted rm $1";
-       print "DEBUG: $ret \n";
+#        print "DEBUG: $ret \n";
     }
     elsif ($cmd =~ /^\/activate:(\d+)\z/i) {
         $ret = "$parted set $1 boot on";
-       print "DEBUG: $ret \n";
+#        print "DEBUG: $ret \n";
     }
     elsif ($cmd =~ /^\/xo/i) {
         $ret = 'parted /dev/dsk';
-       print "DEBUG: $ret \n";
+#        print "DEBUG: $ret \n";
     }
     elsif ($cmd =~ /\/(pri|log|ext)(o)?:(\d+)(,100)?(?:\s+\/spec:(\d+))?/i) {
         my ($ptype, $fat16, $size, $is_percent, $type) =
@@ -651,7 +651,7 @@ sub convert_fdisk_parted ($) {
 	} else {
             $ret = "$parted mkpartfs $parttype $fs $start $end";
 	}
-       print "DEBUG: $ret \n";
+#        print "DEBUG: $ret \n";
     }
     else {
         die "Unable to convert '$fdisk_cmd' to Parted commands; bailing";
