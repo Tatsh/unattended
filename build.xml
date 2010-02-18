@@ -61,12 +61,14 @@
              <arg value="-ai!${drivers.home}/dp_cpu_wnt5_x86-32_*.7z" />
              <arg value="-ai!${drivers.home}/dp_graphics_a_wnt5_x86-32_*.7z" />
              <arg value="-ai!${drivers.home}/dp_graphics_b_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_graphics_c_wnt5_x86-32_*.7z" />
              <arg value="-ai!${drivers.home}/dp_sound_a_wnt5_x86-32_*.7z" />
              <arg value="-ai!${drivers.home}/dp_sound_b_wnt5_x86-32_*.7z" />
              <arg value="-ai!${drivers.home}/dp_lan_wnt5_x86-32_*.7z" />
              <arg value="-ai!${drivers.home}/dp_wlan_wnt5_x86-32_*.7z" />
              <arg value="-ai!${drivers.home}/dp_modem_wnt5_x86-32_*.7z" />
              <arg value="-ai!${drivers.home}/dp_misc_wnt5_x86-32_*.7z" />
+             <arg value="-ai!${drivers.home}/dp_webcam_wnt5_x86-32_*.7z" />
              <arg value="-o${drivers.home}" />
      </exec>
   </target>
