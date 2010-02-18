@@ -21,6 +21,9 @@ my $todo = "$c\\netinst\\todo.txt";
 # Location of "mapznrun" script
 my $mapznrun = "$c\\netinst\\mapznrun.bat";
 
+# Location of the "to do" logs.
+my $log = "$c\\netinst\\logs\\todo.txt";
+
 # Determine alternate letter for z: drive and store it in Z
 # environment variable (unless it is already set).
 unless (exists $ENV{'Z'}) {
@@ -423,7 +426,15 @@ sub do_cmd ($;$) {
     }
     else {
         print "Running: $cmd\n";
+	## log actions
+	my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+	$mon += 1;
+	$mon = ($mon < 10)?"0$mon":$mon;
+	$mday = ($mday < 10)?"0$mday":$mday;
         my $status = system $cmd;
+	my ($sec2,$min2,$hour2) = localtime(time);
+    	my @old = read_file ($log);
+	write_file($log, ((1900+$year)."/$mon/$mday $hour:$min:$sec -> $hour2:$min2:$sec2, status $status,\tRunning:$cmd"), @old);
         $ret = $status;
     }
 
