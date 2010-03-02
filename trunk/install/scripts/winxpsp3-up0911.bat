@@ -8,7 +8,8 @@
 :: URL|ENU|http://download.microsoft.com/download/5/0/C/50CAD9DC-2F6D-4FCD-ABF0-44DBCF7F9961/WindowsXP-KB969947-x86-ENU.exe|updates/winxpsp3/windowsxp-kb969947-x86-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/F/5/5/F55828E0-476D-4C3D-87BE-DE286B2E795D/WindowsXP-KB969947-x86-ESN.exe|updates/winxpsp3/windowsxp-kb969947-x86-esn.exe
 :: URL|FIN|http://download.microsoft.com/download/5/9/F/59F1E541-CD50-42D1-8FE2-BA24B7191464/WindowsXP-KB969947-x86-FIN.exe|updates/winxpsp3/windowsxp-kb969947-x86-fin.exe
-:: No Download found for FRA.
+::  
+URL|FRA|http://download.microsoft.com/download/2/B/2/2B290132-8B01-406B-AE38-640E302611B9/WindowsXP-KB969947-x86-FRA.exe|updates/winxpsp3/windowsxp-kb969947-x86-fra.exe
 :: URL|HEB|http://download.microsoft.com/download/1/2/3/1238715E-10AB-4B70-88AE-D9B8CCBB5AC9/WindowsXP-KB969947-x86-HEB.exe|updates/winxpsp3/windowsxp-kb969947-x86-heb.exe
 :: URL|HUN|http://download.microsoft.com/download/6/E/D/6ED9FA9C-D687-4C8A-A455-B9F69DEB2CC9/WindowsXP-KB969947-x86-HUN.exe|updates/winxpsp3/windowsxp-kb969947-x86-hun.exe
 :: URL|ITA|http://download.microsoft.com/download/A/1/8/A18C47DE-876F-4040-9796-6E232362D589/WindowsXP-KB969947-x86-ITA.exe|updates/winxpsp3/windowsxp-kb969947-x86-ita.exe
