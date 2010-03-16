@@ -13,7 +13,7 @@ my @lines = <UNATTEND>;
 close UNATTEND
     or die "Unable to close $unattend: $^E";
 
-map { s/^(.*Password\s*)=.*$/$1=xxxxxxxx/i; } @lines;
+map { s/^(.*(ProductID|ProductKey|Password)\s*)=.*$/$1=xxxxxxxx/i; } @lines;
 
 open UNATTEND, ">$unattend"
     or die "Unable to open $unattend for writing: $^E";
