@@ -936,7 +936,7 @@ sub create_postinst_bat () {
      # Before installing disable System Restore.
      'todo.pl "srconfig.pl --disable"',
      # First thing is to clean up installation mess.
-     'todo.pl hidepw.pl bootini.pl fixtz.pl',
+     'todo.pl hide.pl bootini.pl fixtz.pl',
      '',
      'todo.pl --go';
 
