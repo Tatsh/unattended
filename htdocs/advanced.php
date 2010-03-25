@@ -197,6 +197,8 @@ $content       = <<<EOT
         (Do not let the name fool you; <code>pxelinux.0</code>  has  nothing  to  do with
         Linux.  It  comes  from  the <a href="http://syslinux.zytor.com/"  rel="external"
         >SYSLINUX</a> package, an excellent general-purpose boot loader.) Get the package and extract pxelinux.0 to your tftproot.</p>
+      <p>You can find a bit more info here: <a href="http://www.debian-administration.org/articles/478"  
+       rel="external">Setting up a server for PXE network booting</a></p>
 
         <p><strong>How it could look like, using DNSmasq (don't let the name fool you, it's a dhcp-server) and atfpd</strong>:
         Additional/modified lines for dnsmasq.conf:
