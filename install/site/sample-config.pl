@@ -186,6 +186,9 @@ $u->push_value ('_meta', 'bottom', sub { lookup_property('bottom_scripts'); });
 
 # Lookup NTP Servers from database, if possible.
 $u->push_value ('_meta', 'ntp_servers', sub { lookup_property('ntp_servers'); });
+# Lookup install command, if possible.
+$u->push_value ('_meta', 'ntinstall_cmd', sub { lookup_property('ntinstall_cmd'); });
+
 
 # Find all relevant drivers for this machine
 $u->push_value ('Unattended', 'OemPnPDriversPath', 
