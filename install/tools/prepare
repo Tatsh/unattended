@@ -10,7 +10,7 @@ if [ "$1" == "--check-only" ]; then shift; SPIDER="--spider"; else SPIDER=""; fi
 # Default to ENU if nothing passed in as first arg
 if [ ".$1" == "." ]; then WINLANG="ENU"; else WINLANG="$1"; fi
 
-for cmdfile in `egrep -lri "URL\|($WINLANG|ALL)" scripts/*.bat`; do
+for cmdfile in `egrep -lri "URL\|($WINLANG|ALL)" scripts/$2`; do
 
   echo Processing $cmdfile
 
