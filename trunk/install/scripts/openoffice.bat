@@ -3,23 +3,23 @@
 :: Full install sets Localized Binaries for 3.2
 :: http://download.openoffice.org/other.html
 
-:: URL|ENU|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=en-US&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_enu.exe
-:: URL|DAN|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=da&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_dan.exe
-:: URL|DEU|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=de&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_deu.exe
+:: URL|ENU|http://download.services.openoffice.org/files/stable/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_en-US.exe|packages/openoffice/ooo_3.2_Win32Intel_install_enu.exe
+:: URL|DAN|http://download.services.openoffice.org/files/localized/da/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_da.exe|packages/openoffice/ooo_3.2_Win32Intel_install_dan.exe
+:: URL|DEU|http://download.services.openoffice.org/files/localized/de/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_de.exe|packages/openoffice/ooo_3.2_Win32Intel_install_deu.exe
 :: URL|ESN|http://download.services.openoffice.org/files/localized/es/3.2.0/OOo_3.2.0_Win32Intel_install_es.exe|packages/openoffice/ooo_3.2_Win32Intel_install_esn.exe
-:: URL|FRA|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=fr&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_fra.exe
-:: URL|ITA|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=it&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_ita.exe
-:: URL|JPN|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=ja&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_jpn.exe
-:: URL|NOR|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=nb&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_nor.exe
-:: URL|NON|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=nn&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_non.exe
-:: URL|NLD|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=nl&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_nld.exe
-:: URL|KOR|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=ko&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_kor.exe
-:: URL|PLK|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=pl&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_plk.exe
-:: URL|RUS|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=ru&version=3.2|packages/openoffice/ooo_3.2_Win32Intel_install_rus.exe
-:: URL|SVE|http://openoffice.bouncer.osuosl.org/?product=OpenOffice.org&os=win&lang=sv&version=3.1.0|packages/openoffice/ooo_3.1.0_Win32Intel_install_sve.exe
-:: URL|PTB|ftp://ftp.broffice.org/stable/3.1.1/Brooo_3.1.1_Win32Intel_install_pt-BR.exe|packages/openoffice/OOo_3.1.1_Win32Intel_install_ptb.exe
-:: URL|CHS|http://download.services.openoffice.org/files/localized/zh-cn/3.1.1/ooo_3.1.1_Win32Intel_install_zh-CN.exe|packages/openoffice/OOo_3.1.1_Win32Intel_install_chs.exe
-:: URL|CHT|http://download.services.openoffice.org/files/localized/zh-tw/3.1.1/ooo_3.1.1_Win32Intel_install_zh-TW.exe|packages/openoffice/OOo_3.1.1_Win32Intel_install_cht.exe
+:: URL|FRA|http://download.services.openoffice.org/files/localized/fr/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_fr.exe|packages/openoffice/ooo_3.2_Win32Intel_install_fra.exe
+:: URL|ITA|http://download.services.openoffice.org/files/localized/it/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_it.exe|packages/openoffice/ooo_3.2_Win32Intel_install_ita.exe
+:: URL|JPN|http://download.services.openoffice.org/files/localized/ja/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_ja.exe|packages/openoffice/ooo_3.2_Win32Intel_install_jpn.exe
+:: URL|NOR|http://download.services.openoffice.org/files/localized/nb/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_nb.exe|packages/openoffice/ooo_3.2_Win32Intel_install_nor.exe
+:: URL|NON|http://download.services.openoffice.org/files/localized/nn/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_nn.exe|packages/openoffice/ooo_3.2_Win32Intel_install_non.exe
+:: URL|NLD|http://download.services.openoffice.org/files/localized/nl/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_nl.exe|packages/openoffice/ooo_3.2_Win32Intel_install_nld.exe
+:: URL|KOR|http://download.services.openoffice.org/files/localized/ko/3.2.0/OOo_3.2.0_Win32Intel_install_ko.exe|packages/openoffice/ooo_3.2_Win32Intel_install_kor.exe
+:: URL|PLK|http://download.services.openoffice.org/files/localized/pl/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_pl.exe|packages/openoffice/ooo_3.2_Win32Intel_install_plk.exe
+:: URL|RUS|http://download.services.openoffice.org/files/localized/ru/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_ru.exe|packages/openoffice/ooo_3.2_Win32Intel_install_rus.exe
+:: URL|SVE|http://download.services.openoffice.org/files/localized/sv/3.2.0/OOo_3.2.0_Win32Intel_install_wJRE_sv.exe|packages/openoffice/ooo_3.2_Win32Intel_install_sve.exe
+:: URL|PTB|ftp://ftp.broffice.org/stable/3.2.0/BrOOo_3.2.0_Win32Intel_install_pt-BR.exe|packages/openoffice/OOo_3.2_Win32Intel_install_ptb.exe
+:: URL|CHS|http://download.services.openoffice.org/files/localized/zh-CN/3.2.0/OOo_3.2.0_Win32Intel_install_zh-CN.exe|packages/openoffice/ooo_3.2_Win32Intel_install_chs.exe
+:: URL|CHT|http://download.services.openoffice.org/files/localized/zh-TW/3.2.0/OOo_3.2.0_Win32Intel_install_zh-TW.exe|packages/openoffice/ooo_3.2_Win32Intel_install_cht.exe
 
 
 :: ==== EXTENSIONS ====
