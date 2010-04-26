@@ -3,15 +3,15 @@
 
 :: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Chipset_wnt5_x86-32_1002.7z|drivers/DP_Chipset_wnt5_x86-32_1002.7z
 :: URL|All|http://downloads.driverpacks.net/xp/x86/DP_CPU_wnt5_x86-32_912.7z|drivers/DP_CPU_wnt5_x86-32_912.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_A_wnt5_x86-32_912.7z|drivers/DP_Graphics_A_wnt5_x86-32_912.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_B_wnt5_x86-32_912.7z|drivers/DP_Graphics_B_wnt5_x86-32_912.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_C_wnt5_x86-32_912.7z|drivers/DP_Graphics_C_wnt5_x86-32_912.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_Languages_wnt5_x86-32_912.7z|drivers/DP_Graphics_Languages_wnt5_x86-32_912.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_LAN_wnt5_x86-32_1002.7z|drivers/DP_LAN_wnt5_x86-32_1002.7z
-:: URL|All|http://downloads.driverpacks.net/DP_MassStorage_wnt5_x86-32_901.7z|drivers/DP_MassStorage_wnt5_x86-32_901.7z
-:: URL|All|http://driverpacks.sytes.net/driverpacks/Nightlies/DP_Sound_A_wnt5_x86-32_907rc1.7z|drivers/DP_Sound_A_wnt5_x86-32_907rc1.7z
-:: URL|All|http://driverpacks.sytes.net/driverpacks/Nightlies/DP_Sound_B_wnt5_x86-32_907rc1.7z|drivers/DP_Sound_B_wnt5_x86-32_907rc1.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_WLAN_wnt5_x86-32_1002.7z|drivers/DP_WLAN_wnt5_x86-32_1002.7z
+:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_Languages_wnt5_x86-32_1004.7z|drivers/DP_Graphics_Languages_wnt5_x86-32_1004.7z
+:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_A_wnt5_x86-32_1004.7z|drivers/DP_Graphics_A_wnt5_x86-32_1004.7z
+:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_B_wnt5_x86-32_1004.7z|drivers/DP_Graphics_B_wnt5_x86-32_1004.7z
+:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_LAN_wnt5_x86-32_10041.7z|drivers/DP_LAN_wnt5_x86-32_10041.7z
+:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_MassStorage_wnt5_x86-32_901.7z|drivers/DP_MassStorage_wnt5_x86-32_901.7z
+:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_WLAN_wnt5_x86-32_1003.7z|drivers/DP_WLAN_wnt5_x86-32_1003.7z
+:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Sound_A_wnt5_x86-32_1003.7z|drivers/DP_Sound_A_wnt5_x86-32_1003.7z
+:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Sound_B_wnt5_x86-32_1003.7z|drivers/DP_Sound_B_wnt5_x86-32_1003.7z
+
 
 :: 3RD Party February-2010
 :: URL|All|http://3rdpartydriverpacks.thesneaky.com/wnt5_x86-32/DP_Bluetooth_wnt5_x86-32_910.7z|drivers/DP_Bluetooth_wnt5_x86-32_910.7z
@@ -29,4 +29,3 @@
 :: URL|All|http://3rdpartydriverpacks.thesneaky.com/wnt5_x86-32/DP_USB_wnt5_x86-32_80911.7z|drivers/DP_USB_wnt5_x86-32_80911.7z
 :: URL|All|http://3rdpartydriverpacks.thesneaky.com/wnt5_x86-32/DP_Virtual_wnt5_x86-32_90225.7z|drivers/DP_Virtual_wnt5_x86-32_90225.7z
 :: URL|All|http://3rdpartydriverpacks.thesneaky.com/wnt5_x86-32/DP_WebCam_wnt5_x86-32_100104.7z|drivers/DP_WebCam_wnt5_x86-32_100104.7z
-
