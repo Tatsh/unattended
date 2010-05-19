@@ -3,7 +3,7 @@ busybox=busybox-1.15.3
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.22
 dbd-mysql=DBD-mysql-2.9008
-dbd-pgpp=DBD-PgPP-0.07
+dbd-pgpp=DBD-PgPP-0.08
 dbi=DBI-1.609
 dmidecode=dmidecode-2.10
 dosemu=dosemu-1.4.0
@@ -15,7 +15,7 @@ glibc=glibc-2.11.1
 kbd=kbd-1.15
 #TODO:libusb-1.0.6
 libusb=libusb-0.1.12
-linux=linux-2.6.33
+linux=linux-2.6.34
 module-init-tools=module-init-tools-3.11.1
 mysql=mysql-5.0.88
 nano=nano-2.0.9
