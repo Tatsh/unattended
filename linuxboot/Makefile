@@ -17,7 +17,7 @@ kbd=kbd-1.15
 libusb=libusb-0.1.12
 linux=linux-2.6.34
 module-init-tools=module-init-tools-3.11.1
-mysql=mysql-5.0.88
+mysql=mysql-5.0.90
 nano=nano-2.0.9
 # TODO: ncurses-5.7
 ncurses=ncurses-5.6
@@ -29,13 +29,13 @@ perl=perl-5.10.1
 perl-ldap=perl-ldap-0.39
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
-pmtools=pmtools-20071116
+pmtools=pmtools-20100513
 samba=samba-3.3.10
 slang=slang-2.0.7
 syslinux=syslinux-3.86
 usbutils=usbutils-0.86
 wireless_tools=wireless_tools.28
-zlib=zlib-1.2.3
+zlib=zlib-1.2.5
 
 keep-archives=1
 
@@ -504,14 +504,15 @@ $(call copy_file,$(pciutils)/pci.ids,stage1/usr/share/pci.ids)
 stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 
 ## pmtools (acpidump, for diagnostics)
-$(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
-	cd $(dir $@)							  \
-	&& $(MAKE) clean						  \
-	&& $(MAKE) CC=$(CC)
-	[ -e $@ ]
+# FIXME: It does not seem to be a core need for it 
+#$(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
+#	cd $(dir $@)							  \
+#	&& $(MAKE) clean						  \
+#	&& $(MAKE) CC=$(CC)
+#	[ -e $@ ]
 
-$(call copy_exe,$(pmtools)/acpidump/acpidump,stage1/sbin/acpidump)
-stage1 += stage1/sbin/acpidump
+#$(call copy_exe,$(pmtools)/acpidump/acpidump,stage1/sbin/acpidump)
+#stage1 += stage1/sbin/acpidump
 
 ## Perl
 $(perl)/perl: fakeinclude/stdio.h
