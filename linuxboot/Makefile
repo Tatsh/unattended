@@ -925,7 +925,8 @@ $(call copy_file,$(syslinux)/com32/menu/menu.c32,iso/isolinux/menu.c32)
 $(call copy_file,$(syslinux)/core/isolinux.bin,iso/isolinux/isolinux.bin)
 
 linuxboot.iso: iso/isolinux/bzImage iso/isolinux/initrd \
-	iso/isolinux/isolinux.cfg iso/isolinux/isolinux.bin
+	iso/isolinux/isolinux.cfg iso/isolinux/isolinux.bin	\
+	iso/isolinux/menu.c32
 	$(mkisofs) -quiet -o $@.tmp -m CVS				\
                 -b isolinux/isolinux.bin -c isolinux/boot.cat		\
                 -no-emul-boot -boot-load-size 4 -boot-info-table	\
