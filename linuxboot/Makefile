@@ -757,12 +757,18 @@ stage1 += stage1/sbin/iwconfig stage1/sbin/iwlist
 zlib_ver := $(patsubst zlib-%,%,$(zlib))
 zlib_so := libz.so.$(zlib_ver)
 
-$(zlib)/$(zlib_so): fakeinclude/stdio.h
+$(zlib)/.stamp-zlib-configure-patch: misc/zlib-configure-patch
+	cd $(zlib) && patch -b -p1 < $(cwd)/$<
+	touch $@
+
+$(zlib)/$(zlib_so): fakeinclude/stdio.h	\
+			$(zlib)/.stamp-zlib-configure-patch
 	rm -f $@
 	cd $(zlib)						\
-	&& $(MAKE) CC=$(CC) CFLAGS="-O $(fakelib_cflags)"	\
+	&& CC="$(CC)" CFLAGS="-O $(fakelib_cflags)"		\
 		LDSHARED="$(CC) -shared -Wl,-soname,libz.so.1"	\
-		$(zlib_so)
+		./configure	\
+	&& $(MAKE) $(zlib_so)
 
 fakeinclude/zlib.h: $(zlib)/zlib.h $(zlib)/zconf.h
 	mkdir -p $(dir $@)
