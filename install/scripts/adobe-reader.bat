@@ -78,9 +78,15 @@ todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\fontpack90_xtd_lang.msi"
 
 :: There is not need for a link on the desktop. It is a document centric application
 todo.pl "unlink.pl special:AllUsersDesktop\"\Adobe Reader 9.lnk\"" 
+
+:: Accept EULA
+todo.pl "reg add \"HKLM\SOFTWARE\Adobe\Acrobat Reader\9.0\AdobeViewer\" /f /v \"EULA\" /t REG_DWORD /d 1"
+
 :: Please do not start anything unless necesary
 todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe ARM\""
 todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
+
+:: This is the actual instaler 
 todo.pl "start /wait %adobe_install% /SAll"
 goto done
 
