@@ -189,6 +189,10 @@ $(dosemu)/.stamp-dosemu-configure-patch: misc/dosemu-configure-patch
 	cd $(dosemu) && patch -b -p1 < $(cwd)/$<
 	touch $@
 
+$(dosemu)/.stamp-dosemu-dexeconfig-patch: misc/dosemu-dexeconfig-patch
+	cd $(dosemu) && patch -b -p1 < $(cwd)/$<
+	touch $@
+
 fakeinclude/slang.h: $(slang)/src/slang.h
 	mkdir -p $(dir $@)
 	cp $< $@
@@ -212,6 +216,7 @@ $(call copy_file, $(slang)/src/objs/libslang.a, \
 #   option does not work for us).
 build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch	\
 			$(dosemu)/.stamp-dosemu-configure-patch		\
+			$(dosemu)/.stamp-dosemu-dexeconfig-patch		\
 			$(dosemu)/configure fakelib/libslang.a		\
 			fakeinclude/slang.h
 	rm -f $@
