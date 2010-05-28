@@ -830,6 +830,8 @@ sub windrivers_scan_dest_map() {
    # generate a string of '<drv>:<dest>@<drv>:<dest> ...'
    # (use '@' as seperator since parse_ini_file() of unatt-functions.sh treats ';' as comments)
    my $raw = $u->{'_temp'}->{'scan_windrivers'};
+   defined $raw
+       or return '';
    ( my $out = $raw )  =~ s/#.*\n//mg ;  # strip comment outputs
    if ( $out eq '' ) {
        return '';
@@ -1819,7 +1821,8 @@ push @edit_choices, ("Edit $doit (will run when you select Continue)"
 # Scan of Windows drivers:
 # - write output log : only once c:\netinst exists.
 # - Update OemPnPDriversPath if needed
-if ( $u->{'_temp'}->{'scan_windrivers'} ne '' ) {
+if (( defined $u->{'_temp'}->{'scan_windrivers'} ) &&
+    ( $u->{'_temp'}->{'scan_windrivers'} ne '' )) {
 
    my $raw_file = $file_spec->catfile ($u->{'_meta'}->{'netinst'}, 
                                        'logs', 'drivers.log');
