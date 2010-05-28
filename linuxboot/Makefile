@@ -49,8 +49,8 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
 	$(samba) $(slang) $(syslinux) $(libusb) $(usbutils)	\
 	$(wireless_tools) $(zlib) 
 
-CC=gcc
-CXX=g++
+CC=gcc -m32
+CXX=g++ -m32
 
 # Debian/Ubuntu systems likely use genisoimage to create iso files
 # otherwise try to use mkisofs
@@ -97,7 +97,7 @@ all: iso tftpboot
 ## module-init-tools (depmod et. al.)
 
 $(module-init-tools)/build/depmod:
-	cd $(module-init-tools) && CC=$(CC) ./configure --prefix=/ 	\
+	cd $(module-init-tools) && CC="$(CC)" ./configure --prefix=/ 	\
 		--build=i586-linux && $(MAKE)
 	[ -e $@ ]
 
@@ -112,18 +112,18 @@ stage1 += stage1/sbin/depmod
 ## Linux
 
 $(linux)/.config: misc/linux-config
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux) mrproper
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(linux) mrproper
 	cp -f $< $@
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux) ARCH=i386 oldconfig
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(linux) ARCH=i386 oldconfig
 
 $(linux)/arch/x86/boot/bzImage: $(linux)/.config
 	rm -f $@
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux) ARCH=i386
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux) INSTALL_HDR_PATH=dest ARCH=i386 headers_install  
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(linux) ARCH=i386
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(linux) INSTALL_HDR_PATH=dest ARCH=i386 headers_install  
 	[ -e $@ ]
 
 stage1/.stamp-modules: $(linux)/arch/x86/boot/bzImage stage1/sbin/depmod
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(linux)		\
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(linux)		\
 			    INSTALL_MOD_PATH=$(cwd)/stage1	\
 			    DEPMOD=$(cwd)/stage1/sbin/depmod	\
 			    ARCH=i386				\
@@ -137,7 +137,7 @@ stage1 += stage1/.stamp-modules
 
 $(bash)/bash: fakeinclude/stdio.h
 	cd $(bash)							\
-	&& CC=$(CC) CFLAGS="$(fakelib_cflags)"				\
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"				\
 		bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
 		--build=i586-linux					\
 	&& $(MAKE)
@@ -159,23 +159,23 @@ $(busybox)/.stamp-busybox-patch: misc/busybox-patch
 
 $(busybox)/.config: misc/busybox-config $(busybox)/.stamp-busybox-patch 
 	cp -f $< $@
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(busybox) oldconfig
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(busybox) oldconfig
 
 # BusyBox has some broken dependencies (changing CONFIG_INIT to off
 # does not rebuild reboot.o), hence the "make clean" here.
 $(busybox)/busybox: $(busybox)/.config fakeinclude/stdio.h
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(busybox) clean
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(busybox) CFLAGS_EXTRA="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(busybox) clean
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(busybox) CFLAGS_EXTRA="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags)"
 
 stage1/bin/busybox: $(busybox)/busybox
-	$(MAKE) CC=$(CC) HOSTCC=$(CC) -C $(busybox) CONFIG_PREFIX=$(cwd)/stage1 install
+	$(MAKE) CC="$(CC)" HOSTCC="$(CC)" -C $(busybox) CONFIG_PREFIX=$(cwd)/stage1 install
 	cmp $< $@
 
 stage1 += stage1/bin/busybox
 
 ## dmidecode
 $(dmidecode)/dmidecode:
-	$(MAKE) CC=$(CC) -C $(dir $@)
+	$(MAKE) CC="$(CC)" -C $(dir $@)
 	[ -e $@ ]
 
 $(call copy_exe,$(dmidecode)/dmidecode,stage1/usr/sbin/dmidecode)
@@ -298,7 +298,7 @@ stage1 += stage1/var/lib/dosemu/drives/dosboot.img
 ## e2fsprogs (just libuuid.so, required for parted)
 $(e2fsprogs)/lib/libuuid.so:
 	cd $(e2fsprogs)							\
-	&& CC=$(CC) ./configure --enable-elf-shlibs --build=i586-linux	\
+	&& CC="$(CC)" ./configure --enable-elf-shlibs --build=i586-linux	\
 	&& $(MAKE)
 	[ -e $@ ]
 
@@ -316,7 +316,8 @@ $(glibc)/.stamp-glibc-gen-translit.pl-patch:
 build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage	\
 			$(glibc)/.stamp-glibc-gen-translit.pl-patch
 	mkdir -p build-$(glibc)
-	cd build-$(glibc) && CC=$(CC) $(cwd)/$(glibc)/configure	\
+	cd build-$(glibc) && CC="$(CC)" CFLAGS="-O2 -U_FORTIFY_SOURCE -fno-stack-protector $(CFLAGS)"	\
+		$(cwd)/$(glibc)/configure	\
 	    --prefix=/usr					\
 	    --disable-profile  --enable-add-ons			\
             --enable-kernel=2.6.18				\
@@ -324,7 +325,7 @@ build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage	\
             --without-selinux					\
 	    --includedir=$(cwd)/$(linux)/dest/include		\
 	    --with-headers=$(cwd)/$(linux)/dest/include		\
-	    --build=i586-linux					\
+	    --host=i586-linux					\
 	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
 	&& $(MAKE)
 	touch -c $@
@@ -420,8 +421,8 @@ $(kbd)/src/loadkeys: fakeinclude/stdio.h
 	rm -f $@
 	cd $(kbd)					\
 	&& export CFLAGS="$(fakelib_cflags) -O2"	\
-	&& CC=$(CC) ./configure --prefix=/		\
-	&& $(MAKE) CC=$(CC) CFLAGS="$$CFLAGS"
+	&& CC="$(CC)" ./configure --prefix=/		\
+	&& $(MAKE) CC="$(CC)" CFLAGS="$$CFLAGS"
 	[ -e $@ ]
 
 ## TODO: get more info about why we are deleting some files
@@ -440,7 +441,7 @@ stage1 += stage1/bin/loadkeys
 ## nano
 $(nano)/src/nano: fakeinclude/stdio.h fakeinclude/curses.h
 	cd $(nano)							    \
-	&& CC=$(CC) CFLAGS="$(fakelib_cflags)"				    \
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"				    \
 		./configure --prefix=/usr				    \
 			--disable-browser --disable-mouse --disable-speller \
 			--build=i586-linux				    \
@@ -454,7 +455,7 @@ stage1 += stage1/usr/bin/nano
 ## ncurses
 $(ncurses)/lib/libncursesw.so: fakeinclude/stdio.h
 	cd $(ncurses)							\
-	&& CC=$(CC) CXX=$(CXX) CFLAGS="$(fakelib_cflags)"		\
+	&& CC="$(CC)" CXX="$(CXX)" CFLAGS="$(fakelib_cflags)"		\
 	LDFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)"	\
 		./configure --prefix=/usr --with-shared			\
 			--without-normal --without-debug		\
@@ -480,7 +481,7 @@ stage1 += stage1/usr/lib/libncursesw.so
 $(parted)/parted/.libs/parted: fakeinclude/stdio.h stage1/lib/libuuid.so \
 				stage1/lib/libdl.so
 	cd $(parted)							\
-	&& CC=$(CC) CXX=$(CXX)						\
+	&& CC="$(CC)" CXX="$(CXX)"						\
 		CFLAGS="$(fakelib_cflags) -I$(cwd)/$(e2fsprogs)/lib"	\
 		./configure --disable-nls --without-readline		\
 		--build=i586-linux --disable-Werror			\
@@ -498,7 +499,7 @@ stage1 += stage1/usr/sbin/parted stage1/lib/libparted.so
 
 ## pciutils
 $(pciutils)/lspci:
-	$(MAKE) CC=$(CC) -C $(pciutils) PREFIX=/usr HOST="i586--linux"	\
+	$(MAKE) CC="$(CC)" -C $(pciutils) PREFIX=/usr HOST="i586--linux"	\
 		RELEASE="$(subst linux-,,$(linux))" OPT="$(fakelib_cflags)"
 	[ -e $@ ]
 
@@ -513,7 +514,7 @@ stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 #$(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
 #	cd $(dir $@)							  \
 #	&& $(MAKE) clean						  \
-#	&& $(MAKE) CC=$(CC)
+#	&& $(MAKE) CC="$(CC)"
 #	[ -e $@ ]
 
 #$(call copy_exe,$(pmtools)/acpidump/acpidump,stage1/sbin/acpidump)
@@ -523,7 +524,7 @@ stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 $(perl)/perl: fakeinclude/stdio.h
 	rm -f $@
 	cd $(perl)							\
-	&& ./Configure -Dcc=$(CC) -Dusethreads -Dprefix=/opt/perl	\
+	&& ./Configure -Dcc="$(CC)" -Dusethreads -Dprefix=/opt/perl	\
 		-Dlibpth="$(cwd)/fakelib $(cwd)/stage1/lib"		\
 		-Ud_sethostent_r -Ud_setprotoent_r -Ud_setservent_r	\
 		-Ud_endhostent_r -Ud_endprotoent_r -Ud_endservent_r	\
@@ -552,7 +553,7 @@ perlrun=$(cwd)/stage1/opt/perl/bin/perl -I$(cwd)/stage1/opt/perl/lib/site_perl -
 # It has a dependency on ncurses-dev fakeinclude/curses.h could fixed
 $(mysql)/Makefile: stage1/opt/perl/bin/perl fakeinclude/zlib.h
 	cd $(dir $@)							\
-	&& CC=$(CC) CXX=$(CXX)						\
+	&& CC="$(CC)" CXX="$(CXX)"						\
 		CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)"	\
 		./configure --prefix=/ --without-server --build=i586-linux
 
@@ -709,7 +710,7 @@ stage1 += stage1/.stamp-perl-xml-xpath
 # so ensure that the kernel is built first
 $(samba)/source/config.status: stage1/.stamp-modules
 	cd $(samba)/source					\
-	    && CC=$(CC) LDFLAGS=-rdynamic ./configure --prefix=/usr	\
+	    && CC="$(CC)" LDFLAGS=-rdynamic ./configure --prefix=/usr	\
 	        --disable-cups --without-readline		\
 		--without-ldap --without-krb5 --without-ads	\
 		--without-utmp --with-included-popt		\
@@ -742,13 +743,12 @@ $(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
 
 stage1 += stage1/sbin/mount.cifs
 
-
 ## wireless_tools
 $(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
 	cd $(wireless_tools)				\
 	&& $(MAKE) clean				\
 	&& $(MAKE) KERNEL_SRC=$(cwd)/$(linux)		\
-		CC=$(CC) CFLAGS="$(fakelib_cflags) -O2 -Wall"
+		CC="$(CC)" CFLAGS="$(fakelib_cflags) -O2 -Wall"
 	[ -e $@ ]
 
 $(wireless_tools)/iwlist: $(wireless_tools)/iwconfig
@@ -786,7 +786,7 @@ stage1 += stage1/lib/libz.so
 ## libexpat
 $(expat)/.libs/libexpat.so.1.5.2:
 	cd $(expat)						\
-	&& CC=$(CC) ./configure --prefix=/			\
+	&& CC="$(CC)" ./configure --prefix=/			\
 	&& $(MAKE)
 
 $(call copy_lib,$(expat)/.libs/libexpat.so.1.5.2,stage1/lib/libexpat.so)
@@ -798,7 +798,7 @@ stage1 += stage1/lib/libexpat.so
 ## libusb
 $(libusb)/.libs/libusb-0.1.so.4.4.4:
 	cd $(libusb)						\
-	&& CC=$(CC) ./configure --disable-static		\
+	&& CC="$(CC)" CXX="$(CXX)" ./configure --disable-static		\
 	                        --build=i586-linux		\
 	                        --disable-dependency-tracking	\
 	&&  $(MAKE)
@@ -814,7 +814,7 @@ stage1 += stage1/lib/libusb.so
 
 $(usbutils)/lsusb: stage1/lib/libusb.so fakeinclude/usb.h
 	cd $(usbutils)							\
-	&& CC=$(CC) CFLAGS="$(fakelib_cflags)"				\
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"				\
 	   LIBUSB_CFLAGS="-I$(cwd)/fakeinclude" LIBUSB_LIBS="-lusb"	\
 		./configure --prefix=/usr				\
 	&& $(MAKE)
