@@ -128,10 +128,11 @@ sub password_q ($) {
     if ($is_linux) {
         while (1) {
             print "\n", $prompt;
-            # Maximum length of Windows passwords is 14.  I think.
-            $ret = read_secret (14);
+            # Maximum length of Windows passwords.
+            # See Ticket #32 
+            $ret = read_secret (50);
             print 'Re-enter to confirm: ';
-            my $again = read_secret (14);
+            my $again = read_secret (50);
             $ret eq $again
                 and last;
             print "*** Passwords do not match!  Try again.\n";
