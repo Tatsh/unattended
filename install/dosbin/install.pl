@@ -687,7 +687,7 @@ sub ask_fdisk_cmds () {
     my $ret = menu_choice
         ('Do nothing (continue)' => undef,
          'Run partitioning tool manually (experts only)' => $interactive_cmd,
-         'Whole disk C:', =>
+         'Whole disk C:' =>
          'fdisk /pri:100,100',
          '12G C:, rest D:' =>
          'fdisk /pri:12288;fdisk /pri:100,100 /spec:7',
