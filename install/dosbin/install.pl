@@ -1137,7 +1137,7 @@ $u->{'_meta'}->{'ipaddr'} =
     };
 
 
-$u->{'_meta'}->{'local_admins'} =
+$u->comments ('_meta', 'local_admins') =
     ['Accounts added to local Administrators group'];
 $u->{'_meta'}->{'local_admins'} =
     sub {
