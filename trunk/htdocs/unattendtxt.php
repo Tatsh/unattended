@@ -110,13 +110,12 @@ $content       = <<<EOT
         the <code>\\support\\tools</code> folder.</p>
       </dd>
 
-      <dt><a
-        href="http://www.microsoft.com/resources/documentation/windowsServ/2003/all/techref/en-us/w2k3tr_unatt_tools.asp"
-        rel="external">Unattended Installation Tools and Settings</a></dt>
+      <dt>Windows Server 2003</dt>
 
-      <dd>For Windows Server 2003, Microsoft has once again put the relevant document  on
-        the Web.  Go figure.  The available settings are mostly the same across the whole
-        NT/2000/XP/2003 family, so this is actually a pretty good reference.</dd>
+      <dd>For Windows Server 2003,
+       <a href="http://technet.microsoft.com/en-us/library/cc757642(WS.10).aspx">Unattended Installation Tools and Settings</a>
+      Seems to be the document.
+      </dd>
 
       </dl>
 
