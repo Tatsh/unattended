@@ -1,6 +1,6 @@
 ::OPTIONAL: Install GIMP (2.6)
 ::HOME: http://gimp-win.sourceforge.net/
-::URL|ALL|http://downloads.sourceforge.net/gimp-win/gimp-2.6.8-i686-setup.exe|packages/gimp/gimp-2.6.8-i686-setup.exe
+::URL|ALL|http://downloads.sourceforge.net/gimp-win/gimp-2.6.9-i686-setup.exe|packages/gimp/gimp-2.6.9-i686-setup.exe
 ::URL|ENU|http://downloads.sourceforge.net/gimp-win/GIMP%20Help%202/GIMP%20Help%202.6.0/gimp-help-2-2.6.0-en-setup.exe|packages/gimp/gimp-help-2-2.6.0-enu-setup.exe
 ::URL|DEU|http://downloads.sourceforge.net/gimp-win/GIMP%20Help%202/GIMP%20Help%202.6.0/gimp-help-2-2.6.0-de-setup.exe|packages/gimp/gimp-help-2-2.6.0-deu-setup.exe
 ::URL|ESN|http://downloads.sourceforge.net/gimp-win/GIMP%20Help%202/GIMP%20Help%202.6.0/gimp-help-2-2.6.0-es-setup.exe|packages/gimp/gimp-help-2-2.6.0-esn-setup.exe
@@ -22,4 +22,4 @@ todo.pl "start /wait %Z%\packages\gimp\gimp-help-2-2.6.0-%WINLANG%-setup.exe SP-
 :nohelp
 
 :: Run the installers
-todo.pl "start /wait %Z%\packages\gimp\gimp-2.6.8-i686-setup.exe SP- /SILENT /NORESTART"
+todo.pl "start /wait %Z%\packages\gimp\gimp-2.6.9-i686-setup.exe SP- /SILENT /NORESTART"
