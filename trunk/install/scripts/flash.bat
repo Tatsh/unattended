@@ -1,7 +1,7 @@
-:: OPTIONAL: Install Flash 10.0.42.34 
+:: OPTIONAL: Install Flash 10.1.53.64 
 :: HOME: http://get.adobe.com/es/flashplayer/otherversions/
-:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/current/install_flash_player.exe|packages/macromedia/install_flash_player_10_0_42.34.exe
+:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/current/install_flash_player.exe|packages/macromedia/install_flash_player_10.1.53.64.exe
 ::
 @Echo off
 
-todo.pl "%Z%\packages\macromedia\install_flash_player_10_0_42.34.exe /s"
+todo.pl "%Z%\packages\macromedia\install_flash_player_10.1.53.64.exe -install"
