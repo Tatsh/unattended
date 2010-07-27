@@ -6,6 +6,7 @@
 ::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=40916|packages/jre/jre-6u21-windows-i586-s.exe
 
 @Echo off
+todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"SunJavaUpdateSched\""
 todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableAutoUpdateCheck\" /t REG_DWORD /d 0"
 todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableJavaUpdate\" /t REG_DWORD /d 0"
 
