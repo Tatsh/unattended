@@ -3,7 +3,7 @@
 :: See:
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://java.sun.com/javase/6/webnotes/install/jre/silent.html#running>
-::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=40916|packages/jre/jre-6u21-windows-i586-s.exe
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=41290|packages/jre/jre-6u21-windows-i586-s.exe
 
 @Echo off
 todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"SunJavaUpdateSched\""
