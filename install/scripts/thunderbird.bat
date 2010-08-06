@@ -17,6 +17,7 @@
 :: URL|JPN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/3.1.2/win32/ja/Thunderbird%20Setup%203.1.2.exe|packages/mozilla/thunderbird-312-jpn.exe
 :: URL|KOR|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/3.1.2/win32/ko/Thunderbird%20Setup%203.1.2.exe|packages/mozilla/thunderbird-312-kor.exe
 :: URL|NLD|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/3.1.2/win32/nl/Thunderbird%20Setup%203.1.2.exe|packages/mozilla/thunderbird-312-nld.exe
+:: URL|NOR|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/3.1.2/win32/nb-NO/Thunderbird%20Setup%203.1.2.exe|packages/mozilla/thunderbird-312-nor.exe
 :: URL|PLK|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/3.1.2/win32/pl/Thunderbird%20Setup%203.1.2.exe|packages/mozilla/thunderbird-312-plk.exe
 :: URL|PTB|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/3.1.2/win32/pt-BR/Thunderbird%20Setup%203.1.2.exe|packages/mozilla/thunderbird-312-ptb.exe
 :: URL|RUS|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/3.1.2/win32/ru/Thunderbird%20Setup%203.1.2.exe|packages/mozilla/thunderbird-312-rus.exe
