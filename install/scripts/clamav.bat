@@ -1,8 +1,8 @@
 :: OPTIONAL: install clamav
 :: HOME: http://www.clamav.net/lang/en/about/win32/ 
 
-:: URL|ALL|http://www.clamav.net/win32/clam-latest-32.exe|packages/clamwin/clam-latest-32.exe
-:: URL|ALL|http://www.clamav.net/win32/clam-latest-64.exe|packages/clamwin/clam-latest-64.exe
+:: URL|ALL|http://download.immunet.com/clamav-en-us-latest-32.exe|packages/clamwin/clamav-en-us-20100813-32.exe
+:: URL|ALL|http://download.immunet.com/clamav-en-us-latest-64.exe|packages/clamwin/clamav-en-us-20100813-64.exe
 @echo off
 
-todo.pl "%Z%\packages\clamwin\clam-latest-32.exe /S"
+todo.pl "%Z%\packages\clamwin\clamav-en-us-20100813-32.exe /S"
