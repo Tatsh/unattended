@@ -1,7 +1,7 @@
 echo off
 REM batch file for apps-only-installs
 REM contributed by Gerhard Hofmann, gerhard.hofmann@planat.de
-REM Release 2009.08.19
+REM Release 2010.08.20
 REM History
 REM =======
 REM 01-Feb-2005
@@ -51,6 +51,11 @@ REM fix: autologin now correcty set when providing autologin password by command
 REM 19-aug-2009
 REM WIKI entry was moved to http://sourceforge.net/apps/trac/unattended/wiki/appsonly
 REM delete Z, Z_PATH, Z_USER variables at the end, see http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg08693.html
+REM 20-aug-2010
+REM changed the way of checking for an already installed Perl runtime
+REM fixed a typo in the line
+REM set z=z:
+REM (a blank too much after set)
 
 
 REM ==== conf. section begin ====
@@ -80,7 +85,7 @@ if not exist %SystemDrive%\netinst md %SystemDrive%\netinst
 if not exist %SystemDrive%\netinst\logs md %SystemDrive%\netinst\logs
 
 REM preferrably, we will use drive z: for install dir mapping
-set  z=z:
+set z=z:
 
 REM I assume that this batch file is called as UNC path
 REM \\server\install\bin\appsonly.bat
@@ -143,8 +148,10 @@ if errorlevel 2 goto proceed
 if errorlevel 1 del %SystemDrive%\netinst\todo.txt 
 :proceed
 
-if exist %SystemDrive%\perl\bin\perl.exe goto runperlscript
-call %z%\scripts\perl.bat
+REM check for already installed Perl runtime, if not found, run perl.bat
+assoc | find ".pl=Perl" > NUL
+if errorlevel 1 call %z%\scripts\perl.bat
+if errorlevel 0 goto runperlscript
 
 :runperlscript
 %z%\bin\appsonly.pl
