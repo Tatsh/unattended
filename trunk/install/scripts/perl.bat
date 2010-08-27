@@ -45,5 +45,5 @@ goto retry
 :: (The latter is undocumented; see
 :: http://bugs.activestate.com/show_bug.cgi?id=20364)
 
-start /wait msiexec /qb /l* %SystemDrive%\netinst\logs\perl.txt /i %perl_msi% PERL_PATH=Yes PERL_EXT=Yes
+start /wait msiexec /qb /l* %SystemDrive%\netinst\logs\perl.txt /i %perl_msi% PERL_PATH=Yes PERL_EXT=Yes TARGETDIR="%ProgramFiles%"
 @if errorlevel 1 exit 1
