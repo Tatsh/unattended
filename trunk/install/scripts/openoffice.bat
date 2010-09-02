@@ -3,20 +3,20 @@
 :: Full install sets Localized Binaries for 3.2.1
 :: http://download.openoffice.org/other.html
 
-:: URL|ENU|http://download.services.openoffice.org/files/stable/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_en-US.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_enu.exe
-:: URL|DAN|http://download.services.openoffice.org/files/localized/da/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_da.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_dan.exe
-:: URL|DEU|http://download.services.openoffice.org/files/localized/de/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_de.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_deu.exe
-:: URL|ESN|http://download.services.openoffice.org/files/localized/es/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_es.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_esn.exe
-:: URL|FRA|http://download.services.openoffice.org/files/localized/fr/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_fr.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_fra.exe
-:: URL|ITA|http://download.services.openoffice.org/files/localized/it/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_it.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_ita.exe
-:: URL|JPN|http://download.services.openoffice.org/files/localized/ja/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_ja.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_jpn.exe
-:: URL|NOR|http://download.services.openoffice.org/files/localized/nb/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_nb.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_nor.exe
-:: URL|NON|http://download.services.openoffice.org/files/localized/nn/3.2.0/OOo_3.2.0_Win_x86_install-wJRE_nn.exe|packages/openoffice/ooo_3.2.0_Win_x86_install_non.exe
-:: URL|NLD|http://download.services.openoffice.org/files/localized/nl/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_nl.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_nld.exe
-:: URL|KOR|http://download.services.openoffice.org/files/localized/ko/3.2.0/OOo_3.2.0_Win_x86_install-wJRE_ko.exe|packages/openoffice/ooo_3.2.0_Win_x86_install_kor.exe
-:: URL|PLK|http://download.services.openoffice.org/files/localized/pl/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_pl.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_plk.exe
-:: URL|RUS|http://download.services.openoffice.org/files/localized/ru/3.2.1/OOo_3.2.1_Win_x86_install-wJRE_ru.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_rus.exe
-:: URL|SVE|http://download.services.openoffice.org/files/localized/sv/3.2.0/OOo_3.2.0_Win_x86_install-wJRE_sv.exe|packages/openoffice/ooo_3.2.0_Win_x86_install_sve.exe
+:: URL|ENU|http://download.services.openoffice.org/files/stable/3.2.1/OOo_3.2.1_Win_x86_install_en-US.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_enu.exe
+:: URL|DAN|http://download.services.openoffice.org/files/localized/da/3.2.1/OOo_3.2.1_Win_x86_install_da.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_dan.exe
+:: URL|DEU|http://download.services.openoffice.org/files/localized/de/3.2.1/OOo_3.2.1_Win_x86_install_de.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_deu.exe
+:: URL|ESN|http://download.services.openoffice.org/files/localized/es/3.2.1/OOo_3.2.1_Win_x86_install_es.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_esn.exe
+:: URL|FRA|http://download.services.openoffice.org/files/localized/fr/3.2.1/OOo_3.2.1_Win_x86_install_fr.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_fra.exe
+:: URL|ITA|http://download.services.openoffice.org/files/localized/it/3.2.1/OOo_3.2.1_Win_x86_install_it.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_ita.exe
+:: URL|JPN|http://download.services.openoffice.org/files/localized/ja/3.2.1/OOo_3.2.1_Win_x86_install_ja.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_jpn.exe
+:: URL|NOR|http://download.services.openoffice.org/files/localized/nb/3.2.1/OOo_3.2.1_Win_x86_install_nb.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_nor.exe
+:: URL|NON|http://download.services.openoffice.org/files/localized/nn/3.2.0/OOo_3.2.0_Win_x86_install_nn.exe|packages/openoffice/ooo_3.2.0_Win_x86_install_non.exe
+:: URL|NLD|http://download.services.openoffice.org/files/localized/nl/3.2.1/OOo_3.2.1_Win_x86_install_nl.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_nld.exe
+:: URL|KOR|http://download.services.openoffice.org/files/localized/ko/3.2.0/OOo_3.2.0_Win_x86_install_ko.exe|packages/openoffice/ooo_3.2.0_Win_x86_install_kor.exe
+:: URL|PLK|http://download.services.openoffice.org/files/localized/pl/3.2.1/OOo_3.2.1_Win_x86_install_pl.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_plk.exe
+:: URL|RUS|http://download.services.openoffice.org/files/localized/ru/3.2.1/OOo_3.2.1_Win_x86_install_ru.exe|packages/openoffice/ooo_3.2.1_Win_x86_install_rus.exe
+:: URL|SVE|http://download.services.openoffice.org/files/localized/sv/3.2.0/OOo_3.2.0_Win_x86_install_sv.exe|packages/openoffice/ooo_3.2.0_Win_x86_install_sve.exe
 :: URL|PTB|ftp://ftp.broffice.org/stable/3.2.0/BrOOo_3.2.0_Win_x86_install_pt-BR.exe|packages/openoffice/OOo_3.2.0_Win_x86_install_ptb.exe
 :: URL|CHS|http://download.services.openoffice.org/files/localized/zh-CN/3.2.0/OOo_3.2.0_Win_x86_install_zh-CN.exe|packages/openoffice/ooo_3.2.0_Win_x86_install_chs.exe
 :: URL|CHT|http://download.services.openoffice.org/files/localized/zh-TW/3.2.0/OOo_3.2.0_Win_x86_install_zh-TW.exe|packages/openoffice/ooo_3.2.0_Win_x86_install_cht.exe
