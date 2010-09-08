@@ -3,22 +3,85 @@
 # Change to the scripts directory so paths are correct
 cd "$(dirname "$0")"/..
 
-# Do not download, only check validity of URL
-if [ "$1" == "--check-only" ]; then shift; SPIDER="--spider"; else SPIDER=""; fi
+# default values
+SPIDER=""
+SCRIPTLOC="scripts"
+WINLANG=ENU
+DRY=0
 
+# process command line args.
+while [ $# -gt 0 ]
+do
+  case "$1" in
+  
+    "-h"|"--help")
+      echo "Usage: $0 [--check-only] [-h|--help] [-n] [-l <dir>|<file.bat>] [<winlang>|ALL|WHOLE]"
+      echo
+      echo "download or check all required files for installation scripts"
+      echo "by parsing *.bat scripts."
+      echo
+      echo "  -h, --help           (this) online help."
+      echo "  -n                   dry mode: do not download or check, just echo url to work on."  
+      echo "  --check-only         do not perform download, just check URL validity"
+      echo "  -l <dir>|<file.bat>  work with folder <dir> or file <file.bat> ; use folder scripts/ if nothing specified."
+      echo "  <winlang>            language to download/check; use 'ENU' if not provided."          
+      echo "  WHOLE                work with all languages: mainly usefull for --check-only operations."
+      exit 0
+      ;;
+  
+    "--check-only")
+      shift
+      SPIDER="--spider"
+      ;;
+  
+    "-l")
+      shift
+      SCRIPTLOC="$1"
+      shift
+      ;;
+  
+    "-n")
+      shift
+      DRY=1
+      ;;
 
-# Default to ENU if nothing passed in as first arg
-if [ ".$1" == "." ]; then WINLANG="ENU"; else WINLANG="$1"; fi
+    *)
+      WINLANG="$1"
+      shift
+      ;;
+  esac
+done
 
-for cmdfile in `egrep -lri "URL\|($WINLANG|ALL)" scripts/$2`; do
+# checks
+if [ ! -f "$SCRIPTLOC" ] && [ ! -d "$SCRIPTLOC" ]
+then
+  echo "ERROR: '$SCRIPTLOC' is neither a folder or a file."
+  exit 1
+fi
 
+# regular expression to find url and file location based on lang
+REGEXFORLANG="URL\|($WINLANG|ALL)"
+if [ "$WINLANG" = "WHOLE" ]; then REGEXFORLANG="URL\|"; fi
+
+# list of files to work on
+WFILES="$SCRIPTLOC"   # default: file
+if [ -d "$SCRIPTLOC" ]
+then
+  WFILES=$( egrep -lri "$REGEXFORLANG" $SCRIPTLOC/*.bat )
+fi
+
+for cmdfile in $WFILES; do
+
+  echo
   echo Processing $cmdfile
 
   # Look for URL|LANG in scripts/ + second arg
-  for needed in `egrep -hri "URL\|($WINLANG|ALL)" $cmdfile | tr ' ' '~'`; do
+  for needed in `egrep -hri "$REGEXFORLANG" $cmdfile | tr ' ' '~'`; do
       url=`echo -ne "$needed" | cut -d\| -f3 | tr '~' ' ' | perl -pe 's/[\r\n]//g;s/^ *//;s/ *$//'`
       file=`echo -ne "$needed" | cut -d\| -f4 | tr '~' ' '  | perl -pe 's/[\r\n]//g;s/^ *//;s/ *$//;s/([^\/]*\/*)$/lc($1)/eg'`
       path=`echo -ne "$file" | perl -pe 's#(.*/).*#$1#'`
+
+      if [ $DRY -eq 1 ]; then echo "dry: url=$url"; echo "dry: file=$file" ; continue; fi
 
       if [ ! "$SPIDER" == "" ]; then
         wget $SPIDER --passive-ftp "$url" ;
