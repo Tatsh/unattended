@@ -68,9 +68,9 @@ sbin/mount.cifs
 #usr/lib/upcase.dat
 #usr/lib/valid.dat
 
-#usr/share/keymaps/i386/
+usr/share/keymaps/i386/
 #Some keymaps need include as well
-#usr/share/keymaps/include/
+usr/share/keymaps/include/
 
 #usr/share/pci.ids
 
