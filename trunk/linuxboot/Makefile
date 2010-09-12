@@ -4,35 +4,37 @@ busybox=busybox-1.15.3
 convert-asn1=Convert-ASN1-0.22
 dbd-mysql=DBD-mysql-2.9008
 dbd-pgpp=DBD-PgPP-0.08
-dbi=DBI-1.609
+dbi=DBI-1.613
 dmidecode=dmidecode-2.10
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.41.9
+e2fsprogs=e2fsprogs-1.41.12
 expat=expat-2.0.1
+#TODO: glibc-2.12.1
 glibc=glibc-2.11.1
-# TODO: kbd-1.15.1 Missing configure
-kbd=kbd-1.15
-#TODO:libusb-1.0.6
+# TODO: kbd-1.15.2 Missing configure
+kbd=kbd-1.15.2
+#TODO:libusb-1.0.8
 libusb=libusb-0.1.12
-linux=linux-2.6.34
-module-init-tools=module-init-tools-3.11.1
+linux=linux-2.6.35.4
+module-init-tools=module-init-tools-3.12
 mysql=mysql-5.0.90
 nano=nano-2.0.9
 # TODO: ncurses-5.7
 ncurses=ncurses-5.6
-#TODO: parted 1.9.0 - NTLDR not found
+#TODO: parted 2.3 - NTLDR not found
 parted=parted-1.6.22
-pciutils=pciutils-3.1.4
+pciutils=pciutils-3.1.7
+# TODO: perl-5.12.2
 perl=perl-5.10.1
 # perl-ldap aka. Net::LDAP
-perl-ldap=perl-ldap-0.39
+perl-ldap=perl-ldap-0.40
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
-pmtools=pmtools-20100513
-samba=samba-3.3.10
+# TODO: samba-3.5.4
+samba=samba-3.3.13
 slang=slang-2.0.7
-syslinux=syslinux-3.86
+syslinux=syslinux-4.02
 usbutils=usbutils-0.86
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.5
@@ -45,7 +47,7 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
 	$(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(glibc) $(kbd)	\
 	$(linux)  $(module-init-tools) $(mysql) $(nano)	\
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
-	$(perl-xml-xpath) $(pciutils) $(pmtools)		\
+	$(perl-xml-xpath) $(pciutils) 		\
 	$(samba) $(slang) $(syslinux) $(libusb) $(usbutils)	\
 	$(wireless_tools) $(zlib) 
 
@@ -95,9 +97,10 @@ all: iso tftpboot
 
 
 ## module-init-tools (depmod et. al.)
+# FIXME: rm the file so it does not invoke doc2book
 
 $(module-init-tools)/build/depmod:
-	cd $(module-init-tools) && CC="$(CC)" ./configure --prefix=/ 	\
+	cd $(module-init-tools) &&  rm doc/modprobe.d.sgml &&CC="$(CC)" ./configure --prefix=/ 	\
 		--build=i586-linux && $(MAKE)
 	[ -e $@ ]
 
@@ -136,10 +139,10 @@ stage1 += stage1/.stamp-modules
 ## FIXME configure loading emacs shared files from system
 
 $(bash)/bash: fakeinclude/stdio.h
-	cd $(bash)							\
-	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"				\
-		bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
-		--build=i586-linux					\
+	cd $(bash) 						\
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"		\
+	bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
+	--build=i586-linux					\
 	&& $(MAKE)
 	[ -e $@ ] && touch $@
 
@@ -1061,17 +1064,15 @@ $(call download_rule, $(perl-xml-parser), tar.gz, \
 	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
 $(call download_rule, $(perl-xml-xpath), tar.gz, \
 	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
-$(call download_rule, $(pmtools), tar.bz2,			\
-	http://ftp.all.kernel.org/pub/linux/kernel/people/lenb/acpi/utils/)
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/stable/)
 $(call download_rule, $(slang), tar.bz2, 	\
 	http://downloads.sourceforge.net/dosemu/)
 $(call download_rule, $(syslinux), tar.gz, \
         http://ftp.all.kernel.org/pub/linux/utils/boot/syslinux/)
-$(call download_rule, $(wireless_tools), tar.gz,	\
-	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
 $(call download_rule, $(usbutils), tar.gz,	\
 	http://downloads.sourceforge.net/linux-usb/)
+$(call download_rule, $(wireless_tools), tar.gz,	\
+	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
 $(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
