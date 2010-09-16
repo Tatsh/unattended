@@ -1,37 +1,37 @@
 :: OPTIONAL: Install Firefox
 
-:: Firefox 3.6.9
-::URL|ARA|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/ar/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-ara.exe
-::URL|CAT|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/ca/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-cat.exe
-::URL|CSY|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/cs/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-csy.exe
-::URL|CHT|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/zh-TW/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-cht.exe
-::URL|CHS|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/zh-CN/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-chs.exe
-::URL|DAN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/da/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-dan.exe
-::URL|DEU|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/de/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-deu.exe
-::URL|ELL|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/el/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-ell.exe
-::URL|ENU|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/en-US/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-enu.exe
-::URL|ENG|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/en-GB/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-eng.exe
-::URL|ESN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/es-ES/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-esn.exe
-::URL|ESS|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/es-AR/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-ess.exe
-::URL|FIN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/fi/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-fin.exe
-::URL|FRA|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/fr/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-fra.exe
-::URL|HEB|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/he/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-heb.exe
-::URL|HUN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/hu/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-hun.exe
-::URL|ITA|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/it/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-ita.exe
-::URL|JPN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/ja/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-jpn.exe
-::URL|KOR|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/ko/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-kor.exe
-::URL|MKI|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/mk/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-mki.exe
-::URL|NLD|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/nl/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-nld.exe
-::URL|NOR|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/nb-NO/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-nor.exe
-::URL|PLK|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/pl/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-plk.exe
-::URL|PTB|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/pt-BR/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-ptb.exe
-::URL|PTG|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/pt-PT/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-ptg.exe
-::URL|ROM|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/ro/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-rom.exe
-::URL|RUS|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/ru/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-rus.exe
-::URL|SLV|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/sl/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-slv.exe
-::URL|SVE|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/sv-SE/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-sve.exe
-::URL|TRK|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.9/win32/tr/Firefox%20Setup%203.6.9.exe|packages/mozilla/firefox-369-trk.exe
+:: Firefox 3.6.10
+::URL|ARA|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/ar/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-ara.exe
+::URL|CAT|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/ca/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-cat.exe
+::URL|CSY|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/cs/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-csy.exe
+::URL|CHT|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/zh-TW/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-cht.exe
+::URL|CHS|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/zh-CN/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-chs.exe
+::URL|DAN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/da/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-dan.exe
+::URL|DEU|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/de/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-deu.exe
+::URL|ELL|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/el/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-ell.exe
+::URL|ENU|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/en-US/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-enu.exe
+::URL|ENG|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/en-GB/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-eng.exe
+::URL|ESN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/es-ES/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-esn.exe
+::URL|ESS|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/es-AR/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-ess.exe
+::URL|FIN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/fi/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-fin.exe
+::URL|FRA|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/fr/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-fra.exe
+::URL|HEB|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/he/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-heb.exe
+::URL|HUN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/hu/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-hun.exe
+::URL|ITA|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/it/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-ita.exe
+::URL|JPN|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/ja/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-jpn.exe
+::URL|KOR|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/ko/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-kor.exe
+::URL|MKI|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/mk/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-mki.exe
+::URL|NLD|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/nl/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-nld.exe
+::URL|NOR|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/nb-NO/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-nor.exe
+::URL|PLK|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/pl/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-plk.exe
+::URL|PTB|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/pt-BR/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-ptb.exe
+::URL|PTG|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/pt-PT/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-ptg.exe
+::URL|ROM|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/ro/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-rom.exe
+::URL|RUS|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/ru/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-rus.exe
+::URL|SLV|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/sl/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-slv.exe
+::URL|SVE|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/sv-SE/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-sve.exe
+::URL|TRK|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.10/win32/tr/Firefox%20Setup%203.6.10.exe|packages/mozilla/firefox-3610-trk.exe
 
 @Echo off
 
-todo.pl "%Z%\packages\mozilla\firefox-369-%WINLANG%.exe -ms -ira"
+todo.pl "%Z%\packages\mozilla\firefox-3610-%WINLANG%.exe -ms -ira"
