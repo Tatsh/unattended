@@ -12,7 +12,7 @@ $sections[]    = array ('unattended-&lt;version&gt;.zip', 'unattended');
 $sections[]    = array ('unattended-&lt;version&gt;-dosboot.zip', 'unattended-dosboot');
 $sections[]    = array ('unattended-&lt;version&gt;-linuxboot.zip', 'unattended-linuxboot');
 $sections[]    = array ('support files', 'supportfiles');
-$sections[]    = array ('daily CVS snapshot', 'snapshot');
+$sections[]    = array ('current code', 'current');
 $content       = <<<EOT
       <h1 id="unattended" style="border-top: none; padding-top: 0;">unattended-&lt;version&gt;.zip</h1>
       <p>This is the main distribution file. It contains the complete directory structure
@@ -46,10 +46,9 @@ $content       = <<<EOT
           >v2apps/pico396b.zip</a>)</li>
         </ul>
 
-      <h1 id="snapshot">daily CVS snapshot</h1>
-      <p>Everyone, who prefers bleeding edge software, can use our <a href="/testing/unattended-daily-snapshot.tar.gz"
-        >daily CVS snapshot</a>. This archive does not contain binaries, you will have to
-        compile them by yourself.</p>
+      <h1 id="current">Current code</h1>
+      <p>Everyone, who prefers bleeding edge software, can use the current code <a href="https://sourceforge.net/apps/trac/unattended/wiki/ModifyingTheBootDisk"
+        >Modifying the boot disk</a>. Yo will have to compile them by yourself.</p>
 EOT;
 
 include ('page.inc');
