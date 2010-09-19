@@ -1,7 +1,7 @@
 :: Install all updates and hotfixes for Windows Server 2003
 @Echo off
 
-:: After installing SP2, install updates for ws2k3sp1.
+:: After installing SP1, install updates for ws2k3sp1.
 todo.pl ws2k3sp1-updates.bat
 
 :: Microsoft Windows Server 2003 Service Pack 1 (32 bit)
