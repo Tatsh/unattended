@@ -31,4 +31,8 @@
   <div class="sideBarText">
 <script type="text/javascript" src="http://www.ohloh.net/p/10536/widgets/project_thin_badge.js"></script>
   </div>
+  <p class="sideBarTitle">Donations</p>
+  <div class="sideBarText">
+  <a href="http://sourceforge.net/donate/index.php?group_id=62053"><img src="http://images.sourceforge.net/images/project-support.jpg" width="88" height="32" border="0" alt="Support This Project" /> </a>
+  </div>
   </div>
