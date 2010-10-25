@@ -70,6 +70,7 @@ then
   WFILES=$( egrep -lri "$REGEXFORLANG" $SCRIPTLOC/*.bat )
 fi
 
+wgetnberr=0
 for cmdfile in $WFILES; do
 
   echo
@@ -85,6 +86,7 @@ for cmdfile in $WFILES; do
 
       if [ ! "$SPIDER" == "" ]; then
         wget $SPIDER --passive-ftp "$url" ;
+        if [ $? -ne 0 ]; then wgetnberr=$(( $wgetnberr + 1 )); fi
         continue
       fi
       # Make sure path is available
@@ -95,6 +97,7 @@ for cmdfile in $WFILES; do
               mv "$file.$$.tmp" "$file"
           else
               rm -f "$file.$$.tmp"
+              wgetnberr=$(( $wgetnberr + 1 ))
           fi
       else
           touch "$file"
@@ -102,3 +105,6 @@ for cmdfile in $WFILES; do
   done
 
 done
+
+echo
+echo "nb of wget errors: $wgetnberr."
