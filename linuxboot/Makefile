@@ -16,7 +16,7 @@ glibc=glibc-2.11.1
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.8
 libusb=libusb-0.1.12
-linux=linux-2.6.35.4
+linux=linux-2.6.35.8
 module-init-tools=module-init-tools-3.12
 mysql=mysql-5.0.90
 nano=nano-2.0.9
@@ -34,7 +34,7 @@ perl-xml-xpath=XML-XPath-1.13
 # TODO: samba-3.5.4
 samba=samba-3.3.13
 slang=slang-2.0.7
-syslinux=syslinux-4.02
+syslinux=syslinux-4.03
 usbutils=usbutils-0.86
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.5
