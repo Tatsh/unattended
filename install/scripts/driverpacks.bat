@@ -1,16 +1,16 @@
-:: OPTIONAL: Download Bâshrat the Sneaky drivers from [WWW] DriverPacks.net 
+:: OPTIONAL: Download Bâshrat the Sneaky drivers from [WWW] DriverPacks.net -- Please Donate!!!
 :: HOME: http://driverpacks.net/driverpacks/windows/xp/x86
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Chipset_wnt5_x86-32_10052.7z|drivers/DP_Chipset_wnt5_x86-32_10052.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_CPU_wnt5_x86-32_1005.7z|drivers/DP_CPU_wnt5_x86-32_1005.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_Languages_wnt5_x86-32_1005.7z|drivers/DP_Graphics_Languages_wnt5_x86-32_1005.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_A_wnt5_x86-32_1005.7z|drivers/DP_Graphics_A_wnt5_x86-32_1005.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_B_wnt5_x86-32_1005.7z|drivers/DP_Graphics_B_wnt5_x86-32_1005.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Graphics_C_wnt5_x86-32_1005.7z|drivers/DP_Graphics_C_wnt5_x86-32_1005.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_LAN_wnt5_x86-32_1007.7z|drivers/DP_LAN_wnt5_x86-32_1007.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_MassStorage_wnt5_x86-32_1006.7z|drivers/DP_MassStorage_wnt5_x86-32_1006.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_WLAN_wnt5_x86-32_1007.7z|drivers/DP_WLAN_wnt5_x86-32_1007.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Sound_A_wnt5_x86-32_1006.7z|drivers/DP_Sound_A_wnt5_x86-32_1006.7z
-:: URL|All|http://downloads.driverpacks.net/xp/x86/DP_Sound_B_wnt5_x86-32_1006.7z|drivers/DP_Sound_B_wnt5_x86-32_1006.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/chipset/10.09/download|drivers/DP_Chipset_wnt5_x86-32_1009.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/cpu/10.05/download|drivers/DP_CPU_wnt5_x86-32_1005.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/graphics-languages/10.09/download|drivers/DP_Graphics_Languages_wnt5_x86-32_1005.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/graphics-a/10.09/download|drivers/DP_Graphics_A_wnt5_x86-32_1009.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/graphics-b/10.09/download|drivers/DP_Graphics_B_wnt5_x86-32_1009.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/graphics-c/10.09.1/download|drivers/DP_Graphics_C_wnt5_x86-32_10091.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/lan/10.09|drivers/DP_LAN_wnt5_x86-32_1009.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/mass-storage/10.10/download|drivers/DP_MassStorage_wnt5_x86-32_1010.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/wlan/10.09/download|drivers/DP_WLAN_wnt5_x86-32_1009.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/sound-a/10.09/download|drivers/DP_Sound_A_wnt5_x86-32_1009.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/sound-b/10.09/download|drivers/DP_Sound_B_wnt5_x86-32_1009.7z
 
 
 :: 3RD Party February-2010
