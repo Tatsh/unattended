@@ -3,7 +3,6 @@
 :: See:
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://java.sun.com/javase/6/webnotes/install/jre/silent.html#running>
-http://javadl.sun.com/webapps/download/AutoDL?BundleId=42751
 ::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=42732|packages/jre/jre-6u22-windows-i586-s.exe
 
 @Echo off
