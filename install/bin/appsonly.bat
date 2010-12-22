@@ -1,7 +1,7 @@
 echo off
 REM batch file for apps-only-installs
 REM contributed by Gerhard Hofmann, gerhard.hofmann@planat.de
-REM Release 2010.08.20
+REM Release 2010.12.22
 REM History
 REM =======
 REM 01-Feb-2005
@@ -38,7 +38,6 @@ REM skipped usage of /persistent:no flag because of problems with Vista Preview 
 REM 27-Mar-2006
 REM added conf. section
 REM optional deletion of existing drive mappings (will "free" drive z:)
-REM
 REM 02-Jul-2008
 REM *** integration of appsonly script into official CVS repository ***
 REM 03-Jul-2008
@@ -56,6 +55,9 @@ REM changed the way of checking for an already installed Perl runtime
 REM fixed a typo in the line
 REM set z=z:
 REM (a blank too much after set)
+REM 22-dec-2010
+REM integrated registry hack allow_unc_prog_start.reg into appsonly.bat to
+REM avoid security warnings on every single script that is executed from an UNC path
 
 
 REM ==== conf. section begin ====
@@ -154,6 +156,7 @@ if errorlevel 1 call %z%\scripts\perl.bat
 if errorlevel 0 goto runperlscript
 
 :runperlscript
+regedit /s %z%\bin\allow_unc_prog_start.reg
 %z%\bin\appsonly.pl
 
 :end
