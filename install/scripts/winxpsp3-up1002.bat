@@ -1,28 +1,3 @@
-:: Security Update for Windows XP (KB978251)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=f6c4472e-385c-4412-bda9-c2e615e50713>
-:: URL|ARA|http://download.microsoft.com/download/C/2/2/C2295D24-10A8-432B-9B29-7A27480D2BE2/WindowsXP-KB978251-x86-ARA.exe|updates/winxpsp3/windowsxp-kb978251-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/4/D/0/4D0D5231-091C-441A-8909-381F4F0FA163/WindowsXP-KB978251-x86-CSY.exe|updates/winxpsp3/windowsxp-kb978251-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/A/2/B/A2B0CDAD-A88B-4173-A9C5-B677604C61BF/WindowsXP-KB978251-x86-DAN.exe|updates/winxpsp3/windowsxp-kb978251-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/7/7/C/77C3ABBD-353F-40D8-8FAF-E5378D7395E2/WindowsXP-KB978251-x86-DEU.exe|updates/winxpsp3/windowsxp-kb978251-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/D/D/4/DD419654-AFD6-4B83-BFBE-D990600D0DAE/WindowsXP-KB978251-x86-ELL.exe|updates/winxpsp3/windowsxp-kb978251-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/8/0/A/80AD85CF-4A46-4110-98CE-0848E78F60C0/WindowsXP-KB978251-x86-ENU.exe|updates/winxpsp3/windowsxp-kb978251-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/C/6/D/C6D3E97A-B296-4C81-88C1-6C20A2976F4B/WindowsXP-KB978251-x86-ESN.exe|updates/winxpsp3/windowsxp-kb978251-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/B/A/7/BA79AA18-EF55-4E3F-B205-9744CE841F05/WindowsXP-KB978251-x86-FIN.exe|updates/winxpsp3/windowsxp-kb978251-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/1/7/4/17433601-6069-4045-B42B-2CCA43F29139/WindowsXP-KB978251-x86-FRA.exe|updates/winxpsp3/windowsxp-kb978251-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/3/5/5/3555B4C1-4E89-40B0-96EA-E02AEF1B2CE4/WindowsXP-KB978251-x86-HEB.exe|updates/winxpsp3/windowsxp-kb978251-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/3/9/2/392E26B6-CEA4-44B6-9E65-92C0FE72A317/WindowsXP-KB978251-x86-HUN.exe|updates/winxpsp3/windowsxp-kb978251-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/F/C/9/FC9BAE0F-4D61-4924-A84B-150A4EBF7236/WindowsXP-KB978251-x86-ITA.exe|updates/winxpsp3/windowsxp-kb978251-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/8/3/A/83A103C0-10B0-45D4-9152-D4ABAC9E7C83/WindowsXP-KB978251-x86-JPN.exe|updates/winxpsp3/windowsxp-kb978251-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/9/3/4937627A-619B-48FF-80AC-BB5189604C97/WindowsXP-KB978251-x86-KOR.exe|updates/winxpsp3/windowsxp-kb978251-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/9/A/3/9A337CCF-0486-40BF-AAEB-AA35269048E0/WindowsXP-KB978251-x86-NLD.exe|updates/winxpsp3/windowsxp-kb978251-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/A/C/A/ACAF8DC1-3FD5-4587-B885-5434E8038F78/WindowsXP-KB978251-x86-NOR.exe|updates/winxpsp3/windowsxp-kb978251-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/5/F/0/5F040E1F-4FB6-435C-9C22-F30C6D2F9469/WindowsXP-KB978251-x86-PLK.exe|updates/winxpsp3/windowsxp-kb978251-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/A/C/9/AC9DA1F1-6D3B-4E45-84C9-1A5C31FD9454/WindowsXP-KB978251-x86-PTB.exe|updates/winxpsp3/windowsxp-kb978251-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/E/B/1/EB116AFB-DC2F-4166-B57E-DFA2D1306601/WindowsXP-KB978251-x86-PTG.exe|updates/winxpsp3/windowsxp-kb978251-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/8/3/A/83A8138D-CA39-4B20-B82C-58F6932A3545/WindowsXP-KB978251-x86-RUS.exe|updates/winxpsp3/windowsxp-kb978251-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/D/A/0/DA040447-76C4-4769-BA1C-320F1A717074/WindowsXP-KB978251-x86-SVE.exe|updates/winxpsp3/windowsxp-kb978251-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/4/6/9/469BD74D-A087-4F16-92E2-5F178FFA6912/WindowsXP-KB978251-x86-TRK.exe|updates/winxpsp3/windowsxp-kb978251-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB978251-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB975713)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b8e7bf17-a037-4200-9ae2-2280b19766a4>
@@ -127,32 +102,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB978037-x86-%WINLANG%.ex
 :: URL|SVE|http://download.microsoft.com/download/2/2/3/2232D53D-CD89-4373-875D-8F3350125498/WindowsXP-KB971468-x86-SVE.exe|updates/winxpsp3/windowsxp-kb971468-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/D/B/F/DBF28A12-746A-40F3-929D-9ADA2193B643/WindowsXP-KB971468-x86-TRK.exe|updates/winxpsp3/windowsxp-kb971468-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971468-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: Security Update for Windows XP (KB977165)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=e2b348f5-ec8d-4782-bb03-5de550adea77>
-:: URL|ARA|http://download.microsoft.com/download/6/C/3/6C3F3CA2-772E-485D-9288-E8D50B579A00/WindowsXP-KB977165-x86-ARA.exe|updates/winxpsp3/windowsxp-kb977165-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/B/8/A/B8A9931B-8BE4-48A8-9811-9DC38FE7BF05/WindowsXP-KB977165-x86-CSY.exe|updates/winxpsp3/windowsxp-kb977165-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/D/1/6/D161124A-6C08-4FB8-9089-2654FCA095DE/WindowsXP-KB977165-x86-DAN.exe|updates/winxpsp3/windowsxp-kb977165-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/1/2/A/12A67689-012E-4176-A05F-4C5D4CC04535/WindowsXP-KB977165-x86-DEU.exe|updates/winxpsp3/windowsxp-kb977165-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/3/3/D/33D2A843-F2F2-4E7D-8815-E80F1343573E/WindowsXP-KB977165-x86-ELL.exe|updates/winxpsp3/windowsxp-kb977165-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/F/3/C/F3CE4A5E-57C4-4D14-9CE8-388CC74A5403/WindowsXP-KB977165-x86-ENU.exe|updates/winxpsp3/windowsxp-kb977165-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/3/9/A/39AEBA26-111A-4925-934F-16D80F16724A/WindowsXP-KB977165-x86-ESN.exe|updates/winxpsp3/windowsxp-kb977165-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/D/C/8/DC82D3E2-D7E0-4DC5-B033-7065BD250095/WindowsXP-KB977165-x86-FIN.exe|updates/winxpsp3/windowsxp-kb977165-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/7/6/3/763EDA74-93CF-4A5D-8BD6-B83B04B2ADF4/WindowsXP-KB977165-x86-FRA.exe|updates/winxpsp3/windowsxp-kb977165-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/7/2/472909B7-E7BF-4859-86DE-4FA1D5CC5D65/WindowsXP-KB977165-x86-HEB.exe|updates/winxpsp3/windowsxp-kb977165-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/0/1/3/01398B30-848D-47AD-93B9-3E25A84C11BB/WindowsXP-KB977165-x86-HUN.exe|updates/winxpsp3/windowsxp-kb977165-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/D/0/5D009194-CEF4-4627-A0B1-B1C581D5FCCC/WindowsXP-KB977165-x86-ITA.exe|updates/winxpsp3/windowsxp-kb977165-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/7/C/6/7C6574F5-D43E-4DD1-AC16-E023D1389DB6/WindowsXP-KB977165-x86-JPN.exe|updates/winxpsp3/windowsxp-kb977165-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/A/4/4A4293AB-3581-48EF-A23B-FDC3E7B6CDD1/WindowsXP-KB977165-x86-KOR.exe|updates/winxpsp3/windowsxp-kb977165-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/4/C/0/4C038755-DE20-44BB-BA42-8A231D209312/WindowsXP-KB977165-x86-NLD.exe|updates/winxpsp3/windowsxp-kb977165-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/C/8/6/C86BACB0-F772-4FAF-B76E-71DF8938BD05/WindowsXP-KB977165-x86-NOR.exe|updates/winxpsp3/windowsxp-kb977165-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/4/D/C/4DC59ADA-0E0C-4C54-88B5-930D1C887B7D/WindowsXP-KB977165-x86-PLK.exe|updates/winxpsp3/windowsxp-kb977165-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/B/C/1/BC1C8164-7BB0-4A69-A8EA-F59CF8B94732/WindowsXP-KB977165-x86-PTB.exe|updates/winxpsp3/windowsxp-kb977165-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/C/6/7C61C1F0-C742-4A67-8FFD-870ECADF99A8/WindowsXP-KB977165-x86-PTG.exe|updates/winxpsp3/windowsxp-kb977165-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/E/B/8/EB866B17-3E03-46DD-86A0-AB6E382EAC5D/WindowsXP-KB977165-x86-RUS.exe|updates/winxpsp3/windowsxp-kb977165-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/B/0/1/B0115942-9857-42A7-B2C3-43C45532E0E7/WindowsXP-KB977165-x86-SVE.exe|updates/winxpsp3/windowsxp-kb977165-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/7/4/E/74EB2590-2B68-44D9-A312-0ECCBE169E48/WindowsXP-KB977165-x86-TRK.exe|updates/winxpsp3/windowsxp-kb977165-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB977165-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB978706)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b2e70df6-7728-4fc3-8df7-8ddb9ba5202f>
