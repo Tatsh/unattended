@@ -51,32 +51,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB950974-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/5/0/1/501e89a8-1b3d-415e-954b-cb37dabf99d6/WindowsXP-KB946648-x86-TRK.exe|updates/winxpsp3/windowsxp-kb946648-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB946648-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Security Update for Outlook Express for Windows XP (KB951066)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyId=91469f2f-461c-4a67-8738-d42520427f6b>
-:: URL|ARA|http://download.microsoft.com/download/3/9/8/398a6b5b-2a8d-4df6-8268-c6714b0c718b/WindowsXP-KB951066-x86-ARA.exe|updates/winxpsp3/windowsxp-kb951066-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/b/b/6/bb669893-0b25-4bfc-8fef-08342149b0ab/WindowsXP-KB951066-x86-CSY.exe|updates/winxpsp3/windowsxp-kb951066-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/7/a/7/7a7c1851-106d-4af9-a63e-355132b87217/WindowsXP-KB951066-x86-DAN.exe|updates/winxpsp3/windowsxp-kb951066-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/2/8/8/2883e774-d13b-4dce-a2ac-3438c722d5a4/WindowsXP-KB951066-x86-DEU.exe|updates/winxpsp3/windowsxp-kb951066-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/d/2/8/d28c4cd4-3448-455e-ad25-bc041d7a7cdc/WindowsXP-KB951066-x86-ELL.exe|updates/winxpsp3/windowsxp-kb951066-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/3/a/f/3afd84f3-729c-4f54-9d38-e77c5112ae0d/WindowsXP-KB951066-x86-ENU.exe|updates/winxpsp3/windowsxp-kb951066-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/4/f/24facde2-5e9c-4131-8fa9-35e522825704/WindowsXP-KB951066-x86-ESN.exe|updates/winxpsp3/windowsxp-kb951066-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/2/3/c/23cff079-e69c-4afa-bac0-83e1aed0994c/WindowsXP-KB951066-x86-FIN.exe|updates/winxpsp3/windowsxp-kb951066-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/7/7/c/77c80559-0388-4542-a432-16236f63ee24/WindowsXP-KB951066-x86-FRA.exe|updates/winxpsp3/windowsxp-kb951066-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/9/e/a/9ea12a74-4159-4d2d-b61c-8b85cdc46c7c/WindowsXP-KB951066-x86-HEB.exe|updates/winxpsp3/windowsxp-kb951066-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/1/5/6/15609387-aa6f-4ca3-9e71-58786f471a39/WindowsXP-KB951066-x86-HUN.exe|updates/winxpsp3/windowsxp-kb951066-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/7/6/0/760ff3af-4a66-4b6d-b01d-3e47a8ecfe74/WindowsXP-KB951066-x86-ITA.exe|updates/winxpsp3/windowsxp-kb951066-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/1/4/3/143dc2e4-4883-4e1e-b7b8-50cbc276c72c/WindowsXP-KB951066-x86-JPN.exe|updates/winxpsp3/windowsxp-kb951066-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/9/2/1/9217413b-a47e-457c-9d04-90d343e5e604/WindowsXP-KB951066-x86-KOR.exe|updates/winxpsp3/windowsxp-kb951066-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/0/4/7/0474c059-7b8c-4b42-9099-5687bdaba7e8/WindowsXP-KB951066-x86-NLD.exe|updates/winxpsp3/windowsxp-kb951066-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/e/9/a/e9a5c0fd-78b6-40ee-bfa3-b454e5433c79/WindowsXP-KB951066-x86-NOR.exe|updates/winxpsp3/windowsxp-kb951066-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/e/a/9/ea915b8d-47f4-4f9e-81b9-0f7be965939f/WindowsXP-KB951066-x86-PLK.exe|updates/winxpsp3/windowsxp-kb951066-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/d/4/2/d421adf1-0afc-4da5-8ad4-94d9339cc164/WindowsXP-KB951066-x86-PTB.exe|updates/winxpsp3/windowsxp-kb951066-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/6/6/76637d30-4c92-4458-af05-ec80b8effad4/WindowsXP-KB951066-x86-PTG.exe|updates/winxpsp3/windowsxp-kb951066-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/8/a/4/8a4a76db-b80f-4b65-a2fd-0b94beeafe7e/WindowsXP-KB951066-x86-RUS.exe|updates/winxpsp3/windowsxp-kb951066-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/e/4/e/e4ed3cf8-88c8-43e7-a779-423e4e6af8f5/WindowsXP-KB951066-x86-SVE.exe|updates/winxpsp3/windowsxp-kb951066-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/c/a/e/cae9cd29-3e89-4e20-aa37-715cdeb23e4b/WindowsXP-KB951066-x86-TRK.exe|updates/winxpsp3/windowsxp-kb951066-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB951066-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB952954)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=d313f42c-f43f-48ea-82ef-3bc33077c7fa>
 :: URL|ARA|http://download.microsoft.com/download/6/1/8/61865f41-29e2-444c-984e-ead5c3c4cadb/WindowsXP-KB952954-x86-ARA.exe|updates/winxpsp3/windowsxp-kb952954-x86-ara.exe
