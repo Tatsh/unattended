@@ -16,6 +16,7 @@
 #        no drivers are currenlty using these forms ?
 # 
 # Changelog:
+#   20110120 - fix #52 USB error message
 #   20091130 - comments revisited.
 #   20091130 - default drivers path: use /z/drivers/ (instead of /z/site/win_drivers/).
 #   20090925 - removed hardcoding of "FUNC_01" in HDAUDIO devices: computed instead.
@@ -693,8 +694,8 @@ sub parse_hardware($$) {
     ##
 
     out("- Check USB devices...");
-    if ( not -f "/proc/bus/usb/devices" ) {
-        out("  no USB support: /proc/bus/usb is not mounted as usbfs FS");
+    if ( not -f "/sys/kernel/debug/usb/devices" ) {
+        out("  no USB support: /sys/kernel/debug/usb/devices is absent");
     }
     elsif ( not -x "/sbin/lsusb" ) {
         out("  no USB support: /sbin/lsusb is missing.");
