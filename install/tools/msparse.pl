@@ -59,7 +59,7 @@ foreach my $k (keys (%lang)) {
     while(<f>) {
         chomp;
         if ($k =~ /enu/i) {
-            $title1 = "$1" if /\<h1.*?\>(.*?)\<\/h1\>/;
+            $title1 = "$1" if /\<title.*?\>(.*?)\<\/title\>/;
             defined $link
                 or $link = $1 if /href=[\"\']\s*(http:\/\/[^\"\']*(\d{6}))[\"\']\>[^\<]*\2/i;
             defined $link
@@ -110,6 +110,21 @@ foreach my $k (keys (%lang)) {
         }
 
         if (/\<a id=[\"\']btnDownload[\"\'] class=[\"\']downloadButton[\"\'] href=[\"\']([^\"\']*)[\"\']\>/) {
+            my $dl=$1;
+            my @a=split(/\//,$dl);
+            if ($a[$#a] =~ /$k/i) {
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+                $run = lc($type)."/".$a[$#a] unless defined $run;
+            } elsif ($a[$#a] =~ /$lang{$k}\.exe/i) {
+                $a[$#a] =~ s/$lang{$k}\.exe/$k.exe/i;
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($a[$#a]);
+                $run = lc($type)."/".$a[$#a] unless defined $run;
+            } else {
+                $urls->{uc($k)} = "URL|".uc($k)."|$dl|".lc($type)."/".lc($k)."/".lc($a[$#a]);
+                $run = lc($type)."/".lc($k)."/".$a[$#a] unless defined $run;
+            }
+        }
+        if (/openDownloadWindow\([\"\']([^\"\']*)[\"\']/) {
             my $dl=$1;
             my @a=split(/\//,$dl);
             if ($a[$#a] =~ /$k/i) {
