@@ -24,4 +24,4 @@ if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-1.1.0.ini goto nolangpack
 :: Install PDFCreator
 :: Use this syntax if you want your language installed:
 ::todo.pl "%Z%\packages\pdfcreator\pdfcreator-1.1.0.setup.exe /silent /LANG=Spanish"
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-1.1.0.setup.exe /silent /components=\"!toolbar\" /tasks=\"!desktop_icon\""
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-1.1.0.setup.exe /SILENT /LOADINF="%Z%\packages\pdfcreator\PDFCreator.ini" /NORESTART"
