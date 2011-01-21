@@ -25,31 +25,6 @@
 :: URL|TRK|http://download.microsoft.com/download/1/B/F/1BFE4EF8-5EFA-4363-A061-F3BAF0308714/WindowsXP-KB975713-x86-TRK.exe|updates/winxpsp3/windowsxp-kb975713-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB975713-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Cumulative Security Update for ActiveX Killbits for Windows XP (KB978262)
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=7bcf3945-0552-478e-b7f3-bbca97dd1b5d>
-:: URL|ARA|http://download.microsoft.com/download/8/5/1/8517829D-AA7D-4249-8ACF-ACA0FE8B2741/WindowsXP-KB978262-x86-ARA.exe|updates/winxpsp3/windowsxp-kb978262-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/B/E/6/BE6D07B8-80BB-41FC-AF26-F2BC8C9D7175/WindowsXP-KB978262-x86-CSY.exe|updates/winxpsp3/windowsxp-kb978262-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/E/7/E/E7EC5173-0EC4-4A8D-9D75-62E4D553153D/WindowsXP-KB978262-x86-DAN.exe|updates/winxpsp3/windowsxp-kb978262-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/D/4/7/D479EC49-4087-4757-B541-6DB55F665F89/WindowsXP-KB978262-x86-DEU.exe|updates/winxpsp3/windowsxp-kb978262-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/6/F/4/6F4DDC4F-1E11-491A-A389-96F6ED974E82/WindowsXP-KB978262-x86-ELL.exe|updates/winxpsp3/windowsxp-kb978262-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/6/D/C/6DCF7FB6-A2D0-4FFC-B3E3-8270CA5373B1/WindowsXP-KB978262-x86-ENU.exe|updates/winxpsp3/windowsxp-kb978262-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/F/B/7/FB72C702-18F5-400A-8BC5-FF12F30F2488/WindowsXP-KB978262-x86-ESN.exe|updates/winxpsp3/windowsxp-kb978262-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/C/4/D/C4D6E31F-3921-4EFE-98B6-B833F3671AB1/WindowsXP-KB978262-x86-FIN.exe|updates/winxpsp3/windowsxp-kb978262-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/5/F/D/5FD7B91D-1C9D-4233-A1A8-7F8CED2F7442/WindowsXP-KB978262-x86-FRA.exe|updates/winxpsp3/windowsxp-kb978262-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/0/1/9/01979D43-FA06-4358-A4CB-82FB8B91C41A/WindowsXP-KB978262-x86-HEB.exe|updates/winxpsp3/windowsxp-kb978262-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/0/5/2/0526BDF4-6BA7-440A-B83F-74FF4BB8AA35/WindowsXP-KB978262-x86-HUN.exe|updates/winxpsp3/windowsxp-kb978262-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/A/6/1/A615AA62-B59B-4FF9-9521-FC80F727CEFE/WindowsXP-KB978262-x86-ITA.exe|updates/winxpsp3/windowsxp-kb978262-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/3/F/43F7CBAA-B38B-4D7D-AFFD-880AD0FECE43/WindowsXP-KB978262-x86-JPN.exe|updates/winxpsp3/windowsxp-kb978262-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/5/4/C/54C6D55E-BE42-4AB8-AF60-33A02856463D/WindowsXP-KB978262-x86-KOR.exe|updates/winxpsp3/windowsxp-kb978262-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/1/1/1/111AD7D2-F918-4E3D-ABD6-3C016C1A9283/WindowsXP-KB978262-x86-NLD.exe|updates/winxpsp3/windowsxp-kb978262-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/8/1/7/817F625D-18D7-4E98-A461-CF3FA1E3A66F/WindowsXP-KB978262-x86-NOR.exe|updates/winxpsp3/windowsxp-kb978262-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/0/2/5/025DE687-44E8-4019-989D-30DB75BD249C/WindowsXP-KB978262-x86-PLK.exe|updates/winxpsp3/windowsxp-kb978262-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/B/0/E/B0EFA953-A236-4031-AC1D-DF91B35DA4F8/WindowsXP-KB978262-x86-PTB.exe|updates/winxpsp3/windowsxp-kb978262-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/C/4/F/C4FF2E4D-DF94-4B46-B196-4C3A3E9757B5/WindowsXP-KB978262-x86-PTG.exe|updates/winxpsp3/windowsxp-kb978262-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/A/7/5/A75B6F2D-7157-4588-8E5D-125680450BBA/WindowsXP-KB978262-x86-RUS.exe|updates/winxpsp3/windowsxp-kb978262-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/8/2/A/82AAD179-D425-404A-8DAF-E024235E0D0A/WindowsXP-KB978262-x86-SVE.exe|updates/winxpsp3/windowsxp-kb978262-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/3/C/C/3CCF2FCD-DF21-4510-A297-C315FF77686A/WindowsXP-KB978262-x86-TRK.exe|updates/winxpsp3/windowsxp-kb978262-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB978262-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Security Update for Windows XP (KB978037)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b9234b40-1b1c-498b-90d4-0bff347b36ee>
