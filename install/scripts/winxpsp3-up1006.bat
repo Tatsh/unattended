@@ -1,29 +1,3 @@
-:: <http://support.microsoft.com/?kbid=979559>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=023A777A-3D83-4A4E-8029-DA8B095B074B>
-:: URL|ARA|http://download.microsoft.com/download/D/6/E/D6E7FD65-0B5B-49CB-A0EC-03496545BA51/WindowsXP-KB979559-x86-ARA.exe|updates/winxpsp3/windowsxp-kb979559-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/C/B/6/CB697424-2768-4D7C-AAE2-EC796EE5B06D/WindowsXP-KB979559-x86-CSY.exe|updates/winxpsp3/windowsxp-kb979559-x86-csy.exe
-:: No Download found for DAN.
-:: URL|DEU|http://download.microsoft.com/download/0/C/0/0C0755FD-0252-4D2F-B4B9-2EA394827612/WindowsXP-KB979559-x86-DEU.exe|updates/winxpsp3/windowsxp-kb979559-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/2/E/3/2E3152B3-804D-405B-A4CF-A121115D902D/WindowsXP-KB979559-x86-ELL.exe|updates/winxpsp3/windowsxp-kb979559-x86-ell.exe
-:: No Download found for ENU.
-:: URL|ESN|http://download.microsoft.com/download/4/7/4/4741C1D4-4F57-4F38-A479-6CBC40010970/WindowsXP-KB979559-x86-ESN.exe|updates/winxpsp3/windowsxp-kb979559-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/D/5/8/D5893B45-703D-400A-AF96-A83135E1A035/WindowsXP-KB979559-x86-FIN.exe|updates/winxpsp3/windowsxp-kb979559-x86-fin.exe
-:: No Download found for FRA.
-:: URL|HEB|http://download.microsoft.com/download/2/E/E/2EEE2F58-5339-401A-BDFC-460F8171FC3F/WindowsXP-KB979559-x86-HEB.exe|updates/winxpsp3/windowsxp-kb979559-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/8/9/D/89DF747F-9BB4-476A-9B48-32DB5222EC84/WindowsXP-KB979559-x86-HUN.exe|updates/winxpsp3/windowsxp-kb979559-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/7/6/C/76CCEF0F-F831-47CF-8036-85FCDE67BE01/WindowsXP-KB979559-x86-ITA.exe|updates/winxpsp3/windowsxp-kb979559-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/3/8/1/381ACDB3-FDE0-4470-A503-904B59EF4A6D/WindowsXP-KB979559-x86-JPN.exe|updates/winxpsp3/windowsxp-kb979559-x86-jpn.exe
-:: No Download found for KOR.
-:: No Download found for NLD.
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/4/C/E/4CE2660A-DCBC-43F9-890D-605886A97A97/WindowsXP-KB979559-x86-PLK.exe|updates/winxpsp3/windowsxp-kb979559-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/D/3/E/D3E7BC33-7CA5-4798-B4BB-C3550C815886/WindowsXP-KB979559-x86-PTB.exe|updates/winxpsp3/windowsxp-kb979559-x86-ptb.exe
-:: No Download found for PTG.
-:: No Download found for RUS.
-:: No Download found for SVE.
-:: No Download found for TRK.
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB979559-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Microsoft Security Bulletin MS10-033 - Critical
 :: "Vulnerabilities in Media Decompression Could Allow Remote Code Execution (979902)"
 :: <http://www.microsoft.com/technet/security/bulletin/MS10-033.mspx>
@@ -159,32 +133,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB979482-x86-%WINLANG%.ex
 :: No Download found for SVE.
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB980195-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: <http://support.microsoft.com/?kbid=982381>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=bfe87761-ed9e-4fec-a393-d7fddb919db4>
-:: URL|ARA|http://download.microsoft.com/download/6/5/9/659A4041-7A24-4B7E-A75D-6F023CF493E7/WindowsXP-KB982381-x86-ARA.exe|updates/winxpsp3/windowsxp-kb982381-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/2/A/1/2A14F886-EE72-4DEF-8E00-B6726D10CB6B/WindowsXP-KB982381-x86-CSY.exe|updates/winxpsp3/windowsxp-kb982381-x86-csy.exe
-:: No Download found for DAN.
-:: URL|DEU|http://download.microsoft.com/download/9/7/D/97D0A36F-078B-4EA2-8558-2124A33CA7F4/WindowsXP-KB982381-x86-DEU.exe|updates/winxpsp3/windowsxp-kb982381-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/2/A/1/2A1A2B1A-2C89-4A98-AC18-AAB25DDCE63E/WindowsXP-KB982381-x86-ELL.exe|updates/winxpsp3/windowsxp-kb982381-x86-ell.exe
-:: No Download found for ENU.
-:: URL|ESN|http://download.microsoft.com/download/9/2/5/925CC664-076D-43B5-B64D-E6E0F3446768/WindowsXP-KB982381-x86-ESN.exe|updates/winxpsp3/windowsxp-kb982381-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/6/D/0/6D01ABDE-C769-4A9D-8DDC-9E9E24E1EC9A/WindowsXP-KB982381-x86-FIN.exe|updates/winxpsp3/windowsxp-kb982381-x86-fin.exe
-:: No Download found for FRA.
-:: URL|HEB|http://download.microsoft.com/download/1/1/6/1166155A-6F91-47C7-AE08-E1DDA844949C/WindowsXP-KB982381-x86-HEB.exe|updates/winxpsp3/windowsxp-kb982381-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/0/1/2/012A0C23-FC2B-40D2-A86D-7088202AAE82/WindowsXP-KB982381-x86-HUN.exe|updates/winxpsp3/windowsxp-kb982381-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/A/C/6/AC6CD8FF-563D-4E0F-B93D-35C9805DA652/WindowsXP-KB982381-x86-ITA.exe|updates/winxpsp3/windowsxp-kb982381-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/7/6/A/76A37661-3CFE-4237-A8F7-646738A5FB86/WindowsXP-KB982381-x86-JPN.exe|updates/winxpsp3/windowsxp-kb982381-x86-jpn.exe
-:: No Download found for KOR.
-:: No Download found for NLD.
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/1/C/A/1CA89816-D56C-485B-9EBC-7F320B951787/WindowsXP-KB982381-x86-PLK.exe|updates/winxpsp3/windowsxp-kb982381-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/E/A/2/EA2BDE6C-CF45-4BC6-AFA7-029641CD4159/WindowsXP-KB982381-x86-PTB.exe|updates/winxpsp3/windowsxp-kb982381-x86-ptb.exe
-:: No Download found for PTG.
-:: No Download found for RUS.
-:: No Download found for SVE.
-:: No Download found for TRK.
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB982381-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: <http://support.microsoft.com/?kbid=980218>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=B42A17C5-997E-4504-BA5B-BFA62166B460>
