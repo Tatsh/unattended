@@ -3,7 +3,7 @@
 :: Reminder: Commands will be executed in reverse order.
 
 :: Uncomment it if you want the compatibility pack installed
-:: todo.pl docxconverter.bat 
+todo.pl docxconverter.bat 
 
 :: Security Update for Microsoft Office Web Components (KB947319)
 :: MS09-043: Description of the security update for Office 2003 Web Components and Office XP Web Components in Office 2003: August 11, 2009
