@@ -52,32 +52,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB975713-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/3/E/D/3ED24307-61A7-4E29-8909-D935A456F49E/WindowsXP-KB978037-x86-TRK.exe|updates/winxpsp3/windowsxp-kb978037-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB978037-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Security Update for Windows XP (KB971468)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=8f7adee3-e68e-41b3-b835-d84691774f31>
-:: URL|ARA|http://download.microsoft.com/download/6/9/E/69E2A682-4668-4A0E-A53C-D1048A5BDB0C/WindowsXP-KB971468-x86-ARA.exe|updates/winxpsp3/windowsxp-kb971468-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/0/3/1/03161F2F-2E31-4C82-A1B0-1624C5E7486E/WindowsXP-KB971468-x86-CSY.exe|updates/winxpsp3/windowsxp-kb971468-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/5/9/A/59A18DCC-37D0-477E-AEDD-36B177816B8B/WindowsXP-KB971468-x86-DAN.exe|updates/winxpsp3/windowsxp-kb971468-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/2/1/0/210DA12E-8886-4F38-B11F-825137A6C589/WindowsXP-KB971468-x86-DEU.exe|updates/winxpsp3/windowsxp-kb971468-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/7/1/1/71195424-E7A9-4B9C-9D53-ACD129FA23DE/WindowsXP-KB971468-x86-ELL.exe|updates/winxpsp3/windowsxp-kb971468-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/2/5/0/2509AE52-1835-4DB9-86C8-CF5C408F85F2/WindowsXP-KB971468-x86-ENU.exe|updates/winxpsp3/windowsxp-kb971468-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/D/D/7/DD70CBF1-DF5F-4FCF-AF65-A2A9DBFCE2DD/WindowsXP-KB971468-x86-ESN.exe|updates/winxpsp3/windowsxp-kb971468-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/D/1/1/D1124540-339B-4AFB-A932-9715A19EA518/WindowsXP-KB971468-x86-FIN.exe|updates/winxpsp3/windowsxp-kb971468-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/B/3/B/B3B07014-CF23-4F13-AA57-684D24632186/WindowsXP-KB971468-x86-FRA.exe|updates/winxpsp3/windowsxp-kb971468-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/3/D/D/3DD8ED7D-0F6C-4B20-B324-D6696ED92052/WindowsXP-KB971468-x86-HEB.exe|updates/winxpsp3/windowsxp-kb971468-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/F/D/6/FD63810A-5F9C-4A5D-8021-CF6E5153FF0C/WindowsXP-KB971468-x86-HUN.exe|updates/winxpsp3/windowsxp-kb971468-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/1/3/7/1378385D-AFD4-40E3-B114-EE55E3377053/WindowsXP-KB971468-x86-ITA.exe|updates/winxpsp3/windowsxp-kb971468-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/B/D/0/BD02DE9C-A17F-4A4C-B37F-AA662738AFD5/WindowsXP-KB971468-x86-JPN.exe|updates/winxpsp3/windowsxp-kb971468-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/D/D/9/DD9B70B2-9D28-4897-89B9-4C3F58F64B47/WindowsXP-KB971468-x86-KOR.exe|updates/winxpsp3/windowsxp-kb971468-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/C/D/2/CD23B349-4887-41C5-ABB1-7A9D52006992/WindowsXP-KB971468-x86-NLD.exe|updates/winxpsp3/windowsxp-kb971468-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/6/D/D/6DD716DA-7118-48AC-9A5D-9F83EDA9C7D7/WindowsXP-KB971468-x86-NOR.exe|updates/winxpsp3/windowsxp-kb971468-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/7/1/8/7183CB79-5D64-498E-A736-0E12385BE726/WindowsXP-KB971468-x86-PLK.exe|updates/winxpsp3/windowsxp-kb971468-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/0/E/B/0EBDE49A-F21E-4197-B806-29D536F81323/WindowsXP-KB971468-x86-PTB.exe|updates/winxpsp3/windowsxp-kb971468-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/D/8/C/D8C5A710-5FCC-4755-AD06-BCA7C79BFD44/WindowsXP-KB971468-x86-PTG.exe|updates/winxpsp3/windowsxp-kb971468-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/1/E/8/1E8D0672-1E3E-44DA-AD7D-3501F1F8A6C7/WindowsXP-KB971468-x86-RUS.exe|updates/winxpsp3/windowsxp-kb971468-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/2/2/3/2232D53D-CD89-4373-875D-8F3350125498/WindowsXP-KB971468-x86-SVE.exe|updates/winxpsp3/windowsxp-kb971468-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/D/B/F/DBF28A12-746A-40F3-929D-9ADA2193B643/WindowsXP-KB971468-x86-TRK.exe|updates/winxpsp3/windowsxp-kb971468-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971468-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows XP (KB978706)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=b2e70df6-7728-4fc3-8df7-8ddb9ba5202f>
 :: URL|ARA|http://download.microsoft.com/download/B/6/B/B6B6F69D-5CCE-409B-BDE2-63DAE9F7DE75/WindowsXP-KB978706-x86-ARA.exe|updates/winxpsp3/windowsxp-kb978706-x86-ara.exe

@@ -137,32 +137,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB977816-x86-%WINLANG%.ex
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB979402-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: <http://support.microsoft.com/?kbid=979683>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=142710FD-9CD4-4DD0-AABA-2AACE03C008F>
-:: URL|ARA|http://download.microsoft.com/download/8/8/1/8810BA24-6554-402E-BB36-D035DC4063C0/WindowsXP-KB979683-x86-ARA.exe|updates/winxpsp3/windowsxp-kb979683-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/3/3/5/335E8362-AADB-4CF5-8D96-54130D300B32/WindowsXP-KB979683-x86-CSY.exe|updates/winxpsp3/windowsxp-kb979683-x86-csy.exe
-:: No Download found for DAN.
-:: URL|DEU|http://download.microsoft.com/download/3/4/C/34C751A7-A9E4-479E-B51E-60892A77E88B/WindowsXP-KB979683-x86-DEU.exe|updates/winxpsp3/windowsxp-kb979683-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/7/9/E/79E968B4-77F4-4697-A877-6BB7381AE935/WindowsXP-KB979683-x86-ELL.exe|updates/winxpsp3/windowsxp-kb979683-x86-ell.exe
-:: No Download found for ENU.
-:: URL|ESN|http://download.microsoft.com/download/2/1/C/21C53012-2570-4CC6-A6D2-C3C70E6CE11D/WindowsXP-KB979683-x86-ESN.exe|updates/winxpsp3/windowsxp-kb979683-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/4/4/2/442BEDD9-31E5-4D0F-91FA-778BA35D0804/WindowsXP-KB979683-x86-FIN.exe|updates/winxpsp3/windowsxp-kb979683-x86-fin.exe
-:: No Download found for FRA.
-:: URL|HEB|http://download.microsoft.com/download/7/C/A/7CAAF6FA-A718-4310-B0F2-7A073E1F9F38/WindowsXP-KB979683-x86-HEB.exe|updates/winxpsp3/windowsxp-kb979683-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/F/4/4/F44725BF-6005-49CF-9000-371B345A3A4B/WindowsXP-KB979683-x86-HUN.exe|updates/winxpsp3/windowsxp-kb979683-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/C/0/5C08C5EA-53EA-4D40-84EF-D073A6B3E85F/WindowsXP-KB979683-x86-ITA.exe|updates/winxpsp3/windowsxp-kb979683-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/B/F/2/BF2874D8-6B8A-40D4-BA81-799AC80A4DE5/WindowsXP-KB979683-x86-JPN.exe|updates/winxpsp3/windowsxp-kb979683-x86-jpn.exe
-:: No Download found for KOR.
-:: No Download found for NLD.
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/4/3/E/43EC9833-8FE9-4A08-8E3F-A7E498F8BD60/WindowsXP-KB979683-x86-PLK.exe|updates/winxpsp3/windowsxp-kb979683-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/A/D/F/ADF5469C-047D-483C-9315-C56E30F6339F/WindowsXP-KB979683-x86-PTB.exe|updates/winxpsp3/windowsxp-kb979683-x86-ptb.exe
-:: No Download found for PTG.
-:: No Download found for RUS.
-:: No Download found for SVE.
-:: No Download found for TRK.
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB979683-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Microsoft Security Bulletin MS10-022 - Important
 :: "Vulnerability in VBScript Scripting Engine Could Allow Remote Code Execution (981169)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms10-022.mspx>
