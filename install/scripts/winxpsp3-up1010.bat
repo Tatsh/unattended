@@ -1,33 +1,3 @@
-
-:: Download details: Cumulative Security Update for Internet Explorer for Windows XP (KB2360131)
-:: Microsoft Security Bulletin MS10-071 - Critical
-:: "Cumulative Security Update for Internet Explorer (2360131)"
-:: <http://www.microsoft.com/technet/security/bulletin/MS10-071.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=3b029696-cf98-4935-b3d6-846110aaa4bb>
-:: URL|ARA|http://download.microsoft.com/download/9/C/8/9C82FC30-3090-409F-87F6-584E81FA40C7/WindowsXP-KB2360131-x86-ARA.exe|updates/winxpsp3/windowsxp-kb2360131-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/C/9/D/C9DA3F6A-975F-4EF8-8CA0-1300AFF4D5A2/WindowsXP-KB2360131-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2360131-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/C/3/5/C354779D-7B91-47F1-9357-1EEE5418DD39/WindowsXP-KB2360131-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2360131-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/5/7/D/57D5C229-DA3C-4A05-B84C-7395D05E3B0D/WindowsXP-KB2360131-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2360131-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/7/3/8/738AED60-0821-4E1A-9C38-68F46BFE099A/WindowsXP-KB2360131-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2360131-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/3/4/1/341BBCA7-54E0-48EF-9DEA-7AB66B5FDA3E/WindowsXP-KB2360131-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2360131-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/5/F/4/5F4AFA8C-BBCC-4854-8642-97595F75B359/WindowsXP-KB2360131-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2360131-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/8/B/0/8B08F1E4-8C8F-4666-B2FD-BE51C9CBAD9C/WindowsXP-KB2360131-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2360131-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/6/7/4/67481175-C654-4EC1-9497-9B5135AEB58D/WindowsXP-KB2360131-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2360131-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/A/C/3/AC322B33-BFDA-443F-9690-60415C54974E/WindowsXP-KB2360131-x86-HEB.exe|updates/winxpsp3/windowsxp-kb2360131-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/7/E/2/7E2B7D3B-C39B-42C8-BBD0-A9CE8FA52C49/WindowsXP-KB2360131-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2360131-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/7/5/1/75180F65-1BD6-4AF9-8B4C-3E0935A96C85/WindowsXP-KB2360131-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2360131-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/C/6/D/C6D9D86E-97E8-450D-B993-F7CA8B7BCE02/WindowsXP-KB2360131-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2360131-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/E/4/D/E4D7DB58-8EBB-4074-8925-A17D0343E442/WindowsXP-KB2360131-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2360131-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/F/B/D/FBD0EF4B-5B13-4E14-B8A8-B566CCDFE4DB/WindowsXP-KB2360131-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2360131-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/7/9/D/79DFF487-90CD-4A5D-88EB-448155C9CEEC/WindowsXP-KB2360131-x86-NOR.exe|updates/winxpsp3/windowsxp-kb2360131-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/5/6/C/56C974E3-F3B7-4A7D-93B1-213D2C7D02AB/WindowsXP-KB2360131-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2360131-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/2/D/B/2DBFAD92-F9C1-484B-BBFB-ED6E4798BF59/WindowsXP-KB2360131-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2360131-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/F/7/7/F77A2EA1-38BF-47B9-A8C1-10E56F39CF02/WindowsXP-KB2360131-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2360131-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/0/2/5/025E6FC9-044E-4B80-8BE1-8A7057BC74AF/WindowsXP-KB2360131-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2360131-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/D/E/8/DE8B5AAB-F2BC-4A64-822E-138217D9B3E7/WindowsXP-KB2360131-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2360131-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/3/D/1/3D18952C-15FB-4664-AB7D-2A5164E51BE3/WindowsXP-KB2360131-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2360131-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2360131-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB982132)
 :: <http://support.microsoft.com/?kbid=982132>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=C3799399-CA72-4DEC-A2A2-3571AD0B2F63>
@@ -54,60 +24,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2360131-x86-%WINLANG%.e
 :: URL|SVE|http://download.microsoft.com/download/A/A/0/AA06BB92-4D16-42B4-BBAB-7403D692372B/WindowsXP-KB982132-x86-SVE.exe|updates/winxpsp3/windowsxp-kb982132-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/8/F/4/8F46A6D0-24E8-47E0-8D2E-F0624B94B051/WindowsXP-KB982132-x86-TRK.exe|updates/winxpsp3/windowsxp-kb982132-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB982132-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: Download details: Security Update for Windows XP (KB981957)
-:: <http://support.microsoft.com/?kbid=981957>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=3966D754-D298-4E4A-9CE6-8205ACCD2215>
-:: URL|ARA|http://download.microsoft.com/download/1/8/C/18C1D1B8-BB40-4FD8-86E2-8FBEC6F4E9FF/WindowsXP-KB981957-x86-ARA.exe|updates/winxpsp3/windowsxp-kb981957-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/C/E/2/CE22954C-7106-4F83-B9A9-B84BB59E5D50/WindowsXP-KB981957-x86-CSY.exe|updates/winxpsp3/windowsxp-kb981957-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/7/1/0/710E5D76-406D-41F3-BD59-886671A7B3E2/WindowsXP-KB981957-x86-DAN.exe|updates/winxpsp3/windowsxp-kb981957-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/2/7/7/2778085B-D375-4FC0-A71E-093993F9C32F/WindowsXP-KB981957-x86-DEU.exe|updates/winxpsp3/windowsxp-kb981957-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/8/B/A/8BA296B8-7360-47F1-96BD-997B1D3ACDA4/WindowsXP-KB981957-x86-ELL.exe|updates/winxpsp3/windowsxp-kb981957-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/7/1/1/71141B6B-0D19-4DF0-9886-770C955FDF24/WindowsXP-KB981957-x86-ENU.exe|updates/winxpsp3/windowsxp-kb981957-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/8/6/68661749-F4AD-47A2-9BBB-EECCE24F5E53/WindowsXP-KB981957-x86-ESN.exe|updates/winxpsp3/windowsxp-kb981957-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/A/B/A/ABA0CBBF-206C-4A9C-9E66-6E09F9DBCB89/WindowsXP-KB981957-x86-FIN.exe|updates/winxpsp3/windowsxp-kb981957-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/9/8/C/98CB1FE2-E420-4405-A344-A8AD4520F615/WindowsXP-KB981957-x86-FRA.exe|updates/winxpsp3/windowsxp-kb981957-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/5/C/45CD54B6-2250-43D0-95AA-4B27C3DD1094/WindowsXP-KB981957-x86-HEB.exe|updates/winxpsp3/windowsxp-kb981957-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/5/8/4/584C9CA8-0CB2-4AE6-A7DA-862E9D7A342A/WindowsXP-KB981957-x86-HUN.exe|updates/winxpsp3/windowsxp-kb981957-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/E/6/B/E6BEC99C-F2AC-4AC6-8DBF-79716A7C111B/WindowsXP-KB981957-x86-ITA.exe|updates/winxpsp3/windowsxp-kb981957-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/3/E/B/3EBD0780-F0BA-40A6-8176-3C6EE5B59BBD/WindowsXP-KB981957-x86-JPN.exe|updates/winxpsp3/windowsxp-kb981957-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/E/1/5/E156D554-4339-4B0B-A189-A22630740286/WindowsXP-KB981957-x86-KOR.exe|updates/winxpsp3/windowsxp-kb981957-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/A/3/E/A3E9C42F-8B3D-40B2-9143-F5D8712D0D67/WindowsXP-KB981957-x86-NLD.exe|updates/winxpsp3/windowsxp-kb981957-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/B/9/C/B9C7AC7A-0CF2-4EA1-AB34-8CCC9CE7B6CC/WindowsXP-KB981957-x86-NOR.exe|updates/winxpsp3/windowsxp-kb981957-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/4/6/4/46433ECB-05A4-468C-BC19-249E8C1DA4E3/WindowsXP-KB981957-x86-PLK.exe|updates/winxpsp3/windowsxp-kb981957-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/4/A/7/4A75E6D6-E75A-44A4-9D6D-054C2590C4C4/WindowsXP-KB981957-x86-PTB.exe|updates/winxpsp3/windowsxp-kb981957-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/C/5/7C59F491-41E3-4741-8C85-5933548E3075/WindowsXP-KB981957-x86-PTG.exe|updates/winxpsp3/windowsxp-kb981957-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/2/7/1/27110004-2618-4CD5-9108-F035E75235CB/WindowsXP-KB981957-x86-RUS.exe|updates/winxpsp3/windowsxp-kb981957-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/0/C/6/0C6A5628-F71D-4BB2-9564-C13B0E29826F/WindowsXP-KB981957-x86-SVE.exe|updates/winxpsp3/windowsxp-kb981957-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/D/2/F/D2FF24D1-7131-4A7B-ABB3-DD76964BB1D6/WindowsXP-KB981957-x86-TRK.exe|updates/winxpsp3/windowsxp-kb981957-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB981957-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: Download details: Security Update for Windows XP (KB2279986)
-:: <http://support.microsoft.com/?kbid=2279986>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=0553FC7C-DEED-4594-A133-D621551310DC>
-:: URL|ARA|http://download.microsoft.com/download/3/7/2/372BCF52-1741-4452-B23A-0E50EFEF5EC2/WindowsXP-KB2279986-x86-ARA.exe|updates/winxpsp3/windowsxp-kb2279986-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/2/E/7/2E7B95BB-35BD-4FFD-82F2-4DF9571AFFE2/WindowsXP-KB2279986-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2279986-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/4/8/9/489A6F7B-8528-4760-8D0E-3B0A91D0F45A/WindowsXP-KB2279986-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2279986-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/D/0/E/D0E26B57-AB19-458E-A946-D9628AEB918F/WindowsXP-KB2279986-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2279986-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/0/7/5/07570BDE-BBB7-495C-A537-5BA5236B9882/WindowsXP-KB2279986-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2279986-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/E/E/B/EEBBA06A-D27D-45A3-B85A-CE41B136EEDA/WindowsXP-KB2279986-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2279986-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/D/F/5/DF5279FD-0EDD-4849-87BD-0FD562BADD2D/WindowsXP-KB2279986-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2279986-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/6/C/0/6C0E35FC-2DB9-4C2A-B7E4-D85993200772/WindowsXP-KB2279986-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2279986-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/D/1/3/D13AB023-2C35-4452-8A03-FFD4441F9BB5/WindowsXP-KB2279986-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2279986-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/D/1/D/D1D85F7F-4397-4124-B1FB-D60E6C8A02E9/WindowsXP-KB2279986-x86-HEB.exe|updates/winxpsp3/windowsxp-kb2279986-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/F/B/D/FBD9F74C-0269-4673-BDC1-20DE431A2416/WindowsXP-KB2279986-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2279986-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/1/4/8/14807300-4ADD-428D-B05E-C746A6A623A3/WindowsXP-KB2279986-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2279986-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/A/8/4A8CF56B-DB5B-45AB-B61B-5DFA341E934A/WindowsXP-KB2279986-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2279986-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/B/5/5/B55C71E5-1E04-4D7D-9C8A-CAB1B7ABC8AF/WindowsXP-KB2279986-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2279986-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/C/0/4/C0417546-858A-45E4-BA49-9CBACF2D454F/WindowsXP-KB2279986-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2279986-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/9/1/9/9198598F-C52A-47CD-9430-6A30EDC5F8AF/WindowsXP-KB2279986-x86-NOR.exe|updates/winxpsp3/windowsxp-kb2279986-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/A/D/3/AD3D8C51-751A-491C-AD86-297F07BC4E51/WindowsXP-KB2279986-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2279986-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/A/4/8A495B63-19F0-4E69-A4AD-913EBF24FDDE/WindowsXP-KB2279986-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2279986-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/4/9/3/49341C07-F6B8-4B15-B8C9-FAECBFEF15C2/WindowsXP-KB2279986-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2279986-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/B/3/F/B3F1ADAA-52AE-40C6-9779-95BBAECECD98/WindowsXP-KB2279986-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2279986-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/2/C/7/2C7DBEDA-A7EB-4927-B02B-24CA1AB010FF/WindowsXP-KB2279986-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2279986-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/2/A/0/2A039FDE-0E9A-4C9F-A107-DD0AD5462B0B/WindowsXP-KB2279986-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2279986-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2279986-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Download details: Security Update for Windows XP (KB2296011)
 :: <http://support.microsoft.com/?kbid=2296011>

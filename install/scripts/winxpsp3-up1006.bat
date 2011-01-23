@@ -1,30 +1,3 @@
-:: Microsoft Security Bulletin MS10-033 - Critical
-:: "Vulnerabilities in Media Decompression Could Allow Remote Code Execution (979902)"
-:: <http://www.microsoft.com/technet/security/bulletin/MS10-033.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=E77D5AF8-E8E0-425C-A809-4CF274E17CC5>
-:: URL|ARA|http://download.microsoft.com/download/9/8/E/98E36F5D-CD5B-4E89-AC2E-E11061F13877/WindowsXP-KB975562-x86-ARA.exe|updates/winxpsp3/windowsxp-kb975562-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/0/B/1/0B132F5B-224D-458B-BEF6-02FBD382300F/WindowsXP-KB975562-x86-CSY.exe|updates/winxpsp3/windowsxp-kb975562-x86-csy.exe
-:: No Download found for DAN.
-:: URL|DEU|http://download.microsoft.com/download/7/F/A/7FA9688B-CD6E-4A4B-809D-81FA2987C9F3/WindowsXP-KB975562-x86-DEU.exe|updates/winxpsp3/windowsxp-kb975562-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/2/B/2/2B2BBEB4-CD49-45FC-9E88-459F185BCF49/WindowsXP-KB975562-x86-ELL.exe|updates/winxpsp3/windowsxp-kb975562-x86-ell.exe
-:: No Download found for ENU.
-:: URL|ESN|http://download.microsoft.com/download/5/5/9/559A583B-72BB-4402-8CC8-6F927A1C91FB/WindowsXP-KB975562-x86-ESN.exe|updates/winxpsp3/windowsxp-kb975562-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/3/C/D/3CD33368-B37C-4D15-8EC1-50F27D9C6F90/WindowsXP-KB975562-x86-FIN.exe|updates/winxpsp3/windowsxp-kb975562-x86-fin.exe
-:: No Download found for FRA.
-:: URL|HEB|http://download.microsoft.com/download/4/0/D/40DD775B-C6B7-4355-A744-15189729CAE9/WindowsXP-KB975562-x86-HEB.exe|updates/winxpsp3/windowsxp-kb975562-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/E/D/2/ED2731E4-D928-4DA1-AE49-F358118FBF24/WindowsXP-KB975562-x86-HUN.exe|updates/winxpsp3/windowsxp-kb975562-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/7/B/F/7BFEA0A4-86C2-4D4F-9DC4-DFD0085807D6/WindowsXP-KB975562-x86-ITA.exe|updates/winxpsp3/windowsxp-kb975562-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/0/9/3/093B3922-E339-402F-AC56-FC47A4D75472/WindowsXP-KB975562-x86-JPN.exe|updates/winxpsp3/windowsxp-kb975562-x86-jpn.exe
-:: No Download found for KOR.
-:: No Download found for NLD.
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/1/8/8/18897410-8EA2-40A0-92B7-3478948F6188/WindowsXP-KB975562-x86-PLK.exe|updates/winxpsp3/windowsxp-kb975562-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/4/B/5/4B504CDF-1A3A-4EF5-A1E9-326BA0CEEA7D/WindowsXP-KB975562-x86-PTB.exe|updates/winxpsp3/windowsxp-kb975562-x86-ptb.exe
-:: No Download found for PTG.
-:: No Download found for RUS.
-:: No Download found for SVE.
-:: No Download found for TRK.
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB975562-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: <http://support.microsoft.com/?kbid=978695>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=EBBCCD82-C637-4C88-86EA-D39AE713C085>
