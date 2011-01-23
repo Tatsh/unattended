@@ -109,34 +109,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB980232-x86-%WINLANG%.ex
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB977816-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Microsoft Security Bulletin MS10-027 - Critical
-:: "Vulnerability in Windows Media Player Could Allow Remote Code Execution (979402)"
-:: <http://www.microsoft.com/technet/security/bulletin/MS10-027.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=9E4277B4-2DC5-4163-A6AA-7E07DD32B721>
-:: URL|ARA|http://download.microsoft.com/download/0/2/C/02C0227C-44F6-46FD-85CB-7145297A736A/WindowsXP-WindowsMedia-KB979402-x86-ARA.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/A/0/A/A0AE86AF-A74F-4712-86E7-73317F5AC22B/WindowsXP-WindowsMedia-KB979402-x86-CSY.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-csy.exe
-:: No Download found for DAN.
-:: URL|DEU|http://download.microsoft.com/download/6/1/6/61699678-9660-4658-A0B0-801EE2718660/WindowsXP-WindowsMedia-KB979402-x86-DEU.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/5/4/6/5464FB3C-EF77-427D-9391-3206D3ADF947/WindowsXP-WindowsMedia-KB979402-x86-ELL.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-ell.exe
-:: No Download found for ENU.
-:: URL|ESN|http://download.microsoft.com/download/A/4/0/A401CD43-B39D-4A1E-8C1C-EB7938D53FBE/WindowsXP-WindowsMedia-KB979402-x86-ESN.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/C/C/0/CC05E038-9622-49DD-A1CE-A820F748DADF/WindowsXP-WindowsMedia-KB979402-x86-FIN.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-fin.exe
-:: No Download found for FRA.
-:: URL|HEB|http://download.microsoft.com/download/8/6/E/86ED634B-4A15-4525-8654-DFE210B718D7/WindowsXP-WindowsMedia-KB979402-x86-HEB.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/3/B/8/3B81916A-6543-4632-BB7A-7B746170737C/WindowsXP-WindowsMedia-KB979402-x86-HUN.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/8/9/B/89B2F9FD-2F30-4883-A3BA-C4BEB0213690/WindowsXP-WindowsMedia-KB979402-x86-ITA.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/6/2/F/62F6ECAC-E5D3-4C4D-A56D-B537A7E7785D/WindowsXP-WindowsMedia-KB979402-x86-JPN.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-jpn.exe
-:: No Download found for KOR.
-:: No Download found for NLD.
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/2/4/B/24B74120-431D-4FEC-82AC-4C99DD9AD5C6/WindowsXP-WindowsMedia-KB979402-x86-PLK.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/E/5/8/E580FCB6-C016-4A5E-B621-420E23201147/WindowsXP-WindowsMedia-KB979402-x86-PTB.exe|updates/winxpsp3/windowsxp-windowsmedia-kb979402-x86-ptb.exe
-:: No Download found for PTG.
-:: No Download found for RUS.
-:: No Download found for SVE.
-:: No Download found for TRK.
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB979402-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Microsoft Security Bulletin MS10-022 - Important
 :: "Vulnerability in VBScript Scripting Engine Could Allow Remote Code Execution (981169)"
 :: <http://www.microsoft.com/technet/security/bulletin/ms10-022.mspx>

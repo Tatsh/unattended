@@ -134,28 +134,3 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB979482-x86-%WINLANG%.ex
 :: No Download found for TRK.
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB980195-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: <http://support.microsoft.com/?kbid=980218>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=B42A17C5-997E-4504-BA5B-BFA62166B460>
-:: URL|ARA|http://download.microsoft.com/download/3/3/6/3364795A-0DB9-4899-8727-F319ED42F65B/WindowsXP-KB980218-x86-ARA.exe|updates/winxpsp3/windowsxp-kb980218-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/6/F/9/6F904670-6A67-4070-B9EA-09E82DEA1185/WindowsXP-KB980218-x86-CSY.exe|updates/winxpsp3/windowsxp-kb980218-x86-csy.exe
-:: No Download found for DAN.
-:: URL|DEU|http://download.microsoft.com/download/D/5/5/D55E4A97-6D03-4282-ACFE-731DF4136171/WindowsXP-KB980218-x86-DEU.exe|updates/winxpsp3/windowsxp-kb980218-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/9/B/5/9B5DB77F-8EF5-403F-8CCB-CD3F350A29BC/WindowsXP-KB980218-x86-ELL.exe|updates/winxpsp3/windowsxp-kb980218-x86-ell.exe
-:: No Download found for ENU.
-:: URL|ESN|http://download.microsoft.com/download/3/7/F/37FF0B85-0413-4155-9F61-720863B06804/WindowsXP-KB980218-x86-ESN.exe|updates/winxpsp3/windowsxp-kb980218-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/4/F/1/4F196DD8-F9F0-4EBF-95BF-4774D0DF436D/WindowsXP-KB980218-x86-FIN.exe|updates/winxpsp3/windowsxp-kb980218-x86-fin.exe
-:: No Download found for FRA.
-:: URL|HEB|http://download.microsoft.com/download/B/C/E/BCE720C7-99A8-46A7-A9E1-727346E5FA61/WindowsXP-KB980218-x86-HEB.exe|updates/winxpsp3/windowsxp-kb980218-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/6/D/E/6DE98987-A45F-4115-BD8A-5039B35B053F/WindowsXP-KB980218-x86-HUN.exe|updates/winxpsp3/windowsxp-kb980218-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/D/2/6/D26017CF-BA99-420D-B76D-C58B5D7F37CE/WindowsXP-KB980218-x86-ITA.exe|updates/winxpsp3/windowsxp-kb980218-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/E/5/5/E55A7569-1D3B-40B2-862B-95BF39AA68EC/WindowsXP-KB980218-x86-JPN.exe|updates/winxpsp3/windowsxp-kb980218-x86-jpn.exe
-:: No Download found for KOR.
-:: No Download found for NLD.
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/9/1/4/914FD38B-62FB-46ED-9920-D4ADF6C33D1B/WindowsXP-KB980218-x86-PLK.exe|updates/winxpsp3/windowsxp-kb980218-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/2/5/6/256B33AB-2D3F-4956-A694-493A8AA0CE95/WindowsXP-KB980218-x86-PTB.exe|updates/winxpsp3/windowsxp-kb980218-x86-ptb.exe
-:: No Download found for PTG.
-:: No Download found for RUS.
-:: No Download found for SVE.
-:: No Download found for TRK.
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB980218-x86-%WINLANG%.exe /norestart /passive /nobackup"
