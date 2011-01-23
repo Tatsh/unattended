@@ -26,33 +26,6 @@
 :: URL|TRK|http://download.microsoft.com/download/A/1/8/A183D2E3-8AC1-43C1-BF19-BD6D5629C08C/WindowsXP-WindowsMedia-KB978695-x86-TRK.exe|updates/winxpsp3/windowsxp-windowsmedia-kb978695-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB978695-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows Media Encoder 9 Series for Windows 2000, Windows XP and Windows Server 2003 (KB979332)
-:: <http://support.microsoft.com/?kbid=979332>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=5B5398C1-5B30-4162-95B6-948D9BE103BF>
-:: URL|ARA|http://download.microsoft.com/download/3/3/6/336FC23E-1F75-4E2E-9A30-2D67BD75FCAE/WindowsMedia9-KB979332-x86-ARA.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/F/1/3/F134E6DF-19EA-4582-BCAD-66B19902A2E0/WindowsMedia9-KB979332-x86-CSY.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/5/4/B/54BDE57F-B2E9-4C8D-BB7F-772EF583554A/WindowsMedia9-KB979332-x86-DAN.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/1/C/9/1C99720D-43AF-4A01-9293-4D7461DE3331/WindowsMedia9-KB979332-x86-DEU.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/2/3/E/23E5E7EE-86C9-421A-BC26-3EA58AB656C8/WindowsMedia9-KB979332-x86-ELL.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/2/9/7/2975D8D2-F50E-47EC-AA91-D3DF22762138/WindowsMedia9-KB979332-x86-ENU.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/A/9/4/A94D40DE-6A2A-4CE3-BACE-4F4A8DA6E9F0/WindowsMedia9-KB979332-x86-ESN.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/8/0/4/80438091-6FC5-4896-8F34-2C91E0436ECE/WindowsMedia9-KB979332-x86-FIN.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/8/8/6/88619207-8674-4C84-AD60-D6D939B99408/WindowsMedia9-KB979332-x86-FRA.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/4/2/C/42CCCA44-AEA1-4949-922E-07CB2E05EA2B/WindowsMedia9-KB979332-x86-HEB.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/5/7/F/57F1C7EF-18AE-429E-9917-0791A2556893/WindowsMedia9-KB979332-x86-HUN.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/9/F/2/9F28E9E1-0900-4855-80FC-2A2DA2AFD92C/WindowsMedia9-KB979332-x86-ITA.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/8/9/2/8920F25D-11FF-4E32-9E96-BF52BEE5B4DB/WindowsMedia9-KB979332-x86-JPN.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/D/7/E/D7E9FAD8-E5FA-4436-8066-636FFDA7D79B/WindowsMedia9-KB979332-x86-KOR.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/2/5/8/25864185-932B-4A4E-AB3A-82990B4787E1/WindowsMedia9-KB979332-x86-NLD.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/3/4/F/34F1AFA4-EA89-4369-B198-6748753B1B66/WindowsMedia9-KB979332-x86-NOR.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/D/8/D/D8D9EF8B-CC17-4383-A4BA-488AC7C31ECA/WindowsMedia9-KB979332-x86-PLK.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/5/5/0/55085F11-7099-4642-8518-B5B9958A4CBB/WindowsMedia9-KB979332-x86-PTB.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/C/A/7/CA7D547B-88F8-4C4F-8352-E1E1992E380C/WindowsMedia9-KB979332-x86-PTG.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/3/4/3/343E4AEE-F3E7-495B-B1F8-BF6F005A986E/WindowsMedia9-KB979332-x86-RUS.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/3/9/E/39E61B1A-E7A6-485E-BD03-7DD7AE69DC17/WindowsMedia9-KB979332-x86-SVE.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/C/0/C/C0CD9259-32AC-4D0E-A38F-B2788C360F1B/WindowsMedia9-KB979332-x86-TRK.exe|updates/winxpsp3/windowsmedia9-kb979332-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsMedia9-KB979332-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB979482)
 :: Microsoft Security Bulletin MS10-033 - Critical
 :: "Vulnerabilities in Media Decompression Could Allow Remote Code Execution (979902)"
