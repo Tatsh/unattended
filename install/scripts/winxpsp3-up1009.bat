@@ -79,33 +79,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\%WINLANG%\WindowsXP-WindowsMedia-KB
 :: URL|TRK|http://download.microsoft.com/download/4/0/7/407FCC40-DE39-4574-B43E-DF3D3B9BEB85/WindowsXP-KB981322-x86-ENU.exe|updates/winxpsp3/trk/windowsxp-kb981322-x86-enu.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\%WINLANG%\WindowsXP-KB981322-x86-ENU.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows XP (KB982802)
-:: <http://support.microsoft.com/?kbid=982802>
-:: <http://www.microsoft.com/downloads/en/details.aspx?familyid=7AD0F2CF-03DC-49A0-A16E-17FED0C01CC6>
-:: URL|ARA|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/ara/windowsxp-kb982802-x86-enu.exe
-:: URL|CSY|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/csy/windowsxp-kb982802-x86-enu.exe
-:: URL|DAN|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/dan/windowsxp-kb982802-x86-enu.exe
-:: URL|DEU|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/deu/windowsxp-kb982802-x86-enu.exe
-:: URL|ELL|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/ell/windowsxp-kb982802-x86-enu.exe
-:: URL|ENU|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/windowsxp-kb982802-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/esn/windowsxp-kb982802-x86-enu.exe
-:: URL|FIN|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/fin/windowsxp-kb982802-x86-enu.exe
-:: URL|FRA|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/fra/windowsxp-kb982802-x86-enu.exe
-:: URL|HEB|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/heb/windowsxp-kb982802-x86-enu.exe
-:: URL|HUN|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/hun/windowsxp-kb982802-x86-enu.exe
-:: URL|ITA|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/ita/windowsxp-kb982802-x86-enu.exe
-:: URL|JPN|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/jpn/windowsxp-kb982802-x86-enu.exe
-:: URL|KOR|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/kor/windowsxp-kb982802-x86-enu.exe
-:: URL|NLD|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/nld/windowsxp-kb982802-x86-enu.exe
-:: URL|NOR|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/nor/windowsxp-kb982802-x86-enu.exe
-:: URL|PLK|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/plk/windowsxp-kb982802-x86-enu.exe
-:: URL|PTB|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/ptb/windowsxp-kb982802-x86-enu.exe
-:: URL|PTG|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/ptg/windowsxp-kb982802-x86-enu.exe
-:: URL|RUS|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/rus/windowsxp-kb982802-x86-enu.exe
-:: URL|SVE|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/sve/windowsxp-kb982802-x86-enu.exe
-:: URL|TRK|http://download.microsoft.com/download/9/9/4/9940EBBE-7252-4BC0-A2B1-3BDD22D6E049/WindowsXP-KB982802-x86-ENU.exe|updates/winxpsp3/trk/windowsxp-kb982802-x86-enu.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\%WINLANG%\WindowsXP-KB982802-x86-ENU.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB2259922)
 :: <http://support.microsoft.com/?kbid=2259922>
 :: <http://www.microsoft.com/downloads/en/details.aspx?familyid=FC4369EC-864A-42AE-A850-B006872241FE>
