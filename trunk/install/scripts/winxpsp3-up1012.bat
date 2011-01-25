@@ -57,35 +57,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2416400-x86-%WINLANG%.e
 :: URL|TRK|http://download.microsoft.com/download/5/C/A/5CAACD50-AF92-4603-8633-1E4E14CC8B83/WindowsXP-KB2296199-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2296199-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2296199-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows Media Encoder 9 Series for Windows XP and Windows Server 2003 (KB2447961)
-:: Microsoft Security Bulletin MS10-094 - Important
-:: "Vulnerability in Windows Media Encoder Could Allow Remote Code Execution (2447961)"
-:: <http://www.microsoft.com/technet/security/bulletin/MS10-094.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=EF0ADA2C-965F-438F-A1D3-BD45DB8460C1>
-:: URL|ARA|http://download.microsoft.com/download/B/9/9/B99670D6-7E1E-48CC-B570-276DA3FDE0D7/WindowsMedia9-KB2447961-x86-ARA.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/2/A/1/2A1B306C-2F03-4B86-9CCD-8D8ED6003BFE/WindowsMedia9-KB2447961-x86-CSY.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/8/8/B/88B1D668-28B8-4C8F-B1A3-DD1A77FE62F7/WindowsMedia9-KB2447961-x86-DAN.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/5/5/5/55519568-C704-4A1F-9B87-34DAF48EAFBA/WindowsMedia9-KB2447961-x86-DEU.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/0/6/D/06D7F949-76D6-4108-85E5-4A1075E6E517/WindowsMedia9-KB2447961-x86-ELL.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/A/B/F/ABF5DE49-46F5-43EA-9748-ADEE66CA7193/WindowsMedia9-KB2447961-x86-ENU.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/8/2/2/822B6505-D43D-4563-B622-433DF73F5621/WindowsMedia9-KB2447961-x86-ESN.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/7/E/D/7ED8F1C9-4AB9-44C0-95AF-F64C78A76E05/WindowsMedia9-KB2447961-x86-FIN.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/C/B/A/CBAC9E55-5A40-45A6-8A2D-74AD12402CBE/WindowsMedia9-KB2447961-x86-FRA.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/1/5/D/15D10279-D572-43FA-9BA4-7062F6895A9B/WindowsMedia9-KB2447961-x86-HEB.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/4/0/A/40A28463-EA3C-4E2B-82FD-5B4E6675EA3A/WindowsMedia9-KB2447961-x86-HUN.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/C/4/9/C4933D4E-3AB4-467B-8073-78AFFC57C008/WindowsMedia9-KB2447961-x86-ITA.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/3/0/D/30D14528-A207-4F3D-8DF5-CB32A7F2A4FD/WindowsMedia9-KB2447961-x86-JPN.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/5/A/B/5AB0D2CB-48ED-45BE-8BE0-004F2C674A8C/WindowsMedia9-KB2447961-x86-KOR.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/5/4/3/543F1911-E4A5-4C42-91E4-9B94BBB3A668/WindowsMedia9-KB2447961-x86-NLD.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/E/9/A/E9AEA53D-6564-4BE8-A223-6FD390E4E7D6/WindowsMedia9-KB2447961-x86-NOR.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/1/1/E/11EFE72E-3629-403D-AB15-53F93596DDFA/WindowsMedia9-KB2447961-x86-PLK.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/1/F/8/1F8B5ED0-C03B-4FED-9770-1DB7409F56C5/WindowsMedia9-KB2447961-x86-PTB.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/8/6/6/866140D7-4A36-4BF5-85EF-22FCEC16BF1E/WindowsMedia9-KB2447961-x86-PTG.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/E/B/2/EB2BFFD9-7D14-4F30-8A45-C92D7093C1E0/WindowsMedia9-KB2447961-x86-RUS.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/7/6/8/768A299E-E290-433B-AD59-A664C6A03E4B/WindowsMedia9-KB2447961-x86-SVE.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/C/D/8/CD82F356-40C7-4F5A-8677-058532DC2C32/WindowsMedia9-KB2447961-x86-TRK.exe|updates/winxpsp3/windowsmedia9-kb2447961-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsMedia9-KB2447961-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB2423089)
 :: <http://support.microsoft.com/?kbid=2423089>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=46BAA431-126C-4FA5-9A7B-525008E2817D>
