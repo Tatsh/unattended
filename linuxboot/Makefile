@@ -18,7 +18,7 @@ kbd=kbd-1.15.2
 libusb=libusb-0.1.12
 linux=linux-2.6.35.8
 module-init-tools=module-init-tools-3.12
-mysql=mysql-5.0.90
+mysql=mysql-5.0.92
 nano=nano-2.0.9
 # TODO: ncurses-5.7
 ncurses=ncurses-5.6
