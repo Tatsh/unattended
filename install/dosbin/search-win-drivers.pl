@@ -16,6 +16,9 @@
 #        no drivers are currenlty using these forms ?
 # 
 # Changelog:
+#   20110312 - fix on HDaudio: use 'AFG Function Id' as 'Function Id' replacement if exists.
+#   20110312 - use /sys/bus/usb to detect USB support.
+#   20110308 - fix: files /proc/asound/card<n1>/codec#<n2>: n1,n2 may have several digits.
 #   20110120 - fix #52 USB error message
 #   20091130 - comments revisited.
 #   20091130 - default drivers path: use /z/drivers/ (instead of /z/site/win_drivers/).
@@ -648,14 +651,14 @@ sub parse_hardware($$) {
     else {
         ## look for files that match /proc/asound/card<num>/codec#<num>
         my @acodec = ();
-        my @acard = map { $_ = "/proc/asound/$_" } grep { /^card\d$/ && -d "/proc/asound/$_" } readdir DIR ;
+        my @acard = map { $_ = "/proc/asound/$_" } grep { /^card\d+$/ && -d "/proc/asound/$_" } readdir DIR ;
         closedir DIR;
         if ( scalar(@acard) eq 0 ) {
             out("  no sound card detected (/proc/asound/card<num>/): HDAUDIO devices search disabled.");
         }
         foreach my $card (@acard) {
             opendir DIR, $card;
-            push @acodec, map { $_ = "$card/$_" } grep { /^codec#\d$/ && -f "$card/$_" } readdir DIR ;
+            push @acodec, map { $_ = "$card/$_" } grep { /^codec#\d+$/ && -f "$card/$_" } readdir DIR ;
             closedir DIR;
         }
         out(sprintf("  found %d HDaudio codec (on %d sound card).", scalar(@acodec), scalar(@acard)));
@@ -664,7 +667,7 @@ sub parse_hardware($$) {
             open FILE, $c;
             while ( my $l = <FILE> ) {
                 chomp $l;
-                $l =~ /^(Codec|Address|Function Id|Vendor Id|Subsystem Id): (.+)/ ;
+                $l =~ /^(Codec|Address|Function Id|AFG Function Id|Vendor Id|Subsystem Id): (0x\d+).*/ ;
                 next if not defined($1);
                 $r_{$1} = $2 ; 
             }
@@ -673,13 +676,18 @@ sub parse_hardware($$) {
             my %h = ( 'bustype' => "HDAUDIO"
                     , 'busid'   => $r_{'Address'}
                     , 'class'   => ""
-                    , 'hdfunc'  => sprintf("%02x", hex($r_{'Function Id'}))
                     , 'vendor'  => sprintf("%04x", hex($r_{'Vendor Id'}) >> 16 )
                     , 'device'  => sprintf("%04x", hex($r_{'Vendor Id'}) &  0x0000ffff )
                     , 'svendor' => sprintf("%04x", hex($r_{'Subsystem Id'}) >> 16 )
                     , 'sdevice' => sprintf("%04x", hex($r_{'Subsystem Id'}) &  0x0000ffff )
                     , 'desc'    => $r_{'Codec'}
                   );
+            if ( defined $r_{'Function Id'} ) {
+                $h{'hdfunc'} = sprintf("%02x", hex($r_{'Function Id'}));
+            }
+            else {
+                $h{'hdfunc'} = sprintf("%02x", hex($r_{'AFG Function Id'}));
+            }
             $h{'infstr'}  = &get_infstr(\%h) ;
             push @dev, \%h ;
         }
@@ -694,8 +702,8 @@ sub parse_hardware($$) {
     ##
 
     out("- Check USB devices...");
-    if ( not -f "/sys/kernel/debug/usb/devices" ) {
-        out("  no USB support: /sys/kernel/debug/usb/devices is absent");
+    if ( not -d "/sys/bus/usb" ) {
+        out("  no USB support: /sys/bus/usb/ is absent");
     }
     elsif ( not -x "/sbin/lsusb" ) {
         out("  no USB support: /sbin/lsusb is missing.");
