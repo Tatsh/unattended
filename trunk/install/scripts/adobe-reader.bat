@@ -1,48 +1,47 @@
 :: OPTIONAL: Install Adobe Reader 
-:: HOME: http://www.adobe.com/support/downloads/product.jsp?platform=windows&product=10
 @Echo Off
 
 :: Download Adobe Reader full version
-:: URL|ARA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/ar_AE/AdbeRdr940_ar_AE.exe|packages/adobereader/adberdr940_ara.exe
-:: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/zh_CN/AdbeRdr940_zh_CN.exe|packages/adobereader/adberdr940_chs.exe
-:: URL|CHT|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/zh_TW/AdbeRdr940_zh_TW.exe|packages/adobereader/adberdr940_cht.exe
-:: URL|CSY|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/cs_CZ/AdbeRdr940_cs_CZ.exe|packages/adobereader/adberdr940_csy.exe
-:: URL|DAN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/da_DK/AdbeRdr940_da_DK.exe|packages/adobereader/adberdr940_dan.exe
-:: URL|NLD|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/nl_NL/AdbeRdr940_nl_NL.exe|packages/adobereader/adberdr940_nld.exe
-:: URL|ENU|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/en_US/AdbeRdr940_en_US.exe|packages/adobereader/adberdr940_enu.exe
-:: URL|FIN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/fi_FI/AdbeRdr940_fi_FI.exe|packages/adobereader/adberdr940_fin.exe
-:: URL|FRA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/fr_FR/AdbeRdr940_fr_FR.exe|packages/adobereader/adberdr940_fra.exe
-:: URL|DEU|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/de_DE/AdbeRdr940_de_DE.exe|packages/adobereader/adberdr940_deu.exe
-:: URL|ELL|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/el_GR/AdbeRdr940_el_GR.exe|packages/adobereader/adberdr940_ell.exe
-:: URL|HEB|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/he_IL/AdbeRdr940_he_IL.exe|packages/adobereader/adberdr940_heb.exe
-:: URL|HUN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/hu_HU/AdbeRdr940_hu_HU.exe|packages/adobereader/adberdr940_hun.exe
-:: URL|ITA|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/it_IT/AdbeRdr940_it_IT.exe|packages/adobereader/adberdr940_ita.exe
-:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/ja_JP/AdbeRdr940_ja_JP.exe|packages/adobereader/adberdr940_jpn.exe
-:: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/ko_KR/AdbeRdr940_ko_KR.exe|packages/adobereader/adberdr940_kor.exe
-:: URL|NOR|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/nb_NO/AdbeRdr940_nb_NO.exe|packages/adobereader/adberdr940_nor.exe
-:: URL|PLK|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/pl_PL/AdbeRdr940_pl_PL.exe|packages/adobereader/adberdr940_plk.exe
-:: URL|PTB|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/pt_BR/AdbeRdr940_pt_BR.exe|packages/adobereader/adberdr940_ptb.exe
-:: URL|RUS|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/ru_RU/AdbeRdr940_ru_RU.exe|packages/adobereader/adberdr940_rus.exe
-:: URL|ESN|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/es_ES/AdbeRdr940_es_ES.exe|packages/adobereader/adberdr940_esn.exe
-:: URL|SVE|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/sv_SE/AdbeRdr940_sv_SE.exe|packages/adobereader/adberdr940_sve.exe
-:: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/9.x/9.4.0/tr_TR/AdbeRdr940_tr_TR.exe|packages/adobereader/adberdr940_trk.exe
+:: URL|ARA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/ar_AE/AdbeRdr1000_ar_AE.exe|packages/adobereader/adberdr1000_ara.exe
+:: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/zh_CN/AdbeRdr1000_zh_CN.exe|packages/adobereader/adberdr1000_chs.exe
+:: URL|CHT|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/zh_TW/AdbeRdr1000_zh_TW.exe|packages/adobereader/adberdr1000_cht.exe
+:: URL|CSY|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/cs_CZ/AdbeRdr1000_cs_CZ.exe|packages/adobereader/adberdr1000_csy.exe
+:: URL|DAN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/da_DK/AdbeRdr1000_da_DK.exe|packages/adobereader/adberdr1000_dan.exe
+:: URL|NLD|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/nl_NL/AdbeRdr1000_nl_NL.exe|packages/adobereader/adberdr1000_nld.exe
+:: URL|ENU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/en_US/AdbeRdr1000_en_US.exe|packages/adobereader/adberdr1000_enu.exe
+:: URL|FIN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/fi_FI/AdbeRdr1000_fi_FI.exe|packages/adobereader/adberdr1000_fin.exe
+:: URL|FRA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/fr_FR/AdbeRdr1000_fr_FR.exe|packages/adobereader/adberdr1000_fra.exe
+:: URL|DEU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/de_DE/AdbeRdr1000_de_DE.exe|packages/adobereader/adberdr1000_deu.exe
+:: URL|ELL|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/el_GR/AdbeRdr1000_el_GR.exe|packages/adobereader/adberdr1000_ell.exe
+:: URL|HEB|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/he_IL/AdbeRdr1000_he_IL.exe|packages/adobereader/adberdr1000_heb.exe
+:: URL|HUN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/hu_HU/AdbeRdr1000_hu_HU.exe|packages/adobereader/adberdr1000_hun.exe
+:: URL|ITA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/it_IT/AdbeRdr1000_it_IT.exe|packages/adobereader/adberdr1000_ita.exe
+:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/ja_JP/AdbeRdr1000_ja_JP.exe|packages/adobereader/adberdr1000_jpn.exe
+:: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/ko_KR/AdbeRdr1000_ko_KR.exe|packages/adobereader/adberdr1000_kor.exe
+:: URL|NOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/nb_NO/AdbeRdr1000_nb_NO.exe|packages/adobereader/adberdr1000_nor.exe
+:: URL|PLK|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/pl_PL/AdbeRdr1000_pl_PL.exe|packages/adobereader/adberdr1000_plk.exe
+:: URL|PTB|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/pt_BR/AdbeRdr1000_pt_BR.exe|packages/adobereader/adberdr1000_ptb.exe
+:: URL|RUS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/ru_RU/AdbeRdr1000_ru_RU.exe|packages/adobereader/adberdr1000_rus.exe
+:: URL|ESN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/es_ES/AdbeRdr1000_es_ES.exe|packages/adobereader/adberdr1000_esn.exe
+:: URL|SVE|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/sv_SE/AdbeRdr1000_sv_SE.exe|packages/adobereader/adberdr1000_sve.exe
+:: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/tr_TR/AdbeRdr1000_tr_TR.exe|packages/adobereader/adberdr1000_trk.exe
 
 
-:: Download Adobe Reader X Spelling Dictionary Pack
-:: URL|ALL|http://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/misc/AdbeRdrSD1000_all.msi|packages/adobereader/misc/AdbeRdrSD1000_all.msi
+:: Download Adobe Reader 9.0.x Language Support
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/misc/AdbeRdrSD1000_all.msi|packages/adobereader/misc/AdbeRdrSD1000_all.msi
 :: Download Extended Language Support Fonts Package
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0/misc/FontPack1000_Xtd_Lang.msi|packages/adobereader/misc/fontpack90_xtd_lang.msi
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/misc/FontPack1000_Xtd_Lang.msi|packages/adobereader/misc/FontPack1000_xtd_lang.msi
 :: Download Adobe Reader Japanese Fonts
-:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0/misc/FontPack1000_ja_JP.msi|packages/adobereader/misc/fontpack90_jpn.msi
+:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/misc/FontPack1000_ja_JP.msi|packages/adobereader/misc/FontPack1000_jpn.msi
 :: Download Adobe Reader Korean Fonts
-:: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0/misc/FontPack1000_ko_KR.msi|packages/adobereader/misc/fontpack90_kor.msi
+:: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/misc/FontPack1000_ko_KR.msi|packages/adobereader/misc/FontPack1000_kor.msi
 :: Download Adobe Reader Chinese Fonts
-:: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0/misc/FontPack1000_zh_CN.msi|packages/adobereader/misc/fontpack90_chs.msi
+:: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/misc/FontPack1000_zh_CN.msi|packages/adobereader/misc/FontPack1000_chs.msi
 :: Download Adobe Reader Taiwanese Fonts
-:: ULR|TWS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0/misc/FontPack1000_zh_TW.msi|packages/adobereader/misc/fontpack90_nan.msi
+:: ULR|TWS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/misc/FontPack1000_zh_TW.msi|packages/adobereader/misc/FontPack1000_nan.msi
 
-:: 9.4.0 Version
-set adobe_install=%Z%\packages\adobereader\AdbeRdr940_%WINLANG%.exe
+:: 10.00 Version
+set adobe_install=%Z%\packages\adobereader\AdbeRdr1000_%WINLANG%.exe
 if not exist %adobe_install% goto noadberdr
 
 :found_install
@@ -52,36 +51,36 @@ if not exist %adobe_install% goto noadberdr
 
 :: Install Adobe Reader Fonts based on current WINLANG
 :: if not exist %Z%\packages\adobereader\misc\alf_%WINLANG%.exe goto noalf
-:: todo.pl "start /wait %Z%\packages\adobereader\misc\fontpack1000_%WINLANG%.msi /qb"
+:: todo.pl "start /wait %Z%\packages\adobereader\misc\FontPack1000_%WINLANG%.msi /qb"
 :nofp
 
 :: Install Adobe Reader Japanese Fonts
-:: todo.pl "start /wait %Z%\packages\adobereader\misc\fontpack1000_jpn.msi /qb"
+:: todo.pl "start /wait %Z%\packages\adobereader\misc\FontPack1000_jpn.msi /qb"
 
 :: Install Adobe Reader Korean Fonts
-:: todo.pl "start /wait %Z%\packages\adobereader\misc\fontpack1000_kor.msi /qb"
+:: todo.pl "start /wait %Z%\packages\adobereader\misc\FontPack1000_kor.msi /qb"
 
 :: Install Adobe Reader Chinese Fonts
-:: todo.pl "start /wait %Z%\packages\adobereader\misc\fontpack1000_chs.msi /qb"
+:: todo.pl "start /wait %Z%\packages\adobereader\misc\FontPack1000_chs.msi /qb"
 
 :: Install Adobe Reader Taiwanese Fonts
-:: todo.pl "start /wait %Z%\packages\adobereader\misc\fontpack1000_nan.msi /qb"
+:: todo.pl "start /wait %Z%\packages\adobereader\misc\FontPack1000_nan.msi /qb"
 
 ::--------------------------------------------------------------------------------
 :: End of Adobe Reader Fonts installation section
 ::--------------------------------------------------------------------------------
 
-if not exist %Z%\packages\adobereader\misc\fontpack1000_xtd_lang.msi goto nolangsupport
+::if not exist %Z%\packages\adobereader\misc\FontPack1000_xtd_lang.msi goto nolangsupport
 :: Install Extended Language Support Fonts Package
-todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\fontpack1000_xtd_lang.msi"
+::todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\FontPack1000_xtd_lang.msi"
 
 :nolangsupport
 
 :: There is not need for a link on the desktop. It is a document centric application
-todo.pl "unlink.pl special:AllUsersDesktop\"\Adobe Reader 9.lnk\"" 
+todo.pl "unlink.pl special:AllUsersDesktop\"\Adobe Reader X.lnk\"" 
 
 :: Accept EULA
-todo.pl "reg add \"HKLM\SOFTWARE\Adobe\Acrobat Reader\9.0\AdobeViewer\" /f /v \"EULA\" /t REG_DWORD /d 1"
+todo.pl "reg add \"HKLM\SOFTWARE\Adobe\Acrobat Reader\10.0\AdobeViewer\" /f /v \"EULA\" /t REG_DWORD /d 1"
 
 :: Please do not start anything unless necesary
 todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe ARM\""
