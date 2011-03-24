@@ -4,8 +4,8 @@
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=9AE91EBE-3385-447C-8A30-081805B2F90B>
 : Active X plugin for IE
 
-:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/current/licensing/win/install_flash_player_10_active_x.exe|packages/macromedia/install_flash_player_10_active_x.exe
-todo.pl "%Z%\packages\macromedia\install_flash_player_10_active_x.exe /s"
+:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/current/licensing/win/install_flash_player_10_active_x.exe|packages/macromedia/install_flash_player_10_active_x-10.2.153.1.exe
+todo.pl "%Z%\packages\macromedia\install_flash_player_10_active_x-10.2.153.1.exe /s"
 
 :: Cumulative Security Update for Internet Explorer 7 for Windows XP (KB969897)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=827b735c-660b-4723-b688-3297e107153a>
