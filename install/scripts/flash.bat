@@ -1,5 +1,5 @@
-:: OPTIONAL: Install Flash
-:: HOME: http://get.adobe.com/flashplayer/otherversions/
+:: OPTIONAL: Install Flash 10.2.153.1
+:: HOME: http://get.adobe.com/flashplayer/otherversions/ http://www.adobe.com/software/flash/about/
 :: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/current/install_flash_player.exe|packages/flash/install_flash_player_10.2.153.1.exe
 :: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/current/install_flash_player_ax.exe|packages/flash/install_flash_player_ax_10.2.153.1.exe
 ::
