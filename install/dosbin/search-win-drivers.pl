@@ -16,6 +16,7 @@
 #        no drivers are currenlty using these forms ?
 # 
 # Changelog:
+#   20110426 - fix: HDaudio parsing: not all values are hexa numbers. also fix hexa number parsing.
 #   20110312 - fix on HDaudio: use 'AFG Function Id' as 'Function Id' replacement if exists.
 #   20110312 - use /sys/bus/usb to detect USB support.
 #   20110308 - fix: files /proc/asound/card<n1>/codec#<n2>: n1,n2 may have several digits.
@@ -667,7 +668,11 @@ sub parse_hardware($$) {
             open FILE, $c;
             while ( my $l = <FILE> ) {
                 chomp $l;
-                $l =~ /^(Codec|Address|Function Id|AFG Function Id|Vendor Id|Subsystem Id): (0x\d+).*/ ;
+		# about values: are different depending on search field.
+		# 'Codec' is a string, 'Address' an int,
+		# we may have 'AFG Function Id: 0x1 (unsol 0)'
+                $l =~ /^(Function Id|AFG Function Id|Vendor Id|Subsystem Id): (0x[0-9A-Fa-f]+).*/ ;
+                $l =~ /^(Codec|Address): (.+)/ if not defined($1);
                 next if not defined($1);
                 $r_{$1} = $2 ; 
             }
