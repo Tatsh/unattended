@@ -16,7 +16,7 @@ glibc=glibc-2.11.1
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.8
 libusb=libusb-0.1.12
-linux=linux-2.6.35.9
+linux=linux-2.6.38.4
 module-init-tools=module-init-tools-3.12
 mysql=mysql-5.0.92
 nano=nano-2.0.9
