@@ -16,6 +16,7 @@
 #        no drivers are currenlty using these forms ?
 # 
 # Changelog:
+#   20110505 - fix: HDaudio: use 'MFG Function Id' if 'AFG Function Id' or 'Function Id' is not available.
 #   20110426 - fix: HDaudio parsing: not all values are hexa numbers. also fix hexa number parsing.
 #   20110312 - fix on HDaudio: use 'AFG Function Id' as 'Function Id' replacement if exists.
 #   20110312 - use /sys/bus/usb to detect USB support.
@@ -146,7 +147,7 @@
 #       $ head /proc/asound/card0/codec#1
 #       Codec: Conextant ID 2c06
 #       Address: 1
-#       Function Id: 0x2
+#       MFG Function Id: 0x2 (unsol 1)
 #       Vendor Id: 0x14f12c06
 #       Subsystem Id: 0x14f1000f
 #       Revision Id: 0x100000
@@ -671,13 +672,13 @@ sub parse_hardware($$) {
 		# about values: are different depending on search field.
 		# 'Codec' is a string, 'Address' an int,
 		# we may have 'AFG Function Id: 0x1 (unsol 0)'
-                $l =~ /^(Function Id|AFG Function Id|Vendor Id|Subsystem Id): (0x[0-9A-Fa-f]+).*/ ;
+                $l =~ /^(Function Id|AFG Function Id|MFG Function Id|Vendor Id|Subsystem Id): (0x[0-9A-Fa-f]+).*/ ;
                 $l =~ /^(Codec|Address): (.+)/ if not defined($1);
                 next if not defined($1);
                 $r_{$1} = $2 ; 
             }
             close FILE;
-            # 'hdfunc' is specific to HDaudio device(s)
+
             my %h = ( 'bustype' => "HDAUDIO"
                     , 'busid'   => $r_{'Address'}
                     , 'class'   => ""
@@ -687,11 +688,17 @@ sub parse_hardware($$) {
                     , 'sdevice' => sprintf("%04x", hex($r_{'Subsystem Id'}) &  0x0000ffff )
                     , 'desc'    => $r_{'Codec'}
                   );
+
+            # 'hdfunc' is specific to HDaudio device(s)
+            $h{'hdfunc'} = "00";
             if ( defined $r_{'Function Id'} ) {
                 $h{'hdfunc'} = sprintf("%02x", hex($r_{'Function Id'}));
             }
-            else {
+            elsif ( defined $r_{'AFG Function Id'} ) {
                 $h{'hdfunc'} = sprintf("%02x", hex($r_{'AFG Function Id'}));
+            }
+            elsif ( defined $r_{'MFG Function Id'} ) {
+                $h{'hdfunc'} = sprintf("%02x", hex($r_{'MFG Function Id'}));
             }
             $h{'infstr'}  = &get_infstr(\%h) ;
             push @dev, \%h ;
