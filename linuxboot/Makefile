@@ -10,8 +10,7 @@ dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
 e2fsprogs=e2fsprogs-1.41.12
 expat=expat-2.0.1
-#TODO: glibc-2.12.1
-glibc=glibc-2.11.1
+glibc=glibc-2.13
 # TODO: kbd-1.15.2 Missing configure
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.8
