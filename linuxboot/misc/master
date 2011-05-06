@@ -152,11 +152,6 @@ done
 [ -f /tmp/dhcp.out ] \
     && . /tmp/dhcp.out
 
-# Configure the keyboard again, in case it was provided via DHCP.
-kbd=$(get_cmdline_param kbd)
-[ -n "$kbd" ] \
-    && loadkeys ${kbd#*=}
-
 echo "*** Now we need to map the /z drive."
 
 while : ; do
@@ -266,6 +261,12 @@ unset PASSWD
 
 [ -d /z/linuxaux ] \
     || die "Invalid install share: /z/linuxaux directory not found."
+
+echo "*** Now, let's try again to configure keybard..."
+# Configure the keyboard again, in case it was provided via DHCP.
+kbd=$(get_cmdline_param kbd)
+[ -n "$kbd" ] \
+    && loadkeys ${kbd#*=}
 
 echo "*** Excellent.  Now, let's see about mass storage controllers..."
 
