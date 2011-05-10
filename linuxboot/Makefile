@@ -31,7 +31,7 @@ perl-ldap=perl-ldap-0.40
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 # TODO: samba-3.5.4
-samba=samba-3.3.13
+samba=samba-3.3.15
 slang=slang-2.0.7
 syslinux=syslinux-4.04
 usbutils=usbutils-0.86
