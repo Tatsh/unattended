@@ -30,6 +30,10 @@
 # bottom_scripts           <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
 # ntp_servers              <macaddr>,<ComputerName>,<FullName>,<OrgName>,Default
 # Partitions               <macaddr>,<ComputerName>,<os_name>,Default
+# fdisk_confirm            <macaddr>,<ComputerName>,<os_name>,Default
+# nt5x-install             <macaddr>,<ComputerName>,<os_name>,Default
+# replace_mbr              <macaddr>,<ComputerName>,<os_name>,Default
+# edit_files               <macaddr>,<ComputerName>,<os_name>,Default
 # DriverPath               <macaddr>,<ComputerName>,<os_name>,Default
 # UnattendedFile           Default,<os_name>,<OrgName>,<FullName>,<ComputerName>,<macaddr>
 
@@ -86,6 +90,91 @@ $u->push_value ('_meta', 'fdisk_cmds',
         }
         return undef;
     });
+# Lookup fdisk confirmation from database, if possible.
+
+ $u->push_value ('_meta', 'fdisk_confirm',
+     sub {
+         my $os_media = $u->{'_meta'}->{'OS_media'};
+         defined $os_media
+             or return undef;
+         my $media_obj = Unattend::WinMedia->new ($os_media);
+         defined $media_obj
+             or return undef;
+         my $os_name = $media_obj->name ();
+         foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                             $u->{'UserData'}->{'ComputerName'},
+                             "$os_name",
+                             'Default') {
+             my $value = CONFIG->lookup_value($lookup, 'fdisk_confirm');
+             defined $value
+                 and return $value;
+         }
+         return undef;
+     });
+ 
+ # Lookup ntinstall_cmd from database, if possible.
+ $u->push_value ('_meta', 'ntinstall_cmd',
+     sub {
+         my $os_media = $u->{'_meta'}->{'OS_media'};
+         defined $os_media
+             or return undef;
+         my $media_obj = Unattend::WinMedia->new ($os_media);
+         defined $media_obj
+             or return undef;
+         my $os_name = $media_obj->name ();
+         foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                             $u->{'UserData'}->{'ComputerName'},
+                             "$os_name",
+                             'Default') {
+             my $value = CONFIG->lookup_value($lookup, 'nt5x-install');
+             defined $value and $value =~ /^(y|yes|true|1)$/i and
+                 return "nt5x-install";
+         }
+         return undef;
+     });
+ 
+ # Lookup replace_mbr from database, if possible.
+ $u->push_value ('_meta', 'replace_mbr',
+     sub {
+         my $os_media = $u->{'_meta'}->{'OS_media'};
+         defined $os_media
+             or return undef;
+         my $media_obj = Unattend::WinMedia->new ($os_media);
+         defined $media_obj
+             or return undef;
+         my $os_name = $media_obj->name ();
+         foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                             $u->{'UserData'}->{'ComputerName'},
+                             "$os_name",
+                             'Default') {
+             my $value = CONFIG->lookup_value($lookup, 'replace_mbr');
+             defined $value and
+                 return $value;
+         }
+         return undef;
+     });
+ 
+
+ # Lookup edit_files from database, if possible.
+ $u->push_value ('_meta', 'edit_files',
+     sub {
+         my $os_media = $u->{'_meta'}->{'OS_media'};
+         defined $os_media
+             or return undef;
+         my $media_obj = Unattend::WinMedia->new ($os_media);
+         defined $media_obj
+             or return undef;
+         my $os_name = $media_obj->name ();
+         foreach my $lookup ($u->{'_meta'}->{'macaddr'}, 
+                             $u->{'UserData'}->{'ComputerName'},
+                             "$os_name",
+                             'Default') {
+             my $value = CONFIG->lookup_value($lookup, 'edit_files');
+             defined $value and
+                 return $value;
+         }
+         return undef;
+     });
 
 # Lookup computer name from database, if possible.
 $u->push_value ('UserData', 'ComputerName', 
