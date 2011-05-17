@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 default:
 	@echo "This Makefile is for the maintainer (sorry)"
 	@echo "Please read the documentation under html/"
