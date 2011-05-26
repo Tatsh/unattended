@@ -46,7 +46,7 @@ then
 fi
 
 #If there is SVN information when use svn as it has better support
-if [ -f .svn ]
+if [ -d .svn ]
 then
     $SVN up
     exit 0
