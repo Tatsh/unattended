@@ -34,7 +34,7 @@ perl-xml-xpath=XML-XPath-1.13
 samba=samba-3.3.15
 slang=slang-2.0.7
 syslinux=syslinux-4.04
-usbutils=usbutils-0.86
+usbutils=usbutils-0.90
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.5
 
