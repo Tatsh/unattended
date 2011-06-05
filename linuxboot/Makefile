@@ -1069,7 +1069,7 @@ $(call download_rule, $(slang), tar.bz2, 	\
 $(call download_rule, $(syslinux), tar.gz, \
         http://ftp.all.kernel.org/pub/linux/utils/boot/syslinux/)
 $(call download_rule, $(usbutils), tar.gz,	\
-	http://downloads.sourceforge.net/linux-usb/)
+	http://www.kernel.org/pub/linux/utils/usb/usbutils/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
 $(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
