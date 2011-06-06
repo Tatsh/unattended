@@ -1,4 +1,8 @@
-** Changes in version 4.9 (2010)
+** Changes in version 4.9 (2010-Jun-6)
+Kernel linux-2.6.38.6
+Windows XP SP3 Security updates up to January 2011
+Linuxboot programs upgrade to latest stable versions.
+AutodetectDrivers. Thanks Pierre! 
 
 ** Changes in version 4.8 (2009-Apr-29)
 Kernel 2.6.29.1  (enable more network drivers)
