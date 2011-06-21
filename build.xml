@@ -6,7 +6,7 @@
        =============================================================== -->
     <property environment="env"/>
     <property name="docs.home" value="htdocs/"/>
-    <property name="release.version" value="49rc3"/>
+    <property name="release.version" value="49rc5"/>
     <property name="release.tmp" value="/var/tmp/unattended.${release.version}"/>
     <property name="drivers.home" value="install/drivers"/>
     <property name="sf.web" value="web.sourceforge.net:/home/groups/u/un/unattended/htdocs/"/>
@@ -21,7 +21,7 @@
    <echo message="Copying Docs" />
      <exec dir="." executable="rsync" os="Linux" failonerror="true">
              <arg value="-a" />
-             <arg value="--bwlimit=30" />
+             <arg value="--bwlimit=25" />
              <arg value="-vC" />
              <arg value="${docs.home}" />
              <arg value="${sf.user}@${sf.web}" />
@@ -42,16 +42,18 @@
              <arg value="${sf.user}@${sf.frs}/unattended/${release.version}/" />
      </exec>
   </target>
-
-  <target name="extract-drivers" depends="init">
+  
+  <target name="rm-drivers" depends="init">
   <!-- ===============================================================
-      Extract Drivers
+      Removing Drivers
        =============================================================== -->
    <echo message="Removing old drivers" />
      <exec dir="." executable="rm" os="Linux" failonerror="true" >
              <arg value="-rf" />
              <arg value="${drivers.home}/D/" />
      </exec>
+  </target>
+  <target name="extract-drivers" depends="rm-drivers">
    <echo message="Uncompress drivers " />
      <exec dir="." executable="7z" os="Linux" failonerror="true" output="extract-drivers.log">
              <arg value="x" />
@@ -72,7 +74,7 @@
              <arg value="-o${drivers.home}" />
      </exec>
   </target>
-  <target name="perms-drivers" depends="init">
+  <target name="chmod-drivers" depends="init">
    <echo message="Setting up permissions" />
     <chmod perm="go+r" type="both">
        <fileset dir="${drivers.home}"/>
