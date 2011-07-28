@@ -27,10 +27,11 @@ if "%WINVER%" == "win2k" goto skipinstaller3
 %Z%\packages\windowsinstaller\windowsinstaller-kb893803-v2-x86.exe /passive /norestart
 :skipinstaller3
 
-:: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.10.1.1008/ActivePerl-5.10.1.1008-MSWin32-x86-294165.msi|packages/perl/activeperl-5.10.1.1008-mswin32-x86-294165.msi
-:: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.10.1.1008/ActivePerl-5.10.1.1008-MSWin32-x64-294165.msi|packages/perl/activeperl-5.10.1.1008-mswin32-AMD64-294165.msi
+http://downloads.activestate.com/ActivePerl/releases/5.12.4.1205/ActivePerl-5.12.4.1205-MSWin32-x86-294981.msi
+:: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.12.4.1205/ActivePerl-5.12.4.1205-MSWin32-x86-294981.msi|packages/perl/activeperl-5.12.4.1205-mswin32-x86-294981.msi
+:: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.12.4.1205/ActivePerl-5.12.4.1205-MSWin32-x64-294981.msi|packages/perl/activeperl-5.12.4.1205-mswin32-AMD64-294981.msi
 
-set perl_msi=%Z%\packages\perl\activeperl-5.10.1.1008-mswin32-%PROCESSOR_ARCHITECTURE%-294165.msi
+set perl_msi=%Z%\packages\perl\activeperl-5.12.4.1205-mswin32-%PROCESSOR_ARCHITECTURE%-294981.msi
 
 :retry
 if exist %perl_msi% goto have_perl
