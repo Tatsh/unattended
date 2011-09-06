@@ -12,7 +12,7 @@
 :: URL|ENU|http://download.microsoft.com/download/1/5/6/156DDB90-3594-4AC0-8EF8-055F9F7AEACE/WindowsXP-KB978601-x86-ENU.exe|updates/winxpsp3/windowsxp-kb978601-x86-enu.exe
 :: URL|ESN|http://download.microsoft.com/download/7/8/F/78FB4BFE-DA8B-4B04-9D62-94BE1EEE2B26/WindowsXP-KB978601-x86-ESN.exe|updates/winxpsp3/windowsxp-kb978601-x86-esn.exe
 :: URL|FIN|http://download.microsoft.com/download/4/E/0/4E0EBF60-9666-4A04-98D3-1AF966C36A23/WindowsXP-KB978601-x86-FIN.exe|updates/winxpsp3/windowsxp-kb978601-x86-fin.exe
-:: No Download found for FRA.
+:: URL|FRA|http://download.microsoft.com/download/6/E/E/6EE8A836-1730-49B6-99BB-CCDE562F61A7/WindowsXP-KB978338-x86-FRA.exe|updates/winxpsp3/windowsxp-kb978338-x86-fra.exe 
 :: URL|HEB|http://download.microsoft.com/download/D/A/E/DAE12F82-F52B-436C-B09A-1B3D874DBC45/WindowsXP-KB978601-x86-HEB.exe|updates/winxpsp3/windowsxp-kb978601-x86-heb.exe
 :: URL|HUN|http://download.microsoft.com/download/9/0/9/90984674-2115-4470-BD39-CD7501DE9880/WindowsXP-KB978601-x86-HUN.exe|updates/winxpsp3/windowsxp-kb978601-x86-hun.exe
 :: URL|ITA|http://download.microsoft.com/download/3/1/4/314545B7-3830-4FC2-BB97-F56E85DB3D8F/WindowsXP-KB978601-x86-ITA.exe|updates/winxpsp3/windowsxp-kb978601-x86-ita.exe
