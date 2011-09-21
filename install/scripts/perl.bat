@@ -27,7 +27,6 @@ if "%WINVER%" == "win2k" goto skipinstaller3
 %Z%\packages\windowsinstaller\windowsinstaller-kb893803-v2-x86.exe /passive /norestart
 :skipinstaller3
 
-http://downloads.activestate.com/ActivePerl/releases/5.12.4.1205/ActivePerl-5.12.4.1205-MSWin32-x86-294981.msi
 :: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.12.4.1205/ActivePerl-5.12.4.1205-MSWin32-x86-294981.msi|packages/perl/activeperl-5.12.4.1205-mswin32-x86-294981.msi
 :: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.12.4.1205/ActivePerl-5.12.4.1205-MSWin32-x64-294981.msi|packages/perl/activeperl-5.12.4.1205-mswin32-AMD64-294981.msi
 
