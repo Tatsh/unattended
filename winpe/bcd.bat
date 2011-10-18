@@ -20,4 +20,4 @@ Bcdedit -store c:\pxe\boot\BCD -displayorder {8d98e8a5-e197-11de-a093-080027130b
 
 ECHO Unmount the current Windows PE image 
 cd \
-imagex /unmount C:\winpe_x86\mount
+imagex /commit /unmount C:\winpe_x86\mount
