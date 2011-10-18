@@ -43,4 +43,4 @@ cd \winpe_x86\mount\Windows\System32
 
 ECHO Unmount the current Windows PE image 
 cd \
-imagex /unmount C:\winpe_x86\mount
+imagex /unmount /commit C:\winpe_x86\mount
