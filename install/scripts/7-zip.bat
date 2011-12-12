@@ -1,6 +1,7 @@
 :: OPTIONAL: Install 7-Zip
 :: HOME: http://sevenzip.sourceforge.net/
-:: URL|ALL|http://downloads.sourceforge.net/sevenzip/7z920.msi|packages/sevenzip/7z920.msi
+:: URL|ALL|http://downloads.sourceforge.net/sevenzip/7z920.msi|packages/sevenzip/7z920-x86.msi
+:: URL|ALL|http://downloads.sourceforge.net/sevenzip/7z920-x64.msi|packages/sevenzip/7z920-AMD64.msi
 @Echo off
 
 if exist "%ProgramFiles%\7-ZIP\7z.exe" goto done
@@ -18,6 +19,6 @@ FOR %%j IN (%Extn%) DO (
 )
 ENDLOCAL
 
-todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\7zip.txt /i %Z%\packages\sevenzip\7z920.msi REBOOT=ReallySuppress"
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\7zip.txt /i %Z%\packages\sevenzip\7z920-%PROCESSOR_ARCHITECTURE%.msi REBOOT=ReallySuppress"
 
 :done
