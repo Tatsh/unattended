@@ -23,7 +23,7 @@ nano=nano-2.0.9
 ncurses=ncurses-5.6
 #TODO: parted 2.3 - NTLDR not found
 parted=parted-1.6.22
-pciutils=pciutils-3.1.7
+pciutils=pciutils-3.1.8
 # TODO: perl-5.12.2
 perl=perl-5.10.1
 # perl-ldap aka. Net::LDAP
@@ -34,7 +34,7 @@ perl-xml-xpath=XML-XPath-1.13
 samba=samba-3.3.15
 slang=slang-2.0.7
 syslinux=syslinux-4.04
-usbutils=usbutils-0.90
+usbutils=usbutils-0.91
 wireless_tools=wireless_tools.28
 zlib=zlib-1.2.5
 
@@ -1036,7 +1036,7 @@ $(call download_rule, $(expat), tar.gz, \
 #$(call cvs_rule, $(glibc), libc, \
 #	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
-$(call download_rule, $(kbd), tar.bz2,			\
+$(call download_rule, $(kbd), tar.gz,			\
 	http://www.all.kernel.org/pub/linux/utils/kbd/)
 $(call download_rule, $(libusb), tar.gz,	\
 	http://downloads.sourceforge.net/libusb/)
@@ -1047,13 +1047,13 @@ $(call download_rule, $(linux), tar.bz2,		\
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.all.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
-	http://mirror.services.wisc.edu/mysql/Downloads/MySQL-5.0/)
+	http://mysql.he.net/Downloads/MySQL-5.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, 			\
         http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/linuxboot/misc/)
-$(call download_rule, $(pciutils), tar.bz2,			\
-	http://ftp.all.kernel.org/pub/software/utils/pciutils/)
+$(call download_rule, $(pciutils), tar.gz,			\
+	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
 	http://downloads.sourceforge.net/pcmcia-cs/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
@@ -1068,8 +1068,8 @@ $(call download_rule, $(slang), tar.bz2, 	\
 	http://downloads.sourceforge.net/dosemu/)
 $(call download_rule, $(syslinux), tar.gz, \
         http://ftp.all.kernel.org/pub/linux/utils/boot/syslinux/)
-$(call download_rule, $(usbutils), tar.gz,	\
-	http://www.kernel.org/pub/linux/utils/usb/usbutils/)
+$(call download_rule, $(usbutils), tar.bz2,	\
+	http://mirror.anl.gov/pub/linux/utils/usb/usbutils/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
 $(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
