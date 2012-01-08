@@ -347,7 +347,7 @@ $content       = <<<EOT
 
 
       <h2 id="autoit">AutoIt</h2>
-      <p><a href="http://www.hiddensoft.com/AutoIt3/" rel="external">AutoIt</a> is a free
+      <p><a href="http://www.hiddensoft.com/autoit3/" rel="external">AutoIt</a> is a free
         tool which can  simulate  key  presses  and  mouse  clicks,  following  a  script
         customarily named with a  <code>.aut</code>  or  a  <code>.au3</code>  extension.
         Most installers have a sufficiently simple and consistent interface that  a  very
@@ -393,13 +393,13 @@ $content       = <<<EOT
         application installation scripts in the SVN repository:</p>
 
       <ul>
-        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/7-zip.bat?rev=HEAD&amp;view=auto">7-Zip</a></li>
-        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/perl.bat?rev=HEAD&amp;view=auto">ActiveState Perl (ActivePerl)</a></li>
-        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/adobe-reader.bat?rev=HEAD&amp;view=auto">Adobe Reader 7.0</a></li>
-        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/ie6.bat?rev=HEAD&amp;view=auto">Microsoft Internet Explorer</a></li>
+        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/7-zip.bat?rev=HEAD">7-Zip</a></li>
+        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/perl.bat?rev=HEAD">ActiveState Perl (ActivePerl)</a></li>
+        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/adobe-reader.bat?rev=HEAD">Adobe Reader 7.0</a></li>
+        <li><a href="http://unattended.svn.sourceforge.net/viewvc/unattended/trunk/install/scripts/ie6.bat?rev=HEAD">Microsoft Internet Explorer</a></li>
       </ul>
 
-      <p>And do not forget our <a href="http://ubertechnique.com/unattended/FrontPage"
+      <p>And do not forget our <a href="http://sourceforge.net/apps/trac/unattended/"
         rel="external">Wiki</a>, which is  a  very  good  source  of  additional  install
         scripts.</p>
 EOT;
