@@ -1,7 +1,7 @@
 :: OPTIONAL:  Install Chrome
-:: HOME: http://googlechromereleases.blogspot.com/
-:: URL|All|http://dl.google.com/chrome/install/874.106/chrome_installer.exe|packages/chrome/chrome_installer-15.0.874.106.exe
+:: HOME: http://googlechromereleases.blogspot.com/search/label/Stable%20updates
+:: URL|All|http://dl.google.com/chrome/install/963.56/chrome_installer.exe|packages/chrome/chrome_installer-17.0.963.56.exe
 @Echo off
 
-todo.pl "%Z%\packages\chrome\chrome_installer-15.0.874.106.exe --sytem-level"
+todo.pl "%Z%\packages\chrome\chrome_installer-17.0.963.56.exe --sytem-level"
 
