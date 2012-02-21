@@ -28,6 +28,6 @@
 @echo off
 
 :: Add Thunderbird as Default Email Client
-todo.pl "reg add HKLM\Software\Clients\Mail /ve /f /d "Mozilla Thunderbird"
+todo.pl "reg add HKLM\Software\Clients\Mail /ve /f /d \"Mozilla Thunderbird\""
 
 todo.pl "%Z%\packages\mozilla\thunderbird-1002-%WINLANG%.exe -ms -ira"
