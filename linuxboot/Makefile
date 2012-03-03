@@ -15,7 +15,7 @@ glibc=glibc-2.13
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.8
 libusb=libusb-0.1.12
-linux=linux-2.6.38.6
+linux=linux-3.2.9
 module-init-tools=module-init-tools-3.12
 mysql=mysql-5.0.92
 nano=nano-2.0.9
@@ -1041,9 +1041,7 @@ $(call download_rule, $(kbd), tar.gz,			\
 $(call download_rule, $(libusb), tar.gz,	\
 	http://downloads.sourceforge.net/libusb/)
 $(call download_rule, $(linux), tar.bz2,		\
-	http://www.kernel.org/pub/linux/kernel/v2.6/)
-#$(call download_rule, $(linux), tar.bz2,		\
-# 	http://www.kernel.org/pub/linux/kernel/v2.6/testing/)
+	http://www.kernel.org/pub/linux/kernel/v3.x/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.all.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
