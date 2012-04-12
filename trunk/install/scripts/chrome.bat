@@ -1,10 +1,7 @@
 :: OPTIONAL:  Install Chrome
 :: HOME: http://googlechromereleases.blogspot.com/search/label/Stable%20updates
-:: URL|All|http://dl.google.com/chrome/install/963.79/chrome_installer.exe|packages/chrome/chrome_installer-17.0.963.79.exe
+:: URL|All|https://dl.google.com/tag/s/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi|packages/chrome/chrome_enterprise-18.0.1025.152.msi
+
 @Echo off
 
-:: Create link
-todo.pl "shortcut.pl \"%ProgramFiles%\"\Google\Chrome\Application\chrome.exe special:AllUsersDesktop\Chrome"
-
-todo.pl "%Z%\packages\chrome\chrome_installer-17.0.963.79.exe --system-level"
-
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\google_chrome.txt /i \"%Z%\packages\chrome\chrome_enterprise-18.0.1025.152.msi\" /qb REBOOT=ReallySuppress"
