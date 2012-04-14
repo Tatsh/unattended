@@ -2,8 +2,7 @@
 :: HOME: http://www.pdfforge.org/
 @echo off
 
-http://sourceforge.net/projects/pdfcreator/files/PDFCreator/PDFCreator%201.3.1/PDFCreator-1_3_1_setup.exe/download
-:: URL|ALL|http://downloads.sourceforge.net/pdfcreator/PDFCreator-1_3_1_setup.exe|packages/pdfcreator/pdfcreator-1.3.1.setup.exe
+:: URL|ALL|http://downloads.sourceforge.net/pdfcreator/PDFCreator-1_3_2_setup.exe|packages/pdfcreator/pdfcreator-1.3.2.setup.exe
 
 :: Install language files
 :: URL|CHS|http://www.pdfforge.org/files/translations/1.3.0/chinese_simplified.ini|packages/pdfcreator/lang-chs-1.3.0.ini
@@ -18,9 +17,9 @@ http://sourceforge.net/projects/pdfcreator/files/PDFCreator/PDFCreator%201.3.1/P
 :: URL|TRK|http://www.pdfforge.org/files/translations/1.3.0/turkish.ini|packages/pdfcreator/lang-trk-1.3.0.ini
 :: URL|ESN|http://www.pdfforge.org/files/translations/1.3.0/spanish.ini|packages/pdfcreator/lang-esn-1.3.0.ini
 
-if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-1.3.1.ini goto nolangpack
- todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-1.3.1.ini \"%ProgramFiles%\PDFCreator\languages\""
+if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-1.3.0.ini goto nolangpack
+ todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-1.3.0.ini \"%ProgramFiles%\PDFCreator\languages\""
 :nolangpack
 
 :: Install PDFCreator
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-1.3.1.setup.exe /SILENT /LOADINF="%Z%\packages\pdfcreator\PDFCreator.ini" /NORESTART"
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-1.3.2.setup.exe /SILENT /LOADINF="%Z%\packages\pdfcreator\PDFCreator.ini" /NORESTART"
