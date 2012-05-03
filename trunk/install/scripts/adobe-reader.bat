@@ -7,16 +7,16 @@
 :: URL|CHT|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/zh_TW/AdbeRdr1010_zh_TW.exe|packages/adobereader/adberdr1010_cht.exe
 :: URL|CSY|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/cs_CZ/AdbeRdr1010_cs_CZ.exe|packages/adobereader/adberdr1010_csy.exe
 :: URL|DAN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/da_DK/AdbeRdr1010_da_DK.exe|packages/adobereader/adberdr1010_dan.exe
-:: URL|DEU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.3/de_DE/AdbeRdr1013_de_DE.exe|packages/adobereader/adberdr1013_deu.exe
+:: URL|DEU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/de_DE/AdbeRdr1010_de_DE.exe|packages/adobereader/adberdr1010_deu.exe
 :: URL|ELL|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/el_GR/AdbeRdr1010_el_GR.exe|packages/adobereader/adberdr1010_ell.exe
-:: URL|ENU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.3/en_US/AdbeRdr1013_en_US.exe|packages/adobereader/adberdr1013_enu.exe
-:: URL|ESN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.3/es_ES/AdbeRdr1013_es_ES.exe|packages/adobereader/adberdr1013_esn.exe
+:: URL|ENU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/en_US/AdbeRdr1010_en_US.exe|packages/adobereader/adberdr1010_enu.exe
+:: URL|ESN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/es_ES/AdbeRdr1010_es_ES.exe|packages/adobereader/adberdr1010_esn.exe
 :: URL|FIN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/fi_FI/AdbeRdr1010_fi_FI.exe|packages/adobereader/adberdr1010_fin.exe
-:: URL|FRA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.3/fr_FR/AdbeRdr1013_fr_FR.exe|packages/adobereader/adberdr1013_fra.exe
+:: URL|FRA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/fr_FR/AdbeRdr1010_fr_FR.exe|packages/adobereader/adberdr1010_fra.exe
 :: URL|HEB|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/he_IL/AdbeRdr1010_he_IL.exe|packages/adobereader/adberdr1010_heb.exe
 :: URL|HUN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/hu_HU/AdbeRdr1010_hu_HU.exe|packages/adobereader/adberdr1010_hun.exe
 :: URL|ITA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/it_IT/AdbeRdr1010_it_IT.exe|packages/adobereader/adberdr1010_ita.exe
-:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.3/ja_JP/AdbeRdr1013_ja_JP.exe|packages/adobereader/adberdr1013_jpn.exe
+:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ja_JP/AdbeRdr1010_ja_JP.exe|packages/adobereader/adberdr1010_jpn.exe
 :: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ko_KR/AdbeRdr1010_ko_KR.exe|packages/adobereader/adberdr1010_kor.exe
 :: URL|NLD|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/nl_NL/AdbeRdr1010_nl_NL.exe|packages/adobereader/adberdr1010_nld.exe
 :: URL|NOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/nb_NO/AdbeRdr1010_nb_NO.exe|packages/adobereader/adberdr1010_nor.exe
@@ -25,6 +25,9 @@
 :: URL|RUS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ru_RU/AdbeRdr1010_ru_RU.exe|packages/adobereader/adberdr1010_rus.exe
 :: URL|SVE|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/sv_SE/AdbeRdr1010_sv_SE.exe|packages/adobereader/adberdr1010_sve.exe
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/tr_TR/AdbeRdr1010_tr_TR.exe|packages/adobereader/adberdr1010_trk.exe
+
+:: Adobe Reader patch for all languages
+:: URL|All|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.3/misc/AdbeRdrUpd1013.msp|packages/adobereader/adberdrupd1013.msp
 
 
 :: Download Adobe Reader 10.0.x Language Support
@@ -40,13 +43,7 @@
 :: Download Adobe Reader Taiwanese Fonts
 :: ULR|TWS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.0.0/misc/FontPack1000_zh_TW.msi|packages/adobereader/misc/FontPack1000_nan.msi
 
-:: VERSION - Sometimes i18n version does not have the most up to date.
-set VERSION=1010
-if exist "%Z%\packages\adobereader\AdbeRdr1013_%WINLANG%.exe" set VERSION=1013
-set adobe_install=%Z%\packages\adobereader\AdbeRdr%VERSION%_%WINLANG%.exe
-if not exist %adobe_install% goto noadberdr
 
-:found_install
 ::--------------------------------------------------------------------------
 :: N.B. Edit this section for a correct selection of Adobe Reader Fonts
 ::--------------------------------------------------------------------------
@@ -88,12 +85,5 @@ todo.pl ".ignore-err 1 reg add \"HKLM\SOFTWARE\Adobe\Acrobat Reader\10.0\AdobeVi
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe ARM\""
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
-:: This is the actual instaler 
-todo.pl "start /wait %adobe_install% /SAll"
-goto done
-
-:noadberdr
-@echo adobe-reader.bat: No Installation File found for Adobe Reader 
-@echo adobe-reader.bat: No Installation File found for Adobe Reader 1>>%SystemDrive%\netinst\logs\not-installed.txt
-
-:done
+:: This is the actual installer, added the patch too
+todo.pl "msiexec /qn /i \"%Z%\packages\adobereader\adberdr1010_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\adberdrupd1013.msp\""
