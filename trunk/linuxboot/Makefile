@@ -15,7 +15,7 @@ glibc=glibc-2.13
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.8
 libusb=libusb-0.1.12
-linux=linux-3.2.9
+linux=linux-3.4.4
 module-init-tools=module-init-tools-3.12
 mysql=mysql-5.0.92
 nano=nano-2.0.9
@@ -1037,13 +1037,13 @@ $(call download_rule, $(expat), tar.gz, \
 #	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 $(call download_rule, $(kbd), tar.gz,			\
-	http://www.all.kernel.org/pub/linux/utils/kbd/)
+	http://ftp.altlinux.com/pub/people/legion/kbd/)
 $(call download_rule, $(libusb), tar.gz,	\
 	http://downloads.sourceforge.net/libusb/)
 $(call download_rule, $(linux), tar.bz2,		\
-	http://www.kernel.org/pub/linux/kernel/v3.x/)
+	http://www.kernel.org/pub/linux/kernel/v3.0/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
-	http://ftp.all.kernel.org/pub/linux/utils/kernel/module-init-tools/)
+	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
 	http://mysql.he.net/Downloads/MySQL-5.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
@@ -1065,12 +1065,12 @@ $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/stable/)
 $(call download_rule, $(slang), tar.bz2, 	\
 	http://downloads.sourceforge.net/dosemu/)
 $(call download_rule, $(syslinux), tar.gz, \
-        http://ftp.all.kernel.org/pub/linux/utils/boot/syslinux/)
+        http://ftp.kernel.org/pub/linux/utils/boot/syslinux/)
 $(call download_rule, $(usbutils), tar.bz2,	\
-	http://mirror.anl.gov/pub/linux/utils/usb/usbutils/)
+	http://ftp.sunet.se/pub/Linux/kernel.org/linux/utils/usb/usbutils/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
-$(call download_rule, $(zlib), tar.gz, http://www.zlib.net/)
+$(call download_rule, $(zlib), tar.gz, http://downloads.sourceforge.net/project/libpng/zlib/1.2.5/)
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
