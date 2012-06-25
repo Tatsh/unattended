@@ -1,7 +1,9 @@
-:: OPTIONAL: Install Flash 11.2.202.235
-:: HOME: http://get.adobe.com/flashplayer/otherversions/ http://www.adobe.com/software/flash/about/
-:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/11.2.202.235/install_flash_player_32bit.exe|packages/flash/install_flash_player_11.2.202.235.exe
-:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/11.2.202.235/install_flash_player_ax_32bit.exe|packages/flash/install_flash_player_ax_11.2.202.235.exe
+:: OPTIONAL: Install Flash 11.3.300.257
+:: HOME: http://get.adobe.com/flashplayer/otherversions/
+:: http://www.adobe.com/software/flash/about/
+:: http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
+:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/11.3.300.257/install_flash_player.exe|packages/flash/install_flash_player_11.3.300.257.exe
+:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/11.3.300.257/install_flash_player_ax.exe|packages/flash/install_flash_player_ax_11.3.300.257.exe
 ::
 @Echo off
 
@@ -9,7 +11,7 @@
 :: todo.pl "echo AutoUpdateDisable=1 > %SYSTEMROOT%\System32\Macromed\Flash\mms.cfg"
 
 :: ActiveX version for Internet Explorer
-todo.pl "%Z%\packages\flash\install_flash_player_ax_11.2.202.235.exe -install"
+todo.pl "%Z%\packages\flash\install_flash_player_ax_11.3.300.257.exe -install"
 
 :: Version for every other browser
-todo.pl "%Z%\packages\flash\install_flash_player_11.2.202.235.exe -install"
+todo.pl "%Z%\packages\flash\install_flash_player_11.3.300.257.exe -install"
