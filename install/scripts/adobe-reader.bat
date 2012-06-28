@@ -2,29 +2,29 @@
 @Echo Off
 
 :: Download Adobe Reader full version
-:: URL|ARA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ar_AE/AdbeRdr1010_ar_AE.exe|packages/adobereader/adberdr1010_ara.exe
-:: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/zh_CN/AdbeRdr1010_zh_CN.exe|packages/adobereader/adberdr1010_chs.exe
-:: URL|CHT|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/zh_TW/AdbeRdr1010_zh_TW.exe|packages/adobereader/adberdr1010_cht.exe
-:: URL|CSY|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/cs_CZ/AdbeRdr1010_cs_CZ.exe|packages/adobereader/adberdr1010_csy.exe
-:: URL|DAN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/da_DK/AdbeRdr1010_da_DK.exe|packages/adobereader/adberdr1010_dan.exe
-:: URL|DEU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/de_DE/AdbeRdr1010_de_DE.exe|packages/adobereader/adberdr1010_deu.exe
-:: URL|ELL|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/el_GR/AdbeRdr1010_el_GR.exe|packages/adobereader/adberdr1010_ell.exe
-:: URL|ENU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/en_US/AdbeRdr1010_en_US.exe|packages/adobereader/adberdr1010_enu.exe
-:: URL|ESN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/es_ES/AdbeRdr1010_es_ES.exe|packages/adobereader/adberdr1010_esn.exe
-:: URL|FIN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/fi_FI/AdbeRdr1010_fi_FI.exe|packages/adobereader/adberdr1010_fin.exe
-:: URL|FRA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/fr_FR/AdbeRdr1010_fr_FR.exe|packages/adobereader/adberdr1010_fra.exe
-:: URL|HEB|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/he_IL/AdbeRdr1010_he_IL.exe|packages/adobereader/adberdr1010_heb.exe
-:: URL|HUN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/hu_HU/AdbeRdr1010_hu_HU.exe|packages/adobereader/adberdr1010_hun.exe
-:: URL|ITA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/it_IT/AdbeRdr1010_it_IT.exe|packages/adobereader/adberdr1010_ita.exe
-:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ja_JP/AdbeRdr1010_ja_JP.exe|packages/adobereader/adberdr1010_jpn.exe
-:: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ko_KR/AdbeRdr1010_ko_KR.exe|packages/adobereader/adberdr1010_kor.exe
-:: URL|NLD|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/nl_NL/AdbeRdr1010_nl_NL.exe|packages/adobereader/adberdr1010_nld.exe
-:: URL|NOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/nb_NO/AdbeRdr1010_nb_NO.exe|packages/adobereader/adberdr1010_nor.exe
-:: URL|PLK|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/pl_PL/AdbeRdr1010_pl_PL.exe|packages/adobereader/adberdr1010_plk.exe
-:: URL|PTB|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/pt_BR/AdbeRdr1010_pt_BR.exe|packages/adobereader/adberdr1010_ptb.exe
-:: URL|RUS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ru_RU/AdbeRdr1010_ru_RU.exe|packages/adobereader/adberdr1010_rus.exe
-:: URL|SVE|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/sv_SE/AdbeRdr1010_sv_SE.exe|packages/adobereader/adberdr1010_sve.exe
-:: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/tr_TR/AdbeRdr1010_tr_TR.exe|packages/adobereader/adberdr1010_trk.exe
+:: URL|ARA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ar_AE/AdbeRdr1010_ar_AE.msi|packages/adobereader/adberdr1010_ara.msi
+:: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/zh_CN/AdbeRdr1010_zh_CN.msi|packages/adobereader/adberdr1010_chs.msi
+:: URL|CHT|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/zh_TW/AdbeRdr1010_zh_TW.msi|packages/adobereader/adberdr1010_cht.msi
+:: URL|CSY|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/cs_CZ/AdbeRdr1010_cs_CZ.msi|packages/adobereader/adberdr1010_csy.msi
+:: URL|DAN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/da_DK/AdbeRdr1010_da_DK.msi|packages/adobereader/adberdr1010_dan.msi
+:: URL|DEU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/de_DE/AdbeRdr1010_de_DE.msi|packages/adobereader/adberdr1010_deu.msi
+:: URL|ELL|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/el_GR/AdbeRdr1010_el_GR.msi|packages/adobereader/adberdr1010_ell.msi
+:: URL|ENU|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/en_US/AdbeRdr1010_en_US.msi|packages/adobereader/adberdr1010_enu.msi
+:: URL|ESN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/es_ES/AdbeRdr1010_es_ES.msi|packages/adobereader/adberdr1010_esn.msi
+:: URL|FIN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/fi_FI/AdbeRdr1010_fi_FI.msi|packages/adobereader/adberdr1010_fin.msi
+:: URL|FRA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/fr_FR/AdbeRdr1010_fr_FR.msi|packages/adobereader/adberdr1010_fra.msi
+:: URL|HEB|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/he_IL/AdbeRdr1010_he_IL.msi|packages/adobereader/adberdr1010_heb.msi
+:: URL|HUN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/hu_HU/AdbeRdr1010_hu_HU.msi|packages/adobereader/adberdr1010_hun.msi
+:: URL|ITA|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/it_IT/AdbeRdr1010_it_IT.msi|packages/adobereader/adberdr1010_ita.msi
+:: URL|JPN|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ja_JP/AdbeRdr1010_ja_JP.msi|packages/adobereader/adberdr1010_jpn.msi
+:: URL|KOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ko_KR/AdbeRdr1010_ko_KR.msi|packages/adobereader/adberdr1010_kor.msi
+:: URL|NLD|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/nl_NL/AdbeRdr1010_nl_NL.msi|packages/adobereader/adberdr1010_nld.msi
+:: URL|NOR|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/nb_NO/AdbeRdr1010_nb_NO.msi|packages/adobereader/adberdr1010_nor.msi
+:: URL|PLK|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/pl_PL/AdbeRdr1010_pl_PL.msi|packages/adobereader/adberdr1010_plk.msi
+:: URL|PTB|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/pt_BR/AdbeRdr1010_pt_BR.msi|packages/adobereader/adberdr1010_ptb.msi
+:: URL|RUS|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/ru_RU/AdbeRdr1010_ru_RU.msi|packages/adobereader/adberdr1010_rus.msi
+:: URL|SVE|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/sv_SE/AdbeRdr1010_sv_SE.msi|packages/adobereader/adberdr1010_sve.msi
+:: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/tr_TR/AdbeRdr1010_tr_TR.msi|packages/adobereader/adberdr1010_trk.msi
 
 :: Adobe Reader patch for all languages
 :: URL|All|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.3/misc/AdbeRdrUpd1013.msp|packages/adobereader/adberdrupd1013.msp
