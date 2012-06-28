@@ -194,33 +194,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB982214-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/1/D/3/1D3FB320-5083-4E61-AFC6-B6442A9ADF37/WindowsXP-KB982665-x86-TRK.exe|updates/winxpsp3/windowsxp-kb982665-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB982665-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows XP (KB981852)
-:: <http://support.microsoft.com/?kbid=981852>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=E3574047-5CE5-4461-94AA-4EB3258D5E71>
-:: URL|ARA|http://download.microsoft.com/download/B/6/7/B6729096-13B8-469E-9E11-E9F3552CE14B/WindowsXP-KB981852-x86-ARA.exe|updates/winxpsp3/windowsxp-kb981852-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/B/C/7/BC7DDB04-0202-439C-A13F-1749EDCB1C8F/WindowsXP-KB981852-x86-CSY.exe|updates/winxpsp3/windowsxp-kb981852-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/9/4/3/9430DD34-D5CF-4FD7-A4EC-AC8EAD3596A8/WindowsXP-KB981852-x86-DAN.exe|updates/winxpsp3/windowsxp-kb981852-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/3/9/7/39710976-8240-4F8F-AA34-378339E3002D/WindowsXP-KB981852-x86-DEU.exe|updates/winxpsp3/windowsxp-kb981852-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/B/A/F/BAF3562F-FE92-4D66-BAF4-C0A103E1D6B2/WindowsXP-KB981852-x86-ELL.exe|updates/winxpsp3/windowsxp-kb981852-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/8/E/B/8EBE8B91-CEA9-4630-8023-1A6782D93EF8/WindowsXP-KB981852-x86-ENU.exe|updates/winxpsp3/windowsxp-kb981852-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/8/9/E/89E80672-35AB-47C9-B955-6A55C72CD696/WindowsXP-KB981852-x86-ESN.exe|updates/winxpsp3/windowsxp-kb981852-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/D/1/3/D13A5B73-1E20-476B-BF86-780CB7F1BE10/WindowsXP-KB981852-x86-FIN.exe|updates/winxpsp3/windowsxp-kb981852-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/7/4/7/747E0C66-047D-4E77-9774-D1EA721D4715/WindowsXP-KB981852-x86-FRA.exe|updates/winxpsp3/windowsxp-kb981852-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/C/0/9/C0956C93-9040-488E-B517-1A8C4E49F078/WindowsXP-KB981852-x86-HEB.exe|updates/winxpsp3/windowsxp-kb981852-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/2/0/A/20A75046-688C-414C-9D92-981F36BF9DAF/WindowsXP-KB981852-x86-HUN.exe|updates/winxpsp3/windowsxp-kb981852-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/B/2/7/B27D74C4-FC44-4B5B-ACBC-8D665B3C879A/WindowsXP-KB981852-x86-ITA.exe|updates/winxpsp3/windowsxp-kb981852-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/B/0/E/B0E53781-F6BD-48E3-AC70-E9ABF4F26D2A/WindowsXP-KB981852-x86-JPN.exe|updates/winxpsp3/windowsxp-kb981852-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/2/8/B/28B46780-DE48-42D4-A1B2-F3B9F927204F/WindowsXP-KB981852-x86-KOR.exe|updates/winxpsp3/windowsxp-kb981852-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/8/C/1/8C1A020D-62B9-4A89-84D1-7447DB8965F0/WindowsXP-KB981852-x86-NLD.exe|updates/winxpsp3/windowsxp-kb981852-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/5/1/9/519459F6-B128-4089-B406-DDD20D5D98FA/WindowsXP-KB981852-x86-NOR.exe|updates/winxpsp3/windowsxp-kb981852-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/A/B/0/AB038E8D-33F7-4D35-9776-1E179F3C279C/WindowsXP-KB981852-x86-PLK.exe|updates/winxpsp3/windowsxp-kb981852-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/1/5/815B6721-DBA2-4EF1-A31B-B4D183ED28CE/WindowsXP-KB981852-x86-PTB.exe|updates/winxpsp3/windowsxp-kb981852-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/1/8/5/185162D1-A471-4761-8FB6-14F9A9FB8284/WindowsXP-KB981852-x86-PTG.exe|updates/winxpsp3/windowsxp-kb981852-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/F/B/3/FB31805D-5756-4FF3-AF4B-CE4E769B7FF0/WindowsXP-KB981852-x86-RUS.exe|updates/winxpsp3/windowsxp-kb981852-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/F/5/C/F5CBE9A1-287F-4B8F-A0D9-D023EA2FB693/WindowsXP-KB981852-x86-SVE.exe|updates/winxpsp3/windowsxp-kb981852-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/C/9/8/C981F838-138E-499E-B8E8-0987C166B3CD/WindowsXP-KB981852-x86-TRK.exe|updates/winxpsp3/windowsxp-kb981852-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB981852-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB981997)
 :: <http://support.microsoft.com/?kbid=981997>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=B211664B-434D-4626-816F-C77510CFD44D>
