@@ -1,33 +1,4 @@
 
-:: Download details: Security Update for Windows XP (KB978601)
-:: Microsoft Security Bulletin MS10-019 - Critical
-:: "Vulnerabilities in Windows Could Allow Remote Code Execution (981210)"
-:: <http://www.microsoft.com/technet/security/bulletin/ms10-019.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=2A01DDF0-F3EA-47C8-ADA2-E69F6C1B5F96>
-:: URL|ARA|http://download.microsoft.com/download/D/4/9/D49194AF-D3EE-431B-B8D2-8C3DF9B05480/WindowsXP-KB978601-x86-ARA.exe|updates/winxpsp3/windowsxp-kb978601-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/3/0/7/3071A08C-5B8F-4F17-B6F4-587BCC982C2A/WindowsXP-KB978601-x86-CSY.exe|updates/winxpsp3/windowsxp-kb978601-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/B/2/1/B2128B41-4B66-4D3F-B6F2-1D1F9C67A6D8/WindowsXP-KB978601-x86-DAN.exe|updates/winxpsp3/windowsxp-kb978601-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/C/A/6CA85371-86C4-4EAC-92E1-54B4BD05373D/WindowsXP-KB978601-x86-DEU.exe|updates/winxpsp3/windowsxp-kb978601-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/B/9/3/B93CF748-474D-4B7E-81E8-B904F6814CF8/WindowsXP-KB978601-x86-ELL.exe|updates/winxpsp3/windowsxp-kb978601-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/1/5/6/156DDB90-3594-4AC0-8EF8-055F9F7AEACE/WindowsXP-KB978601-x86-ENU.exe|updates/winxpsp3/windowsxp-kb978601-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/7/8/F/78FB4BFE-DA8B-4B04-9D62-94BE1EEE2B26/WindowsXP-KB978601-x86-ESN.exe|updates/winxpsp3/windowsxp-kb978601-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/4/E/0/4E0EBF60-9666-4A04-98D3-1AF966C36A23/WindowsXP-KB978601-x86-FIN.exe|updates/winxpsp3/windowsxp-kb978601-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/6/E/E/6EE8A836-1730-49B6-99BB-CCDE562F61A7/WindowsXP-KB978338-x86-FRA.exe|updates/winxpsp3/windowsxp-kb978338-x86-fra.exe 
-:: URL|HEB|http://download.microsoft.com/download/D/A/E/DAE12F82-F52B-436C-B09A-1B3D874DBC45/WindowsXP-KB978601-x86-HEB.exe|updates/winxpsp3/windowsxp-kb978601-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/9/0/9/90984674-2115-4470-BD39-CD7501DE9880/WindowsXP-KB978601-x86-HUN.exe|updates/winxpsp3/windowsxp-kb978601-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/1/4/314545B7-3830-4FC2-BB97-F56E85DB3D8F/WindowsXP-KB978601-x86-ITA.exe|updates/winxpsp3/windowsxp-kb978601-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/E/4/4E4F9665-B6D0-4136-B7F0-E542C65084AF/WindowsXP-KB978601-x86-JPN.exe|updates/winxpsp3/windowsxp-kb978601-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/D/C/1/DC1737B7-4C4F-4AD3-933A-91FA381DFE7B/WindowsXP-KB978601-x86-KOR.exe|updates/winxpsp3/windowsxp-kb978601-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/0/F/9/0F97ED00-BABB-4524-95A7-CAF970F63F4F/WindowsXP-KB978601-x86-NLD.exe|updates/winxpsp3/windowsxp-kb978601-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/C/7/C/C7CB79C1-DC25-4EDA-9E94-AFE0E5B3D41A/WindowsXP-KB978601-x86-NOR.exe|updates/winxpsp3/windowsxp-kb978601-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/6/1/A/61A107A9-0C02-4649-9C0E-70C7248589C3/WindowsXP-KB978601-x86-PLK.exe|updates/winxpsp3/windowsxp-kb978601-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/A/9/8A996E4F-3B3F-4C83-84F4-F544BFC9AC3A/WindowsXP-KB978601-x86-PTB.exe|updates/winxpsp3/windowsxp-kb978601-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/D/E/4/DE49694D-275E-4AE7-A170-38E7F4A4B421/WindowsXP-KB978601-x86-PTG.exe|updates/winxpsp3/windowsxp-kb978601-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/B/C/9/BC9D64B5-4F97-41C6-8105-40FCBF1C2A52/WindowsXP-KB978601-x86-RUS.exe|updates/winxpsp3/windowsxp-kb978601-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/7/9/9/799036C1-F427-459B-8362-F85C33A6A79F/WindowsXP-KB978601-x86-SVE.exe|updates/winxpsp3/windowsxp-kb978601-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/8/5/D/85D949AA-C11F-4CBC-BABE-92B3999F94E6/WindowsXP-KB978601-x86-TRK.exe|updates/winxpsp3/windowsxp-kb978601-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB978601-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB979309)
 :: Microsoft Security Bulletin MS10-019 - Critical
 :: "Vulnerabilities in Windows Could Allow Remote Code Execution (981210)"
