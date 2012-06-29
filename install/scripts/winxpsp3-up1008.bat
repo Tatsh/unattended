@@ -28,35 +28,6 @@
 :: URL|TRK|http://download.microsoft.com/download/0/F/2/0F26C474-6D49-41C4-B45C-69895D1B412E/WindowsXP-KB2286198-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2286198-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2286198-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows XP (KB2286198)
-:: Microsoft Security Bulletin MS10-046 - Critical
-:: "Vulnerability in Windows Shell Could Allow Remote Code Execution (2286198)"
-:: <http://www.microsoft.com/technet/security/bulletin/ms10-046.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=12361875-B453-45E8-852B-90F2727894FD>
-:: URL|ARA|http://download.microsoft.com/download/7/4/D/74D999DB-D216-4EF5-A6E8-ED85547E16E6/WindowsXP-KB2286198-x86-ARA.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/1/0/F/10F54797-A53F-4B9A-8F87-ADD75D82AA87/WindowsXP-KB2286198-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2286198-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/C/3/1/C31A0172-3AAF-4BE1-A048-17C962E5E363/WindowsXP-KB2286198-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/E/8/6E832713-1E11-41FB-B565-34D0EA279138/WindowsXP-KB2286198-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2286198-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/1/B/D/1BDEE468-0503-4172-9A87-192B313844F0/WindowsXP-KB2286198-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/0/4/40447833-BCA6-41C6-A751-71A0DF5C5A66/WindowsXP-KB2286198-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2286198-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/3/9/F/39F07131-1F71-4B2C-8BFB-CEC593D8DAC5/WindowsXP-KB2286198-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/5/6/3/56395B47-6FC4-4048-88D6-2E22AD85073A/WindowsXP-KB2286198-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/0/B/5/0B568304-16D0-4EF5-8389-8967AB6C5D4D/WindowsXP-KB2286198-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2286198-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/6/F/1/6F106BA4-8B45-442D-8523-FCCBDBB9C958/WindowsXP-KB2286198-x86-HEB.exe|updates/winxpsp3/windowsxp-kb2286198-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/C/6/F/C6F75C91-F25F-4D1F-B9B8-5BC8EBF32B36/WindowsXP-KB2286198-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/C/9/3/C93B02AD-0801-41E3-858A-5CEBCDF23F31/WindowsXP-KB2286198-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/1/F/2/1F23E58F-B249-4963-BB1A-E37833542B6C/WindowsXP-KB2286198-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/F/8/F/F8F7056C-AAED-454B-8DE8-BBBC4AC83439/WindowsXP-KB2286198-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2286198-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/D/2/F/D2FC591A-CDB6-4805-9171-58E9430E646B/WindowsXP-KB2286198-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2286198-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/3/4/4/344D2329-F339-46EC-9662-729BDA9A8BC0/WindowsXP-KB2286198-x86-NOR.exe|updates/winxpsp3/windowsxp-kb2286198-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/A/F/8/AF8717DF-2BEC-4804-AF91-42F76C25F359/WindowsXP-KB2286198-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2286198-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/B/E/9BE2C50C-8F8D-4083-9C60-55FC9E6035BB/WindowsXP-KB2286198-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/F/7/B/F7B3C061-3C25-4F3B-A25C-351E52339974/WindowsXP-KB2286198-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/2/A/A/2AA718A9-E255-4EF6-8ECB-BF4D35E97AFA/WindowsXP-KB2286198-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2286198-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/B/7/F/B7FFE203-3D31-4960-B662-3CFBCF566BCC/WindowsXP-KB2286198-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2286198-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/0/F/2/0F26C474-6D49-41C4-B45C-69895D1B412E/WindowsXP-KB2286198-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2286198-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2286198-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB980436)
 :: Microsoft Security Bulletin MS10-049 - Critical
 :: "Vulnerabilities in SChannel could allow Remote Code Execution (980436)"
