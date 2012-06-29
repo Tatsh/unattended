@@ -8,6 +8,7 @@ todo.pl "%Z%\scripts\winxpsp3-extras.bat"
 :: Get a list from Microsoft Security Bulletins
 :: http://www.microsoft.com/technet/security/current.aspx
 
+todo.pl "%Z%\scripts\winxpsp3-up1104.bat"
 todo.pl "%Z%\scripts\winxpsp3-up1102.bat"
 todo.pl "%Z%\scripts\winxpsp3-up1101.bat"
 todo.pl "%Z%\scripts\winxpsp3-up1012.bat"

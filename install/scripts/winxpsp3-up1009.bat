@@ -80,33 +80,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB975558-x86
 :: URL|TRK|http://download.microsoft.com/download/E/8/2/E82CF7B6-5E17-419E-95CD-ABAA6DB82EE2/WindowsXP-KB981322-x86-TRK.exe|updates/winxpsp3/windowsxp-kb981322-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB981322-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows XP (KB2259922)
-:: <http://support.microsoft.com/?kbid=2259922>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=FC4369EC-864A-42AE-A850-B006872241FE>
-:: URL|ARA|http://download.microsoft.com/download/B/1/8/B186209A-4155-4C17-BA0C-807605F708C1/WindowsXP-KB2259922-x86-ARA.exe|updates/winxpsp3/windowsxp-kb2259922-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/4/7/A/47A2C712-4AD5-4230-B215-BAF5BF11B683/WindowsXP-KB2259922-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2259922-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/B/3/B/B3B70007-E3D1-4A71-B019-90DACF118C09/WindowsXP-KB2259922-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2259922-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/3/7/637C1853-9D53-49BD-A9A7-2E233FE2CACC/WindowsXP-KB2259922-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2259922-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/A/8/B/A8B0A83F-F9CD-467C-9ACB-AB3FCFD8885A/WindowsXP-KB2259922-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2259922-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/F/C/0/FC0B0C41-CA7C-4EC5-8237-F10B757F6073/WindowsXP-KB2259922-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2259922-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/3/6/0/360CE61B-635E-40E1-AB4F-BAA89CEB7507/WindowsXP-KB2259922-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2259922-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/B/C/2/BC2D891C-53D9-4DAB-8270-F4DB2E1C1678/WindowsXP-KB2259922-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2259922-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/3/0/9/3090DCB7-DA3F-46FB-AFCF-CEB3AC250BEE/WindowsXP-KB2259922-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2259922-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/A/8/A/A8AFBE45-C255-4D5C-93D3-038528D8E561/WindowsXP-KB2259922-x86-HEB.exe|updates/winxpsp3/windowsxp-kb2259922-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/2/0/8/2085043A-B652-4007-8EB7-889E104FF19B/WindowsXP-KB2259922-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2259922-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/C/F/F/CFFE3DC0-A37E-47AE-82CC-20E35D0EDA14/WindowsXP-KB2259922-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2259922-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/F/5/E/F5E18050-5CCA-486C-BF55-6CE92A43BC3E/WindowsXP-KB2259922-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2259922-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/B/6/0B647606-BEF0-4561-A6A3-0E4A9EE1BFED/WindowsXP-KB2259922-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2259922-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/6/E/E/6EEBB6B4-9AC9-4D18-B75A-347BAD853741/WindowsXP-KB2259922-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2259922-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/3/E/F/3EF37201-8500-4BBD-9ADE-77AF230DCC26/WindowsXP-KB2259922-x86-NOR.exe|updates/winxpsp3/windowsxp-kb2259922-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/2/7/6/27649759-D87C-4B4E-96E7-D3DA766A05E9/WindowsXP-KB2259922-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2259922-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/2/6/4/264C9299-139B-4D60-934D-DFA87F28FA7F/WindowsXP-KB2259922-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2259922-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/A/0/2/A022E56E-8C24-4398-8F5A-4645EA5A83E4/WindowsXP-KB2259922-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2259922-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/E/8/1/E8106A88-2FB7-413A-870C-B4216043E7CC/WindowsXP-KB2259922-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2259922-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/9/C/5/9C53FACA-7A4F-44B2-AF1A-90841A2C9276/WindowsXP-KB2259922-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2259922-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/6/5/A/65AD450D-7649-4947-B5B9-A5F64A749CED/WindowsXP-KB2259922-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2259922-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2259922-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB2121546)
 :: <http://support.microsoft.com/?kbid=2121546>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=20091358-7127-4ACE-BF96-4319461AD305>

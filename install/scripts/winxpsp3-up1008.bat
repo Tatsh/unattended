@@ -140,33 +140,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2079403-x86-%WINLANG%.e
 :: URL|TRK|http://download.microsoft.com/download/6/1/2/612DA648-6F69-4948-8A2F-7EC7A3D52AA7/WindowsXP-KB2115168-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2115168-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2115168-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows XP (KB982214)
-:: <http://support.microsoft.com/?kbid=982214>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=6E5E16F8-C140-4A1D-B898-8417A6BFD4D8>
-:: URL|ARA|http://download.microsoft.com/download/7/1/5/7157A567-0810-4263-BD34-4F3034AED7C9/WindowsXP-KB982214-x86-ARA.exe|updates/winxpsp3/windowsxp-kb982214-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/6/B/B/6BB8B728-5943-4686-A765-92EBA2F37DFA/WindowsXP-KB982214-x86-CSY.exe|updates/winxpsp3/windowsxp-kb982214-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/C/7/E/C7ECB32C-46EA-4854-BF02-382288DFBE55/WindowsXP-KB982214-x86-DAN.exe|updates/winxpsp3/windowsxp-kb982214-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/4/E/8/4E838F81-FD44-4A98-A3D7-981D703F4CC7/WindowsXP-KB982214-x86-DEU.exe|updates/winxpsp3/windowsxp-kb982214-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/6/E/6/6E6846C4-25DE-4A03-8077-9C8CE2F9A9A1/WindowsXP-KB982214-x86-ELL.exe|updates/winxpsp3/windowsxp-kb982214-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/5/1/5/5158C808-4581-4B0F-B595-831762184998/WindowsXP-KB982214-x86-ENU.exe|updates/winxpsp3/windowsxp-kb982214-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/F/2/5/F25E0A7D-F69B-4707-9397-09793D8078B7/WindowsXP-KB982214-x86-ESN.exe|updates/winxpsp3/windowsxp-kb982214-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/5/F/2/5F2BFBAD-8A15-44A0-996E-5BA7D601B61B/WindowsXP-KB982214-x86-FIN.exe|updates/winxpsp3/windowsxp-kb982214-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/0/A/6/0A6701F2-2369-4833-B728-D7F8F4284449/WindowsXP-KB982214-x86-FRA.exe|updates/winxpsp3/windowsxp-kb982214-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/B/2/2/B221E658-D3B9-4BA9-97B8-71A6083444A2/WindowsXP-KB982214-x86-HEB.exe|updates/winxpsp3/windowsxp-kb982214-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/3/0/7/307B6F6F-7BBA-46E5-BF8C-1EF14BBC164F/WindowsXP-KB982214-x86-HUN.exe|updates/winxpsp3/windowsxp-kb982214-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/4/0/E/40EF79FB-EB79-4EE5-B17E-895B1CA057C4/WindowsXP-KB982214-x86-ITA.exe|updates/winxpsp3/windowsxp-kb982214-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/6/7/A/67A76C8D-F3C0-4DD0-855A-09E06DFD07E8/WindowsXP-KB982214-x86-JPN.exe|updates/winxpsp3/windowsxp-kb982214-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/8/A/7/8A71178E-0CD9-40D1-AFDB-0ACF1C94C1B4/WindowsXP-KB982214-x86-KOR.exe|updates/winxpsp3/windowsxp-kb982214-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/A/7/A/A7A6A7B1-20A5-4838-8013-E385835C9691/WindowsXP-KB982214-x86-NLD.exe|updates/winxpsp3/windowsxp-kb982214-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/4/C/3/4C31D1AB-5362-4D06-85EB-E83702FDAE30/WindowsXP-KB982214-x86-NOR.exe|updates/winxpsp3/windowsxp-kb982214-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/6/D/B/6DB698F5-EBA4-4FAF-B962-83ECF8389E04/WindowsXP-KB982214-x86-PLK.exe|updates/winxpsp3/windowsxp-kb982214-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/2/8/F/28FD0627-E746-4611-BD69-4EFD2A31CF50/WindowsXP-KB982214-x86-PTB.exe|updates/winxpsp3/windowsxp-kb982214-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/1/4/B/14B1ECD5-998C-4B5E-A7E2-A467EA08567F/WindowsXP-KB982214-x86-PTG.exe|updates/winxpsp3/windowsxp-kb982214-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/3/B/9/3B98AD74-5EF5-4818-896E-C8FBA6FED4D4/WindowsXP-KB982214-x86-RUS.exe|updates/winxpsp3/windowsxp-kb982214-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/B/F/7/BF7163BE-ED3C-4161-9933-7A8BAEF6F132/WindowsXP-KB982214-x86-SVE.exe|updates/winxpsp3/windowsxp-kb982214-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/6/E/8/6E8DBE47-AB80-4944-B03E-63A245585673/WindowsXP-KB982214-x86-TRK.exe|updates/winxpsp3/windowsxp-kb982214-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB982214-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB982665)
 :: <http://support.microsoft.com/?kbid=982665>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=5DDB5E34-F97A-47C6-96C8-BA2ED06CCB77>
