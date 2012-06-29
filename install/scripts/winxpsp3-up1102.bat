@@ -1,27 +1,3 @@
-:: MS11-003: Cumulative security update for Internet Explorer
-:: <http://support.microsoft.com/kb/2482017>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=20573>
-:: URL|CSY|http://download.microsoft.com/download/D/E/7/DE7DD6E4-9E4D-4560-8F7C-01663CBFFB7F/WindowsXP-KB2482017-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2482017-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/3/7/63796B7F-AA7A-4DB7-BCED-E5A3638BB5C0/WindowsXP-KB2482017-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2482017-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/C/0/F/C0F10228-9C45-43EC-BBD3-1275A98F67D4/WindowsXP-KB2482017-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2482017-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/2/F/4/2F4F5886-0A39-44B0-908B-E7F836766B97/WindowsXP-KB2482017-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2482017-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/0/2/B/02B87538-233E-4611-888F-AE5C009D34CD/WindowsXP-KB2482017-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2482017-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/E/9/B/E9B1D318-0A35-441B-8126-26DCAD494591/WindowsXP-KB2482017-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2482017-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/B/3/8/B3800B76-2690-47CE-890E-FFAE2FB797DD/WindowsXP-KB2482017-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2482017-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/3/2/A/32A7BCC7-97B5-4487-86E1-10EA3064EFD5/WindowsXP-KB2482017-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2482017-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/8/3/7/83777C90-2E34-499C-B983-F6C75EE4AB46/WindowsXP-KB2482017-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2482017-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/2/5/D/25D3DF38-A087-43E1-8F05-131D189F178A/WindowsXP-KB2482017-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2482017-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/0/E/D/0ED404D5-C0B8-4638-94B5-9A6121F9CC71/WindowsXP-KB2482017-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2482017-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/8/B/2/8B277977-1013-4F6B-8555-10E987D1FCBE/WindowsXP-KB2482017-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2482017-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/2/E/B/2EB26831-FE32-47FD-93DB-F26F60AA9909/WindowsXP-KB2482017-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2482017-x86-nld.exe
-:: No Download found for NOR.
-:: URL|PLK|http://download.microsoft.com/download/4/D/6/4D68DC35-72CB-4D49-84AA-60F6C1F292F5/WindowsXP-KB2482017-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2482017-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/E/6/1/E61A1036-11CC-42B3-9607-4367620F7D0B/WindowsXP-KB2482017-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2482017-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/5/3/9/5399A629-4689-46E7-9058-BA414B43E6F9/WindowsXP-KB2482017-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2482017-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/F/E/D/FED5897E-3C99-44B7-86AC-1CE9D72D7527/WindowsXP-KB2482017-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2482017-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/8/9/E/89E37E2F-7479-4399-9F33-5AD8F37F804C/WindowsXP-KB2482017-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2482017-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/4/8/C/48CE1432-7C5C-495A-9756-DD8C169F54C1/WindowsXP-KB2482017-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2482017-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2482017-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: MS11-006: Vulnerability in Windows Shell Graphics Processing could allow remote code execution
 :: <http://support.microsoft.com/kb/2483185>
@@ -46,30 +22,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2482017-x86-%WINLANG%.e
 :: URL|SVE|http://download.microsoft.com/download/E/A/0/EA0EE1BF-DA53-4418-95F7-ACCD45D75102/WindowsXP-KB2483185-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2483185-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/2/D/D/2DDC0F1D-392B-4BAA-8A1D-796FB030F875/WindowsXP-KB2483185-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2483185-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2483185-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: MS11-007: Vulnerability in the OpenType Compact Font Format CFF driver could allow remote code execution
-:: <http://support.microsoft.com/kb/2485376>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=11901>
-:: URL|CSY|http://download.microsoft.com/download/4/7/1/471026C8-93D5-4931-960C-0B9CD5F337BB/WindowsXP-KB2485376-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2485376-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/8/C/F/8CFA976D-118E-4EB3-A854-9BDB69ACB8EA/WindowsXP-KB2485376-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2485376-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/5/9/E/59E306D3-7894-4482-9703-C94E8DEA8C6D/WindowsXP-KB2485376-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2485376-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/9/6/A/96AF3ABD-6728-4917-AB35-69AD4D644795/WindowsXP-KB2485376-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2485376-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/0/A/9/0A919A18-D420-4B85-9D3D-5BDB2BFDEE34/WindowsXP-KB2485376-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2485376-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/3/7/6/37639E7F-87BB-4554-B4BC-B9DFB6E82BFA/WindowsXP-KB2485376-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2485376-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/0/C/F/0CF2AC32-D58B-4914-9460-2EBD9C3EDF8F/WindowsXP-KB2485376-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2485376-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/3/3/3/33399D27-9A23-466C-A6A8-EBC9B90F5AB2/WindowsXP-KB2485376-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2485376-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/0/0/7/0070F0B7-561C-4A27-8261-BA48525CB556/WindowsXP-KB2485376-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2485376-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/0/B/B/0BB7D9F9-7B09-49CB-8366-282C06ABD98E/WindowsXP-KB2485376-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2485376-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/F/7/8/F781AC2E-D32E-4B41-AAC9-2F090CA9C63D/WindowsXP-KB2485376-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2485376-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/F/A/2/FA21E27C-178B-4C54-A043-14DCAEADF51E/WindowsXP-KB2485376-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2485376-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/7/E/4/7E43023B-CFE4-4FE3-947B-109E46271A60/WindowsXP-KB2485376-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2485376-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/4/0/0/4007DBC4-D063-4577-849C-267E9B58EB4E/WindowsXP-KB2485376-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2485376-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/0/4/5/045F2CF9-8C21-417C-8973-F75BCCF5C838/WindowsXP-KB2485376-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2485376-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/9/A/4/9A452084-6CEC-4960-8E2A-398718D001F9/WindowsXP-KB2485376-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2485376-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/6/5/9/65972B79-DB2E-4D49-9358-425AF0819646/WindowsXP-KB2485376-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2485376-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/3/C/3/3C3956F0-51A2-4C25-AD7A-0935DD72327E/WindowsXP-KB2485376-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2485376-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/D/5/B/D5BA2049-6359-4C01-A8D5-A39D9CFE8BDD/WindowsXP-KB2485376-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2485376-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2485376-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: MS11-010: Vulnerability in Windows Client/Server Run-time Subsystem could allow elevation of privilege
 :: <http://support.microsoft.com/kb/2476687>
@@ -118,30 +70,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2476687-x86-%WINLANG%.e
 :: URL|SVE|http://download.microsoft.com/download/1/D/8/1D8C0121-D32E-4806-9C93-D1DCCA22A7E9/WindowsXP-KB2393802-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2393802-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/2/8/2/282F2298-73AC-4D7A-9283-BF791074B751/WindowsXP-KB2393802-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2393802-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2393802-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: MS11-012: Vulnerabilities in Windows kernel-mode drivers could allow elevation of privilege
-:: <http://support.microsoft.com/kb/2479628>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=22574>
-:: URL|CSY|http://download.microsoft.com/download/7/7/9/7793D5D8-9EFB-47AA-811B-B528C4C08196/WindowsXP-KB2479628-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2479628-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/8/1/2/81282D5A-ECE2-4D90-AD41-651B6EFFE55F/WindowsXP-KB2479628-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2479628-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/4/F/1/4F1B4388-7577-4D9B-8D88-075F12F5655F/WindowsXP-KB2479628-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2479628-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/0/C/9/0C9F66FE-5845-4C4C-88AC-22AE1C5DEE3F/WindowsXP-KB2479628-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2479628-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/E/4/B/E4B3E352-3070-4669-9699-18F086D9F68E/WindowsXP-KB2479628-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2479628-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/8/0/4/8043CF07-4E35-4D5B-A716-8D5E5F972B8E/WindowsXP-KB2479628-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2479628-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/A/8/3/A8309F13-FBE8-4BEF-888A-C6A6950B171E/WindowsXP-KB2479628-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2479628-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/4/D/A/4DAE76F6-1249-4B75-AF44-C2B381CAE9DE/WindowsXP-KB2479628-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2479628-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/0/5/4/05438314-7397-4C1E-9480-FB409DB5E0DB/WindowsXP-KB2479628-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2479628-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/1/D/A/1DA1813B-14E3-4C28-ACEB-8CEF68533DE1/WindowsXP-KB2479628-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2479628-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/E/3/B/E3BD5EB3-A224-4406-98AD-B27F6313BB0A/WindowsXP-KB2479628-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2479628-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/5/F/C/5FCB3DA5-1BB2-428D-AF9B-75D8270C4D04/WindowsXP-KB2479628-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2479628-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/2/9/6/296321CB-05D1-4FF0-85BA-D6C9A4A42F75/WindowsXP-KB2479628-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2479628-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/F/A/6/FA6BAECA-5423-42F4-AF81-39F527B0A05B/WindowsXP-KB2479628-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2479628-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/3/C/0/3C067472-0BE4-40FC-8689-614E0E7E48FB/WindowsXP-KB2479628-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2479628-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/2/F/0/2F049FDD-05BF-4AA8-9586-D64D4AC9C83C/WindowsXP-KB2479628-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2479628-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/D/4/E/D4E13261-9EF7-4375-9A19-8A74F6BB1C07/WindowsXP-KB2479628-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2479628-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/2/E/1/2E108E10-0C25-420A-A8D4-A77AB4B0FDC2/WindowsXP-KB2479628-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2479628-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/E/0/7/E07A0EC6-63D3-45C4-86DE-85FF9217465D/WindowsXP-KB2479628-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2479628-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2479628-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: MS11-013: Description of the security update for Kerberos in Windows XP and in Windows Server 2003: February 8, 2011
 :: <http://support.microsoft.com/kb/2478971>

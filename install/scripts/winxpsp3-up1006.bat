@@ -55,31 +55,3 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB978695-x86
 :: URL|TRK|http://download.microsoft.com/download/F/5/3/F53F29DC-C8D6-484A-93FA-061041977E1D/WindowsXP-KB979482-x86-TRK.exe|updates/winxpsp3/windowsxp-kb979482-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB979482-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Cumulative Security Update for ActiveX Killbits for Windows XP (KB980195)
-:: Microsoft Security Bulletin MS10-034 - Critical
-:: "Cumulative Security Update of ActiveX Kill Bits (980195)"
-:: <http://www.microsoft.com/technet/security/bulletin/MS10-034.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=8c3f2e81-c0ea-494a-a47c-4f8982effb49>
-:: URL|ARA|http://download.microsoft.com/download/8/4/5/845EC64A-1A6C-4B11-9820-AC1977B4AEE3/WindowsXP-KB980195-x86-ARA.exe|updates/winxpsp3/windowsxp-kb980195-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/4/6/1/461FEC8C-E269-42F7-AE6F-3529E96930A7/WindowsXP-KB980195-x86-CSY.exe|updates/winxpsp3/windowsxp-kb980195-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/C/6/1/C610C19E-5985-4474-8765-008B49F55777/WindowsXP-KB980195-x86-DAN.exe|updates/winxpsp3/windowsxp-kb980195-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/C/B/4/CB42B50A-0AD1-4FEE-B6A0-308B0C921EB2/WindowsXP-KB980195-x86-DEU.exe|updates/winxpsp3/windowsxp-kb980195-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/2/A/9/2A98EB11-0D83-42B7-9BB1-FB13B8A0D259/WindowsXP-KB980195-x86-ELL.exe|updates/winxpsp3/windowsxp-kb980195-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/0/7/A/07AB5BDC-10C5-4716-B6B4-CC85BE71B8E9/WindowsXP-KB980195-x86-ENU.exe|updates/winxpsp3/windowsxp-kb980195-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/C/B/B/CBB0AD9C-C1F1-4033-BB2A-D7A80F0BE160/WindowsXP-KB980195-x86-ESN.exe|updates/winxpsp3/windowsxp-kb980195-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/E/A/A/EAA24535-338B-4921-A81D-94F65524FA12/WindowsXP-KB980195-x86-FIN.exe|updates/winxpsp3/windowsxp-kb980195-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/6/8/7/687B8996-DB04-404F-B224-78DED405B4C9/WindowsXP-KB980195-x86-FRA.exe|updates/winxpsp3/windowsxp-kb980195-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/B/E/3/BE38BED4-7566-4F64-95F0-8A539C1D476E/WindowsXP-KB980195-x86-HEB.exe|updates/winxpsp3/windowsxp-kb980195-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/5/8/7/58718461-CDEC-4FAD-8A0D-463D62F59983/WindowsXP-KB980195-x86-HUN.exe|updates/winxpsp3/windowsxp-kb980195-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/2/B/2/2B29164E-26F6-4844-9473-0E616232DA1B/WindowsXP-KB980195-x86-ITA.exe|updates/winxpsp3/windowsxp-kb980195-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/F/B/3/FB3114EC-050D-4EBA-88D2-B136DBDCB1BA/WindowsXP-KB980195-x86-JPN.exe|updates/winxpsp3/windowsxp-kb980195-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/C/4/6/C468D8CD-0D03-4305-AA59-B6219B053146/WindowsXP-KB980195-x86-KOR.exe|updates/winxpsp3/windowsxp-kb980195-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/D/5/D/D5DAE49F-B7D3-4C6F-9752-BFF0B82DAE2C/WindowsXP-KB980195-x86-NLD.exe|updates/winxpsp3/windowsxp-kb980195-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/1/0/3/10317CF0-10C0-4301-8335-FB1B8B48086A/WindowsXP-KB980195-x86-NOR.exe|updates/winxpsp3/windowsxp-kb980195-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/4/9/D/49D7153D-6ABA-4016-B38C-40A89339720D/WindowsXP-KB980195-x86-PLK.exe|updates/winxpsp3/windowsxp-kb980195-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/0/B/D/0BD33D7C-FD77-4EFD-BAF7-E47DF1C3A8E2/WindowsXP-KB980195-x86-PTB.exe|updates/winxpsp3/windowsxp-kb980195-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/D/4/7D452135-4A09-4251-8DC6-D7B8D27AF752/WindowsXP-KB980195-x86-PTG.exe|updates/winxpsp3/windowsxp-kb980195-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/C/4/E/C4E49016-4A2B-46D2-980C-A4A4CD04CAB0/WindowsXP-KB980195-x86-RUS.exe|updates/winxpsp3/windowsxp-kb980195-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/5/F/8/5F8B0357-D2AD-4D1B-8E22-357A8EC0F7A8/WindowsXP-KB980195-x86-SVE.exe|updates/winxpsp3/windowsxp-kb980195-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/A/8/3/A832C04C-56C4-4457-A969-0BE9FE8DA9F6/WindowsXP-KB980195-x86-TRK.exe|updates/winxpsp3/windowsxp-kb980195-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB980195-x86-%WINLANG%.exe /norestart /passive /nobackup"

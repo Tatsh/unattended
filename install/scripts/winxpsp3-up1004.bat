@@ -57,33 +57,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB978601-x86-%WINLANG%.ex
 :: URL|TRK|http://download.microsoft.com/download/7/9/2/792516DF-0CC3-4658-AEC4-C2430501BD7C/WindowsXP-KB979309-x86-TRK.exe|updates/winxpsp3/windowsxp-kb979309-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB979309-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows XP (KB980232)
-:: <http://support.microsoft.com/?kbid=980232>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=DEC38C02-3D4A-41C5-8954-E57F56B8FA5B>
-:: URL|ARA|http://download.microsoft.com/download/D/6/9/D697B18C-0161-4A18-BA61-D8B99E1C4FD5/WindowsXP-KB980232-x86-ARA.exe|updates/winxpsp3/windowsxp-kb980232-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/F/1/B/F1B73117-D3A3-4AC3-834F-5ABBD93B75EF/WindowsXP-KB980232-x86-CSY.exe|updates/winxpsp3/windowsxp-kb980232-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/F/8/4/F8449E4F-C63C-434F-B586-E71B4DA78ABA/WindowsXP-KB980232-x86-DAN.exe|updates/winxpsp3/windowsxp-kb980232-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/C/B/E/CBE2F2F9-CC04-4734-BB18-97B72C430599/WindowsXP-KB980232-x86-DEU.exe|updates/winxpsp3/windowsxp-kb980232-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/8/1/9/819351F6-6654-4C5A-9B51-6E5D7EF495BA/WindowsXP-KB980232-x86-ELL.exe|updates/winxpsp3/windowsxp-kb980232-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/1/8/2/182DD434-392E-4B37-B63F-6CEB63A33CD7/WindowsXP-KB980232-x86-ENU.exe|updates/winxpsp3/windowsxp-kb980232-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/5/A/6/5A6CF71C-4CC8-46D7-8B9D-50624972A583/WindowsXP-KB980232-x86-ESN.exe|updates/winxpsp3/windowsxp-kb980232-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/B/D/7/BD731652-3CD6-4945-B345-8EE012C50140/WindowsXP-KB980232-x86-FIN.exe|updates/winxpsp3/windowsxp-kb980232-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/7/B/A/7BA4958F-5D8E-4E91-995D-3C53891435B6/WindowsXP-KB980232-x86-FRA.exe|updates/winxpsp3/windowsxp-kb980232-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/B/0/F/B0F8890E-7050-401E-AA8C-F8F4982E5775/WindowsXP-KB980232-x86-HEB.exe|updates/winxpsp3/windowsxp-kb980232-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/2/6/1/2611DD74-70FE-4E1C-8E09-3F5723DC92FD/WindowsXP-KB980232-x86-HUN.exe|updates/winxpsp3/windowsxp-kb980232-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/0/A/30AC4D7B-DFAC-47DA-928F-CDF14D2F5A65/WindowsXP-KB980232-x86-ITA.exe|updates/winxpsp3/windowsxp-kb980232-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/F/7/2/F7244069-752A-4F1B-8EF3-384F4F5905D7/WindowsXP-KB980232-x86-JPN.exe|updates/winxpsp3/windowsxp-kb980232-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/0/A/00AC03A6-99A2-4898-A42D-41F57CAC5C34/WindowsXP-KB980232-x86-KOR.exe|updates/winxpsp3/windowsxp-kb980232-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/4/0/A/40A82DB8-D729-44D9-BEAC-7961A802786D/WindowsXP-KB980232-x86-NLD.exe|updates/winxpsp3/windowsxp-kb980232-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/4/1/D/41DD49B9-0989-45B3-92F2-D5D12913683A/WindowsXP-KB980232-x86-NOR.exe|updates/winxpsp3/windowsxp-kb980232-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/5/A/E/5AE1E04F-2114-42F0-845C-5AD6DB5646C4/WindowsXP-KB980232-x86-PLK.exe|updates/winxpsp3/windowsxp-kb980232-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/C/4/6/C46CE712-E69C-4412-A5C3-8F7ED3E31521/WindowsXP-KB980232-x86-PTB.exe|updates/winxpsp3/windowsxp-kb980232-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/E/B/2/EB2FAB8C-0E87-4B8E-A663-B8B8FA67B71E/WindowsXP-KB980232-x86-PTG.exe|updates/winxpsp3/windowsxp-kb980232-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/1/8/2/1824ADBE-9215-4337-B239-4D078C43AAA8/WindowsXP-KB980232-x86-RUS.exe|updates/winxpsp3/windowsxp-kb980232-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/D/4/E/D4E68F81-30D6-4D51-9067-973EE5ABC736/WindowsXP-KB980232-x86-SVE.exe|updates/winxpsp3/windowsxp-kb980232-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/0/B/3/0B34A18B-8581-47F6-92B2-127A9802CF7B/WindowsXP-KB980232-x86-TRK.exe|updates/winxpsp3/windowsxp-kb980232-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB980232-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB977816)
 :: Microsoft Security Bulletin MS10-026 - Critical
 :: "Vulnerability in Microsoft MPEG Layer-3 Codecs Could Allow Remote Code Execution (977816)"
@@ -112,35 +85,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB980232-x86-%WINLANG%.ex
 :: URL|SVE|http://download.microsoft.com/download/9/0/B/90BF8470-18F1-4F52-A877-AE6A6E4102C6/WindowsXP-KB977816-x86-SVE.exe|updates/winxpsp3/windowsxp-kb977816-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/E/8/4/E84B7648-D3AF-46FD-93E1-82011131FE50/WindowsXP-KB977816-x86-TRK.exe|updates/winxpsp3/windowsxp-kb977816-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB977816-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: Download details: Security Update for Windows XP (KB981349)
-:: Microsoft Security Bulletin MS10-022 - Important
-:: "Vulnerability in VBScript Scripting Engine Could Allow Remote Code Execution (981169)"
-:: <http://www.microsoft.com/technet/security/bulletin/ms10-022.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=CB21D276-65E9-4C8F-96E3-CF6DC36D0133>
-:: URL|ARA|http://download.microsoft.com/download/4/F/D/4FD6B682-E407-4F99-B608-D338FF062C43/WindowsXP-KB981349-x86-ARA.exe|updates/winxpsp3/windowsxp-kb981349-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/6/A/9/6A99605D-0BE4-4415-903B-E91543ED81DB/WindowsXP-KB981349-x86-CSY.exe|updates/winxpsp3/windowsxp-kb981349-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/B/1/3/B138442C-6139-4BFB-A510-18BC5E2E2DC1/WindowsXP-KB981349-x86-DAN.exe|updates/winxpsp3/windowsxp-kb981349-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/C/B/3/CB36ACC3-EC58-40FC-B229-C10FFD9F2663/WindowsXP-KB981349-x86-DEU.exe|updates/winxpsp3/windowsxp-kb981349-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/8/B/F/8BFB7F7E-F56F-4247-82C0-51D98016DC85/WindowsXP-KB981349-x86-ELL.exe|updates/winxpsp3/windowsxp-kb981349-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/A/1/4A136FDA-07DC-4B01-AD73-9C97BFC518E3/WindowsXP-KB981349-x86-ENU.exe|updates/winxpsp3/windowsxp-kb981349-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/1/D/3/1D34FBC4-FCB1-413C-B12F-D9340186EC5D/WindowsXP-KB981349-x86-ESN.exe|updates/winxpsp3/windowsxp-kb981349-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/1/7/C/17C6F6F5-E917-4B9D-BC13-30AF503464DC/WindowsXP-KB981349-x86-FIN.exe|updates/winxpsp3/windowsxp-kb981349-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/C/6/6/C6691265-20B4-40BC-A743-98765CBBC40B/WindowsXP-KB981349-x86-FRA.exe|updates/winxpsp3/windowsxp-kb981349-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/7/E/1/7E114BCB-F742-42C0-8B52-D52CDBFA2D39/WindowsXP-KB981349-x86-HEB.exe|updates/winxpsp3/windowsxp-kb981349-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/2/2/C/22CA66FE-41FA-42A6-B94A-ECD63D3F554A/WindowsXP-KB981349-x86-HUN.exe|updates/winxpsp3/windowsxp-kb981349-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/3/D/8/3D83C097-653D-41D8-B8F7-6CBEAEC76F3D/WindowsXP-KB981349-x86-ITA.exe|updates/winxpsp3/windowsxp-kb981349-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/1/6/4/164467FB-3837-42E3-A605-B26942D8B4B9/WindowsXP-KB981349-x86-JPN.exe|updates/winxpsp3/windowsxp-kb981349-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/6/D/5/6D5E904A-DCF9-4F56-95F2-93C5C914C76B/WindowsXP-KB981349-x86-KOR.exe|updates/winxpsp3/windowsxp-kb981349-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/B/F/E/BFECBE26-F1BA-477A-BE61-DE734CA5F380/WindowsXP-KB981349-x86-NLD.exe|updates/winxpsp3/windowsxp-kb981349-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/1/D/4/1D44B3EA-F520-4983-8C4C-22F83ACD4D86/WindowsXP-KB981349-x86-NOR.exe|updates/winxpsp3/windowsxp-kb981349-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/2/A/5/2A5C7DD4-85A4-4CC1-BBB3-484F14380011/WindowsXP-KB981349-x86-PLK.exe|updates/winxpsp3/windowsxp-kb981349-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/5/D/3/5D30A18C-3614-42BB-A59F-E12E58A15B75/WindowsXP-KB981349-x86-PTB.exe|updates/winxpsp3/windowsxp-kb981349-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/E/F/7/EF70624C-2E7D-47E7-97B2-415707F2C0C2/WindowsXP-KB981349-x86-PTG.exe|updates/winxpsp3/windowsxp-kb981349-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/0/9/6/0963ADBF-C456-4032-A843-7DDE0BEDF867/WindowsXP-KB981349-x86-RUS.exe|updates/winxpsp3/windowsxp-kb981349-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/B/2/5/B25A34B0-7BA4-4B4B-B474-51CA8EE30B3C/WindowsXP-KB981349-x86-SVE.exe|updates/winxpsp3/windowsxp-kb981349-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/8/6/C/86C1A70D-DE8C-42BE-861A-36F9E38F092B/WindowsXP-KB981349-x86-TRK.exe|updates/winxpsp3/windowsxp-kb981349-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB981349-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: Download details: Security Update for Windows XP (KB976323)
 :: <http://support.microsoft.com/?kbid=976323>
