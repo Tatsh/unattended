@@ -1,30 +1,4 @@
 
-:: Security Update for Jscript 5.7 for Windows XP (KB971961)
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=c933377d-e0bc-4334-bc75-029045d7a62a>
-:: URL|ARA|http://download.microsoft.com/download/A/0/3/A0340DB8-3951-4880-BD0A-DADE1A63977B/WindowsXP-KB971961-JS57-x86-ARA.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/A/4/9/A4955DC2-BB38-4FE1-80D1-2999E80ACC08/WindowsXP-KB971961-JS57-x86-CSY.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/0/4/1/0418DDCB-F46A-47D0-8129-180ECA6F30E0/WindowsXP-KB971961-JS57-x86-DAN.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/2/8/6/2863E9C2-6E27-4278-B1A4-C59B0F84C13B/WindowsXP-KB971961-JS57-x86-DEU.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/E/7/1/E71A45B8-AF33-4286-9399-5E9907779EE4/WindowsXP-KB971961-JS57-x86-ELL.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/D/D/D/DDD74C7A-0689-46EF-83E4-D9CE9E71D17F/WindowsXP-KB971961-JS57-x86-ENU.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/E/3/D/E3DD2AFB-AC4F-4F2F-BADE-A63FAB2DA886/WindowsXP-KB971961-JS57-x86-ESN.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/E/A/C/EAC925AF-3BCE-4044-9CD2-9BD18DCC3CCD/WindowsXP-KB971961-JS57-x86-FIN.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/2/5/B/25BA2A57-577C-4F16-BC63-987B4555BF38/WindowsXP-KB971961-JS57-x86-FRA.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/8/D/2/8D216C38-BB2C-47A0-8181-C84039FE6918/WindowsXP-KB971961-JS57-x86-HEB.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/9/6/F/96FA6515-8443-46F5-B6C5-6B31CEFABEDE/WindowsXP-KB971961-JS57-x86-HUN.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/C/E/5CE1B2FA-7C78-4AA3-A684-A50B8C6FC037/WindowsXP-KB971961-JS57-x86-ITA.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/5/D/8/5D8BB8C5-EF16-420E-8289-AF9D598AD58B/WindowsXP-KB971961-JS57-x86-JPN.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/E/E/8/EE830981-62C1-4DD7-A235-F59AB29AF365/WindowsXP-KB971961-JS57-x86-KOR.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/C/D/8/CD8D2E24-E0F7-4300-B27F-12778EEC7B63/WindowsXP-KB971961-JS57-x86-NLD.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/3/1/E/31E40EA1-EDED-49B1-9DC0-239AFD07CB13/WindowsXP-KB971961-JS57-x86-NOR.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/F/7/9/F791C566-786E-4680-AEBD-E9DAC2AF9DE5/WindowsXP-KB971961-JS57-x86-PLK.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/E/7/D/E7D15A39-42C3-4C06-964E-1D151B28A32B/WindowsXP-KB971961-JS57-x86-PTB.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/1/1/4/1140FEFA-C450-4B53-A98E-A943271A879D/WindowsXP-KB971961-JS57-x86-PTG.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/A/D/E/ADEFC059-9C60-498C-931E-460D56BF4808/WindowsXP-KB971961-JS57-x86-RUS.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/F/7/B/F7B98222-30A9-4C7C-A50B-125A556C1DDF/WindowsXP-KB971961-JS57-x86-SVE.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/B/2/0/B20FF5D2-AD44-4B8D-873F-D5138AD4045E/WindowsXP-KB971961-JS57-x86-TRK.exe|updates/winxpsp3/windowsxp-kb971961-js57-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB971961-JS57-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Security Update for Windows Media Format Runtime 9, 9.5 &amp; 11 for Windows XP SP 3 (KB968816)
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=31585f5a-9aaa-40da-b15a-11284b4b800c>
 :: URL|ARA|http://download.microsoft.com/download/2/0/8/20837822-B08E-4247-85ED-8D122C5413DA/WindowsXP-WindowsMedia-KB968816-x86-ARA.exe|updates/winxpsp3/windowsxp-windowsmedia-kb968816-x86-ara.exe
