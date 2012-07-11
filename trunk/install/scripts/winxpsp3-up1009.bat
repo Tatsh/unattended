@@ -80,29 +80,3 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-WindowsMedia-KB975558-x86
 :: URL|TRK|http://download.microsoft.com/download/E/8/2/E82CF7B6-5E17-419E-95CD-ABAA6DB82EE2/WindowsXP-KB981322-x86-TRK.exe|updates/winxpsp3/windowsxp-kb981322-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB981322-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows XP (KB2121546)
-:: <http://support.microsoft.com/?kbid=2121546>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=20091358-7127-4ACE-BF96-4319461AD305>
-:: URL|ARA|http://download.microsoft.com/download/0/6/6/0665DE21-73E5-4A07-B1DA-D8A87E8D5647/WindowsXP-KB2121546-x86-ARA.exe|updates/winxpsp3/windowsxp-kb2121546-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/1/F/8/1F840E51-DE60-4DA1-88F2-A3720EAD9313/WindowsXP-KB2121546-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2121546-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/4/5/3/4531720B-1802-4181-BB52-C1AD7E82BCBC/WindowsXP-KB2121546-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2121546-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/A/6/2/A628D7CA-D219-44AC-8F74-C6F34C8DF74B/WindowsXP-KB2121546-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2121546-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/8/0/C/80CC5150-38B9-421F-A24C-D6409C59315D/WindowsXP-KB2121546-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2121546-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/0/3/0/030AEED5-435F-44FF-B33E-881F6D05D7B4/WindowsXP-KB2121546-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2121546-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/3/E/1/3E146F15-3995-4460-8927-06E46DA9C791/WindowsXP-KB2121546-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2121546-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/C/E/9/CE927C43-98C9-4EAD-AB9A-E432883B6B28/WindowsXP-KB2121546-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2121546-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/C/1/2/C12BD724-3B2E-4980-97CE-4230D05AFA23/WindowsXP-KB2121546-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2121546-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/8/D/D/8DD0C2BE-EB3C-4029-86B7-13768265C16D/WindowsXP-KB2121546-x86-HEB.exe|updates/winxpsp3/windowsxp-kb2121546-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/B/F/2/BF2E2186-3A99-4260-92FA-75AB8F807FF7/WindowsXP-KB2121546-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2121546-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/7/B/8/7B8A20B7-91E9-49DC-92E6-BCB4655FE2FA/WindowsXP-KB2121546-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2121546-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/5/4/E/54EA083E-2C41-4193-93E5-0265856F2323/WindowsXP-KB2121546-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2121546-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/7/2/E/72EA2A14-4080-4BA7-8E0F-35FA8C28BD35/WindowsXP-KB2121546-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2121546-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/5/8/B/58B56AE2-39E5-406B-89BD-019E656D9890/WindowsXP-KB2121546-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2121546-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/0/4/3/0430CAE0-612A-4479-9576-6351F2577487/WindowsXP-KB2121546-x86-NOR.exe|updates/winxpsp3/windowsxp-kb2121546-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/6/B/8/6B8228AE-6CC1-4A28-BCEB-3D600CFB0F4F/WindowsXP-KB2121546-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2121546-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/F/8/3/F83F3AFF-46D3-4ABC-83A1-222D6DC75FDE/WindowsXP-KB2121546-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2121546-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/8/2/7/827E398A-EFA7-4032-AB8C-96BECCAAE0D0/WindowsXP-KB2121546-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2121546-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/2/4/6/246B41EA-E3B5-42DC-A021-72AF33A14364/WindowsXP-KB2121546-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2121546-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/8/4/9/849349C0-01D5-42E0-BE87-957C9A957F60/WindowsXP-KB2121546-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2121546-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/8/5/8/85838AE5-94CD-4A8C-ACE8-286E4E34EF44/WindowsXP-KB2121546-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2121546-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2121546-x86-%WINLANG%.exe /norestart /passive /nobackup"

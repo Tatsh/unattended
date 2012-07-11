@@ -23,30 +23,6 @@
 :: URL|TRK|http://download.microsoft.com/download/2/D/D/2DDC0F1D-392B-4BAA-8A1D-796FB030F875/WindowsXP-KB2483185-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2483185-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2483185-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: MS11-010: Vulnerability in Windows Client/Server Run-time Subsystem could allow elevation of privilege
-:: <http://support.microsoft.com/kb/2476687>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=22580>
-:: URL|CSY|http://download.microsoft.com/download/B/6/E/B6EDC592-D165-493E-BF6D-B942190FAE59/WindowsXP-KB2476687-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2476687-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/F/6/F/F6F35250-EF6B-4BFD-8353-34CEE53C1F09/WindowsXP-KB2476687-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2476687-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/C/D/E/CDEC8514-8A53-4132-81DE-8AC2DD096F44/WindowsXP-KB2476687-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2476687-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/0/F/5/0F5802BA-7CED-4068-9BDF-156F53A70C3C/WindowsXP-KB2476687-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2476687-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/7/4/5/7451E0E5-50B4-49F9-A1B0-3D3446297DFF/WindowsXP-KB2476687-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2476687-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/4/F/0/4F07C0AF-F355-4107-AC5B-7C5A3B9E4643/WindowsXP-KB2476687-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2476687-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/9/A/B/9AB79994-3D3D-4484-AD2F-301A27FB379E/WindowsXP-KB2476687-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2476687-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/B/1/1/B11D4287-B1AD-46A3-B248-754287C7646B/WindowsXP-KB2476687-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2476687-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/D/0/3/D03B5F35-39EA-4073-83BF-CAE714959DBE/WindowsXP-KB2476687-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2476687-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/B/8/4/B84E60EE-7B77-4F98-97FF-909C69D40CFC/WindowsXP-KB2476687-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2476687-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/3/5/5/355A167B-124F-443D-94CA-337F419F8EAB/WindowsXP-KB2476687-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2476687-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/B/4/4B49B85A-F019-4AAE-842C-1711975F158E/WindowsXP-KB2476687-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2476687-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/E/3/8/E3849081-8FD5-4E68-AD69-334D0E535DFA/WindowsXP-KB2476687-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2476687-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/5/D/0/5D0D9DB9-53BC-4B0D-8E18-FA8C38F9DE0C/WindowsXP-KB2476687-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2476687-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/D/F/A/DFA5CDAE-BE81-43FA-9D70-5DC4ECD90809/WindowsXP-KB2476687-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2476687-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/7/3/6/736CD853-4758-4CE0-A0B3-67C8B1D88601/WindowsXP-KB2476687-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2476687-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/3/A/3/3A378E2A-488E-4E7D-92AA-15B80AAA1BA8/WindowsXP-KB2476687-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2476687-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/4/D/A/4DAC97D1-E24B-4F79-9D03-F98857B4BE97/WindowsXP-KB2476687-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2476687-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/F/C/5/FC5EC306-49D6-43C8-A1D4-D5A5AC5D8B6B/WindowsXP-KB2476687-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2476687-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2476687-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: MS11-011: Vulnerabilities in Windows Kernel could allow elevation of privilege
 :: <http://support.microsoft.com/kb/2393802>
 :: <http://www.microsoft.com/en-us/download/details.aspx?id=15652>

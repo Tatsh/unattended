@@ -1,33 +1,4 @@
 
-:: Download details: Security Update for Windows XP (KB979309)
-:: Microsoft Security Bulletin MS10-019 - Critical
-:: "Vulnerabilities in Windows Could Allow Remote Code Execution (981210)"
-:: <http://www.microsoft.com/technet/security/bulletin/ms10-019.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=6C3AC102-2107-4726-98BE-4FBF6B858BFB>
-:: URL|ARA|http://download.microsoft.com/download/F/E/8/FE8707EB-09D4-4EB1-89C0-8FB1EAE12FEE/WindowsXP-KB979309-x86-ARA.exe|updates/winxpsp3/windowsxp-kb979309-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/B/6/9/B690AB63-25B8-4C2B-AB20-D4F98DB5E4AF/WindowsXP-KB979309-x86-CSY.exe|updates/winxpsp3/windowsxp-kb979309-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/9/9/C/99C508FA-0D63-461F-83E0-1D19FF564012/WindowsXP-KB979309-x86-DAN.exe|updates/winxpsp3/windowsxp-kb979309-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/6/E/66E5C18F-A39A-4E48-92B5-A9B59524EF26/WindowsXP-KB979309-x86-DEU.exe|updates/winxpsp3/windowsxp-kb979309-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/5/1/9/519159B2-44A9-48CE-B33B-2158F6DECF71/WindowsXP-KB979309-x86-ELL.exe|updates/winxpsp3/windowsxp-kb979309-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/C/D/4CD80C17-3162-48F9-9D8D-D6C319B6F3F7/WindowsXP-KB979309-x86-ENU.exe|updates/winxpsp3/windowsxp-kb979309-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/8/9/0/890E807F-0D1C-4529-939C-5563D3231856/WindowsXP-KB979309-x86-ESN.exe|updates/winxpsp3/windowsxp-kb979309-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/2/5/F/25F4D299-6A67-4E33-8BC9-6F2CF0E61220/WindowsXP-KB979309-x86-FIN.exe|updates/winxpsp3/windowsxp-kb979309-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/3/2/8/328B66DB-6993-4CFE-A180-6124289FEB43/WindowsXP-KB979309-x86-FRA.exe|updates/winxpsp3/windowsxp-kb979309-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/A/1/6/A1661005-9CBD-404E-832F-A6F63E0BB9F4/WindowsXP-KB979309-x86-HEB.exe|updates/winxpsp3/windowsxp-kb979309-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/4/D/E/4DE29218-E715-457C-99EE-624C9CF96921/WindowsXP-KB979309-x86-HUN.exe|updates/winxpsp3/windowsxp-kb979309-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/C/1/A/C1A70497-DC92-45FE-B360-8B299D1EE1B9/WindowsXP-KB979309-x86-ITA.exe|updates/winxpsp3/windowsxp-kb979309-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/5/A/B/5AB1BC80-7D31-41EF-BB7F-E98E6EA7724E/WindowsXP-KB979309-x86-JPN.exe|updates/winxpsp3/windowsxp-kb979309-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/E/B/B/EBB3499C-45A5-48E3-87A0-3C091D4BBA16/WindowsXP-KB979309-x86-KOR.exe|updates/winxpsp3/windowsxp-kb979309-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/E/5/5/E5558CD1-BF5F-42B8-B34A-F706E5529380/WindowsXP-KB979309-x86-NLD.exe|updates/winxpsp3/windowsxp-kb979309-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/2/8/7/287AD7BD-2058-44D5-AA1A-53FEFD472C50/WindowsXP-KB979309-x86-NOR.exe|updates/winxpsp3/windowsxp-kb979309-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/B/8/D/B8D947EF-32ED-4FCE-BB2E-9D5A7BA39B03/WindowsXP-KB979309-x86-PLK.exe|updates/winxpsp3/windowsxp-kb979309-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/2/A/F/2AF08192-1A02-4D74-BBC6-9D1A15FBF5E0/WindowsXP-KB979309-x86-PTB.exe|updates/winxpsp3/windowsxp-kb979309-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/6/C/6/6C65FFDB-D4AE-474E-91EA-CB53C5C39932/WindowsXP-KB979309-x86-PTG.exe|updates/winxpsp3/windowsxp-kb979309-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/B/C/E/BCEC0DD3-35EA-4B6A-89B9-E57F2613B226/WindowsXP-KB979309-x86-RUS.exe|updates/winxpsp3/windowsxp-kb979309-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/0/5/B/05B01E39-AB11-4F00-9C6E-D376653D48F7/WindowsXP-KB979309-x86-SVE.exe|updates/winxpsp3/windowsxp-kb979309-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/7/9/2/792516DF-0CC3-4658-AEC4-C2430501BD7C/WindowsXP-KB979309-x86-TRK.exe|updates/winxpsp3/windowsxp-kb979309-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB979309-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB977816)
 :: Microsoft Security Bulletin MS10-026 - Critical
 :: "Vulnerability in Microsoft MPEG Layer-3 Codecs Could Allow Remote Code Execution (977816)"
