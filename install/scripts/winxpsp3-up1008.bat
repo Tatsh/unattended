@@ -28,35 +28,6 @@
 :: URL|TRK|http://download.microsoft.com/download/0/F/2/0F26C474-6D49-41C4-B45C-69895D1B412E/WindowsXP-KB2286198-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2286198-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2286198-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: Download details: Security Update for Windows XP (KB980436)
-:: Microsoft Security Bulletin MS10-049 - Critical
-:: "Vulnerabilities in SChannel could allow Remote Code Execution (980436)"
-:: <http://www.microsoft.com/technet/security/bulletin/ms10-049.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=FF00381C-E74B-48E5-9DD9-34DBEDD906A2>
-:: URL|ARA|http://download.microsoft.com/download/1/8/D/18D177D2-A162-4ADE-8280-EE734C60E78B/WindowsXP-KB980436-x86-ARA.exe|updates/winxpsp3/windowsxp-kb980436-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/5/7/6/576AD303-DD6A-4205-BD11-39AB76CF6385/WindowsXP-KB980436-x86-CSY.exe|updates/winxpsp3/windowsxp-kb980436-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/6/1/1/61129CDB-D856-4E6E-9626-9DF953B29FD4/WindowsXP-KB980436-x86-DAN.exe|updates/winxpsp3/windowsxp-kb980436-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/A/2/6A23404A-5C15-458B-9E51-204A579509FE/WindowsXP-KB980436-x86-DEU.exe|updates/winxpsp3/windowsxp-kb980436-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/8/1/B/81B17A0A-1397-461E-82D1-65D8ACCFBA7C/WindowsXP-KB980436-x86-ELL.exe|updates/winxpsp3/windowsxp-kb980436-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/6/6/46625467-9A6A-4561-A7E2-FBB63A7A28F0/WindowsXP-KB980436-x86-ENU.exe|updates/winxpsp3/windowsxp-kb980436-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/6/5/1/65172EFE-C23D-4555-B8DC-50B049F8594D/WindowsXP-KB980436-x86-ESN.exe|updates/winxpsp3/windowsxp-kb980436-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/A/A/A/AAA43632-5624-4C0D-8134-701098F4BC61/WindowsXP-KB980436-x86-FIN.exe|updates/winxpsp3/windowsxp-kb980436-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/F/F/B/FFB4A8F2-23E9-4994-8FC3-292002D92299/WindowsXP-KB980436-x86-FRA.exe|updates/winxpsp3/windowsxp-kb980436-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/E/2/7/E2718750-6092-43E9-8B0A-2C31BFEC2344/WindowsXP-KB980436-x86-HEB.exe|updates/winxpsp3/windowsxp-kb980436-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/C/1/A/C1ACF018-7439-4084-9EF9-BAD0555988AF/WindowsXP-KB980436-x86-HUN.exe|updates/winxpsp3/windowsxp-kb980436-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/D/9/F/D9FDCCAA-0330-458E-A380-F1C2B29B05E6/WindowsXP-KB980436-x86-ITA.exe|updates/winxpsp3/windowsxp-kb980436-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/5/6/1/56153879-F552-4757-8F2B-5BB3C6B49090/WindowsXP-KB980436-x86-JPN.exe|updates/winxpsp3/windowsxp-kb980436-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/B/C/E/BCE149C5-F2EC-48EF-AA49-D6DF6FD4A83D/WindowsXP-KB980436-x86-KOR.exe|updates/winxpsp3/windowsxp-kb980436-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/1/9/2/1920DACC-5604-4FB1-ADA3-E65086853D07/WindowsXP-KB980436-x86-NLD.exe|updates/winxpsp3/windowsxp-kb980436-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/8/8/2/8821A53E-EF66-4E6B-BD52-FF00F5112705/WindowsXP-KB980436-x86-NOR.exe|updates/winxpsp3/windowsxp-kb980436-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/D/4/B/D4B86AAE-8E42-4647-B737-46E92CFF47EB/WindowsXP-KB980436-x86-PLK.exe|updates/winxpsp3/windowsxp-kb980436-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/7/D/97DD870A-40D3-49F5-B614-2CA4CFF5E537/WindowsXP-KB980436-x86-PTB.exe|updates/winxpsp3/windowsxp-kb980436-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/6/7/3/67331611-A205-4A49-A647-7BBEDB7D8CFD/WindowsXP-KB980436-x86-PTG.exe|updates/winxpsp3/windowsxp-kb980436-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/7/5/B/75B09D12-2004-4A6A-B5DB-77D6F098A78B/WindowsXP-KB980436-x86-RUS.exe|updates/winxpsp3/windowsxp-kb980436-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/9/0/8/908B6E1B-65AE-4FB3-97FA-D3D08FD6E059/WindowsXP-KB980436-x86-SVE.exe|updates/winxpsp3/windowsxp-kb980436-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/A/0/0/A0008168-5DC2-4049-8D00-C696EF0B7672/WindowsXP-KB980436-x86-TRK.exe|updates/winxpsp3/windowsxp-kb980436-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB980436-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB2079403)
 :: <http://support.microsoft.com/?kbid=2079403>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=DBDBBE5E-2EF9-4704-80C4-27EF28FD95EF>

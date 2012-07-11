@@ -1,28 +1,4 @@
 
-:: MS11-018: Cumulative security update for Internet Explorer: April 12, 2011
-:: <http://support.microsoft.com/kb/2497640>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=19852>
-:: URL|CSY|http://download.microsoft.com/download/F/6/7/F671B431-45AD-475D-9604-14C0E2C8465A/WindowsXP-KB2497640-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2497640-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/E/B/B/EBB9B2BE-DA0C-4742-8E0C-01E9550EE1F9/WindowsXP-KB2497640-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2497640-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/D/B/3/DB33E044-4812-4DB6-A4CA-66642424A763/WindowsXP-KB2497640-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2497640-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/6/B/B/6BB65E67-82B2-4CDA-9FAF-27DBEDD9B5FC/WindowsXP-KB2497640-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2497640-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/A/6/3/A63AE3AA-0310-425E-A9BC-4E9EB20DDDFF/WindowsXP-KB2497640-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2497640-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/A/D/3/AD3E9712-CA83-4B12-A7A9-16F6CBC55CA7/WindowsXP-KB2497640-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2497640-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/C/0/2/C02B9E6E-3495-4D10-A817-7BABE3FDACC1/WindowsXP-KB2497640-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2497640-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/9/D/9/9D95C239-16DC-4414-B4A2-3468FD113B73/WindowsXP-KB2497640-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2497640-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/C/8/1/C8161E67-4364-4B22-B360-32BDFAA5565D/WindowsXP-KB2497640-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2497640-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/E/F/B/EFB20A46-3053-4C4B-A5B8-C67B64F835CD/WindowsXP-KB2497640-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2497640-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/2/E/F/2EF2965B-6062-474B-A4DE-930EBEE0CB89/WindowsXP-KB2497640-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2497640-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/2/7/A/27AB3A9D-C80D-4359-8993-8937DE96381E/WindowsXP-KB2497640-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2497640-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/5/5/1/5518B930-BAD5-43AE-ACAE-04F7FA9D2017/WindowsXP-KB2497640-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2497640-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/C/2/3/C23F78B3-35FC-4CAC-AC23-C8338F642FD4/WindowsXP-KB2497640-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2497640-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/B/E/8BE4CBC0-2671-46B8-8C41-A313E8C1A109/WindowsXP-KB2497640-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2497640-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/E/E/E/EEE9721B-432E-4AE7-AC58-CC19E4BA12B1/WindowsXP-KB2497640-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2497640-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/5/9/E/59EB3D55-FFC7-4F7C-BEBF-3DB3C3B0F644/WindowsXP-KB2497640-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2497640-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/5/9/3/5930FCCE-3F9F-49E3-98FA-6EBD2E35AB91/WindowsXP-KB2497640-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2497640-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/6/2/F/62F2B5B4-AC5E-47FA-AAF5-8A69AD8684AD/WindowsXP-KB2497640-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2497640-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2497640-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: MS11-020: Vulnerabilities in SMB Server could allow remote code execution: April 12, 2011
 :: <http://support.microsoft.com/kb/2508429>
 :: <http://www.microsoft.com/en-us/download/details.aspx?id=6411>
@@ -70,54 +46,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2508429-x86-%WINLANG%.e
 :: URL|SVE|http://download.microsoft.com/download/8/2/1/8219AFC9-B0E9-4894-9F2D-4339C8DC0ADD/WindowsXP-KB2491683-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2491683-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/7/9/4/794F3552-DE4D-429C-8284-3F586A54A0EF/WindowsXP-KB2491683-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2491683-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2491683-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: MS11-027: Cumulative security update for ActiveX kill bits: April 12, 2011
-:: <http://support.microsoft.com/kb/2508272>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=3630>
-:: URL|CSY|http://download.microsoft.com/download/5/3/9/5395BA5D-340D-4BAB-A954-7FAC3A47FA21/WindowsXP-KB2508272-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2508272-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/5/1/6/516D5827-C686-49DC-BBE0-54240D5EB817/WindowsXP-KB2508272-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2508272-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/2/A/7/2A7E4A29-B466-43ED-A1F9-621D6C71145C/WindowsXP-KB2508272-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2508272-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/6/C/3/6C38A875-69CF-4670-A2C6-9DB08D8E3940/WindowsXP-KB2508272-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2508272-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/9/9/3/99397B1E-41B7-4BC6-980B-01F10231ABDC/WindowsXP-KB2508272-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2508272-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/0/A/D/0AD93AA2-8CDF-4FE1-9E3A-BE32D8CFDCE5/WindowsXP-KB2508272-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2508272-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/B/3/5/B35497F9-337F-46B6-A9EE-085458A3C966/WindowsXP-KB2508272-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2508272-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/0/2/7/02705305-0B96-46C4-8A16-EA4297A17B3B/WindowsXP-KB2508272-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2508272-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/3/8/4/384C688A-BC79-4578-AA8F-73859AB73475/WindowsXP-KB2508272-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2508272-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/B/5/2/B52374D4-07DB-4C9D-9D34-AD656539FE9B/WindowsXP-KB2508272-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2508272-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/4/8/F/48F247D5-7F95-4D0B-B896-60A858A6F625/WindowsXP-KB2508272-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2508272-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/0/9/0095263E-B276-470B-9E62-DAD68FC2813A/WindowsXP-KB2508272-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2508272-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/5/9/0/590EC138-307B-4249-819A-1EEE110B484A/WindowsXP-KB2508272-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2508272-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/3/A/7/3A7F0380-2B3B-47CB-A626-B740B7709224/WindowsXP-KB2508272-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2508272-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/F/D/4/FD4090B9-784D-4DA7-B669-FA4D8BEBAB32/WindowsXP-KB2508272-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2508272-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/A/6/8/A684F1DD-75E1-4AC4-9881-9BD378AA3465/WindowsXP-KB2508272-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2508272-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/5/B/6/5B6232D5-9642-4268-AE18-E442CAAA611A/WindowsXP-KB2508272-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2508272-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/D/9/9/D99646A2-7A27-4BD7-AFCF-E6EDF8BE0CF2/WindowsXP-KB2508272-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2508272-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/E/3/0/E3065BEF-20B3-4199-8CCB-E6D2DAD97089/WindowsXP-KB2508272-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2508272-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2508272-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: MS11-029: Description of the security update for Windows GDI+: April 12, 2011
-:: <http://support.microsoft.com/kb/2412687>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=12673>
-:: URL|CSY|http://download.microsoft.com/download/7/B/4/7B427E6F-81CC-46FB-83C2-9F8D788CE5AE/WindowsXP-KB2412687-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2412687-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/9/6/D/96DA4438-1F4F-45A4-8A20-3D22DF07D7CE/WindowsXP-KB2412687-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2412687-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/A/0/6A0309A3-79C5-4B64-B579-55E3F17C4CAA/WindowsXP-KB2412687-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2412687-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/0/E/4/0E43776C-AA22-46A9-9153-C90F2AD96296/WindowsXP-KB2412687-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2412687-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/0/0/C/00CDFB4E-AF11-4E21-9400-56BF98B3C3D5/WindowsXP-KB2412687-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2412687-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/9/C/2/9C27ABBA-B79F-4D7B-81E1-9464BD525177/WindowsXP-KB2412687-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2412687-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/0/A/4/0A4CA841-8FD4-4EAA-8A21-25F4332D8694/WindowsXP-KB2412687-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2412687-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/1/4/9/14992F64-90E9-4428-9CAC-5F93B9015803/WindowsXP-KB2412687-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2412687-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/C/9/B/C9BDC60E-F5BE-4B9E-BCBE-504228062DBB/WindowsXP-KB2412687-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2412687-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/D/C/5DCCC469-A3BB-47B8-882A-81A1D83EE727/WindowsXP-KB2412687-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2412687-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/E/6/F/E6F8CA00-94FE-4129-B258-BA654545E397/WindowsXP-KB2412687-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2412687-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/D/C/6/DC6EAA6D-97C5-491C-8394-E6518CC57A58/WindowsXP-KB2412687-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2412687-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/6/2/D/62D0236F-1EFF-4BEF-8635-2C2DC42D0A1A/WindowsXP-KB2412687-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2412687-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/A/C/7/AC7D70DC-FEA1-41C2-80EE-05B749E232FB/WindowsXP-KB2412687-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2412687-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/2/C/5/2C557F6E-1614-4849-850D-FBBEA8928041/WindowsXP-KB2412687-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2412687-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/A/B/3/AB31936E-D48A-4C28-8948-A33F2D8CA6FB/WindowsXP-KB2412687-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2412687-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/A/D/D/ADDF3F91-8B00-487B-9BD4-CF15E3EDE0AB/WindowsXP-KB2412687-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2412687-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/D/6/1/D61DBC5D-D8C9-4BC7-8DBC-6D6220B6D4A0/WindowsXP-KB2412687-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2412687-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/D/9/4/D944BF19-C6B0-46EC-BF38-D7C47DEC5964/WindowsXP-KB2412687-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2412687-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2412687-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: MS11-030: Vulnerability in DNS Resolution could allow remote code execution: April 12, 2011
 :: <http://support.microsoft.com/kb/2509553>
@@ -191,30 +119,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2507618-x86-%WINLANG%.e
 :: URL|TRK|http://download.microsoft.com/download/C/8/0/C80FF2AA-64B0-457B-BFA0-101FAE628CF4/WindowsXP-KB2485663-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2485663-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2485663-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: MS11-034: Vulnerabilities in Windows Kernel-Mode drivers could allow elevation of privilege: April 12, 2011
-:: <http://support.microsoft.com/kb/2506223>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=9893>
-:: URL|CSY|http://download.microsoft.com/download/7/B/8/7B8506F4-7D8E-4561-ACE5-C88B9FC2E37A/WindowsXP-KB2506223-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2506223-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/A/C/8/AC880016-377C-4213-A237-0EA1DFFF6D30/WindowsXP-KB2506223-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2506223-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/8/F/2/8F27E3DB-C660-418F-A727-F7E6FAFC7C27/WindowsXP-KB2506223-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2506223-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/E/D/8/ED82AA30-86E1-42EC-A161-EE2B867227AD/WindowsXP-KB2506223-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2506223-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/F/4/B/F4BFF91D-E30B-47B8-BC05-DEE285D3BE98/WindowsXP-KB2506223-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2506223-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/F/F/3/FF365849-7B40-4CCB-975D-DD04236F32CA/WindowsXP-KB2506223-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2506223-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/F/1/5/F15F93EB-3308-4290-9FA9-8AD7338789BE/WindowsXP-KB2506223-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2506223-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/A/B/F/ABFD8416-E33C-4450-AEFF-55DA43599171/WindowsXP-KB2506223-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2506223-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/1/A/1/1A11CDBD-E16F-4894-8E62-490F1E9829C9/WindowsXP-KB2506223-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2506223-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/C/B/2/CB2ED530-FF87-46B9-A3CD-BC4120E7F4F8/WindowsXP-KB2506223-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2506223-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/5/C/5/5C5AD544-5F26-4E54-BB41-19C37154086F/WindowsXP-KB2506223-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2506223-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/6/D/06D24314-AA97-42AE-96CA-9022C0FA37E7/WindowsXP-KB2506223-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2506223-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/6/F/8/6F8C89E4-29E2-40BD-997E-B1632A1D0A13/WindowsXP-KB2506223-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2506223-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/4/1/0/41066542-04CA-44A2-A296-251B589AD558/WindowsXP-KB2506223-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2506223-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/3/2/D/32D75F75-1A45-44FE-8DDA-55B70F26FA20/WindowsXP-KB2506223-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2506223-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/E/C/7/EC739444-86EE-4261-9E14-72B7A921CF33/WindowsXP-KB2506223-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2506223-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/3/1/1/311A18A2-E804-433D-ABFE-EF235293C82A/WindowsXP-KB2506223-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2506223-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/C/0/2/C02A5733-082A-460F-B157-796A403F9B54/WindowsXP-KB2506223-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2506223-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/3/6/F/36FFC3A4-05C3-42D6-B48B-4C398B0ED2EB/WindowsXP-KB2506223-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2506223-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2506223-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: MS11-014: Vulnerability in Local Security Authority Subsystem Service could allow local elevation of privilege
 :: <http://support.microsoft.com/kb/2478960>
 :: <http://www.microsoft.com/en-us/download/details.aspx?id=5433>
@@ -238,30 +142,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2506223-x86-%WINLANG%.e
 :: URL|SVE|http://download.microsoft.com/download/9/D/9/9D9601CE-0CEE-4B38-8B7C-8EEAEEA92339/WindowsXP-KB2478960-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2478960-x86-sve.exe
 :: URL|TRK|http://download.microsoft.com/download/F/3/4/F348B324-B6CF-44C0-927C-9CB967517FD1/WindowsXP-KB2478960-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2478960-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2478960-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: MS11-019: Vulnerabilities in SMB Client could allow remote code execution: April 12, 2011
-:: <http://support.microsoft.com/kb/2511455>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=13536>
-:: URL|CSY|http://download.microsoft.com/download/5/0/E/50E37B88-4341-48BE-8E03-1979A5FA8B78/WindowsXP-KB2511455-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2511455-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/5/9/8/59843C8F-6D1D-4090-94A9-CA750D343357/WindowsXP-KB2511455-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2511455-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/9/7/5/97545E25-238B-4547-A297-074A9E231BD4/WindowsXP-KB2511455-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2511455-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/3/9/1/39181B43-8A24-4C9A-B621-F3DC908D15F5/WindowsXP-KB2511455-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2511455-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/C/C/B/CCB99DA1-10CC-4C47-874B-4A7E3BB45C8E/WindowsXP-KB2511455-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2511455-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/5/8/8/5885AA12-CA86-4506-A5E9-32B12CDE9453/WindowsXP-KB2511455-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2511455-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/9/1/F/91FB7032-6386-4415-AF82-7CD0D353592C/WindowsXP-KB2511455-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2511455-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/8/1/F/81F39BD1-F20D-4F31-A5BB-279DD23EF12C/WindowsXP-KB2511455-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2511455-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/5/8/5/58540535-0103-4078-BEFE-0625E0635E9F/WindowsXP-KB2511455-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2511455-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/5/E/0/5E0B0270-A1CF-4B8F-8B30-72E12F957C77/WindowsXP-KB2511455-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2511455-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/8/9/4/89478C94-989A-4B82-A777-E5AB228FAD52/WindowsXP-KB2511455-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2511455-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/D/B/A/DBA33806-DCD4-455B-863C-B7E6019F5030/WindowsXP-KB2511455-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2511455-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/0/0/B/00BBB17E-0F1E-4992-8CAE-15E0EB24953C/WindowsXP-KB2511455-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2511455-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/E/C/6/EC658BC3-22D4-4AFD-976B-1B5A40E31AC1/WindowsXP-KB2511455-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2511455-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/2/6/826763CD-F4D6-451A-BD5B-C825684DD20C/WindowsXP-KB2511455-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2511455-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/C/5/D/C5D8A3F3-3006-4732-B1EF-0741D52004C0/WindowsXP-KB2511455-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2511455-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/0/4/0/040A403C-CA8A-4967-95F1-2882703B59AA/WindowsXP-KB2511455-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2511455-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/C/C/D/CCDCDC9A-31E1-4EE0-89EB-F39AA8B0F60B/WindowsXP-KB2511455-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2511455-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/F/B/A/FBADC478-FE2E-4F7C-B9D1-E1F5409DC53F/WindowsXP-KB2511455-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2511455-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2511455-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
 :: MS11-020: Vulnerabilities in SMB Server could allow remote code execution: April 12, 2011
 :: <http://support.microsoft.com/kb/2508429>
