@@ -27,7 +27,7 @@
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/tr_TR/AdbeRdr1010_tr_TR.msi|packages/adobereader/adberdr1010_trk.msi
 
 :: Adobe Reader patch for all languages
-:: URL|All|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.3/misc/AdbeRdrUpd1013.msp|packages/adobereader/adberdrupd1013.msp
+:: URL|All|ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.4/misc/AdbeRdrUpd1014.msp|packages/adobereader/adberdrupd1014.msp
 
 
 :: Download Adobe Reader 10.0.x Language Support
@@ -86,4 +86,4 @@ todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
 :: This is the actual installer, added the patch too
-todo.pl "msiexec /qn /i \"%Z%\packages\adobereader\adberdr1010_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\adberdrupd1013.msp\""
+todo.pl "msiexec /qn /i \"%Z%\packages\adobereader\adberdr1010_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\adberdrupd1014.msp\""
