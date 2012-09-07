@@ -2,7 +2,7 @@
 :: HOME: http://www.pdfforge.org/
 @echo off
 
-:: URL|ALL|http://downloads.sourceforge.net/pdfcreator/PDFCreator-1_3_2_setup.exe|packages/pdfcreator/pdfcreator-1.3.2.setup.exe
+:: URL|ALL|http://downloads.sourceforge.net/pdfcreator/PDFCreator-1_4_3_setup.exe|packages/pdfcreator/pdfcreator-1.4.3.setup.exe
 
 :: Install language files
 :: URL|CHS|http://www.pdfforge.org/files/translations/1.3.0/chinese_simplified.ini|packages/pdfcreator/lang-chs-1.3.0.ini
@@ -22,4 +22,4 @@ if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-1.3.0.ini goto nolangpack
 :nolangpack
 
 :: Install PDFCreator
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-1.3.2.setup.exe /SILENT /LOADINF="%Z%\packages\pdfcreator\PDFCreator.ini" /NORESTART"
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-1.4.3.setup.exe /SILENT /LOADINF="%Z%\packages\pdfcreator\PDFCreator.ini" /NORESTART"
