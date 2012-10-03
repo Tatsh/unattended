@@ -11,6 +11,8 @@ bin/find-modules-pci
 bin/gzip
 bin/loadkeys
 bin/lsmod
+bin/rmmod
+bin/modinfo
 bin/mkdir
 bin/mount
 bin/sh
