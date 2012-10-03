@@ -1,3 +1,6 @@
+# load virtio before anyone else
+virtio
+
 # load dmfe before tulip
 dmfe
 
