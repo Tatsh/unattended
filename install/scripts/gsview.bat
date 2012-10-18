@@ -1,6 +1,6 @@
 :: OPTIONAL: Install Ghostscript and GSview
 :: HOME: http://pages.cs.wisc.edu/~ghost/
-:: URL|ALL|http://downloads.sourceforge.net/ghostscript/gs864w32.exe|packages/ghostscript/gs864w32.exe
+:: URL|ALL|http://downloads.sourceforge.net/ghostscript/GPL%20Ghostscript/9.06/gs906w32.exe|packages/ghostscript/gs906w32.exe
 :: URL|ALL|http://www.mirrorservice.org/sites/mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/gsv50w32.exe|packages/ghostscript/gsv50w32.exe
 :: Then manually extract to gs and gv folders in the same path
 
