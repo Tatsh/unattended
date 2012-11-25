@@ -4,6 +4,7 @@
 :: <http://www.java.com/en/download/manual.jsp>
 :: http://www.java.com/en/download/manual_v6.jsp
 :: <http://java.sun.com/javase/6/webnotes/install/jre/silent.html#running>
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=69474|packages/jre/jre-7u09-windows-i586.exe
 ::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=69512|packages/jre/jre-6u37-windows-i586.exe
 
 @Echo off
