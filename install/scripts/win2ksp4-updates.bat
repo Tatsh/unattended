@@ -2199,7 +2199,7 @@ todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\Windows2000-KB842773-x86-%WINLANG%.
 :: installation which applies the relevant updates, this is useless,
 :: so just this once we violate our principles and patch the registry
 :: directly.
-todo.pl "regedit /s %Z%\scripts\kb873374.reg"
+todo.pl "reg add HKLM\Software\Microsoft\GdiDetectionTool /f /v \"GDITool\" /t REG_DWORD /d 1 "
 
 :: Critical Update for Windows (KB833407)
 :: <http://support.microsoft.com/?kbid=833407>
@@ -2332,3 +2332,8 @@ todo.pl ie6.bat
 :: <http://download.windowsupdate.com/msdownload/update/v3/static/rtf/en/4702.htm>
 :: URL|ALL|http://download.windowsupdate.com/msdownload/update/v3/static/trustedr/en/rootsupd.exe|updates/win2ksp4/rootsupd-3.exe
 todo.pl ".reboot-on 194 %Z%\updates\win2ksp4\rootsupd-3.exe /q /r:n"
+REGEDIT4
+
+; Pretend stupid GDI+ Tool already ran
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\GdiDetectionTool]
+"GDITool"=dword:00000001
