@@ -2,6 +2,7 @@
 :: hangs on some (fast) systems.  I wish I knew what we were really
 :: waiting for.  See
 :: <http://www.mail-archive.com/unattended-info%40lists.sourceforge.net/msg01259.html>.
+:: HOME: http://downloads.activestate.com/ActivePerl/releases/
 @Echo off
 
 ping -n 15 localhost > nul
@@ -27,10 +28,10 @@ if "%WINVER%" == "win2k" goto skipinstaller3
 %Z%\packages\windowsinstaller\windowsinstaller-kb893803-v2-x86.exe /passive /norestart
 :skipinstaller3
 
-:: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.12.4.1205/ActivePerl-5.12.4.1205-MSWin32-x86-294981.msi|packages/perl/activeperl-5.12.4.1205-mswin32-x86-294981.msi
-:: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.12.4.1205/ActivePerl-5.12.4.1205-MSWin32-x64-294981.msi|packages/perl/activeperl-5.12.4.1205-mswin32-AMD64-294981.msi
+:: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.14.2.1402/ActivePerl-5.14.2.1402-MSWin32-x86-295342.msi|packages/perl/activeperl-5.14.2.1402-mswin32-x86-295342.msi
+:: URL|ALL|http://downloads.activestate.com/ActivePerl/releases/5.14.2.1402/ActivePerl-5.14.2.1402-MSWin32-x64-295342.msi|packages/perl/activeperl-5.14.2.1402-mswin32-AMD64-295342.msi
 
-set perl_msi=%Z%\packages\perl\activeperl-5.12.4.1205-mswin32-%PROCESSOR_ARCHITECTURE%-294981.msi
+set perl_msi=%Z%\packages\perl\activeperl-5.14.2.1402-mswin32-%PROCESSOR_ARCHITECTURE%-295342.msi
 
 :retry
 if exist %perl_msi% goto have_perl
