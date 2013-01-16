@@ -31,10 +31,6 @@
 :: URL|TRK|http://download.microsoft.com/download/8/7/b/87bd1589-b61d-4086-a392-ce2789c76928/Windows-KB909520-v1.000-x86-TRK.exe|updates/common/windows-kb909520-v1.000-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\common\Windows-KB909520-v1.000-x86-%WINLANG%.exe /passive /n /norestart"
 
-:: Microsoft Windows Malicious Software Removal Tool (KB890830)
-:: <http://support.microsoft.com/?kbid=890830>
-:: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-:: URL|ALL|http://download.microsoft.com/download/4/a/a/4aa524c6-239d-47ff-860b-5b397199cbf8/Windows-KB890830-v4.11.exe|updates/common/windows-kb890830-v4.11.exe
 todo.pl "%Z%\scripts\win_malicious-software-removal-tool.bat" 
 
 :: Security Update for Windows Media Player 9 (KB917734)
