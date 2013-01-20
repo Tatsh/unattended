@@ -1,8 +1,8 @@
-:: OPTIONAL: AVG Anti-Virus Free Edition
+:: OPTIONAL: AVG Anti-Virus Free Edition 3-Jan-2013
 :: HOME:http://free.avg.com/es-es/descargar.prd-afh#tba1
-:: URL|ALL|http://download.avgfree.com/softw/13free/update/u13iavi5935ad.bin|packages/avg/updates/u13iavi5935ad.bin
-:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x86_all_2013_2793a5877.exe|packages/avg/avg_free_x86_all_2013_2793a5877.exe
-:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x64_all_2013_2793a5877.exe|packages/avg/avg_free_AMD64_all_2013_2793a5877.exe
+:: URL|ALL|http://download.avgfree.com/softw/13free/update/u13iavi6036tm.bin|packages/avg/updates/u13iavi6036tm.bin
+:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x86_all_2013_2890a6006.exe|packages/avg/avg_free_x86_all_2013_2890a6006.exe
+:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x64_all_2013_2890a6006.exe|packages/avg/avg_free_AMD64_all_2013_2890a6006.exe
 
 @echo off
 
@@ -17,5 +17,13 @@ todo.pl "\"%PROGRAMFILES%\AVG\AVG2013\avgmfapx.exe\" /AppMode=UPDATE /source=fol
 ::  Before update lets make sure that avg is active and ok.
 todo.pl ".reboot"
 
-::  HttpScanner,SafeSearch and SafeSurf are plugins for the Browser. Keep them out. 
-todo.pl "%Z%\packages\avg\avg_free_%PROCESSOR_ARCHITECTURE%_all_2013_2793a5877.exe /UILevel=Silent /REMOVE_FEATURE=fea_AVG_SafeSurf,fea_AVG_SafeSearch,fea_AVG_HttpScanner /InstallToolbar=0 /InstallSidebar=0 /DontRestart"
+:: Disable these features:
+:: fea_IDP:             Identity protention
+:: LinkScnFea:          AVG LinkScanner
+:: fea_SrchSrf__Search: AVG Active Search-Shield
+:: fea_SrchSrf__Surf:   AVG Surf-Shield
+:: fea_OnlnSc:          AVG Online Shield
+:: EmailPluginsFea:     Email Plugins Feature
+:: fea_Client:          AVG Remote admin
+
+todo.pl "%Z%\packages\avg\avg_free_%PROCESSOR_ARCHITECTURE%_all_2013_2890a6006.exe /UILevel=Silent /InstallToolbar=0 /InstallSidebar=0 /ChangeBrowserSearchProvider=0  /DontRestart /RemoveFeatures=fea_IDP;LinkScnFea;fea_SrchSrf__Search;fea_SrchSrf__Surf;fea_OnlnSc;EmailPluginsFea;fea_Client;"
