@@ -7,6 +7,7 @@
 
 ping -n 15 localhost > nul
 
+if not "%WINVER%" == "win2k" goto skipinstaller3
 :: Windows Installer 2.0 Redistributable for Windows NT 4.0 and 2000
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=4B6140F9-2D36-4977-8FA1-6F8A0F5DCA8F>
 :: Doesn't hurt to install this as it exits nicely if not needed.
