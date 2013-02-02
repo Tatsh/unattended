@@ -4,8 +4,8 @@
 :: <http://www.java.com/en/download/manual.jsp>
 :: http://www.java.com/en/download/manual_v6.jsp
 :: <http://java.sun.com/javase/6/webnotes/install/jre/silent.html#running>
-::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=73141|packages/jre/jre-7u11-windows-i586.exe
-::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=71310|packages/jre/jre-6u38-windows-i586.exe
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=73857|packages/jre/jre-7u13-windows-i586.exe
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=73922|packages/jre/jre-6u39-windows-i586.exe
 
 @Echo off
 todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"SunJavaUpdateSched\""
