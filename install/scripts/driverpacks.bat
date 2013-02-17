@@ -20,7 +20,15 @@
 :: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/tvcard/10.05/download/torrent|drivers/DP_TVCARD_wnt5_x86-32_1005.7z
 :: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/webcam/11.07/download/torrent|drivers/DP_webcam_wnt5_x86-32_1107.7z
 
+:: WIN7 64Bits
+:: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/chipset/12.12/download/torrent|drivers/DP_Chipset_wnt6_x64_1212.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/graphics-a/12.03/download/torrent|drivers/DP_Graphics_A_wnt6_x64_1203.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/graphics-b/12.03/download/torrent|drivers/DP_Graphics_B_wnt6_x64_1203.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/lan/12.08/download/torrent|drivers/DP_LAN_wnt6_x64_1208.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/wlan/12.03/download/torrent|drivers/DP_LAN_wnt6_x64_1203.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/mass-storage/12.12.1/download/torrent|drivers/DP_MassStorage_wnt6_x64_12121.7z
 
+::Old releases
 :: URL|All|http://driverpacks.net/driverpacks/windows/xp/x86/monitors/10.05/download/torrent|drivers/DP_Monitor_wnt5_x86-32_1005.7z
 :: URL|All|http://3rdpartydriverpacks.thesneaky.com/wnt5_x86-32/DP_Phone_wnt5_x86-32_100214.7z|drivers/DP_Phone_wnt5_x86-32_100214.7z
 :: URL|All|http://3rdpartydriverpacks.thesneaky.com/wnt5_x86-32/DP_PrintersCanonInkjet_wnt5_x86-32_61105.7z|drivers/DP_PrintersCanonInkjet_wnt5_x86-32_61105.7z
