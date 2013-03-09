@@ -6,7 +6,7 @@
        =============================================================== -->
     <property environment="env"/>
     <property name="docs.home" value="htdocs/"/>
-    <property name="release.version" value="49rc5"/>
+    <property name="release.version" value="49"/>
     <property name="release.tmp" value="/var/tmp/unattended.${release.version}"/>
     <property name="drivers.home" value="install/drivers"/>
     <property name="sf.web" value="web.sourceforge.net:/home/groups/u/un/unattended/htdocs/"/>
@@ -35,6 +35,8 @@
    <echo message="Copying Testing Release ${release.version}" />
      <exec dir="." executable="rsync" os="Linux" failonerror="true">
              <arg value="-azc" />
+             <arg value="--delete" />
+             <arg value="--partial" />
              <arg value="-vC" />
              <arg value="--bwlimit=20" />
              <arg value="--include=*.zip" />
