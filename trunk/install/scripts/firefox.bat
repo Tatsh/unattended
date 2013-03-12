@@ -35,4 +35,4 @@
 
 @Echo off
 
-todo.pl "%Z%\packages\mozilla\firefox-19.0.2-%WINLANG%.exe -ms -ira"
+todo.pl "%Z%\packages\mozilla\firefox-1902-%WINLANG%.exe -ms -ira"
