@@ -25,7 +25,7 @@
 :: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/graphics-a/12.03/download/torrent|drivers/DP_Graphics_A_wnt6_x64_1203.7z
 :: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/graphics-b/12.03/download/torrent|drivers/DP_Graphics_B_wnt6_x64_1203.7z
 :: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/lan/12.08/download/torrent|drivers/DP_LAN_wnt6_x64_1208.7z
-:: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/wlan/12.03/download/torrent|drivers/DP_LAN_wnt6_x64_1203.7z
+:: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/wlan/12.03/download/torrent|drivers/DP_WLAN_wnt6_x64_1203.7z
 :: URL|All|http://driverpacks.net/driverpacks/windows/7/x64/mass-storage/12.12.1/download/torrent|drivers/DP_MassStorage_wnt6_x64_12121.7z
 
 ::Old releases
