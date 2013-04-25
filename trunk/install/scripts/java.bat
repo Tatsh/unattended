@@ -3,6 +3,7 @@
 :: See:
 :: <http://www.java.com/en/download/manual.jsp>
 :: http://www.java.com/en/download/manual_v6.jsp
+:: http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jre-installer-options.html
 :: <http://java.sun.com/javase/6/webnotes/install/jre/silent.html#running>
 ::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=76860|packages/jre/jre-7u21-windows-i586.exe
 ::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=75085|packages/jre/jre-6u43-windows-i586.exe
