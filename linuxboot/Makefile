@@ -1,7 +1,7 @@
 bash=bash-4.1
 busybox=busybox-1.15.3
 # Convert::ASN1 is required by perl-ldap
-convert-asn1=Convert-ASN1-0.22
+convert-asn1=Convert-ASN1-0.26
 dbd-mysql=DBD-mysql-2.9008
 dbd-pgpp=DBD-PgPP-0.08
 dbi=DBI-1.613
@@ -15,9 +15,9 @@ glibc=glibc-2.13
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.8
 libusb=libusb-0.1.12
-linux=linux-3.5.5
+linux=linux-3.8.8
 module-init-tools=module-init-tools-3.12
-mysql=mysql-5.0.92
+mysql=mysql-5.0.96
 nano=nano-2.0.9
 # TODO: ncurses-5.7
 ncurses=ncurses-5.6
@@ -1045,7 +1045,7 @@ $(call download_rule, $(linux), tar.bz2,		\
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
-	http://mysql.he.net/Downloads/MySQL-5.0/)
+http://cdn.mysql.com/Downloads/MySQL-5.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, 			\
