@@ -13,5 +13,5 @@ todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"S
 todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableAutoUpdateCheck\" /t REG_DWORD /d 0"
 todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableJavaUpdate\" /t REG_DWORD /d 0"
 
-todo.pl "%Z%\packages\jre\jre-7u21-windows-i586.exe /L C:\NETINST\log\java.log REBOOT=ReallySuppress JAVAUPDATE=0 WEBSTARTICON=0"
+todo.pl "%Z%\packages\jre\jre-7u21-windows-i586.exe /L %SystemDrive%\netinst\logs\java.log REBOOT=ReallySuppress JAVAUPDATE=0 WEBSTARTICON=0"
 
