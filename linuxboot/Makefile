@@ -1050,8 +1050,6 @@ $(call download_rule, $(parted), tar.gz, 			\
         http://unattended.cvs.sourceforge.net/viewvc/unattended/unattended/linuxboot/misc/)
 $(call download_rule, $(pciutils), tar.gz,			\
 	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/)
-$(call download_rule, $(pcmcia-cs), tar.gz,			\
-	http://downloads.sourceforge.net/pcmcia-cs/)
 $(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
 $(call download_rule, $(perl-ldap), tar.gz, \
 	http://www.cpan.org/authors/id/G/GB/GBARR/)
@@ -1067,8 +1065,8 @@ $(call download_rule, $(syslinux), tar.gz, \
 $(call download_rule, $(usbutils), tar.bz2,	\
 	http://ftp.sunet.se/pub/Linux/kernel.org/linux/utils/usb/usbutils/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
-	http://pcmcia-cs.sourceforge.net/ftp/contrib/)
-$(call download_rule, $(zlib), tar.gz, http://downloads.sourceforge.net/project/libpng/zlib/1.2.5/)
+	http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/)
+$(call download_rule, $(zlib), tar.gz, http://downloads.sourceforge.net/project/libpng/zlib/1.2.8/)
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
