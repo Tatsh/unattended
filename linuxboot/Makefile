@@ -1,41 +1,43 @@
-bash=bash-4.1
+bash=bash-4.2
+# TODO: busybox-1.21.0
 busybox=busybox-1.15.3
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.26
 dbd-mysql=DBD-mysql-2.9008
 dbd-pgpp=DBD-PgPP-0.08
-dbi=DBI-1.613
-dmidecode=dmidecode-2.10
+dbi=DBI-1.625
+dmidecode=dmidecode-2.12
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.41.12
-expat=expat-2.0.1
+e2fsprogs=e2fsprogs-1.42.7
+expat=expat-2.1.0
+# TODO: glibc-2.17
 glibc=glibc-2.13
-# TODO: kbd-1.15.2 Missing configure
+# TODO: kbd-1.15.5
 kbd=kbd-1.15.2
-#TODO:libusb-1.0.8
+#TODO:libusb-1.0.9
 libusb=libusb-0.1.12
 linux=linux-3.8.8
-module-init-tools=module-init-tools-3.12
+module-init-tools=module-init-tools-3.15
 mysql=mysql-5.0.96
 nano=nano-2.0.9
-# TODO: ncurses-5.7
+# TODO: ncurses-5.9
 ncurses=ncurses-5.6
 #TODO: parted 2.3 - NTLDR not found
 parted=parted-1.6.22
-pciutils=pciutils-3.1.8
+pciutils=pciutils-3.2.0
 # TODO: perl-5.12.2
 perl=perl-5.10.1
 # perl-ldap aka. Net::LDAP
-perl-ldap=perl-ldap-0.40
+perl-ldap=perl-ldap-0.43
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 # TODO: samba-3.5.4
-samba=samba-3.3.15
-slang=slang-2.0.7
-syslinux=syslinux-4.04
+samba=samba-3.3.16
+slang=slang-2.2.4
+syslinux=syslinux-5.01
 usbutils=usbutils-0.91
-wireless_tools=wireless_tools.28
+wireless_tools=wireless_tools.29
 zlib=zlib-1.2.5
 
 keep-archives=1
@@ -205,6 +207,7 @@ $(slang)/src/objs/libslang.a: stage1/lib/libdl.so $(slang)/configure
 	cd $(slang)						\
 	&& CC="$(CC) $(fakelib_cflags)" ./configure		\
 		--prefix=/usr 					\
+	&& cd demo                                              \
 	&& $(MAKE)
 	[ -e $@ ]
 
@@ -218,7 +221,7 @@ $(call copy_file, $(slang)/src/objs/libslang.a, \
 #   option does not work for us).
 build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch	\
 			$(dosemu)/.stamp-dosemu-configure-patch		\
-			$(dosemu)/.stamp-dosemu-dexeconfig-patch		\
+			$(dosemu)/.stamp-dosemu-dexeconfig-patch	\
 			$(dosemu)/configure fakelib/libslang.a		\
 			fakeinclude/slang.h
 	rm -f $@
@@ -234,11 +237,11 @@ build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch	\
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
 # If it is non-zero, they do something weird which breaks for us.  So
 # we force it to be zero.
-build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status	\
+build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status		\
 				stage1/lib/libdl.so
 	rm -f $@
-	cd build-$(dosemu)					\
-	&& $(MAKE) MAKELEVEL=0 				\
+	cd build-$(dosemu)						\
+	&& $(MAKE) MAKELEVEL=0 						\
 	&& cp commands/exitemu.com $(cwd)/../install/dosbin/exitemu.com
 	[ -e $@ ]
 
@@ -786,12 +789,12 @@ $(call copy_lib,$(zlib)/$(zlib_so),stage1/lib/libz.so)
 stage1 += stage1/lib/libz.so
 
 ## libexpat
-$(expat)/.libs/libexpat.so.1.5.2:
+$(expat)/.libs/libexpat.so.1.6.0:
 	cd $(expat)						\
 	&& CC="$(CC)" ./configure --prefix=/			\
 	&& $(MAKE)
 
-$(call copy_lib,$(expat)/.libs/libexpat.so.1.5.2,stage1/lib/libexpat.so)
+$(call copy_lib,$(expat)/.libs/libexpat.so.1.6.0,stage1/lib/libexpat.so)
 $(call copy_file,$(expat)/lib/expat.h,fakeinclude/expat.h)
 $(call copy_file,$(expat)/lib/expat_external.h,fakeinclude/expat_external.h)
 
@@ -1059,7 +1062,7 @@ $(call download_rule, $(perl-xml-xpath), tar.gz, \
 	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
 $(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/stable/)
 $(call download_rule, $(slang), tar.bz2, 	\
-	http://downloads.sourceforge.net/dosemu/)
+	ftp://space.mit.edu/pub/davis/slang/v2.2/)
 $(call download_rule, $(syslinux), tar.gz, \
         http://ftp.kernel.org/pub/linux/utils/boot/syslinux/)
 $(call download_rule, $(usbutils), tar.bz2,	\
