@@ -1033,8 +1033,6 @@ $(call download_rule, $(e2fsprogs), tar.gz,			\
 	http://downloads.sourceforge.net/e2fsprogs/)
 $(call download_rule, $(expat), tar.gz, \
 	http://downloads.sourceforge.net/expat/)
-#$(call cvs_rule, $(glibc), libc, \
-#	:pserver:anoncvs@sources.redhat.com:/cvs/glibc)
 $(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
 $(call download_rule, $(kbd), tar.gz,			\
 	http://ftp.altlinux.com/pub/people/legion/kbd/)
@@ -1049,7 +1047,7 @@ http://cdn.mysql.com/Downloads/MySQL-5.0/)
 $(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
 $(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
 $(call download_rule, $(parted), tar.gz, 			\
-        http://unattended.cvs.sourceforge.net/*checkout*/unattended/unattended/linuxboot/misc/)
+        http://unattended.cvs.sourceforge.net/viewvc/unattended/unattended/linuxboot/misc/)
 $(call download_rule, $(pciutils), tar.gz,			\
 	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/)
 $(call download_rule, $(pcmcia-cs), tar.gz,			\
