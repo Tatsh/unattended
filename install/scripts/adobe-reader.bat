@@ -31,11 +31,8 @@
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/misc/AdbeRdrSD11000_all.msi|packages/adobereader/misc/AdbeRdrSD11000_all.msi
 :: Download Extended Language Support Fonts Package
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/misc/FontPack11000_XtdAlf_Lang.msi|packages/adobereader/misc/FontPack11000_xtdalf_lang.msi
-:: Download the 11.01 patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.01/misc/AdbeRdrUpd11001.msp|packages/adobereader/adberdrupd11001.msp
-:: Download the 11.02 secondary patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.02/misc/AdbeRdrSecUpd11002.msp|packages/adobereader/adberdrsecupd11002.msp
-
+:: Download the 11.03 patch
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.03/misc/AdbeRdrUpd11003.msp|packages/adobereader/adberdrupd11003.msp
 ::if not exist %Z%\packages\adobereader\misc\FontPack11000_xtd_lang.msi goto nolangsupport
 :: Install Extended Language Support Fonts Package
 ::todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\FontPack11000_xtdalf_lang.msi"
@@ -53,4 +50,4 @@ todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
 :: This is the actual installer plus patch (needs both patches for the install to work)
-todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\adberdr11000_%WINLANG%.msi\" REBOOT=ReallySuppress PATCH=\"%Z%\packages\adobereader\adberdrupd11001.msp;%Z%\packages\adobereader\adberdrsecupd11002.msp\""
+todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\adberdr11000_%WINLANG%.msi\" REBOOT=ReallySuppress PATCH=\"%Z%\packages\adobereader\adberdrupd11003.msp;\""
