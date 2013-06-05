@@ -49,5 +49,5 @@ todo.pl ".ignore-err 1 reg add \"HKLM\SOFTWARE\Adobe\Acrobat Reader\11.0\AdobeVi
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe ARM\""
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
-:: This is the actual installer plus patch (needs both patches for the install to work)
-todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\adberdr11000_%WINLANG%.msi\" REBOOT=ReallySuppress PATCH=\"%Z%\packages\adobereader\adberdrupd11003.msp;\""
+:: This is the actual installer plus patch
+todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\adberdr11000_%WINLANG%.msi\" REBOOT=ReallySuppress PATCH=\"%Z%\packages\adobereader\adberdrupd11003.msp\""
