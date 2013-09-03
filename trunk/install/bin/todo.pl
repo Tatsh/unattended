@@ -209,6 +209,9 @@ sub get_windows_version () {
     elsif ($product_name =~ m/Windows Server.*(2008)/) {
         $os = 'ws2k8';
     }
+	elsif ($product_name =~ m/Windows Server.*(2012)/) {
+        $os = 'win2012';
+    }
     elsif ($product_name =~ m/Windows 7/) {
         $os = 'win7';
     }
