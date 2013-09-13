@@ -93,12 +93,19 @@ for cmdfile in $WFILES; do
       mkdir -p "$path"
       # Download file if it doesn't exist
       if [ ! -f "$file" ] ; then
+        if [ ${url: -7} == "torrent" ]; then
+          wget $WGET_OPS --passive-ftp -O "$file.$$.torrent" "$url" ;
+          if ctorrent -e 0 -s "$file.$$.tmp" "$file.$$.torrent" ; then
+              mv "$file.$$.tmp" "$file"
+          fi
+        else
           if wget $SPIDER $WGET_OPS --passive-ftp -O "$file.$$.tmp" "$url" ; then
               mv "$file.$$.tmp" "$file"
           else
               rm -f "$file.$$.tmp"
               wgetnberr=$(( $wgetnberr + 1 ))
           fi
+        fi
       else
           touch "$file"
       fi
