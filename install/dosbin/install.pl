@@ -900,7 +900,7 @@ sub create_postinst_bat () {
     # NTP servers
     my $ntp_servers = $u->{'_meta'}->{'ntp_servers'};
     defined $ntp_servers && $ntp_servers ne ''
-        and push @postinst_lines, "net time /setsntp:\"$ntp_servers\"";
+        and push @postinst_lines, "w32tm /config /syncfromflags:manual /manualpeerlist:\"$ntp_servers\"";
 
     my $netinst = $u->{'_meta'}->{'netinst'};
 
