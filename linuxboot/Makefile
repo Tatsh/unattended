@@ -18,6 +18,7 @@ kbd=kbd-1.15.2
 #TODO:libusb-1.0.9
 libusb=libusb-0.1.12
 linux=linux-3.11.1
+libxml2=libxml2-2.9.1
 module-init-tools=module-init-tools-3.15
 mysql=mysql-5.0.96
 nano=nano-2.0.9
@@ -37,6 +38,7 @@ samba=samba-3.3.16
 slang=slang-2.2.4
 syslinux=syslinux-5.01
 usbutils=usbutils-0.91
+wimlib=wimlib-1.5.1
 wireless_tools=wireless_tools.29
 zlib=zlib-1.2.5
 
@@ -49,8 +51,8 @@ packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
 	$(linux)  $(module-init-tools) $(mysql) $(nano)	\
 	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
 	$(perl-xml-xpath) $(pciutils) 		\
-	$(samba) $(slang) $(syslinux) $(libusb) $(usbutils)	\
-	$(wireless_tools) $(zlib) 
+	$(samba) $(slang) $(syslinux) $(libusb) $(libxml2) $(usbutils)	\
+	$(wimlib) $(wireless_tools) $(zlib) 
 
 CC=gcc -m32
 CXX=g++ -m32
@@ -748,6 +750,29 @@ $(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
 
 stage1 += stage1/sbin/mount.cifs
 
+## wimlib
+$(wimlib)/imagex:
+         cd $(wimlib)                            \
+         &&                                      \
+PKG_CONFIG_PATH="$(cwd)/stage1/lib/pkgconfig/:$(cwd)/stage1/usr/lib/pkgconfig/" \
+                 CC=$(CC) CFLAGS="$(fakelib_cflags) \
+-I$(cwd)/stage1/usr/include -I$(cwd)/stage1/include \
+-I$(cwd)/stage1/usr/include/libxml2" LDFLAGS="$(fakelib_cflags) \
+-L$(cwd)/stage1/usr/lib/ -lxml2"                 
+                 ./configure                     \
+                         --prefix=/usr           \
+                         --build=i686-linux      \
+	&& $(MAKE)\
+	[ -e $@ ]
+         && CC=$(CC) CFLAGS="$(fakelib_cflags) \
+-I$(cwd)/stage1/usr/include -I$(cwd)/stage1/include \
+-I$(cwd)/stage1/usr/include/libxml2"               
+
+stage1/usr/bin/imagex: $(wimlib)/imagex
+         cd $(wimlib)                            \
+         && $(MAKE) DESTDIR=$(cwd)/stage1 install\
+         [ -e $@ ]
+
 ## wireless_tools
 $(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
 	cd $(wireless_tools)				\
@@ -1043,6 +1068,8 @@ $(call download_rule, $(libusb), tar.gz,	\
 	http://downloads.sourceforge.net/libusb/)
 $(call download_rule, $(linux), tar.bz2,		\
 	http://www.kernel.org/pub/linux/kernel/v3.0/)
+$(call download_rule, $(libxml2), tar.gz,		\
+	ftp://xmlsoft.org/libxml2/)
 $(call download_rule, $(module-init-tools), tar.bz2,			 \
 	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
 $(call download_rule, $(mysql), tar.gz, \
@@ -1067,6 +1094,8 @@ $(call download_rule, $(syslinux), tar.gz, \
         http://ftp.kernel.org/pub/linux/utils/boot/syslinux/)
 $(call download_rule, $(usbutils), tar.bz2,	\
 	http://ftp.sunet.se/pub/Linux/kernel.org/linux/utils/usb/usbutils/)
+$(call download_rule, $(wimlib), tar.gz,	\
+	https://downloads.sourceforge.net/project/wimlib/)
 $(call download_rule, $(wireless_tools), tar.gz,	\
 	http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/)
 $(call download_rule, $(zlib), tar.gz, http://downloads.sourceforge.net/project/libpng/zlib/1.2.8/)
