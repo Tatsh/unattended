@@ -6,7 +6,7 @@ default:
 	@echo "(Did you mean to 'cd bootdisk' or 'cd linuxboot' first?)"
 	exit 1
 sfuser := $$USER
-svnroot := https://unattended.svn.sourceforge.net:/svnroot/unattended
+svnroot := https://svn.code.sf.net:/p/unattended/code
 
 cwd := $(shell pwd)
 
