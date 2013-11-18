@@ -1,5 +1,5 @@
 :: OPTIONAL: Install Firefox
-::HOME: http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/
+::HOME: https://www.mozilla.org/en-US/firefox/all/
 
 :: Firefox 25.0.1
 ::URL|ARA|http://releases.mozilla.org/pub/mozilla.org/firefox/releases/25.0.1/win32/ar/Firefox%20Setup%2025.0.1.exe|packages/mozilla/firefox-2501-ara.exe
