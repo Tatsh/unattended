@@ -38,7 +38,7 @@ samba=samba-3.3.16
 slang=slang-2.2.4
 syslinux=syslinux-5.01
 usbutils=usbutils-0.91
-wimlib=wimlib-1.5.1
+wimlib=wimlib-1.6.1
 wireless_tools=wireless_tools.29
 zlib=zlib-1.2.5
 
