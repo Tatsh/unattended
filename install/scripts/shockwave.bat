@@ -1,7 +1,7 @@
 :: Install Shockwave player
-::
-::URL|ALL|http://www.adobe.com/go/sw_msi_installer|packages/shockwave/shockwave_installer_full_12.0.4.144.msi
+:: HOME: http://get.adobe.com/es/shockwave/otherversions/
+::URL|ALL|http://fpdownload.macromedia.com/get/shockwave/default/english/win95nt/latest/sw_lic_full_installer.msi|packages/shockwave/shockwave_installer_full_12.0.7.148.msi
 
 @Echo off
 
-todo.pl ".ignore-err 194 %Z%\packages\shockwave\shockwave_installer_full_12.0.4.144.msi /quiet /qb /norestart"
+todo.pl ".ignore-err 194 %Z%\packages\shockwave\shockwave_installer_full_12.0.7.148.msi /quiet /qb /norestart"
