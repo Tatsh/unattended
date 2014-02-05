@@ -1,9 +1,7 @@
-:: OPTIONAL: AVG Anti-Virus Free Edition 12-Nov-2013
+:: OPTIONAL: AVG Anti-Virus Free Edition 30-Jan-2014
 :: HOME:http://free.avg.com/es-es/descargar.prd-afh#tba1
-http://download.avgfree.com/filedir/inst/avg_free_x86_all_2014_4161a6829.exe
-:: URL|ALL|http://download.avgfree.com/softw/14free/update/u14iavi6661yj.bin|packages/avg/updates/u14iavi6661yj.bin
-:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x86_all_2014_4161a6829.exe|packages/avg/avg_free_x86_all_2014_4161a6829.exe
-:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x64_all_2014_4161a6829.exe|packages/avg/avg_free_AMD64_all_2014_4161a6829.exe
+:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x86_all_2014_4335a7045.exe|packages/avg/avg_free_x86_all_2014_4335a7045.exe
+:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x64_all_2014_4335a7045.exe|packages/avg/avg_free_AMD64_all_2014_4335a7045.exe
 
 @echo off
 
@@ -13,6 +11,7 @@ todo.pl "unlink.pl special:AllUsersDesktop\"\AVG 2014.lnk\""
 ::  Update program (Does not seem to work)
 ::todo.pl "\"%PROGRAMFILES%\AVG\AVG2014\avgmfapx.exe\" /AppMode=UPDATE"
 ::  Install virus definitions from local network first.
+:: add http://download.avgfree.com/softw/14free/update/*.bin on the URL to work
 ::todo.pl "\"%PROGRAMFILES%\AVG\AVG2014\avgmfapx.exe\" /AppMode=UPDATE /source=folder /path=\"%Z%\packages\avg\updates\""
 
 ::  Before update lets make sure that avg is active and ok.
@@ -27,4 +26,4 @@ todo.pl ".reboot"
 :: EmailPluginsFea:     Email Plugins Feature
 :: fea_Client:          AVG Remote admin
 
-todo.pl "%Z%\packages\avg\avg_free_%PROCESSOR_ARCHITECTURE%_all_2014_4161a6829.exe /UILevel=Silent /InstallToolbar=0 /InstallSidebar=0 /ChangeBrowserSearchProvider=0  /DontRestart /RemoveFeatures=fea_IDP;LinkScnFea;fea_SrchSrf__Search;fea_SrchSrf__Surf;fea_OnlnSc;EmailPluginsFea;fea_Client;"
+todo.pl "%Z%\packages\avg\avg_free_%PROCESSOR_ARCHITECTURE%_all_2014_4335a7045.exe /UILevel=Silent /InstallToolbar=0 /InstallSidebar=0 /ChangeBrowserSearchProvider=0  /DontRestart /RemoveFeatures=fea_IDP;LinkScnFea;fea_SrchSrf__Search;fea_SrchSrf__Surf;fea_OnlnSc;EmailPluginsFea;fea_Client;"
