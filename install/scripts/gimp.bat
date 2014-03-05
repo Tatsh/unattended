@@ -1,5 +1,5 @@
 ::OPTIONAL: Install GIMP (2.8)
-::HOME: http://gimp-win.sourceforge.net/
+::HOME: ftp://ftp.gimp.org/pub/gimp/
 ::URL|ALL|http://ftp.gimp.org/pub/gimp/v2.8/windows/gimp-2.8.10-setup.exe|packages/gimp/gimp-2.8.10-setup.exe
 @echo off
 
