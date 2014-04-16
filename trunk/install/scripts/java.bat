@@ -17,5 +17,5 @@ todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableJav
 
 :: You can use WEB_JAVA_SECURITY_LEVEL=M 
 :: <http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jre-installer-options.html>
-todo.pl "%Z%\packages\jre\jre-7u51-windows-i586.exe /s /L %SystemDrive%\netinst\logs\jre-7u51.log REBOOT=ReallySuppress JAVAUPDATE=0 WEBSTARTICON=0"
+todo.pl "%Z%\packages\jre\jre-7u55-windows-i586.exe /s /L %SystemDrive%\netinst\logs\jre-7u55.log REBOOT=ReallySuppress JAVAUPDATE=0 WEBSTARTICON=0"
 
