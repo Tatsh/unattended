@@ -1,11 +1,9 @@
 :: OPTIONAL: Install Sun Java Virtual Machine
-
-:: See:
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://www.java.com/en/download/manual_v6.jsp>
 :: <http://www.oracle.com/technetwork/java/javase/silent-136552.html>
 :: Testing early access <https://jdk7.java.net/download.html>
-::URL|ALL|http://download.oracle.com/otn-pub/java/jdk/8-b132/jre-8-windows-i586.exe|packages/jre/jre-8-windows-i586.exe
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=86957|packages/jre/jre-8u5-windows-i586.exe
 ::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=86895|packages/jre/jre-7u55-windows-i586.exe
 ::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=76208|packages/jre/jre-6u45-windows-i586.exe
 
