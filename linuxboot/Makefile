@@ -17,7 +17,7 @@ glibc=glibc-2.13
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.9
 libusb=libusb-0.1.12
-linux=linux-3.11.1
+linux=linux-3.12.9
 libxml2=libxml2-2.9.1
 module-init-tools=module-init-tools-3.15
 mysql=mysql-5.0.96
