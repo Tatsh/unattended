@@ -29,6 +29,13 @@ if ($<) {
 
 my ($dev) = @ARGV;
 
+#my $dir = dirname ($0);
+#my $linuxbootmake = "$dir/../Makefile";
+
+my $parted_bin ='../parted-1.6.22/parted/parted';
+my $syslinux_bin ='../syslinux-5.01/linux/syslinux';
+
+
 sub install_flashboot($$$) {
     my ($dev, $yes, $quiet) = @_;
 
@@ -58,15 +65,15 @@ sub install_flashboot($$$) {
     `dd if=/dev/zero of=$dev bs=512 count=2 2>&1`;
     sleep 2;
 
-    `parted -s $dev mklabel msdos`;
-    `parted -s -- $dev mkpartfs primary fat16 0 -0 2>&1`;
-    `parted $dev set 1 boot on`;
+    `$parted_bin -s $dev mklabel msdos`;
+    `$parted_bin -s -- $dev mkpartfs primary fat16 0 -0 2>&1`;
+    `$parted_bin $dev set 1 boot on`;
     sleep 2;
 
-    system "./install-mbr.pl ../syslinux-*/mbr/mbr.bin $dev" . ($quiet ? ' >/dev/null' : '');
+    system "./install-mbr.pl $syslinux_bin $dev" . ($quiet ? ' >/dev/null' : '');
     
     print "Installing syslinux to $part...\n" unless $quiet;
-    `../syslinux-*/linux/syslinux --install $part`;
+    `$syslinux_bin --install $part`;
 
     print "Mounting the newly created $part...\n" unless $quiet;
     mkdir "/tmp/flashboot";
