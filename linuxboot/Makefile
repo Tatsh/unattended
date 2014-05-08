@@ -1048,62 +1048,72 @@ download_targets=$(addprefix download-,$(packages) pci.ids usb.ids.gz)
 
 download: $(download_targets)
 
-$(call download_rule, $(bash), tar.gz, http://ftp.gnu.org/gnu/bash/)
-$(call download_rule, $(busybox), tar.bz2, http://busybox.net/downloads/)
-$(call download_rule, $(convert-asn1), tar.gz, \
-	http://www.cpan.org/authors/id/G/GB/GBARR/)
-$(call download_rule, $(dbd-mysql), tar.gz, \
-	http://www.cpan.org/authors/id/R/RU/RUDY/)
-$(call download_rule, $(dbd-pgpp), tar.gz, \
-	http://www.cpan.org/authors/id/A/AR/ARC/)
-$(call download_rule, $(dbi), tar.gz, \
-	http://www.cpan.org/authors/id/T/TI/TIMB/)
-$(call download_rule, $(dmidecode), tar.bz2,	\
-	http://savannah.nongnu.org/download/dmidecode/)
-$(call download_rule, $(dosemu), tgz,					\
-	http://downloads.sourceforge.net/dosemu/)
-$(call download_rule, $(e2fsprogs), tar.gz,			\
-	http://downloads.sourceforge.net/e2fsprogs/)
-$(call download_rule, $(expat), tar.gz, \
-	http://downloads.sourceforge.net/expat/)
-$(call download_rule, $(glibc), tar.bz2, http://ftp.gnu.org/gnu/glibc/)
-$(call download_rule, $(kbd), tar.gz,			\
-	http://ftp.altlinux.com/pub/people/legion/kbd/)
-$(call download_rule, $(libusb), tar.gz,	\
-	http://downloads.sourceforge.net/libusb/)
-$(call download_rule, $(linux), tar.bz2,		\
-	http://www.kernel.org/pub/linux/kernel/v3.0/)
-$(call download_rule, $(libxml2), tar.gz,		\
-	ftp://xmlsoft.org/libxml2/)
-$(call download_rule, $(module-init-tools), tar.bz2,			 \
-	http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
-$(call download_rule, $(mysql), tar.gz, \
-http://cdn.mysql.com/Downloads/MySQL-5.0/)
-$(call download_rule, $(nano), tar.gz, http://www.nano-editor.org/dist/v2.0/)
-$(call download_rule, $(ncurses), tar.gz, http://ftp.gnu.org/gnu/ncurses/)
-$(call download_rule, $(parted), tar.gz, 			\
-        http://unattended.cvs.sourceforge.net/viewvc/unattended/unattended/linuxboot/misc/)
-$(call download_rule, $(pciutils), tar.gz,			\
-	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/)
-$(call download_rule, $(perl), tar.gz, http://www.cpan.org/src/)
-$(call download_rule, $(perl-ldap), tar.gz, \
-	http://www.cpan.org/authors/id/G/GB/GBARR/)
-$(call download_rule, $(perl-xml-parser), tar.gz, \
-	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
-$(call download_rule, $(perl-xml-xpath), tar.gz, \
-	http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
-$(call download_rule, $(samba), tar.gz, http://www.samba.org/samba/ftp/stable/)
-$(call download_rule, $(slang), tar.bz2, 	\
-	ftp://space.mit.edu/pub/davis/slang/v2.2/)
-$(call download_rule, $(syslinux), tar.gz, \
-        http://ftp.kernel.org/pub/linux/utils/boot/syslinux/)
-$(call download_rule, $(usbutils), tar.bz2,	\
-	http://ftp.sunet.se/pub/Linux/kernel.org/linux/utils/usb/usbutils/)
-$(call download_rule, $(wimlib), tar.gz,	\
-	https://downloads.sourceforge.net/project/wimlib/)
-$(call download_rule, $(wireless_tools), tar.gz,	\
-	http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/)
-$(call download_rule, $(zlib), tar.gz, http://downloads.sourceforge.net/project/libpng/zlib/1.2.8/)
+$(call download_rule, $(bash), tar.gz,                                        \
+  http://ftp.gnu.org/gnu/bash/)
+$(call download_rule, $(busybox), tar.bz2,                                    \
+  http://busybox.net/downloads/)
+$(call download_rule, $(convert-asn1), tar.gz,                                \
+  http://www.cpan.org/authors/id/G/GB/GBARR/)
+$(call download_rule, $(dbd-mysql), tar.gz,                                   \
+  http://www.cpan.org/authors/id/R/RU/RUDY/)
+$(call download_rule, $(dbd-pgpp), tar.gz,                                    \
+  http://www.cpan.org/authors/id/A/AR/ARC/)
+$(call download_rule, $(dbi), tar.gz,                                         \
+  http://www.cpan.org/authors/id/T/TI/TIMB/)
+$(call download_rule, $(dmidecode), tar.bz2,                                  \
+  http://download.savannah.gnu.org/releases/dmidecode/)
+$(call download_rule, $(dosemu), tgz,                                         \
+  http://downloads.sourceforge.net/dosemu/)
+$(call download_rule, $(e2fsprogs), tar.gz,                                   \
+  http://downloads.sourceforge.net/e2fsprogs/)
+$(call download_rule, $(expat), tar.gz,                                       \
+  http://downloads.sourceforge.net/expat/)
+$(call download_rule, $(fuse), tar.gz,                                        \
+  http://downloads.sourceforge.net/fuse/)
+$(call download_rule, $(glibc), tar.bz2,                                      \
+  http://ftp.gnu.org/gnu/glibc/)
+$(call download_rule, $(kbd), tar.gz,                                         \
+  http://ftp.altlinux.com/pub/people/legion/kbd/)
+$(call download_rule, $(libusb), tar.gz,                                      \
+  http://downloads.sourceforge.net/libusb/)
+$(call download_rule, $(linux), tar.gz,                                       \
+  http://www.kernel.org/pub/linux/kernel/v3.0/)
+$(call download_rule, $(libxml2), tar.gz,                                     \
+  ftp://xmlsoft.org/libxml2/)
+$(call download_rule, $(module-init-tools), tar.bz2,                          \
+  http://ftp.kernel.org/pub/linux/utils/kernel/module-init-tools/)
+$(call download_rule, $(mysql), tar.gz,                                       \
+  http://cdn.mysql.com/Downloads/MySQL-5.0/)
+$(call download_rule, $(nano), tar.gz,                                        \
+  http://www.nano-editor.org/dist/v2.0/)
+$(call download_rule, $(ncurses), tar.gz,                                     \
+  http://ftp.gnu.org/gnu/ncurses/)
+$(call download_rule, $(parted), tar.gz,                                      \
+  http://unattended.cvs.sourceforge.net/viewvc/unattended/unattended/linuxboot/misc/)
+$(call download_rule, $(pciutils), tar.gz,                                    \
+  ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/)
+$(call download_rule, $(perl), tar.gz,                                        \
+  http://www.cpan.org/src/)
+$(call download_rule, $(perl-ldap), tar.gz,                                   \
+  http://www.cpan.org/authors/id/G/GB/GBARR/)
+$(call download_rule, $(perl-xml-parser), tar.gz,                             \
+  http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
+$(call download_rule, $(perl-xml-xpath), tar.gz,                              \
+  http://www.cpan.org/authors/id/M/MS/MSERGEANT/)
+$(call download_rule, $(samba), tar.gz,                                       \
+  http://www.samba.org/samba/ftp/stable/)
+$(call download_rule, $(slang), tar.bz2,                                      \
+  ftp://space.mit.edu/pub/davis/slang/v2.2/)
+$(call download_rule, $(syslinux), tar.gz,                                    \
+  http://ftp.kernel.org/pub/linux/utils/boot/syslinux/)
+$(call download_rule, $(usbutils), tar.bz2,                                   \
+  http://mirror.linux.org.au/linux/utils/usb/usbutils/ )
+$(call download_rule, $(wimlib), tar.gz,                                      \
+  http://downloads.sourceforge.net/project/wimlib/)
+$(call download_rule, $(wireless_tools), tar.gz,                              \
+  http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/)
+$(call download_rule, $(zlib), tar.gz,                                        \
+  http://downloads.sourceforge.net/project/libpng/zlib/1.2.5/)
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
@@ -1132,6 +1142,7 @@ tidy:
 	rm -rf dosboot iso
 	rm -rf .stamp-stage1 stage2 .stamp-stage2
 	rm -f devices.cpio initrd
+	rm -f *.tmp
 
 # Clean up all the stuff we built so we can build again
 clean: tidy
