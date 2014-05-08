@@ -1,3 +1,4 @@
+#TODO bash-4.2
 bash=bash-4.2
 # TODO: busybox-1.21.0
 busybox=busybox-1.15.3
@@ -5,29 +6,31 @@ busybox=busybox-1.15.3
 convert-asn1=Convert-ASN1-0.26
 dbd-mysql=DBD-mysql-2.9008
 dbd-pgpp=DBD-PgPP-0.08
-dbi=DBI-1.625
+dbi=DBI-1.631
 dmidecode=dmidecode-2.12
 dosemu=dosemu-1.4.0
 # libuuid.so (from e2fsprogs) is required by parted
-e2fsprogs=e2fsprogs-1.42.7
+e2fsprogs=e2fsprogs-1.42.9
 expat=expat-2.1.0
-# TODO: glibc-2.17
+fuse=fuse-2.9.3
+# TODO: glibc-2.19
 glibc=glibc-2.13
 # TODO: kbd-1.15.5
 kbd=kbd-1.15.2
-#TODO:libusb-1.0.9
+#TODO:libusb-1.0.18
 libusb=libusb-0.1.12
-linux=linux-3.12.17
+linux=linux-3.12.18
 libxml2=libxml2-2.9.1
 module-init-tools=module-init-tools-3.15
+#TODO mysql-5.6.17
 mysql=mysql-5.0.96
 nano=nano-2.0.9
 # TODO: ncurses-5.9
 ncurses=ncurses-5.6
-#TODO: parted 2.3 - NTLDR not found
+#TODO: parted 3.0 - NTLDR not found
 parted=parted-1.6.22
-pciutils=pciutils-3.2.0
-# TODO: perl-5.12.2
+pciutils=pciutils-3.2.1
+# TODO: perl-5.18.2
 perl=perl-5.10.1
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.43
@@ -37,9 +40,11 @@ perl-xml-xpath=XML-XPath-1.13
 samba=samba-3.3.16
 slang=slang-2.2.4
 syslinux=syslinux-5.01
+#TODO usbutils-007
 usbutils=usbutils-0.91
 wimlib=wimlib-1.6.2
 wireless_tools=wireless_tools.29
+# TODO zlib-1.2.8
 zlib=zlib-1.2.5
 
 keep-archives=1
