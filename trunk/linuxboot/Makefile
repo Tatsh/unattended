@@ -1,4 +1,4 @@
-#TODO bash-4.2
+#TODO bash-4.3
 bash=bash-4.2
 # TODO: busybox-1.21.0
 busybox=busybox-1.15.3
@@ -19,7 +19,7 @@ glibc=glibc-2.13
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.18
 libusb=libusb-0.1.12
-linux=linux-3.12.18
+linux=linux-3.12.19
 libxml2=libxml2-2.9.1
 module-init-tools=module-init-tools-3.15
 #TODO mysql-5.6.17
@@ -52,12 +52,11 @@ keep-archives=1
 cwd:=$(shell pwd)
 
 packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
-	$(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(glibc) $(kbd)	\
-	$(linux)  $(module-init-tools) $(mysql) $(nano)	\
-	$(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)	\
-	$(perl-xml-xpath) $(pciutils) 		\
-	$(samba) $(slang) $(syslinux) $(libusb) $(libxml2) $(usbutils)	\
-	$(wimlib) $(wireless_tools) $(zlib) 
+         $(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(fuse) $(glibc)      \
+         $(kbd) $(linux) $(module-init-tools) $(mysql) $(nano)              \
+         $(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)       \
+         $(perl-xml-xpath) $(pciutils) $(samba) $(slang) $(syslinux)        \
+         $(libusb) $(libxml2) $(usbutils) $(wimlib) $(wireless_tools) $(zlib)
 
 CC=gcc -m32
 CXX=g++ -m32
