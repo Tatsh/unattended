@@ -71,7 +71,7 @@ endif
 
 # Macro to generate rule for copying single file
 copy_file=					\
-$(2) : $(1)	;				\
+$(2) : $(1) ;					\
 	mkdir -p $(dir $(2)) ;			\
 	cp -f $(1) $(2).tmp ;			\
 	mv -f $(2).tmp $(2)
@@ -734,10 +734,12 @@ $(fuse)/lib/.libs/libfuse.so:
 	$(MAKE) -C $(fuse)
 
 stage1/lib/libfuse.so: $(fuse)/lib/.libs/libfuse.so $(fuse)/include/fuse.h
+
 $(call copy_lib,$(fuse)/lib/.libs/libfuse.so,stage1/lib/libfuse.so)
-$(call copy_file,$(fuse)/include/fuse.h,fakeinclude/fuse.h)
-$(call copy_file,$(fuse)/include/fuse_common.h,fakeinclude/fuse_common.h)
-$(call copy_file,$(fuse)/include/fuse_opt.h,fakeinclude/fuse_opt.h)
+
+	cp $(fuse)/include/fuse.h fakeinclude
+	cp $(fuse)/include/fuse_common.h fakeinclude
+	cp $(fuse)/include/fuse_opt.h fakeinclude
 
 stage1 += stage1/lib/libfuse.so
 
@@ -761,15 +763,17 @@ $(call copy_file,$(libxml2)/.libs/libxml2.so,stage1/lib/libxml2.so)
 $(wimlib)/imagex: stage1/lib/libxml2.so stage1/lib/libz.so
 	cd $(wimlib) \
 	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)" \
-	LIBFUSE_CFLAGS="-I$(cwd)/fakeinclude" LIBFUSE_LIBS="-lfuse"
+	LIBFUSE_CFLAGS="-I$(cwd)/fakeinclude" LIBFUSE_LIBS="-lfuse" \
 	./configure --prefix=/usr --build=i686-linux --without-ntfs-3g
 	@$(MAKE) -C $(wimlib)
 	[ -e $@ ]
 
 stage1/usr/bin/imagex: $(wimlib)/imagex
-$(call copy_exe,$(wimlib)/imagex,stage1/usr/bin/imagex)
+$(call copy_file,$(wimlib)/imagex,stage1/usr/bin/imagex)
 #	$(MAKE) -C $(wimlib) DESTDIR=$(cwd)/stage1 install
 	[ -e $@ ]
+
+stage1 += stage1/usr/bin/imagex
 
 ## wireless_tools
 $(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
