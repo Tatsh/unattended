@@ -1,6 +1,6 @@
 #TODO bash-4.3
 bash=bash-4.2
-# TODO: busybox-1.21.0
+#TODO: busybox-1.21.0
 busybox=busybox-1.15.3
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.26
@@ -13,9 +13,9 @@ dosemu=dosemu-1.4.0
 e2fsprogs=e2fsprogs-1.42.9
 expat=expat-2.1.0
 fuse=fuse-2.9.3
-# TODO: glibc-2.19
+#TODO: glibc-2.19
 glibc=glibc-2.13
-# TODO: kbd-1.15.5
+#TODO: kbd-1.15.5
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.18
 libusb=libusb-0.1.12
@@ -25,18 +25,18 @@ module-init-tools=module-init-tools-3.15
 #TODO mysql-5.6.17
 mysql=mysql-5.0.96
 nano=nano-2.0.9
-# TODO: ncurses-5.9
+#TODO: ncurses-5.9
 ncurses=ncurses-5.6
 #TODO: parted 3.0 - NTLDR not found
 parted=parted-1.6.22
 pciutils=pciutils-3.2.1
-# TODO: perl-5.18.2
+#TODO: perl-5.18.2
 perl=perl-5.10.1
 # perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.43
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
-# TODO: samba-3.5.4
+#TODO: samba-3.5.4
 samba=samba-3.3.16
 slang=slang-2.2.4
 syslinux=syslinux-5.01
@@ -44,8 +44,8 @@ syslinux=syslinux-5.01
 usbutils=usbutils-0.91
 wimlib=wimlib-1.6.2
 wireless_tools=wireless_tools.29
-# TODO zlib-1.2.8
-zlib=zlib-1.2.5
+#TODO zlib-1.2.8
+zlib=zlib-1.2.8
 
 keep-archives=1
 
@@ -104,11 +104,12 @@ all: iso tftpboot
 
 
 ## module-init-tools (depmod et. al.)
-# FIXME: rm the file so it does not invoke doc2book
+#FIXME: rm the file so it does not invoke doc2book
 
 $(module-init-tools)/build/depmod:
-	cd $(module-init-tools) &&  rm doc/modprobe.d.sgml &&CC="$(CC)" ./configure --prefix=/ 	\
-		--build=i586-linux && $(MAKE)
+	cd $(module-init-tools) && rm doc/modprobe.d.sgml \
+	&& CC="$(CC)" ./configure --prefix=/ --build=i586-linux 
+	$(MAKE) -C $(module-init-tools)
 	[ -e $@ ]
 
 stage1/sbin/depmod: $(module-init-tools)/build/depmod
@@ -143,14 +144,14 @@ stage1/.stamp-modules: $(linux)/arch/x86/boot/bzImage stage1/sbin/depmod
 stage1 += stage1/.stamp-modules
 
 ## bash
-## FIXME configure loading emacs shared files from system
+#FIXME configure loading emacs shared files from system
 
 $(bash)/bash: fakeinclude/stdio.h
-	cd $(bash) 						\
+	cd $(bash) \
 	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"		\
 	bash_cv_termcap_lib=gnutermcap ./configure --prefix=/	\
-	--build=i586-linux					\
-	&& $(MAKE)
+	--build=i586-linux
+	$(MAKE) -C $(bash)
 	[ -e $@ ] && touch $@
 
 $(call copy_exe, $(bash)/bash, stage1/bin/bash)
@@ -207,19 +208,16 @@ fakeinclude/slang.h: $(slang)/src/slang.h
 	mkdir -p $(dir $@)
 	cp $< $@
 	[ -e $@ ] && touch $@
-
-$(slang)/src/objs/libslang.a: stage1/lib/libdl.so $(slang)/configure
+#TODO: Fix why we need to run it twice
+$(slang)/src/objs/libslang.a: stage1/lib/libdl.so 
 	rm -f $@
-	cd $(slang)						\
-	&& CC="$(CC) $(fakelib_cflags)" ./configure		\
-		--prefix=/usr 					\
-	&& cd demo                                              \
-	&& $(MAKE)
+	cd $(slang) \
+	&& CC="$(CC) $(fakelib_cflags)" ./configure --prefix=/usr
+	$(MAKE) -C $(slang) demos
 	[ -e $@ ]
 
 # "Fake" library to link against
-$(call copy_file, $(slang)/src/objs/libslang.a, \
-	fakelib/libslang.a)
+$(call copy_file, $(slang)/src/objs/libslang.a, fakelib/libslang.a)
 
 # dosemu:
 # - use slang of build environment (not system's one): patched 
@@ -232,7 +230,7 @@ build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch	\
 			fakeinclude/slang.h
 	rm -f $@
 	mkdir -p $(dir $@)
-	cd $(dir $@)							\
+	cd $(dir $@) \
 	&& CC="$(CC) $(fakelib_cflags)" $(cwd)/$(dosemu)/configure	\
 		--with-slang-inc=$(cwd)/fakeinclude			\
 		--with-slang-lib=$(cwd)/fakelib				\
@@ -243,10 +241,9 @@ build-$(dosemu)/config.status: $(dosemu)/.stamp-dosemu-nolock-patch	\
 # For some reason, the dosemu Makefiles test the value of "MAKELEVEL".
 # If it is non-zero, they do something weird which breaks for us.  So
 # we force it to be zero.
-build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status		\
-				stage1/lib/libdl.so
+build-$(dosemu)/bin/dosemu.bin: build-$(dosemu)/config.status stage1/lib/libdl.so
 	rm -f $@
-	cd build-$(dosemu)						\
+	cd build-$(dosemu) \
 	&& $(MAKE) MAKELEVEL=0 						\
 	&& cp commands/exitemu.com $(cwd)/../install/dosbin/exitemu.com
 	[ -e $@ ]
@@ -276,23 +273,21 @@ stage1 += stage1/.dosemu/disclaimer
 build-$(dosemu)/bin/../commands/lredir.com: build-$(dosemu)/bin/dosemu.bin
 	[ -e $@ ] && touch $@
 
-$(call copy_file,build-$(dosemu)/bin/../commands/lredir.com,\
-	dosboot/lredir.com)
+$(call copy_file,build-$(dosemu)/bin/../commands/lredir.com, dosboot/lredir.com)
 
 $(call copy_file,misc/autoexec.bat,dosboot/autoexec.bat)
 
 $(call copy_file,misc/config.sys,dosboot/config.sys)
 
-stage1/var/lib/dosemu/drives/dosboot.img: dosboot/autoexec.bat \
-				dosboot/config.sys dosboot/lredir.com \
-				../bootdisk/empty-boot.img.gz
+stage1/var/lib/dosemu/drives/dosboot.img: dosboot/autoexec.bat dosboot/config.sys \
+					dosboot/lredir.com ../bootdisk/empty-boot.img.gz
 	mkdir -p $(dir $@)
-	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&		\
-	echo 'drive x:' > $$tmpfile &&				\
-	echo file=\"$(cwd)/"$@.tmp"\" nolock >> $$tmpfile &&	\
-	export MTOOLSRC=$$tmpfile &&				\
-	gunzip -c ../bootdisk/empty-boot.img.gz >| $@.tmp &&	\
-	(cd dosboot &&						\
+	tmpfile=`mktemp /var/tmp/mtoolsrc.XXXXXX` &&            \
+	echo 'drive x:' > $$tmpfile &&                          \
+	echo file=\"$(cwd)/"$@.tmp"\" nolock >> $$tmpfile &&    \
+	export MTOOLSRC=$$tmpfile &&                            \
+	gunzip -c ../bootdisk/empty-boot.img.gz >| $@.tmp &&    \
+	(cd dosboot &&                                          \
 	 find . -name CVS -prune -o -mindepth 1 -print |	\
 		while read filename ; do			\
 			if [ -d $$filename ] ; then		\
@@ -300,7 +295,7 @@ stage1/var/lib/dosemu/drives/dosboot.img: dosboot/autoexec.bat \
 				continue ;			\
 			fi ;					\
 			mcopy $$filename x:/$$filename ;	\
-		done) &&					\
+		done) &&                                        \
 	rm $$tmpfile
 	mv $@.tmp $@
 
@@ -308,9 +303,8 @@ stage1 += stage1/var/lib/dosemu/drives/dosboot.img
 
 ## e2fsprogs (just libuuid.so, required for parted)
 $(e2fsprogs)/lib/libuuid.so:
-	cd $(e2fsprogs)							\
-	&& CC="$(CC)" ./configure --enable-elf-shlibs --build=i586-linux	\
-	&& $(MAKE)
+	cd $(e2fsprogs) && CC="$(CC)" ./configure --enable-elf-shlibs --build=i586-linux
+	$(MAKE) -C $(e2fsprogs)
 	[ -e $@ ]
 
 $(call copy_lib,$(e2fsprogs)/lib/libuuid.so,stage1/lib/libuuid.so)
@@ -327,30 +321,28 @@ $(glibc)/.stamp-glibc-gen-translit.pl-patch:
 build-$(glibc)/libc.so: $(linux)/arch/x86/boot/bzImage	\
 			$(glibc)/.stamp-glibc-gen-translit.pl-patch
 	mkdir -p build-$(glibc)
-	cd build-$(glibc) && CC="$(CC)" CFLAGS="-O2 -U_FORTIFY_SOURCE -fno-stack-protector $(CFLAGS)"	\
-		$(cwd)/$(glibc)/configure	\
+	cd build-$(glibc) && CC="$(CC)" CFLAGS="-O2 -U_FORTIFY_SOURCE -fno-stack-protector $(CFLAGS)" \
+	$(cwd)/$(glibc)/configure                               \
 	    --prefix=/usr					\
 	    --disable-profile  --enable-add-ons			\
-            --enable-kernel=2.6.18				\
+	    --enable-kernel=2.6.18				\
 	    --without-gd --without-cvs				\
-            --without-selinux					\
+	    --without-selinux					\
 	    --includedir=$(cwd)/$(linux)/dest/include		\
 	    --with-headers=$(cwd)/$(linux)/dest/include		\
-	    --host=i586-linux					\
-	&& find . -name \*.d -print0 | xargs -0 -r rm -f	\
-	&& $(MAKE)
+	    --host=i586-linux                                   \
+	&& find . -name \*.d -print0 | xargs -0 -r rm -f
+	$(MAKE) -C build-$(glibc)
 	touch -c $@
 
 $(call copy_lib, build-$(glibc)/libc.so, stage1/lib/libc.so)
 
 # "Fake" library to link against
-$(call copy_file, build-$(glibc)/libc_nonshared.a, \
-	fakelib/libc_nonshared.a)
+$(call copy_file, build-$(glibc)/libc_nonshared.a, fakelib/libc_nonshared.a)
 
 build-$(glibc)/libc_nonshared.a: build-$(glibc)/libc.so
 
-fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so \
-			stage1/lib/ld-linux.so
+fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so stage1/lib/ld-linux.so
 	mkdir -p $(dir $@)
 	echo "OUTPUT_FORMAT(elf32-i386)" >| $@.tmp
 	echo "GROUP ( $(cwd)/stage1/lib/libc.so.6 " \
@@ -360,16 +352,14 @@ fakelib/libc.so: fakelib/libc_nonshared.a stage1/lib/libc.so \
 # "Fake" headers, too
 fakeinclude/stdio.h: fakelib/libc.so
 	mkdir -p $(dir $@)
-	cd build-$(glibc)						 \
-		&& $(MAKE) inst_includedir=$(cwd)/$(dir $@) install-headers
+	$(MAKE) -C build-$(glibc) inst_includedir=$(cwd)/$(dir $@) install-headers
 	[ -e $@ ] && touch $@
 
 # Variable for use in CFLAGS to convince utilities to compile/link
 # against our just-built libraries instead of the system libraries.
-# FIXME: Should include -nostdinc here
-fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib	\
-	-L$(cwd)/stage1/lib -L$(cwd)/stage1/usr/lib		\
-	-Wl,-rpath-link,$(cwd)/stage1/lib
+#FIXME: Should include -nostdinc here
+fakelib_cflags=-isystem $(cwd)/fakeinclude -L$(cwd)/fakelib -L$(cwd)/stage1/lib \
+               -L$(cwd)/stage1/usr/lib -Wl,-rpath-link,$(cwd)/stage1/lib
 
 # Create empty config file to silence ldconfig warnings
 stage1/etc/ld.so.conf:
@@ -411,39 +401,31 @@ build-$(glibc)/nptl/libpthread.so: build-$(glibc)/libc.so
 
 $(call copy_lib, build-$(glibc)/resolv/libresolv.so, stage1/lib/libresolv.so)
 $(call copy_lib, build-$(glibc)/resolv/libnss_dns.so, stage1/lib/libnss_dns.so)
-$(call copy_lib, build-$(glibc)/nss/libnss_files.so, \
-	stage1/lib/libnss_files.so)
+$(call copy_lib, build-$(glibc)/nss/libnss_files.so, stage1/lib/libnss_files.so)
 $(call copy_lib, build-$(glibc)/nis/libnsl.so, stage1/lib/libnsl.so)
 $(call copy_lib, build-$(glibc)/crypt/libcrypt.so, stage1/lib/libcrypt.so)
 $(call copy_lib, build-$(glibc)/math/libm.so, stage1/lib/libm.so)
 $(call copy_lib, build-$(glibc)/login/libutil.so, stage1/lib/libutil.so)
-$(call copy_lib, build-$(glibc)/nptl/libpthread.so, \
-	stage1/lib/libpthread.so)
+$(call copy_lib, build-$(glibc)/nptl/libpthread.so, stage1/lib/libpthread.so)
 
-stage1 +=							\
-	$(patsubst %, stage1/lib/%,				\
-	  libc.so ld-linux.so libdl.so libresolv.so libnsl.so	\
-	  libnss_dns.so libnss_files.so libcrypt.so		\
-	  libm.so libutil.so libpthread.so librt.so		\
-	)
+stage1 += $(patsubst %, stage1/lib/%,                                          \
+	  libc.so ld-linux.so libdl.so libresolv.so libnsl.so libnss_dns.so    \
+          libnss_files.so libcrypt.so libm.so libutil.so libpthread.so librt.so)
 
 ## kbd
 $(kbd)/src/loadkeys: fakeinclude/stdio.h
-	rm -f $@
-	cd $(kbd)					\
-	&& export CFLAGS="$(fakelib_cflags) -O2"	\
-	&& CC="$(CC)" ./configure --prefix=/		\
-	&& $(MAKE) CC="$(CC)" CFLAGS="$$CFLAGS"
+	rm -f $@ && cd $(kbd)\
+	&& export CFLAGS="$(fakelib_cflags) -O2" && CC="$(CC)" ./configure --prefix=/
+	$(MAKE) -C $(kbd) CC="$(CC)" CFLAGS="$$CFLAGS"
 	[ -e $@ ]
 
-## TODO: get more info about why we are deleting some files
+#TODO: get more info about why we are deleting some files
 stage1/bin/loadkeys: $(kbd)/src/loadkeys
-	rm -f $@
-	cd $(kbd)				\
-	&& $(MAKE) DESTDIR=$(cwd)/stage1 install
+	rm -f $@ && cd $(kbd)
+	$(MAKE) -C $(kbd) DESTDIR=$(cwd)/stage1 install
 	rm -rf stage1/usr/share/locale
-	cd stage1/bin && rm deallocvt dumpkeys fgconsole 		\
-		getkeycodes kbdrate loadunimap mapscrn psf*table 	\
+	cd stage1/bin \
+	&& rm deallocvt dumpkeys fgconsole getkeycodes kbdrate loadunimap mapscrn psf*table \
 		setkeycodes setleds setmetamode showconsolefont showkey
 	[ -e $@ ]
 
@@ -451,12 +433,10 @@ stage1 += stage1/bin/loadkeys
 
 ## nano
 $(nano)/src/nano: fakeinclude/stdio.h fakeinclude/curses.h
-	cd $(nano)							    \
-	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"				    \
-		./configure --prefix=/usr				    \
-			--disable-browser --disable-mouse --disable-speller \
-			--build=i586-linux				    \
-	&& $(MAKE)
+	cd $(nano) && CC="$(CC)" CFLAGS="$(fakelib_cflags)"         \
+	./configure --prefix=/usr --disable-browser --disable-mouse \
+	--disable-speller --build=i586-linux
+	$(MAKE) -C $(nano)
 	[ -e $@ ] && touch $@
 
 $(call copy_exe, $(nano)/src/nano, stage1/usr/bin/nano)
@@ -465,7 +445,7 @@ stage1 += stage1/usr/bin/nano
 
 ## ncurses
 $(ncurses)/lib/libncursesw.so: fakeinclude/stdio.h
-	cd $(ncurses)							\
+	cd $(ncurses) \
 	&& CC="$(CC)" CXX="$(CXX)" CFLAGS="$(fakelib_cflags)"		\
 	LDFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)"	\
 		./configure --prefix=/usr --with-shared			\
@@ -477,7 +457,7 @@ $(ncurses)/lib/libncursesw.so: fakeinclude/stdio.h
 	[ -e $@ ] && touch $@
 
 fakeinclude/curses.h: stage1/usr/lib/libncursesw.so
-	cd $(ncurses)						\
+	cd $(ncurses) \
 	&& $(MAKE) includedir=$(cwd)/$(dir $@) install.includes
 	[ -e $@ ] && touch $@
 
@@ -491,26 +471,25 @@ stage1 += stage1/usr/lib/libncursesw.so
 #       This will probably be fixed in a later version of parted
 $(parted)/parted/.libs/parted: fakeinclude/stdio.h stage1/lib/libuuid.so \
 				stage1/lib/libdl.so
-	cd $(parted)							\
-	&& CC="$(CC)" CXX="$(CXX)"						\
+	cd $(parted) \
+	&& CC="$(CC)" CXX="$(CXX)"                                      \
 		CFLAGS="$(fakelib_cflags) -I$(cwd)/$(e2fsprogs)/lib"	\
 		./configure --disable-nls --without-readline		\
-		--build=i586-linux --disable-Werror			\
-	&& $(MAKE)
+		--build=i586-linux --disable-Werror
+	$(MAKE) -C $(parted)
 	[ -e $@ ]
 
 $(parted)/libparted/.libs/libparted.so: $(parted)/parted/.libs/parted
 	[ -e $@ ] && touch $@
 
 $(call copy_exe, $(parted)/parted/.libs/parted, stage1/usr/sbin/parted)
-$(call copy_lib, $(parted)/libparted/.libs/libparted.so, \
-	stage1/lib/libparted.so)
+$(call copy_lib, $(parted)/libparted/.libs/libparted.so, stage1/lib/libparted.so)
 
 stage1 += stage1/usr/sbin/parted stage1/lib/libparted.so
 
 ## pciutils
 $(pciutils)/lspci:
-	$(MAKE) CC="$(CC)" -C $(pciutils) PREFIX=/usr HOST="i586--linux"	\
+	$(MAKE) CC="$(CC)" -C $(pciutils) PREFIX=/usr HOST="i586--linux"  \
 		RELEASE="$(subst linux-,,$(linux))" OPT="$(fakelib_cflags)"
 	[ -e $@ ]
 
@@ -521,9 +500,9 @@ $(call copy_file,$(pciutils)/pci.ids,stage1/usr/share/pci.ids)
 stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 
 ## pmtools (acpidump, for diagnostics)
-# FIXME: It does not seem to be a core need for it 
+#FIXME: It does not seem to be a core need for it 
 #$(pmtools)/acpidump/acpidump: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
-#	cd $(dir $@)							  \
+#	cd $(dir $@)  \
 #	&& $(MAKE) clean						  \
 #	&& $(MAKE) CC="$(CC)"
 #	[ -e $@ ]
@@ -534,22 +513,21 @@ stage1 += stage1/sbin/lspci stage1/usr/share/pci.ids
 ## Perl
 $(perl)/perl: fakeinclude/stdio.h
 	rm -f $@
-	cd $(perl)							\
+	cd $(perl) \
 	&& ./Configure -Dcc="$(CC)" -Dusethreads -Dprefix=/opt/perl	\
 		-Dlibpth="$(cwd)/fakelib $(cwd)/stage1/lib"		\
 		-Ud_sethostent_r -Ud_setprotoent_r -Ud_setservent_r	\
 		-Ud_endhostent_r -Ud_endprotoent_r -Ud_endservent_r	\
 		-Darchname=i586-linux -Ud_eaccess			\
 		-Accflags="$(fakelib_cflags)"				\
-		-deO							\
-	&& $(MAKE)
+		-deO
+	$(MAKE) -C $(perl)
 	[ -e $@ ]
 
 stage1/opt/perl/bin/perl: $(perl)/perl
 	$(MAKE) -C $(perl) DESTDIR=$(cwd)/stage1 STRIPFLAGS=-s install.perl
 	: # Delete extra utility programs and hard links
-	find stage1/opt/perl/bin -type f ! -name perl		\
-				-a ! -name perldoc -print0	\
+	find stage1/opt/perl/bin -type f ! -name perl -a ! -name perldoc -print0 \
 		| xargs -0 -r rm
 	[ -e $@ ]
 	: # create /usr/bin/perl -> /opt/bin/perl symlink
@@ -563,16 +541,14 @@ perlrun=$(cwd)/stage1/opt/perl/bin/perl -I$(cwd)/stage1/opt/perl/lib/site_perl -
 ## mysql
 # It has a dependency on ncurses-dev fakeinclude/curses.h could fixed
 $(mysql)/Makefile: stage1/opt/perl/bin/perl fakeinclude/zlib.h
-	cd $(dir $@)							\
-	&& CC="$(CC)" CXX="$(CXX)"						\
-		CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)"	\
+	cd $(dir $@) \
+	&& CC="$(CC)" CXX="$(CXX)" CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)" \
 		./configure --prefix=/ --without-server --build=i586-linux
 
 $(mysql)/libmysql/.libs/libmysqlclient.so: $(mysql)/Makefile
 	rm -f $@
-	cd $(mysql)							\
-	&& $(MAKE)								\
-	&& $(MAKE) -C include includedir=$(cwd)/fakeinclude install
+	$(MAKE) -C $(mysql)
+	$(MAKE) -C $(mysql)/include includedir=$(cwd)/fakeinclude install
 	[ -e $@ ]
 
 $(call copy_lib,$(mysql)/libmysql/.libs/libmysqlclient.so,stage1/lib/libmysqlclient.so)
@@ -581,7 +557,7 @@ stage1 += stage1/lib/libmysqlclient.so
 
 ## Convert-ASN1 Perl module
 $(convert-asn1)/Makefile: stage1/opt/perl/bin/perl
-	cd $(dir $@)							\
+	cd $(dir $@) \
 	&& eval `$(perlrun) -V:archlib`					\
 	&& { [ -n "$$archlib" ] || exit 37 ; }				\
 	&& $(perlrun) Makefile.PL PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
@@ -591,7 +567,7 @@ $(convert-asn1)/Makefile: stage1/opt/perl/bin/perl
 # Path to modules is too painful to compute, so use a stamp file.
 stage1/.stamp-convert-asn1: $(convert-asn1)/Makefile
 	rm -f $@
-	cd $(convert-asn1)					\
+	cd $(convert-asn1) \
 	&& $(MAKE) PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags)"	\
 	&& $(MAKE) PERL="$(perlrun)" install
 	touch $@
@@ -600,7 +576,7 @@ stage1 += stage1/.stamp-convert-asn1
 
 ## DBI Perl module
 $(dbi)/Makefile: stage1/opt/perl/bin/perl
-	cd $(dir $@)							\
+	cd $(dir $@) \
 	&& eval `$(perlrun) -V:archlib`					\
 	&& { [ -n "$$archlib" ] || exit 37 ; }				\
 	&& $(perlrun) Makefile.PL PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
@@ -609,7 +585,7 @@ $(dbi)/Makefile: stage1/opt/perl/bin/perl
 
 stage1/.stamp-dbi: $(dbi)/Makefile
 	rm -f $@
-	cd $(dbi)						\
+	cd $(dbi) \
 	&& $(MAKE) PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags)"	\
 	&& $(MAKE) PERL="$(perlrun)" install
 	touch $@
@@ -618,7 +594,7 @@ stage1 += stage1/.stamp-dbi
 
 ## DBD-mysql Perl module
 $(dbd-mysql)/Makefile: stage1/opt/perl/bin/perl
-	cd $(dir $@)							\
+	cd $(dir $@) \
 	&& eval `$(perlrun) -V:archlib`					\
 	&& { [ -n "$$archlib" ] || exit 37 ; }				\
 	&& $(perlrun) Makefile.PL PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
@@ -628,7 +604,7 @@ $(dbd-mysql)/Makefile: stage1/opt/perl/bin/perl
 
 stage1/.stamp-dbd-mysql: $(dbd-mysql)/Makefile stage1/lib/libmysqlclient.so
 	rm -f $@
-	cd $(dbd-mysql)							    \
+	cd $(dbd-mysql)	\
 	&& $(MAKE) PERL="$(perlrun)"					\
 		LDLOADLIBS="$(fakelib_cflags) -lmysqlclient"		\
 		CC="$(CC) $(fakelib_cflags) -I$(cwd)/fakeinclude/mysql"	\
@@ -639,16 +615,16 @@ stage1 += stage1/.stamp-dbd-mysql
 
 ## DBD-pgpp Perl module
 $(dbd-pgpp)/Makefile: stage1/opt/perl/bin/perl
-	cd $(dir $@)							\
+	cd $(dir $@) \
 	&& eval `$(perlrun) -V:archlib`					\
 	&& { [ -n "$$archlib" ] || exit 37 ; }				\
-	&& $(perlrun) Makefile.PL --skipdeps PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
+	&& $(perlrun) Makefile.PL --skipdeps PERL_ARCHLIB=$(cwd)/stage1/$$archlib \
 		DESTDIR=$(cwd)/stage1/ PERL_LIB=$(perllib)
 	[ -e $@ ]
 
 stage1/.stamp-dbd-pgpp: $(dbd-pgpp)/Makefile
 	rm -f $@
-	cd $(dbd-pgpp)							\
+	cd $(dbd-pgpp) \
 	&& $(MAKE) PERL="$(perlrun)" 					\
 	&& $(MAKE) PERL="$(perlrun)" install
 	touch $@
@@ -657,7 +633,7 @@ stage1 += stage1/.stamp-dbd-pgpp
 
 ## perl-ldap Perl module
 $(perl-ldap)/Makefile: stage1/.stamp-convert-asn1
-	cd $(dir $@)							\
+	cd $(dir $@) \
 	&& eval `$(perlrun) -V:archlib`					\
 	&& { [ -n "$$archlib" ] || exit 37 ; }				\
 	&& $(perlrun) Makefile.PL --skipdeps PERL_ARCHLIB=$(cwd)/stage1/$$archlib	\
@@ -666,7 +642,7 @@ $(perl-ldap)/Makefile: stage1/.stamp-convert-asn1
 
 stage1/.stamp-perl-ldap: $(perl-ldap)/Makefile
 	rm -f $@
-	cd $(perl-ldap)						\
+	cd $(perl-ldap)	\
 	&& $(MAKE) PERL="$(perlrun)" CC="$(CC) $(fakelib_cflags)"	\
 	&& $(MAKE) PERL="$(perlrun)" install
 	touch $@
@@ -676,21 +652,19 @@ stage1 += stage1/.stamp-perl-ldap
 
 ## Perl XML::Parser module
 
-# FIXME: We should probably use this PERL_SRC hack for all of the Perl
+#FIXME: We should probably use this PERL_SRC hack for all of the Perl
 # modules.  (Our current hack does not work when top-level module has
 # subdirectories with their own Makefile.PL.)
 $(perl-xml-parser)/Makefile: stage1/opt/perl/bin/perl stage1/lib/libexpat.so
-	cd $(dir $@)					\
+	cd $(dir $@) \
 	&& $(perlrun) Makefile.PL PERL_SRC=$(cwd)/$(perl) DESTDIR=$(cwd)/stage1
 	[ -e $@ ]
 
 stage1/.stamp-perl-xml-parser: $(perl-xml-parser)/Makefile
-	rm -f $@                                                        
-	cd $(perl-xml-parser)                                           \
-	&& $(MAKE) PERL="$(perlrun)"                                       \
-		LDLOADLIBS="$(fakelib_cflags)"                          \
-		CC="$(CC) $(fakelib_cflags) -I$(cwd)/$(expat)/lib"	 \
-	&& $(MAKE) PERL="$(perlrun)" install
+	rm -f $@
+	$(MAKE) -C $(perl-xml-parser) PERL="$(perlrun)" LDLOADLIBS="$(fakelib_cflags)" \
+	           CC="$(CC) $(fakelib_cflags) -I$(cwd)/$(expat)/lib"
+	$(MAKE) -C $(perl-xml-parser) PERL="$(perlrun)" install
 	touch $@
 
 stage1 += stage1/.stamp-perl-xml-parser
@@ -699,17 +673,15 @@ stage1 += stage1/.stamp-perl-xml-parser
 ## Perl XML::XPath module
 
 $(perl-xml-xpath)/Makefile: stage1/opt/perl/bin/perl stage1/lib/libexpat.so
-	 cd $(dir $@)                                    \
-	 && $(perlrun) Makefile.PL PERL_SRC=$(cwd)/$(perl) DESTDIR=$(cwd)/stage1
+	cd $(dir $@) \
+	&& $(perlrun) Makefile.PL PERL_SRC=$(cwd)/$(perl) DESTDIR=$(cwd)/stage1
 	[ -e $@ ]
 
 stage1/.stamp-perl-xml-xpath: $(perl-xml-xpath)/Makefile
-	rm -f $@                                                        
-	cd $(perl-xml-xpath)                                         \
-	&& $(MAKE) PERL="$(perlrun)"                                       \
-		LDLOADLIBS="$(fakelib_cflags)"                          \
-		CC="$(CC) $(fakelib_cflags) -I$(cwd/fakeinclude) -I$(cwd/expat/lib)" \
-	&& $(MAKE) PERL="$(perlrun)" install
+	rm -f $@
+	$(MAKE) -C $(perl-xml-xpath) PERL="$(perlrun)" LDLOADLIBS="$(fakelib_cflags)" \
+		   CC="$(CC) $(fakelib_cflags) -I$(cwd/fakeinclude) -I$(cwd/expat/lib)"
+	$(MAKE) -C $(perl-xml-xpath) PERL="$(perlrun)" install
 	touch $@
 
 stage1 += stage1/.stamp-perl-xml-xpath
@@ -720,11 +692,11 @@ stage1 += stage1/.stamp-perl-xml-xpath
 # smb_register_charset".
 # so ensure that the kernel is built first
 $(samba)/source/config.status: stage1/.stamp-modules
-	cd $(samba)/source					\
-	    && CC="$(CC)" LDFLAGS=-rdynamic ./configure --prefix=/usr	\
-	        --disable-cups --without-readline		\
-		--without-ldap --without-krb5 --without-ads	\
-		--without-utmp --with-included-popt		\
+	cd $(samba)/source \
+	&& CC="$(CC)" LDFLAGS=-rdynamic ./configure --prefix=/usr \
+	        --disable-cups --without-readline		  \
+		--without-ldap --without-krb5 --without-ads	  \
+		--without-utmp --with-included-popt		  \
 		--build=i586-linux
 
 # Without "make installmodules" (which installs CP850.so), smbmount
@@ -734,11 +706,10 @@ $(samba)/source/config.status: stage1/.stamp-modules
 # a make proto before the regular make in the case that we are doing
 # a parallel build
 stage1/usr/lib/smb.conf: $(samba)/source/config.status
-	cd $(samba)/source					\
-	    && $(MAKE) proto					\
-	    && $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)"	\
-	    && $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)"	\
-		    DESTDIR=$(cwd)/stage1			\
+	cd $(samba)/source \
+	&& $(MAKE) proto                                                          \
+	&& $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)"                       \
+	&& $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)" DESTDIR=$(cwd)/stage1 \
 		    installbin installdat installmodules
 	ln -sf ../usr/bin/smbmount stage1/sbin/mount.smbfs
 	find stage1 -name \*.old -print0 | xargs -r -0 rm
@@ -754,35 +725,57 @@ $(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
 
 stage1 += stage1/sbin/mount.cifs
 
-## wimlib
-$(wimlib)/imagex:
-         cd $(wimlib)                            \
-         &&                                      \
-PKG_CONFIG_PATH="$(cwd)/stage1/lib/pkgconfig/:$(cwd)/stage1/usr/lib/pkgconfig/" \
-                 CC=$(CC) CFLAGS="$(fakelib_cflags) \
--I$(cwd)/stage1/usr/include -I$(cwd)/stage1/include \
--I$(cwd)/stage1/usr/include/libxml2" LDFLAGS="$(fakelib_cflags) \
--L$(cwd)/stage1/usr/lib/ -lxml2"                 
-                 ./configure                     \
-                         --prefix=/usr           \
-                         --build=i686-linux      \
-	&& $(MAKE)\
+## fuse
+$(fuse)/lib/.libs/libfuse.so:
+	cd $(fuse) \
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)" ./configure --prefix=/ \
+	   --with-kernel=$(cwd)/$(linux) --disable-kernel-module --disable-example \
+	   --build=i686-linux
+	$(MAKE) -C $(fuse)
+
+stage1/lib/libfuse.so: $(fuse)/lib/.libs/libfuse.so $(fuse)/include/fuse.h
+$(call copy_lib,$(fuse)/lib/.libs/libfuse.so,stage1/lib/libfuse.so)
+$(call copy_file,$(fuse)/include/fuse.h,fakeinclude/fuse.h)
+$(call copy_file,$(fuse)/include/fuse_common.h,fakeinclude/fuse_common.h)
+$(call copy_file,$(fuse)/include/fuse_opt.h,fakeinclude/fuse_opt.h)
+
+stage1 += stage1/lib/libfuse.so
+
+## libxml2 (required by fuse and wimlib)
+$(libxml2)/.libs/libxml2.so: stage1/lib/libz.so
+	cd $(libxml2) \
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"                \
+               ./configure --prefix=/usr --build=i686-linux
+	$(MAKE) -C $(libxml2)
 	[ -e $@ ]
-         && CC=$(CC) CFLAGS="$(fakelib_cflags) \
--I$(cwd)/stage1/usr/include -I$(cwd)/stage1/include \
--I$(cwd)/stage1/usr/include/libxml2"               
+
+stage1/lib/libxml2.so: $(libxml2)/.libs/libxml2.so
+#	$(MAKE) -C $(libxml2) DESTDIR=$(cwd)/stage1 install
+$(call copy_file,$(libxml2)/.libs/libxml2.so,stage1/lib/libxml2.so)
+#$(call copy_file,$(libxml2)/.libs/libxml2.h,fakeinclude/libxml2.h)
+
+#stage1 += stage1/lib/libxml2.so
+
+
+## wimlib
+$(wimlib)/imagex: stage1/lib/libxml2.so stage1/lib/libz.so
+	cd $(wimlib) \
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)" \
+	LIBFUSE_CFLAGS="-I$(cwd)/fakeinclude" LIBFUSE_LIBS="-lfuse"
+	./configure --prefix=/usr --build=i686-linux --without-ntfs-3g
+	@$(MAKE) -C $(wimlib)
+	[ -e $@ ]
 
 stage1/usr/bin/imagex: $(wimlib)/imagex
-         cd $(wimlib)                            \
-         && $(MAKE) DESTDIR=$(cwd)/stage1 install\
-         [ -e $@ ]
+$(call copy_exe,$(wimlib)/imagex,stage1/usr/bin/imagex)
+#	$(MAKE) -C $(wimlib) DESTDIR=$(cwd)/stage1 install
+	[ -e $@ ]
 
 ## wireless_tools
 $(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
-	cd $(wireless_tools)				\
-	&& $(MAKE) clean				\
-	&& $(MAKE) KERNEL_SRC=$(cwd)/$(linux)		\
-		CC="$(CC)" CFLAGS="$(fakelib_cflags) -O2 -Wall"
+	$(MAKE) -C $(wireless_tools) clean
+	$(MAKE) -C $(wireless_tools) KERNEL_SRC=$(cwd)/$(linux)
+	CC="$(CC)" CFLAGS="$(fakelib_cflags) -O2 -Wall"
 	[ -e $@ ]
 
 $(wireless_tools)/iwlist: $(wireless_tools)/iwconfig
@@ -797,13 +790,13 @@ zlib_ver := $(patsubst zlib-%,%,$(zlib))
 zlib_so := libz.so.$(zlib_ver)
 
 $(zlib)/.stamp-zlib-configure-patch: misc/zlib-configure-patch
-	cd $(zlib) && patch -b -p1 < $(cwd)/$<
+#	cd $(zlib) && patch -b -p1 < $(cwd)/$<
 	touch $@
 
 $(zlib)/$(zlib_so): fakeinclude/stdio.h	\
 			$(zlib)/.stamp-zlib-configure-patch
 	rm -f $@
-	cd $(zlib)						\
+	cd $(zlib) \
 	&& CC="$(CC)" CFLAGS="-O $(fakelib_cflags)"		\
 		LDSHARED="$(CC) -shared -Wl,-soname,libz.so.1"	\
 		./configure	\
@@ -819,7 +812,7 @@ stage1 += stage1/lib/libz.so
 
 ## libexpat
 $(expat)/.libs/libexpat.so.1.6.0:
-	cd $(expat)						\
+	cd $(expat) \
 	&& CC="$(CC)" ./configure --prefix=/			\
 	&& $(MAKE)
 
@@ -831,7 +824,7 @@ stage1 += stage1/lib/libexpat.so
 
 ## libusb
 $(libusb)/.libs/libusb-0.1.so.4.4.4:
-	cd $(libusb)						\
+	cd $(libusb) \
 	&& CC="$(CC)" CXX="$(CXX)" ./configure --disable-static		\
 	                        --build=i586-linux		\
 	                        --disable-dependency-tracking	\
@@ -844,13 +837,13 @@ stage1 += stage1/lib/libusb.so
 
 ## usbutils
 ##   use LIBUSB_CFLAGS and LIBUSB_LIBS to avoid pkg-config usage.
-##   FIXME '-lusb' is sufficient since usage of fakelib_cflags for CFLAGS.
+#FIXME '-lusb' is sufficient since usage of fakelib_cflags for CFLAGS.
 
 $(usbutils)/lsusb: stage1/lib/libusb.so fakeinclude/usb.h
-	cd $(usbutils)							\
-	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"				\
+	cd $(usbutils) \
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"			\
 	   LIBUSB_CFLAGS="-I$(cwd)/fakeinclude" LIBUSB_LIBS="-lusb"	\
-		./configure --prefix=/usr				\
+		./configure --prefix=/usr\
 	&& $(MAKE)
 
 $(call copy_exe, $(usbutils)/lsusb, stage1/sbin/lsusb)
@@ -987,7 +980,7 @@ tftpboot: tftpboot/bzImage tftpboot/initrd tftpboot/pxelinux.cfg/default tftpboo
 ## Maintainer targets
 
 # Macro to generate download-foo rule to download and unpack a package
-# FIXME - This is horrid
+#FIXME - This download stuff is horrid
 dest=.
 downloadcache=/var/tmp
 download_rule=								\
@@ -1148,6 +1141,8 @@ clean: tidy
 	rm -rf tftpboot
 	rm -rf linuxboot.iso
 	rm -rf ../install/linuxaux
+todolist:
+	-@for file in Makefile; do fgrep -H -e TODO -e FIXME $$file; done; true
 
 FORCE:
 
