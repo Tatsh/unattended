@@ -42,7 +42,7 @@ slang=slang-2.2.4
 syslinux=syslinux-5.01
 #TODO usbutils-007
 usbutils=usbutils-0.91
-wimlib=wimlib-1.6.2
+wimlib=wimlib-1.7.0
 wireless_tools=wireless_tools.29
 #TODO zlib-1.2.8
 zlib=zlib-1.2.8
@@ -770,6 +770,7 @@ $(wimlib)/imagex: stage1/lib/libxml2.so stage1/lib/libz.so
 
 stage1/usr/bin/imagex: $(wimlib)/imagex
 $(call copy_file,$(wimlib)/imagex,stage1/usr/bin/imagex)
+$(call copy_lib,$(wimlib)/.libs/libwim.so.9.5.0,stage1/lib/libwim.so)
 #	$(MAKE) -C $(wimlib) DESTDIR=$(cwd)/stage1 install
 	[ -e $@ ]
 
