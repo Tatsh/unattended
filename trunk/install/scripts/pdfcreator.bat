@@ -2,7 +2,6 @@
 :: HOME: http://download.pdfforge.org/download/pdfcreator
 :: See also: http://www.pdfforge.org/pdfcreator/translations
 @echo off
-http://red.download.pdfforge.org/pdfcreator/1.7.3/PDFCreator-1_7_3_setup.exe
 :: URL|ALL|http://red.download.pdfforge.org/pdfcreator/1.7.3/PDFCreator-1_7_3_setup.exe|packages/pdfcreator/pdfcreator-1.7.3.setup.exe
 
 :: Install language files
