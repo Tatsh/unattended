@@ -1,18 +1,14 @@
 :: OPTIONAL: Install Sun Java Virtual Machine
 :: <http://www.java.com/en/download/manual.jsp>
-:: <http://www.java.com/en/download/manual_v6.jsp>
 :: <http://www.oracle.com/technetwork/java/javase/silent-136552.html>
 :: Testing early access <https://jdk7.java.net/download.html>
-::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=86957|packages/jre/jre-8u5-windows-i586.exe
-::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=94212|packages/jre/jre-7u65-windows-i586.exe
-::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=76208|packages/jre/jre-6u45-windows-i586.exe
+:: 32 bits
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=95123|packages/jre/jre-7u67-windows-i586.exe
 
 @Echo off
-::FIXME SunJavaUpdateSched fail on windows7
-todo.pl "reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"SunJavaUpdateSched\""
-todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableAutoUpdateCheck\" /t REG_DWORD /d 0"
-todo.pl "reg add \"HKLM\SOFTWARE\JavaSoft\Java Update\Policy\" /f /v \"EnableJavaUpdate\" /t REG_DWORD /d 0"
+:: Removes Java automatic updates:
+todo.pl ".ignore-err 67 msiexec /qn /x {4A03706F-666A-4037-7777-5F2748764D10}"
 
 :: You can use WEB_JAVA_SECURITY_LEVEL=M 
 :: <http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jre-installer-options.html>
-todo.pl "%Z%\packages\jre\jre-7u65-windows-i586.exe /s /L %SystemDrive%\netinst\logs\jre-7u65.log REBOOT=ReallySuppress JAVAUPDATE=0 WEBSTARTICON=0"
+todo.pl "%Z%\packages\jre\jre-7u67-windows-i586.exe /s /L %SystemDrive%\netinst\logs\jre-7u67.log REBOOT=ReallySuppress SPONSORS=0"
