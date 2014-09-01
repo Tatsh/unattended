@@ -1,7 +1,7 @@
-:: OPTIONAL: AVG Anti-Virus Free Edition 30-Jan-2014
-:: HOME:http://free.avg.com/es-es/descargar.prd-afh#tba1
-:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x86_all_2014_4577a7359.exe|packages/avg/avg_free_x86_all_2014_4577a7359.exe
-:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x64_all_2014_4577a7359.exe|packages/avg/avg_free_AMD64_all_2014_4577a7359.exe
+:: OPTIONAL: AVG Anti-Virus Free Edition 30-Aug-2014
+:: HOME:http://www.avg.com/es-es/download.prd-avc
+:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x86_all_2014_4745a8017.exe|packages/avg/avg_free_x86_all_2014_4745a8017.exe
+:: URL|ALL|http://download.avgfree.com/filedir/inst/avg_free_x64_all_2014_4745a8017.exe|packages/avg/avg_free_AMD64_all_2014_4745a8017.exe
 
 @echo off
 
@@ -26,4 +26,4 @@ todo.pl ".reboot"
 :: EmailPluginsFea:     Email Plugins Feature
 :: fea_Client:          AVG Remote admin
 
-todo.pl "%Z%\packages\avg\avg_free_%PROCESSOR_ARCHITECTURE%_all_2014_4577a7359.exe /UILevel=Silent /InstallToolbar=0 /InstallSidebar=0 /ChangeBrowserSearchProvider=0  /DontRestart /RemoveFeatures=fea_IDP;LinkScnFea;fea_SrchSrf__Search;fea_SrchSrf__Surf;fea_OnlnSc;EmailPluginsFea;fea_Client;"
+todo.pl "%Z%\packages\avg\avg_free_%PROCESSOR_ARCHITECTURE%_all_2014_4745a8017.exe /UILevel=Silent /InstallToolbar=0 /InstallSidebar=0 /ChangeBrowserSearchProvider=0  /DontRestart /RemoveFeatures=fea_IDP;LinkScnFea;fea_SrchSrf__Search;fea_SrchSrf__Surf;fea_OnlnSc;EmailPluginsFea;fea_Client;"
