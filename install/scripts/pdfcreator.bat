@@ -3,6 +3,8 @@
 :: Translations: http://translate.pdfforge.org/translate/product/1/4
 
 :: To make .inf-file, run setup with /saveinf=PDFCreator.inf
+:: OBS: To use the new language files, you need to modify the .inf file:
+:: Lang=lang-LANG-1.7
 
 @echo off
 :: URL|ALL|http://red.download.pdfforge.org/pdfcreator/1.7.3/PDFCreator-1_7_3_setup.exe|packages/pdfcreator/pdfcreator-1.7.3.setup.exe
