@@ -1110,7 +1110,7 @@ $(call download_rule, $(wimlib), tar.gz,                                      \
 $(call download_rule, $(wireless_tools), tar.gz,                              \
   http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/)
 $(call download_rule, $(zlib), tar.gz,                                        \
-  http://downloads.sourceforge.net/project/libpng/zlib/1.2.5/)
+  http://downloads.sourceforge.net/project/libpng/zlib/$(patsubst zlib-%,%,$(zlib))/)
 
 symlink_targets=$(addprefix symlink-,$(packages))		\
 	symlink-build-$(glibc) symlink-build-$(dosemu)		\
