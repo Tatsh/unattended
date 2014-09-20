@@ -39,7 +39,7 @@ perl-xml-xpath=XML-XPath-1.13
 #TODO: samba-3.5.4
 samba=samba-3.3.16
 slang=slang-2.2.4
-syslinux=syslinux-5.01
+syslinux=syslinux-5.10
 #TODO usbutils-007
 usbutils=usbutils-0.91
 wimlib=wimlib-1.7.1
@@ -104,16 +104,14 @@ all: iso tftpboot
 
 
 ## module-init-tools (depmod et. al.)
-#FIXME: rm the file so it does not invoke doc2book
 
 $(module-init-tools)/build/depmod:
-	cd $(module-init-tools) && rm doc/modprobe.d.sgml \
-	&& CC="$(CC)" ./configure --prefix=/ --build=i586-linux 
+	cd $(module-init-tools) && DOCBOOKTOMAN=no CC="$(CC)" ./configure --prefix=/ --build=i586-linux 
 	$(MAKE) -C $(module-init-tools)
 	[ -e $@ ]
 
 stage1/sbin/depmod: $(module-init-tools)/build/depmod
-	$(MAKE) -C $(module-init-tools) DESTDIR=$(cwd)/stage1 install
+	$(MAKE) -C $(module-init-tools) DESTDIR=$(cwd)/stage1 DOCBOOKTOMAN=no install
 	rm stage1/sbin/insmod.static
 	[ -e $@ ]
 
@@ -959,11 +957,15 @@ $(call copy_file,misc/isolinux.cfg,iso/isolinux/isolinux.cfg)
 
 $(call copy_file,$(syslinux)/com32/menu/menu.c32,iso/isolinux/menu.c32)
 
+$(call copy_file,$(syslinux)/com32/elflink/ldlinux/ldlinux.c32,iso/isolinux/ldlinux.c32)
+
+$(call copy_file,$(syslinux)/com32/libutil/libutil.c32,iso/isolinux/libutil.c32)
+
 $(call copy_file,$(syslinux)/core/isolinux.bin,iso/isolinux/isolinux.bin)
 
 linuxboot.iso: iso/isolinux/bzImage iso/isolinux/initrd \
 	iso/isolinux/isolinux.cfg iso/isolinux/isolinux.bin	\
-	iso/isolinux/menu.c32
+	iso/isolinux/menu.c32 iso/isolinux/ldlinux.c32 iso/isolinux/libutil.c32
 	$(mkisofs) -quiet -o $@.tmp -m CVS				\
                 -b isolinux/isolinux.bin -c isolinux/boot.cat		\
                 -no-emul-boot -boot-load-size 4 -boot-info-table	\
