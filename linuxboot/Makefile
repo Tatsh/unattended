@@ -42,7 +42,7 @@ slang=slang-2.2.4
 syslinux=syslinux-5.01
 #TODO usbutils-007
 usbutils=usbutils-0.91
-wimlib=wimlib-1.7.0
+wimlib=wimlib-1.7.1
 wireless_tools=wireless_tools.29
 #TODO zlib-1.2.8
 zlib=zlib-1.2.8
