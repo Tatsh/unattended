@@ -1,6 +1,6 @@
 bash=bash-4.3
 #TODO: busybox-1.21.0
-busybox=busybox-1.15.3
+busybox=busybox-1.16.2
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.26
 dbd-mysql=DBD-mysql-2.9008
