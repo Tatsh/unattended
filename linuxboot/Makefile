@@ -1,5 +1,4 @@
-#TODO bash-4.3
-bash=bash-4.2
+bash=bash-4.3
 #TODO: busybox-1.21.0
 busybox=busybox-1.15.3
 # Convert::ASN1 is required by perl-ldap
