@@ -506,7 +506,7 @@ $content       = <<<EOT
 
         <dd>This script creates a Windows shortcut.  What makes it interesting is that it
           uses  <a   href="http://msdn.microsoft.com/scripting/"   rel="external">Windows
-          Script Host</a> so that it can locate the various <a href="http://msdn.microsoft.com/library/en-us/script56/html/wsprospecialfolders.asp"
+          Script Host</a> so that it can locate the various <a href="http://technet.microsoft.com/en-us/library/ee156616.aspx"
           rel="external">special folders</a> for you. So,  for  example,  you  could  use
           <code >shortcut.pl&nbsp;"C:\\Foo\\foo.exe"&nbsp;special:AllUsersDesktop</code >
           to create a desktop shortcut for all users.
