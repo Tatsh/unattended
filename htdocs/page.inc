@@ -64,7 +64,7 @@
            >Download</a> |
         <a href="step-by-step.php">Installation</a> |
         <a href="documentation.php">Documentation</a> |
-        <a href="http://sourceforge.net/scm?type=svn&group_id=62053"
+        <a href="http://sourceforge.net/p/unattended/code/HEAD/tree/trunk/"
            rel="external">Repository</a> |
         <a href="lists.php">Mailing lists</a> |
         <a href="links.php">Links</a> |
