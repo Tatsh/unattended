@@ -54,7 +54,7 @@ cwd:=$(shell pwd)
 packages=$(bash) $(busybox) $(convert-asn1) $(dbd-mysql) $(dbd-pgpp) $(dbi) \
          $(dmidecode) $(dosemu) $(e2fsprogs) $(expat) $(fuse) $(glibc)      \
          $(kbd) $(linux) $(module-init-tools) $(mysql) $(nano)              \
-         $(ncurses) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser)       \
+         $(ncurses) $(ntfs-3g) $(openssl) $(parted) $(perl) $(perl-ldap) $(perl-xml-parser) \
          $(perl-xml-xpath) $(pciutils) $(samba) $(slang) $(syslinux)        \
          $(libusb) $(libxml2) $(usbutils) $(wimlib) $(wireless_tools) $(zlib)
 
@@ -450,18 +450,43 @@ $(ncurses)/lib/libncursesw.so: fakeinclude/stdio.h
 			--without-normal --without-debug		\
 			--disable-database --with-fallbacks=linux	\
 			--build=i586-linux --without-hashed-db		\
-			--enable-widec					\
+			--enable-widec --libdir=/lib			\
 	&& $(MAKE)
 	[ -e $@ ] && touch $@
 
-fakeinclude/curses.h: stage1/usr/lib/libncursesw.so
+fakeinclude/curses.h: stage1/lib/libncursesw.so
 	cd $(ncurses) \
 	&& $(MAKE) includedir=$(cwd)/$(dir $@) install.includes
 	[ -e $@ ] && touch $@
 
-$(call copy_lib, $(ncurses)/lib/libncursesw.so, stage1/usr/lib/libncursesw.so)
+$(call copy_lib, $(ncurses)/lib/libncursesw.so, stage1/lib/libncursesw.so)
 
-stage1 += stage1/usr/lib/libncursesw.so
+stage1 += stage1/lib/libncursesw.so
+
+## ntfs-3g
+$(ntfs-3g)/libntfs-3g/.libs/libntfs-3g.so: 
+	cd $(ntfs-3g) && CC="$(CC)" CFLAGS="$(fakelib_cflags)"         \
+	./configure --prefix=/usr --libdir=/lib 
+	$(MAKE) -C $(ntfs-3g)
+	[ -e $@ ]
+
+$(call copy_lib, $(ntfs-3g)/libntfs-3g/.libs/libntfs-3g.so, stage1/lib/libntfs-3g.so)
+
+stage1 += stage1/lib/libntfs-3g.so
+
+## openssl 
+$(openssl)/libcrypto.so: 
+	cd $(openssl) && CC="$(CC)" CFLAGS="$(fakelib_cflags)"         \
+	./config --prefix=/usr --openssldir=/etc/ssl --libdir=/lib 
+#	./config --prefix=/usr --openssldir=/etc/ssl --libdir=/lib shared zlib-dynamic
+#	$(MAKE) -C $(openssl) build_libs build-shared && 
+	$(MAKE) -C $(openssl) build_ssl build_crypto && \
+	$(MAKE) -C $(openssl) build-shared
+	[ -e $@ ]
+
+$(call copy_lib, $(openssl)/libcrypto.so, stage1/lib/libcrypto.so)
+
+stage1 += stage1/lib/libcrypto.so
 
 ## parted
 
@@ -541,7 +566,7 @@ perlrun=$(cwd)/stage1/opt/perl/bin/perl -I$(cwd)/stage1/opt/perl/lib/site_perl -
 $(mysql)/Makefile: stage1/opt/perl/bin/perl fakeinclude/zlib.h
 	cd $(dir $@) \
 	&& CC="$(CC)" CXX="$(CXX)" CFLAGS="$(fakelib_cflags)" CXXFLAGS="$(fakelib_cflags)" \
-		./configure --prefix=/ --without-server --build=i586-linux
+	./configure --prefix=/ --without-server --build=i586-linux
 
 $(mysql)/libmysql/.libs/libmysqlclient.so: $(mysql)/Makefile
 	rm -f $@
@@ -745,31 +770,28 @@ stage1 += stage1/lib/libfuse.so
 $(libxml2)/.libs/libxml2.so: stage1/lib/libz.so
 	cd $(libxml2) \
 	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)"                \
-               ./configure --prefix=/usr --build=i686-linux
+               ./configure --prefix=/usr --build=i686-linux  --libdir=/lib
 	$(MAKE) -C $(libxml2)
 	[ -e $@ ]
 
 stage1/lib/libxml2.so: $(libxml2)/.libs/libxml2.so
-#	$(MAKE) -C $(libxml2) DESTDIR=$(cwd)/stage1 install
-$(call copy_file,$(libxml2)/.libs/libxml2.so,stage1/lib/libxml2.so)
-#$(call copy_file,$(libxml2)/.libs/libxml2.h,fakeinclude/libxml2.h)
+	$(MAKE) -C $(libxml2) DESTDIR=$(cwd)/stage1 install
 
-#stage1 += stage1/lib/libxml2.so
+stage1 += stage1/lib/libxml2.so
 
 
 ## wimlib
-$(wimlib)/imagex: stage1/lib/libxml2.so stage1/lib/libz.so
+$(wimlib)/.libs/imagex: stage1/lib/libxml2.so stage1/lib/libz.so stage1/lib/libcrypto.so
 	cd $(wimlib) \
 	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)" \
 	LIBFUSE_CFLAGS="-I$(cwd)/fakeinclude" LIBFUSE_LIBS="-lfuse" \
-	./configure --prefix=/usr --build=i686-linux --without-ntfs-3g
-	@$(MAKE) -C $(wimlib)
+	./configure --prefix=/usr --build=i686-linux  --libdir=/lib
+	$(MAKE) -C $(wimlib)
 	[ -e $@ ]
 
-stage1/usr/bin/imagex: $(wimlib)/imagex
-$(call copy_file,$(wimlib)/imagex,stage1/usr/bin/imagex)
-$(call copy_lib,$(wimlib)/.libs/libwim.so.9.5.0,stage1/lib/libwim.so)
-#	$(MAKE) -C $(wimlib) DESTDIR=$(cwd)/stage1 install
+stage1/usr/bin/imagex: $(wimlib)/.libs/imagex
+
+	$(MAKE) -C $(wimlib) DESTDIR=$(cwd)/stage1 install-exec
 	[ -e $@ ]
 
 stage1 += stage1/usr/bin/imagex
@@ -1087,6 +1109,10 @@ $(call download_rule, $(nano), tar.gz,                                        \
   http://www.nano-editor.org/dist/v2.0/)
 $(call download_rule, $(ncurses), tar.gz,                                     \
   http://ftp.gnu.org/gnu/ncurses/)
+$(call download_rule, $(ntfs-3g), tgz,                                        \
+  http://tuxera.com/opensource/)
+$(call download_rule, $(openssl), tar.gz,                                     \
+  ftp://ftp.openssl.org/source/)
 $(call download_rule, $(parted), tar.gz,                                      \
   http://unattended.cvs.sourceforge.net/viewvc/unattended/unattended/linuxboot/misc/)
 $(call download_rule, $(pciutils), tar.gz,                                    \
