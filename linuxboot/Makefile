@@ -37,7 +37,7 @@ perl-ldap=perl-ldap-0.43
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
 #TODO: samba-3.6.24
-samba=samba-3.3.16
+samba=samba-3.5.22
 slang=slang-2.2.4
 #TODO: syslinux 6.02
 syslinux=syslinux-5.10
@@ -714,8 +714,8 @@ stage1 += stage1/.stamp-perl-xml-xpath
 # Without -rdynamic, CP850.so craps out with "undefined symbol:
 # smb_register_charset".
 # so ensure that the kernel is built first
-$(samba)/source/config.status: stage1/.stamp-modules
-	cd $(samba)/source \
+$(samba)/source3/config.status: stage1/.stamp-modules
+	cd $(samba)/source3 \
 	&& CC="$(CC)" LDFLAGS=-rdynamic ./configure --prefix=/usr \
 	        --disable-cups --without-readline		  \
 		--without-ldap --without-krb5 --without-ads	  \
@@ -728,8 +728,8 @@ $(samba)/source/config.status: stage1/.stamp-modules
 # There seems to be a bug in the Samba makefile so we need to do
 # a make proto before the regular make in the case that we are doing
 # a parallel build
-stage1/usr/lib/smb.conf: $(samba)/source/config.status
-	cd $(samba)/source \
+stage1/usr/lib/smb.conf: $(samba)/source3/config.status
+	cd $(samba)/source3 \
 	&& $(MAKE) proto                                                          \
 	&& $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)"                       \
 	&& $(MAKE) SBIN_PROGS="" BIN_PROGS="$(samba_progs)" DESTDIR=$(cwd)/stage1 \
@@ -741,10 +741,10 @@ stage1/usr/lib/smb.conf: $(samba)/source/config.status
 stage1 += stage1/usr/lib/smb.conf
 
 # CIFS support.  We fall back on this if smbmount fails.
-$(samba)/source/client/mount.cifs: fakeinclude/stdio.h
-	$(CC) -O2 $(fakelib_cflags) -o $@ $(samba)/source/client/mtab.o $@.c
+$(samba)/client/mount.cifs: fakeinclude/stdio.h
+	$(CC) -O2 $(fakelib_cflags) -o $@ $(samba)/client/mtab.o $@.c
 
-$(call copy_exe,$(samba)/source/client/mount.cifs,stage1/sbin/mount.cifs)
+$(call copy_exe,$(samba)/client/mount.cifs,stage1/sbin/mount.cifs)
 
 stage1 += stage1/sbin/mount.cifs
 
@@ -789,12 +789,11 @@ $(wimlib)/.libs/imagex: stage1/lib/libxml2.so stage1/lib/libz.so stage1/lib/libc
 	$(MAKE) -C $(wimlib)
 	[ -e $@ ]
 
-stage1/usr/bin/imagex: $(wimlib)/.libs/imagex
-
+stage1/usr/bin/wimlib-imagex: $(wimlib)/.libs/imagex
 	$(MAKE) -C $(wimlib) DESTDIR=$(cwd)/stage1 install-exec
 	[ -e $@ ]
 
-stage1 += stage1/usr/bin/imagex
+stage1 += stage1/usr/bin/wimlib-imagex
 
 ## wireless_tools
 $(wireless_tools)/iwconfig: fakeinclude/stdio.h $(linux)/arch/x86/boot/bzImage
