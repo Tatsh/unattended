@@ -107,7 +107,7 @@ all: iso tftpboot
 
 $(module-init-tools)/build/depmod:
 	cd $(module-init-tools) && DOCBOOKTOMAN=no CC="$(CC)" ./configure --prefix=/ --build=i586-linux 
-	$(MAKE) -C $(module-init-tools)
+	$(MAKE) -C $(module-init-tools) DOCBOOKTOMAN=no
 	[ -e $@ ]
 
 stage1/sbin/depmod: $(module-init-tools)/build/depmod
@@ -211,7 +211,7 @@ $(slang)/src/objs/libslang.a: stage1/lib/libdl.so
 	rm -f $@
 	cd $(slang) \
 	&& CC="$(CC) $(fakelib_cflags)" ./configure --prefix=/usr
-	$(MAKE) -C $(slang) demos
+	$(MAKE) -C $(slang) runtests
 	[ -e $@ ]
 
 # "Fake" library to link against
@@ -829,7 +829,7 @@ stage1 += stage1/lib/libexpat.so
 $(libusb)/.libs/libusb-0.1.so.4.4.4:
 	cd $(libusb) \
 	&& CC="$(CC)" CXX="$(CXX)" ./configure --disable-static		\
-	                        --build=i586-linux		\
+	                        --build=i586-linux --disable-build-docs\
 	                        --disable-dependency-tracking	\
 	&&  $(MAKE)
 	[ -e $@ ]
