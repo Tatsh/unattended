@@ -951,7 +951,7 @@ initrd: devices.cpio .stamp-stage2
 
 $(call copy_file,$(linux)/arch/x86/boot/bzImage,iso/isolinux/bzImage)
 
-$(call link_file,initrd,iso/isolinux/initrd)
+$(call copy_file,initrd,iso/isolinux/initrd)
 
 $(call copy_file,misc/isolinux.cfg,iso/isolinux/isolinux.cfg)
 
