@@ -1,5 +1,5 @@
 bash=bash-4.3
-#TODO: busybox-1.21.0
+#TODO: busybox-1.22.1
 busybox=busybox-1.16.2
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.26
@@ -26,24 +26,25 @@ mysql=mysql-5.0.96
 nano=nano-2.0.9
 #TODO: ncurses-5.9
 ncurses=ncurses-5.6
+ntfs-3g=ntfs-3g_ntfsprogs-2014.2.15
+openssl=openssl-1.0.1i
 #TODO: parted 3.0 - NTLDR not found
 parted=parted-1.6.22
 pciutils=pciutils-3.2.1
 #TODO: perl-5.18.2
 perl=perl-5.10.1
-# perl-ldap aka. Net::LDAP
 perl-ldap=perl-ldap-0.43
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
-#TODO: samba-3.5.4
+#TODO: samba-3.6.24
 samba=samba-3.3.16
 slang=slang-2.2.4
+#TODO: syslinux 6.02
 syslinux=syslinux-5.10
 #TODO usbutils-007
 usbutils=usbutils-0.91
 wimlib=wimlib-1.7.1
 wireless_tools=wireless_tools.29
-#TODO zlib-1.2.8
 zlib=zlib-1.2.8
 
 keep-archives=1
