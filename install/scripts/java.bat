@@ -2,8 +2,9 @@
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://www.oracle.com/technetwork/java/javase/silent-136552.html>
 :: Testing early access <https://jdk7.java.net/download.html>
-:: 32 bits
-::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=95123|packages/jre/jre-7u67-windows-i586.exe
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=98426|packages/jre/jre-8u25-windows-i586.exe
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=97807|packages/jre/jre-7u71-windows-i586.exe
+::URL|ALL|http://javadl.sun.com/webapps/download/AutoDL?BundleId=76208|packages/jre/jre-6u45-windows-i586.exe
 
 @Echo off
 :: Removes Java automatic updates:
