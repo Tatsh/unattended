@@ -12,4 +12,4 @@ todo.pl ".ignore-err 67 msiexec /qn /x {4A03706F-666A-4037-7777-5F2748764D10}"
 
 :: You can use WEB_JAVA_SECURITY_LEVEL=M 
 :: <http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jre-installer-options.html>
-todo.pl "%Z%\packages\jre\jre-7u67-windows-i586.exe /s /L %SystemDrive%\netinst\logs\jre-7u67.log REBOOT=ReallySuppress SPONSORS=0"
+todo.pl "%Z%\packages\jre\jre-7u71-windows-i586.exe /s /L %SystemDrive%\netinst\logs\jre-7u71.log REBOOT=ReallySuppress SPONSORS=0"
