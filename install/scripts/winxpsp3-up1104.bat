@@ -167,26 +167,3 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2478960-x86-%WINLANG%.e
 :: URL|TRK|http://download.microsoft.com/download/F/D/B/FDB5DB93-648C-48FA-9A35-58300884FE96/WindowsXP-KB2508429-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2508429-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2508429-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: MS11-031: Description of the security update for the JScript and VBScript v5.7 scripting engines: April 12, 2011
-:: <http://support.microsoft.com/kb/2510581>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=5983>
-:: URL|CSY|http://download.microsoft.com/download/D/A/3/DA32C71C-0598-4487-BFB5-9D01F70B1DB3/WindowsXP-KB2510581-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2510581-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/9/C/2/9C2ED5F3-28EA-4D47-A96A-7371E99402D9/WindowsXP-KB2510581-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2510581-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/9/5/6/9565F07C-8E7A-4B9C-B6BD-189AF56BF916/WindowsXP-KB2510581-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2510581-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/6/3/7/637D2A75-B1D0-4017-9078-B332F5B6ECCD/WindowsXP-KB2510581-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2510581-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/7/A/D/7AD514F2-7D0C-43D0-A0AF-BA78658CA39E/WindowsXP-KB2510581-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2510581-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/1/B/21B6CBBD-9AB7-4FB6-8DAA-51BFACBBA4C7/WindowsXP-KB2510581-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2510581-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/1/2/D/12DB2FD2-E190-4FB5-8846-5962E88E2D3D/WindowsXP-KB2510581-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2510581-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/B/5/9/B5974F9A-DDC2-4905-AA05-B447709CD39B/WindowsXP-KB2510581-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2510581-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/D/B/D/DBD5F115-0B46-4576-9D58-316B6FE66D02/WindowsXP-KB2510581-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2510581-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/B/F/A/BFAB8FC6-ABC6-4C0A-8DBC-D932ED53CC0D/WindowsXP-KB2510581-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2510581-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/1/1/7/1174AB9E-C8D2-41D5-A937-EBEBD437D15C/WindowsXP-KB2510581-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2510581-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/0/9/8/098D3250-1512-49DA-A309-B54AA10BA74D/WindowsXP-KB2510581-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2510581-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/2/8/5/28592005-1178-443E-B969-555D1DAAC5F7/WindowsXP-KB2510581-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2510581-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/6/C/B/6CBAF9FE-0D76-4AB2-8C6F-3F03AFCBD595/WindowsXP-KB2510581-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2510581-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/8/E/3/8E3943C3-4621-491F-95AD-596F90F0F951/WindowsXP-KB2510581-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2510581-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/5/5/1/551945CB-07C9-4E34-8848-BB580681177B/WindowsXP-KB2510581-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2510581-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/D/E/6/DE623522-113E-4361-8623-31618FCA31E6/WindowsXP-KB2510581-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2510581-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/9/4/E/94E254BB-5A63-4497-8CC9-A1E5579D7717/WindowsXP-KB2510581-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2510581-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/C/B/3/CB3054D3-148F-49F7-BA72-F295F2A06DE2/WindowsXP-KB2510581-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2510581-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2510581-x86-%WINLANG%.exe /norestart /passive /nobackup"
