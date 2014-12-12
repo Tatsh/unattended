@@ -1,7 +1,7 @@
 ::OPTIONAL: Install LibreOffice
 ::HOME: http://www.libreoffice.org/
 ::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/4.3.4/win/x86/LibreOffice_4.3.4_Win_x86.msi|packages/libreoffice/libreoffice_4.3.4_win_x86_install.msi
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/4.2.7/win/x86/LibreOffice_4.2.7_Win_x86.msi|packages/libreoffice/libreoffice_4.2.7_win_x86_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/4.2.8/win/x86/LibreOffice_4.2.8_Win_x86.msi|packages/libreoffice/libreoffice_4.2.8_win_x86_install.msi
 
 @echo off
 
