@@ -1,4 +1,52 @@
-:: De.scription of Office Compatibility Pack SP3
+:: Security Update for Microsoft Office Compatibility Pack Service Pack 3 (KB2956097)
+:: <http://support.microsoft.com/kb/912203>
+:: <https://www.microsoft.com/en-us/download/details.aspx?id=45782>
+:: URL|CSY|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/csy/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|DAN|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/dan/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|DEU|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/deu/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|ELL|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/ell/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|ENU|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/enu/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|ESN|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/esn/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|FIN|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/fin/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|FRA|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/fra/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|HUN|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/hun/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|ITA|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/ita/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|JPN|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/jpn/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|KOR|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/kor/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|NLD|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/nld/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|PLK|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/plk/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|PTB|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/ptb/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|PTG|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/ptg/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|RUS|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/rus/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|SVE|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/sve/xlconv2007-kb2956097-fullfile-x86-glb.exe
+:: URL|TRK|http://download.microsoft.com/download/D/D/9/DD9B7716-B912-4653-9D27-D5B9C854D904/xlconv2007-kb2956097-fullfile-x86-glb.exe|updates/common/trk/xlconv2007-kb2956097-fullfile-x86-glb.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\xlconv2007-kb2956097-fullfile-x86-glb.exe /Q"
+
+:: Security Update for Microsoft Office Compatibility Pack Service Pack 3 (KB2956098)
+:: <http://support.microsoft.com/kb/912203>
+:: <https://www.microsoft.com/en-us/download/details.aspx?id=45757>
+:: URL|CSY|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/csy/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|DAN|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/dan/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|DEU|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/deu/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|ELL|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/ell/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|ENU|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/enu/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|ESN|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/esn/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|FIN|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/fin/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|FRA|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/fra/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|HUN|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/hun/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|ITA|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/ita/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|JPN|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/jpn/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|KOR|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/kor/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|NLD|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/nld/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|PLK|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/plk/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|PTB|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/ptb/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|PTG|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/ptg/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|RUS|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/rus/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|SVE|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/sve/wordconv2007-kb2956098-fullfile-x86-glb.exe
+:: URL|TRK|http://download.microsoft.com/download/E/B/F/EBF02585-B50C-4815-8BB6-53C0AB7EFF7C/wordconv2007-kb2956098-fullfile-x86-glb.exe|updates/common/trk/wordconv2007-kb2956098-fullfile-x86-glb.exe
+todo.pl ".reboot-on 194 %Z%\updates\common\%WINLANG%\wordconv2007-kb2956098-fullfile-x86-glb.exe /Q"
+
+:: Description of Office Compatibility Pack SP3
 :: <http://support.microsoft.com/kb/2526297>
 :: <http://www.microsoft.com/en-us/download/details.aspx?id=27836>
 :: URL|CSY|http://download.microsoft.com/download/8/D/1/8D163AC5-E68B-46AF-866A-1EEA63E8EE38/compatibilitypacksp3-kb2526297-fullfile-cs-cz.exe|updates/common/compatibilitypacksp3-kb2526297-fullfile-csy.exe
