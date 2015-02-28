@@ -7,7 +7,7 @@
 :: Lang=lang-LANG-1.7
 
 @echo off
-:: URL|ALL|http://red.download.pdfforge.org/pdfcreator/1.7.3/PDFCreator-1_7_3_setup.exe|packages/pdfcreator/pdfcreator-1.7.3.setup.exe
+:: URL|ALL|http://azure.download.pdfforge.org/pdfcreator/2.0.2/PDFCreator-2_0_2-setup.exe|packages/pdfcreator/pdfcreator-2.0.2.setup.exe
 
 :: Install language files
 :: OBS: Not all translations are 100% finished!
@@ -37,15 +37,9 @@
 :: URL|TRK|http://translate.pdfforge.org/translate/export/confirmed/1/4/64|packages/pdfcreator/lang-trk-1.7.ini
 
 
-if not exist %Z%\packages\pdfcreator\lang-%WINLANG%-1.7.ini goto install
-
-IF %PROCESSOR_ARCHITECTURE% == AMD64 GOTO x64
-todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-1.7.ini \"%ProgramFiles%\PDFCreator\languages\""
-goto install
-
-:x64
-todo.pl "copy %Z%\packages\pdfcreator\lang-%WINLANG%-1.7.ini \"%ProgramFiles(x86)%\PDFCreator\languages\""
-
+::FIXME desktop lnk
 :install
+:: Avoid auto update dialog
+::reg add "HKLM\SOFTWARE\%x%PDFCreator\Program" /v "UpdateInterval" /t REG_SZ /d "0" /f
 :: Install PDFCreator
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-1.7.3.setup.exe /SILENT /LOADINF="%Z%\packages\pdfcreator\PDFCreator.inf" /NORESTART"
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-2.0.2.setup.exe /SILENT /COMPONENTS=\"program,ghostscript\" /NORESTART"
