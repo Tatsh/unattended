@@ -1,7 +1,7 @@
 :: OPTIONAL: AVG Anti-Virus Free Edition 8-Dec-2014
 :: HOME:http://www.avg.com/es-es/download.prd-avc
-:: URL|ALL|http://download.avg.com/filedir/inst/avg_ipw_x86_all_2015_5577a8547.exe|packages/avg/avg_free_x86_all_2015_5577a8547.exe
-:: URL|ALL|http://download.avg.com/filedir/inst/avg_ipw_x64_all_2015_5577a8547.exe|packages/avg/avg_free_AMD64_all_2015_5577a8547.exe
+:: URL|ALL|http://download.avg.com/filedir/inst/avg_free_x86_all_2015_5645a8758.exe|packages/avg/avg_free_x86_all_2015_5645a8758.exe
+:: URL|ALL|http://download.avg.com/filedir/inst/avg_free_x64_all_2015_5645a8758.exe|packages/avg/avg_free_AMD64_all_2015_5645a8758.exe
 
 @echo off
 
@@ -26,4 +26,4 @@ todo.pl ".reboot"
 :: EmailPluginsFea:     Email Plugins Feature
 :: fea_Client:          AVG Remote admin
 
-todo.pl "%Z%\packages\avg\avg_free_%PROCESSOR_ARCHITECTURE%_all_2015_5577a8547.exe /UILevel=Silent /InstallToolbar=0 /InstallSidebar=0 /ChangeBrowserSearchProvider=0  /DontRestart /RemoveFeatures=fea_IDP;LinkScnFea;fea_SrchSrf__Search;fea_SrchSrf__Surf;fea_OnlnSc;EmailPluginsFea;fea_Client;"
+todo.pl "%Z%\packages\avg\avg_free_%PROCESSOR_ARCHITECTURE%_all_2015_5645a8758.exe /UILevel=Silent /InstallToolbar=0 /InstallSidebar=0 /ChangeBrowserSearchProvider=0 /DontRestart /RemoveFeatures=fea_IDP;LinkScnFea;fea_SrchSrf__Search;fea_SrchSrf__Surf;fea_OnlnSc;EmailPluginsFea;fea_Client;"
