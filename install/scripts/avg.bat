@@ -6,7 +6,7 @@
 @echo off
 
 :: AVG use a icon on the tray so this link is unecesary.
-todo.pl "unlink.pl special:AllUsersDesktop\"\AVG 2014.lnk\""
+todo.pl "unlink.pl special:AllUsersDesktop\"\AVG 2015.lnk\""
 
 ::  Update program (Does not seem to work)
 ::todo.pl "\"%PROGRAMFILES%\AVG\AVG2014\avgmfapx.exe\" /AppMode=UPDATE"
