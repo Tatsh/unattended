@@ -7,7 +7,7 @@
 :: Lang=lang-LANG-1.7
 
 @echo off
-:: URL|ALL|http://azure.download.pdfforge.org/pdfcreator/2.0.2/PDFCreator-2_0_2-setup.exe|packages/pdfcreator/pdfcreator-2.0.2.setup.exe
+:: URL|ALL|http://azure.download.pdfforge.org/pdfcreator/2.1.1/PDFCreator-2_1_1-setup.exe|packages/pdfcreator/pdfcreator-2.1.1.setup.exe
 
 :: Install language files
 :: OBS: Not all translations are 100% finished!
@@ -42,4 +42,4 @@
 :: Avoid auto update dialog
 ::reg add "HKLM\SOFTWARE\%x%PDFCreator\Program" /v "UpdateInterval" /t REG_SZ /d "0" /f
 :: Install PDFCreator
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-2.0.2.setup.exe /SILENT /COMPONENTS=\"program,ghostscript\" /NORESTART"
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-2.1.1.setup.exe /SILENT /COMPONENTS=\"program,ghostscript\" /NORESTART"
