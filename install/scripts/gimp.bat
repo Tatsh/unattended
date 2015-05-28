@@ -1,6 +1,6 @@
 ::OPTIONAL: Install GIMP (2.8)
-::HOME: ftp://ftp.gimp.org/pub/gimp/
-::URL|ALL|http://ftp.gimp.org/pub/gimp/v2.8/windows/gimp-2.8.14-setup.exe|packages/gimp/gimp-2.8.14-setup.exe
+::HOME: http://download.gimp.org/pub/gimp/
+::URL|ALL|http://download.gimp.org/pub/gimp/v2.8/windows/gimp-2.8.14-setup.exe|packages/gimp/gimp-2.8.14-setup.exe
 @echo off
 
 :: Create a link on the desktop
