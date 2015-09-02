@@ -1,60 +1,4 @@
 
-:: Download details: Security Update for Windows XP (KB2286198)
-:: Microsoft Security Bulletin MS10-046 - Critical
-:: "Vulnerability in Windows Shell Could Allow Remote Code Execution (2286198)"
-:: <http://www.microsoft.com/technet/security/bulletin/ms10-046.mspx>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=12361875-B453-45E8-852B-90F2727894FD>
-:: URL|ARA|http://download.microsoft.com/download/7/4/D/74D999DB-D216-4EF5-A6E8-ED85547E16E6/WindowsXP-KB2286198-x86-ARA.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/1/0/F/10F54797-A53F-4B9A-8F87-ADD75D82AA87/WindowsXP-KB2286198-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2286198-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/C/3/1/C31A0172-3AAF-4BE1-A048-17C962E5E363/WindowsXP-KB2286198-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/E/8/6E832713-1E11-41FB-B565-34D0EA279138/WindowsXP-KB2286198-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2286198-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/1/B/D/1BDEE468-0503-4172-9A87-192B313844F0/WindowsXP-KB2286198-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/4/0/4/40447833-BCA6-41C6-A751-71A0DF5C5A66/WindowsXP-KB2286198-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2286198-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/3/9/F/39F07131-1F71-4B2C-8BFB-CEC593D8DAC5/WindowsXP-KB2286198-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/5/6/3/56395B47-6FC4-4048-88D6-2E22AD85073A/WindowsXP-KB2286198-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/0/B/5/0B568304-16D0-4EF5-8389-8967AB6C5D4D/WindowsXP-KB2286198-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2286198-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/6/F/1/6F106BA4-8B45-442D-8523-FCCBDBB9C958/WindowsXP-KB2286198-x86-HEB.exe|updates/winxpsp3/windowsxp-kb2286198-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/C/6/F/C6F75C91-F25F-4D1F-B9B8-5BC8EBF32B36/WindowsXP-KB2286198-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/C/9/3/C93B02AD-0801-41E3-858A-5CEBCDF23F31/WindowsXP-KB2286198-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/1/F/2/1F23E58F-B249-4963-BB1A-E37833542B6C/WindowsXP-KB2286198-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2286198-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/F/8/F/F8F7056C-AAED-454B-8DE8-BBBC4AC83439/WindowsXP-KB2286198-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2286198-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/D/2/F/D2FC591A-CDB6-4805-9171-58E9430E646B/WindowsXP-KB2286198-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2286198-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/3/4/4/344D2329-F339-46EC-9662-729BDA9A8BC0/WindowsXP-KB2286198-x86-NOR.exe|updates/winxpsp3/windowsxp-kb2286198-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/A/F/8/AF8717DF-2BEC-4804-AF91-42F76C25F359/WindowsXP-KB2286198-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2286198-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/9/B/E/9BE2C50C-8F8D-4083-9C60-55FC9E6035BB/WindowsXP-KB2286198-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/F/7/B/F7B3C061-3C25-4F3B-A25C-351E52339974/WindowsXP-KB2286198-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2286198-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/2/A/A/2AA718A9-E255-4EF6-8ECB-BF4D35E97AFA/WindowsXP-KB2286198-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2286198-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/B/7/F/B7FFE203-3D31-4960-B662-3CFBCF566BCC/WindowsXP-KB2286198-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2286198-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/0/F/2/0F26C474-6D49-41C4-B45C-69895D1B412E/WindowsXP-KB2286198-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2286198-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2286198-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
-:: Download details: Security Update for Windows XP (KB2079403)
-:: <http://support.microsoft.com/?kbid=2079403>
-:: <http://www.microsoft.com/downloads/details.aspx?FamilyID=DBDBBE5E-2EF9-4704-80C4-27EF28FD95EF>
-:: URL|ARA|http://download.microsoft.com/download/4/B/E/4BE52E9F-7E78-40F5-9676-D1EFF990B82E/WindowsXP-KB2079403-x86-ARA.exe|updates/winxpsp3/windowsxp-kb2079403-x86-ara.exe
-:: URL|CSY|http://download.microsoft.com/download/5/E/A/5EAA5C3A-1A45-451F-9CE3-8A11F6B6FCBE/WindowsXP-KB2079403-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2079403-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/9/E/2/9E258245-CA70-41E3-BBA3-6BE6BF0B9E8B/WindowsXP-KB2079403-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2079403-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/6/7/F/67F86572-7B5D-4B8A-9291-76C5E11145A4/WindowsXP-KB2079403-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2079403-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/3/0/5/305B7C6D-9F79-40A1-AE58-AF9DA6094EB2/WindowsXP-KB2079403-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2079403-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/9/5/3/953085A9-AE67-4AD3-B824-A656F4FBF4E6/WindowsXP-KB2079403-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2079403-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/4/4/C/44C3EBB3-149F-4A25-9FBE-FD6AEAA3C896/WindowsXP-KB2079403-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2079403-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/0/F/D/0FDEE5E8-20F4-487B-81E3-02CE038625B6/WindowsXP-KB2079403-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2079403-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/D/C/D/DCDE4DA4-EF4E-4469-ADC7-9CF25AA77202/WindowsXP-KB2079403-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2079403-x86-fra.exe
-:: URL|HEB|http://download.microsoft.com/download/2/5/0/2501B38E-57A5-4737-9562-43FBCE5842C0/WindowsXP-KB2079403-x86-HEB.exe|updates/winxpsp3/windowsxp-kb2079403-x86-heb.exe
-:: URL|HUN|http://download.microsoft.com/download/B/F/9/BF910B76-0440-4678-8AEF-2A94CC5ECCA1/WindowsXP-KB2079403-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2079403-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/8/F/B/8FBC145B-DD58-4436-BD65-2F693C8965AD/WindowsXP-KB2079403-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2079403-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/A/0/B/A0B00662-7794-41DA-BB79-AB14D4CDBBC0/WindowsXP-KB2079403-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2079403-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/4/E/0/4E0C9828-778D-4E6C-BDD5-099632D1E53B/WindowsXP-KB2079403-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2079403-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/3/C/8/3C8401A9-8811-4AE2-B354-4392B51A8FC5/WindowsXP-KB2079403-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2079403-x86-nld.exe
-:: URL|NOR|http://download.microsoft.com/download/4/4/C/44CE1F63-9F72-43DB-A494-B725EF83D152/WindowsXP-KB2079403-x86-NOR.exe|updates/winxpsp3/windowsxp-kb2079403-x86-nor.exe
-:: URL|PLK|http://download.microsoft.com/download/B/B/8/BB8722E6-6527-4211-A246-054B7BA65D74/WindowsXP-KB2079403-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2079403-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/2/3/C/23CAB24C-7E41-473E-9D18-D9565C610879/WindowsXP-KB2079403-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2079403-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/3/7/E/37E90825-0E4B-45DF-8F6A-FEA99231A470/WindowsXP-KB2079403-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2079403-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/8/5/0/850B2411-D3A7-437F-B931-CD37D21923F5/WindowsXP-KB2079403-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2079403-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/0/7/0/070154A5-4F86-4B3A-8F22-C00AAD74A6F6/WindowsXP-KB2079403-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2079403-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/8/1/B/81B34E30-10E4-41D6-B933-349AF2263492/WindowsXP-KB2079403-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2079403-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2079403-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: Download details: Security Update for Windows XP (KB2115168)
 :: <http://support.microsoft.com/?kbid=2115168>
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyID=08159149-17DE-4640-8818-CB7BD4811531>
