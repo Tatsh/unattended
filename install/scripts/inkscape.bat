@@ -4,4 +4,4 @@
 :: URL|All|http://inkscape.global.ssl.fastly.net/media/resources/file/inkscape-0.91-x64.msi|packages/inkscape/inkscape-0.91-1-AMD64.msi
 @Echo off
 
-todo.pl "%Z%\packages\inkscape\inkscape-0.91-1-%PROCESSOR_ARCHITECTURE%.msi /quiet /qb"
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\inkscape.txt /i  %Z%\packages\inkscape\inkscape-0.91-1-%PROCESSOR_ARCHITECTURE%.msi"
