@@ -47,30 +47,6 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2685939-x86-%WINLANG%.e
 :: URL|TRK|http://download.microsoft.com/download/8/0/8/8080EA93-6CFD-414A-9211-7EBEACB2C4D9/WindowsXP-KB2699988-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2699988-x86-trk.exe
 todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2699988-x86-%WINLANG%.exe /norestart /passive /nobackup"
 
-:: MS12-041: Vulnerabilities in Windows Kernel-Mode Drivers could allow elevation of privilege: June 12, 2012
-:: <http://support.microsoft.com/kb/2709162>
-:: <http://www.microsoft.com/en-us/download/details.aspx?id=30101>
-:: URL|CSY|http://download.microsoft.com/download/1/8/9/189A0664-D138-48D7-B0C5-BDEC57C7CDA8/WindowsXP-KB2709162-x86-CSY.exe|updates/winxpsp3/windowsxp-kb2709162-x86-csy.exe
-:: URL|DAN|http://download.microsoft.com/download/D/D/D/DDD3F76C-13C7-41FE-AA1B-671ECC2CE487/WindowsXP-KB2709162-x86-DAN.exe|updates/winxpsp3/windowsxp-kb2709162-x86-dan.exe
-:: URL|DEU|http://download.microsoft.com/download/2/B/7/2B71D7F3-F715-4FE9-90D4-41CBC2AD819B/WindowsXP-KB2709162-x86-DEU.exe|updates/winxpsp3/windowsxp-kb2709162-x86-deu.exe
-:: URL|ELL|http://download.microsoft.com/download/9/7/0/97044A46-CC1B-41D9-BCF5-7BEC9FE00D6F/WindowsXP-KB2709162-x86-ELL.exe|updates/winxpsp3/windowsxp-kb2709162-x86-ell.exe
-:: URL|ENU|http://download.microsoft.com/download/B/5/6/B564803E-FA46-4F58-991F-D3489601C51F/WindowsXP-KB2709162-x86-ENU.exe|updates/winxpsp3/windowsxp-kb2709162-x86-enu.exe
-:: URL|ESN|http://download.microsoft.com/download/2/D/0/2D03D71D-0579-4967-8B8D-33F67B63643E/WindowsXP-KB2709162-x86-ESN.exe|updates/winxpsp3/windowsxp-kb2709162-x86-esn.exe
-:: URL|FIN|http://download.microsoft.com/download/A/F/F/AFFB2853-0A46-4701-8606-525DCD96BB06/WindowsXP-KB2709162-x86-FIN.exe|updates/winxpsp3/windowsxp-kb2709162-x86-fin.exe
-:: URL|FRA|http://download.microsoft.com/download/9/6/E/96E14E36-67F5-439F-8C72-E885647C511E/WindowsXP-KB2709162-x86-FRA.exe|updates/winxpsp3/windowsxp-kb2709162-x86-fra.exe
-:: URL|HUN|http://download.microsoft.com/download/3/9/9/399EB815-F9FE-455A-A469-54B9300B4E36/WindowsXP-KB2709162-x86-HUN.exe|updates/winxpsp3/windowsxp-kb2709162-x86-hun.exe
-:: URL|ITA|http://download.microsoft.com/download/D/6/A/D6A4C3C9-F950-4A36-A817-9139D40DD043/WindowsXP-KB2709162-x86-ITA.exe|updates/winxpsp3/windowsxp-kb2709162-x86-ita.exe
-:: URL|JPN|http://download.microsoft.com/download/A/C/7/AC70A7BB-0EAB-4CAF-ABB2-53BC235D1040/WindowsXP-KB2709162-x86-JPN.exe|updates/winxpsp3/windowsxp-kb2709162-x86-jpn.exe
-:: URL|KOR|http://download.microsoft.com/download/1/5/D/15D3404F-E7EB-4446-A761-813CADFB6DCF/WindowsXP-KB2709162-x86-KOR.exe|updates/winxpsp3/windowsxp-kb2709162-x86-kor.exe
-:: URL|NLD|http://download.microsoft.com/download/F/0/8/F080956C-022A-4B68-B0B5-4A9E451B2378/WindowsXP-KB2709162-x86-NLD.exe|updates/winxpsp3/windowsxp-kb2709162-x86-nld.exe
-:: URL|PLK|http://download.microsoft.com/download/A/0/2/A0285140-761D-4258-8846-7C44F45A677F/WindowsXP-KB2709162-x86-PLK.exe|updates/winxpsp3/windowsxp-kb2709162-x86-plk.exe
-:: URL|PTB|http://download.microsoft.com/download/E/1/B/E1B657B2-94E9-4C3B-8B52-3EA6E88661EB/WindowsXP-KB2709162-x86-PTB.exe|updates/winxpsp3/windowsxp-kb2709162-x86-ptb.exe
-:: URL|PTG|http://download.microsoft.com/download/6/E/0/6E074DF4-CFD1-498C-A840-9E58644F7DF1/WindowsXP-KB2709162-x86-PTG.exe|updates/winxpsp3/windowsxp-kb2709162-x86-ptg.exe
-:: URL|RUS|http://download.microsoft.com/download/A/A/1/AA199351-C82F-4DAB-9EAC-08E8BBA3C032/WindowsXP-KB2709162-x86-RUS.exe|updates/winxpsp3/windowsxp-kb2709162-x86-rus.exe
-:: URL|SVE|http://download.microsoft.com/download/5/0/2/502AFEAB-7072-4AEB-90BC-AC955058FB1F/WindowsXP-KB2709162-x86-SVE.exe|updates/winxpsp3/windowsxp-kb2709162-x86-sve.exe
-:: URL|TRK|http://download.microsoft.com/download/B/A/D/BAD4F65B-0CF3-414F-8056-E55DF48E558B/WindowsXP-KB2709162-x86-TRK.exe|updates/winxpsp3/windowsxp-kb2709162-x86-trk.exe
-todo.pl ".reboot-on 194 %Z%\updates\winxpsp3\WindowsXP-KB2709162-x86-%WINLANG%.exe /norestart /passive /nobackup"
-
 :: MS12-042: Description of the security update for Windows XP and Windows Server 2003: June 12, 2012
 :: <http://support.microsoft.com/kb/2707511>
 :: <http://www.microsoft.com/en-us/download/details.aspx?id=30044>
