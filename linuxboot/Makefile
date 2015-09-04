@@ -18,7 +18,7 @@ glibc=glibc-2.13
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.18
 libusb=libusb-0.1.12
-linux=linux-3.14.19
+linux=linux-3.17.2
 libxml2=libxml2-2.9.1
 module-init-tools=module-init-tools-3.15
 #TODO mysql-5.6.17
@@ -43,7 +43,7 @@ slang=slang-2.2.4
 syslinux=syslinux-5.10
 #TODO usbutils-007
 usbutils=usbutils-0.91
-wimlib=wimlib-1.7.1
+wimlib=wimlib-1.8.2
 wireless_tools=wireless_tools.29
 zlib=zlib-1.2.8
 
@@ -781,10 +781,10 @@ stage1 += stage1/lib/libxml2.so
 
 
 ## wimlib
-$(wimlib)/.libs/imagex: stage1/lib/libxml2.so stage1/lib/libz.so stage1/lib/libcrypto.so
+$(wimlib)/.libs/imagex: stage1/lib/libxml2.so stage1/lib/libz.so stage1/lib/libcrypto.so stage1/lib/libntfs-3g.so
 	cd $(wimlib) \
 	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)" \
-	LIBFUSE_CFLAGS="-I$(cwd)/fakeinclude" LIBFUSE_LIBS="-lfuse" \
+#	LIBFUSE_CFLAGS="-I$(cwd)/fakeinclude" LIBFUSE_LIBS="-lfuse" \
 	./configure --prefix=/usr --build=i686-linux  --libdir=/lib
 	$(MAKE) -C $(wimlib)
 	[ -e $@ ]
@@ -1133,7 +1133,7 @@ $(call download_rule, $(syslinux), tar.gz,                                    \
 $(call download_rule, $(usbutils), tar.bz2,                                   \
   http://mirror.linux.org.au/linux/utils/usb/usbutils/ )
 $(call download_rule, $(wimlib), tar.gz,                                      \
-  http://downloads.sourceforge.net/project/wimlib/)
+  http://wimlib.net/downloads/)
 $(call download_rule, $(wireless_tools), tar.gz,                              \
   http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/)
 $(call download_rule, $(zlib), tar.gz,                                        \
