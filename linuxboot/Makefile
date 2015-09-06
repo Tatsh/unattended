@@ -1,5 +1,5 @@
 bash=bash-4.3
-#TODO: busybox-1.22.1
+#TODO: busybox-1.23.2
 busybox=busybox-1.16.2
 # Convert::ASN1 is required by perl-ldap
 convert-asn1=Convert-ASN1-0.26
@@ -18,7 +18,7 @@ glibc=glibc-2.13
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.18
 libusb=libusb-0.1.12
-linux=linux-3.17.2
+linux=linux-4.1.6
 libxml2=libxml2-2.9.1
 module-init-tools=module-init-tools-3.15
 #TODO mysql-5.6.17
@@ -26,8 +26,8 @@ mysql=mysql-5.0.96
 nano=nano-2.0.9
 #TODO: ncurses-5.9
 ncurses=ncurses-5.6
-ntfs-3g=ntfs-3g_ntfsprogs-2014.2.15
-openssl=openssl-1.0.1i
+ntfs-3g=ntfs-3g_ntfsprogs-2015.3.14
+openssl=openssl-1.0.1p
 #TODO: parted 3.0 - NTLDR not found
 parted=parted-1.6.22
 pciutils=pciutils-3.2.1
@@ -36,7 +36,7 @@ perl=perl-5.10.1
 perl-ldap=perl-ldap-0.43
 perl-xml-parser=XML-Parser-2.36
 perl-xml-xpath=XML-XPath-1.13
-#TODO: samba-3.6.24
+#TODO: samba-3.6.25
 samba=samba-3.5.22
 slang=slang-2.2.4
 #TODO: syslinux 6.02
@@ -477,11 +477,8 @@ stage1 += stage1/lib/libntfs-3g.so
 ## openssl 
 $(openssl)/libcrypto.so: 
 	cd $(openssl) && CC="$(CC)" CFLAGS="$(fakelib_cflags)"         \
-	./config --prefix=/usr --openssldir=/etc/ssl --libdir=/lib 
-#	./config --prefix=/usr --openssldir=/etc/ssl --libdir=/lib shared zlib-dynamic
-#	$(MAKE) -C $(openssl) build_libs build-shared && 
-	$(MAKE) -C $(openssl) build_ssl build_crypto && \
-	$(MAKE) -C $(openssl) build-shared
+	./config --prefix=/usr --openssldir=/etc/ssl --libdir=/lib shared zlib-dynamic
+	$(MAKE) -C $(openssl) build_libcrypto
 	[ -e $@ ]
 
 $(call copy_lib, $(openssl)/libcrypto.so, stage1/lib/libcrypto.so)
@@ -781,15 +778,15 @@ stage1 += stage1/lib/libxml2.so
 
 
 ## wimlib
-$(wimlib)/.libs/imagex: stage1/lib/libxml2.so stage1/lib/libz.so stage1/lib/libcrypto.so stage1/lib/libntfs-3g.so
+$(wimlib)/.libs/wimlib-imagex: stage1/lib/libxml2.so stage1/lib/libz.so stage1/lib/libcrypto.so stage1/lib/libntfs-3g.so
 	cd $(wimlib) \
-	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)" \
-#	LIBFUSE_CFLAGS="-I$(cwd)/fakeinclude" LIBFUSE_LIBS="-lfuse" \
-	./configure --prefix=/usr --build=i686-linux  --libdir=/lib
-	$(MAKE) -C $(wimlib)
+        && PKG_CONFIG_PATH="$(cwd)/stage1/lib/pkgconfig/" \
+	&& CC="$(CC)" CFLAGS="$(fakelib_cflags)" LDFLAGS="$(fakelib_cflags) -L$(cwd)/stage1/lib/ -lxml2" \
+	./configure --without-fuse --prefix=/usr --build=i686-linux --libdir=/lib 
+	$(MAKE) -C $(wimlib) CC="$(CC) $(fakelib_cflags)"
 	[ -e $@ ]
 
-stage1/usr/bin/wimlib-imagex: $(wimlib)/.libs/imagex
+stage1/usr/bin/wimlib-imagex: $(wimlib)/.libs/wimlib-imagex
 	$(MAKE) -C $(wimlib) DESTDIR=$(cwd)/stage1 install-exec
 	[ -e $@ ]
 
@@ -1097,7 +1094,7 @@ $(call download_rule, $(kbd), tar.gz,                                         \
 $(call download_rule, $(libusb), tar.gz,                                      \
   http://downloads.sourceforge.net/libusb/)
 $(call download_rule, $(linux), tar.gz,                                       \
-  http://www.kernel.org/pub/linux/kernel/v3.0/)
+  http://www.kernel.org/pub/linux/kernel/v4.x/)
 $(call download_rule, $(libxml2), tar.gz,                                     \
   ftp://xmlsoft.org/libxml2/)
 $(call download_rule, $(module-init-tools), tar.bz2,                          \
