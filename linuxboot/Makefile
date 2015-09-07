@@ -1,4 +1,4 @@
-bash=bash-4.3
+bash=bash-4.3.30
 #TODO: busybox-1.23.2
 busybox=busybox-1.16.2
 # Convert::ASN1 is required by perl-ldap
@@ -18,7 +18,7 @@ glibc=glibc-2.13
 kbd=kbd-1.15.2
 #TODO:libusb-1.0.18
 libusb=libusb-0.1.12
-linux=linux-4.1.6
+linux=linux-3.10.87
 libxml2=libxml2-2.9.1
 module-init-tools=module-init-tools-3.15
 #TODO mysql-5.6.17
@@ -30,7 +30,7 @@ ntfs-3g=ntfs-3g_ntfsprogs-2015.3.14
 openssl=openssl-1.0.1p
 #TODO: parted 3.0 - NTLDR not found
 parted=parted-1.6.22
-pciutils=pciutils-3.2.1
+pciutils=pciutils-3.3.1
 #TODO: perl-5.18.2
 perl=perl-5.10.1
 perl-ldap=perl-ldap-0.43
@@ -1094,7 +1094,7 @@ $(call download_rule, $(kbd), tar.gz,                                         \
 $(call download_rule, $(libusb), tar.gz,                                      \
   http://downloads.sourceforge.net/libusb/)
 $(call download_rule, $(linux), tar.gz,                                       \
-  http://www.kernel.org/pub/linux/kernel/v4.x/)
+  http://www.kernel.org/pub/linux/kernel/v3.x/)
 $(call download_rule, $(libxml2), tar.gz,                                     \
   ftp://xmlsoft.org/libxml2/)
 $(call download_rule, $(module-init-tools), tar.bz2,                          \
