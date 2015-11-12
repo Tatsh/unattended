@@ -1,7 +1,7 @@
 :: OPTIONAL: Install Adobe Reader 
 @Echo Off
 
-:: Download Adobe Reader DC full version
+:: Download Adobe Reader Document Cloud (DC) full version
 :: URL|ARA|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_ar_AE.msi|packages/adobereader/acrordrdc1500720033_ara.msi
 :: URL|CHS|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_zh_CN.msi|packages/adobereader/acrordrdc1500720033_chs.msi
 :: URL|CHT|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_zh_TW.msi|packages/adobereader/acrordrdc1500720033_cht.msi
