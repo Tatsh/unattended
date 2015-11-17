@@ -36,6 +36,7 @@
 
 :: Tool to create msp-file (transform) for msi available 
 :: http://www.adobe.com/support/downloads/new.jsp
+:: To use a transforming file, add TRANSFORMS=(filename).mst to the installing command
 
 ::if not exist %Z%\packages\adobereader\misc\FontPack11000_xtd_lang.msi goto nolangsupport
 :: Install Extended Language Support Fonts Package
@@ -54,4 +55,4 @@ todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
 :: This is the actual installer
-todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\acrordrdcupd1500920077.msp\" TRANSFORMS=acrordrdc1500720033_nor.mst REBOOT=ReallySuppress"
+todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\acrordrdcupd1500920077.msp\" REBOOT=ReallySuppress"
