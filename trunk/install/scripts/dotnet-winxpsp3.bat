@@ -5,5 +5,6 @@
 :: URL|ALL|http://download.microsoft.com/download/C/6/A/C6ADC586-2518-404B-8973-E1E22C556AF4/NDP35SP1-KB958484-x86.exe|updates/common/NDP35SP1-KB958484-x86.exe
 
 todo.pl ".reboot-on 194 %Z%\updates\common\dotnetfx40-client-x86.exe /q /norestart"
-todo.pl ".reboot-on 194 %Z%\updates\common\NDP35SP1-KB958484-x86.exe /q /norestart"
-todo.pl ".reboot-on 194 %Z%\updates\common\dotnetfx35-sp1.exe /q /norestart"
+:: INSTALL JUST 4.0
+:: todo.pl ".reboot-on 194 %Z%\updates\common\NDP35SP1-KB958484-x86.exe /q /norestart"
+:: todo.pl ".reboot-on 194 %Z%\updates\common\dotnetfx35-sp1.exe /q /norestart"
