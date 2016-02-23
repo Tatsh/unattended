@@ -218,6 +218,9 @@ sub get_windows_version () {
 	elsif ($product_name =~ m/Windows 8/) {
         $os = 'win8';
     }
+	elsif ($product_name =~ m/Windows 10/) {
+        $os = 'win10';
+    }
     else {
         die "Unrecognized $pn_key: $product_name";
     }
