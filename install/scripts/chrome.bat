@@ -6,6 +6,3 @@
 @Echo off
 
 todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\google_chrome.txt /i \"%Z%\packages\chrome\chrome_enterprise-48.0.2564.103-%PROCESSOR_ARCHITECTURE%.msi\" /qb REBOOT=ReallySuppress"
-
-
-https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B834EEEB9-4D9D-8923-9464-40B2A14FFBBE%7D%26lang%3Den%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-stable/dl/chrome/install/googlechromestandaloneenterprise64.msi
