@@ -6,4 +6,4 @@
 
 :: Add rule to the firewall to allow port 5900 
 todo.pl "\"netsh firewall add portopening protocol = TCP port = 5900 name = TightVNC mode = enable\""
-todo.pl "%Z%\packages\tightvnc-2.7.10-setup-%PROCESSOR_ARCHITECTURE%.msi /quiet /qb " 
+todo.pl "msiexec /qb /i %Z%\packages\tightvnc-2.7.10-setup-%PROCESSOR_ARCHITECTURE%.msi" 
