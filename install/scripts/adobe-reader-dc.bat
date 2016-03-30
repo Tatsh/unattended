@@ -28,11 +28,11 @@
 
 
 :: Download Adobe Reader Language Support
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/AcroRdrSD1500720033_all_DC.msi|packages/adobereader/misc/AdbeRdrSD1500720033_all.msi
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/AcroRdrSD1501020060_all_DC.msi|packages/adobereader/misc/AdbeRdrSD1501020060_all.msi
 :: Download Extended Language Support Fonts Package
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/FontPack1500720033_XtdAlf_Lang_DC.msi|packages/adobereader/misc/FontPack1500720033_xtdalf_lang.msi
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/FontPack1501020060_XtdAlf_Lang_DC.msi|packages/adobereader/misc/FontPack1501020060_xtdalf_lang.msi
 :: Download the patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500920077/AcroRdrDCUpd1500920077.msp|packages/adobereader/acrordrdcupd1500920077.msp
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1501020060/AcroRdrDCUpd1501020060.msp|packages/adobereader/acrordrdcupd1501020060.msp
 
 :: Tool to create msp-file (transform) for msi available 
 :: http://www.adobe.com/support/downloads/new.jsp
