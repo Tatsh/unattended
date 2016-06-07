@@ -29,10 +29,10 @@
 @echo off
 
 :: Delete the bundled Lightning add-on
-IF %PROCESSOR_ARCHITECTURE%==AMD64 todo.pl "del /S /Q \"%PROGRAMFILES(x86)%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\""
-IF %PROCESSOR_ARCHITECTURE%==x86 todo.pl "del /S /Q \"%PROGRAMFILES%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\""
+:: IF %PROCESSOR_ARCHITECTURE%==AMD64 todo.pl "del /S /Q \"%PROGRAMFILES(x86)%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\""
+:: IF %PROCESSOR_ARCHITECTURE%==x86 todo.pl "del /S /Q \"%PROGRAMFILES%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\""
 
 :: Add Thunderbird as Default Email Client
-todo.pl "reg add HKLM\Software\Clients\Mail /ve /f /d \"Mozilla Thunderbird\""
+:: todo.pl "reg add HKLM\Software\Clients\Mail /ve /f /d \"Mozilla Thunderbird\""
 
 todo.pl "%Z%\packages\mozilla\thunderbird-4511-%WINLANG%.exe -ms -ira"
