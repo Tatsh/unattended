@@ -32,7 +32,7 @@
 :: Download Extended Language Support Fonts Package
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/FontPack1500720033_XtdAlf_Lang_DC.msi|packages/adobereader/misc/FontPack1500720033_xtdalf_lang.msi
 :: Download the patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1501020060/AcroRdrDCUpd1501020060.msp|packages/adobereader/acrordrdcupd1501020060.msp
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1501720053/AcroRdrDCUpd1501720053.msp|packages/adobereader/AcroRdrDCUpd1501720053.msp
 
 :: Tool to create msp-file (transform) for msi available 
 :: http://www.adobe.com/support/downloads/new.jsp
@@ -55,4 +55,4 @@ todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
 :: This is the actual installer
-todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\acrordrdcupd1500920077.msp\" REBOOT=ReallySuppress"
+todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\acrordrdcupd1501720053.msp\" REBOOT=ReallySuppress"
