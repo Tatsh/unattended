@@ -34,7 +34,8 @@ todo.pl ".reboot-on 194 %Z%\updates\winxpsp2\WindowsXP-KB898461-x86-%WINLANG%.ex
 :: Microsoft Windows Malicious Software Removal Tool (KB890830)
 :: <http://support.microsoft.com/?kbid=890830>
 :: <http://www.microsoft.com/downloads/details.aspx?familyid=AD724AE0-E72D-4F54-9AB3-75B8EB148356>
-todo.pl "%Z%\scripts\win_malicious-software-removal-tool.bat"
+:: No longer valid for XP
+::todo.pl "%Z%\scripts\win_malicious-software-removal-tool.bat"
 
 :: Security Update for Flash Player (KB923789)
 :: <http://www.microsoft.com/downloads/details.aspx?FamilyId=93208e57-5f14-4fb2-bc0c-2c4f3c56274a>
