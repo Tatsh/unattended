@@ -1,30 +1,30 @@
-:: OPTIONAL: Install Thunderbird 52.1.1
+:: OPTIONAL: Install Thunderbird 52.2.0
 :: HOME: http://download-origin.cdn.mozilla.net/pub/mozilla.org/thunderbird/releases/?C=M;O=D
 ::
-:: URL|CAT|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/ca/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-cat.exe
-:: URL|CSY|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/cs/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-csy.exe
-:: URL|DAN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/da/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-dan.exe
-:: URL|DEU|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/de/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-deu.exe
-:: URL|ELL|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/el/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-ell.exe
-:: URL|ENG|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/en-GB/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-eng.exe
-:: URL|ENU|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/en-US/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-enu.exe
-:: URL|ESN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/es-ES/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-esn.exe
-:: URL|ESS|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/es-AR/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-ess.exe
-:: URL|FIN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/fi/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-fin.exe
-:: URL|FRA|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/fr/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-fra.exe
-:: URL|HEB|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/he/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-heb.exe
-:: URL|HUN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/hu/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-hun.exe
-:: URL|ITA|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/it/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-ita.exe
-:: URL|JPN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/ja/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-jpn.exe
-:: URL|KOR|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/ko/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-kor.exe
-:: URL|NLD|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/nl/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-nld.exe
-:: URL|NOR|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/nb-NO/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-nor.exe
-:: URL|PLK|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/pl/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-plk.exe
-:: URL|PTB|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/pt-BR/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-ptb.exe
-:: URL|RUS|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/ru/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-rus.exe
-:: URL|SLV|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/sl/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-slv.exe
-:: URL|SVE|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/sv-SE/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-sve.exe
-:: URL|TRK|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.1.1/win32/tr/Thunderbird%20Setup%2052.1.1.exe|packages/mozilla/thunderbird-5211-trk.exe
+:: URL|CAT|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/ca/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-cat.exe
+:: URL|CSY|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/cs/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-csy.exe
+:: URL|DAN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/da/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-dan.exe
+:: URL|DEU|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/de/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-deu.exe
+:: URL|ELL|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/el/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-ell.exe
+:: URL|ENG|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/en-GB/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-eng.exe
+:: URL|ENU|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/en-US/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-enu.exe
+:: URL|ESN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/es-ES/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-esn.exe
+:: URL|ESS|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/es-AR/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-ess.exe
+:: URL|FIN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/fi/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-fin.exe
+:: URL|FRA|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/fr/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-fra.exe
+:: URL|HEB|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/he/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-heb.exe
+:: URL|HUN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/hu/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-hun.exe
+:: URL|ITA|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/it/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-ita.exe
+:: URL|JPN|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/ja/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-jpn.exe
+:: URL|KOR|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/ko/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-kor.exe
+:: URL|NLD|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/nl/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-nld.exe
+:: URL|NOR|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/nb-NO/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-nor.exe
+:: URL|PLK|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/pl/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-plk.exe
+:: URL|PTB|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/pt-BR/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-ptb.exe
+:: URL|RUS|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/ru/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-rus.exe
+:: URL|SLV|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/sl/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-slv.exe
+:: URL|SVE|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/sv-SE/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-sve.exe
+:: URL|TRK|http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/52.2.0/win32/tr/Thunderbird%20Setup%2052.2.0.exe|packages/mozilla/thunderbird-5220-trk.exe
 
 @echo off
 
@@ -39,4 +39,4 @@
 :: Add Thunderbird as Default Email Client
 todo.pl "reg add HKLM\Software\Clients\Mail /ve /f /d \"Mozilla Thunderbird\""
 
-todo.pl "%Z%\packages\mozilla\thunderbird-5211-%WINLANG%.exe -ms -ira"
+todo.pl "%Z%\packages\mozilla\thunderbird-5220-%WINLANG%.exe -ms -ira"
