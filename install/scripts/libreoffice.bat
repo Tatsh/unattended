@@ -12,7 +12,7 @@
 :: <http://www.libreoffice.org/download/libreoffice-still/>
 :: "LibreOffice Still is the stable version that has undergone more testing (over a longer time)
 :: It is usually recommended for more conservative use."
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/5.3.4/win/x86/LibreOffice_5.3.4_Win_x86.msi|packages/libreoffice/libreoffice_5.3.4_win_x86_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/5.3.5/win/x86/LibreOffice_5.3.5_Win_x86.msi|packages/libreoffice/libreoffice_5.3.5_win_x86_install.msi
 
 @echo off
 
