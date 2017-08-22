@@ -33,10 +33,10 @@
 ::IF %PROCESSOR_ARCHITECTURE%==x86 todo.pl "rmdir /S /Q \"%PROGRAMFILES%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\""
 
 :: Move Lightning add-on to globally installed extensions folder
-IF %PROCESSOR_ARCHITECTURE%==AMD64 todo.pl "move /Y \"%PROGRAMFILES(x86)%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\" \"%PROGRAMFILES(x86)%\Mozilla Thunderbird\extensions\""
-IF %PROCESSOR_ARCHITECTURE%==x86 todo.pl "move /Y \"%PROGRAMFILES%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\" \"%PROGRAMFILES%\Mozilla Thunderbird\extensions\\""
+::IF %PROCESSOR_ARCHITECTURE%==AMD64 todo.pl "move /Y \"%PROGRAMFILES(x86)%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\" \"%PROGRAMFILES(x86)%\Mozilla Thunderbird\extensions\""
+::IF %PROCESSOR_ARCHITECTURE%==x86 todo.pl "move /Y \"%PROGRAMFILES%\Mozilla Thunderbird\distribution\extensions\{e2fda1a4-762b-4020-b5ad-a41df1933103}\" \"%PROGRAMFILES%\Mozilla Thunderbird\extensions\\""
 
 :: Add Thunderbird as Default Email Client
-todo.pl "reg add HKLM\Software\Clients\Mail /ve /f /d \"Mozilla Thunderbird\""
+:: todo.pl "reg add HKLM\Software\Clients\Mail /ve /f /d \"Mozilla Thunderbird\""
 
 todo.pl "%Z%\packages\mozilla\thunderbird-5230-%WINLANG%.exe -ms -ira"
