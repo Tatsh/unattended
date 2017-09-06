@@ -2,7 +2,7 @@
 :: HOME: http://download.pdfforge.org/download/pdfcreator
 
 @echo off
-:: URL|ALL|http://blue.download.pdfforge.org/pdfcreator/2.5.2/PDFCreator-2_5_2-Setup.exe|packages/pdfcreator/pdfcreator-2.5.2.setup.exe
+:: URL|ALL|http://blue.download.pdfforge.org/pdfcreator/2.5.3/PDFCreator-2_5_3-Setup.exe|packages/pdfcreator/pdfcreator-2.5.3.setup.exe
 
 :install
 :: No need for a desktop shortcut.
@@ -13,7 +13,7 @@ todo.pl ".ignore-err 1 reg add \"HKLM\SOFTWARE\PDFCreator\Program\" /v \"UpdateI
 
 :: Install PDFCreator
 :: To set default language, add /LANG=(language name)
-todo.pl "%Z%\packages\pdfcreator\pdfcreator-2.5.2.setup.exe /LOG=%SystemDrive%\netinst\logs\pdfcreator.txt /SILENT /COMPONENTS=\"program\" /NORESTART"
+todo.pl "%Z%\packages\pdfcreator\pdfcreator-2.5.3.setup.exe /LOG=%SystemDrive%\netinst\logs\pdfcreator.txt /SILENT /COMPONENTS=\"program\" /NORESTART"
 
 ::DotNet requierement
 todo.pl dotnet.bat
