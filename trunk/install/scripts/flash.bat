@@ -1,10 +1,10 @@
-:: OPTIONAL: Install Flash 26.0.0.151
+:: OPTIONAL: Install Flash 27.0.0.130
 :: HOME: http://get.adobe.com/flashplayer/otherversions/
 :: http://www.adobe.com/software/flash/about/
 :: http://helpx.adobe.com/flash-player/kb/archived-flash-player-versions.html
-:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/26.0.0.151/install_flash_player.exe|packages/flash/install_flash_player_26.0.0.151.exe
-:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/26.0.0.151/install_flash_player_ax.exe|packages/flash/install_flash_player_ax_26.0.0.151.exe
-:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/26.0.0.151/install_flash_player_ppapi.exe|packages/flash/install_flash_player_ppapi_26.0.0.151.exe
+:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/27.0.0.130/install_flash_player.exe|packages/flash/install_flash_player_27.0.0.130.exe
+:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/27.0.0.130/install_flash_player_ax.exe|packages/flash/install_flash_player_ax_27.0.0.130.exe
+:: URL|ALL|http://fpdownload.macromedia.com/get/flashplayer/pdc/27.0.0.130/install_flash_player_ppapi.exe|packages/flash/install_flash_player_ppapi_27.0.0.130.exe
 ::
 @Echo off
 
@@ -12,10 +12,10 @@
 todo.pl "echo AutoUpdateDisable=1 > %SYSTEMROOT%\System32\Macromed\Flash\mms.cfg"
 
 :: ActiveX version for Internet Explorer
-todo.pl "%Z%\packages\flash\install_flash_player_ax_26.0.0.151.exe -install"
+todo.pl "%Z%\packages\flash\install_flash_player_ax_27.0.0.130.exe -install"
 
 :: Version for Firefox NAPI
-todo.pl "%Z%\packages\flash\install_flash_player_26.0.0.151.exe -install"
+todo.pl "%Z%\packages\flash\install_flash_player_27.0.0.130.exe -install"
 
 :: Version for Opera and Chromium
-todo.pl "%Z%\packages\flash\install_flash_player_ppapi_26.0.0.151.exe -install"
+todo.pl "%Z%\packages\flash\install_flash_player_ppapi_27.0.0.130.exe -install"
