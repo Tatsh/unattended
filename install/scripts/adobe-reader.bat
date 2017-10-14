@@ -32,7 +32,7 @@
 :: Download Extended Language Support Fonts Package
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/misc/FontPack11000_XtdAlf_Lang.msi|packages/adobereader/misc/FontPack11000_xtdalf_lang.msi
 :: Download the patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.20/misc/AdbeRdrUpd11020.msp|packages/adobereader/adberdrupd11020.msp
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.21/misc/AdbeRdrUpd11021.msp|packages/adobereader/adberdrupd11021.msp
 :: Download security patch
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.15/misc/AdbeRdrSecUpd11015.msp|packages/adobereader/adberdrsecupd11015.msp
 ::if not exist %Z%\packages\adobereader\misc\FontPack11000_xtd_lang.msi goto nolangsupport
@@ -52,4 +52,4 @@ todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
 :: This is the actual installer plus patch
-todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\adberdr11000_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\adberdrupd11020.msp\" REBOOT=ReallySuppress"
+todo.pl ".ignore-err 194 msiexec /qn /i \"%Z%\packages\adobereader\adberdr11000_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\adberdrupd11021.msp\" REBOOT=ReallySuppress"
