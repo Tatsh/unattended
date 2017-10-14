@@ -27,7 +27,7 @@
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_tr_TR.msi|packages/adobereader/acrordrdc1500720033_trk.msi
 
 :: Download the newest patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1701220095/AcroRdrDCUpd1701220098.msp|packages/adobereader/AcroRdrDCUpd1701220098.msp
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1701220098/AcroRdrDCUpd1701220098.msp|packages/adobereader/AcroRdrDCUpd1701220098.msp
 
 :: Download Adobe Reader Language Support
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/AcroRdrSD1500720033_all_DC.msi|packages/adobereader/misc/AdbeRdrSD1500720033_all.msi
