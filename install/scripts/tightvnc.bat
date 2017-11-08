@@ -5,7 +5,13 @@
 :: URL|ALL|http://www.tightvnc.com/download/2.8.8/tightvnc-2.8.8-gpl-setup-64bit.msi|packages/tightvnc-2.8.8-setup-AMD64.msi
 @Echo off
 
+:: Edit install/site/pass.bat and provide your password like 'set tightvncpass=12345678'
+call %Z%\site\pass.bat
+if %tightvncpass%==xxxxxxxx goto nopass
+SET VNC_OPTIONS= SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=%tightvncpass%
+:nopass
+
 :: Add rule to the firewall to allow port 5900 
 :: This change include public profile. Same behaviour as old good Windows XP 
 todo.pl "\"netsh firewall add portopening protocol=TCP port=5900 name=TightVNC profile=all\""
-todo.pl "msiexec /qb /i %Z%\packages\tightvnc-2.8.8-setup-%PROCESSOR_ARCHITECTURE%.msi" 
+todo.pl "msiexec /qb /i %Z%\packages\tightvnc-2.8.8-setup-%PROCESSOR_ARCHITECTURE%.msi %VNC_OPTIONS%" 
