@@ -27,7 +27,7 @@
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_tr_TR.msi|packages/adobereader/acrordrdc1500720033_trk.msi
 
 :: Download the newest patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1701220098/AcroRdrDCUpd1701220098.msp|packages/adobereader/AcroRdrDCUpd1701220098.msp
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1800920050/AcroRdrDCUpd1800920050.msp|packages/adobereader/AcroRdrDCUpd1800920050.msp
 
 :: Download Adobe Reader Language Support
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/AcroRdrSD1500720033_all_DC.msi|packages/adobereader/misc/AdbeRdrSD1500720033_all.msi
@@ -55,4 +55,4 @@ todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
 :: This is the actual installer
-todo.pl ".ignore-err 194 msiexec /qn /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\acrordrdcupd1701220098.msp\" REBOOT=ReallySuppress"
+todo.pl ".ignore-err 194 msiexec /qn /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd1800920050.msp\" REBOOT=ReallySuppress"
