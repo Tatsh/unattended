@@ -1,7 +1,7 @@
 :: OPTIONAL: Install 7-Zip
 :: HOME: http://www.7-zip.org/
-:: URL|ALL|http://www.7-zip.org/a/7z1604.msi|packages/sevenzip/7z1604-x86.msi
-:: URL|ALL|http://www.7-zip.org/a/7z1604-x64.msi|packages/sevenzip/7z1604-AMD64.msi
+:: URL|ALL|http://www.7-zip.org/a/7z1801.msi|packages/sevenzip/7z1801-x86.msi
+:: URL|ALL|http://www.7-zip.org/a/7z1801-x64.msi|packages/sevenzip/7z1801-AMD64.msi
 @Echo off
 
 if exist "%ProgramFiles%\7-ZIP\7z.exe" goto done
@@ -19,6 +19,6 @@ FOR %%j IN (%Extn%) DO (
 )
 ENDLOCAL
 
-todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\7zip.txt /i %Z%\packages\sevenzip\7z1604-%PROCESSOR_ARCHITECTURE%.msi REBOOT=ReallySuppress"
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\7zip.txt /i %Z%\packages\sevenzip\7z1801-%PROCESSOR_ARCHITECTURE%.msi REBOOT=ReallySuppress"
 
 :done
