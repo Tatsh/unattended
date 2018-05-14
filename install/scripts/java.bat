@@ -1,8 +1,8 @@
 :: OPTIONAL: Install Sun Java Virtual Machine
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://www.oracle.com/technetwork/java/javase/silent-136552.html>
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=230540_2f38c3b165be4555a1fa6e98c45e0808|packages/jre/jre-8u161-windows-x86.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=230542_2f38c3b165be4555a1fa6e98c45e0808|packages/jre/jre-8u161-windows-amd64.exe
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=233170_512cd62ec5174c3487ac17c61aaa89e8|packages/jre/jre-8u171-windows-x86.exe
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=233172_512cd62ec5174c3487ac17c61aaa89e8|packages/jre/jre-8u171-windows-amd64.exe
 
 :: JRE version 7 is no longer available for public download, need to login and "agree" to download it:
 :: <http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html>
