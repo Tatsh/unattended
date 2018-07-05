@@ -15,4 +15,4 @@ todo.pl ".ignore-err 67 msiexec /qn /x {4A03706F-666A-4037-7777-5F2748764D10}"
 :: <http://docs.oracle.com/javase/7/docs/webnotes/install/windows/jre-installer-options.html>
 :: Some Apps and websites does not work if you are using 64bit
 :: to enable 64 change this jre-xuxx-windows-%PROCESSOR_ARCHITECTURE%.exe
-todo.pl "%Z%\packages\jre\jre-8u161-windows-x86.exe /s /L %SystemDrive%\netinst\logs\jre-8u161.log REBOOT=ReallySuppress SPONSORS=0"
+todo.pl "%Z%\packages\jre\jre-8u171-windows-x86.exe /s /L %SystemDrive%\netinst\logs\jre-8u171.log REBOOT=ReallySuppress SPONSORS=0"
