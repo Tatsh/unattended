@@ -8,6 +8,13 @@
 ::
 @Echo off
 
+:: Delete Tasks autoupdate:
+todo.pl "SchTasks /Delete /TN \"Adobe Flash Player Updater\" /f"
+todo.pl "SchTasks /Delete /TN \"Adobe Flash Player PPAPI Notifier\" /f"
+
+:: Remove Flash autoupdate service:
+todo.pl "sc delete AdobeFlashPlayerUpdateSvc /f"
+
 :: Disable Flash autoupdate:
 todo.pl "echo AutoUpdateDisable=1 > %SYSTEMROOT%\System32\Macromed\Flash\mms.cfg"
 
