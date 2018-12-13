@@ -209,16 +209,22 @@ sub get_windows_version () {
     elsif ($product_name =~ m/Windows Server.*(2008)/) {
         $os = 'ws2k8';
     }
-	elsif ($product_name =~ m/Windows Server.*(2012)/) {
+    elsif ($product_name =~ m/Windows Server.*(2012)/) {
         $os = 'win2012';
+    }
+    elsif ($product_name =~ m/Windows Server.*(2016)/) {
+        $os = 'win2016';
+    }
+    elsif ($product_name =~ m/Windows Server.*(2019)/) {
+        $os = 'win2019';
     }
     elsif ($product_name =~ m/Windows 7/) {
         $os = 'win7';
     }
-	elsif ($product_name =~ m/Windows 8/) {
+    elsif ($product_name =~ m/Windows 8/) {
         $os = 'win8';
     }
-	elsif ($product_name =~ m/Windows 10/) {
+    elsif ($product_name =~ m/Windows 10/) {
         $os = 'win10';
     }
     else {
