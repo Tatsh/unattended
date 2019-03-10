@@ -1,4 +1,4 @@
-:: OPTIONAL: Install Adobe Reader Document Cloud (DC) 1900820071
+:: OPTIONAL: Install Adobe Reader Document Cloud (DC) 1901020098
 @Echo Off
 
 :: Download Adobe Reader Document Cloud (DC) full version
@@ -27,7 +27,7 @@
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_tr_TR.msi|packages/adobereader/acrordrdc1500720033_trk.msi
 
 :: Download the newest patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1901020069/AcroRdrDCUpd1901020069.msp|packages/adobereader/AcroRdrDCUpd1901020069.msp
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1901020098/AcroRdrDCUpd1901020098.msp|packages/adobereader/AcroRdrDCUpd1901020098.msp
 
 :: Download Adobe Reader Language Support
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/AcroRdrSD1500720033_all_DC.msi|packages/adobereader/misc/AdbeRdrSD1500720033_all.msi
@@ -55,4 +55,4 @@ todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion
 todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
 
 :: This is the actual installer
-todo.pl ".ignore-err 194 msiexec /qn /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd1901020069.msp\" REBOOT=ReallySuppress"
+todo.pl ".ignore-err 194 msiexec /qn /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd1901020098.msp\" REBOOT=ReallySuppress"
