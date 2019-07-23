@@ -2,8 +2,8 @@
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://www.oracle.com/technetwork/java/javase/silent-136552.html>
 ::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=227550_e758a0de34e24606bca991d704f6dcbf|packages/jre/jre-8u151-windows-x86.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=238727_478a62b7d4e34b78b671c754eaaf38ab|packages/jre/jre-8u211-windows-x86.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=238729_478a62b7d4e34b78b671c754eaaf38ab|packages/jre/jre-8u211-windows-amd64.exe
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=239856_230deb18db3e4014bb8e3e8324f81b43|packages/jre/jre-8u221-windows-x86.exe
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=239858_230deb18db3e4014bb8e3e8324f81b43|packages/jre/jre-8u221-windows-amd64.exe
 
 :: JRE version 7 is no longer available for public download, need to login and "agree" to download it:
 :: <http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html>
@@ -14,7 +14,7 @@
 
 :: Some Apps and websites does not work if you are using 64bit
 :: to enable 64 change the VERSION variable.
-set VERSION=8u211-windows-x86
+set VERSION=8u221-windows-x86
 
 ::If system is XP then use version 8u151
 if "%WINVER%" == "winxpsp3" set VERSION=8u151-windows-x86
