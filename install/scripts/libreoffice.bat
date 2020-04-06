@@ -5,8 +5,8 @@
 :: "LibreOffice Fresh is the stable version with the most recent features.
 :: DEPLOYMENT INFO https://wiki.documentfoundation.org/Deployment_and_Migration
 :: Users interested in taking advantage of our most innovative features should download and use our fresh version."
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/6.4.1/win/x86/LibreOffice_6.4.1_Win_x86.msi|packages/libreoffice/libreoffice_6.4.1_win_x86_install.msi
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/6.4.1/win/x86_64/LibreOffice_6.4.1_Win_x64.msi|packages/libreoffice/libreoffice_6.4.1_win_AMD64_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/6.4.2/win/x86/LibreOffice_6.4.2_Win_x86.msi|packages/libreoffice/libreoffice_6.4.2_win_x86_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/6.4.2/win/x86_64/LibreOffice_6.4.2_Win_x64.msi|packages/libreoffice/libreoffice_6.4.2_win_AMD64_install.msi
 
 :: LibreOffice Still
 :: <http://www.libreoffice.org/download/libreoffice-still/>
