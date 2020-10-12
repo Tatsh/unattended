@@ -1,4 +1,4 @@
-:: OPTIONAL: Install Adobe Reader Document Cloud (DC) 1901020098
+:: OPTIONAL: Install Adobe Reader Document Cloud (DC) 2001220048
 @Echo Off
 
 :: Download Adobe Reader Document Cloud (DC) full version
@@ -27,7 +27,7 @@
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_tr_TR.msi|packages/adobereader/acrordrdc1500720033_trk.msi
 
 :: Download the newest patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/2000920074/AcroRdrDCUpd2000920074.msp|packages/adobereader/AcroRdrDCUpd2000920074.msp
+:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/2001220048/AcroRdrDCUpd2001220048.msp|packages/adobereader/AcroRdrDCUpd2001220048.msp
 
 :: Download Adobe Reader Language Support
 :: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/AcroRdrSD1500720033_all_DC.msi|packages/adobereader/misc/AdbeRdrSD1500720033_all.msi
