@@ -1,4 +1,4 @@
-:: OPTIONAL: Install Thunderbird 78.4.0
+:: OPTIONAL: Install Thunderbird 78.4.3
 :: HOME: http://download-origin.cdn.mozilla.net/pub/thunderbird/releases/?C=M;O=D
 :: Installation options: https://firefox-source-docs.mozilla.org/browser/installer/windows/installer/FullConfig.html
 ::
@@ -27,55 +27,55 @@
 :: URL|SVE|http://releases.mozilla.org/pub/thunderbird/releases/52.9.1/win32/sv-SE/Thunderbird%20Setup%2052.9.1.exe|packages/mozilla/thunderbird-5291-sve-x86.exe
 :: URL|TRK|http://releases.mozilla.org/pub/thunderbird/releases/52.9.1/win32/tr/Thunderbird%20Setup%2052.9.1.exe|packages/mozilla/thunderbird-5291-trk-x86.exe
 
-:: URL|CAT|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/ca/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-cat-x86.exe
-:: URL|CSY|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/cs/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-csy-x86.exe
-:: URL|DAN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/da/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-dan-x86.exe
-:: URL|DEU|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/de/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-deu-x86.exe
-:: URL|ELL|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/el/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-ell-x86.exe
-:: URL|ENG|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/en-GB/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-eng-x86.exe
-:: URL|ENU|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/en-US/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-enu-x86.exe
-:: URL|ESN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/es-ES/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-esn-x86.exe
-:: URL|ESS|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/es-AR/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-ess-x86.exe
-:: URL|FIN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/fi/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-fin-x86.exe
-:: URL|FRA|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/fr/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-fra-x86.exe
-:: URL|HEB|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/he/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-heb-x86.exe
-:: URL|HUN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/hu/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-hun-x86.exe
-:: URL|ITA|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/it/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-ita-x86.exe
-:: URL|JPN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/ja/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-jpn-x86.exe
-:: URL|KOR|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/ko/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-kor-x86.exe
-:: URL|NLD|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/nl/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-nld-x86.exe
-:: URL|NOR|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/nb-NO/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-nor-x86.exe
-:: URL|PLK|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/pl/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-plk-x86.exe
-:: URL|PTB|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/pt-BR/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-ptb-x86.exe
-:: URL|RUS|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/ru/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-rus-x86.exe
-:: URL|SLV|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/sl/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-slv-x86.exe
-:: URL|SVE|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/sv-SE/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-sve-x86.exe
-:: URL|TRK|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win32/tr/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-trk-x86.exe
+:: URL|CAT|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/ca/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-cat-x86.exe
+:: URL|CSY|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/cs/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-csy-x86.exe
+:: URL|DAN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/da/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-dan-x86.exe
+:: URL|DEU|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/de/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-deu-x86.exe
+:: URL|ELL|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/el/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-ell-x86.exe
+:: URL|ENG|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/en-GB/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-eng-x86.exe
+:: URL|ENU|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/en-US/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-enu-x86.exe
+:: URL|ESN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/es-ES/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-esn-x86.exe
+:: URL|ESS|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/es-AR/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-ess-x86.exe
+:: URL|FIN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/fi/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-fin-x86.exe
+:: URL|FRA|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/fr/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-fra-x86.exe
+:: URL|HEB|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/he/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-heb-x86.exe
+:: URL|HUN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/hu/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-hun-x86.exe
+:: URL|ITA|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/it/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-ita-x86.exe
+:: URL|JPN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/ja/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-jpn-x86.exe
+:: URL|KOR|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/ko/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-kor-x86.exe
+:: URL|NLD|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/nl/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-nld-x86.exe
+:: URL|NOR|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/nb-NO/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-nor-x86.exe
+:: URL|PLK|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/pl/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-plk-x86.exe
+:: URL|PTB|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/pt-BR/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-ptb-x86.exe
+:: URL|RUS|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/ru/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-rus-x86.exe
+:: URL|SLV|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/sl/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-slv-x86.exe
+:: URL|SVE|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/sv-SE/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-sve-x86.exe
+:: URL|TRK|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win32/tr/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-trk-x86.exe
 
-:: URL|CAT|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/ca/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-cat-amd64.exe
-:: URL|CSY|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/cs/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-csy-amd64.exe
-:: URL|DAN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/da/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-dan-amd64.exe
-:: URL|DEU|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/de/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-deu-amd64.exe
-:: URL|ELL|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/el/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-ell-amd64.exe
-:: URL|ENG|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/en-GB/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-eng-amd64.exe
-:: URL|ENU|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/en-US/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-enu-amd64.exe
-:: URL|ESN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/es-ES/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-esn-amd64.exe
-:: URL|ESS|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/es-AR/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-ess-amd64.exe
-:: URL|FIN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/fi/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-fin-amd64.exe
-:: URL|FRA|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/fr/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-fra-amd64.exe
-:: URL|HEB|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/he/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-heb-amd64.exe
-:: URL|HUN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/hu/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-hun-amd64.exe
-:: URL|ITA|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/it/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-ita-amd64.exe
-:: URL|JPN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/ja/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-jpn-amd64.exe
-:: URL|KOR|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/ko/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-kor-amd64.exe
-:: URL|NLD|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/nl/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-nld-amd64.exe
-:: URL|NOR|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/nb-NO/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-nor-amd64.exe
-:: URL|PLK|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/pl/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-plk-amd64.exe
-:: URL|PTB|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/pt-BR/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-ptb-amd64.exe
-:: URL|RUS|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/ru/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-rus-amd64.exe
-:: URL|SLV|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/sl/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-slv-amd64.exe
-:: URL|SVE|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/sv-SE/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-sve-amd64.exe
-:: URL|TRK|http://releases.mozilla.org/pub/thunderbird/releases/78.4.0/win64/tr/Thunderbird%20Setup%2078.4.0.exe|packages/mozilla/thunderbird-7840-trk-amd64.exe
+:: URL|CAT|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/ca/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-cat-amd64.exe
+:: URL|CSY|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/cs/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-csy-amd64.exe
+:: URL|DAN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/da/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-dan-amd64.exe
+:: URL|DEU|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/de/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-deu-amd64.exe
+:: URL|ELL|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/el/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-ell-amd64.exe
+:: URL|ENG|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/en-GB/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-eng-amd64.exe
+:: URL|ENU|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/en-US/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-enu-amd64.exe
+:: URL|ESN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/es-ES/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-esn-amd64.exe
+:: URL|ESS|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/es-AR/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-ess-amd64.exe
+:: URL|FIN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/fi/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-fin-amd64.exe
+:: URL|FRA|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/fr/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-fra-amd64.exe
+:: URL|HEB|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/he/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-heb-amd64.exe
+:: URL|HUN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/hu/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-hun-amd64.exe
+:: URL|ITA|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/it/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-ita-amd64.exe
+:: URL|JPN|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/ja/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-jpn-amd64.exe
+:: URL|KOR|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/ko/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-kor-amd64.exe
+:: URL|NLD|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/nl/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-nld-amd64.exe
+:: URL|NOR|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/nb-NO/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-nor-amd64.exe
+:: URL|PLK|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/pl/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-plk-amd64.exe
+:: URL|PTB|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/pt-BR/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-ptb-amd64.exe
+:: URL|RUS|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/ru/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-rus-amd64.exe
+:: URL|SLV|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/sl/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-slv-amd64.exe
+:: URL|SVE|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/sv-SE/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-sve-amd64.exe
+:: URL|TRK|http://releases.mozilla.org/pub/thunderbird/releases/78.4.3/win64/tr/Thunderbird%20Setup%2078.4.3.exe|packages/mozilla/thunderbird-7843-trk-amd64.exe
 
 @echo off
 
@@ -83,7 +83,7 @@
 todo.pl "reg add HKLM\Software\Clients\Mail /ve /f /d \"Mozilla Thunderbird\""
 
 :: if system is XP then use 52.9.1
-set VERSION=7840
+set VERSION=7843
 if "%WINVER%" == "winxpsp3" set VERSION=5291
 
 todo.pl "%Z%\packages\mozilla\thunderbird-%VERSION%-%WINLANG%-%PROCESSOR_ARCHITECTURE%.exe /S /DesktopShortcut=false /PreventRebootRequired=true /MaintenanceService=false"
