@@ -1,8 +1,8 @@
-:: OPTIONAL: Install TightVNC 2.8.27
+:: OPTIONAL: Install TightVNC 2.8.55
 :: HOME: http://www.tightvnc.com/
 :: FIXME: Need to change user-agent to work
-:: URL|ALL|http://www.tightvnc.com/download/2.8.27/tightvnc-2.8.27-gpl-setup-32bit.msi|packages/tightvnc-2.8.27-setup-x86.msi
-:: URL|ALL|http://www.tightvnc.com/download/2.8.27/tightvnc-2.8.27-gpl-setup-64bit.msi|packages/tightvnc-2.8.27-setup-AMD64.msi
+:: URL|ALL|http://www.tightvnc.com/download/2.8.55/tightvnc-2.8.55-gpl-setup-32bit.msi|packages/tightvnc-2.8.55-setup-x86.msi
+:: URL|ALL|http://www.tightvnc.com/download/2.8.55/tightvnc-2.8.55-gpl-setup-64bit.msi|packages/tightvnc-2.8.55-setup-AMD64.msi
 @Echo off
 
 :: Edit install/site/pass.bat and provide your password like 'set tightvncpass=12345678'
@@ -14,4 +14,4 @@ SET VNC_OPTIONS= SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_
 :: Add rule to the firewall to allow port 5900 
 :: This change include public profile. Same behaviour as old good Windows XP 
 todo.pl "\"netsh firewall add portopening protocol=TCP port=5900 name=TightVNC profile=all\""
-todo.pl "msiexec /qb /i %Z%\packages\tightvnc-2.8.27-setup-%PROCESSOR_ARCHITECTURE%.msi %VNC_OPTIONS%" 
+todo.pl "msiexec /qb /i %Z%\packages\tightvnc-2.8.55-setup-%PROCESSOR_ARCHITECTURE%.msi %VNC_OPTIONS%" 
