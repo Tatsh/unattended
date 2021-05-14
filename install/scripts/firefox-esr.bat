@@ -1,68 +1,68 @@
 :: OPTIONAL: Install Firefox Extended Release Support (ESR)
 ::HOME: http://www.mozilla.org/en-US/firefox/organizations/all.html
-:: Firefox 78.7.1esr 32Bit
-::URL|ARA|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/ar/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ara-x86.exe
-::URL|CAT|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/ca/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-cat-x86.exe
-::URL|CSY|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/cs/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-csy-x86.exe
-::URL|CHT|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/zh-TW/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-cht-x86.exe
-::URL|CHS|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/zh-CN/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-chs-x86.exe
-::URL|DAN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/da/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-dan-x86.exe
-::URL|DEU|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/de/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-deu-x86.exe
-::URL|ELL|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/el/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ell-x86.exe
-::URL|ENU|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/en-US/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-enu-x86.exe
-::URL|ENG|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/en-GB/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-eng-x86.exe
-::URL|ESN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/es-ES/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-esn-x86.exe
-::URL|ESS|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/es-AR/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ess-x86.exe
-::URL|FIN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/fi/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-fin-x86.exe
-::URL|FRA|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/fr/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-fra-x86.exe
-::URL|HEB|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/he/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-heb-x86.exe
-::URL|HUN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/hu/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-hun-x86.exe
-::URL|ITA|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/it/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ita-x86.exe
-::URL|JPN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/ja/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-jpn-x86.exe
-::URL|KOR|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/ko/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-kor-x86.exe
-::URL|MKI|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/mk/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-mki-x86.exe
-::URL|NLD|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/nl/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-nld-x86.exe
-::URL|NOR|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/nb-NO/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-nor-x86.exe
-::URL|PLK|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/pl/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-plk-x86.exe
-::URL|PTB|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/pt-BR/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ptb-x86.exe
-::URL|PTG|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/pt-PT/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ptg-x86.exe
-::URL|ROM|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/ro/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-rom-x86.exe
-::URL|RUS|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/ru/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-rus-x86.exe
-::URL|SLV|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/sl/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-slv-x86.exe
-::URL|SVE|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/sv-SE/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-sve-x86.exe
-::URL|TRK|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win32/tr/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-trk-x86.exe
+:: Firefox 78.10.1esr 32Bit
+::URL|ARA|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/ar/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ara-x86.exe
+::URL|CAT|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/ca/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-cat-x86.exe
+::URL|CSY|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/cs/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-csy-x86.exe
+::URL|CHT|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/zh-TW/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-cht-x86.exe
+::URL|CHS|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/zh-CN/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-chs-x86.exe
+::URL|DAN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/da/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-dan-x86.exe
+::URL|DEU|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/de/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-deu-x86.exe
+::URL|ELL|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/el/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ell-x86.exe
+::URL|ENU|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/en-US/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-enu-x86.exe
+::URL|ENG|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/en-GB/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-eng-x86.exe
+::URL|ESN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/es-ES/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-esn-x86.exe
+::URL|ESS|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/es-AR/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ess-x86.exe
+::URL|FIN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/fi/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-fin-x86.exe
+::URL|FRA|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/fr/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-fra-x86.exe
+::URL|HEB|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/he/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-heb-x86.exe
+::URL|HUN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/hu/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-hun-x86.exe
+::URL|ITA|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/it/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ita-x86.exe
+::URL|JPN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/ja/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-jpn-x86.exe
+::URL|KOR|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/ko/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-kor-x86.exe
+::URL|MKI|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/mk/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-mki-x86.exe
+::URL|NLD|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/nl/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-nld-x86.exe
+::URL|NOR|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/nb-NO/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-nor-x86.exe
+::URL|PLK|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/pl/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-plk-x86.exe
+::URL|PTB|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/pt-BR/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ptb-x86.exe
+::URL|PTG|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/pt-PT/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ptg-x86.exe
+::URL|ROM|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/ro/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-rom-x86.exe
+::URL|RUS|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/ru/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-rus-x86.exe
+::URL|SLV|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/sl/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-slv-x86.exe
+::URL|SVE|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/sv-SE/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-sve-x86.exe
+::URL|TRK|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win32/tr/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-trk-x86.exe
 
-:: Firefox 78.7.1esr 64Bit
-::URL|ARA|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/ar/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ara-amd64.exe
-::URL|CAT|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/ca/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-cat-amd64.exe
-::URL|CSY|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/cs/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-csy-amd64.exe
-::URL|CHT|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/zh-TW/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-cht-amd64.exe
-::URL|CHS|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/zh-CN/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-chs-amd64.exe
-::URL|DAN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/da/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-dan-amd64.exe
-::URL|DEU|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/de/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-deu-amd64.exe
-::URL|ELL|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/el/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ell-amd64.exe
-::URL|ENU|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/en-US/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-enu-amd64.exe
-::URL|ENG|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/en-GB/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-eng-amd64.exe
-::URL|ESN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/es-ES/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-esn-amd64.exe
-::URL|ESS|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/es-AR/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ess-amd64.exe
-::URL|FIN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/fi/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-fin-amd64.exe
-::URL|FRA|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/fr/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-fra-amd64.exe
-::URL|HEB|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/he/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-heb-amd64.exe
-::URL|HUN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/hu/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-hun-amd64.exe
-::URL|ITA|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/it/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ita-amd64.exe
-::URL|JPN|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/ja/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-jpn-amd64.exe
-::URL|KOR|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/ko/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-kor-amd64.exe
-::URL|MKI|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/mk/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-mki-amd64.exe
-::URL|NLD|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/nl/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-nld-amd64.exe
-::URL|NOR|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/nb-NO/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-nor-amd64.exe
-::URL|PLK|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/pl/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-plk-amd64.exe
-::URL|PTB|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/pt-BR/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ptb-amd64.exe
-::URL|PTG|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/pt-PT/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-ptg-amd64.exe
-::URL|ROM|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/ro/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-rom-amd64.exe
-::URL|RUS|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/ru/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-rus-amd64.exe
-::URL|SLV|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/sl/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-slv-amd64.exe
-::URL|SVE|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/sv-SE/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-sve-amd64.exe
-::URL|TRK|http://ftp.mozilla.org/pub/firefox/releases/78.7.1esr/win64/tr/Firefox%20Setup%2078.7.1esr.exe|packages/mozilla/firefox-7871esr-trk-amd64.exe
+:: Firefox 78.10.1esr 64Bit
+::URL|ARA|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/ar/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ara-amd64.exe
+::URL|CAT|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/ca/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-cat-amd64.exe
+::URL|CSY|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/cs/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-csy-amd64.exe
+::URL|CHT|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/zh-TW/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-cht-amd64.exe
+::URL|CHS|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/zh-CN/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-chs-amd64.exe
+::URL|DAN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/da/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-dan-amd64.exe
+::URL|DEU|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/de/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-deu-amd64.exe
+::URL|ELL|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/el/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ell-amd64.exe
+::URL|ENU|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/en-US/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-enu-amd64.exe
+::URL|ENG|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/en-GB/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-eng-amd64.exe
+::URL|ESN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/es-ES/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-esn-amd64.exe
+::URL|ESS|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/es-AR/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ess-amd64.exe
+::URL|FIN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/fi/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-fin-amd64.exe
+::URL|FRA|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/fr/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-fra-amd64.exe
+::URL|HEB|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/he/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-heb-amd64.exe
+::URL|HUN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/hu/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-hun-amd64.exe
+::URL|ITA|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/it/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ita-amd64.exe
+::URL|JPN|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/ja/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-jpn-amd64.exe
+::URL|KOR|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/ko/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-kor-amd64.exe
+::URL|MKI|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/mk/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-mki-amd64.exe
+::URL|NLD|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/nl/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-nld-amd64.exe
+::URL|NOR|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/nb-NO/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-nor-amd64.exe
+::URL|PLK|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/pl/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-plk-amd64.exe
+::URL|PTB|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/pt-BR/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ptb-amd64.exe
+::URL|PTG|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/pt-PT/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-ptg-amd64.exe
+::URL|ROM|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/ro/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-rom-amd64.exe
+::URL|RUS|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/ru/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-rus-amd64.exe
+::URL|SLV|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/sl/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-slv-amd64.exe
+::URL|SVE|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/sv-SE/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-sve-amd64.exe
+::URL|TRK|http://ftp.mozilla.org/pub/firefox/releases/78.10.1esr/win64/tr/Firefox%20Setup%2078.10.1esr.exe|packages/mozilla/firefox-78101esr-trk-amd64.exe
 
 
 :: Firefox 52.9.0esr 32Bit For Windows XP
@@ -103,7 +103,7 @@
 @Echo off
 
 :: If system is XP then use 52.9.0esr
-set VERSION=7871esr
+set VERSION=78101esr
 if "%WINVER%" == "winxpsp3" set VERSION=5290esr
 
 todo.pl "%Z%\packages\mozilla\firefox-%VERSION%-%WINLANG%-%PROCESSOR_ARCHITECTURE%.exe -ms -ira /PreventRebootRequired=true /MaintenanceService=false"
