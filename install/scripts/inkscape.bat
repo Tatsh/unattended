@@ -1,8 +1,7 @@
-:: OPTIONAL:  Install Inkscape and Open Clip Art 
+:: OPTIONAL:  Install Inkscape 1.1
 :: HOME: http://www.inkscape.org/
-
-:: URL|All|https://media.inkscape.org/dl/resources/file/inkscape-1.0.2_2021-01-15_e86c870879-x86.msi|packages/inkscape/inkscape-1.0.2-x86.msi
-:: URL|All|https://media.inkscape.org/dl/resources/file/inkscape-1.0.2_2021-01-15_e86c870879-x64.msi|packages/inkscape/inkscape-1.0.2-AMD64.msi
+:: URL|All|https://inkscape.org/gallery/item/26938/inkscape-1.1-x86.msi|packages/inkscape/inkscape-1.1-x86.msi
+:: URL|All|https://inkscape.org/gallery/item/26939/inkscape-1.1-x64.msi|packages/inkscape/inkscape-1.1-AMD64.msi
 @Echo off
 
-todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\inkscape.txt /i  %Z%\packages\inkscape\inkscape-1.0.2-%PROCESSOR_ARCHITECTURE%.msi"
+todo.pl "msiexec /qb /l* %SystemDrive%\netinst\logs\inkscape.txt /i  %Z%\packages\inkscape\inkscape-1.1-%PROCESSOR_ARCHITECTURE%.msi"
