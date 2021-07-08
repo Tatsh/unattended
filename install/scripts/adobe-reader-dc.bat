@@ -1,5 +1,13 @@
-:: OPTIONAL: Install Adobe Reader Document Cloud (DC) 2001320064
+:: OPTIONAL: Install Adobe Reader Document Cloud (DC) 2100520048
 @Echo Off
+:: Note: Newest patches are no longer available on the FTP, link to patches can be found here:
+:: https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/
+
+:: Acrobat DC Customization Wizard for Windows
+:: Tool to create MST-files (transform files) can be found here:
+:: https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/index.html
+:: To use a transforming file, add TRANSFORMS=(filename).mst to the installing command
+
 
 :: Download Adobe Reader Document Cloud (DC) full version
 :: URL|ARA|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_ar_AE.msi|packages/adobereader/acrordrdc1500720033_ara.msi
@@ -27,32 +35,25 @@
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_tr_TR.msi|packages/adobereader/acrordrdc1500720033_trk.msi
 
 :: Download the newest patch
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/2001320064/AcroRdrDCUpd2001320064.msp|packages/adobereader/AcroRdrDCUpd2001320064.msp
+:: URL|ALL|https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2100520048/AcroRdrDCUpd2100520048.msp|packages/adobereader/AcroRdrDCUpd2100520048.msp
 
-:: Download Adobe Reader Language Support
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/AcroRdrSD1500720033_all_DC.msi|packages/adobereader/misc/AdbeRdrSD1500720033_all.msi
-:: Download Extended Language Support Fonts Package
-:: URL|ALL|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/FontPack1500720033_XtdAlf_Lang_DC.msi|packages/adobereader/misc/FontPack1500720033_xtdalf_lang.msi
+:: Extra language packs, more info:
+:: https://helpx.adobe.com/acrobat/kb/windows-font-packs-32-bit-reader.html
+:: Download Spelling dictionary pack
+:: URL|ALL|https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/AcroRdrSD1900820071_all_DC.msi|packages/adobereader/misc/AdbeRdrSD1900820071_all.msi
+:: Download Font Pack
+:: URL|ALL|https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/misc/FontPack2100120135_XtdAlf_Lang_DC.msi|packages/adobereader/misc/FontPack2100120135_XtdAlf_Lang_DC.msi
 
-:: Tool to create msp-file (transform) for msi available 
-:: http://www.adobe.com/support/downloads/new.jsp
-:: To use a transforming file, add TRANSFORMS=(filename).mst to the installing command
+:: Uncomment the todo.pl lines if you want to install these language packs.
+:: Install Spelling dictionary pack
+:: todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\AdbeRdrSD1900820071_all.msi"
+:: Install Extended Asian Language Fonts Pack
+:: todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\FontPack2100120135_XtdAlf_Lang_DC.msi"
 
-::if not exist %Z%\packages\adobereader\misc\FontPack11000_xtd_lang.msi goto nolangsupport
-:: Install Extended Language Support Fonts Package
-::todo.pl "msiexec /qb /i %Z%\packages\adobereader\misc\FontPack11000_xtdalf_lang.msi"
-
-:nolangsupport
-
-:: There is not need for a link on the desktop. It is a document centric application
+:: There is no need for a link on the desktop. This is a document-centric application.
 todo.pl "unlink.pl special:AllUsersDesktop\"\Acrobat Reader DC.lnk\"" 
-
 :: Accept EULA
 todo.pl ".ignore-err 1 reg add \"HKLM\SOFTWARE\Adobe\Acrobat Reader\DC\AdobeViewer\" /f /v \"EULA\" /t REG_DWORD /d 1"
 
-:: Please do not start anything unless necesary
-todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe ARM\""
-todo.pl ".ignore-err 1 reg delete HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /f /v \"Adobe Reader Speed Launcher\""
-
 :: This is the actual installer
-todo.pl ".ignore-err 194 msiexec /qn /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd2001320064.msp\" REBOOT=ReallySuppress"
+todo.pl ".ignore-err 194 msiexec /qb /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd2100520048.msp\" REBOOT=ReallySuppress"
