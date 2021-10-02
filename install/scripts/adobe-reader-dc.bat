@@ -35,7 +35,7 @@
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_tr_TR.msi|packages/adobereader/acrordrdc1500720033_trk.msi
 
 :: Download the newest patch
-:: URL|ALL|https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2100520048/AcroRdrDCUpd2100520048.msp|packages/adobereader/AcroRdrDCUpd2100520048.msp
+:: URL|ALL|https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2100720091/AcroRdrDCUpd2100720091.msp|packages/adobereader/AcroRdrDCUpd2100720091.msp
 
 :: Extra language packs, more info:
 :: https://helpx.adobe.com/acrobat/kb/windows-font-packs-32-bit-reader.html
@@ -56,4 +56,4 @@ todo.pl "unlink.pl special:AllUsersDesktop\"\Acrobat Reader DC.lnk\""
 todo.pl ".ignore-err 1 reg add \"HKLM\SOFTWARE\Adobe\Acrobat Reader\DC\AdobeViewer\" /f /v \"EULA\" /t REG_DWORD /d 1"
 
 :: This is the actual installer
-todo.pl ".ignore-err 194 msiexec /qb /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd2100520048.msp\" REBOOT=ReallySuppress"
+todo.pl ".ignore-err 194 msiexec /qb /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd2100720091.msp\" REBOOT=ReallySuppress"
