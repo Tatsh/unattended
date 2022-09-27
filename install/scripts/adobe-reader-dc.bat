@@ -1,4 +1,4 @@
-:: OPTIONAL: Install Adobe Reader Document Cloud (DC) 2200120169
+:: OPTIONAL: Install Adobe Reader Document Cloud (DC) 2200220191
 @Echo Off
 :: Note: Newest patches are no longer available on the FTP, link to patches can be found here:
 :: https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/
@@ -35,7 +35,7 @@
 :: URL|TRK|ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/acrordrdc1500720033_tr_TR.msi|packages/adobereader/acrordrdc1500720033_trk.msi
 
 :: Download the newest patch
-:: URL|ALL|https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2200120169/AcroRdrDCUpd2200120169.msp|packages/adobereader/AcroRdrDCUpd2200120169.msp
+:: URL|ALL|https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2200220191/AcroRdrDCUpd2200220191.msp|packages/adobereader/AcroRdrDCUpd2200220191.msp
 
 :: Extra language packs, more info:
 :: https://helpx.adobe.com/acrobat/kb/windows-font-packs-32-bit-reader.html
@@ -56,4 +56,4 @@ todo.pl "unlink.pl special:AllUsersDesktop\"\Acrobat Reader DC.lnk\""
 todo.pl ".ignore-err 1 reg add \"HKLM\SOFTWARE\Adobe\Acrobat Reader\DC\AdobeViewer\" /f /v \"EULA\" /t REG_DWORD /d 1"
 
 :: This is the actual installer
-todo.pl ".ignore-err 194 msiexec /qb /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd2200120169.msp\" REBOOT=ReallySuppress"
+todo.pl ".ignore-err 194 msiexec /qb /l* %SystemDrive%\netinst\logs\adobereaderdc.txt /i \"%Z%\packages\adobereader\acrordrdc1500720033_%WINLANG%.msi\" PATCH=\"%Z%\packages\adobereader\AcroRdrDCUpd2200220191.msp\" REBOOT=ReallySuppress"
