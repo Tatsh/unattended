@@ -1,8 +1,8 @@
-:: OPTIONAL: Install PDFCreator (PDF Printer) 5.0.2
+:: OPTIONAL: Install PDFCreator (PDF Printer) 5.0.3
 :: HOME: http://download.pdfforge.org/download/pdfcreator
 
 @echo off
-:: URL|ALL|http://cdn.download.pdfforge.org/pdfcreator/5.0.2/PDFCreator-5_0_2-Setup.exe|packages/pdfcreator/pdfcreator-5.0.2.setup.exe
+:: URL|ALL|http://cdn.download.pdfforge.org/pdfcreator/5.0.3/PDFCreator-5_0_3-Setup.exe|packages/pdfcreator/pdfcreator-5.0.3.setup.exe
 :: URL|ALL|http://azure.download.pdfforge.org/pdfcreator/2.5.3/PDFCreator-2_5_3-Setup.exe|packages/pdfcreator/pdfcreator-2.5.3.setup.exe
 
 :: No need for a desktop shortcut.
@@ -12,7 +12,7 @@ todo.pl "unlink.pl special:AllUsersDesktop\"\PDFCreator.lnk\""
 todo.pl ".ignore-err 1 reg add \"HKLM\SOFTWARE\PDFCreator\Program\" /v \"UpdateInterval\" /t REG_SZ /d \"0\" /f"
 
 ::If this system is XP then use 2.5.3
-set VERSION=5.0.2
+set VERSION=5.0.3
 if "%WINVER%" == "winxpsp3" set VERSION=2.5.3
 
 :: Install PDFCreator
