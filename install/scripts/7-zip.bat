@@ -1,7 +1,7 @@
-:: OPTIONAL: Install 7-Zip
+:: OPTIONAL: Install 7-Zip 23.01
 :: HOME: http://www.7-zip.org/
-:: URL|ALL|http://downloads.sourceforge.net/sevenzip/7-Zip/21.07/7z2107.msi|packages/sevenzip/7z2107-x86.msi
-:: URL|ALL|http://downloads.sourceforge.net/sevenzip/7-Zip/21.07/7z2107-x64.msi|packages/sevenzip/7z2107-AMD64.msi
+:: URL|ALL|http://downloads.sourceforge.net/sevenzip/7-Zip/23.01/7z2301.msi|packages/sevenzip/7zip_2301-x86.msi
+:: URL|ALL|http://downloads.sourceforge.net/sevenzip/7-Zip/23.01/7z2301-x64.msi|packages/sevenzip/7zip_2301-AMD64.msi
 @Echo off
 
 if exist "%ProgramFiles%\7-ZIP\7z.exe" goto done
@@ -19,6 +19,6 @@ FOR %%j IN (%Extn%) DO (
 )
 ENDLOCAL
 
-todo.pl "msiexec /qn /i %Z%\packages\sevenzip\7z2107-%PROCESSOR_ARCHITECTURE%.msi REBOOT=ReallySuppress"
+todo.pl "msiexec /qn /i %Z%\packages\sevenzip\7zip_2301-%PROCESSOR_ARCHITECTURE%.msi REBOOT=ReallySuppress"
 
 :done
