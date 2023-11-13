@@ -1,6 +1,6 @@
-::OPTIONAL: Install GIMP (2.10.34)
+::OPTIONAL: Install GIMP (2.10.36)
 ::HOME: http://download.gimp.org/pub/gimp/
-::URL|ALL|https://download.gimp.org/pub/gimp/v2.10/windows/gimp-2.10.34-setup.exe|packages/gimp/gimp-2.10.34-x86-setup.exe
+::URL|ALL|https://download.gimp.org/pub/gimp/v2.10/windows/gimp-2.10.36-setup.exe|packages/gimp/gimp-2.10.36-x86-setup.exe
 ::URL|ALL|https://download.gimp.org/pub/gimp/v2.10/windows/gimp-2.10.0-x64-setup.exe|packages/gimp/gimp-2.10.0-amd64-setup.exe
 @echo off
 
@@ -8,4 +8,4 @@
 todo.pl "shortcut.pl  \"%ProgramFiles%\GIMP 2\bin\gimp-2.10.exe\" special:AllUsersDesktop\Gimp2"
 
 :: Run the installers. Avoid amd64 for now.
-todo.pl "start /wait %Z%\packages\gimp\gimp-2.10.34-x86-setup.exe SP- /SILENT /NORESTART /ALLUSERS"
+todo.pl "start /wait %Z%\packages\gimp\gimp-2.10.36-x86-setup.exe SP- /SILENT /NORESTART /ALLUSERS"
