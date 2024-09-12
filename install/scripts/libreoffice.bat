@@ -1,12 +1,12 @@
 ::OPTIONAL: Install LibreOffice
 ::HOME: http://www.libreoffice.org/
-:: LibreOffice Fresh
+:: LibreOffice Fresh 24.8.1
 :: <http://www.libreoffice.org/download/libreoffice-fresh/>
 :: "LibreOffice Fresh is the stable version with the most recent features.
 :: DEPLOYMENT INFO https://wiki.documentfoundation.org/Deployment_and_Migration
 :: Users interested in taking advantage of our most innovative features should download and use our fresh version."
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/24.8.0/win/x86/LibreOffice_24.8.0_Win_x86.msi|packages/libreoffice/libreoffice_24.8.0_win_x86_install.msi
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/24.8.0/win/x86_64/LibreOffice_24.8.0_Win_x86-64.msi|packages/libreoffice/libreoffice_24.8.0_win_AMD64_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/24.8.1/win/x86/LibreOffice_24.8.1_Win_x86.msi|packages/libreoffice/libreoffice_24.8.1_win_x86_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/24.8.1/win/x86_64/LibreOffice_24.8.1_Win_x86-64.msi|packages/libreoffice/libreoffice_24.8.1_win_AMD64_install.msi
 
 :: LibreOffice Still
 :: <http://www.libreoffice.org/download/libreoffice-still/>
