@@ -2,10 +2,10 @@
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://www.oracle.com/technetwork/java/javase/silent-136552.html>
 ::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=227550_e758a0de34e24606bca991d704f6dcbf|packages/jre/jre-8u151-windows-x86.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252043_8a1589aa0fe24566b4337beee47c2d29|packages/jre/jre-8u451-windows-x86.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252044_8a1589aa0fe24566b4337beee47c2d29|packages/jre/jre-8u451-windows-amd64.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252032_8a1589aa0fe24566b4337beee47c2d29|packages/jre/jre-8u451-linux-i586.tar.gz
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252034_8a1589aa0fe24566b4337beee47c2d29|packages/jre/jre-8u451-linux-x64.tar.gz
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252321_68ce765258164726922591683c51982c|packages/jre/jre-8u461-windows-x86.exe
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252322_68ce765258164726922591683c51982c|packages/jre/jre-8u461-windows-amd64.exe
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252310_68ce765258164726922591683c51982c|packages/jre/jre-8u461-linux-i586.tar.gz
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252312_68ce765258164726922591683c51982c|packages/jre/jre-8u461-linux-x64.tar.gz
 
 :: JRE version 7 is no longer available for public download, need to login and "agree" to download it:
 :: <http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html>
@@ -16,7 +16,7 @@
 
 :: Some Apps and websites does not work if you are using 64bit
 :: to enable 64 change the VERSION variable.
-set VERSION=8u451-windows-x86
+set VERSION=8u461-windows-x86
 
 ::If system is XP then use version 8u151
 if "%WINVER%" == "winxpsp3" set VERSION=8u151-windows-x86
