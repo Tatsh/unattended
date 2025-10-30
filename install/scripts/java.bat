@@ -1,11 +1,11 @@
-:: OPTIONAL: Install Java Virtual Machine Version 8 Update 431
+:: OPTIONAL: Install Java Virtual Machine Version 8 Update 471
 :: <http://www.java.com/en/download/manual.jsp>
 :: <http://www.oracle.com/technetwork/java/javase/silent-136552.html>
 ::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=227550_e758a0de34e24606bca991d704f6dcbf|packages/jre/jre-8u151-windows-x86.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252321_68ce765258164726922591683c51982c|packages/jre/jre-8u461-windows-x86.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252322_68ce765258164726922591683c51982c|packages/jre/jre-8u461-windows-amd64.exe
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252310_68ce765258164726922591683c51982c|packages/jre/jre-8u461-linux-i586.tar.gz
-::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252312_68ce765258164726922591683c51982c|packages/jre/jre-8u461-linux-x64.tar.gz
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252626_99a6cb9582554a09bd4ac60f73f9b8e6|packages/jre/jre-8u471-windows-x86.exe
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252627_99a6cb9582554a09bd4ac60f73f9b8e6|packages/jre/jre-8u471-windows-amd64.exe
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252615_99a6cb9582554a09bd4ac60f73f9b8e6|packages/jre/jre-8u471-linux-i586.tar.gz
+::URL|ALL|http://javadl.oracle.com/webapps/download/AutoDL?BundleId=252617_99a6cb9582554a09bd4ac60f73f9b8e6|packages/jre/jre-8u471-linux-x64.tar.gz
 
 :: JRE version 7 is no longer available for public download, need to login and "agree" to download it:
 :: <http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html>
@@ -16,7 +16,7 @@
 
 :: Some Apps and websites does not work if you are using 64bit
 :: to enable 64 change the VERSION variable.
-set VERSION=8u461-windows-x86
+set VERSION=8u471-windows-x86
 
 ::If system is XP then use version 8u151
 if "%WINVER%" == "winxpsp3" set VERSION=8u151-windows-x86
