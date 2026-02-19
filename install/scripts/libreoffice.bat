@@ -11,8 +11,8 @@
 :: LibreOffice Still
 :: <http://www.libreoffice.org/download/libreoffice-still/>
 :: "LibreOffice Still is the stable version that has undergone more testing (over a longer time)
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.8.4/win/x86/LibreOffice_25.8.4_Win_x86.msi|packages/libreoffice/libreoffice_25.8.4_win_x86_install.msi
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.8.4/win/x86_64/LibreOffice_25.8.4_Win_x86-64.msi|packages/libreoffice/libreoffice_25.8.4_win_AMD64_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.8.5/win/x86/LibreOffice_25.8.5_Win_x86.msi|packages/libreoffice/libreoffice_25.8.5_win_x86_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.8.5/win/x86_64/LibreOffice_25.8.5_Win_x86-64.msi|packages/libreoffice/libreoffice_25.8.5_win_AMD64_install.msi
 
 :: libreOffice 25.2.x is last release that works on windows 7 and 8/8.1
 ::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.2.7/win/x86/LibreOffice_25.2.7_Win_x86.msi|packages/libreoffice/libreoffice_25.2.7_win_x86_install.msi
