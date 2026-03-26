@@ -1,18 +1,18 @@
 ::OPTIONAL: Install LibreOffice
 ::HOME: http://www.libreoffice.org/
-:: LibreOffice Fresh 26.2.1
+:: LibreOffice Fresh 26.2.2
 :: <http://www.libreoffice.org/download/libreoffice-fresh/>
 :: "LibreOffice Fresh is the stable version with the most recent features.
 :: DEPLOYMENT INFO https://wiki.documentfoundation.org/Deployment_and_Migration
 :: Users interested in taking advantage of our most innovative features should download and use our fresh version."
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/26.2.1/win/x86/LibreOffice_26.2.1_Win_x86.msi|packages/libreoffice/libreoffice_26.2.1_win_x86_install.msi
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/26.2.1/win/x86_64/LibreOffice_26.2.1_Win_x86-64.msi|packages/libreoffice/libreoffice_26.2.1_win_AMD64_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/26.2.2/win/x86/LibreOffice_26.2.2_Win_x86.msi|packages/libreoffice/libreoffice_26.2.2_win_x86_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/26.2.2/win/x86_64/LibreOffice_26.2.2_Win_x86-64.msi|packages/libreoffice/libreoffice_26.2.2_win_AMD64_install.msi
 
 :: LibreOffice Still
 :: <http://www.libreoffice.org/download/libreoffice-still/>
 :: "LibreOffice Still is the stable version that has undergone more testing (over a longer time)
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.8.5/win/x86/LibreOffice_25.8.5_Win_x86.msi|packages/libreoffice/libreoffice_25.8.5_win_x86_install.msi
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.8.5/win/x86_64/LibreOffice_25.8.5_Win_x86-64.msi|packages/libreoffice/libreoffice_25.8.5_win_AMD64_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.8.6/win/x86/LibreOffice_25.8.6_Win_x86.msi|packages/libreoffice/libreoffice_25.8.6_win_x86_install.msi
+::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.8.6/win/x86_64/LibreOffice_25.8.6_Win_x86-64.msi|packages/libreoffice/libreoffice_25.8.6_win_AMD64_install.msi
 
 :: libreOffice 25.2.x is last release that works on windows 7 and 8/8.1
 ::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.2.7/win/x86/LibreOffice_25.2.7_Win_x86.msi|packages/libreoffice/libreoffice_25.2.7_win_x86_install.msi
