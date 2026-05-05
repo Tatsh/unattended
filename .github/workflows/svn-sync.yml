@@ -1,0 +1,72 @@
+concurrency:
+  cancel-in-progress: false
+  group: svn-sync
+env:
+  SVN_URL: https://svn.code.sf.net/p/unattended/code/trunk
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Install git-svn
+        run: |
+          sudo apt-get update -o Acquire::Retries=3
+          # The runner's pre-installed git (2.53 from the git-core PPA) is
+          # newer than git-svn's upper-bound dep (git < 2.43). Pin git and
+          # git-man to the noble archive version so the solver picks a
+          # compatible set.
+          archive_git_ver=$(apt-cache madison git \
+            | awk -F'|' 'tolower($3) !~ /ppa|launchpad/ { gsub(/^ +| +$/,"",$2); print $2; exit }')
+          if [ -z "$archive_git_ver" ]; then
+            echo "::error::Could not determine noble archive git version" >&2
+            apt-cache madison git >&2
+            exit 1
+          fi
+          echo "Pinning git=$archive_git_ver"
+          sudo apt-get install -y --allow-downgrades --no-install-recommends \
+            "git=$archive_git_ver" "git-man=$archive_git_ver" git-svn subversion
+          git svn --version
+      - name: Configure git identity
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+      - name: Reconstruct git-svn metadata
+        run: |
+          git svn init "$SVN_URL"
+          last_svn_commit=$(git rev-list --max-count=1 \
+            --grep="^git-svn-id: ${SVN_URL}@" HEAD)
+          if [ -z "$last_svn_commit" ]; then
+            echo "::error::No git-svn-id trailer found in master history" >&2
+            exit 1
+          fi
+          git update-ref refs/remotes/git-svn "$last_svn_commit"
+      - id: fetch
+        name: Fetch new Subversion revisions
+        run: |
+          before=$(git rev-parse refs/remotes/git-svn)
+          git svn fetch
+          after=$(git rev-parse refs/remotes/git-svn)
+          echo "before=$before" >> "$GITHUB_OUTPUT"
+          echo "after=$after"   >> "$GITHUB_OUTPUT"
+          if [ "$before" = "$after" ]; then
+            echo "No new Subversion revisions."
+          else
+            echo "Subversion advanced: $before -> $after"
+          fi
+      - if: steps.fetch.outputs.before != steps.fetch.outputs.after
+        name: Rebase workflow commit on top of new Subversion HEAD
+        run: git rebase refs/remotes/git-svn
+      - if: steps.fetch.outputs.before != steps.fetch.outputs.after
+        name: Push to GitHub
+        run: git push --force-with-lease origin master
+name: Sync upstream
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
