@@ -25,7 +25,7 @@
 @echo off
 
 :: Old systems use diferent versions.
-set VERSION=25.2.7
+set VERSION=26.2.5
 if "%WINVER%" == "winxpsp3" set VERSION=5.4.7
 if "%WINVER%" == "win7" set VERSION=25.2.7
 
