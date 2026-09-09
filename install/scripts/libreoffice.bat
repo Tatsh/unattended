@@ -15,12 +15,12 @@
 ::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/26.2.6/win/x86_64/LibreOffice_26.2.6_Win_x86-64.msi|packages/libreoffice/libreoffice_26.2.6_win_AMD64_install.msi
 
 :: libreOffice 25.2.x is last release that works on windows 7 and 8/8.1
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.2.7/win/x86/LibreOffice_25.2.7_Win_x86.msi|packages/libreoffice/libreoffice_25.2.7_win_x86_install.msi
-::URL|ALL|http://download.documentfoundation.org/libreoffice/stable/25.2.7/win/x86_64/LibreOffice_25.2.7_Win_x86-64.msi|packages/libreoffice/libreoffice_25.2.7_win_AMD64_install.msi
+::URL|ALL|http://downloadarchive.documentfoundation.org/libreoffice/old/25.2.7.2/win/x86/LibreOffice_25.2.7.2_Win_x86.msi|packages/libreoffice/libreoffice_25.2.7_win_x86_install.msi
+::URL|ALL|http://downloadarchive.documentfoundation.org/libreoffice/old/25.2.7.2/win/x86_64/LibreOffice_25.2.7.2_Win_x86-64.msi|packages/libreoffice/libreoffice_25.2.7_win_AMD64_install.msi
 
 :: libreOffice 5.4.x is last release that works on windows XP
-::URL|ALL|http://archive-na.documentfoundation.org/libreoffice/old/5.4.7.2/win/x86/LibreOffice_5.4.7.2_Win_x86.msi|packages/libreoffice/libreoffice_5.4.7_win_x86_install.msi
-::URL|ALL|http://archive-na.documentfoundation.org/libreoffice/old/5.4.7.2/win/x86_64/LibreOffice_5.4.7.2_Win_x64.msi|packages/libreoffice/libreoffice_5.4.7_win_AMD64_install.msi
+::URL|ALL|http://downloadarchive.documentfoundation.org/libreoffice/old/5.4.7.2/win/x86/LibreOffice_5.4.7.2_Win_x86.msi|packages/libreoffice/libreoffice_5.4.7_win_x86_install.msi
+::URL|ALL|http://downloadarchive.documentfoundation.org/libreoffice/old/5.4.7.2/win/x86_64/LibreOffice_5.4.7.2_Win_x64.msi|packages/libreoffice/libreoffice_5.4.7_win_AMD64_install.msi
 :: See bug https://bugs.documentfoundation.org/show_bug.cgi?id=112928
 @echo off
 
